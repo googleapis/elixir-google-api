@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.ColorDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :background => String.t(),
-          :foreground => String.t()
+          :background => String.t() | nil,
+          :foreground => String.t() | nil
         }
 
   field(:background)

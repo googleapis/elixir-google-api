@@ -47,13 +47,13 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conferenceId => String.t(),
-          :conferenceSolution => GoogleApi.Calendar.V3.Model.ConferenceSolution.t(),
-          :createRequest => GoogleApi.Calendar.V3.Model.CreateConferenceRequest.t(),
-          :entryPoints => list(GoogleApi.Calendar.V3.Model.EntryPoint.t()),
-          :notes => String.t(),
-          :parameters => GoogleApi.Calendar.V3.Model.ConferenceParameters.t(),
-          :signature => String.t()
+          :conferenceId => String.t() | nil,
+          :conferenceSolution => GoogleApi.Calendar.V3.Model.ConferenceSolution.t() | nil,
+          :createRequest => GoogleApi.Calendar.V3.Model.CreateConferenceRequest.t() | nil,
+          :entryPoints => list(GoogleApi.Calendar.V3.Model.EntryPoint.t()) | nil,
+          :notes => String.t() | nil,
+          :parameters => GoogleApi.Calendar.V3.Model.ConferenceParameters.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:conferenceId)

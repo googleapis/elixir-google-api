@@ -48,7 +48,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   *   `{:error, info}` on failure
   """
   @spec calendar_calendar_list_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def calendar_calendar_list_delete(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -99,6 +99,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   @spec calendar_calendar_list_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_calendar_list_get(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -151,6 +152,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   @spec calendar_calendar_list_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_calendar_list_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -211,6 +213,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   @spec calendar_calendar_list_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_calendar_list_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -268,6 +271,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   @spec calendar_calendar_list_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_calendar_list_patch(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -323,6 +327,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   @spec calendar_calendar_list_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_calendar_list_update(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -384,7 +389,10 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   *   `{:error, info}` on failure
   """
   @spec calendar_calendar_list_watch(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_calendar_list_watch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

@@ -30,10 +30,12 @@ defmodule GoogleApi.Calendar.V3.Model.Colors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendar => %{optional(String.t()) => GoogleApi.Calendar.V3.Model.ColorDefinition.t()},
-          :event => %{optional(String.t()) => GoogleApi.Calendar.V3.Model.ColorDefinition.t()},
-          :kind => String.t(),
-          :updated => DateTime.t()
+          :calendar =>
+            %{optional(String.t()) => GoogleApi.Calendar.V3.Model.ColorDefinition.t()} | nil,
+          :event =>
+            %{optional(String.t()) => GoogleApi.Calendar.V3.Model.ColorDefinition.t()} | nil,
+          :kind => String.t() | nil,
+          :updated => DateTime.t() | nil
         }
 
   field(:calendar, as: GoogleApi.Calendar.V3.Model.ColorDefinition, type: :map)

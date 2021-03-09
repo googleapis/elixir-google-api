@@ -30,10 +30,10 @@ defmodule GoogleApi.Calendar.V3.Model.EventCreator do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t(),
-          :id => String.t(),
-          :self => boolean()
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :id => String.t() | nil,
+          :self => boolean() | nil
         }
 
   field(:displayName)

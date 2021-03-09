@@ -36,14 +36,14 @@ defmodule GoogleApi.Calendar.V3.Model.EventGadget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :display => String.t(),
-          :height => integer(),
-          :iconLink => String.t(),
-          :link => String.t(),
-          :preferences => map(),
-          :title => String.t(),
-          :type => String.t(),
-          :width => integer()
+          :display => String.t() | nil,
+          :height => integer() | nil,
+          :iconLink => String.t() | nil,
+          :link => String.t() | nil,
+          :preferences => map() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:display)

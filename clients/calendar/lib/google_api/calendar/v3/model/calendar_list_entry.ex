@@ -49,26 +49,26 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessRole => String.t(),
-          :backgroundColor => String.t(),
-          :colorId => String.t(),
-          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
-          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          :deleted => boolean(),
-          :description => String.t(),
-          :etag => String.t(),
-          :foregroundColor => String.t(),
-          :hidden => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :location => String.t(),
+          :accessRole => String.t() | nil,
+          :backgroundColor => String.t() | nil,
+          :colorId => String.t() | nil,
+          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t() | nil,
+          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()) | nil,
+          :deleted => boolean() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :foregroundColor => String.t() | nil,
+          :hidden => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :location => String.t() | nil,
           :notificationSettings =>
-            GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.t(),
-          :primary => boolean(),
-          :selected => boolean(),
-          :summary => String.t(),
-          :summaryOverride => String.t(),
-          :timeZone => String.t()
+            GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.t() | nil,
+          :primary => boolean() | nil,
+          :selected => boolean() | nil,
+          :summary => String.t() | nil,
+          :summaryOverride => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:accessRole)

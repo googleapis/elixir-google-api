@@ -27,7 +27,7 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t()
+          :id => String.t() | nil
         }
 
   field(:id)

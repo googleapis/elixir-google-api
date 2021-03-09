@@ -53,7 +53,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def calendar_events_delete(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -109,7 +109,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_get(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -165,7 +168,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_import(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -225,7 +231,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -296,7 +305,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Events.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_instances(
         connection,
         calendar_id,
@@ -391,7 +403,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Events.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -469,7 +484,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_move(
         connection,
         calendar_id,
@@ -539,7 +558,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_patch(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -606,7 +628,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_quick_add(connection, calendar_id, text, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -668,7 +694,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Event.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_update(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -756,7 +785,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec calendar_events_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def calendar_events_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

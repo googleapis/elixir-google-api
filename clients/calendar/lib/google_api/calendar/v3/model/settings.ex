@@ -31,11 +31,11 @@ defmodule GoogleApi.Calendar.V3.Model.Settings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Calendar.V3.Model.Setting.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :nextSyncToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Calendar.V3.Model.Setting.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :nextSyncToken => String.t() | nil
         }
 
   field(:etag)

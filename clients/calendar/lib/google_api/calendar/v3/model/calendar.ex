@@ -34,14 +34,14 @@ defmodule GoogleApi.Calendar.V3.Model.Calendar do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :location => String.t(),
-          :summary => String.t(),
-          :timeZone => String.t()
+          :conferenceProperties => GoogleApi.Calendar.V3.Model.ConferenceProperties.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :location => String.t() | nil,
+          :summary => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:conferenceProperties, as: GoogleApi.Calendar.V3.Model.ConferenceProperties)

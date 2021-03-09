@@ -36,8 +36,8 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :method => String.t(),
-          :type => String.t()
+          :method => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:method)

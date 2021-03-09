@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.TimePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => DateTime.t(),
-          :start => DateTime.t()
+          :end => DateTime.t() | nil,
+          :start => DateTime.t() | nil
         }
 
   field(:end, as: DateTime)

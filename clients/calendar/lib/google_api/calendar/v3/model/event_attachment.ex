@@ -34,11 +34,11 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileId => String.t(),
-          :fileUrl => String.t(),
-          :iconLink => String.t(),
-          :mimeType => String.t(),
-          :title => String.t()
+          :fileId => String.t() | nil,
+          :fileUrl => String.t() | nil,
+          :iconLink => String.t() | nil,
+          :mimeType => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:fileId)

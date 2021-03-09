@@ -32,8 +32,8 @@ defmodule GoogleApi.Calendar.V3.Model.Error do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t(),
-          :reason => String.t()
+          :domain => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:domain)

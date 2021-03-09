@@ -36,11 +36,11 @@ defmodule GoogleApi.Calendar.V3.Model.AclRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :role => String.t(),
-          :scope => GoogleApi.Calendar.V3.Model.AclRuleScope.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :role => String.t() | nil,
+          :scope => GoogleApi.Calendar.V3.Model.AclRuleScope.t() | nil
         }
 
   field(:etag)

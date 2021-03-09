@@ -31,13 +31,13 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendars => %{
-            optional(String.t()) => GoogleApi.Calendar.V3.Model.FreeBusyCalendar.t()
-          },
-          :groups => %{optional(String.t()) => GoogleApi.Calendar.V3.Model.FreeBusyGroup.t()},
-          :kind => String.t(),
-          :timeMax => DateTime.t(),
-          :timeMin => DateTime.t()
+          :calendars =>
+            %{optional(String.t()) => GoogleApi.Calendar.V3.Model.FreeBusyCalendar.t()} | nil,
+          :groups =>
+            %{optional(String.t()) => GoogleApi.Calendar.V3.Model.FreeBusyGroup.t()} | nil,
+          :kind => String.t() | nil,
+          :timeMax => DateTime.t() | nil,
+          :timeMin => DateTime.t() | nil
         }
 
   field(:calendars, as: GoogleApi.Calendar.V3.Model.FreeBusyCalendar, type: :map)

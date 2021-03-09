@@ -32,12 +32,12 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendarExpansionMax => integer(),
-          :groupExpansionMax => integer(),
-          :items => list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t()),
-          :timeMax => DateTime.t(),
-          :timeMin => DateTime.t(),
-          :timeZone => String.t()
+          :calendarExpansionMax => integer() | nil,
+          :groupExpansionMax => integer() | nil,
+          :items => list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t()) | nil,
+          :timeMax => DateTime.t() | nil,
+          :timeMin => DateTime.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:calendarExpansionMax)

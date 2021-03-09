@@ -27,7 +27,7 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifications => list(GoogleApi.Calendar.V3.Model.CalendarNotification.t())
+          :notifications => list(GoogleApi.Calendar.V3.Model.CalendarNotification.t()) | nil
         }
 
   field(:notifications, as: GoogleApi.Calendar.V3.Model.CalendarNotification, type: :list)

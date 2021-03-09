@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyCalendar do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :busy => list(GoogleApi.Calendar.V3.Model.TimePeriod.t()),
-          :errors => list(GoogleApi.Calendar.V3.Model.Error.t())
+          :busy => list(GoogleApi.Calendar.V3.Model.TimePeriod.t()) | nil,
+          :errors => list(GoogleApi.Calendar.V3.Model.Error.t()) | nil
         }
 
   field(:busy, as: GoogleApi.Calendar.V3.Model.TimePeriod, type: :list)

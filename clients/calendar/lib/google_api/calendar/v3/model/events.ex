@@ -42,17 +42,17 @@ defmodule GoogleApi.Calendar.V3.Model.Events do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessRole => String.t(),
-          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          :description => String.t(),
-          :etag => String.t(),
-          :items => list(GoogleApi.Calendar.V3.Model.Event.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :nextSyncToken => String.t(),
-          :summary => String.t(),
-          :timeZone => String.t(),
-          :updated => DateTime.t()
+          :accessRole => String.t() | nil,
+          :defaultReminders => list(GoogleApi.Calendar.V3.Model.EventReminder.t()) | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Calendar.V3.Model.Event.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :nextSyncToken => String.t() | nil,
+          :summary => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :updated => DateTime.t() | nil
         }
 
   field(:accessRole)
