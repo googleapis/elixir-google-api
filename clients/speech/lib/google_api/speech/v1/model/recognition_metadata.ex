@@ -34,14 +34,14 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioTopic => String.t(),
-          :industryNaicsCodeOfAudio => integer(),
-          :interactionType => String.t(),
-          :microphoneDistance => String.t(),
-          :originalMediaType => String.t(),
-          :originalMimeType => String.t(),
-          :recordingDeviceName => String.t(),
-          :recordingDeviceType => String.t()
+          :audioTopic => String.t() | nil,
+          :industryNaicsCodeOfAudio => integer() | nil,
+          :interactionType => String.t() | nil,
+          :microphoneDistance => String.t() | nil,
+          :originalMediaType => String.t() | nil,
+          :originalMimeType => String.t() | nil,
+          :recordingDeviceName => String.t() | nil,
+          :recordingDeviceType => String.t() | nil
         }
 
   field(:audioTopic)

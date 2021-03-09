@@ -28,8 +28,8 @@ defmodule GoogleApi.Speech.V1.Model.SpeechRecognitionResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternatives => list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t()),
-          :channelTag => integer()
+          :alternatives => list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t()) | nil,
+          :channelTag => integer() | nil
         }
 
   field(:alternatives, as: GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative, type: :list)

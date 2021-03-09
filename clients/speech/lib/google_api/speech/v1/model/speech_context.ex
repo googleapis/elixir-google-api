@@ -27,7 +27,7 @@ defmodule GoogleApi.Speech.V1.Model.SpeechContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :phrases => list(String.t())
+          :phrases => list(String.t()) | nil
         }
 
   field(:phrases, type: :list)

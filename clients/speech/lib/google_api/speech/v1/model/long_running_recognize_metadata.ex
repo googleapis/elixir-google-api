@@ -30,10 +30,10 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastUpdateTime => DateTime.t(),
-          :progressPercent => integer(),
-          :startTime => DateTime.t(),
-          :uri => String.t()
+          :lastUpdateTime => DateTime.t() | nil,
+          :progressPercent => integer() | nil,
+          :startTime => DateTime.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:lastUpdateTime, as: DateTime)

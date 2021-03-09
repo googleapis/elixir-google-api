@@ -40,20 +40,20 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioChannelCount => integer(),
-          :diarizationConfig => GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig.t(),
-          :enableAutomaticPunctuation => boolean(),
-          :enableSeparateRecognitionPerChannel => boolean(),
-          :enableWordTimeOffsets => boolean(),
-          :encoding => String.t(),
-          :languageCode => String.t(),
-          :maxAlternatives => integer(),
-          :metadata => GoogleApi.Speech.V1.Model.RecognitionMetadata.t(),
-          :model => String.t(),
-          :profanityFilter => boolean(),
-          :sampleRateHertz => integer(),
-          :speechContexts => list(GoogleApi.Speech.V1.Model.SpeechContext.t()),
-          :useEnhanced => boolean()
+          :audioChannelCount => integer() | nil,
+          :diarizationConfig => GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig.t() | nil,
+          :enableAutomaticPunctuation => boolean() | nil,
+          :enableSeparateRecognitionPerChannel => boolean() | nil,
+          :enableWordTimeOffsets => boolean() | nil,
+          :encoding => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :maxAlternatives => integer() | nil,
+          :metadata => GoogleApi.Speech.V1.Model.RecognitionMetadata.t() | nil,
+          :model => String.t() | nil,
+          :profanityFilter => boolean() | nil,
+          :sampleRateHertz => integer() | nil,
+          :speechContexts => list(GoogleApi.Speech.V1.Model.SpeechContext.t()) | nil,
+          :useEnhanced => boolean() | nil
         }
 
   field(:audioChannelCount)

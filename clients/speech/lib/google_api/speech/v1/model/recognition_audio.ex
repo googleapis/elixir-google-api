@@ -28,8 +28,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionAudio do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :uri => String.t()
+          :content => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:content)

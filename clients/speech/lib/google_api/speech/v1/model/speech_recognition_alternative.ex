@@ -29,9 +29,9 @@ defmodule GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :transcript => String.t(),
-          :words => list(GoogleApi.Speech.V1.Model.WordInfo.t())
+          :confidence => number() | nil,
+          :transcript => String.t() | nil,
+          :words => list(GoogleApi.Speech.V1.Model.WordInfo.t()) | nil
         }
 
   field(:confidence)

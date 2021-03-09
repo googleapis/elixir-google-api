@@ -27,7 +27,7 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t())
+          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil
         }
 
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)

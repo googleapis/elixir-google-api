@@ -28,8 +28,8 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audio => GoogleApi.Speech.V1.Model.RecognitionAudio.t(),
-          :config => GoogleApi.Speech.V1.Model.RecognitionConfig.t()
+          :audio => GoogleApi.Speech.V1.Model.RecognitionAudio.t() | nil,
+          :config => GoogleApi.Speech.V1.Model.RecognitionConfig.t() | nil
         }
 
   field(:audio, as: GoogleApi.Speech.V1.Model.RecognitionAudio)
