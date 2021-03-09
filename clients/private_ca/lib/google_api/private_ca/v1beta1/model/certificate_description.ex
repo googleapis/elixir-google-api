@@ -34,14 +34,14 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aiaIssuingCertificateUrls => list(String.t()),
-          :authorityKeyId => GoogleApi.PrivateCA.V1beta1.Model.KeyId.t(),
-          :certFingerprint => GoogleApi.PrivateCA.V1beta1.Model.CertificateFingerprint.t(),
-          :configValues => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t(),
-          :crlDistributionPoints => list(String.t()),
-          :publicKey => GoogleApi.PrivateCA.V1beta1.Model.PublicKey.t(),
-          :subjectDescription => GoogleApi.PrivateCA.V1beta1.Model.SubjectDescription.t(),
-          :subjectKeyId => GoogleApi.PrivateCA.V1beta1.Model.KeyId.t()
+          :aiaIssuingCertificateUrls => list(String.t()) | nil,
+          :authorityKeyId => GoogleApi.PrivateCA.V1beta1.Model.KeyId.t() | nil,
+          :certFingerprint => GoogleApi.PrivateCA.V1beta1.Model.CertificateFingerprint.t() | nil,
+          :configValues => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t() | nil,
+          :crlDistributionPoints => list(String.t()) | nil,
+          :publicKey => GoogleApi.PrivateCA.V1beta1.Model.PublicKey.t() | nil,
+          :subjectDescription => GoogleApi.PrivateCA.V1beta1.Model.SubjectDescription.t() | nil,
+          :subjectKeyId => GoogleApi.PrivateCA.V1beta1.Model.KeyId.t() | nil
         }
 
   field(:aiaIssuingCertificateUrls, type: :list)

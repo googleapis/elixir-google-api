@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.RevokeCertificateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t(),
-          :requestId => String.t()
+          :reason => String.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:reason)

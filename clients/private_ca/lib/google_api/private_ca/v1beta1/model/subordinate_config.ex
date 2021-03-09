@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateAuthority => String.t(),
-          :pemIssuerChain => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfigChain.t()
+          :certificateAuthority => String.t() | nil,
+          :pemIssuerChain => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfigChain.t() | nil
         }
 
   field(:certificateAuthority)

@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfigChain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pemCertificates => list(String.t())
+          :pemCertificates => list(String.t()) | nil
         }
 
   field(:pemCertificates, type: :list)

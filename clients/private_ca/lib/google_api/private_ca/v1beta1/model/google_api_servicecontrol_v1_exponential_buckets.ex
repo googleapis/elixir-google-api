@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Exponential
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :growthFactor => float(),
-          :numFiniteBuckets => integer(),
-          :scale => float()
+          :growthFactor => float() | nil,
+          :numFiniteBuckets => integer() | nil,
+          :scale => float() | nil
         }
 
   field(:growthFactor)

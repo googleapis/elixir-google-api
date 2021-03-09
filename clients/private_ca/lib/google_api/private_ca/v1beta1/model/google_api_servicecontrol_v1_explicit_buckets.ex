@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ExplicitBuc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bounds => list(float())
+          :bounds => list(float()) | nil
         }
 
   field(:bounds, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.IssuingOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeCaCertUrl => boolean(),
-          :includeCrlAccessUrl => boolean()
+          :includeCaCertUrl => boolean() | nil,
+          :includeCrlAccessUrl => boolean() | nil
         }
 
   field(:includeCaCertUrl)

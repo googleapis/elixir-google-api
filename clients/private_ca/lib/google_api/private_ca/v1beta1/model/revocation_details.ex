@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.RevocationDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :revocationState => String.t(),
-          :revocationTime => DateTime.t()
+          :revocationState => String.t() | nil,
+          :revocationTime => DateTime.t() | nil
         }
 
   field(:revocationState)

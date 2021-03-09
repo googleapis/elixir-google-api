@@ -39,20 +39,21 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntry do
 
   @type t :: %__MODULE__{
           :httpRequest =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1HttpRequest.t(),
-          :insertId => String.t(),
-          :labels => map(),
-          :name => String.t(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1HttpRequest.t() | nil,
+          :insertId => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
           :operation =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntryOperation.t(),
-          :protoPayload => map(),
-          :severity => String.t(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntryOperation.t() | nil,
+          :protoPayload => map() | nil,
+          :severity => String.t() | nil,
           :sourceLocation =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntrySourceLocation.t(),
-          :structPayload => map(),
-          :textPayload => String.t(),
-          :timestamp => DateTime.t(),
-          :trace => String.t()
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntrySourceLocation.t()
+            | nil,
+          :structPayload => map() | nil,
+          :textPayload => String.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :trace => String.t() | nil
         }
 
   field(:httpRequest, as: GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1HttpRequest)

@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.RevokedCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificate => String.t(),
-          :hexSerialNumber => String.t(),
-          :revocationReason => String.t()
+          :certificate => String.t() | nil,
+          :hexSerialNumber => String.t() | nil,
+          :revocationReason => String.t() | nil
         }
 
   field(:certificate)

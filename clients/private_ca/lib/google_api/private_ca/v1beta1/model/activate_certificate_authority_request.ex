@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ActivateCertificateAuthorityRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pemCaCertificate => String.t(),
-          :requestId => String.t(),
-          :subordinateConfig => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig.t()
+          :pemCaCertificate => String.t() | nil,
+          :requestId => String.t() | nil,
+          :subordinateConfig => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig.t() | nil
         }
 
   field(:pemCaCertificate)

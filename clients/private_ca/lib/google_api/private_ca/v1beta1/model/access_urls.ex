@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.AccessUrls do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caCertificateAccessUrl => String.t(),
-          :crlAccessUrl => String.t()
+          :caCertificateAccessUrl => String.t() | nil,
+          :crlAccessUrl => String.t() | nil
         }
 
   field(:caCertificateAccessUrl)

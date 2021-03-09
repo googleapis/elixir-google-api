@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.IssuanceModes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowConfigBasedIssuance => boolean(),
-          :allowCsrBasedIssuance => boolean()
+          :allowConfigBasedIssuance => boolean() | nil,
+          :allowCsrBasedIssuance => boolean() | nil
         }
 
   field(:allowConfigBasedIssuance)

@@ -28,8 +28,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reusableConfig => String.t(),
-          :reusableConfigValues => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t()
+          :reusableConfig => String.t() | nil,
+          :reusableConfigValues =>
+            GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t() | nil
         }
 
   field(:reusableConfig)

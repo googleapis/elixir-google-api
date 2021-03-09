@@ -28,7 +28,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.AllowedConfigList do
 
   @type t :: %__MODULE__{
           :allowedConfigValues =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t())
+            list(GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t()) | nil
         }
 
   field(:allowedConfigValues,

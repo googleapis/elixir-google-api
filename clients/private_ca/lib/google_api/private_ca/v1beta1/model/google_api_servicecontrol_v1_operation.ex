@@ -40,25 +40,27 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Operation d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerId => String.t(),
-          :endTime => DateTime.t(),
-          :extensions => list(map()),
-          :importance => String.t(),
-          :labels => map(),
+          :consumerId => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :extensions => list(map()) | nil,
+          :importance => String.t() | nil,
+          :labels => map() | nil,
           :logEntries =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntry.t()),
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntry.t()) | nil,
           :metricValueSets =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1MetricValueSet.t()),
-          :operationId => String.t(),
-          :operationName => String.t(),
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1MetricValueSet.t())
+            | nil,
+          :operationId => String.t() | nil,
+          :operationName => String.t() | nil,
           :quotaProperties =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1QuotaProperties.t(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1QuotaProperties.t() | nil,
           :resources =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ResourceInfo.t()),
-          :startTime => DateTime.t(),
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ResourceInfo.t())
+            | nil,
+          :startTime => DateTime.t() | nil,
           :traceSpans =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TraceSpan.t()),
-          :userLabels => map()
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TraceSpan.t()) | nil,
+          :userLabels => map() | nil
         }
 
   field(:consumerId)

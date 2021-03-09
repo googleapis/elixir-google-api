@@ -37,17 +37,18 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.Certificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateDescription => GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription.t(),
-          :config => GoogleApi.PrivateCA.V1beta1.Model.CertificateConfig.t(),
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :lifetime => String.t(),
-          :name => String.t(),
-          :pemCertificate => String.t(),
-          :pemCertificateChain => list(String.t()),
-          :pemCsr => String.t(),
-          :revocationDetails => GoogleApi.PrivateCA.V1beta1.Model.RevocationDetails.t(),
-          :updateTime => DateTime.t()
+          :certificateDescription =>
+            GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription.t() | nil,
+          :config => GoogleApi.PrivateCA.V1beta1.Model.CertificateConfig.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :lifetime => String.t() | nil,
+          :name => String.t() | nil,
+          :pemCertificate => String.t() | nil,
+          :pemCertificateChain => list(String.t()) | nil,
+          :pemCsr => String.t() | nil,
+          :revocationDetails => GoogleApi.PrivateCA.V1beta1.Model.RevocationDetails.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:certificateDescription, as: GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription)

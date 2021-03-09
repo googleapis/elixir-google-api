@@ -32,12 +32,12 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.AllowedSubjectAltNames do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowCustomSans => boolean(),
-          :allowGlobbingDnsWildcards => boolean(),
-          :allowedDnsNames => list(String.t()),
-          :allowedEmailAddresses => list(String.t()),
-          :allowedIps => list(String.t()),
-          :allowedUris => list(String.t())
+          :allowCustomSans => boolean() | nil,
+          :allowGlobbingDnsWildcards => boolean() | nil,
+          :allowedDnsNames => list(String.t()) | nil,
+          :allowedEmailAddresses => list(String.t()) | nil,
+          :allowedIps => list(String.t()) | nil,
+          :allowedUris => list(String.t()) | nil
         }
 
   field(:allowCustomSans)

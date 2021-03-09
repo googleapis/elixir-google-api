@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicKey => GoogleApi.PrivateCA.V1beta1.Model.PublicKey.t(),
-          :reusableConfig => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t(),
-          :subjectConfig => GoogleApi.PrivateCA.V1beta1.Model.SubjectConfig.t()
+          :publicKey => GoogleApi.PrivateCA.V1beta1.Model.PublicKey.t() | nil,
+          :reusableConfig => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t() | nil,
+          :subjectConfig => GoogleApi.PrivateCA.V1beta1.Model.SubjectConfig.t() | nil
         }
 
   field(:publicKey, as: GoogleApi.PrivateCA.V1beta1.Model.PublicKey)

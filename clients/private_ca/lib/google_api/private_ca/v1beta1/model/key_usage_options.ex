@@ -35,15 +35,15 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.KeyUsageOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certSign => boolean(),
-          :contentCommitment => boolean(),
-          :crlSign => boolean(),
-          :dataEncipherment => boolean(),
-          :decipherOnly => boolean(),
-          :digitalSignature => boolean(),
-          :encipherOnly => boolean(),
-          :keyAgreement => boolean(),
-          :keyEncipherment => boolean()
+          :certSign => boolean() | nil,
+          :contentCommitment => boolean() | nil,
+          :crlSign => boolean() | nil,
+          :dataEncipherment => boolean() | nil,
+          :decipherOnly => boolean() | nil,
+          :digitalSignature => boolean() | nil,
+          :encipherOnly => boolean() | nil,
+          :keyAgreement => boolean() | nil,
+          :keyEncipherment => boolean() | nil
         }
 
   field(:certSign)

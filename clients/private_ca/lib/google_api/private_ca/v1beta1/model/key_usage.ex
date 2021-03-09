@@ -29,9 +29,10 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.KeyUsage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseKeyUsage => GoogleApi.PrivateCA.V1beta1.Model.KeyUsageOptions.t(),
-          :extendedKeyUsage => GoogleApi.PrivateCA.V1beta1.Model.ExtendedKeyUsageOptions.t(),
-          :unknownExtendedKeyUsages => list(GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t())
+          :baseKeyUsage => GoogleApi.PrivateCA.V1beta1.Model.KeyUsageOptions.t() | nil,
+          :extendedKeyUsage =>
+            GoogleApi.PrivateCA.V1beta1.Model.ExtendedKeyUsageOptions.t() | nil,
+          :unknownExtendedKeyUsages => list(GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t()) | nil
         }
 
   field(:baseKeyUsage, as: GoogleApi.PrivateCA.V1beta1.Model.KeyUsageOptions)

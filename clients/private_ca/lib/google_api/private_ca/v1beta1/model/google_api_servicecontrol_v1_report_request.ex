@@ -30,9 +30,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ReportReque
 
   @type t :: %__MODULE__{
           :operations =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Operation.t()),
-          :serviceConfigId => String.t(),
-          :serviceName => String.t()
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Operation.t()) | nil,
+          :serviceConfigId => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:operations,

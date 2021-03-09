@@ -32,12 +32,12 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ReusableConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :updateTime => DateTime.t(),
-          :values => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :values => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues.t() | nil
         }
 
   field(:createTime, as: DateTime)

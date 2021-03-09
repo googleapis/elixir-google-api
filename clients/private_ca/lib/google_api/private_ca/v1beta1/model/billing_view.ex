@@ -29,6 +29,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.BillingView do
   @type t :: %__MODULE__{
           :reportRequests =>
             list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ReportRequest.t())
+            | nil
         }
 
   field(:reportRequests,

@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.FetchCertificateAuthorityCsrResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pemCsr => String.t()
+          :pemCsr => String.t() | nil
         }
 
   field(:pemCsr)

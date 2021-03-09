@@ -29,10 +29,10 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1AttributeVa
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :intValue => String.t(),
+          :boolValue => boolean() | nil,
+          :intValue => String.t() | nil,
           :stringValue =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TruncatableString.t()
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TruncatableString.t() | nil
         }
 
   field(:boolValue)

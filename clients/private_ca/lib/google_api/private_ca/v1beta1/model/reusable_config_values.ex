@@ -31,11 +31,12 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalExtensions => list(GoogleApi.PrivateCA.V1beta1.Model.X509Extension.t()),
-          :aiaOcspServers => list(String.t()),
-          :caOptions => GoogleApi.PrivateCA.V1beta1.Model.CaOptions.t(),
-          :keyUsage => GoogleApi.PrivateCA.V1beta1.Model.KeyUsage.t(),
-          :policyIds => list(GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t())
+          :additionalExtensions =>
+            list(GoogleApi.PrivateCA.V1beta1.Model.X509Extension.t()) | nil,
+          :aiaOcspServers => list(String.t()) | nil,
+          :caOptions => GoogleApi.PrivateCA.V1beta1.Model.CaOptions.t() | nil,
+          :keyUsage => GoogleApi.PrivateCA.V1beta1.Model.KeyUsage.t() | nil,
+          :policyIds => list(GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t()) | nil
         }
 
   field(:additionalExtensions, as: GoogleApi.PrivateCA.V1beta1.Model.X509Extension, type: :list)
