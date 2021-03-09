@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdPayloadError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.Monitoring.V3.Model.Status.t(),
-          :index => integer(),
-          :valueErrors => list(GoogleApi.Monitoring.V3.Model.CollectdValueError.t())
+          :error => GoogleApi.Monitoring.V3.Model.Status.t() | nil,
+          :index => integer() | nil,
+          :valueErrors => list(GoogleApi.Monitoring.V3.Model.CollectdValueError.t()) | nil
         }
 
   field(:error, as: GoogleApi.Monitoring.V3.Model.Status)

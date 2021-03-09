@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.PointData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :timeInterval => GoogleApi.Monitoring.V3.Model.TimeInterval.t(),
-          :values => list(GoogleApi.Monitoring.V3.Model.TypedValue.t())
+          :timeInterval => GoogleApi.Monitoring.V3.Model.TimeInterval.t() | nil,
+          :values => list(GoogleApi.Monitoring.V3.Model.TypedValue.t()) | nil
         }
 
   field(:timeInterval, as: GoogleApi.Monitoring.V3.Model.TimeInterval)

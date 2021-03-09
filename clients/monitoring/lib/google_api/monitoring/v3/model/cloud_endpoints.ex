@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.CloudEndpoints do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => String.t()
+          :service => String.t() | nil
         }
 
   field(:service)

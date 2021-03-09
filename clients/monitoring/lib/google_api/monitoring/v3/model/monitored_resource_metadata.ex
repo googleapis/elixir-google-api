@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.MonitoredResourceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :systemLabels => map(),
-          :userLabels => map()
+          :systemLabels => map() | nil,
+          :userLabels => map() | nil
         }
 
   field(:systemLabels, type: :map)

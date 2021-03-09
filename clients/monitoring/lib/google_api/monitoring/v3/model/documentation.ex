@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Documentation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :mimeType => String.t()
+          :content => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:content)

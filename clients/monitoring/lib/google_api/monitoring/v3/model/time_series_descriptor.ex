@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.TimeSeriesDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelDescriptors => list(GoogleApi.Monitoring.V3.Model.LabelDescriptor.t()),
-          :pointDescriptors => list(GoogleApi.Monitoring.V3.Model.ValueDescriptor.t())
+          :labelDescriptors => list(GoogleApi.Monitoring.V3.Model.LabelDescriptor.t()) | nil,
+          :pointDescriptors => list(GoogleApi.Monitoring.V3.Model.ValueDescriptor.t()) | nil
         }
 
   field(:labelDescriptors, as: GoogleApi.Monitoring.V3.Model.LabelDescriptor, type: :list)

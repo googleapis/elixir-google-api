@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectdPayloads => list(GoogleApi.Monitoring.V3.Model.CollectdPayload.t()),
-          :collectdVersion => String.t(),
-          :resource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t()
+          :collectdPayloads => list(GoogleApi.Monitoring.V3.Model.CollectdPayload.t()) | nil,
+          :collectdVersion => String.t() | nil,
+          :resource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t() | nil
         }
 
   field(:collectdPayloads, as: GoogleApi.Monitoring.V3.Model.CollectdPayload, type: :list)

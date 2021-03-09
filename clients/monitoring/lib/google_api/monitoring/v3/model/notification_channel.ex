@@ -36,16 +36,16 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :enabled => boolean(),
-          :labels => map(),
-          :mutationRecords => list(GoogleApi.Monitoring.V3.Model.MutationRecord.t()),
-          :name => String.t(),
-          :type => String.t(),
-          :userLabels => map(),
-          :verificationStatus => String.t()
+          :creationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :enabled => boolean() | nil,
+          :labels => map() | nil,
+          :mutationRecords => list(GoogleApi.Monitoring.V3.Model.MutationRecord.t()) | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil,
+          :userLabels => map() | nil,
+          :verificationStatus => String.t() | nil
         }
 
   field(:creationRecord, as: GoogleApi.Monitoring.V3.Model.MutationRecord)

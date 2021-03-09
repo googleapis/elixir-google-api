@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdValueError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.Monitoring.V3.Model.Status.t(),
-          :index => integer()
+          :error => GoogleApi.Monitoring.V3.Model.Status.t() | nil,
+          :index => integer() | nil
         }
 
   field(:error, as: GoogleApi.Monitoring.V3.Model.Status)

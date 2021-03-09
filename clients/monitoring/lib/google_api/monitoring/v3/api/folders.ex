@@ -69,6 +69,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Folders do
   @spec monitoring_folders_time_series_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def monitoring_folders_time_series_list(
         connection,

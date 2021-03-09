@@ -29,8 +29,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsRespon
 
   @type t :: %__MODULE__{
           :channelDescriptors =>
-            list(GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:channelDescriptors,

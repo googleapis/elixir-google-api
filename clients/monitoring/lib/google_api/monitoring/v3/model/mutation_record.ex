@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.MutationRecord do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mutateTime => DateTime.t(),
-          :mutatedBy => String.t()
+          :mutateTime => DateTime.t() | nil,
+          :mutatedBy => String.t() | nil
         }
 
   field(:mutateTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ResourceGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupId => String.t(),
-          :resourceType => String.t()
+          :groupId => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:groupId)

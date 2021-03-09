@@ -38,18 +38,18 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentMatchers => list(GoogleApi.Monitoring.V3.Model.ContentMatcher.t()),
-          :displayName => String.t(),
-          :httpCheck => GoogleApi.Monitoring.V3.Model.HttpCheck.t(),
-          :internalCheckers => list(GoogleApi.Monitoring.V3.Model.InternalChecker.t()),
-          :isInternal => boolean(),
-          :monitoredResource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t(),
-          :name => String.t(),
-          :period => String.t(),
-          :resourceGroup => GoogleApi.Monitoring.V3.Model.ResourceGroup.t(),
-          :selectedRegions => list(String.t()),
-          :tcpCheck => GoogleApi.Monitoring.V3.Model.TcpCheck.t(),
-          :timeout => String.t()
+          :contentMatchers => list(GoogleApi.Monitoring.V3.Model.ContentMatcher.t()) | nil,
+          :displayName => String.t() | nil,
+          :httpCheck => GoogleApi.Monitoring.V3.Model.HttpCheck.t() | nil,
+          :internalCheckers => list(GoogleApi.Monitoring.V3.Model.InternalChecker.t()) | nil,
+          :isInternal => boolean() | nil,
+          :monitoredResource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t() | nil,
+          :name => String.t() | nil,
+          :period => String.t() | nil,
+          :resourceGroup => GoogleApi.Monitoring.V3.Model.ResourceGroup.t() | nil,
+          :selectedRegions => list(String.t()) | nil,
+          :tcpCheck => GoogleApi.Monitoring.V3.Model.TcpCheck.t() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:contentMatchers, as: GoogleApi.Monitoring.V3.Model.ContentMatcher, type: :list)

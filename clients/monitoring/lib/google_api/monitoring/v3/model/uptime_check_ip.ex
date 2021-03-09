@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckIp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :location => String.t(),
-          :region => String.t()
+          :ipAddress => String.t() | nil,
+          :location => String.t() | nil,
+          :region => String.t() | nil
         }
 
   field(:ipAddress)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.GetNotificationChannelVerificationCodeRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :expireTime => DateTime.t()
+          :code => String.t() | nil,
+          :expireTime => DateTime.t() | nil
         }
 
   field(:code)

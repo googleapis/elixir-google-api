@@ -30,10 +30,10 @@ defmodule GoogleApi.Monitoring.V3.Model.ValueDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :metricKind => String.t(),
-          :unit => String.t(),
-          :valueType => String.t()
+          :key => String.t() | nil,
+          :metricKind => String.t() | nil,
+          :unit => String.t() | nil,
+          :valueType => String.t() | nil
         }
 
   field(:key)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :query => String.t(),
-          :trigger => GoogleApi.Monitoring.V3.Model.Trigger.t()
+          :duration => String.t() | nil,
+          :query => String.t() | nil,
+          :trigger => GoogleApi.Monitoring.V3.Model.Trigger.t() | nil
         }
 
   field(:duration)

@@ -35,15 +35,15 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngine => GoogleApi.Monitoring.V3.Model.AppEngine.t(),
-          :cloudEndpoints => GoogleApi.Monitoring.V3.Model.CloudEndpoints.t(),
-          :clusterIstio => GoogleApi.Monitoring.V3.Model.ClusterIstio.t(),
-          :custom => GoogleApi.Monitoring.V3.Model.Custom.t(),
-          :displayName => String.t(),
-          :istioCanonicalService => GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t(),
-          :meshIstio => GoogleApi.Monitoring.V3.Model.MeshIstio.t(),
-          :name => String.t(),
-          :telemetry => GoogleApi.Monitoring.V3.Model.Telemetry.t()
+          :appEngine => GoogleApi.Monitoring.V3.Model.AppEngine.t() | nil,
+          :cloudEndpoints => GoogleApi.Monitoring.V3.Model.CloudEndpoints.t() | nil,
+          :clusterIstio => GoogleApi.Monitoring.V3.Model.ClusterIstio.t() | nil,
+          :custom => GoogleApi.Monitoring.V3.Model.Custom.t() | nil,
+          :displayName => String.t() | nil,
+          :istioCanonicalService => GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t() | nil,
+          :meshIstio => GoogleApi.Monitoring.V3.Model.MeshIstio.t() | nil,
+          :name => String.t() | nil,
+          :telemetry => GoogleApi.Monitoring.V3.Model.Telemetry.t() | nil
         }
 
   field(:appEngine, as: GoogleApi.Monitoring.V3.Model.AppEngine)

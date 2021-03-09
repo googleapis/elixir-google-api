@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.LabelValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :int64Value => String.t(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :int64Value => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

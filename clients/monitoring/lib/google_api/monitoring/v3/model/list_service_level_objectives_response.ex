@@ -28,8 +28,9 @@ defmodule GoogleApi.Monitoring.V3.Model.ListServiceLevelObjectivesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :serviceLevelObjectives => list(GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t())
+          :nextPageToken => String.t() | nil,
+          :serviceLevelObjectives =>
+            list(GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()) | nil
         }
 
   field(:nextPageToken)

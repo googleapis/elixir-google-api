@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.TimeSeriesRatio do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :badServiceFilter => String.t(),
-          :goodServiceFilter => String.t(),
-          :totalServiceFilter => String.t()
+          :badServiceFilter => String.t() | nil,
+          :goodServiceFilter => String.t() | nil,
+          :totalServiceFilter => String.t() | nil
         }
 
   field(:badServiceFilter)

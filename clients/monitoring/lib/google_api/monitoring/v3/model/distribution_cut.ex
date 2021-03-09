@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.DistributionCut do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distributionFilter => String.t(),
-          :range => GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range.t()
+          :distributionFilter => String.t() | nil,
+          :range => GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range.t() | nil
         }
 
   field(:distributionFilter)

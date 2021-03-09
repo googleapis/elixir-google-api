@@ -33,13 +33,13 @@ defmodule GoogleApi.Monitoring.V3.Model.Distribution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketCounts => list(String.t()),
-          :bucketOptions => GoogleApi.Monitoring.V3.Model.BucketOptions.t(),
-          :count => String.t(),
-          :exemplars => list(GoogleApi.Monitoring.V3.Model.Exemplar.t()),
-          :mean => float(),
-          :range => GoogleApi.Monitoring.V3.Model.Range.t(),
-          :sumOfSquaredDeviation => float()
+          :bucketCounts => list(String.t()) | nil,
+          :bucketOptions => GoogleApi.Monitoring.V3.Model.BucketOptions.t() | nil,
+          :count => String.t() | nil,
+          :exemplars => list(GoogleApi.Monitoring.V3.Model.Exemplar.t()) | nil,
+          :mean => float() | nil,
+          :range => GoogleApi.Monitoring.V3.Model.Range.t() | nil,
+          :sumOfSquaredDeviation => float() | nil
         }
 
   field(:bucketCounts, type: :list)

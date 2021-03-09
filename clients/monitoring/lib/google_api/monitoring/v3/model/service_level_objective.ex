@@ -32,12 +32,12 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendarPeriod => String.t(),
-          :displayName => String.t(),
-          :goal => float(),
-          :name => String.t(),
-          :rollingPeriod => String.t(),
-          :serviceLevelIndicator => GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t()
+          :calendarPeriod => String.t() | nil,
+          :displayName => String.t() | nil,
+          :goal => float() | nil,
+          :name => String.t() | nil,
+          :rollingPeriod => String.t() | nil,
+          :serviceLevelIndicator => GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t() | nil
         }
 
   field(:calendarPeriod)

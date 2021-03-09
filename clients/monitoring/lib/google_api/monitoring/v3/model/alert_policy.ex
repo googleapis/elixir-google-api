@@ -37,17 +37,17 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :combiner => String.t(),
-          :conditions => list(GoogleApi.Monitoring.V3.Model.Condition.t()),
-          :creationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t(),
-          :displayName => String.t(),
-          :documentation => GoogleApi.Monitoring.V3.Model.Documentation.t(),
-          :enabled => boolean(),
-          :mutationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t(),
-          :name => String.t(),
-          :notificationChannels => list(String.t()),
-          :userLabels => map(),
-          :validity => GoogleApi.Monitoring.V3.Model.Status.t()
+          :combiner => String.t() | nil,
+          :conditions => list(GoogleApi.Monitoring.V3.Model.Condition.t()) | nil,
+          :creationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t() | nil,
+          :displayName => String.t() | nil,
+          :documentation => GoogleApi.Monitoring.V3.Model.Documentation.t() | nil,
+          :enabled => boolean() | nil,
+          :mutationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t() | nil,
+          :name => String.t() | nil,
+          :notificationChannels => list(String.t()) | nil,
+          :userLabels => map() | nil,
+          :validity => GoogleApi.Monitoring.V3.Model.Status.t() | nil
         }
 
   field(:combiner)

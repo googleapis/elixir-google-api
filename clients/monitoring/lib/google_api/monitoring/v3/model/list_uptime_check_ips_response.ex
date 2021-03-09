@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :uptimeCheckIps => list(GoogleApi.Monitoring.V3.Model.UptimeCheckIp.t())
+          :nextPageToken => String.t() | nil,
+          :uptimeCheckIps => list(GoogleApi.Monitoring.V3.Model.UptimeCheckIp.t()) | nil
         }
 
   field(:nextPageToken)

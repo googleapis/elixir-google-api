@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :totalSize => integer(),
-          :uptimeCheckConfigs => list(GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t())
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil,
+          :uptimeCheckConfigs => list(GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()) | nil
         }
 
   field(:nextPageToken)

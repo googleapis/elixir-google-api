@@ -31,11 +31,11 @@ defmodule GoogleApi.Monitoring.V3.Model.BasicSli do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => GoogleApi.Monitoring.V3.Model.AvailabilityCriteria.t(),
-          :latency => GoogleApi.Monitoring.V3.Model.LatencyCriteria.t(),
-          :location => list(String.t()),
-          :method => list(String.t()),
-          :version => list(String.t())
+          :availability => GoogleApi.Monitoring.V3.Model.AvailabilityCriteria.t() | nil,
+          :latency => GoogleApi.Monitoring.V3.Model.LatencyCriteria.t() | nil,
+          :location => list(String.t()) | nil,
+          :method => list(String.t()) | nil,
+          :version => list(String.t()) | nil
         }
 
   field(:availability, as: GoogleApi.Monitoring.V3.Model.AvailabilityCriteria)

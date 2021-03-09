@@ -31,11 +31,12 @@ defmodule GoogleApi.Monitoring.V3.Model.WindowsBasedSli do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :goodBadMetricFilter => String.t(),
-          :goodTotalRatioThreshold => GoogleApi.Monitoring.V3.Model.PerformanceThreshold.t(),
-          :metricMeanInRange => GoogleApi.Monitoring.V3.Model.MetricRange.t(),
-          :metricSumInRange => GoogleApi.Monitoring.V3.Model.MetricRange.t(),
-          :windowPeriod => String.t()
+          :goodBadMetricFilter => String.t() | nil,
+          :goodTotalRatioThreshold =>
+            GoogleApi.Monitoring.V3.Model.PerformanceThreshold.t() | nil,
+          :metricMeanInRange => GoogleApi.Monitoring.V3.Model.MetricRange.t() | nil,
+          :metricSumInRange => GoogleApi.Monitoring.V3.Model.MetricRange.t() | nil,
+          :windowPeriod => String.t() | nil
         }
 
   field(:goodBadMetricFilter)

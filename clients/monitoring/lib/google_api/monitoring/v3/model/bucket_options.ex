@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.BucketOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :explicitBuckets => GoogleApi.Monitoring.V3.Model.Explicit.t(),
-          :exponentialBuckets => GoogleApi.Monitoring.V3.Model.Exponential.t(),
-          :linearBuckets => GoogleApi.Monitoring.V3.Model.Linear.t()
+          :explicitBuckets => GoogleApi.Monitoring.V3.Model.Explicit.t() | nil,
+          :exponentialBuckets => GoogleApi.Monitoring.V3.Model.Exponential.t() | nil,
+          :linearBuckets => GoogleApi.Monitoring.V3.Model.Linear.t() | nil
         }
 
   field(:explicitBuckets, as: GoogleApi.Monitoring.V3.Model.Explicit)

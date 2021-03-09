@@ -32,12 +32,12 @@ defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :gcpZone => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :peerProjectId => String.t(),
-          :state => String.t()
+          :displayName => String.t() | nil,
+          :gcpZone => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :peerProjectId => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:displayName)

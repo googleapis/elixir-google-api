@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicSli => GoogleApi.Monitoring.V3.Model.BasicSli.t(),
-          :requestBased => GoogleApi.Monitoring.V3.Model.RequestBasedSli.t(),
-          :windowsBased => GoogleApi.Monitoring.V3.Model.WindowsBasedSli.t()
+          :basicSli => GoogleApi.Monitoring.V3.Model.BasicSli.t() | nil,
+          :requestBased => GoogleApi.Monitoring.V3.Model.RequestBasedSli.t() | nil,
+          :windowsBased => GoogleApi.Monitoring.V3.Model.WindowsBasedSli.t() | nil
         }
 
   field(:basicSli, as: GoogleApi.Monitoring.V3.Model.BasicSli)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alertPolicies => list(GoogleApi.Monitoring.V3.Model.AlertPolicy.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :alertPolicies => list(GoogleApi.Monitoring.V3.Model.AlertPolicy.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:alertPolicies, as: GoogleApi.Monitoring.V3.Model.AlertPolicy, type: :list)

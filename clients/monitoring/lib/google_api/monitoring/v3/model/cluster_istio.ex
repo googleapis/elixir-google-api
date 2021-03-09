@@ -30,10 +30,10 @@ defmodule GoogleApi.Monitoring.V3.Model.ClusterIstio do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterName => String.t(),
-          :location => String.t(),
-          :serviceName => String.t(),
-          :serviceNamespace => String.t()
+          :clusterName => String.t() | nil,
+          :location => String.t() | nil,
+          :serviceName => String.t() | nil,
+          :serviceNamespace => String.t() | nil
         }
 
   field(:clusterName)

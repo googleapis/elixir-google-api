@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.DroppedLabels do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => map()
+          :label => map() | nil
         }
 
   field(:label, type: :map)

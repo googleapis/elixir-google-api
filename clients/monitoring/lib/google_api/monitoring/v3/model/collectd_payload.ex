@@ -34,14 +34,15 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdPayload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :metadata => %{optional(String.t()) => GoogleApi.Monitoring.V3.Model.TypedValue.t()},
-          :plugin => String.t(),
-          :pluginInstance => String.t(),
-          :startTime => DateTime.t(),
-          :type => String.t(),
-          :typeInstance => String.t(),
-          :values => list(GoogleApi.Monitoring.V3.Model.CollectdValue.t())
+          :endTime => DateTime.t() | nil,
+          :metadata =>
+            %{optional(String.t()) => GoogleApi.Monitoring.V3.Model.TypedValue.t()} | nil,
+          :plugin => String.t() | nil,
+          :pluginInstance => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :type => String.t() | nil,
+          :typeInstance => String.t() | nil,
+          :values => list(GoogleApi.Monitoring.V3.Model.CollectdValue.t()) | nil
         }
 
   field(:endTime, as: DateTime)

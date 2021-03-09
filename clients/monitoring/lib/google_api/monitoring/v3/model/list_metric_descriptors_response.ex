@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricDescriptors => list(GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()),
-          :nextPageToken => String.t()
+          :metricDescriptors => list(GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:metricDescriptors, as: GoogleApi.Monitoring.V3.Model.MetricDescriptor, type: :list)
