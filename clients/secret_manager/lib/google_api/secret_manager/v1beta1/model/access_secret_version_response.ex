@@ -28,8 +28,8 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.AccessSecretVersionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :payload => GoogleApi.SecretManager.V1beta1.Model.SecretPayload.t()
+          :name => String.t() | nil,
+          :payload => GoogleApi.SecretManager.V1beta1.Model.SecretPayload.t() | nil
         }
 
   field(:name)

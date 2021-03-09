@@ -29,9 +29,9 @@ defmodule GoogleApi.SecretManager.V1.Model.ListSecretsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :secrets => list(GoogleApi.SecretManager.V1.Model.Secret.t()),
-          :totalSize => integer()
+          :nextPageToken => String.t() | nil,
+          :secrets => list(GoogleApi.SecretManager.V1.Model.Secret.t()) | nil,
+          :totalSize => integer() | nil
         }
 
   field(:nextPageToken)

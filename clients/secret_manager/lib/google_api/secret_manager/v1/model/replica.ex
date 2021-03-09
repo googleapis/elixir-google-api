@@ -29,8 +29,8 @@ defmodule GoogleApi.SecretManager.V1.Model.Replica do
 
   @type t :: %__MODULE__{
           :customerManagedEncryption =>
-            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t(),
-          :location => String.t()
+            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t() | nil,
+          :location => String.t() | nil
         }
 
   field(:customerManagedEncryption, as: GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption)

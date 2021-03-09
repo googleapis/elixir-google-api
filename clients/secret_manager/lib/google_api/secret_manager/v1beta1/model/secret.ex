@@ -30,10 +30,10 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.Secret do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :replication => GoogleApi.SecretManager.V1beta1.Model.Replication.t()
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :replication => GoogleApi.SecretManager.V1beta1.Model.Replication.t() | nil
         }
 
   field(:createTime, as: DateTime)

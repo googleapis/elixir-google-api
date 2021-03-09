@@ -28,8 +28,8 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.Replication do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :automatic => GoogleApi.SecretManager.V1beta1.Model.Automatic.t(),
-          :userManaged => GoogleApi.SecretManager.V1beta1.Model.UserManaged.t()
+          :automatic => GoogleApi.SecretManager.V1beta1.Model.Automatic.t() | nil,
+          :userManaged => GoogleApi.SecretManager.V1beta1.Model.UserManaged.t() | nil
         }
 
   field(:automatic, as: GoogleApi.SecretManager.V1beta1.Model.Automatic)
