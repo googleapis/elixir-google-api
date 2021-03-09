@@ -33,13 +33,13 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :name => String.t(),
-          :sizeBytes => String.t(),
-          :sourceTable => String.t(),
-          :startTime => DateTime.t(),
-          :state => String.t()
+          :endTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :sizeBytes => String.t() | nil,
+          :sourceTable => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

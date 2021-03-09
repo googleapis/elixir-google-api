@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListAppProfilesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appProfiles => list(GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()),
-          :failedLocations => list(String.t()),
-          :nextPageToken => String.t()
+          :appProfiles => list(GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()) | nil,
+          :failedLocations => list(String.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:appProfiles, as: GoogleApi.BigtableAdmin.V2.Model.AppProfile, type: :list)

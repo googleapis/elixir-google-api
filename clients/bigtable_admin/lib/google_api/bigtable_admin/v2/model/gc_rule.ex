@@ -30,10 +30,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GcRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intersection => GoogleApi.BigtableAdmin.V2.Model.Intersection.t(),
-          :maxAge => String.t(),
-          :maxNumVersions => integer(),
-          :union => GoogleApi.BigtableAdmin.V2.Model.Union.t()
+          :intersection => GoogleApi.BigtableAdmin.V2.Model.Intersection.t() | nil,
+          :maxAge => String.t() | nil,
+          :maxNumVersions => integer() | nil,
+          :union => GoogleApi.BigtableAdmin.V2.Model.Union.t() | nil
         }
 
   field(:intersection, as: GoogleApi.BigtableAdmin.V2.Model.Intersection)

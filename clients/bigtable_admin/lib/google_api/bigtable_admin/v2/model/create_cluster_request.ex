@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateClusterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cluster => GoogleApi.BigtableAdmin.V2.Model.Cluster.t(),
-          :clusterId => String.t(),
-          :parent => String.t()
+          :cluster => GoogleApi.BigtableAdmin.V2.Model.Cluster.t() | nil,
+          :clusterId => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:cluster, as: GoogleApi.BigtableAdmin.V2.Model.Cluster)

@@ -31,12 +31,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :etag => String.t(),
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
           :multiClusterRoutingUseAny =>
-            GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t(),
-          :name => String.t(),
-          :singleClusterRouting => GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t()
+            GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t() | nil,
+          :name => String.t() | nil,
+          :singleClusterRouting => GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t() | nil
         }
 
   field(:description)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.FailureTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :frames => list(GoogleApi.BigtableAdmin.V2.Model.Frame.t())
+          :frames => list(GoogleApi.BigtableAdmin.V2.Model.Frame.t()) | nil
         }
 
   field(:frames, as: GoogleApi.BigtableAdmin.V2.Model.Frame, type: :list)

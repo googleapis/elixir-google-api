@@ -54,6 +54,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
   @spec bigtableadmin_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigtableadmin_operations_cancel(
         connection,
@@ -118,6 +119,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
   @spec bigtableadmin_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigtableadmin_operations_delete(
         connection,
@@ -182,6 +184,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
   @spec bigtableadmin_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigtableadmin_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -249,6 +252,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigtableadmin_operations_projects_operations_list(
         connection,

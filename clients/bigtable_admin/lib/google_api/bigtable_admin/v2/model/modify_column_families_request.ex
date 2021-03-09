@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ModifyColumnFamiliesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :modifications => list(GoogleApi.BigtableAdmin.V2.Model.Modification.t())
+          :modifications => list(GoogleApi.BigtableAdmin.V2.Model.Modification.t()) | nil
         }
 
   field(:modifications, as: GoogleApi.BigtableAdmin.V2.Model.Modification, type: :list)

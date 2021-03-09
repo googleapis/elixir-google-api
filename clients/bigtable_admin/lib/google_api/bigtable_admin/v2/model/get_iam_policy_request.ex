@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.BigtableAdmin.V2.Model.GetPolicyOptions.t()
+          :options => GoogleApi.BigtableAdmin.V2.Model.GetPolicyOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.BigtableAdmin.V2.Model.GetPolicyOptions)

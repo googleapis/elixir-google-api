@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListClustersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.BigtableAdmin.V2.Model.Cluster.t()),
-          :failedLocations => list(String.t()),
-          :nextPageToken => String.t()
+          :clusters => list(GoogleApi.BigtableAdmin.V2.Model.Cluster.t()) | nil,
+          :failedLocations => list(String.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:clusters, as: GoogleApi.BigtableAdmin.V2.Model.Cluster, type: :list)

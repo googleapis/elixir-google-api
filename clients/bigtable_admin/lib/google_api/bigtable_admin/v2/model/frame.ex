@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Frame do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetName => String.t(),
-          :workflowGuid => String.t(),
-          :zoneId => String.t()
+          :targetName => String.t() | nil,
+          :workflowGuid => String.t() | nil,
+          :zoneId => String.t() | nil
         }
 
   field(:targetName)

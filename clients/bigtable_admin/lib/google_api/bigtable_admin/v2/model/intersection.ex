@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Intersection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rules => list(GoogleApi.BigtableAdmin.V2.Model.GcRule.t())
+          :rules => list(GoogleApi.BigtableAdmin.V2.Model.GcRule.t()) | nil
         }
 
   field(:rules, as: GoogleApi.BigtableAdmin.V2.Model.GcRule, type: :list)

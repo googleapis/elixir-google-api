@@ -31,11 +31,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultStorageType => String.t(),
-          :location => String.t(),
-          :name => String.t(),
-          :serveNodes => integer(),
-          :state => String.t()
+          :defaultStorageType => String.t() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :serveNodes => integer() | nil,
+          :state => String.t() | nil
         }
 
   field(:defaultStorageType)

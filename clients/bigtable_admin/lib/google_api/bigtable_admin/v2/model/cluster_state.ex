@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ClusterState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :replicationState => String.t()
+          :replicationState => String.t() | nil
         }
 
   field(:replicationState)

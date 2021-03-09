@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.OperationProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :progressPercent => integer(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :progressPercent => integer() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

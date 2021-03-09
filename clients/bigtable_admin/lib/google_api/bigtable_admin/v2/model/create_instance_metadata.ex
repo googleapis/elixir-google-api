@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateInstanceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finishTime => DateTime.t(),
-          :originalRequest => GoogleApi.BigtableAdmin.V2.Model.CreateInstanceRequest.t(),
-          :requestTime => DateTime.t()
+          :finishTime => DateTime.t() | nil,
+          :originalRequest => GoogleApi.BigtableAdmin.V2.Model.CreateInstanceRequest.t() | nil,
+          :requestTime => DateTime.t() | nil
         }
 
   field(:finishTime, as: DateTime)

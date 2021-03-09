@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListInstancesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failedLocations => list(String.t()),
-          :instances => list(GoogleApi.BigtableAdmin.V2.Model.Instance.t()),
-          :nextPageToken => String.t()
+          :failedLocations => list(String.t()) | nil,
+          :instances => list(GoogleApi.BigtableAdmin.V2.Model.Instance.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:failedLocations, type: :list)

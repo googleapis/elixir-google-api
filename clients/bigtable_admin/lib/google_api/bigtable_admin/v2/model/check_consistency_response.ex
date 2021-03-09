@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consistent => boolean()
+          :consistent => boolean() | nil
         }
 
   field(:consistent)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.PartialUpdateInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => GoogleApi.BigtableAdmin.V2.Model.Instance.t(),
-          :updateMask => String.t()
+          :instance => GoogleApi.BigtableAdmin.V2.Model.Instance.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:instance, as: GoogleApi.BigtableAdmin.V2.Model.Instance)
