@@ -35,15 +35,15 @@ defmodule GoogleApi.Jobs.V3.Model.SearchJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :broadenedQueryJobsCount => integer(),
-          :estimatedTotalSize => integer(),
-          :histogramResults => GoogleApi.Jobs.V3.Model.HistogramResults.t(),
-          :locationFilters => list(GoogleApi.Jobs.V3.Model.Location.t()),
-          :matchingJobs => list(GoogleApi.Jobs.V3.Model.MatchingJob.t()),
-          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t(),
-          :nextPageToken => String.t(),
-          :spellCorrection => GoogleApi.Jobs.V3.Model.SpellingCorrection.t(),
-          :totalSize => integer()
+          :broadenedQueryJobsCount => integer() | nil,
+          :estimatedTotalSize => integer() | nil,
+          :histogramResults => GoogleApi.Jobs.V3.Model.HistogramResults.t() | nil,
+          :locationFilters => list(GoogleApi.Jobs.V3.Model.Location.t()) | nil,
+          :matchingJobs => list(GoogleApi.Jobs.V3.Model.MatchingJob.t()) | nil,
+          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :spellCorrection => GoogleApi.Jobs.V3.Model.SpellingCorrection.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:broadenedQueryJobsCount)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Jobs.V3.Model.HistogramFacets do
 
   @type t :: %__MODULE__{
           :compensationHistogramFacets =>
-            list(GoogleApi.Jobs.V3.Model.CompensationHistogramRequest.t()),
+            list(GoogleApi.Jobs.V3.Model.CompensationHistogramRequest.t()) | nil,
           :customAttributeHistogramFacets =>
-            list(GoogleApi.Jobs.V3.Model.CustomAttributeHistogramRequest.t()),
-          :simpleHistogramFacets => list(String.t())
+            list(GoogleApi.Jobs.V3.Model.CustomAttributeHistogramRequest.t()) | nil,
+          :simpleHistogramFacets => list(String.t()) | nil
         }
 
   field(:compensationHistogramFacets,

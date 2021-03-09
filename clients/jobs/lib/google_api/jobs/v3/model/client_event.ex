@@ -32,12 +32,12 @@ defmodule GoogleApi.Jobs.V3.Model.ClientEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :eventId => String.t(),
-          :extraInfo => map(),
-          :jobEvent => GoogleApi.Jobs.V3.Model.JobEvent.t(),
-          :parentEventId => String.t(),
-          :requestId => String.t()
+          :createTime => DateTime.t() | nil,
+          :eventId => String.t() | nil,
+          :extraInfo => map() | nil,
+          :jobEvent => GoogleApi.Jobs.V3.Model.JobEvent.t() | nil,
+          :parentEventId => String.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

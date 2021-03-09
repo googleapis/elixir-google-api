@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.CompanyDerivedInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headquartersLocation => GoogleApi.Jobs.V3.Model.Location.t()
+          :headquartersLocation => GoogleApi.Jobs.V3.Model.Location.t() | nil
         }
 
   field(:headquartersLocation, as: GoogleApi.Jobs.V3.Model.Location)

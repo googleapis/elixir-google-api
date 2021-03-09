@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.CompletionResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageUri => String.t(),
-          :suggestion => String.t(),
-          :type => String.t()
+          :imageUri => String.t() | nil,
+          :suggestion => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:imageUri)

@@ -39,19 +39,19 @@ defmodule GoogleApi.Jobs.V3.Model.JobQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commuteFilter => GoogleApi.Jobs.V3.Model.CommuteFilter.t(),
-          :companyDisplayNames => list(String.t()),
-          :companyNames => list(String.t()),
-          :compensationFilter => GoogleApi.Jobs.V3.Model.CompensationFilter.t(),
-          :customAttributeFilter => String.t(),
-          :disableSpellCheck => boolean(),
-          :employmentTypes => list(String.t()),
-          :jobCategories => list(String.t()),
-          :languageCodes => list(String.t()),
-          :locationFilters => list(GoogleApi.Jobs.V3.Model.LocationFilter.t()),
-          :publishTimeRange => GoogleApi.Jobs.V3.Model.TimestampRange.t(),
-          :query => String.t(),
-          :queryLanguageCode => String.t()
+          :commuteFilter => GoogleApi.Jobs.V3.Model.CommuteFilter.t() | nil,
+          :companyDisplayNames => list(String.t()) | nil,
+          :companyNames => list(String.t()) | nil,
+          :compensationFilter => GoogleApi.Jobs.V3.Model.CompensationFilter.t() | nil,
+          :customAttributeFilter => String.t() | nil,
+          :disableSpellCheck => boolean() | nil,
+          :employmentTypes => list(String.t()) | nil,
+          :jobCategories => list(String.t()) | nil,
+          :languageCodes => list(String.t()) | nil,
+          :locationFilters => list(GoogleApi.Jobs.V3.Model.LocationFilter.t()) | nil,
+          :publishTimeRange => GoogleApi.Jobs.V3.Model.TimestampRange.t() | nil,
+          :query => String.t() | nil,
+          :queryLanguageCode => String.t() | nil
         }
 
   field(:commuteFilter, as: GoogleApi.Jobs.V3.Model.CommuteFilter)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Jobs.V3.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latLng => GoogleApi.Jobs.V3.Model.LatLng.t(),
-          :locationType => String.t(),
-          :postalAddress => GoogleApi.Jobs.V3.Model.PostalAddress.t(),
-          :radiusInMiles => float()
+          :latLng => GoogleApi.Jobs.V3.Model.LatLng.t() | nil,
+          :locationType => String.t() | nil,
+          :postalAddress => GoogleApi.Jobs.V3.Model.PostalAddress.t() | nil,
+          :radiusInMiles => float() | nil
         }
 
   field(:latLng, as: GoogleApi.Jobs.V3.Model.LatLng)

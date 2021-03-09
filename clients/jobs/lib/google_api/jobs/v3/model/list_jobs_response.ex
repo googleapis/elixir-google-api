@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.Jobs.V3.Model.Job.t()),
-          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t(),
-          :nextPageToken => String.t()
+          :jobs => list(GoogleApi.Jobs.V3.Model.Job.t()) | nil,
+          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:jobs, as: GoogleApi.Jobs.V3.Model.Job, type: :list)

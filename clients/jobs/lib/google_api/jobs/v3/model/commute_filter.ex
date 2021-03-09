@@ -32,12 +32,12 @@ defmodule GoogleApi.Jobs.V3.Model.CommuteFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowImpreciseAddresses => boolean(),
-          :commuteMethod => String.t(),
-          :departureTime => GoogleApi.Jobs.V3.Model.TimeOfDay.t(),
-          :roadTraffic => String.t(),
-          :startCoordinates => GoogleApi.Jobs.V3.Model.LatLng.t(),
-          :travelDuration => String.t()
+          :allowImpreciseAddresses => boolean() | nil,
+          :commuteMethod => String.t() | nil,
+          :departureTime => GoogleApi.Jobs.V3.Model.TimeOfDay.t() | nil,
+          :roadTraffic => String.t() | nil,
+          :startCoordinates => GoogleApi.Jobs.V3.Model.LatLng.t() | nil,
+          :travelDuration => String.t() | nil
         }
 
   field(:allowImpreciseAddresses)

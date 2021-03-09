@@ -32,12 +32,12 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Jobs.V3.Model.Money.t(),
-          :description => String.t(),
-          :expectedUnitsPerYear => float(),
-          :range => GoogleApi.Jobs.V3.Model.CompensationRange.t(),
-          :type => String.t(),
-          :unit => String.t()
+          :amount => GoogleApi.Jobs.V3.Model.Money.t() | nil,
+          :description => String.t() | nil,
+          :expectedUnitsPerYear => float() | nil,
+          :range => GoogleApi.Jobs.V3.Model.CompensationRange.t() | nil,
+          :type => String.t() | nil,
+          :unit => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Jobs.V3.Model.Money)

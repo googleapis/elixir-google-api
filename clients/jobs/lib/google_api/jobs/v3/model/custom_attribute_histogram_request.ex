@@ -29,10 +29,10 @@ defmodule GoogleApi.Jobs.V3.Model.CustomAttributeHistogramRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
+          :key => String.t() | nil,
           :longValueHistogramBucketingOption =>
-            GoogleApi.Jobs.V3.Model.NumericBucketingOption.t(),
-          :stringValueHistogram => boolean()
+            GoogleApi.Jobs.V3.Model.NumericBucketingOption.t() | nil,
+          :stringValueHistogram => boolean() | nil
         }
 
   field(:key)

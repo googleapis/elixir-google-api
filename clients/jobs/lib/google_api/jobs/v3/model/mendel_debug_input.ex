@@ -27,9 +27,8 @@ defmodule GoogleApi.Jobs.V3.Model.MendelDebugInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namespacedDebugInput => %{
-            optional(String.t()) => GoogleApi.Jobs.V3.Model.NamespacedDebugInput.t()
-          }
+          :namespacedDebugInput =>
+            %{optional(String.t()) => GoogleApi.Jobs.V3.Model.NamespacedDebugInput.t()} | nil
         }
 
   field(:namespacedDebugInput, as: GoogleApi.Jobs.V3.Model.NamespacedDebugInput, type: :map)

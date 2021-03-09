@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.CreateCompanyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :company => GoogleApi.Jobs.V3.Model.Company.t()
+          :company => GoogleApi.Jobs.V3.Model.Company.t() | nil
         }
 
   field(:company, as: GoogleApi.Jobs.V3.Model.Company)

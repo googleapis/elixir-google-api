@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.CompleteQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionResults => list(GoogleApi.Jobs.V3.Model.CompletionResult.t()),
-          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t()
+          :completionResults => list(GoogleApi.Jobs.V3.Model.CompletionResult.t()) | nil,
+          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t() | nil
         }
 
   field(:completionResults, as: GoogleApi.Jobs.V3.Model.CompletionResult, type: :list)

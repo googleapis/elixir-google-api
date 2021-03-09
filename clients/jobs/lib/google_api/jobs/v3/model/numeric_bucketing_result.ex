@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.NumericBucketingResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :counts => list(GoogleApi.Jobs.V3.Model.BucketizedCount.t()),
-          :maxValue => float(),
-          :minValue => float()
+          :counts => list(GoogleApi.Jobs.V3.Model.BucketizedCount.t()) | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil
         }
 
   field(:counts, as: GoogleApi.Jobs.V3.Model.BucketizedCount, type: :list)

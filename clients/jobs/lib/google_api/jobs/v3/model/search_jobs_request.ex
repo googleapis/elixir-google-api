@@ -39,19 +39,19 @@ defmodule GoogleApi.Jobs.V3.Model.SearchJobsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableKeywordMatch => boolean(),
-          :diversificationLevel => String.t(),
-          :enableBroadening => boolean(),
-          :histogramFacets => GoogleApi.Jobs.V3.Model.HistogramFacets.t(),
-          :jobQuery => GoogleApi.Jobs.V3.Model.JobQuery.t(),
-          :jobView => String.t(),
-          :offset => integer(),
-          :orderBy => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :requestMetadata => GoogleApi.Jobs.V3.Model.RequestMetadata.t(),
-          :requirePreciseResultSize => boolean(),
-          :searchMode => String.t()
+          :disableKeywordMatch => boolean() | nil,
+          :diversificationLevel => String.t() | nil,
+          :enableBroadening => boolean() | nil,
+          :histogramFacets => GoogleApi.Jobs.V3.Model.HistogramFacets.t() | nil,
+          :jobQuery => GoogleApi.Jobs.V3.Model.JobQuery.t() | nil,
+          :jobView => String.t() | nil,
+          :offset => integer() | nil,
+          :orderBy => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :requestMetadata => GoogleApi.Jobs.V3.Model.RequestMetadata.t() | nil,
+          :requirePreciseResultSize => boolean() | nil,
+          :searchMode => String.t() | nil
         }
 
   field(:disableKeywordMatch)

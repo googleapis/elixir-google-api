@@ -39,19 +39,19 @@ defmodule GoogleApi.Jobs.V3.Model.Company do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :careerSiteUri => String.t(),
-          :derivedInfo => GoogleApi.Jobs.V3.Model.CompanyDerivedInfo.t(),
-          :displayName => String.t(),
-          :eeoText => String.t(),
-          :externalId => String.t(),
-          :headquartersAddress => String.t(),
-          :hiringAgency => boolean(),
-          :imageUri => String.t(),
-          :keywordSearchableJobCustomAttributes => list(String.t()),
-          :name => String.t(),
-          :size => String.t(),
-          :suspended => boolean(),
-          :websiteUri => String.t()
+          :careerSiteUri => String.t() | nil,
+          :derivedInfo => GoogleApi.Jobs.V3.Model.CompanyDerivedInfo.t() | nil,
+          :displayName => String.t() | nil,
+          :eeoText => String.t() | nil,
+          :externalId => String.t() | nil,
+          :headquartersAddress => String.t() | nil,
+          :hiringAgency => boolean() | nil,
+          :imageUri => String.t() | nil,
+          :keywordSearchableJobCustomAttributes => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :size => String.t() | nil,
+          :suspended => boolean() | nil,
+          :websiteUri => String.t() | nil
         }
 
   field(:careerSiteUri)

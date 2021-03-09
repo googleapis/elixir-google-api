@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.DeviceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceType => String.t(),
-          :id => String.t()
+          :deviceType => String.t() | nil,
+          :id => String.t() | nil
         }
 
   field(:deviceType)

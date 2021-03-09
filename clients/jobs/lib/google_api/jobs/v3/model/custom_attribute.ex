@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.CustomAttribute do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterable => boolean(),
-          :longValues => list(String.t()),
-          :stringValues => list(String.t())
+          :filterable => boolean() | nil,
+          :longValues => list(String.t()) | nil,
+          :stringValues => list(String.t()) | nil
         }
 
   field(:filterable)

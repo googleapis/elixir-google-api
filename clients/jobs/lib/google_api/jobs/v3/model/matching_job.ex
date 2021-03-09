@@ -31,11 +31,11 @@ defmodule GoogleApi.Jobs.V3.Model.MatchingJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commuteInfo => GoogleApi.Jobs.V3.Model.CommuteInfo.t(),
-          :job => GoogleApi.Jobs.V3.Model.Job.t(),
-          :jobSummary => String.t(),
-          :jobTitleSnippet => String.t(),
-          :searchTextSnippet => String.t()
+          :commuteInfo => GoogleApi.Jobs.V3.Model.CommuteInfo.t() | nil,
+          :job => GoogleApi.Jobs.V3.Model.Job.t() | nil,
+          :jobSummary => String.t() | nil,
+          :jobTitleSnippet => String.t() | nil,
+          :searchTextSnippet => String.t() | nil
         }
 
   field(:commuteInfo, as: GoogleApi.Jobs.V3.Model.CommuteInfo)

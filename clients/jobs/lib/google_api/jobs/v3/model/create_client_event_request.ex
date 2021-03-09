@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.CreateClientEventRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientEvent => GoogleApi.Jobs.V3.Model.ClientEvent.t()
+          :clientEvent => GoogleApi.Jobs.V3.Model.ClientEvent.t() | nil
         }
 
   field(:clientEvent, as: GoogleApi.Jobs.V3.Model.ClientEvent)

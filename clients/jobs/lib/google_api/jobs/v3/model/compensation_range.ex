@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxCompensation => GoogleApi.Jobs.V3.Model.Money.t(),
-          :minCompensation => GoogleApi.Jobs.V3.Model.Money.t()
+          :maxCompensation => GoogleApi.Jobs.V3.Model.Money.t() | nil,
+          :minCompensation => GoogleApi.Jobs.V3.Model.Money.t() | nil
         }
 
   field(:maxCompensation, as: GoogleApi.Jobs.V3.Model.Money)

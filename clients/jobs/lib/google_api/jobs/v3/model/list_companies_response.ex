@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.ListCompaniesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :companies => list(GoogleApi.Jobs.V3.Model.Company.t()),
-          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t(),
-          :nextPageToken => String.t()
+          :companies => list(GoogleApi.Jobs.V3.Model.Company.t()) | nil,
+          :metadata => GoogleApi.Jobs.V3.Model.ResponseMetadata.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:companies, as: GoogleApi.Jobs.V3.Model.Company, type: :list)
