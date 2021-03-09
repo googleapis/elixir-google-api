@@ -28,8 +28,8 @@ defmodule GoogleApi.IAMCredentials.V1.Model.SignJwtResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyId => String.t(),
-          :signedJwt => String.t()
+          :keyId => String.t() | nil,
+          :signedJwt => String.t() | nil
         }
 
   field(:keyId)

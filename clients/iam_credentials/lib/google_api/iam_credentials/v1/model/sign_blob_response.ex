@@ -28,8 +28,8 @@ defmodule GoogleApi.IAMCredentials.V1.Model.SignBlobResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyId => String.t(),
-          :signedBlob => String.t()
+          :keyId => String.t() | nil,
+          :signedBlob => String.t() | nil
         }
 
   field(:keyId)
