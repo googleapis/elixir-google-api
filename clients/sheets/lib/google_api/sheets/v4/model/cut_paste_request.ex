@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.CutPasteRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :pasteType => String.t(),
-          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :destination => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :pasteType => String.t() | nil,
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:destination, as: GoogleApi.Sheets.V4.Model.GridCoordinate)

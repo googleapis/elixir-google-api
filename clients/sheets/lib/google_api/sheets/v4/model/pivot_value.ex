@@ -32,12 +32,13 @@ defmodule GoogleApi.Sheets.V4.Model.PivotValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calculatedDisplayType => String.t(),
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :formula => String.t(),
-          :name => String.t(),
-          :sourceColumnOffset => integer(),
-          :summarizeFunction => String.t()
+          :calculatedDisplayType => String.t() | nil,
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :formula => String.t() | nil,
+          :name => String.t() | nil,
+          :sourceColumnOffset => integer() | nil,
+          :summarizeFunction => String.t() | nil
         }
 
   field(:calculatedDisplayType)

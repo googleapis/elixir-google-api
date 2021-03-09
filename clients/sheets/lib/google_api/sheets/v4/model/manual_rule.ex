@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.ManualRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groups => list(GoogleApi.Sheets.V4.Model.ManualRuleGroup.t())
+          :groups => list(GoogleApi.Sheets.V4.Model.ManualRuleGroup.t()) | nil
         }
 
   field(:groups, as: GoogleApi.Sheets.V4.Model.ManualRuleGroup, type: :list)

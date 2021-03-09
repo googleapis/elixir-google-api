@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartDomain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :reversed => boolean()
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :reversed => boolean() | nil
         }
 
   field(:domain, as: GoogleApi.Sheets.V4.Model.ChartData)

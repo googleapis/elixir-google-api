@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

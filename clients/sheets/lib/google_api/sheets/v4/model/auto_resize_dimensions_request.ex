@@ -29,8 +29,8 @@ defmodule GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
 
   @type t :: %__MODULE__{
           :dataSourceSheetDimensions =>
-            GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t(),
-          :dimensions => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+            GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t() | nil,
+          :dimensions => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:dataSourceSheetDimensions, as: GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange)

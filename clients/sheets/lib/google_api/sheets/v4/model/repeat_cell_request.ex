@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.RepeatCellRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cell => GoogleApi.Sheets.V4.Model.CellData.t(),
-          :fields => String.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :cell => GoogleApi.Sheets.V4.Model.CellData.t() | nil,
+          :fields => String.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:cell, as: GoogleApi.Sheets.V4.Model.CellData)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDataSourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t()
+          :dataSourceId => String.t() | nil
         }
 
   field(:dataSourceId)

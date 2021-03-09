@@ -33,13 +33,14 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customSubtotals => list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t()),
-          :data => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t(),
-          :hideTrailingSubtotal => boolean(),
-          :negativeColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
-          :positiveColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
-          :subtotalColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t()
+          :customSubtotals =>
+            list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t()) | nil,
+          :data => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t() | nil,
+          :hideTrailingSubtotal => boolean() | nil,
+          :negativeColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t() | nil,
+          :positiveColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t() | nil,
+          :subtotalColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t() | nil
         }
 
   field(:customSubtotals, as: GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal, type: :list)

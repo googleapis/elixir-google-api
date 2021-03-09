@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => integer()
+          :objectId => integer() | nil
         }
 
   field(:objectId)

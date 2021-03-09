@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.BooleanRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          :format => GoogleApi.Sheets.V4.Model.CellFormat.t()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t() | nil,
+          :format => GoogleApi.Sheets.V4.Model.CellFormat.t() | nil
         }
 
   field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)

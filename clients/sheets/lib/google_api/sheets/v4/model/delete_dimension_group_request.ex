@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDimensionGroupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.DimensionRange)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comparisonColumns => list(GoogleApi.Sheets.V4.Model.DimensionRange.t()),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :comparisonColumns => list(GoogleApi.Sheets.V4.Model.DimensionRange.t()) | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:comparisonColumns, as: GoogleApi.Sheets.V4.Model.DimensionRange, type: :list)

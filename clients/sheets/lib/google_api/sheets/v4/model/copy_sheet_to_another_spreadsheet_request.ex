@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.CopySheetToAnotherSpreadsheetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationSpreadsheetId => String.t()
+          :destinationSpreadsheetId => String.t() | nil
         }
 
   field(:destinationSpreadsheetId)

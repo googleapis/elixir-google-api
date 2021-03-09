@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertSheetIndex => integer(),
-          :newSheetId => integer(),
-          :newSheetName => String.t(),
-          :sourceSheetId => integer()
+          :insertSheetIndex => integer() | nil,
+          :newSheetId => integer() | nil,
+          :newSheetName => String.t() | nil,
+          :sourceSheetId => integer() | nil
         }
 
   field(:insertSheetIndex)

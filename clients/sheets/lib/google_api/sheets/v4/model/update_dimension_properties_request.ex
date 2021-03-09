@@ -30,10 +30,11 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceSheetRange => GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t(),
-          :fields => String.t(),
-          :properties => GoogleApi.Sheets.V4.Model.DimensionProperties.t(),
-          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :dataSourceSheetRange =>
+            GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t() | nil,
+          :fields => String.t() | nil,
+          :properties => GoogleApi.Sheets.V4.Model.DimensionProperties.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:dataSourceSheetRange, as: GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange)

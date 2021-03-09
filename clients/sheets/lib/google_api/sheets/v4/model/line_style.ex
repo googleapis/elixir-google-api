@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.LineStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :width => integer()
+          :type => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:type)

@@ -33,14 +33,14 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoRecalc => String.t(),
-          :defaultFormat => GoogleApi.Sheets.V4.Model.CellFormat.t(),
+          :autoRecalc => String.t() | nil,
+          :defaultFormat => GoogleApi.Sheets.V4.Model.CellFormat.t() | nil,
           :iterativeCalculationSettings =>
-            GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t(),
-          :locale => String.t(),
-          :spreadsheetTheme => GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t(),
-          :timeZone => String.t(),
-          :title => String.t()
+            GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t() | nil,
+          :locale => String.t() | nil,
+          :spreadsheetTheme => GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t() | nil,
+          :timeZone => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:autoRecalc)

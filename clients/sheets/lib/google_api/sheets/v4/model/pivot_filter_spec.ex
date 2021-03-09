@@ -29,9 +29,10 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnOffsetIndex => integer(),
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :filterCriteria => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t()
+          :columnOffsetIndex => integer() | nil,
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :filterCriteria => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t() | nil
         }
 
   field(:columnOffsetIndex)

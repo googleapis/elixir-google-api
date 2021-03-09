@@ -33,13 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateBordersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bottom => GoogleApi.Sheets.V4.Model.Border.t(),
-          :innerHorizontal => GoogleApi.Sheets.V4.Model.Border.t(),
-          :innerVertical => GoogleApi.Sheets.V4.Model.Border.t(),
-          :left => GoogleApi.Sheets.V4.Model.Border.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :right => GoogleApi.Sheets.V4.Model.Border.t(),
-          :top => GoogleApi.Sheets.V4.Model.Border.t()
+          :bottom => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :innerHorizontal => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :innerVertical => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :left => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :right => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :top => GoogleApi.Sheets.V4.Model.Border.t() | nil
         }
 
   field(:bottom, as: GoogleApi.Sheets.V4.Model.Border)

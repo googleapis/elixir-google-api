@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :rule => GoogleApi.Sheets.V4.Model.DataValidationRule.t()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :rule => GoogleApi.Sheets.V4.Model.DataValidationRule.t() | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

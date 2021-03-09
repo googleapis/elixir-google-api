@@ -29,9 +29,10 @@ defmodule GoogleApi.Sheets.V4.Model.FilterSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndex => integer(),
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :filterCriteria => GoogleApi.Sheets.V4.Model.FilterCriteria.t()
+          :columnIndex => integer() | nil,
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :filterCriteria => GoogleApi.Sheets.V4.Model.FilterCriteria.t() | nil
         }
 
   field(:columnIndex)

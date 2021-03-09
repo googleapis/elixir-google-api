@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceObjectReferences do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :references => list(GoogleApi.Sheets.V4.Model.DataSourceObjectReference.t())
+          :references => list(GoogleApi.Sheets.V4.Model.DataSourceObjectReference.t()) | nil
         }
 
   field(:references, as: GoogleApi.Sheets.V4.Model.DataSourceObjectReference, type: :list)

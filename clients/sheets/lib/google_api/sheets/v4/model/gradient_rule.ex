@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.GradientRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
-          :midpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t(),
-          :minpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t()
+          :maxpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t() | nil,
+          :midpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t() | nil,
+          :minpoint => GoogleApi.Sheets.V4.Model.InterpolationPoint.t() | nil
         }
 
   field(:maxpoint, as: GoogleApi.Sheets.V4.Model.InterpolationPoint)

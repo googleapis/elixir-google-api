@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.SetBasicFilterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => GoogleApi.Sheets.V4.Model.BasicFilter.t()
+          :filter => GoogleApi.Sheets.V4.Model.BasicFilter.t() | nil
         }
 
   field(:filter, as: GoogleApi.Sheets.V4.Model.BasicFilter)

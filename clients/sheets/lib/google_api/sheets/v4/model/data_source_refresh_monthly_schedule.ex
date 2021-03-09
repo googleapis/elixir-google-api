@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysOfMonth => list(integer()),
-          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t()
+          :daysOfMonth => list(integer()) | nil,
+          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t() | nil
         }
 
   field(:daysOfMonth, type: :list)

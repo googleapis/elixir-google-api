@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupLimit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applyOrder => integer(),
-          :countLimit => integer()
+          :applyOrder => integer() | nil,
+          :countLimit => integer() | nil
         }
 
   field(:applyOrder)

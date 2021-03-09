@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(GoogleApi.Sheets.V4.Model.CandlestickData.t()),
-          :domain => GoogleApi.Sheets.V4.Model.CandlestickDomain.t()
+          :data => list(GoogleApi.Sheets.V4.Model.CandlestickData.t()) | nil,
+          :domain => GoogleApi.Sheets.V4.Model.CandlestickDomain.t() | nil
         }
 
   field(:data, as: GoogleApi.Sheets.V4.Model.CandlestickData, type: :list)

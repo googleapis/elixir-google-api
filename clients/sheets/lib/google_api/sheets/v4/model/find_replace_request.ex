@@ -35,15 +35,15 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allSheets => boolean(),
-          :find => String.t(),
-          :includeFormulas => boolean(),
-          :matchCase => boolean(),
-          :matchEntireCell => boolean(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :replacement => String.t(),
-          :searchByRegex => boolean(),
-          :sheetId => integer()
+          :allSheets => boolean() | nil,
+          :find => String.t() | nil,
+          :includeFormulas => boolean() | nil,
+          :matchCase => boolean() | nil,
+          :matchEntireCell => boolean() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :replacement => String.t() | nil,
+          :searchByRegex => boolean() | nil,
+          :sheetId => integer() | nil
         }
 
   field(:allSheets)

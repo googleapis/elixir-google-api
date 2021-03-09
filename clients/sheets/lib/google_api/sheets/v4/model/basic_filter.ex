@@ -30,10 +30,11 @@ defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :criteria => %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()},
-          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
+          :criteria =>
+            %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()} | nil,
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()) | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()) | nil
         }
 
   field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)

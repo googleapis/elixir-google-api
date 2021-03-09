@@ -32,12 +32,12 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spreadsheetId => String.t(),
-          :updatedCells => integer(),
-          :updatedColumns => integer(),
-          :updatedData => GoogleApi.Sheets.V4.Model.ValueRange.t(),
-          :updatedRange => String.t(),
-          :updatedRows => integer()
+          :spreadsheetId => String.t() | nil,
+          :updatedCells => integer() | nil,
+          :updatedColumns => integer() | nil,
+          :updatedData => GoogleApi.Sheets.V4.Model.ValueRange.t() | nil,
+          :updatedRange => String.t() | nil,
+          :updatedRows => integer() | nil
         }
 
   field(:spreadsheetId)

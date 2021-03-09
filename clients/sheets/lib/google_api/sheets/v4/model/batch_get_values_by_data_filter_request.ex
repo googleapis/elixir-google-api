@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          :dateTimeRenderOption => String.t(),
-          :majorDimension => String.t(),
-          :valueRenderOption => String.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()) | nil,
+          :dateTimeRenderOption => String.t() | nil,
+          :majorDimension => String.t() | nil,
+          :valueRenderOption => String.t() | nil
         }
 
   field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)

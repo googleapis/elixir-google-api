@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
+          :dimensionGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()) | nil
         }
 
   field(:dimensionGroups, as: GoogleApi.Sheets.V4.Model.DimensionGroup, type: :list)

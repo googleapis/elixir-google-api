@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataIsSubtotal => boolean(),
-          :label => String.t(),
-          :subtotalIndex => integer()
+          :dataIsSubtotal => boolean() | nil,
+          :label => String.t() | nil,
+          :subtotalIndex => integer() | nil
         }
 
   field(:dataIsSubtotal)

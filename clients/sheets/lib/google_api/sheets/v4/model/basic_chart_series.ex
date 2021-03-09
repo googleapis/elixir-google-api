@@ -35,16 +35,16 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Sheets.V4.Model.Color.t(),
-          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t(),
-          :lineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
-          :pointStyle => GoogleApi.Sheets.V4.Model.PointStyle.t(),
-          :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :color => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t() | nil,
+          :lineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t() | nil,
+          :pointStyle => GoogleApi.Sheets.V4.Model.PointStyle.t() | nil,
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
           :styleOverrides =>
-            list(GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride.t()),
-          :targetAxis => String.t(),
-          :type => String.t()
+            list(GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride.t()) | nil,
+          :targetAxis => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)

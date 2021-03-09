@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :horizontalAlignment => String.t()
+          :horizontalAlignment => String.t() | nil
         }
 
   field(:horizontalAlignment)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.GridData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
-          :rowData => list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          :rowMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()),
-          :startColumn => integer(),
-          :startRow => integer()
+          :columnMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()) | nil,
+          :rowData => list(GoogleApi.Sheets.V4.Model.RowData.t()) | nil,
+          :rowMetadata => list(GoogleApi.Sheets.V4.Model.DimensionProperties.t()) | nil,
+          :startColumn => integer() | nil,
+          :startRow => integer() | nil
         }
 
   field(:columnMetadata, as: GoogleApi.Sheets.V4.Model.DimensionProperties, type: :list)

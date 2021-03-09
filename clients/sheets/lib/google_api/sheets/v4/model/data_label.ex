@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DataLabel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customLabelData => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :placement => String.t(),
-          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :type => String.t()
+          :customLabelData => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :placement => String.t() | nil,
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:customLabelData, as: GoogleApi.Sheets.V4.Model.ChartData)

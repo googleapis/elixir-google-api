@@ -28,7 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse do
 
   @type t :: %__MODULE__{
           :matchedDeveloperMetadata =>
-            list(GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.t())
+            list(GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata.t()) | nil
         }
 
   field(:matchedDeveloperMetadata,

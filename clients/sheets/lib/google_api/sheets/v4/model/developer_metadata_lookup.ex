@@ -33,13 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationMatchingStrategy => String.t(),
-          :locationType => String.t(),
-          :metadataId => integer(),
-          :metadataKey => String.t(),
-          :metadataLocation => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
-          :metadataValue => String.t(),
-          :visibility => String.t()
+          :locationMatchingStrategy => String.t() | nil,
+          :locationType => String.t() | nil,
+          :metadataId => integer() | nil,
+          :metadataKey => String.t() | nil,
+          :metadataLocation => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t() | nil,
+          :metadataValue => String.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:locationMatchingStrategy)

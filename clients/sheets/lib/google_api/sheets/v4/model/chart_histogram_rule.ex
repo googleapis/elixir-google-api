@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.ChartHistogramRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intervalSize => float(),
-          :maxValue => float(),
-          :minValue => float()
+          :intervalSize => float() | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil
         }
 
   field(:intervalSize)

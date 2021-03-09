@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigQuery => GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec.t(),
-          :parameters => list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t())
+          :bigQuery => GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec.t() | nil,
+          :parameters => list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t()) | nil
         }
 
   field(:bigQuery, as: GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec)

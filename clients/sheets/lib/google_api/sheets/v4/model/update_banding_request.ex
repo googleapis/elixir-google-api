@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t(),
-          :fields => String.t()
+          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t() | nil,
+          :fields => String.t() | nil
         }
 
   field(:bandedRange, as: GoogleApi.Sheets.V4.Model.BandedRange)

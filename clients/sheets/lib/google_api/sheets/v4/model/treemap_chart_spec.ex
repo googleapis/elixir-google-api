@@ -39,19 +39,19 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colorData => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :colorScale => GoogleApi.Sheets.V4.Model.TreemapChartColorScale.t(),
-          :headerColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :hideTooltips => boolean(),
-          :hintedLevels => integer(),
-          :labels => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :levels => integer(),
-          :maxValue => float(),
-          :minValue => float(),
-          :parentLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :sizeData => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t()
+          :colorData => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :colorScale => GoogleApi.Sheets.V4.Model.TreemapChartColorScale.t() | nil,
+          :headerColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :hideTooltips => boolean() | nil,
+          :hintedLevels => integer() | nil,
+          :labels => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :levels => integer() | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil,
+          :parentLabels => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :sizeData => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil
         }
 
   field(:colorData, as: GoogleApi.Sheets.V4.Model.ChartData)

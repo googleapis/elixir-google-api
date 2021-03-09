@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collapsed => boolean(),
-          :depth => integer(),
-          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :collapsed => boolean() | nil,
+          :depth => integer() | nil,
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:collapsed)

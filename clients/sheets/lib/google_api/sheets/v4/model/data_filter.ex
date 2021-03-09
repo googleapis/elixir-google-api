@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :a1Range => String.t(),
-          :developerMetadataLookup => GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t(),
-          :gridRange => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :a1Range => String.t() | nil,
+          :developerMetadataLookup => GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t() | nil,
+          :gridRange => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:a1Range)

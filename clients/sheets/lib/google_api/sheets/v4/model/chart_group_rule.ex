@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartGroupRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateTimeRule => GoogleApi.Sheets.V4.Model.ChartDateTimeRule.t(),
-          :histogramRule => GoogleApi.Sheets.V4.Model.ChartHistogramRule.t()
+          :dateTimeRule => GoogleApi.Sheets.V4.Model.ChartDateTimeRule.t() | nil,
+          :histogramRule => GoogleApi.Sheets.V4.Model.ChartHistogramRule.t() | nil
         }
 
   field(:dateTimeRule, as: GoogleApi.Sheets.V4.Model.ChartDateTimeRule)

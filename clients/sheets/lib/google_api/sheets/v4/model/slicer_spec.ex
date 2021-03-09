@@ -35,15 +35,15 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applyToPivotTables => boolean(),
-          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :columnIndex => integer(),
-          :dataRange => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :filterCriteria => GoogleApi.Sheets.V4.Model.FilterCriteria.t(),
-          :horizontalAlignment => String.t(),
-          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :title => String.t()
+          :applyToPivotTables => boolean() | nil,
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :columnIndex => integer() | nil,
+          :dataRange => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :filterCriteria => GoogleApi.Sheets.V4.Model.FilterCriteria.t() | nil,
+          :horizontalAlignment => String.t() | nil,
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:applyToPivotTables)

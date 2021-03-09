@@ -34,14 +34,14 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bold => boolean(),
-          :fontFamily => String.t(),
-          :fontSize => integer(),
-          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :italic => boolean(),
-          :strikethrough => boolean(),
-          :underline => boolean()
+          :bold => boolean() | nil,
+          :fontFamily => String.t() | nil,
+          :fontSize => integer() | nil,
+          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :italic => boolean() | nil,
+          :strikethrough => boolean() | nil,
+          :underline => boolean() | nil
         }
 
   field(:bold)

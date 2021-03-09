@@ -36,16 +36,17 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :groupLimit => GoogleApi.Sheets.V4.Model.PivotGroupLimit.t(),
-          :groupRule => GoogleApi.Sheets.V4.Model.PivotGroupRule.t(),
-          :label => String.t(),
-          :repeatHeadings => boolean(),
-          :showTotals => boolean(),
-          :sortOrder => String.t(),
-          :sourceColumnOffset => integer(),
-          :valueBucket => GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.t(),
-          :valueMetadata => list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t())
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :groupLimit => GoogleApi.Sheets.V4.Model.PivotGroupLimit.t() | nil,
+          :groupRule => GoogleApi.Sheets.V4.Model.PivotGroupRule.t() | nil,
+          :label => String.t() | nil,
+          :repeatHeadings => boolean() | nil,
+          :showTotals => boolean() | nil,
+          :sortOrder => String.t() | nil,
+          :sourceColumnOffset => integer() | nil,
+          :valueBucket => GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.t() | nil,
+          :valueMetadata => list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t()) | nil
         }
 
   field(:dataSourceColumnReference, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference)

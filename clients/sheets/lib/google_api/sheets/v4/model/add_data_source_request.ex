@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddDataSourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSource => GoogleApi.Sheets.V4.Model.DataSource.t()
+          :dataSource => GoogleApi.Sheets.V4.Model.DataSource.t() | nil
         }
 
   field(:dataSource, as: GoogleApi.Sheets.V4.Model.DataSource)

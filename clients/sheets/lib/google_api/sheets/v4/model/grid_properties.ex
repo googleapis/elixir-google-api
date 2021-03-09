@@ -33,13 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.GridProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnCount => integer(),
-          :columnGroupControlAfter => boolean(),
-          :frozenColumnCount => integer(),
-          :frozenRowCount => integer(),
-          :hideGridlines => boolean(),
-          :rowCount => integer(),
-          :rowGroupControlAfter => boolean()
+          :columnCount => integer() | nil,
+          :columnGroupControlAfter => boolean() | nil,
+          :frozenColumnCount => integer() | nil,
+          :frozenRowCount => integer() | nil,
+          :hideGridlines => boolean() | nil,
+          :rowCount => integer() | nil,
+          :rowGroupControlAfter => boolean() | nil
         }
 
   field(:columnCount)

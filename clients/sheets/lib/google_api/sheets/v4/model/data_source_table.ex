@@ -33,13 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnSelectionType => String.t(),
-          :columns => list(GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t()),
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :dataSourceId => String.t(),
-          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
-          :rowLimit => integer(),
-          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
+          :columnSelectionType => String.t() | nil,
+          :columns => list(GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t()) | nil,
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :dataSourceId => String.t() | nil,
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()) | nil,
+          :rowLimit => integer() | nil,
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()) | nil
         }
 
   field(:columnSelectionType)

@@ -38,18 +38,18 @@ defmodule GoogleApi.Sheets.V4.Model.CellData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceFormula => GoogleApi.Sheets.V4.Model.DataSourceFormula.t(),
-          :dataSourceTable => GoogleApi.Sheets.V4.Model.DataSourceTable.t(),
-          :dataValidation => GoogleApi.Sheets.V4.Model.DataValidationRule.t(),
-          :effectiveFormat => GoogleApi.Sheets.V4.Model.CellFormat.t(),
-          :effectiveValue => GoogleApi.Sheets.V4.Model.ExtendedValue.t(),
-          :formattedValue => String.t(),
-          :hyperlink => String.t(),
-          :note => String.t(),
-          :pivotTable => GoogleApi.Sheets.V4.Model.PivotTable.t(),
-          :textFormatRuns => list(GoogleApi.Sheets.V4.Model.TextFormatRun.t()),
-          :userEnteredFormat => GoogleApi.Sheets.V4.Model.CellFormat.t(),
-          :userEnteredValue => GoogleApi.Sheets.V4.Model.ExtendedValue.t()
+          :dataSourceFormula => GoogleApi.Sheets.V4.Model.DataSourceFormula.t() | nil,
+          :dataSourceTable => GoogleApi.Sheets.V4.Model.DataSourceTable.t() | nil,
+          :dataValidation => GoogleApi.Sheets.V4.Model.DataValidationRule.t() | nil,
+          :effectiveFormat => GoogleApi.Sheets.V4.Model.CellFormat.t() | nil,
+          :effectiveValue => GoogleApi.Sheets.V4.Model.ExtendedValue.t() | nil,
+          :formattedValue => String.t() | nil,
+          :hyperlink => String.t() | nil,
+          :note => String.t() | nil,
+          :pivotTable => GoogleApi.Sheets.V4.Model.PivotTable.t() | nil,
+          :textFormatRuns => list(GoogleApi.Sheets.V4.Model.TextFormatRun.t()) | nil,
+          :userEnteredFormat => GoogleApi.Sheets.V4.Model.CellFormat.t() | nil,
+          :userEnteredValue => GoogleApi.Sheets.V4.Model.ExtendedValue.t() | nil
         }
 
   field(:dataSourceFormula, as: GoogleApi.Sheets.V4.Model.DataSourceFormula)

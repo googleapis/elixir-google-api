@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.Borders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bottom => GoogleApi.Sheets.V4.Model.Border.t(),
-          :left => GoogleApi.Sheets.V4.Model.Border.t(),
-          :right => GoogleApi.Sheets.V4.Model.Border.t(),
-          :top => GoogleApi.Sheets.V4.Model.Border.t()
+          :bottom => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :left => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :right => GoogleApi.Sheets.V4.Model.Border.t() | nil,
+          :top => GoogleApi.Sheets.V4.Model.Border.t() | nil
         }
 
   field(:bottom, as: GoogleApi.Sheets.V4.Model.Border)

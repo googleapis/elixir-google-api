@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.GridCoordinate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndex => integer(),
-          :rowIndex => integer(),
-          :sheetId => integer()
+          :columnIndex => integer() | nil,
+          :rowIndex => integer() | nil,
+          :sheetId => integer() | nil
         }
 
   field(:columnIndex)

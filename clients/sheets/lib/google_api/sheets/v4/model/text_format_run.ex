@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormatRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :startIndex => integer()
+          :format => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :startIndex => integer() | nil
         }
 
   field(:format, as: GoogleApi.Sheets.V4.Model.TextFormat)

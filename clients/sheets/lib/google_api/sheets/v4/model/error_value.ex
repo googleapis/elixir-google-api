@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ErrorValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => String.t(),
-          :type => String.t()
+          :message => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:message)

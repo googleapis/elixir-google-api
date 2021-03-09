@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clearedRanges => list(String.t()),
-          :spreadsheetId => String.t()
+          :clearedRanges => list(String.t()) | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:clearedRanges, type: :list)

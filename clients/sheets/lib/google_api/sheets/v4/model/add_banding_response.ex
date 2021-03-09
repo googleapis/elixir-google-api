@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddBandingResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t()
+          :bandedRange => GoogleApi.Sheets.V4.Model.BandedRange.t() | nil
         }
 
   field(:bandedRange, as: GoogleApi.Sheets.V4.Model.BandedRange)

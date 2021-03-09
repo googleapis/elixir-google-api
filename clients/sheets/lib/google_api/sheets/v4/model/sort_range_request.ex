@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.SortRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()) | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

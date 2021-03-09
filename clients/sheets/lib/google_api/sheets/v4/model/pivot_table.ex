@@ -35,17 +35,16 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
-          :criteria => %{
-            optional(String.t()) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t()
-          },
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :dataSourceId => String.t(),
-          :filterSpecs => list(GoogleApi.Sheets.V4.Model.PivotFilterSpec.t()),
-          :rows => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
-          :source => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :valueLayout => String.t(),
-          :values => list(GoogleApi.Sheets.V4.Model.PivotValue.t())
+          :columns => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()) | nil,
+          :criteria =>
+            %{optional(String.t()) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t()} | nil,
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :dataSourceId => String.t() | nil,
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.PivotFilterSpec.t()) | nil,
+          :rows => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()) | nil,
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :valueLayout => String.t() | nil,
+          :values => list(GoogleApi.Sheets.V4.Model.PivotValue.t()) | nil
         }
 
   field(:columns, as: GoogleApi.Sheets.V4.Model.PivotGroup, type: :list)

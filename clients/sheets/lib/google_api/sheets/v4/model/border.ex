@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.Border do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Sheets.V4.Model.Color.t(),
-          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :style => String.t(),
-          :width => integer()
+          :color => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :style => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)

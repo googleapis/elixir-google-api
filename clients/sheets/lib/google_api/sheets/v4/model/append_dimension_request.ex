@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.AppendDimensionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :length => integer(),
-          :sheetId => integer()
+          :dimension => String.t() | nil,
+          :length => integer() | nil,
+          :sheetId => integer() | nil
         }
 
   field(:dimension)

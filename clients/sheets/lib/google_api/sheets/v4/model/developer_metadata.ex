@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t(),
-          :metadataId => integer(),
-          :metadataKey => String.t(),
-          :metadataValue => String.t(),
-          :visibility => String.t()
+          :location => GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t() | nil,
+          :metadataId => integer() | nil,
+          :metadataKey => String.t() | nil,
+          :metadataValue => String.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:location, as: GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation)

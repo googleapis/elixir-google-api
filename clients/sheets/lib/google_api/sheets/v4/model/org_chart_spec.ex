@@ -34,14 +34,14 @@ defmodule GoogleApi.Sheets.V4.Model.OrgChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :nodeColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :nodeColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :nodeSize => String.t(),
-          :parentLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :selectedNodeColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :selectedNodeColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :tooltips => GoogleApi.Sheets.V4.Model.ChartData.t()
+          :labels => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :nodeColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :nodeColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :nodeSize => String.t() | nil,
+          :parentLabels => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :selectedNodeColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :selectedNodeColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :tooltips => GoogleApi.Sheets.V4.Model.ChartData.t() | nil
         }
 
   field(:labels, as: GoogleApi.Sheets.V4.Model.ChartData)

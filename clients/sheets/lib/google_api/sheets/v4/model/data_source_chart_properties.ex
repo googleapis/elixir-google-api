@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceChartProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :dataSourceId => String.t()
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :dataSourceId => String.t() | nil
         }
 
   field(:dataExecutionStatus, as: GoogleApi.Sheets.V4.Model.DataExecutionStatus)

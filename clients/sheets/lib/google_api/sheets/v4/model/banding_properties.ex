@@ -34,14 +34,14 @@ defmodule GoogleApi.Sheets.V4.Model.BandingProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :firstBandColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :firstBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :footerColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :footerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :headerColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :secondBandColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :secondBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
+          :firstBandColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :firstBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :footerColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :footerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :headerColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :secondBandColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :secondBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil
         }
 
   field(:firstBandColor, as: GoogleApi.Sheets.V4.Model.Color)

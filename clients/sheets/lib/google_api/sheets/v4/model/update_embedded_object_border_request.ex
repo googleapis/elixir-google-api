@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectBorderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :border => GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder.t(),
-          :fields => String.t(),
-          :objectId => integer()
+          :border => GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder.t() | nil,
+          :fields => String.t() | nil,
+          :objectId => integer() | nil
         }
 
   field(:border, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t(),
-          :fields => String.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()) | nil,
+          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t() | nil,
+          :fields => String.t() | nil
         }
 
   field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)

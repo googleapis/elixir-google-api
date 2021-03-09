@@ -34,14 +34,15 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceSchedules => list(GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule.t()),
-          :dataSources => list(GoogleApi.Sheets.V4.Model.DataSource.t()),
-          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
-          :namedRanges => list(GoogleApi.Sheets.V4.Model.NamedRange.t()),
-          :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t(),
-          :sheets => list(GoogleApi.Sheets.V4.Model.Sheet.t()),
-          :spreadsheetId => String.t(),
-          :spreadsheetUrl => String.t()
+          :dataSourceSchedules =>
+            list(GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule.t()) | nil,
+          :dataSources => list(GoogleApi.Sheets.V4.Model.DataSource.t()) | nil,
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()) | nil,
+          :namedRanges => list(GoogleApi.Sheets.V4.Model.NamedRange.t()) | nil,
+          :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t() | nil,
+          :sheets => list(GoogleApi.Sheets.V4.Model.Sheet.t()) | nil,
+          :spreadsheetId => String.t() | nil,
+          :spreadsheetUrl => String.t() | nil
         }
 
   field(:dataSourceSchedules, as: GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule, type: :list)

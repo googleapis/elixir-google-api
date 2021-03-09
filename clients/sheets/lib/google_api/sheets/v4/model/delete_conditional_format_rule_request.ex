@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :sheetId => integer()
+          :index => integer() | nil,
+          :sheetId => integer() | nil
         }
 
   field(:index)

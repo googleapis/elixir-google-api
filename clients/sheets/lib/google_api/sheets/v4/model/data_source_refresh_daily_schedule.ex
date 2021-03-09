@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshDailySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t()
+          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t() | nil
         }
 
   field(:startTime, as: GoogleApi.Sheets.V4.Model.TimeOfDay)

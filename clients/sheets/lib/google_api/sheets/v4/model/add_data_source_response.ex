@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.AddDataSourceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :dataSource => GoogleApi.Sheets.V4.Model.DataSource.t()
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :dataSource => GoogleApi.Sheets.V4.Model.DataSource.t() | nil
         }
 
   field(:dataExecutionStatus, as: GoogleApi.Sheets.V4.Model.DataExecutionStatus)

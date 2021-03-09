@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DataValidationRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          :inputMessage => String.t(),
-          :showCustomUi => boolean(),
-          :strict => boolean()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t() | nil,
+          :inputMessage => String.t() | nil,
+          :showCustomUi => boolean() | nil,
+          :strict => boolean() | nil
         }
 
   field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)

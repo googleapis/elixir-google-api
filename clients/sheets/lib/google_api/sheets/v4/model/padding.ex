@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.Padding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bottom => integer(),
-          :left => integer(),
-          :right => integer(),
-          :top => integer()
+          :bottom => integer() | nil,
+          :left => integer() | nil,
+          :right => integer() | nil,
+          :top => integer() | nil
         }
 
   field(:bottom)

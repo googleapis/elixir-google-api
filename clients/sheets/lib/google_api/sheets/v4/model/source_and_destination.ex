@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.SourceAndDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :fillLength => integer(),
-          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :dimension => String.t() | nil,
+          :fillLength => integer() | nil,
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:dimension)

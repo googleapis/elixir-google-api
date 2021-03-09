@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ThemeColorPair do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :colorType => String.t()
+          :color => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :colorType => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.ColorStyle)

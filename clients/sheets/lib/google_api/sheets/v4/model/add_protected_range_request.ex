@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :protectedRange => GoogleApi.Sheets.V4.Model.ProtectedRange.t()
+          :protectedRange => GoogleApi.Sheets.V4.Model.ProtectedRange.t() | nil
         }
 
   field(:protectedRange, as: GoogleApi.Sheets.V4.Model.ProtectedRange)

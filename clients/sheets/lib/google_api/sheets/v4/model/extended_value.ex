@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.ExtendedValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :errorValue => GoogleApi.Sheets.V4.Model.ErrorValue.t(),
-          :formulaValue => String.t(),
-          :numberValue => float(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :errorValue => GoogleApi.Sheets.V4.Model.ErrorValue.t() | nil,
+          :formulaValue => String.t() | nil,
+          :numberValue => float() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.RefreshDataSourceObjectExecutionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :reference => GoogleApi.Sheets.V4.Model.DataSourceObjectReference.t()
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :reference => GoogleApi.Sheets.V4.Model.DataSourceObjectReference.t() | nil
         }
 
   field(:dataExecutionStatus, as: GoogleApi.Sheets.V4.Model.DataExecutionStatus)

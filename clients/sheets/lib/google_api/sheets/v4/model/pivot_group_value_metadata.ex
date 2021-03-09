@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collapsed => boolean(),
-          :value => GoogleApi.Sheets.V4.Model.ExtendedValue.t()
+          :collapsed => boolean() | nil,
+          :value => GoogleApi.Sheets.V4.Model.ExtendedValue.t() | nil
         }
 
   field(:collapsed)

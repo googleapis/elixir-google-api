@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceColumn do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formula => String.t(),
-          :reference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t()
+          :formula => String.t() | nil,
+          :reference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil
         }
 
   field(:formula)

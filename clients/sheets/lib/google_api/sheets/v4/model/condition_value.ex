@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ConditionValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :relativeDate => String.t(),
-          :userEnteredValue => String.t()
+          :relativeDate => String.t() | nil,
+          :userEnteredValue => String.t() | nil
         }
 
   field(:relativeDate)

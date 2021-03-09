@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t(),
-          :force => boolean(),
-          :isAll => boolean(),
-          :references => GoogleApi.Sheets.V4.Model.DataSourceObjectReferences.t()
+          :dataSourceId => String.t() | nil,
+          :force => boolean() | nil,
+          :isAll => boolean() | nil,
+          :references => GoogleApi.Sheets.V4.Model.DataSourceObjectReferences.t() | nil
         }
 
   field(:dataSourceId)

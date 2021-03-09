@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :protectedRangeId => integer()
+          :protectedRangeId => integer() | nil
         }
 
   field(:protectedRangeId)

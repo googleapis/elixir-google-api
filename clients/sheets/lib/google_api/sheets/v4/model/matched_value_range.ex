@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.MatchedValueRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          :valueRange => GoogleApi.Sheets.V4.Model.ValueRange.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()) | nil,
+          :valueRange => GoogleApi.Sheets.V4.Model.ValueRange.t() | nil
         }
 
   field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)

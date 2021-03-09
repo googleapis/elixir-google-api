@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t()
+          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t() | nil
         }
 
   field(:namedRange, as: GoogleApi.Sheets.V4.Model.NamedRange)

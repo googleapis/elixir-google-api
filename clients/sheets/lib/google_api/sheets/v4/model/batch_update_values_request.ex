@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(GoogleApi.Sheets.V4.Model.ValueRange.t()),
-          :includeValuesInResponse => boolean(),
-          :responseDateTimeRenderOption => String.t(),
-          :responseValueRenderOption => String.t(),
-          :valueInputOption => String.t()
+          :data => list(GoogleApi.Sheets.V4.Model.ValueRange.t()) | nil,
+          :includeValuesInResponse => boolean() | nil,
+          :responseDateTimeRenderOption => String.t() | nil,
+          :responseValueRenderOption => String.t() | nil,
+          :valueInputOption => String.t() | nil
         }
 
   field(:data, as: GoogleApi.Sheets.V4.Model.ValueRange, type: :list)

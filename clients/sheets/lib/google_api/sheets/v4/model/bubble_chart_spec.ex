@@ -38,18 +38,18 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bubbleBorderColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :bubbleBorderColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :bubbleLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :bubbleMaxRadiusSize => integer(),
-          :bubbleMinRadiusSize => integer(),
-          :bubbleOpacity => number(),
-          :bubbleSizes => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :bubbleTextStyle => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :groupIds => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :legendPosition => String.t(),
-          :series => GoogleApi.Sheets.V4.Model.ChartData.t()
+          :bubbleBorderColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :bubbleBorderColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :bubbleLabels => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :bubbleMaxRadiusSize => integer() | nil,
+          :bubbleMinRadiusSize => integer() | nil,
+          :bubbleOpacity => number() | nil,
+          :bubbleSizes => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :bubbleTextStyle => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :groupIds => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :legendPosition => String.t() | nil,
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t() | nil
         }
 
   field(:bubbleBorderColor, as: GoogleApi.Sheets.V4.Model.Color)

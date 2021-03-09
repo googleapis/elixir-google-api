@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.NumberFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pattern => String.t(),
-          :type => String.t()
+          :pattern => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:pattern)

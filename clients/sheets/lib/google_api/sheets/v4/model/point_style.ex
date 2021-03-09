@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.PointStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :shape => String.t(),
-          :size => float()
+          :shape => String.t() | nil,
+          :size => float() | nil
         }
 
   field(:shape)

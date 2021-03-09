@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delimiter => String.t(),
-          :delimiterType => String.t(),
-          :source => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :delimiter => String.t() | nil,
+          :delimiterType => String.t() | nil,
+          :source => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:delimiter)
