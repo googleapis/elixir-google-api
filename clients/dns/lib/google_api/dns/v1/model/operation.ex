@@ -34,14 +34,14 @@ defmodule GoogleApi.DNS.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsKeyContext => GoogleApi.DNS.V1.Model.OperationDnsKeyContext.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :startTime => String.t(),
-          :status => String.t(),
-          :type => String.t(),
-          :user => String.t(),
-          :zoneContext => GoogleApi.DNS.V1.Model.OperationManagedZoneContext.t()
+          :dnsKeyContext => GoogleApi.DNS.V1.Model.OperationDnsKeyContext.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :startTime => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil,
+          :user => String.t() | nil,
+          :zoneContext => GoogleApi.DNS.V1.Model.OperationManagedZoneContext.t() | nil
         }
 
   field(:dnsKeyContext, as: GoogleApi.DNS.V1.Model.OperationDnsKeyContext)

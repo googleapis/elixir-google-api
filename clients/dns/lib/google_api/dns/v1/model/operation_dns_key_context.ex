@@ -28,8 +28,8 @@ defmodule GoogleApi.DNS.V1.Model.OperationDnsKeyContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newValue => GoogleApi.DNS.V1.Model.DnsKey.t(),
-          :oldValue => GoogleApi.DNS.V1.Model.DnsKey.t()
+          :newValue => GoogleApi.DNS.V1.Model.DnsKey.t() | nil,
+          :oldValue => GoogleApi.DNS.V1.Model.DnsKey.t() | nil
         }
 
   field(:newValue, as: GoogleApi.DNS.V1.Model.DnsKey)

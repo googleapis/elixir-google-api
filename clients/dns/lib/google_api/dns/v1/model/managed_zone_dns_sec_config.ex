@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t()),
-          :kind => String.t(),
-          :nonExistence => String.t(),
-          :state => String.t()
+          :defaultKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t()) | nil,
+          :kind => String.t() | nil,
+          :nonExistence => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:defaultKeySpecs, as: GoogleApi.DNS.V1.Model.DnsKeySpec, type: :list)

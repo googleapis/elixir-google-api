@@ -28,8 +28,8 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeyDigest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digest => String.t(),
-          :type => String.t()
+          :digest => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:digest)

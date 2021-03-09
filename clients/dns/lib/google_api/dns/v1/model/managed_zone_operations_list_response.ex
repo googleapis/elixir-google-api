@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.DNS.V1.Model.Operation.t())
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :operations => list(GoogleApi.DNS.V1.Model.Operation.t()) | nil
         }
 
   field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)

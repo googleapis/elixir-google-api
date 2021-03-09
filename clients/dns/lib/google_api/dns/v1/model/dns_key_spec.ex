@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeySpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :keyLength => integer(),
-          :keyType => String.t(),
-          :kind => String.t()
+          :algorithm => String.t() | nil,
+          :keyLength => integer() | nil,
+          :keyType => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:algorithm)

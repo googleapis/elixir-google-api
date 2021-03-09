@@ -28,8 +28,8 @@ defmodule GoogleApi.DNS.V1.Model.PoliciesUpdateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :policy => GoogleApi.DNS.V1.Model.Policy.t()
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :policy => GoogleApi.DNS.V1.Model.Policy.t() | nil
         }
 
   field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)

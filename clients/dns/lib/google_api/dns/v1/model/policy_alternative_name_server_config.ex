@@ -28,9 +28,10 @@ defmodule GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :targetNameServers =>
             list(GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfigTargetNameServer.t())
+            | nil
         }
 
   field(:kind)

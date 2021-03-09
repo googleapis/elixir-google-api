@@ -28,8 +28,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :namespace => GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfigNamespace.t()
+          :kind => String.t() | nil,
+          :namespace =>
+            GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfigNamespace.t() | nil
         }
 
   field(:kind)

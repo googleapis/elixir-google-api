@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   @moduledoc """
-  A unit of data that will be returned by the DNS servers.
+  A unit of data that is returned by the DNS servers.
 
   ## Attributes
 
@@ -32,12 +32,12 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t(),
-          :rrdatas => list(String.t()),
-          :signatureRrdatas => list(String.t()),
-          :ttl => integer(),
-          :type => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :rrdatas => list(String.t()) | nil,
+          :signatureRrdatas => list(String.t()) | nil,
+          :ttl => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:kind)

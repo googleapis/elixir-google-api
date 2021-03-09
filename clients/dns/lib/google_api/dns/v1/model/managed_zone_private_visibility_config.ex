@@ -28,8 +28,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :networks => list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork.t())
+          :kind => String.t() | nil,
+          :networks =>
+            list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork.t()) | nil
         }
 
   field(:kind)

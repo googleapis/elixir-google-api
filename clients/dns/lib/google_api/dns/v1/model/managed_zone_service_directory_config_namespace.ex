@@ -21,7 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfigNamespace do
 
   ## Attributes
 
-  *   `deletionTime` (*type:* `String.t`, *default:* `nil`) - The time that the namespace backing this zone was deleted, empty string if it still exists. This is in RFC3339 text format. Output only.
+  *   `deletionTime` (*type:* `String.t`, *default:* `nil`) - The time that the namespace backing this zone was deleted; an empty string if it still exists. This is in RFC3339 text format. Output only.
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneServiceDirectoryConfigNamespace`) - 
   *   `namespaceUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the namespace associated with the zone. This should be formatted like https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}
   """
@@ -29,9 +29,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfigNamespace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletionTime => String.t(),
-          :kind => String.t(),
-          :namespaceUrl => String.t()
+          :deletionTime => String.t() | nil,
+          :kind => String.t() | nil,
+          :namespaceUrl => String.t() | nil
         }
 
   field(:deletionTime)

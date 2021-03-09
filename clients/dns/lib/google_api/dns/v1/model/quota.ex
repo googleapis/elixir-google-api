@@ -41,21 +41,21 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsKeysPerManagedZone => integer(),
-          :kind => String.t(),
-          :managedZones => integer(),
-          :managedZonesPerNetwork => integer(),
-          :networksPerManagedZone => integer(),
-          :networksPerPolicy => integer(),
-          :policies => integer(),
-          :resourceRecordsPerRrset => integer(),
-          :rrsetAdditionsPerChange => integer(),
-          :rrsetDeletionsPerChange => integer(),
-          :rrsetsPerManagedZone => integer(),
-          :targetNameServersPerManagedZone => integer(),
-          :targetNameServersPerPolicy => integer(),
-          :totalRrdataSizePerChange => integer(),
-          :whitelistedKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t())
+          :dnsKeysPerManagedZone => integer() | nil,
+          :kind => String.t() | nil,
+          :managedZones => integer() | nil,
+          :managedZonesPerNetwork => integer() | nil,
+          :networksPerManagedZone => integer() | nil,
+          :networksPerPolicy => integer() | nil,
+          :policies => integer() | nil,
+          :resourceRecordsPerRrset => integer() | nil,
+          :rrsetAdditionsPerChange => integer() | nil,
+          :rrsetDeletionsPerChange => integer() | nil,
+          :rrsetsPerManagedZone => integer() | nil,
+          :targetNameServersPerManagedZone => integer() | nil,
+          :targetNameServersPerPolicy => integer() | nil,
+          :totalRrdataSizePerChange => integer() | nil,
+          :whitelistedKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t()) | nil
         }
 
   field(:dnsKeysPerManagedZone)

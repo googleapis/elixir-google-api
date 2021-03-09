@@ -28,8 +28,8 @@ defmodule GoogleApi.DNS.V1.Model.PolicyNetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :networkUrl => String.t()
+          :kind => String.t() | nil,
+          :networkUrl => String.t() | nil
         }
 
   field(:kind)
