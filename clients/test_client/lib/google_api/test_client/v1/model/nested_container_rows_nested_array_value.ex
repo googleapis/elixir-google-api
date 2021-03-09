@@ -27,7 +27,7 @@ defmodule GoogleApi.TestClient.V1.Model.NestedContainerRowsNestedArrayValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stringVal => String.t()
+          :stringVal => String.t() | nil
         }
 
   field(:stringVal)

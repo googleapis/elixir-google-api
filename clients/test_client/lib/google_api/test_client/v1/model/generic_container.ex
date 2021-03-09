@@ -30,10 +30,11 @@ defmodule GoogleApi.TestClient.V1.Model.GenericContainer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :any => any(),
-          :attributes => map(),
-          :listOfAny => list(any()),
-          :mapOfRefs => %{optional(String.t()) => GoogleApi.TestClient.V1.Model.Container.t()}
+          :any => any() | nil,
+          :attributes => map() | nil,
+          :listOfAny => list(any()) | nil,
+          :mapOfRefs =>
+            %{optional(String.t()) => GoogleApi.TestClient.V1.Model.Container.t()} | nil
         }
 
   field(:any)

@@ -27,7 +27,7 @@ defmodule GoogleApi.TestClient.V1.Model.ContainerObjectVal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field1 => String.t()
+          :field1 => String.t() | nil
         }
 
   field(:field1)
