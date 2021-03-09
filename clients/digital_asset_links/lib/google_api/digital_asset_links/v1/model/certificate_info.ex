@@ -27,7 +27,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.CertificateInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256Fingerprint => String.t()
+          :sha256Fingerprint => String.t() | nil
         }
 
   field(:sha256Fingerprint)

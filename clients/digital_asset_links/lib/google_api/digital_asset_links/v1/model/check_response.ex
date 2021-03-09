@@ -30,10 +30,10 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.CheckResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugString => String.t(),
-          :errorCode => list(String.t()),
-          :linked => boolean(),
-          :maxAge => String.t()
+          :debugString => String.t() | nil,
+          :errorCode => list(String.t()) | nil,
+          :linked => boolean() | nil,
+          :maxAge => String.t() | nil
         }
 
   field(:debugString)

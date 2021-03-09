@@ -28,8 +28,8 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.AndroidAppAsset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificate => GoogleApi.DigitalAssetLinks.V1.Model.CertificateInfo.t(),
-          :packageName => String.t()
+          :certificate => GoogleApi.DigitalAssetLinks.V1.Model.CertificateInfo.t() | nil,
+          :packageName => String.t() | nil
         }
 
   field(:certificate, as: GoogleApi.DigitalAssetLinks.V1.Model.CertificateInfo)

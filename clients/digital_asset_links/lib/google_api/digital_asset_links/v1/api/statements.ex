@@ -57,6 +57,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Statements do
   @spec digitalassetlinks_statements_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DigitalAssetLinks.V1.Model.ListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def digitalassetlinks_statements_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
