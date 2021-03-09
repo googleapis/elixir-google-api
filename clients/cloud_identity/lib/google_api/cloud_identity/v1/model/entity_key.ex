@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.EntityKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :namespace => String.t()
+          :id => String.t() | nil,
+          :namespace => String.t() | nil
         }
 
   field(:id)

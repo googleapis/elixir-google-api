@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.ModifyMembershipRolesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :membership => GoogleApi.CloudIdentity.V1.Model.Membership.t()
+          :membership => GoogleApi.CloudIdentity.V1.Model.Membership.t() | nil
         }
 
   field(:membership, as: GoogleApi.CloudIdentity.V1.Model.Membership)

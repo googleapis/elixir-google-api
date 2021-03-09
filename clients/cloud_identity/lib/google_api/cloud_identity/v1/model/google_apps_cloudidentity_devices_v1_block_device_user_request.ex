@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Block
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customer => String.t()
+          :customer => String.t() | nil
         }
 
   field(:customer)

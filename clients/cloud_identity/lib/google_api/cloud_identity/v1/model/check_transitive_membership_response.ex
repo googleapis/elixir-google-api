@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.CheckTransitiveMembershipResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasMembership => boolean()
+          :hasMembership => boolean() | nil
         }
 
   field(:hasMembership)

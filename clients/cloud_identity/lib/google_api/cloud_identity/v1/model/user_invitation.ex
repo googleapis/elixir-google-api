@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudIdentity.V1.Model.UserInvitation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mailsSentCount => String.t(),
-          :name => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :mailsSentCount => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:mailsSentCount)

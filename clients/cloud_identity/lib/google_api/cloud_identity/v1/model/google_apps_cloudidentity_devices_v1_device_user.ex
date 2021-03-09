@@ -36,16 +36,16 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compromisedState => String.t(),
-          :createTime => DateTime.t(),
-          :firstSyncTime => DateTime.t(),
-          :languageCode => String.t(),
-          :lastSyncTime => DateTime.t(),
-          :managementState => String.t(),
-          :name => String.t(),
-          :passwordState => String.t(),
-          :userAgent => String.t(),
-          :userEmail => String.t()
+          :compromisedState => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :firstSyncTime => DateTime.t() | nil,
+          :languageCode => String.t() | nil,
+          :lastSyncTime => DateTime.t() | nil,
+          :managementState => String.t() | nil,
+          :name => String.t() | nil,
+          :passwordState => String.t() | nil,
+          :userAgent => String.t() | nil,
+          :userEmail => String.t() | nil
         }
 
   field(:compromisedState)

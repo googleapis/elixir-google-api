@@ -38,21 +38,23 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Clien
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetTags => list(String.t()),
-          :complianceState => String.t(),
-          :createTime => DateTime.t(),
-          :customId => String.t(),
-          :etag => String.t(),
-          :healthScore => String.t(),
-          :keyValuePairs => %{
-            optional(String.t()) =>
-              GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1CustomAttributeValue.t()
-          },
-          :lastUpdateTime => DateTime.t(),
-          :managed => String.t(),
-          :name => String.t(),
-          :ownerType => String.t(),
-          :scoreReason => String.t()
+          :assetTags => list(String.t()) | nil,
+          :complianceState => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :customId => String.t() | nil,
+          :etag => String.t() | nil,
+          :healthScore => String.t() | nil,
+          :keyValuePairs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1CustomAttributeValue.t()
+            }
+            | nil,
+          :lastUpdateTime => DateTime.t() | nil,
+          :managed => String.t() | nil,
+          :name => String.t() | nil,
+          :ownerType => String.t() | nil,
+          :scoreReason => String.t() | nil
         }
 
   field(:assetTags, type: :list)

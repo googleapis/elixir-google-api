@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipAdjacencyList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :edges => list(GoogleApi.CloudIdentity.V1.Model.Membership.t()),
-          :group => String.t()
+          :edges => list(GoogleApi.CloudIdentity.V1.Model.Membership.t()) | nil,
+          :group => String.t() | nil
         }
 
   field(:edges, as: GoogleApi.CloudIdentity.V1.Model.Membership, type: :list)

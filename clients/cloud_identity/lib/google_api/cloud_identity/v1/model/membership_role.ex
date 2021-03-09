@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipRole do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiryDetail => GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t(),
-          :name => String.t()
+          :expiryDetail => GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:expiryDetail, as: GoogleApi.CloudIdentity.V1.Model.ExpiryDetail)

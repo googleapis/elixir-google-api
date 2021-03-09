@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MemberRelation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :member => String.t(),
-          :preferredMemberKey => list(GoogleApi.CloudIdentity.V1.Model.EntityKey.t()),
-          :relationType => String.t(),
-          :roles => list(GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole.t())
+          :member => String.t() | nil,
+          :preferredMemberKey => list(GoogleApi.CloudIdentity.V1.Model.EntityKey.t()) | nil,
+          :relationType => String.t() | nil,
+          :roles => list(GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole.t()) | nil
         }
 
   field(:member)
