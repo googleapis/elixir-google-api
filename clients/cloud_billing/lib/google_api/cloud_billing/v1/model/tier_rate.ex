@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.TierRate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :startUsageAmount => float(),
-          :unitPrice => GoogleApi.CloudBilling.V1.Model.Money.t()
+          :startUsageAmount => float() | nil,
+          :unitPrice => GoogleApi.CloudBilling.V1.Model.Money.t() | nil
         }
 
   field(:startUsageAmount)

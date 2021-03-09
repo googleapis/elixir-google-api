@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudBilling.V1.Model.PricingExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseUnit => String.t(),
-          :baseUnitConversionFactor => float(),
-          :baseUnitDescription => String.t(),
-          :displayQuantity => float(),
-          :tieredRates => list(GoogleApi.CloudBilling.V1.Model.TierRate.t()),
-          :usageUnit => String.t(),
-          :usageUnitDescription => String.t()
+          :baseUnit => String.t() | nil,
+          :baseUnitConversionFactor => float() | nil,
+          :baseUnitDescription => String.t() | nil,
+          :displayQuantity => float() | nil,
+          :tieredRates => list(GoogleApi.CloudBilling.V1.Model.TierRate.t()) | nil,
+          :usageUnit => String.t() | nil,
+          :usageUnitDescription => String.t() | nil
         }
 
   field(:baseUnit)

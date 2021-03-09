@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAccountName => String.t(),
-          :billingEnabled => boolean(),
-          :name => String.t(),
-          :projectId => String.t()
+          :billingAccountName => String.t() | nil,
+          :billingEnabled => boolean() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:billingAccountName)

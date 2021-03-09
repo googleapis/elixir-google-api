@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBilling.V1.Model.AggregationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregationCount => integer(),
-          :aggregationInterval => String.t(),
-          :aggregationLevel => String.t()
+          :aggregationCount => integer() | nil,
+          :aggregationInterval => String.t() | nil,
+          :aggregationLevel => String.t() | nil
         }
 
   field(:aggregationCount)

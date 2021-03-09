@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.GeoTaxonomy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regions => list(String.t()),
-          :type => String.t()
+          :regions => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:regions, type: :list)

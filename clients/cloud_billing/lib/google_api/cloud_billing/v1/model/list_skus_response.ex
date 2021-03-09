@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListSkusResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :skus => list(GoogleApi.CloudBilling.V1.Model.Sku.t())
+          :nextPageToken => String.t() | nil,
+          :skus => list(GoogleApi.CloudBilling.V1.Model.Sku.t()) | nil
         }
 
   field(:nextPageToken)

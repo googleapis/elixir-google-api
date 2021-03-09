@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.Category do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceFamily => String.t(),
-          :resourceGroup => String.t(),
-          :serviceDisplayName => String.t(),
-          :usageType => String.t()
+          :resourceFamily => String.t() | nil,
+          :resourceGroup => String.t() | nil,
+          :serviceDisplayName => String.t() | nil,
+          :usageType => String.t() | nil
         }
 
   field(:resourceFamily)

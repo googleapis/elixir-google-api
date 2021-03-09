@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudBilling.V1.Model.PricingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregationInfo => GoogleApi.CloudBilling.V1.Model.AggregationInfo.t(),
-          :currencyConversionRate => float(),
-          :effectiveTime => DateTime.t(),
-          :pricingExpression => GoogleApi.CloudBilling.V1.Model.PricingExpression.t(),
-          :summary => String.t()
+          :aggregationInfo => GoogleApi.CloudBilling.V1.Model.AggregationInfo.t() | nil,
+          :currencyConversionRate => float() | nil,
+          :effectiveTime => DateTime.t() | nil,
+          :pricingExpression => GoogleApi.CloudBilling.V1.Model.PricingExpression.t() | nil,
+          :summary => String.t() | nil
         }
 
   field(:aggregationInfo, as: GoogleApi.CloudBilling.V1.Model.AggregationInfo)

@@ -55,6 +55,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   @spec cloudbilling_services_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudbilling_services_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -119,6 +120,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   @spec cloudbilling_services_skus_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListSkusResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudbilling_services_skus_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
