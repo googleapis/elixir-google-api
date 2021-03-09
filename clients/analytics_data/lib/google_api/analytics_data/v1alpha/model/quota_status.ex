@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumed => integer(),
-          :remaining => integer()
+          :consumed => integer() | nil,
+          :remaining => integer() | nil
         }
 
   field(:consumed)

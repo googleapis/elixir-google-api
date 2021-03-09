@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.BatchRunReportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reports => list(GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse.t())
+          :reports => list(GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse.t()) | nil
         }
 
   field(:reports, as: GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse, type: :list)

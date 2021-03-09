@@ -29,9 +29,10 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.CohortSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cohortReportSettings => GoogleApi.AnalyticsData.V1alpha.Model.CohortReportSettings.t(),
-          :cohorts => list(GoogleApi.AnalyticsData.V1alpha.Model.Cohort.t()),
-          :cohortsRange => GoogleApi.AnalyticsData.V1alpha.Model.CohortsRange.t()
+          :cohortReportSettings =>
+            GoogleApi.AnalyticsData.V1alpha.Model.CohortReportSettings.t() | nil,
+          :cohorts => list(GoogleApi.AnalyticsData.V1alpha.Model.Cohort.t()) | nil,
+          :cohortsRange => GoogleApi.AnalyticsData.V1alpha.Model.CohortsRange.t() | nil
         }
 
   field(:cohortReportSettings, as: GoogleApi.AnalyticsData.V1alpha.Model.CohortReportSettings)

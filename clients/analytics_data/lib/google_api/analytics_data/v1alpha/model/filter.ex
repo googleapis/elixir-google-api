@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Filter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :betweenFilter => GoogleApi.AnalyticsData.V1alpha.Model.BetweenFilter.t(),
-          :fieldName => String.t(),
-          :inListFilter => GoogleApi.AnalyticsData.V1alpha.Model.InListFilter.t(),
-          :numericFilter => GoogleApi.AnalyticsData.V1alpha.Model.NumericFilter.t(),
-          :stringFilter => GoogleApi.AnalyticsData.V1alpha.Model.StringFilter.t()
+          :betweenFilter => GoogleApi.AnalyticsData.V1alpha.Model.BetweenFilter.t() | nil,
+          :fieldName => String.t() | nil,
+          :inListFilter => GoogleApi.AnalyticsData.V1alpha.Model.InListFilter.t() | nil,
+          :numericFilter => GoogleApi.AnalyticsData.V1alpha.Model.NumericFilter.t() | nil,
+          :stringFilter => GoogleApi.AnalyticsData.V1alpha.Model.StringFilter.t() | nil
         }
 
   field(:betweenFilter, as: GoogleApi.AnalyticsData.V1alpha.Model.BetweenFilter)

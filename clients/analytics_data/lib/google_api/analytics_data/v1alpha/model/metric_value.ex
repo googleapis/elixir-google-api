@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.MetricValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :value => String.t()
+          :value => String.t() | nil
         }
 
   field(:value)

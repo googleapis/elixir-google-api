@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.BatchRunReportsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entity => GoogleApi.AnalyticsData.V1alpha.Model.Entity.t(),
-          :requests => list(GoogleApi.AnalyticsData.V1alpha.Model.RunReportRequest.t())
+          :entity => GoogleApi.AnalyticsData.V1alpha.Model.Entity.t() | nil,
+          :requests => list(GoogleApi.AnalyticsData.V1alpha.Model.RunReportRequest.t()) | nil
         }
 
   field(:entity, as: GoogleApi.AnalyticsData.V1alpha.Model.Entity)

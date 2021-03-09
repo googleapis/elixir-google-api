@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataLossFromOtherRow => boolean()
+          :dataLossFromOtherRow => boolean() | nil
         }
 
   field(:dataLossFromOtherRow)

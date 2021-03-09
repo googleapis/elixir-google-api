@@ -29,8 +29,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader do
 
   @type t :: %__MODULE__{
           :pivotDimensionHeaders =>
-            list(GoogleApi.AnalyticsData.V1alpha.Model.PivotDimensionHeader.t()),
-          :rowCount => integer()
+            list(GoogleApi.AnalyticsData.V1alpha.Model.PivotDimensionHeader.t()) | nil,
+          :rowCount => integer() | nil
         }
 
   field(:pivotDimensionHeaders,

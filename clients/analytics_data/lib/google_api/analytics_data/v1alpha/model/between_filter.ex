@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.BetweenFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fromValue => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t(),
-          :toValue => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t()
+          :fromValue => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t() | nil,
+          :toValue => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t() | nil
         }
 
   field(:fromValue, as: GoogleApi.AnalyticsData.V1alpha.Model.NumericValue)

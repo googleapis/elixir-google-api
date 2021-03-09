@@ -28,8 +28,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionValues => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue.t()),
-          :metricValues => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricValue.t())
+          :dimensionValues =>
+            list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue.t()) | nil,
+          :metricValues => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricValue.t()) | nil
         }
 
   field(:dimensionValues, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue, type: :list)

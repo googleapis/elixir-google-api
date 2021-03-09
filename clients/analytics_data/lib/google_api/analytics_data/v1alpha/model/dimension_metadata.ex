@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiName => String.t(),
-          :customDefinition => boolean(),
-          :deprecatedApiNames => list(String.t()),
-          :description => String.t(),
-          :uiName => String.t()
+          :apiName => String.t() | nil,
+          :customDefinition => boolean() | nil,
+          :deprecatedApiNames => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :uiName => String.t() | nil
         }
 
   field(:apiName)

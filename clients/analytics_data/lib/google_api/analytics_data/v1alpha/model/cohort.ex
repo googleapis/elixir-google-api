@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Cohort do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateRange => GoogleApi.AnalyticsData.V1alpha.Model.DateRange.t(),
-          :dimension => String.t(),
-          :name => String.t()
+          :dateRange => GoogleApi.AnalyticsData.V1alpha.Model.DateRange.t() | nil,
+          :dimension => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:dateRange, as: GoogleApi.AnalyticsData.V1alpha.Model.DateRange)

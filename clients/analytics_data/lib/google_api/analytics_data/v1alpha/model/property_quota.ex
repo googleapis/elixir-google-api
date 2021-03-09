@@ -30,10 +30,11 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :concurrentRequests => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t(),
-          :serverErrorsPerProjectPerHour => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t(),
-          :tokensPerDay => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t(),
-          :tokensPerHour => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t()
+          :concurrentRequests => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t() | nil,
+          :serverErrorsPerProjectPerHour =>
+            GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t() | nil,
+          :tokensPerDay => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t() | nil,
+          :tokensPerHour => GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus.t() | nil
         }
 
   field(:concurrentRequests, as: GoogleApi.AnalyticsData.V1alpha.Model.QuotaStatus)

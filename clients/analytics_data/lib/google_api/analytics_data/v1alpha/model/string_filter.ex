@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.StringFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :matchType => String.t(),
-          :value => String.t()
+          :caseSensitive => boolean() | nil,
+          :matchType => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:caseSensitive)

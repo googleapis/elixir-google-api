@@ -54,6 +54,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.V1alpha do
   @spec analyticsdata_batch_run_pivot_reports(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.BatchRunPivotReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_batch_run_pivot_reports(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.V1alpha do
   @spec analyticsdata_batch_run_reports(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.BatchRunReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_batch_run_reports(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -174,6 +176,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.V1alpha do
   @spec analyticsdata_run_pivot_report(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_run_pivot_report(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -234,6 +237,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.V1alpha do
   @spec analyticsdata_run_report(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_run_report(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

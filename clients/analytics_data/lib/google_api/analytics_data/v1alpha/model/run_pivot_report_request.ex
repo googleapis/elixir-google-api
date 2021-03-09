@@ -37,17 +37,17 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cohortSpec => GoogleApi.AnalyticsData.V1alpha.Model.CohortSpec.t(),
-          :currencyCode => String.t(),
-          :dateRanges => list(GoogleApi.AnalyticsData.V1alpha.Model.DateRange.t()),
-          :dimensionFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t(),
-          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t()),
-          :entity => GoogleApi.AnalyticsData.V1alpha.Model.Entity.t(),
-          :keepEmptyRows => boolean(),
-          :metricFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t(),
-          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t()),
-          :pivots => list(GoogleApi.AnalyticsData.V1alpha.Model.Pivot.t()),
-          :returnPropertyQuota => boolean()
+          :cohortSpec => GoogleApi.AnalyticsData.V1alpha.Model.CohortSpec.t() | nil,
+          :currencyCode => String.t() | nil,
+          :dateRanges => list(GoogleApi.AnalyticsData.V1alpha.Model.DateRange.t()) | nil,
+          :dimensionFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t() | nil,
+          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t()) | nil,
+          :entity => GoogleApi.AnalyticsData.V1alpha.Model.Entity.t() | nil,
+          :keepEmptyRows => boolean() | nil,
+          :metricFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t() | nil,
+          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t()) | nil,
+          :pivots => list(GoogleApi.AnalyticsData.V1alpha.Model.Pivot.t()) | nil,
+          :returnPropertyQuota => boolean() | nil
         }
 
   field(:cohortSpec, as: GoogleApi.AnalyticsData.V1alpha.Model.CohortSpec)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :propertyId => String.t()
+          :propertyId => String.t() | nil
         }
 
   field(:propertyId)

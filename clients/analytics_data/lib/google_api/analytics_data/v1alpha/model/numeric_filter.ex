@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.NumericFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operation => String.t(),
-          :value => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t()
+          :operation => String.t() | nil,
+          :value => GoogleApi.AnalyticsData.V1alpha.Model.NumericValue.t() | nil
         }
 
   field(:operation)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PivotOrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricName => String.t(),
-          :pivotSelections => list(GoogleApi.AnalyticsData.V1alpha.Model.PivotSelection.t())
+          :metricName => String.t() | nil,
+          :pivotSelections => list(GoogleApi.AnalyticsData.V1alpha.Model.PivotSelection.t()) | nil
         }
 
   field(:metricName)

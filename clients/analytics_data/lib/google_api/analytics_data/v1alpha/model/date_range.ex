@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => String.t(),
-          :name => String.t(),
-          :startDate => String.t()
+          :endDate => String.t() | nil,
+          :name => String.t() | nil,
+          :startDate => String.t() | nil
         }
 
   field(:endDate)
