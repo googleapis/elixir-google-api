@@ -29,9 +29,9 @@ defmodule GoogleApi.Poly.V1.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :relativePath => String.t(),
-          :url => String.t()
+          :contentType => String.t() | nil,
+          :relativePath => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:contentType)

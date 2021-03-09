@@ -29,9 +29,9 @@ defmodule GoogleApi.Poly.V1.Model.ListUserAssetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :totalSize => integer(),
-          :userAssets => list(GoogleApi.Poly.V1.Model.UserAsset.t())
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil,
+          :userAssets => list(GoogleApi.Poly.V1.Model.UserAsset.t()) | nil
         }
 
   field(:nextPageToken)

@@ -40,20 +40,20 @@ defmodule GoogleApi.Poly.V1.Model.Asset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorName => String.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :formats => list(GoogleApi.Poly.V1.Model.Format.t()),
-          :isCurated => boolean(),
-          :license => String.t(),
-          :metadata => String.t(),
-          :name => String.t(),
-          :presentationParams => GoogleApi.Poly.V1.Model.PresentationParams.t(),
-          :remixInfo => GoogleApi.Poly.V1.Model.RemixInfo.t(),
-          :thumbnail => GoogleApi.Poly.V1.Model.File.t(),
-          :updateTime => DateTime.t(),
-          :visibility => String.t()
+          :authorName => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :formats => list(GoogleApi.Poly.V1.Model.Format.t()) | nil,
+          :isCurated => boolean() | nil,
+          :license => String.t() | nil,
+          :metadata => String.t() | nil,
+          :name => String.t() | nil,
+          :presentationParams => GoogleApi.Poly.V1.Model.PresentationParams.t() | nil,
+          :remixInfo => GoogleApi.Poly.V1.Model.RemixInfo.t() | nil,
+          :thumbnail => GoogleApi.Poly.V1.Model.File.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:authorName)

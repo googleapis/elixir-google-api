@@ -30,10 +30,10 @@ defmodule GoogleApi.Poly.V1.Model.Quaternion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :w => float(),
-          :x => float(),
-          :y => float(),
-          :z => float()
+          :w => float() | nil,
+          :x => float() | nil,
+          :y => float() | nil,
+          :z => float() | nil
         }
 
   field(:w)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Poly.V1.Model.Format do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formatComplexity => GoogleApi.Poly.V1.Model.FormatComplexity.t(),
-          :formatType => String.t(),
-          :resources => list(GoogleApi.Poly.V1.Model.File.t()),
-          :root => GoogleApi.Poly.V1.Model.File.t()
+          :formatComplexity => GoogleApi.Poly.V1.Model.FormatComplexity.t() | nil,
+          :formatType => String.t() | nil,
+          :resources => list(GoogleApi.Poly.V1.Model.File.t()) | nil,
+          :root => GoogleApi.Poly.V1.Model.File.t() | nil
         }
 
   field(:formatComplexity, as: GoogleApi.Poly.V1.Model.FormatComplexity)

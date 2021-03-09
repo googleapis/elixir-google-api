@@ -30,10 +30,10 @@ defmodule GoogleApi.Poly.V1.Model.StartAssetImportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetId => String.t(),
-          :assetImportId => String.t(),
-          :assetImportMessages => list(GoogleApi.Poly.V1.Model.AssetImportMessage.t()),
-          :publishUrl => String.t()
+          :assetId => String.t() | nil,
+          :assetImportId => String.t() | nil,
+          :assetImportMessages => list(GoogleApi.Poly.V1.Model.AssetImportMessage.t()) | nil,
+          :publishUrl => String.t() | nil
         }
 
   field(:assetId)

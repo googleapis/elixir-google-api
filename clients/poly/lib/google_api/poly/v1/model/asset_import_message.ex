@@ -30,10 +30,10 @@ defmodule GoogleApi.Poly.V1.Model.AssetImportMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :filePath => String.t(),
-          :imageError => GoogleApi.Poly.V1.Model.ImageError.t(),
-          :objParseError => GoogleApi.Poly.V1.Model.ObjParseError.t()
+          :code => String.t() | nil,
+          :filePath => String.t() | nil,
+          :imageError => GoogleApi.Poly.V1.Model.ImageError.t() | nil,
+          :objParseError => GoogleApi.Poly.V1.Model.ObjParseError.t() | nil
         }
 
   field(:code)
