@@ -31,11 +31,11 @@ defmodule GoogleApi.Webmaster.V3.Model.ApiDataRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clicks => float(),
-          :ctr => float(),
-          :impressions => float(),
-          :keys => list(String.t()),
-          :position => float()
+          :clicks => float() | nil,
+          :ctr => float() | nil,
+          :impressions => float() | nil,
+          :keys => list(String.t()) | nil,
+          :position => float() | nil
         }
 
   field(:clicks)

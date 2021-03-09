@@ -35,15 +35,15 @@ defmodule GoogleApi.Webmaster.V3.Model.WmxSitemap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => list(GoogleApi.Webmaster.V3.Model.WmxSitemapContent.t()),
-          :errors => String.t(),
-          :isPending => boolean(),
-          :isSitemapsIndex => boolean(),
-          :lastDownloaded => DateTime.t(),
-          :lastSubmitted => DateTime.t(),
-          :path => String.t(),
-          :type => String.t(),
-          :warnings => String.t()
+          :contents => list(GoogleApi.Webmaster.V3.Model.WmxSitemapContent.t()) | nil,
+          :errors => String.t() | nil,
+          :isPending => boolean() | nil,
+          :isSitemapsIndex => boolean() | nil,
+          :lastDownloaded => DateTime.t() | nil,
+          :lastSubmitted => DateTime.t() | nil,
+          :path => String.t() | nil,
+          :type => String.t() | nil,
+          :warnings => String.t() | nil
         }
 
   field(:contents, as: GoogleApi.Webmaster.V3.Model.WmxSitemapContent, type: :list)

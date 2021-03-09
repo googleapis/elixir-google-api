@@ -29,9 +29,9 @@ defmodule GoogleApi.Webmaster.V3.Model.ApiDimensionFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :expression => String.t(),
-          :operator => String.t()
+          :dimension => String.t() | nil,
+          :expression => String.t() | nil,
+          :operator => String.t() | nil
         }
 
   field(:dimension)

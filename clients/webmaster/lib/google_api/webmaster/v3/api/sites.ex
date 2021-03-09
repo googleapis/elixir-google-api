@@ -48,7 +48,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   *   `{:error, info}` on failure
   """
   @spec webmasters_sites_add(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def webmasters_sites_add(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   *   `{:error, info}` on failure
   """
   @spec webmasters_sites_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def webmasters_sites_delete(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -146,7 +146,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   *   `{:error, info}` on failure
   """
   @spec webmasters_sites_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Webmaster.V3.Model.WmxSite.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Webmaster.V3.Model.WmxSite.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def webmasters_sites_get(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -196,6 +199,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   @spec webmasters_sites_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.SitesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def webmasters_sites_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
