@@ -30,10 +30,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.DefaultResources do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostingSite => String.t(),
-          :locationId => String.t(),
-          :realtimeDatabaseInstance => String.t(),
-          :storageBucket => String.t()
+          :hostingSite => String.t() | nil,
+          :locationId => String.t() | nil,
+          :realtimeDatabaseInstance => String.t() | nil,
+          :storageBucket => String.t() | nil
         }
 
   field(:hostingSite)

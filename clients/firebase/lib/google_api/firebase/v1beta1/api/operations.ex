@@ -54,6 +54,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Operations do
   @spec firebase_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firebase_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

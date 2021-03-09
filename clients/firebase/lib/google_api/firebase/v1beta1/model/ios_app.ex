@@ -32,12 +32,12 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appId => String.t(),
-          :appStoreId => String.t(),
-          :bundleId => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :projectId => String.t()
+          :appId => String.t() | nil,
+          :appStoreId => String.t() | nil,
+          :bundleId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:appId)

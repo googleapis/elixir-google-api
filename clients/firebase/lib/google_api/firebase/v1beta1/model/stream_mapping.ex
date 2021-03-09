@@ -29,9 +29,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StreamMapping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :app => String.t(),
-          :measurementId => String.t(),
-          :streamId => String.t()
+          :app => String.t() | nil,
+          :measurementId => String.t() | nil,
+          :streamId => String.t() | nil
         }
 
   field(:app)

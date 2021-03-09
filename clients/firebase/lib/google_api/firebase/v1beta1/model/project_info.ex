@@ -29,9 +29,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ProjectInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :locationId => String.t(),
-          :project => String.t()
+          :displayName => String.t() | nil,
+          :locationId => String.t() | nil,
+          :project => String.t() | nil
         }
 
   field(:displayName)

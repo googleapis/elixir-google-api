@@ -31,11 +31,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appId => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :namespace => String.t(),
-          :platform => String.t()
+          :appId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :namespace => String.t() | nil,
+          :platform => String.t() | nil
         }
 
   field(:appId)

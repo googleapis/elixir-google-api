@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AnalyticsDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsProperty => GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty.t(),
-          :streamMappings => list(GoogleApi.Firebase.V1beta1.Model.StreamMapping.t())
+          :analyticsProperty => GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty.t() | nil,
+          :streamMappings => list(GoogleApi.Firebase.V1beta1.Model.StreamMapping.t()) | nil
         }
 
   field(:analyticsProperty, as: GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty)

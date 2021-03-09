@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :id => String.t()
+          :displayName => String.t() | nil,
+          :id => String.t() | nil
         }
 
   field(:displayName)
