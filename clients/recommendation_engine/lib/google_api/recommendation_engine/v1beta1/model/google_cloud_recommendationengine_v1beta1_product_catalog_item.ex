@@ -34,19 +34,22 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableQuantity => String.t(),
-          :canonicalProductUri => String.t(),
-          :costs => map(),
-          :currencyCode => String.t(),
+          :availableQuantity => String.t() | nil,
+          :canonicalProductUri => String.t() | nil,
+          :costs => map() | nil,
+          :currencyCode => String.t() | nil,
           :exactPrice =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice.t()
+            | nil,
           :images =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1Image.t()
-            ),
+            )
+            | nil,
           :priceRange =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange.t(),
-          :stockState => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange.t()
+            | nil,
+          :stockState => String.t() | nil
         }
 
   field(:availableQuantity)

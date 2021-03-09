@@ -31,13 +31,17 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
 
   @type t :: %__MODULE__{
           :bigQuerySource =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1BigQuerySource.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1BigQuerySource.t()
+            | nil,
           :catalogInlineSource =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogInlineSource.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogInlineSource.t()
+            | nil,
           :gcsSource =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1GcsSource.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1GcsSource.t()
+            | nil,
           :userEventInlineSource =>
             GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1UserEventInlineSource.t()
+            | nil
         }
 
   field(:bigQuerySource,

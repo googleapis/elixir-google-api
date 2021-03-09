@@ -31,6 +31,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItem.t()
             )
+            | nil
         }
 
   field(:catalogItems,

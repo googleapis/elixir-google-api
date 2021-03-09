@@ -31,11 +31,11 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperatio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.RecommendationEngine.V1beta1.Model.GoogleRpcStatus.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.RecommendationEngine.V1beta1.Model.GoogleRpcStatus.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

@@ -33,14 +33,17 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
 
   @type t :: %__MODULE__{
           :eventDetail =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1EventDetail.t(),
-          :eventSource => String.t(),
-          :eventTime => DateTime.t(),
-          :eventType => String.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1EventDetail.t()
+            | nil,
+          :eventSource => String.t() | nil,
+          :eventTime => DateTime.t() | nil,
+          :eventType => String.t() | nil,
           :productEventDetail =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductEventDetail.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductEventDetail.t()
+            | nil,
           :userInfo =>
             GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1UserInfo.t()
+            | nil
         }
 
   field(:eventDetail,

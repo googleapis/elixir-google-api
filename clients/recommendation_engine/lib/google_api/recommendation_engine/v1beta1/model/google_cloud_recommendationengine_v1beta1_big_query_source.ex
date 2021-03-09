@@ -31,11 +31,11 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSchema => String.t(),
-          :datasetId => String.t(),
-          :gcsStagingDir => String.t(),
-          :projectId => String.t(),
-          :tableId => String.t()
+          :dataSchema => String.t() | nil,
+          :datasetId => String.t() | nil,
+          :gcsStagingDir => String.t() | nil,
+          :projectId => String.t() | nil,
+          :tableId => String.t() | nil
         }
 
   field(:dataSchema)

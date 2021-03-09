@@ -33,12 +33,13 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
 
   @type t :: %__MODULE__{
           :eventAttributes =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMap.t(),
-          :experimentIds => list(String.t()),
-          :pageViewId => String.t(),
-          :recommendationToken => String.t(),
-          :referrerUri => String.t(),
-          :uri => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMap.t()
+            | nil,
+          :experimentIds => list(String.t()) | nil,
+          :pageViewId => String.t() | nil,
+          :recommendationToken => String.t() | nil,
+          :referrerUri => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:eventAttributes,

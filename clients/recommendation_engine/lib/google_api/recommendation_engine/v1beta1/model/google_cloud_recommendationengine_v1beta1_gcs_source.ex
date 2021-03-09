@@ -28,8 +28,8 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputUris => list(String.t()),
-          :jsonSchema => String.t()
+          :inputUris => list(String.t()) | nil,
+          :jsonSchema => String.t() | nil
         }
 
   field(:inputUris, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :userEventRejoinScope => String.t()
+          :userEventRejoinScope => String.t() | nil
         }
 
   field(:userEventRejoinScope)
