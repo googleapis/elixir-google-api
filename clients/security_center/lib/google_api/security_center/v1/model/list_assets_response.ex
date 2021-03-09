@@ -30,10 +30,11 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListAssetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listAssetsResults => list(GoogleApi.SecurityCenter.V1.Model.ListAssetsResult.t()),
-          :nextPageToken => String.t(),
-          :readTime => DateTime.t(),
-          :totalSize => integer()
+          :listAssetsResults =>
+            list(GoogleApi.SecurityCenter.V1.Model.ListAssetsResult.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:listAssetsResults, as: GoogleApi.SecurityCenter.V1.Model.ListAssetsResult, type: :list)

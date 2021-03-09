@@ -27,7 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.StreamingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t()
+          :filter => String.t() | nil
         }
 
   field(:filter)

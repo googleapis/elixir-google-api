@@ -30,10 +30,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupByResults => list(GoogleApi.SecurityCenter.V1.Model.GroupResult.t()),
-          :nextPageToken => String.t(),
-          :readTime => DateTime.t(),
-          :totalSize => integer()
+          :groupByResults => list(GoogleApi.SecurityCenter.V1.Model.GroupResult.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:groupByResults, as: GoogleApi.SecurityCenter.V1.Model.GroupResult, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SetFindingStateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :startTime => DateTime.t(),
-          :state => String.t()
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:startTime, as: DateTime)

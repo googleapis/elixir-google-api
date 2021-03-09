@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListAssetsResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :asset => GoogleApi.SecurityCenter.V1.Model.Asset.t(),
-          :stateChange => String.t()
+          :asset => GoogleApi.SecurityCenter.V1.Model.Asset.t() | nil,
+          :stateChange => String.t() | nil
         }
 
   field(:asset, as: GoogleApi.SecurityCenter.V1.Model.Asset)

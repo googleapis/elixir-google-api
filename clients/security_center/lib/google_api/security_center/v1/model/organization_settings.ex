@@ -29,9 +29,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.OrganizationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetDiscoveryConfig => GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig.t(),
-          :enableAssetDiscovery => boolean(),
-          :name => String.t()
+          :assetDiscoveryConfig =>
+            GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig.t() | nil,
+          :enableAssetDiscovery => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:assetDiscoveryConfig, as: GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig)
