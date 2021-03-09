@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTasks.V2.Model.AppEngineRouting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :instance => String.t(),
-          :service => String.t(),
-          :version => String.t()
+          :host => String.t() | nil,
+          :instance => String.t() | nil,
+          :service => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:host)

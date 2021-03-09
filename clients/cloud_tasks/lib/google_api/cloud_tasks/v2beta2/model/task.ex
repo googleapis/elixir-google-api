@@ -33,13 +33,14 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Task do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineHttpRequest => GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest.t(),
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :pullMessage => GoogleApi.CloudTasks.V2beta2.Model.PullMessage.t(),
-          :scheduleTime => DateTime.t(),
-          :status => GoogleApi.CloudTasks.V2beta2.Model.TaskStatus.t(),
-          :view => String.t()
+          :appEngineHttpRequest =>
+            GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :pullMessage => GoogleApi.CloudTasks.V2beta2.Model.PullMessage.t() | nil,
+          :scheduleTime => DateTime.t() | nil,
+          :status => GoogleApi.CloudTasks.V2beta2.Model.TaskStatus.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:appEngineHttpRequest, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest)

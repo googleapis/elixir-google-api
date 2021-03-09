@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.RenewLeaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :leaseDuration => String.t(),
-          :responseView => String.t(),
-          :scheduleTime => DateTime.t()
+          :leaseDuration => String.t() | nil,
+          :responseView => String.t() | nil,
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:leaseDuration)

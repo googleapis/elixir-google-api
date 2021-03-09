@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tasks => list(GoogleApi.CloudTasks.V2beta2.Model.Task.t())
+          :tasks => list(GoogleApi.CloudTasks.V2beta2.Model.Task.t()) | nil
         }
 
   field(:tasks, as: GoogleApi.CloudTasks.V2beta2.Model.Task, type: :list)

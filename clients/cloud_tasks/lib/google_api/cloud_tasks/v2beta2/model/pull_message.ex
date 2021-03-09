@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.PullMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => String.t(),
-          :tag => String.t()
+          :payload => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:payload)

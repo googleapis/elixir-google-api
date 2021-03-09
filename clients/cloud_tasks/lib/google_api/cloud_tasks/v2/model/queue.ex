@@ -33,13 +33,14 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineRoutingOverride => GoogleApi.CloudTasks.V2.Model.AppEngineRouting.t(),
-          :name => String.t(),
-          :purgeTime => DateTime.t(),
-          :rateLimits => GoogleApi.CloudTasks.V2.Model.RateLimits.t(),
-          :retryConfig => GoogleApi.CloudTasks.V2.Model.RetryConfig.t(),
-          :stackdriverLoggingConfig => GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig.t(),
-          :state => String.t()
+          :appEngineRoutingOverride => GoogleApi.CloudTasks.V2.Model.AppEngineRouting.t() | nil,
+          :name => String.t() | nil,
+          :purgeTime => DateTime.t() | nil,
+          :rateLimits => GoogleApi.CloudTasks.V2.Model.RateLimits.t() | nil,
+          :retryConfig => GoogleApi.CloudTasks.V2.Model.RetryConfig.t() | nil,
+          :stackdriverLoggingConfig =>
+            GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:appEngineRoutingOverride, as: GoogleApi.CloudTasks.V2.Model.AppEngineRouting)

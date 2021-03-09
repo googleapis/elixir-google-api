@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.TaskStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attemptDispatchCount => integer(),
-          :attemptResponseCount => integer(),
-          :firstAttemptStatus => GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t(),
-          :lastAttemptStatus => GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t()
+          :attemptDispatchCount => integer() | nil,
+          :attemptResponseCount => integer() | nil,
+          :firstAttemptStatus => GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t() | nil,
+          :lastAttemptStatus => GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t() | nil
         }
 
   field(:attemptDispatchCount)

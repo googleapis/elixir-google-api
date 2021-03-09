@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.AcknowledgeTaskRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :scheduleTime => DateTime.t()
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:scheduleTime, as: DateTime)

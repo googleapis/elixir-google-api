@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.CloudTasks.V2beta2.Model.Policy.t()
+          :policy => GoogleApi.CloudTasks.V2beta2.Model.Policy.t() | nil
         }
 
   field(:policy, as: GoogleApi.CloudTasks.V2beta2.Model.Policy)

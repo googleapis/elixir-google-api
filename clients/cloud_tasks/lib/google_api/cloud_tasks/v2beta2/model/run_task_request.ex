@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responseView => String.t()
+          :responseView => String.t() | nil
         }
 
   field(:responseView)
