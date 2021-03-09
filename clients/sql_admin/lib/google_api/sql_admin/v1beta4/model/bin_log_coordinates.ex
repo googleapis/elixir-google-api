@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binLogFileName => String.t(),
-          :binLogPosition => String.t(),
-          :kind => String.t()
+          :binLogFileName => String.t() | nil,
+          :binLogPosition => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:binLogFileName)

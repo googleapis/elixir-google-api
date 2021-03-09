@@ -34,14 +34,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caCertificate => String.t(),
-          :clientCertificate => String.t(),
-          :clientKey => String.t(),
-          :dumpFilePath => String.t(),
-          :hostPort => String.t(),
-          :kind => String.t(),
-          :password => String.t(),
-          :username => String.t()
+          :caCertificate => String.t() | nil,
+          :clientCertificate => String.t() | nil,
+          :clientKey => String.t() | nil,
+          :dumpFilePath => String.t() | nil,
+          :hostPort => String.t() | nil,
+          :kind => String.t() | nil,
+          :password => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:caCertificate)

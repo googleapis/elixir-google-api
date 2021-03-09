@@ -31,11 +31,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binLogCoordinates => GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t(),
-          :destinationInstanceName => String.t(),
-          :kind => String.t(),
-          :pitrTimestampMs => String.t(),
-          :pointInTime => DateTime.t()
+          :binLogCoordinates => GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t() | nil,
+          :destinationInstanceName => String.t() | nil,
+          :kind => String.t() | nil,
+          :pitrTimestampMs => String.t() | nil,
+          :pointInTime => DateTime.t() | nil
         }
 
   field(:binLogCoordinates, as: GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates)

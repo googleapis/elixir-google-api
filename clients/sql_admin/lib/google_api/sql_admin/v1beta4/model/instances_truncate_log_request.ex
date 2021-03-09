@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :truncateLogContext => GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.t()
+          :truncateLogContext => GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.t() | nil
         }
 
   field(:truncateLogContext, as: GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext)

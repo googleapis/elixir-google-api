@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupRunId => String.t(),
-          :instanceId => String.t(),
-          :kind => String.t(),
-          :project => String.t()
+          :backupRunId => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :kind => String.t() | nil,
+          :project => String.t() | nil
         }
 
   field(:backupRunId)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   @moduledoc """
-  An Operation resource. For successful operations that return an Operation resource, only the fields relevant to the operation are populated in the resource. Next field: 18
+  An Operation resource. For successful operations that return an Operation resource, only the fields relevant to the operation are populated in the resource.
 
   ## Attributes
 
@@ -42,22 +42,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupContext => GoogleApi.SQLAdmin.V1beta4.Model.BackupContext.t(),
-          :endTime => DateTime.t(),
-          :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t(),
-          :exportContext => GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t(),
-          :importContext => GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t(),
-          :insertTime => DateTime.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :operationType => String.t(),
-          :selfLink => String.t(),
-          :startTime => DateTime.t(),
-          :status => String.t(),
-          :targetId => String.t(),
-          :targetLink => String.t(),
-          :targetProject => String.t(),
-          :user => String.t()
+          :backupContext => GoogleApi.SQLAdmin.V1beta4.Model.BackupContext.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t() | nil,
+          :exportContext => GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t() | nil,
+          :importContext => GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t() | nil,
+          :insertTime => DateTime.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :operationType => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => String.t() | nil,
+          :targetId => String.t() | nil,
+          :targetLink => String.t() | nil,
+          :targetProject => String.t() | nil,
+          :user => String.t() | nil
         }
 
   field(:backupContext, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupContext)

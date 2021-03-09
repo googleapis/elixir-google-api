@@ -61,6 +61,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_add_server_ca(
         connection,
@@ -129,6 +130,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_clone(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_clone(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -191,6 +193,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_delete(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -259,6 +262,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_demote_master(
         connection,
@@ -328,6 +332,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_export(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -391,6 +396,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_failover(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_failover(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -453,6 +459,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_get(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -515,6 +522,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_import(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_import(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -577,6 +585,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -640,6 +649,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -711,6 +721,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_list_server_cas(
         connection,
@@ -781,6 +792,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_patch(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -849,6 +861,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_promote_replica(
         connection,
@@ -922,6 +935,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_reset_ssl_config(
         connection,
@@ -989,6 +1003,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_restart(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_restart(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1057,6 +1072,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_restore_backup(
         connection,
@@ -1132,6 +1148,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_rotate_server_ca(
         connection,
@@ -1206,6 +1223,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_start_replica(
         connection,
@@ -1279,6 +1297,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_stop_replica(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1311,7 +1330,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Truncate MySQL general and slow query log tables
+  Truncate MySQL general and slow query log tables MySQL only.
 
   ## Parameters
 
@@ -1347,6 +1366,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_truncate_log(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1410,6 +1430,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @spec sql_instances_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_instances_update(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

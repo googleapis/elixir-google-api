@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :selectQuery => String.t()
+          :selectQuery => String.t() | nil
         }
 
   field(:selectQuery)

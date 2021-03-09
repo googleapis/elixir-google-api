@@ -55,6 +55,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
   @spec sql_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_operations_get(connection, project, operation, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,6 +119,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
   @spec sql_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_operations_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

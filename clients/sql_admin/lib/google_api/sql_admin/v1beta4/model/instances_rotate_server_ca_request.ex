@@ -27,7 +27,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rotateServerCaContext => GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext.t()
+          :rotateServerCaContext =>
+            GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext.t() | nil
         }
 
   field(:rotateServerCaContext, as: GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext)

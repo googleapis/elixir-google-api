@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access_token => String.t(),
-          :public_key => String.t()
+          :access_token => String.t() | nil,
+          :public_key => String.t() | nil
         }
 
   field(:access_token)

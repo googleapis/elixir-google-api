@@ -50,31 +50,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activationPolicy => String.t(),
-          :activeDirectoryConfig => GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t(),
-          :authorizedGaeApplications => list(String.t()),
-          :availabilityType => String.t(),
-          :backupConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t(),
-          :collation => String.t(),
-          :crashSafeReplicationEnabled => boolean(),
-          :dataDiskSizeGb => String.t(),
-          :dataDiskType => String.t(),
-          :databaseFlags => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t()),
-          :databaseReplicationEnabled => boolean(),
+          :activationPolicy => String.t() | nil,
+          :activeDirectoryConfig =>
+            GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t() | nil,
+          :authorizedGaeApplications => list(String.t()) | nil,
+          :availabilityType => String.t() | nil,
+          :backupConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t() | nil,
+          :collation => String.t() | nil,
+          :crashSafeReplicationEnabled => boolean() | nil,
+          :dataDiskSizeGb => String.t() | nil,
+          :dataDiskType => String.t() | nil,
+          :databaseFlags => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t()) | nil,
+          :databaseReplicationEnabled => boolean() | nil,
           :denyMaintenancePeriods =>
-            list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t()),
-          :insightsConfig => GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig.t(),
-          :ipConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t(),
-          :kind => String.t(),
-          :locationPreference => GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t(),
-          :maintenanceWindow => GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t(),
-          :pricingPlan => String.t(),
-          :replicationType => String.t(),
-          :settingsVersion => String.t(),
-          :storageAutoResize => boolean(),
-          :storageAutoResizeLimit => String.t(),
-          :tier => String.t(),
-          :userLabels => map()
+            list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t()) | nil,
+          :insightsConfig => GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig.t() | nil,
+          :ipConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t() | nil,
+          :kind => String.t() | nil,
+          :locationPreference => GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t() | nil,
+          :maintenanceWindow => GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t() | nil,
+          :pricingPlan => String.t() | nil,
+          :replicationType => String.t() | nil,
+          :settingsVersion => String.t() | nil,
+          :storageAutoResize => boolean() | nil,
+          :storageAutoResizeLimit => String.t() | nil,
+          :tier => String.t() | nil,
+          :userLabels => map() | nil
         }
 
   field(:activationPolicy)

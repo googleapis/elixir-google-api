@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncrypti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certPath => String.t(),
-          :pvkPassword => String.t(),
-          :pvkPath => String.t()
+          :certPath => String.t() | nil,
+          :pvkPassword => String.t() | nil,
+          :pvkPath => String.t() | nil
         }
 
   field(:certPath)

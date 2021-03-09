@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert, type: :list)

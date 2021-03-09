@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :retainedBackups => integer(),
-          :retentionUnit => String.t()
+          :retainedBackups => integer() | nil,
+          :retentionUnit => String.t() | nil
         }
 
   field(:retainedBackups)

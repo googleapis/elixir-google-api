@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizedNetworks => list(GoogleApi.SQLAdmin.V1beta4.Model.AclEntry.t()),
-          :ipv4Enabled => boolean(),
-          :privateNetwork => String.t(),
-          :requireSsl => boolean()
+          :authorizedNetworks => list(GoogleApi.SQLAdmin.V1beta4.Model.AclEntry.t()) | nil,
+          :ipv4Enabled => boolean() | nil,
+          :privateNetwork => String.t() | nil,
+          :requireSsl => boolean() | nil
         }
 
   field(:authorizedNetworks, as: GoogleApi.SQLAdmin.V1beta4.Model.AclEntry, type: :list)

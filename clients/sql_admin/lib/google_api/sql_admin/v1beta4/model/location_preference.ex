@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :followGaeApplication => String.t(),
-          :kind => String.t(),
-          :secondaryZone => String.t(),
-          :zone => String.t()
+          :followGaeApplication => String.t() | nil,
+          :kind => String.t() | nil,
+          :secondaryZone => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:followGaeApplication)

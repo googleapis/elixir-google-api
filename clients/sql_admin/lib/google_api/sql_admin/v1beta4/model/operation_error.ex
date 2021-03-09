@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :kind => String.t(),
-          :message => String.t()
+          :code => String.t() | nil,
+          :kind => String.t() | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

@@ -37,17 +37,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caCertificate => String.t(),
-          :clientCertificate => String.t(),
-          :clientKey => String.t(),
-          :connectRetryInterval => integer(),
-          :dumpFilePath => String.t(),
-          :kind => String.t(),
-          :masterHeartbeatPeriod => String.t(),
-          :password => String.t(),
-          :sslCipher => String.t(),
-          :username => String.t(),
-          :verifyServerCertificate => boolean()
+          :caCertificate => String.t() | nil,
+          :clientCertificate => String.t() | nil,
+          :clientKey => String.t() | nil,
+          :connectRetryInterval => integer() | nil,
+          :dumpFilePath => String.t() | nil,
+          :kind => String.t() | nil,
+          :masterHeartbeatPeriod => String.t() | nil,
+          :password => String.t() | nil,
+          :sslCipher => String.t() | nil,
+          :username => String.t() | nil,
+          :verifyServerCertificate => boolean() | nil
         }
 
   field(:caCertificate)

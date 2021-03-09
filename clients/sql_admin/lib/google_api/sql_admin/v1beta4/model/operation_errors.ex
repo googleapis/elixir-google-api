@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t()),
-          :kind => String.t()
+          :errors => list(GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:errors, as: GoogleApi.SQLAdmin.V1beta4.Model.OperationError, type: :list)

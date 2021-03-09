@@ -28,9 +28,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :mysqlReplicaConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration.t()
+            GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration.t() | nil
         }
 
   field(:kind)

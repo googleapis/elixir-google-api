@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloneContext => GoogleApi.SQLAdmin.V1beta4.Model.CloneContext.t()
+          :cloneContext => GoogleApi.SQLAdmin.V1beta4.Model.CloneContext.t() | nil
         }
 
   field(:cloneContext, as: GoogleApi.SQLAdmin.V1beta4.Model.CloneContext)

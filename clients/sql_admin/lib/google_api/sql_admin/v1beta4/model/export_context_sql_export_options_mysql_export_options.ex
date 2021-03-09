@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :masterData => integer()
+          :masterData => integer() | nil
         }
 
   field(:masterData)

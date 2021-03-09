@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :demoteMasterContext => GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext.t()
+          :demoteMasterContext => GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext.t() | nil
         }
 
   field(:demoteMasterContext, as: GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext)

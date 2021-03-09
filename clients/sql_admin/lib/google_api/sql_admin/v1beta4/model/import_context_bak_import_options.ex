@@ -29,6 +29,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions do
   @type t :: %__MODULE__{
           :encryptionOptions =>
             GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncryptionOptions.t()
+            | nil
         }
 
   field(:encryptionOptions,

@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certInfo => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t(),
-          :certPrivateKey => String.t()
+          :certInfo => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil,
+          :certPrivateKey => String.t() | nil
         }
 
   field(:certInfo, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)

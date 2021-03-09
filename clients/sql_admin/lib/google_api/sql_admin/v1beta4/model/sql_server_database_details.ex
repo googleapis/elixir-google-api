@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlServerDatabaseDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compatibilityLevel => integer(),
-          :recoveryModel => String.t()
+          :compatibilityLevel => integer() | nil,
+          :recoveryModel => String.t() | nil
         }
 
   field(:compatibilityLevel)
