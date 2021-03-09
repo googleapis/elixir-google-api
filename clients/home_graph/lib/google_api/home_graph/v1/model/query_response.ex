@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => GoogleApi.HomeGraph.V1.Model.QueryResponsePayload.t(),
-          :requestId => String.t()
+          :payload => GoogleApi.HomeGraph.V1.Model.QueryResponsePayload.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:payload, as: GoogleApi.HomeGraph.V1.Model.QueryResponsePayload)

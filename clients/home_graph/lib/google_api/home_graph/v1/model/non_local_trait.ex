@@ -27,7 +27,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.NonLocalTrait do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :trait => String.t()
+          :trait => String.t() | nil
         }
 
   field(:trait)

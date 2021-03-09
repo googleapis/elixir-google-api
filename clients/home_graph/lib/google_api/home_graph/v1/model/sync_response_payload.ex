@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.SyncResponsePayload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUserId => String.t(),
-          :devices => list(GoogleApi.HomeGraph.V1.Model.Device.t())
+          :agentUserId => String.t() | nil,
+          :devices => list(GoogleApi.HomeGraph.V1.Model.Device.t()) | nil
         }
 
   field(:agentUserId)

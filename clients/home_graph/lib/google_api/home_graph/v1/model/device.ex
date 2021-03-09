@@ -39,19 +39,19 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :customData => map(),
-          :deviceInfo => GoogleApi.HomeGraph.V1.Model.DeviceInfo.t(),
-          :id => String.t(),
-          :name => GoogleApi.HomeGraph.V1.Model.DeviceNames.t(),
-          :nonLocalTraits => list(GoogleApi.HomeGraph.V1.Model.NonLocalTrait.t()),
-          :notificationSupportedByAgent => boolean(),
-          :otherDeviceIds => list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t()),
-          :roomHint => String.t(),
-          :structureHint => String.t(),
-          :traits => list(String.t()),
-          :type => String.t(),
-          :willReportState => boolean()
+          :attributes => map() | nil,
+          :customData => map() | nil,
+          :deviceInfo => GoogleApi.HomeGraph.V1.Model.DeviceInfo.t() | nil,
+          :id => String.t() | nil,
+          :name => GoogleApi.HomeGraph.V1.Model.DeviceNames.t() | nil,
+          :nonLocalTraits => list(GoogleApi.HomeGraph.V1.Model.NonLocalTrait.t()) | nil,
+          :notificationSupportedByAgent => boolean() | nil,
+          :otherDeviceIds => list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t()) | nil,
+          :roomHint => String.t() | nil,
+          :structureHint => String.t() | nil,
+          :traits => list(String.t()) | nil,
+          :type => String.t() | nil,
+          :willReportState => boolean() | nil
         }
 
   field(:attributes, type: :map)

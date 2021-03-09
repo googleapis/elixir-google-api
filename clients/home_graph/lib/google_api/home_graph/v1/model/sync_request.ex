@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.SyncRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUserId => String.t(),
-          :requestId => String.t()
+          :agentUserId => String.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:agentUserId)

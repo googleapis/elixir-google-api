@@ -29,9 +29,9 @@ defmodule GoogleApi.HomeGraph.V1.Model.DeviceNames do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultNames => list(String.t()),
-          :name => String.t(),
-          :nicknames => list(String.t())
+          :defaultNames => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :nicknames => list(String.t()) | nil
         }
 
   field(:defaultNames, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUserId => String.t(),
-          :eventId => String.t(),
-          :followUpToken => String.t(),
-          :payload => GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t(),
-          :requestId => String.t()
+          :agentUserId => String.t() | nil,
+          :eventId => String.t() | nil,
+          :followUpToken => String.t() | nil,
+          :payload => GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:agentUserId)

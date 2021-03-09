@@ -29,9 +29,9 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUserId => String.t(),
-          :inputs => list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t()),
-          :requestId => String.t()
+          :agentUserId => String.t() | nil,
+          :inputs => list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t()) | nil,
+          :requestId => String.t() | nil
         }
 
   field(:agentUserId)
