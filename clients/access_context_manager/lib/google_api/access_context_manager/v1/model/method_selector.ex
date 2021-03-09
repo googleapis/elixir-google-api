@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.MethodSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :method => String.t(),
-          :permission => String.t()
+          :method => String.t() | nil,
+          :permission => String.t() | nil
         }
 
   field(:method)

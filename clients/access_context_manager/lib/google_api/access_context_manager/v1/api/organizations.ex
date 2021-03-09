@@ -60,6 +60,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def accesscontextmanager_organizations_gcp_user_access_bindings_create(
         connection,
@@ -130,6 +131,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def accesscontextmanager_organizations_gcp_user_access_bindings_delete(
         connection,
@@ -199,6 +201,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def accesscontextmanager_organizations_gcp_user_access_bindings_get(
         connection,
@@ -272,6 +275,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListGcpUserAccessBindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def accesscontextmanager_organizations_gcp_user_access_bindings_list(
         connection,
@@ -348,6 +352,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def accesscontextmanager_organizations_gcp_user_access_bindings_patch(
         connection,

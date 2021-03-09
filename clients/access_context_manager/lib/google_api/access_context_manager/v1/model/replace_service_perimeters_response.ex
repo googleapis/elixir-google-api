@@ -27,7 +27,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceServicePerimetersRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :servicePerimeters => list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t())
+          :servicePerimeters =>
+            list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t()) | nil
         }
 
   field(:servicePerimeters,

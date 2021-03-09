@@ -31,11 +31,11 @@ defmodule GoogleApi.AccessContextManager.V1.Model.AccessLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basic => GoogleApi.AccessContextManager.V1.Model.BasicLevel.t(),
-          :custom => GoogleApi.AccessContextManager.V1.Model.CustomLevel.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :title => String.t()
+          :basic => GoogleApi.AccessContextManager.V1.Model.BasicLevel.t() | nil,
+          :custom => GoogleApi.AccessContextManager.V1.Model.CustomLevel.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:basic, as: GoogleApi.AccessContextManager.V1.Model.BasicLevel)

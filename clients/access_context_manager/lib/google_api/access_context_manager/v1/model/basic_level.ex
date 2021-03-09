@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.BasicLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :combiningFunction => String.t(),
-          :conditions => list(GoogleApi.AccessContextManager.V1.Model.Condition.t())
+          :combiningFunction => String.t() | nil,
+          :conditions => list(GoogleApi.AccessContextManager.V1.Model.Condition.t()) | nil
         }
 
   field(:combiningFunction)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressTo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operations => list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t()),
-          :resources => list(String.t())
+          :operations => list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t()) | nil,
+          :resources => list(String.t()) | nil
         }
 
   field(:operations, as: GoogleApi.AccessContextManager.V1.Model.ApiOperation, type: :list)

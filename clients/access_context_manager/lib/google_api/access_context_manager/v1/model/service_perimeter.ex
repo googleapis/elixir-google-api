@@ -33,13 +33,13 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ServicePerimeter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :perimeterType => String.t(),
-          :spec => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t(),
-          :status => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t(),
-          :title => String.t(),
-          :useExplicitDryRunSpec => boolean()
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :perimeterType => String.t() | nil,
+          :spec => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t() | nil,
+          :status => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t() | nil,
+          :title => String.t() | nil,
+          :useExplicitDryRunSpec => boolean() | nil
         }
 
   field(:description)

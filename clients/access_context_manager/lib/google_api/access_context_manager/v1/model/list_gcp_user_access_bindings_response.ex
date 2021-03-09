@@ -29,8 +29,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListGcpUserAccessBindingsRespo
 
   @type t :: %__MODULE__{
           :gcpUserAccessBindings =>
-            list(GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:gcpUserAccessBindings,

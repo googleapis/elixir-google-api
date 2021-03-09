@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.CustomLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expr => GoogleApi.AccessContextManager.V1.Model.Expr.t()
+          :expr => GoogleApi.AccessContextManager.V1.Model.Expr.t() | nil
         }
 
   field(:expr, as: GoogleApi.AccessContextManager.V1.Model.Expr)

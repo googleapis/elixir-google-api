@@ -28,8 +28,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceServicePerimetersReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :servicePerimeters => list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t())
+          :etag => String.t() | nil,
+          :servicePerimeters =>
+            list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t()) | nil
         }
 
   field(:etag)

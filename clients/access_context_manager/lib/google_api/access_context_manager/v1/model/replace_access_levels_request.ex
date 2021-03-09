@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceAccessLevelsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()),
-          :etag => String.t()
+          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()) | nil,
+          :etag => String.t() | nil
         }
 
   field(:accessLevels, as: GoogleApi.AccessContextManager.V1.Model.AccessLevel, type: :list)

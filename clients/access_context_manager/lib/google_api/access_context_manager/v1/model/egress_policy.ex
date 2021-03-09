@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.EgressPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :egressFrom => GoogleApi.AccessContextManager.V1.Model.EgressFrom.t(),
-          :egressTo => GoogleApi.AccessContextManager.V1.Model.EgressTo.t()
+          :egressFrom => GoogleApi.AccessContextManager.V1.Model.EgressFrom.t() | nil,
+          :egressTo => GoogleApi.AccessContextManager.V1.Model.EgressTo.t() | nil
         }
 
   field(:egressFrom, as: GoogleApi.AccessContextManager.V1.Model.EgressFrom)

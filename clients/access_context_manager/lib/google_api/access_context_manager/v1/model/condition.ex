@@ -32,12 +32,12 @@ defmodule GoogleApi.AccessContextManager.V1.Model.Condition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devicePolicy => GoogleApi.AccessContextManager.V1.Model.DevicePolicy.t(),
-          :ipSubnetworks => list(String.t()),
-          :members => list(String.t()),
-          :negate => boolean(),
-          :regions => list(String.t()),
-          :requiredAccessLevels => list(String.t())
+          :devicePolicy => GoogleApi.AccessContextManager.V1.Model.DevicePolicy.t() | nil,
+          :ipSubnetworks => list(String.t()) | nil,
+          :members => list(String.t()) | nil,
+          :negate => boolean() | nil,
+          :regions => list(String.t()) | nil,
+          :requiredAccessLevels => list(String.t()) | nil
         }
 
   field(:devicePolicy, as: GoogleApi.AccessContextManager.V1.Model.DevicePolicy)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.OsConstraint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minimumVersion => String.t(),
-          :osType => String.t(),
-          :requireVerifiedChromeOs => boolean()
+          :minimumVersion => String.t() | nil,
+          :osType => String.t() | nil,
+          :requireVerifiedChromeOs => boolean() | nil
         }
 
   field(:minimumVersion)

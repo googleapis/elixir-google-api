@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListAccessLevelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()),
-          :nextPageToken => String.t()
+          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accessLevels, as: GoogleApi.AccessContextManager.V1.Model.AccessLevel, type: :list)

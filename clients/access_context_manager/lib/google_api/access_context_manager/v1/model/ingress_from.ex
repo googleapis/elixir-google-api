@@ -29,9 +29,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressFrom do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identities => list(String.t()),
-          :identityType => String.t(),
-          :sources => list(GoogleApi.AccessContextManager.V1.Model.IngressSource.t())
+          :identities => list(String.t()) | nil,
+          :identityType => String.t() | nil,
+          :sources => list(GoogleApi.AccessContextManager.V1.Model.IngressSource.t()) | nil
         }
 
   field(:identities, type: :list)

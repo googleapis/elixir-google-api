@@ -32,13 +32,14 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(String.t()),
-          :egressPolicies => list(GoogleApi.AccessContextManager.V1.Model.EgressPolicy.t()),
-          :ingressPolicies => list(GoogleApi.AccessContextManager.V1.Model.IngressPolicy.t()),
-          :resources => list(String.t()),
-          :restrictedServices => list(String.t()),
+          :accessLevels => list(String.t()) | nil,
+          :egressPolicies => list(GoogleApi.AccessContextManager.V1.Model.EgressPolicy.t()) | nil,
+          :ingressPolicies =>
+            list(GoogleApi.AccessContextManager.V1.Model.IngressPolicy.t()) | nil,
+          :resources => list(String.t()) | nil,
+          :restrictedServices => list(String.t()) | nil,
           :vpcAccessibleServices =>
-            GoogleApi.AccessContextManager.V1.Model.VpcAccessibleServices.t()
+            GoogleApi.AccessContextManager.V1.Model.VpcAccessibleServices.t() | nil
         }
 
   field(:accessLevels, type: :list)
