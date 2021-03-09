@@ -28,7 +28,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetails do
 
   @type t :: %__MODULE__{
           :relatedPlaylists =>
-            GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists.t()
+            GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists.t() | nil
         }
 
   field(:relatedPlaylists, as: GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists)

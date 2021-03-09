@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.SuperStickerMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :altText => String.t(),
-          :altTextLanguage => String.t(),
-          :stickerId => String.t()
+          :altText => String.t() | nil,
+          :altTextLanguage => String.t() | nil,
+          :stickerId => String.t() | nil
         }
 
   field(:altText)

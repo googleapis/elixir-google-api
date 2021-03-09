@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRating do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rating => String.t(),
-          :videoId => String.t()
+          :rating => String.t() | nil,
+          :videoId => String.t() | nil
         }
 
   field(:rating)

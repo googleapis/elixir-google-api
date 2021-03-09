@@ -34,14 +34,14 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspectRatio => float(),
-          :bitrateBps => String.t(),
-          :codec => String.t(),
-          :frameRateFps => float(),
-          :heightPixels => integer(),
-          :rotation => String.t(),
-          :vendor => String.t(),
-          :widthPixels => integer()
+          :aspectRatio => float() | nil,
+          :bitrateBps => String.t() | nil,
+          :codec => String.t() | nil,
+          :frameRateFps => float() | nil,
+          :heightPixels => integer() | nil,
+          :rotation => String.t() | nil,
+          :vendor => String.t() | nil,
+          :widthPixels => integer() | nil
         }
 
   field(:aspectRatio)

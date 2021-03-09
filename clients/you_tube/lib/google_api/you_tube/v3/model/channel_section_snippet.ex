@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :defaultLanguage => String.t(),
-          :localized => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t(),
-          :position => integer(),
-          :style => String.t(),
-          :title => String.t(),
-          :type => String.t()
+          :channelId => String.t() | nil,
+          :defaultLanguage => String.t() | nil,
+          :localized => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t() | nil,
+          :position => integer() | nil,
+          :style => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:channelId)

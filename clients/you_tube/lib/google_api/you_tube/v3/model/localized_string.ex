@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.LocalizedString do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :language => String.t(),
-          :value => String.t()
+          :language => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:language)

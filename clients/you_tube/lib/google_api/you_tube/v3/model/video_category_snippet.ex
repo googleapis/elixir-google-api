@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignable => boolean(),
-          :channelId => String.t(),
-          :title => String.t()
+          :assignable => boolean() | nil,
+          :channelId => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:assignable)

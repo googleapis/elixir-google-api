@@ -31,12 +31,12 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessibleLevels => list(String.t()),
-          :highestAccessibleLevel => String.t(),
-          :highestAccessibleLevelDisplayName => String.t(),
-          :membershipsDuration => GoogleApi.YouTube.V3.Model.MembershipsDuration.t(),
+          :accessibleLevels => list(String.t()) | nil,
+          :highestAccessibleLevel => String.t() | nil,
+          :highestAccessibleLevelDisplayName => String.t() | nil,
+          :membershipsDuration => GoogleApi.YouTube.V3.Model.MembershipsDuration.t() | nil,
           :membershipsDurationAtLevels =>
-            list(GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel.t())
+            list(GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel.t()) | nil
         }
 
   field(:accessibleLevels, type: :list)

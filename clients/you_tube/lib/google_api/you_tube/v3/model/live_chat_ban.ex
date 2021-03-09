@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatBan do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.LiveChatBanSnippet.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.LiveChatBanSnippet.t() | nil
         }
 
   field(:etag)

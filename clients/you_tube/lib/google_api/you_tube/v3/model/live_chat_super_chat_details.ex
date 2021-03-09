@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountDisplayString => String.t(),
-          :amountMicros => String.t(),
-          :currency => String.t(),
-          :tier => integer(),
-          :userComment => String.t()
+          :amountDisplayString => String.t() | nil,
+          :amountMicros => String.t() | nil,
+          :currency => String.t() | nil,
+          :tier => integer() | nil,
+          :userComment => String.t() | nil
         }
 
   field(:amountDisplayString)

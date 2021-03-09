@@ -31,11 +31,12 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :editorSuggestions => list(String.t()),
-          :processingErrors => list(String.t()),
-          :processingHints => list(String.t()),
-          :processingWarnings => list(String.t()),
-          :tagSuggestions => list(GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion.t())
+          :editorSuggestions => list(String.t()) | nil,
+          :processingErrors => list(String.t()) | nil,
+          :processingHints => list(String.t()) | nil,
+          :processingWarnings => list(String.t()) | nil,
+          :tagSuggestions =>
+            list(GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion.t()) | nil
         }
 
   field(:editorSuggestions, type: :list)

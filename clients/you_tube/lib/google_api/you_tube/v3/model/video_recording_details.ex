@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => GoogleApi.YouTube.V3.Model.GeoPoint.t(),
-          :locationDescription => String.t(),
-          :recordingDate => DateTime.t()
+          :location => GoogleApi.YouTube.V3.Model.GeoPoint.t() | nil,
+          :locationDescription => String.t() | nil,
+          :recordingDate => DateTime.t() | nil
         }
 
   field(:location, as: GoogleApi.YouTube.V3.Model.GeoPoint)

@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :itemCount => integer()
+          :itemCount => integer() | nil
         }
 
   field(:itemCount)

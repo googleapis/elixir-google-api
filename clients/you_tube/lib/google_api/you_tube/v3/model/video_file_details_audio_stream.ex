@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bitrateBps => String.t(),
-          :channelCount => integer(),
-          :codec => String.t(),
-          :vendor => String.t()
+          :bitrateBps => String.t() | nil,
+          :channelCount => integer() | nil,
+          :codec => String.t() | nil,
+          :vendor => String.t() | nil
         }
 
   field(:bitrateBps)

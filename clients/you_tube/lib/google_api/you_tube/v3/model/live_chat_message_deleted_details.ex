@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletedMessageId => String.t()
+          :deletedMessageId => String.t() | nil
         }
 
   field(:deletedMessageId)

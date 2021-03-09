@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => String.t(),
-          :conversionUrl => String.t()
+          :context => String.t() | nil,
+          :conversionUrl => String.t() | nil
         }
 
   field(:context)

@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStream do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cdn => GoogleApi.YouTube.V3.Model.CdnSettings.t(),
-          :contentDetails => GoogleApi.YouTube.V3.Model.LiveStreamContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.LiveStreamSnippet.t(),
-          :status => GoogleApi.YouTube.V3.Model.LiveStreamStatus.t()
+          :cdn => GoogleApi.YouTube.V3.Model.CdnSettings.t() | nil,
+          :contentDetails => GoogleApi.YouTube.V3.Model.LiveStreamContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.LiveStreamSnippet.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.LiveStreamStatus.t() | nil
         }
 
   field(:cdn, as: GoogleApi.YouTube.V3.Model.CdnSettings)

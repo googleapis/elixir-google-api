@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.GeoPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :altitude => float(),
-          :latitude => float(),
-          :longitude => float()
+          :altitude => float() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil
         }
 
   field(:altitude)

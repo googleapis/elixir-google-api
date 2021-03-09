@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityType => String.t(),
-          :newItemCount => integer(),
-          :totalItemCount => integer()
+          :activityType => String.t() | nil,
+          :newItemCount => integer() | nil,
+          :totalItemCount => integer() | nil
         }
 
   field(:activityType)

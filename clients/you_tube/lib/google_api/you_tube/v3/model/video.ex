@@ -44,26 +44,25 @@ defmodule GoogleApi.YouTube.V3.Model.Video do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ageGating => GoogleApi.YouTube.V3.Model.VideoAgeGating.t(),
-          :contentDetails => GoogleApi.YouTube.V3.Model.VideoContentDetails.t(),
-          :etag => String.t(),
-          :fileDetails => GoogleApi.YouTube.V3.Model.VideoFileDetails.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :liveStreamingDetails => GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.t(),
-          :localizations => %{
-            optional(String.t()) => GoogleApi.YouTube.V3.Model.VideoLocalization.t()
-          },
-          :monetizationDetails => GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.t(),
-          :player => GoogleApi.YouTube.V3.Model.VideoPlayer.t(),
-          :processingDetails => GoogleApi.YouTube.V3.Model.VideoProcessingDetails.t(),
-          :projectDetails => GoogleApi.YouTube.V3.Model.VideoProjectDetails.t(),
-          :recordingDetails => GoogleApi.YouTube.V3.Model.VideoRecordingDetails.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.VideoSnippet.t(),
-          :statistics => GoogleApi.YouTube.V3.Model.VideoStatistics.t(),
-          :status => GoogleApi.YouTube.V3.Model.VideoStatus.t(),
-          :suggestions => GoogleApi.YouTube.V3.Model.VideoSuggestions.t(),
-          :topicDetails => GoogleApi.YouTube.V3.Model.VideoTopicDetails.t()
+          :ageGating => GoogleApi.YouTube.V3.Model.VideoAgeGating.t() | nil,
+          :contentDetails => GoogleApi.YouTube.V3.Model.VideoContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :fileDetails => GoogleApi.YouTube.V3.Model.VideoFileDetails.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :liveStreamingDetails => GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.t() | nil,
+          :localizations =>
+            %{optional(String.t()) => GoogleApi.YouTube.V3.Model.VideoLocalization.t()} | nil,
+          :monetizationDetails => GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.t() | nil,
+          :player => GoogleApi.YouTube.V3.Model.VideoPlayer.t() | nil,
+          :processingDetails => GoogleApi.YouTube.V3.Model.VideoProcessingDetails.t() | nil,
+          :projectDetails => GoogleApi.YouTube.V3.Model.VideoProjectDetails.t() | nil,
+          :recordingDetails => GoogleApi.YouTube.V3.Model.VideoRecordingDetails.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.VideoSnippet.t() | nil,
+          :statistics => GoogleApi.YouTube.V3.Model.VideoStatistics.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.VideoStatus.t() | nil,
+          :suggestions => GoogleApi.YouTube.V3.Model.VideoSuggestions.t() | nil,
+          :topicDetails => GoogleApi.YouTube.V3.Model.VideoTopicDetails.t() | nil
         }
 
   field(:ageGating, as: GoogleApi.YouTube.V3.Model.VideoAgeGating)

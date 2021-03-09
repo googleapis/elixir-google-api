@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commentCount => String.t(),
-          :dislikeCount => String.t(),
-          :favoriteCount => String.t(),
-          :likeCount => String.t(),
-          :viewCount => String.t()
+          :commentCount => String.t() | nil,
+          :dislikeCount => String.t() | nil,
+          :favoriteCount => String.t() | nil,
+          :likeCount => String.t() | nil,
+          :viewCount => String.t() | nil
         }
 
   field(:commentCount)

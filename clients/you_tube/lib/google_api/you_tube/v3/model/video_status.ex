@@ -36,16 +36,16 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embeddable => boolean(),
-          :failureReason => String.t(),
-          :license => String.t(),
-          :madeForKids => boolean(),
-          :privacyStatus => String.t(),
-          :publicStatsViewable => boolean(),
-          :publishAt => DateTime.t(),
-          :rejectionReason => String.t(),
-          :selfDeclaredMadeForKids => boolean(),
-          :uploadStatus => String.t()
+          :embeddable => boolean() | nil,
+          :failureReason => String.t() | nil,
+          :license => String.t() | nil,
+          :madeForKids => boolean() | nil,
+          :privacyStatus => String.t() | nil,
+          :publicStatsViewable => boolean() | nil,
+          :publishAt => DateTime.t() | nil,
+          :rejectionReason => String.t() | nil,
+          :selfDeclaredMadeForKids => boolean() | nil,
+          :uploadStatus => String.t() | nil
         }
 
   field(:embeddable)

@@ -37,17 +37,17 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actualEndTime => DateTime.t(),
-          :actualStartTime => DateTime.t(),
-          :channelId => String.t(),
-          :description => String.t(),
-          :isDefaultBroadcast => boolean(),
-          :liveChatId => String.t(),
-          :publishedAt => DateTime.t(),
-          :scheduledEndTime => DateTime.t(),
-          :scheduledStartTime => DateTime.t(),
-          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :actualEndTime => DateTime.t() | nil,
+          :actualStartTime => DateTime.t() | nil,
+          :channelId => String.t() | nil,
+          :description => String.t() | nil,
+          :isDefaultBroadcast => boolean() | nil,
+          :liveChatId => String.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :scheduledEndTime => DateTime.t() | nil,
+          :scheduledStartTime => DateTime.t() | nil,
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:actualEndTime, as: DateTime)

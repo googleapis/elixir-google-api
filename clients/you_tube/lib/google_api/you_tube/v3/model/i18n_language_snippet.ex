@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hl => String.t(),
-          :name => String.t()
+          :hl => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:hl)

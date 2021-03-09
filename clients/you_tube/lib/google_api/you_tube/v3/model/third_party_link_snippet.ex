@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelToStoreLink => GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails.t(),
-          :type => String.t()
+          :channelToStoreLink => GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:channelToStoreLink, as: GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails)

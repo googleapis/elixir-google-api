@@ -55,6 +55,7 @@ defmodule GoogleApi.YouTube.V3.Api.AbuseReports do
   @spec youtube_abuse_reports_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.AbuseReport.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_abuse_reports_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

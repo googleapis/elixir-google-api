@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :broadcastStreamDelayMs => integer(),
-          :embedHtml => String.t(),
-          :enableMonitorStream => boolean()
+          :broadcastStreamDelayMs => integer() | nil,
+          :embedHtml => String.t() | nil,
+          :enableMonitorStream => boolean() | nil
         }
 
   field(:broadcastStreamDelayMs)

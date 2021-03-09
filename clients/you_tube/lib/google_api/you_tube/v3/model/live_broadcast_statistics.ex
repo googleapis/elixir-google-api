@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :totalChatCount => String.t()
+          :totalChatCount => String.t() | nil
         }
 
   field(:totalChatCount)

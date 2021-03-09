@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionLocalization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :title => String.t()
+          :title => String.t() | nil
         }
 
   field(:title)

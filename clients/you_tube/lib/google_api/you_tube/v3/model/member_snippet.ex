@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.MemberSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creatorChannelId => String.t(),
-          :memberDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t(),
-          :membershipsDetails => GoogleApi.YouTube.V3.Model.MembershipsDetails.t()
+          :creatorChannelId => String.t() | nil,
+          :memberDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t() | nil,
+          :membershipsDetails => GoogleApi.YouTube.V3.Model.MembershipsDetails.t() | nil
         }
 
   field(:creatorChannelId)

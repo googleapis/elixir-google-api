@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t(),
-          :statistics => GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t(),
-          :status => GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t() | nil,
+          :statistics => GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails)

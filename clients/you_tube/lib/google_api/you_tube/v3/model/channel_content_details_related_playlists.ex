@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :favorites => String.t(),
-          :likes => String.t(),
-          :uploads => String.t(),
-          :watchHistory => String.t(),
-          :watchLater => String.t()
+          :favorites => String.t() | nil,
+          :likes => String.t() | nil,
+          :uploads => String.t() | nil,
+          :watchHistory => String.t() | nil,
+          :watchLater => String.t() | nil
         }
 
   field(:favorites)

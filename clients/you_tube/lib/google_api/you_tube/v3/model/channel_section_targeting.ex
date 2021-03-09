@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countries => list(String.t()),
-          :languages => list(String.t()),
-          :regions => list(String.t())
+          :countries => list(String.t()) | nil,
+          :languages => list(String.t()) | nil,
+          :regions => list(String.t()) | nil
         }
 
   field(:countries, type: :list)

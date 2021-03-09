@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.PageInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resultsPerPage => integer(),
-          :totalResults => integer()
+          :resultsPerPage => integer() | nil,
+          :totalResults => integer() | nil
         }
 
   field(:resultsPerPage)

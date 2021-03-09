@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.CdnSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => String.t(),
-          :frameRate => String.t(),
-          :ingestionInfo => GoogleApi.YouTube.V3.Model.IngestionInfo.t(),
-          :ingestionType => String.t(),
-          :resolution => String.t()
+          :format => String.t() | nil,
+          :frameRate => String.t() | nil,
+          :ingestionInfo => GoogleApi.YouTube.V3.Model.IngestionInfo.t() | nil,
+          :ingestionType => String.t() | nil,
+          :resolution => String.t() | nil
         }
 
   field(:format)

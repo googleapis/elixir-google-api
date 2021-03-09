@@ -36,16 +36,16 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adTag => String.t(),
-          :clickTrackingUrl => String.t(),
-          :creativeViewUrl => String.t(),
-          :ctaType => String.t(),
-          :customCtaButtonText => String.t(),
-          :descriptionText => String.t(),
-          :destinationUrl => String.t(),
-          :forecastingUrl => list(String.t()),
-          :impressionUrl => list(String.t()),
-          :videoId => String.t()
+          :adTag => String.t() | nil,
+          :clickTrackingUrl => String.t() | nil,
+          :creativeViewUrl => String.t() | nil,
+          :ctaType => String.t() | nil,
+          :customCtaButtonText => String.t() | nil,
+          :descriptionText => String.t() | nil,
+          :destinationUrl => String.t() | nil,
+          :forecastingUrl => list(String.t()) | nil,
+          :impressionUrl => list(String.t()) | nil,
+          :videoId => String.t() | nil
         }
 
   field(:adTag)

@@ -52,7 +52,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec youtube_comments_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_comments_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -109,7 +109,10 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec youtube_comments_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.YouTube.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def youtube_comments_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -173,6 +176,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   @spec youtube_comments_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_comments_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -234,7 +238,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec youtube_comments_mark_as_spam(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_comments_mark_as_spam(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -297,7 +301,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_comments_set_moderation_status(
         connection,
         id,
@@ -362,7 +366,10 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec youtube_comments_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.YouTube.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def youtube_comments_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

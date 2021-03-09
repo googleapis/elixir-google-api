@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.AbuseReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abuseTypes => list(GoogleApi.YouTube.V3.Model.AbuseType.t()),
-          :description => String.t(),
-          :relatedEntities => list(GoogleApi.YouTube.V3.Model.RelatedEntity.t()),
-          :subject => GoogleApi.YouTube.V3.Model.Entity.t()
+          :abuseTypes => list(GoogleApi.YouTube.V3.Model.AbuseType.t()) | nil,
+          :description => String.t() | nil,
+          :relatedEntities => list(GoogleApi.YouTube.V3.Model.RelatedEntity.t()) | nil,
+          :subject => GoogleApi.YouTube.V3.Model.Entity.t() | nil
         }
 
   field(:abuseTypes, as: GoogleApi.YouTube.V3.Model.AbuseType, type: :list)

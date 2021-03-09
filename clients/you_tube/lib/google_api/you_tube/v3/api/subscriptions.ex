@@ -52,7 +52,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   *   `{:error, info}` on failure
   """
   @spec youtube_subscriptions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_subscriptions_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,6 +111,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   @spec youtube_subscriptions_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_subscriptions_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -181,6 +182,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   @spec youtube_subscriptions_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.SubscriptionListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_subscriptions_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

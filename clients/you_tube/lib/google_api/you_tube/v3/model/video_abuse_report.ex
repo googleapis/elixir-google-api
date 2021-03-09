@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comments => String.t(),
-          :language => String.t(),
-          :reasonId => String.t(),
-          :secondaryReasonId => String.t(),
-          :videoId => String.t()
+          :comments => String.t() | nil,
+          :language => String.t() | nil,
+          :reasonId => String.t() | nil,
+          :secondaryReasonId => String.t() | nil,
+          :videoId => String.t() | nil
         }
 
   field(:comments)

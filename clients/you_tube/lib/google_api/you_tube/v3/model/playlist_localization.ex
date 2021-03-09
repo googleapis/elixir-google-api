@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistLocalization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :title => String.t()
+          :description => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

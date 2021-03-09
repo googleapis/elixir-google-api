@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => GoogleApi.YouTube.V3.Model.AccessPolicy.t()
+          :access => GoogleApi.YouTube.V3.Model.AccessPolicy.t() | nil
         }
 
   field(:access, as: GoogleApi.YouTube.V3.Model.AccessPolicy)

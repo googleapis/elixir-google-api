@@ -60,6 +60,7 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_video_abuse_report_reasons_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

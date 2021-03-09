@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.AccessPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowed => boolean(),
-          :exception => list(String.t())
+          :allowed => boolean() | nil,
+          :exception => list(String.t()) | nil
         }
 
   field(:allowed)

@@ -34,14 +34,14 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :channelUrl => String.t(),
-          :displayName => String.t(),
-          :isChatModerator => boolean(),
-          :isChatOwner => boolean(),
-          :isChatSponsor => boolean(),
-          :isVerified => boolean(),
-          :profileImageUrl => String.t()
+          :channelId => String.t() | nil,
+          :channelUrl => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isChatModerator => boolean() | nil,
+          :isChatOwner => boolean() | nil,
+          :isChatSponsor => boolean() | nil,
+          :isVerified => boolean() | nil,
+          :profileImageUrl => String.t() | nil
         }
 
   field(:channelId)

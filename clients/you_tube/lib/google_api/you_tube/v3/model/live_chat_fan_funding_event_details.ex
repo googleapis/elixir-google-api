@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountDisplayString => String.t(),
-          :amountMicros => String.t(),
-          :currency => String.t(),
-          :userComment => String.t()
+          :amountDisplayString => String.t() | nil,
+          :amountMicros => String.t() | nil,
+          :currency => String.t() | nil,
+          :userComment => String.t() | nil
         }
 
   field(:amountDisplayString)

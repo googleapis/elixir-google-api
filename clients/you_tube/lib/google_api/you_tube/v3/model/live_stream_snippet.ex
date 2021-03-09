@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :description => String.t(),
-          :isDefaultStream => boolean(),
-          :publishedAt => DateTime.t(),
-          :title => String.t()
+          :channelId => String.t() | nil,
+          :description => String.t() | nil,
+          :isDefaultStream => boolean() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:channelId)

@@ -36,17 +36,17 @@ defmodule GoogleApi.YouTube.V3.Model.VideoContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caption => String.t(),
-          :contentRating => GoogleApi.YouTube.V3.Model.ContentRating.t(),
-          :countryRestriction => GoogleApi.YouTube.V3.Model.AccessPolicy.t(),
-          :definition => String.t(),
-          :dimension => String.t(),
-          :duration => String.t(),
-          :hasCustomThumbnail => boolean(),
-          :licensedContent => boolean(),
-          :projection => String.t(),
+          :caption => String.t() | nil,
+          :contentRating => GoogleApi.YouTube.V3.Model.ContentRating.t() | nil,
+          :countryRestriction => GoogleApi.YouTube.V3.Model.AccessPolicy.t() | nil,
+          :definition => String.t() | nil,
+          :dimension => String.t() | nil,
+          :duration => String.t() | nil,
+          :hasCustomThumbnail => boolean() | nil,
+          :licensedContent => boolean() | nil,
+          :projection => String.t() | nil,
           :regionRestriction =>
-            GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction.t()
+            GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction.t() | nil
         }
 
   field(:caption)

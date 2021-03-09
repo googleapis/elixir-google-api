@@ -40,20 +40,20 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :defaultLanguage => String.t(),
-          :defaultTab => String.t(),
-          :description => String.t(),
-          :featuredChannelsTitle => String.t(),
-          :featuredChannelsUrls => list(String.t()),
-          :keywords => String.t(),
-          :moderateComments => boolean(),
-          :profileColor => String.t(),
-          :showBrowseView => boolean(),
-          :showRelatedChannels => boolean(),
-          :title => String.t(),
-          :trackingAnalyticsAccountId => String.t(),
-          :unsubscribedTrailer => String.t()
+          :country => String.t() | nil,
+          :defaultLanguage => String.t() | nil,
+          :defaultTab => String.t() | nil,
+          :description => String.t() | nil,
+          :featuredChannelsTitle => String.t() | nil,
+          :featuredChannelsUrls => list(String.t()) | nil,
+          :keywords => String.t() | nil,
+          :moderateComments => boolean() | nil,
+          :profileColor => String.t() | nil,
+          :showBrowseView => boolean() | nil,
+          :showRelatedChannels => boolean() | nil,
+          :title => String.t() | nil,
+          :trackingAnalyticsAccountId => String.t() | nil,
+          :unsubscribedTrailer => String.t() | nil
         }
 
   field(:country)

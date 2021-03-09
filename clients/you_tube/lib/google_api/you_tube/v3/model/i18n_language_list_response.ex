@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.I18nLanguageListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :eventId => String.t(),
-          :items => list(GoogleApi.YouTube.V3.Model.I18nLanguage.t()),
-          :kind => String.t(),
-          :visitorId => String.t()
+          :etag => String.t() | nil,
+          :eventId => String.t() | nil,
+          :items => list(GoogleApi.YouTube.V3.Model.I18nLanguage.t()) | nil,
+          :kind => String.t() | nil,
+          :visitorId => String.t() | nil
         }
 
   field(:etag)

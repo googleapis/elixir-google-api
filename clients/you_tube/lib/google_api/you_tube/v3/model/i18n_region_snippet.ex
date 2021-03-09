@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gl => String.t(),
-          :name => String.t()
+          :gl => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:gl)

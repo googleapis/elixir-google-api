@@ -33,15 +33,15 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :localizations => %{
-            optional(String.t()) => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t()
-          },
-          :snippet => GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.t(),
-          :targeting => GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :localizations =>
+            %{optional(String.t()) => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t()}
+            | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.t() | nil,
+          :targeting => GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails)

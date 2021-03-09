@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.PlaylistItemSnippet.t(),
-          :status => GoogleApi.YouTube.V3.Model.PlaylistItemStatus.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.PlaylistItemSnippet.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.PlaylistItemStatus.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails)

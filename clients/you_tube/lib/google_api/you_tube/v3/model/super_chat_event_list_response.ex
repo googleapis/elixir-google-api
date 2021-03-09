@@ -34,14 +34,14 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :eventId => String.t(),
-          :items => list(GoogleApi.YouTube.V3.Model.SuperChatEvent.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t(),
-          :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t(),
-          :visitorId => String.t()
+          :etag => String.t() | nil,
+          :eventId => String.t() | nil,
+          :items => list(GoogleApi.YouTube.V3.Model.SuperChatEvent.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t() | nil,
+          :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t() | nil,
+          :visitorId => String.t() | nil
         }
 
   field(:etag)

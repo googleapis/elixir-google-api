@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistPlayer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embedHtml => String.t()
+          :embedHtml => String.t() | nil
         }
 
   field(:embedHtml)

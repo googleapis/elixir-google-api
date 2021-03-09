@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsLevelSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creatorChannelId => String.t(),
-          :levelDetails => GoogleApi.YouTube.V3.Model.LevelDetails.t()
+          :creatorChannelId => String.t() | nil,
+          :levelDetails => GoogleApi.YouTube.V3.Model.LevelDetails.t() | nil
         }
 
   field(:creatorChannelId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.Member do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.MemberSnippet.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.MemberSnippet.t() | nil
         }
 
   field(:etag)

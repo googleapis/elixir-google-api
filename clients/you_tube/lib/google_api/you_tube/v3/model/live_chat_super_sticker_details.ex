@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountDisplayString => String.t(),
-          :amountMicros => String.t(),
-          :currency => String.t(),
-          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t(),
-          :tier => integer()
+          :amountDisplayString => String.t() | nil,
+          :amountMicros => String.t() | nil,
+          :currency => String.t() | nil,
+          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t() | nil,
+          :tier => integer() | nil
         }
 
   field(:amountDisplayString)

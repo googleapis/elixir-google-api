@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :channelTitle => String.t(),
-          :description => String.t(),
-          :publishedAt => DateTime.t(),
-          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
-          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :channelId => String.t() | nil,
+          :channelTitle => String.t() | nil,
+          :description => String.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil,
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:channelId)

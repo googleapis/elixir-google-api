@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.VideoCategory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.VideoCategorySnippet.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.VideoCategorySnippet.t() | nil
         }
 
   field(:etag)

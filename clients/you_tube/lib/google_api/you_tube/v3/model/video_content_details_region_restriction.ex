@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoContentDetailsRegionRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowed => list(String.t()),
-          :blocked => list(String.t())
+          :allowed => list(String.t()) | nil,
+          :blocked => list(String.t()) | nil
         }
 
   field(:allowed, type: :list)

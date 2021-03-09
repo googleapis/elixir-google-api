@@ -37,17 +37,21 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletin => GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.t(),
-          :channelItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem.t(),
-          :comment => GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment.t(),
-          :favorite => GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite.t(),
-          :like => GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike.t(),
-          :playlistItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.t(),
-          :promotedItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.t(),
-          :recommendation => GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.t(),
-          :social => GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.t(),
-          :subscription => GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.t(),
-          :upload => GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.t()
+          :bulletin => GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.t() | nil,
+          :channelItem => GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem.t() | nil,
+          :comment => GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment.t() | nil,
+          :favorite => GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite.t() | nil,
+          :like => GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike.t() | nil,
+          :playlistItem =>
+            GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.t() | nil,
+          :promotedItem =>
+            GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.t() | nil,
+          :recommendation =>
+            GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.t() | nil,
+          :social => GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.t() | nil,
+          :subscription =>
+            GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.t() | nil,
+          :upload => GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.t() | nil
         }
 
   field(:bulletin, as: GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin)

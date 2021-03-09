@@ -35,15 +35,15 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.t()),
-          :bitrateBps => String.t(),
-          :container => String.t(),
-          :creationTime => String.t(),
-          :durationMs => String.t(),
-          :fileName => String.t(),
-          :fileSize => String.t(),
-          :fileType => String.t(),
-          :videoStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.t())
+          :audioStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.t()) | nil,
+          :bitrateBps => String.t() | nil,
+          :container => String.t() | nil,
+          :creationTime => String.t() | nil,
+          :durationMs => String.t() | nil,
+          :fileName => String.t() | nil,
+          :fileSize => String.t() | nil,
+          :fileType => String.t() | nil,
+          :videoStreams => list(GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.t()) | nil
         }
 
   field(:audioStreams, as: GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream, type: :list)

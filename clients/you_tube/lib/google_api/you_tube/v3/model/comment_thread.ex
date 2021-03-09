@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThread do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :replies => GoogleApi.YouTube.V3.Model.CommentThreadReplies.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.CommentThreadSnippet.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :replies => GoogleApi.YouTube.V3.Model.CommentThreadReplies.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.CommentThreadSnippet.t() | nil
         }
 
   field(:etag)

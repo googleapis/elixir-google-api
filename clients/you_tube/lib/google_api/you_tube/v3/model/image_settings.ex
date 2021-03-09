@@ -48,28 +48,30 @@ defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
-          :bannerExternalUrl => String.t(),
-          :bannerImageUrl => String.t(),
-          :bannerMobileExtraHdImageUrl => String.t(),
-          :bannerMobileHdImageUrl => String.t(),
-          :bannerMobileImageUrl => String.t(),
-          :bannerMobileLowImageUrl => String.t(),
-          :bannerMobileMediumHdImageUrl => String.t(),
-          :bannerTabletExtraHdImageUrl => String.t(),
-          :bannerTabletHdImageUrl => String.t(),
-          :bannerTabletImageUrl => String.t(),
-          :bannerTabletLowImageUrl => String.t(),
-          :bannerTvHighImageUrl => String.t(),
-          :bannerTvImageUrl => String.t(),
-          :bannerTvLowImageUrl => String.t(),
-          :bannerTvMediumImageUrl => String.t(),
-          :largeBrandedBannerImageImapScript => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
-          :largeBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
-          :smallBrandedBannerImageImapScript => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
-          :smallBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t(),
-          :trackingImageUrl => String.t(),
-          :watchIconImageUrl => String.t()
+          :backgroundImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t() | nil,
+          :bannerExternalUrl => String.t() | nil,
+          :bannerImageUrl => String.t() | nil,
+          :bannerMobileExtraHdImageUrl => String.t() | nil,
+          :bannerMobileHdImageUrl => String.t() | nil,
+          :bannerMobileImageUrl => String.t() | nil,
+          :bannerMobileLowImageUrl => String.t() | nil,
+          :bannerMobileMediumHdImageUrl => String.t() | nil,
+          :bannerTabletExtraHdImageUrl => String.t() | nil,
+          :bannerTabletHdImageUrl => String.t() | nil,
+          :bannerTabletImageUrl => String.t() | nil,
+          :bannerTabletLowImageUrl => String.t() | nil,
+          :bannerTvHighImageUrl => String.t() | nil,
+          :bannerTvImageUrl => String.t() | nil,
+          :bannerTvLowImageUrl => String.t() | nil,
+          :bannerTvMediumImageUrl => String.t() | nil,
+          :largeBrandedBannerImageImapScript =>
+            GoogleApi.YouTube.V3.Model.LocalizedProperty.t() | nil,
+          :largeBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t() | nil,
+          :smallBrandedBannerImageImapScript =>
+            GoogleApi.YouTube.V3.Model.LocalizedProperty.t() | nil,
+          :smallBrandedBannerImageUrl => GoogleApi.YouTube.V3.Model.LocalizedProperty.t() | nil,
+          :trackingImageUrl => String.t() | nil,
+          :watchIconImageUrl => String.t() | nil
         }
 
   field(:backgroundImageUrl, as: GoogleApi.YouTube.V3.Model.LocalizedProperty)

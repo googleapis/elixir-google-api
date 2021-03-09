@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endAt => String.t(),
-          :note => String.t(),
-          :startAt => String.t(),
-          :videoId => String.t(),
-          :videoPublishedAt => DateTime.t()
+          :endAt => String.t() | nil,
+          :note => String.t() | nil,
+          :startAt => String.t() | nil,
+          :videoId => String.t() | nil,
+          :videoPublishedAt => DateTime.t() | nil
         }
 
   field(:endAt)

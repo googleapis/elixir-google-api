@@ -38,18 +38,18 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoryId => String.t(),
-          :channelId => String.t(),
-          :channelTitle => String.t(),
-          :defaultAudioLanguage => String.t(),
-          :defaultLanguage => String.t(),
-          :description => String.t(),
-          :liveBroadcastContent => String.t(),
-          :localized => GoogleApi.YouTube.V3.Model.VideoLocalization.t(),
-          :publishedAt => DateTime.t(),
-          :tags => list(String.t()),
-          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :categoryId => String.t() | nil,
+          :channelId => String.t() | nil,
+          :channelTitle => String.t() | nil,
+          :defaultAudioLanguage => String.t() | nil,
+          :defaultLanguage => String.t() | nil,
+          :description => String.t() | nil,
+          :liveBroadcastContent => String.t() | nil,
+          :localized => GoogleApi.YouTube.V3.Model.VideoLocalization.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :tags => list(String.t()) | nil,
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:categoryId)

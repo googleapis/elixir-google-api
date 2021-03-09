@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.Comment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.CommentSnippet.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.CommentSnippet.t() | nil
         }
 
   field(:etag)

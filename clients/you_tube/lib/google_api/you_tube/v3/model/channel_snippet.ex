@@ -34,14 +34,14 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :customUrl => String.t(),
-          :defaultLanguage => String.t(),
-          :description => String.t(),
-          :localized => GoogleApi.YouTube.V3.Model.ChannelLocalization.t(),
-          :publishedAt => DateTime.t(),
-          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :country => String.t() | nil,
+          :customUrl => String.t() | nil,
+          :defaultLanguage => String.t() | nil,
+          :description => String.t() | nil,
+          :localized => GoogleApi.YouTube.V3.Model.ChannelLocalization.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:country)

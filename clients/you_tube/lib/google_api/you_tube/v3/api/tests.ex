@@ -53,7 +53,10 @@ defmodule GoogleApi.YouTube.V3.Api.Tests do
   *   `{:error, info}` on failure
   """
   @spec youtube_tests_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.TestItem.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.YouTube.V3.Model.TestItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def youtube_tests_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

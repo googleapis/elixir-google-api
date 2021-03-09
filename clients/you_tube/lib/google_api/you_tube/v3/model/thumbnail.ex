@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.Thumbnail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :url => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :url => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadReplies do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comments => list(GoogleApi.YouTube.V3.Model.Comment.t())
+          :comments => list(GoogleApi.YouTube.V3.Model.Comment.t()) | nil
         }
 
   field(:comments, as: GoogleApi.YouTube.V3.Model.Comment, type: :list)

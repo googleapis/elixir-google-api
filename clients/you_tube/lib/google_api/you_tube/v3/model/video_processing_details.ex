@@ -34,15 +34,15 @@ defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :editorSuggestionsAvailability => String.t(),
-          :fileDetailsAvailability => String.t(),
-          :processingFailureReason => String.t(),
-          :processingIssuesAvailability => String.t(),
+          :editorSuggestionsAvailability => String.t() | nil,
+          :fileDetailsAvailability => String.t() | nil,
+          :processingFailureReason => String.t() | nil,
+          :processingIssuesAvailability => String.t() | nil,
           :processingProgress =>
-            GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.t(),
-          :processingStatus => String.t(),
-          :tagSuggestionsAvailability => String.t(),
-          :thumbnailsAvailability => String.t()
+            GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.t() | nil,
+          :processingStatus => String.t() | nil,
+          :tagSuggestionsAvailability => String.t() | nil,
+          :thumbnailsAvailability => String.t() | nil
         }
 
   field(:editorSuggestionsAvailability)

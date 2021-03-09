@@ -54,7 +54,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
   *   `{:error, info}` on failure
   """
   @spec youtube_watermarks_set(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_watermarks_set(connection, channel_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -123,7 +123,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_watermarks_set_iodata(
         connection,
         channel_id,
@@ -199,7 +199,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_watermarks_set_resumable(
         connection,
         channel_id,
@@ -275,7 +275,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_watermarks_set_simple(
         connection,
         channel_id,
@@ -344,7 +344,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
   *   `{:error, info}` on failure
   """
   @spec youtube_watermarks_unset(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_watermarks_unset(connection, channel_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

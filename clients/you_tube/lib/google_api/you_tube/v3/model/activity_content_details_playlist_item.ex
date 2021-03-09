@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :playlistId => String.t(),
-          :playlistItemId => String.t(),
-          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+          :playlistId => String.t() | nil,
+          :playlistItemId => String.t() | nil,
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil
         }
 
   field(:playlistId)

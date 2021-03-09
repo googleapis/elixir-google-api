@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthStatus => GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus.t(),
-          :streamStatus => String.t()
+          :healthStatus => GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus.t() | nil,
+          :streamStatus => String.t() | nil
         }
 
   field(:healthStatus, as: GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus)

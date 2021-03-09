@@ -36,16 +36,16 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :eventId => String.t(),
-          :items => list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :offlineAt => DateTime.t(),
-          :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t(),
-          :pollingIntervalMillis => integer(),
-          :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t(),
-          :visitorId => String.t()
+          :etag => String.t() | nil,
+          :eventId => String.t() | nil,
+          :items => list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :offlineAt => DateTime.t() | nil,
+          :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t() | nil,
+          :pollingIntervalMillis => integer() | nil,
+          :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t() | nil,
+          :visitorId => String.t() | nil
         }
 
   field(:etag)

@@ -55,6 +55,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   @spec youtube_comment_threads_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_comment_threads_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,6 +125,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   @spec youtube_comment_threads_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentThreadListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_comment_threads_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -193,6 +195,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   @spec youtube_comment_threads_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_comment_threads_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
