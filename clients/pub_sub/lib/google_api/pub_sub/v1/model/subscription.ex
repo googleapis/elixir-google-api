@@ -39,19 +39,19 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackDeadlineSeconds => integer(),
-          :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t(),
-          :detached => boolean(),
-          :enableMessageOrdering => boolean(),
-          :expirationPolicy => GoogleApi.PubSub.V1.Model.ExpirationPolicy.t(),
-          :filter => String.t(),
-          :labels => map(),
-          :messageRetentionDuration => String.t(),
-          :name => String.t(),
-          :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t(),
-          :retainAckedMessages => boolean(),
-          :retryPolicy => GoogleApi.PubSub.V1.Model.RetryPolicy.t(),
-          :topic => String.t()
+          :ackDeadlineSeconds => integer() | nil,
+          :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t() | nil,
+          :detached => boolean() | nil,
+          :enableMessageOrdering => boolean() | nil,
+          :expirationPolicy => GoogleApi.PubSub.V1.Model.ExpirationPolicy.t() | nil,
+          :filter => String.t() | nil,
+          :labels => map() | nil,
+          :messageRetentionDuration => String.t() | nil,
+          :name => String.t() | nil,
+          :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t() | nil,
+          :retainAckedMessages => boolean() | nil,
+          :retryPolicy => GoogleApi.PubSub.V1.Model.RetryPolicy.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:ackDeadlineSeconds)

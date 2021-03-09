@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.CreateSnapshotRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :subscription => String.t()
+          :labels => map() | nil,
+          :subscription => String.t() | nil
         }
 
   field(:labels, type: :map)

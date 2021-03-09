@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.PubSub.V1.Model.Policy.t()
+          :policy => GoogleApi.PubSub.V1.Model.Policy.t() | nil
         }
 
   field(:policy, as: GoogleApi.PubSub.V1.Model.Policy)

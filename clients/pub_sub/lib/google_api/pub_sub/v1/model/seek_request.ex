@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.SeekRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshot => String.t(),
-          :time => DateTime.t()
+          :snapshot => String.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:snapshot)

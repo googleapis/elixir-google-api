@@ -31,11 +31,11 @@ defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :data => String.t(),
-          :messageId => String.t(),
-          :orderingKey => String.t(),
-          :publishTime => DateTime.t()
+          :attributes => map() | nil,
+          :data => String.t() | nil,
+          :messageId => String.t() | nil,
+          :orderingKey => String.t() | nil,
+          :publishTime => DateTime.t() | nil
         }
 
   field(:attributes, type: :map)

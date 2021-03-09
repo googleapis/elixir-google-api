@@ -32,12 +32,12 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t(),
-          :labels => map(),
-          :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t(),
-          :name => String.t(),
-          :satisfiesPzs => boolean(),
-          :schemaSettings => GoogleApi.PubSub.V1.Model.SchemaSettings.t()
+          :kmsKeyName => String.t() | nil,
+          :labels => map() | nil,
+          :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t() | nil,
+          :name => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
+          :schemaSettings => GoogleApi.PubSub.V1.Model.SchemaSettings.t() | nil
         }
 
   field(:kmsKeyName)

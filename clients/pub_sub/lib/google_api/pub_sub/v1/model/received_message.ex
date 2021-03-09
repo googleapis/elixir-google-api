@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSub.V1.Model.ReceivedMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackId => String.t(),
-          :deliveryAttempt => integer(),
-          :message => GoogleApi.PubSub.V1.Model.PubsubMessage.t()
+          :ackId => String.t() | nil,
+          :deliveryAttempt => integer() | nil,
+          :message => GoogleApi.PubSub.V1.Model.PubsubMessage.t() | nil
         }
 
   field(:ackId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.ListSchemasResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :schemas => list(GoogleApi.PubSub.V1.Model.Schema.t())
+          :nextPageToken => String.t() | nil,
+          :schemas => list(GoogleApi.PubSub.V1.Model.Schema.t()) | nil
         }
 
   field(:nextPageToken)

@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.SchemaSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encoding => String.t(),
-          :schema => String.t()
+          :encoding => String.t() | nil,
+          :schema => String.t() | nil
         }
 
   field(:encoding)

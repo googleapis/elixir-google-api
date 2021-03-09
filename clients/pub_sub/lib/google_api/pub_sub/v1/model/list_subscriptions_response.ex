@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :subscriptions => list(GoogleApi.PubSub.V1.Model.Subscription.t())
+          :nextPageToken => String.t() | nil,
+          :subscriptions => list(GoogleApi.PubSub.V1.Model.Subscription.t()) | nil
         }
 
   field(:nextPageToken)
