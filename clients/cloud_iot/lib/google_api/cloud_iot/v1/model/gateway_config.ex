@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudIot.V1.Model.GatewayConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gatewayAuthMethod => String.t(),
-          :gatewayType => String.t(),
-          :lastAccessedGatewayId => String.t(),
-          :lastAccessedGatewayTime => DateTime.t()
+          :gatewayAuthMethod => String.t() | nil,
+          :gatewayType => String.t() | nil,
+          :lastAccessedGatewayId => String.t() | nil,
+          :lastAccessedGatewayTime => DateTime.t() | nil
         }
 
   field(:gatewayAuthMethod)

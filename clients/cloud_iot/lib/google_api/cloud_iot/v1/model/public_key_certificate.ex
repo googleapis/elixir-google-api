@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudIot.V1.Model.PublicKeyCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificate => String.t(),
-          :format => String.t(),
-          :x509Details => GoogleApi.CloudIot.V1.Model.X509CertificateDetails.t()
+          :certificate => String.t() | nil,
+          :format => String.t() | nil,
+          :x509Details => GoogleApi.CloudIot.V1.Model.X509CertificateDetails.t() | nil
         }
 
   field(:certificate)

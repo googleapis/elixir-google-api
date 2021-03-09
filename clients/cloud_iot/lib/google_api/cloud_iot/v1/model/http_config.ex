@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.HttpConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpEnabledState => String.t()
+          :httpEnabledState => String.t() | nil
         }
 
   field(:httpEnabledState)

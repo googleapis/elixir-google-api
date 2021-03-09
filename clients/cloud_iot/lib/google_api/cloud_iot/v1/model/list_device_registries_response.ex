@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDeviceRegistriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceRegistries => list(GoogleApi.CloudIot.V1.Model.DeviceRegistry.t()),
-          :nextPageToken => String.t()
+          :deviceRegistries => list(GoogleApi.CloudIot.V1.Model.DeviceRegistry.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:deviceRegistries, as: GoogleApi.CloudIot.V1.Model.DeviceRegistry, type: :list)

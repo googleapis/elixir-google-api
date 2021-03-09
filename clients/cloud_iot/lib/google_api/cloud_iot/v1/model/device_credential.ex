@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceCredential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTime => DateTime.t(),
-          :publicKey => GoogleApi.CloudIot.V1.Model.PublicKeyCredential.t()
+          :expirationTime => DateTime.t() | nil,
+          :publicKey => GoogleApi.CloudIot.V1.Model.PublicKeyCredential.t() | nil
         }
 
   field(:expirationTime, as: DateTime)

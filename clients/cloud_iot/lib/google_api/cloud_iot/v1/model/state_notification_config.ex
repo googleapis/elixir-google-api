@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.StateNotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsubTopicName => String.t()
+          :pubsubTopicName => String.t() | nil
         }
 
   field(:pubsubTopicName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.SendCommandToDeviceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binaryData => String.t(),
-          :subfolder => String.t()
+          :binaryData => String.t() | nil,
+          :subfolder => String.t() | nil
         }
 
   field(:binaryData)

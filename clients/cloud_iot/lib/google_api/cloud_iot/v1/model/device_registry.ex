@@ -34,15 +34,16 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceRegistry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :credentials => list(GoogleApi.CloudIot.V1.Model.RegistryCredential.t()),
+          :credentials => list(GoogleApi.CloudIot.V1.Model.RegistryCredential.t()) | nil,
           :eventNotificationConfigs =>
-            list(GoogleApi.CloudIot.V1.Model.EventNotificationConfig.t()),
-          :httpConfig => GoogleApi.CloudIot.V1.Model.HttpConfig.t(),
-          :id => String.t(),
-          :logLevel => String.t(),
-          :mqttConfig => GoogleApi.CloudIot.V1.Model.MqttConfig.t(),
-          :name => String.t(),
-          :stateNotificationConfig => GoogleApi.CloudIot.V1.Model.StateNotificationConfig.t()
+            list(GoogleApi.CloudIot.V1.Model.EventNotificationConfig.t()) | nil,
+          :httpConfig => GoogleApi.CloudIot.V1.Model.HttpConfig.t() | nil,
+          :id => String.t() | nil,
+          :logLevel => String.t() | nil,
+          :mqttConfig => GoogleApi.CloudIot.V1.Model.MqttConfig.t() | nil,
+          :name => String.t() | nil,
+          :stateNotificationConfig =>
+            GoogleApi.CloudIot.V1.Model.StateNotificationConfig.t() | nil
         }
 
   field(:credentials, as: GoogleApi.CloudIot.V1.Model.RegistryCredential, type: :list)

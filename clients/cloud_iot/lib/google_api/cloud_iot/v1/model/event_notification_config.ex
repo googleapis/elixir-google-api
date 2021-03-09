@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.EventNotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsubTopicName => String.t(),
-          :subfolderMatches => String.t()
+          :pubsubTopicName => String.t() | nil,
+          :subfolderMatches => String.t() | nil
         }
 
   field(:pubsubTopicName)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.RegistryCredential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicKeyCertificate => GoogleApi.CloudIot.V1.Model.PublicKeyCertificate.t()
+          :publicKeyCertificate => GoogleApi.CloudIot.V1.Model.PublicKeyCertificate.t() | nil
         }
 
   field(:publicKeyCertificate, as: GoogleApi.CloudIot.V1.Model.PublicKeyCertificate)

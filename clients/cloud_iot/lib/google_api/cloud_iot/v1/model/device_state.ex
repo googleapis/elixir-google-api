@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binaryData => String.t(),
-          :updateTime => DateTime.t()
+          :binaryData => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:binaryData)

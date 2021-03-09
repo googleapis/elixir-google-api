@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.CloudIot.V1.Model.Policy.t()
+          :policy => GoogleApi.CloudIot.V1.Model.Policy.t() | nil
         }
 
   field(:policy, as: GoogleApi.CloudIot.V1.Model.Policy)

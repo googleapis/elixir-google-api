@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binaryData => String.t(),
-          :cloudUpdateTime => DateTime.t(),
-          :deviceAckTime => DateTime.t(),
-          :version => String.t()
+          :binaryData => String.t() | nil,
+          :cloudUpdateTime => DateTime.t() | nil,
+          :deviceAckTime => DateTime.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:binaryData)

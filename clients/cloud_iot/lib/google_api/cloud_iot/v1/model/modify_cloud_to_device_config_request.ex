@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.ModifyCloudToDeviceConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binaryData => String.t(),
-          :versionToUpdate => String.t()
+          :binaryData => String.t() | nil,
+          :versionToUpdate => String.t() | nil
         }
 
   field(:binaryData)
