@@ -29,9 +29,9 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegationServiceAccountEmail => String.t(),
-          :noteReference => String.t(),
-          :publicKeys => list(GoogleApi.BinaryAuthorization.V1.Model.AttestorPublicKey.t())
+          :delegationServiceAccountEmail => String.t() | nil,
+          :noteReference => String.t() | nil,
+          :publicKeys => list(GoogleApi.BinaryAuthorization.V1.Model.AttestorPublicKey.t()) | nil
         }
 
   field(:delegationServiceAccountEmail)

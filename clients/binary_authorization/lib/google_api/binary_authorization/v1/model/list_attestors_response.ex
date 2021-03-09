@@ -28,8 +28,8 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.ListAttestorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestors => list(GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()),
-          :nextPageToken => String.t()
+          :attestors => list(GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:attestors, as: GoogleApi.BinaryAuthorization.V1.Model.Attestor, type: :list)

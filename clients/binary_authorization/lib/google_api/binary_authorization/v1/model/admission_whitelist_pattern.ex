@@ -27,7 +27,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namePattern => String.t()
+          :namePattern => String.t() | nil
         }
 
   field(:namePattern)
