@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.MailOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludeDrafts => boolean()
+          :excludeDrafts => boolean() | nil
         }
 
   field(:excludeDrafts)

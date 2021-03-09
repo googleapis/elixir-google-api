@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.CloseMatterResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matter => GoogleApi.Vault.V1.Model.Matter.t()
+          :matter => GoogleApi.Vault.V1.Model.Matter.t() | nil
         }
 
   field(:matter, as: GoogleApi.Vault.V1.Model.Matter)

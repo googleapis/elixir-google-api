@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.SharedDriveInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sharedDriveIds => list(String.t())
+          :sharedDriveIds => list(String.t()) | nil
         }
 
   field(:sharedDriveIds, type: :list)

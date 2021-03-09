@@ -30,10 +30,10 @@ defmodule GoogleApi.Vault.V1.Model.CloudStorageFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :md5Hash => String.t(),
-          :objectName => String.t(),
-          :size => String.t()
+          :bucketName => String.t() | nil,
+          :md5Hash => String.t() | nil,
+          :objectName => String.t() | nil,
+          :size => String.t() | nil
         }
 
   field(:bucketName)

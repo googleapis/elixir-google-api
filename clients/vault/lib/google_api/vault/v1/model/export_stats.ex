@@ -29,9 +29,9 @@ defmodule GoogleApi.Vault.V1.Model.ExportStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportedArtifactCount => String.t(),
-          :sizeInBytes => String.t(),
-          :totalArtifactCount => String.t()
+          :exportedArtifactCount => String.t() | nil,
+          :sizeInBytes => String.t() | nil,
+          :totalArtifactCount => String.t() | nil
         }
 
   field(:exportedArtifactCount)

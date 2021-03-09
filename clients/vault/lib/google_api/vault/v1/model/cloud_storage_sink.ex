@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.CloudStorageSink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.Vault.V1.Model.CloudStorageFile.t())
+          :files => list(GoogleApi.Vault.V1.Model.CloudStorageFile.t()) | nil
         }
 
   field(:files, as: GoogleApi.Vault.V1.Model.CloudStorageFile, type: :list)

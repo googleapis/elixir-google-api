@@ -29,9 +29,9 @@ defmodule GoogleApi.Vault.V1.Model.AddMatterPermissionsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ccMe => boolean(),
-          :matterPermission => GoogleApi.Vault.V1.Model.MatterPermission.t(),
-          :sendEmails => boolean()
+          :ccMe => boolean() | nil,
+          :matterPermission => GoogleApi.Vault.V1.Model.MatterPermission.t() | nil,
+          :sendEmails => boolean() | nil
         }
 
   field(:ccMe)

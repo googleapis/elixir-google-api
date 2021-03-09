@@ -31,11 +31,11 @@ defmodule GoogleApi.Vault.V1.Model.SavedQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :matterId => String.t(),
-          :query => GoogleApi.Vault.V1.Model.Query.t(),
-          :savedQueryId => String.t()
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :matterId => String.t() | nil,
+          :query => GoogleApi.Vault.V1.Model.Query.t() | nil,
+          :savedQueryId => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

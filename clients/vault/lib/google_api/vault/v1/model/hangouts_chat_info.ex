@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.HangoutsChatInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :roomId => list(String.t())
+          :roomId => list(String.t()) | nil
         }
 
   field(:roomId, type: :list)

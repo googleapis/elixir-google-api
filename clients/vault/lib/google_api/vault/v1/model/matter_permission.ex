@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.MatterPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :role => String.t()
+          :accountId => String.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:accountId)

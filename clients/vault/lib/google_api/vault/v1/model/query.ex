@@ -43,23 +43,23 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountInfo => GoogleApi.Vault.V1.Model.AccountInfo.t(),
-          :corpus => String.t(),
-          :dataScope => String.t(),
-          :driveOptions => GoogleApi.Vault.V1.Model.DriveOptions.t(),
-          :endTime => DateTime.t(),
-          :hangoutsChatInfo => GoogleApi.Vault.V1.Model.HangoutsChatInfo.t(),
-          :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatOptions.t(),
-          :mailOptions => GoogleApi.Vault.V1.Model.MailOptions.t(),
-          :method => String.t(),
-          :orgUnitInfo => GoogleApi.Vault.V1.Model.OrgUnitInfo.t(),
-          :searchMethod => String.t(),
-          :sharedDriveInfo => GoogleApi.Vault.V1.Model.SharedDriveInfo.t(),
-          :startTime => DateTime.t(),
-          :teamDriveInfo => GoogleApi.Vault.V1.Model.TeamDriveInfo.t(),
-          :terms => String.t(),
-          :timeZone => String.t(),
-          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceOptions.t()
+          :accountInfo => GoogleApi.Vault.V1.Model.AccountInfo.t() | nil,
+          :corpus => String.t() | nil,
+          :dataScope => String.t() | nil,
+          :driveOptions => GoogleApi.Vault.V1.Model.DriveOptions.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :hangoutsChatInfo => GoogleApi.Vault.V1.Model.HangoutsChatInfo.t() | nil,
+          :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatOptions.t() | nil,
+          :mailOptions => GoogleApi.Vault.V1.Model.MailOptions.t() | nil,
+          :method => String.t() | nil,
+          :orgUnitInfo => GoogleApi.Vault.V1.Model.OrgUnitInfo.t() | nil,
+          :searchMethod => String.t() | nil,
+          :sharedDriveInfo => GoogleApi.Vault.V1.Model.SharedDriveInfo.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :teamDriveInfo => GoogleApi.Vault.V1.Model.TeamDriveInfo.t() | nil,
+          :terms => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceOptions.t() | nil
         }
 
   field(:accountInfo, as: GoogleApi.Vault.V1.Model.AccountInfo)

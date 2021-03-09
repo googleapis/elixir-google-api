@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.RemoveHeldAccountsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountIds => list(String.t())
+          :accountIds => list(String.t()) | nil
         }
 
   field(:accountIds, type: :list)

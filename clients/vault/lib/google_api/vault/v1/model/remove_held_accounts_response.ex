@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.RemoveHeldAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :statuses => list(GoogleApi.Vault.V1.Model.Status.t())
+          :statuses => list(GoogleApi.Vault.V1.Model.Status.t()) | nil
         }
 
   field(:statuses, as: GoogleApi.Vault.V1.Model.Status, type: :list)

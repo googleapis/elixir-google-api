@@ -29,9 +29,9 @@ defmodule GoogleApi.Vault.V1.Model.DriveOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeSharedDrives => boolean(),
-          :includeTeamDrives => boolean(),
-          :versionDate => DateTime.t()
+          :includeSharedDrives => boolean() | nil,
+          :includeTeamDrives => boolean() | nil,
+          :versionDate => DateTime.t() | nil
         }
 
   field(:includeSharedDrives)

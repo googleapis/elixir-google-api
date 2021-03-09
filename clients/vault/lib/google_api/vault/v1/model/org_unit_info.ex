@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.OrgUnitInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :orgUnitId => String.t()
+          :orgUnitId => String.t() | nil
         }
 
   field(:orgUnitId)

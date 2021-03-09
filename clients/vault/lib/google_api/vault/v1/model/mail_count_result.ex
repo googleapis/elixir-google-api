@@ -31,11 +31,11 @@ defmodule GoogleApi.Vault.V1.Model.MailCountResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountCountErrors => list(GoogleApi.Vault.V1.Model.AccountCountError.t()),
-          :accountCounts => list(GoogleApi.Vault.V1.Model.AccountCount.t()),
-          :matchingAccountsCount => String.t(),
-          :nonQueryableAccounts => list(String.t()),
-          :queriedAccountsCount => String.t()
+          :accountCountErrors => list(GoogleApi.Vault.V1.Model.AccountCountError.t()) | nil,
+          :accountCounts => list(GoogleApi.Vault.V1.Model.AccountCount.t()) | nil,
+          :matchingAccountsCount => String.t() | nil,
+          :nonQueryableAccounts => list(String.t()) | nil,
+          :queriedAccountsCount => String.t() | nil
         }
 
   field(:accountCountErrors, as: GoogleApi.Vault.V1.Model.AccountCountError, type: :list)

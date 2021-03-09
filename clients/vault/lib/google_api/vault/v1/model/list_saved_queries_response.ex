@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.ListSavedQueriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :savedQueries => list(GoogleApi.Vault.V1.Model.SavedQuery.t())
+          :nextPageToken => String.t() | nil,
+          :savedQueries => list(GoogleApi.Vault.V1.Model.SavedQuery.t()) | nil
         }
 
   field(:nextPageToken)

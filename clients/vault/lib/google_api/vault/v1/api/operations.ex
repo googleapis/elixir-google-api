@@ -53,7 +53,10 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec vault_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def vault_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,7 +114,10 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec vault_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def vault_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -168,7 +174,10 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec vault_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Vault.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def vault_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -230,6 +239,7 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   @spec vault_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Vault.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def vault_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

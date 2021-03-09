@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.ListExportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exports => list(GoogleApi.Vault.V1.Model.Export.t()),
-          :nextPageToken => String.t()
+          :exports => list(GoogleApi.Vault.V1.Model.Export.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:exports, as: GoogleApi.Vault.V1.Model.Export, type: :list)

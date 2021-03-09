@@ -31,11 +31,11 @@ defmodule GoogleApi.Vault.V1.Model.Matter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :matterId => String.t(),
-          :matterPermissions => list(GoogleApi.Vault.V1.Model.MatterPermission.t()),
-          :name => String.t(),
-          :state => String.t()
+          :description => String.t() | nil,
+          :matterId => String.t() | nil,
+          :matterPermissions => list(GoogleApi.Vault.V1.Model.MatterPermission.t()) | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:description)

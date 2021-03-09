@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.AccountCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.Vault.V1.Model.UserInfo.t(),
-          :count => String.t()
+          :account => GoogleApi.Vault.V1.Model.UserInfo.t() | nil,
+          :count => String.t() | nil
         }
 
   field(:account, as: GoogleApi.Vault.V1.Model.UserInfo)

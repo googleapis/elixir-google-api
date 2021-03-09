@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.ListMattersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matters => list(GoogleApi.Vault.V1.Model.Matter.t()),
-          :nextPageToken => String.t()
+          :matters => list(GoogleApi.Vault.V1.Model.Matter.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:matters, as: GoogleApi.Vault.V1.Model.Matter, type: :list)

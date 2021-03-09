@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.AddHeldAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.Vault.V1.Model.AddHeldAccountResult.t())
+          :responses => list(GoogleApi.Vault.V1.Model.AddHeldAccountResult.t()) | nil
         }
 
   field(:responses, as: GoogleApi.Vault.V1.Model.AddHeldAccountResult, type: :list)
