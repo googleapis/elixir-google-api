@@ -28,8 +28,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListServicePerimetersResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :servicePerimeters => list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t())
+          :nextPageToken => String.t() | nil,
+          :servicePerimeters =>
+            list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t()) | nil
         }
 
   field(:nextPageToken)

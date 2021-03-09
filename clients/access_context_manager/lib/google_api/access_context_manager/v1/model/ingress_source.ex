@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevel => String.t(),
-          :resource => String.t()
+          :accessLevel => String.t() | nil,
+          :resource => String.t() | nil
         }
 
   field(:accessLevel)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.CommitServicePerimetersRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t()
+          :etag => String.t() | nil
         }
 
   field(:etag)

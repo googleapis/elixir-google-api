@@ -32,12 +32,12 @@ defmodule GoogleApi.AccessContextManager.V1.Model.DevicePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedDeviceManagementLevels => list(String.t()),
-          :allowedEncryptionStatuses => list(String.t()),
-          :osConstraints => list(GoogleApi.AccessContextManager.V1.Model.OsConstraint.t()),
-          :requireAdminApproval => boolean(),
-          :requireCorpOwned => boolean(),
-          :requireScreenlock => boolean()
+          :allowedDeviceManagementLevels => list(String.t()) | nil,
+          :allowedEncryptionStatuses => list(String.t()) | nil,
+          :osConstraints => list(GoogleApi.AccessContextManager.V1.Model.OsConstraint.t()) | nil,
+          :requireAdminApproval => boolean() | nil,
+          :requireCorpOwned => boolean() | nil,
+          :requireScreenlock => boolean() | nil
         }
 
   field(:allowedDeviceManagementLevels, type: :list)

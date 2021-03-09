@@ -28,8 +28,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ApiOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :methodSelectors => list(GoogleApi.AccessContextManager.V1.Model.MethodSelector.t()),
-          :serviceName => String.t()
+          :methodSelectors =>
+            list(GoogleApi.AccessContextManager.V1.Model.MethodSelector.t()) | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:methodSelectors, as: GoogleApi.AccessContextManager.V1.Model.MethodSelector, type: :list)

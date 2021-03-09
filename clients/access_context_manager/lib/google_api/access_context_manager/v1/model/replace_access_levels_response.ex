@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceAccessLevelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t())
+          :accessLevels => list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()) | nil
         }
 
   field(:accessLevels, as: GoogleApi.AccessContextManager.V1.Model.AccessLevel, type: :list)

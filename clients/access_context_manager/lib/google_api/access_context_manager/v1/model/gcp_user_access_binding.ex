@@ -29,9 +29,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(String.t()),
-          :groupKey => String.t(),
-          :name => String.t()
+          :accessLevels => list(String.t()) | nil,
+          :groupKey => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:accessLevels, type: :list)

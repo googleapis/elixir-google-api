@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListAccessPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessPolicies => list(GoogleApi.AccessContextManager.V1.Model.AccessPolicy.t()),
-          :nextPageToken => String.t()
+          :accessPolicies => list(GoogleApi.AccessContextManager.V1.Model.AccessPolicy.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accessPolicies, as: GoogleApi.AccessContextManager.V1.Model.AccessPolicy, type: :list)
