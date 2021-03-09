@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ignoreUnknownValues => boolean(),
-          :kind => String.t(),
-          :rows => list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.t()),
-          :skipInvalidRows => boolean(),
-          :templateSuffix => String.t()
+          :ignoreUnknownValues => boolean() | nil,
+          :kind => String.t() | nil,
+          :rows => list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.t()) | nil,
+          :skipInvalidRows => boolean() | nil,
+          :templateSuffix => String.t() | nil
         }
 
   field(:ignoreUnknownValues)

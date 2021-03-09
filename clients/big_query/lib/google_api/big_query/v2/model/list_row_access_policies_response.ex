@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ListRowAccessPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :rowAccessPolicies => list(GoogleApi.BigQuery.V2.Model.RowAccessPolicy.t())
+          :nextPageToken => String.t() | nil,
+          :rowAccessPolicies => list(GoogleApi.BigQuery.V2.Model.RowAccessPolicy.t()) | nil
         }
 
   field(:nextPageToken)

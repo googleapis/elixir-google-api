@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.JobList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :jobs => list(GoogleApi.BigQuery.V2.Model.JobListJobs.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :jobs => list(GoogleApi.BigQuery.V2.Model.JobListJobs.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

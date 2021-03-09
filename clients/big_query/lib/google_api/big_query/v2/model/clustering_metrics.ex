@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusteringMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.BigQuery.V2.Model.Cluster.t()),
-          :daviesBouldinIndex => float(),
-          :meanSquaredDistance => float()
+          :clusters => list(GoogleApi.BigQuery.V2.Model.Cluster.t()) | nil,
+          :daviesBouldinIndex => float() | nil,
+          :meanSquaredDistance => float() | nil
         }
 
   field(:clusters, as: GoogleApi.BigQuery.V2.Model.Cluster, type: :list)

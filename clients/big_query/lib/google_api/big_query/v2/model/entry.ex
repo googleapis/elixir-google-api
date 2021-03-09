@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Entry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :itemCount => String.t(),
-          :predictedLabel => String.t()
+          :itemCount => String.t() | nil,
+          :predictedLabel => String.t() | nil
         }
 
   field(:itemCount)

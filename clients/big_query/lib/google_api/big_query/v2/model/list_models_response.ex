@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ListModelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :models => list(GoogleApi.BigQuery.V2.Model.Model.t()),
-          :nextPageToken => String.t()
+          :models => list(GoogleApi.BigQuery.V2.Model.Model.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:models, as: GoogleApi.BigQuery.V2.Model.Model, type: :list)

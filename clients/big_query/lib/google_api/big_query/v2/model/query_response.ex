@@ -37,17 +37,17 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheHit => boolean(),
-          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()),
-          :jobComplete => boolean(),
-          :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t(),
-          :kind => String.t(),
-          :numDmlAffectedRows => String.t(),
-          :pageToken => String.t(),
-          :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()),
-          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
-          :totalBytesProcessed => String.t(),
-          :totalRows => String.t()
+          :cacheHit => boolean() | nil,
+          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()) | nil,
+          :jobComplete => boolean() | nil,
+          :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t() | nil,
+          :kind => String.t() | nil,
+          :numDmlAffectedRows => String.t() | nil,
+          :pageToken => String.t() | nil,
+          :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()) | nil,
+          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
+          :totalBytesProcessed => String.t() | nil,
+          :totalRows => String.t() | nil
         }
 
   field(:cacheHit)

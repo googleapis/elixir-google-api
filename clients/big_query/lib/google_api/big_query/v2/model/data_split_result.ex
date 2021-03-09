@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.DataSplitResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluationTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :trainingTable => GoogleApi.BigQuery.V2.Model.TableReference.t()
+          :evaluationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :trainingTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil
         }
 
   field(:evaluationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)

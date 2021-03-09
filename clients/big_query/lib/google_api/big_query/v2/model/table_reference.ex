@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.TableReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetId => String.t(),
-          :projectId => String.t(),
-          :tableId => String.t()
+          :datasetId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :tableId => String.t() | nil
         }
 
   field(:datasetId)

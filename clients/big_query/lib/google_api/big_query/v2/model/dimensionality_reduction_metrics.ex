@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :totalExplainedVarianceRatio => float()
+          :totalExplainedVarianceRatio => float() | nil
         }
 
   field(:totalExplainedVarianceRatio)

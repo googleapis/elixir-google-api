@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.BigQuery.V2.Model.Policy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.BigQuery.V2.Model.Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.BigQuery.V2.Model.Policy)

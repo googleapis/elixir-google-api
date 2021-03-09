@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.CsvOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowJaggedRows => boolean(),
-          :allowQuotedNewlines => boolean(),
-          :encoding => String.t(),
-          :fieldDelimiter => String.t(),
-          :quote => String.t(),
-          :skipLeadingRows => String.t()
+          :allowJaggedRows => boolean() | nil,
+          :allowQuotedNewlines => boolean() | nil,
+          :encoding => String.t() | nil,
+          :fieldDelimiter => String.t() | nil,
+          :quote => String.t() | nil,
+          :skipLeadingRows => String.t() | nil
         }
 
   field(:allowJaggedRows)

@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetReference => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
-          :friendlyName => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labels => map(),
-          :location => String.t()
+          :datasetReference => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
+          :friendlyName => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :location => String.t() | nil
         }
 
   field(:datasetReference, as: GoogleApi.BigQuery.V2.Model.DatasetReference)

@@ -34,15 +34,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createDisposition => String.t(),
+          :createDisposition => String.t() | nil,
           :destinationEncryptionConfiguration =>
-            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
-          :destinationExpirationTime => any(),
-          :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :operationType => String.t(),
-          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :sourceTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()),
-          :writeDisposition => String.t()
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
+          :destinationExpirationTime => any() | nil,
+          :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :operationType => String.t() | nil,
+          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :sourceTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()) | nil,
+          :writeDisposition => String.t() | nil
         }
 
   field(:createDisposition)

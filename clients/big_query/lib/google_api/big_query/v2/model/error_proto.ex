@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ErrorProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugInfo => String.t(),
-          :location => String.t(),
-          :message => String.t(),
-          :reason => String.t()
+          :debugInfo => String.t() | nil,
+          :location => String.t() | nil,
+          :message => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:debugInfo)

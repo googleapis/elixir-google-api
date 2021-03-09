@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.BqmlTrainingRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iterationResults => list(GoogleApi.BigQuery.V2.Model.BqmlIterationResult.t()),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :trainingOptions => GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions.t()
+          :iterationResults => list(GoogleApi.BigQuery.V2.Model.BqmlIterationResult.t()) | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :trainingOptions => GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions.t() | nil
         }
 
   field(:iterationResults, as: GoogleApi.BigQuery.V2.Model.BqmlIterationResult, type: :list)

@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.ScriptStackFrame do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endColumn => integer(),
-          :endLine => integer(),
-          :procedureId => String.t(),
-          :startColumn => integer(),
-          :startLine => integer(),
-          :text => String.t()
+          :endColumn => integer() | nil,
+          :endLine => integer() | nil,
+          :procedureId => String.t() | nil,
+          :startColumn => integer() | nil,
+          :startLine => integer() | nil,
+          :text => String.t() | nil
         }
 
   field(:endColumn)

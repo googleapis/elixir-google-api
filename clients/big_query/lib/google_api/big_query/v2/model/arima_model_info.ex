@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arimaCoefficients => GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t(),
-          :arimaFittingMetrics => GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t(),
-          :hasDrift => boolean(),
-          :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t(),
-          :seasonalPeriods => list(String.t()),
-          :timeSeriesId => String.t()
+          :arimaCoefficients => GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t() | nil,
+          :arimaFittingMetrics => GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t() | nil,
+          :hasDrift => boolean() | nil,
+          :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t() | nil,
+          :seasonalPeriods => list(String.t()) | nil,
+          :timeSeriesId => String.t() | nil
         }
 
   field(:arimaCoefficients, as: GoogleApi.BigQuery.V2.Model.ArimaCoefficients)

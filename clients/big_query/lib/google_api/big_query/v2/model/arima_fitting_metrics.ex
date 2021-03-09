@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aic => float(),
-          :logLikelihood => float(),
-          :variance => float()
+          :aic => float() | nil,
+          :logLikelihood => float() | nil,
+          :variance => float() | nil
         }
 
   field(:aic)

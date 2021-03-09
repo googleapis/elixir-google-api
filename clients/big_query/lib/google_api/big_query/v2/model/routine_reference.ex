@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.RoutineReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetId => String.t(),
-          :projectId => String.t(),
-          :routineId => String.t()
+          :datasetId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :routineId => String.t() | nil
         }
 
   field(:datasetId)

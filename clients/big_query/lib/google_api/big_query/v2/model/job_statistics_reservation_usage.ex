@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :slotMs => String.t()
+          :name => String.t() | nil,
+          :slotMs => String.t() | nil
         }
 
   field(:name)

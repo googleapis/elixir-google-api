@@ -42,23 +42,23 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t()),
-          :creationTime => String.t(),
-          :datasetReference => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
+          :access => list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t()) | nil,
+          :creationTime => String.t() | nil,
+          :datasetReference => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
           :defaultEncryptionConfiguration =>
-            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
-          :defaultPartitionExpirationMs => String.t(),
-          :defaultTableExpirationMs => String.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :friendlyName => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labels => map(),
-          :lastModifiedTime => String.t(),
-          :location => String.t(),
-          :satisfiesPZS => boolean(),
-          :selfLink => String.t()
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
+          :defaultPartitionExpirationMs => String.t() | nil,
+          :defaultTableExpirationMs => String.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :friendlyName => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :location => String.t() | nil,
+          :satisfiesPZS => boolean() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:access, as: GoogleApi.BigQuery.V2.Model.DatasetAccess, type: :list)

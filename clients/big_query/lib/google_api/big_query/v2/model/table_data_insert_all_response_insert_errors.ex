@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()),
-          :index => integer()
+          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()) | nil,
+          :index => integer() | nil
         }
 
   field(:errors, as: GoogleApi.BigQuery.V2.Model.ErrorProto, type: :list)

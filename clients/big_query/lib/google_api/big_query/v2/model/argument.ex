@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.Argument do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :argumentKind => String.t(),
-          :dataType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t(),
-          :mode => String.t(),
-          :name => String.t()
+          :argumentKind => String.t() | nil,
+          :dataType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
+          :mode => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:argumentKind)

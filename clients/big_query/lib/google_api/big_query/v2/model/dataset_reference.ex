@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetId => String.t(),
-          :projectId => String.t()
+          :datasetId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:datasetId)

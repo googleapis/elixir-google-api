@@ -34,14 +34,14 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :copy => GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy.t(),
-          :dryRun => boolean(),
-          :extract => GoogleApi.BigQuery.V2.Model.JobConfigurationExtract.t(),
-          :jobTimeoutMs => String.t(),
-          :jobType => String.t(),
-          :labels => map(),
-          :load => GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t(),
-          :query => GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t()
+          :copy => GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy.t() | nil,
+          :dryRun => boolean() | nil,
+          :extract => GoogleApi.BigQuery.V2.Model.JobConfigurationExtract.t() | nil,
+          :jobTimeoutMs => String.t() | nil,
+          :jobType => String.t() | nil,
+          :labels => map() | nil,
+          :load => GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t() | nil,
+          :query => GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t() | nil
         }
 
   field(:copy, as: GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy)

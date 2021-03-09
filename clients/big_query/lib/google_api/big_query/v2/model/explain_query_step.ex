@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :substeps => list(String.t())
+          :kind => String.t() | nil,
+          :substeps => list(String.t()) | nil
         }
 
   field(:kind)

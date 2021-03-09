@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetType => String.t()
+          :targetType => String.t() | nil
         }
 
   field(:targetType)

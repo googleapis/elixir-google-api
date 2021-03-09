@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.StandardSqlDataType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayElementType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t(),
-          :structType => GoogleApi.BigQuery.V2.Model.StandardSqlStructType.t(),
-          :typeKind => String.t()
+          :arrayElementType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
+          :structType => GoogleApi.BigQuery.V2.Model.StandardSqlStructType.t() | nil,
+          :typeKind => String.t() | nil
         }
 
   field(:arrayElementType, as: GoogleApi.BigQuery.V2.Model.StandardSqlDataType)

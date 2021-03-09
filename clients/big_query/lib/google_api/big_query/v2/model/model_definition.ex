@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ModelDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :modelOptions => GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions.t(),
-          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.BqmlTrainingRun.t())
+          :modelOptions => GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions.t() | nil,
+          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.BqmlTrainingRun.t()) | nil
         }
 
   field(:modelOptions, as: GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions)

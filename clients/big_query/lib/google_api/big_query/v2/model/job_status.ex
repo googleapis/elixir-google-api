@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorResult => GoogleApi.BigQuery.V2.Model.ErrorProto.t(),
-          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()),
-          :state => String.t()
+          :errorResult => GoogleApi.BigQuery.V2.Model.ErrorProto.t() | nil,
+          :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()) | nil,
+          :state => String.t() | nil
         }
 
   field(:errorResult, as: GoogleApi.BigQuery.V2.Model.ErrorProto)

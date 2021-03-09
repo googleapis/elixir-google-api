@@ -33,16 +33,17 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arimaForecastingMetrics => GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics.t(),
+          :arimaForecastingMetrics =>
+            GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics.t() | nil,
           :binaryClassificationMetrics =>
-            GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t(),
-          :clusteringMetrics => GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t(),
+            GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t() | nil,
+          :clusteringMetrics => GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t() | nil,
           :dimensionalityReductionMetrics =>
-            GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics.t(),
+            GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics.t() | nil,
           :multiClassClassificationMetrics =>
-            GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t(),
-          :rankingMetrics => GoogleApi.BigQuery.V2.Model.RankingMetrics.t(),
-          :regressionMetrics => GoogleApi.BigQuery.V2.Model.RegressionMetrics.t()
+            GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t() | nil,
+          :rankingMetrics => GoogleApi.BigQuery.V2.Model.RankingMetrics.t() | nil,
+          :regressionMetrics => GoogleApi.BigQuery.V2.Model.RegressionMetrics.t() | nil
         }
 
   field(:arimaForecastingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inlineCode => String.t(),
-          :resourceUri => String.t()
+          :inlineCode => String.t() | nil,
+          :resourceUri => String.t() | nil
         }
 
   field(:inlineCode)

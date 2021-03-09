@@ -49,33 +49,33 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowLargeResults => boolean(),
-          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t(),
-          :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()),
-          :createDisposition => String.t(),
-          :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
+          :allowLargeResults => boolean() | nil,
+          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
+          :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()) | nil,
+          :createDisposition => String.t() | nil,
+          :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
           :destinationEncryptionConfiguration =>
-            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
-          :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :flattenResults => boolean(),
-          :maximumBillingTier => integer(),
-          :maximumBytesBilled => String.t(),
-          :parameterMode => String.t(),
-          :preserveNulls => boolean(),
-          :priority => String.t(),
-          :query => String.t(),
-          :queryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()),
-          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t(),
-          :schemaUpdateOptions => list(String.t()),
-          :tableDefinitions => %{
-            optional(String.t()) => GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration.t()
-          },
-          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t(),
-          :useLegacySql => boolean(),
-          :useQueryCache => boolean(),
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
+          :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :flattenResults => boolean() | nil,
+          :maximumBillingTier => integer() | nil,
+          :maximumBytesBilled => String.t() | nil,
+          :parameterMode => String.t() | nil,
+          :preserveNulls => boolean() | nil,
+          :priority => String.t() | nil,
+          :query => String.t() | nil,
+          :queryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()) | nil,
+          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
+          :schemaUpdateOptions => list(String.t()) | nil,
+          :tableDefinitions =>
+            %{optional(String.t()) => GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration.t()}
+            | nil,
+          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
+          :useLegacySql => boolean() | nil,
+          :useQueryCache => boolean() | nil,
           :userDefinedFunctionResources =>
-            list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t()),
-          :writeDisposition => String.t()
+            list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t()) | nil,
+          :writeDisposition => String.t() | nil
         }
 
   field(:allowLargeResults)

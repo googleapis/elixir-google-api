@@ -29,8 +29,8 @@ defmodule GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics do
 
   @type t :: %__MODULE__{
           :aggregateClassificationMetrics =>
-            GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t(),
-          :confusionMatrixList => list(GoogleApi.BigQuery.V2.Model.ConfusionMatrix.t())
+            GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t() | nil,
+          :confusionMatrixList => list(GoogleApi.BigQuery.V2.Model.ConfusionMatrix.t()) | nil
         }
 
   field(:aggregateClassificationMetrics,

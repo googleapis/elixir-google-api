@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
 
   @type t :: %__MODULE__{
           :aggregateClassificationMetrics =>
-            GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t(),
+            GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t() | nil,
           :binaryConfusionMatrixList =>
-            list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t()),
-          :negativeLabel => String.t(),
-          :positiveLabel => String.t()
+            list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t()) | nil,
+          :negativeLabel => String.t() | nil,
+          :positiveLabel => String.t() | nil
         }
 
   field(:aggregateClassificationMetrics,

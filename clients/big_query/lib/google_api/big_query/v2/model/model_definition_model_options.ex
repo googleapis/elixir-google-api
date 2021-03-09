@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => list(String.t()),
-          :lossType => String.t(),
-          :modelType => String.t()
+          :labels => list(String.t()) | nil,
+          :lossType => String.t() | nil,
+          :modelType => String.t() | nil
         }
 
   field(:labels, type: :list)

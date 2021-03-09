@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Clustering do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(String.t())
+          :fields => list(String.t()) | nil
         }
 
   field(:fields, type: :list)

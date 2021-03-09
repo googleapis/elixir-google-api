@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaCoefficients do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoRegressiveCoefficients => list(float()),
-          :interceptCoefficient => float(),
-          :movingAverageCoefficients => list(float())
+          :autoRegressiveCoefficients => list(float()) | nil,
+          :interceptCoefficient => float() | nil,
+          :movingAverageCoefficients => list(float()) | nil
         }
 
   field(:autoRegressiveCoefficients, type: :list)

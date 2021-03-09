@@ -38,18 +38,18 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t(),
-          :creationTime => String.t(),
-          :expirationTime => String.t(),
-          :friendlyName => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labels => map(),
-          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t(),
-          :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t(),
-          :type => String.t(),
-          :view => GoogleApi.BigQuery.V2.Model.TableListTablesView.t()
+          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
+          :creationTime => String.t() | nil,
+          :expirationTime => String.t() | nil,
+          :friendlyName => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
+          :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
+          :type => String.t() | nil,
+          :view => GoogleApi.BigQuery.V2.Model.TableListTablesView.t() | nil
         }
 
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)

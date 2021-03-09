@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StandardSqlStructType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t())
+          :fields => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()) | nil
         }
 
   field(:fields, as: GoogleApi.BigQuery.V2.Model.StandardSqlField, type: :list)

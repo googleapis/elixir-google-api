@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :f => list(GoogleApi.BigQuery.V2.Model.TableCell.t())
+          :f => list(GoogleApi.BigQuery.V2.Model.TableCell.t()) | nil
         }
 
   field(:f, as: GoogleApi.BigQuery.V2.Model.TableCell, type: :list)

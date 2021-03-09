@@ -31,11 +31,12 @@ defmodule GoogleApi.BigQuery.V2.Model.RowAccessPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :etag => String.t(),
-          :filterPredicate => String.t(),
-          :lastModifiedTime => DateTime.t(),
-          :rowAccessPolicyReference => GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t()
+          :creationTime => DateTime.t() | nil,
+          :etag => String.t() | nil,
+          :filterPredicate => String.t() | nil,
+          :lastModifiedTime => DateTime.t() | nil,
+          :rowAccessPolicyReference =>
+            GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t() | nil
         }
 
   field(:creationTime, as: DateTime)

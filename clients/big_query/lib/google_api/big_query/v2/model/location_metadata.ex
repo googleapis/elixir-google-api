@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :legacyLocationId => String.t()
+          :legacyLocationId => String.t() | nil
         }
 
   field(:legacyLocationId)

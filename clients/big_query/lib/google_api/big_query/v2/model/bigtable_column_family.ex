@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.BigtableColumnFamily do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(GoogleApi.BigQuery.V2.Model.BigtableColumn.t()),
-          :encoding => String.t(),
-          :familyId => String.t(),
-          :onlyReadLatest => boolean(),
-          :type => String.t()
+          :columns => list(GoogleApi.BigQuery.V2.Model.BigtableColumn.t()) | nil,
+          :encoding => String.t() | nil,
+          :familyId => String.t() | nil,
+          :onlyReadLatest => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:columns, as: GoogleApi.BigQuery.V2.Model.BigtableColumn, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.Streamingbuffer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :estimatedBytes => String.t(),
-          :estimatedRows => String.t(),
-          :oldestEntryTime => String.t()
+          :estimatedBytes => String.t() | nil,
+          :estimatedRows => String.t() | nil,
+          :oldestEntryTime => String.t() | nil
         }
 
   field(:estimatedBytes)

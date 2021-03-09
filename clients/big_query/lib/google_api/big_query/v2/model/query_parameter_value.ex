@@ -29,11 +29,10 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayValues => list(GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()),
-          :structValues => %{
-            optional(String.t()) => GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()
-          },
-          :value => String.t()
+          :arrayValues => list(GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()) | nil,
+          :structValues =>
+            %{optional(String.t()) => GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()} | nil,
+          :value => String.t() | nil
         }
 
   field(:arrayValues, as: GoogleApi.BigQuery.V2.Model.QueryParameterValue, type: :list)

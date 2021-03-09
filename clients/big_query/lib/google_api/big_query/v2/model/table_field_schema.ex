@@ -33,13 +33,13 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categories => GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t(),
-          :description => String.t(),
-          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()),
-          :mode => String.t(),
-          :name => String.t(),
-          :policyTags => GoogleApi.BigQuery.V2.Model.TableFieldSchemaPolicyTags.t(),
-          :type => String.t()
+          :categories => GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t() | nil,
+          :description => String.t() | nil,
+          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil,
+          :mode => String.t() | nil,
+          :name => String.t() | nil,
+          :policyTags => GoogleApi.BigQuery.V2.Model.TableFieldSchemaPolicyTags.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:categories, as: GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories)

@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryTimelineSample do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeUnits => String.t(),
-          :completedUnits => String.t(),
-          :elapsedMs => String.t(),
-          :pendingUnits => String.t(),
-          :totalSlotMs => String.t()
+          :activeUnits => String.t() | nil,
+          :completedUnits => String.t() | nil,
+          :elapsedMs => String.t() | nil,
+          :pendingUnits => String.t() | nil,
+          :totalSlotMs => String.t() | nil
         }
 
   field(:activeUnits)

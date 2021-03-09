@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.RangePartitioning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => String.t(),
-          :range => GoogleApi.BigQuery.V2.Model.RangePartitioningRange.t()
+          :field => String.t() | nil,
+          :range => GoogleApi.BigQuery.V2.Model.RangePartitioningRange.t() | nil
         }
 
   field(:field)

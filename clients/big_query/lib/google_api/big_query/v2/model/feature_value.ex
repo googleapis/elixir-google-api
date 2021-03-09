@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.FeatureValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoricalValue => GoogleApi.BigQuery.V2.Model.CategoricalValue.t(),
-          :featureColumn => String.t(),
-          :numericalValue => float()
+          :categoricalValue => GoogleApi.BigQuery.V2.Model.CategoricalValue.t() | nil,
+          :featureColumn => String.t() | nil,
+          :numericalValue => float() | nil
         }
 
   field(:categoricalValue, as: GoogleApi.BigQuery.V2.Model.CategoricalValue)

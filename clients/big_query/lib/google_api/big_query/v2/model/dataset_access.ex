@@ -35,15 +35,15 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => GoogleApi.BigQuery.V2.Model.DatasetAccessEntry.t(),
-          :domain => String.t(),
-          :groupByEmail => String.t(),
-          :iamMember => String.t(),
-          :role => String.t(),
-          :routine => GoogleApi.BigQuery.V2.Model.RoutineReference.t(),
-          :specialGroup => String.t(),
-          :userByEmail => String.t(),
-          :view => GoogleApi.BigQuery.V2.Model.TableReference.t()
+          :dataset => GoogleApi.BigQuery.V2.Model.DatasetAccessEntry.t() | nil,
+          :domain => String.t() | nil,
+          :groupByEmail => String.t() | nil,
+          :iamMember => String.t() | nil,
+          :role => String.t() | nil,
+          :routine => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
+          :specialGroup => String.t() | nil,
+          :userByEmail => String.t() | nil,
+          :view => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil
         }
 
   field(:dataset, as: GoogleApi.BigQuery.V2.Model.DatasetAccessEntry)

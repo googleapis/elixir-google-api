@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchemaPolicyTags do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :names => list(String.t())
+          :names => list(String.t()) | nil
         }
 
   field(:names, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTablesView do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :useLegacySql => boolean()
+          :useLegacySql => boolean() | nil
         }
 
   field(:useLegacySql)

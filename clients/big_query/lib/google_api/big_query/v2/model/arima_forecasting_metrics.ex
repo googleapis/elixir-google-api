@@ -32,13 +32,13 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arimaFittingMetrics => list(GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t()),
+          :arimaFittingMetrics => list(GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t()) | nil,
           :arimaSingleModelForecastingMetrics =>
-            list(GoogleApi.BigQuery.V2.Model.ArimaSingleModelForecastingMetrics.t()),
-          :hasDrift => list(boolean()),
-          :nonSeasonalOrder => list(GoogleApi.BigQuery.V2.Model.ArimaOrder.t()),
-          :seasonalPeriods => list(String.t()),
-          :timeSeriesId => list(String.t())
+            list(GoogleApi.BigQuery.V2.Model.ArimaSingleModelForecastingMetrics.t()) | nil,
+          :hasDrift => list(boolean()) | nil,
+          :nonSeasonalOrder => list(GoogleApi.BigQuery.V2.Model.ArimaOrder.t()) | nil,
+          :seasonalPeriods => list(String.t()) | nil,
+          :timeSeriesId => list(String.t()) | nil
         }
 
   field(:arimaFittingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics, type: :list)

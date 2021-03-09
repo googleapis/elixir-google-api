@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableRefresh => boolean(),
-          :lastRefreshTime => String.t(),
-          :query => String.t(),
-          :refreshIntervalMs => String.t()
+          :enableRefresh => boolean() | nil,
+          :lastRefreshTime => String.t() | nil,
+          :query => String.t() | nil,
+          :refreshIntervalMs => String.t() | nil
         }
 
   field(:enableRefresh)
