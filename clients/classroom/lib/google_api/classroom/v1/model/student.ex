@@ -30,10 +30,10 @@ defmodule GoogleApi.Classroom.V1.Model.Student do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :courseId => String.t(),
-          :profile => GoogleApi.Classroom.V1.Model.UserProfile.t(),
-          :studentWorkFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t(),
-          :userId => String.t()
+          :courseId => String.t() | nil,
+          :profile => GoogleApi.Classroom.V1.Model.UserProfile.t() | nil,
+          :studentWorkFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:courseId)

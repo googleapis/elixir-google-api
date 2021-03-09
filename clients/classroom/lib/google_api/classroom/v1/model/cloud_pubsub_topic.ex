@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.CloudPubsubTopic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :topicName => String.t()
+          :topicName => String.t() | nil
         }
 
   field(:topicName)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addAttachments => list(GoogleApi.Classroom.V1.Model.Attachment.t())
+          :addAttachments => list(GoogleApi.Classroom.V1.Model.Attachment.t()) | nil
         }
 
   field(:addAttachments, as: GoogleApi.Classroom.V1.Model.Attachment, type: :list)

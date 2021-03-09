@@ -29,9 +29,9 @@ defmodule GoogleApi.Classroom.V1.Model.DriveFolder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateLink => String.t(),
-          :id => String.t(),
-          :title => String.t()
+          :alternateLink => String.t() | nil,
+          :id => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:alternateLink)

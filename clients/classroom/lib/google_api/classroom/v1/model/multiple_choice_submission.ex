@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :answer => String.t()
+          :answer => String.t() | nil
         }
 
   field(:answer)

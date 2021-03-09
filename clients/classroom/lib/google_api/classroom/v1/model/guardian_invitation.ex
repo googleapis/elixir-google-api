@@ -31,11 +31,11 @@ defmodule GoogleApi.Classroom.V1.Model.GuardianInvitation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :invitationId => String.t(),
-          :invitedEmailAddress => String.t(),
-          :state => String.t(),
-          :studentId => String.t()
+          :creationTime => DateTime.t() | nil,
+          :invitationId => String.t() | nil,
+          :invitedEmailAddress => String.t() | nil,
+          :state => String.t() | nil,
+          :studentId => String.t() | nil
         }
 
   field(:creationTime, as: DateTime)

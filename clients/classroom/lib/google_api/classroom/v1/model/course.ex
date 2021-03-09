@@ -44,24 +44,24 @@ defmodule GoogleApi.Classroom.V1.Model.Course do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateLink => String.t(),
-          :calendarId => String.t(),
-          :courseGroupEmail => String.t(),
-          :courseMaterialSets => list(GoogleApi.Classroom.V1.Model.CourseMaterialSet.t()),
-          :courseState => String.t(),
-          :creationTime => DateTime.t(),
-          :description => String.t(),
-          :descriptionHeading => String.t(),
-          :enrollmentCode => String.t(),
-          :guardiansEnabled => boolean(),
-          :id => String.t(),
-          :name => String.t(),
-          :ownerId => String.t(),
-          :room => String.t(),
-          :section => String.t(),
-          :teacherFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t(),
-          :teacherGroupEmail => String.t(),
-          :updateTime => DateTime.t()
+          :alternateLink => String.t() | nil,
+          :calendarId => String.t() | nil,
+          :courseGroupEmail => String.t() | nil,
+          :courseMaterialSets => list(GoogleApi.Classroom.V1.Model.CourseMaterialSet.t()) | nil,
+          :courseState => String.t() | nil,
+          :creationTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :descriptionHeading => String.t() | nil,
+          :enrollmentCode => String.t() | nil,
+          :guardiansEnabled => boolean() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :ownerId => String.t() | nil,
+          :room => String.t() | nil,
+          :section => String.t() | nil,
+          :teacherFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t() | nil,
+          :teacherGroupEmail => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:alternateLink)

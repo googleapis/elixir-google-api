@@ -30,10 +30,10 @@ defmodule GoogleApi.Classroom.V1.Model.Invitation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :courseId => String.t(),
-          :id => String.t(),
-          :role => String.t(),
-          :userId => String.t()
+          :courseId => String.t() | nil,
+          :id => String.t() | nil,
+          :role => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:courseId)

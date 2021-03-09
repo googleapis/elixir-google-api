@@ -38,19 +38,19 @@ defmodule GoogleApi.Classroom.V1.Model.Announcement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateLink => String.t(),
-          :assigneeMode => String.t(),
-          :courseId => String.t(),
-          :creationTime => DateTime.t(),
-          :creatorUserId => String.t(),
-          :id => String.t(),
+          :alternateLink => String.t() | nil,
+          :assigneeMode => String.t() | nil,
+          :courseId => String.t() | nil,
+          :creationTime => DateTime.t() | nil,
+          :creatorUserId => String.t() | nil,
+          :id => String.t() | nil,
           :individualStudentsOptions =>
-            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
-          :materials => list(GoogleApi.Classroom.V1.Model.Material.t()),
-          :scheduledTime => DateTime.t(),
-          :state => String.t(),
-          :text => String.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t() | nil,
+          :materials => list(GoogleApi.Classroom.V1.Model.Material.t()) | nil,
+          :scheduledTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :text => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:alternateLink)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.CourseMaterialSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :materials => list(GoogleApi.Classroom.V1.Model.CourseMaterial.t()),
-          :title => String.t()
+          :materials => list(GoogleApi.Classroom.V1.Model.CourseMaterial.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:materials, as: GoogleApi.Classroom.V1.Model.CourseMaterial, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Classroom.V1.Model.GradeHistory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actorUserId => String.t(),
-          :gradeChangeType => String.t(),
-          :gradeTimestamp => DateTime.t(),
-          :maxPoints => float(),
-          :pointsEarned => float()
+          :actorUserId => String.t() | nil,
+          :gradeChangeType => String.t() | nil,
+          :gradeTimestamp => DateTime.t() | nil,
+          :maxPoints => float() | nil,
+          :pointsEarned => float() | nil
         }
 
   field(:actorUserId)

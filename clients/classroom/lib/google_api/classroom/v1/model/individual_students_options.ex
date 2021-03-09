@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :studentIds => list(String.t())
+          :studentIds => list(String.t()) | nil
         }
 
   field(:studentIds, type: :list)

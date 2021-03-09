@@ -30,10 +30,10 @@ defmodule GoogleApi.Classroom.V1.Model.Registration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudPubsubTopic => GoogleApi.Classroom.V1.Model.CloudPubsubTopic.t(),
-          :expiryTime => DateTime.t(),
-          :feed => GoogleApi.Classroom.V1.Model.Feed.t(),
-          :registrationId => String.t()
+          :cloudPubsubTopic => GoogleApi.Classroom.V1.Model.CloudPubsubTopic.t() | nil,
+          :expiryTime => DateTime.t() | nil,
+          :feed => GoogleApi.Classroom.V1.Model.Feed.t() | nil,
+          :registrationId => String.t() | nil
         }
 
   field(:cloudPubsubTopic, as: GoogleApi.Classroom.V1.Model.CloudPubsubTopic)

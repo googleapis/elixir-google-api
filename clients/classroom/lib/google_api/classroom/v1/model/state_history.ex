@@ -29,9 +29,9 @@ defmodule GoogleApi.Classroom.V1.Model.StateHistory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actorUserId => String.t(),
-          :state => String.t(),
-          :stateTimestamp => DateTime.t()
+          :actorUserId => String.t() | nil,
+          :state => String.t() | nil,
+          :stateTimestamp => DateTime.t() | nil
         }
 
   field(:actorUserId)

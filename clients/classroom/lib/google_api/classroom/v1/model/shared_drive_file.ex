@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.SharedDriveFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveFile => GoogleApi.Classroom.V1.Model.DriveFile.t(),
-          :shareMode => String.t()
+          :driveFile => GoogleApi.Classroom.V1.Model.DriveFile.t() | nil,
+          :shareMode => String.t() | nil
         }
 
   field(:driveFile, as: GoogleApi.Classroom.V1.Model.DriveFile)

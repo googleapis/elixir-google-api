@@ -29,9 +29,9 @@ defmodule GoogleApi.Classroom.V1.Model.Name do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :familyName => String.t(),
-          :fullName => String.t(),
-          :givenName => String.t()
+          :familyName => String.t() | nil,
+          :fullName => String.t() | nil,
+          :givenName => String.t() | nil
         }
 
   field(:familyName)

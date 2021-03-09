@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.Assignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :studentWorkFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t()
+          :studentWorkFolder => GoogleApi.Classroom.V1.Model.DriveFolder.t() | nil
         }
 
   field(:studentWorkFolder, as: GoogleApi.Classroom.V1.Model.DriveFolder)

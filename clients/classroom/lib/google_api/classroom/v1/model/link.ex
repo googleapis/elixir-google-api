@@ -29,9 +29,9 @@ defmodule GoogleApi.Classroom.V1.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thumbnailUrl => String.t(),
-          :title => String.t(),
-          :url => String.t()
+          :thumbnailUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:thumbnailUrl)

@@ -48,29 +48,30 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateLink => String.t(),
-          :assigneeMode => String.t(),
-          :assignment => GoogleApi.Classroom.V1.Model.Assignment.t(),
-          :associatedWithDeveloper => boolean(),
-          :courseId => String.t(),
-          :creationTime => DateTime.t(),
-          :creatorUserId => String.t(),
-          :description => String.t(),
-          :dueDate => GoogleApi.Classroom.V1.Model.Date.t(),
-          :dueTime => GoogleApi.Classroom.V1.Model.TimeOfDay.t(),
-          :id => String.t(),
+          :alternateLink => String.t() | nil,
+          :assigneeMode => String.t() | nil,
+          :assignment => GoogleApi.Classroom.V1.Model.Assignment.t() | nil,
+          :associatedWithDeveloper => boolean() | nil,
+          :courseId => String.t() | nil,
+          :creationTime => DateTime.t() | nil,
+          :creatorUserId => String.t() | nil,
+          :description => String.t() | nil,
+          :dueDate => GoogleApi.Classroom.V1.Model.Date.t() | nil,
+          :dueTime => GoogleApi.Classroom.V1.Model.TimeOfDay.t() | nil,
+          :id => String.t() | nil,
           :individualStudentsOptions =>
-            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
-          :materials => list(GoogleApi.Classroom.V1.Model.Material.t()),
-          :maxPoints => float(),
-          :multipleChoiceQuestion => GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t(),
-          :scheduledTime => DateTime.t(),
-          :state => String.t(),
-          :submissionModificationMode => String.t(),
-          :title => String.t(),
-          :topicId => String.t(),
-          :updateTime => DateTime.t(),
-          :workType => String.t()
+            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t() | nil,
+          :materials => list(GoogleApi.Classroom.V1.Model.Material.t()) | nil,
+          :maxPoints => float() | nil,
+          :multipleChoiceQuestion =>
+            GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t() | nil,
+          :scheduledTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :submissionModificationMode => String.t() | nil,
+          :title => String.t() | nil,
+          :topicId => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :workType => String.t() | nil
         }
 
   field(:alternateLink)

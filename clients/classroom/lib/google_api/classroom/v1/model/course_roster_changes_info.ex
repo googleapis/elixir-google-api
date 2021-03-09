@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :courseId => String.t()
+          :courseId => String.t() | nil
         }
 
   field(:courseId)

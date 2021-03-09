@@ -28,9 +28,9 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyAnnouncementAssigneesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assigneeMode => String.t(),
+          :assigneeMode => String.t() | nil,
           :modifyIndividualStudentsOptions =>
-            GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t()
+            GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t() | nil
         }
 
   field(:assigneeMode)
