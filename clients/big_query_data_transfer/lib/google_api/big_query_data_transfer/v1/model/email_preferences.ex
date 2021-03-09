@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableFailureEmail => boolean()
+          :enableFailureEmail => boolean() | nil
         }
 
   field(:enableFailureEmail)

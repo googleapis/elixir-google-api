@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :transferRuns => list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t())
+          :nextPageToken => String.t() | nil,
+          :transferRuns => list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()) | nil
         }
 
   field(:nextPageToken)

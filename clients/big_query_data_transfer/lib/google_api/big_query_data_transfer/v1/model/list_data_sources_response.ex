@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSources => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()),
-          :nextPageToken => String.t()
+          :dataSources => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dataSources, as: GoogleApi.BigQueryDataTransfer.V1.Model.DataSource, type: :list)

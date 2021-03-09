@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageText => String.t(),
-          :messageTime => DateTime.t(),
-          :severity => String.t()
+          :messageText => String.t() | nil,
+          :messageTime => DateTime.t() | nil,
+          :severity => String.t() | nil
         }
 
   field(:messageText)
