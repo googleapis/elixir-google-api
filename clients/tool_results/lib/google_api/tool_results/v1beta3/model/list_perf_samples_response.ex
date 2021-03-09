@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :perfSamples => list(GoogleApi.ToolResults.V1beta3.Model.PerfSample.t())
+          :nextPageToken => String.t() | nil,
+          :perfSamples => list(GoogleApi.ToolResults.V1beta3.Model.PerfSample.t()) | nil
         }
 
   field(:nextPageToken)

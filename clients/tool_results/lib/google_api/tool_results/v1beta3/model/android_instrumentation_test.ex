@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testPackageId => String.t(),
-          :testRunnerClass => String.t(),
-          :testTargets => list(String.t()),
-          :useOrchestrator => boolean()
+          :testPackageId => String.t() | nil,
+          :testRunnerClass => String.t() | nil,
+          :testTargets => list(String.t()) | nil,
+          :useOrchestrator => boolean() | nil
         }
 
   field(:testPackageId)

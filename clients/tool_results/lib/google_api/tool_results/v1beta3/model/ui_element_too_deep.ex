@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.UIElementTooDeep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :depth => integer(),
-          :screenId => String.t(),
-          :screenStateId => String.t()
+          :depth => integer() | nil,
+          :screenId => String.t() | nil,
+          :screenStateId => String.t() | nil
         }
 
   field(:depth)

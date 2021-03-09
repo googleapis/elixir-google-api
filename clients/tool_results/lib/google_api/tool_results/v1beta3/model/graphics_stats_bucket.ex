@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :frameCount => String.t(),
-          :renderMillis => String.t()
+          :frameCount => String.t() | nil,
+          :renderMillis => String.t() | nil
         }
 
   field(:frameCount)

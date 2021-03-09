@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosAppCrashed do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stackTrace => GoogleApi.ToolResults.V1beta3.Model.StackTrace.t()
+          :stackTrace => GoogleApi.ToolResults.V1beta3.Model.StackTrace.t() | nil
         }
 
   field(:stackTrace, as: GoogleApi.ToolResults.V1beta3.Model.StackTrace)

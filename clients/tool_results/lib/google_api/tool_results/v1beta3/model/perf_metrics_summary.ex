@@ -34,14 +34,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appStartTime => GoogleApi.ToolResults.V1beta3.Model.AppStartTime.t(),
-          :executionId => String.t(),
-          :graphicsStats => GoogleApi.ToolResults.V1beta3.Model.GraphicsStats.t(),
-          :historyId => String.t(),
-          :perfEnvironment => GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment.t(),
-          :perfMetrics => list(String.t()),
-          :projectId => String.t(),
-          :stepId => String.t()
+          :appStartTime => GoogleApi.ToolResults.V1beta3.Model.AppStartTime.t() | nil,
+          :executionId => String.t() | nil,
+          :graphicsStats => GoogleApi.ToolResults.V1beta3.Model.GraphicsStats.t() | nil,
+          :historyId => String.t() | nil,
+          :perfEnvironment => GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment.t() | nil,
+          :perfMetrics => list(String.t()) | nil,
+          :projectId => String.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:appStartTime, as: GoogleApi.ToolResults.V1beta3.Model.AppStartTime)

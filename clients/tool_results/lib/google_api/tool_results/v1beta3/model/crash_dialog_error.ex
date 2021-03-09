@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.CrashDialogError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crashPackage => String.t()
+          :crashPackage => String.t() | nil
         }
 
   field(:crashPackage)

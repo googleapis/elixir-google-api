@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosTestLoop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleId => String.t()
+          :bundleId => String.t() | nil
         }
 
   field(:bundleId)

@@ -32,12 +32,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :errorMessage => String.t(),
-          :severity => String.t(),
-          :stackTrace => GoogleApi.ToolResults.V1beta3.Model.StackTrace.t(),
-          :type => String.t(),
-          :warning => GoogleApi.ToolResults.V1beta3.Model.Any.t()
+          :category => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :severity => String.t() | nil,
+          :stackTrace => GoogleApi.ToolResults.V1beta3.Model.StackTrace.t() | nil,
+          :type => String.t() | nil,
+          :warning => GoogleApi.ToolResults.V1beta3.Model.Any.t() | nil
         }
 
   field(:category)

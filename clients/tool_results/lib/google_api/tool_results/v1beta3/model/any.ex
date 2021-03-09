@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Any do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :typeUrl => String.t(),
-          :value => String.t()
+          :typeUrl => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:typeUrl)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :privateDoNotAccessOrElseSafeHtmlWrappedValue => String.t()
+          :privateDoNotAccessOrElseSafeHtmlWrappedValue => String.t() | nil
         }
 
   field(:privateDoNotAccessOrElseSafeHtmlWrappedValue)

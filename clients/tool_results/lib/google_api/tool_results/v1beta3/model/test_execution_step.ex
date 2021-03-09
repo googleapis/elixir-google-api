@@ -30,10 +30,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testIssues => list(GoogleApi.ToolResults.V1beta3.Model.TestIssue.t()),
-          :testSuiteOverviews => list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t()),
-          :testTiming => GoogleApi.ToolResults.V1beta3.Model.TestTiming.t(),
-          :toolExecution => GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t()
+          :testIssues => list(GoogleApi.ToolResults.V1beta3.Model.TestIssue.t()) | nil,
+          :testSuiteOverviews =>
+            list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t()) | nil,
+          :testTiming => GoogleApi.ToolResults.V1beta3.Model.TestTiming.t() | nil,
+          :toolExecution => GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t() | nil
         }
 
   field(:testIssues, as: GoogleApi.ToolResults.V1beta3.Model.TestIssue, type: :list)

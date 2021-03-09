@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Specification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidTest => GoogleApi.ToolResults.V1beta3.Model.AndroidTest.t(),
-          :iosTest => GoogleApi.ToolResults.V1beta3.Model.IosTest.t()
+          :androidTest => GoogleApi.ToolResults.V1beta3.Model.AndroidTest.t() | nil,
+          :iosTest => GoogleApi.ToolResults.V1beta3.Model.IosTest.t() | nil
         }
 
   field(:androidTest, as: GoogleApi.ToolResults.V1beta3.Model.AndroidTest)

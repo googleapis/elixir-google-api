@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.EncounteredNonAndroidUiWidgetScree
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distinctScreens => integer(),
-          :screenIds => list(String.t())
+          :distinctScreens => integer() | nil,
+          :screenIds => list(String.t()) | nil
         }
 
   field(:distinctScreens)

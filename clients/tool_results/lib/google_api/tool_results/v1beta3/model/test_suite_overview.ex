@@ -34,14 +34,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :errorCount => integer(),
-          :failureCount => integer(),
-          :flakyCount => integer(),
-          :name => String.t(),
-          :skippedCount => integer(),
-          :totalCount => integer(),
-          :xmlSource => GoogleApi.ToolResults.V1beta3.Model.FileReference.t()
+          :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
+          :errorCount => integer() | nil,
+          :failureCount => integer() | nil,
+          :flakyCount => integer() | nil,
+          :name => String.t() | nil,
+          :skippedCount => integer() | nil,
+          :totalCount => integer() | nil,
+          :xmlSource => GoogleApi.ToolResults.V1beta3.Model.FileReference.t() | nil
         }
 
   field(:elapsedTime, as: GoogleApi.ToolResults.V1beta3.Model.Duration)

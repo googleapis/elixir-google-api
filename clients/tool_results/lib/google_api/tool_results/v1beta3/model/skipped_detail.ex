@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SkippedDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :incompatibleAppVersion => boolean(),
-          :incompatibleArchitecture => boolean(),
-          :incompatibleDevice => boolean()
+          :incompatibleAppVersion => boolean() | nil,
+          :incompatibleArchitecture => boolean() | nil,
+          :incompatibleDevice => boolean() | nil
         }
 
   field(:incompatibleAppVersion)

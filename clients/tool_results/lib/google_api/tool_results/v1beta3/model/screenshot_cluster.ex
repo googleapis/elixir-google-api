@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activity => String.t(),
-          :clusterId => String.t(),
-          :keyScreen => GoogleApi.ToolResults.V1beta3.Model.Screen.t(),
-          :screens => list(GoogleApi.ToolResults.V1beta3.Model.Screen.t())
+          :activity => String.t() | nil,
+          :clusterId => String.t() | nil,
+          :keyScreen => GoogleApi.ToolResults.V1beta3.Model.Screen.t() | nil,
+          :screens => list(GoogleApi.ToolResults.V1beta3.Model.Screen.t()) | nil
         }
 
   field(:activity)

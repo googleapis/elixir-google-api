@@ -37,18 +37,18 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
+          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
           :dimensionValue =>
-            list(GoogleApi.ToolResults.V1beta3.Model.EnvironmentDimensionValueEntry.t()),
-          :displayName => String.t(),
-          :environmentId => String.t(),
-          :environmentResult => GoogleApi.ToolResults.V1beta3.Model.MergedResult.t(),
-          :executionId => String.t(),
-          :historyId => String.t(),
-          :projectId => String.t(),
-          :resultsStorage => GoogleApi.ToolResults.V1beta3.Model.ResultsStorage.t(),
-          :shardSummaries => list(GoogleApi.ToolResults.V1beta3.Model.ShardSummary.t())
+            list(GoogleApi.ToolResults.V1beta3.Model.EnvironmentDimensionValueEntry.t()) | nil,
+          :displayName => String.t() | nil,
+          :environmentId => String.t() | nil,
+          :environmentResult => GoogleApi.ToolResults.V1beta3.Model.MergedResult.t() | nil,
+          :executionId => String.t() | nil,
+          :historyId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :resultsStorage => GoogleApi.ToolResults.V1beta3.Model.ResultsStorage.t() | nil,
+          :shardSummaries => list(GoogleApi.ToolResults.V1beta3.Model.ShardSummary.t()) | nil
         }
 
   field(:completionTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)

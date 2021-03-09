@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :thumbnails => list(GoogleApi.ToolResults.V1beta3.Model.Image.t())
+          :nextPageToken => String.t() | nil,
+          :thumbnails => list(GoogleApi.ToolResults.V1beta3.Model.Image.t()) | nil
         }
 
   field(:nextPageToken)

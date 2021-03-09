@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :testCases => list(GoogleApi.ToolResults.V1beta3.Model.TestCase.t())
+          :nextPageToken => String.t() | nil,
+          :testCases => list(GoogleApi.ToolResults.V1beta3.Model.TestCase.t()) | nil
         }
 
   field(:nextPageToken)

@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Screen do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileReference => String.t(),
-          :locale => String.t(),
-          :model => String.t(),
-          :version => String.t()
+          :fileReference => String.t() | nil,
+          :locale => String.t() | nil,
+          :model => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:fileReference)

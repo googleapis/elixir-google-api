@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepAccessibilityClustersRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.ToolResults.V1beta3.Model.SuggestionClusterProto.t()),
-          :name => String.t()
+          :clusters => list(GoogleApi.ToolResults.V1beta3.Model.SuggestionClusterProto.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:clusters, as: GoogleApi.ToolResults.V1beta3.Model.SuggestionClusterProto, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iosAppInfo => GoogleApi.ToolResults.V1beta3.Model.IosAppInfo.t(),
-          :iosRoboTest => GoogleApi.ToolResults.V1beta3.Model.IosRoboTest.t(),
-          :iosTestLoop => GoogleApi.ToolResults.V1beta3.Model.IosTestLoop.t(),
-          :iosXcTest => GoogleApi.ToolResults.V1beta3.Model.IosXcTest.t(),
-          :testTimeout => GoogleApi.ToolResults.V1beta3.Model.Duration.t()
+          :iosAppInfo => GoogleApi.ToolResults.V1beta3.Model.IosAppInfo.t() | nil,
+          :iosRoboTest => GoogleApi.ToolResults.V1beta3.Model.IosRoboTest.t() | nil,
+          :iosTestLoop => GoogleApi.ToolResults.V1beta3.Model.IosTestLoop.t() | nil,
+          :iosXcTest => GoogleApi.ToolResults.V1beta3.Model.IosXcTest.t() | nil,
+          :testTimeout => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil
         }
 
   field(:iosAppInfo, as: GoogleApi.ToolResults.V1beta3.Model.IosAppInfo)

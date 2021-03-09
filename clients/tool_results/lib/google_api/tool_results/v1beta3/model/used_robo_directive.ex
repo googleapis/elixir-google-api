@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.UsedRoboDirective do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceName => String.t()
+          :resourceName => String.t() | nil
         }
 
   field(:resourceName)

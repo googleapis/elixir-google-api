@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :data => String.t(),
-          :heightPx => integer(),
-          :widthPx => integer()
+          :contentType => String.t() | nil,
+          :data => String.t() | nil,
+          :heightPx => integer() | nil,
+          :widthPx => integer() | nil
         }
 
   field(:contentType)

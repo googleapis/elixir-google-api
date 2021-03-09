@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :perfSamples => list(GoogleApi.ToolResults.V1beta3.Model.PerfSample.t())
+          :perfSamples => list(GoogleApi.ToolResults.V1beta3.Model.PerfSample.t()) | nil
         }
 
   field(:perfSamples, as: GoogleApi.ToolResults.V1beta3.Model.PerfSample, type: :list)

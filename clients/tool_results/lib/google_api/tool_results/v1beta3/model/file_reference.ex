@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FileReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileUri => String.t()
+          :fileUri => String.t() | nil
         }
 
   field(:fileUri)

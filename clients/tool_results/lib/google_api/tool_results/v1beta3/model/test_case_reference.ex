@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCaseReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :className => String.t(),
-          :name => String.t(),
-          :testSuiteName => String.t()
+          :className => String.t() | nil,
+          :name => String.t() | nil,
+          :testSuiteName => String.t() | nil
         }
 
   field(:className)

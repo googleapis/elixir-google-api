@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerformedMonkeyActions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :totalActions => integer()
+          :totalActions => integer() | nil
         }
 
   field(:totalActions)

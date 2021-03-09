@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :steps => list(GoogleApi.ToolResults.V1beta3.Model.Step.t())
+          :nextPageToken => String.t() | nil,
+          :steps => list(GoogleApi.ToolResults.V1beta3.Model.Step.t()) | nil
         }
 
   field(:nextPageToken)

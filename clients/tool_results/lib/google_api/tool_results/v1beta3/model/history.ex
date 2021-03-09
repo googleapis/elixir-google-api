@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.History do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :historyId => String.t(),
-          :name => String.t(),
-          :testPlatform => String.t()
+          :displayName => String.t() | nil,
+          :historyId => String.t() | nil,
+          :name => String.t() | nil,
+          :testPlatform => String.t() | nil
         }
 
   field(:displayName)

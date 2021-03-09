@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.StackTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exception => String.t()
+          :exception => String.t() | nil
         }
 
   field(:exception)

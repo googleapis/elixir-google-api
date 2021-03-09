@@ -38,18 +38,18 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.GraphicsStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buckets => list(GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket.t()),
-          :highInputLatencyCount => String.t(),
-          :jankyFrames => String.t(),
-          :missedVsyncCount => String.t(),
-          :p50Millis => String.t(),
-          :p90Millis => String.t(),
-          :p95Millis => String.t(),
-          :p99Millis => String.t(),
-          :slowBitmapUploadCount => String.t(),
-          :slowDrawCount => String.t(),
-          :slowUiThreadCount => String.t(),
-          :totalFrames => String.t()
+          :buckets => list(GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket.t()) | nil,
+          :highInputLatencyCount => String.t() | nil,
+          :jankyFrames => String.t() | nil,
+          :missedVsyncCount => String.t() | nil,
+          :p50Millis => String.t() | nil,
+          :p90Millis => String.t() | nil,
+          :p95Millis => String.t() | nil,
+          :p99Millis => String.t() | nil,
+          :slowBitmapUploadCount => String.t() | nil,
+          :slowDrawCount => String.t() | nil,
+          :slowUiThreadCount => String.t() | nil,
+          :totalFrames => String.t() | nil
         }
 
   field(:buckets, as: GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environments => list(GoogleApi.ToolResults.V1beta3.Model.Environment.t()),
-          :executionId => String.t(),
-          :historyId => String.t(),
-          :nextPageToken => String.t(),
-          :projectId => String.t()
+          :environments => list(GoogleApi.ToolResults.V1beta3.Model.Environment.t()) | nil,
+          :executionId => String.t() | nil,
+          :historyId => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:environments, as: GoogleApi.ToolResults.V1beta3.Model.Environment, type: :list)

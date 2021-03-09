@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :packageName => String.t(),
-          :upgradeToVersion => String.t()
+          :packageName => String.t() | nil,
+          :upgradeToVersion => String.t() | nil
         }
 
   field(:packageName)

@@ -36,16 +36,16 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SuggestionProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :helpUrl => String.t(),
-          :longMessage => GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t(),
-          :priority => String.t(),
-          :pseudoResourceId => String.t(),
-          :region => GoogleApi.ToolResults.V1beta3.Model.RegionProto.t(),
-          :resourceName => String.t(),
-          :screenId => String.t(),
-          :secondaryPriority => float(),
-          :shortMessage => GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t(),
-          :title => String.t()
+          :helpUrl => String.t() | nil,
+          :longMessage => GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t() | nil,
+          :priority => String.t() | nil,
+          :pseudoResourceId => String.t() | nil,
+          :region => GoogleApi.ToolResults.V1beta3.Model.RegionProto.t() | nil,
+          :resourceName => String.t() | nil,
+          :screenId => String.t() | nil,
+          :secondaryPriority => float() | nil,
+          :shortMessage => GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:helpUrl)

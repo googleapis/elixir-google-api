@@ -31,12 +31,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidAppInfo => GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo.t(),
+          :androidAppInfo => GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo.t() | nil,
           :androidInstrumentationTest =>
-            GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest.t(),
-          :androidRoboTest => GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest.t(),
-          :androidTestLoop => GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop.t(),
-          :testTimeout => GoogleApi.ToolResults.V1beta3.Model.Duration.t()
+            GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest.t() | nil,
+          :androidRoboTest => GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest.t() | nil,
+          :androidTestLoop => GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop.t() | nil,
+          :testTimeout => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil
         }
 
   field(:androidAppInfo, as: GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo)

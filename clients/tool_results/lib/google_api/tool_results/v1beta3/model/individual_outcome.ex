@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :multistepNumber => integer(),
-          :outcomeSummary => String.t(),
-          :runDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :stepId => String.t()
+          :multistepNumber => integer() | nil,
+          :outcomeSummary => String.t() | nil,
+          :runDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:multistepNumber)

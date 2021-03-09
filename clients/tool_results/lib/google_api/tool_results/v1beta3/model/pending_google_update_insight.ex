@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nameOfGoogleLibrary => String.t()
+          :nameOfGoogleLibrary => String.t() | nil
         }
 
   field(:nameOfGoogleLibrary)

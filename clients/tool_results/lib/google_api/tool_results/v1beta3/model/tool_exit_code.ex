@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExitCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :number => integer()
+          :number => integer() | nil
         }
 
   field(:number)

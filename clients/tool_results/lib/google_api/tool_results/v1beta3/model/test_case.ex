@@ -35,15 +35,15 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :endTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :skippedMessage => String.t(),
-          :stackTraces => list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t()),
-          :startTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :status => String.t(),
-          :testCaseId => String.t(),
-          :testCaseReference => GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t(),
-          :toolOutputs => list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t())
+          :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
+          :endTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :skippedMessage => String.t() | nil,
+          :stackTraces => list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t()) | nil,
+          :startTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :status => String.t() | nil,
+          :testCaseId => String.t() | nil,
+          :testCaseReference => GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t() | nil,
+          :toolOutputs => list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t()) | nil
         }
 
   field(:elapsedTime, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
