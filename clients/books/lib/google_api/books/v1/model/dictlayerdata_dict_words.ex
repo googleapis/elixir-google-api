@@ -30,10 +30,11 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWords do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :derivatives => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives.t()),
-          :examples => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamples.t()),
-          :senses => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses.t()),
-          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsSource.t()
+          :derivatives =>
+            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives.t()) | nil,
+          :examples => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamples.t()) | nil,
+          :senses => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses.t()) | nil,
+          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsSource.t() | nil
         }
 
   field(:derivatives, as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives, type: :list)

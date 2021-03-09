@@ -30,12 +30,14 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancelTime => String.t(),
+          :cancelTime => String.t() | nil,
           :currentReleaseInfo =>
-            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo.t(),
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo.t()
+            | nil,
           :nextReleaseInfo =>
-            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo.t(),
-          :seriesSubscriptionType => String.t()
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo.t()
+            | nil,
+          :seriesSubscriptionType => String.t() | nil
         }
 
   field(:cancelTime)

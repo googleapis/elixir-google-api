@@ -31,11 +31,11 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Volumeannotation.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :totalItems => integer(),
-          :version => String.t()
+          :items => list(GoogleApi.Books.V1.Model.Volumeannotation.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :totalItems => integer() | nil,
+          :version => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.Volumeannotation, type: :list)

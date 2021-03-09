@@ -31,11 +31,11 @@ defmodule GoogleApi.Books.V1.Model.FamilyInfoMembership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acquirePermission => String.t(),
-          :ageGroup => String.t(),
-          :allowedMaturityRating => String.t(),
-          :isInFamily => boolean(),
-          :role => String.t()
+          :acquirePermission => String.t() | nil,
+          :ageGroup => String.t() | nil,
+          :allowedMaturityRating => String.t() | nil,
+          :isInFamily => boolean() | nil,
+          :role => String.t() | nil
         }
 
   field(:acquirePermission)

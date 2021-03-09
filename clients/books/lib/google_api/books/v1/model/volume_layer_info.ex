@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeLayerInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layers => list(GoogleApi.Books.V1.Model.VolumeLayerInfoLayers.t())
+          :layers => list(GoogleApi.Books.V1.Model.VolumeLayerInfoLayers.t()) | nil
         }
 
   field(:layers, as: GoogleApi.Books.V1.Model.VolumeLayerInfoLayers, type: :list)

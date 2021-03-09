@@ -53,7 +53,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_annotations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_annotations_delete(
         connection,
         annotation_id,
@@ -120,7 +123,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_annotations_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Annotation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_annotations_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -189,7 +195,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_annotations_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Annotations.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Annotations.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_annotations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -263,6 +272,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.AnnotationsSummary.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_mylibrary_annotations_summary(
         connection,
@@ -328,7 +338,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_annotations_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Annotation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_annotations_update(
         connection,
         annotation_id,
@@ -400,7 +413,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_add_volume(
         connection,
         shelf,
@@ -471,7 +488,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_clear_volumes(
         connection,
         shelf,
@@ -535,7 +556,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_bookshelves_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Bookshelf.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Bookshelf.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_get(connection, shelf, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -593,7 +617,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:error, info}` on failure
   """
   @spec books_mylibrary_bookshelves_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Bookshelves.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Bookshelves.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -658,7 +685,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_move_volume(
         connection,
         shelf,
@@ -733,7 +764,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_remove_volume(
         connection,
         shelf,
@@ -810,7 +845,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_bookshelves_volumes_list(
         connection,
         shelf,
@@ -883,6 +922,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   @spec books_mylibrary_readingpositions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.ReadingPosition.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_mylibrary_readingpositions_get(
         connection,
@@ -959,7 +999,11 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_mylibrary_readingpositions_set_position(
         connection,
         volume_id,

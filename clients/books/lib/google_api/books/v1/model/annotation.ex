@@ -43,23 +43,25 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :afterSelectedText => String.t(),
-          :beforeSelectedText => String.t(),
-          :clientVersionRanges => GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t(),
-          :created => String.t(),
-          :currentVersionRanges => GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t(),
-          :data => String.t(),
-          :deleted => boolean(),
-          :highlightStyle => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :layerId => String.t(),
-          :layerSummary => GoogleApi.Books.V1.Model.AnnotationLayerSummary.t(),
-          :pageIds => list(String.t()),
-          :selectedText => String.t(),
-          :selfLink => String.t(),
-          :updated => String.t(),
-          :volumeId => String.t()
+          :afterSelectedText => String.t() | nil,
+          :beforeSelectedText => String.t() | nil,
+          :clientVersionRanges =>
+            GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t() | nil,
+          :created => String.t() | nil,
+          :currentVersionRanges =>
+            GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t() | nil,
+          :data => String.t() | nil,
+          :deleted => boolean() | nil,
+          :highlightStyle => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :layerId => String.t() | nil,
+          :layerSummary => GoogleApi.Books.V1.Model.AnnotationLayerSummary.t() | nil,
+          :pageIds => list(String.t()) | nil,
+          :selectedText => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:afterSelectedText)

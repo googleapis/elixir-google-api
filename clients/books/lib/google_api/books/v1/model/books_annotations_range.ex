@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.BooksAnnotationsRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endOffset => String.t(),
-          :endPosition => String.t(),
-          :startOffset => String.t(),
-          :startPosition => String.t()
+          :endOffset => String.t() | nil,
+          :endPosition => String.t() | nil,
+          :startOffset => String.t() | nil,
+          :startPosition => String.t() | nil
         }
 
   field(:endOffset)

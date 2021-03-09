@@ -35,15 +35,15 @@ defmodule GoogleApi.Books.V1.Model.DictionaryAnnotationdata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationType => String.t(),
-          :data => GoogleApi.Books.V1.Model.Dictlayerdata.t(),
-          :encodedData => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :layerId => String.t(),
-          :selfLink => String.t(),
-          :updated => String.t(),
-          :volumeId => String.t()
+          :annotationType => String.t() | nil,
+          :data => GoogleApi.Books.V1.Model.Dictlayerdata.t() | nil,
+          :encodedData => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :layerId => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:annotationType)

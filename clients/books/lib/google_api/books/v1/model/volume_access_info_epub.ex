@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.VolumeAccessInfoEpub do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acsTokenLink => String.t(),
-          :downloadLink => String.t(),
-          :isAvailable => boolean()
+          :acsTokenLink => String.t() | nil,
+          :downloadLink => String.t() | nil,
+          :isAvailable => boolean() | nil
         }
 
   field(:acsTokenLink)

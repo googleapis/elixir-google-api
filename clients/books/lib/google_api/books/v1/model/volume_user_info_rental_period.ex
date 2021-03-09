@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoRentalPeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endUtcSec => String.t(),
-          :startUtcSec => String.t()
+          :endUtcSec => String.t() | nil,
+          :startUtcSec => String.t() | nil
         }
 
   field(:endUtcSec)

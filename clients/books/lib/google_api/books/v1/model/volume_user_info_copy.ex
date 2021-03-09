@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoCopy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedCharacterCount => integer(),
-          :limitType => String.t(),
-          :remainingCharacterCount => integer(),
-          :updated => String.t()
+          :allowedCharacterCount => integer() | nil,
+          :limitType => String.t() | nil,
+          :remainingCharacterCount => integer() | nil,
+          :updated => String.t() | nil
         }
 
   field(:allowedCharacterCount)

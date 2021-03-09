@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consistency_token => String.t()
+          :consistency_token => String.t() | nil
         }
 
   field(:consistency_token)

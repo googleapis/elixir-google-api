@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.Bookshelves do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Bookshelf.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.Books.V1.Model.Bookshelf.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.Bookshelf, type: :list)

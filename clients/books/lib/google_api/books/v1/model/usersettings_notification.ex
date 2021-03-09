@@ -32,13 +32,14 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotification do
 
   @type t :: %__MODULE__{
           :matchMyInterests =>
-            GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t(),
+            GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t() | nil,
           :moreFromAuthors =>
-            GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromAuthors.t(),
-          :moreFromSeries => GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromSeries.t(),
-          :priceDrop => GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop.t(),
+            GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromAuthors.t() | nil,
+          :moreFromSeries =>
+            GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromSeries.t() | nil,
+          :priceDrop => GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop.t() | nil,
           :rewardExpirations =>
-            GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations.t()
+            GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations.t() | nil
         }
 
   field(:matchMyInterests, as: GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests)

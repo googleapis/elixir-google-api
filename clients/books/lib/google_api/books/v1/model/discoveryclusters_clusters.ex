@@ -33,12 +33,12 @@ defmodule GoogleApi.Books.V1.Model.DiscoveryclustersClusters do
 
   @type t :: %__MODULE__{
           :banner_with_content_container =>
-            GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentContainer.t(),
-          :subTitle => String.t(),
-          :title => String.t(),
-          :totalVolumes => integer(),
-          :uid => String.t(),
-          :volumes => list(GoogleApi.Books.V1.Model.Volume.t())
+            GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentContainer.t() | nil,
+          :subTitle => String.t() | nil,
+          :title => String.t() | nil,
+          :totalVolumes => integer() | nil,
+          :uid => String.t() | nil,
+          :volumes => list(GoogleApi.Books.V1.Model.Volume.t()) | nil
         }
 
   field(:banner_with_content_container,

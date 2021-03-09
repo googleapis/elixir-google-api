@@ -52,7 +52,10 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   *   `{:error, info}` on failure
   """
   @spec books_familysharing_get_family_info(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.FamilyInfo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.FamilyInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_familysharing_get_family_info(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,7 +113,10 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   *   `{:error, info}` on failure
   """
   @spec books_familysharing_share(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_familysharing_share(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -170,7 +176,10 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   *   `{:error, info}` on failure
   """
   @spec books_familysharing_unshare(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_familysharing_unshare(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

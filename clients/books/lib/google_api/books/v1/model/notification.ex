@@ -42,22 +42,22 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :crmExperimentIds => list(String.t()),
-          :doc_id => String.t(),
-          :doc_type => String.t(),
-          :dont_show_notification => boolean(),
-          :iconUrl => String.t(),
-          :is_document_mature => boolean(),
-          :kind => String.t(),
-          :notificationGroup => String.t(),
-          :notification_type => String.t(),
-          :pcampaign_id => String.t(),
-          :reason => String.t(),
-          :show_notification_settings_action => boolean(),
-          :targetUrl => String.t(),
-          :timeToExpireMs => String.t(),
-          :title => String.t()
+          :body => String.t() | nil,
+          :crmExperimentIds => list(String.t()) | nil,
+          :doc_id => String.t() | nil,
+          :doc_type => String.t() | nil,
+          :dont_show_notification => boolean() | nil,
+          :iconUrl => String.t() | nil,
+          :is_document_mature => boolean() | nil,
+          :kind => String.t() | nil,
+          :notificationGroup => String.t() | nil,
+          :notification_type => String.t() | nil,
+          :pcampaign_id => String.t() | nil,
+          :reason => String.t() | nil,
+          :show_notification_settings_action => boolean() | nil,
+          :targetUrl => String.t() | nil,
+          :timeToExpireMs => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:body)

@@ -54,6 +54,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   @spec books_myconfig_get_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_myconfig_get_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -121,6 +122,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_myconfig_release_download_access(
         connection,
@@ -201,6 +203,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.RequestAccessData.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_myconfig_request_access(
         connection,
@@ -283,7 +286,11 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_myconfig_sync_volume_licenses(
         connection,
         cpksver,
@@ -355,6 +362,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   @spec books_myconfig_update_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_myconfig_update_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

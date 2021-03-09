@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :processingState => String.t()
+          :processingState => String.t() | nil
         }
 
   field(:processingState)

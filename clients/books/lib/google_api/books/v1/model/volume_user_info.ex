@@ -45,26 +45,26 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acquiredTime => String.t(),
-          :acquisitionType => integer(),
-          :copy => GoogleApi.Books.V1.Model.VolumeUserInfoCopy.t(),
-          :entitlementType => integer(),
-          :familySharing => GoogleApi.Books.V1.Model.VolumeUserInfoFamilySharing.t(),
-          :isFamilySharedFromUser => boolean(),
-          :isFamilySharedToUser => boolean(),
-          :isFamilySharingAllowed => boolean(),
-          :isFamilySharingDisabledByFop => boolean(),
-          :isInMyBooks => boolean(),
-          :isPreordered => boolean(),
-          :isPurchased => boolean(),
-          :isUploaded => boolean(),
-          :readingPosition => GoogleApi.Books.V1.Model.ReadingPosition.t(),
-          :rentalPeriod => GoogleApi.Books.V1.Model.VolumeUserInfoRentalPeriod.t(),
-          :rentalState => String.t(),
-          :review => GoogleApi.Books.V1.Model.Review.t(),
-          :updated => String.t(),
+          :acquiredTime => String.t() | nil,
+          :acquisitionType => integer() | nil,
+          :copy => GoogleApi.Books.V1.Model.VolumeUserInfoCopy.t() | nil,
+          :entitlementType => integer() | nil,
+          :familySharing => GoogleApi.Books.V1.Model.VolumeUserInfoFamilySharing.t() | nil,
+          :isFamilySharedFromUser => boolean() | nil,
+          :isFamilySharedToUser => boolean() | nil,
+          :isFamilySharingAllowed => boolean() | nil,
+          :isFamilySharingDisabledByFop => boolean() | nil,
+          :isInMyBooks => boolean() | nil,
+          :isPreordered => boolean() | nil,
+          :isPurchased => boolean() | nil,
+          :isUploaded => boolean() | nil,
+          :readingPosition => GoogleApi.Books.V1.Model.ReadingPosition.t() | nil,
+          :rentalPeriod => GoogleApi.Books.V1.Model.VolumeUserInfoRentalPeriod.t() | nil,
+          :rentalState => String.t() | nil,
+          :review => GoogleApi.Books.V1.Model.Review.t() | nil,
+          :updated => String.t() | nil,
           :userUploadedVolumeInfo =>
-            GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo.t()
+            GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo.t() | nil
         }
 
   field(:acquiredTime)

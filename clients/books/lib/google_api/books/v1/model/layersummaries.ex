@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Layersummaries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Layersummary.t()),
-          :kind => String.t(),
-          :totalItems => integer()
+          :items => list(GoogleApi.Books.V1.Model.Layersummary.t()) | nil,
+          :kind => String.t() | nil,
+          :totalItems => integer() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.Layersummary, type: :list)

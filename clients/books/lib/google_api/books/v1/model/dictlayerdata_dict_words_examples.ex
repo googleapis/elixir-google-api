@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamples do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamplesSource.t(),
-          :text => String.t()
+          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamplesSource.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:source, as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamplesSource)

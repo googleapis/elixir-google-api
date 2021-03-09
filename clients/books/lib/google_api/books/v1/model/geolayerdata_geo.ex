@@ -34,14 +34,14 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundary => list(String.t()),
-          :cachePolicy => String.t(),
-          :countryCode => String.t(),
-          :latitude => float(),
-          :longitude => float(),
-          :mapType => String.t(),
-          :viewport => GoogleApi.Books.V1.Model.GeolayerdataGeoViewport.t(),
-          :zoom => integer()
+          :boundary => list(String.t()) | nil,
+          :cachePolicy => String.t() | nil,
+          :countryCode => String.t() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :mapType => String.t() | nil,
+          :viewport => GoogleApi.Books.V1.Model.GeolayerdataGeoViewport.t() | nil,
+          :zoom => integer() | nil
         }
 
   field(:boundary, type: :list)

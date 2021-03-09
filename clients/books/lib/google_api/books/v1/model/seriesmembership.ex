@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Seriesmembership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :member => list(GoogleApi.Books.V1.Model.Volume.t()),
-          :nextPageToken => String.t()
+          :kind => String.t() | nil,
+          :member => list(GoogleApi.Books.V1.Model.Volume.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:kind)

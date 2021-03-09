@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.RequestAccessData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :concurrentAccess => GoogleApi.Books.V1.Model.ConcurrentAccessRestriction.t(),
-          :downloadAccess => GoogleApi.Books.V1.Model.DownloadAccessRestriction.t(),
-          :kind => String.t()
+          :concurrentAccess => GoogleApi.Books.V1.Model.ConcurrentAccessRestriction.t() | nil,
+          :downloadAccess => GoogleApi.Books.V1.Model.DownloadAccessRestriction.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:concurrentAccess, as: GoogleApi.Books.V1.Model.ConcurrentAccessRestriction)

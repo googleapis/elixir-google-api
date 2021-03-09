@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeannotationContentRanges do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cfiRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t(),
-          :contentVersion => String.t(),
-          :gbImageRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t(),
-          :gbTextRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t()
+          :cfiRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t() | nil,
+          :contentVersion => String.t() | nil,
+          :gbImageRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t() | nil,
+          :gbTextRange => GoogleApi.Books.V1.Model.BooksAnnotationsRange.t() | nil
         }
 
   field(:cfiRange, as: GoogleApi.Books.V1.Model.BooksAnnotationsRange)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Geolayerdata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.Books.V1.Model.GeolayerdataCommon.t(),
-          :geo => GoogleApi.Books.V1.Model.GeolayerdataGeo.t(),
-          :kind => String.t()
+          :common => GoogleApi.Books.V1.Model.GeolayerdataCommon.t() | nil,
+          :geo => GoogleApi.Books.V1.Model.GeolayerdataGeo.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:common, as: GoogleApi.Books.V1.Model.GeolayerdataCommon)

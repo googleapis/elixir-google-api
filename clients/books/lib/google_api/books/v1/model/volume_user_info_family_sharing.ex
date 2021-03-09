@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoFamilySharing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :familyRole => String.t(),
-          :isSharingAllowed => boolean(),
-          :isSharingDisabledByFop => boolean()
+          :familyRole => String.t() | nil,
+          :isSharingAllowed => boolean() | nil,
+          :isSharingDisabledByFop => boolean() | nil
         }
 
   field(:familyRole)

@@ -39,19 +39,19 @@ defmodule GoogleApi.Books.V1.Model.Layersummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationCount => integer(),
-          :annotationTypes => list(String.t()),
-          :annotationsDataLink => String.t(),
-          :annotationsLink => String.t(),
-          :contentVersion => String.t(),
-          :dataCount => integer(),
-          :id => String.t(),
-          :kind => String.t(),
-          :layerId => String.t(),
-          :selfLink => String.t(),
-          :updated => String.t(),
-          :volumeAnnotationsVersion => String.t(),
-          :volumeId => String.t()
+          :annotationCount => integer() | nil,
+          :annotationTypes => list(String.t()) | nil,
+          :annotationsDataLink => String.t() | nil,
+          :annotationsLink => String.t() | nil,
+          :contentVersion => String.t() | nil,
+          :dataCount => integer() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :layerId => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeAnnotationsVersion => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:annotationCount)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataCommon do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :title => String.t()
+          :title => String.t() | nil
         }
 
   field(:title)

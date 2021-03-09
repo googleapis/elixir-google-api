@@ -56,6 +56,7 @@ defmodule GoogleApi.Books.V1.Api.Personalizedstream do
   @spec books_personalizedstream_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Discoveryclusters.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_personalizedstream_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

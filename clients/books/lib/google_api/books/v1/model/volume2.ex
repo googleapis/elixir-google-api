@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Volume2 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Volume.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.Books.V1.Model.Volume.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.Volume, type: :list)

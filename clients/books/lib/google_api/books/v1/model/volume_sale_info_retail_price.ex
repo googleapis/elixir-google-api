@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => float(),
-          :currencyCode => String.t()
+          :amount => float() | nil,
+          :currencyCode => String.t() | nil
         }
 
   field(:amount)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Discoveryclusters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.Books.V1.Model.DiscoveryclustersClusters.t()),
-          :kind => String.t(),
-          :totalClusters => integer()
+          :clusters => list(GoogleApi.Books.V1.Model.DiscoveryclustersClusters.t()) | nil,
+          :kind => String.t() | nil,
+          :totalClusters => integer() | nil
         }
 
   field(:clusters, as: GoogleApi.Books.V1.Model.DiscoveryclustersClusters, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeLayerInfoLayers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layerId => String.t(),
-          :volumeAnnotationsVersion => String.t()
+          :layerId => String.t() | nil,
+          :volumeAnnotationsVersion => String.t() | nil
         }
 
   field(:layerId)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Books.V1.Model.MetadataItems do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :download_url => String.t(),
-          :encrypted_key => String.t(),
-          :language => String.t(),
-          :size => String.t(),
-          :version => String.t()
+          :download_url => String.t() | nil,
+          :encrypted_key => String.t() | nil,
+          :language => String.t() | nil,
+          :size => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:download_url)

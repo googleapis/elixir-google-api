@@ -28,9 +28,10 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :definition => String.t(),
+          :definition => String.t() | nil,
           :examples =>
             list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamples.t())
+            | nil
         }
 
   field(:definition)

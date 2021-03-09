@@ -37,17 +37,17 @@ defmodule GoogleApi.Books.V1.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessInfo => GoogleApi.Books.V1.Model.VolumeAccessInfo.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :layerInfo => GoogleApi.Books.V1.Model.VolumeLayerInfo.t(),
-          :recommendedInfo => GoogleApi.Books.V1.Model.VolumeRecommendedInfo.t(),
-          :saleInfo => GoogleApi.Books.V1.Model.VolumeSaleInfo.t(),
-          :searchInfo => GoogleApi.Books.V1.Model.VolumeSearchInfo.t(),
-          :selfLink => String.t(),
-          :userInfo => GoogleApi.Books.V1.Model.VolumeUserInfo.t(),
-          :volumeInfo => GoogleApi.Books.V1.Model.VolumeVolumeInfo.t()
+          :accessInfo => GoogleApi.Books.V1.Model.VolumeAccessInfo.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :layerInfo => GoogleApi.Books.V1.Model.VolumeLayerInfo.t() | nil,
+          :recommendedInfo => GoogleApi.Books.V1.Model.VolumeRecommendedInfo.t() | nil,
+          :saleInfo => GoogleApi.Books.V1.Model.VolumeSaleInfo.t() | nil,
+          :searchInfo => GoogleApi.Books.V1.Model.VolumeSearchInfo.t() | nil,
+          :selfLink => String.t() | nil,
+          :userInfo => GoogleApi.Books.V1.Model.VolumeUserInfo.t() | nil,
+          :volumeInfo => GoogleApi.Books.V1.Model.VolumeVolumeInfo.t() | nil
         }
 
   field(:accessInfo, as: GoogleApi.Books.V1.Model.VolumeAccessInfo)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :issueDisplayNumber => String.t(),
-          :issueOrderNumber => integer()
+          :issueDisplayNumber => String.t() | nil,
+          :issueOrderNumber => integer() | nil
         }
 
   field(:issueDisplayNumber)

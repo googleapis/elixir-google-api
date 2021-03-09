@@ -36,16 +36,16 @@ defmodule GoogleApi.Books.V1.Model.Bookshelf do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => String.t(),
-          :created => String.t(),
-          :description => String.t(),
-          :id => integer(),
-          :kind => String.t(),
-          :selfLink => String.t(),
-          :title => String.t(),
-          :updated => String.t(),
-          :volumeCount => integer(),
-          :volumesLastUpdated => String.t()
+          :access => String.t() | nil,
+          :created => String.t() | nil,
+          :description => String.t() | nil,
+          :id => integer() | nil,
+          :kind => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :title => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeCount => integer() | nil,
+          :volumesLastUpdated => String.t() | nil
         }
 
   field(:access)

@@ -38,18 +38,18 @@ defmodule GoogleApi.Books.V1.Model.DownloadAccessRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceAllowed => boolean(),
-          :downloadsAcquired => integer(),
-          :justAcquired => boolean(),
-          :kind => String.t(),
-          :maxDownloadDevices => integer(),
-          :message => String.t(),
-          :nonce => String.t(),
-          :reasonCode => String.t(),
-          :restricted => boolean(),
-          :signature => String.t(),
-          :source => String.t(),
-          :volumeId => String.t()
+          :deviceAllowed => boolean() | nil,
+          :downloadsAcquired => integer() | nil,
+          :justAcquired => boolean() | nil,
+          :kind => String.t() | nil,
+          :maxDownloadDevices => integer() | nil,
+          :message => String.t() | nil,
+          :nonce => String.t() | nil,
+          :reasonCode => String.t() | nil,
+          :restricted => boolean() | nil,
+          :signature => String.t() | nil,
+          :source => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:deviceAllowed)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeSearchInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :textSnippet => String.t()
+          :textSnippet => String.t() | nil
         }
 
   field(:textSnippet)

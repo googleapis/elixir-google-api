@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.MetadataItems.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.Books.V1.Model.MetadataItems.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.MetadataItems, type: :list)

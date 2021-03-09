@@ -56,6 +56,7 @@ defmodule GoogleApi.Books.V1.Api.Notification do
   @spec books_notification_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Notification.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_notification_get(connection, notification_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

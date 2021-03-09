@@ -57,6 +57,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   @spec books_layers_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummary.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_get(connection, volume_id, summary_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -123,6 +124,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   @spec books_layers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummaries.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_list(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -203,6 +205,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.DictionaryAnnotationdata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_annotation_data_get(
         connection,
@@ -299,6 +302,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.Annotationsdata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_annotation_data_list(
         connection,
@@ -388,6 +392,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.Volumeannotation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_volume_annotations_get(
         connection,
@@ -482,6 +487,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         ) ::
           {:ok, GoogleApi.Books.V1.Model.Volumeannotations.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_layers_volume_annotations_list(
         connection,

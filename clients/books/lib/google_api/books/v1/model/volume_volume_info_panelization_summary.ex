@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containsEpubBubbles => boolean(),
-          :containsImageBubbles => boolean(),
-          :epubBubbleVersion => String.t(),
-          :imageBubbleVersion => String.t()
+          :containsEpubBubbles => boolean() | nil,
+          :containsImageBubbles => boolean() | nil,
+          :epubBubbleVersion => String.t() | nil,
+          :imageBubbleVersion => String.t() | nil
         }
 
   field(:containsEpubBubbles)
