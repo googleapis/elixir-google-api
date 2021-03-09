@@ -28,8 +28,8 @@ defmodule GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filters => list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilter.t()),
-          :groupType => String.t()
+          :filters => list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilter.t()) | nil,
+          :groupType => String.t() | nil
         }
 
   field(:filters, as: GoogleApi.Webmaster.V3.Model.ApiDimensionFilter, type: :list)

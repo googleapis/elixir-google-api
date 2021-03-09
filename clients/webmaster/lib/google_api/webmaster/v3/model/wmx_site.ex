@@ -28,8 +28,8 @@ defmodule GoogleApi.Webmaster.V3.Model.WmxSite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissionLevel => String.t(),
-          :siteUrl => String.t()
+          :permissionLevel => String.t() | nil,
+          :siteUrl => String.t() | nil
         }
 
   field(:permissionLevel)

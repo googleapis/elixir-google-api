@@ -27,7 +27,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SitemapsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sitemap => list(GoogleApi.Webmaster.V3.Model.WmxSitemap.t())
+          :sitemap => list(GoogleApi.Webmaster.V3.Model.WmxSitemap.t()) | nil
         }
 
   field(:sitemap, as: GoogleApi.Webmaster.V3.Model.WmxSitemap, type: :list)

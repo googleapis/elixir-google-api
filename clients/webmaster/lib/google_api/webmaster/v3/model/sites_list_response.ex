@@ -27,7 +27,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SitesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :siteEntry => list(GoogleApi.Webmaster.V3.Model.WmxSite.t())
+          :siteEntry => list(GoogleApi.Webmaster.V3.Model.WmxSite.t()) | nil
         }
 
   field(:siteEntry, as: GoogleApi.Webmaster.V3.Model.WmxSite, type: :list)

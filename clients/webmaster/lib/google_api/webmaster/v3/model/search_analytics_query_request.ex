@@ -39,16 +39,16 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregationType => String.t(),
-          :dataState => String.t(),
+          :aggregationType => String.t() | nil,
+          :dataState => String.t() | nil,
           :dimensionFilterGroups =>
-            list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t()),
-          :dimensions => list(String.t()),
-          :endDate => String.t(),
-          :rowLimit => integer(),
-          :searchType => String.t(),
-          :startDate => String.t(),
-          :startRow => integer()
+            list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t()) | nil,
+          :dimensions => list(String.t()) | nil,
+          :endDate => String.t() | nil,
+          :rowLimit => integer() | nil,
+          :searchType => String.t() | nil,
+          :startDate => String.t() | nil,
+          :startRow => integer() | nil
         }
 
   field(:aggregationType)
