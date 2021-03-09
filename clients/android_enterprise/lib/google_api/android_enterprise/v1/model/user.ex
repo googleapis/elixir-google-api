@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountIdentifier => String.t(),
-          :accountType => String.t(),
-          :displayName => String.t(),
-          :id => String.t(),
-          :managementType => String.t(),
-          :primaryEmail => String.t()
+          :accountIdentifier => String.t() | nil,
+          :accountType => String.t() | nil,
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :managementType => String.t() | nil,
+          :primaryEmail => String.t() | nil
         }
 
   field(:accountIdentifier)

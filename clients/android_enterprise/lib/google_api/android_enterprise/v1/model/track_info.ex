@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.TrackInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :trackAlias => String.t(),
-          :trackId => String.t()
+          :trackAlias => String.t() | nil,
+          :trackId => String.t() | nil
         }
 
   field(:trackAlias)

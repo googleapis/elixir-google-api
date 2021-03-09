@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountState => String.t()
+          :accountState => String.t() | nil
         }
 
   field(:accountState)

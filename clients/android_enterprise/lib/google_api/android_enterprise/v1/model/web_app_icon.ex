@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebAppIcon do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageData => String.t()
+          :imageData => String.t() | nil
         }
 
   field(:imageData)

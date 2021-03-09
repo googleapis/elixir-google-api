@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationMs => String.t(),
-          :startTimeAfterMidnightMs => String.t()
+          :durationMs => String.t() | nil,
+          :startTimeAfterMidnightMs => String.t() | nil
         }
 
   field(:durationMs)

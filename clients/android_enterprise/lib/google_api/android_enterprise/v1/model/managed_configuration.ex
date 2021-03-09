@@ -31,10 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
 
   @type t :: %__MODULE__{
           :configurationVariables =>
-            GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t(),
-          :kind => String.t(),
-          :managedProperty => list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t()),
-          :productId => String.t()
+            GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t() | nil,
+          :kind => String.t() | nil,
+          :managedProperty =>
+            list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t()) | nil,
+          :productId => String.t() | nil
         }
 
   field(:configurationVariables, as: GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables)

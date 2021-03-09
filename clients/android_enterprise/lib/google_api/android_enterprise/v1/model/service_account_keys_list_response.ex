@@ -27,7 +27,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :serviceAccountKey => list(GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t())
+          :serviceAccountKey =>
+            list(GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t()) | nil
         }
 
   field(:serviceAccountKey,

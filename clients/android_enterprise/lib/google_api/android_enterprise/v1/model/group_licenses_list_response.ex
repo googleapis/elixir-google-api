@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupLicense => list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t())
+          :groupLicense => list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t()) | nil
         }
 
   field(:groupLicense, as: GoogleApi.AndroidEnterprise.V1.Model.GroupLicense, type: :list)

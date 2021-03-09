@@ -60,7 +60,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidenterprise_entitlements_delete(
         connection,
         enterprise_id,
@@ -140,6 +140,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_entitlements_get(
         connection,
@@ -218,6 +219,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_entitlements_list(
         connection,
@@ -300,6 +302,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_entitlements_update(
         connection,

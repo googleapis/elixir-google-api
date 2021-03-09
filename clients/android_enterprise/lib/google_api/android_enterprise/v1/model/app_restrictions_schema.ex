@@ -28,9 +28,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :restrictions =>
-            list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t())
+            list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t()) | nil
         }
 
   field(:kind)

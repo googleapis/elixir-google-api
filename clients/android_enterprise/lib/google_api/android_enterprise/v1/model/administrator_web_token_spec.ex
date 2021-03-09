@@ -34,16 +34,18 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
 
   @type t :: %__MODULE__{
           :managedConfigurations =>
-            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t(),
-          :parent => String.t(),
-          :permission => list(String.t()),
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t()
+            | nil,
+          :parent => String.t() | nil,
+          :permission => list(String.t()) | nil,
           :playSearch =>
-            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t(),
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t() | nil,
           :privateApps =>
-            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t(),
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t() | nil,
           :storeBuilder =>
-            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t(),
-          :webApps => GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t()
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t() | nil,
+          :webApps =>
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t() | nil
         }
 
   field(:managedConfigurations,

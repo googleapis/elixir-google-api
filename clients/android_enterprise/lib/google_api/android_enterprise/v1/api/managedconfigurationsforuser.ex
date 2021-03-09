@@ -60,7 +60,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidenterprise_managedconfigurationsforuser_delete(
         connection,
         enterprise_id,
@@ -141,6 +141,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_managedconfigurationsforuser_get(
         connection,
@@ -222,6 +223,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_managedconfigurationsforuser_list(
         connection,
@@ -304,6 +306,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_managedconfigurationsforuser_update(
         connection,

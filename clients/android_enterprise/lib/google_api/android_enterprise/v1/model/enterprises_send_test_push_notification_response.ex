@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageId => String.t(),
-          :topicName => String.t()
+          :messageId => String.t() | nil,
+          :topicName => String.t() | nil
         }
 
   field(:messageId)

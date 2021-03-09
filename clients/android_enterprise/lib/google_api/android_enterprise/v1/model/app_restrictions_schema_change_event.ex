@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :productId => String.t()
+          :productId => String.t() | nil
         }
 
   field(:productId)

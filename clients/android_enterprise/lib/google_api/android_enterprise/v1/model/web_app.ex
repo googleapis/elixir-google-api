@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayMode => String.t(),
-          :icons => list(GoogleApi.AndroidEnterprise.V1.Model.WebAppIcon.t()),
-          :isPublished => boolean(),
-          :startUrl => String.t(),
-          :title => String.t(),
-          :versionCode => String.t(),
-          :webAppId => String.t()
+          :displayMode => String.t() | nil,
+          :icons => list(GoogleApi.AndroidEnterprise.V1.Model.WebAppIcon.t()) | nil,
+          :isPublished => boolean() | nil,
+          :startUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :versionCode => String.t() | nil,
+          :webAppId => String.t() | nil
         }
 
   field(:displayMode)

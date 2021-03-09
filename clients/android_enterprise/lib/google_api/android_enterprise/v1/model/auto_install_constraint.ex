@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chargingStateConstraint => String.t(),
-          :deviceIdleStateConstraint => String.t(),
-          :networkTypeConstraint => String.t()
+          :chargingStateConstraint => String.t() | nil,
+          :deviceIdleStateConstraint => String.t() | nil,
+          :networkTypeConstraint => String.t() | nil
         }
 
   field(:chargingStateConstraint)

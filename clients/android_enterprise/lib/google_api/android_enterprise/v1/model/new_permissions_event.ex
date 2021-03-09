@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvedPermissions => list(String.t()),
-          :productId => String.t(),
-          :requestedPermissions => list(String.t())
+          :approvedPermissions => list(String.t()) | nil,
+          :productId => String.t() | nil,
+          :requestedPermissions => list(String.t()) | nil
         }
 
   field(:approvedPermissions, type: :list)

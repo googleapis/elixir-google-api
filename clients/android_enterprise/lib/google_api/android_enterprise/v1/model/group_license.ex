@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acquisitionKind => String.t(),
-          :approval => String.t(),
-          :numProvisioned => integer(),
-          :numPurchased => integer(),
-          :permissions => String.t(),
-          :productId => String.t()
+          :acquisitionKind => String.t() | nil,
+          :approval => String.t() | nil,
+          :numProvisioned => integer() | nil,
+          :numPurchased => integer() | nil,
+          :permissions => String.t() | nil,
+          :productId => String.t() | nil
         }
 
   field(:acquisitionKind)

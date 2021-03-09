@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoUpdatePolicy => String.t(),
-          :deviceReportPolicy => String.t(),
-          :maintenanceWindow => GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.t(),
-          :productAvailabilityPolicy => String.t(),
-          :productPolicy => list(GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy.t())
+          :autoUpdatePolicy => String.t() | nil,
+          :deviceReportPolicy => String.t() | nil,
+          :maintenanceWindow => GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.t() | nil,
+          :productAvailabilityPolicy => String.t() | nil,
+          :productPolicy => list(GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy.t()) | nil
         }
 
   field(:autoUpdatePolicy)

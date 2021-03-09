@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :valueBool => boolean(),
-          :valueInteger => integer(),
-          :valueMultiselect => list(String.t()),
-          :valueString => String.t()
+          :type => String.t() | nil,
+          :valueBool => boolean() | nil,
+          :valueInteger => integer() | nil,
+          :valueMultiselect => list(String.t()) | nil,
+          :valueString => String.t() | nil
         }
 
   field(:type)

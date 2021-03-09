@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enterprise => list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t())
+          :enterprise => list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()) | nil
         }
 
   field(:enterprise, as: GoogleApi.AndroidEnterprise.V1.Model.Enterprise, type: :list)

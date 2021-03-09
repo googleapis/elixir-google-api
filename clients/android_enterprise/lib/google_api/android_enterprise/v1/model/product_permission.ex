@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissionId => String.t(),
-          :state => String.t()
+          :permissionId => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:permissionId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mcmId => String.t(),
-          :variableSet => list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t())
+          :mcmId => String.t() | nil,
+          :variableSet => list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t()) | nil
         }
 
   field(:mcmId)

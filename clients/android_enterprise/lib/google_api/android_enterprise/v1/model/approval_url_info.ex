@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalUrl => String.t()
+          :approvalUrl => String.t() | nil
         }
 
   field(:approvalUrl)

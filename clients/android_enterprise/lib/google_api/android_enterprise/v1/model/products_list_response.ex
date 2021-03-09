@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageInfo => GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t(),
-          :product => list(GoogleApi.AndroidEnterprise.V1.Model.Product.t()),
-          :tokenPagination => GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t()
+          :pageInfo => GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t() | nil,
+          :product => list(GoogleApi.AndroidEnterprise.V1.Model.Product.t()) | nil,
+          :tokenPagination => GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t() | nil
         }
 
   field(:pageInfo, as: GoogleApi.AndroidEnterprise.V1.Model.PageInfo)

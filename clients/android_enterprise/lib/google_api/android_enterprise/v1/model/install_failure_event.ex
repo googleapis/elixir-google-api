@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :failureDetails => String.t(),
-          :failureReason => String.t(),
-          :productId => String.t(),
-          :userId => String.t()
+          :deviceId => String.t() | nil,
+          :failureDetails => String.t() | nil,
+          :failureReason => String.t() | nil,
+          :productId => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:deviceId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Permission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :permissionId => String.t()
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :permissionId => String.t() | nil
         }
 
   field(:description)

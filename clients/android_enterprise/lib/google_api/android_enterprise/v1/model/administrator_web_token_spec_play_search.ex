@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySear
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approveApps => boolean(),
-          :enabled => boolean()
+          :approveApps => boolean() | nil,
+          :enabled => boolean() | nil
         }
 
   field(:approveApps)

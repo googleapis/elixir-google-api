@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :device => list(GoogleApi.AndroidEnterprise.V1.Model.Device.t())
+          :device => list(GoogleApi.AndroidEnterprise.V1.Model.Device.t()) | nil
         }
 
   field(:device, as: GoogleApi.AndroidEnterprise.V1.Model.Device, type: :list)

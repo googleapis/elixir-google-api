@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.UsersListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :user => list(GoogleApi.AndroidEnterprise.V1.Model.User.t())
+          :user => list(GoogleApi.AndroidEnterprise.V1.Model.User.t()) | nil
         }
 
   field(:user, as: GoogleApi.AndroidEnterprise.V1.Model.User, type: :list)

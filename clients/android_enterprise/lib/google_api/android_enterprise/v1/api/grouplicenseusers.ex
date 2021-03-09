@@ -61,6 +61,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicenseUsersListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_grouplicenseusers_list(
         connection,

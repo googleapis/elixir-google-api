@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :key => String.t(),
-          :message => String.t(),
-          :severity => String.t(),
-          :stateTimestampMillis => String.t()
+          :data => String.t() | nil,
+          :key => String.t() | nil,
+          :message => String.t() | nil,
+          :severity => String.t() | nil,
+          :stateTimestampMillis => String.t() | nil
         }
 
   field(:data)

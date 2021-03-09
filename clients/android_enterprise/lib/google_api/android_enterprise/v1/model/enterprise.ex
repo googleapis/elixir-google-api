@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :administrator => list(GoogleApi.AndroidEnterprise.V1.Model.Administrator.t()),
-          :id => String.t(),
-          :name => String.t(),
-          :primaryDomain => String.t()
+          :administrator => list(GoogleApi.AndroidEnterprise.V1.Model.Administrator.t()) | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :primaryDomain => String.t() | nil
         }
 
   field(:administrator, as: GoogleApi.AndroidEnterprise.V1.Model.Administrator, type: :list)

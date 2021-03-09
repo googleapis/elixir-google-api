@@ -62,7 +62,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidenterprise_installs_delete(
         connection,
         enterprise_id,
@@ -146,6 +146,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Install.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_installs_get(
         connection,
@@ -228,6 +229,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_installs_list(
         connection,
@@ -313,6 +315,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Install.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_installs_update(
         connection,
