@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.ListUserProcessesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :processes => list(GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess.t())
+          :nextPageToken => String.t() | nil,
+          :processes => list(GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess.t()) | nil
         }
 
   field(:nextPageToken)

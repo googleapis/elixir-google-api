@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.ScriptStackTraceElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => String.t(),
-          :lineNumber => integer()
+          :function => String.t() | nil,
+          :lineNumber => integer() | nil
         }
 
   field(:function)

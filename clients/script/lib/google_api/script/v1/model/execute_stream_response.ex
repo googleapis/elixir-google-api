@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.ExecuteStreamResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => GoogleApi.Script.V1.Model.ScriptExecutionResult.t()
+          :result => GoogleApi.Script.V1.Model.ScriptExecutionResult.t() | nil
         }
 
   field(:result, as: GoogleApi.Script.V1.Model.ScriptExecutionResult)

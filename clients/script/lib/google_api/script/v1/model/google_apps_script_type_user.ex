@@ -30,10 +30,10 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t(),
-          :email => String.t(),
-          :name => String.t(),
-          :photoUrl => String.t()
+          :domain => String.t() | nil,
+          :email => String.t() | nil,
+          :name => String.t() | nil,
+          :photoUrl => String.t() | nil
         }
 
   field(:domain)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Script.V1.Model.CreateProjectRequest do
   @moduledoc """
-  Request to create a script project.
+  Request to create a script project. Request to create a script project.
 
   ## Attributes
 
@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.CreateProjectRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parentId => String.t(),
-          :title => String.t()
+          :parentId => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:parentId)

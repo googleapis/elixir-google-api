@@ -30,10 +30,10 @@ defmodule GoogleApi.Script.V1.Model.DeploymentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :manifestFileName => String.t(),
-          :scriptId => String.t(),
-          :versionNumber => integer()
+          :description => String.t() | nil,
+          :manifestFileName => String.t() | nil,
+          :scriptId => String.t() | nil,
+          :versionNumber => integer() | nil
         }
 
   field(:description)

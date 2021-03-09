@@ -29,9 +29,9 @@ defmodule GoogleApi.Script.V1.Model.MetricsValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :value => String.t()
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

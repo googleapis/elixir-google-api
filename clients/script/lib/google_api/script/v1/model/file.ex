@@ -33,13 +33,13 @@ defmodule GoogleApi.Script.V1.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :functionSet => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet.t(),
-          :lastModifyUser => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t(),
-          :name => String.t(),
-          :source => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :functionSet => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet.t() | nil,
+          :lastModifyUser => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t() | nil,
+          :name => String.t() | nil,
+          :source => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

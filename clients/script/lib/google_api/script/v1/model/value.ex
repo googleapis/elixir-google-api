@@ -35,15 +35,15 @@ defmodule GoogleApi.Script.V1.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :bytesValue => String.t(),
-          :dateValue => String.t(),
-          :listValue => GoogleApi.Script.V1.Model.ListValue.t(),
-          :nullValue => String.t(),
-          :numberValue => float(),
-          :protoValue => map(),
-          :stringValue => String.t(),
-          :structValue => GoogleApi.Script.V1.Model.Struct.t()
+          :boolValue => boolean() | nil,
+          :bytesValue => String.t() | nil,
+          :dateValue => String.t() | nil,
+          :listValue => GoogleApi.Script.V1.Model.ListValue.t() | nil,
+          :nullValue => String.t() | nil,
+          :numberValue => float() | nil,
+          :protoValue => map() | nil,
+          :stringValue => String.t() | nil,
+          :structValue => GoogleApi.Script.V1.Model.Struct.t() | nil
         }
 
   field(:boolValue)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Script.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.Script.V1.Model.Status.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.Script.V1.Model.Status.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

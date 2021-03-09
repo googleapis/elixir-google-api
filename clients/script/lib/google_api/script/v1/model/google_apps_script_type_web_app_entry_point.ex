@@ -28,8 +28,9 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppEntryPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entryPointConfig => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppConfig.t(),
-          :url => String.t()
+          :entryPointConfig =>
+            GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppConfig.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:entryPointConfig, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppConfig)

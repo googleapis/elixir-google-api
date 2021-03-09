@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.Struct do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => %{optional(String.t()) => GoogleApi.Script.V1.Model.Value.t()}
+          :fields => %{optional(String.t()) => GoogleApi.Script.V1.Model.Value.t()} | nil
         }
 
   field(:fields, as: GoogleApi.Script.V1.Model.Value, type: :map)

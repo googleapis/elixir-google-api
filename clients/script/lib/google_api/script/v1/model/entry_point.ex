@@ -30,11 +30,11 @@ defmodule GoogleApi.Script.V1.Model.EntryPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addOn => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeAddOnEntryPoint.t(),
-          :entryPointType => String.t(),
+          :addOn => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeAddOnEntryPoint.t() | nil,
+          :entryPointType => String.t() | nil,
           :executionApi =>
-            GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiEntryPoint.t(),
-          :webApp => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppEntryPoint.t()
+            GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiEntryPoint.t() | nil,
+          :webApp => GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppEntryPoint.t() | nil
         }
 
   field(:addOn, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeAddOnEntryPoint)

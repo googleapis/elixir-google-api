@@ -30,10 +30,10 @@ defmodule GoogleApi.Script.V1.Model.Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :scriptId => String.t(),
-          :versionNumber => integer()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :scriptId => String.t() | nil,
+          :versionNumber => integer() | nil
         }
 
   field(:createTime, as: DateTime)
