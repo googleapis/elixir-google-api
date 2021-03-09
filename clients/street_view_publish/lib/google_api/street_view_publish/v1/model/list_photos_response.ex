@@ -28,8 +28,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.ListPhotosResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :photos => list(GoogleApi.StreetViewPublish.V1.Model.Photo.t())
+          :nextPageToken => String.t() | nil,
+          :photos => list(GoogleApi.StreetViewPublish.V1.Model.Photo.t()) | nil
         }
 
   field(:nextPageToken)

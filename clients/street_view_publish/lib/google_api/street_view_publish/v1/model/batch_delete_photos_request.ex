@@ -27,7 +27,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :photoIds => list(String.t())
+          :photoIds => list(String.t()) | nil
         }
 
   field(:photoIds, type: :list)

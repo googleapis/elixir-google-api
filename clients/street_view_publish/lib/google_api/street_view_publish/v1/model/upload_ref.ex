@@ -27,7 +27,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.UploadRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uploadUrl => String.t()
+          :uploadUrl => String.t() | nil
         }
 
   field(:uploadUrl)

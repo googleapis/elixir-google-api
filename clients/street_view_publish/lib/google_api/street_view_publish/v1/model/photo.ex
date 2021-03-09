@@ -38,18 +38,18 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :captureTime => DateTime.t(),
-          :connections => list(GoogleApi.StreetViewPublish.V1.Model.Connection.t()),
-          :downloadUrl => String.t(),
-          :mapsPublishStatus => String.t(),
-          :photoId => GoogleApi.StreetViewPublish.V1.Model.PhotoId.t(),
-          :places => list(GoogleApi.StreetViewPublish.V1.Model.Place.t()),
-          :pose => GoogleApi.StreetViewPublish.V1.Model.Pose.t(),
-          :shareLink => String.t(),
-          :thumbnailUrl => String.t(),
-          :transferStatus => String.t(),
-          :uploadReference => GoogleApi.StreetViewPublish.V1.Model.UploadRef.t(),
-          :viewCount => String.t()
+          :captureTime => DateTime.t() | nil,
+          :connections => list(GoogleApi.StreetViewPublish.V1.Model.Connection.t()) | nil,
+          :downloadUrl => String.t() | nil,
+          :mapsPublishStatus => String.t() | nil,
+          :photoId => GoogleApi.StreetViewPublish.V1.Model.PhotoId.t() | nil,
+          :places => list(GoogleApi.StreetViewPublish.V1.Model.Place.t()) | nil,
+          :pose => GoogleApi.StreetViewPublish.V1.Model.Pose.t() | nil,
+          :shareLink => String.t() | nil,
+          :thumbnailUrl => String.t() | nil,
+          :transferStatus => String.t() | nil,
+          :uploadReference => GoogleApi.StreetViewPublish.V1.Model.UploadRef.t() | nil,
+          :viewCount => String.t() | nil
         }
 
   field(:captureTime, as: DateTime)

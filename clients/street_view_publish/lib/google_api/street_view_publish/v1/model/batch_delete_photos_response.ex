@@ -27,7 +27,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => list(GoogleApi.StreetViewPublish.V1.Model.Status.t())
+          :status => list(GoogleApi.StreetViewPublish.V1.Model.Status.t()) | nil
         }
 
   field(:status, as: GoogleApi.StreetViewPublish.V1.Model.Status, type: :list)

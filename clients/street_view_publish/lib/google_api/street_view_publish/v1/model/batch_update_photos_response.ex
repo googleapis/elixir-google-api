@@ -27,7 +27,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t())
+          :results => list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t()) | nil
         }
 
   field(:results, as: GoogleApi.StreetViewPublish.V1.Model.PhotoResponse, type: :list)

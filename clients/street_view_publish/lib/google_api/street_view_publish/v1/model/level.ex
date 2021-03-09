@@ -28,8 +28,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Level do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :number => float()
+          :name => String.t() | nil,
+          :number => float() | nil
         }
 
   field(:name)

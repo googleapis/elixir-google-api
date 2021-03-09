@@ -33,13 +33,13 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accuracyMeters => number(),
-          :altitude => float(),
-          :heading => float(),
-          :latLngPair => GoogleApi.StreetViewPublish.V1.Model.LatLng.t(),
-          :level => GoogleApi.StreetViewPublish.V1.Model.Level.t(),
-          :pitch => float(),
-          :roll => float()
+          :accuracyMeters => number() | nil,
+          :altitude => float() | nil,
+          :heading => float() | nil,
+          :latLngPair => GoogleApi.StreetViewPublish.V1.Model.LatLng.t() | nil,
+          :level => GoogleApi.StreetViewPublish.V1.Model.Level.t() | nil,
+          :pitch => float() | nil,
+          :roll => float() | nil
         }
 
   field(:accuracyMeters)
