@@ -62,6 +62,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_aggregated_usable_subnetworks_list(
         connection,
@@ -138,6 +139,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_get_server_config(
         connection,
@@ -210,6 +212,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_complete_ip_rotation(
         connection,
@@ -281,6 +284,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_create(
         connection,
@@ -354,6 +358,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_delete(
         connection,
@@ -427,7 +432,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.Cluster.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Container.V1.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def container_projects_locations_clusters_get(
         connection,
         name,
@@ -499,6 +507,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.GetJSONWebKeysResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_get_jwks(
         connection,
@@ -570,6 +579,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_list(
         connection,
@@ -642,6 +652,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_addons(
         connection,
@@ -713,6 +724,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_legacy_abac(
         connection,
@@ -784,6 +796,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_locations(
         connection,
@@ -855,6 +868,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_logging(
         connection,
@@ -926,6 +940,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_maintenance_policy(
         connection,
@@ -997,6 +1012,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_master_auth(
         connection,
@@ -1068,6 +1084,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_monitoring(
         connection,
@@ -1139,6 +1156,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_network_policy(
         connection,
@@ -1210,6 +1228,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_set_resource_labels(
         connection,
@@ -1281,6 +1300,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_start_ip_rotation(
         connection,
@@ -1352,6 +1372,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_update(
         connection,
@@ -1423,6 +1444,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_update_master(
         connection,
@@ -1494,6 +1516,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_create(
         connection,
@@ -1568,6 +1591,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_delete(
         connection,
@@ -1645,6 +1669,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.NodePool.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_get(
         connection,
@@ -1721,6 +1746,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_list(
         connection,
@@ -1794,6 +1820,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_rollback(
         connection,
@@ -1865,6 +1892,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_set_autoscaling(
         connection,
@@ -1936,6 +1964,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_set_management(
         connection,
@@ -2007,6 +2036,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_set_size(
         connection,
@@ -2078,6 +2108,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_node_pools_update(
         connection,
@@ -2148,6 +2179,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.GetOpenIDConfigResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_clusters_well_known_get_openid_configuration(
         connection,
@@ -2216,7 +2248,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Container.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def container_projects_locations_operations_cancel(
         connection,
         name,
@@ -2289,6 +2324,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_operations_get(
         connection,
@@ -2363,6 +2399,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_locations_operations_list(
         connection,
@@ -2437,6 +2474,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_get_serverconfig(
         connection,
@@ -2514,6 +2552,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_addons(
         connection,
@@ -2593,6 +2632,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_complete_ip_rotation(
         connection,
@@ -2673,6 +2713,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_create(
         connection,
@@ -2750,6 +2791,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_delete(
         connection,
@@ -2827,7 +2869,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.Cluster.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Container.V1.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def container_projects_zones_clusters_get(
         connection,
         project_id,
@@ -2906,6 +2951,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_legacy_abac(
         connection,
@@ -2983,6 +3029,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_list(
         connection,
@@ -3060,6 +3107,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_locations(
         connection,
@@ -3139,6 +3187,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_logging(
         connection,
@@ -3218,6 +3267,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_master(
         connection,
@@ -3297,6 +3347,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_monitoring(
         connection,
@@ -3376,6 +3427,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_resource_labels(
         connection,
@@ -3458,6 +3510,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_set_maintenance_policy(
         connection,
@@ -3540,6 +3593,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_set_master_auth(
         connection,
@@ -3622,6 +3676,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_set_network_policy(
         connection,
@@ -3704,6 +3759,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_start_ip_rotation(
         connection,
@@ -3786,6 +3842,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_update(
         connection,
@@ -3867,6 +3924,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_autoscaling(
         connection,
@@ -3951,6 +4009,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_create(
         connection,
@@ -4032,6 +4091,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_delete(
         connection,
@@ -4118,6 +4178,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.NodePool.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_get(
         connection,
@@ -4202,6 +4263,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_list(
         connection,
@@ -4283,6 +4345,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_rollback(
         connection,
@@ -4369,6 +4432,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_set_management(
         connection,
@@ -4455,6 +4519,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_set_size(
         connection,
@@ -4541,6 +4606,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_clusters_node_pools_update(
         connection,
@@ -4623,7 +4689,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Container.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def container_projects_zones_operations_cancel(
         connection,
         project_id,
@@ -4702,6 +4771,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_operations_get(
         connection,
@@ -4779,6 +4849,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def container_projects_zones_operations_list(
         connection,

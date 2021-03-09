@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.NotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsub => GoogleApi.Container.V1.Model.PubSub.t()
+          :pubsub => GoogleApi.Container.V1.Model.PubSub.t() | nil
         }
 
   field(:pubsub, as: GoogleApi.Container.V1.Model.PubSub)

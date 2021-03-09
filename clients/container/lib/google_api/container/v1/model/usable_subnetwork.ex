@@ -31,12 +31,12 @@ defmodule GoogleApi.Container.V1.Model.UsableSubnetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :network => String.t(),
+          :ipCidrRange => String.t() | nil,
+          :network => String.t() | nil,
           :secondaryIpRanges =>
-            list(GoogleApi.Container.V1.Model.UsableSubnetworkSecondaryRange.t()),
-          :statusMessage => String.t(),
-          :subnetwork => String.t()
+            list(GoogleApi.Container.V1.Model.UsableSubnetworkSecondaryRange.t()) | nil,
+          :statusMessage => String.t() | nil,
+          :subnetwork => String.t() | nil
         }
 
   field(:ipCidrRange)

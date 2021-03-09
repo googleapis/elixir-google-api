@@ -49,34 +49,37 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
-          :desiredBinaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
-          :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
-          :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
-          :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t(),
-          :desiredImageType => String.t(),
+          :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
+          :desiredBinaryAuthorization =>
+            GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
+          :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
+          :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
+          :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
+          :desiredImageType => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
-            GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t(),
-          :desiredLocations => list(String.t()),
-          :desiredLoggingService => String.t(),
+            GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t() | nil,
+          :desiredLocations => list(String.t()) | nil,
+          :desiredLoggingService => String.t() | nil,
           :desiredMasterAuthorizedNetworksConfig =>
-            GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t(),
-          :desiredMasterVersion => String.t(),
-          :desiredMonitoringService => String.t(),
-          :desiredNodePoolAutoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
-          :desiredNodePoolId => String.t(),
-          :desiredNodeVersion => String.t(),
-          :desiredNotificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t(),
-          :desiredPrivateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
-          :desiredPrivateIpv6GoogleAccess => String.t(),
-          :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t(),
+            GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
+          :desiredMasterVersion => String.t() | nil,
+          :desiredMonitoringService => String.t() | nil,
+          :desiredNodePoolAutoscaling =>
+            GoogleApi.Container.V1.Model.NodePoolAutoscaling.t() | nil,
+          :desiredNodePoolId => String.t() | nil,
+          :desiredNodeVersion => String.t() | nil,
+          :desiredNotificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
+          :desiredPrivateClusterConfig =>
+            GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
+          :desiredPrivateIpv6GoogleAccess => String.t() | nil,
+          :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
           :desiredResourceUsageExportConfig =>
-            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
-          :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
+            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
+          :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
           :desiredVerticalPodAutoscaling =>
-            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t(),
+            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil,
           :desiredWorkloadIdentityConfig =>
-            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t()
+            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t() | nil
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)

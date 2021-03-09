@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.CidrBlock do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cidrBlock => String.t(),
-          :displayName => String.t()
+          :cidrBlock => String.t() | nil,
+          :displayName => String.t() | nil
         }
 
   field(:cidrBlock)

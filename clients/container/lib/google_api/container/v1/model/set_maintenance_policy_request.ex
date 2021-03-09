@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.SetMaintenancePolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

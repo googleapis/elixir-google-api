@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.ReservationAffinity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumeReservationType => String.t(),
-          :key => String.t(),
-          :values => list(String.t())
+          :consumeReservationType => String.t() | nil,
+          :key => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:consumeReservationType)

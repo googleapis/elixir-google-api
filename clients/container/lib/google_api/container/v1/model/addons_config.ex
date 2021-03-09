@@ -34,15 +34,16 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRunConfig => GoogleApi.Container.V1.Model.CloudRunConfig.t(),
-          :configConnectorConfig => GoogleApi.Container.V1.Model.ConfigConnectorConfig.t(),
-          :dnsCacheConfig => GoogleApi.Container.V1.Model.DnsCacheConfig.t(),
+          :cloudRunConfig => GoogleApi.Container.V1.Model.CloudRunConfig.t() | nil,
+          :configConnectorConfig => GoogleApi.Container.V1.Model.ConfigConnectorConfig.t() | nil,
+          :dnsCacheConfig => GoogleApi.Container.V1.Model.DnsCacheConfig.t() | nil,
           :gcePersistentDiskCsiDriverConfig =>
-            GoogleApi.Container.V1.Model.GcePersistentDiskCsiDriverConfig.t(),
-          :horizontalPodAutoscaling => GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t(),
-          :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t(),
-          :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t(),
-          :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t()
+            GoogleApi.Container.V1.Model.GcePersistentDiskCsiDriverConfig.t() | nil,
+          :horizontalPodAutoscaling =>
+            GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t() | nil,
+          :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t() | nil,
+          :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t() | nil,
+          :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t() | nil
         }
 
   field(:cloudRunConfig, as: GoogleApi.Container.V1.Model.CloudRunConfig)

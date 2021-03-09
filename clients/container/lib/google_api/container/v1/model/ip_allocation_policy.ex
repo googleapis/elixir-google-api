@@ -39,19 +39,19 @@ defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterIpv4Cidr => String.t(),
-          :clusterIpv4CidrBlock => String.t(),
-          :clusterSecondaryRangeName => String.t(),
-          :createSubnetwork => boolean(),
-          :nodeIpv4Cidr => String.t(),
-          :nodeIpv4CidrBlock => String.t(),
-          :servicesIpv4Cidr => String.t(),
-          :servicesIpv4CidrBlock => String.t(),
-          :servicesSecondaryRangeName => String.t(),
-          :subnetworkName => String.t(),
-          :tpuIpv4CidrBlock => String.t(),
-          :useIpAliases => boolean(),
-          :useRoutes => boolean()
+          :clusterIpv4Cidr => String.t() | nil,
+          :clusterIpv4CidrBlock => String.t() | nil,
+          :clusterSecondaryRangeName => String.t() | nil,
+          :createSubnetwork => boolean() | nil,
+          :nodeIpv4Cidr => String.t() | nil,
+          :nodeIpv4CidrBlock => String.t() | nil,
+          :servicesIpv4Cidr => String.t() | nil,
+          :servicesIpv4CidrBlock => String.t() | nil,
+          :servicesSecondaryRangeName => String.t() | nil,
+          :subnetworkName => String.t() | nil,
+          :tpuIpv4CidrBlock => String.t() | nil,
+          :useIpAliases => boolean() | nil,
+          :useRoutes => boolean() | nil
         }
 
   field(:clusterIpv4Cidr)

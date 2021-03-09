@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.AutoUpgradeOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoUpgradeStartTime => String.t(),
-          :description => String.t()
+          :autoUpgradeStartTime => String.t() | nil,
+          :description => String.t() | nil
         }
 
   field(:autoUpgradeStartTime)

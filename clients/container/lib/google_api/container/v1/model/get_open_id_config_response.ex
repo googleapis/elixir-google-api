@@ -34,14 +34,14 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIDConfigResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t(),
-          :claims_supported => list(String.t()),
-          :grant_types => list(String.t()),
-          :id_token_signing_alg_values_supported => list(String.t()),
-          :issuer => String.t(),
-          :jwks_uri => String.t(),
-          :response_types_supported => list(String.t()),
-          :subject_types_supported => list(String.t())
+          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t() | nil,
+          :claims_supported => list(String.t()) | nil,
+          :grant_types => list(String.t()) | nil,
+          :id_token_signing_alg_values_supported => list(String.t()) | nil,
+          :issuer => String.t() | nil,
+          :jwks_uri => String.t() | nil,
+          :response_types_supported => list(String.t()) | nil,
+          :subject_types_supported => list(String.t()) | nil
         }
 
   field(:cacheHeader, as: GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader)

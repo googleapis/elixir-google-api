@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :age => String.t(),
-          :directive => String.t(),
-          :expires => String.t()
+          :age => String.t() | nil,
+          :directive => String.t() | nil,
+          :expires => String.t() | nil
         }
 
   field(:age)

@@ -35,15 +35,16 @@ defmodule GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bootDiskKmsKey => String.t(),
-          :diskSizeGb => integer(),
-          :diskType => String.t(),
-          :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
-          :minCpuPlatform => String.t(),
-          :oauthScopes => list(String.t()),
-          :serviceAccount => String.t(),
-          :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
-          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t()
+          :bootDiskKmsKey => String.t() | nil,
+          :diskSizeGb => integer() | nil,
+          :diskType => String.t() | nil,
+          :management => GoogleApi.Container.V1.Model.NodeManagement.t() | nil,
+          :minCpuPlatform => String.t() | nil,
+          :oauthScopes => list(String.t()) | nil,
+          :serviceAccount => String.t() | nil,
+          :shieldedInstanceConfig =>
+            GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil
         }
 
   field(:bootDiskKmsKey)

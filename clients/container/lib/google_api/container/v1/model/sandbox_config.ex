@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.SandboxConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t()
+          :type => String.t() | nil
         }
 
   field(:type)

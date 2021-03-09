@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cidrBlocks => list(GoogleApi.Container.V1.Model.CidrBlock.t()),
-          :enabled => boolean()
+          :cidrBlocks => list(GoogleApi.Container.V1.Model.CidrBlock.t()) | nil,
+          :enabled => boolean() | nil
         }
 
   field(:cidrBlocks, as: GoogleApi.Container.V1.Model.CidrBlock, type: :list)

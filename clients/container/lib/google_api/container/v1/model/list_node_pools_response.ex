@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.ListNodePoolsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t())
+          :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil
         }
 
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)

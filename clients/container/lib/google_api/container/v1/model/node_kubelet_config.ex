@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.NodeKubeletConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuCfsQuota => boolean(),
-          :cpuCfsQuotaPeriod => String.t(),
-          :cpuManagerPolicy => String.t()
+          :cpuCfsQuota => boolean() | nil,
+          :cpuCfsQuotaPeriod => String.t() | nil,
+          :cpuManagerPolicy => String.t() | nil
         }
 
   field(:cpuCfsQuota)

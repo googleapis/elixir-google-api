@@ -35,15 +35,15 @@ defmodule GoogleApi.Container.V1.Model.Jwk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alg => String.t(),
-          :crv => String.t(),
-          :e => String.t(),
-          :kid => String.t(),
-          :kty => String.t(),
-          :n => String.t(),
-          :use => String.t(),
-          :x => String.t(),
-          :y => String.t()
+          :alg => String.t() | nil,
+          :crv => String.t() | nil,
+          :e => String.t() | nil,
+          :kid => String.t() | nil,
+          :kty => String.t() | nil,
+          :n => String.t() | nil,
+          :use => String.t() | nil,
+          :x => String.t() | nil,
+          :y => String.t() | nil
         }
 
   field(:alg)

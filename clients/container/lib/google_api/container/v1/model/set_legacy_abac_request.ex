@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.SetLegacyAbacRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :enabled => boolean(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :enabled => boolean() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

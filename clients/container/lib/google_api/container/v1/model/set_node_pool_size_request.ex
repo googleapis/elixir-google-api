@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :name => String.t(),
-          :nodeCount => integer(),
-          :nodePoolId => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :nodeCount => integer() | nil,
+          :nodePoolId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

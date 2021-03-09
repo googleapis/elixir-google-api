@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.WorkloadMetadataConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mode => String.t()
+          :mode => String.t() | nil
         }
 
   field(:mode)

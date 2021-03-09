@@ -30,11 +30,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoprovisioningLocations => list(String.t()),
+          :autoprovisioningLocations => list(String.t()) | nil,
           :autoprovisioningNodePoolDefaults =>
-            GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t(),
-          :enableNodeAutoprovisioning => boolean(),
-          :resourceLimits => list(GoogleApi.Container.V1.Model.ResourceLimit.t())
+            GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t() | nil,
+          :enableNodeAutoprovisioning => boolean() | nil,
+          :resourceLimits => list(GoogleApi.Container.V1.Model.ResourceLimit.t()) | nil
         }
 
   field(:autoprovisioningLocations, type: :list)

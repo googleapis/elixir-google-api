@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.GcePersistentDiskCsiDriverConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean()
+          :enabled => boolean() | nil
         }
 
   field(:enabled)

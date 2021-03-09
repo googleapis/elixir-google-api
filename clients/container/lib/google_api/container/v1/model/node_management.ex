@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.NodeManagement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoRepair => boolean(),
-          :autoUpgrade => boolean(),
-          :upgradeOptions => GoogleApi.Container.V1.Model.AutoUpgradeOptions.t()
+          :autoRepair => boolean() | nil,
+          :autoUpgrade => boolean() | nil,
+          :upgradeOptions => GoogleApi.Container.V1.Model.AutoUpgradeOptions.t() | nil
         }
 
   field(:autoRepair)

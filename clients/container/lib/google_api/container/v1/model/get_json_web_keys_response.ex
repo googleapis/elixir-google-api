@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t(),
-          :keys => list(GoogleApi.Container.V1.Model.Jwk.t())
+          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t() | nil,
+          :keys => list(GoogleApi.Container.V1.Model.Jwk.t()) | nil
         }
 
   field(:cacheHeader, as: GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader)

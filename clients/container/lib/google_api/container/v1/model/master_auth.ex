@@ -32,12 +32,13 @@ defmodule GoogleApi.Container.V1.Model.MasterAuth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientCertificate => String.t(),
-          :clientCertificateConfig => GoogleApi.Container.V1.Model.ClientCertificateConfig.t(),
-          :clientKey => String.t(),
-          :clusterCaCertificate => String.t(),
-          :password => String.t(),
-          :username => String.t()
+          :clientCertificate => String.t() | nil,
+          :clientCertificateConfig =>
+            GoogleApi.Container.V1.Model.ClientCertificateConfig.t() | nil,
+          :clientKey => String.t() | nil,
+          :clusterCaCertificate => String.t() | nil,
+          :password => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:clientCertificate)

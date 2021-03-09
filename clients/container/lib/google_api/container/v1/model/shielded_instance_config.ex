@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.ShieldedInstanceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableIntegrityMonitoring => boolean(),
-          :enableSecureBoot => boolean()
+          :enableIntegrityMonitoring => boolean() | nil,
+          :enableSecureBoot => boolean() | nil
         }
 
   field(:enableIntegrityMonitoring)

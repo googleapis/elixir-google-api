@@ -30,10 +30,10 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoprovisioned => boolean(),
-          :enabled => boolean(),
-          :maxNodeCount => integer(),
-          :minNodeCount => integer()
+          :autoprovisioned => boolean() | nil,
+          :enabled => boolean() | nil,
+          :maxNodeCount => integer() | nil,
+          :minNodeCount => integer() | nil
         }
 
   field(:autoprovisioned)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.ListOperationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :missingZones => list(String.t()),
-          :operations => list(GoogleApi.Container.V1.Model.Operation.t())
+          :missingZones => list(String.t()) | nil,
+          :operations => list(GoogleApi.Container.V1.Model.Operation.t()) | nil
         }
 
   field(:missingZones, type: :list)

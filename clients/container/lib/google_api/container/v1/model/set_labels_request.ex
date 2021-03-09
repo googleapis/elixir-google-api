@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.SetLabelsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :labelFingerprint => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :resourceLabels => map(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :resourceLabels => map() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

@@ -29,11 +29,11 @@ defmodule GoogleApi.Container.V1.Model.MaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailyMaintenanceWindow => GoogleApi.Container.V1.Model.DailyMaintenanceWindow.t(),
-          :maintenanceExclusions => %{
-            optional(String.t()) => GoogleApi.Container.V1.Model.TimeWindow.t()
-          },
-          :recurringWindow => GoogleApi.Container.V1.Model.RecurringTimeWindow.t()
+          :dailyMaintenanceWindow =>
+            GoogleApi.Container.V1.Model.DailyMaintenanceWindow.t() | nil,
+          :maintenanceExclusions =>
+            %{optional(String.t()) => GoogleApi.Container.V1.Model.TimeWindow.t()} | nil,
+          :recurringWindow => GoogleApi.Container.V1.Model.RecurringTimeWindow.t() | nil
         }
 
   field(:dailyMaintenanceWindow, as: GoogleApi.Container.V1.Model.DailyMaintenanceWindow)

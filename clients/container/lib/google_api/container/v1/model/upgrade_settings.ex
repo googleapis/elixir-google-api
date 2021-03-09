@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.UpgradeSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxSurge => integer(),
-          :maxUnavailable => integer()
+          :maxSurge => integer() | nil,
+          :maxUnavailable => integer() | nil
         }
 
   field(:maxSurge)

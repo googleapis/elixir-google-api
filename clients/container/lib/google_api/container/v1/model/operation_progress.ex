@@ -30,10 +30,10 @@ defmodule GoogleApi.Container.V1.Model.OperationProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metrics => list(GoogleApi.Container.V1.Model.Metric.t()),
-          :name => String.t(),
-          :stages => list(GoogleApi.Container.V1.Model.OperationProgress.t()),
-          :status => String.t()
+          :metrics => list(GoogleApi.Container.V1.Model.Metric.t()) | nil,
+          :name => String.t() | nil,
+          :stages => list(GoogleApi.Container.V1.Model.OperationProgress.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:metrics, as: GoogleApi.Container.V1.Model.Metric, type: :list)

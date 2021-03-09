@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :securityGroup => String.t()
+          :enabled => boolean() | nil,
+          :securityGroup => String.t() | nil
         }
 
   field(:enabled)

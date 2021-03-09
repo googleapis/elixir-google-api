@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.ReleaseChannelConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => String.t(),
-          :defaultVersion => String.t(),
-          :validVersions => list(String.t())
+          :channel => String.t() | nil,
+          :defaultVersion => String.t() | nil,
+          :validVersions => list(String.t()) | nil
         }
 
   field(:channel)
