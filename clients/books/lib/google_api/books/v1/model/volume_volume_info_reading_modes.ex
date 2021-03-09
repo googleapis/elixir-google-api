@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoReadingModes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => boolean(),
-          :text => boolean()
+          :image => boolean() | nil,
+          :text => boolean() | nil
         }
 
   field(:image)

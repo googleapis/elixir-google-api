@@ -32,12 +32,12 @@ defmodule GoogleApi.Books.V1.Model.OffersItemsItems do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => String.t(),
-          :canonicalVolumeLink => String.t(),
-          :coverUrl => String.t(),
-          :description => String.t(),
-          :title => String.t(),
-          :volumeId => String.t()
+          :author => String.t() | nil,
+          :canonicalVolumeLink => String.t() | nil,
+          :coverUrl => String.t() | nil,
+          :description => String.t() | nil,
+          :title => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:author)

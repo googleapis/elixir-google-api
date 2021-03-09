@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotesExport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folderName => String.t(),
-          :isEnabled => boolean()
+          :folderName => String.t() | nil,
+          :isEnabled => boolean() | nil
         }
 
   field(:folderName)

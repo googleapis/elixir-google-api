@@ -36,17 +36,17 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bannerImageUrl => String.t(),
-          :eligibleForSubscription => boolean(),
-          :imageUrl => String.t(),
-          :isComplete => boolean(),
-          :seriesFormatType => String.t(),
-          :seriesId => String.t(),
+          :bannerImageUrl => String.t() | nil,
+          :eligibleForSubscription => boolean() | nil,
+          :imageUrl => String.t() | nil,
+          :isComplete => boolean() | nil,
+          :seriesFormatType => String.t() | nil,
+          :seriesId => String.t() | nil,
           :seriesSubscriptionReleaseInfo =>
-            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo.t(),
-          :seriesType => String.t(),
-          :subscriptionId => String.t(),
-          :title => String.t()
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo.t() | nil,
+          :seriesType => String.t() | nil,
+          :subscriptionId => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:bannerImageUrl)

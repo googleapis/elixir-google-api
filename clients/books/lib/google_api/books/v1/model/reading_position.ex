@@ -33,13 +33,13 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :epubCfiPosition => String.t(),
-          :gbImagePosition => String.t(),
-          :gbTextPosition => String.t(),
-          :kind => String.t(),
-          :pdfPosition => String.t(),
-          :updated => String.t(),
-          :volumeId => String.t()
+          :epubCfiPosition => String.t() | nil,
+          :gbImagePosition => String.t() | nil,
+          :gbTextPosition => String.t() | nil,
+          :kind => String.t() | nil,
+          :pdfPosition => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:epubCfiPosition)

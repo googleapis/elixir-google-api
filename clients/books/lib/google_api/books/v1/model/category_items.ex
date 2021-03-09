@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.CategoryItems do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :badgeUrl => String.t(),
-          :categoryId => String.t(),
-          :name => String.t()
+          :badgeUrl => String.t() | nil,
+          :categoryId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:badgeUrl)

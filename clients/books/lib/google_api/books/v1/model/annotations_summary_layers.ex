@@ -31,11 +31,11 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummaryLayers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedCharacterCount => integer(),
-          :layerId => String.t(),
-          :limitType => String.t(),
-          :remainingCharacterCount => integer(),
-          :updated => String.t()
+          :allowedCharacterCount => integer() | nil,
+          :layerId => String.t() | nil,
+          :limitType => String.t() | nil,
+          :remainingCharacterCount => integer() | nil,
+          :updated => String.t() | nil
         }
 
   field(:allowedCharacterCount)

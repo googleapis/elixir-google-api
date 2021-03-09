@@ -40,20 +40,20 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationDataId => String.t(),
-          :annotationDataLink => String.t(),
-          :annotationType => String.t(),
-          :contentRanges => GoogleApi.Books.V1.Model.VolumeannotationContentRanges.t(),
-          :data => String.t(),
-          :deleted => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :layerId => String.t(),
-          :pageIds => list(String.t()),
-          :selectedText => String.t(),
-          :selfLink => String.t(),
-          :updated => String.t(),
-          :volumeId => String.t()
+          :annotationDataId => String.t() | nil,
+          :annotationDataLink => String.t() | nil,
+          :annotationType => String.t() | nil,
+          :contentRanges => GoogleApi.Books.V1.Model.VolumeannotationContentRanges.t() | nil,
+          :data => String.t() | nil,
+          :deleted => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :layerId => String.t() | nil,
+          :pageIds => list(String.t()) | nil,
+          :selectedText => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :updated => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:annotationDataId)

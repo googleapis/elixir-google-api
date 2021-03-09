@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExampl
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attribution => String.t(),
-          :url => String.t()
+          :attribution => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:attribution)

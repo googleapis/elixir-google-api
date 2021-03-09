@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeoViewport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hi => GoogleApi.Books.V1.Model.GeolayerdataGeoViewportHi.t(),
-          :lo => GoogleApi.Books.V1.Model.GeolayerdataGeoViewportLo.t()
+          :hi => GoogleApi.Books.V1.Model.GeolayerdataGeoViewportHi.t() | nil,
+          :lo => GoogleApi.Books.V1.Model.GeolayerdataGeoViewportLo.t() | nil
         }
 
   field(:hi, as: GoogleApi.Books.V1.Model.GeolayerdataGeoViewportHi)

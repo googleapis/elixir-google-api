@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.BooksCloudloadingResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => String.t(),
-          :processingState => String.t(),
-          :title => String.t(),
-          :volumeId => String.t()
+          :author => String.t() | nil,
+          :processingState => String.t() | nil,
+          :title => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:author)

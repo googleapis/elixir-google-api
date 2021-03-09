@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.AnnotationLayerSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedCharacterCount => integer(),
-          :limitType => String.t(),
-          :remainingCharacterCount => integer()
+          :allowedCharacterCount => integer() | nil,
+          :limitType => String.t() | nil,
+          :remainingCharacterCount => integer() | nil
         }
 
   field(:allowedCharacterCount)

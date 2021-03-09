@@ -32,12 +32,12 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoImageLinks do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :extraLarge => String.t(),
-          :large => String.t(),
-          :medium => String.t(),
-          :small => String.t(),
-          :smallThumbnail => String.t(),
-          :thumbnail => String.t()
+          :extraLarge => String.t() | nil,
+          :large => String.t() | nil,
+          :medium => String.t() | nil,
+          :small => String.t() | nil,
+          :smallThumbnail => String.t() | nil,
+          :thumbnail => String.t() | nil
         }
 
   field(:extraLarge)

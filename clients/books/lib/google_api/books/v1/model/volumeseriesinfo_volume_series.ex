@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :issue => list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue.t()),
-          :orderNumber => integer(),
-          :seriesBookType => String.t(),
-          :seriesId => String.t()
+          :issue => list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue.t()) | nil,
+          :orderNumber => integer() | nil,
+          :seriesBookType => String.t() | nil,
+          :seriesId => String.t() | nil
         }
 
   field(:issue, as: GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :layers => list(GoogleApi.Books.V1.Model.AnnotationsSummaryLayers.t())
+          :kind => String.t() | nil,
+          :layers => list(GoogleApi.Books.V1.Model.AnnotationsSummaryLayers.t()) | nil
         }
 
   field(:kind)

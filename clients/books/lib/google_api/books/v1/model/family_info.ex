@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.FamilyInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :membership => GoogleApi.Books.V1.Model.FamilyInfoMembership.t()
+          :kind => String.t() | nil,
+          :membership => GoogleApi.Books.V1.Model.FamilyInfoMembership.t() | nil
         }
 
   field(:kind)

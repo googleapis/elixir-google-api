@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.Annotations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Annotation.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :totalItems => integer()
+          :items => list(GoogleApi.Books.V1.Model.Annotation.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :totalItems => integer() | nil
         }
 
   field(:items, as: GoogleApi.Books.V1.Model.Annotation, type: :list)

@@ -52,7 +52,10 @@ defmodule GoogleApi.Books.V1.Api.Series do
   *   `{:error, info}` on failure
   """
   @spec books_series_get(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Series.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Books.V1.Model.Series.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def books_series_get(connection, series_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -112,6 +115,7 @@ defmodule GoogleApi.Books.V1.Api.Series do
   @spec books_series_membership_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Seriesmembership.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def books_series_membership_get(connection, series_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

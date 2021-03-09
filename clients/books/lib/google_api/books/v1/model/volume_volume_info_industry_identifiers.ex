@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoIndustryIdentifiers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identifier => String.t(),
-          :type => String.t()
+          :identifier => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:identifier)

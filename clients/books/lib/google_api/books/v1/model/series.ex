@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.Series do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :series => list(GoogleApi.Books.V1.Model.SeriesSeries.t())
+          :kind => String.t() | nil,
+          :series => list(GoogleApi.Books.V1.Model.SeriesSeries.t()) | nil
         }
 
   field(:kind)

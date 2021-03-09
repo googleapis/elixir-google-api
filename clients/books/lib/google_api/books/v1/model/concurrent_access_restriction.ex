@@ -37,17 +37,17 @@ defmodule GoogleApi.Books.V1.Model.ConcurrentAccessRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceAllowed => boolean(),
-          :kind => String.t(),
-          :maxConcurrentDevices => integer(),
-          :message => String.t(),
-          :nonce => String.t(),
-          :reasonCode => String.t(),
-          :restricted => boolean(),
-          :signature => String.t(),
-          :source => String.t(),
-          :timeWindowSeconds => integer(),
-          :volumeId => String.t()
+          :deviceAllowed => boolean() | nil,
+          :kind => String.t() | nil,
+          :maxConcurrentDevices => integer() | nil,
+          :message => String.t() | nil,
+          :nonce => String.t() | nil,
+          :reasonCode => String.t() | nil,
+          :restricted => boolean() | nil,
+          :signature => String.t() | nil,
+          :source => String.t() | nil,
+          :timeWindowSeconds => integer() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:deviceAllowed)

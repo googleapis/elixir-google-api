@@ -31,11 +31,12 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoOffers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finskyOfferType => integer(),
-          :giftable => boolean(),
-          :listPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoOffersListPrice.t(),
-          :rentalDuration => GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration.t(),
-          :retailPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRetailPrice.t()
+          :finskyOfferType => integer() | nil,
+          :giftable => boolean() | nil,
+          :listPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoOffersListPrice.t() | nil,
+          :rentalDuration =>
+            GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration.t() | nil,
+          :retailPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRetailPrice.t() | nil
         }
 
   field(:finskyOfferType)

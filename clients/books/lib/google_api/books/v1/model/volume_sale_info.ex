@@ -34,14 +34,14 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buyLink => String.t(),
-          :country => String.t(),
-          :isEbook => boolean(),
-          :listPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice.t(),
-          :offers => list(GoogleApi.Books.V1.Model.VolumeSaleInfoOffers.t()),
-          :onSaleDate => String.t(),
-          :retailPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice.t(),
-          :saleability => String.t()
+          :buyLink => String.t() | nil,
+          :country => String.t() | nil,
+          :isEbook => boolean() | nil,
+          :listPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice.t() | nil,
+          :offers => list(GoogleApi.Books.V1.Model.VolumeSaleInfoOffers.t()) | nil,
+          :onSaleDate => String.t() | nil,
+          :retailPrice => GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice.t() | nil,
+          :saleability => String.t() | nil
         }
 
   field(:buyLink)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeRecommendedInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :explanation => String.t()
+          :explanation => String.t() | nil
         }
 
   field(:explanation)

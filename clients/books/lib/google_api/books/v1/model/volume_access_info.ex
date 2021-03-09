@@ -40,20 +40,20 @@ defmodule GoogleApi.Books.V1.Model.VolumeAccessInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessViewStatus => String.t(),
-          :country => String.t(),
-          :downloadAccess => GoogleApi.Books.V1.Model.DownloadAccessRestriction.t(),
-          :driveImportedContentLink => String.t(),
-          :embeddable => boolean(),
-          :epub => GoogleApi.Books.V1.Model.VolumeAccessInfoEpub.t(),
-          :explicitOfflineLicenseManagement => boolean(),
-          :pdf => GoogleApi.Books.V1.Model.VolumeAccessInfoPdf.t(),
-          :publicDomain => boolean(),
-          :quoteSharingAllowed => boolean(),
-          :textToSpeechPermission => String.t(),
-          :viewOrderUrl => String.t(),
-          :viewability => String.t(),
-          :webReaderLink => String.t()
+          :accessViewStatus => String.t() | nil,
+          :country => String.t() | nil,
+          :downloadAccess => GoogleApi.Books.V1.Model.DownloadAccessRestriction.t() | nil,
+          :driveImportedContentLink => String.t() | nil,
+          :embeddable => boolean() | nil,
+          :epub => GoogleApi.Books.V1.Model.VolumeAccessInfoEpub.t() | nil,
+          :explicitOfflineLicenseManagement => boolean() | nil,
+          :pdf => GoogleApi.Books.V1.Model.VolumeAccessInfoPdf.t() | nil,
+          :publicDomain => boolean() | nil,
+          :quoteSharingAllowed => boolean() | nil,
+          :textToSpeechPermission => String.t() | nil,
+          :viewOrderUrl => String.t() | nil,
+          :viewability => String.t() | nil,
+          :webReaderLink => String.t() | nil
         }
 
   field(:accessViewStatus)

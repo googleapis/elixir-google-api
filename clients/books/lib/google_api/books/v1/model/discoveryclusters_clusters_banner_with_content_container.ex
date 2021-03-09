@@ -32,12 +32,12 @@ defmodule GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentCon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fillColorArgb => String.t(),
-          :imageUrl => String.t(),
-          :maskColorArgb => String.t(),
-          :moreButtonText => String.t(),
-          :moreButtonUrl => String.t(),
-          :textColorArgb => String.t()
+          :fillColorArgb => String.t() | nil,
+          :imageUrl => String.t() | nil,
+          :maskColorArgb => String.t() | nil,
+          :moreButtonText => String.t() | nil,
+          :moreButtonUrl => String.t() | nil,
+          :textColorArgb => String.t() | nil
         }
 
   field(:fillColorArgb)

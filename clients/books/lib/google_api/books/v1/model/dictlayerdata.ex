@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Dictlayerdata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.Books.V1.Model.DictlayerdataCommon.t(),
-          :dict => GoogleApi.Books.V1.Model.DictlayerdataDict.t(),
-          :kind => String.t()
+          :common => GoogleApi.Books.V1.Model.DictlayerdataCommon.t() | nil,
+          :dict => GoogleApi.Books.V1.Model.DictlayerdataDict.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:common, as: GoogleApi.Books.V1.Model.DictlayerdataCommon)

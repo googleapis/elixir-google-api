@@ -28,8 +28,9 @@ defmodule GoogleApi.Books.V1.Model.DownloadAccesses do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :downloadAccessList => list(GoogleApi.Books.V1.Model.DownloadAccessRestriction.t()),
-          :kind => String.t()
+          :downloadAccessList =>
+            list(GoogleApi.Books.V1.Model.DownloadAccessRestriction.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:downloadAccessList, as: GoogleApi.Books.V1.Model.DownloadAccessRestriction, type: :list)

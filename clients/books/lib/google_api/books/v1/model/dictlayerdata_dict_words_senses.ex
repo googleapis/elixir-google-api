@@ -35,15 +35,16 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses do
 
   @type t :: %__MODULE__{
           :conjugations =>
-            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations.t()),
+            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations.t()) | nil,
           :definitions =>
-            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions.t()),
-          :partOfSpeech => String.t(),
-          :pronunciation => String.t(),
-          :pronunciationUrl => String.t(),
-          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSource.t(),
-          :syllabification => String.t(),
-          :synonyms => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSynonyms.t())
+            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions.t()) | nil,
+          :partOfSpeech => String.t() | nil,
+          :pronunciation => String.t() | nil,
+          :pronunciationUrl => String.t() | nil,
+          :source => GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSource.t() | nil,
+          :syllabification => String.t() | nil,
+          :synonyms =>
+            list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSynonyms.t()) | nil
         }
 
   field(:conjugations,

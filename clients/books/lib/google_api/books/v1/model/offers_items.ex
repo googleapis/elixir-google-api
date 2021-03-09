@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.OffersItems do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :artUrl => String.t(),
-          :gservicesKey => String.t(),
-          :id => String.t(),
-          :items => list(GoogleApi.Books.V1.Model.OffersItemsItems.t())
+          :artUrl => String.t() | nil,
+          :gservicesKey => String.t() | nil,
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Books.V1.Model.OffersItemsItems.t()) | nil
         }
 
   field(:artUrl)

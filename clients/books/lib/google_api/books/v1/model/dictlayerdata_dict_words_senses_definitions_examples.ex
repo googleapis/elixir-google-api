@@ -29,8 +29,9 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExampl
 
   @type t :: %__MODULE__{
           :source =>
-            GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamplesSource.t(),
-          :text => String.t()
+            GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamplesSource.t()
+            | nil,
+          :text => String.t() | nil
         }
 
   field(:source,

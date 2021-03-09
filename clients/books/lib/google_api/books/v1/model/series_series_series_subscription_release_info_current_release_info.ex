@@ -30,10 +30,10 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountInMicros => float(),
-          :currencyCode => String.t(),
-          :releaseNumber => String.t(),
-          :releaseTime => String.t()
+          :amountInMicros => float() | nil,
+          :currencyCode => String.t() | nil,
+          :releaseNumber => String.t() | nil,
+          :releaseTime => String.t() | nil
         }
 
   field(:amountInMicros)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => float(),
-          :unit => String.t()
+          :count => float() | nil,
+          :unit => String.t() | nil
         }
 
   field(:count)

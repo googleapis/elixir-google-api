@@ -29,9 +29,9 @@ defmodule GoogleApi.Books.V1.Model.Usersettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :notesExport => GoogleApi.Books.V1.Model.UsersettingsNotesExport.t(),
-          :notification => GoogleApi.Books.V1.Model.UsersettingsNotification.t()
+          :kind => String.t() | nil,
+          :notesExport => GoogleApi.Books.V1.Model.UsersettingsNotesExport.t() | nil,
+          :notification => GoogleApi.Books.V1.Model.UsersettingsNotification.t() | nil
         }
 
   field(:kind)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataCommon do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lang => String.t(),
-          :previewImageUrl => String.t(),
-          :snippet => String.t(),
-          :snippetUrl => String.t(),
-          :title => String.t()
+          :lang => String.t() | nil,
+          :previewImageUrl => String.t() | nil,
+          :snippet => String.t() | nil,
+          :snippetUrl => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:lang)

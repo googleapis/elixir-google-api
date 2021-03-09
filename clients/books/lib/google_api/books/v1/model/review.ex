@@ -36,16 +36,16 @@ defmodule GoogleApi.Books.V1.Model.Review do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => GoogleApi.Books.V1.Model.ReviewAuthor.t(),
-          :content => String.t(),
-          :date => String.t(),
-          :fullTextUrl => String.t(),
-          :kind => String.t(),
-          :rating => String.t(),
-          :source => GoogleApi.Books.V1.Model.ReviewSource.t(),
-          :title => String.t(),
-          :type => String.t(),
-          :volumeId => String.t()
+          :author => GoogleApi.Books.V1.Model.ReviewAuthor.t() | nil,
+          :content => String.t() | nil,
+          :date => String.t() | nil,
+          :fullTextUrl => String.t() | nil,
+          :kind => String.t() | nil,
+          :rating => String.t() | nil,
+          :source => GoogleApi.Books.V1.Model.ReviewSource.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:author, as: GoogleApi.Books.V1.Model.ReviewAuthor)
