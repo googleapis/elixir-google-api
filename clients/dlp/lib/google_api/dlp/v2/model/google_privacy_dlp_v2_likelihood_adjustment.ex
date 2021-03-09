@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LikelihoodAdjustment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedLikelihood => String.t(),
-          :relativeLikelihood => integer()
+          :fixedLikelihood => String.t() | nil,
+          :relativeLikelihood => integer() | nil
         }
 
   field(:fixedLikelihood)

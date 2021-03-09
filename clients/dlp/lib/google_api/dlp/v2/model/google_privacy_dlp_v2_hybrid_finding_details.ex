@@ -31,11 +31,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridFindingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerDetails => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t(),
-          :fileOffset => String.t(),
-          :labels => map(),
-          :rowOffset => String.t(),
-          :tableOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions.t()
+          :containerDetails => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t() | nil,
+          :fileOffset => String.t() | nil,
+          :labels => map() | nil,
+          :rowOffset => String.t() | nil,
+          :tableOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions.t() | nil
         }
 
   field(:containerDetails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container)

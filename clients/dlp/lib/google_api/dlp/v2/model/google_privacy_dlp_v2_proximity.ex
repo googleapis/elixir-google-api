@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Proximity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :windowAfter => integer(),
-          :windowBefore => integer()
+          :windowAfter => integer() | nil,
+          :windowBefore => integer() | nil
         }
 
   field(:windowAfter)

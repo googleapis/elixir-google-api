@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateStoredInfoTypeRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t(),
-          :locationId => String.t(),
-          :storedInfoTypeId => String.t()
+          :config => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t() | nil,
+          :locationId => String.t() | nil,
+          :storedInfoTypeId => String.t() | nil
         }
 
   field(:config, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig)

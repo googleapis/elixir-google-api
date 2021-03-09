@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :labels => map(),
-          :requiredFindingLabelKeys => list(String.t()),
-          :tableOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions.t()
+          :description => String.t() | nil,
+          :labels => map() | nil,
+          :requiredFindingLabelKeys => list(String.t()) | nil,
+          :tableOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions.t() | nil
         }
 
   field(:description)

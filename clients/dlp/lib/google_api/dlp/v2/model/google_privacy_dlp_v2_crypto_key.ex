@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsWrapped => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t(),
-          :transient => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey.t(),
-          :unwrapped => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey.t()
+          :kmsWrapped => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t() | nil,
+          :transient => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey.t() | nil,
+          :unwrapped => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey.t() | nil
         }
 
   field(:kmsWrapped, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey)

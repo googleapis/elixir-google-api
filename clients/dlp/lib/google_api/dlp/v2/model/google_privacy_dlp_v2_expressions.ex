@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conditions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions.t(),
-          :logicalOperator => String.t()
+          :conditions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions.t() | nil,
+          :logicalOperator => String.t() | nil
         }
 
   field(:conditions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions)

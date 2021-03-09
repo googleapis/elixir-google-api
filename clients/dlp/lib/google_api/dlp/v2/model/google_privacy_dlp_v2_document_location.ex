@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileOffset => String.t()
+          :fileOffset => String.t() | nil
         }
 
   field(:fileOffset)

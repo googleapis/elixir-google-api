@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :words => list(String.t())
+          :words => list(String.t()) | nil
         }
 
   field(:words, type: :list)

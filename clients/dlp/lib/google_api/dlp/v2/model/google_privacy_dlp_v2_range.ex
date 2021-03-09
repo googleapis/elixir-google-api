@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => String.t(),
-          :start => String.t()
+          :end => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:end)

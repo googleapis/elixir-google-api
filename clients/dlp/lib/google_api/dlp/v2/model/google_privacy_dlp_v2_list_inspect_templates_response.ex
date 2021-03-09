@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inspectTemplates => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()),
-          :nextPageToken => String.t()
+          :inspectTemplates =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:inspectTemplates,

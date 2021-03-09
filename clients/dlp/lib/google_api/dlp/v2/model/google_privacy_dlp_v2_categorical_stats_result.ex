@@ -29,6 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult do
   @type t :: %__MODULE__{
           :valueFrequencyHistogramBuckets =>
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBucket.t())
+            | nil
         }
 
   field(:valueFrequencyHistogramBuckets,

@@ -29,9 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StatisticalTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdentifierField.t()),
-          :relativeFrequency => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+          :quasiIds =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdentifierField.t()) | nil,
+          :relativeFrequency => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:quasiIds, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdentifierField, type: :list)

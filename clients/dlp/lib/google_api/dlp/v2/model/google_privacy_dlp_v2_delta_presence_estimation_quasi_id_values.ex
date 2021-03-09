@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationQuasiI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :estimatedProbability => float(),
-          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t())
+          :estimatedProbability => float() | nil,
+          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()) | nil
         }
 
   field(:estimatedProbability)

@@ -32,12 +32,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonAlphabet => String.t(),
-          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t(),
-          :customAlphabet => String.t(),
-          :radix => integer(),
-          :surrogateInfoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()
+          :commonAlphabet => String.t() | nil,
+          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t() | nil,
+          :customAlphabet => String.t() | nil,
+          :radix => integer() | nil,
+          :surrogateInfoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
   field(:commonAlphabet)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
-          :sensitiveAttribute => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()
+          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil,
+          :sensitiveAttribute => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil
         }
 
   field(:quasiIds, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)

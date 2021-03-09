@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Trigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manual => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual.t(),
-          :schedule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule.t()
+          :manual => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual.t() | nil,
+          :schedule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule.t() | nil
         }
 
   field(:manual, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual)

@@ -30,11 +30,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
 
   @type t :: %__MODULE__{
           :infoTypeTransformations =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t() | nil,
           :recordTransformations =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t() | nil,
           :transformationErrorHandling =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t() | nil
         }
 
   field(:infoTypeTransformations,

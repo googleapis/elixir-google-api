@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations do
 
   @type t :: %__MODULE__{
           :fieldTransformations =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t()),
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t()) | nil,
           :recordSuppressions =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t())
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t()) | nil
         }
 
   field(:fieldTransformations,

@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.DLP.V2.Model.GoogleTypeDate.t(),
-          :dayOfWeek => String.t(),
-          :time => GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t(),
-          :timeZone => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone.t()
+          :date => GoogleApi.DLP.V2.Model.GoogleTypeDate.t() | nil,
+          :dayOfWeek => String.t() | nil,
+          :time => GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t() | nil,
+          :timeZone => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone.t() | nil
         }
 
   field(:date, as: GoogleApi.DLP.V2.Model.GoogleTypeDate)

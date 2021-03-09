@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :value => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()
+          :count => String.t() | nil,
+          :value => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil
         }
 
   field(:count)

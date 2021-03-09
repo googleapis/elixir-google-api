@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t()
+          :condition => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t() | nil
         }
 
   field(:condition, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition)

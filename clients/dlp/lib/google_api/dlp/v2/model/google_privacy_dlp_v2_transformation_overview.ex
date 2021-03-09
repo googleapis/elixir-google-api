@@ -29,8 +29,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationOverview do
 
   @type t :: %__MODULE__{
           :transformationSummaries =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary.t()),
-          :transformedBytes => String.t()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary.t()) | nil,
+          :transformedBytes => String.t() | nil
         }
 
   field(:transformationSummaries,

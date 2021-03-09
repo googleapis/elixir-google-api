@@ -31,12 +31,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t(),
-          :displayName => String.t(),
+          :description => String.t() | nil,
+          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t() | nil,
+          :displayName => String.t() | nil,
           :largeCustomDictionary =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig.t(),
-          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig.t() | nil,
+          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t() | nil
         }
 
   field(:description)

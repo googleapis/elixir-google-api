@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudStoragePath => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t(),
-          :wordList => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList.t()
+          :cloudStoragePath =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t() | nil,
+          :wordList => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList.t() | nil
         }
 
   field(:cloudStoragePath, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath)

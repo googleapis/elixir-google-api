@@ -28,7 +28,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult do
 
   @type t :: %__MODULE__{
           :equivalenceClassHistogramBuckets =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket.t())
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket.t()) | nil
         }
 
   field(:equivalenceClassHistogramBuckets,

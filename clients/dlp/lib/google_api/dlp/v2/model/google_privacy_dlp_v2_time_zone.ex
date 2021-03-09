@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :offsetMinutes => integer()
+          :offsetMinutes => integer() | nil
         }
 
   field(:offsetMinutes)

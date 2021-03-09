@@ -29,10 +29,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentVersion => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t(),
-          :name => String.t(),
+          :currentVersion =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t() | nil,
+          :name => String.t() | nil,
           :pendingVersions =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t())
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t()) | nil
         }
 
   field(:currentVersion, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion)

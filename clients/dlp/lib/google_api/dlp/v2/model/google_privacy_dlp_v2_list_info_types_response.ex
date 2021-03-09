@@ -27,7 +27,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription.t())
+          :infoTypes =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription.t()) | nil
         }
 
   field(:infoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription, type: :list)

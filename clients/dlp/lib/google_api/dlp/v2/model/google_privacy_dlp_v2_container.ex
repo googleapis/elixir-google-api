@@ -33,13 +33,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullPath => String.t(),
-          :projectId => String.t(),
-          :relativePath => String.t(),
-          :rootPath => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t(),
-          :version => String.t()
+          :fullPath => String.t() | nil,
+          :projectId => String.t() | nil,
+          :relativePath => String.t() | nil,
+          :rootPath => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:fullPath)

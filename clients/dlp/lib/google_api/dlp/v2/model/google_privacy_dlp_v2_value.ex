@@ -34,14 +34,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanValue => boolean(),
-          :dateValue => GoogleApi.DLP.V2.Model.GoogleTypeDate.t(),
-          :dayOfWeekValue => String.t(),
-          :floatValue => float(),
-          :integerValue => String.t(),
-          :stringValue => String.t(),
-          :timeValue => GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t(),
-          :timestampValue => DateTime.t()
+          :booleanValue => boolean() | nil,
+          :dateValue => GoogleApi.DLP.V2.Model.GoogleTypeDate.t() | nil,
+          :dayOfWeekValue => String.t() | nil,
+          :floatValue => float() | nil,
+          :integerValue => String.t() | nil,
+          :stringValue => String.t() | nil,
+          :timeValue => GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t() | nil,
+          :timestampValue => DateTime.t() | nil
         }
 
   field(:booleanValue)

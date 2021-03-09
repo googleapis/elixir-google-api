@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageRegexFileSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :excludeRegex => list(String.t()),
-          :includeRegex => list(String.t())
+          :bucketName => String.t() | nil,
+          :excludeRegex => list(String.t()) | nil,
+          :includeRegex => list(String.t()) | nil
         }
 
   field(:bucketName)

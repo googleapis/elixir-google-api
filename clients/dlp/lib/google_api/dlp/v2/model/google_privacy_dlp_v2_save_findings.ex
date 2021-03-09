@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig.t()
+          :outputConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig.t() | nil
         }
 
   field(:outputConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig)

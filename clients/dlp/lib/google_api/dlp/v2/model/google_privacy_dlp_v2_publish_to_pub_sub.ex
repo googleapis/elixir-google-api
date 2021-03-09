@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :topic => String.t()
+          :topic => String.t() | nil
         }
 
   field(:topic)

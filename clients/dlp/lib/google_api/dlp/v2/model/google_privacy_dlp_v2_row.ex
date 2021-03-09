@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t())
+          :values => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()) | nil
         }
 
   field(:values, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value, type: :list)

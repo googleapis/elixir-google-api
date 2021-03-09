@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UpdateInspectTemplateRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inspectTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t(),
-          :updateMask => String.t()
+          :inspectTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:inspectTemplate, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate)

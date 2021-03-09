@@ -29,8 +29,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesRespon
 
   @type t :: %__MODULE__{
           :deidentifyTemplates =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:deidentifyTemplates,

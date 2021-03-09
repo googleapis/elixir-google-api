@@ -29,9 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateDeidentifyTemplateReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deidentifyTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t(),
-          :locationId => String.t(),
-          :templateId => String.t()
+          :deidentifyTemplate =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t() | nil,
+          :locationId => String.t() | nil,
+          :templateId => String.t() | nil
         }
 
   field(:deidentifyTemplate, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate)

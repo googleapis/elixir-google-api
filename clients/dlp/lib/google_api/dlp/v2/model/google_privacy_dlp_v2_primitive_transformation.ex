@@ -37,22 +37,23 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketingConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t(),
+          :bucketingConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t() | nil,
           :characterMaskConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t() | nil,
           :cryptoDeterministicConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t(),
-          :cryptoHashConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t() | nil,
+          :cryptoHashConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t() | nil,
           :cryptoReplaceFfxFpeConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t(),
-          :dateShiftConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t() | nil,
+          :dateShiftConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t() | nil,
           :fixedSizeBucketingConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t(),
-          :redactConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t(),
-          :replaceConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t() | nil,
+          :redactConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t() | nil,
+          :replaceConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t() | nil,
           :replaceWithInfoTypeConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t(),
-          :timePartConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t() | nil,
+          :timePartConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t() | nil
         }
 
   field(:bucketingConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig)

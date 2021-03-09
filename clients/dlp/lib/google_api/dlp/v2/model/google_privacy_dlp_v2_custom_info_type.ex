@@ -34,14 +34,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectionRules => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule.t()),
-          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t(),
-          :exclusionType => String.t(),
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
-          :likelihood => String.t(),
-          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t(),
-          :storedType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t(),
-          :surrogateType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t()
+          :detectionRules =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule.t()) | nil,
+          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t() | nil,
+          :exclusionType => String.t() | nil,
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
+          :likelihood => String.t() | nil,
+          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t() | nil,
+          :storedType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t() | nil,
+          :surrogateType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t() | nil
         }
 
   field(:detectionRules, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule, type: :list)

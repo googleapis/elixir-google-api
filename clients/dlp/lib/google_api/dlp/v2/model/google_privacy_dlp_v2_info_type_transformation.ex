@@ -28,9 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()),
+          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()) | nil,
           :primitiveTransformation =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t() | nil
         }
 
   field(:infoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType, type: :list)

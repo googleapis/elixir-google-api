@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t(),
-          :snapshotInspectTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()
+          :jobConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t() | nil,
+          :snapshotInspectTemplate =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t() | nil
         }
 
   field(:jobConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig)

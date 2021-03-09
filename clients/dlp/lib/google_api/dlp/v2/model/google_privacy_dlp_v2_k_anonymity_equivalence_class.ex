@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityEquivalenceClass do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :equivalenceClassSize => String.t(),
-          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t())
+          :equivalenceClassSize => String.t() | nil,
+          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()) | nil
         }
 
   field(:equivalenceClassSize)

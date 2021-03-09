@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actions => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t()),
-          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
-          :inspectTemplateName => String.t(),
-          :storageConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig.t()
+          :actions => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t()) | nil,
+          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil,
+          :inspectTemplateName => String.t() | nil,
+          :storageConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig.t() | nil
         }
 
   field(:actions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action, type: :list)

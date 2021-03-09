@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :storageLabel => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageMetadataLabel.t(),
-          :type => String.t()
+          :storageLabel =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageMetadataLabel.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:storageLabel, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageMetadataLabel)

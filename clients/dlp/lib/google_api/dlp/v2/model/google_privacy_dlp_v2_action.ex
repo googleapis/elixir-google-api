@@ -33,15 +33,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
 
   @type t :: %__MODULE__{
           :jobNotificationEmails =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t(),
-          :pubSub => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t() | nil,
+          :pubSub => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t() | nil,
           :publishFindingsToCloudDataCatalog =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t() | nil,
           :publishSummaryToCscc =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t() | nil,
           :publishToStackdriver =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToStackdriver.t(),
-          :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToStackdriver.t() | nil,
+          :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t() | nil
         }
 
   field(:jobNotificationEmails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails)

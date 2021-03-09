@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customTag => String.t(),
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()
+          :customTag => String.t() | nil,
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil
         }
 
   field(:customTag)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableAutoPopulationOfTimespanConfig => boolean(),
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :timestampField => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()
+          :enableAutoPopulationOfTimespanConfig => boolean() | nil,
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :timestampField => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil
         }
 
   field(:enableAutoPopulationOfTimespanConfig)

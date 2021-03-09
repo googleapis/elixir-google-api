@@ -30,10 +30,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t(),
-          :codepointRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t(),
-          :container => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t(),
-          :contentLocations => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t())
+          :byteRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t() | nil,
+          :codepointRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t() | nil,
+          :container => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t() | nil,
+          :contentLocations =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t()) | nil
         }
 
   field(:byteRange, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range)

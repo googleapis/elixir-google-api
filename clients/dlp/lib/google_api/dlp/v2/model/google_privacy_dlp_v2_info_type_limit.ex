@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
-          :maxFindings => integer()
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
+          :maxFindings => integer() | nil
         }
 
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)

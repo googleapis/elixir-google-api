@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :storedInfoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t())
+          :nextPageToken => String.t() | nil,
+          :storedInfoTypes =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()) | nil
         }
 
   field(:nextPageToken)

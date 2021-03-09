@@ -33,15 +33,17 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric do
 
   @type t :: %__MODULE__{
           :categoricalStatsConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig.t() | nil,
           :deltaPresenceEstimationConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig.t(),
-          :kAnonymityConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig.t() | nil,
+          :kAnonymityConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig.t() | nil,
           :kMapEstimationConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig.t(),
-          :lDiversityConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig.t() | nil,
+          :lDiversityConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig.t() | nil,
           :numericalStatsConfig =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig.t() | nil
         }
 
   field(:categoricalStatsConfig,

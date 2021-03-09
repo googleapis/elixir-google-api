@@ -55,6 +55,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_content_deidentify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_content_deidentify(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,6 +119,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_content_inspect(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_content_inspect(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -181,6 +183,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_content_reidentify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_content_reidentify(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -249,6 +252,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_deidentify_templates_create(
         connection,
@@ -321,6 +325,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_deidentify_templates_delete(
         connection,
@@ -390,6 +395,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_deidentify_templates_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -460,6 +466,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_deidentify_templates_list(
         connection,
@@ -537,6 +544,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_deidentify_templates_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -600,6 +608,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_dlp_jobs_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_dlp_jobs_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -661,6 +670,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_dlp_jobs_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_dlp_jobs_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -721,6 +731,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_dlp_jobs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_dlp_jobs_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -780,6 +791,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_dlp_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_dlp_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -845,6 +857,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_dlp_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDlpJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_dlp_jobs_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -913,6 +926,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_image_redact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_image_redact(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -981,6 +995,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_inspect_templates_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1048,6 +1063,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_inspect_templates_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1107,6 +1123,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_inspect_templates_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_inspect_templates_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1172,6 +1189,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_inspect_templates_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_inspect_templates_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1238,6 +1256,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_inspect_templates_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_inspect_templates_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1301,6 +1320,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_activate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_activate(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1362,6 +1382,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1422,6 +1443,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1481,6 +1503,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1545,6 +1568,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListJobTriggersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1612,6 +1636,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_job_triggers_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_job_triggers_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1678,6 +1703,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_content_deidentify(
         connection,
@@ -1751,6 +1777,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_content_inspect(
         connection,
@@ -1824,6 +1851,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_content_reidentify(
         connection,
@@ -1897,6 +1925,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_deidentify_templates_create(
         connection,
@@ -1969,6 +1998,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_deidentify_templates_delete(
         connection,
@@ -2038,6 +2068,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_deidentify_templates_get(
         connection,
@@ -2113,6 +2144,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_deidentify_templates_list(
         connection,
@@ -2190,6 +2222,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_deidentify_templates_patch(
         connection,
@@ -2263,6 +2296,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2329,6 +2363,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_create(
         connection,
@@ -2399,6 +2434,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2464,6 +2500,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_finish(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2524,6 +2561,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_locations_dlp_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2589,6 +2627,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_hybrid_inspect(
         connection,
@@ -2662,6 +2701,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_locations_dlp_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDlpJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_dlp_jobs_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2730,6 +2770,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_locations_image_redact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_image_redact(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2798,6 +2839,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_inspect_templates_create(
         connection,
@@ -2870,6 +2912,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_inspect_templates_delete(
         connection,
@@ -2939,6 +2982,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_inspect_templates_get(
         connection,
@@ -3014,6 +3058,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_inspect_templates_list(
         connection,
@@ -3090,6 +3135,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_inspect_templates_patch(
         connection,
@@ -3163,6 +3209,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_activate(
         connection,
@@ -3234,6 +3281,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_create(
         connection,
@@ -3304,6 +3352,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_delete(
         connection,
@@ -3373,6 +3422,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3438,6 +3488,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_hybrid_inspect(
         connection,
@@ -3515,6 +3566,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListJobTriggersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_list(
         connection,
@@ -3592,6 +3644,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_job_triggers_patch(
         connection,
@@ -3663,6 +3716,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_stored_info_types_create(
         connection,
@@ -3735,6 +3789,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_stored_info_types_delete(
         connection,
@@ -3804,6 +3859,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_stored_info_types_get(
         connection,
@@ -3879,6 +3935,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_stored_info_types_list(
         connection,
@@ -3955,6 +4012,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_locations_stored_info_types_patch(
         connection,
@@ -4028,6 +4086,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_stored_info_types_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4095,6 +4154,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_stored_info_types_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4154,6 +4214,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_stored_info_types_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_stored_info_types_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4219,6 +4280,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_stored_info_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_stored_info_types_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4285,6 +4347,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   @spec dlp_projects_stored_info_types_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_projects_stored_info_types_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

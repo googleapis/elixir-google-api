@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customTag => String.t(),
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :inferred => GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t(),
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()
+          :customTag => String.t() | nil,
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :inferred => GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t() | nil,
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
   field(:customTag)

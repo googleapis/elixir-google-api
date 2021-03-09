@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t(),
-          :surrogateInfoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()
+          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t() | nil,
+          :surrogateInfoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
   field(:context, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

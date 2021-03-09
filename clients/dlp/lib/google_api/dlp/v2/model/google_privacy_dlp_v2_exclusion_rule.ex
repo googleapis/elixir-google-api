@@ -30,10 +30,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t(),
-          :excludeInfoTypes => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes.t(),
-          :matchingType => String.t(),
-          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t()
+          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t() | nil,
+          :excludeInfoTypes =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes.t() | nil,
+          :matchingType => String.t() | nil,
+          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t() | nil
         }
 
   field(:dictionary, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary)

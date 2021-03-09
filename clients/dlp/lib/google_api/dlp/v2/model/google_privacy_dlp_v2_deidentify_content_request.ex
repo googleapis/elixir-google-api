@@ -32,12 +32,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deidentifyConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t(),
-          :deidentifyTemplateName => String.t(),
-          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
-          :inspectTemplateName => String.t(),
-          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t(),
-          :locationId => String.t()
+          :deidentifyConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t() | nil,
+          :deidentifyTemplateName => String.t() | nil,
+          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil,
+          :inspectTemplateName => String.t() | nil,
+          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t() | nil,
+          :locationId => String.t() | nil
         }
 
   field(:deidentifyConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig)

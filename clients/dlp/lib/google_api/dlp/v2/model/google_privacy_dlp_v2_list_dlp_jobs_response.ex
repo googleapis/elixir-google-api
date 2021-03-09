@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDlpJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()),
-          :nextPageToken => String.t()
+          :jobs => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:jobs, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob, type: :list)

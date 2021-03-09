@@ -31,12 +31,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketSize => String.t(),
-          :bucketValueCount => String.t(),
+          :bucketSize => String.t() | nil,
+          :bucketValueCount => String.t() | nil,
           :bucketValues =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass.t()),
-          :sensitiveValueFrequencyLowerBound => String.t(),
-          :sensitiveValueFrequencyUpperBound => String.t()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass.t()) | nil,
+          :sensitiveValueFrequencyLowerBound => String.t() | nil,
+          :sensitiveValueFrequencyUpperBound => String.t() | nil
         }
 
   field(:bucketSize)

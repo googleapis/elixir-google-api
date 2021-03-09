@@ -39,19 +39,19 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :findingId => String.t(),
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
-          :jobCreateTime => DateTime.t(),
-          :jobName => String.t(),
-          :labels => map(),
-          :likelihood => String.t(),
-          :location => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t(),
-          :name => String.t(),
-          :quote => String.t(),
-          :quoteInfo => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo.t(),
-          :resourceName => String.t(),
-          :triggerName => String.t()
+          :createTime => DateTime.t() | nil,
+          :findingId => String.t() | nil,
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
+          :jobCreateTime => DateTime.t() | nil,
+          :jobName => String.t() | nil,
+          :labels => map() | nil,
+          :likelihood => String.t() | nil,
+          :location => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t() | nil,
+          :name => String.t() | nil,
+          :quote => String.t() | nil,
+          :quoteInfo => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo.t() | nil,
+          :resourceName => String.t() | nil,
+          :triggerName => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

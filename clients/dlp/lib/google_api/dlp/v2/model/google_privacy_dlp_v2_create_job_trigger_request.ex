@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateJobTriggerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobTrigger => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t(),
-          :locationId => String.t(),
-          :triggerId => String.t()
+          :jobTrigger => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t() | nil,
+          :locationId => String.t() | nil,
+          :triggerId => String.t() | nil
         }
 
   field(:jobTrigger, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()
+          :count => String.t() | nil,
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
   field(:count)

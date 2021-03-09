@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Key.t()
+          :entityKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Key.t() | nil
         }
 
   field(:entityKey, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Key)

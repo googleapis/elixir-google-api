@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateInspectTemplateRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inspectTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t(),
-          :locationId => String.t(),
-          :templateId => String.t()
+          :inspectTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t() | nil,
+          :locationId => String.t() | nil,
+          :templateId => String.t() | nil
         }
 
   field(:inspectTemplate, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate)

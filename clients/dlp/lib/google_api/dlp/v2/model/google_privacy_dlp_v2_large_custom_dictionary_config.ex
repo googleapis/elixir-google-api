@@ -29,10 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigQueryField => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField.t(),
+          :bigQueryField => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField.t() | nil,
           :cloudStorageFileSet =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet.t(),
-          :outputPath => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet.t() | nil,
+          :outputPath => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t() | nil
         }
 
   field(:bigQueryField, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField)

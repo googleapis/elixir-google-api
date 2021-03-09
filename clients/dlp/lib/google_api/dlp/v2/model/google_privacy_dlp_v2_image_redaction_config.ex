@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
-          :redactAllText => boolean(),
-          :redactionColor => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Color.t()
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
+          :redactAllText => boolean() | nil,
+          :redactionColor => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Color.t() | nil
         }
 
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)

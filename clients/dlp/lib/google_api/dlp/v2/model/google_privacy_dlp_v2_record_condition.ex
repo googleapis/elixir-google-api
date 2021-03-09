@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expressions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions.t()
+          :expressions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions.t() | nil
         }
 
   field(:expressions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions)

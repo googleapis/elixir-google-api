@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestedOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions.t(),
-          :result => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result.t()
+          :requestedOptions =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions.t() | nil,
+          :result => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result.t() | nil
         }
 
   field(:requestedOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions)

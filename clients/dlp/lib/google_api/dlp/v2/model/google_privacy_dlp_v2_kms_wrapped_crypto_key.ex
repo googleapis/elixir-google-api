@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKeyName => String.t(),
-          :wrappedKey => String.t()
+          :cryptoKeyName => String.t() | nil,
+          :wrappedKey => String.t() | nil
         }
 
   field(:cryptoKeyName)

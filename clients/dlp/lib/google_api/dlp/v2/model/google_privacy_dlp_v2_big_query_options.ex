@@ -32,12 +32,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
-          :identifyingFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
-          :rowsLimit => String.t(),
-          :rowsLimitPercent => integer(),
-          :sampleMethod => String.t(),
-          :tableReference => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+          :excludedFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil,
+          :identifyingFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil,
+          :rowsLimit => String.t() | nil,
+          :rowsLimitPercent => integer() | nil,
+          :sampleMethod => String.t() | nil,
+          :tableReference => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:excludedFields, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abortedCount => String.t(),
-          :pendingCount => String.t(),
-          :processedCount => String.t()
+          :abortedCount => String.t() | nil,
+          :pendingCount => String.t() | nil,
+          :processedCount => String.t() | nil
         }
 
   field(:abortedCount)

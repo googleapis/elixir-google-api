@@ -31,11 +31,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBuck
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketSize => String.t(),
-          :bucketValueCount => String.t(),
-          :bucketValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t()),
-          :valueFrequencyLowerBound => String.t(),
-          :valueFrequencyUpperBound => String.t()
+          :bucketSize => String.t() | nil,
+          :bucketValueCount => String.t() | nil,
+          :bucketValues =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t()) | nil,
+          :valueFrequencyLowerBound => String.t() | nil,
+          :valueFrequencyUpperBound => String.t() | nil
         }
 
   field(:bucketSize)

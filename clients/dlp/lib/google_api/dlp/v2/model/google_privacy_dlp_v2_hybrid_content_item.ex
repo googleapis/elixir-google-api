@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findingDetails => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridFindingDetails.t(),
-          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t()
+          :findingDetails =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridFindingDetails.t() | nil,
+          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t() | nil
         }
 
   field(:findingDetails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridFindingDetails)
