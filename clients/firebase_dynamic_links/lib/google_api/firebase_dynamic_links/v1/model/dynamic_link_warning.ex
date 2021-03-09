@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :warningCode => String.t(),
-          :warningDocumentLink => String.t(),
-          :warningMessage => String.t()
+          :warningCode => String.t() | nil,
+          :warningDocumentLink => String.t() | nil,
+          :warningMessage => String.t() | nil
         }
 
   field(:warningCode)

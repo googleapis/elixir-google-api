@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desktopFallbackLink => String.t()
+          :desktopFallbackLink => String.t() | nil
         }
 
   field(:desktopFallbackLink)

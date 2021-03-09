@@ -30,10 +30,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidFallbackLink => String.t(),
-          :androidLink => String.t(),
-          :androidMinPackageVersionCode => String.t(),
-          :androidPackageName => String.t()
+          :androidFallbackLink => String.t() | nil,
+          :androidLink => String.t() | nil,
+          :androidMinPackageVersionCode => String.t() | nil,
+          :androidPackageName => String.t() | nil
         }
 
   field(:androidFallbackLink)

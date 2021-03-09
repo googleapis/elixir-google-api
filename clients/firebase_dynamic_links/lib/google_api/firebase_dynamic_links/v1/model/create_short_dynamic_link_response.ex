@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :previewLink => String.t(),
-          :shortLink => String.t(),
-          :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t())
+          :previewLink => String.t() | nil,
+          :shortLink => String.t() | nil,
+          :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t()) | nil
         }
 
   field(:previewLink)

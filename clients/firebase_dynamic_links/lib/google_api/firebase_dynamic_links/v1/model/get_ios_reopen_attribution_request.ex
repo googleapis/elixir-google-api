@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleId => String.t(),
-          :requestedLink => String.t(),
-          :sdkVersion => String.t()
+          :bundleId => String.t() | nil,
+          :requestedLink => String.t() | nil,
+          :sdkVersion => String.t() | nil
         }
 
   field(:bundleId)

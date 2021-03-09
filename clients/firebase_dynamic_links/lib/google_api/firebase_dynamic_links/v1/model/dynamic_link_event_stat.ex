@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :event => String.t(),
-          :platform => String.t()
+          :count => String.t() | nil,
+          :event => String.t() | nil,
+          :platform => String.t() | nil
         }
 
   field(:count)

@@ -35,15 +35,15 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deepLink => String.t(),
-          :invitationId => String.t(),
-          :iosMinAppVersion => String.t(),
-          :resolvedLink => String.t(),
-          :utmCampaign => String.t(),
-          :utmContent => String.t(),
-          :utmMedium => String.t(),
-          :utmSource => String.t(),
-          :utmTerm => String.t()
+          :deepLink => String.t() | nil,
+          :invitationId => String.t() | nil,
+          :iosMinAppVersion => String.t() | nil,
+          :resolvedLink => String.t() | nil,
+          :utmCampaign => String.t() | nil,
+          :utmContent => String.t() | nil,
+          :utmMedium => String.t() | nil,
+          :utmSource => String.t() | nil,
+          :utmTerm => String.t() | nil
         }
 
   field(:deepLink)

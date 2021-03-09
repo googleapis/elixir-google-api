@@ -31,11 +31,11 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicLinkInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t(),
-          :longDynamicLink => String.t(),
-          :name => String.t(),
-          :sdkVersion => String.t(),
-          :suffix => GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix.t()
+          :dynamicLinkInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t() | nil,
+          :longDynamicLink => String.t() | nil,
+          :name => String.t() | nil,
+          :sdkVersion => String.t() | nil,
+          :suffix => GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix.t() | nil
         }
 
   field(:dynamicLinkInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo)

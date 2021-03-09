@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableForcedRedirect => boolean()
+          :enableForcedRedirect => boolean() | nil
         }
 
   field(:enableForcedRedirect)

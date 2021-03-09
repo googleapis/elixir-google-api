@@ -35,15 +35,16 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo.t(),
-          :androidInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo.t(),
-          :desktopInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.t(),
-          :domainUriPrefix => String.t(),
-          :dynamicLinkDomain => String.t(),
-          :iosInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo.t(),
-          :link => String.t(),
-          :navigationInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo.t(),
-          :socialMetaTagInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo.t()
+          :analyticsInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo.t() | nil,
+          :androidInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo.t() | nil,
+          :desktopInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.t() | nil,
+          :domainUriPrefix => String.t() | nil,
+          :dynamicLinkDomain => String.t() | nil,
+          :iosInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo.t() | nil,
+          :link => String.t() | nil,
+          :navigationInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo.t() | nil,
+          :socialMetaTagInfo =>
+            GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo.t() | nil
         }
 
   field(:analyticsInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo)

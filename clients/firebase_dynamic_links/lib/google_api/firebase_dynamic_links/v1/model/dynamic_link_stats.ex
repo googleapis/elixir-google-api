@@ -28,7 +28,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do
 
   @type t :: %__MODULE__{
           :linkEventStats =>
-            list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t())
+            list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t()) | nil
         }
 
   field(:linkEventStats,
