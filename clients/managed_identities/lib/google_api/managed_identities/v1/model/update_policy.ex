@@ -29,10 +29,10 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.UpdatePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => String.t(),
+          :channel => String.t() | nil,
           :denyMaintenancePeriods =>
-            list(GoogleApi.ManagedIdentities.V1.Model.DenyMaintenancePeriod.t()),
-          :window => GoogleApi.ManagedIdentities.V1.Model.MaintenanceWindow.t()
+            list(GoogleApi.ManagedIdentities.V1.Model.DenyMaintenancePeriod.t()) | nil,
+          :window => GoogleApi.ManagedIdentities.V1.Model.MaintenanceWindow.t() | nil
         }
 
   field(:channel)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagem
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eligible => boolean(),
-          :reason => String.t()
+          :eligible => boolean() | nil,
+          :reason => String.t() | nil
         }
 
   field(:eligible)

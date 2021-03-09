@@ -27,7 +27,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.ResetAdminPasswordResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :password => String.t()
+          :password => String.t() | nil
         }
 
   field(:password)

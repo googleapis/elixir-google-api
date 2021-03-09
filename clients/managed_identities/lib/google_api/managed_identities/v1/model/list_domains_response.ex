@@ -29,9 +29,9 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.ListDomainsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domains => list(GoogleApi.ManagedIdentities.V1.Model.Domain.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :domains => list(GoogleApi.ManagedIdentities.V1.Model.Domain.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:domains, as: GoogleApi.ManagedIdentities.V1.Model.Domain, type: :list)

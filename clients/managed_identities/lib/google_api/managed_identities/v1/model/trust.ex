@@ -37,17 +37,17 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Trust do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :lastTrustHeartbeatTime => DateTime.t(),
-          :selectiveAuthentication => boolean(),
-          :state => String.t(),
-          :stateDescription => String.t(),
-          :targetDnsIpAddresses => list(String.t()),
-          :targetDomainName => String.t(),
-          :trustDirection => String.t(),
-          :trustHandshakeSecret => String.t(),
-          :trustType => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :lastTrustHeartbeatTime => DateTime.t() | nil,
+          :selectiveAuthentication => boolean() | nil,
+          :state => String.t() | nil,
+          :stateDescription => String.t() | nil,
+          :targetDnsIpAddresses => list(String.t()) | nil,
+          :targetDomainName => String.t() | nil,
+          :trustDirection => String.t() | nil,
+          :trustHandshakeSecret => String.t() | nil,
+          :trustType => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

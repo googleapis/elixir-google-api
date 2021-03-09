@@ -29,9 +29,9 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.DenyMaintenancePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.ManagedIdentities.V1.Model.Date.t(),
-          :startDate => GoogleApi.ManagedIdentities.V1.Model.Date.t(),
-          :time => GoogleApi.ManagedIdentities.V1.Model.TimeOfDay.t()
+          :endDate => GoogleApi.ManagedIdentities.V1.Model.Date.t() | nil,
+          :startDate => GoogleApi.ManagedIdentities.V1.Model.Date.t() | nil,
+          :time => GoogleApi.ManagedIdentities.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:endDate, as: GoogleApi.ManagedIdentities.V1.Model.Date)

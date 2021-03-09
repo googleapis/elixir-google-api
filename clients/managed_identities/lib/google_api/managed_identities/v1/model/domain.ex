@@ -38,18 +38,18 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :admin => String.t(),
-          :authorizedNetworks => list(String.t()),
-          :createTime => DateTime.t(),
-          :fqdn => String.t(),
-          :labels => map(),
-          :locations => list(String.t()),
-          :name => String.t(),
-          :reservedIpRange => String.t(),
-          :state => String.t(),
-          :statusMessage => String.t(),
-          :trusts => list(GoogleApi.ManagedIdentities.V1.Model.Trust.t()),
-          :updateTime => DateTime.t()
+          :admin => String.t() | nil,
+          :authorizedNetworks => list(String.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :fqdn => String.t() | nil,
+          :labels => map() | nil,
+          :locations => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :reservedIpRange => String.t() | nil,
+          :state => String.t() | nil,
+          :statusMessage => String.t() | nil,
+          :trusts => list(GoogleApi.ManagedIdentities.V1.Model.Trust.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:admin)
