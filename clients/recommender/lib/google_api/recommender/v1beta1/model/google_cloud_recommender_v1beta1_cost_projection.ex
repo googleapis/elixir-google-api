@@ -28,8 +28,8 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cost => GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t(),
-          :duration => String.t()
+          :cost => GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t() | nil,
+          :duration => String.t() | nil
         }
 
   field(:cost, as: GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney)

@@ -40,18 +40,19 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
           :associatedRecommendations =>
             list(
               GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightRecommendationReference.t()
-            ),
-          :category => String.t(),
-          :content => map(),
-          :description => String.t(),
-          :etag => String.t(),
-          :insightSubtype => String.t(),
-          :lastRefreshTime => DateTime.t(),
-          :name => String.t(),
-          :observationPeriod => String.t(),
+            )
+            | nil,
+          :category => String.t() | nil,
+          :content => map() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :insightSubtype => String.t() | nil,
+          :lastRefreshTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :observationPeriod => String.t() | nil,
           :stateInfo =>
-            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo.t(),
-          :targetResources => list(String.t())
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo.t() | nil,
+          :targetResources => list(String.t()) | nil
         }
 
   field(:associatedRecommendations,

@@ -27,7 +27,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insight => String.t()
+          :insight => String.t() | nil
         }
 
   field(:insight)

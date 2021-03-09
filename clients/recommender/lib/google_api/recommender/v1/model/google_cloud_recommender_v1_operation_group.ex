@@ -28,7 +28,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1OperationGroup 
 
   @type t :: %__MODULE__{
           :operations =>
-            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Operation.t())
+            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Operation.t()) | nil
         }
 
   field(:operations,

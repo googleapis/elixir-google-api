@@ -27,7 +27,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ValueMatcher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchesPattern => String.t()
+          :matchesPattern => String.t() | nil
         }
 
   field(:matchesPattern)

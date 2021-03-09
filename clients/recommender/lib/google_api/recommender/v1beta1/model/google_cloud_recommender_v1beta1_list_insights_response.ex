@@ -29,8 +29,9 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ListI
 
   @type t :: %__MODULE__{
           :insights =>
-            list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insight.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insight.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:insights,
