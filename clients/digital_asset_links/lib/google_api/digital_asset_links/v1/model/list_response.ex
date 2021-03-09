@@ -30,10 +30,10 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.ListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugString => String.t(),
-          :errorCode => list(String.t()),
-          :maxAge => String.t(),
-          :statements => list(GoogleApi.DigitalAssetLinks.V1.Model.Statement.t())
+          :debugString => String.t() | nil,
+          :errorCode => list(String.t()) | nil,
+          :maxAge => String.t() | nil,
+          :statements => list(GoogleApi.DigitalAssetLinks.V1.Model.Statement.t()) | nil
         }
 
   field(:debugString)

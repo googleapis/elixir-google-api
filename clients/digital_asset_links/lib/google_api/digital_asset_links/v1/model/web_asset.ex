@@ -27,7 +27,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.WebAsset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :site => String.t()
+          :site => String.t() | nil
         }
 
   field(:site)

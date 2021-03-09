@@ -60,6 +60,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
   @spec digitalassetlinks_assetlinks_check(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DigitalAssetLinks.V1.Model.CheckResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def digitalassetlinks_assetlinks_check(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

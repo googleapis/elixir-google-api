@@ -29,9 +29,9 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.Statement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :relation => String.t(),
-          :source => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t(),
-          :target => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t()
+          :relation => String.t() | nil,
+          :source => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil,
+          :target => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil
         }
 
   field(:relation)

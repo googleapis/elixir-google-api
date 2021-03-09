@@ -28,8 +28,8 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.Asset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidApp => GoogleApi.DigitalAssetLinks.V1.Model.AndroidAppAsset.t(),
-          :web => GoogleApi.DigitalAssetLinks.V1.Model.WebAsset.t()
+          :androidApp => GoogleApi.DigitalAssetLinks.V1.Model.AndroidAppAsset.t() | nil,
+          :web => GoogleApi.DigitalAssetLinks.V1.Model.WebAsset.t() | nil
         }
 
   field(:androidApp, as: GoogleApi.DigitalAssetLinks.V1.Model.AndroidAppAsset)
