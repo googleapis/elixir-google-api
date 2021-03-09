@@ -33,13 +33,13 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :events => list(GoogleApi.LifeSciences.V2beta.Model.Event.t()),
-          :labels => map(),
-          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t(),
-          :pubSubTopic => String.t(),
-          :startTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :events => list(GoogleApi.LifeSciences.V2beta.Model.Event.t()) | nil,
+          :labels => map() | nil,
+          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t() | nil,
+          :pubSubTopic => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

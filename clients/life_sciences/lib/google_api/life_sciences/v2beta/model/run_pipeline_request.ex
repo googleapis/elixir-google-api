@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.RunPipelineRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t(),
-          :pubSubTopic => String.t()
+          :labels => map() | nil,
+          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t() | nil,
+          :pubSubTopic => String.t() | nil
         }
 
   field(:labels, type: :map)

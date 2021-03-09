@@ -28,8 +28,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.ListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.LifeSciences.V2beta.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.LifeSciences.V2beta.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.LifeSciences.V2beta.Model.Location, type: :list)

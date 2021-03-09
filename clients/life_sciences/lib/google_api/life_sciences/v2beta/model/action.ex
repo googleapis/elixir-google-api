@@ -45,25 +45,25 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alwaysRun => boolean(),
-          :blockExternalNetwork => boolean(),
-          :commands => list(String.t()),
-          :containerName => String.t(),
-          :credentials => GoogleApi.LifeSciences.V2beta.Model.Secret.t(),
-          :disableImagePrefetch => boolean(),
-          :disableStandardErrorCapture => boolean(),
-          :enableFuse => boolean(),
-          :entrypoint => String.t(),
-          :environment => map(),
-          :ignoreExitStatus => boolean(),
-          :imageUri => String.t(),
-          :labels => map(),
-          :mounts => list(GoogleApi.LifeSciences.V2beta.Model.Mount.t()),
-          :pidNamespace => String.t(),
-          :portMappings => map(),
-          :publishExposedPorts => boolean(),
-          :runInBackground => boolean(),
-          :timeout => String.t()
+          :alwaysRun => boolean() | nil,
+          :blockExternalNetwork => boolean() | nil,
+          :commands => list(String.t()) | nil,
+          :containerName => String.t() | nil,
+          :credentials => GoogleApi.LifeSciences.V2beta.Model.Secret.t() | nil,
+          :disableImagePrefetch => boolean() | nil,
+          :disableStandardErrorCapture => boolean() | nil,
+          :enableFuse => boolean() | nil,
+          :entrypoint => String.t() | nil,
+          :environment => map() | nil,
+          :ignoreExitStatus => boolean() | nil,
+          :imageUri => String.t() | nil,
+          :labels => map() | nil,
+          :mounts => list(GoogleApi.LifeSciences.V2beta.Model.Mount.t()) | nil,
+          :pidNamespace => String.t() | nil,
+          :portMappings => map() | nil,
+          :publishExposedPorts => boolean() | nil,
+          :runInBackground => boolean() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:alwaysRun)

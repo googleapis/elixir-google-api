@@ -28,8 +28,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Accelerator do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :type => String.t()
+          :count => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:count)

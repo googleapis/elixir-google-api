@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Resources do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regions => list(String.t()),
-          :virtualMachine => GoogleApi.LifeSciences.V2beta.Model.VirtualMachine.t(),
-          :zones => list(String.t())
+          :regions => list(String.t()) | nil,
+          :virtualMachine => GoogleApi.LifeSciences.V2beta.Model.VirtualMachine.t() | nil,
+          :zones => list(String.t()) | nil
         }
 
   field(:regions, type: :list)

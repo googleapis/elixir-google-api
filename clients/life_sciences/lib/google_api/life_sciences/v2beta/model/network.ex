@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Network do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :network => String.t(),
-          :subnetwork => String.t(),
-          :usePrivateAddress => boolean()
+          :network => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :usePrivateAddress => boolean() | nil
         }
 
   field(:network)

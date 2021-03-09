@@ -27,7 +27,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.NFSMount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :target => String.t()
+          :target => String.t() | nil
         }
 
   field(:target)

@@ -28,8 +28,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.UnexpectedExitStatusEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionId => integer(),
-          :exitStatus => integer()
+          :actionId => integer() | nil,
+          :exitStatus => integer() | nil
         }
 
   field(:actionId)

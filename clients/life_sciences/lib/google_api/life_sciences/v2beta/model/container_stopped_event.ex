@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.ContainerStoppedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionId => integer(),
-          :exitStatus => integer(),
-          :stderr => String.t()
+          :actionId => integer() | nil,
+          :exitStatus => integer() | nil,
+          :stderr => String.t() | nil
         }
 
   field(:actionId)
