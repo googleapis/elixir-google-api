@@ -30,13 +30,14 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :claimDate => DateTime.t(),
+          :claimDate => DateTime.t() | nil,
           :claimReview =>
             list(
               GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview.t()
-            ),
-          :claimant => String.t(),
-          :text => String.t()
+            )
+            | nil,
+          :claimant => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:claimDate, as: DateTime)

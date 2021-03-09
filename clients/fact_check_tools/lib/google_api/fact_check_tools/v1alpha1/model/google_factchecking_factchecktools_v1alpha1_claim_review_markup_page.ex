@@ -33,15 +33,17 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
 
   @type t :: %__MODULE__{
           :claimReviewAuthor =>
-            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor.t(),
+            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor.t()
+            | nil,
           :claimReviewMarkups =>
             list(
               GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup.t()
-            ),
-          :name => String.t(),
-          :pageUrl => String.t(),
-          :publishDate => String.t(),
-          :versionId => String.t()
+            )
+            | nil,
+          :name => String.t() | nil,
+          :pageUrl => String.t() | nil,
+          :publishDate => String.t() | nil,
+          :versionId => String.t() | nil
         }
 
   field(:claimReviewAuthor,

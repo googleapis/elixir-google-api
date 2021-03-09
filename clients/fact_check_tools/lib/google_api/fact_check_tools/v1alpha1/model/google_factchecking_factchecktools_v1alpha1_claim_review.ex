@@ -32,13 +32,14 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
+          :languageCode => String.t() | nil,
           :publisher =>
-            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1Publisher.t(),
-          :reviewDate => DateTime.t(),
-          :textualRating => String.t(),
-          :title => String.t(),
-          :url => String.t()
+            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1Publisher.t()
+            | nil,
+          :reviewDate => DateTime.t() | nil,
+          :textualRating => String.t() | nil,
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:languageCode)

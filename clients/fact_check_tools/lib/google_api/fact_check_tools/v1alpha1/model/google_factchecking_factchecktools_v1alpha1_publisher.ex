@@ -28,8 +28,8 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :site => String.t()
+          :name => String.t() | nil,
+          :site => String.t() | nil
         }
 
   field(:name)
