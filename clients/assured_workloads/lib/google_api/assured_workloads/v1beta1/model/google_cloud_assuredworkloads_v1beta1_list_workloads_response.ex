@@ -28,11 +28,12 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :workloads =>
             list(
               GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1Workload.t()
             )
+            | nil
         }
 
   field(:nextPageToken)

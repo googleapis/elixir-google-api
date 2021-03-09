@@ -40,28 +40,34 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAccount => String.t(),
+          :billingAccount => String.t() | nil,
           :cjisSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadCJISSettings.t(),
-          :complianceRegime => String.t(),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :etag => String.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadCJISSettings.t()
+            | nil,
+          :complianceRegime => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
           :fedrampHighSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampHighSettings.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampHighSettings.t()
+            | nil,
           :fedrampModerateSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampModerateSettings.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampModerateSettings.t()
+            | nil,
           :il4Settings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadIL4Settings.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadIL4Settings.t()
+            | nil,
           :kmsSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings.t(),
-          :labels => map(),
-          :name => String.t(),
-          :provisionedResourcesParent => String.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings.t()
+            | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :provisionedResourcesParent => String.t() | nil,
           :resources =>
             list(
               GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadResourceInfo.t()
             )
+            | nil
         }
 
   field(:billingAccount)

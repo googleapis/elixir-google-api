@@ -59,6 +59,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_operations_get(
         connection,
@@ -134,6 +135,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
           {:ok,
            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_operations_list(
         connection,
@@ -214,6 +216,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_workloads_create(
         connection,
@@ -288,6 +291,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_workloads_delete(
         connection,
@@ -361,6 +365,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
           {:ok,
            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1Workload.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_workloads_get(
         connection,
@@ -440,6 +445,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
           {:ok,
            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1ListWorkloadsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_workloads_list(
         connection,
@@ -521,6 +527,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
           {:ok,
            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1Workload.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def assuredworkloads_organizations_locations_workloads_patch(
         connection,

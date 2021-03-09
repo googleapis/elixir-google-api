@@ -28,8 +28,8 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextRotationTime => DateTime.t(),
-          :rotationPeriod => String.t()
+          :nextRotationTime => DateTime.t() | nil,
+          :rotationPeriod => String.t() | nil
         }
 
   field(:nextRotationTime, as: DateTime)
