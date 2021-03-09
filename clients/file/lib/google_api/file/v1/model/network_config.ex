@@ -30,10 +30,10 @@ defmodule GoogleApi.File.V1.Model.NetworkConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddresses => list(String.t()),
-          :modes => list(String.t()),
-          :network => String.t(),
-          :reservedIpRange => String.t()
+          :ipAddresses => list(String.t()) | nil,
+          :modes => list(String.t()) | nil,
+          :network => String.t() | nil,
+          :reservedIpRange => String.t() | nil
         }
 
   field(:ipAddresses, type: :list)

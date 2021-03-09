@@ -32,9 +32,10 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
           :exclusions =>
             list(
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t()
-            ),
-          :location => String.t(),
-          :nodeId => String.t()
+            )
+            | nil,
+          :location => String.t() | nil,
+          :nodeId => String.t() | nil
         }
 
   field(:exclusions,

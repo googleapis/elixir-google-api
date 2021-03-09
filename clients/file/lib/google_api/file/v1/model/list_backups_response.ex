@@ -29,9 +29,9 @@ defmodule GoogleApi.File.V1.Model.ListBackupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backups => list(GoogleApi.File.V1.Model.Backup.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :backups => list(GoogleApi.File.V1.Model.Backup.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:backups, as: GoogleApi.File.V1.Model.Backup, type: :list)

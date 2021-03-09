@@ -30,10 +30,10 @@ defmodule GoogleApi.File.V1.Model.FileShareConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capacityGb => String.t(),
-          :name => String.t(),
-          :nfsExportOptions => list(GoogleApi.File.V1.Model.NfsExportOptions.t()),
-          :sourceBackup => String.t()
+          :capacityGb => String.t() | nil,
+          :name => String.t() | nil,
+          :nfsExportOptions => list(GoogleApi.File.V1.Model.NfsExportOptions.t()) | nil,
+          :sourceBackup => String.t() | nil
         }
 
   field(:capacityGb)

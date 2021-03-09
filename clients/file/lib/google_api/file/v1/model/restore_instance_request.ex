@@ -28,8 +28,8 @@ defmodule GoogleApi.File.V1.Model.RestoreInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileShare => String.t(),
-          :sourceBackup => String.t()
+          :fileShare => String.t() | nil,
+          :sourceBackup => String.t() | nil
         }
 
   field(:fileShare)
