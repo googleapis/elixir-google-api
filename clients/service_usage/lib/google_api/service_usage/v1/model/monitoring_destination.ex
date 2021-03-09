@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MonitoringDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metrics => list(String.t()),
-          :monitoredResource => String.t()
+          :metrics => list(String.t()) | nil,
+          :monitoredResource => String.t() | nil
         }
 
   field(:metrics, type: :list)

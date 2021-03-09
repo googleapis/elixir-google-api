@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.BatchEnableServicesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :serviceIds => list(String.t())
+          :serviceIds => list(String.t()) | nil
         }
 
   field(:serviceIds, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ImportAdminQuotaPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policies => list(GoogleApi.ServiceUsage.V1.Model.AdminQuotaPolicy.t())
+          :policies => list(GoogleApi.ServiceUsage.V1.Model.AdminQuotaPolicy.t()) | nil
         }
 
   field(:policies, as: GoogleApi.ServiceUsage.V1.Model.AdminQuotaPolicy, type: :list)

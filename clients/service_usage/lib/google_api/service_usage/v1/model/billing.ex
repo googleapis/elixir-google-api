@@ -27,7 +27,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Billing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerDestinations => list(GoogleApi.ServiceUsage.V1.Model.BillingDestination.t())
+          :consumerDestinations =>
+            list(GoogleApi.ServiceUsage.V1.Model.BillingDestination.t()) | nil
         }
 
   field(:consumerDestinations, as: GoogleApi.ServiceUsage.V1.Model.BillingDestination, type: :list)

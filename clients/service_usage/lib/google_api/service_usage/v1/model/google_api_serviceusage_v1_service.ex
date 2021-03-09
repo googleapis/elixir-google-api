@@ -30,10 +30,11 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :state => String.t()
+          :config =>
+            GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:config, as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig)

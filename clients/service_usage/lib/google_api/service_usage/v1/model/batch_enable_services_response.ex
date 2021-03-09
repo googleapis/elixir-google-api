@@ -28,8 +28,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.BatchEnableServicesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failures => list(GoogleApi.ServiceUsage.V1.Model.EnableFailure.t()),
-          :services => list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t())
+          :failures => list(GoogleApi.ServiceUsage.V1.Model.EnableFailure.t()) | nil,
+          :services =>
+            list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t()) | nil
         }
 
   field(:failures, as: GoogleApi.ServiceUsage.V1.Model.EnableFailure, type: :list)

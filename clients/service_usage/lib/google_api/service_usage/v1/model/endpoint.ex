@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliases => list(String.t()),
-          :allowCors => boolean(),
-          :name => String.t(),
-          :target => String.t()
+          :aliases => list(String.t()) | nil,
+          :allowCors => boolean() | nil,
+          :name => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:aliases, type: :list)

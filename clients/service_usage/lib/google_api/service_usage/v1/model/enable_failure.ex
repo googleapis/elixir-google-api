@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.EnableFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :serviceId => String.t()
+          :errorMessage => String.t() | nil,
+          :serviceId => String.t() | nil
         }
 
   field(:errorMessage)

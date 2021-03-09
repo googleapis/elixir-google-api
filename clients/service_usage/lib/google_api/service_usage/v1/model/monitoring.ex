@@ -29,8 +29,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Monitoring do
 
   @type t :: %__MODULE__{
           :consumerDestinations =>
-            list(GoogleApi.ServiceUsage.V1.Model.MonitoringDestination.t()),
-          :producerDestinations => list(GoogleApi.ServiceUsage.V1.Model.MonitoringDestination.t())
+            list(GoogleApi.ServiceUsage.V1.Model.MonitoringDestination.t()) | nil,
+          :producerDestinations =>
+            list(GoogleApi.ServiceUsage.V1.Model.MonitoringDestination.t()) | nil
         }
 
   field(:consumerDestinations,

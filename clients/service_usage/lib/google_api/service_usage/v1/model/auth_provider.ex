@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceUsage.V1.Model.AuthProvider do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audiences => String.t(),
-          :authorizationUrl => String.t(),
-          :id => String.t(),
-          :issuer => String.t(),
-          :jwksUri => String.t(),
-          :jwtLocations => list(GoogleApi.ServiceUsage.V1.Model.JwtLocation.t())
+          :audiences => String.t() | nil,
+          :authorizationUrl => String.t() | nil,
+          :id => String.t() | nil,
+          :issuer => String.t() | nil,
+          :jwksUri => String.t() | nil,
+          :jwtLocations => list(GoogleApi.ServiceUsage.V1.Model.JwtLocation.t()) | nil
         }
 
   field(:audiences)

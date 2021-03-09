@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1OperationMetada
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceNames => list(String.t())
+          :resourceNames => list(String.t()) | nil
         }
 
   field(:resourceNames, type: :list)

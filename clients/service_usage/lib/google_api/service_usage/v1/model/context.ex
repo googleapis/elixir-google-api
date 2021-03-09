@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Context do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rules => list(GoogleApi.ServiceUsage.V1.Model.ContextRule.t())
+          :rules => list(GoogleApi.ServiceUsage.V1.Model.ContextRule.t()) | nil
         }
 
   field(:rules, as: GoogleApi.ServiceUsage.V1.Model.ContextRule, type: :list)

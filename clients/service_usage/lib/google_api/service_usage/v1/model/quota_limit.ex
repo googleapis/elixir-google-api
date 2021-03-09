@@ -36,16 +36,16 @@ defmodule GoogleApi.ServiceUsage.V1.Model.QuotaLimit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultLimit => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :duration => String.t(),
-          :freeTier => String.t(),
-          :maxLimit => String.t(),
-          :metric => String.t(),
-          :name => String.t(),
-          :unit => String.t(),
-          :values => map()
+          :defaultLimit => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :duration => String.t() | nil,
+          :freeTier => String.t() | nil,
+          :maxLimit => String.t() | nil,
+          :metric => String.t() | nil,
+          :name => String.t() | nil,
+          :unit => String.t() | nil,
+          :values => map() | nil
         }
 
   field(:defaultLimit)

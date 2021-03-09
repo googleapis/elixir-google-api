@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.DisableServiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkIfServiceHasUsage => String.t(),
-          :disableDependentServices => boolean()
+          :checkIfServiceHasUsage => String.t() | nil,
+          :disableDependentServices => boolean() | nil
         }
 
   field(:checkIfServiceHasUsage)

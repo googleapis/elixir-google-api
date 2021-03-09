@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Type do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.ServiceUsage.V1.Model.Field.t()),
-          :name => String.t(),
-          :oneofs => list(String.t()),
-          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()),
-          :sourceContext => GoogleApi.ServiceUsage.V1.Model.SourceContext.t(),
-          :syntax => String.t()
+          :fields => list(GoogleApi.ServiceUsage.V1.Model.Field.t()) | nil,
+          :name => String.t() | nil,
+          :oneofs => list(String.t()) | nil,
+          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()) | nil,
+          :sourceContext => GoogleApi.ServiceUsage.V1.Model.SourceContext.t() | nil,
+          :syntax => String.t() | nil
         }
 
   field(:fields, as: GoogleApi.ServiceUsage.V1.Model.Field, type: :list)

@@ -27,7 +27,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.BatchGetServicesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :services => list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t())
+          :services =>
+            list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t()) | nil
         }
 
   field(:services, as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service, type: :list)
