@@ -34,14 +34,14 @@ defmodule GoogleApi.DataFusion.V1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalStatus => map(),
-          :apiVersion => String.t(),
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :requestedCancellation => boolean(),
-          :statusDetail => String.t(),
-          :target => String.t(),
-          :verb => String.t()
+          :additionalStatus => map() | nil,
+          :apiVersion => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :requestedCancellation => boolean() | nil,
+          :statusDetail => String.t() | nil,
+          :target => String.t() | nil,
+          :verb => String.t() | nil
         }
 
   field(:additionalStatus, type: :map)
