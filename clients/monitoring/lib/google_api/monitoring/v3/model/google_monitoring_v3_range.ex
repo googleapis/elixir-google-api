@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :max => float(),
-          :min => float()
+          :max => float() | nil,
+          :min => float() | nil
         }
 
   field(:max)

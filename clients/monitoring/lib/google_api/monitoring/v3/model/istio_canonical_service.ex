@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.IstioCanonicalService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canonicalService => String.t(),
-          :canonicalServiceNamespace => String.t(),
-          :meshUid => String.t()
+          :canonicalService => String.t() | nil,
+          :canonicalServiceNamespace => String.t() | nil,
+          :meshUid => String.t() | nil
         }
 
   field(:canonicalService)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Monitoring.V3.Model.TimeSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.Monitoring.V3.Model.MonitoredResourceMetadata.t(),
-          :metric => GoogleApi.Monitoring.V3.Model.Metric.t(),
-          :metricKind => String.t(),
-          :points => list(GoogleApi.Monitoring.V3.Model.Point.t()),
-          :resource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t(),
-          :unit => String.t(),
-          :valueType => String.t()
+          :metadata => GoogleApi.Monitoring.V3.Model.MonitoredResourceMetadata.t() | nil,
+          :metric => GoogleApi.Monitoring.V3.Model.Metric.t() | nil,
+          :metricKind => String.t() | nil,
+          :points => list(GoogleApi.Monitoring.V3.Model.Point.t()) | nil,
+          :resource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t() | nil,
+          :unit => String.t() | nil,
+          :valueType => String.t() | nil
         }
 
   field(:metadata, as: GoogleApi.Monitoring.V3.Model.MonitoredResourceMetadata)

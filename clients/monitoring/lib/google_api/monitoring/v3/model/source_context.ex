@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.SourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileName => String.t()
+          :fileName => String.t() | nil
         }
 
   field(:fileName)

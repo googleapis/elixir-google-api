@@ -31,12 +31,12 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conditionAbsent => GoogleApi.Monitoring.V3.Model.MetricAbsence.t(),
+          :conditionAbsent => GoogleApi.Monitoring.V3.Model.MetricAbsence.t() | nil,
           :conditionMonitoringQueryLanguage =>
-            GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t(),
-          :conditionThreshold => GoogleApi.Monitoring.V3.Model.MetricThreshold.t(),
-          :displayName => String.t(),
-          :name => String.t()
+            GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t() | nil,
+          :conditionThreshold => GoogleApi.Monitoring.V3.Model.MetricThreshold.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:conditionAbsent, as: GoogleApi.Monitoring.V3.Model.MetricAbsence)

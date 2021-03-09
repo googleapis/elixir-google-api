@@ -30,10 +30,10 @@ defmodule GoogleApi.Monitoring.V3.Model.Aggregation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignmentPeriod => String.t(),
-          :crossSeriesReducer => String.t(),
-          :groupByFields => list(String.t()),
-          :perSeriesAligner => String.t()
+          :alignmentPeriod => String.t() | nil,
+          :crossSeriesReducer => String.t() | nil,
+          :groupByFields => list(String.t()) | nil,
+          :perSeriesAligner => String.t() | nil
         }
 
   field(:alignmentPeriod)

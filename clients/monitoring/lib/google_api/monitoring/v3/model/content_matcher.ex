@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :matcher => String.t()
+          :content => String.t() | nil,
+          :matcher => String.t() | nil
         }
 
   field(:content)

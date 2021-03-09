@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payloadErrors => list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t()),
-          :summary => GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary.t()
+          :payloadErrors => list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t()) | nil,
+          :summary => GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary.t() | nil
         }
 
   field(:payloadErrors, as: GoogleApi.Monitoring.V3.Model.CollectdPayloadError, type: :list)

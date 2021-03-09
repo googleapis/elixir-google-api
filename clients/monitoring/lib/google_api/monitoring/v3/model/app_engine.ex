@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AppEngine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :moduleId => String.t()
+          :moduleId => String.t() | nil
         }
 
   field(:moduleId)

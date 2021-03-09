@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.MeshIstio do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meshUid => String.t(),
-          :serviceName => String.t(),
-          :serviceNamespace => String.t()
+          :meshUid => String.t() | nil,
+          :serviceName => String.t() | nil,
+          :serviceNamespace => String.t() | nil
         }
 
   field(:meshUid)

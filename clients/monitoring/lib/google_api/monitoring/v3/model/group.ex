@@ -31,11 +31,11 @@ defmodule GoogleApi.Monitoring.V3.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :filter => String.t(),
-          :isCluster => boolean(),
-          :name => String.t(),
-          :parentName => String.t()
+          :displayName => String.t() | nil,
+          :filter => String.t() | nil,
+          :isCluster => boolean() | nil,
+          :name => String.t() | nil,
+          :parentName => String.t() | nil
         }
 
   field(:displayName)

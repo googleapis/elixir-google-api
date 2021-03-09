@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Error do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pointCount => integer(),
-          :status => GoogleApi.Monitoring.V3.Model.Status.t()
+          :pointCount => integer() | nil,
+          :status => GoogleApi.Monitoring.V3.Model.Status.t() | nil
         }
 
   field(:pointCount)

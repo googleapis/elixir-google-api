@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.TimeSeriesData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelValues => list(GoogleApi.Monitoring.V3.Model.LabelValue.t()),
-          :pointData => list(GoogleApi.Monitoring.V3.Model.PointData.t())
+          :labelValues => list(GoogleApi.Monitoring.V3.Model.LabelValue.t()) | nil,
+          :pointData => list(GoogleApi.Monitoring.V3.Model.PointData.t()) | nil
         }
 
   field(:labelValues, as: GoogleApi.Monitoring.V3.Model.LabelValue, type: :list)

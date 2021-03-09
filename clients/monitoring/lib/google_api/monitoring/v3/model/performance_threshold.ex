@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.PerformanceThreshold do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicSliPerformance => GoogleApi.Monitoring.V3.Model.BasicSli.t(),
-          :performance => GoogleApi.Monitoring.V3.Model.RequestBasedSli.t(),
-          :threshold => float()
+          :basicSliPerformance => GoogleApi.Monitoring.V3.Model.BasicSli.t() | nil,
+          :performance => GoogleApi.Monitoring.V3.Model.RequestBasedSli.t() | nil,
+          :threshold => float() | nil
         }
 
   field(:basicSliPerformance, as: GoogleApi.Monitoring.V3.Model.BasicSli)

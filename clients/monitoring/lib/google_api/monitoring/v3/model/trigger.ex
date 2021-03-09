@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Trigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :percent => float()
+          :count => integer() | nil,
+          :percent => float() | nil
         }
 
   field(:count)

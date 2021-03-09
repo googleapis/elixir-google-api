@@ -30,10 +30,10 @@ defmodule GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :partialErrors => list(GoogleApi.Monitoring.V3.Model.Status.t()),
-          :timeSeriesData => list(GoogleApi.Monitoring.V3.Model.TimeSeriesData.t()),
-          :timeSeriesDescriptor => GoogleApi.Monitoring.V3.Model.TimeSeriesDescriptor.t()
+          :nextPageToken => String.t() | nil,
+          :partialErrors => list(GoogleApi.Monitoring.V3.Model.Status.t()) | nil,
+          :timeSeriesData => list(GoogleApi.Monitoring.V3.Model.TimeSeriesData.t()) | nil,
+          :timeSeriesDescriptor => GoogleApi.Monitoring.V3.Model.TimeSeriesDescriptor.t() | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Telemetry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceName => String.t()
+          :resourceName => String.t() | nil
         }
 
   field(:resourceName)

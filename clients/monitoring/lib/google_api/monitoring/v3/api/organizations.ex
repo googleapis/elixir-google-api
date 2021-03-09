@@ -74,6 +74,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Organizations do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def monitoring_organizations_time_series_list(
         connection,

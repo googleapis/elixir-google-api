@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.VerifyNotificationChannelRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t()
+          :code => String.t() | nil
         }
 
   field(:code)

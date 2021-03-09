@@ -31,11 +31,11 @@ defmodule GoogleApi.Monitoring.V3.Model.TypedValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :distributionValue => GoogleApi.Monitoring.V3.Model.Distribution.t(),
-          :doubleValue => float(),
-          :int64Value => String.t(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :distributionValue => GoogleApi.Monitoring.V3.Model.Distribution.t() | nil,
+          :doubleValue => float() | nil,
+          :int64Value => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range.t(),
-          :timeSeries => String.t()
+          :range => GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range.t() | nil,
+          :timeSeries => String.t() | nil
         }
 
   field(:range, as: GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range)

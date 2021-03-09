@@ -29,9 +29,10 @@ defmodule GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :notificationChannels => list(GoogleApi.Monitoring.V3.Model.NotificationChannel.t()),
-          :totalSize => integer()
+          :nextPageToken => String.t() | nil,
+          :notificationChannels =>
+            list(GoogleApi.Monitoring.V3.Model.NotificationChannel.t()) | nil,
+          :totalSize => integer() | nil
         }
 
   field(:nextPageToken)

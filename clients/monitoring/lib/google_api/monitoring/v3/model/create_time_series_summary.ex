@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.Monitoring.V3.Model.Error.t()),
-          :successPointCount => integer(),
-          :totalPointCount => integer()
+          :errors => list(GoogleApi.Monitoring.V3.Model.Error.t()) | nil,
+          :successPointCount => integer() | nil,
+          :totalPointCount => integer() | nil
         }
 
   field(:errors, as: GoogleApi.Monitoring.V3.Model.Error, type: :list)

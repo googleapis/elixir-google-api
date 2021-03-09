@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceName => String.t(),
-          :dataSourceType => String.t(),
-          :value => GoogleApi.Monitoring.V3.Model.TypedValue.t()
+          :dataSourceName => String.t() | nil,
+          :dataSourceType => String.t() | nil,
+          :value => GoogleApi.Monitoring.V3.Model.TypedValue.t() | nil
         }
 
   field(:dataSourceName)

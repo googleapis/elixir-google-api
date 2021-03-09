@@ -36,16 +36,16 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authInfo => GoogleApi.Monitoring.V3.Model.BasicAuthentication.t(),
-          :body => String.t(),
-          :contentType => String.t(),
-          :headers => map(),
-          :maskHeaders => boolean(),
-          :path => String.t(),
-          :port => integer(),
-          :requestMethod => String.t(),
-          :useSsl => boolean(),
-          :validateSsl => boolean()
+          :authInfo => GoogleApi.Monitoring.V3.Model.BasicAuthentication.t() | nil,
+          :body => String.t() | nil,
+          :contentType => String.t() | nil,
+          :headers => map() | nil,
+          :maskHeaders => boolean() | nil,
+          :path => String.t() | nil,
+          :port => integer() | nil,
+          :requestMethod => String.t() | nil,
+          :useSsl => boolean() | nil,
+          :validateSsl => boolean() | nil
         }
 
   field(:authInfo, as: GoogleApi.Monitoring.V3.Model.BasicAuthentication)

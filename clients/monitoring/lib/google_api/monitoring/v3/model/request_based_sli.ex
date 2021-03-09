@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.RequestBasedSli do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distributionCut => GoogleApi.Monitoring.V3.Model.DistributionCut.t(),
-          :goodTotalRatio => GoogleApi.Monitoring.V3.Model.TimeSeriesRatio.t()
+          :distributionCut => GoogleApi.Monitoring.V3.Model.DistributionCut.t() | nil,
+          :goodTotalRatio => GoogleApi.Monitoring.V3.Model.TimeSeriesRatio.t() | nil
         }
 
   field(:distributionCut, as: GoogleApi.Monitoring.V3.Model.DistributionCut)

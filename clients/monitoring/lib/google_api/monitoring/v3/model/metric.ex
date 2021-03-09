@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Metric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :type => String.t()
+          :labels => map() | nil,
+          :type => String.t() | nil
         }
 
   field(:labels, type: :map)

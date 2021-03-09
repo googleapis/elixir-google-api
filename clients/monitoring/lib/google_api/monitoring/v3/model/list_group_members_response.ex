@@ -29,9 +29,9 @@ defmodule GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :members => list(GoogleApi.Monitoring.V3.Model.MonitoredResource.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :members => list(GoogleApi.Monitoring.V3.Model.MonitoredResource.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:members, as: GoogleApi.Monitoring.V3.Model.MonitoredResource, type: :list)

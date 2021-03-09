@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.TcpCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :port => integer()
+          :port => integer() | nil
         }
 
   field(:port)

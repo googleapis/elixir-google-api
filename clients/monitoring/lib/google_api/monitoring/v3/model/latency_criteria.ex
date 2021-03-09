@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.LatencyCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :threshold => String.t()
+          :threshold => String.t() | nil
         }
 
   field(:threshold)

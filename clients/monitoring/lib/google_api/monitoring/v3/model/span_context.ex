@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.SpanContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spanName => String.t()
+          :spanName => String.t() | nil
         }
 
   field(:spanName)

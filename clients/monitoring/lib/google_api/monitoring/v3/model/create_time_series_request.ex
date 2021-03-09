@@ -27,7 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.CreateTimeSeriesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :timeSeries => list(GoogleApi.Monitoring.V3.Model.TimeSeries.t())
+          :timeSeries => list(GoogleApi.Monitoring.V3.Model.TimeSeries.t()) | nil
         }
 
   field(:timeSeries, as: GoogleApi.Monitoring.V3.Model.TimeSeries, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ListGroupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :group => list(GoogleApi.Monitoring.V3.Model.Group.t()),
-          :nextPageToken => String.t()
+          :group => list(GoogleApi.Monitoring.V3.Model.Group.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:group, as: GoogleApi.Monitoring.V3.Model.Group, type: :list)
