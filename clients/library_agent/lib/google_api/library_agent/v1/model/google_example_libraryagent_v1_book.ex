@@ -30,10 +30,10 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => String.t(),
-          :name => String.t(),
-          :read => boolean(),
-          :title => String.t()
+          :author => String.t() | nil,
+          :name => String.t() | nil,
+          :read => boolean() | nil,
+          :title => String.t() | nil
         }
 
   field(:author)

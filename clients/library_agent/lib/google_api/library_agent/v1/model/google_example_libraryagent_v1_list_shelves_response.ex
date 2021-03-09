@@ -28,8 +28,9 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListShelves
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :shelves => list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf.t())
+          :nextPageToken => String.t() | nil,
+          :shelves =>
+            list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf.t()) | nil
         }
 
   field(:nextPageToken)

@@ -28,8 +28,9 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListBooksRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :books => list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t()),
-          :nextPageToken => String.t()
+          :books =>
+            list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:books, as: GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book, type: :list)
