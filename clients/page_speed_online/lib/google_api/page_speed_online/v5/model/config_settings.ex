@@ -31,11 +31,11 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => String.t(),
-          :emulatedFormFactor => String.t(),
-          :formFactor => String.t(),
-          :locale => String.t(),
-          :onlyCategories => any()
+          :channel => String.t() | nil,
+          :emulatedFormFactor => String.t() | nil,
+          :formFactor => String.t() | nil,
+          :locale => String.t() | nil,
+          :onlyCategories => any() | nil
         }
 
   field(:channel)

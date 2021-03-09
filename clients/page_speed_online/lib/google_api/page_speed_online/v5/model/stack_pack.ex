@@ -30,10 +30,10 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.StackPack do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :descriptions => map(),
-          :iconDataURL => String.t(),
-          :id => String.t(),
-          :title => String.t()
+          :descriptions => map() | nil,
+          :iconDataURL => String.t() | nil,
+          :id => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:descriptions, type: :map)

@@ -27,7 +27,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Timing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :total => float()
+          :total => float() | nil
         }
 
   field(:total)

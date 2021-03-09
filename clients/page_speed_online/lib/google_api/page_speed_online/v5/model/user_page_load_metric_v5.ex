@@ -32,12 +32,12 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :distributions => list(GoogleApi.PageSpeedOnline.V5.Model.Bucket.t()),
-          :formFactor => String.t(),
-          :median => integer(),
-          :metricId => String.t(),
-          :percentile => integer()
+          :category => String.t() | nil,
+          :distributions => list(GoogleApi.PageSpeedOnline.V5.Model.Bucket.t()) | nil,
+          :formFactor => String.t() | nil,
+          :median => integer() | nil,
+          :metricId => String.t() | nil,
+          :percentile => integer() | nil
         }
 
   field(:category)

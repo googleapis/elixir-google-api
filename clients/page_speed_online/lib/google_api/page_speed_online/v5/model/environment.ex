@@ -29,9 +29,9 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :benchmarkIndex => float(),
-          :hostUserAgent => String.t(),
-          :networkUserAgent => String.t()
+          :benchmarkIndex => float() | nil,
+          :hostUserAgent => String.t() | nil,
+          :networkUserAgent => String.t() | nil
         }
 
   field(:benchmarkIndex)

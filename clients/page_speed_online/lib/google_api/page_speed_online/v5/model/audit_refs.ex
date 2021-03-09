@@ -29,9 +29,9 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.AuditRefs do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :group => String.t(),
-          :id => String.t(),
-          :weight => float()
+          :group => String.t() | nil,
+          :id => String.t() | nil,
+          :weight => float() | nil
         }
 
   field(:group)

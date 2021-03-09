@@ -65,6 +65,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
         ) ::
           {:ok, GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pagespeedonline_pagespeedapi_runpagespeed(
         connection,

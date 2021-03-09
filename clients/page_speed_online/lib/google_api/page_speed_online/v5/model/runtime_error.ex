@@ -28,8 +28,8 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.RuntimeError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :message => String.t()
+          :code => String.t() | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

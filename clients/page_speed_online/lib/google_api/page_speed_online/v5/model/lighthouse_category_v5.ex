@@ -32,12 +32,12 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditRefs => list(GoogleApi.PageSpeedOnline.V5.Model.AuditRefs.t()),
-          :description => String.t(),
-          :id => String.t(),
-          :manualDescription => String.t(),
-          :score => any(),
-          :title => String.t()
+          :auditRefs => list(GoogleApi.PageSpeedOnline.V5.Model.AuditRefs.t()) | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :manualDescription => String.t() | nil,
+          :score => any() | nil,
+          :title => String.t() | nil
         }
 
   field(:auditRefs, as: GoogleApi.PageSpeedOnline.V5.Model.AuditRefs, type: :list)

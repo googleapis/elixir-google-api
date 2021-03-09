@@ -29,9 +29,9 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Bucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :max => integer(),
-          :min => integer(),
-          :proportion => float()
+          :max => integer() | nil,
+          :min => integer() | nil,
+          :proportion => float() | nil
         }
 
   field(:max)
