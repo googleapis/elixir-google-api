@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RepoId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectRepoId => GoogleApi.CloudDebugger.V2.Model.ProjectRepoId.t(),
-          :uid => String.t()
+          :projectRepoId => GoogleApi.CloudDebugger.V2.Model.ProjectRepoId.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:projectRepoId, as: GoogleApi.CloudDebugger.V2.Model.ProjectRepoId)

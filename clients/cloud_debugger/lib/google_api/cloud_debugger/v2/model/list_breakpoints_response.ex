@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :breakpoints => list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t()),
-          :nextWaitToken => String.t()
+          :breakpoints => list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t()) | nil,
+          :nextWaitToken => String.t() | nil
         }
 
   field(:breakpoints, as: GoogleApi.CloudDebugger.V2.Model.Breakpoint, type: :list)

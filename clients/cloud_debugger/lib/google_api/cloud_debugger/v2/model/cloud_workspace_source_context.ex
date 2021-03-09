@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshotId => String.t(),
-          :workspaceId => GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId.t()
+          :snapshotId => String.t() | nil,
+          :workspaceId => GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId.t() | nil
         }
 
   field(:snapshotId)

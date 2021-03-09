@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudDebugger.V2.Model.GerritSourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliasContext => GoogleApi.CloudDebugger.V2.Model.AliasContext.t(),
-          :aliasName => String.t(),
-          :gerritProject => String.t(),
-          :hostUri => String.t(),
-          :revisionId => String.t()
+          :aliasContext => GoogleApi.CloudDebugger.V2.Model.AliasContext.t() | nil,
+          :aliasName => String.t() | nil,
+          :gerritProject => String.t() | nil,
+          :hostUri => String.t() | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:aliasContext, as: GoogleApi.CloudDebugger.V2.Model.AliasContext)

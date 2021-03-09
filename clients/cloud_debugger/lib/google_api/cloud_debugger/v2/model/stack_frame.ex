@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudDebugger.V2.Model.StackFrame do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arguments => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()),
-          :function => String.t(),
-          :locals => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()),
-          :location => GoogleApi.CloudDebugger.V2.Model.SourceLocation.t()
+          :arguments => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()) | nil,
+          :function => String.t() | nil,
+          :locals => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()) | nil,
+          :location => GoogleApi.CloudDebugger.V2.Model.SourceLocation.t() | nil
         }
 
   field(:arguments, as: GoogleApi.CloudDebugger.V2.Model.Variable, type: :list)

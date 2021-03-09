@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Variable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :members => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()),
-          :name => String.t(),
-          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t(),
-          :type => String.t(),
-          :value => String.t(),
-          :varTableIndex => integer()
+          :members => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()) | nil,
+          :name => String.t() | nil,
+          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil,
+          :varTableIndex => integer() | nil
         }
 
   field(:members, as: GoogleApi.CloudDebugger.V2.Model.Variable, type: :list)

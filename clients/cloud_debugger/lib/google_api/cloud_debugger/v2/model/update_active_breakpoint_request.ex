@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.UpdateActiveBreakpointRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :breakpoint => GoogleApi.CloudDebugger.V2.Model.Breakpoint.t()
+          :breakpoint => GoogleApi.CloudDebugger.V2.Model.Breakpoint.t() | nil
         }
 
   field(:breakpoint, as: GoogleApi.CloudDebugger.V2.Model.Breakpoint)

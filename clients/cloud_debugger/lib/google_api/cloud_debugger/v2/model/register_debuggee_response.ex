@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentId => String.t(),
-          :debuggee => GoogleApi.CloudDebugger.V2.Model.Debuggee.t()
+          :agentId => String.t() | nil,
+          :debuggee => GoogleApi.CloudDebugger.V2.Model.Debuggee.t() | nil
         }
 
   field(:agentId)

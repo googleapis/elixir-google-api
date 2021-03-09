@@ -38,18 +38,19 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentVersion => String.t(),
-          :canaryMode => String.t(),
-          :description => String.t(),
-          :extSourceContexts => list(GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext.t()),
-          :id => String.t(),
-          :isDisabled => boolean(),
-          :isInactive => boolean(),
-          :labels => map(),
-          :project => String.t(),
-          :sourceContexts => list(GoogleApi.CloudDebugger.V2.Model.SourceContext.t()),
-          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t(),
-          :uniquifier => String.t()
+          :agentVersion => String.t() | nil,
+          :canaryMode => String.t() | nil,
+          :description => String.t() | nil,
+          :extSourceContexts =>
+            list(GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext.t()) | nil,
+          :id => String.t() | nil,
+          :isDisabled => boolean() | nil,
+          :isInactive => boolean() | nil,
+          :labels => map() | nil,
+          :project => String.t() | nil,
+          :sourceContexts => list(GoogleApi.CloudDebugger.V2.Model.SourceContext.t()) | nil,
+          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t() | nil,
+          :uniquifier => String.t() | nil
         }
 
   field(:agentVersion)

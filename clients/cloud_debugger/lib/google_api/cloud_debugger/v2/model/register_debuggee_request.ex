@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debuggee => GoogleApi.CloudDebugger.V2.Model.Debuggee.t()
+          :debuggee => GoogleApi.CloudDebugger.V2.Model.Debuggee.t() | nil
         }
 
   field(:debuggee, as: GoogleApi.CloudDebugger.V2.Model.Debuggee)

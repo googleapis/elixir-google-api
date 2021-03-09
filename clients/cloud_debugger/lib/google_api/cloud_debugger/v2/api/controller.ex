@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
   @spec clouddebugger_controller_debuggees_register(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_controller_debuggees_register(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -122,6 +123,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListActiveBreakpointsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_controller_debuggees_breakpoints_list(
         connection,
@@ -199,6 +201,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.UpdateActiveBreakpointResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_controller_debuggees_breakpoints_update(
         connection,

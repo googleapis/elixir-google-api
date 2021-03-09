@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.FormatMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => String.t(),
-          :parameters => list(String.t())
+          :format => String.t() | nil,
+          :parameters => list(String.t()) | nil
         }
 
   field(:format)
