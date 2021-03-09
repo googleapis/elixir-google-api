@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsListPosDataProvidersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :posDataProviders => list(GoogleApi.Content.V2.Model.PosDataProviders.t())
+          :kind => String.t() | nil,
+          :posDataProviders => list(GoogleApi.Content.V2.Model.PosDataProviders.t()) | nil
         }
 
   field(:kind)

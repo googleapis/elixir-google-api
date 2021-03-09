@@ -37,17 +37,17 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalShippingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actualDeliveryTime => GoogleApi.Content.V21.Model.DateTime.t(),
-          :carrierName => String.t(),
-          :carrierServiceName => String.t(),
-          :earliestDeliveryPromiseTime => GoogleApi.Content.V21.Model.DateTime.t(),
-          :latestDeliveryPromiseTime => GoogleApi.Content.V21.Model.DateTime.t(),
-          :originPostalCode => String.t(),
-          :originRegionCode => String.t(),
-          :shipmentId => String.t(),
-          :shippedTime => GoogleApi.Content.V21.Model.DateTime.t(),
-          :shippingStatus => String.t(),
-          :trackingId => String.t()
+          :actualDeliveryTime => GoogleApi.Content.V21.Model.DateTime.t() | nil,
+          :carrierName => String.t() | nil,
+          :carrierServiceName => String.t() | nil,
+          :earliestDeliveryPromiseTime => GoogleApi.Content.V21.Model.DateTime.t() | nil,
+          :latestDeliveryPromiseTime => GoogleApi.Content.V21.Model.DateTime.t() | nil,
+          :originPostalCode => String.t() | nil,
+          :originRegionCode => String.t() | nil,
+          :shipmentId => String.t() | nil,
+          :shippedTime => GoogleApi.Content.V21.Model.DateTime.t() | nil,
+          :shippingStatus => String.t() | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:actualDeliveryTime, as: GoogleApi.Content.V21.Model.DateTime)

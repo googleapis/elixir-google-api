@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateMerchantOrderIdRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :merchantOrderId => String.t(),
-          :operationId => String.t()
+          :merchantOrderId => String.t() | nil,
+          :operationId => String.t() | nil
         }
 
   field(:merchantOrderId)

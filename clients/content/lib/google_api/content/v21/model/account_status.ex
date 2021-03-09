@@ -31,12 +31,12 @@ defmodule GoogleApi.Content.V21.Model.AccountStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :accountLevelIssues =>
-            list(GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue.t()),
-          :kind => String.t(),
-          :products => list(GoogleApi.Content.V21.Model.AccountStatusProducts.t()),
-          :websiteClaimed => boolean()
+            list(GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue.t()) | nil,
+          :kind => String.t() | nil,
+          :products => list(GoogleApi.Content.V21.Model.AccountStatusProducts.t()) | nil,
+          :websiteClaimed => boolean() | nil
         }
 
   field(:accountId)

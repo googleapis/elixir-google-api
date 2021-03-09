@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrderShipmentScheduledDeliveryDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierPhoneNumber => String.t(),
-          :scheduledDate => String.t()
+          :carrierPhoneNumber => String.t() | nil,
+          :scheduledDate => String.t() | nil
         }
 
   field(:carrierPhoneNumber)

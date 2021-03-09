@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disbursements => list(GoogleApi.Content.V2.Model.OrderReportDisbursement.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :disbursements => list(GoogleApi.Content.V2.Model.OrderReportDisbursement.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:disbursements, as: GoogleApi.Content.V2.Model.OrderReportDisbursement, type: :list)

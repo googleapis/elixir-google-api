@@ -30,10 +30,11 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionAmount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commission => GoogleApi.Content.V21.Model.SettlementTransactionAmountCommission.t(),
-          :description => String.t(),
-          :transactionAmount => GoogleApi.Content.V21.Model.Price.t(),
-          :type => String.t()
+          :commission =>
+            GoogleApi.Content.V21.Model.SettlementTransactionAmountCommission.t() | nil,
+          :description => String.t() | nil,
+          :transactionAmount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:commission, as: GoogleApi.Content.V21.Model.SettlementTransactionAmountCommission)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :fullName => String.t(),
-          :providerId => String.t()
+          :displayName => String.t() | nil,
+          :fullName => String.t() | nil,
+          :providerId => String.t() | nil
         }
 
   field(:displayName)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :datafeedStatus => GoogleApi.Content.V2.Model.DatafeedStatus.t(),
-          :errors => GoogleApi.Content.V2.Model.Errors.t()
+          :batchId => integer() | nil,
+          :datafeedStatus => GoogleApi.Content.V2.Model.DatafeedStatus.t() | nil,
+          :errors => GoogleApi.Content.V2.Model.Errors.t() | nil
         }
 
   field(:batchId)

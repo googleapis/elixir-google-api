@@ -62,6 +62,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersAcknowledgeResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_acknowledge(
         connection,
@@ -136,6 +137,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersAdvanceTestOrderResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_advancetestorder(
         connection,
@@ -206,6 +208,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
   @spec content_orders_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersCancelResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_cancel(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -275,6 +278,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersCancelLineItemResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_cancellineitem(
         connection,
@@ -352,6 +356,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersCancelTestOrderByCustomerResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_canceltestorderbycustomer(
         connection,
@@ -422,6 +427,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
   @spec content_orders_createtestorder(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersCreateTestOrderResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_createtestorder(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -492,6 +498,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersCreateTestReturnResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_createtestreturn(
         connection,
@@ -560,7 +567,10 @@ defmodule GoogleApi.Content.V21.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec content_orders_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Order.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Order.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_orders_get(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -627,6 +637,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersGetByMerchantOrderIdResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_getbymerchantorderid(
         connection,
@@ -704,6 +715,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersGetTestOrderTemplateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_gettestordertemplate(
         connection,
@@ -781,6 +793,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersInStoreRefundLineItemResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_instorerefundlineitem(
         connection,
@@ -857,6 +870,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
   @spec content_orders_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -931,6 +945,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersRefundItemResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_refunditem(
         connection,
@@ -1006,6 +1021,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersRefundOrderResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_refundorder(
         connection,
@@ -1081,6 +1097,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersRejectReturnLineItemResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_rejectreturnlineitem(
         connection,
@@ -1158,6 +1175,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersReturnRefundLineItemResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_returnrefundlineitem(
         connection,
@@ -1235,6 +1253,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersSetLineItemMetadataResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_setlineitemmetadata(
         connection,
@@ -1312,6 +1331,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersShipLineItemsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_shiplineitems(
         connection,
@@ -1389,6 +1409,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersUpdateLineItemShippingDetailsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_updatelineitemshippingdetails(
         connection,
@@ -1469,6 +1490,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersUpdateMerchantOrderIdResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_updatemerchantorderid(
         connection,
@@ -1546,6 +1568,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrdersUpdateShipmentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orders_updateshipment(
         connection,

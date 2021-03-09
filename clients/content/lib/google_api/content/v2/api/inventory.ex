@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   @spec content_inventory_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.InventoryCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_inventory_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -127,6 +128,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.InventorySetResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_inventory_set(
         connection,

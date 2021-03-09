@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderinvoicesCustomBatchRequestEntryCreate
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :reason => String.t()
+          :description => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:description)

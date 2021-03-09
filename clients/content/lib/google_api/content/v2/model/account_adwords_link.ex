@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.AccountAdwordsLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adwordsId => String.t(),
-          :status => String.t()
+          :adwordsId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:adwordsId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalChargeAmount => GoogleApi.Content.V2.Model.Amount.t(),
-          :additionalChargePromotions => list(GoogleApi.Content.V2.Model.Promotion.t()),
-          :type => String.t()
+          :additionalChargeAmount => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :additionalChargePromotions => list(GoogleApi.Content.V2.Model.Promotion.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:additionalChargeAmount, as: GoogleApi.Content.V2.Model.Amount)

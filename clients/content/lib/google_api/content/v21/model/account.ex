@@ -40,20 +40,23 @@ defmodule GoogleApi.Content.V21.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adsLinks => list(GoogleApi.Content.V21.Model.AccountAdsLink.t()),
-          :adultContent => boolean(),
-          :automaticLabelIds => list(String.t()),
-          :businessInformation => GoogleApi.Content.V21.Model.AccountBusinessInformation.t(),
-          :cssId => String.t(),
-          :googleMyBusinessLink => GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labelIds => list(String.t()),
-          :name => String.t(),
-          :sellerId => String.t(),
-          :users => list(GoogleApi.Content.V21.Model.AccountUser.t()),
-          :websiteUrl => String.t(),
-          :youtubeChannelLinks => list(GoogleApi.Content.V21.Model.AccountYouTubeChannelLink.t())
+          :adsLinks => list(GoogleApi.Content.V21.Model.AccountAdsLink.t()) | nil,
+          :adultContent => boolean() | nil,
+          :automaticLabelIds => list(String.t()) | nil,
+          :businessInformation =>
+            GoogleApi.Content.V21.Model.AccountBusinessInformation.t() | nil,
+          :cssId => String.t() | nil,
+          :googleMyBusinessLink =>
+            GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labelIds => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :sellerId => String.t() | nil,
+          :users => list(GoogleApi.Content.V21.Model.AccountUser.t()) | nil,
+          :websiteUrl => String.t() | nil,
+          :youtubeChannelLinks =>
+            list(GoogleApi.Content.V21.Model.AccountYouTubeChannelLink.t()) | nil
         }
 
   field(:adsLinks, as: GoogleApi.Content.V21.Model.AccountAdsLink, type: :list)

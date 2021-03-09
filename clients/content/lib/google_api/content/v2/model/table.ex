@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders => GoogleApi.Content.V2.Model.Headers.t(),
-          :name => String.t(),
-          :rowHeaders => GoogleApi.Content.V2.Model.Headers.t(),
-          :rows => list(GoogleApi.Content.V2.Model.Row.t())
+          :columnHeaders => GoogleApi.Content.V2.Model.Headers.t() | nil,
+          :name => String.t() | nil,
+          :rowHeaders => GoogleApi.Content.V2.Model.Headers.t() | nil,
+          :rows => list(GoogleApi.Content.V2.Model.Row.t()) | nil
         }
 
   field(:columnHeaders, as: GoogleApi.Content.V2.Model.Headers)

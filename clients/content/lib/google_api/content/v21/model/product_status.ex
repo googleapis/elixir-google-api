@@ -35,16 +35,17 @@ defmodule GoogleApi.Content.V21.Model.ProductStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationDate => String.t(),
+          :creationDate => String.t() | nil,
           :destinationStatuses =>
-            list(GoogleApi.Content.V21.Model.ProductStatusDestinationStatus.t()),
-          :googleExpirationDate => String.t(),
-          :itemLevelIssues => list(GoogleApi.Content.V21.Model.ProductStatusItemLevelIssue.t()),
-          :kind => String.t(),
-          :lastUpdateDate => String.t(),
-          :link => String.t(),
-          :productId => String.t(),
-          :title => String.t()
+            list(GoogleApi.Content.V21.Model.ProductStatusDestinationStatus.t()) | nil,
+          :googleExpirationDate => String.t() | nil,
+          :itemLevelIssues =>
+            list(GoogleApi.Content.V21.Model.ProductStatusItemLevelIssue.t()) | nil,
+          :kind => String.t() | nil,
+          :lastUpdateDate => String.t() | nil,
+          :link => String.t() | nil,
+          :productId => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:creationDate)

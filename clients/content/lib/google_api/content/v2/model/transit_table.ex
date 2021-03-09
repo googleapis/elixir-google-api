@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.TransitTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postalCodeGroupNames => list(String.t()),
-          :rows => list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRow.t()),
-          :transitTimeLabels => list(String.t())
+          :postalCodeGroupNames => list(String.t()) | nil,
+          :rows => list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRow.t()) | nil,
+          :transitTimeLabels => list(String.t()) | nil
         }
 
   field(:postalCodeGroupNames, type: :list)

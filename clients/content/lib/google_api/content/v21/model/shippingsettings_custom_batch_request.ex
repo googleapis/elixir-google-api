@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.ShippingsettingsCustomBatchRequest do
 
   @type t :: %__MODULE__{
           :entries =>
-            list(GoogleApi.Content.V21.Model.ShippingsettingsCustomBatchRequestEntry.t())
+            list(GoogleApi.Content.V21.Model.ShippingsettingsCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries,

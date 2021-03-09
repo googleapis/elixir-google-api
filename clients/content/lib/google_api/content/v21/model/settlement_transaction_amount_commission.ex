@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionAmountCommission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :rate => String.t()
+          :category => String.t() | nil,
+          :rate => String.t() | nil
         }
 
   field(:category)

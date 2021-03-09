@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.AccountUser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :admin => boolean(),
-          :emailAddress => String.t(),
-          :orderManager => boolean(),
-          :paymentsAnalyst => boolean(),
-          :paymentsManager => boolean()
+          :admin => boolean() | nil,
+          :emailAddress => String.t() | nil,
+          :orderManager => boolean() | nil,
+          :paymentsAnalyst => boolean() | nil,
+          :paymentsManager => boolean() | nil
         }
 
   field(:admin)

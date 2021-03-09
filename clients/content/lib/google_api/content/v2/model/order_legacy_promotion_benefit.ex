@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :discount => GoogleApi.Content.V2.Model.Price.t(),
-          :offerIds => list(String.t()),
-          :subType => String.t(),
-          :taxImpact => GoogleApi.Content.V2.Model.Price.t(),
-          :type => String.t()
+          :discount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :offerIds => list(String.t()) | nil,
+          :subType => String.t() | nil,
+          :taxImpact => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:discount, as: GoogleApi.Content.V2.Model.Price)

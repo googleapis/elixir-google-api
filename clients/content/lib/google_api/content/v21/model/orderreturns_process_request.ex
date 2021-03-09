@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsProcessRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullChargeReturnShippingCost => boolean(),
-          :operationId => String.t(),
-          :refundShippingFee => GoogleApi.Content.V21.Model.OrderreturnsRefundOperation.t(),
-          :returnItems => list(GoogleApi.Content.V21.Model.OrderreturnsReturnItem.t())
+          :fullChargeReturnShippingCost => boolean() | nil,
+          :operationId => String.t() | nil,
+          :refundShippingFee => GoogleApi.Content.V21.Model.OrderreturnsRefundOperation.t() | nil,
+          :returnItems => list(GoogleApi.Content.V21.Model.OrderreturnsReturnItem.t()) | nil
         }
 
   field(:fullChargeReturnShippingCost)

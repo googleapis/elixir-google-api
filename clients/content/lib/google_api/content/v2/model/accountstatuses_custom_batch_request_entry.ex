@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :batchId => integer(),
-          :destinations => list(String.t()),
-          :merchantId => String.t(),
-          :method => String.t()
+          :accountId => String.t() | nil,
+          :batchId => integer() | nil,
+          :destinations => list(String.t()) | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil
         }
 
   field(:accountId)

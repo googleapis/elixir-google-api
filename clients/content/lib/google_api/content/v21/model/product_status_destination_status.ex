@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.ProductStatusDestinationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvedCountries => list(String.t()),
-          :destination => String.t(),
-          :disapprovedCountries => list(String.t()),
-          :pendingCountries => list(String.t()),
-          :status => String.t()
+          :approvedCountries => list(String.t()) | nil,
+          :destination => String.t() | nil,
+          :disapprovedCountries => list(String.t()) | nil,
+          :pendingCountries => list(String.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:approvedCountries, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.CustomAttribute do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupValues => list(GoogleApi.Content.V21.Model.CustomAttribute.t()),
-          :name => String.t(),
-          :value => String.t()
+          :groupValues => list(GoogleApi.Content.V21.Model.CustomAttribute.t()) | nil,
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:groupValues, as: GoogleApi.Content.V21.Model.CustomAttribute, type: :list)

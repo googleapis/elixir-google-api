@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ReportRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metrics => GoogleApi.Content.V21.Model.Metrics.t(),
-          :segments => GoogleApi.Content.V21.Model.Segments.t()
+          :metrics => GoogleApi.Content.V21.Model.Metrics.t() | nil,
+          :segments => GoogleApi.Content.V21.Model.Segments.t() | nil
         }
 
   field(:metrics, as: GoogleApi.Content.V21.Model.Metrics)

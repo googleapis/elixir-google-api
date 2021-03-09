@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ProductShippingWeight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unit => String.t(),
-          :value => float()
+          :unit => String.t() | nil,
+          :value => float() | nil
         }
 
   field(:unit)

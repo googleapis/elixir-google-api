@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.ProductShipping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :locationGroupName => String.t(),
-          :locationId => String.t(),
-          :postalCode => String.t(),
-          :price => GoogleApi.Content.V21.Model.Price.t(),
-          :region => String.t(),
-          :service => String.t()
+          :country => String.t() | nil,
+          :locationGroupName => String.t() | nil,
+          :locationId => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :region => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:country)

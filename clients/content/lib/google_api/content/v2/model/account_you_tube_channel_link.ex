@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.AccountYouTubeChannelLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :status => String.t()
+          :channelId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:channelId)

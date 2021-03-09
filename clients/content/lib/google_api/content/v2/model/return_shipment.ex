@@ -33,13 +33,14 @@ defmodule GoogleApi.Content.V2.Model.ReturnShipment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationDate => String.t(),
-          :deliveryDate => String.t(),
-          :returnMethodType => String.t(),
-          :shipmentId => String.t(),
-          :shipmentTrackingInfos => list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t()),
-          :shippingDate => String.t(),
-          :state => String.t()
+          :creationDate => String.t() | nil,
+          :deliveryDate => String.t() | nil,
+          :returnMethodType => String.t() | nil,
+          :shipmentId => String.t() | nil,
+          :shipmentTrackingInfos =>
+            list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t()) | nil,
+          :shippingDate => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:creationDate)

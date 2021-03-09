@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.AccountLabel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :description => String.t(),
-          :labelId => String.t(),
-          :labelType => String.t(),
-          :name => String.t()
+          :accountId => String.t() | nil,
+          :description => String.t() | nil,
+          :labelId => String.t() | nil,
+          :labelType => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:accountId)

@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -123,6 +124,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_get(
         connection,
@@ -194,6 +196,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_getsupportedcarriers(
         connection,
@@ -265,6 +268,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedHolidaysResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_getsupportedholidays(
         connection,
@@ -336,6 +340,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedPickupServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_getsupportedpickupservices(
         connection,
@@ -405,6 +410,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   @spec content_shippingsettings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingsettingsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -477,6 +483,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ShippingSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_shippingsettings_update(
         connection,

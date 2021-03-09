@@ -62,6 +62,7 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orderinvoices_createchargeinvoice(
         connection,
@@ -139,6 +140,7 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_orderinvoices_createrefundinvoice(
         connection,

@@ -32,12 +32,13 @@ defmodule GoogleApi.Content.V21.Model.OrdersRefundItemRequest do
 
   @type t :: %__MODULE__{
           :items =>
-            list(GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemItem.t()),
-          :operationId => String.t(),
-          :reason => String.t(),
-          :reasonText => String.t(),
+            list(GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemItem.t())
+            | nil,
+          :operationId => String.t() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil,
           :shipping =>
-            GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemShipping.t()
+            GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemShipping.t() | nil
         }
 
   field(:items,

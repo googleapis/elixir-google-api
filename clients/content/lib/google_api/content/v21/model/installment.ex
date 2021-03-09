@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.Installment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V21.Model.Price.t(),
-          :months => String.t()
+          :amount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :months => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.Price)

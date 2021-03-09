@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.CutoffTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hour => integer(),
-          :minute => integer(),
-          :timezone => String.t()
+          :hour => integer() | nil,
+          :minute => integer() | nil,
+          :timezone => String.t() | nil
         }
 
   field(:hour)

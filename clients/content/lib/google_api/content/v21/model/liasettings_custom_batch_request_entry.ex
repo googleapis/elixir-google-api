@@ -37,17 +37,17 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :batchId => integer(),
-          :contactEmail => String.t(),
-          :contactName => String.t(),
-          :country => String.t(),
-          :gmbEmail => String.t(),
-          :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :posDataProviderId => String.t(),
-          :posExternalAccountId => String.t()
+          :accountId => String.t() | nil,
+          :batchId => integer() | nil,
+          :contactEmail => String.t() | nil,
+          :contactName => String.t() | nil,
+          :country => String.t() | nil,
+          :gmbEmail => String.t() | nil,
+          :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :posDataProviderId => String.t() | nil,
+          :posExternalAccountId => String.t() | nil
         }
 
   field(:accountId)

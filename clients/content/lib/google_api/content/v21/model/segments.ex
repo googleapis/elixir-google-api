@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.Segments do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.Content.V21.Model.Date.t(),
-          :offerId => String.t(),
-          :program => String.t()
+          :date => GoogleApi.Content.V21.Model.Date.t() | nil,
+          :offerId => String.t() | nil,
+          :program => String.t() | nil
         }
 
   field(:date, as: GoogleApi.Content.V21.Model.Date)

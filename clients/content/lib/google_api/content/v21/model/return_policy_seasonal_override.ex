@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicySeasonalOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => String.t(),
-          :name => String.t(),
-          :policy => GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t(),
-          :startDate => String.t()
+          :endDate => String.t() | nil,
+          :name => String.t() | nil,
+          :policy => GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t() | nil,
+          :startDate => String.t() | nil
         }
 
   field(:endDate)

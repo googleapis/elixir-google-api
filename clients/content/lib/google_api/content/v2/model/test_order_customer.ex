@@ -30,11 +30,11 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :explicitMarketingPreference => boolean(),
-          :fullName => String.t(),
+          :email => String.t() | nil,
+          :explicitMarketingPreference => boolean() | nil,
+          :fullName => String.t() | nil,
           :marketingRightsInfo =>
-            GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo.t()
+            GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo.t() | nil
         }
 
   field(:email)

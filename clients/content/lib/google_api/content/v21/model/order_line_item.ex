@@ -44,24 +44,25 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adjustments => list(GoogleApi.Content.V21.Model.OrderLineItemAdjustment.t()),
-          :annotations => list(GoogleApi.Content.V21.Model.OrderMerchantProvidedAnnotation.t()),
-          :cancellations => list(GoogleApi.Content.V21.Model.OrderCancellation.t()),
-          :id => String.t(),
-          :price => GoogleApi.Content.V21.Model.Price.t(),
-          :product => GoogleApi.Content.V21.Model.OrderLineItemProduct.t(),
-          :quantityCanceled => integer(),
-          :quantityDelivered => integer(),
-          :quantityOrdered => integer(),
-          :quantityPending => integer(),
-          :quantityReadyForPickup => integer(),
-          :quantityReturned => integer(),
-          :quantityShipped => integer(),
-          :quantityUndeliverable => integer(),
-          :returnInfo => GoogleApi.Content.V21.Model.OrderLineItemReturnInfo.t(),
-          :returns => list(GoogleApi.Content.V21.Model.OrderReturn.t()),
-          :shippingDetails => GoogleApi.Content.V21.Model.OrderLineItemShippingDetails.t(),
-          :tax => GoogleApi.Content.V21.Model.Price.t()
+          :adjustments => list(GoogleApi.Content.V21.Model.OrderLineItemAdjustment.t()) | nil,
+          :annotations =>
+            list(GoogleApi.Content.V21.Model.OrderMerchantProvidedAnnotation.t()) | nil,
+          :cancellations => list(GoogleApi.Content.V21.Model.OrderCancellation.t()) | nil,
+          :id => String.t() | nil,
+          :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :product => GoogleApi.Content.V21.Model.OrderLineItemProduct.t() | nil,
+          :quantityCanceled => integer() | nil,
+          :quantityDelivered => integer() | nil,
+          :quantityOrdered => integer() | nil,
+          :quantityPending => integer() | nil,
+          :quantityReadyForPickup => integer() | nil,
+          :quantityReturned => integer() | nil,
+          :quantityShipped => integer() | nil,
+          :quantityUndeliverable => integer() | nil,
+          :returnInfo => GoogleApi.Content.V21.Model.OrderLineItemReturnInfo.t() | nil,
+          :returns => list(GoogleApi.Content.V21.Model.OrderReturn.t()) | nil,
+          :shippingDetails => GoogleApi.Content.V21.Model.OrderLineItemShippingDetails.t() | nil,
+          :tax => GoogleApi.Content.V21.Model.Price.t() | nil
         }
 
   field(:adjustments, as: GoogleApi.Content.V21.Model.OrderLineItemAdjustment, type: :list)

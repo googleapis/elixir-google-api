@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.ProductsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V2.Model.Product.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V2.Model.Product.t()) | nil
         }
 
   field(:kind)

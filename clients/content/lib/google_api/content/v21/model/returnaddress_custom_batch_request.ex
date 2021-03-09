@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V21.Model.ReturnaddressCustomBatchRequestEntry.t())
+          :entries =>
+            list(GoogleApi.Content.V21.Model.ReturnaddressCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries,

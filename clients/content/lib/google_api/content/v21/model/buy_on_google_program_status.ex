@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.BuyOnGoogleProgramStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerServicePendingEmail => String.t(),
-          :customerServiceVerifiedEmail => String.t(),
-          :participationStage => String.t()
+          :customerServicePendingEmail => String.t() | nil,
+          :customerServiceVerifiedEmail => String.t() | nil,
+          :participationStage => String.t() | nil
         }
 
   field(:customerServicePendingEmail)

@@ -33,12 +33,12 @@ defmodule GoogleApi.Content.V2.Model.InvoiceSummary do
 
   @type t :: %__MODULE__{
           :additionalChargeSummaries =>
-            list(GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary.t()),
-          :customerBalance => GoogleApi.Content.V2.Model.Amount.t(),
-          :googleBalance => GoogleApi.Content.V2.Model.Amount.t(),
-          :merchantBalance => GoogleApi.Content.V2.Model.Amount.t(),
-          :productTotal => GoogleApi.Content.V2.Model.Amount.t(),
-          :promotionSummaries => list(GoogleApi.Content.V2.Model.Promotion.t())
+            list(GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary.t()) | nil,
+          :customerBalance => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :googleBalance => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :merchantBalance => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :productTotal => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :promotionSummaries => list(GoogleApi.Content.V2.Model.Promotion.t()) | nil
         }
 
   field(:additionalChargeSummaries,

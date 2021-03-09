@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusExampleItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :itemId => String.t(),
-          :link => String.t(),
-          :submittedValue => String.t(),
-          :title => String.t(),
-          :valueOnLandingPage => String.t()
+          :itemId => String.t() | nil,
+          :link => String.t() | nil,
+          :submittedValue => String.t() | nil,
+          :title => String.t() | nil,
+          :valueOnLandingPage => String.t() | nil
         }
 
   field(:itemId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.AccounttaxCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountTax => GoogleApi.Content.V21.Model.AccountTax.t(),
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :kind => String.t()
+          :accountTax => GoogleApi.Content.V21.Model.AccountTax.t() | nil,
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountTax, as: GoogleApi.Content.V21.Model.AccountTax)

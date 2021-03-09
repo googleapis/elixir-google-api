@@ -43,32 +43,34 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :cancel => GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel.t(),
+          :batchId => integer() | nil,
+          :cancel => GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel.t() | nil,
           :cancelLineItem =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem.t() | nil,
           :inStoreRefundLineItem =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem.t(),
-          :merchantId => String.t(),
-          :merchantOrderId => String.t(),
-          :method => String.t(),
-          :operationId => String.t(),
-          :orderId => String.t(),
-          :refund => GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem.t()
+            | nil,
+          :merchantId => String.t() | nil,
+          :merchantOrderId => String.t() | nil,
+          :method => String.t() | nil,
+          :operationId => String.t() | nil,
+          :orderId => String.t() | nil,
+          :refund => GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund.t() | nil,
           :rejectReturnLineItem =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLineItem.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLineItem.t() | nil,
           :returnLineItem =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem.t() | nil,
           :returnRefundLineItem =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLineItem.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLineItem.t() | nil,
           :setLineItemMetadata =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMetadata.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMetadata.t() | nil,
           :shipLineItems =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems.t() | nil,
           :updateLineItemShippingDetails =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails.t(),
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails.t()
+            | nil,
           :updateShipment =>
-            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment.t()
+            GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment.t() | nil
         }
 
   field(:batchId)

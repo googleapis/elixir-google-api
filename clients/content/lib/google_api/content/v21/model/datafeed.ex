@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V21.Model.Datafeed do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeLanguage => String.t(),
-          :contentType => String.t(),
-          :fetchSchedule => GoogleApi.Content.V21.Model.DatafeedFetchSchedule.t(),
-          :fileName => String.t(),
-          :format => GoogleApi.Content.V21.Model.DatafeedFormat.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :targets => list(GoogleApi.Content.V21.Model.DatafeedTarget.t())
+          :attributeLanguage => String.t() | nil,
+          :contentType => String.t() | nil,
+          :fetchSchedule => GoogleApi.Content.V21.Model.DatafeedFetchSchedule.t() | nil,
+          :fileName => String.t() | nil,
+          :format => GoogleApi.Content.V21.Model.DatafeedFormat.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :targets => list(GoogleApi.Content.V21.Model.DatafeedTarget.t()) | nil
         }
 
   field(:attributeLanguage)

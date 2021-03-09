@@ -29,8 +29,8 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponse do
 
   @type t :: %__MODULE__{
           :entries =>
-            list(GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponseEntry.t()),
-          :kind => String.t()
+            list(GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponseEntry.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:entries,

@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V21.Api.Ordertrackingsignals do
   @spec content_ordertrackingsignals_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.OrderTrackingSignal.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_ordertrackingsignals_create(
         connection,

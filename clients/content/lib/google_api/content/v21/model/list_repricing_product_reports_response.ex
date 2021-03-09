@@ -28,8 +28,9 @@ defmodule GoogleApi.Content.V21.Model.ListRepricingProductReportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :repricingProductReports => list(GoogleApi.Content.V21.Model.RepricingProductReport.t())
+          :nextPageToken => String.t() | nil,
+          :repricingProductReports =>
+            list(GoogleApi.Content.V21.Model.RepricingProductReport.t()) | nil
         }
 
   field(:nextPageToken)

@@ -29,8 +29,8 @@ defmodule GoogleApi.Content.V21.Model.RegionPostalCodeArea do
 
   @type t :: %__MODULE__{
           :postalCodes =>
-            list(GoogleApi.Content.V21.Model.RegionPostalCodeAreaPostalCodeRange.t()),
-          :regionCode => String.t()
+            list(GoogleApi.Content.V21.Model.RegionPostalCodeAreaPostalCodeRange.t()) | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:postalCodes,

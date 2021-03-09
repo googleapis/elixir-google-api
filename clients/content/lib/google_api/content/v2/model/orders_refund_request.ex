@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersRefundRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V2.Model.Price.t(),
-          :amountPretax => GoogleApi.Content.V2.Model.Price.t(),
-          :amountTax => GoogleApi.Content.V2.Model.Price.t(),
-          :operationId => String.t(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :amount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :amountPretax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :amountTax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :operationId => String.t() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V2.Model.Price)

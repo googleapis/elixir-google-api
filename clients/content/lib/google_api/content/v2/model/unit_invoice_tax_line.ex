@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceTaxLine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :taxAmount => GoogleApi.Content.V2.Model.Price.t(),
-          :taxName => String.t(),
-          :taxType => String.t()
+          :taxAmount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :taxName => String.t() | nil,
+          :taxType => String.t() | nil
         }
 
   field(:taxAmount, as: GoogleApi.Content.V2.Model.Price)

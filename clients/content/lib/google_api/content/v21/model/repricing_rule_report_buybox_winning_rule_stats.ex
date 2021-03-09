@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleReportBuyboxWinningRuleStats 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buyboxWonProductCount => integer()
+          :buyboxWonProductCount => integer() | nil
         }
 
   field(:buyboxWonProductCount)

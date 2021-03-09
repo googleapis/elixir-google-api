@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsGetAccessibleGmbAccountsRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :gmbAccounts => list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t()),
-          :kind => String.t()
+          :accountId => String.t() | nil,
+          :gmbAccounts => list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountId)

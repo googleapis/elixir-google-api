@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floor => GoogleApi.Content.V21.Model.RepricingRuleRestrictionBoundary.t(),
-          :useAutoPricingMinPrice => boolean()
+          :floor => GoogleApi.Content.V21.Model.RepricingRuleRestrictionBoundary.t() | nil,
+          :useAutoPricingMinPrice => boolean() | nil
         }
 
   field(:floor, as: GoogleApi.Content.V21.Model.RepricingRuleRestrictionBoundary)

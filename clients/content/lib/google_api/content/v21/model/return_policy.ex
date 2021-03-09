@@ -35,15 +35,16 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :kind => String.t(),
-          :label => String.t(),
-          :name => String.t(),
-          :nonFreeReturnReasons => list(String.t()),
-          :policy => GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t(),
-          :returnPolicyId => String.t(),
-          :returnShippingFee => GoogleApi.Content.V21.Model.Price.t(),
-          :seasonalOverrides => list(GoogleApi.Content.V21.Model.ReturnPolicySeasonalOverride.t())
+          :country => String.t() | nil,
+          :kind => String.t() | nil,
+          :label => String.t() | nil,
+          :name => String.t() | nil,
+          :nonFreeReturnReasons => list(String.t()) | nil,
+          :policy => GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t() | nil,
+          :returnPolicyId => String.t() | nil,
+          :returnShippingFee => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :seasonalOverrides =>
+            list(GoogleApi.Content.V21.Model.ReturnPolicySeasonalOverride.t()) | nil
         }
 
   field(:country)

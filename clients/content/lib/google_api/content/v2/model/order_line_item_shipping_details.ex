@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliverByDate => String.t(),
-          :method => GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t(),
-          :shipByDate => String.t(),
-          :type => String.t()
+          :deliverByDate => String.t() | nil,
+          :method => GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t() | nil,
+          :shipByDate => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:deliverByDate)

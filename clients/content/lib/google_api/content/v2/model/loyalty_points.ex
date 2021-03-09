@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.LoyaltyPoints do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :pointsValue => String.t(),
-          :ratio => float()
+          :name => String.t() | nil,
+          :pointsValue => String.t() | nil,
+          :ratio => float() | nil
         }
 
   field(:name)

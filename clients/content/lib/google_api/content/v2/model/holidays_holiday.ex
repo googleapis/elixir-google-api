@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.HolidaysHoliday do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
-          :date => String.t(),
-          :deliveryGuaranteeDate => String.t(),
-          :deliveryGuaranteeHour => String.t(),
-          :id => String.t(),
-          :type => String.t()
+          :countryCode => String.t() | nil,
+          :date => String.t() | nil,
+          :deliveryGuaranteeDate => String.t() | nil,
+          :deliveryGuaranteeHour => String.t() | nil,
+          :id => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:countryCode)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionTransaction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postDate => String.t(),
-          :type => String.t()
+          :postDate => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:postDate)

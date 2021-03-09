@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V2.Model.MinimumOrderValueTable do
 
   @type t :: %__MODULE__{
           :storeCodeSetWithMovs =>
-            list(GoogleApi.Content.V2.Model.MinimumOrderValueTableStoreCodeSetWithMov.t())
+            list(GoogleApi.Content.V2.Model.MinimumOrderValueTableStoreCodeSetWithMov.t()) | nil
         }
 
   field(:storeCodeSetWithMovs,

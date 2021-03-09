@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :product => GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t(),
-          :quantityOrdered => integer(),
-          :returnInfo => GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t(),
-          :shippingDetails => GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t(),
-          :unitTax => GoogleApi.Content.V2.Model.Price.t()
+          :product => GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t() | nil,
+          :quantityOrdered => integer() | nil,
+          :returnInfo => GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t() | nil,
+          :shippingDetails => GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t() | nil,
+          :unitTax => GoogleApi.Content.V2.Model.Price.t() | nil
         }
 
   field(:product, as: GoogleApi.Content.V2.Model.TestOrderLineItemProduct)

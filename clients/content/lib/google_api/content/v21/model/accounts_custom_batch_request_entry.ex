@@ -36,17 +36,17 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.Content.V21.Model.Account.t(),
-          :accountId => String.t(),
-          :batchId => integer(),
-          :force => boolean(),
-          :labelIds => list(String.t()),
+          :account => GoogleApi.Content.V21.Model.Account.t() | nil,
+          :accountId => String.t() | nil,
+          :batchId => integer() | nil,
+          :force => boolean() | nil,
+          :labelIds => list(String.t()) | nil,
           :linkRequest =>
-            GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :overwrite => boolean(),
-          :view => String.t()
+            GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :overwrite => boolean() | nil,
+          :view => String.t() | nil
         }
 
   field(:account, as: GoogleApi.Content.V21.Model.Account)

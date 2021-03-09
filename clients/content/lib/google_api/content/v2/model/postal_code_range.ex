@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.PostalCodeRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postalCodeRangeBegin => String.t(),
-          :postalCodeRangeEnd => String.t()
+          :postalCodeRangeBegin => String.t() | nil,
+          :postalCodeRangeEnd => String.t() | nil
         }
 
   field(:postalCodeRangeBegin)

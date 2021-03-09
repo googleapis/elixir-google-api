@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.ListReturnPolicyOnlineResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :returnPolicies => list(GoogleApi.Content.V21.Model.ReturnPolicyOnline.t())
+          :returnPolicies => list(GoogleApi.Content.V21.Model.ReturnPolicyOnline.t()) | nil
         }
 
   field(:returnPolicies, as: GoogleApi.Content.V21.Model.ReturnPolicyOnline, type: :list)

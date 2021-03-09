@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrdersCancelRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationId => String.t(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :operationId => String.t() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:operationId)

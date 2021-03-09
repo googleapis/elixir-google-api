@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliverByDate => String.t(),
-          :method => GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t(),
-          :pickupPromiseInMinutes => integer(),
-          :shipByDate => String.t(),
-          :type => String.t()
+          :deliverByDate => String.t() | nil,
+          :method => GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t() | nil,
+          :pickupPromiseInMinutes => integer() | nil,
+          :shipByDate => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:deliverByDate)

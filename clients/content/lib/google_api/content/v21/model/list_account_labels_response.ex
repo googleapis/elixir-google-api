@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ListAccountLabelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountLabels => list(GoogleApi.Content.V21.Model.AccountLabel.t()),
-          :nextPageToken => String.t()
+          :accountLabels => list(GoogleApi.Content.V21.Model.AccountLabel.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accountLabels, as: GoogleApi.Content.V21.Model.AccountLabel, type: :list)

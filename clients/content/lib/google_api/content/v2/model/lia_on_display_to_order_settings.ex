@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :shippingCostPolicyUrl => String.t(),
-          :status => String.t()
+          :shippingCostPolicyUrl => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:shippingCostPolicyUrl)

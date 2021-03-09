@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.ProductAspect do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspectName => String.t(),
-          :destinationName => String.t(),
-          :intention => String.t()
+          :aspectName => String.t() | nil,
+          :destinationName => String.t() | nil,
+          :intention => String.t() | nil
         }
 
   field(:aspectName)

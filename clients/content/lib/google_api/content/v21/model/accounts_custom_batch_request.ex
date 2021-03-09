@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry.t())
+          :entries => list(GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries, as: GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry, type: :list)

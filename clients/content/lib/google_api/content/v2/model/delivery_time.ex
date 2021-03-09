@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V2.Model.DeliveryTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cutoffTime => GoogleApi.Content.V2.Model.CutoffTime.t(),
-          :handlingBusinessDayConfig => GoogleApi.Content.V2.Model.BusinessDayConfig.t(),
-          :holidayCutoffs => list(GoogleApi.Content.V2.Model.HolidayCutoff.t()),
-          :maxHandlingTimeInDays => integer(),
-          :maxTransitTimeInDays => integer(),
-          :minHandlingTimeInDays => integer(),
-          :minTransitTimeInDays => integer(),
-          :transitBusinessDayConfig => GoogleApi.Content.V2.Model.BusinessDayConfig.t(),
-          :transitTimeTable => GoogleApi.Content.V2.Model.TransitTable.t()
+          :cutoffTime => GoogleApi.Content.V2.Model.CutoffTime.t() | nil,
+          :handlingBusinessDayConfig => GoogleApi.Content.V2.Model.BusinessDayConfig.t() | nil,
+          :holidayCutoffs => list(GoogleApi.Content.V2.Model.HolidayCutoff.t()) | nil,
+          :maxHandlingTimeInDays => integer() | nil,
+          :maxTransitTimeInDays => integer() | nil,
+          :minHandlingTimeInDays => integer() | nil,
+          :minTransitTimeInDays => integer() | nil,
+          :transitBusinessDayConfig => GoogleApi.Content.V2.Model.BusinessDayConfig.t() | nil,
+          :transitTimeTable => GoogleApi.Content.V2.Model.TransitTable.t() | nil
         }
 
   field(:cutoffTime, as: GoogleApi.Content.V2.Model.CutoffTime)

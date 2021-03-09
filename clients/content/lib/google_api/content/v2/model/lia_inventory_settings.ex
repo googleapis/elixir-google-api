@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.LiaInventorySettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventoryVerificationContactEmail => String.t(),
-          :inventoryVerificationContactName => String.t(),
-          :inventoryVerificationContactStatus => String.t(),
-          :status => String.t()
+          :inventoryVerificationContactEmail => String.t() | nil,
+          :inventoryVerificationContactName => String.t() | nil,
+          :inventoryVerificationContactStatus => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:inventoryVerificationContactEmail)

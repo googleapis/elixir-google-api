@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.Headers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.Content.V21.Model.LocationIdSet.t()),
-          :numberOfItems => list(String.t()),
-          :postalCodeGroupNames => list(String.t()),
-          :prices => list(GoogleApi.Content.V21.Model.Price.t()),
-          :weights => list(GoogleApi.Content.V21.Model.Weight.t())
+          :locations => list(GoogleApi.Content.V21.Model.LocationIdSet.t()) | nil,
+          :numberOfItems => list(String.t()) | nil,
+          :postalCodeGroupNames => list(String.t()) | nil,
+          :prices => list(GoogleApi.Content.V21.Model.Price.t()) | nil,
+          :weights => list(GoogleApi.Content.V21.Model.Weight.t()) | nil
         }
 
   field(:locations, as: GoogleApi.Content.V21.Model.LocationIdSet, type: :list)

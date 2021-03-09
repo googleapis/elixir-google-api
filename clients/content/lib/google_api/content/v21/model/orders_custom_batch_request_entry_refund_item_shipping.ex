@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemShi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V21.Model.Price.t(),
-          :fullRefund => boolean()
+          :amount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :fullRefund => boolean() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.Price)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :gmbAccounts => GoogleApi.Content.V21.Model.GmbAccounts.t(),
-          :kind => String.t(),
-          :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t(),
-          :posDataProviders => list(GoogleApi.Content.V21.Model.PosDataProviders.t())
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :gmbAccounts => GoogleApi.Content.V21.Model.GmbAccounts.t() | nil,
+          :kind => String.t() | nil,
+          :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t() | nil,
+          :posDataProviders => list(GoogleApi.Content.V21.Model.PosDataProviders.t()) | nil
         }
 
   field(:batchId)

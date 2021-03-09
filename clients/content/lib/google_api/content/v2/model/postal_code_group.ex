@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.PostalCodeGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :name => String.t(),
-          :postalCodeRanges => list(GoogleApi.Content.V2.Model.PostalCodeRange.t())
+          :country => String.t() | nil,
+          :name => String.t() | nil,
+          :postalCodeRanges => list(GoogleApi.Content.V2.Model.PostalCodeRange.t()) | nil
         }
 
   field(:country)

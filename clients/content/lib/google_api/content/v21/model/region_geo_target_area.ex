@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.RegionGeoTargetArea do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :geotargetCriteriaIds => list(String.t())
+          :geotargetCriteriaIds => list(String.t()) | nil
         }
 
   field(:geotargetCriteriaIds, type: :list)

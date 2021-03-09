@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountstatusesCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountStatus => GoogleApi.Content.V21.Model.AccountStatus.t(),
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t()
+          :accountStatus => GoogleApi.Content.V21.Model.AccountStatus.t() | nil,
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil
         }
 
   field(:accountStatus, as: GoogleApi.Content.V21.Model.AccountStatus)

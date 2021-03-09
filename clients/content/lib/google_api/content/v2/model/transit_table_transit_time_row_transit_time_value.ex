@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxTransitTimeInDays => integer(),
-          :minTransitTimeInDays => integer()
+          :maxTransitTimeInDays => integer() | nil,
+          :minTransitTimeInDays => integer() | nil
         }
 
   field(:maxTransitTimeInDays)

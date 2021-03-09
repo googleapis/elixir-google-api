@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.DatafeedFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnDelimiter => String.t(),
-          :fileEncoding => String.t(),
-          :quotingMode => String.t()
+          :columnDelimiter => String.t() | nil,
+          :fileEncoding => String.t() | nil,
+          :quotingMode => String.t() | nil
         }
 
   field(:columnDelimiter)

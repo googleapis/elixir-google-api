@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.SearchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :results => list(GoogleApi.Content.V21.Model.ReportRow.t())
+          :nextPageToken => String.t() | nil,
+          :results => list(GoogleApi.Content.V21.Model.ReportRow.t()) | nil
         }
 
   field(:nextPageToken)

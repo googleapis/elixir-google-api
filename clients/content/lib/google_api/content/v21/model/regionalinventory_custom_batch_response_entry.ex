@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponseEntry 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :kind => String.t(),
-          :regionalInventory => GoogleApi.Content.V21.Model.RegionalInventory.t()
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :kind => String.t() | nil,
+          :regionalInventory => GoogleApi.Content.V21.Model.RegionalInventory.t() | nil
         }
 
   field(:batchId)

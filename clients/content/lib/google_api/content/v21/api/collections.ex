@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
   @spec content_collections_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.Collection.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_collections_create(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -119,7 +120,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_collections_delete(
         connection,
         merchant_id,
@@ -186,6 +187,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
   @spec content_collections_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.Collection.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_collections_get(
         connection,
@@ -254,6 +256,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
   @spec content_collections_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListCollectionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_collections_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

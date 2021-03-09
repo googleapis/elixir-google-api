@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.Amount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pretax => GoogleApi.Content.V2.Model.Price.t(),
-          :tax => GoogleApi.Content.V2.Model.Price.t()
+          :pretax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :tax => GoogleApi.Content.V2.Model.Price.t() | nil
         }
 
   field(:pretax, as: GoogleApi.Content.V2.Model.Price)

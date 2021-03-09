@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersAdvanceTestOrderResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t()
+          :kind => String.t() | nil
         }
 
   field(:kind)

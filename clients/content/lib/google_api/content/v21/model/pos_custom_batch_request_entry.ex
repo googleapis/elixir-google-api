@@ -34,14 +34,14 @@ defmodule GoogleApi.Content.V21.Model.PosCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :inventory => GoogleApi.Content.V21.Model.PosInventory.t(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :sale => GoogleApi.Content.V21.Model.PosSale.t(),
-          :store => GoogleApi.Content.V21.Model.PosStore.t(),
-          :storeCode => String.t(),
-          :targetMerchantId => String.t()
+          :batchId => integer() | nil,
+          :inventory => GoogleApi.Content.V21.Model.PosInventory.t() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :sale => GoogleApi.Content.V21.Model.PosSale.t() | nil,
+          :store => GoogleApi.Content.V21.Model.PosStore.t() | nil,
+          :storeCode => String.t() | nil,
+          :targetMerchantId => String.t() | nil
         }
 
   field(:batchId)

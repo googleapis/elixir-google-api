@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.TransitTableTransitTimeRow do
 
   @type t :: %__MODULE__{
           :values =>
-            list(GoogleApi.Content.V21.Model.TransitTableTransitTimeRowTransitTimeValue.t())
+            list(GoogleApi.Content.V21.Model.TransitTableTransitTimeRowTransitTimeValue.t()) | nil
         }
 
   field(:values,

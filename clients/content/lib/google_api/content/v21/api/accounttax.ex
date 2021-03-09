@@ -54,6 +54,7 @@ defmodule GoogleApi.Content.V21.Api.Accounttax do
   @spec content_accounttax_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.AccounttaxCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_accounttax_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.Content.V21.Api.Accounttax do
   @spec content_accounttax_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.AccountTax.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_accounttax_get(
         connection,
@@ -183,6 +185,7 @@ defmodule GoogleApi.Content.V21.Api.Accounttax do
   @spec content_accounttax_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.AccounttaxListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_accounttax_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -252,6 +255,7 @@ defmodule GoogleApi.Content.V21.Api.Accounttax do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.AccountTax.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_accounttax_update(
         connection,

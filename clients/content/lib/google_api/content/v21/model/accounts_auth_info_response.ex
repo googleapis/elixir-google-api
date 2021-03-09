@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.AccountsAuthInfoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountIdentifiers => list(GoogleApi.Content.V21.Model.AccountIdentifier.t()),
-          :kind => String.t()
+          :accountIdentifiers => list(GoogleApi.Content.V21.Model.AccountIdentifier.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountIdentifiers, as: GoogleApi.Content.V21.Model.AccountIdentifier, type: :list)

@@ -56,6 +56,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
   @spec content_repricingrules_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.RepricingRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_repricingrules_create(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -121,7 +122,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_repricingrules_delete(
         connection,
         merchant_id,
@@ -194,6 +195,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.RepricingRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_repricingrules_get(
         connection,
@@ -264,6 +266,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
   @spec content_repricingrules_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListRepricingRulesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_repricingrules_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -337,6 +340,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.RepricingRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_repricingrules_patch(
         connection,
@@ -415,6 +419,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.ListRepricingRuleReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_repricingrules_repricingreports_list(
         connection,

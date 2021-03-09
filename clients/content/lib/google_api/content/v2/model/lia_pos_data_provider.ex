@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.LiaPosDataProvider do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :posDataProviderId => String.t(),
-          :posExternalAccountId => String.t()
+          :posDataProviderId => String.t() | nil,
+          :posExternalAccountId => String.t() | nil
         }
 
   field(:posDataProviderId)

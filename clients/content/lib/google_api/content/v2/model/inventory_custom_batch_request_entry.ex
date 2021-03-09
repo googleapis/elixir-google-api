@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.InventoryCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :inventory => GoogleApi.Content.V2.Model.Inventory.t(),
-          :merchantId => String.t(),
-          :productId => String.t(),
-          :storeCode => String.t()
+          :batchId => integer() | nil,
+          :inventory => GoogleApi.Content.V2.Model.Inventory.t() | nil,
+          :merchantId => String.t() | nil,
+          :productId => String.t() | nil,
+          :storeCode => String.t() | nil
         }
 
   field(:batchId)

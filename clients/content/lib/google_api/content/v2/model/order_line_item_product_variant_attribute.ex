@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :value => String.t()
+          :dimension => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:dimension)

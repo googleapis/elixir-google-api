@@ -28,8 +28,9 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V21.Model.AccountsCustomBatchResponseEntry.t()),
-          :kind => String.t()
+          :entries =>
+            list(GoogleApi.Content.V21.Model.AccountsCustomBatchResponseEntry.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:entries, as: GoogleApi.Content.V21.Model.AccountsCustomBatchResponseEntry, type: :list)

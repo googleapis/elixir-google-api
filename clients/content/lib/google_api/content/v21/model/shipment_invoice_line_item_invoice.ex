@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.ShipmentInvoiceLineItemInvoice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :productId => String.t(),
-          :shipmentUnitIds => list(String.t()),
-          :unitInvoice => GoogleApi.Content.V21.Model.UnitInvoice.t()
+          :lineItemId => String.t() | nil,
+          :productId => String.t() | nil,
+          :shipmentUnitIds => list(String.t()) | nil,
+          :unitInvoice => GoogleApi.Content.V21.Model.UnitInvoice.t() | nil
         }
 
   field(:lineItemId)

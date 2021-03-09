@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.Errors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => integer(),
-          :errors => list(GoogleApi.Content.V21.Model.Error.t()),
-          :message => String.t()
+          :code => integer() | nil,
+          :errors => list(GoogleApi.Content.V21.Model.Error.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

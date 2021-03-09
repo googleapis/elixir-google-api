@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :productId => String.t(),
-          :quantity => integer(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :lineItemId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:lineItemId)

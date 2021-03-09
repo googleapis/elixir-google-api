@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.OrderPromotionItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :offerId => String.t(),
-          :productId => String.t(),
-          :quantity => integer()
+          :lineItemId => String.t() | nil,
+          :offerId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil
         }
 
   field(:lineItemId)

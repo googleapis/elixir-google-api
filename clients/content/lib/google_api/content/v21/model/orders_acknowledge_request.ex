@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersAcknowledgeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationId => String.t()
+          :operationId => String.t() | nil
         }
 
   field(:operationId)

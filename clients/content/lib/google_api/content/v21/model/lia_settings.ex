@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.LiaSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :countrySettings => list(GoogleApi.Content.V21.Model.LiaCountrySettings.t()),
-          :kind => String.t()
+          :accountId => String.t() | nil,
+          :countrySettings => list(GoogleApi.Content.V21.Model.LiaCountrySettings.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountId)

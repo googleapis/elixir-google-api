@@ -31,11 +31,12 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :explicitMarketingPreference => boolean(),
-          :fullName => String.t(),
-          :invoiceReceivingEmail => String.t(),
-          :marketingRightsInfo => GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo.t()
+          :email => String.t() | nil,
+          :explicitMarketingPreference => boolean() | nil,
+          :fullName => String.t() | nil,
+          :invoiceReceivingEmail => String.t() | nil,
+          :marketingRightsInfo =>
+            GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo.t() | nil
         }
 
   field(:email)

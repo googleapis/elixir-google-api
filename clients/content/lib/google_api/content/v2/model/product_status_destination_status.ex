@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalPending => boolean(),
-          :approvalStatus => String.t(),
-          :destination => String.t(),
-          :intention => String.t()
+          :approvalPending => boolean() | nil,
+          :approvalStatus => String.t() | nil,
+          :destination => String.t() | nil,
+          :intention => String.t() | nil
         }
 
   field(:approvalPending)

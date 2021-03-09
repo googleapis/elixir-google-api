@@ -38,18 +38,18 @@ defmodule GoogleApi.Content.V2.Model.Datafeed do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeLanguage => String.t(),
-          :contentLanguage => String.t(),
-          :contentType => String.t(),
-          :fetchSchedule => GoogleApi.Content.V2.Model.DatafeedFetchSchedule.t(),
-          :fileName => String.t(),
-          :format => GoogleApi.Content.V2.Model.DatafeedFormat.t(),
-          :id => String.t(),
-          :intendedDestinations => list(String.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :targetCountry => String.t(),
-          :targets => list(GoogleApi.Content.V2.Model.DatafeedTarget.t())
+          :attributeLanguage => String.t() | nil,
+          :contentLanguage => String.t() | nil,
+          :contentType => String.t() | nil,
+          :fetchSchedule => GoogleApi.Content.V2.Model.DatafeedFetchSchedule.t() | nil,
+          :fileName => String.t() | nil,
+          :format => GoogleApi.Content.V2.Model.DatafeedFormat.t() | nil,
+          :id => String.t() | nil,
+          :intendedDestinations => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :targetCountry => String.t() | nil,
+          :targets => list(GoogleApi.Content.V2.Model.DatafeedTarget.t()) | nil
         }
 
   field(:attributeLanguage)

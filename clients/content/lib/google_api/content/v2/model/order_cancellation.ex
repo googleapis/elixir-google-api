@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrderCancellation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actor => String.t(),
-          :creationDate => String.t(),
-          :quantity => integer(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :actor => String.t() | nil,
+          :creationDate => String.t() | nil,
+          :quantity => integer() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:actor)

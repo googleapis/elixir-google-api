@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.CustomGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => list(GoogleApi.Content.V2.Model.CustomAttribute.t()),
-          :name => String.t()
+          :attributes => list(GoogleApi.Content.V2.Model.CustomAttribute.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:attributes, as: GoogleApi.Content.V2.Model.CustomAttribute, type: :list)

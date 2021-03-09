@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry.t())
+          :entries =>
+            list(GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries, as: GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry, type: :list)

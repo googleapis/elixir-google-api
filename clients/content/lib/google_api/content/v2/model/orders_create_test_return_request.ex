@@ -31,6 +31,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestReturnRequest do
             list(
               GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCreateTestReturnReturnItem.t()
             )
+            | nil
         }
 
   field(:items,

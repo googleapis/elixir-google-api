@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.OnboardBuyOnGoogleProgramRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerServiceEmail => String.t()
+          :customerServiceEmail => String.t() | nil
         }
 
   field(:customerServiceEmail)

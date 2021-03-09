@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.ReturnAddress.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.ReturnAddress.t()) | nil
         }
 
   field(:kind)

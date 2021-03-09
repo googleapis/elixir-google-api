@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelLineItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V2.Model.Price.t(),
-          :amountPretax => GoogleApi.Content.V2.Model.Price.t(),
-          :amountTax => GoogleApi.Content.V2.Model.Price.t(),
-          :lineItemId => String.t(),
-          :operationId => String.t(),
-          :productId => String.t(),
-          :quantity => integer(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :amount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :amountPretax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :amountTax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :lineItemId => String.t() | nil,
+          :operationId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V2.Model.Price)

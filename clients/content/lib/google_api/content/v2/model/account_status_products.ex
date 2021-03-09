@@ -31,11 +31,12 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusProducts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => String.t(),
-          :country => String.t(),
-          :destination => String.t(),
-          :itemLevelIssues => list(GoogleApi.Content.V2.Model.AccountStatusItemLevelIssue.t()),
-          :statistics => GoogleApi.Content.V2.Model.AccountStatusStatistics.t()
+          :channel => String.t() | nil,
+          :country => String.t() | nil,
+          :destination => String.t() | nil,
+          :itemLevelIssues =>
+            list(GoogleApi.Content.V2.Model.AccountStatusItemLevelIssue.t()) | nil,
+          :statistics => GoogleApi.Content.V2.Model.AccountStatusStatistics.t() | nil
         }
 
   field(:channel)

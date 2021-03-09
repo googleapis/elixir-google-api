@@ -36,16 +36,16 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :datafeedId => String.t(),
-          :errors => list(GoogleApi.Content.V21.Model.DatafeedStatusError.t()),
-          :itemsTotal => String.t(),
-          :itemsValid => String.t(),
-          :kind => String.t(),
-          :language => String.t(),
-          :lastUploadDate => String.t(),
-          :processingStatus => String.t(),
-          :warnings => list(GoogleApi.Content.V21.Model.DatafeedStatusError.t())
+          :country => String.t() | nil,
+          :datafeedId => String.t() | nil,
+          :errors => list(GoogleApi.Content.V21.Model.DatafeedStatusError.t()) | nil,
+          :itemsTotal => String.t() | nil,
+          :itemsValid => String.t() | nil,
+          :kind => String.t() | nil,
+          :language => String.t() | nil,
+          :lastUploadDate => String.t() | nil,
+          :processingStatus => String.t() | nil,
+          :warnings => list(GoogleApi.Content.V21.Model.DatafeedStatusError.t()) | nil
         }
 
   field(:country)

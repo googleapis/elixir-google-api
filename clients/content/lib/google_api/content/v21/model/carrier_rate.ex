@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.CarrierRate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierName => String.t(),
-          :carrierService => String.t(),
-          :flatAdjustment => GoogleApi.Content.V21.Model.Price.t(),
-          :name => String.t(),
-          :originPostalCode => String.t(),
-          :percentageAdjustment => String.t()
+          :carrierName => String.t() | nil,
+          :carrierService => String.t() | nil,
+          :flatAdjustment => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :name => String.t() | nil,
+          :originPostalCode => String.t() | nil,
+          :percentageAdjustment => String.t() | nil
         }
 
   field(:carrierName)

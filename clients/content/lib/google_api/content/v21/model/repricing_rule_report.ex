@@ -36,15 +36,16 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleReport do
 
   @type t :: %__MODULE__{
           :buyboxWinningRuleStats =>
-            GoogleApi.Content.V21.Model.RepricingRuleReportBuyboxWinningRuleStats.t(),
-          :date => GoogleApi.Content.V21.Model.Date.t(),
-          :impactedProducts => list(String.t()),
-          :inapplicabilityDetails => list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t()),
-          :inapplicableProducts => list(String.t()),
-          :orderItemCount => integer(),
-          :ruleId => String.t(),
-          :totalGmv => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :type => String.t()
+            GoogleApi.Content.V21.Model.RepricingRuleReportBuyboxWinningRuleStats.t() | nil,
+          :date => GoogleApi.Content.V21.Model.Date.t() | nil,
+          :impactedProducts => list(String.t()) | nil,
+          :inapplicabilityDetails =>
+            list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t()) | nil,
+          :inapplicableProducts => list(String.t()) | nil,
+          :orderItemCount => integer() | nil,
+          :ruleId => String.t() | nil,
+          :totalGmv => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:buyboxWinningRuleStats,

@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :percentageDelta => integer(),
-          :priceDelta => String.t()
+          :percentageDelta => integer() | nil,
+          :priceDelta => String.t() | nil
         }
 
   field(:percentageDelta)

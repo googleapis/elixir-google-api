@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.DatafeedTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :excludedDestinations => list(String.t()),
-          :includedDestinations => list(String.t()),
-          :language => String.t()
+          :country => String.t() | nil,
+          :excludedDestinations => list(String.t()) | nil,
+          :includedDestinations => list(String.t()) | nil,
+          :language => String.t() | nil
         }
 
   field(:country)

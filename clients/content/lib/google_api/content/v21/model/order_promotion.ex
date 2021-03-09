@@ -38,18 +38,18 @@ defmodule GoogleApi.Content.V21.Model.OrderPromotion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicableItems => list(GoogleApi.Content.V21.Model.OrderPromotionItem.t()),
-          :appliedItems => list(GoogleApi.Content.V21.Model.OrderPromotionItem.t()),
-          :endTime => String.t(),
-          :funder => String.t(),
-          :merchantPromotionId => String.t(),
-          :priceValue => GoogleApi.Content.V21.Model.Price.t(),
-          :shortTitle => String.t(),
-          :startTime => String.t(),
-          :subtype => String.t(),
-          :taxValue => GoogleApi.Content.V21.Model.Price.t(),
-          :title => String.t(),
-          :type => String.t()
+          :applicableItems => list(GoogleApi.Content.V21.Model.OrderPromotionItem.t()) | nil,
+          :appliedItems => list(GoogleApi.Content.V21.Model.OrderPromotionItem.t()) | nil,
+          :endTime => String.t() | nil,
+          :funder => String.t() | nil,
+          :merchantPromotionId => String.t() | nil,
+          :priceValue => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :shortTitle => String.t() | nil,
+          :startTime => String.t() | nil,
+          :subtype => String.t() | nil,
+          :taxValue => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:applicableItems, as: GoogleApi.Content.V21.Model.OrderPromotionItem, type: :list)

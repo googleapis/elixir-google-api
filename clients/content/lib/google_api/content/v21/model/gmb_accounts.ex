@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.GmbAccounts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :gmbAccounts => list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t())
+          :accountId => String.t() | nil,
+          :gmbAccounts => list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t()) | nil
         }
 
   field(:accountId)

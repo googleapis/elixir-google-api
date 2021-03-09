@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatusExample do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :itemId => String.t(),
-          :lineNumber => String.t(),
-          :value => String.t()
+          :itemId => String.t() | nil,
+          :lineNumber => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:itemId)

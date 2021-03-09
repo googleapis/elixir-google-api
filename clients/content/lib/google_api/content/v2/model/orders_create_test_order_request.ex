@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :templateName => String.t(),
-          :testOrder => GoogleApi.Content.V2.Model.TestOrder.t()
+          :country => String.t() | nil,
+          :templateName => String.t() | nil,
+          :testOrder => GoogleApi.Content.V2.Model.TestOrder.t() | nil
         }
 
   field(:country)

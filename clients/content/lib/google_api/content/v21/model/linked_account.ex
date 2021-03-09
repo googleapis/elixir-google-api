@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.LinkedAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :linkedAccountId => String.t(),
-          :services => list(GoogleApi.Content.V21.Model.LinkService.t())
+          :linkedAccountId => String.t() | nil,
+          :services => list(GoogleApi.Content.V21.Model.LinkService.t()) | nil
         }
 
   field(:linkedAccountId)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.AccountAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :locality => String.t(),
-          :postalCode => String.t(),
-          :region => String.t(),
-          :streetAddress => String.t()
+          :country => String.t() | nil,
+          :locality => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :region => String.t() | nil,
+          :streetAddress => String.t() | nil
         }
 
   field(:country)

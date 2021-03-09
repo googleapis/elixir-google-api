@@ -41,21 +41,21 @@ defmodule GoogleApi.Content.V2.Model.InventorySetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => String.t(),
-          :customLabel0 => String.t(),
-          :customLabel1 => String.t(),
-          :customLabel2 => String.t(),
-          :customLabel3 => String.t(),
-          :customLabel4 => String.t(),
-          :installment => GoogleApi.Content.V2.Model.Installment.t(),
-          :instoreProductLocation => String.t(),
-          :loyaltyPoints => GoogleApi.Content.V2.Model.LoyaltyPoints.t(),
-          :pickup => GoogleApi.Content.V2.Model.InventoryPickup.t(),
-          :price => GoogleApi.Content.V2.Model.Price.t(),
-          :quantity => integer(),
-          :salePrice => GoogleApi.Content.V2.Model.Price.t(),
-          :salePriceEffectiveDate => String.t(),
-          :sellOnGoogleQuantity => integer()
+          :availability => String.t() | nil,
+          :customLabel0 => String.t() | nil,
+          :customLabel1 => String.t() | nil,
+          :customLabel2 => String.t() | nil,
+          :customLabel3 => String.t() | nil,
+          :customLabel4 => String.t() | nil,
+          :installment => GoogleApi.Content.V2.Model.Installment.t() | nil,
+          :instoreProductLocation => String.t() | nil,
+          :loyaltyPoints => GoogleApi.Content.V2.Model.LoyaltyPoints.t() | nil,
+          :pickup => GoogleApi.Content.V2.Model.InventoryPickup.t() | nil,
+          :price => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :quantity => integer() | nil,
+          :salePrice => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :salePriceEffectiveDate => String.t() | nil,
+          :sellOnGoogleQuantity => integer() | nil
         }
 
   field(:availability)

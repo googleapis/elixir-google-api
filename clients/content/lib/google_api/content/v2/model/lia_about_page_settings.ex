@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.LiaAboutPageSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => String.t(),
-          :url => String.t()
+          :status => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:status)

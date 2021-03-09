@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountCredentials do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessToken => String.t(),
-          :expiresIn => String.t(),
-          :purpose => String.t()
+          :accessToken => String.t() | nil,
+          :expiresIn => String.t() | nil,
+          :purpose => String.t() | nil
         }
 
   field(:accessToken)

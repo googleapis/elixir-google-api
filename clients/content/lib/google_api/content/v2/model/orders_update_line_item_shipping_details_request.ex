@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliverByDate => String.t(),
-          :lineItemId => String.t(),
-          :operationId => String.t(),
-          :productId => String.t(),
-          :shipByDate => String.t()
+          :deliverByDate => String.t() | nil,
+          :lineItemId => String.t() | nil,
+          :operationId => String.t() | nil,
+          :productId => String.t() | nil,
+          :shipByDate => String.t() | nil
         }
 
   field(:deliverByDate)

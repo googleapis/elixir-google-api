@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.CollectionFeaturedProduct do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :offerId => String.t(),
-          :x => number(),
-          :y => number()
+          :offerId => String.t() | nil,
+          :x => number() | nil,
+          :y => number() | nil
         }
 
   field(:offerId)

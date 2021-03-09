@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemAdjustment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :priceAdjustment => GoogleApi.Content.V21.Model.Price.t(),
-          :taxAdjustment => GoogleApi.Content.V21.Model.Price.t(),
-          :type => String.t()
+          :priceAdjustment => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :taxAdjustment => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:priceAdjustment, as: GoogleApi.Content.V21.Model.Price)

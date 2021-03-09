@@ -32,14 +32,14 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :accountLevelIssues =>
-            list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t()),
+            list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t()) | nil,
           :dataQualityIssues =>
-            list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()),
-          :kind => String.t(),
-          :products => list(GoogleApi.Content.V2.Model.AccountStatusProducts.t()),
-          :websiteClaimed => boolean()
+            list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t()) | nil,
+          :kind => String.t() | nil,
+          :products => list(GoogleApi.Content.V2.Model.AccountStatusProducts.t()) | nil,
+          :websiteClaimed => boolean() | nil
         }
 
   field(:accountId)

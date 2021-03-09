@@ -38,18 +38,20 @@ defmodule GoogleApi.Content.V2.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adultContent => boolean(),
-          :adwordsLinks => list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t()),
-          :businessInformation => GoogleApi.Content.V2.Model.AccountBusinessInformation.t(),
-          :googleMyBusinessLink => GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :reviewsUrl => String.t(),
-          :sellerId => String.t(),
-          :users => list(GoogleApi.Content.V2.Model.AccountUser.t()),
-          :websiteUrl => String.t(),
-          :youtubeChannelLinks => list(GoogleApi.Content.V2.Model.AccountYouTubeChannelLink.t())
+          :adultContent => boolean() | nil,
+          :adwordsLinks => list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t()) | nil,
+          :businessInformation => GoogleApi.Content.V2.Model.AccountBusinessInformation.t() | nil,
+          :googleMyBusinessLink =>
+            GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :reviewsUrl => String.t() | nil,
+          :sellerId => String.t() | nil,
+          :users => list(GoogleApi.Content.V2.Model.AccountUser.t()) | nil,
+          :websiteUrl => String.t() | nil,
+          :youtubeChannelLinks =>
+            list(GoogleApi.Content.V2.Model.AccountYouTubeChannelLink.t()) | nil
         }
 
   field(:adultContent)

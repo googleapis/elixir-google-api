@@ -29,8 +29,8 @@ defmodule GoogleApi.Content.V21.Model.InvoiceSummary do
 
   @type t :: %__MODULE__{
           :additionalChargeSummaries =>
-            list(GoogleApi.Content.V21.Model.InvoiceSummaryAdditionalChargeSummary.t()),
-          :productTotal => GoogleApi.Content.V21.Model.Amount.t()
+            list(GoogleApi.Content.V21.Model.InvoiceSummaryAdditionalChargeSummary.t()) | nil,
+          :productTotal => GoogleApi.Content.V21.Model.Amount.t() | nil
         }
 
   field(:additionalChargeSummaries,

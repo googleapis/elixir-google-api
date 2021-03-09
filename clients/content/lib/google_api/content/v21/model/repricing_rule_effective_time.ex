@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime do
 
   @type t :: %__MODULE__{
           :fixedTimePeriods =>
-            list(GoogleApi.Content.V21.Model.RepricingRuleEffectiveTimeFixedTimePeriod.t())
+            list(GoogleApi.Content.V21.Model.RepricingRuleEffectiveTimeFixedTimePeriod.t()) | nil
         }
 
   field(:fixedTimePeriods,

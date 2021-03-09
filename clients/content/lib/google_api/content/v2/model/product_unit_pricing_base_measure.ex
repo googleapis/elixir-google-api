@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unit => String.t(),
-          :value => String.t()
+          :unit => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:unit)

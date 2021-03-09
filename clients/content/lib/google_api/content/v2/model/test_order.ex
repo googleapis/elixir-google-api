@@ -38,18 +38,18 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customer => GoogleApi.Content.V2.Model.TestOrderCustomer.t(),
-          :enableOrderinvoices => boolean(),
-          :kind => String.t(),
-          :lineItems => list(GoogleApi.Content.V2.Model.TestOrderLineItem.t()),
-          :notificationMode => String.t(),
-          :paymentMethod => GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t(),
-          :predefinedDeliveryAddress => String.t(),
-          :predefinedPickupDetails => String.t(),
-          :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()),
-          :shippingCost => GoogleApi.Content.V2.Model.Price.t(),
-          :shippingCostTax => GoogleApi.Content.V2.Model.Price.t(),
-          :shippingOption => String.t()
+          :customer => GoogleApi.Content.V2.Model.TestOrderCustomer.t() | nil,
+          :enableOrderinvoices => boolean() | nil,
+          :kind => String.t() | nil,
+          :lineItems => list(GoogleApi.Content.V2.Model.TestOrderLineItem.t()) | nil,
+          :notificationMode => String.t() | nil,
+          :paymentMethod => GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t() | nil,
+          :predefinedDeliveryAddress => String.t() | nil,
+          :predefinedPickupDetails => String.t() | nil,
+          :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()) | nil,
+          :shippingCost => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :shippingCostTax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :shippingOption => String.t() | nil
         }
 
   field(:customer, as: GoogleApi.Content.V2.Model.TestOrderCustomer)

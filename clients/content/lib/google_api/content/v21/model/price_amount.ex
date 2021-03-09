@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.PriceAmount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currency => String.t(),
-          :value => String.t()
+          :currency => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:currency)

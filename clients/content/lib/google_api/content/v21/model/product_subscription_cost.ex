@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.ProductSubscriptionCost do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V21.Model.Price.t(),
-          :period => String.t(),
-          :periodLength => String.t()
+          :amount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :period => String.t() | nil,
+          :periodLength => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.Price)

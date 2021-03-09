@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executionStatus => String.t(),
-          :kind => String.t()
+          :executionStatus => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:executionStatus)

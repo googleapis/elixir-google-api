@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.InapplicabilityDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inapplicableCount => String.t(),
-          :inapplicableReason => String.t()
+          :inapplicableCount => String.t() | nil,
+          :inapplicableReason => String.t() | nil
         }
 
   field(:inapplicableCount)

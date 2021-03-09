@@ -42,22 +42,23 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t()),
-          :cancellations => list(GoogleApi.Content.V2.Model.OrderCancellation.t()),
-          :id => String.t(),
-          :price => GoogleApi.Content.V2.Model.Price.t(),
-          :product => GoogleApi.Content.V2.Model.OrderLineItemProduct.t(),
-          :quantityCanceled => integer(),
-          :quantityDelivered => integer(),
-          :quantityOrdered => integer(),
-          :quantityPending => integer(),
-          :quantityReadyForPickup => integer(),
-          :quantityReturned => integer(),
-          :quantityShipped => integer(),
-          :returnInfo => GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t(),
-          :returns => list(GoogleApi.Content.V2.Model.OrderReturn.t()),
-          :shippingDetails => GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t(),
-          :tax => GoogleApi.Content.V2.Model.Price.t()
+          :annotations =>
+            list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t()) | nil,
+          :cancellations => list(GoogleApi.Content.V2.Model.OrderCancellation.t()) | nil,
+          :id => String.t() | nil,
+          :price => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :product => GoogleApi.Content.V2.Model.OrderLineItemProduct.t() | nil,
+          :quantityCanceled => integer() | nil,
+          :quantityDelivered => integer() | nil,
+          :quantityOrdered => integer() | nil,
+          :quantityPending => integer() | nil,
+          :quantityReadyForPickup => integer() | nil,
+          :quantityReturned => integer() | nil,
+          :quantityShipped => integer() | nil,
+          :returnInfo => GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t() | nil,
+          :returns => list(GoogleApi.Content.V2.Model.OrderReturn.t()) | nil,
+          :shippingDetails => GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t() | nil,
+          :tax => GoogleApi.Content.V2.Model.Price.t() | nil
         }
 
   field(:annotations, as: GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation, type: :list)

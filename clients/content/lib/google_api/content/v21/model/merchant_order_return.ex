@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturn do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationDate => String.t(),
-          :merchantOrderId => String.t(),
-          :orderId => String.t(),
-          :orderReturnId => String.t(),
-          :returnItems => list(GoogleApi.Content.V21.Model.MerchantOrderReturnItem.t()),
-          :returnPricingInfo => GoogleApi.Content.V21.Model.ReturnPricingInfo.t(),
-          :returnShipments => list(GoogleApi.Content.V21.Model.ReturnShipment.t())
+          :creationDate => String.t() | nil,
+          :merchantOrderId => String.t() | nil,
+          :orderId => String.t() | nil,
+          :orderReturnId => String.t() | nil,
+          :returnItems => list(GoogleApi.Content.V21.Model.MerchantOrderReturnItem.t()) | nil,
+          :returnPricingInfo => GoogleApi.Content.V21.Model.ReturnPricingInfo.t() | nil,
+          :returnShipments => list(GoogleApi.Content.V21.Model.ReturnShipment.t()) | nil
         }
 
   field(:creationDate)

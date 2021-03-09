@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountCustomerService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :phoneNumber => String.t(),
-          :url => String.t()
+          :email => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:email)

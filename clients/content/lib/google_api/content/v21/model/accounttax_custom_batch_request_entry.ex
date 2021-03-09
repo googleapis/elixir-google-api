@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.AccounttaxCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :accountTax => GoogleApi.Content.V21.Model.AccountTax.t(),
-          :batchId => integer(),
-          :merchantId => String.t(),
-          :method => String.t()
+          :accountId => String.t() | nil,
+          :accountTax => GoogleApi.Content.V21.Model.AccountTax.t() | nil,
+          :batchId => integer() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil
         }
 
   field(:accountId)

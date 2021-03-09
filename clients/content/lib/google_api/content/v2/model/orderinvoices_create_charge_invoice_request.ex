@@ -31,12 +31,12 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :invoiceId => String.t(),
-          :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t(),
+          :invoiceId => String.t() | nil,
+          :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t() | nil,
           :lineItemInvoices =>
-            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
-          :operationId => String.t(),
-          :shipmentGroupId => String.t()
+            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()) | nil,
+          :operationId => String.t() | nil,
+          :shipmentGroupId => String.t() | nil
         }
 
   field(:invoiceId)

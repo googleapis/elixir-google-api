@@ -34,14 +34,14 @@ defmodule GoogleApi.Content.V21.Model.SettlementReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => String.t(),
-          :kind => String.t(),
-          :previousBalance => GoogleApi.Content.V21.Model.Price.t(),
-          :settlementId => String.t(),
-          :startDate => String.t(),
-          :transferAmount => GoogleApi.Content.V21.Model.Price.t(),
-          :transferDate => String.t(),
-          :transferIds => list(String.t())
+          :endDate => String.t() | nil,
+          :kind => String.t() | nil,
+          :previousBalance => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :settlementId => String.t() | nil,
+          :startDate => String.t() | nil,
+          :transferAmount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :transferDate => String.t() | nil,
+          :transferIds => list(String.t()) | nil
         }
 
   field(:endDate)

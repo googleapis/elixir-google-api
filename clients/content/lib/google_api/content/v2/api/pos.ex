@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
   @spec content_pos_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.PosCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pos_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -121,7 +122,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_pos_delete(
         connection,
         merchant_id,
@@ -197,7 +198,10 @@ defmodule GoogleApi.Content.V2.Api.Pos do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Content.V2.Model.PosStore.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V2.Model.PosStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_pos_get(
         connection,
         merchant_id,
@@ -266,7 +270,10 @@ defmodule GoogleApi.Content.V2.Api.Pos do
   *   `{:error, info}` on failure
   """
   @spec content_pos_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.PosStore.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V2.Model.PosStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_pos_insert(
         connection,
         merchant_id,
@@ -337,6 +344,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
   @spec content_pos_inventory(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.PosInventoryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pos_inventory(
         connection,
@@ -406,6 +414,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
   @spec content_pos_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.PosListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pos_list(
         connection,
@@ -475,6 +484,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
   @spec content_pos_sale(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.PosSaleResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pos_sale(
         connection,

@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersCancelTestOrderByCustomerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t()
+          :reason => String.t() | nil
         }
 
   field(:reason)

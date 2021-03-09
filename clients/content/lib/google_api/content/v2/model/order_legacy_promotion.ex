@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :benefits => list(GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit.t()),
-          :effectiveDates => String.t(),
-          :genericRedemptionCode => String.t(),
-          :id => String.t(),
-          :longTitle => String.t(),
-          :productApplicability => String.t(),
-          :redemptionChannel => String.t()
+          :benefits => list(GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit.t()) | nil,
+          :effectiveDates => String.t() | nil,
+          :genericRedemptionCode => String.t() | nil,
+          :id => String.t() | nil,
+          :longTitle => String.t() | nil,
+          :productApplicability => String.t() | nil,
+          :redemptionChannel => String.t() | nil
         }
 
   field(:benefits, as: GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit, type: :list)

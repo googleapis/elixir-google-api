@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.PickupCarrierService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierName => String.t(),
-          :serviceName => String.t()
+          :carrierName => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:carrierName)
