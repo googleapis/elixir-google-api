@@ -29,9 +29,9 @@ defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.GamesManagement.V1management.Model.HiddenPlayer.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.GamesManagement.V1management.Model.HiddenPlayer.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.GamesManagement.V1management.Model.HiddenPlayer, type: :list)

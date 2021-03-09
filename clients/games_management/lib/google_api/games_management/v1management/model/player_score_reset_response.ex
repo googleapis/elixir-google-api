@@ -29,9 +29,9 @@ defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :definitionId => String.t(),
-          :kind => String.t(),
-          :resetScoreTimeSpans => list(String.t())
+          :definitionId => String.t() | nil,
+          :kind => String.t() | nil,
+          :resetScoreTimeSpans => list(String.t()) | nil
         }
 
   field(:definitionId)

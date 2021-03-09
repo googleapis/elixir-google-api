@@ -61,6 +61,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
         ) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_management_applications_list_hidden(
         connection,

@@ -29,9 +29,9 @@ defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :level => integer(),
-          :maxExperiencePoints => String.t(),
-          :minExperiencePoints => String.t()
+          :level => integer() | nil,
+          :maxExperiencePoints => String.t() | nil,
+          :minExperiencePoints => String.t() | nil
         }
 
   field(:level)
