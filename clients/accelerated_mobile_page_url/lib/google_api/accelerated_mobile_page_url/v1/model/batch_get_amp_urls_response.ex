@@ -28,8 +28,8 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ampUrls => list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl.t()),
-          :urlErrors => list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError.t())
+          :ampUrls => list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl.t()) | nil,
+          :urlErrors => list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError.t()) | nil
         }
 
   field(:ampUrls, as: GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl, type: :list)
