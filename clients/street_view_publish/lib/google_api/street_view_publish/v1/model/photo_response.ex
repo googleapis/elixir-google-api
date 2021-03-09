@@ -28,8 +28,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :photo => GoogleApi.StreetViewPublish.V1.Model.Photo.t(),
-          :status => GoogleApi.StreetViewPublish.V1.Model.Status.t()
+          :photo => GoogleApi.StreetViewPublish.V1.Model.Photo.t() | nil,
+          :status => GoogleApi.StreetViewPublish.V1.Model.Status.t() | nil
         }
 
   field(:photo, as: GoogleApi.StreetViewPublish.V1.Model.Photo)

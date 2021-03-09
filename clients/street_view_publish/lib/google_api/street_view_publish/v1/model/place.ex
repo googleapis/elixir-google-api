@@ -29,9 +29,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Place do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :name => String.t(),
-          :placeId => String.t()
+          :languageCode => String.t() | nil,
+          :name => String.t() | nil,
+          :placeId => String.t() | nil
         }
 
   field(:languageCode)

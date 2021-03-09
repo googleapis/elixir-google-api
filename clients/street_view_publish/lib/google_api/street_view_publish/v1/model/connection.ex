@@ -27,7 +27,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Connection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :target => GoogleApi.StreetViewPublish.V1.Model.PhotoId.t()
+          :target => GoogleApi.StreetViewPublish.V1.Model.PhotoId.t() | nil
         }
 
   field(:target, as: GoogleApi.StreetViewPublish.V1.Model.PhotoId)
