@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.EmptyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t()
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil
         }
 
   field(:errors, as: GoogleApi.YouTubeAnalytics.V2.Model.Errors)

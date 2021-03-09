@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.ListGroupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t(),
-          :etag => String.t(),
-          :items => list(GoogleApi.YouTubeAnalytics.V2.Model.Group.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil,
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.YouTubeAnalytics.V2.Model.Group.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:errors, as: GoogleApi.YouTubeAnalytics.V2.Model.Errors)

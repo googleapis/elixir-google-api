@@ -30,10 +30,11 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.QueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders => list(GoogleApi.YouTubeAnalytics.V2.Model.ResultTableColumnHeader.t()),
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t(),
-          :kind => String.t(),
-          :rows => list(list(any()))
+          :columnHeaders =>
+            list(GoogleApi.YouTubeAnalytics.V2.Model.ResultTableColumnHeader.t()) | nil,
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil,
+          :kind => String.t() | nil,
+          :rows => list(list(any())) | nil
         }
 
   field(:columnHeaders,

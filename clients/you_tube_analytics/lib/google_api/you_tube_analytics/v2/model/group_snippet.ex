@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publishedAt => DateTime.t(),
-          :title => String.t()
+          :publishedAt => DateTime.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:publishedAt, as: DateTime)
