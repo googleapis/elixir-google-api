@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.TableBorderRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableBorderCells => list(GoogleApi.Slides.V1.Model.TableBorderCell.t())
+          :tableBorderCells => list(GoogleApi.Slides.V1.Model.TableBorderCell.t()) | nil
         }
 
   field(:tableBorderCells, as: GoogleApi.Slides.V1.Model.TableBorderCell, type: :list)

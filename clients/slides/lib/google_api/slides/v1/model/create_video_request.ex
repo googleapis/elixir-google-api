@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.CreateVideoRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
-          :id => String.t(),
-          :objectId => String.t(),
-          :source => String.t()
+          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t() | nil,
+          :id => String.t() | nil,
+          :objectId => String.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:elementProperties, as: GoogleApi.Slides.V1.Model.PageElementProperties)

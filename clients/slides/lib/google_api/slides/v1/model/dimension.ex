@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.Dimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :magnitude => float(),
-          :unit => String.t()
+          :magnitude => float() | nil,
+          :unit => String.t() | nil
         }
 
   field(:magnitude)

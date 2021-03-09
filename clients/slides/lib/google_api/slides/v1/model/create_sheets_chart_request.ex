@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.CreateSheetsChartRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
-          :linkingMode => String.t(),
-          :objectId => String.t(),
-          :spreadsheetId => String.t()
+          :chartId => integer() | nil,
+          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t() | nil,
+          :linkingMode => String.t() | nil,
+          :objectId => String.t() | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:chartId)

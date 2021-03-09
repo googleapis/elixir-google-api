@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.SolidFill do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alpha => number(),
-          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t()
+          :alpha => number() | nil,
+          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t() | nil
         }
 
   field(:alpha)

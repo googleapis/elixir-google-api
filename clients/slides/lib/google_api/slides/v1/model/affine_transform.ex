@@ -33,13 +33,13 @@ defmodule GoogleApi.Slides.V1.Model.AffineTransform do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :scaleX => float(),
-          :scaleY => float(),
-          :shearX => float(),
-          :shearY => float(),
-          :translateX => float(),
-          :translateY => float(),
-          :unit => String.t()
+          :scaleX => float() | nil,
+          :scaleY => float() | nil,
+          :shearX => float() | nil,
+          :shearY => float() | nil,
+          :translateX => float() | nil,
+          :translateY => float() | nil,
+          :unit => String.t() | nil
         }
 
   field(:scaleX)

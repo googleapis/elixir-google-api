@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.PageBackgroundFill do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :propertyState => String.t(),
-          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t(),
-          :stretchedPictureFill => GoogleApi.Slides.V1.Model.StretchedPictureFill.t()
+          :propertyState => String.t() | nil,
+          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t() | nil,
+          :stretchedPictureFill => GoogleApi.Slides.V1.Model.StretchedPictureFill.t() | nil
         }
 
   field(:propertyState)

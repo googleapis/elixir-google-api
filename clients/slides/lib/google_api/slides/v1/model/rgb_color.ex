@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.RgbColor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blue => number(),
-          :green => number(),
-          :red => number()
+          :blue => number() | nil,
+          :green => number() | nil,
+          :red => number() | nil
         }
 
   field(:blue)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndices => list(integer()),
-          :fields => String.t(),
-          :objectId => String.t(),
-          :tableColumnProperties => GoogleApi.Slides.V1.Model.TableColumnProperties.t()
+          :columnIndices => list(integer()) | nil,
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :tableColumnProperties => GoogleApi.Slides.V1.Model.TableColumnProperties.t() | nil
         }
 
   field(:columnIndices, type: :list)

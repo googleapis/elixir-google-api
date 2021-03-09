@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applyMode => String.t(),
-          :objectId => String.t(),
-          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t()
+          :applyMode => String.t() | nil,
+          :objectId => String.t() | nil,
+          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t() | nil
         }
 
   field(:applyMode)

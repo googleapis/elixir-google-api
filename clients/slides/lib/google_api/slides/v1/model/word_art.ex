@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.WordArt do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :renderedText => String.t()
+          :renderedText => String.t() | nil
         }
 
   field(:renderedText)

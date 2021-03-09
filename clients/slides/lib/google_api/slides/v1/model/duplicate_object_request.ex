@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.DuplicateObjectRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t(),
-          :objectIds => map()
+          :objectId => String.t() | nil,
+          :objectIds => map() | nil
         }
 
   field(:objectId)

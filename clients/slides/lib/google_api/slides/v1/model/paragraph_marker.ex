@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.ParagraphMarker do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bullet => GoogleApi.Slides.V1.Model.Bullet.t(),
-          :style => GoogleApi.Slides.V1.Model.ParagraphStyle.t()
+          :bullet => GoogleApi.Slides.V1.Model.Bullet.t() | nil,
+          :style => GoogleApi.Slides.V1.Model.ParagraphStyle.t() | nil
         }
 
   field(:bullet, as: GoogleApi.Slides.V1.Model.Bullet)

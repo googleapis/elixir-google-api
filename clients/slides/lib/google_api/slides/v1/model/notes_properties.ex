@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.NotesProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :speakerNotesObjectId => String.t()
+          :speakerNotesObjectId => String.t() | nil
         }
 
   field(:speakerNotesObjectId)

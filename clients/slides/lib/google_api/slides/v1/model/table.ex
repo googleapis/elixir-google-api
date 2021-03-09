@@ -32,12 +32,12 @@ defmodule GoogleApi.Slides.V1.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => integer(),
-          :horizontalBorderRows => list(GoogleApi.Slides.V1.Model.TableBorderRow.t()),
-          :rows => integer(),
-          :tableColumns => list(GoogleApi.Slides.V1.Model.TableColumnProperties.t()),
-          :tableRows => list(GoogleApi.Slides.V1.Model.TableRow.t()),
-          :verticalBorderRows => list(GoogleApi.Slides.V1.Model.TableBorderRow.t())
+          :columns => integer() | nil,
+          :horizontalBorderRows => list(GoogleApi.Slides.V1.Model.TableBorderRow.t()) | nil,
+          :rows => integer() | nil,
+          :tableColumns => list(GoogleApi.Slides.V1.Model.TableColumnProperties.t()) | nil,
+          :tableRows => list(GoogleApi.Slides.V1.Model.TableRow.t()) | nil,
+          :verticalBorderRows => list(GoogleApi.Slides.V1.Model.TableBorderRow.t()) | nil
         }
 
   field(:columns)

@@ -34,14 +34,14 @@ defmodule GoogleApi.Slides.V1.Model.ImageProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brightness => number(),
-          :contrast => number(),
-          :cropProperties => GoogleApi.Slides.V1.Model.CropProperties.t(),
-          :link => GoogleApi.Slides.V1.Model.Link.t(),
-          :outline => GoogleApi.Slides.V1.Model.Outline.t(),
-          :recolor => GoogleApi.Slides.V1.Model.Recolor.t(),
-          :shadow => GoogleApi.Slides.V1.Model.Shadow.t(),
-          :transparency => number()
+          :brightness => number() | nil,
+          :contrast => number() | nil,
+          :cropProperties => GoogleApi.Slides.V1.Model.CropProperties.t() | nil,
+          :link => GoogleApi.Slides.V1.Model.Link.t() | nil,
+          :outline => GoogleApi.Slides.V1.Model.Outline.t() | nil,
+          :recolor => GoogleApi.Slides.V1.Model.Recolor.t() | nil,
+          :shadow => GoogleApi.Slides.V1.Model.Shadow.t() | nil,
+          :transparency => number() | nil
         }
 
   field(:brightness)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.TableRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnSpan => integer(),
-          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :rowSpan => integer()
+          :columnSpan => integer() | nil,
+          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :rowSpan => integer() | nil
         }
 
   field(:columnSpan)

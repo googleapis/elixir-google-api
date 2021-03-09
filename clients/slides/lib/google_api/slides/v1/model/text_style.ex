@@ -38,18 +38,18 @@ defmodule GoogleApi.Slides.V1.Model.TextStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Slides.V1.Model.OptionalColor.t(),
-          :baselineOffset => String.t(),
-          :bold => boolean(),
-          :fontFamily => String.t(),
-          :fontSize => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :foregroundColor => GoogleApi.Slides.V1.Model.OptionalColor.t(),
-          :italic => boolean(),
-          :link => GoogleApi.Slides.V1.Model.Link.t(),
-          :smallCaps => boolean(),
-          :strikethrough => boolean(),
-          :underline => boolean(),
-          :weightedFontFamily => GoogleApi.Slides.V1.Model.WeightedFontFamily.t()
+          :backgroundColor => GoogleApi.Slides.V1.Model.OptionalColor.t() | nil,
+          :baselineOffset => String.t() | nil,
+          :bold => boolean() | nil,
+          :fontFamily => String.t() | nil,
+          :fontSize => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :foregroundColor => GoogleApi.Slides.V1.Model.OptionalColor.t() | nil,
+          :italic => boolean() | nil,
+          :link => GoogleApi.Slides.V1.Model.Link.t() | nil,
+          :smallCaps => boolean() | nil,
+          :strikethrough => boolean() | nil,
+          :underline => boolean() | nil,
+          :weightedFontFamily => GoogleApi.Slides.V1.Model.WeightedFontFamily.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Slides.V1.Model.OptionalColor)

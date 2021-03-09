@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.TextElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoText => GoogleApi.Slides.V1.Model.AutoText.t(),
-          :endIndex => integer(),
-          :paragraphMarker => GoogleApi.Slides.V1.Model.ParagraphMarker.t(),
-          :startIndex => integer(),
-          :textRun => GoogleApi.Slides.V1.Model.TextRun.t()
+          :autoText => GoogleApi.Slides.V1.Model.AutoText.t() | nil,
+          :endIndex => integer() | nil,
+          :paragraphMarker => GoogleApi.Slides.V1.Model.ParagraphMarker.t() | nil,
+          :startIndex => integer() | nil,
+          :textRun => GoogleApi.Slides.V1.Model.TextRun.t() | nil
         }
 
   field(:autoText, as: GoogleApi.Slides.V1.Model.AutoText)

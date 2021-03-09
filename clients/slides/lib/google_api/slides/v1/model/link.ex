@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageObjectId => String.t(),
-          :relativeLink => String.t(),
-          :slideIndex => integer(),
-          :url => String.t()
+          :pageObjectId => String.t() | nil,
+          :relativeLink => String.t() | nil,
+          :slideIndex => integer() | nil,
+          :url => String.t() | nil
         }
 
   field(:pageObjectId)

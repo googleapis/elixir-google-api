@@ -38,20 +38,20 @@ defmodule GoogleApi.Slides.V1.Model.Response do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createImage => GoogleApi.Slides.V1.Model.CreateImageResponse.t(),
-          :createLine => GoogleApi.Slides.V1.Model.CreateLineResponse.t(),
-          :createShape => GoogleApi.Slides.V1.Model.CreateShapeResponse.t(),
-          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartResponse.t(),
-          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideResponse.t(),
-          :createTable => GoogleApi.Slides.V1.Model.CreateTableResponse.t(),
-          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoResponse.t(),
-          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectResponse.t(),
-          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsResponse.t(),
+          :createImage => GoogleApi.Slides.V1.Model.CreateImageResponse.t() | nil,
+          :createLine => GoogleApi.Slides.V1.Model.CreateLineResponse.t() | nil,
+          :createShape => GoogleApi.Slides.V1.Model.CreateShapeResponse.t() | nil,
+          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartResponse.t() | nil,
+          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideResponse.t() | nil,
+          :createTable => GoogleApi.Slides.V1.Model.CreateTableResponse.t() | nil,
+          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoResponse.t() | nil,
+          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectResponse.t() | nil,
+          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsResponse.t() | nil,
           :replaceAllShapesWithImage =>
-            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse.t(),
+            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse.t() | nil,
           :replaceAllShapesWithSheetsChart =>
-            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse.t(),
-          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextResponse.t()
+            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse.t() | nil,
+          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextResponse.t() | nil
         }
 
   field(:createImage, as: GoogleApi.Slides.V1.Model.CreateImageResponse)

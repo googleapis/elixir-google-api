@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.PageElementProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageObjectId => String.t(),
-          :size => GoogleApi.Slides.V1.Model.Size.t(),
-          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t()
+          :pageObjectId => String.t() | nil,
+          :size => GoogleApi.Slides.V1.Model.Size.t() | nil,
+          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t() | nil
         }
 
   field(:pageObjectId)

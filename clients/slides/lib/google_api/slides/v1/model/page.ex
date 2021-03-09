@@ -35,15 +35,15 @@ defmodule GoogleApi.Slides.V1.Model.Page do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layoutProperties => GoogleApi.Slides.V1.Model.LayoutProperties.t(),
-          :masterProperties => GoogleApi.Slides.V1.Model.MasterProperties.t(),
-          :notesProperties => GoogleApi.Slides.V1.Model.NotesProperties.t(),
-          :objectId => String.t(),
-          :pageElements => list(GoogleApi.Slides.V1.Model.PageElement.t()),
-          :pageProperties => GoogleApi.Slides.V1.Model.PageProperties.t(),
-          :pageType => String.t(),
-          :revisionId => String.t(),
-          :slideProperties => GoogleApi.Slides.V1.Model.SlideProperties.t()
+          :layoutProperties => GoogleApi.Slides.V1.Model.LayoutProperties.t() | nil,
+          :masterProperties => GoogleApi.Slides.V1.Model.MasterProperties.t() | nil,
+          :notesProperties => GoogleApi.Slides.V1.Model.NotesProperties.t() | nil,
+          :objectId => String.t() | nil,
+          :pageElements => list(GoogleApi.Slides.V1.Model.PageElement.t()) | nil,
+          :pageProperties => GoogleApi.Slides.V1.Model.PageProperties.t() | nil,
+          :pageType => String.t() | nil,
+          :revisionId => String.t() | nil,
+          :slideProperties => GoogleApi.Slides.V1.Model.SlideProperties.t() | nil
         }
 
   field(:layoutProperties, as: GoogleApi.Slides.V1.Model.LayoutProperties)

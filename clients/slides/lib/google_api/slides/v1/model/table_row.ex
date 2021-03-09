@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.TableRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rowHeight => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :tableCells => list(GoogleApi.Slides.V1.Model.TableCell.t()),
-          :tableRowProperties => GoogleApi.Slides.V1.Model.TableRowProperties.t()
+          :rowHeight => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :tableCells => list(GoogleApi.Slides.V1.Model.TableCell.t()) | nil,
+          :tableRowProperties => GoogleApi.Slides.V1.Model.TableRowProperties.t() | nil
         }
 
   field(:rowHeight, as: GoogleApi.Slides.V1.Model.Dimension)

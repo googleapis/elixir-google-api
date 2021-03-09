@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.TextContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lists => %{optional(String.t()) => GoogleApi.Slides.V1.Model.List.t()},
-          :textElements => list(GoogleApi.Slides.V1.Model.TextElement.t())
+          :lists => %{optional(String.t()) => GoogleApi.Slides.V1.Model.List.t()} | nil,
+          :textElements => list(GoogleApi.Slides.V1.Model.TextElement.t()) | nil
         }
 
   field(:lists, as: GoogleApi.Slides.V1.Model.List, type: :map)

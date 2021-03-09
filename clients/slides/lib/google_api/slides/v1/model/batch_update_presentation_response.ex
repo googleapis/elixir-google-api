@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :presentationId => String.t(),
-          :replies => list(GoogleApi.Slides.V1.Model.Response.t()),
-          :writeControl => GoogleApi.Slides.V1.Model.WriteControl.t()
+          :presentationId => String.t() | nil,
+          :replies => list(GoogleApi.Slides.V1.Model.Response.t()) | nil,
+          :writeControl => GoogleApi.Slides.V1.Model.WriteControl.t() | nil
         }
 
   field(:presentationId)

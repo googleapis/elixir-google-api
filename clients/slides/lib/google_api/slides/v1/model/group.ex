@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :children => list(GoogleApi.Slides.V1.Model.PageElement.t())
+          :children => list(GoogleApi.Slides.V1.Model.PageElement.t()) | nil
         }
 
   field(:children, as: GoogleApi.Slides.V1.Model.PageElement, type: :list)

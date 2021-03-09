@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.Placeholder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :parentObjectId => String.t(),
-          :type => String.t()
+          :index => integer() | nil,
+          :parentObjectId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:index)

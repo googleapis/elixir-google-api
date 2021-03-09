@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceAllTextResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :occurrencesChanged => integer()
+          :occurrencesChanged => integer() | nil
         }
 
   field(:occurrencesChanged)

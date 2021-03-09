@@ -32,12 +32,12 @@ defmodule GoogleApi.Slides.V1.Model.ShapeProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autofit => GoogleApi.Slides.V1.Model.Autofit.t(),
-          :contentAlignment => String.t(),
-          :link => GoogleApi.Slides.V1.Model.Link.t(),
-          :outline => GoogleApi.Slides.V1.Model.Outline.t(),
-          :shadow => GoogleApi.Slides.V1.Model.Shadow.t(),
-          :shapeBackgroundFill => GoogleApi.Slides.V1.Model.ShapeBackgroundFill.t()
+          :autofit => GoogleApi.Slides.V1.Model.Autofit.t() | nil,
+          :contentAlignment => String.t() | nil,
+          :link => GoogleApi.Slides.V1.Model.Link.t() | nil,
+          :outline => GoogleApi.Slides.V1.Model.Outline.t() | nil,
+          :shadow => GoogleApi.Slides.V1.Model.Shadow.t() | nil,
+          :shapeBackgroundFill => GoogleApi.Slides.V1.Model.ShapeBackgroundFill.t() | nil
         }
 
   field(:autofit, as: GoogleApi.Slides.V1.Model.Autofit)

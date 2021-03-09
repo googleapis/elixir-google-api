@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :objectId => String.t(),
-          :title => String.t()
+          :description => String.t() | nil,
+          :objectId => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

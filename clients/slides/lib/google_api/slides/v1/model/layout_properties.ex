@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.LayoutProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :masterObjectId => String.t(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :masterObjectId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operation => String.t(),
-          :pageElementObjectIds => list(String.t())
+          :operation => String.t() | nil,
+          :pageElementObjectIds => list(String.t()) | nil
         }
 
   field(:operation)

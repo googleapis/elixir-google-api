@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertionIndex => integer(),
-          :slideObjectIds => list(String.t())
+          :insertionIndex => integer() | nil,
+          :slideObjectIds => list(String.t()) | nil
         }
 
   field(:insertionIndex)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.Thumbnail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentUrl => String.t(),
-          :height => integer(),
-          :width => integer()
+          :contentUrl => String.t() | nil,
+          :height => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:contentUrl)

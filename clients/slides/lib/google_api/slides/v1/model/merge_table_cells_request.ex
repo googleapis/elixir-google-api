@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.MergeTableCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t(),
-          :tableRange => GoogleApi.Slides.V1.Model.TableRange.t()
+          :objectId => String.t() | nil,
+          :tableRange => GoogleApi.Slides.V1.Model.TableRange.t() | nil
         }
 
   field(:objectId)

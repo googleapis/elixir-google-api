@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.Bullet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletStyle => GoogleApi.Slides.V1.Model.TextStyle.t(),
-          :glyph => String.t(),
-          :listId => String.t(),
-          :nestingLevel => integer()
+          :bulletStyle => GoogleApi.Slides.V1.Model.TextStyle.t() | nil,
+          :glyph => String.t() | nil,
+          :listId => String.t() | nil,
+          :nestingLevel => integer() | nil
         }
 
   field(:bulletStyle, as: GoogleApi.Slides.V1.Model.TextStyle)

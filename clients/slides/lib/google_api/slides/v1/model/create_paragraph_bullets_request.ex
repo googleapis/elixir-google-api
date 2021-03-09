@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletPreset => String.t(),
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :objectId => String.t(),
-          :textRange => GoogleApi.Slides.V1.Model.Range.t()
+          :bulletPreset => String.t() | nil,
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :objectId => String.t() | nil,
+          :textRange => GoogleApi.Slides.V1.Model.Range.t() | nil
         }
 
   field(:bulletPreset)

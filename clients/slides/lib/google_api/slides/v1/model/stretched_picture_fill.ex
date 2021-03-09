@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.StretchedPictureFill do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentUrl => String.t(),
-          :size => GoogleApi.Slides.V1.Model.Size.t()
+          :contentUrl => String.t() | nil,
+          :size => GoogleApi.Slides.V1.Model.Size.t() | nil
         }
 
   field(:contentUrl)

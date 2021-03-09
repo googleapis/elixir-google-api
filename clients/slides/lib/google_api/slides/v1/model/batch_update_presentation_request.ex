@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.BatchUpdatePresentationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requests => list(GoogleApi.Slides.V1.Model.Request.t()),
-          :writeControl => GoogleApi.Slides.V1.Model.WriteControl.t()
+          :requests => list(GoogleApi.Slides.V1.Model.Request.t()) | nil,
+          :writeControl => GoogleApi.Slides.V1.Model.WriteControl.t() | nil
         }
 
   field(:requests, as: GoogleApi.Slides.V1.Model.Request, type: :list)

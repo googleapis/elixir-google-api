@@ -39,19 +39,19 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :elementGroup => GoogleApi.Slides.V1.Model.Group.t(),
-          :image => GoogleApi.Slides.V1.Model.Image.t(),
-          :line => GoogleApi.Slides.V1.Model.Line.t(),
-          :objectId => String.t(),
-          :shape => GoogleApi.Slides.V1.Model.Shape.t(),
-          :sheetsChart => GoogleApi.Slides.V1.Model.SheetsChart.t(),
-          :size => GoogleApi.Slides.V1.Model.Size.t(),
-          :table => GoogleApi.Slides.V1.Model.Table.t(),
-          :title => String.t(),
-          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t(),
-          :video => GoogleApi.Slides.V1.Model.Video.t(),
-          :wordArt => GoogleApi.Slides.V1.Model.WordArt.t()
+          :description => String.t() | nil,
+          :elementGroup => GoogleApi.Slides.V1.Model.Group.t() | nil,
+          :image => GoogleApi.Slides.V1.Model.Image.t() | nil,
+          :line => GoogleApi.Slides.V1.Model.Line.t() | nil,
+          :objectId => String.t() | nil,
+          :shape => GoogleApi.Slides.V1.Model.Shape.t() | nil,
+          :sheetsChart => GoogleApi.Slides.V1.Model.SheetsChart.t() | nil,
+          :size => GoogleApi.Slides.V1.Model.Size.t() | nil,
+          :table => GoogleApi.Slides.V1.Model.Table.t() | nil,
+          :title => String.t() | nil,
+          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t() | nil,
+          :video => GoogleApi.Slides.V1.Model.Video.t() | nil,
+          :wordArt => GoogleApi.Slides.V1.Model.WordArt.t() | nil
         }
 
   field(:description)

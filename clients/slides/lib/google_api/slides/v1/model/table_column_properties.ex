@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.TableColumnProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnWidth => GoogleApi.Slides.V1.Model.Dimension.t()
+          :columnWidth => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:columnWidth, as: GoogleApi.Slides.V1.Model.Dimension)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.VideoProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoPlay => boolean(),
-          :end => integer(),
-          :mute => boolean(),
-          :outline => GoogleApi.Slides.V1.Model.Outline.t(),
-          :start => integer()
+          :autoPlay => boolean() | nil,
+          :end => integer() | nil,
+          :mute => boolean() | nil,
+          :outline => GoogleApi.Slides.V1.Model.Outline.t() | nil,
+          :start => integer() | nil
         }
 
   field(:autoPlay)
