@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => String.t(),
-          :executionId => String.t(),
-          :result => String.t()
+          :error => String.t() | nil,
+          :executionId => String.t() | nil,
+          :result => String.t() | nil
         }
 
   field(:error)

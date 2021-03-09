@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudFunctions.V1.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :labels => map(),
-          :locationId => String.t(),
-          :metadata => map(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :locationId => String.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

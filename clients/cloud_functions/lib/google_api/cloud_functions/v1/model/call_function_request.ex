@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CallFunctionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t()
+          :data => String.t() | nil
         }
 
   field(:data)

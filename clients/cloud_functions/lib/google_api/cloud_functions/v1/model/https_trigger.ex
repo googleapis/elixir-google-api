@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.HttpsTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :securityLevel => String.t(),
-          :url => String.t()
+          :securityLevel => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:securityLevel)

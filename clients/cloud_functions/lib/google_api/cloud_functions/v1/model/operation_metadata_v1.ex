@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildId => String.t(),
-          :request => map(),
-          :sourceToken => String.t(),
-          :target => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t(),
-          :versionId => String.t()
+          :buildId => String.t() | nil,
+          :request => map() | nil,
+          :sourceToken => String.t() | nil,
+          :target => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :versionId => String.t() | nil
         }
 
   field(:buildId)

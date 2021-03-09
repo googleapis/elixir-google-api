@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditLogConfigs => list(GoogleApi.CloudFunctions.V1.Model.AuditLogConfig.t()),
-          :service => String.t()
+          :auditLogConfigs => list(GoogleApi.CloudFunctions.V1.Model.AuditLogConfig.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs, as: GoogleApi.CloudFunctions.V1.Model.AuditLogConfig, type: :list)

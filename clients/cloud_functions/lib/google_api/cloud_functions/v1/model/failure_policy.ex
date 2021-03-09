@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :retry => GoogleApi.CloudFunctions.V1.Model.Retry.t()
+          :retry => GoogleApi.CloudFunctions.V1.Model.Retry.t() | nil
         }
 
   field(:retry, as: GoogleApi.CloudFunctions.V1.Model.Retry)

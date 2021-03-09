@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.SourceRepository do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployedUrl => String.t(),
-          :url => String.t()
+          :deployedUrl => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:deployedUrl)
