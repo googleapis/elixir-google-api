@@ -27,7 +27,7 @@ defmodule GoogleApi.Genomics.V1.Model.RuntimeMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computeEngine => GoogleApi.Genomics.V1.Model.ComputeEngine.t()
+          :computeEngine => GoogleApi.Genomics.V1.Model.ComputeEngine.t() | nil
         }
 
   field(:computeEngine, as: GoogleApi.Genomics.V1.Model.ComputeEngine)

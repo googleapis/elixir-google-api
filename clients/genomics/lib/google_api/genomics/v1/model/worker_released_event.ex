@@ -28,8 +28,8 @@ defmodule GoogleApi.Genomics.V1.Model.WorkerReleasedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => String.t(),
-          :zone => String.t()
+          :instance => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:instance)

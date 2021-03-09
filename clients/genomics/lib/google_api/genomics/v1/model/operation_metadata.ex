@@ -35,15 +35,15 @@ defmodule GoogleApi.Genomics.V1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :events => list(GoogleApi.Genomics.V1.Model.OperationEvent.t()),
-          :labels => map(),
-          :projectId => String.t(),
-          :request => map(),
-          :runtimeMetadata => map(),
-          :startTime => DateTime.t()
+          :clientId => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :events => list(GoogleApi.Genomics.V1.Model.OperationEvent.t()) | nil,
+          :labels => map() | nil,
+          :projectId => String.t() | nil,
+          :request => map() | nil,
+          :runtimeMetadata => map() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:clientId)
