@@ -28,8 +28,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.DestinationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => String.t(),
-          :status => String.t()
+          :destination => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:destination)

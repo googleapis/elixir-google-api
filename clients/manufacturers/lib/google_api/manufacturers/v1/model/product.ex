@@ -34,14 +34,15 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.Manufacturers.V1.Model.Attributes.t(),
-          :contentLanguage => String.t(),
-          :destinationStatuses => list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t()),
-          :issues => list(GoogleApi.Manufacturers.V1.Model.Issue.t()),
-          :name => String.t(),
-          :parent => String.t(),
-          :productId => String.t(),
-          :targetCountry => String.t()
+          :attributes => GoogleApi.Manufacturers.V1.Model.Attributes.t() | nil,
+          :contentLanguage => String.t() | nil,
+          :destinationStatuses =>
+            list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t()) | nil,
+          :issues => list(GoogleApi.Manufacturers.V1.Model.Issue.t()) | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :productId => String.t() | nil,
+          :targetCountry => String.t() | nil
         }
 
   field(:attributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)

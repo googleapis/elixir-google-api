@@ -29,9 +29,9 @@ defmodule GoogleApi.Manufacturers.V1.Model.ProductDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeName => String.t(),
-          :attributeValue => String.t(),
-          :sectionName => String.t()
+          :attributeName => String.t() | nil,
+          :attributeValue => String.t() | nil,
+          :sectionName => String.t() | nil
         }
 
   field(:attributeName)

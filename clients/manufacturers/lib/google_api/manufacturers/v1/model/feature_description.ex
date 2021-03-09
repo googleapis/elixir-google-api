@@ -29,9 +29,9 @@ defmodule GoogleApi.Manufacturers.V1.Model.FeatureDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headline => String.t(),
-          :image => GoogleApi.Manufacturers.V1.Model.Image.t(),
-          :text => String.t()
+          :headline => String.t() | nil,
+          :image => GoogleApi.Manufacturers.V1.Model.Image.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:headline)
