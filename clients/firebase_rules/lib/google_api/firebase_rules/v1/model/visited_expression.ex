@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.VisitedExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t(),
-          :value => any()
+          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t() | nil,
+          :value => any() | nil
         }
 
   field(:sourcePosition, as: GoogleApi.FirebaseRules.V1.Model.SourcePosition)

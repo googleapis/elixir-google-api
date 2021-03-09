@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseRules.V1.Model.FunctionMock do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(GoogleApi.FirebaseRules.V1.Model.Arg.t()),
-          :function => String.t(),
-          :result => GoogleApi.FirebaseRules.V1.Model.Result.t()
+          :args => list(GoogleApi.FirebaseRules.V1.Model.Arg.t()) | nil,
+          :function => String.t() | nil,
+          :result => GoogleApi.FirebaseRules.V1.Model.Result.t() | nil
         }
 
   field(:args, as: GoogleApi.FirebaseRules.V1.Model.Arg, type: :list)

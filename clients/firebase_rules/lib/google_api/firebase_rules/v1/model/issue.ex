@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Issue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :severity => String.t(),
-          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t()
+          :description => String.t() | nil,
+          :severity => String.t() | nil,
+          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t() | nil
         }
 
   field(:description)

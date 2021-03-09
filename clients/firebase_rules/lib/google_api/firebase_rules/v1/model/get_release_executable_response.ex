@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executable => String.t(),
-          :executableVersion => String.t(),
-          :language => String.t(),
-          :rulesetName => String.t(),
-          :syncTime => DateTime.t(),
-          :updateTime => DateTime.t()
+          :executable => String.t() | nil,
+          :executableVersion => String.t() | nil,
+          :language => String.t() | nil,
+          :rulesetName => String.t() | nil,
+          :syncTime => DateTime.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:executable)

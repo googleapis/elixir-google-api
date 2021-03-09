@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :release => GoogleApi.FirebaseRules.V1.Model.Release.t(),
-          :updateMask => String.t()
+          :release => GoogleApi.FirebaseRules.V1.Model.Release.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:release, as: GoogleApi.FirebaseRules.V1.Model.Release)

@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.FunctionCall do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(any()),
-          :function => String.t()
+          :args => list(any()) | nil,
+          :function => String.t() | nil
         }
 
   field(:args, type: :list)

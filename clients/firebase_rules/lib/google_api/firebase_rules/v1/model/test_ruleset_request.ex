@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestRulesetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :source => GoogleApi.FirebaseRules.V1.Model.Source.t(),
-          :testSuite => GoogleApi.FirebaseRules.V1.Model.TestSuite.t()
+          :source => GoogleApi.FirebaseRules.V1.Model.Source.t() | nil,
+          :testSuite => GoogleApi.FirebaseRules.V1.Model.TestSuite.t() | nil
         }
 
   field(:source, as: GoogleApi.FirebaseRules.V1.Model.Source)

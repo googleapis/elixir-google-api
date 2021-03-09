@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expectation => String.t(),
-          :expressionReportLevel => String.t(),
-          :functionMocks => list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t()),
-          :pathEncoding => String.t(),
-          :request => any(),
-          :resource => any()
+          :expectation => String.t() | nil,
+          :expressionReportLevel => String.t() | nil,
+          :functionMocks => list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t()) | nil,
+          :pathEncoding => String.t() | nil,
+          :request => any() | nil,
+          :resource => any() | nil
         }
 
   field(:expectation)

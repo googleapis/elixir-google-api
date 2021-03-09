@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.ValueCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :value => any()
+          :count => integer() | nil,
+          :value => any() | nil
         }
 
   field(:count)

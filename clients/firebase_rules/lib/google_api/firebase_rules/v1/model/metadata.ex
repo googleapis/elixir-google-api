@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :services => list(String.t())
+          :services => list(String.t()) | nil
         }
 
   field(:services, type: :list)
