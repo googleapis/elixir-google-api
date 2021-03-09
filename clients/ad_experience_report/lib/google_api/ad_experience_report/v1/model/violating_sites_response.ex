@@ -27,7 +27,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :violatingSites => list(GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t())
+          :violatingSites =>
+            list(GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t()) | nil
         }
 
   field(:violatingSites,

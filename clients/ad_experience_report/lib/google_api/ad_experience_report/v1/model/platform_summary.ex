@@ -33,13 +33,13 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :betterAdsStatus => String.t(),
-          :enforcementTime => DateTime.t(),
-          :filterStatus => String.t(),
-          :lastChangeTime => DateTime.t(),
-          :region => list(String.t()),
-          :reportUrl => String.t(),
-          :underReview => boolean()
+          :betterAdsStatus => String.t() | nil,
+          :enforcementTime => DateTime.t() | nil,
+          :filterStatus => String.t() | nil,
+          :lastChangeTime => DateTime.t() | nil,
+          :region => list(String.t()) | nil,
+          :reportUrl => String.t() | nil,
+          :underReview => boolean() | nil
         }
 
   field(:betterAdsStatus)
