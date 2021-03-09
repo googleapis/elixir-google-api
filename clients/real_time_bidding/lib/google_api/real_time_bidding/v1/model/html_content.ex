@@ -29,9 +29,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.HtmlContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :snippet => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :snippet => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

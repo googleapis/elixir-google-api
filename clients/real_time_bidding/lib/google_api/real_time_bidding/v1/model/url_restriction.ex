@@ -30,10 +30,10 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.UrlRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.RealTimeBidding.V1.Model.Date.t(),
-          :restrictionType => String.t(),
-          :startDate => GoogleApi.RealTimeBidding.V1.Model.Date.t(),
-          :url => String.t()
+          :endDate => GoogleApi.RealTimeBidding.V1.Model.Date.t() | nil,
+          :restrictionType => String.t() | nil,
+          :startDate => GoogleApi.RealTimeBidding.V1.Model.Date.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:endDate, as: GoogleApi.RealTimeBidding.V1.Model.Date)

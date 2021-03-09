@@ -29,8 +29,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.AppTargeting do
 
   @type t :: %__MODULE__{
           :mobileAppCategoryTargeting =>
-            GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t(),
-          :mobileAppTargeting => GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t()
+            GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t() | nil,
+          :mobileAppTargeting =>
+            GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t() | nil
         }
 
   field(:mobileAppCategoryTargeting,

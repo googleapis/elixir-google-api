@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.AddTargetedAppsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appIds => list(String.t()),
-          :targetingMode => String.t()
+          :appIds => list(String.t()) | nil,
+          :targetingMode => String.t() | nil
         }
 
   field(:appIds, type: :list)

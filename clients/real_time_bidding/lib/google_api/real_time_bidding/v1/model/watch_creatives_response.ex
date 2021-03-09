@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.WatchCreativesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subscription => String.t(),
-          :topic => String.t()
+          :subscription => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:subscription)

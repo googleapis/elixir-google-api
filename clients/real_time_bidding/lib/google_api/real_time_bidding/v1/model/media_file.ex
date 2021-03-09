@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.MediaFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bitrate => String.t(),
-          :mimeType => String.t()
+          :bitrate => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:bitrate)

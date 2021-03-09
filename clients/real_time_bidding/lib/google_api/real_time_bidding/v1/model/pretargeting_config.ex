@@ -49,30 +49,33 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedUserTargetingModes => list(String.t()),
-          :appTargeting => GoogleApi.RealTimeBidding.V1.Model.AppTargeting.t(),
-          :billingId => String.t(),
-          :displayName => String.t(),
-          :excludedContentLabelIds => list(String.t()),
-          :geoTargeting => GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t(),
+          :allowedUserTargetingModes => list(String.t()) | nil,
+          :appTargeting => GoogleApi.RealTimeBidding.V1.Model.AppTargeting.t() | nil,
+          :billingId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :excludedContentLabelIds => list(String.t()) | nil,
+          :geoTargeting => GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t() | nil,
           :includedCreativeDimensions =>
-            list(GoogleApi.RealTimeBidding.V1.Model.CreativeDimensions.t()),
-          :includedEnvironments => list(String.t()),
-          :includedFormats => list(String.t()),
-          :includedLanguages => list(String.t()),
-          :includedMobileOperatingSystemIds => list(String.t()),
-          :includedPlatforms => list(String.t()),
-          :includedUserIdTypes => list(String.t()),
-          :interstitialTargeting => String.t(),
-          :invalidGeoIds => list(String.t()),
-          :maximumQps => String.t(),
-          :minimumViewabilityDecile => integer(),
-          :name => String.t(),
-          :publisherTargeting => GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t(),
-          :state => String.t(),
-          :userListTargeting => GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t(),
-          :verticalTargeting => GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t(),
-          :webTargeting => GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t()
+            list(GoogleApi.RealTimeBidding.V1.Model.CreativeDimensions.t()) | nil,
+          :includedEnvironments => list(String.t()) | nil,
+          :includedFormats => list(String.t()) | nil,
+          :includedLanguages => list(String.t()) | nil,
+          :includedMobileOperatingSystemIds => list(String.t()) | nil,
+          :includedPlatforms => list(String.t()) | nil,
+          :includedUserIdTypes => list(String.t()) | nil,
+          :interstitialTargeting => String.t() | nil,
+          :invalidGeoIds => list(String.t()) | nil,
+          :maximumQps => String.t() | nil,
+          :minimumViewabilityDecile => integer() | nil,
+          :name => String.t() | nil,
+          :publisherTargeting =>
+            GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t() | nil,
+          :state => String.t() | nil,
+          :userListTargeting =>
+            GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t() | nil,
+          :verticalTargeting =>
+            GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension.t() | nil,
+          :webTargeting => GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension.t() | nil
         }
 
   field(:allowedUserTargetingModes, type: :list)

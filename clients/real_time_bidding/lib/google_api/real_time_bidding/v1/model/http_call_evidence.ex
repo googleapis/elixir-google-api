@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.HttpCallEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :urls => list(String.t())
+          :urls => list(String.t()) | nil
         }
 
   field(:urls, type: :list)

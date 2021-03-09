@@ -29,8 +29,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DownloadSizeEvidence do
 
   @type t :: %__MODULE__{
           :topUrlDownloadSizeBreakdowns =>
-            list(GoogleApi.RealTimeBidding.V1.Model.UrlDownloadSize.t()),
-          :totalDownloadSizeKb => integer()
+            list(GoogleApi.RealTimeBidding.V1.Model.UrlDownloadSize.t()) | nil,
+          :totalDownloadSizeKb => integer() | nil
         }
 
   field(:topUrlDownloadSizeBreakdowns,

@@ -29,9 +29,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.VideoContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :videoMetadata => GoogleApi.RealTimeBidding.V1.Model.VideoMetadata.t(),
-          :videoUrl => String.t(),
-          :videoVastXml => String.t()
+          :videoMetadata => GoogleApi.RealTimeBidding.V1.Model.VideoMetadata.t() | nil,
+          :videoUrl => String.t() | nil,
+          :videoVastXml => String.t() | nil
         }
 
   field(:videoMetadata, as: GoogleApi.RealTimeBidding.V1.Model.VideoMetadata)

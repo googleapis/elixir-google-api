@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.StringTargetingDimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetingMode => String.t(),
-          :values => list(String.t())
+          :targetingMode => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:targetingMode)

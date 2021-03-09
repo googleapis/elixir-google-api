@@ -59,6 +59,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.GetRemarketingTagResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_get_remarketing_tag(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_creatives_create(
         connection,
@@ -197,6 +199,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   @spec realtimebidding_buyers_creatives_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_creatives_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -266,6 +269,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.ListCreativesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_creatives_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -338,6 +342,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_creatives_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -405,6 +410,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.UserList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_close(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -471,6 +477,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.UserList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_create(
         connection,
@@ -541,6 +548,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.UserList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -605,6 +613,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.GetRemarketingTagResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_get_remarketing_tag(
         connection,
@@ -678,6 +687,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.ListUserListsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_list(
         connection,
@@ -752,6 +762,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.UserList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_open(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -818,6 +829,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.UserList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_buyers_user_lists_update(
         connection,

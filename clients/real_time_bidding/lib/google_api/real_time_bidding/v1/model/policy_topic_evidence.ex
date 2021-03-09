@@ -34,14 +34,14 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence do
 
   @type t :: %__MODULE__{
           :destinationNotCrawlable =>
-            GoogleApi.RealTimeBidding.V1.Model.DestinationNotCrawlableEvidence.t(),
+            GoogleApi.RealTimeBidding.V1.Model.DestinationNotCrawlableEvidence.t() | nil,
           :destinationNotWorking =>
-            GoogleApi.RealTimeBidding.V1.Model.DestinationNotWorkingEvidence.t(),
-          :destinationUrl => GoogleApi.RealTimeBidding.V1.Model.DestinationUrlEvidence.t(),
-          :domainCall => GoogleApi.RealTimeBidding.V1.Model.DomainCallEvidence.t(),
-          :downloadSize => GoogleApi.RealTimeBidding.V1.Model.DownloadSizeEvidence.t(),
-          :httpCall => GoogleApi.RealTimeBidding.V1.Model.HttpCallEvidence.t(),
-          :httpCookie => GoogleApi.RealTimeBidding.V1.Model.HttpCookieEvidence.t()
+            GoogleApi.RealTimeBidding.V1.Model.DestinationNotWorkingEvidence.t() | nil,
+          :destinationUrl => GoogleApi.RealTimeBidding.V1.Model.DestinationUrlEvidence.t() | nil,
+          :domainCall => GoogleApi.RealTimeBidding.V1.Model.DomainCallEvidence.t() | nil,
+          :downloadSize => GoogleApi.RealTimeBidding.V1.Model.DownloadSizeEvidence.t() | nil,
+          :httpCall => GoogleApi.RealTimeBidding.V1.Model.HttpCallEvidence.t() | nil,
+          :httpCookie => GoogleApi.RealTimeBidding.V1.Model.HttpCookieEvidence.t() | nil
         }
 
   field(:destinationNotCrawlable,

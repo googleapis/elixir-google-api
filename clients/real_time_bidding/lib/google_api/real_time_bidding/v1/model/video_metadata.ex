@@ -32,12 +32,12 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.VideoMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :isValidVast => boolean(),
-          :isVpaid => boolean(),
-          :mediaFiles => list(GoogleApi.RealTimeBidding.V1.Model.MediaFile.t()),
-          :skipOffset => String.t(),
-          :vastVersion => String.t()
+          :duration => String.t() | nil,
+          :isValidVast => boolean() | nil,
+          :isVpaid => boolean() | nil,
+          :mediaFiles => list(GoogleApi.RealTimeBidding.V1.Model.MediaFile.t()) | nil,
+          :skipOffset => String.t() | nil,
+          :vastVersion => String.t() | nil
         }
 
   field(:duration)

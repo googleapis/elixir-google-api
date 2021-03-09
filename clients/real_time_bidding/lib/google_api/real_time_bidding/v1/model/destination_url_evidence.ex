@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DestinationUrlEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationUrl => String.t()
+          :destinationUrl => String.t() | nil
         }
 
   field(:destinationUrl)

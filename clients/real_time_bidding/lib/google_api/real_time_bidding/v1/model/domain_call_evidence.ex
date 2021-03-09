@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DomainCallEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :topHttpCallDomains => list(GoogleApi.RealTimeBidding.V1.Model.DomainCalls.t()),
-          :totalHttpCallCount => integer()
+          :topHttpCallDomains => list(GoogleApi.RealTimeBidding.V1.Model.DomainCalls.t()) | nil,
+          :totalHttpCallCount => integer() | nil
         }
 
   field(:topHttpCallDomains, as: GoogleApi.RealTimeBidding.V1.Model.DomainCalls, type: :list)

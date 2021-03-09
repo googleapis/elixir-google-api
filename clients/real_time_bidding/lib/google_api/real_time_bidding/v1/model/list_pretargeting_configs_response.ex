@@ -28,8 +28,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.ListPretargetingConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :pretargetingConfigs => list(GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t())
+          :nextPageToken => String.t() | nil,
+          :pretargetingConfigs =>
+            list(GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()) | nil
         }
 
   field(:nextPageToken)

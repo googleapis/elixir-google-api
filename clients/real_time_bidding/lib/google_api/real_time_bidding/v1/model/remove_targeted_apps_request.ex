@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.RemoveTargetedAppsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appIds => list(String.t())
+          :appIds => list(String.t()) | nil
         }
 
   field(:appIds, type: :list)
