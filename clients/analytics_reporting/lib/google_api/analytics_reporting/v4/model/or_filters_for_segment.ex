@@ -28,7 +28,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
 
   @type t :: %__MODULE__{
           :segmentFilterClauses =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause.t())
+            list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause.t()) | nil
         }
 
   field(:segmentFilterClauses,

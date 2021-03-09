@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appName => String.t(),
-          :mobileDeviceBranding => String.t(),
-          :mobileDeviceModel => String.t(),
-          :screenName => String.t()
+          :appName => String.t() | nil,
+          :mobileDeviceBranding => String.t() | nil,
+          :mobileDeviceModel => String.t() | nil,
+          :screenName => String.t() | nil
         }
 
   field(:appName)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sampleRate => float(),
-          :sessions => list(GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession.t()),
-          :totalRows => integer()
+          :nextPageToken => String.t() | nil,
+          :sampleRate => float() | nil,
+          :sessions => list(GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession.t()) | nil,
+          :totalRows => integer() | nil
         }
 
   field(:nextPageToken)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.EcommerceData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionType => String.t(),
-          :ecommerceType => String.t(),
-          :products => list(GoogleApi.AnalyticsReporting.V4.Model.ProductData.t()),
-          :transaction => GoogleApi.AnalyticsReporting.V4.Model.TransactionData.t()
+          :actionType => String.t() | nil,
+          :ecommerceType => String.t() | nil,
+          :products => list(GoogleApi.AnalyticsReporting.V4.Model.ProductData.t()) | nil,
+          :transaction => GoogleApi.AnalyticsReporting.V4.Model.TransactionData.t() | nil
         }
 
   field(:actionType)

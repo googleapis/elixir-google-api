@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comparisonValue => String.t(),
-          :metricName => String.t(),
-          :not => boolean(),
-          :operator => String.t()
+          :comparisonValue => String.t() | nil,
+          :metricName => String.t() | nil,
+          :not => boolean() | nil,
+          :operator => String.t() | nil
         }
 
   field(:comparisonValue)

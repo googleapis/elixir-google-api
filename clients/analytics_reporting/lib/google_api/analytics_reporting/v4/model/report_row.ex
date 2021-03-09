@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(String.t()),
-          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t())
+          :dimensions => list(String.t()) | nil,
+          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil
         }
 
   field(:dimensions, type: :list)

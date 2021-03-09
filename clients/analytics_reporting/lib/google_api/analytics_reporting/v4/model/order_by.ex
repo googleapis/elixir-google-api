@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldName => String.t(),
-          :orderType => String.t(),
-          :sortOrder => String.t()
+          :fieldName => String.t() | nil,
+          :orderType => String.t() | nil,
+          :sortOrder => String.t() | nil
         }
 
   field(:fieldName)

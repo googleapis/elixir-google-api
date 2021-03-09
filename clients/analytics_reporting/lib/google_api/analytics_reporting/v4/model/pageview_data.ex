@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PageviewData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pagePath => String.t(),
-          :pageTitle => String.t()
+          :pagePath => String.t() | nil,
+          :pageTitle => String.t() | nil
         }
 
   field(:pagePath)

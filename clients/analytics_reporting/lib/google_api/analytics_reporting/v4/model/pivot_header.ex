@@ -28,8 +28,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pivotHeaderEntries => list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry.t()),
-          :totalPivotGroupsCount => integer()
+          :pivotHeaderEntries =>
+            list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry.t()) | nil,
+          :totalPivotGroupsCount => integer() | nil
         }
 
   field(:pivotHeaderEntries,

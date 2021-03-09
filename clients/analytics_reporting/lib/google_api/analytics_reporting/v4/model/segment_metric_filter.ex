@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comparisonValue => String.t(),
-          :maxComparisonValue => String.t(),
-          :metricName => String.t(),
-          :operator => String.t(),
-          :scope => String.t()
+          :comparisonValue => String.t() | nil,
+          :maxComparisonValue => String.t() | nil,
+          :metricName => String.t() | nil,
+          :operator => String.t() | nil,
+          :scope => String.t() | nil
         }
 
   field(:comparisonValue)

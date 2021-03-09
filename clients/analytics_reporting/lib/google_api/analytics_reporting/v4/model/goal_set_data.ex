@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GoalSetData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :goals => list(GoogleApi.AnalyticsReporting.V4.Model.GoalData.t())
+          :goals => list(GoogleApi.AnalyticsReporting.V4.Model.GoalData.t()) | nil
         }
 
   field(:goals, as: GoogleApi.AnalyticsReporting.V4.Model.GoalData, type: :list)

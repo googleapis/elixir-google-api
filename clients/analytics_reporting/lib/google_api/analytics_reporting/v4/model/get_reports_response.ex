@@ -29,10 +29,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queryCost => integer(),
-          :reports => list(GoogleApi.AnalyticsReporting.V4.Model.Report.t()),
+          :queryCost => integer() | nil,
+          :reports => list(GoogleApi.AnalyticsReporting.V4.Model.Report.t()) | nil,
           :resourceQuotasRemaining =>
-            GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.t()
+            GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.t() | nil
         }
 
   field(:queryCost)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(String.t()),
-          :metricHeader => GoogleApi.AnalyticsReporting.V4.Model.MetricHeader.t()
+          :dimensions => list(String.t()) | nil,
+          :metricHeader => GoogleApi.AnalyticsReporting.V4.Model.MetricHeader.t() | nil
         }
 
   field(:dimensions, type: :list)

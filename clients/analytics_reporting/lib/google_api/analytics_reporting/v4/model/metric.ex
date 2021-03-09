@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Metric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t(),
-          :expression => String.t(),
-          :formattingType => String.t()
+          :alias => String.t() | nil,
+          :expression => String.t() | nil,
+          :formattingType => String.t() | nil
         }
 
   field(:alias)

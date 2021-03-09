@@ -32,11 +32,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Pivot do
 
   @type t :: %__MODULE__{
           :dimensionFilterClauses =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause.t()),
-          :dimensions => list(GoogleApi.AnalyticsReporting.V4.Model.Dimension.t()),
-          :maxGroupCount => integer(),
-          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.Metric.t()),
-          :startGroup => integer()
+            list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause.t()) | nil,
+          :dimensions => list(GoogleApi.AnalyticsReporting.V4.Model.Dimension.t()) | nil,
+          :maxGroupCount => integer() | nil,
+          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.Metric.t()) | nil,
+          :startGroup => integer() | nil
         }
 
   field(:dimensionFilterClauses,

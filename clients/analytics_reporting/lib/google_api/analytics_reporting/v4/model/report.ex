@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeader => GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader.t(),
-          :data => GoogleApi.AnalyticsReporting.V4.Model.ReportData.t(),
-          :nextPageToken => String.t()
+          :columnHeader => GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader.t() | nil,
+          :data => GoogleApi.AnalyticsReporting.V4.Model.ReportData.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:columnHeader, as: GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader)

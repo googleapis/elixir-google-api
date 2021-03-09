@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :sessionSegment => GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t(),
-          :userSegment => GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t()
+          :name => String.t() | nil,
+          :sessionSegment => GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t() | nil,
+          :userSegment => GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t() | nil
         }
 
   field(:name)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.CohortGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cohorts => list(GoogleApi.AnalyticsReporting.V4.Model.Cohort.t()),
-          :lifetimeValue => boolean()
+          :cohorts => list(GoogleApi.AnalyticsReporting.V4.Model.Cohort.t()) | nil,
+          :lifetimeValue => boolean() | nil
         }
 
   field(:cohorts, as: GoogleApi.AnalyticsReporting.V4.Model.Cohort, type: :list)

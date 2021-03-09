@@ -41,21 +41,22 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Activity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityTime => DateTime.t(),
-          :activityType => String.t(),
-          :appview => GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData.t(),
-          :campaign => String.t(),
-          :channelGrouping => String.t(),
-          :customDimension => list(GoogleApi.AnalyticsReporting.V4.Model.CustomDimension.t()),
-          :ecommerce => GoogleApi.AnalyticsReporting.V4.Model.EcommerceData.t(),
-          :event => GoogleApi.AnalyticsReporting.V4.Model.EventData.t(),
-          :goals => GoogleApi.AnalyticsReporting.V4.Model.GoalSetData.t(),
-          :hostname => String.t(),
-          :keyword => String.t(),
-          :landingPagePath => String.t(),
-          :medium => String.t(),
-          :pageview => GoogleApi.AnalyticsReporting.V4.Model.PageviewData.t(),
-          :source => String.t()
+          :activityTime => DateTime.t() | nil,
+          :activityType => String.t() | nil,
+          :appview => GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData.t() | nil,
+          :campaign => String.t() | nil,
+          :channelGrouping => String.t() | nil,
+          :customDimension =>
+            list(GoogleApi.AnalyticsReporting.V4.Model.CustomDimension.t()) | nil,
+          :ecommerce => GoogleApi.AnalyticsReporting.V4.Model.EcommerceData.t() | nil,
+          :event => GoogleApi.AnalyticsReporting.V4.Model.EventData.t() | nil,
+          :goals => GoogleApi.AnalyticsReporting.V4.Model.GoalSetData.t() | nil,
+          :hostname => String.t() | nil,
+          :keyword => String.t() | nil,
+          :landingPagePath => String.t() | nil,
+          :medium => String.t() | nil,
+          :pageview => GoogleApi.AnalyticsReporting.V4.Model.PageviewData.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:activityTime, as: DateTime)

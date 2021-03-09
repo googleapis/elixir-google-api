@@ -28,8 +28,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pivotValueRegions => list(GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion.t()),
-          :values => list(String.t())
+          :pivotValueRegions =>
+            list(GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion.t()) | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:pivotValueRegions,

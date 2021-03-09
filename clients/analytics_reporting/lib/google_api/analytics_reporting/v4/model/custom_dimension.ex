@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.CustomDimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :value => String.t()
+          :index => integer() | nil,
+          :value => String.t() | nil
         }
 
   field(:index)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportRequests => list(GoogleApi.AnalyticsReporting.V4.Model.ReportRequest.t()),
-          :useResourceQuotas => boolean()
+          :reportRequests => list(GoogleApi.AnalyticsReporting.V4.Model.ReportRequest.t()) | nil,
+          :useResourceQuotas => boolean() | nil
         }
 
   field(:reportRequests, as: GoogleApi.AnalyticsReporting.V4.Model.ReportRequest, type: :list)

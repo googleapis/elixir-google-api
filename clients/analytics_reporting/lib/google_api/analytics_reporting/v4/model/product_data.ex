@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ProductData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :itemRevenue => float(),
-          :productName => String.t(),
-          :productQuantity => String.t(),
-          :productSku => String.t()
+          :itemRevenue => float() | nil,
+          :productName => String.t() | nil,
+          :productQuantity => String.t() | nil,
+          :productSku => String.t() | nil
         }
 
   field(:itemRevenue)

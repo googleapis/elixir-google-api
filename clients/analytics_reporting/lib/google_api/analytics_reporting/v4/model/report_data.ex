@@ -35,15 +35,15 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataLastRefreshed => DateTime.t(),
-          :isDataGolden => boolean(),
-          :maximums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()),
-          :minimums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()),
-          :rowCount => integer(),
-          :rows => list(GoogleApi.AnalyticsReporting.V4.Model.ReportRow.t()),
-          :samplesReadCounts => list(String.t()),
-          :samplingSpaceSizes => list(String.t()),
-          :totals => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t())
+          :dataLastRefreshed => DateTime.t() | nil,
+          :isDataGolden => boolean() | nil,
+          :maximums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil,
+          :minimums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil,
+          :rowCount => integer() | nil,
+          :rows => list(GoogleApi.AnalyticsReporting.V4.Model.ReportRow.t()) | nil,
+          :samplesReadCounts => list(String.t()) | nil,
+          :samplingSpaceSizes => list(String.t()) | nil,
+          :totals => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil
         }
 
   field(:dataLastRefreshed, as: DateTime)

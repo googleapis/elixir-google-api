@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailyQuotaTokensRemaining => integer(),
-          :hourlyQuotaTokensRemaining => integer()
+          :dailyQuotaTokensRemaining => integer() | nil,
+          :hourlyQuotaTokensRemaining => integer() | nil
         }
 
   field(:dailyQuotaTokensRemaining)
