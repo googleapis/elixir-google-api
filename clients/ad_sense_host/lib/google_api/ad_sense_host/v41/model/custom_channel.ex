@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.CustomChannel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t()
+          :code => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:code)

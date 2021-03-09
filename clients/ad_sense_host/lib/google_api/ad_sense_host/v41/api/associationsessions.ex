@@ -60,6 +60,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_associationsessions_start(
         connection,
@@ -125,6 +126,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_associationsessions_verify(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

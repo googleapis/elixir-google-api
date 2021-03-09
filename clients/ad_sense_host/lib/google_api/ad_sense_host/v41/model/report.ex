@@ -33,13 +33,13 @@ defmodule GoogleApi.AdSenseHost.V41.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :averages => list(String.t()),
-          :headers => list(GoogleApi.AdSenseHost.V41.Model.ReportHeaders.t()),
-          :kind => String.t(),
-          :rows => list(list(String.t())),
-          :totalMatchedRows => String.t(),
-          :totals => list(String.t()),
-          :warnings => list(String.t())
+          :averages => list(String.t()) | nil,
+          :headers => list(GoogleApi.AdSenseHost.V41.Model.ReportHeaders.t()) | nil,
+          :kind => String.t() | nil,
+          :rows => list(list(String.t())) | nil,
+          :totalMatchedRows => String.t() | nil,
+          :totals => list(String.t()) | nil,
+          :warnings => list(String.t()) | nil
         }
 
   field(:averages, type: :list)

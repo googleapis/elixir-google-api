@@ -28,8 +28,8 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyleFont do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :family => String.t(),
-          :size => String.t()
+          :family => String.t() | nil,
+          :size => String.t() | nil
         }
 
   field(:family)

@@ -31,11 +31,11 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyleColors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :background => String.t(),
-          :border => String.t(),
-          :text => String.t(),
-          :title => String.t(),
-          :url => String.t()
+          :background => String.t() | nil,
+          :border => String.t() | nil,
+          :text => String.t() | nil,
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:background)

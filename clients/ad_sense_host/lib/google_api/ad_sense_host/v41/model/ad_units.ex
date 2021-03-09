@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnits do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.AdSenseHost.V41.Model.AdUnit.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.AdSenseHost.V41.Model.AdUnit.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

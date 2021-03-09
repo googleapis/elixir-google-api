@@ -30,9 +30,9 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings do
 
   @type t :: %__MODULE__{
           :backupOption =>
-            GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption.t(),
-          :size => String.t(),
-          :type => String.t()
+            GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption.t() | nil,
+          :size => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:backupOption, as: GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption)

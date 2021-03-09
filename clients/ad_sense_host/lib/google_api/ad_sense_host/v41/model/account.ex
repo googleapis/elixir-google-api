@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :status => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:id)
