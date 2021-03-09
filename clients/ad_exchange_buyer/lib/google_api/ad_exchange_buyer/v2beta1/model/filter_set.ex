@@ -40,20 +40,23 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :absoluteDateRange => GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t(),
-          :breakdownDimensions => list(String.t()),
-          :creativeId => String.t(),
-          :dealId => String.t(),
-          :environment => String.t(),
-          :format => String.t(),
-          :formats => list(String.t()),
-          :name => String.t(),
-          :platforms => list(String.t()),
-          :publisherIdentifiers => list(String.t()),
-          :realtimeTimeRange => GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange.t(),
-          :relativeDateRange => GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange.t(),
-          :sellerNetworkIds => list(integer()),
-          :timeSeriesGranularity => String.t()
+          :absoluteDateRange =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t() | nil,
+          :breakdownDimensions => list(String.t()) | nil,
+          :creativeId => String.t() | nil,
+          :dealId => String.t() | nil,
+          :environment => String.t() | nil,
+          :format => String.t() | nil,
+          :formats => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :platforms => list(String.t()) | nil,
+          :publisherIdentifiers => list(String.t()) | nil,
+          :realtimeTimeRange =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange.t() | nil,
+          :relativeDateRange =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange.t() | nil,
+          :sellerNetworkIds => list(integer()) | nil,
+          :timeSeriesGranularity => String.t() | nil
         }
 
   field(:absoluteDateRange, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange)

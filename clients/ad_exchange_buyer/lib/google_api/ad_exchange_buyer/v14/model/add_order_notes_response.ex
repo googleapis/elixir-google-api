@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notes => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t())
+          :notes => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t()) | nil
         }
 
   field(:notes, as: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote, type: :list)

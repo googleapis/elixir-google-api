@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :platforms => list(String.t())
+          :platforms => list(String.t()) | nil
         }
 
   field(:platforms, type: :list)

@@ -34,17 +34,17 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brandingType => String.t(),
-          :description => String.t(),
-          :estimatedGrossSpend => GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t(),
-          :estimatedImpressionsPerDay => String.t(),
+          :brandingType => String.t() | nil,
+          :description => String.t() | nil,
+          :estimatedGrossSpend => GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t() | nil,
+          :estimatedImpressionsPerDay => String.t() | nil,
           :guaranteedFixedPriceTerms =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms.t() | nil,
           :nonGuaranteedAuctionTerms =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms.t() | nil,
           :nonGuaranteedFixedPriceTerms =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms.t(),
-          :sellerTimeZone => String.t()
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms.t() | nil,
+          :sellerTimeZone => String.t() | nil
         }
 
   field(:brandingType)

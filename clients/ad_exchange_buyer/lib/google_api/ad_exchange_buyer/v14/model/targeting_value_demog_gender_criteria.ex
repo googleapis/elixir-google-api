@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :demogGenderCriteriaIds => list(String.t())
+          :demogGenderCriteriaIds => list(String.t()) | nil
         }
 
   field(:demogGenderCriteriaIds, type: :list)

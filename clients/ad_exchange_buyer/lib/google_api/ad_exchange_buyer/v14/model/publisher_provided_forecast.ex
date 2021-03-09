@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(GoogleApi.AdExchangeBuyer.V14.Model.Dimension.t()),
-          :weeklyImpressions => String.t(),
-          :weeklyUniques => String.t()
+          :dimensions => list(GoogleApi.AdExchangeBuyer.V14.Model.Dimension.t()) | nil,
+          :weeklyImpressions => String.t() | nil,
+          :weeklyUniques => String.t() | nil
         }
 
   field(:dimensions, as: GoogleApi.AdExchangeBuyer.V14.Model.Dimension, type: :list)

@@ -55,34 +55,36 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :creationTimeMs => String.t(),
-          :creatorContacts => list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()),
-          :creatorRole => String.t(),
-          :deliveryControl => GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t(),
-          :flightEndTimeMs => String.t(),
-          :flightStartTimeMs => String.t(),
-          :hasCreatorSignedOff => boolean(),
-          :inventorySource => String.t(),
-          :kind => String.t(),
-          :labels => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t()),
-          :lastUpdateTimeMs => String.t(),
-          :legacyOfferId => String.t(),
-          :marketplacePublisherProfileId => String.t(),
-          :name => String.t(),
-          :privateAuctionId => String.t(),
-          :productId => String.t(),
-          :publisherProfileId => String.t(),
+          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :creationTimeMs => String.t() | nil,
+          :creatorContacts =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()) | nil,
+          :creatorRole => String.t() | nil,
+          :deliveryControl => GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t() | nil,
+          :flightEndTimeMs => String.t() | nil,
+          :flightStartTimeMs => String.t() | nil,
+          :hasCreatorSignedOff => boolean() | nil,
+          :inventorySource => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t()) | nil,
+          :lastUpdateTimeMs => String.t() | nil,
+          :legacyOfferId => String.t() | nil,
+          :marketplacePublisherProfileId => String.t() | nil,
+          :name => String.t() | nil,
+          :privateAuctionId => String.t() | nil,
+          :productId => String.t() | nil,
+          :publisherProfileId => String.t() | nil,
           :publisherProvidedForecast =>
-            GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t(),
-          :revisionNumber => String.t(),
-          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t(),
-          :sharedTargetings => list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t()),
-          :state => String.t(),
-          :syndicationProduct => String.t(),
-          :terms => GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t(),
-          :webPropertyCode => String.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t() | nil,
+          :revisionNumber => String.t() | nil,
+          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t() | nil,
+          :sharedTargetings =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t()) | nil,
+          :state => String.t() | nil,
+          :syndicationProduct => String.t() | nil,
+          :terms => GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t() | nil,
+          :webPropertyCode => String.t() | nil
         }
 
   field(:billedBuyer, as: GoogleApi.AdExchangeBuyer.V14.Model.Buyer)

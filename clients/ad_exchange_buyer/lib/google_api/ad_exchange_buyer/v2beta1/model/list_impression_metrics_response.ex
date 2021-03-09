@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse 
 
   @type t :: %__MODULE__{
           :impressionMetricsRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ImpressionMetricsRow.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ImpressionMetricsRow.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:impressionMetricsRows,

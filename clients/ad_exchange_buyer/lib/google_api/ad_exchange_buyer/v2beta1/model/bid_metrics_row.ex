@@ -34,14 +34,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bids => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :bidsInAuction => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :billedImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :impressionsWon => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :measurableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :reachedQueries => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t(),
-          :viewableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t()
+          :bids => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :bidsInAuction => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :billedImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :impressionsWon => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :measurableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :reachedQueries => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t() | nil,
+          :viewableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil
         }
 
   field(:bids, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)

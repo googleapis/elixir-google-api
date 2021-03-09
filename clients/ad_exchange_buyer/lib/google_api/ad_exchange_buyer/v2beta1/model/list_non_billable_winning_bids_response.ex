@@ -28,9 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :nonBillableWinningBidStatusRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow.t())
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow.t()) | nil
         }
 
   field(:nextPageToken)

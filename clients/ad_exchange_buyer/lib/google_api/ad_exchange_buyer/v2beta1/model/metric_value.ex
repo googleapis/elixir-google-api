@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :value => String.t(),
-          :variance => String.t()
+          :value => String.t() | nil,
+          :variance => String.t() | nil
         }
 
   field(:value)

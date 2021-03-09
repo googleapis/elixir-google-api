@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :videoUrl => String.t(),
-          :videoVastXml => String.t()
+          :videoUrl => String.t() | nil,
+          :videoVastXml => String.t() | nil
         }
 
   field(:videoUrl)

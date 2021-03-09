@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientAccountId => String.t(),
-          :email => String.t(),
-          :status => String.t(),
-          :userId => String.t()
+          :clientAccountId => String.t() | nil,
+          :email => String.t() | nil,
+          :status => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:clientAccountId)

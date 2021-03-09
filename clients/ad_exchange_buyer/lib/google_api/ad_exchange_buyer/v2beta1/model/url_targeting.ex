@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedUrls => list(String.t()),
-          :targetedUrls => list(String.t())
+          :excludedUrls => list(String.t()) | nil,
+          :targetedUrls => list(String.t()) | nil
         }
 
   field(:excludedUrls, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Price do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountMicros => float(),
-          :currencyCode => String.t(),
-          :expectedCpmMicros => float(),
-          :pricingType => String.t()
+          :amountMicros => float() | nil,
+          :currencyCode => String.t() | nil,
+          :expectedCpmMicros => float() | nil,
+          :pricingType => String.t() | nil
         }
 
   field(:amountMicros)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AddNoteRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :note => GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t()
+          :note => GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t() | nil
         }
 
   field(:note, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Note)

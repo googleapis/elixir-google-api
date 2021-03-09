@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auctionTypes => list(String.t())
+          :auctionTypes => list(String.t()) | nil
         }
 
   field(:auctionTypes, type: :list)

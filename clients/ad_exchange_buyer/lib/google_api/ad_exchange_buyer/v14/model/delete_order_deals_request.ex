@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dealIds => list(String.t()),
-          :proposalRevisionNumber => String.t(),
-          :updateAction => String.t()
+          :dealIds => list(String.t()) | nil,
+          :proposalRevisionNumber => String.t() | nil,
+          :updateAction => String.t() | nil
         }
 
   field(:dealIds, type: :list)

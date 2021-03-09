@@ -32,11 +32,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
 
   @type t :: %__MODULE__{
           :billingInfo =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo.t(),
-          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t()),
-          :guaranteedImpressions => String.t(),
-          :guaranteedLooks => String.t(),
-          :minimumDailyLooks => String.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo.t()
+            | nil,
+          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t()) | nil,
+          :guaranteedImpressions => String.t() | nil,
+          :guaranteedLooks => String.t() | nil,
+          :minimumDailyLooks => String.t() | nil
         }
 
   field(:billingInfo,

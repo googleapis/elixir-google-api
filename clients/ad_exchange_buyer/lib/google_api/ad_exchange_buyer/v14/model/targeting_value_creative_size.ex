@@ -32,12 +32,13 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedFormats => list(String.t()),
-          :companionSizes => list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t()),
-          :creativeSizeType => String.t(),
-          :nativeTemplate => String.t(),
-          :size => GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t(),
-          :skippableAdType => String.t()
+          :allowedFormats => list(String.t()) | nil,
+          :companionSizes =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t()) | nil,
+          :creativeSizeType => String.t() | nil,
+          :nativeTemplate => String.t() | nil,
+          :size => GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t() | nil,
+          :skippableAdType => String.t() | nil
         }
 
   field(:allowedFormats, type: :list)

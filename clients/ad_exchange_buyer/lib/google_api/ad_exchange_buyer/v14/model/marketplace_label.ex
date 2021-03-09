@@ -30,11 +30,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :createTimeMs => String.t(),
+          :accountId => String.t() | nil,
+          :createTimeMs => String.t() | nil,
           :deprecatedMarketplaceDealParty =>
-            GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty.t(),
-          :label => String.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty.t() | nil,
+          :label => String.t() | nil
         }
 
   field(:accountId)

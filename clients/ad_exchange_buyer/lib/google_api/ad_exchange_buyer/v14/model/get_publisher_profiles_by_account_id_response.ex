@@ -27,7 +27,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherProfilesByAccountIdRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :profiles => list(GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto.t())
+          :profiles =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto.t()) | nil
         }
 
   field(:profiles, as: GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto, type: :list)

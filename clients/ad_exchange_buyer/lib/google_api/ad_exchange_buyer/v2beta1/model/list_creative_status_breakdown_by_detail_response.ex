@@ -29,10 +29,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detailType => String.t(),
+          :detailType => String.t() | nil,
           :filteredBidDetailRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:detailType)

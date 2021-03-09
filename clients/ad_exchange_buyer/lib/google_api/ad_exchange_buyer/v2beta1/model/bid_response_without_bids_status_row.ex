@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :impressionCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t(),
-          :status => String.t()
+          :impressionCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:impressionCount, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)

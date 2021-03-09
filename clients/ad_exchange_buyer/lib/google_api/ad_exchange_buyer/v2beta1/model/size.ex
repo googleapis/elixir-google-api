@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Size do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :width => integer()
+          :height => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

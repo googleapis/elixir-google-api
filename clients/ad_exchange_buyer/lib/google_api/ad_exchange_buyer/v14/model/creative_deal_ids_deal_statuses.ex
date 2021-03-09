@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arcStatus => String.t(),
-          :dealId => String.t(),
-          :webPropertyId => integer()
+          :arcStatus => String.t() | nil,
+          :dealId => String.t() | nil,
+          :webPropertyId => integer() | nil
         }
 
   field(:arcStatus)

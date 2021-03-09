@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clients => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()),
-          :nextPageToken => String.t()
+          :clients => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:clients, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Client, type: :list)

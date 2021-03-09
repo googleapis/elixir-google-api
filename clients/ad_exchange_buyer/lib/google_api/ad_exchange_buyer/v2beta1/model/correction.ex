@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contexts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t()),
-          :details => list(String.t()),
-          :type => String.t()
+          :contexts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t()) | nil,
+          :details => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:contexts, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext, type: :list)

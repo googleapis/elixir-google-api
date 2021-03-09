@@ -35,15 +35,15 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Client do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientAccountId => String.t(),
-          :clientName => String.t(),
-          :entityId => String.t(),
-          :entityName => String.t(),
-          :entityType => String.t(),
-          :partnerClientId => String.t(),
-          :role => String.t(),
-          :status => String.t(),
-          :visibleToSeller => boolean()
+          :clientAccountId => String.t() | nil,
+          :clientName => String.t() | nil,
+          :entityId => String.t() | nil,
+          :entityName => String.t() | nil,
+          :entityType => String.t() | nil,
+          :partnerClientId => String.t() | nil,
+          :role => String.t() | nil,
+          :status => String.t() | nil,
+          :visibleToSeller => boolean() | nil
         }
 
   field(:clientAccountId)

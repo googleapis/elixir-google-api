@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrectionsContexts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auctionType => list(String.t()),
-          :contextType => String.t(),
-          :geoCriteriaId => list(integer()),
-          :platform => list(String.t())
+          :auctionType => list(String.t()) | nil,
+          :contextType => String.t() | nil,
+          :geoCriteriaId => list(integer()) | nil,
+          :platform => list(String.t()) | nil
         }
 
   field(:auctionType, type: :list)

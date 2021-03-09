@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t()),
-          :guaranteedImpressions => String.t(),
-          :guaranteedLooks => String.t(),
-          :minimumDailyLooks => String.t()
+          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t()) | nil,
+          :guaranteedImpressions => String.t() | nil,
+          :guaranteedLooks => String.t() | nil,
+          :minimumDailyLooks => String.t() | nil
         }
 
   field(:fixedPrices, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer, type: :list)

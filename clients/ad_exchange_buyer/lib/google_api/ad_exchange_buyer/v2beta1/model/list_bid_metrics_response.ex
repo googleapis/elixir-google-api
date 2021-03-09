@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bidMetricsRows => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow.t()),
-          :nextPageToken => String.t()
+          :bidMetricsRows =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:bidMetricsRows, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow, type: :list)

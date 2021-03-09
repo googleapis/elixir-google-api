@@ -34,17 +34,17 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
 
   @type t :: %__MODULE__{
           :creativeSizeValue =>
-            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize.t() | nil,
           :dayPartTargetingValue =>
-            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting.t() | nil,
           :demogAgeCriteriaValue =>
-            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.t() | nil,
           :demogGenderCriteriaValue =>
-            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t(),
-          :longValue => String.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t() | nil,
+          :longValue => String.t() | nil,
           :requestPlatformTargetingValue =>
-            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTargeting.t(),
-          :stringValue => String.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTargeting.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:creativeSizeValue, as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize)

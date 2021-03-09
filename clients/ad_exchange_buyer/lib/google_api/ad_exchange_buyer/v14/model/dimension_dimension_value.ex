@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => integer(),
-          :name => String.t(),
-          :percentage => integer()
+          :id => integer() | nil,
+          :name => String.t() | nil,
+          :percentage => integer() | nil
         }
 
   field(:id)

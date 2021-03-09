@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeBlockingLevel => String.t(),
-          :deliveryRateType => String.t(),
-          :frequencyCaps => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap.t())
+          :creativeBlockingLevel => String.t() | nil,
+          :deliveryRateType => String.t() | nil,
+          :frequencyCaps => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap.t()) | nil
         }
 
   field(:creativeBlockingLevel)

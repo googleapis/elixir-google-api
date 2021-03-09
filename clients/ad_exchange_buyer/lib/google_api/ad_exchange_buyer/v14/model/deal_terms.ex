@@ -36,20 +36,20 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brandingType => String.t(),
-          :crossListedExternalDealIdType => String.t(),
-          :description => String.t(),
-          :estimatedGrossSpend => GoogleApi.AdExchangeBuyer.V14.Model.Price.t(),
-          :estimatedImpressionsPerDay => String.t(),
+          :brandingType => String.t() | nil,
+          :crossListedExternalDealIdType => String.t() | nil,
+          :description => String.t() | nil,
+          :estimatedGrossSpend => GoogleApi.AdExchangeBuyer.V14.Model.Price.t() | nil,
+          :estimatedImpressionsPerDay => String.t() | nil,
           :guaranteedFixedPriceTerms =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms.t() | nil,
           :nonGuaranteedAuctionTerms =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms.t() | nil,
           :nonGuaranteedFixedPriceTerms =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms.t(),
+            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms.t() | nil,
           :rubiconNonGuaranteedTerms =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms.t(),
-          :sellerTimeZone => String.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms.t() | nil,
+          :sellerTimeZone => String.t() | nil
         }
 
   field(:brandingType)

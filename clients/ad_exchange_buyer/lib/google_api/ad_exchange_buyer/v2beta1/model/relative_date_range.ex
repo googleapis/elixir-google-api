@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationDays => integer(),
-          :offsetDays => integer()
+          :durationDays => integer() | nil,
+          :offsetDays => integer() | nil
         }
 
   field(:durationDays)

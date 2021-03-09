@@ -53,37 +53,38 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingId => String.t(),
-          :configId => String.t(),
-          :configName => String.t(),
-          :creativeType => list(String.t()),
+          :billingId => String.t() | nil,
+          :configId => String.t() | nil,
+          :configName => String.t() | nil,
+          :creativeType => list(String.t()) | nil,
           :dimensions =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions.t()),
-          :excludedContentLabels => list(String.t()),
-          :excludedGeoCriteriaIds => list(String.t()),
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions.t()) | nil,
+          :excludedContentLabels => list(String.t()) | nil,
+          :excludedGeoCriteriaIds => list(String.t()) | nil,
           :excludedPlacements =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements.t()),
-          :excludedUserLists => list(String.t()),
-          :excludedVerticals => list(String.t()),
-          :geoCriteriaIds => list(String.t()),
-          :isActive => boolean(),
-          :kind => String.t(),
-          :languages => list(String.t()),
-          :maximumQps => String.t(),
-          :minimumViewabilityDecile => integer(),
-          :mobileCarriers => list(String.t()),
-          :mobileDevices => list(String.t()),
-          :mobileOperatingSystemVersions => list(String.t()),
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements.t())
+            | nil,
+          :excludedUserLists => list(String.t()) | nil,
+          :excludedVerticals => list(String.t()) | nil,
+          :geoCriteriaIds => list(String.t()) | nil,
+          :isActive => boolean() | nil,
+          :kind => String.t() | nil,
+          :languages => list(String.t()) | nil,
+          :maximumQps => String.t() | nil,
+          :minimumViewabilityDecile => integer() | nil,
+          :mobileCarriers => list(String.t()) | nil,
+          :mobileDevices => list(String.t()) | nil,
+          :mobileOperatingSystemVersions => list(String.t()) | nil,
           :placements =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigPlacements.t()),
-          :platforms => list(String.t()),
-          :supportedCreativeAttributes => list(String.t()),
-          :userIdentifierDataRequired => list(String.t()),
-          :userLists => list(String.t()),
-          :vendorTypes => list(String.t()),
-          :verticals => list(String.t()),
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigPlacements.t()) | nil,
+          :platforms => list(String.t()) | nil,
+          :supportedCreativeAttributes => list(String.t()) | nil,
+          :userIdentifierDataRequired => list(String.t()) | nil,
+          :userLists => list(String.t()) | nil,
+          :vendorTypes => list(String.t()) | nil,
+          :verticals => list(String.t()) | nil,
           :videoPlayerSizes =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes.t())
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes.t()) | nil
         }
 
   field(:billingId)

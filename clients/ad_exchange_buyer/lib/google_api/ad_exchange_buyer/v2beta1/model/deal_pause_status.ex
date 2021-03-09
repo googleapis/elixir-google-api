@@ -31,11 +31,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buyerPauseReason => String.t(),
-          :firstPausedBy => String.t(),
-          :hasBuyerPaused => boolean(),
-          :hasSellerPaused => boolean(),
-          :sellerPauseReason => String.t()
+          :buyerPauseReason => String.t() | nil,
+          :firstPausedBy => String.t() | nil,
+          :hasBuyerPaused => boolean() | nil,
+          :hasSellerPaused => boolean() | nil,
+          :sellerPauseReason => String.t() | nil
         }
 
   field(:buyerPauseReason)

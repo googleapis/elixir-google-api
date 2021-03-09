@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayParts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart.t()),
-          :timeZoneType => String.t()
+          :dayParts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart.t()) | nil,
+          :timeZoneType => String.t() | nil
         }
 
   field(:dayParts, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart, type: :list)

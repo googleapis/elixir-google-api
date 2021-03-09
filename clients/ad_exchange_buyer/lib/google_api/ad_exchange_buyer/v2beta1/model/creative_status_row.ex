@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeStatusRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bidCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :creativeStatusId => integer(),
-          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t()
+          :bidCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :creativeStatusId => integer() | nil,
+          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t() | nil
         }
 
   field(:bidCount, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)

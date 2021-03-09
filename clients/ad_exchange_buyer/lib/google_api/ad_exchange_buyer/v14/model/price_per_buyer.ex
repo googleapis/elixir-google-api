@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auctionTier => String.t(),
-          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :price => GoogleApi.AdExchangeBuyer.V14.Model.Price.t()
+          :auctionTier => String.t() | nil,
+          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :price => GoogleApi.AdExchangeBuyer.V14.Model.Price.t() | nil
         }
 
   field(:auctionTier)

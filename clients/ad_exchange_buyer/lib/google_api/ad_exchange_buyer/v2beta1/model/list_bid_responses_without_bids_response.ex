@@ -29,8 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsRes
 
   @type t :: %__MODULE__{
           :bidResponseWithoutBidsStatusRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRow.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRow.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:bidResponseWithoutBidsStatusRows,

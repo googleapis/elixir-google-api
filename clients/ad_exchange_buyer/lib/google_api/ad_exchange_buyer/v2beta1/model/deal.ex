@@ -51,33 +51,35 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableEndTime => DateTime.t(),
-          :availableStartTime => DateTime.t(),
-          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t(),
-          :createProductId => String.t(),
-          :createProductRevision => String.t(),
-          :createTime => DateTime.t(),
-          :creativePreApprovalPolicy => String.t(),
+          :availableEndTime => DateTime.t() | nil,
+          :availableStartTime => DateTime.t() | nil,
+          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t() | nil,
+          :createProductId => String.t() | nil,
+          :createProductRevision => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :creativePreApprovalPolicy => String.t() | nil,
           :creativeRestrictions =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t(),
-          :creativeSafeFrameCompatibility => String.t(),
-          :dealId => String.t(),
-          :dealServingMetadata => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata.t(),
-          :dealTerms => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t(),
-          :deliveryControl => GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :externalDealId => String.t(),
-          :isSetupComplete => boolean(),
-          :programmaticCreativeSource => String.t(),
-          :proposalId => String.t(),
-          :sellerContacts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
-          :syndicationProduct => String.t(),
-          :targeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t() | nil,
+          :creativeSafeFrameCompatibility => String.t() | nil,
+          :dealId => String.t() | nil,
+          :dealServingMetadata =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata.t() | nil,
+          :dealTerms => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t() | nil,
+          :deliveryControl => GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :externalDealId => String.t() | nil,
+          :isSetupComplete => boolean() | nil,
+          :programmaticCreativeSource => String.t() | nil,
+          :proposalId => String.t() | nil,
+          :sellerContacts =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()) | nil,
+          :syndicationProduct => String.t() | nil,
+          :targeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting.t() | nil,
           :targetingCriterion =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t()),
-          :updateTime => DateTime.t(),
-          :webPropertyCode => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t()) | nil,
+          :updateTime => DateTime.t() | nil,
+          :webPropertyCode => String.t() | nil
         }
 
   field(:availableEndTime, as: DateTime)

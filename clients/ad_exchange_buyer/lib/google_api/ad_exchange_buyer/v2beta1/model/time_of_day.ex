@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hours => integer(),
-          :minutes => integer(),
-          :nanos => integer(),
-          :seconds => integer()
+          :hours => integer() | nil,
+          :minutes => integer() | nil,
+          :nanos => integer() | nil,
+          :seconds => integer() | nil
         }
 
   field(:hours)

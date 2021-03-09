@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting do
 
   @type t :: %__MODULE__{
           :mobileApplicationTargeting =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t(),
-          :urlTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t()
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t() | nil,
+          :urlTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t() | nil
         }
 
   field(:mobileApplicationTargeting,

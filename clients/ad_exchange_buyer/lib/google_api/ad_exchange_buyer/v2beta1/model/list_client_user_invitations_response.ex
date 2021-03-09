@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :invitations => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t()),
-          :nextPageToken => String.t()
+          :invitations =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:invitations,

@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PrivateData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :referenceId => String.t(),
-          :referencePayload => String.t()
+          :referenceId => String.t() | nil,
+          :referencePayload => String.t() | nil
         }
 
   field(:referenceId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t())
+          :fixedPrices => list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t()) | nil
         }
 
   field(:fixedPrices, as: GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer, type: :list)

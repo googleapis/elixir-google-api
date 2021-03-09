@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyConversionTimeMs => String.t(),
-          :dfpLineItemId => String.t(),
-          :originalContractedQuantity => String.t(),
-          :price => GoogleApi.AdExchangeBuyer.V14.Model.Price.t()
+          :currencyConversionTimeMs => String.t() | nil,
+          :dfpLineItemId => String.t() | nil,
+          :originalContractedQuantity => String.t() | nil,
+          :price => GoogleApi.AdExchangeBuyer.V14.Model.Price.t() | nil
         }
 
   field(:currencyConversionTimeMs)

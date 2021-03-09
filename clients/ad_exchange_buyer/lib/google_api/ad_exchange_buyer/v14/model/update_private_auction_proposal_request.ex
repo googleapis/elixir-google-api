@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.UpdatePrivateAuctionProposalReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :externalDealId => String.t(),
-          :note => GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t(),
-          :proposalRevisionNumber => String.t(),
-          :updateAction => String.t()
+          :externalDealId => String.t() | nil,
+          :note => GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t() | nil,
+          :proposalRevisionNumber => String.t() | nil,
+          :updateAction => String.t() | nil
         }
 
   field(:externalDealId)

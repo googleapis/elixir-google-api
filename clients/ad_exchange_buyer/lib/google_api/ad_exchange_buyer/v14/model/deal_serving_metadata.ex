@@ -28,9 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alcoholAdsAllowed => boolean(),
+          :alcoholAdsAllowed => boolean() | nil,
           :dealPauseStatus =>
-            GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus.t()
+            GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus.t() | nil
         }
 
   field(:alcoholAdsAllowed)

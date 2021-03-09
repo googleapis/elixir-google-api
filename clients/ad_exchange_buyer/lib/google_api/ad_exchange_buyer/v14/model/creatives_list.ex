@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativesList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.AdExchangeBuyer.V14.Model.Creative, type: :list)

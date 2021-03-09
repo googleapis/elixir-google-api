@@ -52,32 +52,35 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t(),
-          :creationTimeMs => String.t(),
-          :creativePreApprovalPolicy => String.t(),
-          :creativeSafeFrameCompatibility => String.t(),
-          :dealId => String.t(),
-          :dealServingMetadata => GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata.t(),
-          :deliveryControl => GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t(),
-          :externalDealId => String.t(),
-          :flightEndTimeMs => String.t(),
-          :flightStartTimeMs => String.t(),
-          :inventoryDescription => String.t(),
-          :isRfpTemplate => boolean(),
-          :isSetupComplete => boolean(),
-          :kind => String.t(),
-          :lastUpdateTimeMs => String.t(),
-          :makegoodRequestedReason => String.t(),
-          :name => String.t(),
-          :productId => String.t(),
-          :productRevisionNumber => String.t(),
-          :programmaticCreativeSource => String.t(),
-          :proposalId => String.t(),
-          :sellerContacts => list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()),
-          :sharedTargetings => list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t()),
-          :syndicationProduct => String.t(),
-          :terms => GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t(),
-          :webPropertyCode => String.t()
+          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t() | nil,
+          :creationTimeMs => String.t() | nil,
+          :creativePreApprovalPolicy => String.t() | nil,
+          :creativeSafeFrameCompatibility => String.t() | nil,
+          :dealId => String.t() | nil,
+          :dealServingMetadata =>
+            GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata.t() | nil,
+          :deliveryControl => GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t() | nil,
+          :externalDealId => String.t() | nil,
+          :flightEndTimeMs => String.t() | nil,
+          :flightStartTimeMs => String.t() | nil,
+          :inventoryDescription => String.t() | nil,
+          :isRfpTemplate => boolean() | nil,
+          :isSetupComplete => boolean() | nil,
+          :kind => String.t() | nil,
+          :lastUpdateTimeMs => String.t() | nil,
+          :makegoodRequestedReason => String.t() | nil,
+          :name => String.t() | nil,
+          :productId => String.t() | nil,
+          :productRevisionNumber => String.t() | nil,
+          :programmaticCreativeSource => String.t() | nil,
+          :proposalId => String.t() | nil,
+          :sellerContacts =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()) | nil,
+          :sharedTargetings =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t()) | nil,
+          :syndicationProduct => String.t() | nil,
+          :terms => GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t() | nil,
+          :webPropertyCode => String.t() | nil
         }
 
   field(:buyerPrivateData, as: GoogleApi.AdExchangeBuyer.V14.Model.PrivateData)

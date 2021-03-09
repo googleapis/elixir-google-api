@@ -30,10 +30,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeSizeValue => GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize.t(),
-          :dayPartTargetingValue => GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting.t(),
-          :longValue => String.t(),
-          :stringValue => String.t()
+          :creativeSizeValue => GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize.t() | nil,
+          :dayPartTargetingValue =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting.t() | nil,
+          :longValue => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:creativeSizeValue, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientAccountId => String.t(),
-          :email => String.t(),
-          :invitationId => String.t()
+          :clientAccountId => String.t() | nil,
+          :email => String.t() | nil,
+          :invitationId => String.t() | nil
         }
 
   field(:clientAccountId)

@@ -50,6 +50,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.BillingInfo do
   @spec adexchangebuyer_billing_info_get(Tesla.Env.client(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adexchangebuyer_billing_info_get(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -100,6 +101,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.BillingInfo do
   @spec adexchangebuyer_billing_info_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adexchangebuyer_billing_info_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

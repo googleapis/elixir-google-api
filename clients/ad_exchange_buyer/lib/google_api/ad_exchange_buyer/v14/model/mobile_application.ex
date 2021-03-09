@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MobileApplication do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appStore => String.t(),
-          :externalAppId => String.t()
+          :appStore => String.t() | nil,
+          :externalAppId => String.t() | nil
         }
 
   field(:appStore)

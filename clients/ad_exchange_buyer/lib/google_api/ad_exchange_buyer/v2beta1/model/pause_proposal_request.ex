@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PauseProposalRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t()
+          :reason => String.t() | nil
         }
 
   field(:reason)

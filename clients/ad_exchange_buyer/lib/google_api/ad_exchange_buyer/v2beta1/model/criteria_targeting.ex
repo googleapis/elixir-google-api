@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedCriteriaIds => list(String.t()),
-          :targetedCriteriaIds => list(String.t())
+          :excludedCriteriaIds => list(String.t()) | nil,
+          :targetedCriteriaIds => list(String.t()) | nil
         }
 
   field(:excludedCriteriaIds, type: :list)

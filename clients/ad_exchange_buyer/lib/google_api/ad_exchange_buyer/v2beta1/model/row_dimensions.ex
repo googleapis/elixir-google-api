@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publisherIdentifier => String.t(),
-          :timeInterval => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval.t()
+          :publisherIdentifier => String.t() | nil,
+          :timeInterval => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval.t() | nil
         }
 
   field(:publisherIdentifier)

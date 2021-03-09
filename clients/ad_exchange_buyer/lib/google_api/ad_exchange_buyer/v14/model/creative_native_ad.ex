@@ -39,19 +39,19 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiser => String.t(),
-          :appIcon => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon.t(),
-          :body => String.t(),
-          :callToAction => String.t(),
-          :clickLinkUrl => String.t(),
-          :clickTrackingUrl => String.t(),
-          :headline => String.t(),
-          :image => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage.t(),
-          :impressionTrackingUrl => list(String.t()),
-          :logo => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t(),
-          :price => String.t(),
-          :starRating => float(),
-          :videoURL => String.t()
+          :advertiser => String.t() | nil,
+          :appIcon => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon.t() | nil,
+          :body => String.t() | nil,
+          :callToAction => String.t() | nil,
+          :clickLinkUrl => String.t() | nil,
+          :clickTrackingUrl => String.t() | nil,
+          :headline => String.t() | nil,
+          :image => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage.t() | nil,
+          :impressionTrackingUrl => list(String.t()) | nil,
+          :logo => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t() | nil,
+          :price => String.t() | nil,
+          :starRating => float() | nil,
+          :videoURL => String.t() | nil
         }
 
   field(:advertiser)

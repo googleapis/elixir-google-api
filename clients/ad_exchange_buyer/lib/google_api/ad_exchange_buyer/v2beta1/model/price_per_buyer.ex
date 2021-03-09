@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserIds => list(String.t()),
-          :buyer => GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t(),
-          :price => GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t()
+          :advertiserIds => list(String.t()) | nil,
+          :buyer => GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t() | nil,
+          :price => GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t() | nil
         }
 
   field(:advertiserIds, type: :list)

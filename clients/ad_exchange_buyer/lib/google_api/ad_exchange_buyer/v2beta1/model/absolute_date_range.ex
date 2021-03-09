@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t(),
-          :startDate => GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t()
+          :endDate => GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t() | nil,
+          :startDate => GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t() | nil
         }
 
   field(:endDate, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Date)

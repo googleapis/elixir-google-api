@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse d
 
   @type t :: %__MODULE__{
           :associations =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:associations,

@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByC
 
   @type t :: %__MODULE__{
           :filteredBidCreativeRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:filteredBidCreativeRows,

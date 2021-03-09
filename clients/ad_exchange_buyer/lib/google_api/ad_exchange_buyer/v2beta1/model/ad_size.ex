@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => String.t(),
-          :sizeType => String.t(),
-          :width => String.t()
+          :height => String.t() | nil,
+          :sizeType => String.t() | nil,
+          :width => String.t() | nil
         }
 
   field(:height)

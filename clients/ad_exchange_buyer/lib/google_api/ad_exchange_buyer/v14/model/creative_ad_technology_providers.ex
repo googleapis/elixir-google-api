@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectedProviderIds => list(String.t()),
-          :hasUnidentifiedProvider => boolean()
+          :detectedProviderIds => list(String.t()) | nil,
+          :hasUnidentifiedProvider => boolean() | nil
         }
 
   field(:detectedProviderIds, type: :list)

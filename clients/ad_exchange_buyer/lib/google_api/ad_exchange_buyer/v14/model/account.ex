@@ -35,15 +35,16 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applyPretargetingToNonGuaranteedDeals => boolean(),
-          :bidderLocation => list(GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation.t()),
-          :cookieMatchingNid => String.t(),
-          :cookieMatchingUrl => String.t(),
-          :id => integer(),
-          :kind => String.t(),
-          :maximumActiveCreatives => integer(),
-          :maximumTotalQps => integer(),
-          :numberActiveCreatives => integer()
+          :applyPretargetingToNonGuaranteedDeals => boolean() | nil,
+          :bidderLocation =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation.t()) | nil,
+          :cookieMatchingNid => String.t() | nil,
+          :cookieMatchingUrl => String.t() | nil,
+          :id => integer() | nil,
+          :kind => String.t() | nil,
+          :maximumActiveCreatives => integer() | nil,
+          :maximumTotalQps => integer() | nil,
+          :numberActiveCreatives => integer() | nil
         }
 
   field(:applyPretargetingToNonGuaranteedDeals)
