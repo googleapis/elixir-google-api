@@ -31,11 +31,11 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :destroyTime => DateTime.t(),
-          :name => String.t(),
-          :replicationStatus => GoogleApi.SecretManager.V1.Model.ReplicationStatus.t(),
-          :state => String.t()
+          :createTime => DateTime.t() | nil,
+          :destroyTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :replicationStatus => GoogleApi.SecretManager.V1.Model.ReplicationStatus.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SecretManager.V1.Model.AddSecretVersionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => GoogleApi.SecretManager.V1.Model.SecretPayload.t()
+          :payload => GoogleApi.SecretManager.V1.Model.SecretPayload.t() | nil
         }
 
   field(:payload, as: GoogleApi.SecretManager.V1.Model.SecretPayload)

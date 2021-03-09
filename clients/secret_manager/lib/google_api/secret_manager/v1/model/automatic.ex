@@ -28,7 +28,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Automatic do
 
   @type t :: %__MODULE__{
           :customerManagedEncryption =>
-            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t()
+            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t() | nil
         }
 
   field(:customerManagedEncryption, as: GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption)

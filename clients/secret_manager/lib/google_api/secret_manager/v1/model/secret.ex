@@ -33,13 +33,13 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :replication => GoogleApi.SecretManager.V1.Model.Replication.t(),
-          :topics => list(GoogleApi.SecretManager.V1.Model.Topic.t()),
-          :ttl => String.t()
+          :createTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :replication => GoogleApi.SecretManager.V1.Model.Replication.t() | nil,
+          :topics => list(GoogleApi.SecretManager.V1.Model.Topic.t()) | nil,
+          :ttl => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

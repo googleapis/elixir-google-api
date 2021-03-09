@@ -27,7 +27,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretPayload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t()
+          :data => String.t() | nil
         }
 
   field(:data)

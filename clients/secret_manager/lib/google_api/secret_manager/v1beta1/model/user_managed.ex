@@ -27,7 +27,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.UserManaged do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :replicas => list(GoogleApi.SecretManager.V1beta1.Model.Replica.t())
+          :replicas => list(GoogleApi.SecretManager.V1beta1.Model.Replica.t()) | nil
         }
 
   field(:replicas, as: GoogleApi.SecretManager.V1beta1.Model.Replica, type: :list)

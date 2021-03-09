@@ -27,7 +27,7 @@ defmodule GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyVersionName => String.t()
+          :kmsKeyVersionName => String.t() | nil
         }
 
   field(:kmsKeyVersionName)

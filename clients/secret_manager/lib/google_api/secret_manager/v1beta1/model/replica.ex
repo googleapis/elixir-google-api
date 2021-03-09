@@ -27,7 +27,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.Replica do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => String.t()
+          :location => String.t() | nil
         }
 
   field(:location)

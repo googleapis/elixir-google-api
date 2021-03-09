@@ -29,8 +29,8 @@ defmodule GoogleApi.SecretManager.V1.Model.ReplicaStatus do
 
   @type t :: %__MODULE__{
           :customerManagedEncryption =>
-            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t(),
-          :location => String.t()
+            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t() | nil,
+          :location => String.t() | nil
         }
 
   field(:customerManagedEncryption,

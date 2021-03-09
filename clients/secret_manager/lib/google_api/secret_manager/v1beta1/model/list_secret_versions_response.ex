@@ -29,9 +29,9 @@ defmodule GoogleApi.SecretManager.V1beta1.Model.ListSecretVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :totalSize => integer(),
-          :versions => list(GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t())
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil,
+          :versions => list(GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()) | nil
         }
 
   field(:nextPageToken)
