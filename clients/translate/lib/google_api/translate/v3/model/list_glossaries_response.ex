@@ -28,8 +28,8 @@ defmodule GoogleApi.Translate.V3.Model.ListGlossariesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :glossaries => list(GoogleApi.Translate.V3.Model.Glossary.t()),
-          :nextPageToken => String.t()
+          :glossaries => list(GoogleApi.Translate.V3.Model.Glossary.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:glossaries, as: GoogleApi.Translate.V3.Model.Glossary, type: :list)

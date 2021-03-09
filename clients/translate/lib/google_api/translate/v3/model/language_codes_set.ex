@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.LanguageCodesSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCodes => list(String.t())
+          :languageCodes => list(String.t()) | nil
         }
 
   field(:languageCodes, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Translate.V3.Model.ListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.Translate.V3.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.Translate.V3.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.Translate.V3.Model.Location, type: :list)

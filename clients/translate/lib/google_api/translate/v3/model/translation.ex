@@ -30,10 +30,10 @@ defmodule GoogleApi.Translate.V3.Model.Translation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectedLanguageCode => String.t(),
-          :glossaryConfig => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t(),
-          :model => String.t(),
-          :translatedText => String.t()
+          :detectedLanguageCode => String.t() | nil,
+          :glossaryConfig => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t() | nil,
+          :model => String.t() | nil,
+          :translatedText => String.t() | nil
         }
 
   field(:detectedLanguageCode)

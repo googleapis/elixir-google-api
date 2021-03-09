@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detections => list(list(GoogleApi.Translate.V2.Model.DetectionsResource.t()))
+          :detections => list(list(GoogleApi.Translate.V2.Model.DetectionsResource.t())) | nil
         }
 
   field(:detections, as: GoogleApi.Translate.V2.Model.DetectionsResource, type: :listlist)

@@ -38,11 +38,11 @@ defmodule GoogleApi.Translate.V2.Model.TranslateTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => String.t(),
-          :model => String.t(),
-          :q => list(String.t()),
-          :source => String.t(),
-          :target => String.t()
+          :format => String.t() | nil,
+          :model => String.t() | nil,
+          :q => list(String.t()) | nil,
+          :source => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:format)

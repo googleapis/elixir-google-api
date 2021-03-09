@@ -34,9 +34,9 @@ defmodule GoogleApi.Translate.V2.Model.TranslationsResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectedSourceLanguage => String.t(),
-          :model => String.t(),
-          :translatedText => String.t()
+          :detectedSourceLanguage => String.t() | nil,
+          :model => String.t() | nil,
+          :translatedText => String.t() | nil
         }
 
   field(:detectedSourceLanguage)

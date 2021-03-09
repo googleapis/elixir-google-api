@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.GlossaryInputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => GoogleApi.Translate.V3.Model.GcsSource.t()
+          :gcsSource => GoogleApi.Translate.V3.Model.GcsSource.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.Translate.V3.Model.GcsSource)

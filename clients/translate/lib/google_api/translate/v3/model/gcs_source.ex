@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.GcsSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputUri => String.t()
+          :inputUri => String.t() | nil
         }
 
   field(:inputUri)

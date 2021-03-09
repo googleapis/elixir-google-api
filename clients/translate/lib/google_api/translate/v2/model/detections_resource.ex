@@ -29,9 +29,9 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :isReliable => boolean(),
-          :language => String.t()
+          :confidence => number() | nil,
+          :isReliable => boolean() | nil,
+          :language => String.t() | nil
         }
 
   field(:confidence)

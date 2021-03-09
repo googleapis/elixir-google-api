@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.DetectLanguageResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languages => list(GoogleApi.Translate.V3.Model.DetectedLanguage.t())
+          :languages => list(GoogleApi.Translate.V3.Model.DetectedLanguage.t()) | nil
         }
 
   field(:languages, as: GoogleApi.Translate.V3.Model.DetectedLanguage, type: :list)

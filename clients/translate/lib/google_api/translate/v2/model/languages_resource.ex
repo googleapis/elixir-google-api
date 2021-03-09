@@ -30,8 +30,8 @@ defmodule GoogleApi.Translate.V2.Model.LanguagesResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :language => String.t(),
-          :name => String.t()
+          :language => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:language)

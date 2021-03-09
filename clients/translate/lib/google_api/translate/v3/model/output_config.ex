@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.OutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsDestination => GoogleApi.Translate.V3.Model.GcsDestination.t()
+          :gcsDestination => GoogleApi.Translate.V3.Model.GcsDestination.t() | nil
         }
 
   field(:gcsDestination, as: GoogleApi.Translate.V3.Model.GcsDestination)

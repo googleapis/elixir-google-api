@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V2.Model.TranslationsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :translations => list(GoogleApi.Translate.V2.Model.TranslationsResource.t())
+          :translations => list(GoogleApi.Translate.V2.Model.TranslationsResource.t()) | nil
         }
 
   field(:translations, as: GoogleApi.Translate.V2.Model.TranslationsResource, type: :list)
