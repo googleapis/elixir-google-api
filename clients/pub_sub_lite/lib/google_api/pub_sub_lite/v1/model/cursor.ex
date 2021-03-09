@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.Cursor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :offset => String.t()
+          :offset => String.t() | nil
         }
 
   field(:offset)

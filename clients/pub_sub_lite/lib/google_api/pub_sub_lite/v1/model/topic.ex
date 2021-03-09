@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSubLite.V1.Model.Topic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :partitionConfig => GoogleApi.PubSubLite.V1.Model.PartitionConfig.t(),
-          :retentionConfig => GoogleApi.PubSubLite.V1.Model.RetentionConfig.t()
+          :name => String.t() | nil,
+          :partitionConfig => GoogleApi.PubSubLite.V1.Model.PartitionConfig.t() | nil,
+          :retentionConfig => GoogleApi.PubSubLite.V1.Model.RetentionConfig.t() | nil
         }
 
   field(:name)

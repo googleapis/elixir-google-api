@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSubLite.V1.Model.ListTopicsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :topics => list(GoogleApi.PubSubLite.V1.Model.Topic.t())
+          :nextPageToken => String.t() | nil,
+          :topics => list(GoogleApi.PubSubLite.V1.Model.Topic.t()) | nil
         }
 
   field(:nextPageToken)

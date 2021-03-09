@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.ComputeHeadCursorResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t()
+          :headCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t() | nil
         }
 
   field(:headCursor, as: GoogleApi.PubSubLite.V1.Model.Cursor)
