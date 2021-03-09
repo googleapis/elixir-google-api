@@ -32,12 +32,12 @@ defmodule GoogleApi.People.V1.Model.ImClient do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedProtocol => String.t(),
-          :formattedType => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :protocol => String.t(),
-          :type => String.t(),
-          :username => String.t()
+          :formattedProtocol => String.t() | nil,
+          :formattedType => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :protocol => String.t() | nil,
+          :type => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:formattedProtocol)

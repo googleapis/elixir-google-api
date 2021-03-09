@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.SearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :person => GoogleApi.People.V1.Model.Person.t()
+          :person => GoogleApi.People.V1.Model.Person.t() | nil
         }
 
   field(:person, as: GoogleApi.People.V1.Model.Person)

@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleted => boolean(),
-          :updateTime => DateTime.t()
+          :deleted => boolean() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:deleted)

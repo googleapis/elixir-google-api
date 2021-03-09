@@ -40,20 +40,20 @@ defmodule GoogleApi.People.V1.Model.Organization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :current => boolean(),
-          :department => String.t(),
-          :domain => String.t(),
-          :endDate => GoogleApi.People.V1.Model.Date.t(),
-          :formattedType => String.t(),
-          :jobDescription => String.t(),
-          :location => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :name => String.t(),
-          :phoneticName => String.t(),
-          :startDate => GoogleApi.People.V1.Model.Date.t(),
-          :symbol => String.t(),
-          :title => String.t(),
-          :type => String.t()
+          :current => boolean() | nil,
+          :department => String.t() | nil,
+          :domain => String.t() | nil,
+          :endDate => GoogleApi.People.V1.Model.Date.t() | nil,
+          :formattedType => String.t() | nil,
+          :jobDescription => String.t() | nil,
+          :location => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :name => String.t() | nil,
+          :phoneticName => String.t() | nil,
+          :startDate => GoogleApi.People.V1.Model.Date.t() | nil,
+          :symbol => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:current)

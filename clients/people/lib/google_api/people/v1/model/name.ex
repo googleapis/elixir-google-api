@@ -41,21 +41,21 @@ defmodule GoogleApi.People.V1.Model.Name do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :displayNameLastFirst => String.t(),
-          :familyName => String.t(),
-          :givenName => String.t(),
-          :honorificPrefix => String.t(),
-          :honorificSuffix => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :middleName => String.t(),
-          :phoneticFamilyName => String.t(),
-          :phoneticFullName => String.t(),
-          :phoneticGivenName => String.t(),
-          :phoneticHonorificPrefix => String.t(),
-          :phoneticHonorificSuffix => String.t(),
-          :phoneticMiddleName => String.t(),
-          :unstructuredName => String.t()
+          :displayName => String.t() | nil,
+          :displayNameLastFirst => String.t() | nil,
+          :familyName => String.t() | nil,
+          :givenName => String.t() | nil,
+          :honorificPrefix => String.t() | nil,
+          :honorificSuffix => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :middleName => String.t() | nil,
+          :phoneticFamilyName => String.t() | nil,
+          :phoneticFullName => String.t() | nil,
+          :phoneticGivenName => String.t() | nil,
+          :phoneticHonorificPrefix => String.t() | nil,
+          :phoneticHonorificSuffix => String.t() | nil,
+          :phoneticMiddleName => String.t() | nil,
+          :unstructuredName => String.t() | nil
         }
 
   field(:displayName)

@@ -30,10 +30,10 @@ defmodule GoogleApi.People.V1.Model.Event do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.People.V1.Model.Date.t(),
-          :formattedType => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :type => String.t()
+          :date => GoogleApi.People.V1.Model.Date.t() | nil,
+          :formattedType => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:date, as: GoogleApi.People.V1.Model.Date)

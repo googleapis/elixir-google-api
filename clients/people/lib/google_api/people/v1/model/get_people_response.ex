@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.GetPeopleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.People.V1.Model.PersonResponse.t())
+          :responses => list(GoogleApi.People.V1.Model.PersonResponse.t()) | nil
         }
 
   field(:responses, as: GoogleApi.People.V1.Model.PersonResponse, type: :list)

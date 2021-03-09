@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.DomainMembership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inViewerDomain => boolean()
+          :inViewerDomain => boolean() | nil
         }
 
   field(:inViewerDomain)

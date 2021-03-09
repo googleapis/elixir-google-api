@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.Birthday do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.People.V1.Model.Date.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :text => String.t()
+          :date => GoogleApi.People.V1.Model.Date.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:date, as: GoogleApi.People.V1.Model.Date)

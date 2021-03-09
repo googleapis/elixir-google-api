@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.Membership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroupMembership => GoogleApi.People.V1.Model.ContactGroupMembership.t(),
-          :domainMembership => GoogleApi.People.V1.Model.DomainMembership.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t()
+          :contactGroupMembership => GoogleApi.People.V1.Model.ContactGroupMembership.t() | nil,
+          :domainMembership => GoogleApi.People.V1.Model.DomainMembership.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil
         }
 
   field(:contactGroupMembership, as: GoogleApi.People.V1.Model.ContactGroupMembership)

@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.UpdateContactGroupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t(),
-          :readGroupFields => String.t(),
-          :updateGroupFields => String.t()
+          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t() | nil,
+          :readGroupFields => String.t() | nil,
+          :updateGroupFields => String.t() | nil
         }
 
   field(:contactGroup, as: GoogleApi.People.V1.Model.ContactGroup)

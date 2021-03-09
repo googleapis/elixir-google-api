@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.RelationshipInterest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedValue => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :formattedValue => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:formattedValue)

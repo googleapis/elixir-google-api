@@ -30,10 +30,10 @@ defmodule GoogleApi.People.V1.Model.Gender do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressMeAs => String.t(),
-          :formattedValue => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :addressMeAs => String.t() | nil,
+          :formattedValue => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:addressMeAs)

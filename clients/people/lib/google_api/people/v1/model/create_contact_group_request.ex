@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.CreateContactGroupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t(),
-          :readGroupFields => String.t()
+          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t() | nil,
+          :readGroupFields => String.t() | nil
         }
 
   field(:contactGroup, as: GoogleApi.People.V1.Model.ContactGroup)

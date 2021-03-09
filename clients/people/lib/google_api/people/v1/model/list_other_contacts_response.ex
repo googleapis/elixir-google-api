@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.ListOtherContactsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :nextSyncToken => String.t(),
-          :otherContacts => list(GoogleApi.People.V1.Model.Person.t())
+          :nextPageToken => String.t() | nil,
+          :nextSyncToken => String.t() | nil,
+          :otherContacts => list(GoogleApi.People.V1.Model.Person.t()) | nil
         }
 
   field(:nextPageToken)

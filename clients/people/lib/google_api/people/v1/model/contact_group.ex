@@ -35,15 +35,15 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientData => list(GoogleApi.People.V1.Model.GroupClientData.t()),
-          :etag => String.t(),
-          :formattedName => String.t(),
-          :groupType => String.t(),
-          :memberCount => integer(),
-          :memberResourceNames => list(String.t()),
-          :metadata => GoogleApi.People.V1.Model.ContactGroupMetadata.t(),
-          :name => String.t(),
-          :resourceName => String.t()
+          :clientData => list(GoogleApi.People.V1.Model.GroupClientData.t()) | nil,
+          :etag => String.t() | nil,
+          :formattedName => String.t() | nil,
+          :groupType => String.t() | nil,
+          :memberCount => integer() | nil,
+          :memberResourceNames => list(String.t()) | nil,
+          :metadata => GoogleApi.People.V1.Model.ContactGroupMetadata.t() | nil,
+          :name => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:clientData, as: GoogleApi.People.V1.Model.GroupClientData, type: :list)

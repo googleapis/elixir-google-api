@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.Occupation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:metadata, as: GoogleApi.People.V1.Model.FieldMetadata)

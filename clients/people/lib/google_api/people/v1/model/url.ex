@@ -30,10 +30,10 @@ defmodule GoogleApi.People.V1.Model.Url do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedType => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :type => String.t(),
-          :value => String.t()
+          :formattedType => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:formattedType)

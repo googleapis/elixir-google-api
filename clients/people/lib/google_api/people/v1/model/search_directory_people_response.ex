@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.SearchDirectoryPeopleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :people => list(GoogleApi.People.V1.Model.Person.t()),
-          :totalSize => integer()
+          :nextPageToken => String.t() | nil,
+          :people => list(GoogleApi.People.V1.Model.Person.t()) | nil,
+          :totalSize => integer() | nil
         }
 
   field(:nextPageToken)

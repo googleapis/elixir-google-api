@@ -31,11 +31,11 @@ defmodule GoogleApi.People.V1.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :profileMetadata => GoogleApi.People.V1.Model.ProfileMetadata.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :profileMetadata => GoogleApi.People.V1.Model.ProfileMetadata.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:etag)

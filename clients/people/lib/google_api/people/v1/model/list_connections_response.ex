@@ -31,11 +31,11 @@ defmodule GoogleApi.People.V1.Model.ListConnectionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connections => list(GoogleApi.People.V1.Model.Person.t()),
-          :nextPageToken => String.t(),
-          :nextSyncToken => String.t(),
-          :totalItems => integer(),
-          :totalPeople => integer()
+          :connections => list(GoogleApi.People.V1.Model.Person.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :nextSyncToken => String.t() | nil,
+          :totalItems => integer() | nil,
+          :totalPeople => integer() | nil
         }
 
   field(:connections, as: GoogleApi.People.V1.Model.Person, type: :list)

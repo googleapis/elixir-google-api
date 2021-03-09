@@ -30,10 +30,10 @@ defmodule GoogleApi.People.V1.Model.PersonResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpStatusCode => integer(),
-          :person => GoogleApi.People.V1.Model.Person.t(),
-          :requestedResourceName => String.t(),
-          :status => GoogleApi.People.V1.Model.Status.t()
+          :httpStatusCode => integer() | nil,
+          :person => GoogleApi.People.V1.Model.Person.t() | nil,
+          :requestedResourceName => String.t() | nil,
+          :status => GoogleApi.People.V1.Model.Status.t() | nil
         }
 
   field(:httpStatusCode)

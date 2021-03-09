@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceNamesToAdd => list(String.t()),
-          :resourceNamesToRemove => list(String.t())
+          :resourceNamesToAdd => list(String.t()) | nil,
+          :resourceNamesToRemove => list(String.t()) | nil
         }
 
   field(:resourceNamesToAdd, type: :list)
