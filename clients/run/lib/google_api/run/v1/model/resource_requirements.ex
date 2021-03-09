@@ -28,8 +28,8 @@ defmodule GoogleApi.Run.V1.Model.ResourceRequirements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limits => map(),
-          :requests => map()
+          :limits => map() | nil,
+          :requests => map() | nil
         }
 
   field(:limits, type: :map)

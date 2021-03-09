@@ -29,9 +29,9 @@ defmodule GoogleApi.Run.V1.Model.SecretEnvSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :localObjectReference => GoogleApi.Run.V1.Model.LocalObjectReference.t(),
-          :name => String.t(),
-          :optional => boolean()
+          :localObjectReference => GoogleApi.Run.V1.Model.LocalObjectReference.t() | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:localObjectReference, as: GoogleApi.Run.V1.Model.LocalObjectReference)

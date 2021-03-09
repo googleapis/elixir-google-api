@@ -29,9 +29,9 @@ defmodule GoogleApi.Run.V1.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configMap => GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t(),
-          :name => String.t(),
-          :secret => GoogleApi.Run.V1.Model.SecretVolumeSource.t()
+          :configMap => GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t() | nil,
+          :name => String.t() | nil,
+          :secret => GoogleApi.Run.V1.Model.SecretVolumeSource.t() | nil
         }
 
   field(:configMap, as: GoogleApi.Run.V1.Model.ConfigMapVolumeSource)

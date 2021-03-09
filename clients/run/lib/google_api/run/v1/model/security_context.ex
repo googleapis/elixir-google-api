@@ -27,7 +27,7 @@ defmodule GoogleApi.Run.V1.Model.SecurityContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :runAsUser => integer()
+          :runAsUser => integer() | nil
         }
 
   field(:runAsUser)

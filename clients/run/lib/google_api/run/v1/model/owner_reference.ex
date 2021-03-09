@@ -32,12 +32,12 @@ defmodule GoogleApi.Run.V1.Model.OwnerReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :blockOwnerDeletion => boolean(),
-          :controller => boolean(),
-          :kind => String.t(),
-          :name => String.t(),
-          :uid => String.t()
+          :apiVersion => String.t() | nil,
+          :blockOwnerDeletion => boolean() | nil,
+          :controller => boolean() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:apiVersion)

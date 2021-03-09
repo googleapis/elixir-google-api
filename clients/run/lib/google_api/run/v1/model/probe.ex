@@ -34,14 +34,14 @@ defmodule GoogleApi.Run.V1.Model.Probe do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exec => GoogleApi.Run.V1.Model.ExecAction.t(),
-          :failureThreshold => integer(),
-          :httpGet => GoogleApi.Run.V1.Model.HTTPGetAction.t(),
-          :initialDelaySeconds => integer(),
-          :periodSeconds => integer(),
-          :successThreshold => integer(),
-          :tcpSocket => GoogleApi.Run.V1.Model.TCPSocketAction.t(),
-          :timeoutSeconds => integer()
+          :exec => GoogleApi.Run.V1.Model.ExecAction.t() | nil,
+          :failureThreshold => integer() | nil,
+          :httpGet => GoogleApi.Run.V1.Model.HTTPGetAction.t() | nil,
+          :initialDelaySeconds => integer() | nil,
+          :periodSeconds => integer() | nil,
+          :successThreshold => integer() | nil,
+          :tcpSocket => GoogleApi.Run.V1.Model.TCPSocketAction.t() | nil,
+          :timeoutSeconds => integer() | nil
         }
 
   field(:exec, as: GoogleApi.Run.V1.Model.ExecAction)

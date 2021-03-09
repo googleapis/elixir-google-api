@@ -31,11 +31,11 @@ defmodule GoogleApi.Run.V1.Model.ListRoutesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :items => list(GoogleApi.Run.V1.Model.Route.t()),
-          :kind => String.t(),
-          :metadata => GoogleApi.Run.V1.Model.ListMeta.t(),
-          :unreachable => list(String.t())
+          :apiVersion => String.t() | nil,
+          :items => list(GoogleApi.Run.V1.Model.Route.t()) | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.Run.V1.Model.ListMeta.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:apiVersion)

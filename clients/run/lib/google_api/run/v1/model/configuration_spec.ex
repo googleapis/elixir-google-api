@@ -27,7 +27,7 @@ defmodule GoogleApi.Run.V1.Model.ConfigurationSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :template => GoogleApi.Run.V1.Model.RevisionTemplate.t()
+          :template => GoogleApi.Run.V1.Model.RevisionTemplate.t() | nil
         }
 
   field(:template, as: GoogleApi.Run.V1.Model.RevisionTemplate)

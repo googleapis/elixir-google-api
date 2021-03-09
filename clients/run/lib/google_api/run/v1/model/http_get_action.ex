@@ -30,10 +30,10 @@ defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :httpHeaders => list(GoogleApi.Run.V1.Model.HTTPHeader.t()),
-          :path => String.t(),
-          :scheme => String.t()
+          :host => String.t() | nil,
+          :httpHeaders => list(GoogleApi.Run.V1.Model.HTTPHeader.t()) | nil,
+          :path => String.t() | nil,
+          :scheme => String.t() | nil
         }
 
   field(:host)

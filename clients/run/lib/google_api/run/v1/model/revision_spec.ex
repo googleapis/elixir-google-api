@@ -31,11 +31,11 @@ defmodule GoogleApi.Run.V1.Model.RevisionSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerConcurrency => integer(),
-          :containers => list(GoogleApi.Run.V1.Model.Container.t()),
-          :serviceAccountName => String.t(),
-          :timeoutSeconds => integer(),
-          :volumes => list(GoogleApi.Run.V1.Model.Volume.t())
+          :containerConcurrency => integer() | nil,
+          :containers => list(GoogleApi.Run.V1.Model.Container.t()) | nil,
+          :serviceAccountName => String.t() | nil,
+          :timeoutSeconds => integer() | nil,
+          :volumes => list(GoogleApi.Run.V1.Model.Volume.t()) | nil
         }
 
   field(:containerConcurrency)

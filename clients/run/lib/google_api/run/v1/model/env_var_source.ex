@@ -28,8 +28,8 @@ defmodule GoogleApi.Run.V1.Model.EnvVarSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configMapKeyRef => GoogleApi.Run.V1.Model.ConfigMapKeySelector.t(),
-          :secretKeyRef => GoogleApi.Run.V1.Model.SecretKeySelector.t()
+          :configMapKeyRef => GoogleApi.Run.V1.Model.ConfigMapKeySelector.t() | nil,
+          :secretKeyRef => GoogleApi.Run.V1.Model.SecretKeySelector.t() | nil
         }
 
   field(:configMapKeyRef, as: GoogleApi.Run.V1.Model.ConfigMapKeySelector)

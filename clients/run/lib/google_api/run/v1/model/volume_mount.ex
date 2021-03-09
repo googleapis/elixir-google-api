@@ -30,10 +30,10 @@ defmodule GoogleApi.Run.V1.Model.VolumeMount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mountPath => String.t(),
-          :name => String.t(),
-          :readOnly => boolean(),
-          :subPath => String.t()
+          :mountPath => String.t() | nil,
+          :name => String.t() | nil,
+          :readOnly => boolean() | nil,
+          :subPath => String.t() | nil
         }
 
   field(:mountPath)

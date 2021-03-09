@@ -33,13 +33,13 @@ defmodule GoogleApi.Run.V1.Model.ServiceStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Run.V1.Model.Addressable.t(),
-          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()),
-          :latestCreatedRevisionName => String.t(),
-          :latestReadyRevisionName => String.t(),
-          :observedGeneration => integer(),
-          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()),
-          :url => String.t()
+          :address => GoogleApi.Run.V1.Model.Addressable.t() | nil,
+          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
+          :latestCreatedRevisionName => String.t() | nil,
+          :latestReadyRevisionName => String.t() | nil,
+          :observedGeneration => integer() | nil,
+          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Run.V1.Model.Addressable)
