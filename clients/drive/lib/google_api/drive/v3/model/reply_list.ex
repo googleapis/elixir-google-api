@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.ReplyList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :replies => list(GoogleApi.Drive.V3.Model.Reply.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :replies => list(GoogleApi.Drive.V3.Model.Reply.t()) | nil
         }
 
   field(:kind)

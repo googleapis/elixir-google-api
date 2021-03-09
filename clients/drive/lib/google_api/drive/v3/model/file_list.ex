@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.FileList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.Drive.V3.Model.File.t()),
-          :incompleteSearch => boolean(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :files => list(GoogleApi.Drive.V3.Model.File.t()) | nil,
+          :incompleteSearch => boolean() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:files, as: GoogleApi.Drive.V3.Model.File, type: :list)

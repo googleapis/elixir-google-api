@@ -28,8 +28,8 @@ defmodule GoogleApi.Drive.V3.Model.FileShortcutDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetId => String.t(),
-          :targetMimeType => String.t()
+          :targetId => String.t() | nil,
+          :targetMimeType => String.t() | nil
         }
 
   field(:targetId)

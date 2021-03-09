@@ -38,18 +38,18 @@ defmodule GoogleApi.Drive.V3.Model.Comment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :anchor => String.t(),
-          :author => GoogleApi.Drive.V3.Model.User.t(),
-          :content => String.t(),
-          :createdTime => DateTime.t(),
-          :deleted => boolean(),
-          :htmlContent => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :modifiedTime => DateTime.t(),
-          :quotedFileContent => GoogleApi.Drive.V3.Model.CommentQuotedFileContent.t(),
-          :replies => list(GoogleApi.Drive.V3.Model.Reply.t()),
-          :resolved => boolean()
+          :anchor => String.t() | nil,
+          :author => GoogleApi.Drive.V3.Model.User.t() | nil,
+          :content => String.t() | nil,
+          :createdTime => DateTime.t() | nil,
+          :deleted => boolean() | nil,
+          :htmlContent => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :modifiedTime => DateTime.t() | nil,
+          :quotedFileContent => GoogleApi.Drive.V3.Model.CommentQuotedFileContent.t() | nil,
+          :replies => list(GoogleApi.Drive.V3.Model.Reply.t()) | nil,
+          :resolved => boolean() | nil
         }
 
   field(:anchor)

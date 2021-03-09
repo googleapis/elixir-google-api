@@ -49,7 +49,10 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec drive_comments_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_comments_create(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +103,7 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec drive_comments_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def drive_comments_delete(connection, file_id, comment_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -152,7 +155,10 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec drive_comments_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_comments_get(connection, file_id, comment_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -207,7 +213,10 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec drive_comments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.CommentList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.CommentList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_comments_list(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -262,7 +271,10 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
   *   `{:error, info}` on failure
   """
   @spec drive_comments_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_comments_update(connection, file_id, comment_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

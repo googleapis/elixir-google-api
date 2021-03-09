@@ -37,10 +37,10 @@ defmodule GoogleApi.Drive.V3.Model.PermissionPermissionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inherited => boolean(),
-          :inheritedFrom => String.t(),
-          :permissionType => String.t(),
-          :role => String.t()
+          :inherited => boolean() | nil,
+          :inheritedFrom => String.t() | nil,
+          :permissionType => String.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:inherited)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Drive.V3.Connection do
       # See, edit, create, and delete all of your Google Drive files
       "https://www.googleapis.com/auth/drive",
 
-      # View and manage its own configuration data in your Google Drive
+      # See, create, and delete its own configuration data in your Google Drive
       "https://www.googleapis.com/auth/drive.appdata",
 
       # View and manage Google Drive files and folders that you have opened or created with this app
@@ -36,7 +36,7 @@ defmodule GoogleApi.Drive.V3.Connection do
       # View and manage metadata of files in your Google Drive
       "https://www.googleapis.com/auth/drive.metadata",
 
-      # View metadata for files in your Google Drive
+      # See information about your Google Drive files
       "https://www.googleapis.com/auth/drive.metadata.readonly",
 
       # View the photos, videos and albums in your Google Photos

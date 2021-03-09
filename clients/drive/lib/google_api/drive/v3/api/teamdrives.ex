@@ -49,7 +49,10 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   *   `{:error, info}` on failure
   """
   @spec drive_teamdrives_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_teamdrives_create(connection, request_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -98,7 +101,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   *   `{:error, info}` on failure
   """
   @spec drive_teamdrives_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def drive_teamdrives_delete(connection, team_drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -148,7 +151,10 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   *   `{:error, info}` on failure
   """
   @spec drive_teamdrives_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_teamdrives_get(connection, team_drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -203,6 +209,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   @spec drive_teamdrives_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.TeamDriveList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def drive_teamdrives_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -256,7 +263,10 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   *   `{:error, info}` on failure
   """
   @spec drive_teamdrives_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.TeamDrive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_teamdrives_update(connection, team_drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

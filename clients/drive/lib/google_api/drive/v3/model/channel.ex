@@ -30,22 +30,22 @@ defmodule GoogleApi.Drive.V3.Model.Channel do
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - A version-specific identifier for the watched resource.
   *   `token` (*type:* `String.t`, *default:* `nil`) - An arbitrary string delivered to the target address with each notification delivered over this channel. Optional.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of delivery mechanism used for this channel.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of delivery mechanism used for this channel. Valid values are "web_hook" (or "webhook"). Both values refer to a channel where Http requests are used to deliver messages.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :expiration => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :params => map(),
-          :payload => boolean(),
-          :resourceId => String.t(),
-          :resourceUri => String.t(),
-          :token => String.t(),
-          :type => String.t()
+          :address => String.t() | nil,
+          :expiration => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :params => map() | nil,
+          :payload => boolean() | nil,
+          :resourceId => String.t() | nil,
+          :resourceUri => String.t() | nil,
+          :token => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:address)

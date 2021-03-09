@@ -47,7 +47,10 @@ defmodule GoogleApi.Drive.V3.Api.About do
   *   `{:error, info}` on failure
   """
   @spec drive_about_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.About.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.About.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_about_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

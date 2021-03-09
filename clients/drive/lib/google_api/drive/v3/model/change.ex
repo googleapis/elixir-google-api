@@ -37,17 +37,17 @@ defmodule GoogleApi.Drive.V3.Model.Change do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changeType => String.t(),
-          :drive => GoogleApi.Drive.V3.Model.Drive.t(),
-          :driveId => String.t(),
-          :file => GoogleApi.Drive.V3.Model.File.t(),
-          :fileId => String.t(),
-          :kind => String.t(),
-          :removed => boolean(),
-          :teamDrive => GoogleApi.Drive.V3.Model.TeamDrive.t(),
-          :teamDriveId => String.t(),
-          :time => DateTime.t(),
-          :type => String.t()
+          :changeType => String.t() | nil,
+          :drive => GoogleApi.Drive.V3.Model.Drive.t() | nil,
+          :driveId => String.t() | nil,
+          :file => GoogleApi.Drive.V3.Model.File.t() | nil,
+          :fileId => String.t() | nil,
+          :kind => String.t() | nil,
+          :removed => boolean() | nil,
+          :teamDrive => GoogleApi.Drive.V3.Model.TeamDrive.t() | nil,
+          :teamDriveId => String.t() | nil,
+          :time => DateTime.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:changeType)

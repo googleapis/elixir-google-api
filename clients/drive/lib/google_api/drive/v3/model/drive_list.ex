@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.DriveList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drives => list(GoogleApi.Drive.V3.Model.Drive.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :drives => list(GoogleApi.Drive.V3.Model.Drive.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:drives, as: GoogleApi.Drive.V3.Model.Drive, type: :list)

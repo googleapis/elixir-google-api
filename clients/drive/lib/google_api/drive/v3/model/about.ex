@@ -39,19 +39,19 @@ defmodule GoogleApi.Drive.V3.Model.About do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appInstalled => boolean(),
-          :canCreateDrives => boolean(),
-          :canCreateTeamDrives => boolean(),
-          :driveThemes => list(GoogleApi.Drive.V3.Model.AboutDriveThemes.t()),
-          :exportFormats => map(),
-          :folderColorPalette => list(String.t()),
-          :importFormats => map(),
-          :kind => String.t(),
-          :maxImportSizes => map(),
-          :maxUploadSize => String.t(),
-          :storageQuota => GoogleApi.Drive.V3.Model.AboutStorageQuota.t(),
-          :teamDriveThemes => list(GoogleApi.Drive.V3.Model.AboutTeamDriveThemes.t()),
-          :user => GoogleApi.Drive.V3.Model.User.t()
+          :appInstalled => boolean() | nil,
+          :canCreateDrives => boolean() | nil,
+          :canCreateTeamDrives => boolean() | nil,
+          :driveThemes => list(GoogleApi.Drive.V3.Model.AboutDriveThemes.t()) | nil,
+          :exportFormats => map() | nil,
+          :folderColorPalette => list(String.t()) | nil,
+          :importFormats => map() | nil,
+          :kind => String.t() | nil,
+          :maxImportSizes => map() | nil,
+          :maxUploadSize => String.t() | nil,
+          :storageQuota => GoogleApi.Drive.V3.Model.AboutStorageQuota.t() | nil,
+          :teamDriveThemes => list(GoogleApi.Drive.V3.Model.AboutTeamDriveThemes.t()) | nil,
+          :user => GoogleApi.Drive.V3.Model.User.t() | nil
         }
 
   field(:appInstalled)

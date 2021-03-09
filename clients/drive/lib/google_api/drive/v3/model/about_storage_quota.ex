@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.AboutStorageQuota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limit => String.t(),
-          :usage => String.t(),
-          :usageInDrive => String.t(),
-          :usageInDriveTrash => String.t()
+          :limit => String.t() | nil,
+          :usage => String.t() | nil,
+          :usageInDrive => String.t() | nil,
+          :usageInDriveTrash => String.t() | nil
         }
 
   field(:limit)

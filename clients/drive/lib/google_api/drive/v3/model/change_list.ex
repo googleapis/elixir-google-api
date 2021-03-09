@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.ChangeList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changes => list(GoogleApi.Drive.V3.Model.Change.t()),
-          :kind => String.t(),
-          :newStartPageToken => String.t(),
-          :nextPageToken => String.t()
+          :changes => list(GoogleApi.Drive.V3.Model.Change.t()) | nil,
+          :kind => String.t() | nil,
+          :newStartPageToken => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:changes, as: GoogleApi.Drive.V3.Model.Change, type: :list)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Drive.V3.Model.TeamDrive do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundImageFile => GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile.t(),
-          :backgroundImageLink => String.t(),
-          :capabilities => GoogleApi.Drive.V3.Model.TeamDriveCapabilities.t(),
-          :colorRgb => String.t(),
-          :createdTime => DateTime.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :restrictions => GoogleApi.Drive.V3.Model.TeamDriveRestrictions.t(),
-          :themeId => String.t()
+          :backgroundImageFile => GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile.t() | nil,
+          :backgroundImageLink => String.t() | nil,
+          :capabilities => GoogleApi.Drive.V3.Model.TeamDriveCapabilities.t() | nil,
+          :colorRgb => String.t() | nil,
+          :createdTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :restrictions => GoogleApi.Drive.V3.Model.TeamDriveRestrictions.t() | nil,
+          :themeId => String.t() | nil
         }
 
   field(:backgroundImageFile, as: GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile)

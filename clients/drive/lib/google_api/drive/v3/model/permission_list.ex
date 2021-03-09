@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.PermissionList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :permissions => list(GoogleApi.Drive.V3.Model.Permission.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :permissions => list(GoogleApi.Drive.V3.Model.Permission.t()) | nil
         }
 
   field(:kind)

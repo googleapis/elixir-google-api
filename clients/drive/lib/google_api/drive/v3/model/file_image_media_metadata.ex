@@ -47,27 +47,27 @@ defmodule GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aperture => number(),
-          :cameraMake => String.t(),
-          :cameraModel => String.t(),
-          :colorSpace => String.t(),
-          :exposureBias => number(),
-          :exposureMode => String.t(),
-          :exposureTime => number(),
-          :flashUsed => boolean(),
-          :focalLength => number(),
-          :height => integer(),
-          :isoSpeed => integer(),
-          :lens => String.t(),
-          :location => GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t(),
-          :maxApertureValue => number(),
-          :meteringMode => String.t(),
-          :rotation => integer(),
-          :sensor => String.t(),
-          :subjectDistance => integer(),
-          :time => String.t(),
-          :whiteBalance => String.t(),
-          :width => integer()
+          :aperture => number() | nil,
+          :cameraMake => String.t() | nil,
+          :cameraModel => String.t() | nil,
+          :colorSpace => String.t() | nil,
+          :exposureBias => number() | nil,
+          :exposureMode => String.t() | nil,
+          :exposureTime => number() | nil,
+          :flashUsed => boolean() | nil,
+          :focalLength => number() | nil,
+          :height => integer() | nil,
+          :isoSpeed => integer() | nil,
+          :lens => String.t() | nil,
+          :location => GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t() | nil,
+          :maxApertureValue => number() | nil,
+          :meteringMode => String.t() | nil,
+          :rotation => integer() | nil,
+          :sensor => String.t() | nil,
+          :subjectDistance => integer() | nil,
+          :time => String.t() | nil,
+          :whiteBalance => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:aperture)

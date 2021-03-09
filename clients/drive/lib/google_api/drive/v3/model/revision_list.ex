@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.RevisionList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :revisions => list(GoogleApi.Drive.V3.Model.Revision.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :revisions => list(GoogleApi.Drive.V3.Model.Revision.t()) | nil
         }
 
   field(:kind)

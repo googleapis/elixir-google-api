@@ -32,12 +32,12 @@ defmodule GoogleApi.Drive.V3.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :emailAddress => String.t(),
-          :kind => String.t(),
-          :me => boolean(),
-          :permissionId => String.t(),
-          :photoLink => String.t()
+          :displayName => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :kind => String.t() | nil,
+          :me => boolean() | nil,
+          :permissionId => String.t() | nil,
+          :photoLink => String.t() | nil
         }
 
   field(:displayName)

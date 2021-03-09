@@ -49,7 +49,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Drive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Drive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_create(connection, request_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -98,7 +101,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def drive_drives_delete(connection, drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -148,7 +151,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Drive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Drive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_get(connection, drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -198,7 +204,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_hide(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Drive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Drive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_hide(connection, drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -250,7 +259,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.DriveList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.DriveList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -301,7 +313,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_unhide(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Drive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Drive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_unhide(connection, drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -352,7 +367,10 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   *   `{:error, info}` on failure
   """
   @spec drive_drives_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Drive.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Drive.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_drives_update(connection, drive_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

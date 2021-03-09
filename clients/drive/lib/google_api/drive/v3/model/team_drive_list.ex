@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :teamDrives => list(GoogleApi.Drive.V3.Model.TeamDrive.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :teamDrives => list(GoogleApi.Drive.V3.Model.TeamDrive.t()) | nil
         }
 
   field(:kind)

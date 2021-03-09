@@ -53,6 +53,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   @spec drive_changes_get_start_page_token(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.StartPageToken.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def drive_changes_get_start_page_token(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,7 +117,10 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   *   `{:error, info}` on failure
   """
   @spec drive_changes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.ChangeList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.ChangeList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_changes_list(connection, page_token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -189,7 +193,10 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   *   `{:error, info}` on failure
   """
   @spec drive_changes_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_changes_watch(connection, page_token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

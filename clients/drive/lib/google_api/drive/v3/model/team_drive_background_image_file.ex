@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :width => number(),
-          :xCoordinate => number(),
-          :yCoordinate => number()
+          :id => String.t() | nil,
+          :width => number() | nil,
+          :xCoordinate => number() | nil,
+          :yCoordinate => number() | nil
         }
 
   field(:id)

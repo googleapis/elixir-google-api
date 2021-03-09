@@ -57,7 +57,10 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_permissions_create(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -119,7 +122,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def drive_permissions_delete(
         connection,
         file_id,
@@ -182,7 +185,10 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_permissions_get(connection, file_id, permission_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -243,6 +249,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   @spec drive_permissions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.PermissionList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def drive_permissions_list(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -305,7 +312,10 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def drive_permissions_update(
         connection,
         file_id,
