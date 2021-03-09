@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compilerError => boolean(),
-          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t()
+          :compilerError => boolean() | nil,
+          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t() | nil
         }
 
   field(:compilerError)

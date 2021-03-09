@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()),
-          :nextPageToken => String.t()
+          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:builtInVariable, as: GoogleApi.TagManager.V2.Model.BuiltInVariable, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.TagManager.V2.Model.QuickPreviewResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compilerError => boolean(),
-          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t(),
-          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t()
+          :compilerError => boolean() | nil,
+          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t() | nil,
+          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t() | nil
         }
 
   field(:compilerError)

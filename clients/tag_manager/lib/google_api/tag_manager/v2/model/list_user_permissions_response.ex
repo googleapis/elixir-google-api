@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :userPermission => list(GoogleApi.TagManager.V2.Model.UserPermission.t())
+          :nextPageToken => String.t() | nil,
+          :userPermission => list(GoogleApi.TagManager.V2.Model.UserPermission.t()) | nil
         }
 
   field(:nextPageToken)

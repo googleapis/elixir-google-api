@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mergeConflict => list(GoogleApi.TagManager.V2.Model.MergeConflict.t()),
-          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t()
+          :mergeConflict => list(GoogleApi.TagManager.V2.Model.MergeConflict.t()) | nil,
+          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t() | nil
         }
 
   field(:mergeConflict, as: GoogleApi.TagManager.V2.Model.MergeConflict, type: :list)

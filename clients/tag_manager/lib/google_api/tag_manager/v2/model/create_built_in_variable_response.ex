@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t())
+          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()) | nil
         }
 
   field(:builtInVariable, as: GoogleApi.TagManager.V2.Model.BuiltInVariable, type: :list)

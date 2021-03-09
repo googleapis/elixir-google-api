@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListFoldersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folder => list(GoogleApi.TagManager.V2.Model.Folder.t()),
-          :nextPageToken => String.t()
+          :folder => list(GoogleApi.TagManager.V2.Model.Folder.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:folder, as: GoogleApi.TagManager.V2.Model.Folder, type: :list)

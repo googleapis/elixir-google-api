@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerAccess do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerId => String.t(),
-          :permission => String.t()
+          :containerId => String.t() | nil,
+          :permission => String.t() | nil
         }
 
   field(:containerId)

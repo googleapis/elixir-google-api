@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertFolderResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folder => GoogleApi.TagManager.V2.Model.Folder.t()
+          :folder => GoogleApi.TagManager.V2.Model.Folder.t() | nil
         }
 
   field(:folder, as: GoogleApi.TagManager.V2.Model.Folder)

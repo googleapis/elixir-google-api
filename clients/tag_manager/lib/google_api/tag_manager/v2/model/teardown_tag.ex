@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.TeardownTag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stopTeardownOnFailure => boolean(),
-          :tagName => String.t()
+          :stopTeardownOnFailure => boolean() | nil,
+          :tagName => String.t() | nil
         }
 
   field(:stopTeardownOnFailure)

@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertTagResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tag => GoogleApi.TagManager.V2.Model.Tag.t()
+          :tag => GoogleApi.TagManager.V2.Model.Tag.t() | nil
         }
 
   field(:tag, as: GoogleApi.TagManager.V2.Model.Tag)

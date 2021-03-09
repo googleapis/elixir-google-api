@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ZoneBoundary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => list(GoogleApi.TagManager.V2.Model.Condition.t()),
-          :customEvaluationTriggerId => list(String.t())
+          :condition => list(GoogleApi.TagManager.V2.Model.Condition.t()) | nil,
+          :customEvaluationTriggerId => list(String.t()) | nil
         }
 
   field(:condition, as: GoogleApi.TagManager.V2.Model.Condition, type: :list)

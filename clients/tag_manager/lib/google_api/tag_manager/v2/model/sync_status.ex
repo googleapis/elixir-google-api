@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.SyncStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mergeConflict => boolean(),
-          :syncError => boolean()
+          :mergeConflict => boolean() | nil,
+          :syncError => boolean() | nil
         }
 
   field(:mergeConflict)

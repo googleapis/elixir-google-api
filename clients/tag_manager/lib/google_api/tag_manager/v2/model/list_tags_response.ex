@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListTagsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t())
+          :nextPageToken => String.t() | nil,
+          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()) | nil
         }
 
   field(:nextPageToken)

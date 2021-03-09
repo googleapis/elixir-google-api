@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => list(GoogleApi.TagManager.V2.Model.Account.t()),
-          :nextPageToken => String.t()
+          :account => list(GoogleApi.TagManager.V2.Model.Account.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:account, as: GoogleApi.TagManager.V2.Model.Account, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListContainersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :container => list(GoogleApi.TagManager.V2.Model.Container.t()),
-          :nextPageToken => String.t()
+          :container => list(GoogleApi.TagManager.V2.Model.Container.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:container, as: GoogleApi.TagManager.V2.Model.Container, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compilerError => boolean(),
-          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t(),
-          :newWorkspacePath => String.t(),
-          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t()
+          :compilerError => boolean() | nil,
+          :containerVersion => GoogleApi.TagManager.V2.Model.ContainerVersion.t() | nil,
+          :newWorkspacePath => String.t() | nil,
+          :syncStatus => GoogleApi.TagManager.V2.Model.SyncStatus.t() | nil
         }
 
   field(:compilerError)

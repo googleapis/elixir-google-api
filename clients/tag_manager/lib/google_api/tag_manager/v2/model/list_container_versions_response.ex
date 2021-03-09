@@ -29,8 +29,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse do
 
   @type t :: %__MODULE__{
           :containerVersionHeader =>
-            list(GoogleApi.TagManager.V2.Model.ContainerVersionHeader.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.TagManager.V2.Model.ContainerVersionHeader.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:containerVersionHeader,

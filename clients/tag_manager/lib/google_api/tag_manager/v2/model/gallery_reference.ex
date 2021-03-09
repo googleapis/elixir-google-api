@@ -32,12 +32,12 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :isModified => boolean(),
-          :owner => String.t(),
-          :repository => String.t(),
-          :signature => String.t(),
-          :version => String.t()
+          :host => String.t() | nil,
+          :isModified => boolean() | nil,
+          :owner => String.t() | nil,
+          :repository => String.t() | nil,
+          :signature => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:host)

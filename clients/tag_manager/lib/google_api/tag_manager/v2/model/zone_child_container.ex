@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ZoneChildContainer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nickname => String.t(),
-          :publicId => String.t()
+          :nickname => String.t() | nil,
+          :publicId => String.t() | nil
         }
 
   field(:nickname)

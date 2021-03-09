@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean()
+          :enabled => boolean() | nil
         }
 
   field(:enabled)

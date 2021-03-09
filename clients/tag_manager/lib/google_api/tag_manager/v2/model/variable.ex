@@ -43,23 +43,23 @@ defmodule GoogleApi.TagManager.V2.Model.Variable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :containerId => String.t(),
-          :disablingTriggerId => list(String.t()),
-          :enablingTriggerId => list(String.t()),
-          :fingerprint => String.t(),
-          :formatValue => GoogleApi.TagManager.V2.Model.VariableFormatValue.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
-          :parentFolderId => String.t(),
-          :path => String.t(),
-          :scheduleEndMs => String.t(),
-          :scheduleStartMs => String.t(),
-          :tagManagerUrl => String.t(),
-          :type => String.t(),
-          :variableId => String.t(),
-          :workspaceId => String.t()
+          :accountId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :disablingTriggerId => list(String.t()) | nil,
+          :enablingTriggerId => list(String.t()) | nil,
+          :fingerprint => String.t() | nil,
+          :formatValue => GoogleApi.TagManager.V2.Model.VariableFormatValue.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
+          :parentFolderId => String.t() | nil,
+          :path => String.t() | nil,
+          :scheduleEndMs => String.t() | nil,
+          :scheduleStartMs => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :type => String.t() | nil,
+          :variableId => String.t() | nil,
+          :workspaceId => String.t() | nil
         }
 
   field(:accountId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.AccountAccess do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permission => String.t()
+          :permission => String.t() | nil
         }
 
   field(:permission)

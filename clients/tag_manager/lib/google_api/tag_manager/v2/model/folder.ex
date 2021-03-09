@@ -35,15 +35,15 @@ defmodule GoogleApi.TagManager.V2.Model.Folder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :containerId => String.t(),
-          :fingerprint => String.t(),
-          :folderId => String.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :path => String.t(),
-          :tagManagerUrl => String.t(),
-          :workspaceId => String.t()
+          :accountId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :folderId => String.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :path => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :workspaceId => String.t() | nil
         }
 
   field(:accountId)

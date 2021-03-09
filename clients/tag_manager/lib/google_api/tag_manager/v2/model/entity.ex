@@ -32,12 +32,12 @@ defmodule GoogleApi.TagManager.V2.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changeStatus => String.t(),
-          :client => GoogleApi.TagManager.V2.Model.Client.t(),
-          :folder => GoogleApi.TagManager.V2.Model.Folder.t(),
-          :tag => GoogleApi.TagManager.V2.Model.Tag.t(),
-          :trigger => GoogleApi.TagManager.V2.Model.Trigger.t(),
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t()
+          :changeStatus => String.t() | nil,
+          :client => GoogleApi.TagManager.V2.Model.Client.t() | nil,
+          :folder => GoogleApi.TagManager.V2.Model.Folder.t() | nil,
+          :tag => GoogleApi.TagManager.V2.Model.Tag.t() | nil,
+          :trigger => GoogleApi.TagManager.V2.Model.Trigger.t() | nil,
+          :variable => GoogleApi.TagManager.V2.Model.Variable.t() | nil
         }
 
   field(:changeStatus)

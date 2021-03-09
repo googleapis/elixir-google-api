@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.MergeConflict do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityInBaseVersion => GoogleApi.TagManager.V2.Model.Entity.t(),
-          :entityInWorkspace => GoogleApi.TagManager.V2.Model.Entity.t()
+          :entityInBaseVersion => GoogleApi.TagManager.V2.Model.Entity.t() | nil,
+          :entityInWorkspace => GoogleApi.TagManager.V2.Model.Entity.t() | nil
         }
 
   field(:entityInBaseVersion, as: GoogleApi.TagManager.V2.Model.Entity)

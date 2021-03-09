@@ -31,11 +31,11 @@ defmodule GoogleApi.TagManager.V2.Model.VariableFormatValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseConversionType => String.t(),
-          :convertFalseToValue => GoogleApi.TagManager.V2.Model.Parameter.t(),
-          :convertNullToValue => GoogleApi.TagManager.V2.Model.Parameter.t(),
-          :convertTrueToValue => GoogleApi.TagManager.V2.Model.Parameter.t(),
-          :convertUndefinedToValue => GoogleApi.TagManager.V2.Model.Parameter.t()
+          :caseConversionType => String.t() | nil,
+          :convertFalseToValue => GoogleApi.TagManager.V2.Model.Parameter.t() | nil,
+          :convertNullToValue => GoogleApi.TagManager.V2.Model.Parameter.t() | nil,
+          :convertTrueToValue => GoogleApi.TagManager.V2.Model.Parameter.t() | nil,
+          :convertUndefinedToValue => GoogleApi.TagManager.V2.Model.Parameter.t() | nil
         }
 
   field(:caseConversionType)
