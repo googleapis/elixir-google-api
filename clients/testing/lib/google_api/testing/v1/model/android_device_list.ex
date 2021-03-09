@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidDeviceList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidDevices => list(GoogleApi.Testing.V1.Model.AndroidDevice.t())
+          :androidDevices => list(GoogleApi.Testing.V1.Model.AndroidDevice.t()) | nil
         }
 
   field(:androidDevices, as: GoogleApi.Testing.V1.Model.AndroidDevice, type: :list)

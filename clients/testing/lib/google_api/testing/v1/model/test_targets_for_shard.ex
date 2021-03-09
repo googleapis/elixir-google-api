@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.TestTargetsForShard do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testTargets => list(String.t())
+          :testTargets => list(String.t()) | nil
         }
 
   field(:testTargets, type: :list)

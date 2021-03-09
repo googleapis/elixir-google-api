@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.IosTestLoop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appBundleId => String.t(),
-          :appIpa => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :scenarios => list(integer())
+          :appBundleId => String.t() | nil,
+          :appIpa => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :scenarios => list(integer()) | nil
         }
 
   field(:appBundleId)

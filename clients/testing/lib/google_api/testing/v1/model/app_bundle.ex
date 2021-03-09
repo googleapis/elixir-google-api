@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.AppBundle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleLocation => GoogleApi.Testing.V1.Model.FileReference.t()
+          :bundleLocation => GoogleApi.Testing.V1.Model.FileReference.t() | nil
         }
 
   field(:bundleLocation, as: GoogleApi.Testing.V1.Model.FileReference)

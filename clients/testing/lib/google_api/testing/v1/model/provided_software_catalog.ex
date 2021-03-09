@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidxOrchestratorVersion => String.t(),
-          :orchestratorVersion => String.t()
+          :androidxOrchestratorVersion => String.t() | nil,
+          :orchestratorVersion => String.t() | nil
         }
 
   field(:androidxOrchestratorVersion)

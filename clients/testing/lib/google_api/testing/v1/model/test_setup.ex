@@ -34,14 +34,14 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.Testing.V1.Model.Account.t(),
-          :additionalApks => list(GoogleApi.Testing.V1.Model.Apk.t()),
-          :directoriesToPull => list(String.t()),
-          :dontAutograntPermissions => boolean(),
-          :environmentVariables => list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t()),
-          :filesToPush => list(GoogleApi.Testing.V1.Model.DeviceFile.t()),
-          :networkProfile => String.t(),
-          :systrace => GoogleApi.Testing.V1.Model.SystraceSetup.t()
+          :account => GoogleApi.Testing.V1.Model.Account.t() | nil,
+          :additionalApks => list(GoogleApi.Testing.V1.Model.Apk.t()) | nil,
+          :directoriesToPull => list(String.t()) | nil,
+          :dontAutograntPermissions => boolean() | nil,
+          :environmentVariables => list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t()) | nil,
+          :filesToPush => list(GoogleApi.Testing.V1.Model.DeviceFile.t()) | nil,
+          :networkProfile => String.t() | nil,
+          :systrace => GoogleApi.Testing.V1.Model.SystraceSetup.t() | nil
         }
 
   field(:account, as: GoogleApi.Testing.V1.Model.Account)

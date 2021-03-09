@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :launcherActivity => GoogleApi.Testing.V1.Model.LauncherActivityIntent.t(),
-          :startActivity => GoogleApi.Testing.V1.Model.StartActivityIntent.t(),
-          :timeout => String.t()
+          :launcherActivity => GoogleApi.Testing.V1.Model.LauncherActivityIntent.t() | nil,
+          :startActivity => GoogleApi.Testing.V1.Model.StartActivityIntent.t() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:launcherActivity, as: GoogleApi.Testing.V1.Model.LauncherActivityIntent)

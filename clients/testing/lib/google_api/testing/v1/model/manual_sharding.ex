@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.ManualSharding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testTargetsForShard => list(GoogleApi.Testing.V1.Model.TestTargetsForShard.t())
+          :testTargetsForShard => list(GoogleApi.Testing.V1.Model.TestTargetsForShard.t()) | nil
         }
 
   field(:testTargetsForShard, as: GoogleApi.Testing.V1.Model.TestTargetsForShard, type: :list)

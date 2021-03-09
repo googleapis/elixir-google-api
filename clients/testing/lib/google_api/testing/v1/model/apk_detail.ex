@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apkManifest => GoogleApi.Testing.V1.Model.ApkManifest.t()
+          :apkManifest => GoogleApi.Testing.V1.Model.ApkManifest.t() | nil
         }
 
   field(:apkManifest, as: GoogleApi.Testing.V1.Model.ApkManifest)

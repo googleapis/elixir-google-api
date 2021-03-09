@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.NetworkConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :downRule => GoogleApi.Testing.V1.Model.TrafficRule.t(),
-          :id => String.t(),
-          :upRule => GoogleApi.Testing.V1.Model.TrafficRule.t()
+          :downRule => GoogleApi.Testing.V1.Model.TrafficRule.t() | nil,
+          :id => String.t() | nil,
+          :upRule => GoogleApi.Testing.V1.Model.TrafficRule.t() | nil
         }
 
   field(:downRule, as: GoogleApi.Testing.V1.Model.TrafficRule)

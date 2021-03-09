@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.StartActivityIntent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :categories => list(String.t()),
-          :uri => String.t()
+          :action => String.t() | nil,
+          :categories => list(String.t()) | nil,
+          :uri => String.t() | nil
         }
 
   field(:action)

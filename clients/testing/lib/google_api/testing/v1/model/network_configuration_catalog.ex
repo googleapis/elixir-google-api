@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurations => list(GoogleApi.Testing.V1.Model.NetworkConfiguration.t())
+          :configurations => list(GoogleApi.Testing.V1.Model.NetworkConfiguration.t()) | nil
         }
 
   field(:configurations, as: GoogleApi.Testing.V1.Model.NetworkConfiguration, type: :list)

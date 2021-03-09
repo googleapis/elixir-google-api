@@ -41,21 +41,21 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brand => String.t(),
-          :codename => String.t(),
-          :form => String.t(),
-          :formFactor => String.t(),
-          :id => String.t(),
-          :lowFpsVideoRecording => boolean(),
-          :manufacturer => String.t(),
-          :name => String.t(),
-          :screenDensity => integer(),
-          :screenX => integer(),
-          :screenY => integer(),
-          :supportedAbis => list(String.t()),
-          :supportedVersionIds => list(String.t()),
-          :tags => list(String.t()),
-          :thumbnailUrl => String.t()
+          :brand => String.t() | nil,
+          :codename => String.t() | nil,
+          :form => String.t() | nil,
+          :formFactor => String.t() | nil,
+          :id => String.t() | nil,
+          :lowFpsVideoRecording => boolean() | nil,
+          :manufacturer => String.t() | nil,
+          :name => String.t() | nil,
+          :screenDensity => integer() | nil,
+          :screenX => integer() | nil,
+          :screenY => integer() | nil,
+          :supportedAbis => list(String.t()) | nil,
+          :supportedVersionIds => list(String.t()) | nil,
+          :tags => list(String.t()) | nil,
+          :thumbnailUrl => String.t() | nil
         }
 
   field(:brand)

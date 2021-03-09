@@ -33,13 +33,13 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationLabel => String.t(),
-          :intentFilters => list(GoogleApi.Testing.V1.Model.IntentFilter.t()),
-          :maxSdkVersion => integer(),
-          :minSdkVersion => integer(),
-          :packageName => String.t(),
-          :targetSdkVersion => integer(),
-          :usesPermission => list(String.t())
+          :applicationLabel => String.t() | nil,
+          :intentFilters => list(GoogleApi.Testing.V1.Model.IntentFilter.t()) | nil,
+          :maxSdkVersion => integer() | nil,
+          :minSdkVersion => integer() | nil,
+          :packageName => String.t() | nil,
+          :targetSdkVersion => integer() | nil,
+          :usesPermission => list(String.t()) | nil
         }
 
   field(:applicationLabel)

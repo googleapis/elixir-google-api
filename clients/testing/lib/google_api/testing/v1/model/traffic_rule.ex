@@ -31,11 +31,11 @@ defmodule GoogleApi.Testing.V1.Model.TrafficRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandwidth => number(),
-          :burst => number(),
-          :delay => String.t(),
-          :packetDuplicationRatio => number(),
-          :packetLossRatio => number()
+          :bandwidth => number() | nil,
+          :burst => number() | nil,
+          :delay => String.t() | nil,
+          :packetDuplicationRatio => number() | nil,
+          :packetLossRatio => number() | nil
         }
 
   field(:bandwidth)

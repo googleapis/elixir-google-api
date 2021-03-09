@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.Shard do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numShards => integer(),
-          :shardIndex => integer(),
-          :testTargetsForShard => GoogleApi.Testing.V1.Model.TestTargetsForShard.t()
+          :numShards => integer() | nil,
+          :shardIndex => integer() | nil,
+          :testTargetsForShard => GoogleApi.Testing.V1.Model.TestTargetsForShard.t() | nil
         }
 
   field(:numShards)

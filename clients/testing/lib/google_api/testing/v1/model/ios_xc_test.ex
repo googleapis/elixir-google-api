@@ -31,11 +31,11 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appBundleId => String.t(),
-          :testSpecialEntitlements => boolean(),
-          :testsZip => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :xcodeVersion => String.t(),
-          :xctestrun => GoogleApi.Testing.V1.Model.FileReference.t()
+          :appBundleId => String.t() | nil,
+          :testSpecialEntitlements => boolean() | nil,
+          :testsZip => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :xcodeVersion => String.t() | nil,
+          :xctestrun => GoogleApi.Testing.V1.Model.FileReference.t() | nil
         }
 
   field(:appBundleId)

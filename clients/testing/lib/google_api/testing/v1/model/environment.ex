@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidDevice => GoogleApi.Testing.V1.Model.AndroidDevice.t(),
-          :iosDevice => GoogleApi.Testing.V1.Model.IosDevice.t()
+          :androidDevice => GoogleApi.Testing.V1.Model.AndroidDevice.t() | nil,
+          :iosDevice => GoogleApi.Testing.V1.Model.IosDevice.t() | nil
         }
 
   field(:androidDevice, as: GoogleApi.Testing.V1.Model.AndroidDevice)

@@ -35,15 +35,15 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceCapabilities => list(String.t()),
-          :formFactor => String.t(),
-          :id => String.t(),
-          :name => String.t(),
-          :screenDensity => integer(),
-          :screenX => integer(),
-          :screenY => integer(),
-          :supportedVersionIds => list(String.t()),
-          :tags => list(String.t())
+          :deviceCapabilities => list(String.t()) | nil,
+          :formFactor => String.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :screenDensity => integer() | nil,
+          :screenX => integer() | nil,
+          :screenY => integer() | nil,
+          :supportedVersionIds => list(String.t()) | nil,
+          :tags => list(String.t()) | nil
         }
 
   field(:deviceCapabilities, type: :list)

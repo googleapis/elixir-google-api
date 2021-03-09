@@ -33,13 +33,13 @@ defmodule GoogleApi.Testing.V1.Model.AndroidVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiLevel => integer(),
-          :codeName => String.t(),
-          :distribution => GoogleApi.Testing.V1.Model.Distribution.t(),
-          :id => String.t(),
-          :releaseDate => GoogleApi.Testing.V1.Model.Date.t(),
-          :tags => list(String.t()),
-          :versionString => String.t()
+          :apiLevel => integer() | nil,
+          :codeName => String.t() | nil,
+          :distribution => GoogleApi.Testing.V1.Model.Distribution.t() | nil,
+          :id => String.t() | nil,
+          :releaseDate => GoogleApi.Testing.V1.Model.Date.t() | nil,
+          :tags => list(String.t()) | nil,
+          :versionString => String.t() | nil
         }
 
   field(:apiLevel)

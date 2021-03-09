@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.AndroidMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidModelIds => list(String.t()),
-          :androidVersionIds => list(String.t()),
-          :locales => list(String.t()),
-          :orientations => list(String.t())
+          :androidModelIds => list(String.t()) | nil,
+          :androidVersionIds => list(String.t()) | nil,
+          :locales => list(String.t()) | nil,
+          :orientations => list(String.t()) | nil
         }
 
   field(:androidModelIds, type: :list)

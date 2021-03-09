@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ObbFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :obb => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :obbFileName => String.t()
+          :obb => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :obbFileName => String.t() | nil
         }
 
   field(:obb, as: GoogleApi.Testing.V1.Model.FileReference)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleAuto => GoogleApi.Testing.V1.Model.GoogleAuto.t()
+          :googleAuto => GoogleApi.Testing.V1.Model.GoogleAuto.t() | nil
         }
 
   field(:googleAuto, as: GoogleApi.Testing.V1.Model.GoogleAuto)

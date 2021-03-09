@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.GoogleCloudStorage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsPath => String.t()
+          :gcsPath => String.t() | nil
         }
 
   field(:gcsPath)

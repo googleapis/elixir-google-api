@@ -31,12 +31,12 @@ defmodule GoogleApi.Testing.V1.Model.TestEnvironmentCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidDeviceCatalog => GoogleApi.Testing.V1.Model.AndroidDeviceCatalog.t(),
-          :deviceIpBlockCatalog => GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog.t(),
-          :iosDeviceCatalog => GoogleApi.Testing.V1.Model.IosDeviceCatalog.t(),
+          :androidDeviceCatalog => GoogleApi.Testing.V1.Model.AndroidDeviceCatalog.t() | nil,
+          :deviceIpBlockCatalog => GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog.t() | nil,
+          :iosDeviceCatalog => GoogleApi.Testing.V1.Model.IosDeviceCatalog.t() | nil,
           :networkConfigurationCatalog =>
-            GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog.t(),
-          :softwareCatalog => GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog.t()
+            GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog.t() | nil,
+          :softwareCatalog => GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog.t() | nil
         }
 
   field(:androidDeviceCatalog, as: GoogleApi.Testing.V1.Model.AndroidDeviceCatalog)

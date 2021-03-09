@@ -37,16 +37,16 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
 
   @type t :: %__MODULE__{
           :androidInstrumentationTest =>
-            GoogleApi.Testing.V1.Model.AndroidInstrumentationTest.t(),
-          :androidRoboTest => GoogleApi.Testing.V1.Model.AndroidRoboTest.t(),
-          :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t(),
-          :disablePerformanceMetrics => boolean(),
-          :disableVideoRecording => boolean(),
-          :iosTestLoop => GoogleApi.Testing.V1.Model.IosTestLoop.t(),
-          :iosTestSetup => GoogleApi.Testing.V1.Model.IosTestSetup.t(),
-          :iosXcTest => GoogleApi.Testing.V1.Model.IosXcTest.t(),
-          :testSetup => GoogleApi.Testing.V1.Model.TestSetup.t(),
-          :testTimeout => String.t()
+            GoogleApi.Testing.V1.Model.AndroidInstrumentationTest.t() | nil,
+          :androidRoboTest => GoogleApi.Testing.V1.Model.AndroidRoboTest.t() | nil,
+          :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t() | nil,
+          :disablePerformanceMetrics => boolean() | nil,
+          :disableVideoRecording => boolean() | nil,
+          :iosTestLoop => GoogleApi.Testing.V1.Model.IosTestLoop.t() | nil,
+          :iosTestSetup => GoogleApi.Testing.V1.Model.IosTestSetup.t() | nil,
+          :iosXcTest => GoogleApi.Testing.V1.Model.IosXcTest.t() | nil,
+          :testSetup => GoogleApi.Testing.V1.Model.TestSetup.t() | nil,
+          :testTimeout => String.t() | nil
         }
 
   field(:androidInstrumentationTest, as: GoogleApi.Testing.V1.Model.AndroidInstrumentationTest)

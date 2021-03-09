@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.XcodeVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tags => list(String.t()),
-          :version => String.t()
+          :tags => list(String.t()) | nil,
+          :version => String.t() | nil
         }
 
   field(:tags, type: :list)

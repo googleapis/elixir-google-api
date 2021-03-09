@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRuntimeConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locales => list(GoogleApi.Testing.V1.Model.Locale.t()),
-          :orientations => list(GoogleApi.Testing.V1.Model.Orientation.t())
+          :locales => list(GoogleApi.Testing.V1.Model.Locale.t()) | nil,
+          :orientations => list(GoogleApi.Testing.V1.Model.Orientation.t()) | nil
         }
 
   field(:locales, as: GoogleApi.Testing.V1.Model.Locale, type: :list)

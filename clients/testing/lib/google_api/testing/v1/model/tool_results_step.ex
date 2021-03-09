@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.ToolResultsStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executionId => String.t(),
-          :historyId => String.t(),
-          :projectId => String.t(),
-          :stepId => String.t()
+          :executionId => String.t() | nil,
+          :historyId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:executionId)

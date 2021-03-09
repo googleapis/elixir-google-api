@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.IntentFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionNames => list(String.t()),
-          :categoryNames => list(String.t()),
-          :mimeType => String.t()
+          :actionNames => list(String.t()) | nil,
+          :categoryNames => list(String.t()) | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:actionNames, type: :list)

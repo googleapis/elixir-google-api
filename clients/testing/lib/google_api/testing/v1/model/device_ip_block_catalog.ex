@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipBlocks => list(GoogleApi.Testing.V1.Model.DeviceIpBlock.t())
+          :ipBlocks => list(GoogleApi.Testing.V1.Model.DeviceIpBlock.t()) | nil
         }
 
   field(:ipBlocks, as: GoogleApi.Testing.V1.Model.DeviceIpBlock, type: :list)
