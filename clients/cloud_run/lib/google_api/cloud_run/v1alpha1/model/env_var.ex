@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvVar do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => String.t(),
-          :valueFrom => GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource.t()
+          :name => String.t() | nil,
+          :value => String.t() | nil,
+          :valueFrom => GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource.t() | nil
         }
 
   field(:name)

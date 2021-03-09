@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :kind => String.t(),
-          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t(),
-          :spec => GoogleApi.CloudRun.V1alpha1.Model.JobSpec.t(),
-          :status => GoogleApi.CloudRun.V1alpha1.Model.JobStatus.t()
+          :apiVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t() | nil,
+          :spec => GoogleApi.CloudRun.V1alpha1.Model.JobSpec.t() | nil,
+          :status => GoogleApi.CloudRun.V1alpha1.Model.JobStatus.t() | nil
         }
 
   field(:apiVersion)

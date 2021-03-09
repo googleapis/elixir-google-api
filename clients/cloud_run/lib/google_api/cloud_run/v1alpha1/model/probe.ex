@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failureThreshold => integer(),
-          :handler => GoogleApi.CloudRun.V1alpha1.Model.Handler.t(),
-          :initialDelaySeconds => integer(),
-          :periodSeconds => integer(),
-          :successThreshold => integer(),
-          :timeoutSeconds => integer()
+          :failureThreshold => integer() | nil,
+          :handler => GoogleApi.CloudRun.V1alpha1.Model.Handler.t() | nil,
+          :initialDelaySeconds => integer() | nil,
+          :periodSeconds => integer() | nil,
+          :successThreshold => integer() | nil,
+          :timeoutSeconds => integer() | nil
         }
 
   field(:failureThreshold)

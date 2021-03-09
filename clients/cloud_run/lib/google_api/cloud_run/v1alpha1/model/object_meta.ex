@@ -41,21 +41,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :clusterName => String.t(),
-          :creationTimestamp => DateTime.t(),
-          :deletionGracePeriodSeconds => integer(),
-          :deletionTimestamp => DateTime.t(),
-          :finalizers => list(String.t()),
-          :generateName => String.t(),
-          :generation => integer(),
-          :labels => map(),
-          :name => String.t(),
-          :namespace => String.t(),
-          :ownerReferences => list(GoogleApi.CloudRun.V1alpha1.Model.OwnerReference.t()),
-          :resourceVersion => String.t(),
-          :selfLink => String.t(),
-          :uid => String.t()
+          :annotations => map() | nil,
+          :clusterName => String.t() | nil,
+          :creationTimestamp => DateTime.t() | nil,
+          :deletionGracePeriodSeconds => integer() | nil,
+          :deletionTimestamp => DateTime.t() | nil,
+          :finalizers => list(String.t()) | nil,
+          :generateName => String.t() | nil,
+          :generation => integer() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :namespace => String.t() | nil,
+          :ownerReferences => list(GoogleApi.CloudRun.V1alpha1.Model.OwnerReference.t()) | nil,
+          :resourceVersion => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:annotations, type: :map)

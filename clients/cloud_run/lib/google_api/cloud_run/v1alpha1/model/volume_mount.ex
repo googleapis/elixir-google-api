@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeMount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mountPath => String.t(),
-          :mountPropagation => String.t(),
-          :name => String.t(),
-          :readOnly => boolean(),
-          :subPath => String.t()
+          :mountPath => String.t() | nil,
+          :mountPropagation => String.t() | nil,
+          :name => String.t() | nil,
+          :readOnly => boolean() | nil,
+          :subPath => String.t() | nil
         }
 
   field(:mountPath)

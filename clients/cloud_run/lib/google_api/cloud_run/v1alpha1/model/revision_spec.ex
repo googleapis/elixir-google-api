@@ -35,15 +35,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :concurrencyModel => String.t(),
-          :container => GoogleApi.CloudRun.V1alpha1.Model.Container.t(),
-          :containerConcurrency => integer(),
-          :containers => list(GoogleApi.CloudRun.V1alpha1.Model.Container.t()),
-          :generation => integer(),
-          :serviceAccountName => String.t(),
-          :servingState => String.t(),
-          :timeoutSeconds => integer(),
-          :volumes => list(GoogleApi.CloudRun.V1alpha1.Model.Volume.t())
+          :concurrencyModel => String.t() | nil,
+          :container => GoogleApi.CloudRun.V1alpha1.Model.Container.t() | nil,
+          :containerConcurrency => integer() | nil,
+          :containers => list(GoogleApi.CloudRun.V1alpha1.Model.Container.t()) | nil,
+          :generation => integer() | nil,
+          :serviceAccountName => String.t() | nil,
+          :servingState => String.t() | nil,
+          :timeoutSeconds => integer() | nil,
+          :volumes => list(GoogleApi.CloudRun.V1alpha1.Model.Volume.t()) | nil
         }
 
   field(:concurrencyModel)

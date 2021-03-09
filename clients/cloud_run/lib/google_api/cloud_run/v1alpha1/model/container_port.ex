@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ContainerPort do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerPort => integer(),
-          :hostIP => String.t(),
-          :hostPort => integer(),
-          :name => String.t(),
-          :protocol => String.t()
+          :containerPort => integer() | nil,
+          :hostIP => String.t() | nil,
+          :hostPort => integer() | nil,
+          :name => String.t() | nil,
+          :protocol => String.t() | nil
         }
 
   field(:containerPort)

@@ -30,10 +30,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigMapKeySelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :localObjectReference => GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t(),
-          :name => String.t(),
-          :optional => boolean()
+          :key => String.t() | nil,
+          :localObjectReference =>
+            GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t() | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:key)

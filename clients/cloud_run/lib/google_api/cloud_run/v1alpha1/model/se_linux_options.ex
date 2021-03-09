@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SELinuxOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :level => String.t(),
-          :role => String.t(),
-          :type => String.t(),
-          :user => String.t()
+          :level => String.t() | nil,
+          :role => String.t() | nil,
+          :type => String.t() | nil,
+          :user => String.t() | nil
         }
 
   field(:level)

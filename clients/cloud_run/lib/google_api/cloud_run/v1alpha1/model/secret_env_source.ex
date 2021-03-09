@@ -29,9 +29,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :localObjectReference => GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t(),
-          :name => String.t(),
-          :optional => boolean()
+          :localObjectReference =>
+            GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t() | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:localObjectReference, as: GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference)

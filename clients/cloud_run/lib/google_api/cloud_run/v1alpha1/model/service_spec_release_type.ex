@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configuration => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t(),
-          :revisions => list(String.t()),
-          :rolloutPercent => integer()
+          :configuration => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t() | nil,
+          :revisions => list(String.t()) | nil,
+          :rolloutPercent => integer() | nil
         }
 
   field(:configuration, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec)

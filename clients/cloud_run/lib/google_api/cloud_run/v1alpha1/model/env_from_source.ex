@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvFromSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configMapRef => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource.t(),
-          :prefix => String.t(),
-          :secretRef => GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource.t()
+          :configMapRef => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource.t() | nil,
+          :prefix => String.t() | nil,
+          :secretRef => GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource.t() | nil
         }
 
   field(:configMapRef, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource)

@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition.t()),
-          :latestCreatedRevisionName => String.t(),
-          :latestReadyRevisionName => String.t(),
-          :observedGeneration => integer()
+          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition.t()) | nil,
+          :latestCreatedRevisionName => String.t() | nil,
+          :latestReadyRevisionName => String.t() | nil,
+          :observedGeneration => integer() | nil
         }
 
   field(:conditions, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition, type: :list)

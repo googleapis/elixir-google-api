@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configuration => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t()
+          :configuration => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t() | nil
         }
 
   field(:configuration, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec)

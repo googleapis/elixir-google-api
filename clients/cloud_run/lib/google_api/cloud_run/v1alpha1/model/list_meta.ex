@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListMeta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :continue => String.t(),
-          :resourceVersion => String.t(),
-          :selfLink => String.t()
+          :continue => String.t() | nil,
+          :resourceVersion => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:continue)

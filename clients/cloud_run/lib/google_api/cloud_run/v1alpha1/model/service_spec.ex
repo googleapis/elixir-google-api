@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :generation => integer(),
-          :manual => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType.t(),
-          :pinned => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType.t(),
-          :release => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType.t(),
-          :runLatest => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t(),
-          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t(),
-          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t())
+          :generation => integer() | nil,
+          :manual => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType.t() | nil,
+          :pinned => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType.t() | nil,
+          :release => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType.t() | nil,
+          :runLatest => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t() | nil,
+          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t() | nil,
+          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t()) | nil
         }
 
   field(:generation)

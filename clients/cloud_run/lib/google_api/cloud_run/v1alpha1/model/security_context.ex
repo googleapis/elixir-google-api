@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecurityContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowPrivilegeEscalation => boolean(),
-          :capabilities => GoogleApi.CloudRun.V1alpha1.Model.Capabilities.t(),
-          :privileged => boolean(),
-          :readOnlyRootFilesystem => boolean(),
-          :runAsGroup => integer(),
-          :runAsNonRoot => boolean(),
-          :runAsUser => integer(),
-          :seLinuxOptions => GoogleApi.CloudRun.V1alpha1.Model.SELinuxOptions.t()
+          :allowPrivilegeEscalation => boolean() | nil,
+          :capabilities => GoogleApi.CloudRun.V1alpha1.Model.Capabilities.t() | nil,
+          :privileged => boolean() | nil,
+          :readOnlyRootFilesystem => boolean() | nil,
+          :runAsGroup => integer() | nil,
+          :runAsNonRoot => boolean() | nil,
+          :runAsUser => integer() | nil,
+          :seLinuxOptions => GoogleApi.CloudRun.V1alpha1.Model.SELinuxOptions.t() | nil
         }
 
   field(:allowPrivilegeEscalation)

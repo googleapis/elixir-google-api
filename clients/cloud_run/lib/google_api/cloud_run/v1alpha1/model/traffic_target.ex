@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurationName => String.t(),
-          :latestRevision => boolean(),
-          :name => String.t(),
-          :percent => integer(),
-          :revisionName => String.t(),
-          :tag => String.t(),
-          :url => String.t()
+          :configurationName => String.t() | nil,
+          :latestRevision => boolean() | nil,
+          :name => String.t() | nil,
+          :percent => integer() | nil,
+          :revisionName => String.t() | nil,
+          :tag => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:configurationName)

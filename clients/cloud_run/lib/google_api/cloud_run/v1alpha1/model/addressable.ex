@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Addressable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostname => String.t(),
-          :url => String.t()
+          :hostname => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:hostname)

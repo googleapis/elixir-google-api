@@ -35,15 +35,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.JobStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => integer(),
-          :completionTime => DateTime.t(),
-          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.JobCondition.t()),
-          :failed => integer(),
-          :imageDigest => String.t(),
-          :instances => list(GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus.t()),
-          :observedGeneration => integer(),
-          :startTime => DateTime.t(),
-          :succeeded => integer()
+          :active => integer() | nil,
+          :completionTime => DateTime.t() | nil,
+          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.JobCondition.t()) | nil,
+          :failed => integer() | nil,
+          :imageDigest => String.t() | nil,
+          :instances => list(GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus.t()) | nil,
+          :observedGeneration => integer() | nil,
+          :startTime => DateTime.t() | nil,
+          :succeeded => integer() | nil
         }
 
   field(:active)

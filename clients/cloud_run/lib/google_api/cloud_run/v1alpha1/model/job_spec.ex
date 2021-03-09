@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.JobSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeDeadlineSeconds => String.t(),
-          :backoffLimit => integer(),
-          :completions => integer(),
-          :parallelism => integer(),
-          :template => GoogleApi.CloudRun.V1alpha1.Model.InstanceTemplateSpec.t(),
-          :ttlSecondsAfterFinished => integer()
+          :activeDeadlineSeconds => String.t() | nil,
+          :backoffLimit => integer() | nil,
+          :completions => integer() | nil,
+          :parallelism => integer() | nil,
+          :template => GoogleApi.CloudRun.V1alpha1.Model.InstanceTemplateSpec.t() | nil,
+          :ttlSecondsAfterFinished => integer() | nil
         }
 
   field(:activeDeadlineSeconds)

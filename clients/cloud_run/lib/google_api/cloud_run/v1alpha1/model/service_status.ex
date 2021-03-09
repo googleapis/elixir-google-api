@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.CloudRun.V1alpha1.Model.Addressable.t(),
-          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.t()),
-          :domain => String.t(),
-          :latestCreatedRevisionName => String.t(),
-          :latestReadyRevisionName => String.t(),
-          :observedGeneration => integer(),
-          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t()),
-          :url => String.t()
+          :address => GoogleApi.CloudRun.V1alpha1.Model.Addressable.t() | nil,
+          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.t()) | nil,
+          :domain => String.t() | nil,
+          :latestCreatedRevisionName => String.t() | nil,
+          :latestReadyRevisionName => String.t() | nil,
+          :observedGeneration => integer() | nil,
+          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:address, as: GoogleApi.CloudRun.V1alpha1.Model.Addressable)

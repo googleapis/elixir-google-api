@@ -47,27 +47,27 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Container do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
-          :command => list(String.t()),
-          :env => list(GoogleApi.CloudRun.V1alpha1.Model.EnvVar.t()),
-          :envFrom => list(GoogleApi.CloudRun.V1alpha1.Model.EnvFromSource.t()),
-          :image => String.t(),
-          :imagePullPolicy => String.t(),
-          :lifecycle => GoogleApi.CloudRun.V1alpha1.Model.Lifecycle.t(),
-          :livenessProbe => GoogleApi.CloudRun.V1alpha1.Model.Probe.t(),
-          :name => String.t(),
-          :ports => list(GoogleApi.CloudRun.V1alpha1.Model.ContainerPort.t()),
-          :readinessProbe => GoogleApi.CloudRun.V1alpha1.Model.Probe.t(),
-          :resources => GoogleApi.CloudRun.V1alpha1.Model.ResourceRequirements.t(),
-          :securityContext => GoogleApi.CloudRun.V1alpha1.Model.SecurityContext.t(),
-          :stdin => boolean(),
-          :stdinOnce => boolean(),
-          :terminationMessagePath => String.t(),
-          :terminationMessagePolicy => String.t(),
-          :tty => boolean(),
-          :volumeDevices => list(GoogleApi.CloudRun.V1alpha1.Model.VolumeDevice.t()),
-          :volumeMounts => list(GoogleApi.CloudRun.V1alpha1.Model.VolumeMount.t()),
-          :workingDir => String.t()
+          :args => list(String.t()) | nil,
+          :command => list(String.t()) | nil,
+          :env => list(GoogleApi.CloudRun.V1alpha1.Model.EnvVar.t()) | nil,
+          :envFrom => list(GoogleApi.CloudRun.V1alpha1.Model.EnvFromSource.t()) | nil,
+          :image => String.t() | nil,
+          :imagePullPolicy => String.t() | nil,
+          :lifecycle => GoogleApi.CloudRun.V1alpha1.Model.Lifecycle.t() | nil,
+          :livenessProbe => GoogleApi.CloudRun.V1alpha1.Model.Probe.t() | nil,
+          :name => String.t() | nil,
+          :ports => list(GoogleApi.CloudRun.V1alpha1.Model.ContainerPort.t()) | nil,
+          :readinessProbe => GoogleApi.CloudRun.V1alpha1.Model.Probe.t() | nil,
+          :resources => GoogleApi.CloudRun.V1alpha1.Model.ResourceRequirements.t() | nil,
+          :securityContext => GoogleApi.CloudRun.V1alpha1.Model.SecurityContext.t() | nil,
+          :stdin => boolean() | nil,
+          :stdinOnce => boolean() | nil,
+          :terminationMessagePath => String.t() | nil,
+          :terminationMessagePolicy => String.t() | nil,
+          :tty => boolean() | nil,
+          :volumeDevices => list(GoogleApi.CloudRun.V1alpha1.Model.VolumeDevice.t()) | nil,
+          :volumeMounts => list(GoogleApi.CloudRun.V1alpha1.Model.VolumeMount.t()) | nil,
+          :workingDir => String.t() | nil
         }
 
   field(:args, type: :list)

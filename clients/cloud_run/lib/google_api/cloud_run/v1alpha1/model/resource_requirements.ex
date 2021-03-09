@@ -30,14 +30,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ResourceRequirements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limits => map(),
-          :limitsInMap => %{
-            optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()
-          },
-          :requests => map(),
-          :requestsInMap => %{
-            optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()
-          }
+          :limits => map() | nil,
+          :limitsInMap =>
+            %{optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()} | nil,
+          :requests => map() | nil,
+          :requestsInMap =>
+            %{optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()} | nil
         }
 
   field(:limits, type: :map)

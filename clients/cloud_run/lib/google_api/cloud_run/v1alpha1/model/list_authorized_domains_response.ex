@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListAuthorizedDomainsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domains => list(GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain.t()),
-          :nextPageToken => String.t()
+          :domains => list(GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:domains, as: GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain, type: :list)
