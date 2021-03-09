@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.SearchTransitiveMembershipsResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :memberships => list(GoogleApi.CloudIdentity.V1.Model.MemberRelation.t()),
-          :nextPageToken => String.t()
+          :memberships => list(GoogleApi.CloudIdentity.V1.Model.MemberRelation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:memberships, as: GoogleApi.CloudIdentity.V1.Model.MemberRelation, type: :list)

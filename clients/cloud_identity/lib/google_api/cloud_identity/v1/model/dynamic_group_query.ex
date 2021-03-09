@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :query => String.t(),
-          :resourceType => String.t()
+          :query => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:query)

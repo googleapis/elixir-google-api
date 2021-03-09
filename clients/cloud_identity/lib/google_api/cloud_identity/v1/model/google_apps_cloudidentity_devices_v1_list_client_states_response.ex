@@ -29,8 +29,9 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ListC
 
   @type t :: %__MODULE__{
           :clientStates =>
-            list(GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ClientState.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ClientState.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:clientStates,

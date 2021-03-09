@@ -27,7 +27,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1WipeD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :device => GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device.t()
+          :device =>
+            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device.t() | nil
         }
 
   field(:device, as: GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device)

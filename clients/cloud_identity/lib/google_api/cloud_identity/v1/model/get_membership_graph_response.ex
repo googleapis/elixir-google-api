@@ -28,8 +28,9 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GetMembershipGraphResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adjacencyList => list(GoogleApi.CloudIdentity.V1.Model.MembershipAdjacencyList.t()),
-          :groups => list(GoogleApi.CloudIdentity.V1.Model.Group.t())
+          :adjacencyList =>
+            list(GoogleApi.CloudIdentity.V1.Model.MembershipAdjacencyList.t()) | nil,
+          :groups => list(GoogleApi.CloudIdentity.V1.Model.Group.t()) | nil
         }
 
   field(:adjacencyList, as: GoogleApi.CloudIdentity.V1.Model.MembershipAdjacencyList, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.ExpiryDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expireTime => DateTime.t()
+          :expireTime => DateTime.t() | nil
         }
 
   field(:expireTime, as: DateTime)

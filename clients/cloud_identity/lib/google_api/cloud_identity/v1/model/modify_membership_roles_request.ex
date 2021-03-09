@@ -29,10 +29,10 @@ defmodule GoogleApi.CloudIdentity.V1.Model.ModifyMembershipRolesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addRoles => list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t()),
-          :removeRoles => list(String.t()),
+          :addRoles => list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t()) | nil,
+          :removeRoles => list(String.t()) | nil,
           :updateRolesParams =>
-            list(GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams.t())
+            list(GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams.t()) | nil
         }
 
   field(:addRoles, as: GoogleApi.CloudIdentity.V1.Model.MembershipRole, type: :list)

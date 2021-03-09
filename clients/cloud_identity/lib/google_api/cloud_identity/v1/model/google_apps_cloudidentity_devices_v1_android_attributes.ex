@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Andro
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabledUnknownSources => boolean(),
-          :ownerProfileAccount => boolean(),
-          :ownershipPrivilege => String.t(),
-          :supportsWorkProfile => boolean()
+          :enabledUnknownSources => boolean() | nil,
+          :ownerProfileAccount => boolean() | nil,
+          :ownershipPrivilege => String.t() | nil,
+          :supportsWorkProfile => boolean() | nil
         }
 
   field(:enabledUnknownSources)

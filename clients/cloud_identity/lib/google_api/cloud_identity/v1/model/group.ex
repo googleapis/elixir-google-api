@@ -35,15 +35,16 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :dynamicGroupMetadata => GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata.t(),
-          :groupKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t(),
-          :labels => map(),
-          :name => String.t(),
-          :parent => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :dynamicGroupMetadata =>
+            GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata.t() | nil,
+          :groupKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
