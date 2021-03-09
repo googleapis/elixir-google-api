@@ -30,13 +30,14 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Devi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
+          :name => String.t() | nil,
           :parentRelations =>
             list(
               GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ParentRelation.t()
-            ),
-          :traits => map(),
-          :type => String.t()
+            )
+            | nil,
+          :traits => map() | nil,
+          :type => String.t() | nil
         }
 
   field(:name)

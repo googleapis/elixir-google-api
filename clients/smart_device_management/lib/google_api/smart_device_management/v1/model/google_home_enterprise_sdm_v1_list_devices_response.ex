@@ -29,8 +29,9 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1List
 
   @type t :: %__MODULE__{
           :devices =>
-            list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:devices,

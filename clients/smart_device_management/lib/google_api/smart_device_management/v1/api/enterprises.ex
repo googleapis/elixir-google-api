@@ -61,6 +61,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
           {:ok,
            GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_devices_execute_command(
         connection,
@@ -137,6 +138,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_devices_get(
         connection,
@@ -213,6 +215,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
           {:ok,
            GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ListDevicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_devices_list(
         connection,
@@ -291,6 +294,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Structure.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_structures_get(
         connection,
@@ -367,6 +371,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
           {:ok,
            GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ListStructuresResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_structures_list(
         connection,
@@ -445,6 +450,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_structures_rooms_get(
         connection,
@@ -519,6 +525,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
           {:ok,
            GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ListRoomsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def smartdevicemanagement_enterprises_structures_rooms_list(
         connection,
