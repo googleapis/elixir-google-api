@@ -28,8 +28,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :scopes => list(String.t())
+          :email => String.t() | nil,
+          :scopes => list(String.t()) | nil
         }
 
   field(:email)

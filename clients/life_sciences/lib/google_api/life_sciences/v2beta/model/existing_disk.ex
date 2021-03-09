@@ -27,7 +27,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.ExistingDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disk => String.t()
+          :disk => String.t() | nil
         }
 
   field(:disk)

@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Mount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disk => String.t(),
-          :path => String.t(),
-          :readOnly => boolean()
+          :disk => String.t() | nil,
+          :path => String.t() | nil,
+          :readOnly => boolean() | nil
         }
 
   field(:disk)

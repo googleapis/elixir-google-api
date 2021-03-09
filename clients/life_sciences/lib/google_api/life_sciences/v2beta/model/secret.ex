@@ -28,8 +28,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Secret do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cipherText => String.t(),
-          :keyName => String.t()
+          :cipherText => String.t() | nil,
+          :keyName => String.t() | nil
         }
 
   field(:cipherText)

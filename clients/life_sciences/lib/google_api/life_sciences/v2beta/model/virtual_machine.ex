@@ -40,20 +40,20 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.LifeSciences.V2beta.Model.Accelerator.t()),
-          :bootDiskSizeGb => integer(),
-          :bootImage => String.t(),
-          :cpuPlatform => String.t(),
-          :disks => list(GoogleApi.LifeSciences.V2beta.Model.Disk.t()),
-          :dockerCacheImages => list(String.t()),
-          :enableStackdriverMonitoring => boolean(),
-          :labels => map(),
-          :machineType => String.t(),
-          :network => GoogleApi.LifeSciences.V2beta.Model.Network.t(),
-          :nvidiaDriverVersion => String.t(),
-          :preemptible => boolean(),
-          :serviceAccount => GoogleApi.LifeSciences.V2beta.Model.ServiceAccount.t(),
-          :volumes => list(GoogleApi.LifeSciences.V2beta.Model.Volume.t())
+          :accelerators => list(GoogleApi.LifeSciences.V2beta.Model.Accelerator.t()) | nil,
+          :bootDiskSizeGb => integer() | nil,
+          :bootImage => String.t() | nil,
+          :cpuPlatform => String.t() | nil,
+          :disks => list(GoogleApi.LifeSciences.V2beta.Model.Disk.t()) | nil,
+          :dockerCacheImages => list(String.t()) | nil,
+          :enableStackdriverMonitoring => boolean() | nil,
+          :labels => map() | nil,
+          :machineType => String.t() | nil,
+          :network => GoogleApi.LifeSciences.V2beta.Model.Network.t() | nil,
+          :nvidiaDriverVersion => String.t() | nil,
+          :preemptible => boolean() | nil,
+          :serviceAccount => GoogleApi.LifeSciences.V2beta.Model.ServiceAccount.t() | nil,
+          :volumes => list(GoogleApi.LifeSciences.V2beta.Model.Volume.t()) | nil
         }
 
   field(:accelerators, as: GoogleApi.LifeSciences.V2beta.Model.Accelerator, type: :list)

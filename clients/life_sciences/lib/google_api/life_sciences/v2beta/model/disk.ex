@@ -30,10 +30,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Disk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :sizeGb => integer(),
-          :sourceImage => String.t(),
-          :type => String.t()
+          :name => String.t() | nil,
+          :sizeGb => integer() | nil,
+          :sourceImage => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:name)

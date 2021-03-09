@@ -30,10 +30,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Pipeline do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actions => list(GoogleApi.LifeSciences.V2beta.Model.Action.t()),
-          :environment => map(),
-          :resources => GoogleApi.LifeSciences.V2beta.Model.Resources.t(),
-          :timeout => String.t()
+          :actions => list(GoogleApi.LifeSciences.V2beta.Model.Action.t()) | nil,
+          :environment => map() | nil,
+          :resources => GoogleApi.LifeSciences.V2beta.Model.Resources.t() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:actions, as: GoogleApi.LifeSciences.V2beta.Model.Action, type: :list)

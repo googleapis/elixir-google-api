@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.PersistentDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sizeGb => integer(),
-          :sourceImage => String.t(),
-          :type => String.t()
+          :sizeGb => integer() | nil,
+          :sourceImage => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:sizeGb)

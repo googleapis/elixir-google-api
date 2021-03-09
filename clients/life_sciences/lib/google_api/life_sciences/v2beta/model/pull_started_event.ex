@@ -27,7 +27,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.PullStartedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageUri => String.t()
+          :imageUri => String.t() | nil
         }
 
   field(:imageUri)

@@ -29,9 +29,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.WorkerAssignedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => String.t(),
-          :machineType => String.t(),
-          :zone => String.t()
+          :instance => String.t() | nil,
+          :machineType => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:instance)

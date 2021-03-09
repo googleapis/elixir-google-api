@@ -30,10 +30,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :existingDisk => GoogleApi.LifeSciences.V2beta.Model.ExistingDisk.t(),
-          :nfsMount => GoogleApi.LifeSciences.V2beta.Model.NFSMount.t(),
-          :persistentDisk => GoogleApi.LifeSciences.V2beta.Model.PersistentDisk.t(),
-          :volume => String.t()
+          :existingDisk => GoogleApi.LifeSciences.V2beta.Model.ExistingDisk.t() | nil,
+          :nfsMount => GoogleApi.LifeSciences.V2beta.Model.NFSMount.t() | nil,
+          :persistentDisk => GoogleApi.LifeSciences.V2beta.Model.PersistentDisk.t() | nil,
+          :volume => String.t() | nil
         }
 
   field(:existingDisk, as: GoogleApi.LifeSciences.V2beta.Model.ExistingDisk)

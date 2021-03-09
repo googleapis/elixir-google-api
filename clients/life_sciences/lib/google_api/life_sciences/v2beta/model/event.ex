@@ -38,19 +38,21 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Event do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerKilled => GoogleApi.LifeSciences.V2beta.Model.ContainerKilledEvent.t(),
-          :containerStarted => GoogleApi.LifeSciences.V2beta.Model.ContainerStartedEvent.t(),
-          :containerStopped => GoogleApi.LifeSciences.V2beta.Model.ContainerStoppedEvent.t(),
-          :delayed => GoogleApi.LifeSciences.V2beta.Model.DelayedEvent.t(),
-          :description => String.t(),
-          :failed => GoogleApi.LifeSciences.V2beta.Model.FailedEvent.t(),
-          :pullStarted => GoogleApi.LifeSciences.V2beta.Model.PullStartedEvent.t(),
-          :pullStopped => GoogleApi.LifeSciences.V2beta.Model.PullStoppedEvent.t(),
-          :timestamp => DateTime.t(),
+          :containerKilled => GoogleApi.LifeSciences.V2beta.Model.ContainerKilledEvent.t() | nil,
+          :containerStarted =>
+            GoogleApi.LifeSciences.V2beta.Model.ContainerStartedEvent.t() | nil,
+          :containerStopped =>
+            GoogleApi.LifeSciences.V2beta.Model.ContainerStoppedEvent.t() | nil,
+          :delayed => GoogleApi.LifeSciences.V2beta.Model.DelayedEvent.t() | nil,
+          :description => String.t() | nil,
+          :failed => GoogleApi.LifeSciences.V2beta.Model.FailedEvent.t() | nil,
+          :pullStarted => GoogleApi.LifeSciences.V2beta.Model.PullStartedEvent.t() | nil,
+          :pullStopped => GoogleApi.LifeSciences.V2beta.Model.PullStoppedEvent.t() | nil,
+          :timestamp => DateTime.t() | nil,
           :unexpectedExitStatus =>
-            GoogleApi.LifeSciences.V2beta.Model.UnexpectedExitStatusEvent.t(),
-          :workerAssigned => GoogleApi.LifeSciences.V2beta.Model.WorkerAssignedEvent.t(),
-          :workerReleased => GoogleApi.LifeSciences.V2beta.Model.WorkerReleasedEvent.t()
+            GoogleApi.LifeSciences.V2beta.Model.UnexpectedExitStatusEvent.t() | nil,
+          :workerAssigned => GoogleApi.LifeSciences.V2beta.Model.WorkerAssignedEvent.t() | nil,
+          :workerReleased => GoogleApi.LifeSciences.V2beta.Model.WorkerReleasedEvent.t() | nil
         }
 
   field(:containerKilled, as: GoogleApi.LifeSciences.V2beta.Model.ContainerKilledEvent)
