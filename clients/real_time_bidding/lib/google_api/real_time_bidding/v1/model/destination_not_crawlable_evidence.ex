@@ -29,9 +29,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DestinationNotCrawlableEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crawlTime => DateTime.t(),
-          :crawledUrl => String.t(),
-          :reason => String.t()
+          :crawlTime => DateTime.t() | nil,
+          :crawledUrl => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:crawlTime, as: DateTime)

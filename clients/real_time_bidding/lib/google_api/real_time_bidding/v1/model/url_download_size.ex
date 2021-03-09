@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.UrlDownloadSize do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :downloadSizeKb => integer(),
-          :normalizedUrl => String.t()
+          :downloadSizeKb => integer() | nil,
+          :normalizedUrl => String.t() | nil
         }
 
   field(:downloadSizeKb)

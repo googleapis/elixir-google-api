@@ -46,27 +46,27 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.Creative do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :adChoicesDestinationUrl => String.t(),
-          :advertiserName => String.t(),
-          :agencyId => String.t(),
-          :apiUpdateTime => DateTime.t(),
-          :creativeFormat => String.t(),
-          :creativeId => String.t(),
+          :accountId => String.t() | nil,
+          :adChoicesDestinationUrl => String.t() | nil,
+          :advertiserName => String.t() | nil,
+          :agencyId => String.t() | nil,
+          :apiUpdateTime => DateTime.t() | nil,
+          :creativeFormat => String.t() | nil,
+          :creativeId => String.t() | nil,
           :creativeServingDecision =>
-            GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision.t(),
-          :dealIds => list(String.t()),
-          :declaredAttributes => list(String.t()),
-          :declaredClickThroughUrls => list(String.t()),
-          :declaredRestrictedCategories => list(String.t()),
-          :declaredVendorIds => list(integer()),
-          :html => GoogleApi.RealTimeBidding.V1.Model.HtmlContent.t(),
-          :impressionTrackingUrls => list(String.t()),
-          :name => String.t(),
-          :native => GoogleApi.RealTimeBidding.V1.Model.NativeContent.t(),
-          :restrictedCategories => list(String.t()),
-          :version => integer(),
-          :video => GoogleApi.RealTimeBidding.V1.Model.VideoContent.t()
+            GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision.t() | nil,
+          :dealIds => list(String.t()) | nil,
+          :declaredAttributes => list(String.t()) | nil,
+          :declaredClickThroughUrls => list(String.t()) | nil,
+          :declaredRestrictedCategories => list(String.t()) | nil,
+          :declaredVendorIds => list(integer()) | nil,
+          :html => GoogleApi.RealTimeBidding.V1.Model.HtmlContent.t() | nil,
+          :impressionTrackingUrls => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :native => GoogleApi.RealTimeBidding.V1.Model.NativeContent.t() | nil,
+          :restrictedCategories => list(String.t()) | nil,
+          :version => integer() | nil,
+          :video => GoogleApi.RealTimeBidding.V1.Model.VideoContent.t() | nil
         }
 
   field(:accountId)

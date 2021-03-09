@@ -30,10 +30,10 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :advertiserName => String.t(),
-          :brandId => String.t(),
-          :brandName => String.t()
+          :advertiserId => String.t() | nil,
+          :advertiserName => String.t() | nil,
+          :brandId => String.t() | nil,
+          :brandName => String.t() | nil
         }
 
   field(:advertiserId)

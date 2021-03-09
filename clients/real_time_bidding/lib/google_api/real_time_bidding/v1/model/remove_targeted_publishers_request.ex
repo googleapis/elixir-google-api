@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.RemoveTargetedPublishersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publisherIds => list(String.t())
+          :publisherIds => list(String.t()) | nil
         }
 
   field(:publisherIds, type: :list)

@@ -32,12 +32,12 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.UserList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :membershipDurationDays => String.t(),
-          :name => String.t(),
-          :status => String.t(),
-          :urlRestriction => GoogleApi.RealTimeBidding.V1.Model.UrlRestriction.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :membershipDurationDays => String.t() | nil,
+          :name => String.t() | nil,
+          :status => String.t() | nil,
+          :urlRestriction => GoogleApi.RealTimeBidding.V1.Model.UrlRestriction.t() | nil
         }
 
   field(:description)

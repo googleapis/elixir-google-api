@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.NumericTargetingDimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedIds => list(String.t()),
-          :includedIds => list(String.t())
+          :excludedIds => list(String.t()) | nil,
+          :includedIds => list(String.t()) | nil
         }
 
   field(:excludedIds, type: :list)

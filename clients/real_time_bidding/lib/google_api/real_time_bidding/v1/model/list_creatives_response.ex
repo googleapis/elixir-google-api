@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.ListCreativesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creatives => list(GoogleApi.RealTimeBidding.V1.Model.Creative.t()),
-          :nextPageToken => String.t()
+          :creatives => list(GoogleApi.RealTimeBidding.V1.Model.Creative.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:creatives, as: GoogleApi.RealTimeBidding.V1.Model.Creative, type: :list)

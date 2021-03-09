@@ -38,18 +38,18 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.NativeContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserName => String.t(),
-          :appIcon => GoogleApi.RealTimeBidding.V1.Model.Image.t(),
-          :body => String.t(),
-          :callToAction => String.t(),
-          :clickLinkUrl => String.t(),
-          :clickTrackingUrl => String.t(),
-          :headline => String.t(),
-          :image => GoogleApi.RealTimeBidding.V1.Model.Image.t(),
-          :logo => GoogleApi.RealTimeBidding.V1.Model.Image.t(),
-          :priceDisplayText => String.t(),
-          :starRating => float(),
-          :videoUrl => String.t()
+          :advertiserName => String.t() | nil,
+          :appIcon => GoogleApi.RealTimeBidding.V1.Model.Image.t() | nil,
+          :body => String.t() | nil,
+          :callToAction => String.t() | nil,
+          :clickLinkUrl => String.t() | nil,
+          :clickTrackingUrl => String.t() | nil,
+          :headline => String.t() | nil,
+          :image => GoogleApi.RealTimeBidding.V1.Model.Image.t() | nil,
+          :logo => GoogleApi.RealTimeBidding.V1.Model.Image.t() | nil,
+          :priceDisplayText => String.t() | nil,
+          :starRating => float() | nil,
+          :videoUrl => String.t() | nil
         }
 
   field(:advertiserName)

@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.GetRemarketingTagResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snippet => String.t()
+          :snippet => String.t() | nil
         }
 
   field(:snippet)

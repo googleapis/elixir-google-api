@@ -27,7 +27,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.RemoveTargetedSitesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sites => list(String.t())
+          :sites => list(String.t()) | nil
         }
 
   field(:sites, type: :list)

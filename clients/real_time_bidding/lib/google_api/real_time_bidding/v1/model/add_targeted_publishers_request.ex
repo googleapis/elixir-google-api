@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.AddTargetedPublishersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publisherIds => list(String.t()),
-          :targetingMode => String.t()
+          :publisherIds => list(String.t()) | nil,
+          :targetingMode => String.t() | nil
         }
 
   field(:publisherIds, type: :list)

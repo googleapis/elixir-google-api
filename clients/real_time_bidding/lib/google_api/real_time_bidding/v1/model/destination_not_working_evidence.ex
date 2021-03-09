@@ -34,14 +34,14 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DestinationNotWorkingEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsError => String.t(),
-          :expandedUrl => String.t(),
-          :httpError => integer(),
-          :invalidPage => String.t(),
-          :lastCheckTime => DateTime.t(),
-          :platform => String.t(),
-          :redirectionError => String.t(),
-          :urlRejected => String.t()
+          :dnsError => String.t() | nil,
+          :expandedUrl => String.t() | nil,
+          :httpError => integer() | nil,
+          :invalidPage => String.t() | nil,
+          :lastCheckTime => DateTime.t() | nil,
+          :platform => String.t() | nil,
+          :redirectionError => String.t() | nil,
+          :urlRejected => String.t() | nil
         }
 
   field(:dnsError)

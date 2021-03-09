@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DomainCalls do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t(),
-          :httpCallCount => integer()
+          :domain => String.t() | nil,
+          :httpCallCount => integer() | nil
         }
 
   field(:domain)

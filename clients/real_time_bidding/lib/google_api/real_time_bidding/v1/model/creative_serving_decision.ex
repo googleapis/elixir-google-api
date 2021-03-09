@@ -40,20 +40,23 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chinaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
-          :dealsPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
-          :detectedAdvertisers => list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t()),
-          :detectedAttributes => list(String.t()),
-          :detectedClickThroughUrls => list(String.t()),
-          :detectedDomains => list(String.t()),
-          :detectedLanguages => list(String.t()),
-          :detectedProductCategories => list(integer()),
-          :detectedSensitiveCategories => list(integer()),
-          :detectedVendorIds => list(integer()),
-          :lastStatusUpdate => DateTime.t(),
-          :networkPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
-          :platformPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
-          :russiaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t()
+          :chinaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
+          :dealsPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
+          :detectedAdvertisers =>
+            list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t()) | nil,
+          :detectedAttributes => list(String.t()) | nil,
+          :detectedClickThroughUrls => list(String.t()) | nil,
+          :detectedDomains => list(String.t()) | nil,
+          :detectedLanguages => list(String.t()) | nil,
+          :detectedProductCategories => list(integer()) | nil,
+          :detectedSensitiveCategories => list(integer()) | nil,
+          :detectedVendorIds => list(integer()) | nil,
+          :lastStatusUpdate => DateTime.t() | nil,
+          :networkPolicyCompliance =>
+            GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
+          :platformPolicyCompliance =>
+            GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
+          :russiaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil
         }
 
   field(:chinaPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)

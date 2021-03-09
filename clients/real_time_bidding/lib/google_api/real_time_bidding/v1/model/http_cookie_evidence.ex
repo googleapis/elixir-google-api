@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.HttpCookieEvidence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cookieNames => list(String.t()),
-          :maxCookieCount => integer()
+          :cookieNames => list(String.t()) | nil,
+          :maxCookieCount => integer() | nil
         }
 
   field(:cookieNames, type: :list)

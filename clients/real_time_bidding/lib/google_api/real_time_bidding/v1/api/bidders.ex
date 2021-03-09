@@ -63,6 +63,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.ListCreativesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_creatives_list(
         connection,
@@ -139,6 +140,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.WatchCreativesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_creatives_watch(
         connection,
@@ -212,6 +214,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_activate(
         connection,
@@ -283,6 +286,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_add_targeted_apps(
         connection,
@@ -354,6 +358,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_add_targeted_publishers(
         connection,
@@ -425,6 +430,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_add_targeted_sites(
         connection,
@@ -496,6 +502,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_create(
         connection,
@@ -566,6 +573,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_delete(
         connection,
@@ -635,6 +643,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_get(
         connection,
@@ -706,6 +715,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.ListPretargetingConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_list(
         connection,
@@ -781,6 +791,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_patch(
         connection,
@@ -853,6 +864,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_remove_targeted_apps(
         connection,
@@ -924,6 +936,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_remove_targeted_publishers(
         connection,
@@ -995,6 +1008,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_remove_targeted_sites(
         connection,
@@ -1066,6 +1080,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Bidders do
         ) ::
           {:ok, GoogleApi.RealTimeBidding.V1.Model.PretargetingConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def realtimebidding_bidders_pretargeting_configs_suspend(
         connection,

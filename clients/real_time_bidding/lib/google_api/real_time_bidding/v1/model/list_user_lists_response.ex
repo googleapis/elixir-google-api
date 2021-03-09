@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.ListUserListsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :userLists => list(GoogleApi.RealTimeBidding.V1.Model.UserList.t())
+          :nextPageToken => String.t() | nil,
+          :userLists => list(GoogleApi.RealTimeBidding.V1.Model.UserList.t()) | nil
         }
 
   field(:nextPageToken)

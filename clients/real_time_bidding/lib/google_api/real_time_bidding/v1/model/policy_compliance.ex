@@ -28,8 +28,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => String.t(),
-          :topics => list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry.t())
+          :status => String.t() | nil,
+          :topics => list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry.t()) | nil
         }
 
   field(:status)

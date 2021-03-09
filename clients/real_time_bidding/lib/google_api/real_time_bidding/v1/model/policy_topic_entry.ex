@@ -29,9 +29,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evidences => list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence.t()),
-          :helpCenterUrl => String.t(),
-          :policyTopic => String.t()
+          :evidences => list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence.t()) | nil,
+          :helpCenterUrl => String.t() | nil,
+          :policyTopic => String.t() | nil
         }
 
   field(:evidences, as: GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence, type: :list)
