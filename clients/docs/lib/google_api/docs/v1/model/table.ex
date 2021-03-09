@@ -32,12 +32,12 @@ defmodule GoogleApi.Docs.V1.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => integer(),
-          :rows => integer(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t()),
-          :tableRows => list(GoogleApi.Docs.V1.Model.TableRow.t()),
-          :tableStyle => GoogleApi.Docs.V1.Model.TableStyle.t()
+          :columns => integer() | nil,
+          :rows => integer() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil,
+          :tableRows => list(GoogleApi.Docs.V1.Model.TableRow.t()) | nil,
+          :tableStyle => GoogleApi.Docs.V1.Model.TableStyle.t() | nil
         }
 
   field(:columns)

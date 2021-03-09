@@ -33,13 +33,14 @@ defmodule GoogleApi.Docs.V1.Model.Response do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createFooter => GoogleApi.Docs.V1.Model.CreateFooterResponse.t(),
-          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteResponse.t(),
-          :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderResponse.t(),
-          :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeResponse.t(),
-          :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageResponse.t(),
-          :insertInlineSheetsChart => GoogleApi.Docs.V1.Model.InsertInlineSheetsChartResponse.t(),
-          :replaceAllText => GoogleApi.Docs.V1.Model.ReplaceAllTextResponse.t()
+          :createFooter => GoogleApi.Docs.V1.Model.CreateFooterResponse.t() | nil,
+          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteResponse.t() | nil,
+          :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderResponse.t() | nil,
+          :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeResponse.t() | nil,
+          :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageResponse.t() | nil,
+          :insertInlineSheetsChart =>
+            GoogleApi.Docs.V1.Model.InsertInlineSheetsChartResponse.t() | nil,
+          :replaceAllText => GoogleApi.Docs.V1.Model.ReplaceAllTextResponse.t() | nil
         }
 
   field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterResponse)

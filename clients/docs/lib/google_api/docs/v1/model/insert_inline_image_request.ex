@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.InsertInlineImageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t(),
-          :location => GoogleApi.Docs.V1.Model.Location.t(),
-          :objectSize => GoogleApi.Docs.V1.Model.Size.t(),
-          :uri => String.t()
+          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t() | nil,
+          :location => GoogleApi.Docs.V1.Model.Location.t() | nil,
+          :objectSize => GoogleApi.Docs.V1.Model.Size.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:endOfSegmentLocation, as: GoogleApi.Docs.V1.Model.EndOfSegmentLocation)

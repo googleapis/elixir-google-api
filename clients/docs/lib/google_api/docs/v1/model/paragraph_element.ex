@@ -29,6 +29,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   *   `horizontalRule` (*type:* `GoogleApi.Docs.V1.Model.HorizontalRule.t`, *default:* `nil`) - A horizontal rule paragraph element.
   *   `inlineObjectElement` (*type:* `GoogleApi.Docs.V1.Model.InlineObjectElement.t`, *default:* `nil`) - An inline object paragraph element.
   *   `pageBreak` (*type:* `GoogleApi.Docs.V1.Model.PageBreak.t`, *default:* `nil`) - A page break paragraph element.
+  *   `person` (*type:* `GoogleApi.Docs.V1.Model.Person.t`, *default:* `nil`) - A paragraph element that links to a person or email address.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this paragraph element, in UTF-16 code units.
   *   `textRun` (*type:* `GoogleApi.Docs.V1.Model.TextRun.t`, *default:* `nil`) - A text run paragraph element.
   """
@@ -36,16 +37,17 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoText => GoogleApi.Docs.V1.Model.AutoText.t(),
-          :columnBreak => GoogleApi.Docs.V1.Model.ColumnBreak.t(),
-          :endIndex => integer(),
-          :equation => GoogleApi.Docs.V1.Model.Equation.t(),
-          :footnoteReference => GoogleApi.Docs.V1.Model.FootnoteReference.t(),
-          :horizontalRule => GoogleApi.Docs.V1.Model.HorizontalRule.t(),
-          :inlineObjectElement => GoogleApi.Docs.V1.Model.InlineObjectElement.t(),
-          :pageBreak => GoogleApi.Docs.V1.Model.PageBreak.t(),
-          :startIndex => integer(),
-          :textRun => GoogleApi.Docs.V1.Model.TextRun.t()
+          :autoText => GoogleApi.Docs.V1.Model.AutoText.t() | nil,
+          :columnBreak => GoogleApi.Docs.V1.Model.ColumnBreak.t() | nil,
+          :endIndex => integer() | nil,
+          :equation => GoogleApi.Docs.V1.Model.Equation.t() | nil,
+          :footnoteReference => GoogleApi.Docs.V1.Model.FootnoteReference.t() | nil,
+          :horizontalRule => GoogleApi.Docs.V1.Model.HorizontalRule.t() | nil,
+          :inlineObjectElement => GoogleApi.Docs.V1.Model.InlineObjectElement.t() | nil,
+          :pageBreak => GoogleApi.Docs.V1.Model.PageBreak.t() | nil,
+          :person => GoogleApi.Docs.V1.Model.Person.t() | nil,
+          :startIndex => integer() | nil,
+          :textRun => GoogleApi.Docs.V1.Model.TextRun.t() | nil
         }
 
   field(:autoText, as: GoogleApi.Docs.V1.Model.AutoText)
@@ -56,6 +58,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   field(:horizontalRule, as: GoogleApi.Docs.V1.Model.HorizontalRule)
   field(:inlineObjectElement, as: GoogleApi.Docs.V1.Model.InlineObjectElement)
   field(:pageBreak, as: GoogleApi.Docs.V1.Model.PageBreak)
+  field(:person, as: GoogleApi.Docs.V1.Model.Person)
   field(:startIndex)
   field(:textRun, as: GoogleApi.Docs.V1.Model.TextRun)
 end

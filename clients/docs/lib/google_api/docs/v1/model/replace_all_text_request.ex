@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceAllTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containsText => GoogleApi.Docs.V1.Model.SubstringMatchCriteria.t(),
-          :replaceText => String.t()
+          :containsText => GoogleApi.Docs.V1.Model.SubstringMatchCriteria.t() | nil,
+          :replaceText => String.t() | nil
         }
 
   field(:containsText, as: GoogleApi.Docs.V1.Model.SubstringMatchCriteria)

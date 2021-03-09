@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :rowIndices => list(integer()),
-          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t(),
-          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t()
+          :fields => String.t() | nil,
+          :rowIndices => list(integer()) | nil,
+          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t() | nil,
+          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t() | nil
         }
 
   field(:fields)

@@ -42,28 +42,27 @@ defmodule GoogleApi.Docs.V1.Model.Document do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => GoogleApi.Docs.V1.Model.Body.t(),
-          :documentId => String.t(),
-          :documentStyle => GoogleApi.Docs.V1.Model.DocumentStyle.t(),
-          :footers => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Footer.t()},
-          :footnotes => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Footnote.t()},
-          :headers => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Header.t()},
-          :inlineObjects => %{optional(String.t()) => GoogleApi.Docs.V1.Model.InlineObject.t()},
-          :lists => %{optional(String.t()) => GoogleApi.Docs.V1.Model.List.t()},
-          :namedRanges => %{optional(String.t()) => GoogleApi.Docs.V1.Model.NamedRanges.t()},
-          :namedStyles => GoogleApi.Docs.V1.Model.NamedStyles.t(),
-          :positionedObjects => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.PositionedObject.t()
-          },
-          :revisionId => String.t(),
-          :suggestedDocumentStyleChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedDocumentStyle.t()
-          },
-          :suggestedNamedStylesChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedNamedStyles.t()
-          },
-          :suggestionsViewMode => String.t(),
-          :title => String.t()
+          :body => GoogleApi.Docs.V1.Model.Body.t() | nil,
+          :documentId => String.t() | nil,
+          :documentStyle => GoogleApi.Docs.V1.Model.DocumentStyle.t() | nil,
+          :footers => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Footer.t()} | nil,
+          :footnotes => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Footnote.t()} | nil,
+          :headers => %{optional(String.t()) => GoogleApi.Docs.V1.Model.Header.t()} | nil,
+          :inlineObjects =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.InlineObject.t()} | nil,
+          :lists => %{optional(String.t()) => GoogleApi.Docs.V1.Model.List.t()} | nil,
+          :namedRanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.NamedRanges.t()} | nil,
+          :namedStyles => GoogleApi.Docs.V1.Model.NamedStyles.t() | nil,
+          :positionedObjects =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.PositionedObject.t()} | nil,
+          :revisionId => String.t() | nil,
+          :suggestedDocumentStyleChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedDocumentStyle.t()} | nil,
+          :suggestedNamedStylesChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedNamedStyles.t()} | nil,
+          :suggestionsViewMode => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:body, as: GoogleApi.Docs.V1.Model.Body)

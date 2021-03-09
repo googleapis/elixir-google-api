@@ -31,11 +31,11 @@ defmodule GoogleApi.Docs.V1.Model.CropProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angle => number(),
-          :offsetBottom => number(),
-          :offsetLeft => number(),
-          :offsetRight => number(),
-          :offsetTop => number()
+          :angle => number() | nil,
+          :offsetBottom => number() | nil,
+          :offsetLeft => number() | nil,
+          :offsetRight => number() | nil,
+          :offsetTop => number() | nil
         }
 
   field(:angle)

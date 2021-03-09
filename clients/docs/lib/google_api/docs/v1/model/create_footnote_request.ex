@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.CreateFootnoteRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t(),
-          :location => GoogleApi.Docs.V1.Model.Location.t()
+          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t() | nil,
+          :location => GoogleApi.Docs.V1.Model.Location.t() | nil
         }
 
   field(:endOfSegmentLocation, as: GoogleApi.Docs.V1.Model.EndOfSegmentLocation)

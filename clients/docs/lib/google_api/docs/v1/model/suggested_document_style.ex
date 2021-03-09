@@ -28,9 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedDocumentStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentStyle => GoogleApi.Docs.V1.Model.DocumentStyle.t(),
+          :documentStyle => GoogleApi.Docs.V1.Model.DocumentStyle.t() | nil,
           :documentStyleSuggestionState =>
-            GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState.t()
+            GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState.t() | nil
         }
 
   field(:documentStyle, as: GoogleApi.Docs.V1.Model.DocumentStyle)

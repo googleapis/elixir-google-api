@@ -37,17 +37,18 @@ defmodule GoogleApi.Docs.V1.Model.EmbeddedObject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :embeddedDrawingProperties => GoogleApi.Docs.V1.Model.EmbeddedDrawingProperties.t(),
-          :embeddedObjectBorder => GoogleApi.Docs.V1.Model.EmbeddedObjectBorder.t(),
-          :imageProperties => GoogleApi.Docs.V1.Model.ImageProperties.t(),
-          :linkedContentReference => GoogleApi.Docs.V1.Model.LinkedContentReference.t(),
-          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :size => GoogleApi.Docs.V1.Model.Size.t(),
-          :title => String.t()
+          :description => String.t() | nil,
+          :embeddedDrawingProperties =>
+            GoogleApi.Docs.V1.Model.EmbeddedDrawingProperties.t() | nil,
+          :embeddedObjectBorder => GoogleApi.Docs.V1.Model.EmbeddedObjectBorder.t() | nil,
+          :imageProperties => GoogleApi.Docs.V1.Model.ImageProperties.t() | nil,
+          :linkedContentReference => GoogleApi.Docs.V1.Model.LinkedContentReference.t() | nil,
+          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :size => GoogleApi.Docs.V1.Model.Size.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

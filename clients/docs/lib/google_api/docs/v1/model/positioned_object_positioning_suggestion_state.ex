@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObjectPositioningSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layoutSuggested => boolean(),
-          :leftOffsetSuggested => boolean(),
-          :topOffsetSuggested => boolean()
+          :layoutSuggested => boolean() | nil,
+          :leftOffsetSuggested => boolean() | nil,
+          :topOffsetSuggested => boolean() | nil
         }
 
   field(:layoutSuggested)

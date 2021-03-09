@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceImageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageObjectId => String.t(),
-          :imageReplaceMethod => String.t(),
-          :uri => String.t()
+          :imageObjectId => String.t() | nil,
+          :imageReplaceMethod => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:imageObjectId)

@@ -33,19 +33,16 @@ defmodule GoogleApi.Docs.V1.Model.Paragraph do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bullet => GoogleApi.Docs.V1.Model.Bullet.t(),
-          :elements => list(GoogleApi.Docs.V1.Model.ParagraphElement.t()),
-          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t(),
-          :positionedObjectIds => list(String.t()),
-          :suggestedBulletChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedBullet.t()
-          },
-          :suggestedParagraphStyleChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedParagraphStyle.t()
-          },
-          :suggestedPositionedObjectIds => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.ObjectReferences.t()
-          }
+          :bullet => GoogleApi.Docs.V1.Model.Bullet.t() | nil,
+          :elements => list(GoogleApi.Docs.V1.Model.ParagraphElement.t()) | nil,
+          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t() | nil,
+          :positionedObjectIds => list(String.t()) | nil,
+          :suggestedBulletChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedBullet.t()} | nil,
+          :suggestedParagraphStyleChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedParagraphStyle.t()} | nil,
+          :suggestedPositionedObjectIds =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.ObjectReferences.t()} | nil
         }
 
   field(:bullet, as: GoogleApi.Docs.V1.Model.Bullet)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.BatchUpdateDocumentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requests => list(GoogleApi.Docs.V1.Model.Request.t()),
-          :writeControl => GoogleApi.Docs.V1.Model.WriteControl.t()
+          :requests => list(GoogleApi.Docs.V1.Model.Request.t()) | nil,
+          :writeControl => GoogleApi.Docs.V1.Model.WriteControl.t() | nil
         }
 
   field(:requests, as: GoogleApi.Docs.V1.Model.Request, type: :list)

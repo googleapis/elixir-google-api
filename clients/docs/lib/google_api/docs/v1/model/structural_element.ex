@@ -32,12 +32,12 @@ defmodule GoogleApi.Docs.V1.Model.StructuralElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endIndex => integer(),
-          :paragraph => GoogleApi.Docs.V1.Model.Paragraph.t(),
-          :sectionBreak => GoogleApi.Docs.V1.Model.SectionBreak.t(),
-          :startIndex => integer(),
-          :table => GoogleApi.Docs.V1.Model.Table.t(),
-          :tableOfContents => GoogleApi.Docs.V1.Model.TableOfContents.t()
+          :endIndex => integer() | nil,
+          :paragraph => GoogleApi.Docs.V1.Model.Paragraph.t() | nil,
+          :sectionBreak => GoogleApi.Docs.V1.Model.SectionBreak.t() | nil,
+          :startIndex => integer() | nil,
+          :table => GoogleApi.Docs.V1.Model.Table.t() | nil,
+          :tableOfContents => GoogleApi.Docs.V1.Model.TableOfContents.t() | nil
         }
 
   field(:endIndex)

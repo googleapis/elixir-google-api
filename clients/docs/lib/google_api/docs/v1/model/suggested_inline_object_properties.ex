@@ -28,9 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inlineObjectProperties => GoogleApi.Docs.V1.Model.InlineObjectProperties.t(),
+          :inlineObjectProperties => GoogleApi.Docs.V1.Model.InlineObjectProperties.t() | nil,
           :inlineObjectPropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.InlineObjectPropertiesSuggestionState.t()
+            GoogleApi.Docs.V1.Model.InlineObjectPropertiesSuggestionState.t() | nil
         }
 
   field(:inlineObjectProperties, as: GoogleApi.Docs.V1.Model.InlineObjectProperties)

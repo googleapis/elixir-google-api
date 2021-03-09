@@ -28,7 +28,7 @@ defmodule GoogleApi.Docs.V1.Model.InlineObjectPropertiesSuggestionState do
 
   @type t :: %__MODULE__{
           :embeddedObjectSuggestionState =>
-            GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t()
+            GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t() | nil
         }
 
   field(:embeddedObjectSuggestionState, as: GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState)

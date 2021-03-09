@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndices => list(integer()),
-          :fields => String.t(),
-          :tableColumnProperties => GoogleApi.Docs.V1.Model.TableColumnProperties.t(),
-          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t()
+          :columnIndices => list(integer()) | nil,
+          :fields => String.t() | nil,
+          :tableColumnProperties => GoogleApi.Docs.V1.Model.TableColumnProperties.t() | nil,
+          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t() | nil
         }
 
   field(:columnIndices, type: :list)

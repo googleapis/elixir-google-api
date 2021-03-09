@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.CreateHeaderResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headerId => String.t()
+          :headerId => String.t() | nil
         }
 
   field(:headerId)

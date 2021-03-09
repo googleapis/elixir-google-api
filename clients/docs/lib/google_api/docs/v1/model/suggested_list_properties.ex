@@ -28,9 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedListProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listProperties => GoogleApi.Docs.V1.Model.ListProperties.t(),
+          :listProperties => GoogleApi.Docs.V1.Model.ListProperties.t() | nil,
           :listPropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.ListPropertiesSuggestionState.t()
+            GoogleApi.Docs.V1.Model.ListPropertiesSuggestionState.t() | nil
         }
 
   field(:listProperties, as: GoogleApi.Docs.V1.Model.ListProperties)

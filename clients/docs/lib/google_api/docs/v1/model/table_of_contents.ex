@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.TableOfContents do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t())
+          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()) | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil
         }
 
   field(:content, as: GoogleApi.Docs.V1.Model.StructuralElement, type: :list)

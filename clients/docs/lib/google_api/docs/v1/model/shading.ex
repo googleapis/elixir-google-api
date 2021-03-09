@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.Shading do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t()
+          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Docs.V1.Model.OptionalColor)

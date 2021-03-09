@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.Bullet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listId => String.t(),
-          :nestingLevel => integer(),
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t()
+          :listId => String.t() | nil,
+          :nestingLevel => integer() | nil,
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil
         }
 
   field(:listId)

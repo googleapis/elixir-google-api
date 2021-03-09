@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObjectPositioning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layout => String.t(),
-          :leftOffset => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :topOffset => GoogleApi.Docs.V1.Model.Dimension.t()
+          :layout => String.t() | nil,
+          :leftOffset => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :topOffset => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:layout)

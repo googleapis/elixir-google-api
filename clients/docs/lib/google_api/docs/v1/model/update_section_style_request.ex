@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :range => GoogleApi.Docs.V1.Model.Range.t(),
-          :sectionStyle => GoogleApi.Docs.V1.Model.SectionStyle.t()
+          :fields => String.t() | nil,
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil,
+          :sectionStyle => GoogleApi.Docs.V1.Model.SectionStyle.t() | nil
         }
 
   field(:fields)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t()
+          :objectId => String.t() | nil
         }
 
   field(:objectId)

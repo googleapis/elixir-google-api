@@ -28,9 +28,10 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :positionedObjectProperties => GoogleApi.Docs.V1.Model.PositionedObjectProperties.t(),
+          :positionedObjectProperties =>
+            GoogleApi.Docs.V1.Model.PositionedObjectProperties.t() | nil,
           :positionedObjectPropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.PositionedObjectPropertiesSuggestionState.t()
+            GoogleApi.Docs.V1.Model.PositionedObjectPropertiesSuggestionState.t() | nil
         }
 
   field(:positionedObjectProperties, as: GoogleApi.Docs.V1.Model.PositionedObjectProperties)

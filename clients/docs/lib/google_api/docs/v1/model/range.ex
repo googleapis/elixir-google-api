@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.Range do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endIndex => integer(),
-          :segmentId => String.t(),
-          :startIndex => integer()
+          :endIndex => integer() | nil,
+          :segmentId => String.t() | nil,
+          :startIndex => integer() | nil
         }
 
   field(:endIndex)

@@ -46,26 +46,26 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignmentSuggested => boolean(),
-          :avoidWidowAndOrphanSuggested => boolean(),
-          :borderBetweenSuggested => boolean(),
-          :borderBottomSuggested => boolean(),
-          :borderLeftSuggested => boolean(),
-          :borderRightSuggested => boolean(),
-          :borderTopSuggested => boolean(),
-          :directionSuggested => boolean(),
-          :headingIdSuggested => boolean(),
-          :indentEndSuggested => boolean(),
-          :indentFirstLineSuggested => boolean(),
-          :indentStartSuggested => boolean(),
-          :keepLinesTogetherSuggested => boolean(),
-          :keepWithNextSuggested => boolean(),
-          :lineSpacingSuggested => boolean(),
-          :namedStyleTypeSuggested => boolean(),
-          :shadingSuggestionState => GoogleApi.Docs.V1.Model.ShadingSuggestionState.t(),
-          :spaceAboveSuggested => boolean(),
-          :spaceBelowSuggested => boolean(),
-          :spacingModeSuggested => boolean()
+          :alignmentSuggested => boolean() | nil,
+          :avoidWidowAndOrphanSuggested => boolean() | nil,
+          :borderBetweenSuggested => boolean() | nil,
+          :borderBottomSuggested => boolean() | nil,
+          :borderLeftSuggested => boolean() | nil,
+          :borderRightSuggested => boolean() | nil,
+          :borderTopSuggested => boolean() | nil,
+          :directionSuggested => boolean() | nil,
+          :headingIdSuggested => boolean() | nil,
+          :indentEndSuggested => boolean() | nil,
+          :indentFirstLineSuggested => boolean() | nil,
+          :indentStartSuggested => boolean() | nil,
+          :keepLinesTogetherSuggested => boolean() | nil,
+          :keepWithNextSuggested => boolean() | nil,
+          :lineSpacingSuggested => boolean() | nil,
+          :namedStyleTypeSuggested => boolean() | nil,
+          :shadingSuggestionState => GoogleApi.Docs.V1.Model.ShadingSuggestionState.t() | nil,
+          :spaceAboveSuggested => boolean() | nil,
+          :spaceBelowSuggested => boolean() | nil,
+          :spacingModeSuggested => boolean() | nil
         }
 
   field(:alignmentSuggested)

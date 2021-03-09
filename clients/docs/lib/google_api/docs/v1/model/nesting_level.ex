@@ -34,14 +34,14 @@ defmodule GoogleApi.Docs.V1.Model.NestingLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletAlignment => String.t(),
-          :glyphFormat => String.t(),
-          :glyphSymbol => String.t(),
-          :glyphType => String.t(),
-          :indentFirstLine => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :indentStart => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :startNumber => integer(),
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t()
+          :bulletAlignment => String.t() | nil,
+          :glyphFormat => String.t() | nil,
+          :glyphSymbol => String.t() | nil,
+          :glyphType => String.t() | nil,
+          :indentFirstLine => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :indentStart => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :startNumber => integer() | nil,
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil
         }
 
   field(:bulletAlignment)

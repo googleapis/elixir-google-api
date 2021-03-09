@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.TableRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnSpan => integer(),
-          :rowSpan => integer(),
-          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t()
+          :columnSpan => integer() | nil,
+          :rowSpan => integer() | nil,
+          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t() | nil
         }
 
   field(:columnSpan)

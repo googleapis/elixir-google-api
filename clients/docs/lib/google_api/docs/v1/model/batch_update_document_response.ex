@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.BatchUpdateDocumentResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentId => String.t(),
-          :replies => list(GoogleApi.Docs.V1.Model.Response.t()),
-          :writeControl => GoogleApi.Docs.V1.Model.WriteControl.t()
+          :documentId => String.t() | nil,
+          :replies => list(GoogleApi.Docs.V1.Model.Response.t()) | nil,
+          :writeControl => GoogleApi.Docs.V1.Model.WriteControl.t() | nil
         }
 
   field(:documentId)

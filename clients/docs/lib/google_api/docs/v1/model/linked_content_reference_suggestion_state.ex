@@ -28,7 +28,7 @@ defmodule GoogleApi.Docs.V1.Model.LinkedContentReferenceSuggestionState do
 
   @type t :: %__MODULE__{
           :sheetsChartReferenceSuggestionState =>
-            GoogleApi.Docs.V1.Model.SheetsChartReferenceSuggestionState.t()
+            GoogleApi.Docs.V1.Model.SheetsChartReferenceSuggestionState.t() | nil
         }
 
   field(:sheetsChartReferenceSuggestionState,

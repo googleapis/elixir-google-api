@@ -37,21 +37,21 @@ defmodule GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :descriptionSuggested => boolean(),
+          :descriptionSuggested => boolean() | nil,
           :embeddedDrawingPropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.EmbeddedDrawingPropertiesSuggestionState.t(),
+            GoogleApi.Docs.V1.Model.EmbeddedDrawingPropertiesSuggestionState.t() | nil,
           :embeddedObjectBorderSuggestionState =>
-            GoogleApi.Docs.V1.Model.EmbeddedObjectBorderSuggestionState.t(),
+            GoogleApi.Docs.V1.Model.EmbeddedObjectBorderSuggestionState.t() | nil,
           :imagePropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState.t(),
+            GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState.t() | nil,
           :linkedContentReferenceSuggestionState =>
-            GoogleApi.Docs.V1.Model.LinkedContentReferenceSuggestionState.t(),
-          :marginBottomSuggested => boolean(),
-          :marginLeftSuggested => boolean(),
-          :marginRightSuggested => boolean(),
-          :marginTopSuggested => boolean(),
-          :sizeSuggestionState => GoogleApi.Docs.V1.Model.SizeSuggestionState.t(),
-          :titleSuggested => boolean()
+            GoogleApi.Docs.V1.Model.LinkedContentReferenceSuggestionState.t() | nil,
+          :marginBottomSuggested => boolean() | nil,
+          :marginLeftSuggested => boolean() | nil,
+          :marginRightSuggested => boolean() | nil,
+          :marginTopSuggested => boolean() | nil,
+          :sizeSuggestionState => GoogleApi.Docs.V1.Model.SizeSuggestionState.t() | nil,
+          :titleSuggested => boolean() | nil
         }
 
   field(:descriptionSuggested)

@@ -27,7 +27,8 @@ defmodule GoogleApi.Docs.V1.Model.NamedStylesSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stylesSuggestionStates => list(GoogleApi.Docs.V1.Model.NamedStyleSuggestionState.t())
+          :stylesSuggestionStates =>
+            list(GoogleApi.Docs.V1.Model.NamedStyleSuggestionState.t()) | nil
         }
 
   field(:stylesSuggestionStates,

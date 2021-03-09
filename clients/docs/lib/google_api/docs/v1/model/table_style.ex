@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.TableStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableColumnProperties => list(GoogleApi.Docs.V1.Model.TableColumnProperties.t())
+          :tableColumnProperties => list(GoogleApi.Docs.V1.Model.TableColumnProperties.t()) | nil
         }
 
   field(:tableColumnProperties, as: GoogleApi.Docs.V1.Model.TableColumnProperties, type: :list)

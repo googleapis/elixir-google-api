@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.ObjectReferences do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectIds => list(String.t())
+          :objectIds => list(String.t()) | nil
         }
 
   field(:objectIds, type: :list)

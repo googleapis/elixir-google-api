@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.EndOfSegmentLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :segmentId => String.t()
+          :segmentId => String.t() | nil
         }
 
   field(:segmentId)

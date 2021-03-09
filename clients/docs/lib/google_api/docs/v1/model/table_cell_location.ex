@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.TableCellLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndex => integer(),
-          :rowIndex => integer(),
-          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t()
+          :columnIndex => integer() | nil,
+          :rowIndex => integer() | nil,
+          :tableStartLocation => GoogleApi.Docs.V1.Model.Location.t() | nil
         }
 
   field(:columnIndex)

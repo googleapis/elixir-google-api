@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Docs.V1.Model.Range.t()
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil
         }
 
   field(:range, as: GoogleApi.Docs.V1.Model.Range)

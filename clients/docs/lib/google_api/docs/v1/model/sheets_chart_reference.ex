@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SheetsChartReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :spreadsheetId => String.t()
+          :chartId => integer() | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:chartId)

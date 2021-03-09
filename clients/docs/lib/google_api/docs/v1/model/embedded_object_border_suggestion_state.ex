@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.EmbeddedObjectBorderSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colorSuggested => boolean(),
-          :dashStyleSuggested => boolean(),
-          :propertyStateSuggested => boolean(),
-          :widthSuggested => boolean()
+          :colorSuggested => boolean() | nil,
+          :dashStyleSuggested => boolean() | nil,
+          :propertyStateSuggested => boolean() | nil,
+          :widthSuggested => boolean() | nil
         }
 
   field(:colorSuggested)

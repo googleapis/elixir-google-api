@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedBullet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bullet => GoogleApi.Docs.V1.Model.Bullet.t(),
-          :bulletSuggestionState => GoogleApi.Docs.V1.Model.BulletSuggestionState.t()
+          :bullet => GoogleApi.Docs.V1.Model.Bullet.t() | nil,
+          :bulletSuggestionState => GoogleApi.Docs.V1.Model.BulletSuggestionState.t() | nil
         }
 
   field(:bullet, as: GoogleApi.Docs.V1.Model.Bullet)

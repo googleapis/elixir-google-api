@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.SectionBreak do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sectionStyle => GoogleApi.Docs.V1.Model.SectionStyle.t(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t())
+          :sectionStyle => GoogleApi.Docs.V1.Model.SectionStyle.t() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil
         }
 
   field(:sectionStyle, as: GoogleApi.Docs.V1.Model.SectionStyle)

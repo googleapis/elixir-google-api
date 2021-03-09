@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObjectPropertiesSuggestionState do
 
   @type t :: %__MODULE__{
           :embeddedObjectSuggestionState =>
-            GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t(),
+            GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t() | nil,
           :positioningSuggestionState =>
-            GoogleApi.Docs.V1.Model.PositionedObjectPositioningSuggestionState.t()
+            GoogleApi.Docs.V1.Model.PositionedObjectPositioningSuggestionState.t() | nil
         }
 
   field(:embeddedObjectSuggestionState, as: GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState)

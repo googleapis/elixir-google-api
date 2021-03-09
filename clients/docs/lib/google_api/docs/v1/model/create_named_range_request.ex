@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.CreateNamedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :range => GoogleApi.Docs.V1.Model.Range.t()
+          :name => String.t() | nil,
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil
         }
 
   field(:name)

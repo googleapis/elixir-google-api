@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SectionColumnProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paddingEnd => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :width => GoogleApi.Docs.V1.Model.Dimension.t()
+          :paddingEnd => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :width => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:paddingEnd, as: GoogleApi.Docs.V1.Model.Dimension)

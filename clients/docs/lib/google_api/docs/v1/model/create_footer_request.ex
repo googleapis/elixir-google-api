@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.CreateFooterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sectionBreakLocation => GoogleApi.Docs.V1.Model.Location.t(),
-          :type => String.t()
+          :sectionBreakLocation => GoogleApi.Docs.V1.Model.Location.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:sectionBreakLocation, as: GoogleApi.Docs.V1.Model.Location)

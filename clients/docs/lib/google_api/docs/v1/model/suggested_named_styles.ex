@@ -28,8 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedNamedStyles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namedStyles => GoogleApi.Docs.V1.Model.NamedStyles.t(),
-          :namedStylesSuggestionState => GoogleApi.Docs.V1.Model.NamedStylesSuggestionState.t()
+          :namedStyles => GoogleApi.Docs.V1.Model.NamedStyles.t() | nil,
+          :namedStylesSuggestionState =>
+            GoogleApi.Docs.V1.Model.NamedStylesSuggestionState.t() | nil
         }
 
   field(:namedStyles, as: GoogleApi.Docs.V1.Model.NamedStyles)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SubstringMatchCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchCase => boolean(),
-          :text => String.t()
+          :matchCase => boolean() | nil,
+          :text => String.t() | nil
         }
 
   field(:matchCase)

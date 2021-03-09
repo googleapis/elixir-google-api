@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteFooterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :footerId => String.t()
+          :footerId => String.t() | nil
         }
 
   field(:footerId)

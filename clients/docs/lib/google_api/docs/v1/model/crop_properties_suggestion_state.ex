@@ -31,11 +31,11 @@ defmodule GoogleApi.Docs.V1.Model.CropPropertiesSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angleSuggested => boolean(),
-          :offsetBottomSuggested => boolean(),
-          :offsetLeftSuggested => boolean(),
-          :offsetRightSuggested => boolean(),
-          :offsetTopSuggested => boolean()
+          :angleSuggested => boolean() | nil,
+          :offsetBottomSuggested => boolean() | nil,
+          :offsetLeftSuggested => boolean() | nil,
+          :offsetRightSuggested => boolean() | nil,
+          :offsetTopSuggested => boolean() | nil
         }
 
   field(:angleSuggested)

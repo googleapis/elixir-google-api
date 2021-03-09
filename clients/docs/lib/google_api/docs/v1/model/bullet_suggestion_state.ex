@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.BulletSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listIdSuggested => boolean(),
-          :nestingLevelSuggested => boolean(),
-          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t()
+          :listIdSuggested => boolean() | nil,
+          :nestingLevelSuggested => boolean() | nil,
+          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t() | nil
         }
 
   field(:listIdSuggested)

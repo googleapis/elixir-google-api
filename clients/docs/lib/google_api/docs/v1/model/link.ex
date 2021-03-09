@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bookmarkId => String.t(),
-          :headingId => String.t(),
-          :url => String.t()
+          :bookmarkId => String.t() | nil,
+          :headingId => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:bookmarkId)

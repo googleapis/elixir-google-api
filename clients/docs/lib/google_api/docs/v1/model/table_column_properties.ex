@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.TableColumnProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :width => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :widthType => String.t()
+          :width => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :widthType => String.t() | nil
         }
 
   field(:width, as: GoogleApi.Docs.V1.Model.Dimension)

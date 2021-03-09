@@ -33,14 +33,14 @@ defmodule GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angleSuggested => boolean(),
-          :brightnessSuggested => boolean(),
-          :contentUriSuggested => boolean(),
-          :contrastSuggested => boolean(),
+          :angleSuggested => boolean() | nil,
+          :brightnessSuggested => boolean() | nil,
+          :contentUriSuggested => boolean() | nil,
+          :contrastSuggested => boolean() | nil,
           :cropPropertiesSuggestionState =>
-            GoogleApi.Docs.V1.Model.CropPropertiesSuggestionState.t(),
-          :sourceUriSuggested => boolean(),
-          :transparencySuggested => boolean()
+            GoogleApi.Docs.V1.Model.CropPropertiesSuggestionState.t() | nil,
+          :sourceUriSuggested => boolean() | nil,
+          :transparencySuggested => boolean() | nil
         }
 
   field(:angleSuggested)
