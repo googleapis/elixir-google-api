@@ -29,9 +29,9 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digest => String.t(),
-          :hash => String.t(),
-          :url => String.t()
+          :digest => String.t() | nil,
+          :hash => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:digest)

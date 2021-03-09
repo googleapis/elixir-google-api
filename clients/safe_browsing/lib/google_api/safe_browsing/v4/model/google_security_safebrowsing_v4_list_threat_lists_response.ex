@@ -31,6 +31,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ListThreat
             list(
               GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatListDescriptor.t()
             )
+            | nil
         }
 
   field(:threatLists,

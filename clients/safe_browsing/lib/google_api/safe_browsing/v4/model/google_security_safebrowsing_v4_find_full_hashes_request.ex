@@ -31,11 +31,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHa
 
   @type t :: %__MODULE__{
           :apiClient =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t(),
-          :client => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t(),
-          :clientStates => list(String.t()),
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t() | nil,
+          :client =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t() | nil,
+          :clientStates => list(String.t()) | nil,
           :threatInfo =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatInfo.t()
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatInfo.t() | nil
         }
 
   field(:apiClient, as: GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo)

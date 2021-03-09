@@ -27,7 +27,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawIndices
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indices => list(integer())
+          :indices => list(integer()) | nil
         }
 
   field(:indices, type: :list)

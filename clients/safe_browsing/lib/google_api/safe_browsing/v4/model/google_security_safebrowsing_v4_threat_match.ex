@@ -32,13 +32,15 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatMatc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheDuration => String.t(),
-          :platformType => String.t(),
-          :threat => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t(),
+          :cacheDuration => String.t() | nil,
+          :platformType => String.t() | nil,
+          :threat =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t() | nil,
           :threatEntryMetadata =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntryMetadata.t(),
-          :threatEntryType => String.t(),
-          :threatType => String.t()
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntryMetadata.t()
+            | nil,
+          :threatEntryType => String.t() | nil,
+          :threatType => String.t() | nil
         }
 
   field(:cacheDuration)

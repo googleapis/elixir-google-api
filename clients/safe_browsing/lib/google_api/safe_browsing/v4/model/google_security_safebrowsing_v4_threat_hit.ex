@@ -33,16 +33,19 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatHit 
 
   @type t :: %__MODULE__{
           :clientInfo =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t(),
-          :entry => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t(),
-          :platformType => String.t(),
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t() | nil,
+          :entry =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t() | nil,
+          :platformType => String.t() | nil,
           :resources =>
             list(
               GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatHitThreatSource.t()
-            ),
-          :threatType => String.t(),
+            )
+            | nil,
+          :threatType => String.t() | nil,
           :userInfo =>
             GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatHitUserInfo.t()
+            | nil
         }
 
   field(:clientInfo, as: GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo)

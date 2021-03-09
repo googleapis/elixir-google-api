@@ -28,11 +28,13 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThrea
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :client => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t(),
+          :client =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo.t() | nil,
           :listUpdateRequests =>
             list(
               GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequest.t()
             )
+            | nil
         }
 
   field(:client, as: GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo)

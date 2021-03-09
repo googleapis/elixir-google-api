@@ -28,8 +28,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatHitU
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regionCode => String.t(),
-          :userId => String.t()
+          :regionCode => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:regionCode)

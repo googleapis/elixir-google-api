@@ -31,8 +31,9 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThrea
           :listUpdateResponses =>
             list(
               GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponse.t()
-            ),
-          :minimumWaitDuration => String.t()
+            )
+            | nil,
+          :minimumWaitDuration => String.t() | nil
         }
 
   field(:listUpdateResponses,

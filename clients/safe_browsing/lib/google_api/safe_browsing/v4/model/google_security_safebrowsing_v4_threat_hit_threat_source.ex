@@ -30,10 +30,10 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatHitT
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :referrer => String.t(),
-          :remoteIp => String.t(),
-          :type => String.t(),
-          :url => String.t()
+          :referrer => String.t() | nil,
+          :remoteIp => String.t() | nil,
+          :type => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:referrer)

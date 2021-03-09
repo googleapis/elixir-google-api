@@ -29,6 +29,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindThreat
   @type t :: %__MODULE__{
           :matches =>
             list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatMatch.t())
+            | nil
         }
 
   field(:matches,

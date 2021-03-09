@@ -55,6 +55,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.FullHashes do
           {:ok,
            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHashesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def safebrowsing_full_hashes_find(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
