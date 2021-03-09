@@ -32,12 +32,12 @@ defmodule GoogleApi.CustomSearch.V1.Model.Promotion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bodyLines => list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t()),
-          :displayLink => String.t(),
-          :htmlTitle => String.t(),
-          :image => GoogleApi.CustomSearch.V1.Model.PromotionImage.t(),
-          :link => String.t(),
-          :title => String.t()
+          :bodyLines => list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t()) | nil,
+          :displayLink => String.t() | nil,
+          :htmlTitle => String.t() | nil,
+          :image => GoogleApi.CustomSearch.V1.Model.PromotionImage.t() | nil,
+          :link => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:bodyLines, as: GoogleApi.CustomSearch.V1.Model.PromotionBodyLines, type: :list)

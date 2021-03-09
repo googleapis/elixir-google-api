@@ -84,6 +84,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   @spec search_cse_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def search_cse_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -202,6 +203,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   @spec search_cse_siterestrict_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def search_cse_siterestrict_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

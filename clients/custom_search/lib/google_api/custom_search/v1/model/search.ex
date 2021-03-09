@@ -34,14 +34,14 @@ defmodule GoogleApi.CustomSearch.V1.Model.Search do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => map(),
-          :items => list(GoogleApi.CustomSearch.V1.Model.Result.t()),
-          :kind => String.t(),
-          :promotions => list(GoogleApi.CustomSearch.V1.Model.Promotion.t()),
-          :queries => GoogleApi.CustomSearch.V1.Model.SearchQueries.t(),
-          :searchInformation => GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t(),
-          :spelling => GoogleApi.CustomSearch.V1.Model.SearchSpelling.t(),
-          :url => GoogleApi.CustomSearch.V1.Model.SearchUrl.t()
+          :context => map() | nil,
+          :items => list(GoogleApi.CustomSearch.V1.Model.Result.t()) | nil,
+          :kind => String.t() | nil,
+          :promotions => list(GoogleApi.CustomSearch.V1.Model.Promotion.t()) | nil,
+          :queries => GoogleApi.CustomSearch.V1.Model.SearchQueries.t() | nil,
+          :searchInformation => GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t() | nil,
+          :spelling => GoogleApi.CustomSearch.V1.Model.SearchSpelling.t() | nil,
+          :url => GoogleApi.CustomSearch.V1.Model.SearchUrl.t() | nil
         }
 
   field(:context, type: :map)

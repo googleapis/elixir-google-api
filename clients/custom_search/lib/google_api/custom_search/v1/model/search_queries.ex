@@ -29,9 +29,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchQueries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPage => list(GoogleApi.CustomSearch.V1.Model.SearchQueriesNextPage.t()),
-          :previousPage => list(GoogleApi.CustomSearch.V1.Model.SearchQueriesPreviousPage.t()),
-          :request => list(GoogleApi.CustomSearch.V1.Model.SearchQueriesRequest.t())
+          :nextPage => list(GoogleApi.CustomSearch.V1.Model.SearchQueriesNextPage.t()) | nil,
+          :previousPage =>
+            list(GoogleApi.CustomSearch.V1.Model.SearchQueriesPreviousPage.t()) | nil,
+          :request => list(GoogleApi.CustomSearch.V1.Model.SearchQueriesRequest.t()) | nil
         }
 
   field(:nextPage, as: GoogleApi.CustomSearch.V1.Model.SearchQueriesNextPage, type: :list)

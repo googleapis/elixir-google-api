@@ -33,13 +33,13 @@ defmodule GoogleApi.CustomSearch.V1.Model.ResultImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteSize => integer(),
-          :contextLink => String.t(),
-          :height => integer(),
-          :thumbnailHeight => integer(),
-          :thumbnailLink => String.t(),
-          :thumbnailWidth => integer(),
-          :width => integer()
+          :byteSize => integer() | nil,
+          :contextLink => String.t() | nil,
+          :height => integer() | nil,
+          :thumbnailHeight => integer() | nil,
+          :thumbnailLink => String.t() | nil,
+          :thumbnailWidth => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:byteSize)

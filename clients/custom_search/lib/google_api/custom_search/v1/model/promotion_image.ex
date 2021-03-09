@@ -29,9 +29,9 @@ defmodule GoogleApi.CustomSearch.V1.Model.PromotionImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :source => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :source => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)
