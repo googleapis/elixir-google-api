@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adPosition => String.t(),
-          :frequency => integer(),
-          :minimumWordCount => integer(),
-          :type => String.t()
+          :adPosition => String.t() | nil,
+          :frequency => integer() | nil,
+          :minimumWordCount => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:adPosition)

@@ -35,15 +35,16 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :averages => list(String.t()),
-          :endDate => String.t(),
-          :headers => list(GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders.t()),
-          :kind => String.t(),
-          :rows => list(list(String.t())),
-          :startDate => String.t(),
-          :totalMatchedRows => String.t(),
-          :totals => list(String.t()),
-          :warnings => list(String.t())
+          :averages => list(String.t()) | nil,
+          :endDate => String.t() | nil,
+          :headers =>
+            list(GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders.t()) | nil,
+          :kind => String.t() | nil,
+          :rows => list(list(String.t())) | nil,
+          :startDate => String.t() | nil,
+          :totalMatchedRows => String.t() | nil,
+          :totals => list(String.t()) | nil,
+          :warnings => list(String.t()) | nil
         }
 
   field(:averages, type: :list)

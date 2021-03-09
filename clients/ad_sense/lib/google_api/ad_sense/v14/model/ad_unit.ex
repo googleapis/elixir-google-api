@@ -41,17 +41,17 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :contentAdsSettings => GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings.t(),
-          :customStyle => GoogleApi.AdSense.V14.Model.AdStyle.t(),
-          :feedAdsSettings => GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings.t(),
-          :id => String.t(),
-          :kind => String.t(),
+          :code => String.t() | nil,
+          :contentAdsSettings => GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings.t() | nil,
+          :customStyle => GoogleApi.AdSense.V14.Model.AdStyle.t() | nil,
+          :feedAdsSettings => GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
           :mobileContentAdsSettings =>
-            GoogleApi.AdSense.V14.Model.AdUnitMobileContentAdsSettings.t(),
-          :name => String.t(),
-          :savedStyleId => String.t(),
-          :status => String.t()
+            GoogleApi.AdSense.V14.Model.AdUnitMobileContentAdsSettings.t() | nil,
+          :name => String.t() | nil,
+          :savedStyleId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:code)

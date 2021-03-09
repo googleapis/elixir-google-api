@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colors => GoogleApi.AdSense.V14.Model.AdStyleColors.t(),
-          :corners => String.t(),
-          :font => GoogleApi.AdSense.V14.Model.AdStyleFont.t(),
-          :kind => String.t()
+          :colors => GoogleApi.AdSense.V14.Model.AdStyleColors.t() | nil,
+          :corners => String.t() | nil,
+          :font => GoogleApi.AdSense.V14.Model.AdStyleFont.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:colors, as: GoogleApi.AdSense.V14.Model.AdStyleColors)

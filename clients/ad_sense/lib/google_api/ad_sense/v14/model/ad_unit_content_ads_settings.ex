@@ -29,9 +29,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupOption => GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption.t(),
-          :size => String.t(),
-          :type => String.t()
+          :backupOption =>
+            GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption.t() | nil,
+          :size => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:backupOption, as: GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption)

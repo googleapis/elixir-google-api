@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.SavedAdStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adStyle => GoogleApi.AdSense.V14.Model.AdStyle.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t()
+          :adStyle => GoogleApi.AdSense.V14.Model.AdStyle.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:adStyle, as: GoogleApi.AdSense.V14.Model.AdStyle)

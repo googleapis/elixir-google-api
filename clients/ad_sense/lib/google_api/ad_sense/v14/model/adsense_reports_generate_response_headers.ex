@@ -29,9 +29,9 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currency => String.t(),
-          :name => String.t(),
-          :type => String.t()
+          :currency => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:currency)

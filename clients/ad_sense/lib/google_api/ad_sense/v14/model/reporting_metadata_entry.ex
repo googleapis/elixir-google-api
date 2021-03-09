@@ -33,13 +33,13 @@ defmodule GoogleApi.AdSense.V14.Model.ReportingMetadataEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compatibleDimensions => list(String.t()),
-          :compatibleMetrics => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :requiredDimensions => list(String.t()),
-          :requiredMetrics => list(String.t()),
-          :supportedProducts => list(String.t())
+          :compatibleDimensions => list(String.t()) | nil,
+          :compatibleMetrics => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :requiredDimensions => list(String.t()) | nil,
+          :requiredMetrics => list(String.t()) | nil,
+          :supportedProducts => list(String.t()) | nil
         }
 
   field(:compatibleDimensions, type: :list)

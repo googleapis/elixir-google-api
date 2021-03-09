@@ -48,7 +48,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   *   `{:error, info}` on failure
   """
   @spec adsense_alerts_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def adsense_alerts_delete(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,10 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   *   `{:error, info}` on failure
   """
   @spec adsense_alerts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def adsense_alerts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
