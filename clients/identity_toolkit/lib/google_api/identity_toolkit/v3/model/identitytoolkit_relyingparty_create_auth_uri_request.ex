@@ -42,22 +42,22 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyCreateAu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appId => String.t(),
-          :authFlowType => String.t(),
-          :clientId => String.t(),
-          :context => String.t(),
-          :continueUri => String.t(),
-          :customParameter => map(),
-          :hostedDomain => String.t(),
-          :identifier => String.t(),
-          :oauthConsumerKey => String.t(),
-          :oauthScope => String.t(),
-          :openidRealm => String.t(),
-          :otaApp => String.t(),
-          :providerId => String.t(),
-          :sessionId => String.t(),
-          :tenantId => String.t(),
-          :tenantProjectNumber => String.t()
+          :appId => String.t() | nil,
+          :authFlowType => String.t() | nil,
+          :clientId => String.t() | nil,
+          :context => String.t() | nil,
+          :continueUri => String.t() | nil,
+          :customParameter => map() | nil,
+          :hostedDomain => String.t() | nil,
+          :identifier => String.t() | nil,
+          :oauthConsumerKey => String.t() | nil,
+          :oauthScope => String.t() | nil,
+          :openidRealm => String.t() | nil,
+          :otaApp => String.t() | nil,
+          :providerId => String.t() | nil,
+          :sessionId => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :tenantProjectNumber => String.t() | nil
         }
 
   field(:appId)

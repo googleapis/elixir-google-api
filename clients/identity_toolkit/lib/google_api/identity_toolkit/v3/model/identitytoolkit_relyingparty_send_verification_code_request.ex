@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVeri
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iosReceipt => String.t(),
-          :iosSecret => String.t(),
-          :phoneNumber => String.t(),
-          :recaptchaToken => String.t()
+          :iosReceipt => String.t() | nil,
+          :iosSecret => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :recaptchaToken => String.t() | nil
         }
 
   field(:iosReceipt)

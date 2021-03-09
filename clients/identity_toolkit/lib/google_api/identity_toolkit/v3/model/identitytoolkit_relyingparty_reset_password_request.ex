@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPas
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :newPassword => String.t(),
-          :oldPassword => String.t(),
-          :oobCode => String.t()
+          :email => String.t() | nil,
+          :newPassword => String.t() | nil,
+          :oldPassword => String.t() | nil,
+          :oobCode => String.t() | nil
         }
 
   field(:email)

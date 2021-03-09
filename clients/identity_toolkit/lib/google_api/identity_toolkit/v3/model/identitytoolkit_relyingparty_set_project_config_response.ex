@@ -27,7 +27,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProje
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectId => String.t()
+          :projectId => String.t() | nil
         }
 
   field(:projectId)

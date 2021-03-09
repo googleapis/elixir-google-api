@@ -29,9 +29,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegatedProjectNumber => String.t(),
-          :idToken => String.t(),
-          :localId => String.t()
+          :delegatedProjectNumber => String.t() | nil,
+          :idToken => String.t() | nil,
+          :localId => String.t() | nil
         }
 
   field(:delegatedProjectNumber)

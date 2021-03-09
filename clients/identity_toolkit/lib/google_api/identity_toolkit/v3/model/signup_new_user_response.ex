@@ -33,13 +33,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t(),
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :kind => String.t(),
-          :localId => String.t(),
-          :refreshToken => String.t()
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :kind => String.t() | nil,
+          :localId => String.t() | nil,
+          :refreshToken => String.t() | nil
         }
 
   field(:displayName)

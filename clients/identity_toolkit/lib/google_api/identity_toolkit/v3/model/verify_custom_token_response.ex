@@ -31,11 +31,11 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :isNewUser => boolean(),
-          :kind => String.t(),
-          :refreshToken => String.t()
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :isNewUser => boolean() | nil,
+          :kind => String.t() | nil,
+          :refreshToken => String.t() | nil
         }
 
   field(:expiresIn)

@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :kind => String.t(),
-          :newEmail => String.t(),
-          :requestType => String.t()
+          :email => String.t() | nil,
+          :kind => String.t() | nil,
+          :newEmail => String.t() | nil,
+          :requestType => String.t() | nil
         }
 
   field(:email)

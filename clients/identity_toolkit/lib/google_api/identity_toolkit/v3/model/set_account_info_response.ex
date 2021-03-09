@@ -38,19 +38,20 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t(),
-          :emailVerified => boolean(),
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :kind => String.t(),
-          :localId => String.t(),
-          :newEmail => String.t(),
-          :passwordHash => String.t(),
-          :photoUrl => String.t(),
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :emailVerified => boolean() | nil,
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :kind => String.t() | nil,
+          :localId => String.t() | nil,
+          :newEmail => String.t() | nil,
+          :passwordHash => String.t() | nil,
+          :photoUrl => String.t() | nil,
           :providerUserInfo =>
-            list(GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo.t()),
-          :refreshToken => String.t()
+            list(GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo.t())
+            | nil,
+          :refreshToken => String.t() | nil
         }
 
   field(:displayName)

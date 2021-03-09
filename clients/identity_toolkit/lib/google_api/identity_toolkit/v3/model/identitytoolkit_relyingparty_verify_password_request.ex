@@ -37,17 +37,17 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPa
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :captchaChallenge => String.t(),
-          :captchaResponse => String.t(),
-          :delegatedProjectNumber => String.t(),
-          :email => String.t(),
-          :idToken => String.t(),
-          :instanceId => String.t(),
-          :password => String.t(),
-          :pendingIdToken => String.t(),
-          :returnSecureToken => boolean(),
-          :tenantId => String.t(),
-          :tenantProjectNumber => String.t()
+          :captchaChallenge => String.t() | nil,
+          :captchaResponse => String.t() | nil,
+          :delegatedProjectNumber => String.t() | nil,
+          :email => String.t() | nil,
+          :idToken => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :password => String.t() | nil,
+          :pendingIdToken => String.t() | nil,
+          :returnSecureToken => boolean() | nil,
+          :tenantId => String.t() | nil,
+          :tenantProjectNumber => String.t() | nil
         }
 
   field(:captchaChallenge)

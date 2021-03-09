@@ -41,21 +41,21 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.Relyingparty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidInstallApp => boolean(),
-          :androidMinimumVersion => String.t(),
-          :androidPackageName => String.t(),
-          :canHandleCodeInApp => boolean(),
-          :captchaResp => String.t(),
-          :challenge => String.t(),
-          :continueUrl => String.t(),
-          :email => String.t(),
-          :iOSAppStoreId => String.t(),
-          :iOSBundleId => String.t(),
-          :idToken => String.t(),
-          :kind => String.t(),
-          :newEmail => String.t(),
-          :requestType => String.t(),
-          :userIp => String.t()
+          :androidInstallApp => boolean() | nil,
+          :androidMinimumVersion => String.t() | nil,
+          :androidPackageName => String.t() | nil,
+          :canHandleCodeInApp => boolean() | nil,
+          :captchaResp => String.t() | nil,
+          :challenge => String.t() | nil,
+          :continueUrl => String.t() | nil,
+          :email => String.t() | nil,
+          :iOSAppStoreId => String.t() | nil,
+          :iOSBundleId => String.t() | nil,
+          :idToken => String.t() | nil,
+          :kind => String.t() | nil,
+          :newEmail => String.t() | nil,
+          :requestType => String.t() | nil,
+          :userIp => String.t() | nil
         }
 
   field(:androidInstallApp)

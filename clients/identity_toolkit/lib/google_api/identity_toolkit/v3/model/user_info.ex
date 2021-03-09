@@ -45,26 +45,26 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :customAttributes => String.t(),
-          :customAuth => boolean(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :email => String.t(),
-          :emailVerified => boolean(),
-          :lastLoginAt => String.t(),
-          :localId => String.t(),
-          :passwordHash => String.t(),
-          :passwordUpdatedAt => float(),
-          :phoneNumber => String.t(),
-          :photoUrl => String.t(),
+          :createdAt => String.t() | nil,
+          :customAttributes => String.t() | nil,
+          :customAuth => boolean() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :emailVerified => boolean() | nil,
+          :lastLoginAt => String.t() | nil,
+          :localId => String.t() | nil,
+          :passwordHash => String.t() | nil,
+          :passwordUpdatedAt => float() | nil,
+          :phoneNumber => String.t() | nil,
+          :photoUrl => String.t() | nil,
           :providerUserInfo =>
-            list(GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo.t()),
-          :rawPassword => String.t(),
-          :salt => String.t(),
-          :screenName => String.t(),
-          :validSince => String.t(),
-          :version => integer()
+            list(GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo.t()) | nil,
+          :rawPassword => String.t() | nil,
+          :salt => String.t() | nil,
+          :screenName => String.t() | nil,
+          :validSince => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:createdAt)

@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegatedProjectNumber => String.t(),
-          :instanceId => String.t(),
-          :returnSecureToken => boolean(),
-          :token => String.t()
+          :delegatedProjectNumber => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :returnSecureToken => boolean() | nil,
+          :token => String.t() | nil
         }
 
   field(:delegatedProjectNumber)

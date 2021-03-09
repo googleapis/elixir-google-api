@@ -29,9 +29,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :users => list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :users => list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t()) | nil
         }
 
   field(:kind)

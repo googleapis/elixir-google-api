@@ -40,20 +40,20 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowOverwrite => boolean(),
-          :blockSize => integer(),
-          :cpuMemCost => integer(),
-          :delegatedProjectNumber => String.t(),
-          :dkLen => integer(),
-          :hashAlgorithm => String.t(),
-          :memoryCost => integer(),
-          :parallelization => integer(),
-          :rounds => integer(),
-          :saltSeparator => String.t(),
-          :sanityCheck => boolean(),
-          :signerKey => String.t(),
-          :targetProjectId => String.t(),
-          :users => list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t())
+          :allowOverwrite => boolean() | nil,
+          :blockSize => integer() | nil,
+          :cpuMemCost => integer() | nil,
+          :delegatedProjectNumber => String.t() | nil,
+          :dkLen => integer() | nil,
+          :hashAlgorithm => String.t() | nil,
+          :memoryCost => integer() | nil,
+          :parallelization => integer() | nil,
+          :rounds => integer() | nil,
+          :saltSeparator => String.t() | nil,
+          :sanityCheck => boolean() | nil,
+          :signerKey => String.t() | nil,
+          :targetProjectId => String.t() | nil,
+          :users => list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t()) | nil
         }
 
   field(:allowOverwrite)

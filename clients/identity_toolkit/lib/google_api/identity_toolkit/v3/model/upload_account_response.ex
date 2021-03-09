@@ -28,8 +28,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => list(GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError.t()),
-          :kind => String.t()
+          :error => list(GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:error, as: GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError, type: :list)

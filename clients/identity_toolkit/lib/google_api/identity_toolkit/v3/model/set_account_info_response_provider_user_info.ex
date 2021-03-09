@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :federatedId => String.t(),
-          :photoUrl => String.t(),
-          :providerId => String.t()
+          :displayName => String.t() | nil,
+          :federatedId => String.t() | nil,
+          :photoUrl => String.t() | nil,
+          :providerId => String.t() | nil
         }
 
   field(:displayName)

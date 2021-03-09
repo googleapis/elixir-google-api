@@ -38,18 +38,18 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t(),
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :kind => String.t(),
-          :localId => String.t(),
-          :oauthAccessToken => String.t(),
-          :oauthAuthorizationCode => String.t(),
-          :oauthExpireIn => integer(),
-          :photoUrl => String.t(),
-          :refreshToken => String.t(),
-          :registered => boolean()
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :kind => String.t() | nil,
+          :localId => String.t() | nil,
+          :oauthAccessToken => String.t() | nil,
+          :oauthAuthorizationCode => String.t() | nil,
+          :oauthExpireIn => integer() | nil,
+          :photoUrl => String.t() | nil,
+          :refreshToken => String.t() | nil,
+          :registered => boolean() | nil
         }
 
   field(:displayName)
