@@ -31,11 +31,11 @@ defmodule GoogleApi.Gmail.V1.Model.SmtpMsa do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :password => String.t(),
-          :port => integer(),
-          :securityMode => String.t(),
-          :username => String.t()
+          :host => String.t() | nil,
+          :password => String.t() | nil,
+          :port => integer() | nil,
+          :securityMode => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:host)

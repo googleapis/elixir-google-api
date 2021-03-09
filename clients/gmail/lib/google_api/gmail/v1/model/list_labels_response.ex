@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListLabelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => list(GoogleApi.Gmail.V1.Model.Label.t())
+          :labels => list(GoogleApi.Gmail.V1.Model.Label.t()) | nil
         }
 
   field(:labels, as: GoogleApi.Gmail.V1.Model.Label, type: :list)

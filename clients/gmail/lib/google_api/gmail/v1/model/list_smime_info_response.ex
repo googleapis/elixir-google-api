@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListSmimeInfoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :smimeInfo => list(GoogleApi.Gmail.V1.Model.SmimeInfo.t())
+          :smimeInfo => list(GoogleApi.Gmail.V1.Model.SmimeInfo.t()) | nil
         }
 
   field(:smimeInfo, as: GoogleApi.Gmail.V1.Model.SmimeInfo, type: :list)

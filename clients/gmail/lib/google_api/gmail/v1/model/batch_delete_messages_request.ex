@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.BatchDeleteMessagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ids => list(String.t())
+          :ids => list(String.t()) | nil
         }
 
   field(:ids, type: :list)

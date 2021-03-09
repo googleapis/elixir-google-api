@@ -30,10 +30,10 @@ defmodule GoogleApi.Gmail.V1.Model.Profile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddress => String.t(),
-          :historyId => String.t(),
-          :messagesTotal => integer(),
-          :threadsTotal => integer()
+          :emailAddress => String.t() | nil,
+          :historyId => String.t() | nil,
+          :messagesTotal => integer() | nil,
+          :threadsTotal => integer() | nil
         }
 
   field(:emailAddress)

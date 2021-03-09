@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListSendAsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sendAs => list(GoogleApi.Gmail.V1.Model.SendAs.t())
+          :sendAs => list(GoogleApi.Gmail.V1.Model.SendAs.t()) | nil
         }
 
   field(:sendAs, as: GoogleApi.Gmail.V1.Model.SendAs, type: :list)

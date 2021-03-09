@@ -36,16 +36,16 @@ defmodule GoogleApi.Gmail.V1.Model.Label do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Gmail.V1.Model.LabelColor.t(),
-          :id => String.t(),
-          :labelListVisibility => String.t(),
-          :messageListVisibility => String.t(),
-          :messagesTotal => integer(),
-          :messagesUnread => integer(),
-          :name => String.t(),
-          :threadsTotal => integer(),
-          :threadsUnread => integer(),
-          :type => String.t()
+          :color => GoogleApi.Gmail.V1.Model.LabelColor.t() | nil,
+          :id => String.t() | nil,
+          :labelListVisibility => String.t() | nil,
+          :messageListVisibility => String.t() | nil,
+          :messagesTotal => integer() | nil,
+          :messagesUnread => integer() | nil,
+          :name => String.t() | nil,
+          :threadsTotal => integer() | nil,
+          :threadsUnread => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Gmail.V1.Model.LabelColor)

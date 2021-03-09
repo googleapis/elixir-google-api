@@ -35,15 +35,15 @@ defmodule GoogleApi.Gmail.V1.Model.FilterCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludeChats => boolean(),
-          :from => String.t(),
-          :hasAttachment => boolean(),
-          :negatedQuery => String.t(),
-          :query => String.t(),
-          :size => integer(),
-          :sizeComparison => String.t(),
-          :subject => String.t(),
-          :to => String.t()
+          :excludeChats => boolean() | nil,
+          :from => String.t() | nil,
+          :hasAttachment => boolean() | nil,
+          :negatedQuery => String.t() | nil,
+          :query => String.t() | nil,
+          :size => integer() | nil,
+          :sizeComparison => String.t() | nil,
+          :subject => String.t() | nil,
+          :to => String.t() | nil
         }
 
   field(:excludeChats)

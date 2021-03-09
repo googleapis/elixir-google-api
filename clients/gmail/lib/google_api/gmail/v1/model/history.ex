@@ -32,12 +32,12 @@ defmodule GoogleApi.Gmail.V1.Model.History do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :labelsAdded => list(GoogleApi.Gmail.V1.Model.HistoryLabelAdded.t()),
-          :labelsRemoved => list(GoogleApi.Gmail.V1.Model.HistoryLabelRemoved.t()),
-          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()),
-          :messagesAdded => list(GoogleApi.Gmail.V1.Model.HistoryMessageAdded.t()),
-          :messagesDeleted => list(GoogleApi.Gmail.V1.Model.HistoryMessageDeleted.t())
+          :id => String.t() | nil,
+          :labelsAdded => list(GoogleApi.Gmail.V1.Model.HistoryLabelAdded.t()) | nil,
+          :labelsRemoved => list(GoogleApi.Gmail.V1.Model.HistoryLabelRemoved.t()) | nil,
+          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()) | nil,
+          :messagesAdded => list(GoogleApi.Gmail.V1.Model.HistoryMessageAdded.t()) | nil,
+          :messagesDeleted => list(GoogleApi.Gmail.V1.Model.HistoryMessageDeleted.t()) | nil
         }
 
   field(:id)

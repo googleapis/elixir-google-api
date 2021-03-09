@@ -32,12 +32,12 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePart do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => GoogleApi.Gmail.V1.Model.MessagePartBody.t(),
-          :filename => String.t(),
-          :headers => list(GoogleApi.Gmail.V1.Model.MessagePartHeader.t()),
-          :mimeType => String.t(),
-          :partId => String.t(),
-          :parts => list(GoogleApi.Gmail.V1.Model.MessagePart.t())
+          :body => GoogleApi.Gmail.V1.Model.MessagePartBody.t() | nil,
+          :filename => String.t() | nil,
+          :headers => list(GoogleApi.Gmail.V1.Model.MessagePartHeader.t()) | nil,
+          :mimeType => String.t() | nil,
+          :partId => String.t() | nil,
+          :parts => list(GoogleApi.Gmail.V1.Model.MessagePart.t()) | nil
         }
 
   field(:body, as: GoogleApi.Gmail.V1.Model.MessagePartBody)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.ListDraftsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drafts => list(GoogleApi.Gmail.V1.Model.Draft.t()),
-          :nextPageToken => String.t(),
-          :resultSizeEstimate => integer()
+          :drafts => list(GoogleApi.Gmail.V1.Model.Draft.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :resultSizeEstimate => integer() | nil
         }
 
   field(:drafts, as: GoogleApi.Gmail.V1.Model.Draft, type: :list)

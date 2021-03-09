@@ -26,7 +26,7 @@ defmodule GoogleApi.Gmail.V1.Model.SendAs do
   *   `isPrimary` (*type:* `boolean()`, *default:* `nil`) - Whether this address is the primary address used to login to the account. Every Gmail account has exactly one primary address, and it cannot be deleted from the collection of send-as aliases. This field is read-only.
   *   `replyToAddress` (*type:* `String.t`, *default:* `nil`) - An optional email address that is included in a "Reply-To:" header for mail sent using this alias. If this is empty, Gmail will not generate a "Reply-To:" header.
   *   `sendAsEmail` (*type:* `String.t`, *default:* `nil`) - The email address that appears in the "From:" header for mail sent using this alias. This is read-only for all operations except create.
-  *   `signature` (*type:* `String.t`, *default:* `nil`) - An optional HTML signature that is included in messages composed with this alias in the Gmail web UI.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - An optional HTML signature that is included in messages composed with this alias in the Gmail web UI. This signature is added to new emails only.
   *   `smtpMsa` (*type:* `GoogleApi.Gmail.V1.Model.SmtpMsa.t`, *default:* `nil`) - An optional SMTP service that will be used as an outbound relay for mail sent using this alias. If this is empty, outbound mail will be sent directly from Gmail's servers to the destination SMTP service. This setting only applies to custom "from" aliases.
   *   `treatAsAlias` (*type:* `boolean()`, *default:* `nil`) - Whether Gmail should treat this address as an alias for the user's primary email address. This setting only applies to custom "from" aliases.
   *   `verificationStatus` (*type:* `String.t`, *default:* `nil`) - Indicates whether this address has been verified for use as a send-as alias. Read-only. This setting only applies to custom "from" aliases.
@@ -35,15 +35,15 @@ defmodule GoogleApi.Gmail.V1.Model.SendAs do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :isDefault => boolean(),
-          :isPrimary => boolean(),
-          :replyToAddress => String.t(),
-          :sendAsEmail => String.t(),
-          :signature => String.t(),
-          :smtpMsa => GoogleApi.Gmail.V1.Model.SmtpMsa.t(),
-          :treatAsAlias => boolean(),
-          :verificationStatus => String.t()
+          :displayName => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :isPrimary => boolean() | nil,
+          :replyToAddress => String.t() | nil,
+          :sendAsEmail => String.t() | nil,
+          :signature => String.t() | nil,
+          :smtpMsa => GoogleApi.Gmail.V1.Model.SmtpMsa.t() | nil,
+          :treatAsAlias => boolean() | nil,
+          :verificationStatus => String.t() | nil
         }
 
   field(:displayName)

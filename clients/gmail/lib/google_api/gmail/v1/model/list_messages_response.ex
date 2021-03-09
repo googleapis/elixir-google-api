@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.ListMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()),
-          :nextPageToken => String.t(),
-          :resultSizeEstimate => integer()
+          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :resultSizeEstimate => integer() | nil
         }
 
   field(:messages, as: GoogleApi.Gmail.V1.Model.Message, type: :list)

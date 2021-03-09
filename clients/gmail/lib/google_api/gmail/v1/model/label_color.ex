@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.LabelColor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => String.t(),
-          :textColor => String.t()
+          :backgroundColor => String.t() | nil,
+          :textColor => String.t() | nil
         }
 
   field(:backgroundColor)

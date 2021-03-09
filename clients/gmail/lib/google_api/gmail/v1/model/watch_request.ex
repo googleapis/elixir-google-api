@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.WatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelFilterAction => String.t(),
-          :labelIds => list(String.t()),
-          :topicName => String.t()
+          :labelFilterAction => String.t() | nil,
+          :labelIds => list(String.t()) | nil,
+          :topicName => String.t() | nil
         }
 
   field(:labelFilterAction)

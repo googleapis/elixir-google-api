@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePartHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

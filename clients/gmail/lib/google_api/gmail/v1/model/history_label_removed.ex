@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.HistoryLabelRemoved do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelIds => list(String.t()),
-          :message => GoogleApi.Gmail.V1.Model.Message.t()
+          :labelIds => list(String.t()) | nil,
+          :message => GoogleApi.Gmail.V1.Model.Message.t() | nil
         }
 
   field(:labelIds, type: :list)

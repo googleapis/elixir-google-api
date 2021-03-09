@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.ListThreadsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resultSizeEstimate => integer(),
-          :threads => list(GoogleApi.Gmail.V1.Model.Thread.t())
+          :nextPageToken => String.t() | nil,
+          :resultSizeEstimate => integer() | nil,
+          :threads => list(GoogleApi.Gmail.V1.Model.Thread.t()) | nil
         }
 
   field(:nextPageToken)
