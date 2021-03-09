@@ -35,15 +35,15 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Trigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :destination => GoogleApi.Eventarc.V1beta1.Model.Destination.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :matchingCriteria => list(GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria.t()),
-          :name => String.t(),
-          :serviceAccount => String.t(),
-          :transport => GoogleApi.Eventarc.V1beta1.Model.Transport.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :destination => GoogleApi.Eventarc.V1beta1.Model.Destination.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :matchingCriteria => list(GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria.t()) | nil,
+          :name => String.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :transport => GoogleApi.Eventarc.V1beta1.Model.Transport.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

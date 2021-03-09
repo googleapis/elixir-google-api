@@ -27,7 +27,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Transport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsub => GoogleApi.Eventarc.V1beta1.Model.Pubsub.t()
+          :pubsub => GoogleApi.Eventarc.V1beta1.Model.Pubsub.t() | nil
         }
 
   field(:pubsub, as: GoogleApi.Eventarc.V1beta1.Model.Pubsub)

@@ -54,6 +54,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
   @spec eventarc_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
   @spec eventarc_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -186,6 +188,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_operations_cancel(
         connection,
@@ -256,6 +259,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_operations_delete(
         connection,
@@ -325,6 +329,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_operations_get(
         connection,
@@ -397,6 +402,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_operations_list(
         connection,
@@ -474,6 +480,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_create(
         connection,
@@ -549,6 +556,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_delete(
         connection,
@@ -621,6 +629,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Trigger.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_get(
         connection,
@@ -691,6 +700,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_get_iam_policy(
         connection,
@@ -764,6 +774,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.ListTriggersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_list(
         connection,
@@ -840,6 +851,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_patch(
         connection,
@@ -914,6 +926,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_set_iam_policy(
         connection,
@@ -985,6 +998,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Eventarc.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def eventarc_projects_locations_triggers_test_iam_permissions(
         connection,

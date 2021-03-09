@@ -29,9 +29,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.ListTriggersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :triggers => list(GoogleApi.Eventarc.V1beta1.Model.Trigger.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :triggers => list(GoogleApi.Eventarc.V1beta1.Model.Trigger.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

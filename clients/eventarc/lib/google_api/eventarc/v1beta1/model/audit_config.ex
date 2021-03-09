@@ -28,8 +28,8 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.AuditConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditLogConfigs => list(GoogleApi.Eventarc.V1beta1.Model.AuditLogConfig.t()),
-          :service => String.t()
+          :auditLogConfigs => list(GoogleApi.Eventarc.V1beta1.Model.AuditLogConfig.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs, as: GoogleApi.Eventarc.V1beta1.Model.AuditLogConfig, type: :list)

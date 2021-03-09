@@ -28,8 +28,8 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Pubsub do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subscription => String.t(),
-          :topic => String.t()
+          :subscription => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:subscription)
