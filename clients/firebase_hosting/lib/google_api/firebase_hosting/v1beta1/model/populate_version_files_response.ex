@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PopulateVersionFilesResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uploadRequiredHashes => list(String.t()),
-          :uploadUrl => String.t()
+          :uploadRequiredHashes => list(String.t()) | nil,
+          :uploadUrl => String.t() | nil
         }
 
   field(:uploadRequiredHashes, type: :list)

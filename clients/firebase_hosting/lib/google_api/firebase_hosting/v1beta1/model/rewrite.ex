@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicLinks => boolean(),
-          :function => String.t(),
-          :glob => String.t(),
-          :path => String.t(),
-          :regex => String.t(),
-          :run => GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite.t()
+          :dynamicLinks => boolean() | nil,
+          :function => String.t() | nil,
+          :glob => String.t() | nil,
+          :path => String.t() | nil,
+          :regex => String.t() | nil,
+          :run => GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite.t() | nil
         }
 
   field(:dynamicLinks)

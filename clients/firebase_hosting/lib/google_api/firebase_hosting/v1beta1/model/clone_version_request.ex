@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CloneVersionRequest do
   @moduledoc """
-  The request sent to CloneVersion.
+
 
   ## Attributes
 
-  *   `exclude` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that do not match any of the regexes in this list will be included in the new version.
-  *   `finalize` (*type:* `boolean()`, *default:* `nil`) - If true, immediately finalize the version after cloning is complete.
-  *   `include` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that match one or more regexes in this list will be included in the new version.
-  *   `sourceVersion` (*type:* `String.t`, *default:* `nil`) - Required. The name of the version to be cloned, in the format: `sites/{site}/versions/{version}`
+  *   `exclude` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that do not match any of the RegEx values in this list will be included in the new version.
+  *   `finalize` (*type:* `boolean()`, *default:* `nil`) - If true, the call to `CloneVersion` immediately finalizes the version after cloning is complete. If false, the cloned version will have a status of `CREATED`. Use [`UpdateVersion`](patch) to set the status of the version to `FINALIZED`.
+  *   `include` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that match one or more RegEx values in this list will be included in the new version.
+  *   `sourceVersion` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for the version to be cloned, in the format: sites/SITE_NAME/versions/VERSION_ID
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclude => GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t(),
-          :finalize => boolean(),
-          :include => GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t(),
-          :sourceVersion => String.t()
+          :exclude => GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t() | nil,
+          :finalize => boolean() | nil,
+          :include => GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t() | nil,
+          :sourceVersion => String.t() | nil
         }
 
   field(:exclude, as: GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter)

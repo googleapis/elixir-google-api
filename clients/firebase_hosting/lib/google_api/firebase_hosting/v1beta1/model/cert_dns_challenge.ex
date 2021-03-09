@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CertDnsChallenge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainName => String.t(),
-          :token => String.t()
+          :domainName => String.t() | nil,
+          :token => String.t() | nil
         }
 
   field(:domainName)

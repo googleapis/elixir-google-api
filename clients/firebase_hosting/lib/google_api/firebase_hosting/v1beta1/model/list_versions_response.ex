@@ -21,15 +21,15 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist beyond the ones in this response. Include this token in your next call to `ListVersions`. Page tokens are short-lived and should not be stored.
   *   `versions` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Version.t)`, *default:* `nil`) - The list of versions, if any exist.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :versions => list(GoogleApi.FirebaseHosting.V1beta1.Model.Version.t())
+          :nextPageToken => String.t() | nil,
+          :versions => list(GoogleApi.FirebaseHosting.V1beta1.Model.Version.t()) | nil
         }
 
   field(:nextPageToken)

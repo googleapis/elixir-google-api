@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :root => String.t()
+          :root => String.t() | nil
         }
 
   field(:root)

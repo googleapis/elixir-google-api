@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudLoggingEnabled => boolean(),
-          :maxVersions => String.t()
+          :cloudLoggingEnabled => boolean() | nil,
+          :maxVersions => String.t() | nil
         }
 
   field(:cloudLoggingEnabled)

@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CertHttpChallenge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :path => String.t(),
-          :token => String.t()
+          :path => String.t() | nil,
+          :token => String.t() | nil
         }
 
   field(:path)

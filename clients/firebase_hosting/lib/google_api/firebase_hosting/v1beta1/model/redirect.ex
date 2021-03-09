@@ -30,10 +30,10 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Redirect do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :glob => String.t(),
-          :location => String.t(),
-          :regex => String.t(),
-          :statusCode => integer()
+          :glob => String.t() | nil,
+          :location => String.t() | nil,
+          :regex => String.t() | nil,
+          :statusCode => integer() | nil
         }
 
   field(:glob)
