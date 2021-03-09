@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.DataAccessOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logMode => String.t()
+          :logMode => String.t() | nil
         }
 
   field(:logMode)

@@ -33,13 +33,13 @@ defmodule GoogleApi.GameServices.V1.Model.Rule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :conditions => list(GoogleApi.GameServices.V1.Model.Condition.t()),
-          :description => String.t(),
-          :in => list(String.t()),
-          :logConfig => list(GoogleApi.GameServices.V1.Model.LogConfig.t()),
-          :notIn => list(String.t()),
-          :permissions => list(String.t())
+          :action => String.t() | nil,
+          :conditions => list(GoogleApi.GameServices.V1.Model.Condition.t()) | nil,
+          :description => String.t() | nil,
+          :in => list(String.t()) | nil,
+          :logConfig => list(GoogleApi.GameServices.V1.Model.LogConfig.t()) | nil,
+          :notIn => list(String.t()) | nil,
+          :permissions => list(String.t()) | nil
         }
 
   field(:action)

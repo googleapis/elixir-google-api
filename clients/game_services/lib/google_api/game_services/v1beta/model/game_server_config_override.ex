@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerConfigOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configVersion => String.t(),
-          :realmsSelector => GoogleApi.GameServices.V1beta.Model.RealmSelector.t()
+          :configVersion => String.t() | nil,
+          :realmsSelector => GoogleApi.GameServices.V1beta.Model.RealmSelector.t() | nil
         }
 
   field(:configVersion)

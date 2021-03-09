@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.TargetFleet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :specSource => GoogleApi.GameServices.V1beta.Model.SpecSource.t()
+          :name => String.t() | nil,
+          :specSource => GoogleApi.GameServices.V1beta.Model.SpecSource.t() | nil
         }
 
   field(:name)

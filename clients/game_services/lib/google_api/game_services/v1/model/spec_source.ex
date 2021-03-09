@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1.Model.SpecSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gameServerConfigName => String.t(),
-          :name => String.t()
+          :gameServerConfigName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:gameServerConfigName)

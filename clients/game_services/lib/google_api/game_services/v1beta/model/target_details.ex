@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.TargetDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fleetDetails => list(GoogleApi.GameServices.V1beta.Model.TargetFleetDetails.t()),
-          :gameServerClusterName => String.t(),
-          :gameServerDeploymentName => String.t()
+          :fleetDetails => list(GoogleApi.GameServices.V1beta.Model.TargetFleetDetails.t()) | nil,
+          :gameServerClusterName => String.t() | nil,
+          :gameServerDeploymentName => String.t() | nil
         }
 
   field(:fleetDetails, as: GoogleApi.GameServices.V1beta.Model.TargetFleetDetails, type: :list)

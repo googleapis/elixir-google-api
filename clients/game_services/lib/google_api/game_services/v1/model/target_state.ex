@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1.Model.TargetState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => list(GoogleApi.GameServices.V1.Model.TargetDetails.t())
+          :details => list(GoogleApi.GameServices.V1.Model.TargetDetails.t()) | nil
         }
 
   field(:details, as: GoogleApi.GameServices.V1.Model.TargetDetails, type: :list)

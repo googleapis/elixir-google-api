@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1.Model.LabelSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map()
+          :labels => map() | nil
         }
 
   field(:labels, type: :map)

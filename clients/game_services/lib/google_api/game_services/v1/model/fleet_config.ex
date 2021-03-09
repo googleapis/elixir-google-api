@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1.Model.FleetConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fleetSpec => String.t(),
-          :name => String.t()
+          :fleetSpec => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:fleetSpec)

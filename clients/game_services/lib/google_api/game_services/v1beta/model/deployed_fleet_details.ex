@@ -28,8 +28,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployedAutoscaler => GoogleApi.GameServices.V1beta.Model.DeployedFleetAutoscaler.t(),
-          :deployedFleet => GoogleApi.GameServices.V1beta.Model.DeployedFleet.t()
+          :deployedAutoscaler =>
+            GoogleApi.GameServices.V1beta.Model.DeployedFleetAutoscaler.t() | nil,
+          :deployedFleet => GoogleApi.GameServices.V1beta.Model.DeployedFleet.t() | nil
         }
 
   field(:deployedAutoscaler, as: GoogleApi.GameServices.V1beta.Model.DeployedFleetAutoscaler)

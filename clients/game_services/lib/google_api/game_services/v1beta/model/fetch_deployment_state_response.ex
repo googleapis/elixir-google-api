@@ -28,8 +28,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.FetchDeploymentStateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterState => list(GoogleApi.GameServices.V1beta.Model.DeployedClusterState.t()),
-          :unavailable => list(String.t())
+          :clusterState =>
+            list(GoogleApi.GameServices.V1beta.Model.DeployedClusterState.t()) | nil,
+          :unavailable => list(String.t()) | nil
         }
 
   field(:clusterState, as: GoogleApi.GameServices.V1beta.Model.DeployedClusterState, type: :list)

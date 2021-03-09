@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.OperationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :errorCode => String.t(),
-          :errorMessage => String.t()
+          :done => boolean() | nil,
+          :errorCode => String.t() | nil,
+          :errorMessage => String.t() | nil
         }
 
   field(:done)

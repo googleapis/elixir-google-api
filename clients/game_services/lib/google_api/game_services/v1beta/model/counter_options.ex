@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.CounterOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customFields => list(GoogleApi.GameServices.V1beta.Model.CustomField.t()),
-          :field => String.t(),
-          :metric => String.t()
+          :customFields => list(GoogleApi.GameServices.V1beta.Model.CustomField.t()) | nil,
+          :field => String.t() | nil,
+          :metric => String.t() | nil
         }
 
   field(:customFields, as: GoogleApi.GameServices.V1beta.Model.CustomField, type: :list)

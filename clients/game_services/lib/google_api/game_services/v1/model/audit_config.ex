@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1.Model.AuditConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditLogConfigs => list(GoogleApi.GameServices.V1.Model.AuditLogConfig.t()),
-          :exemptedMembers => list(String.t()),
-          :service => String.t()
+          :auditLogConfigs => list(GoogleApi.GameServices.V1.Model.AuditLogConfig.t()) | nil,
+          :exemptedMembers => list(String.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs, as: GoogleApi.GameServices.V1.Model.AuditLogConfig, type: :list)

@@ -33,13 +33,13 @@ defmodule GoogleApi.GameServices.V1beta.Model.Realm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :timeZone => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

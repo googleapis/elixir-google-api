@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gkeClusterReference => GoogleApi.GameServices.V1.Model.GkeClusterReference.t(),
-          :namespace => String.t()
+          :gkeClusterReference => GoogleApi.GameServices.V1.Model.GkeClusterReference.t() | nil,
+          :namespace => String.t() | nil
         }
 
   field(:gkeClusterReference, as: GoogleApi.GameServices.V1.Model.GkeClusterReference)

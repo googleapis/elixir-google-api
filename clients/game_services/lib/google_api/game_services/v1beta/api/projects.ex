@@ -54,6 +54,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   @spec gameservices_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -117,6 +118,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   @spec gameservices_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -189,6 +191,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_create(
         connection,
@@ -260,6 +263,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_delete(
         connection,
@@ -330,6 +334,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.FetchDeploymentStateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_fetch_deployment_state(
         connection,
@@ -402,6 +407,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_get(
         connection,
@@ -474,6 +480,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_get_iam_policy(
         connection,
@@ -544,6 +551,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.GameServerDeploymentRollout.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_get_rollout(
         connection,
@@ -619,6 +627,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListGameServerDeploymentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_list(
         connection,
@@ -696,6 +705,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_patch(
         connection,
@@ -771,6 +781,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
           {:ok,
            GoogleApi.GameServices.V1beta.Model.PreviewGameServerDeploymentRolloutResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_preview_rollout(
         connection,
@@ -850,6 +861,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_set_iam_policy(
         connection,
@@ -921,6 +933,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_test_iam_permissions(
         connection,
@@ -995,6 +1008,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_update_rollout(
         connection,
@@ -1068,6 +1082,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_configs_create(
         connection,
@@ -1139,6 +1154,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_configs_delete(
         connection,
@@ -1208,6 +1224,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.GameServerConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_configs_get(
         connection,
@@ -1281,6 +1298,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListGameServerConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_game_server_deployments_configs_list(
         connection,
@@ -1357,6 +1375,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_operations_cancel(
         connection,
@@ -1427,6 +1446,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_operations_delete(
         connection,
@@ -1496,6 +1516,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_operations_get(
         connection,
@@ -1568,6 +1589,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_operations_list(
         connection,
@@ -1644,6 +1666,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_create(
         connection,
@@ -1715,6 +1738,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_delete(
         connection,
@@ -1784,6 +1808,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Realm.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_get(
         connection,
@@ -1857,6 +1882,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListRealmsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_list(
         connection,
@@ -1934,6 +1960,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_patch(
         connection,
@@ -2008,6 +2035,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.PreviewRealmUpdateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_preview_update(
         connection,
@@ -2084,6 +2112,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_create(
         connection,
@@ -2155,6 +2184,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_delete(
         connection,
@@ -2224,6 +2254,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.GameServerCluster.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_get(
         connection,
@@ -2297,6 +2328,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.ListGameServerClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_list(
         connection,
@@ -2374,6 +2406,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_patch(
         connection,
@@ -2448,6 +2481,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.PreviewCreateGameServerClusterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_preview_create(
         connection,
@@ -2524,6 +2558,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.PreviewDeleteGameServerClusterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_preview_delete(
         connection,
@@ -2600,6 +2635,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.GameServices.V1beta.Model.PreviewUpdateGameServerClusterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gameservices_projects_locations_realms_game_server_clusters_preview_update(
         connection,

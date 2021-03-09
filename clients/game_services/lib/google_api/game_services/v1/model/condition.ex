@@ -31,11 +31,11 @@ defmodule GoogleApi.GameServices.V1.Model.Condition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iam => String.t(),
-          :op => String.t(),
-          :svc => String.t(),
-          :sys => String.t(),
-          :values => list(String.t())
+          :iam => String.t() | nil,
+          :op => String.t() | nil,
+          :svc => String.t() | nil,
+          :sys => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:iam)

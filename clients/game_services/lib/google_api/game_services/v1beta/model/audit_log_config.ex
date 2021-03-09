@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.AuditLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exemptedMembers => list(String.t()),
-          :ignoreChildExemptions => boolean(),
-          :logType => String.t()
+          :exemptedMembers => list(String.t()) | nil,
+          :ignoreChildExemptions => boolean() | nil,
+          :logType => String.t() | nil
         }
 
   field(:exemptedMembers, type: :list)

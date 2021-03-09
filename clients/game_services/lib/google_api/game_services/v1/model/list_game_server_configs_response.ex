@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1.Model.ListGameServerConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gameServerConfigs => list(GoogleApi.GameServices.V1.Model.GameServerConfig.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :gameServerConfigs => list(GoogleApi.GameServices.V1.Model.GameServerConfig.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:gameServerConfigs, as: GoogleApi.GameServices.V1.Model.GameServerConfig, type: :list)
