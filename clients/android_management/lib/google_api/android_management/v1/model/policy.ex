@@ -51,7 +51,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `androidDevicePolicyTracks` (*type:* `list(String.t)`, *default:* `nil`) - The app tracks for Android Device Policy the device can access. The device receives the latest version among all accessible tracks. If no tracks are specified, then the device only uses the production track.
   *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED - Use wifi_config_disabled.
   *   `minimumApiLevel` (*type:* `integer()`, *default:* `nil`) - The minimum allowed Android API level.
-  *   `installUnknownSourcesAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to enable the "Unknown Sources" setting, which allows installation of apps from unknown sources.
+  *   `installUnknownSourcesAllowed` (*type:* `boolean()`, *default:* `nil`) - This field has no effect.
   *   `smsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether sending and receiving SMS messages is disabled.
   *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
