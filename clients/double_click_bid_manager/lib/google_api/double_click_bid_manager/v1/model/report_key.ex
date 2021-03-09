@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queryId => String.t(),
-          :reportId => String.t()
+          :queryId => String.t() | nil,
+          :reportId => String.t() | nil
         }
 
   field(:queryId)

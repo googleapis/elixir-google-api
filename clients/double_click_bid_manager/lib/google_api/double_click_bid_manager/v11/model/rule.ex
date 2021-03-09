@@ -29,8 +29,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Rule do
 
   @type t :: %__MODULE__{
           :disjunctiveMatchStatements =>
-            list(GoogleApi.DoubleClickBidManager.V11.Model.DisjunctiveMatchStatement.t()),
-          :name => String.t()
+            list(GoogleApi.DoubleClickBidManager.V11.Model.DisjunctiveMatchStatement.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:disjunctiveMatchStatements,

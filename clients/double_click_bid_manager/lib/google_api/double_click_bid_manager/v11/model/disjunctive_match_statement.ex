@@ -27,7 +27,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DisjunctiveMatchStatement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t())
+          :eventFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t()) | nil
         }
 
   field(:eventFilters, as: GoogleApi.DoubleClickBidManager.V11.Model.EventFilter, type: :list)

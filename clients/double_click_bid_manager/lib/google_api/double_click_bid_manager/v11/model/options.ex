@@ -28,8 +28,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Options do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeOnlyTargetedUserLists => boolean(),
-          :pathQueryOptions => GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptions.t()
+          :includeOnlyTargetedUserLists => boolean() | nil,
+          :pathQueryOptions =>
+            GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptions.t() | nil
         }
 
   field(:includeOnlyTargetedUserLists)

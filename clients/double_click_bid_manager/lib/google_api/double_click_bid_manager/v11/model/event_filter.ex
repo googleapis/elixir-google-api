@@ -27,7 +27,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.EventFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionFilter => GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptionsFilter.t()
+          :dimensionFilter =>
+            GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptionsFilter.t() | nil
         }
 
   field(:dimensionFilter, as: GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptionsFilter)

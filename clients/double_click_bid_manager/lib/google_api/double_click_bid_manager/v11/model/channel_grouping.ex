@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fallbackName => String.t(),
-          :name => String.t(),
-          :rules => list(GoogleApi.DoubleClickBidManager.V11.Model.Rule.t())
+          :fallbackName => String.t() | nil,
+          :name => String.t() | nil,
+          :rules => list(GoogleApi.DoubleClickBidManager.V11.Model.Rule.t()) | nil
         }
 
   field(:fallbackName)

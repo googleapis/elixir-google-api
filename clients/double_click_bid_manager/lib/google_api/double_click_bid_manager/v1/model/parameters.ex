@@ -31,11 +31,11 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.Parameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filters => list(GoogleApi.DoubleClickBidManager.V1.Model.FilterPair.t()),
-          :groupBys => list(String.t()),
-          :includeInviteData => boolean(),
-          :metrics => list(String.t()),
-          :type => String.t()
+          :filters => list(GoogleApi.DoubleClickBidManager.V1.Model.FilterPair.t()) | nil,
+          :groupBys => list(String.t()) | nil,
+          :includeInviteData => boolean() | nil,
+          :metrics => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:filters, as: GoogleApi.DoubleClickBidManager.V1.Model.FilterPair, type: :list)

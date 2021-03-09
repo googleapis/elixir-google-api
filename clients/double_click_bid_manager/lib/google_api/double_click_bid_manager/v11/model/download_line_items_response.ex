@@ -27,7 +27,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DownloadLineItemsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItems => String.t()
+          :lineItems => String.t() | nil
         }
 
   field(:lineItems)

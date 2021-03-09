@@ -30,10 +30,10 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.ReportStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failure => GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure.t(),
-          :finishTimeMs => String.t(),
-          :format => String.t(),
-          :state => String.t()
+          :failure => GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure.t() | nil,
+          :finishTimeMs => String.t() | nil,
+          :format => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:failure, as: GoogleApi.DoubleClickBidManager.V1.Model.ReportFailure)

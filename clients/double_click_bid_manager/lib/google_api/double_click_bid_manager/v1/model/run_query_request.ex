@@ -30,10 +30,10 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.RunQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataRange => String.t(),
-          :reportDataEndTimeMs => String.t(),
-          :reportDataStartTimeMs => String.t(),
-          :timezoneCode => String.t()
+          :dataRange => String.t() | nil,
+          :reportDataEndTimeMs => String.t() | nil,
+          :reportDataStartTimeMs => String.t() | nil,
+          :timezoneCode => String.t() | nil
         }
 
   field(:dataRange)

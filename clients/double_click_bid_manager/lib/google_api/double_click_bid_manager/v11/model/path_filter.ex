@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.PathFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t()),
-          :pathMatchPosition => String.t()
+          :eventFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t()) | nil,
+          :pathMatchPosition => String.t() | nil
         }
 
   field(:eventFilters, as: GoogleApi.DoubleClickBidManager.V11.Model.EventFilter, type: :list)

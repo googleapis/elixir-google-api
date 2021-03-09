@@ -30,10 +30,10 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ReportMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleCloudStoragePath => String.t(),
-          :reportDataEndTimeMs => String.t(),
-          :reportDataStartTimeMs => String.t(),
-          :status => GoogleApi.DoubleClickBidManager.V11.Model.ReportStatus.t()
+          :googleCloudStoragePath => String.t() | nil,
+          :reportDataEndTimeMs => String.t() | nil,
+          :reportDataStartTimeMs => String.t() | nil,
+          :status => GoogleApi.DoubleClickBidManager.V11.Model.ReportStatus.t() | nil
         }
 
   field(:googleCloudStoragePath)

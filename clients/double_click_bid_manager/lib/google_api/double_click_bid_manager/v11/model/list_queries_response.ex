@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ListQueriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :queries => list(GoogleApi.DoubleClickBidManager.V11.Model.Query.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :queries => list(GoogleApi.DoubleClickBidManager.V11.Model.Query.t()) | nil
         }
 
   field(:kind)

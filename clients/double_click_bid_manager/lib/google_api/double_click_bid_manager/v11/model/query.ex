@@ -34,14 +34,14 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Query do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :metadata => GoogleApi.DoubleClickBidManager.V11.Model.QueryMetadata.t(),
-          :params => GoogleApi.DoubleClickBidManager.V11.Model.Parameters.t(),
-          :queryId => String.t(),
-          :reportDataEndTimeMs => String.t(),
-          :reportDataStartTimeMs => String.t(),
-          :schedule => GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule.t(),
-          :timezoneCode => String.t()
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.DoubleClickBidManager.V11.Model.QueryMetadata.t() | nil,
+          :params => GoogleApi.DoubleClickBidManager.V11.Model.Parameters.t() | nil,
+          :queryId => String.t() | nil,
+          :reportDataEndTimeMs => String.t() | nil,
+          :reportDataStartTimeMs => String.t() | nil,
+          :schedule => GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule.t() | nil,
+          :timezoneCode => String.t() | nil
         }
 
   field(:kind)
