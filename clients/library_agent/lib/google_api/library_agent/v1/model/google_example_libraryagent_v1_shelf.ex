@@ -28,8 +28,8 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :theme => String.t()
+          :name => String.t() | nil,
+          :theme => String.t() | nil
         }
 
   field(:name)

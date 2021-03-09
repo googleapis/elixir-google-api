@@ -54,6 +54,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   @spec libraryagent_shelves_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -117,6 +118,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
           {:ok,
            GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListShelvesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -182,6 +184,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   @spec libraryagent_shelves_books_borrow(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_books_borrow(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -243,6 +246,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   @spec libraryagent_shelves_books_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_books_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -306,6 +310,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   @spec libraryagent_shelves_books_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListBooksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_books_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -370,6 +375,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   @spec libraryagent_shelves_books_return(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def libraryagent_shelves_books_return(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
