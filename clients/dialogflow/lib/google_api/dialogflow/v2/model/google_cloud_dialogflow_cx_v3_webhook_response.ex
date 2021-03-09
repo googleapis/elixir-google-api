@@ -33,12 +33,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookResponse
 
   @type t :: %__MODULE__{
           :fulfillmentResponse =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse.t(),
-          :pageInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfo.t(),
-          :payload => map(),
-          :sessionInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo.t(),
-          :targetFlow => String.t(),
-          :targetPage => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse.t()
+            | nil,
+          :pageInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfo.t() | nil,
+          :payload => map() | nil,
+          :sessionInfo =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo.t() | nil,
+          :targetFlow => String.t() | nil,
+          :targetPage => String.t() | nil
         }
 
   field(:fulfillmentResponse,

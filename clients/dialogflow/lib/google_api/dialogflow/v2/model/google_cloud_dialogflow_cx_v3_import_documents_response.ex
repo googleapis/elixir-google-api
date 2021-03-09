@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ImportDocuments
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :warnings => list(GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t())
+          :warnings => list(GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t()) | nil
         }
 
   field(:warnings, as: GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus, type: :list)

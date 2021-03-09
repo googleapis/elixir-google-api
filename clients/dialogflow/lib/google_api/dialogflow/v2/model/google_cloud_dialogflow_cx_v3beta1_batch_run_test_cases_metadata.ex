@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1BatchRunTe
 
   @type t :: %__MODULE__{
           :errors =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestError.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestError.t()) | nil
         }
 
   field(:errors,

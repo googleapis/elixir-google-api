@@ -30,10 +30,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationEvent
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conversation => String.t(),
-          :errorStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t(),
-          :newMessagePayload => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message.t(),
-          :type => String.t()
+          :conversation => String.t() | nil,
+          :errorStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
+          :newMessagePayload =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:conversation)

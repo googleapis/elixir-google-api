@@ -31,11 +31,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechC
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effectsProfileId => list(String.t()),
-          :pitch => float(),
-          :speakingRate => float(),
-          :voice => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2VoiceSelectionParams.t(),
-          :volumeGainDb => float()
+          :effectsProfileId => list(String.t()) | nil,
+          :pitch => float() | nil,
+          :speakingRate => float() | nil,
+          :voice =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2VoiceSelectionParams.t() | nil,
+          :volumeGainDb => float() | nil
         }
 
   field(:effectsProfileId, type: :list)

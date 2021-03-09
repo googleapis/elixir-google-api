@@ -32,11 +32,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntent
 
   @type t :: %__MODULE__{
           :intentBatchInline =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentBatch.t(),
-          :intentBatchUri => String.t(),
-          :intentView => String.t(),
-          :languageCode => String.t(),
-          :updateMask => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentBatch.t() | nil,
+          :intentBatchUri => String.t() | nil,
+          :intentView => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:intentBatchInline, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentBatch)

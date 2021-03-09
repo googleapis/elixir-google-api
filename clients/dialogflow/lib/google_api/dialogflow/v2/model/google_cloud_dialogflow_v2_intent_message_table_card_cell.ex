@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTabl
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :text => String.t()
+          :text => String.t() | nil
         }
 
   field(:text)

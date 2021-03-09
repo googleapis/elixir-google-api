@@ -31,13 +31,15 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :enabled => boolean(),
+          :displayName => String.t() | nil,
+          :enabled => boolean() | nil,
           :features =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentFeature.t()),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentFeature.t())
+            | nil,
           :genericWebService =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGenericWebService.t(),
-          :name => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGenericWebService.t()
+            | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

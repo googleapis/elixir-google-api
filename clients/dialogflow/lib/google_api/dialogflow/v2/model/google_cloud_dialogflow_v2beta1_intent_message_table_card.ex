@@ -35,19 +35,22 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :buttons =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton.t()
-            ),
+            )
+            | nil,
           :columnProperties =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageColumnProperties.t()
-            ),
+            )
+            | nil,
           :image =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage.t() | nil,
           :rows =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCardRow.t()
-            ),
-          :subtitle => String.t(),
-          :title => String.t()
+            )
+            | nil,
+          :subtitle => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:buttons,

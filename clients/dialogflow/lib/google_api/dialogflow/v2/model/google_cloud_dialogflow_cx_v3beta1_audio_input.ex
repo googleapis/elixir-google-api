@@ -28,9 +28,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AudioInput
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audio => String.t(),
+          :audio => String.t() | nil,
           :config =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1InputAudioConfig.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1InputAudioConfig.t() | nil
         }
 
   field(:audio)

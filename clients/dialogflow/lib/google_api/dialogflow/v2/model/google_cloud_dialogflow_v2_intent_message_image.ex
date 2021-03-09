@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessibilityText => String.t(),
-          :imageUri => String.t()
+          :accessibilityText => String.t() | nil,
+          :imageUri => String.t() | nil
         }
 
   field(:accessibilityText)

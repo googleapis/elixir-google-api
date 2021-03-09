@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1OriginalDete
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => map(),
-          :source => String.t(),
-          :version => String.t()
+          :payload => map() | nil,
+          :source => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:payload, type: :map)

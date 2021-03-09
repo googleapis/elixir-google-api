@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupInt
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :followupIntentName => String.t(),
-          :parentFollowupIntentName => String.t()
+          :followupIntentName => String.t() | nil,
+          :parentFollowupIntentName => String.t() | nil
         }
 
   field(:followupIntentName)

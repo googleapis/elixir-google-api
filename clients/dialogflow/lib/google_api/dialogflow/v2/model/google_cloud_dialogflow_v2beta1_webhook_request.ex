@@ -32,13 +32,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookReque
 
   @type t :: %__MODULE__{
           :alternativeQueryResults =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult.t()),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult.t()) | nil,
           :originalDetectIntentRequest =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest.t()
+            | nil,
           :queryResult =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult.t(),
-          :responseId => String.t(),
-          :session => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult.t() | nil,
+          :responseId => String.t() | nil,
+          :session => String.t() | nil
         }
 
   field(:alternativeQueryResults,

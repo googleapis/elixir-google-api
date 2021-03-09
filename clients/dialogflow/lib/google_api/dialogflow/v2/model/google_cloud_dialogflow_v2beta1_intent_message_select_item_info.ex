@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :synonyms => list(String.t())
+          :key => String.t() | nil,
+          :synonyms => list(String.t()) | nil
         }
 
   field(:key)

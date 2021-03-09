@@ -30,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageList
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :image => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
+          :description => String.t() | nil,
+          :image =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
           :info =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSelectItemInfo.t(),
-          :title => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSelectItemInfo.t()
+            | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

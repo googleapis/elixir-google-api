@@ -33,15 +33,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTur
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentPage => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Page.t(),
-          :diagnosticInfo => map(),
+          :currentPage => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Page.t() | nil,
+          :diagnosticInfo => map() | nil,
           :differences =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestRunDifference.t()),
-          :sessionParameters => map(),
-          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestRunDifference.t())
+            | nil,
+          :sessionParameters => map() | nil,
+          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
           :textResponses =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t()),
-          :triggeredIntent => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Intent.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t())
+            | nil,
+          :triggeredIntent =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Intent.t() | nil
         }
 
   field(:currentPage, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Page)

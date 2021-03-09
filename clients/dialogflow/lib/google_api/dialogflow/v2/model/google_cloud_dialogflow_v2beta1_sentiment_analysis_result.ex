@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAna
 
   @type t :: %__MODULE__{
           :queryTextSentiment =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Sentiment.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Sentiment.t() | nil
         }
 
   field(:queryTextSentiment,

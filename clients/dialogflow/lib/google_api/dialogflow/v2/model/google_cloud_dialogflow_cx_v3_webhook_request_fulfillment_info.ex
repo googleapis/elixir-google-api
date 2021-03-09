@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestF
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tag => String.t()
+          :tag => String.t() | nil
         }
 
   field(:tag)

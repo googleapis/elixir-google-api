@@ -31,8 +31,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentCond
           :caseContent =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCasesCaseCaseContent.t()
-            ),
-          :condition => String.t()
+            )
+            | nil,
+          :condition => String.t() | nil
         }
 
   field(:caseContent,

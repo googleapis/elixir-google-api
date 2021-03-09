@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3CreateVersionOp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :version => String.t()
+          :version => String.t() | nil
         }
 
   field(:version)

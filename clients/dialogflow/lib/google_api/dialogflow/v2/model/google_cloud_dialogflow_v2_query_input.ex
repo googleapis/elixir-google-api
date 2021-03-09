@@ -30,9 +30,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput do
 
   @type t :: %__MODULE__{
           :audioConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig.t(),
-          :event => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t(),
-          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig.t() | nil,
+          :event => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t() | nil,
+          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t() | nil
         }
 
   field(:audioConfig, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig)

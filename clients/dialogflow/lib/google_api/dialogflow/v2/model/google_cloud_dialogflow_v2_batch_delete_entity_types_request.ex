@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntity
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityTypeNames => list(String.t())
+          :entityTypeNames => list(String.t()) | nil
         }
 
   field(:entityTypeNames, type: :list)

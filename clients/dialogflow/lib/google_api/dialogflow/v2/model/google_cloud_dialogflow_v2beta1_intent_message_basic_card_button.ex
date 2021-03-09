@@ -29,8 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   @type t :: %__MODULE__{
           :openUriAction =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCardButtonOpenUriAction.t(),
-          :title => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCardButtonOpenUriAction.t()
+            | nil,
+          :title => String.t() | nil
         }
 
   field(:openUriAction,

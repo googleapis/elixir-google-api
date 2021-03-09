@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationResult 
 
   @type t :: %__MODULE__{
           :validationErrors =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationError.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationError.t()) | nil
         }
 
   field(:validationErrors,

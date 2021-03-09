@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessageP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityType => String.t(),
-          :formattedValue => any(),
-          :text => String.t()
+          :entityType => String.t() | nil,
+          :formattedValue => any() | nil,
+          :text => String.t() | nil
         }
 
   field(:entityType)

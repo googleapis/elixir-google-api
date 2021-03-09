@@ -29,10 +29,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioEncoding => String.t(),
-          :sampleRateHertz => integer(),
+          :audioEncoding => String.t() | nil,
+          :sampleRateHertz => integer() | nil,
           :synthesizeSpeechConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t() | nil
         }
 
   field(:audioEncoding)

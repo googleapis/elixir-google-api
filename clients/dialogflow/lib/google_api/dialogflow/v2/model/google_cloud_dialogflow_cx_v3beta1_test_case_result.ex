@@ -32,11 +32,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestCaseRe
 
   @type t :: %__MODULE__{
           :conversationTurns =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ConversationTurn.t()),
-          :environment => String.t(),
-          :name => String.t(),
-          :testResult => String.t(),
-          :testTime => DateTime.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ConversationTurn.t())
+            | nil,
+          :environment => String.t() | nil,
+          :name => String.t() | nil,
+          :testResult => String.t() | nil,
+          :testTime => DateTime.t() | nil
         }
 
   field(:conversationTurns,

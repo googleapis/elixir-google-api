@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayText => String.t(),
-          :ssml => String.t(),
-          :textToSpeech => String.t()
+          :displayText => String.t() | nil,
+          :ssml => String.t() | nil,
+          :textToSpeech => String.t() | nil
         }
 
   field(:displayText)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntent
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t())
+          :intents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()) | nil
         }
 
   field(:intents, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent, type: :list)

@@ -29,8 +29,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesRe
 
   @type t :: %__MODULE__{
           :entityTypes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:entityTypes,

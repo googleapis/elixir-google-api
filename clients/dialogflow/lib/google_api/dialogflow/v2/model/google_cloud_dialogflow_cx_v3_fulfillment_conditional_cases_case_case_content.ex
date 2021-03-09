@@ -29,8 +29,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentCond
 
   @type t :: %__MODULE__{
           :additionalCases =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCases.t(),
-          :message => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCases.t()
+            | nil,
+          :message =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage.t() | nil
         }
 
   field(:additionalCases,

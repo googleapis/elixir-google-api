@@ -30,14 +30,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
+          :description => String.t() | nil,
           :media =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia.t()
+            | nil,
           :suggestions =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion.t()
-            ),
-          :title => String.t()
+            )
+            | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

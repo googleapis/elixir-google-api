@@ -33,13 +33,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1InputAudio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioEncoding => String.t(),
-          :enableWordInfo => boolean(),
-          :model => String.t(),
-          :modelVariant => String.t(),
-          :phraseHints => list(String.t()),
-          :sampleRateHertz => integer(),
-          :singleUtterance => boolean()
+          :audioEncoding => String.t() | nil,
+          :enableWordInfo => boolean() | nil,
+          :model => String.t() | nil,
+          :modelVariant => String.t() | nil,
+          :phraseHints => list(String.t()) | nil,
+          :sampleRateHertz => integer() | nil,
+          :singleUtterance => boolean() | nil
         }
 
   field(:audioEncoding)

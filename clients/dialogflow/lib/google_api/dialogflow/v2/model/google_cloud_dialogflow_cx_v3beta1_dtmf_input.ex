@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1DtmfInput 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digits => String.t(),
-          :finishDigit => String.t()
+          :digits => String.t() | nil,
+          :finishDigit => String.t() | nil
         }
 
   field(:digits)

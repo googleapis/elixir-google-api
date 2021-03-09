@@ -31,11 +31,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentVersion => String.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :agentVersion => String.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:agentVersion)

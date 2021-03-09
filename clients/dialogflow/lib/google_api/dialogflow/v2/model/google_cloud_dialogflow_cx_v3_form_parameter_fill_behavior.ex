@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FormParameterFi
 
   @type t :: %__MODULE__{
           :initialPromptFulfillment =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t() | nil,
           :repromptEventHandlers =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventHandler.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventHandler.t()) | nil
         }
 
   field(:initialPromptFulfillment,

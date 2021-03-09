@@ -38,18 +38,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :avatarUri => String.t(),
-          :classificationThreshold => number(),
-          :defaultLanguageCode => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :enableLogging => boolean(),
-          :matchMode => String.t(),
-          :parent => String.t(),
-          :supportedLanguageCodes => list(String.t()),
-          :tier => String.t(),
-          :timeZone => String.t()
+          :apiVersion => String.t() | nil,
+          :avatarUri => String.t() | nil,
+          :classificationThreshold => number() | nil,
+          :defaultLanguageCode => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :enableLogging => boolean() | nil,
+          :matchMode => String.t() | nil,
+          :parent => String.t() | nil,
+          :supportedLanguageCodes => list(String.t()) | nil,
+          :tier => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:apiVersion)

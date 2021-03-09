@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleLongrunningListOperationsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t())
+          :nextPageToken => String.t() | nil,
+          :operations => list(GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()) | nil
         }
 
   field(:nextPageToken)

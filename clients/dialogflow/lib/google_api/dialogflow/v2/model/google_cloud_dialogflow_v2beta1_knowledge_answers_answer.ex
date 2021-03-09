@@ -31,11 +31,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAns
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :answer => String.t(),
-          :faqQuestion => String.t(),
-          :matchConfidence => number(),
-          :matchConfidenceLevel => String.t(),
-          :source => String.t()
+          :answer => String.t() | nil,
+          :faqQuestion => String.t() | nil,
+          :matchConfidence => number() | nil,
+          :matchConfidenceLevel => String.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:answer)

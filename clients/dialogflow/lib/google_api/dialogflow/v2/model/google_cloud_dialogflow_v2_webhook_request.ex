@@ -31,10 +31,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookRequest do
 
   @type t :: %__MODULE__{
           :originalDetectIntentRequest =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OriginalDetectIntentRequest.t(),
-          :queryResult => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t(),
-          :responseId => String.t(),
-          :session => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OriginalDetectIntentRequest.t()
+            | nil,
+          :queryResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t() | nil,
+          :responseId => String.t() | nil,
+          :session => String.t() | nil
         }
 
   field(:originalDetectIntentRequest,

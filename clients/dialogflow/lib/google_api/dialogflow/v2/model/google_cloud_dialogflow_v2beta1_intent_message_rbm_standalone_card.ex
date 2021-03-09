@@ -30,9 +30,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   @type t :: %__MODULE__{
           :cardContent =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent.t(),
-          :cardOrientation => String.t(),
-          :thumbnailImageAlignment => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent.t()
+            | nil,
+          :cardOrientation => String.t() | nil,
+          :thumbnailImageAlignment => String.t() | nil
         }
 
   field(:cardContent,

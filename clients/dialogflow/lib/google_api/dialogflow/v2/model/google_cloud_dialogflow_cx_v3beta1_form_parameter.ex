@@ -33,14 +33,15 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FormParame
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultValue => any(),
-          :displayName => String.t(),
-          :entityType => String.t(),
+          :defaultValue => any() | nil,
+          :displayName => String.t() | nil,
+          :entityType => String.t() | nil,
           :fillBehavior =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FormParameterFillBehavior.t(),
-          :isList => boolean(),
-          :redact => boolean(),
-          :required => boolean()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FormParameterFillBehavior.t()
+            | nil,
+          :isList => boolean() | nil,
+          :redact => boolean() | nil,
+          :required => boolean() | nil
         }
 
   field(:defaultValue)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :magnitude => number(),
-          :score => number()
+          :magnitude => number() | nil,
+          :score => number() | nil
         }
 
   field(:magnitude)

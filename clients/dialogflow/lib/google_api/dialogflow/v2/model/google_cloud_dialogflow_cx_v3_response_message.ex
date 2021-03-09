@@ -35,19 +35,26 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage
 
   @type t :: %__MODULE__{
           :conversationSuccess =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageConversationSuccess.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageConversationSuccess.t()
+            | nil,
           :endInteraction =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageEndInteraction.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageEndInteraction.t()
+            | nil,
           :liveAgentHandoff =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageLiveAgentHandoff.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageLiveAgentHandoff.t()
+            | nil,
           :mixedAudio =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageMixedAudio.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageMixedAudio.t()
+            | nil,
           :outputAudioText =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageOutputAudioText.t(),
-          :payload => map(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageOutputAudioText.t()
+            | nil,
+          :payload => map() | nil,
           :playAudio =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessagePlayAudio.t(),
-          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessagePlayAudio.t()
+            | nil,
+          :text =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t() | nil
         }
 
   field(:conversationSuccess,

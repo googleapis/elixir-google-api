@@ -28,9 +28,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containEntities => boolean(),
+          :containEntities => boolean() | nil,
           :parts =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessagePart.t())
+            | nil
         }
 
   field(:containEntities)

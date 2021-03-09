@@ -30,13 +30,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTraini
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
+          :name => String.t() | nil,
           :parts =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart.t()
-            ),
-          :timesAddedCount => integer(),
-          :type => String.t()
+            )
+            | nil,
+          :timesAddedCount => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:name)

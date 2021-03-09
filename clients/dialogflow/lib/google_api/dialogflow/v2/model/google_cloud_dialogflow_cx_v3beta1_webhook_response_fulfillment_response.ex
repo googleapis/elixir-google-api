@@ -28,9 +28,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mergeBehavior => String.t(),
+          :mergeBehavior => String.t() | nil,
           :messages =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t())
+            | nil
         }
 
   field(:mergeBehavior)

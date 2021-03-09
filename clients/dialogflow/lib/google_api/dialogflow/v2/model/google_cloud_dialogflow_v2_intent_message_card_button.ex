@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCard
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postback => String.t(),
-          :text => String.t()
+          :postback => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:postback)

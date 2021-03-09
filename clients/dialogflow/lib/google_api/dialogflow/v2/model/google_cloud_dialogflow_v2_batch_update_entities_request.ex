@@ -30,9 +30,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntiti
 
   @type t :: %__MODULE__{
           :entities =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity.t()),
-          :languageCode => String.t(),
-          :updateMask => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity.t()) | nil,
+          :languageCode => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:entities,

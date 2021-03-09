@@ -28,8 +28,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentPage => String.t(),
-          :formInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfoFormInfo.t()
+          :currentPage => String.t() | nil,
+          :formInfo =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfoFormInfo.t() | nil
         }
 
   field(:currentPage)

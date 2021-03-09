@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestConfig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :flow => String.t(),
-          :trackingParameters => list(String.t())
+          :flow => String.t() | nil,
+          :trackingParameters => list(String.t()) | nil
         }
 
   field(:flow)

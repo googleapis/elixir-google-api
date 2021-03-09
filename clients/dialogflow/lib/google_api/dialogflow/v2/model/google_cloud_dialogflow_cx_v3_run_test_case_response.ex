@@ -27,7 +27,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3RunTestCaseResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t()
+          :result =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t() | nil
         }
 
   field(:result, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult)

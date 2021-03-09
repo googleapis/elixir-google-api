@@ -30,10 +30,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentParameter
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityType => String.t(),
-          :id => String.t(),
-          :isList => boolean(),
-          :redact => boolean()
+          :entityType => String.t() | nil,
+          :id => String.t() | nil,
+          :isList => boolean() | nil,
+          :redact => boolean() | nil
         }
 
   field(:entityType)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseError d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t(),
-          :testCase => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCase.t()
+          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
+          :testCase => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCase.t() | nil
         }
 
   field(:status, as: GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus)

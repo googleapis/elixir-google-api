@@ -42,30 +42,40 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage do
 
   @type t :: %__MODULE__{
           :basicCard =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCard.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCard.t() | nil,
           :browseCarouselCard =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard.t(),
-          :card => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCard.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard.t()
+            | nil,
+          :card =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCard.t() | nil,
           :carouselSelect =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCarouselSelect.t(),
-          :image => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCarouselSelect.t()
+            | nil,
+          :image =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
           :linkOutSuggestion =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion.t()
+            | nil,
           :listSelect =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelect.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelect.t() | nil,
           :mediaContent =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMediaContent.t(),
-          :payload => map(),
-          :platform => String.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMediaContent.t()
+            | nil,
+          :payload => map() | nil,
+          :platform => String.t() | nil,
           :quickReplies =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageQuickReplies.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageQuickReplies.t()
+            | nil,
           :simpleResponses =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponses.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponses.t()
+            | nil,
           :suggestions =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestions.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestions.t()
+            | nil,
           :tableCard =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTableCard.t(),
-          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageText.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTableCard.t() | nil,
+          :text =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageText.t() | nil
         }
 
   field(:basicCard,

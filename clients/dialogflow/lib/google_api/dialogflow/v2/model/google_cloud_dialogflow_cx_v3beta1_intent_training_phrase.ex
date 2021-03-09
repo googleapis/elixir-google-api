@@ -29,12 +29,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentTrai
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
+          :id => String.t() | nil,
           :parts =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentTrainingPhrasePart.t()
-            ),
-          :repeatCount => integer()
+            )
+            | nil,
+          :repeatCount => integer() | nil
         }
 
   field(:id)

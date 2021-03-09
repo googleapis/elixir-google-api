@@ -30,13 +30,15 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :displayName => String.t(),
-          :lastMatchedIntent => String.t(),
-          :parameters => %{
-            optional(String.t()) =>
-              GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfoIntentParameterValue.t()
-          }
+          :confidence => number() | nil,
+          :displayName => String.t() | nil,
+          :lastMatchedIntent => String.t() | nil,
+          :parameters =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfoIntentParameterValue.t()
+            }
+            | nil
         }
 
   field(:confidence)

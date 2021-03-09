@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => map()
+          :metadata => map() | nil
         }
 
   field(:metadata, type: :map)

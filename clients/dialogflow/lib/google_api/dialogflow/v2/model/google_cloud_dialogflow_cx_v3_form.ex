@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Form do
 
   @type t :: %__MODULE__{
           :parameters =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FormParameter.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FormParameter.t()) | nil
         }
 
   field(:parameters,

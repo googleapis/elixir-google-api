@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationError d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(String.t()),
-          :errorMessage => String.t(),
-          :severity => String.t()
+          :entries => list(String.t()) | nil,
+          :errorMessage => String.t() | nil,
+          :severity => String.t() | nil
         }
 
   field(:entries, type: :list)

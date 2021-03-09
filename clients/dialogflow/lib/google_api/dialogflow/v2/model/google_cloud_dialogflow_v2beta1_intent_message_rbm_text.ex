@@ -31,8 +31,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :rbmSuggestion =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion.t()
-            ),
-          :text => String.t()
+            )
+            | nil,
+          :text => String.t() | nil
         }
 
   field(:rbmSuggestion,

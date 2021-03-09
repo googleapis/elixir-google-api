@@ -29,6 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV3alpha1DeleteDocum
   @type t :: %__MODULE__{
           :genericMetadata =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata.t()
+            | nil
         }
 
   field(:genericMetadata,

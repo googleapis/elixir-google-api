@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2VoiceSelectionPar
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :ssmlGender => String.t()
+          :name => String.t() | nil,
+          :ssmlGender => String.t() | nil
         }
 
   field(:name)

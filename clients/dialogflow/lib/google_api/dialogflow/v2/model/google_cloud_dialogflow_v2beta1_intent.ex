@@ -46,35 +46,39 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :defaultResponsePlatforms => list(String.t()),
-          :displayName => String.t(),
-          :endInteraction => boolean(),
-          :events => list(String.t()),
+          :action => String.t() | nil,
+          :defaultResponsePlatforms => list(String.t()) | nil,
+          :displayName => String.t() | nil,
+          :endInteraction => boolean() | nil,
+          :events => list(String.t()) | nil,
           :followupIntentInfo =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo.t()
-            ),
-          :inputContextNames => list(String.t()),
-          :isFallback => boolean(),
+            )
+            | nil,
+          :inputContextNames => list(String.t()) | nil,
+          :isFallback => boolean() | nil,
           :messages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t()),
-          :mlDisabled => boolean(),
-          :mlEnabled => boolean(),
-          :name => String.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t())
+            | nil,
+          :mlDisabled => boolean() | nil,
+          :mlEnabled => boolean() | nil,
+          :name => String.t() | nil,
           :outputContexts =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()) | nil,
           :parameters =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParameter.t()),
-          :parentFollowupIntentName => String.t(),
-          :priority => integer(),
-          :resetContexts => boolean(),
-          :rootFollowupIntentName => String.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParameter.t())
+            | nil,
+          :parentFollowupIntentName => String.t() | nil,
+          :priority => integer() | nil,
+          :resetContexts => boolean() | nil,
+          :rootFollowupIntentName => String.t() | nil,
           :trainingPhrases =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTrainingPhrase.t()
-            ),
-          :webhookState => String.t()
+            )
+            | nil,
+          :webhookState => String.t() | nil
         }
 
   field(:action)
