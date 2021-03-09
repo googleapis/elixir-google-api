@@ -29,9 +29,9 @@ defmodule GoogleApi.CivicInfo.V2.Model.GeographicDivision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alsoKnownAs => list(String.t()),
-          :name => String.t(),
-          :officeIndices => list(integer())
+          :alsoKnownAs => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :officeIndices => list(integer()) | nil
         }
 
   field(:alsoKnownAs, type: :list)

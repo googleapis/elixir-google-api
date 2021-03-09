@@ -34,14 +34,14 @@ defmodule GoogleApi.CivicInfo.V2.Model.Candidate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :candidateUrl => String.t(),
-          :channels => list(GoogleApi.CivicInfo.V2.Model.Channel.t()),
-          :email => String.t(),
-          :name => String.t(),
-          :orderOnBallot => String.t(),
-          :party => String.t(),
-          :phone => String.t(),
-          :photoUrl => String.t()
+          :candidateUrl => String.t() | nil,
+          :channels => list(GoogleApi.CivicInfo.V2.Model.Channel.t()) | nil,
+          :email => String.t() | nil,
+          :name => String.t() | nil,
+          :orderOnBallot => String.t() | nil,
+          :party => String.t() | nil,
+          :phone => String.t() | nil,
+          :photoUrl => String.t() | nil
         }
 
   field(:candidateUrl)

@@ -32,12 +32,12 @@ defmodule GoogleApi.CivicInfo.V2.Model.Office do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :divisionId => String.t(),
-          :levels => list(String.t()),
-          :name => String.t(),
-          :officialIndices => list(integer()),
-          :roles => list(String.t()),
-          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t())
+          :divisionId => String.t() | nil,
+          :levels => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :officialIndices => list(integer()) | nil,
+          :roles => list(String.t()) | nil,
+          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t()) | nil
         }
 
   field(:divisionId)

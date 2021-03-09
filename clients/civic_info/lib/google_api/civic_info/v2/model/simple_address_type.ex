@@ -33,13 +33,13 @@ defmodule GoogleApi.CivicInfo.V2.Model.SimpleAddressType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :city => String.t(),
-          :line1 => String.t(),
-          :line2 => String.t(),
-          :line3 => String.t(),
-          :locationName => String.t(),
-          :state => String.t(),
-          :zip => String.t()
+          :city => String.t() | nil,
+          :line1 => String.t() | nil,
+          :line2 => String.t() | nil,
+          :line3 => String.t() | nil,
+          :locationName => String.t() | nil,
+          :state => String.t() | nil,
+          :zip => String.t() | nil
         }
 
   field(:city)

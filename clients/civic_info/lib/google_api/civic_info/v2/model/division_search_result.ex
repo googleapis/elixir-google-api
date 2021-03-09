@@ -29,9 +29,9 @@ defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliases => list(String.t()),
-          :name => String.t(),
-          :ocdId => String.t()
+          :aliases => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :ocdId => String.t() | nil
         }
 
   field(:aliases, type: :list)

@@ -30,10 +30,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :electionAdministrationBody => GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t(),
-          :local_jurisdiction => GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t(),
-          :name => String.t(),
-          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t())
+          :electionAdministrationBody =>
+            GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t() | nil,
+          :local_jurisdiction => GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t() | nil,
+          :name => String.t() | nil,
+          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t()) | nil
         }
 
   field(:electionAdministrationBody, as: GoogleApi.CivicInfo.V2.Model.AdministrativeBody)
