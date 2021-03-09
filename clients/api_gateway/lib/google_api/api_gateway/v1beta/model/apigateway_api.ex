@@ -33,13 +33,13 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApi do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :labels => map(),
-          :managedService => String.t(),
-          :name => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :managedService => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -54,6 +54,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
   @spec apigateway_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayLocation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
   @spec apigateway_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -187,6 +189,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_create(
         connection,
@@ -258,6 +261,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_delete(
         connection,
@@ -327,6 +331,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayApi.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -392,6 +397,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_get_iam_policy(
         connection,
@@ -466,6 +472,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayListApisResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_list(
         connection,
@@ -543,6 +550,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_patch(
         connection,
@@ -615,6 +623,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_set_iam_policy(
         connection,
@@ -686,6 +695,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayTestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_test_iam_permissions(
         connection,
@@ -760,6 +770,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_create(
         connection,
@@ -831,6 +842,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_delete(
         connection,
@@ -901,6 +913,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_get(
         connection,
@@ -972,6 +985,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_get_iam_policy(
         connection,
@@ -1046,6 +1060,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayListApiConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_list(
         connection,
@@ -1123,6 +1138,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_patch(
         connection,
@@ -1195,6 +1211,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_set_iam_policy(
         connection,
@@ -1266,6 +1283,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayTestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_apis_configs_test_iam_permissions(
         connection,
@@ -1340,6 +1358,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_create(
         connection,
@@ -1411,6 +1430,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_delete(
         connection,
@@ -1480,6 +1500,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayGateway.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_get(
         connection,
@@ -1550,6 +1571,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_get_iam_policy(
         connection,
@@ -1624,6 +1646,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayListGatewaysResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_list(
         connection,
@@ -1701,6 +1724,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_patch(
         connection,
@@ -1773,6 +1797,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_set_iam_policy(
         connection,
@@ -1844,6 +1869,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayTestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_gateways_test_iam_permissions(
         connection,
@@ -1917,6 +1943,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_operations_cancel(
         connection,
@@ -1987,6 +2014,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_operations_delete(
         connection,
@@ -2056,6 +2084,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_operations_get(
         connection,
@@ -2128,6 +2157,7 @@ defmodule GoogleApi.APIGateway.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.APIGateway.V1beta.Model.ApigatewayListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigateway_projects_locations_operations_list(
         connection,

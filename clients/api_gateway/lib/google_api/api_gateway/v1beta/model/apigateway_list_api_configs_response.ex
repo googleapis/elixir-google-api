@@ -29,9 +29,9 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayListApiConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiConfigs => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig.t()),
-          :nextPageToken => String.t(),
-          :unreachableLocations => list(String.t())
+          :apiConfigs => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachableLocations => list(String.t()) | nil
         }
 
   field(:apiConfigs, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig, type: :list)

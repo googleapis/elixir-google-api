@@ -34,14 +34,14 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayGateway do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiConfig => String.t(),
-          :createTime => DateTime.t(),
-          :defaultHostname => String.t(),
-          :displayName => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :apiConfig => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :defaultHostname => String.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:apiConfig)
