@@ -34,14 +34,14 @@ defmodule GoogleApi.NetworkManagement.V1.Model.InstanceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :externalIp => String.t(),
-          :interface => String.t(),
-          :internalIp => String.t(),
-          :networkTags => list(String.t()),
-          :networkUri => String.t(),
-          :serviceAccount => String.t(),
-          :uri => String.t()
+          :displayName => String.t() | nil,
+          :externalIp => String.t() | nil,
+          :interface => String.t() | nil,
+          :internalIp => String.t() | nil,
+          :networkTags => list(String.t()) | nil,
+          :networkUri => String.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:displayName)

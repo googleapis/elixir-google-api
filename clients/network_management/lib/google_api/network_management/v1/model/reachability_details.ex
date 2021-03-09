@@ -30,10 +30,10 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.NetworkManagement.V1.Model.Status.t(),
-          :result => String.t(),
-          :traces => list(GoogleApi.NetworkManagement.V1.Model.Trace.t()),
-          :verifyTime => DateTime.t()
+          :error => GoogleApi.NetworkManagement.V1.Model.Status.t() | nil,
+          :result => String.t() | nil,
+          :traces => list(GoogleApi.NetworkManagement.V1.Model.Trace.t()) | nil,
+          :verifyTime => DateTime.t() | nil
         }
 
   field(:error, as: GoogleApi.NetworkManagement.V1.Model.Status)

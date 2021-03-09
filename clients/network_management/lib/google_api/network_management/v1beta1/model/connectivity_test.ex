@@ -38,19 +38,19 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ConnectivityTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :destination => GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t(),
-          :displayName => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :probingDetails => GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails.t(),
-          :protocol => String.t(),
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :destination => GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :probingDetails => GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails.t() | nil,
+          :protocol => String.t() | nil,
           :reachabilityDetails =>
-            GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t(),
-          :relatedProjects => list(String.t()),
-          :source => GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t() | nil,
+          :relatedProjects => list(String.t()) | nil,
+          :source => GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

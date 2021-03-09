@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Trace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endpointInfo => GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t(),
-          :steps => list(GoogleApi.NetworkManagement.V1.Model.Step.t())
+          :endpointInfo => GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t() | nil,
+          :steps => list(GoogleApi.NetworkManagement.V1.Model.Step.t()) | nil
         }
 
   field(:endpointInfo, as: GoogleApi.NetworkManagement.V1.Model.EndpointInfo)

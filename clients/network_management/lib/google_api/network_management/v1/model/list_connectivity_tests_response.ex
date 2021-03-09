@@ -29,9 +29,9 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ListConnectivityTestsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.NetworkManagement.V1.Model.ConnectivityTest.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.NetworkManagement.V1.Model.ConnectivityTest.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

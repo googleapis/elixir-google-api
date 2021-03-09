@@ -32,12 +32,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :externalIp => String.t(),
-          :internalIp => String.t(),
-          :networkUri => String.t(),
-          :region => String.t(),
-          :uri => String.t()
+          :displayName => String.t() | nil,
+          :externalIp => String.t() | nil,
+          :internalIp => String.t() | nil,
+          :networkUri => String.t() | nil,
+          :region => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:displayName)

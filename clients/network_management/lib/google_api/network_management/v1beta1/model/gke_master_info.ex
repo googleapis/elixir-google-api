@@ -30,10 +30,10 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterNetworkUri => String.t(),
-          :clusterUri => String.t(),
-          :externalIp => String.t(),
-          :internalIp => String.t()
+          :clusterNetworkUri => String.t() | nil,
+          :clusterUri => String.t() | nil,
+          :externalIp => String.t() | nil,
+          :internalIp => String.t() | nil
         }
 
   field(:clusterNetworkUri)

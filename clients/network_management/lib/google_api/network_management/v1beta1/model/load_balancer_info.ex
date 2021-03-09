@@ -31,11 +31,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendType => String.t(),
-          :backendUri => String.t(),
-          :backends => list(GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackend.t()),
-          :healthCheckUri => String.t(),
-          :loadBalancerType => String.t()
+          :backendType => String.t() | nil,
+          :backendUri => String.t() | nil,
+          :backends =>
+            list(GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackend.t()) | nil,
+          :healthCheckUri => String.t() | nil,
+          :loadBalancerType => String.t() | nil
         }
 
   field(:backendType)

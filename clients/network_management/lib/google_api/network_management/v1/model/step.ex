@@ -43,23 +43,23 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abort => GoogleApi.NetworkManagement.V1.Model.AbortInfo.t(),
-          :causesDrop => boolean(),
-          :deliver => GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t(),
-          :description => String.t(),
-          :drop => GoogleApi.NetworkManagement.V1.Model.DropInfo.t(),
-          :endpoint => GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t(),
-          :firewall => GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t(),
-          :forward => GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t(),
-          :forwardingRule => GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t(),
-          :instance => GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t(),
-          :loadBalancer => GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t(),
-          :network => GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t(),
-          :projectId => String.t(),
-          :route => GoogleApi.NetworkManagement.V1.Model.RouteInfo.t(),
-          :state => String.t(),
-          :vpnGateway => GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t(),
-          :vpnTunnel => GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t()
+          :abort => GoogleApi.NetworkManagement.V1.Model.AbortInfo.t() | nil,
+          :causesDrop => boolean() | nil,
+          :deliver => GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t() | nil,
+          :description => String.t() | nil,
+          :drop => GoogleApi.NetworkManagement.V1.Model.DropInfo.t() | nil,
+          :endpoint => GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t() | nil,
+          :firewall => GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t() | nil,
+          :forward => GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t() | nil,
+          :forwardingRule => GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t() | nil,
+          :instance => GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t() | nil,
+          :loadBalancer => GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t() | nil,
+          :network => GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t() | nil,
+          :projectId => String.t() | nil,
+          :route => GoogleApi.NetworkManagement.V1.Model.RouteInfo.t() | nil,
+          :state => String.t() | nil,
+          :vpnGateway => GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t() | nil,
+          :vpnTunnel => GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t() | nil
         }
 
   field(:abort, as: GoogleApi.NetworkManagement.V1.Model.AbortInfo)

@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ForwardInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceUri => String.t(),
-          :target => String.t()
+          :resourceUri => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:resourceUri)

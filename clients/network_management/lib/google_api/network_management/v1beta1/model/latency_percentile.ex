@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.LatencyPercentile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latencyMicros => String.t(),
-          :percent => integer()
+          :latencyMicros => String.t() | nil,
+          :percent => integer() | nil
         }
 
   field(:latencyMicros)

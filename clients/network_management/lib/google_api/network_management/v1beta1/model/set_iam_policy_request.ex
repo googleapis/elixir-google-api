@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.NetworkManagement.V1beta1.Model.Policy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.NetworkManagement.V1beta1.Model.Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.NetworkManagement.V1beta1.Model.Policy)

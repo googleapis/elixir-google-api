@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.AbortInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cause => String.t(),
-          :resourceUri => String.t()
+          :cause => String.t() | nil,
+          :resourceUri => String.t() | nil
         }
 
   field(:cause)
