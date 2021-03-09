@@ -28,8 +28,8 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.QueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :record => GoogleApi.ChromeUXReport.V1.Model.Record.t(),
-          :urlNormalizationDetails => GoogleApi.ChromeUXReport.V1.Model.UrlNormalization.t()
+          :record => GoogleApi.ChromeUXReport.V1.Model.Record.t() | nil,
+          :urlNormalizationDetails => GoogleApi.ChromeUXReport.V1.Model.UrlNormalization.t() | nil
         }
 
   field(:record, as: GoogleApi.ChromeUXReport.V1.Model.Record)

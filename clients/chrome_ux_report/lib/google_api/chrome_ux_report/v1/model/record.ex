@@ -28,8 +28,9 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Record do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => GoogleApi.ChromeUXReport.V1.Model.Key.t(),
-          :metrics => %{optional(String.t()) => GoogleApi.ChromeUXReport.V1.Model.Metric.t()}
+          :key => GoogleApi.ChromeUXReport.V1.Model.Key.t() | nil,
+          :metrics =>
+            %{optional(String.t()) => GoogleApi.ChromeUXReport.V1.Model.Metric.t()} | nil
         }
 
   field(:key, as: GoogleApi.ChromeUXReport.V1.Model.Key)

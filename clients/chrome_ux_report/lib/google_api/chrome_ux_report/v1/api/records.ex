@@ -54,6 +54,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Api.Records do
   @spec chromeuxreport_records_query_record(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ChromeUXReport.V1.Model.QueryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def chromeuxreport_records_query_record(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
