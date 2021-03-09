@@ -33,13 +33,13 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.Subject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
-          :locality => String.t(),
-          :organization => String.t(),
-          :organizationalUnit => String.t(),
-          :postalCode => String.t(),
-          :province => String.t(),
-          :streetAddress => String.t()
+          :countryCode => String.t() | nil,
+          :locality => String.t() | nil,
+          :organization => String.t() | nil,
+          :organizationalUnit => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :province => String.t() | nil,
+          :streetAddress => String.t() | nil
         }
 
   field(:countryCode)

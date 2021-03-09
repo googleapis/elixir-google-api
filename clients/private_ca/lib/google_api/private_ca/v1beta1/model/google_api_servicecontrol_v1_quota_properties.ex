@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1QuotaProper
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quotaMode => String.t()
+          :quotaMode => String.t() | nil
         }
 
   field(:quotaMode)

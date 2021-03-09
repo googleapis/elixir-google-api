@@ -31,11 +31,11 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubjectAltNames do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customSans => list(GoogleApi.PrivateCA.V1beta1.Model.X509Extension.t()),
-          :dnsNames => list(String.t()),
-          :emailAddresses => list(String.t()),
-          :ipAddresses => list(String.t()),
-          :uris => list(String.t())
+          :customSans => list(GoogleApi.PrivateCA.V1beta1.Model.X509Extension.t()) | nil,
+          :dnsNames => list(String.t()) | nil,
+          :emailAddresses => list(String.t()) | nil,
+          :ipAddresses => list(String.t()) | nil,
+          :uris => list(String.t()) | nil
         }
 
   field(:customSans, as: GoogleApi.PrivateCA.V1beta1.Model.X509Extension, type: :list)

@@ -35,15 +35,16 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateRevocationList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessUrl => String.t(),
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :pemCrl => String.t(),
-          :revokedCertificates => list(GoogleApi.PrivateCA.V1beta1.Model.RevokedCertificate.t()),
-          :sequenceNumber => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :accessUrl => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :pemCrl => String.t() | nil,
+          :revokedCertificates =>
+            list(GoogleApi.PrivateCA.V1beta1.Model.RevokedCertificate.t()) | nil,
+          :sequenceNumber => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:accessUrl)

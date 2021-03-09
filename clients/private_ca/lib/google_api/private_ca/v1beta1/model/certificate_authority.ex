@@ -44,25 +44,26 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthority do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessUrls => GoogleApi.PrivateCA.V1beta1.Model.AccessUrls.t(),
+          :accessUrls => GoogleApi.PrivateCA.V1beta1.Model.AccessUrls.t() | nil,
           :caCertificateDescriptions =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription.t()),
-          :certificatePolicy => GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthorityPolicy.t(),
-          :config => GoogleApi.PrivateCA.V1beta1.Model.CertificateConfig.t(),
-          :createTime => DateTime.t(),
-          :deleteTime => DateTime.t(),
-          :gcsBucket => String.t(),
-          :issuingOptions => GoogleApi.PrivateCA.V1beta1.Model.IssuingOptions.t(),
-          :keySpec => GoogleApi.PrivateCA.V1beta1.Model.KeyVersionSpec.t(),
-          :labels => map(),
-          :lifetime => String.t(),
-          :name => String.t(),
-          :pemCaCertificates => list(String.t()),
-          :state => String.t(),
-          :subordinateConfig => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig.t(),
-          :tier => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateDescription.t()) | nil,
+          :certificatePolicy =>
+            GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthorityPolicy.t() | nil,
+          :config => GoogleApi.PrivateCA.V1beta1.Model.CertificateConfig.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :gcsBucket => String.t() | nil,
+          :issuingOptions => GoogleApi.PrivateCA.V1beta1.Model.IssuingOptions.t() | nil,
+          :keySpec => GoogleApi.PrivateCA.V1beta1.Model.KeyVersionSpec.t() | nil,
+          :labels => map() | nil,
+          :lifetime => String.t() | nil,
+          :name => String.t() | nil,
+          :pemCaCertificates => list(String.t()) | nil,
+          :state => String.t() | nil,
+          :subordinateConfig => GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig.t() | nil,
+          :tier => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:accessUrls, as: GoogleApi.PrivateCA.V1beta1.Model.AccessUrls)

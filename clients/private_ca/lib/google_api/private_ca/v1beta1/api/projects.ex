@@ -54,6 +54,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
   @spec privateca_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
   @spec privateca_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -186,6 +188,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_activate(
         connection,
@@ -259,6 +262,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_create(
         connection,
@@ -332,6 +336,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_disable(
         connection,
@@ -403,6 +408,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_enable(
         connection,
@@ -473,6 +479,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.FetchCertificateAuthorityCsrResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_fetch(
         connection,
@@ -544,6 +551,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthority.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_get(
         connection,
@@ -616,6 +624,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_get_iam_policy(
         connection,
@@ -690,6 +699,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListCertificateAuthoritiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_list(
         connection,
@@ -768,6 +778,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_patch(
         connection,
@@ -841,6 +852,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_restore(
         connection,
@@ -912,6 +924,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_schedule_delete(
         connection,
@@ -983,6 +996,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_set_iam_policy(
         connection,
@@ -1054,6 +1068,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_test_iam_permissions(
         connection,
@@ -1126,6 +1141,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.CertificateRevocationList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_get(
         connection,
@@ -1198,6 +1214,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_get_iam_policy(
         connection,
@@ -1272,6 +1289,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListCertificateRevocationListsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_list(
         connection,
@@ -1351,6 +1369,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_patch(
         connection,
@@ -1424,6 +1443,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_set_iam_policy(
         connection,
@@ -1495,6 +1515,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificate_revocation_lists_test_iam_permissions(
         connection,
@@ -1570,6 +1591,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificates_create(
         connection,
@@ -1642,6 +1664,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificates_get(
         connection,
@@ -1715,6 +1738,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListCertificatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificates_list(
         connection,
@@ -1793,6 +1817,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificates_patch(
         connection,
@@ -1866,6 +1891,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_certificate_authorities_certificates_revoke(
         connection,
@@ -1937,6 +1963,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_operations_cancel(
         connection,
@@ -2007,6 +2034,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_operations_delete(
         connection,
@@ -2076,6 +2104,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_operations_get(
         connection,
@@ -2148,6 +2177,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_operations_list(
         connection,
@@ -2222,6 +2252,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ReusableConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_reusable_configs_get(
         connection,
@@ -2292,6 +2323,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_reusable_configs_get_iam_policy(
         connection,
@@ -2366,6 +2398,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.ListReusableConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_reusable_configs_list(
         connection,
@@ -2442,6 +2475,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_reusable_configs_set_iam_policy(
         connection,
@@ -2513,6 +2547,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PrivateCA.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def privateca_projects_locations_reusable_configs_test_iam_permissions(
         connection,

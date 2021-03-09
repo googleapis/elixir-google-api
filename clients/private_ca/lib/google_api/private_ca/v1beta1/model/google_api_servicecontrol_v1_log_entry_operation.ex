@@ -30,10 +30,10 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntryOpe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :first => boolean(),
-          :id => String.t(),
-          :last => boolean(),
-          :producer => String.t()
+          :first => boolean() | nil,
+          :id => String.t() | nil,
+          :last => boolean() | nil,
+          :producer => String.t() | nil
         }
 
   field(:first)

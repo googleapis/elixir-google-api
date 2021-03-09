@@ -28,9 +28,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1MetricValue
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricName => String.t(),
+          :metricName => String.t() | nil,
           :metricValues =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1MetricValue.t())
+            list(GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1MetricValue.t()) | nil
         }
 
   field(:metricName)

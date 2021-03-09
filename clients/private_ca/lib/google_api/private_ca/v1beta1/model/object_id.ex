@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ObjectId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectIdPath => list(integer())
+          :objectIdPath => list(integer()) | nil
         }
 
   field(:objectIdPath, type: :list)

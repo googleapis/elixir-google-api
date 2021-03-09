@@ -33,13 +33,13 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubjectDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonName => String.t(),
-          :hexSerialNumber => String.t(),
-          :lifetime => String.t(),
-          :notAfterTime => DateTime.t(),
-          :notBeforeTime => DateTime.t(),
-          :subject => GoogleApi.PrivateCA.V1beta1.Model.Subject.t(),
-          :subjectAltName => GoogleApi.PrivateCA.V1beta1.Model.SubjectAltNames.t()
+          :commonName => String.t() | nil,
+          :hexSerialNumber => String.t() | nil,
+          :lifetime => String.t() | nil,
+          :notAfterTime => DateTime.t() | nil,
+          :notBeforeTime => DateTime.t() | nil,
+          :subject => GoogleApi.PrivateCA.V1beta1.Model.Subject.t() | nil,
+          :subjectAltName => GoogleApi.PrivateCA.V1beta1.Model.SubjectAltNames.t() | nil
         }
 
   field(:commonName)

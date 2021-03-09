@@ -32,12 +32,12 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ExtendedKeyUsageOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientAuth => boolean(),
-          :codeSigning => boolean(),
-          :emailProtection => boolean(),
-          :ocspSigning => boolean(),
-          :serverAuth => boolean(),
-          :timeStamping => boolean()
+          :clientAuth => boolean() | nil,
+          :codeSigning => boolean() | nil,
+          :emailProtection => boolean() | nil,
+          :ocspSigning => boolean() | nil,
+          :serverAuth => boolean() | nil,
+          :timeStamping => boolean() | nil
         }
 
   field(:clientAuth)

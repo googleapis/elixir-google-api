@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ListCertificatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificates => list(GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :certificates => list(GoogleApi.PrivateCA.V1beta1.Model.Certificate.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:certificates, as: GoogleApi.PrivateCA.V1beta1.Model.Certificate, type: :list)

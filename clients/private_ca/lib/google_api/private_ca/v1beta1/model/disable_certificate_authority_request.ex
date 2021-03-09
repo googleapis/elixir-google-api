@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.DisableCertificateAuthorityRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestId => String.t()
+          :requestId => String.t() | nil
         }
 
   field(:requestId)

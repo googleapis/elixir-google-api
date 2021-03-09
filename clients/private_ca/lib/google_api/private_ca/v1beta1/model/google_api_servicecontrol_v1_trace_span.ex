@@ -38,18 +38,18 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TraceSpan d
 
   @type t :: %__MODULE__{
           :attributes =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Attributes.t(),
-          :childSpanCount => integer(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Attributes.t() | nil,
+          :childSpanCount => integer() | nil,
           :displayName =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TruncatableString.t(),
-          :endTime => DateTime.t(),
-          :name => String.t(),
-          :parentSpanId => String.t(),
-          :sameProcessAsParentSpan => boolean(),
-          :spanId => String.t(),
-          :spanKind => String.t(),
-          :startTime => DateTime.t(),
-          :status => GoogleApi.PrivateCA.V1beta1.Model.Status.t()
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1TruncatableString.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :parentSpanId => String.t() | nil,
+          :sameProcessAsParentSpan => boolean() | nil,
+          :spanId => String.t() | nil,
+          :spanKind => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => GoogleApi.PrivateCA.V1beta1.Model.Status.t() | nil
         }
 
   field(:attributes, as: GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Attributes)

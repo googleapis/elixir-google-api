@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.KeyId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyId => String.t()
+          :keyId => String.t() | nil
         }
 
   field(:keyId)

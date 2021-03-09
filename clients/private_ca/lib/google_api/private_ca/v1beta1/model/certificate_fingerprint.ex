@@ -27,7 +27,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateFingerprint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256Hash => String.t()
+          :sha256Hash => String.t() | nil
         }
 
   field(:sha256Hash)

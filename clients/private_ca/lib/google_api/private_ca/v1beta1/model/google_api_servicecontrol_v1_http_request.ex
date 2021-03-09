@@ -41,21 +41,21 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1HttpRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheFillBytes => String.t(),
-          :cacheHit => boolean(),
-          :cacheLookup => boolean(),
-          :cacheValidatedWithOriginServer => boolean(),
-          :latency => String.t(),
-          :protocol => String.t(),
-          :referer => String.t(),
-          :remoteIp => String.t(),
-          :requestMethod => String.t(),
-          :requestSize => String.t(),
-          :requestUrl => String.t(),
-          :responseSize => String.t(),
-          :serverIp => String.t(),
-          :status => integer(),
-          :userAgent => String.t()
+          :cacheFillBytes => String.t() | nil,
+          :cacheHit => boolean() | nil,
+          :cacheLookup => boolean() | nil,
+          :cacheValidatedWithOriginServer => boolean() | nil,
+          :latency => String.t() | nil,
+          :protocol => String.t() | nil,
+          :referer => String.t() | nil,
+          :remoteIp => String.t() | nil,
+          :requestMethod => String.t() | nil,
+          :requestSize => String.t() | nil,
+          :requestUrl => String.t() | nil,
+          :responseSize => String.t() | nil,
+          :serverIp => String.t() | nil,
+          :status => integer() | nil,
+          :userAgent => String.t() | nil
         }
 
   field(:cacheFillBytes)

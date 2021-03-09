@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubjectConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonName => String.t(),
-          :subject => GoogleApi.PrivateCA.V1beta1.Model.Subject.t(),
-          :subjectAltName => GoogleApi.PrivateCA.V1beta1.Model.SubjectAltNames.t()
+          :commonName => String.t() | nil,
+          :subject => GoogleApi.PrivateCA.V1beta1.Model.Subject.t() | nil,
+          :subjectAltName => GoogleApi.PrivateCA.V1beta1.Model.SubjectAltNames.t() | nil
         }
 
   field(:commonName)

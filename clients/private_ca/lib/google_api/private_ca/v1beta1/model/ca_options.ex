@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CaOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isCa => boolean(),
-          :maxIssuerPathLength => integer()
+          :isCa => boolean() | nil,
+          :maxIssuerPathLength => integer() | nil
         }
 
   field(:isCa)

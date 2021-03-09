@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ScheduleDeleteCertificateAuthorityRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ignoreActiveCertificates => boolean(),
-          :requestId => String.t()
+          :ignoreActiveCertificates => boolean() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:ignoreActiveCertificates)

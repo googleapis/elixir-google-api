@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LogEntrySou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :file => String.t(),
-          :function => String.t(),
-          :line => String.t()
+          :file => String.t() | nil,
+          :function => String.t() | nil,
+          :line => String.t() | nil
         }
 
   field(:file)

@@ -30,9 +30,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ListCertificateRevocationListsRespon
 
   @type t :: %__MODULE__{
           :certificateRevocationLists =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateRevocationList.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateRevocationList.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:certificateRevocationLists,

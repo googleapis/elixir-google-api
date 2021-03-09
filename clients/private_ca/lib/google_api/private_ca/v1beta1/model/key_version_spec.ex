@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.KeyVersionSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :cloudKmsKeyVersion => String.t()
+          :algorithm => String.t() | nil,
+          :cloudKmsKeyVersion => String.t() | nil
         }
 
   field(:algorithm)

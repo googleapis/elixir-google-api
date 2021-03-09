@@ -33,14 +33,15 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthorityPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedCommonNames => list(String.t()),
-          :allowedConfigList => GoogleApi.PrivateCA.V1beta1.Model.AllowedConfigList.t(),
-          :allowedIssuanceModes => GoogleApi.PrivateCA.V1beta1.Model.IssuanceModes.t(),
+          :allowedCommonNames => list(String.t()) | nil,
+          :allowedConfigList => GoogleApi.PrivateCA.V1beta1.Model.AllowedConfigList.t() | nil,
+          :allowedIssuanceModes => GoogleApi.PrivateCA.V1beta1.Model.IssuanceModes.t() | nil,
           :allowedLocationsAndOrganizations =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.Subject.t()),
-          :allowedSans => GoogleApi.PrivateCA.V1beta1.Model.AllowedSubjectAltNames.t(),
-          :maximumLifetime => String.t(),
-          :overwriteConfigValues => GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t()
+            list(GoogleApi.PrivateCA.V1beta1.Model.Subject.t()) | nil,
+          :allowedSans => GoogleApi.PrivateCA.V1beta1.Model.AllowedSubjectAltNames.t() | nil,
+          :maximumLifetime => String.t() | nil,
+          :overwriteConfigValues =>
+            GoogleApi.PrivateCA.V1beta1.Model.ReusableConfigWrapper.t() | nil
         }
 
   field(:allowedCommonNames, type: :list)

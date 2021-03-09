@@ -30,9 +30,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ListCertificateAuthoritiesResponse d
 
   @type t :: %__MODULE__{
           :certificateAuthorities =>
-            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthority.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+            list(GoogleApi.PrivateCA.V1beta1.Model.CertificateAuthority.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:certificateAuthorities,

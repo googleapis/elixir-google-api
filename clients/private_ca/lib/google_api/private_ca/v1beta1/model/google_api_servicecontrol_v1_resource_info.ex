@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ResourceInf
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceContainer => String.t(),
-          :resourceLocation => String.t(),
-          :resourceName => String.t()
+          :resourceContainer => String.t() | nil,
+          :resourceLocation => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:resourceContainer)

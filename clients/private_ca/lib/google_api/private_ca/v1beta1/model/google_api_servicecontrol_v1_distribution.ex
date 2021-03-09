@@ -36,19 +36,20 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Distributio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketCounts => list(String.t()),
-          :count => String.t(),
-          :exemplars => list(GoogleApi.PrivateCA.V1beta1.Model.Exemplar.t()),
+          :bucketCounts => list(String.t()) | nil,
+          :count => String.t() | nil,
+          :exemplars => list(GoogleApi.PrivateCA.V1beta1.Model.Exemplar.t()) | nil,
           :explicitBuckets =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ExplicitBuckets.t(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ExplicitBuckets.t() | nil,
           :exponentialBuckets =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ExponentialBuckets.t(),
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1ExponentialBuckets.t()
+            | nil,
           :linearBuckets =>
-            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LinearBuckets.t(),
-          :maximum => float(),
-          :mean => float(),
-          :minimum => float(),
-          :sumOfSquaredDeviation => float()
+            GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1LinearBuckets.t() | nil,
+          :maximum => float() | nil,
+          :mean => float() | nil,
+          :minimum => float() | nil,
+          :sumOfSquaredDeviation => float() | nil
         }
 
   field(:bucketCounts, type: :list)

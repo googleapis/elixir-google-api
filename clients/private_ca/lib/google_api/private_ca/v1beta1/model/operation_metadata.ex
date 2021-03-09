@@ -33,13 +33,13 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :requestedCancellation => boolean(),
-          :statusMessage => String.t(),
-          :target => String.t(),
-          :verb => String.t()
+          :apiVersion => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :requestedCancellation => boolean() | nil,
+          :statusMessage => String.t() | nil,
+          :target => String.t() | nil,
+          :verb => String.t() | nil
         }
 
   field(:apiVersion)

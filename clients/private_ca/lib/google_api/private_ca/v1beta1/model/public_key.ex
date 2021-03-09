@@ -28,8 +28,8 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.PublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :type => String.t()
+          :key => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:key)

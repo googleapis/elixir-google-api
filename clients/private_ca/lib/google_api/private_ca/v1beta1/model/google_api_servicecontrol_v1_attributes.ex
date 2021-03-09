@@ -28,11 +28,13 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1Attributes 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeMap => %{
-            optional(String.t()) =>
-              GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1AttributeValue.t()
-          },
-          :droppedAttributesCount => integer()
+          :attributeMap =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.PrivateCA.V1beta1.Model.GoogleApiServicecontrolV1AttributeValue.t()
+            }
+            | nil,
+          :droppedAttributesCount => integer() | nil
         }
 
   field(:attributeMap,

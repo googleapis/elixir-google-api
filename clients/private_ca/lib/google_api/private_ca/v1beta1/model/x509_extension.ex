@@ -29,9 +29,9 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.X509Extension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :critical => boolean(),
-          :objectId => GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t(),
-          :value => String.t()
+          :critical => boolean() | nil,
+          :objectId => GoogleApi.PrivateCA.V1beta1.Model.ObjectId.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:critical)
