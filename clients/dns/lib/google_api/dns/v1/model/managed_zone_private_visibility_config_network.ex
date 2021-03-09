@@ -22,14 +22,14 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZonePrivateVisibilityConfigNetwork`) - 
-  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the VPC network to bind to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
+  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the VPC network to bind to. Format this URL like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :networkUrl => String.t()
+          :kind => String.t() | nil,
+          :networkUrl => String.t() | nil
         }
 
   field(:kind)

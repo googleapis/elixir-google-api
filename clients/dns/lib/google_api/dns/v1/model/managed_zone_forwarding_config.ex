@@ -28,9 +28,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :targetNameServers =>
-            list(GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget.t())
+            list(GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget.t()) | nil
         }
 
   field(:kind)

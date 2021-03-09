@@ -61,7 +61,11 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.DNS.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dns_managed_zone_operations_get(
         connection,
         project,
@@ -143,6 +147,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
         ) ::
           {:ok, GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dns_managed_zone_operations_list(
         connection,

@@ -29,9 +29,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePeeringConfigTargetNetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deactivateTime => String.t(),
-          :kind => String.t(),
-          :networkUrl => String.t()
+          :deactivateTime => String.t() | nil,
+          :kind => String.t() | nil,
+          :networkUrl => String.t() | nil
         }
 
   field(:deactivateTime)

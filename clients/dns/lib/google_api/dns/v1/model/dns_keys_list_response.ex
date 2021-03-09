@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeysListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsKeys => list(GoogleApi.DNS.V1.Model.DnsKey.t()),
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :dnsKeys => list(GoogleApi.DNS.V1.Model.DnsKey.t()) | nil,
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dnsKeys, as: GoogleApi.DNS.V1.Model.DnsKey, type: :list)

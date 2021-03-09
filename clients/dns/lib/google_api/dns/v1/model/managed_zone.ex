@@ -30,35 +30,36 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZone`) - 
   *   `labels` (*type:* `map()`, *default:* `nil`) - User labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.
-  *   `nameServerSet` (*type:* `String.t`, *default:* `nil`) - Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset. If you need to use this field, please reach out to your account team.
+  *   `nameServerSet` (*type:* `String.t`, *default:* `nil`) - Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.
   *   `nameServers` (*type:* `list(String.t)`, *default:* `nil`) - Delegate your managed_zone to these virtual name servers; defined by the server (output only)
   *   `peeringConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t`, *default:* `nil`) - The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.
   *   `privateVisibilityConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t`, *default:* `nil`) - For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.
   *   `reverseLookupConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig.t`, *default:* `nil`) - The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS resolves reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config.
-  *   `serviceDirectoryConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t`, *default:* `nil`) - This field links to the associated service directory namespace. This field should not be set for public zones or forwarding zones.
+  *   `serviceDirectoryConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t`, *default:* `nil`) - This field links to the associated service directory namespace. Do not set this field for public zones or forwarding zones.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => String.t(),
-          :description => String.t(),
-          :dnsName => String.t(),
-          :dnssecConfig => GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig.t(),
-          :forwardingConfig => GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :nameServerSet => String.t(),
-          :nameServers => list(String.t()),
-          :peeringConfig => GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t(),
+          :creationTime => String.t() | nil,
+          :description => String.t() | nil,
+          :dnsName => String.t() | nil,
+          :dnssecConfig => GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig.t() | nil,
+          :forwardingConfig => GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :nameServerSet => String.t() | nil,
+          :nameServers => list(String.t()) | nil,
+          :peeringConfig => GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t() | nil,
           :privateVisibilityConfig =>
-            GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t(),
-          :reverseLookupConfig => GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig.t(),
-          :serviceDirectoryConfig => GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t(),
-          :visibility => String.t()
+            GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t() | nil,
+          :reverseLookupConfig => GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig.t() | nil,
+          :serviceDirectoryConfig =>
+            GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:creationTime)

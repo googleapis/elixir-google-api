@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :rrsets => list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t())
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :rrsets => list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t()) | nil
         }
 
   field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)

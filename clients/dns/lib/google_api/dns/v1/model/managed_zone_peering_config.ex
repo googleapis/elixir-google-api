@@ -28,8 +28,8 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :targetNetwork => GoogleApi.DNS.V1.Model.ManagedZonePeeringConfigTargetNetwork.t()
+          :kind => String.t() | nil,
+          :targetNetwork => GoogleApi.DNS.V1.Model.ManagedZonePeeringConfigTargetNetwork.t() | nil
         }
 
   field(:kind)

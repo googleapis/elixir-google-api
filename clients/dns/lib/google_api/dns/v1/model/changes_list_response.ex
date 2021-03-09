@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.ChangesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changes => list(GoogleApi.DNS.V1.Model.Change.t()),
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :changes => list(GoogleApi.DNS.V1.Model.Change.t()) | nil,
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:changes, as: GoogleApi.DNS.V1.Model.Change, type: :list)

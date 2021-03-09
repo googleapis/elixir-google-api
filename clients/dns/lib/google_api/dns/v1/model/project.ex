@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.Project do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :number => String.t(),
-          :quota => GoogleApi.DNS.V1.Model.Quota.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :number => String.t() | nil,
+          :quota => GoogleApi.DNS.V1.Model.Quota.t() | nil
         }
 
   field(:id)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DNS.V1.Model.PoliciesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :policies => list(GoogleApi.DNS.V1.Model.Policy.t())
+          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :policies => list(GoogleApi.DNS.V1.Model.Policy.t()) | nil
         }
 
   field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)
