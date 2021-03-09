@@ -32,12 +32,12 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveItemReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveFile => GoogleApi.DriveActivity.V2.Model.DriveFile.t(),
-          :driveFolder => GoogleApi.DriveActivity.V2.Model.DriveFolder.t(),
-          :file => GoogleApi.DriveActivity.V2.Model.File.t(),
-          :folder => GoogleApi.DriveActivity.V2.Model.Folder.t(),
-          :name => String.t(),
-          :title => String.t()
+          :driveFile => GoogleApi.DriveActivity.V2.Model.DriveFile.t() | nil,
+          :driveFolder => GoogleApi.DriveActivity.V2.Model.DriveFolder.t() | nil,
+          :file => GoogleApi.DriveActivity.V2.Model.File.t() | nil,
+          :folder => GoogleApi.DriveActivity.V2.Model.Folder.t() | nil,
+          :name => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:driveFile, as: GoogleApi.DriveActivity.V2.Model.DriveFile)

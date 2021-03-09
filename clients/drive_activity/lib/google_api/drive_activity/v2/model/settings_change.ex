@@ -27,7 +27,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.SettingsChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :restrictionChanges => list(GoogleApi.DriveActivity.V2.Model.RestrictionChange.t())
+          :restrictionChanges =>
+            list(GoogleApi.DriveActivity.V2.Model.RestrictionChange.t()) | nil
         }
 
   field(:restrictionChanges, as: GoogleApi.DriveActivity.V2.Model.RestrictionChange, type: :list)

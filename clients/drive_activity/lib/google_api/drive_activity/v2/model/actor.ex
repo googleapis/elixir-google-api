@@ -31,11 +31,11 @@ defmodule GoogleApi.DriveActivity.V2.Model.Actor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :administrator => GoogleApi.DriveActivity.V2.Model.Administrator.t(),
-          :anonymous => GoogleApi.DriveActivity.V2.Model.AnonymousUser.t(),
-          :impersonation => GoogleApi.DriveActivity.V2.Model.Impersonation.t(),
-          :system => GoogleApi.DriveActivity.V2.Model.SystemEvent.t(),
-          :user => GoogleApi.DriveActivity.V2.Model.User.t()
+          :administrator => GoogleApi.DriveActivity.V2.Model.Administrator.t() | nil,
+          :anonymous => GoogleApi.DriveActivity.V2.Model.AnonymousUser.t() | nil,
+          :impersonation => GoogleApi.DriveActivity.V2.Model.Impersonation.t() | nil,
+          :system => GoogleApi.DriveActivity.V2.Model.SystemEvent.t() | nil,
+          :user => GoogleApi.DriveActivity.V2.Model.User.t() | nil
         }
 
   field(:administrator, as: GoogleApi.DriveActivity.V2.Model.Administrator)

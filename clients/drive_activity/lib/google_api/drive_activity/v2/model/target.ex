@@ -30,10 +30,10 @@ defmodule GoogleApi.DriveActivity.V2.Model.Target do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drive => GoogleApi.DriveActivity.V2.Model.Drive.t(),
-          :driveItem => GoogleApi.DriveActivity.V2.Model.DriveItem.t(),
-          :fileComment => GoogleApi.DriveActivity.V2.Model.FileComment.t(),
-          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDrive.t()
+          :drive => GoogleApi.DriveActivity.V2.Model.Drive.t() | nil,
+          :driveItem => GoogleApi.DriveActivity.V2.Model.DriveItem.t() | nil,
+          :fileComment => GoogleApi.DriveActivity.V2.Model.FileComment.t() | nil,
+          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDrive.t() | nil
         }
 
   field(:drive, as: GoogleApi.DriveActivity.V2.Model.Drive)

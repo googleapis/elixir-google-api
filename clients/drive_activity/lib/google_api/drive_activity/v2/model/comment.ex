@@ -30,10 +30,10 @@ defmodule GoogleApi.DriveActivity.V2.Model.Comment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignment => GoogleApi.DriveActivity.V2.Model.Assignment.t(),
-          :mentionedUsers => list(GoogleApi.DriveActivity.V2.Model.User.t()),
-          :post => GoogleApi.DriveActivity.V2.Model.Post.t(),
-          :suggestion => GoogleApi.DriveActivity.V2.Model.Suggestion.t()
+          :assignment => GoogleApi.DriveActivity.V2.Model.Assignment.t() | nil,
+          :mentionedUsers => list(GoogleApi.DriveActivity.V2.Model.User.t()) | nil,
+          :post => GoogleApi.DriveActivity.V2.Model.Post.t() | nil,
+          :suggestion => GoogleApi.DriveActivity.V2.Model.Suggestion.t() | nil
         }
 
   field(:assignment, as: GoogleApi.DriveActivity.V2.Model.Assignment)

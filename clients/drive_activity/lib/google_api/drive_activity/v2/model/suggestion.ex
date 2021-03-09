@@ -27,7 +27,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.Suggestion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subtype => String.t()
+          :subtype => String.t() | nil
         }
 
   field(:subtype)

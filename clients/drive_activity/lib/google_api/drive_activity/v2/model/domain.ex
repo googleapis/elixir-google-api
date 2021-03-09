@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.Domain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :legacyId => String.t(),
-          :name => String.t()
+          :legacyId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:legacyId)

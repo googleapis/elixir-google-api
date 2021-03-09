@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.Rename do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newTitle => String.t(),
-          :oldTitle => String.t()
+          :newTitle => String.t() | nil,
+          :oldTitle => String.t() | nil
         }
 
   field(:newTitle)

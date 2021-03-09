@@ -31,11 +31,11 @@ defmodule GoogleApi.DriveActivity.V2.Model.Action do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actor => GoogleApi.DriveActivity.V2.Model.Actor.t(),
-          :detail => GoogleApi.DriveActivity.V2.Model.ActionDetail.t(),
-          :target => GoogleApi.DriveActivity.V2.Model.Target.t(),
-          :timeRange => GoogleApi.DriveActivity.V2.Model.TimeRange.t(),
-          :timestamp => DateTime.t()
+          :actor => GoogleApi.DriveActivity.V2.Model.Actor.t() | nil,
+          :detail => GoogleApi.DriveActivity.V2.Model.ActionDetail.t() | nil,
+          :target => GoogleApi.DriveActivity.V2.Model.Target.t() | nil,
+          :timeRange => GoogleApi.DriveActivity.V2.Model.TimeRange.t() | nil,
+          :timestamp => DateTime.t() | nil
         }
 
   field(:actor, as: GoogleApi.DriveActivity.V2.Model.Actor)

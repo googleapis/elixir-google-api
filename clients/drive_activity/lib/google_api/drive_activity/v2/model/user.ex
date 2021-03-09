@@ -29,9 +29,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletedUser => GoogleApi.DriveActivity.V2.Model.DeletedUser.t(),
-          :knownUser => GoogleApi.DriveActivity.V2.Model.KnownUser.t(),
-          :unknownUser => GoogleApi.DriveActivity.V2.Model.UnknownUser.t()
+          :deletedUser => GoogleApi.DriveActivity.V2.Model.DeletedUser.t() | nil,
+          :knownUser => GoogleApi.DriveActivity.V2.Model.KnownUser.t() | nil,
+          :unknownUser => GoogleApi.DriveActivity.V2.Model.UnknownUser.t() | nil
         }
 
   field(:deletedUser, as: GoogleApi.DriveActivity.V2.Model.DeletedUser)

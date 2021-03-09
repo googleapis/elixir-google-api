@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :title => String.t()
+          :name => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:name)

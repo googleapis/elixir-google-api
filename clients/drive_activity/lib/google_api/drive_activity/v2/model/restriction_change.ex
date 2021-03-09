@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.RestrictionChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feature => String.t(),
-          :newRestriction => String.t()
+          :feature => String.t() | nil,
+          :newRestriction => String.t() | nil
         }
 
   field(:feature)

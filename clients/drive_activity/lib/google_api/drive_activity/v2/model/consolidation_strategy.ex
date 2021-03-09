@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :legacy => GoogleApi.DriveActivity.V2.Model.Legacy.t(),
-          :none => GoogleApi.DriveActivity.V2.Model.NoConsolidation.t()
+          :legacy => GoogleApi.DriveActivity.V2.Model.Legacy.t() | nil,
+          :none => GoogleApi.DriveActivity.V2.Model.NoConsolidation.t() | nil
         }
 
   field(:legacy, as: GoogleApi.DriveActivity.V2.Model.Legacy)

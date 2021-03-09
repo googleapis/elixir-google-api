@@ -32,12 +32,12 @@ defmodule GoogleApi.DriveActivity.V2.Model.Permission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowDiscovery => boolean(),
-          :anyone => GoogleApi.DriveActivity.V2.Model.Anyone.t(),
-          :domain => GoogleApi.DriveActivity.V2.Model.Domain.t(),
-          :group => GoogleApi.DriveActivity.V2.Model.Group.t(),
-          :role => String.t(),
-          :user => GoogleApi.DriveActivity.V2.Model.User.t()
+          :allowDiscovery => boolean() | nil,
+          :anyone => GoogleApi.DriveActivity.V2.Model.Anyone.t() | nil,
+          :domain => GoogleApi.DriveActivity.V2.Model.Domain.t() | nil,
+          :group => GoogleApi.DriveActivity.V2.Model.Group.t() | nil,
+          :role => String.t() | nil,
+          :user => GoogleApi.DriveActivity.V2.Model.User.t() | nil
         }
 
   field(:allowDiscovery)

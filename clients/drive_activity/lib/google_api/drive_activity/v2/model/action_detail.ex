@@ -37,17 +37,17 @@ defmodule GoogleApi.DriveActivity.V2.Model.ActionDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comment => GoogleApi.DriveActivity.V2.Model.Comment.t(),
-          :create => GoogleApi.DriveActivity.V2.Model.Create.t(),
-          :delete => GoogleApi.DriveActivity.V2.Model.Delete.t(),
-          :dlpChange => GoogleApi.DriveActivity.V2.Model.DataLeakPreventionChange.t(),
-          :edit => GoogleApi.DriveActivity.V2.Model.Edit.t(),
-          :move => GoogleApi.DriveActivity.V2.Model.Move.t(),
-          :permissionChange => GoogleApi.DriveActivity.V2.Model.PermissionChange.t(),
-          :reference => GoogleApi.DriveActivity.V2.Model.ApplicationReference.t(),
-          :rename => GoogleApi.DriveActivity.V2.Model.Rename.t(),
-          :restore => GoogleApi.DriveActivity.V2.Model.Restore.t(),
-          :settingsChange => GoogleApi.DriveActivity.V2.Model.SettingsChange.t()
+          :comment => GoogleApi.DriveActivity.V2.Model.Comment.t() | nil,
+          :create => GoogleApi.DriveActivity.V2.Model.Create.t() | nil,
+          :delete => GoogleApi.DriveActivity.V2.Model.Delete.t() | nil,
+          :dlpChange => GoogleApi.DriveActivity.V2.Model.DataLeakPreventionChange.t() | nil,
+          :edit => GoogleApi.DriveActivity.V2.Model.Edit.t() | nil,
+          :move => GoogleApi.DriveActivity.V2.Model.Move.t() | nil,
+          :permissionChange => GoogleApi.DriveActivity.V2.Model.PermissionChange.t() | nil,
+          :reference => GoogleApi.DriveActivity.V2.Model.ApplicationReference.t() | nil,
+          :rename => GoogleApi.DriveActivity.V2.Model.Rename.t() | nil,
+          :restore => GoogleApi.DriveActivity.V2.Model.Restore.t() | nil,
+          :settingsChange => GoogleApi.DriveActivity.V2.Model.SettingsChange.t() | nil
         }
 
   field(:comment, as: GoogleApi.DriveActivity.V2.Model.Comment)

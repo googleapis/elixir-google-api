@@ -27,7 +27,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.Impersonation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :impersonatedUser => GoogleApi.DriveActivity.V2.Model.User.t()
+          :impersonatedUser => GoogleApi.DriveActivity.V2.Model.User.t() | nil
         }
 
   field(:impersonatedUser, as: GoogleApi.DriveActivity.V2.Model.User)
