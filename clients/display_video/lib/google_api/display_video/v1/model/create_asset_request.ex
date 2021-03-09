@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreateAssetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filename => String.t()
+          :filename => String.t() | nil
         }
 
   field(:filename)

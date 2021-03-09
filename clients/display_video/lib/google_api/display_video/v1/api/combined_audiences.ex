@@ -56,6 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CombinedAudiences do
   @spec displayvideo_combined_audiences_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CombinedAudience.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_combined_audiences_get(
         connection,
@@ -127,6 +128,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CombinedAudiences do
   @spec displayvideo_combined_audiences_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListCombinedAudiencesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_combined_audiences_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

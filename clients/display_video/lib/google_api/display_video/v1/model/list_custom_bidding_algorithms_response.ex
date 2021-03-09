@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingAlgorithmsResponse do
 
   @type t :: %__MODULE__{
           :customBiddingAlgorithms =>
-            list(GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:customBiddingAlgorithms,

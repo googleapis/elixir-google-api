@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyVideoViewability do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :playerImpressionRate => String.t(),
-          :videoIab => String.t(),
-          :videoViewableRate => String.t()
+          :playerImpressionRate => String.t() | nil,
+          :videoIab => String.t() | nil,
+          :videoViewableRate => String.t() | nil
         }
 
   field(:playerImpressionRate)

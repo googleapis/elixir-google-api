@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeyword do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keywordValue => String.t(),
-          :name => String.t()
+          :keywordValue => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:keywordValue)

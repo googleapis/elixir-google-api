@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CampaignGoal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :campaignGoalType => String.t(),
-          :performanceGoal => GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t()
+          :campaignGoalType => String.t() | nil,
+          :performanceGoal => GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t() | nil
         }
 
   field(:campaignGoalType)

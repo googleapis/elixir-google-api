@@ -27,7 +27,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :settings => list(GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting.t())
+          :settings =>
+            list(GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting.t()) | nil
         }
 
   field(:settings, as: GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting, type: :list)

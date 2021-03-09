@@ -55,6 +55,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySources do
   @spec displayvideo_inventory_sources_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_sources_get(
         connection,
@@ -125,6 +126,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySources do
   @spec displayvideo_inventory_sources_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListInventorySourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_sources_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

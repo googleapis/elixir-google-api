@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.MeasurementConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dv360ToCmCostReportingEnabled => boolean(),
-          :dv360ToCmDataSharingEnabled => boolean()
+          :dv360ToCmCostReportingEnabled => boolean() | nil,
+          :dv360ToCmDataSharingEnabled => boolean() | nil
         }
 
   field(:dv360ToCmCostReportingEnabled)

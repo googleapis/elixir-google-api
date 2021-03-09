@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PartnerRevenueModel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :markupAmount => String.t(),
-          :markupType => String.t()
+          :markupAmount => String.t() | nil,
+          :markupType => String.t() | nil
         }
 
   field(:markupAmount)

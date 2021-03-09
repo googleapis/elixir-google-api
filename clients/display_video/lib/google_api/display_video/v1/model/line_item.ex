@@ -49,29 +49,31 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :bidStrategy => GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t(),
-          :budget => GoogleApi.DisplayVideo.V1.Model.LineItemBudget.t(),
-          :campaignId => String.t(),
-          :conversionCounting => GoogleApi.DisplayVideo.V1.Model.ConversionCountingConfig.t(),
-          :creativeIds => list(String.t()),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :flight => GoogleApi.DisplayVideo.V1.Model.LineItemFlight.t(),
-          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t(),
-          :insertionOrderId => String.t(),
-          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t(),
-          :inventorySourceIds => list(String.t()),
-          :lineItemId => String.t(),
-          :lineItemType => String.t(),
-          :mobileApp => GoogleApi.DisplayVideo.V1.Model.MobileApp.t(),
-          :name => String.t(),
-          :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t(),
-          :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()),
-          :partnerRevenueModel => GoogleApi.DisplayVideo.V1.Model.PartnerRevenueModel.t(),
-          :targetingExpansion => GoogleApi.DisplayVideo.V1.Model.TargetingExpansionConfig.t(),
-          :updateTime => DateTime.t(),
-          :warningMessages => list(String.t())
+          :advertiserId => String.t() | nil,
+          :bidStrategy => GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t() | nil,
+          :budget => GoogleApi.DisplayVideo.V1.Model.LineItemBudget.t() | nil,
+          :campaignId => String.t() | nil,
+          :conversionCounting =>
+            GoogleApi.DisplayVideo.V1.Model.ConversionCountingConfig.t() | nil,
+          :creativeIds => list(String.t()) | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :flight => GoogleApi.DisplayVideo.V1.Model.LineItemFlight.t() | nil,
+          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t() | nil,
+          :insertionOrderId => String.t() | nil,
+          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t() | nil,
+          :inventorySourceIds => list(String.t()) | nil,
+          :lineItemId => String.t() | nil,
+          :lineItemType => String.t() | nil,
+          :mobileApp => GoogleApi.DisplayVideo.V1.Model.MobileApp.t() | nil,
+          :name => String.t() | nil,
+          :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t() | nil,
+          :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()) | nil,
+          :partnerRevenueModel => GoogleApi.DisplayVideo.V1.Model.PartnerRevenueModel.t() | nil,
+          :targetingExpansion =>
+            GoogleApi.DisplayVideo.V1.Model.TargetingExpansionConfig.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :warningMessages => list(String.t()) | nil
         }
 
   field(:advertiserId)

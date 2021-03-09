@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditLineItemAssignedTargetingOptio
 
   @type t :: %__MODULE__{
           :createRequests =>
-            list(GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest.t()),
+            list(GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest.t()) | nil,
           :deleteRequests =>
-            list(GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest.t())
+            list(GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest.t()) | nil
         }
 
   field(:createRequests,

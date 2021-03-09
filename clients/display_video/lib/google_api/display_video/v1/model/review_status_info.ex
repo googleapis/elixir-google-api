@@ -31,13 +31,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ReviewStatusInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalStatus => String.t(),
-          :contentAndPolicyReviewStatus => String.t(),
-          :creativeAndLandingPageReviewStatus => String.t(),
+          :approvalStatus => String.t() | nil,
+          :contentAndPolicyReviewStatus => String.t() | nil,
+          :creativeAndLandingPageReviewStatus => String.t() | nil,
           :exchangeReviewStatuses =>
-            list(GoogleApi.DisplayVideo.V1.Model.ExchangeReviewStatus.t()),
+            list(GoogleApi.DisplayVideo.V1.Model.ExchangeReviewStatus.t()) | nil,
           :publisherReviewStatuses =>
-            list(GoogleApi.DisplayVideo.V1.Model.PublisherReviewStatus.t())
+            list(GoogleApi.DisplayVideo.V1.Model.PublisherReviewStatus.t()) | nil
         }
 
   field(:approvalStatus)

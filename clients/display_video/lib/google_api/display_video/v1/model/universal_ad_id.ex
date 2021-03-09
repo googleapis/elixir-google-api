@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.UniversalAdId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :registry => String.t()
+          :id => String.t() | nil,
+          :registry => String.t() | nil
         }
 
   field(:id)

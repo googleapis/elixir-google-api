@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListFirstAndThirdPartyAudiencesRespons
 
   @type t :: %__MODULE__{
           :firstAndThirdPartyAudiences =>
-            list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:firstAndThirdPartyAudiences,

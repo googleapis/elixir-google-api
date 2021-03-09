@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

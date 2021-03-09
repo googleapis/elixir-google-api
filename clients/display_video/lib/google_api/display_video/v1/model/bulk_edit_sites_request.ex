@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditSitesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :createdSites => list(GoogleApi.DisplayVideo.V1.Model.Site.t()),
-          :deletedSites => list(String.t()),
-          :partnerId => String.t()
+          :advertiserId => String.t() | nil,
+          :createdSites => list(GoogleApi.DisplayVideo.V1.Model.Site.t()) | nil,
+          :deletedSites => list(String.t()) | nil,
+          :partnerId => String.t() | nil
         }
 
   field(:advertiserId)

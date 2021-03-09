@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.MobileApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appId => String.t(),
-          :displayName => String.t(),
-          :platform => String.t(),
-          :publisher => String.t()
+          :appId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :platform => String.t() | nil,
+          :publisher => String.t() | nil
         }
 
   field(:appId)

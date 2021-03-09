@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityAssignedTargetingOptionDeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetingOptionId => String.t(),
-          :viewability => String.t()
+          :targetingOptionId => String.t() | nil,
+          :viewability => String.t() | nil
         }
 
   field(:targetingOptionId)

@@ -61,6 +61,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomBiddingAlgorithms do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_custom_bidding_algorithms_get(
         connection,
@@ -135,6 +136,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomBiddingAlgorithms do
   @spec displayvideo_custom_bidding_algorithms_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingAlgorithmsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_custom_bidding_algorithms_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

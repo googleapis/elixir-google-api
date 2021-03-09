@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customListId => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+          :customListId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:customListId)

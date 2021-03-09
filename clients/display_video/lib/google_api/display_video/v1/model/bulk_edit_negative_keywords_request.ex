@@ -28,8 +28,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditNegativeKeywordsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdNegativeKeywords => list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t()),
-          :deletedNegativeKeywords => list(String.t())
+          :createdNegativeKeywords =>
+            list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t()) | nil,
+          :deletedNegativeKeywords => list(String.t()) | nil
         }
 
   field(:createdNegativeKeywords, as: GoogleApi.DisplayVideo.V1.Model.NegativeKeyword, type: :list)

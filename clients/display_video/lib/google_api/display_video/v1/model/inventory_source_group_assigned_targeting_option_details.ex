@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceGroupAssignedTargetingO
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventorySourceGroupId => String.t()
+          :inventorySourceGroupId => String.t() | nil
         }
 
   field(:inventorySourceGroupId)

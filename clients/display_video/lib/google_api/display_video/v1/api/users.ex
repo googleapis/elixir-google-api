@@ -60,6 +60,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedUserRolesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_users_bulk_edit_assigned_user_roles(
         connection,
@@ -125,7 +126,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec displayvideo_users_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def displayvideo_users_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -183,6 +187,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   @spec displayvideo_users_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_users_delete(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -240,7 +245,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec displayvideo_users_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def displayvideo_users_get(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -302,6 +310,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   @spec displayvideo_users_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListUsersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_users_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -363,7 +372,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec displayvideo_users_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.DisplayVideo.V1.Model.User.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def displayvideo_users_patch(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

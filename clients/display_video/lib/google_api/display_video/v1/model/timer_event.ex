@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TimerEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :reportingName => String.t()
+          :name => String.t() | nil,
+          :reportingName => String.t() | nil
         }
 
   field(:name)

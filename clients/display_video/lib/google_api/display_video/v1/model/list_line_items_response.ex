@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListLineItemsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItems => list(GoogleApi.DisplayVideo.V1.Model.LineItem.t()),
-          :nextPageToken => String.t()
+          :lineItems => list(GoogleApi.DisplayVideo.V1.Model.LineItem.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:lineItems, as: GoogleApi.DisplayVideo.V1.Model.LineItem, type: :list)

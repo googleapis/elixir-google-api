@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configStatus => String.t(),
-          :entityPauseReason => String.t(),
-          :entityStatus => String.t(),
-          :sellerPauseReason => String.t(),
-          :sellerStatus => String.t()
+          :configStatus => String.t() | nil,
+          :entityPauseReason => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :sellerPauseReason => String.t() | nil,
+          :sellerStatus => String.t() | nil
         }
 
   field(:configStatus)

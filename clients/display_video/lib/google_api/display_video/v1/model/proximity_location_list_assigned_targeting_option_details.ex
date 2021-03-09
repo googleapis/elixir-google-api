@@ -22,14 +22,14 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ProximityLocationListAssignedTargeting
   ## Attributes
 
   *   `proximityLocationListId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the proximity location list. Should refer to the location_list_id field of a LocationList resource whose type is `TARGETING_LOCATION_TYPE_PROXIMITY`.
-  *   `proximityRadiusRange` (*type:* `String.t`, *default:* `nil`) - Required. Radius range for proximity location list. This represents the size of the area around a chosen location that will be targeted. `All` proximity location targeting under a single line item must have the same radius range value. Set this value to match any existing targeting. If updated, this field will change the radius range for all proximity targeting under the line item.
+  *   `proximityRadiusRange` (*type:* `String.t`, *default:* `nil`) - Required. Radius range for proximity location list. This represents the size of the area around a chosen location that will be targeted. `All` proximity location targeting under a single resource must have the same radius range value. Set this value to match any existing targeting. If updated, this field will change the radius range for all proximity targeting under the resource.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :proximityLocationListId => String.t(),
-          :proximityRadiusRange => String.t()
+          :proximityLocationListId => String.t() | nil,
+          :proximityRadiusRange => String.t() | nil
         }
 
   field(:proximityLocationListId)

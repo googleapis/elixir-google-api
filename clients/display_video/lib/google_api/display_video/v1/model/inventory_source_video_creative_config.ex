@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t()
+          :duration => String.t() | nil
         }
 
   field(:duration)

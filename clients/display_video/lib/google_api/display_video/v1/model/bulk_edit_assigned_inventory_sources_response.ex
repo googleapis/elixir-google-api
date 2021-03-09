@@ -28,7 +28,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesRespon
 
   @type t :: %__MODULE__{
           :assignedInventorySources =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t())
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()) | nil
         }
 
   field(:assignedInventorySources,

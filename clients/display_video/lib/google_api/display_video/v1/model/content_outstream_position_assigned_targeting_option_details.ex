@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTarget
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adType => String.t(),
-          :contentOutstreamPosition => String.t(),
-          :targetingOptionId => String.t()
+          :adType => String.t() | nil,
+          :contentOutstreamPosition => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:adType)

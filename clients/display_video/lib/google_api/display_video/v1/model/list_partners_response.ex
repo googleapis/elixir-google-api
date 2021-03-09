@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListPartnersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :partners => list(GoogleApi.DisplayVideo.V1.Model.Partner.t())
+          :nextPageToken => String.t() | nil,
+          :partners => list(GoogleApi.DisplayVideo.V1.Model.Partner.t()) | nil
         }
 
   field(:nextPageToken)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :inventorySourceGroupId => String.t(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :inventorySourceGroupId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

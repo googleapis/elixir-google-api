@@ -29,6 +29,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup do
   @type t :: %__MODULE__{
           :settings =>
             list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceTargetingSetting.t())
+            | nil
         }
 
   field(:settings,

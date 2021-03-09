@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyDisplayViewability do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iab => String.t(),
-          :viewableDuring => String.t()
+          :iab => String.t() | nil,
+          :viewableDuring => String.t() | nil
         }
 
   field(:iab)

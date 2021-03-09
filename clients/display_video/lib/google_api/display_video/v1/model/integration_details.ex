@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegrationDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => String.t(),
-          :integrationCode => String.t()
+          :details => String.t() | nil,
+          :integrationCode => String.t() | nil
         }
 
   field(:details)

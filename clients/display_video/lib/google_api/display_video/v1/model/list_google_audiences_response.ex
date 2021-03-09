@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListGoogleAudiencesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleAudiences => list(GoogleApi.DisplayVideo.V1.Model.GoogleAudience.t()),
-          :nextPageToken => String.t()
+          :googleAudiences => list(GoogleApi.DisplayVideo.V1.Model.GoogleAudience.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:googleAudiences, as: GoogleApi.DisplayVideo.V1.Model.GoogleAudience, type: :list)

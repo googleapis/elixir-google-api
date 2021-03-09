@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t()
+          :displayName => String.t() | nil
         }
 
   field(:displayName)

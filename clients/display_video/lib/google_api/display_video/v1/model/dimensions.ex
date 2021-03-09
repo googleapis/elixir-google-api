@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Dimensions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :heightPixels => integer(),
-          :widthPixels => integer()
+          :heightPixels => integer() | nil,
+          :widthPixels => integer() | nil
         }
 
   field(:heightPixels)

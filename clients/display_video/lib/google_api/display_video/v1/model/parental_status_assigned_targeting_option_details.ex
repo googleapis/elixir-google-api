@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ParentalStatusAssignedTargetingOptionD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parentalStatus => String.t(),
-          :targetingOptionId => String.t()
+          :parentalStatus => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:parentalStatus)

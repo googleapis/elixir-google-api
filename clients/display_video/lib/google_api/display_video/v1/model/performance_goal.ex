@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :performanceGoalAmountMicros => String.t(),
-          :performanceGoalPercentageMicros => String.t(),
-          :performanceGoalString => String.t(),
-          :performanceGoalType => String.t()
+          :performanceGoalAmountMicros => String.t() | nil,
+          :performanceGoalPercentageMicros => String.t() | nil,
+          :performanceGoalString => String.t() | nil,
+          :performanceGoalType => String.t() | nil
         }
 
   field(:performanceGoalAmountMicros)

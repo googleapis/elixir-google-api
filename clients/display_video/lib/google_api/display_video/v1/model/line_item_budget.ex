@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItemBudget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :budgetAllocationType => String.t(),
-          :budgetUnit => String.t(),
-          :maxAmount => String.t()
+          :budgetAllocationType => String.t() | nil,
+          :budgetUnit => String.t() | nil,
+          :maxAmount => String.t() | nil
         }
 
   field(:budgetAllocationType)

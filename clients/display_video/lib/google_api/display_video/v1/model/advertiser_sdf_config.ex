@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserSdfConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :overridePartnerSdfConfig => boolean(),
-          :sdfConfig => GoogleApi.DisplayVideo.V1.Model.SdfConfig.t()
+          :overridePartnerSdfConfig => boolean() | nil,
+          :sdfConfig => GoogleApi.DisplayVideo.V1.Model.SdfConfig.t() | nil
         }
 
   field(:overridePartnerSdfConfig)

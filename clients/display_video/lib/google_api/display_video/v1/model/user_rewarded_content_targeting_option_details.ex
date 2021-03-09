@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.UserRewardedContentTargetingOptionDeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :userRewardedContent => String.t()
+          :userRewardedContent => String.t() | nil
         }
 
   field(:userRewardedContent)

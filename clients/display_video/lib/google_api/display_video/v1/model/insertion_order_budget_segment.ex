@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :budgetAmountMicros => String.t(),
-          :campaignBudgetId => String.t(),
-          :dateRange => GoogleApi.DisplayVideo.V1.Model.DateRange.t(),
-          :description => String.t()
+          :budgetAmountMicros => String.t() | nil,
+          :campaignBudgetId => String.t() | nil,
+          :dateRange => GoogleApi.DisplayVideo.V1.Model.DateRange.t() | nil,
+          :description => String.t() | nil
         }
 
   field(:budgetAmountMicros)

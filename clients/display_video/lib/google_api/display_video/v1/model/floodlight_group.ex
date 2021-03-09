@@ -34,13 +34,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FloodlightGroup do
 
   @type t :: %__MODULE__{
           :activeViewConfig =>
-            GoogleApi.DisplayVideo.V1.Model.ActiveViewVideoViewabilityMetricConfig.t(),
-          :customVariables => map(),
-          :displayName => String.t(),
-          :floodlightGroupId => String.t(),
-          :lookbackWindow => GoogleApi.DisplayVideo.V1.Model.LookbackWindow.t(),
-          :name => String.t(),
-          :webTagType => String.t()
+            GoogleApi.DisplayVideo.V1.Model.ActiveViewVideoViewabilityMetricConfig.t() | nil,
+          :customVariables => map() | nil,
+          :displayName => String.t() | nil,
+          :floodlightGroupId => String.t() | nil,
+          :lookbackWindow => GoogleApi.DisplayVideo.V1.Model.LookbackWindow.t() | nil,
+          :name => String.t() | nil,
+          :webTagType => String.t() | nil
         }
 
   field(:activeViewConfig,

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.DisplayVideo.V1.Model.Date.t(),
-          :startDate => GoogleApi.DisplayVideo.V1.Model.Date.t()
+          :endDate => GoogleApi.DisplayVideo.V1.Model.Date.t() | nil,
+          :startDate => GoogleApi.DisplayVideo.V1.Model.Date.t() | nil
         }
 
   field(:endDate, as: GoogleApi.DisplayVideo.V1.Model.Date)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyBrandSafetyCategories do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :avoidUnknownBrandSafetyCategory => boolean(),
-          :avoidedHighSeverityCategories => list(String.t()),
-          :avoidedMediumSeverityCategories => list(String.t())
+          :avoidUnknownBrandSafetyCategory => boolean() | nil,
+          :avoidedHighSeverityCategories => list(String.t()) | nil,
+          :avoidedMediumSeverityCategories => list(String.t()) | nil
         }
 
   field(:avoidUnknownBrandSafetyCategory)

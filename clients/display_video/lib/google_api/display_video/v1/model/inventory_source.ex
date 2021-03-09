@@ -40,20 +40,20 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitment => String.t(),
-          :creativeConfigs => list(GoogleApi.DisplayVideo.V1.Model.CreativeConfig.t()),
-          :dealId => String.t(),
-          :deliveryMethod => String.t(),
-          :displayName => String.t(),
-          :exchange => String.t(),
-          :inventorySourceId => String.t(),
-          :inventorySourceType => String.t(),
-          :name => String.t(),
-          :publisherName => String.t(),
-          :rateDetails => GoogleApi.DisplayVideo.V1.Model.RateDetails.t(),
-          :status => GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus.t(),
-          :timeRange => GoogleApi.DisplayVideo.V1.Model.TimeRange.t(),
-          :updateTime => DateTime.t()
+          :commitment => String.t() | nil,
+          :creativeConfigs => list(GoogleApi.DisplayVideo.V1.Model.CreativeConfig.t()) | nil,
+          :dealId => String.t() | nil,
+          :deliveryMethod => String.t() | nil,
+          :displayName => String.t() | nil,
+          :exchange => String.t() | nil,
+          :inventorySourceId => String.t() | nil,
+          :inventorySourceType => String.t() | nil,
+          :name => String.t() | nil,
+          :publisherName => String.t() | nil,
+          :rateDetails => GoogleApi.DisplayVideo.V1.Model.RateDetails.t() | nil,
+          :status => GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus.t() | nil,
+          :timeRange => GoogleApi.DisplayVideo.V1.Model.TimeRange.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:commitment)

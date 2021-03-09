@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :onScreenPosition => String.t()
+          :onScreenPosition => String.t() | nil
         }
 
   field(:onScreenPosition)

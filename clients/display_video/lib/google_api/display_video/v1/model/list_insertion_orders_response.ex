@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListInsertionOrdersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertionOrders => list(GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t()),
-          :nextPageToken => String.t()
+          :insertionOrders => list(GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:insertionOrders, as: GoogleApi.DisplayVideo.V1.Model.InsertionOrder, type: :list)

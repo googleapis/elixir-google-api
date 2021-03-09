@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pixelOrderIdReportingEnabled => boolean()
+          :pixelOrderIdReportingEnabled => boolean() | nil
         }
 
   field(:pixelOrderIdReportingEnabled)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.UserRewardedContentAssignedTargetingOp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetingOptionId => String.t(),
-          :userRewardedContent => String.t()
+          :targetingOptionId => String.t() | nil,
+          :userRewardedContent => String.t() | nil
         }
 
   field(:targetingOptionId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :negativeKeywordListId => String.t()
+          :advertiserId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :negativeKeywordListId => String.t() | nil
         }
 
   field(:advertiserId)

@@ -62,6 +62,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.TargetingTypes do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.TargetingOption.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_targeting_types_targeting_options_get(
         connection,
@@ -142,6 +143,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.TargetingTypes do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_targeting_types_targeting_options_list(
         connection,
@@ -219,6 +221,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.TargetingTypes do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.SearchTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_targeting_types_targeting_options_search(
         connection,

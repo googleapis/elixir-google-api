@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelAssignedTargetingOp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentRatingTier => String.t(),
-          :excludedTargetingOptionId => String.t()
+          :contentRatingTier => String.t() | nil,
+          :excludedTargetingOptionId => String.t() | nil
         }
 
   field(:contentRatingTier)

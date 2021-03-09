@@ -35,15 +35,15 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :campaignFlight => GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t(),
-          :campaignGoal => GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t(),
-          :campaignId => String.t(),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :advertiserId => String.t() | nil,
+          :campaignFlight => GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t() | nil,
+          :campaignGoal => GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t() | nil,
+          :campaignId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:advertiserId)

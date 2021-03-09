@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exchange => String.t()
+          :exchange => String.t() | nil
         }
 
   field(:exchange)

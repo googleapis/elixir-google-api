@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedUserRoles => list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t()),
-          :displayName => String.t(),
-          :email => String.t(),
-          :name => String.t(),
-          :userId => String.t()
+          :assignedUserRoles => list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t()) | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :name => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:assignedUserRoles, as: GoogleApi.DisplayVideo.V1.Model.AssignedUserRole, type: :list)

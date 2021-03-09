@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :percentage => String.t(),
-          :seconds => String.t()
+          :percentage => String.t() | nil,
+          :seconds => String.t() | nil
         }
 
   field(:percentage)

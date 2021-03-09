@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :googleAudienceId => String.t(),
-          :googleAudienceType => String.t(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :googleAudienceId => String.t() | nil,
+          :googleAudienceType => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

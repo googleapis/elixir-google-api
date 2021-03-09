@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedLocations => list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t())
+          :assignedLocations => list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t()) | nil
         }
 
   field(:assignedLocations, as: GoogleApi.DisplayVideo.V1.Model.AssignedLocation, type: :list)

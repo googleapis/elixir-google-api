@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.KeywordAssignedTargetingOptionDetails 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyword => String.t(),
-          :negative => boolean()
+          :keyword => String.t() | nil,
+          :negative => boolean() | nil
         }
 
   field(:keyword)

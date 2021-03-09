@@ -33,14 +33,16 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDe
 
   @type t :: %__MODULE__{
           :excludedFirstAndThirdPartyAudienceGroup =>
-            GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t(),
-          :excludedGoogleAudienceGroup => GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t(),
+            GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t() | nil,
+          :excludedGoogleAudienceGroup =>
+            GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t() | nil,
           :includedCombinedAudienceGroup =>
-            GoogleApi.DisplayVideo.V1.Model.CombinedAudienceGroup.t(),
-          :includedCustomListGroup => GoogleApi.DisplayVideo.V1.Model.CustomListGroup.t(),
+            GoogleApi.DisplayVideo.V1.Model.CombinedAudienceGroup.t() | nil,
+          :includedCustomListGroup => GoogleApi.DisplayVideo.V1.Model.CustomListGroup.t() | nil,
           :includedFirstAndThirdPartyAudienceGroups =>
-            list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t()),
-          :includedGoogleAudienceGroup => GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t()
+            list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t()) | nil,
+          :includedGoogleAudienceGroup =>
+            GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t() | nil
         }
 
   field(:excludedFirstAndThirdPartyAudienceGroup,

@@ -32,12 +32,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreateSdfDownloadTaskRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :idFilter => GoogleApi.DisplayVideo.V1.Model.IdFilter.t(),
-          :inventorySourceFilter => GoogleApi.DisplayVideo.V1.Model.InventorySourceFilter.t(),
-          :parentEntityFilter => GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter.t(),
-          :partnerId => String.t(),
-          :version => String.t()
+          :advertiserId => String.t() | nil,
+          :idFilter => GoogleApi.DisplayVideo.V1.Model.IdFilter.t() | nil,
+          :inventorySourceFilter =>
+            GoogleApi.DisplayVideo.V1.Model.InventorySourceFilter.t() | nil,
+          :parentEntityFilter => GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter.t() | nil,
+          :partnerId => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:advertiserId)

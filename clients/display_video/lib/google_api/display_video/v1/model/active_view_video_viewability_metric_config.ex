@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ActiveViewVideoViewabilityMetricConfig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :minimumDuration => String.t(),
-          :minimumQuartile => String.t(),
-          :minimumViewability => String.t(),
-          :minimumVolume => String.t()
+          :displayName => String.t() | nil,
+          :minimumDuration => String.t() | nil,
+          :minimumQuartile => String.t() | nil,
+          :minimumViewability => String.t() | nil,
+          :minimumVolume => String.t() | nil
         }
 
   field(:displayName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AgeRangeAssignedTargetingOptionDetails
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ageRange => String.t(),
-          :targetingOptionId => String.t()
+          :ageRange => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:ageRange)

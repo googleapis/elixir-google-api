@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CmTrackingAd do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cmAdId => String.t(),
-          :cmCreativeId => String.t(),
-          :cmPlacementId => String.t()
+          :cmAdId => String.t() | nil,
+          :cmCreativeId => String.t() | nil,
+          :cmPlacementId => String.t() | nil
         }
 
   field(:cmAdId)

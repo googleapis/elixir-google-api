@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Asset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :mediaId => String.t()
+          :content => String.t() | nil,
+          :mediaId => String.t() | nil
         }
 
   field(:content)

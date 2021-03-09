@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeSize => GoogleApi.DisplayVideo.V1.Model.Dimensions.t()
+          :creativeSize => GoogleApi.DisplayVideo.V1.Model.Dimensions.t() | nil
         }
 
   field(:creativeSize, as: GoogleApi.DisplayVideo.V1.Model.Dimensions)

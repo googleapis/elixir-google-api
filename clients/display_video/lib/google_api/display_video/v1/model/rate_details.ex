@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.RateDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventorySourceRateType => String.t(),
-          :minimumSpend => GoogleApi.DisplayVideo.V1.Model.Money.t(),
-          :rate => GoogleApi.DisplayVideo.V1.Model.Money.t(),
-          :unitsPurchased => String.t()
+          :inventorySourceRateType => String.t() | nil,
+          :minimumSpend => GoogleApi.DisplayVideo.V1.Model.Money.t() | nil,
+          :rate => GoogleApi.DisplayVideo.V1.Model.Money.t() | nil,
+          :unitsPurchased => String.t() | nil
         }
 
   field(:inventorySourceRateType)

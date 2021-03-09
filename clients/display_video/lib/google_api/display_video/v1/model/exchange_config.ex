@@ -28,7 +28,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeConfig do
 
   @type t :: %__MODULE__{
           :enabledExchanges =>
-            list(GoogleApi.DisplayVideo.V1.Model.ExchangeConfigEnabledExchange.t())
+            list(GoogleApi.DisplayVideo.V1.Model.ExchangeConfigEnabledExchange.t()) | nil
         }
 
   field(:enabledExchanges,

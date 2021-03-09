@@ -28,8 +28,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListNegativeKeywordListsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :negativeKeywordLists => list(GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList.t()),
-          :nextPageToken => String.t()
+          :negativeKeywordLists =>
+            list(GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:negativeKeywordLists,

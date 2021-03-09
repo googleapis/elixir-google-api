@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TrackingFloodlightActivityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floodlightActivityId => String.t(),
-          :postClickLookbackWindowDays => integer(),
-          :postViewLookbackWindowDays => integer()
+          :floodlightActivityId => String.t() | nil,
+          :postClickLookbackWindowDays => integer() | nil,
+          :postViewLookbackWindowDays => integer() | nil
         }
 
   field(:floodlightActivityId)

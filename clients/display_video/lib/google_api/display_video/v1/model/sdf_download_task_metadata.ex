@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SdfDownloadTaskMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :version => String.t()
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

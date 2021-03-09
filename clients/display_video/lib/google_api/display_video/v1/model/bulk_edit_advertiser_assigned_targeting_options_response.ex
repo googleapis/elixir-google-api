@@ -28,7 +28,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAdvertiserAssignedTargetingOpt
 
   @type t :: %__MODULE__{
           :createdAssignedTargetingOptions =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t())
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()) | nil
         }
 
   field(:createdAssignedTargetingOptions,

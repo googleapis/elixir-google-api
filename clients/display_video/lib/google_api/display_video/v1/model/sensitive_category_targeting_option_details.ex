@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetail
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sensitiveCategory => String.t()
+          :sensitiveCategory => String.t() | nil
         }
 
   field(:sensitiveCategory)

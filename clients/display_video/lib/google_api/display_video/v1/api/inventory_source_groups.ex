@@ -56,6 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   @spec displayvideo_inventory_source_groups_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -123,6 +124,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_delete(
         connection,
@@ -196,6 +198,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_get(
         connection,
@@ -267,6 +270,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   @spec displayvideo_inventory_source_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListInventorySourceGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -341,6 +345,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_patch(
         connection,
@@ -416,6 +421,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_assigned_inventory_sources_bulk_edit(
         connection,
@@ -496,6 +502,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_assigned_inventory_sources_create(
         connection,
@@ -578,6 +585,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_assigned_inventory_sources_delete(
         connection,
@@ -662,6 +670,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_inventory_source_groups_assigned_inventory_sources_list(
         connection,

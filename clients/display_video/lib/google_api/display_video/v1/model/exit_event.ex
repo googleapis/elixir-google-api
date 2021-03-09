@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExitEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :reportingName => String.t(),
-          :type => String.t(),
-          :url => String.t()
+          :name => String.t() | nil,
+          :reportingName => String.t() | nil,
+          :type => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:name)

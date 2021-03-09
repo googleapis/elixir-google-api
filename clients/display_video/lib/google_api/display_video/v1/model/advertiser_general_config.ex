@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserGeneralConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyCode => String.t(),
-          :domainUrl => String.t(),
-          :timeZone => String.t()
+          :currencyCode => String.t() | nil,
+          :domainUrl => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:currencyCode)

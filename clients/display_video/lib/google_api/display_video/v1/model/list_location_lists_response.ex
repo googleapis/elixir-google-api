@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListLocationListsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationLists => list(GoogleApi.DisplayVideo.V1.Model.LocationList.t()),
-          :nextPageToken => String.t()
+          :locationLists => list(GoogleApi.DisplayVideo.V1.Model.LocationList.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locationLists, as: GoogleApi.DisplayVideo.V1.Model.LocationList, type: :list)

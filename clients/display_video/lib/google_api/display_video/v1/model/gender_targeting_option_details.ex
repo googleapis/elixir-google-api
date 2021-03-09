@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GenderTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gender => String.t()
+          :gender => String.t() | nil
         }
 
   field(:gender)

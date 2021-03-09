@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOpti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedTargetingOptionId => String.t(),
-          :sensitiveCategory => String.t()
+          :excludedTargetingOptionId => String.t() | nil,
+          :sensitiveCategory => String.t() | nil
         }
 
   field(:excludedTargetingOptionId)

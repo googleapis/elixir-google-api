@@ -54,53 +54,61 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ageRangeDetails => GoogleApi.DisplayVideo.V1.Model.AgeRangeTargetingOptionDetails.t(),
+          :ageRangeDetails =>
+            GoogleApi.DisplayVideo.V1.Model.AgeRangeTargetingOptionDetails.t() | nil,
           :appCategoryDetails =>
-            GoogleApi.DisplayVideo.V1.Model.AppCategoryTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.AppCategoryTargetingOptionDetails.t() | nil,
           :authorizedSellerStatusDetails =>
-            GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t(),
-          :browserDetails => GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t() | nil,
+          :browserDetails =>
+            GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t() | nil,
           :carrierAndIspDetails =>
-            GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t(),
-          :categoryDetails => GoogleApi.DisplayVideo.V1.Model.CategoryTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t() | nil,
+          :categoryDetails =>
+            GoogleApi.DisplayVideo.V1.Model.CategoryTargetingOptionDetails.t() | nil,
           :contentInstreamPositionDetails =>
-            GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionTargetingOptionDetails.t()
+            | nil,
           :contentOutstreamPositionDetails =>
-            GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionTargetingOptionDetails.t()
+            | nil,
           :deviceMakeModelDetails =>
-            GoogleApi.DisplayVideo.V1.Model.DeviceMakeModelTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.DeviceMakeModelTargetingOptionDetails.t() | nil,
           :deviceTypeDetails =>
-            GoogleApi.DisplayVideo.V1.Model.DeviceTypeTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.DeviceTypeTargetingOptionDetails.t() | nil,
           :digitalContentLabelDetails =>
-            GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDetails.t() | nil,
           :environmentDetails =>
-            GoogleApi.DisplayVideo.V1.Model.EnvironmentTargetingOptionDetails.t(),
-          :exchangeDetails => GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails.t(),
-          :genderDetails => GoogleApi.DisplayVideo.V1.Model.GenderTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.EnvironmentTargetingOptionDetails.t() | nil,
+          :exchangeDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails.t() | nil,
+          :genderDetails =>
+            GoogleApi.DisplayVideo.V1.Model.GenderTargetingOptionDetails.t() | nil,
           :geoRegionDetails =>
-            GoogleApi.DisplayVideo.V1.Model.GeoRegionTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.GeoRegionTargetingOptionDetails.t() | nil,
           :householdIncomeDetails =>
-            GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeTargetingOptionDetails.t(),
-          :languageDetails => GoogleApi.DisplayVideo.V1.Model.LanguageTargetingOptionDetails.t(),
-          :name => String.t(),
+            GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeTargetingOptionDetails.t() | nil,
+          :languageDetails =>
+            GoogleApi.DisplayVideo.V1.Model.LanguageTargetingOptionDetails.t() | nil,
+          :name => String.t() | nil,
           :onScreenPositionDetails =>
-            GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t() | nil,
           :operatingSystemDetails =>
-            GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails.t() | nil,
           :parentalStatusDetails =>
-            GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t() | nil,
           :sensitiveCategoryDetails =>
-            GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t() | nil,
           :subExchangeDetails =>
-            GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails.t(),
-          :targetingOptionId => String.t(),
-          :targetingType => String.t(),
+            GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails.t() | nil,
+          :targetingOptionId => String.t() | nil,
+          :targetingType => String.t() | nil,
           :userRewardedContentDetails =>
-            GoogleApi.DisplayVideo.V1.Model.UserRewardedContentTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.UserRewardedContentTargetingOptionDetails.t() | nil,
           :videoPlayerSizeDetails =>
-            GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeTargetingOptionDetails.t(),
+            GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeTargetingOptionDetails.t() | nil,
           :viewabilityDetails =>
-            GoogleApi.DisplayVideo.V1.Model.ViewabilityTargetingOptionDetails.t()
+            GoogleApi.DisplayVideo.V1.Model.ViewabilityTargetingOptionDetails.t() | nil
         }
 
   field(:ageRangeDetails, as: GoogleApi.DisplayVideo.V1.Model.AgeRangeTargetingOptionDetails)

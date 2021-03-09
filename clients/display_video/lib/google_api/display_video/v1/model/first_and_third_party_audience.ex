@@ -41,21 +41,21 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeDisplayAudienceSize => String.t(),
-          :audienceSource => String.t(),
-          :audienceType => String.t(),
-          :description => String.t(),
-          :displayAudienceSize => String.t(),
-          :displayDesktopAudienceSize => String.t(),
-          :displayMobileAppAudienceSize => String.t(),
-          :displayMobileWebAudienceSize => String.t(),
-          :displayName => String.t(),
-          :firstAndThirdPartyAudienceId => String.t(),
-          :firstAndThirdPartyAudienceType => String.t(),
-          :gmailAudienceSize => String.t(),
-          :membershipDurationDays => String.t(),
-          :name => String.t(),
-          :youtubeAudienceSize => String.t()
+          :activeDisplayAudienceSize => String.t() | nil,
+          :audienceSource => String.t() | nil,
+          :audienceType => String.t() | nil,
+          :description => String.t() | nil,
+          :displayAudienceSize => String.t() | nil,
+          :displayDesktopAudienceSize => String.t() | nil,
+          :displayMobileAppAudienceSize => String.t() | nil,
+          :displayMobileWebAudienceSize => String.t() | nil,
+          :displayName => String.t() | nil,
+          :firstAndThirdPartyAudienceId => String.t() | nil,
+          :firstAndThirdPartyAudienceType => String.t() | nil,
+          :gmailAudienceSize => String.t() | nil,
+          :membershipDurationDays => String.t() | nil,
+          :name => String.t() | nil,
+          :youtubeAudienceSize => String.t() | nil
         }
 
   field(:activeDisplayAudienceSize)

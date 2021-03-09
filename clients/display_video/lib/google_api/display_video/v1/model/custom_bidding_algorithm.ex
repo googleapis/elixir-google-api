@@ -33,13 +33,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :customBiddingAlgorithmId => String.t(),
-          :customBiddingAlgorithmType => String.t(),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :name => String.t(),
-          :partnerId => String.t()
+          :advertiserId => String.t() | nil,
+          :customBiddingAlgorithmId => String.t() | nil,
+          :customBiddingAlgorithmType => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :name => String.t() | nil,
+          :partnerId => String.t() | nil
         }
 
   field(:advertiserId)
