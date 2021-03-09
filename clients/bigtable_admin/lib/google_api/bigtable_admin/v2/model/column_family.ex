@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ColumnFamily do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcRule => GoogleApi.BigtableAdmin.V2.Model.GcRule.t()
+          :gcRule => GoogleApi.BigtableAdmin.V2.Model.GcRule.t() | nil
         }
 
   field(:gcRule, as: GoogleApi.BigtableAdmin.V2.Model.GcRule)

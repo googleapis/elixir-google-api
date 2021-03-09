@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.OptimizeRestoredTableMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :progress => GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t()
+          :name => String.t() | nil,
+          :progress => GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t() | nil
         }
 
   field(:name)

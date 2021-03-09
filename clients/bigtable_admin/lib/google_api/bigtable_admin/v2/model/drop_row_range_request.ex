@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.DropRowRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteAllDataFromTable => boolean(),
-          :rowKeyPrefix => String.t()
+          :deleteAllDataFromTable => boolean() | nil,
+          :rowKeyPrefix => String.t() | nil
         }
 
   field(:deleteAllDataFromTable)

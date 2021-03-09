@@ -31,11 +31,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :state => String.t(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

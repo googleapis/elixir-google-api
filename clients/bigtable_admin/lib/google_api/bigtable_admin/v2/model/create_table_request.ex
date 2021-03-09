@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateTableRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :initialSplits => list(GoogleApi.BigtableAdmin.V2.Model.Split.t()),
-          :table => GoogleApi.BigtableAdmin.V2.Model.Table.t(),
-          :tableId => String.t()
+          :initialSplits => list(GoogleApi.BigtableAdmin.V2.Model.Split.t()) | nil,
+          :table => GoogleApi.BigtableAdmin.V2.Model.Table.t() | nil,
+          :tableId => String.t() | nil
         }
 
   field(:initialSplits, as: GoogleApi.BigtableAdmin.V2.Model.Split, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateBackupMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :name => String.t(),
-          :sourceTable => String.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :sourceTable => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

@@ -31,11 +31,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.RestoreTableMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupInfo => GoogleApi.BigtableAdmin.V2.Model.BackupInfo.t(),
-          :name => String.t(),
-          :optimizeTableOperationName => String.t(),
-          :progress => GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t(),
-          :sourceType => String.t()
+          :backupInfo => GoogleApi.BigtableAdmin.V2.Model.BackupInfo.t() | nil,
+          :name => String.t() | nil,
+          :optimizeTableOperationName => String.t() | nil,
+          :progress => GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t() | nil,
+          :sourceType => String.t() | nil
         }
 
   field(:backupInfo, as: GoogleApi.BigtableAdmin.V2.Model.BackupInfo)

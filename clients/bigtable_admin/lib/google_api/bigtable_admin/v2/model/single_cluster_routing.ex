@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowTransactionalWrites => boolean(),
-          :clusterId => String.t()
+          :allowTransactionalWrites => boolean() | nil,
+          :clusterId => String.t() | nil
         }
 
   field(:allowTransactionalWrites)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Split do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t()
+          :key => String.t() | nil
         }
 
   field(:key)

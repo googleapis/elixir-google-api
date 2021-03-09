@@ -30,10 +30,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateClusterMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finishTime => DateTime.t(),
-          :originalRequest => GoogleApi.BigtableAdmin.V2.Model.CreateClusterRequest.t(),
-          :requestTime => DateTime.t(),
-          :tables => %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.TableProgress.t()}
+          :finishTime => DateTime.t() | nil,
+          :originalRequest => GoogleApi.BigtableAdmin.V2.Model.CreateClusterRequest.t() | nil,
+          :requestTime => DateTime.t() | nil,
+          :tables =>
+            %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.TableProgress.t()} | nil
         }
 
   field(:finishTime, as: DateTime)

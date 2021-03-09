@@ -29,9 +29,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.TableProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :estimatedCopiedBytes => String.t(),
-          :estimatedSizeBytes => String.t(),
-          :state => String.t()
+          :estimatedCopiedBytes => String.t() | nil,
+          :estimatedSizeBytes => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:estimatedCopiedBytes)

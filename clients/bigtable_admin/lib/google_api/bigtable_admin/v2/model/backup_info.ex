@@ -30,10 +30,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.BackupInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backup => String.t(),
-          :endTime => DateTime.t(),
-          :sourceTable => String.t(),
-          :startTime => DateTime.t()
+          :backup => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :sourceTable => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:backup)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.RestoreTableRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backup => String.t(),
-          :tableId => String.t()
+          :backup => String.t() | nil,
+          :tableId => String.t() | nil
         }
 
   field(:backup)

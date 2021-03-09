@@ -31,15 +31,13 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterStates => %{
-            optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.ClusterState.t()
-          },
-          :columnFamilies => %{
-            optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t()
-          },
-          :granularity => String.t(),
-          :name => String.t(),
-          :restoreInfo => GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t()
+          :clusterStates =>
+            %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.ClusterState.t()} | nil,
+          :columnFamilies =>
+            %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t()} | nil,
+          :granularity => String.t() | nil,
+          :name => String.t() | nil,
+          :restoreInfo => GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t() | nil
         }
 
   field(:clusterStates, as: GoogleApi.BigtableAdmin.V2.Model.ClusterState, type: :map)

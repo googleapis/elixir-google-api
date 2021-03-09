@@ -30,10 +30,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Modification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :create => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t(),
-          :drop => boolean(),
-          :id => String.t(),
-          :update => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t()
+          :create => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t() | nil,
+          :drop => boolean() | nil,
+          :id => String.t() | nil,
+          :update => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t() | nil
         }
 
   field(:create, as: GoogleApi.BigtableAdmin.V2.Model.ColumnFamily)

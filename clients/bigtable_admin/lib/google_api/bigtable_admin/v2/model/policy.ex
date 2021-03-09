@@ -30,10 +30,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.BigtableAdmin.V2.Model.AuditConfig.t()),
-          :bindings => list(GoogleApi.BigtableAdmin.V2.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs => list(GoogleApi.BigtableAdmin.V2.Model.AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.BigtableAdmin.V2.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.BigtableAdmin.V2.Model.AuditConfig, type: :list)

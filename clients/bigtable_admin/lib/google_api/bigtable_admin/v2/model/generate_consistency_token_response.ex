@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GenerateConsistencyTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consistencyToken => String.t()
+          :consistencyToken => String.t() | nil
         }
 
   field(:consistencyToken)

@@ -30,10 +30,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.Cluster.t()},
-          :instance => GoogleApi.BigtableAdmin.V2.Model.Instance.t(),
-          :instanceId => String.t(),
-          :parent => String.t()
+          :clusters =>
+            %{optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.Cluster.t()} | nil,
+          :instance => GoogleApi.BigtableAdmin.V2.Model.Instance.t() | nil,
+          :instanceId => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:clusters, as: GoogleApi.BigtableAdmin.V2.Model.Cluster, type: :map)

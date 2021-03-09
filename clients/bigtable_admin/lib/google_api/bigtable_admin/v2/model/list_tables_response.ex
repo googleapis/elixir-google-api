@@ -28,8 +28,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListTablesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tables => list(GoogleApi.BigtableAdmin.V2.Model.Table.t())
+          :nextPageToken => String.t() | nil,
+          :tables => list(GoogleApi.BigtableAdmin.V2.Model.Table.t()) | nil
         }
 
   field(:nextPageToken)

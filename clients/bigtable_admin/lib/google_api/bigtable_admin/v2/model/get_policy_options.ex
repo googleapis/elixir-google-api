@@ -27,7 +27,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GetPolicyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestedPolicyVersion => integer()
+          :requestedPolicyVersion => integer() | nil
         }
 
   field(:requestedPolicyVersion)
