@@ -60,6 +60,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.CloudShell.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudshell_users_environments_add_public_key(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.CloudShell.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudshell_users_environments_authorize(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -191,6 +193,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Users do
   @spec cloudshell_users_environments_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudShell.V1.Model.Environment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudshell_users_environments_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -256,6 +259,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.CloudShell.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudshell_users_environments_remove_public_key(
         connection,
@@ -322,6 +326,7 @@ defmodule GoogleApi.CloudShell.V1.Api.Users do
   @spec cloudshell_users_environments_start(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudShell.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudshell_users_environments_start(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

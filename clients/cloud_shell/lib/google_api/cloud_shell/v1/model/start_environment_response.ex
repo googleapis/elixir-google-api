@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudShell.V1.Model.StartEnvironmentResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => GoogleApi.CloudShell.V1.Model.Environment.t()
+          :environment => GoogleApi.CloudShell.V1.Model.Environment.t() | nil
         }
 
   field(:environment, as: GoogleApi.CloudShell.V1.Model.Environment)

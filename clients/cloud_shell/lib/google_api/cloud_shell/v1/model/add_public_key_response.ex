@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudShell.V1.Model.AddPublicKeyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t()
+          :key => String.t() | nil
         }
 
   field(:key)

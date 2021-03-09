@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudShell.V1.Model.StartEnvironmentMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => String.t()
+          :state => String.t() | nil
         }
 
   field(:state)

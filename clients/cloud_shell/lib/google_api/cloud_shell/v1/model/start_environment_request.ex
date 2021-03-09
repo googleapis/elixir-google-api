@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudShell.V1.Model.StartEnvironmentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessToken => String.t(),
-          :publicKeys => list(String.t())
+          :accessToken => String.t() | nil,
+          :publicKeys => list(String.t()) | nil
         }
 
   field(:accessToken)
