@@ -27,7 +27,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfiguration
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurations => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t())
+          :configurations =>
+            list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()) | nil
         }
 
   field(:configurations,

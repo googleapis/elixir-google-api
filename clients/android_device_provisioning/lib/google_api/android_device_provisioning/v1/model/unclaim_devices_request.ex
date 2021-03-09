@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDevicesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unclaims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t())
+          :unclaims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t()) | nil
         }
 
   field(:unclaims, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim, type: :list)

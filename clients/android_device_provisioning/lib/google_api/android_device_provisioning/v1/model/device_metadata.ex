@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => map()
+          :entries => map() | nil
         }
 
   field(:entries, type: :map)

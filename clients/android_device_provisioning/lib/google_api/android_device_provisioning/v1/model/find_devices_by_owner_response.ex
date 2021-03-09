@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)

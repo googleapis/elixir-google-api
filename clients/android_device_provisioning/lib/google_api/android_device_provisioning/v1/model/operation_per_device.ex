@@ -30,11 +30,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :claim => GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t(),
-          :result => GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch.t(),
-          :unclaim => GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t(),
+          :claim => GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t() | nil,
+          :result =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch.t() | nil,
+          :unclaim => GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t() | nil,
           :updateMetadata =>
-            GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t()
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t() | nil
         }
 
   field(:claim, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim)

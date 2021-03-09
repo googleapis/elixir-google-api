@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :errorIdentifier => String.t(),
-          :errorMessage => String.t(),
-          :status => String.t()
+          :deviceId => String.t() | nil,
+          :errorIdentifier => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:deviceId)

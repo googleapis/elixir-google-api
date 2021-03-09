@@ -29,9 +29,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t()
+          :deviceId => String.t() | nil,
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
+          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil
         }
 
   field(:deviceId)

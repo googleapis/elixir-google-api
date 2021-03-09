@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerId => list(String.t()),
-          :limit => String.t(),
-          :pageToken => String.t(),
-          :sectionType => String.t()
+          :customerId => list(String.t()) | nil,
+          :limit => String.t() | nil,
+          :pageToken => String.t() | nil,
+          :sectionType => String.t() | nil
         }
 
   field(:customerId, type: :list)

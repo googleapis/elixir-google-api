@@ -30,10 +30,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerId => String.t(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t(),
-          :sectionType => String.t()
+          :customerId => String.t() | nil,
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
+          :deviceMetadata =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil,
+          :sectionType => String.t() | nil
         }
 
   field(:customerId)

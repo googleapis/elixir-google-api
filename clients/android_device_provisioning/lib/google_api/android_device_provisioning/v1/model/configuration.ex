@@ -36,16 +36,16 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :companyName => String.t(),
-          :configurationId => String.t(),
-          :configurationName => String.t(),
-          :contactEmail => String.t(),
-          :contactPhone => String.t(),
-          :customMessage => String.t(),
-          :dpcExtras => String.t(),
-          :dpcResourcePath => String.t(),
-          :isDefault => boolean(),
-          :name => String.t()
+          :companyName => String.t() | nil,
+          :configurationId => String.t() | nil,
+          :configurationName => String.t() | nil,
+          :contactEmail => String.t() | nil,
+          :contactPhone => String.t() | nil,
+          :customMessage => String.t() | nil,
+          :dpcExtras => String.t() | nil,
+          :dpcResourcePath => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:companyName)

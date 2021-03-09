@@ -28,8 +28,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t()
+          :deviceId => String.t() | nil,
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil
         }
 
   field(:deviceId)

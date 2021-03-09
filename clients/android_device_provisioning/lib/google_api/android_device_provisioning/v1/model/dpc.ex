@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dpcName => String.t(),
-          :name => String.t(),
-          :packageName => String.t()
+          :dpcName => String.t() | nil,
+          :name => String.t() | nil,
+          :packageName => String.t() | nil
         }
 
   field(:dpcName)

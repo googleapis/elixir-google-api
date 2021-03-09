@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devicesCount => integer(),
-          :processingStatus => String.t(),
-          :progress => integer()
+          :devicesCount => integer() | nil,
+          :processingStatus => String.t() | nil,
+          :progress => integer() | nil
         }
 
   field(:devicesCount)

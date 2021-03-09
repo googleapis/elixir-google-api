@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ownerCompanyId => String.t(),
-          :resellerId => String.t(),
-          :sectionType => String.t(),
-          :vacationModeExpireTime => DateTime.t(),
-          :vacationModeStartTime => DateTime.t()
+          :ownerCompanyId => String.t() | nil,
+          :resellerId => String.t() | nil,
+          :sectionType => String.t() | nil,
+          :vacationModeExpireTime => DateTime.t() | nil,
+          :vacationModeStartTime => DateTime.t() | nil
         }
 
   field(:ownerCompanyId)
