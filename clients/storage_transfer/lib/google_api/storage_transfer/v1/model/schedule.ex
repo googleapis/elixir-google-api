@@ -31,11 +31,11 @@ defmodule GoogleApi.StorageTransfer.V1.Model.Schedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTimeOfDay => GoogleApi.StorageTransfer.V1.Model.TimeOfDay.t(),
-          :repeatInterval => String.t(),
-          :scheduleEndDate => GoogleApi.StorageTransfer.V1.Model.Date.t(),
-          :scheduleStartDate => GoogleApi.StorageTransfer.V1.Model.Date.t(),
-          :startTimeOfDay => GoogleApi.StorageTransfer.V1.Model.TimeOfDay.t()
+          :endTimeOfDay => GoogleApi.StorageTransfer.V1.Model.TimeOfDay.t() | nil,
+          :repeatInterval => String.t() | nil,
+          :scheduleEndDate => GoogleApi.StorageTransfer.V1.Model.Date.t() | nil,
+          :scheduleStartDate => GoogleApi.StorageTransfer.V1.Model.Date.t() | nil,
+          :startTimeOfDay => GoogleApi.StorageTransfer.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:endTimeOfDay, as: GoogleApi.StorageTransfer.V1.Model.TimeOfDay)

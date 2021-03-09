@@ -29,9 +29,9 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteObjectsFromSourceAfterTransfer => boolean(),
-          :deleteObjectsUniqueInSink => boolean(),
-          :overwriteObjectsAlreadyExistingInSink => boolean()
+          :deleteObjectsFromSourceAfterTransfer => boolean() | nil,
+          :deleteObjectsUniqueInSink => boolean() | nil,
+          :overwriteObjectsAlreadyExistingInSink => boolean() | nil
         }
 
   field(:deleteObjectsFromSourceAfterTransfer)

@@ -28,8 +28,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.GcsData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :path => String.t()
+          :bucketName => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:bucketName)

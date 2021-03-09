@@ -54,6 +54,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   @spec storagetransfer_transfer_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storagetransfer_transfer_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -119,6 +120,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storagetransfer_transfer_jobs_get(
         connection,
@@ -187,6 +189,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   @spec storagetransfer_transfer_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storagetransfer_transfer_jobs_list(connection, filter, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -250,6 +253,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   @spec storagetransfer_transfer_jobs_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storagetransfer_transfer_jobs_patch(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -311,6 +315,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   @spec storagetransfer_transfer_jobs_run(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storagetransfer_transfer_jobs_run(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

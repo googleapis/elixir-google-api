@@ -29,9 +29,9 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t(),
-          :errorCount => String.t(),
-          :errorLogEntries => list(GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry.t())
+          :errorCode => String.t() | nil,
+          :errorCount => String.t() | nil,
+          :errorLogEntries => list(GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry.t()) | nil
         }
 
   field(:errorCode)

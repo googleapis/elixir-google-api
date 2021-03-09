@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.HttpData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listUrl => String.t()
+          :listUrl => String.t() | nil
         }
 
   field(:listUrl)

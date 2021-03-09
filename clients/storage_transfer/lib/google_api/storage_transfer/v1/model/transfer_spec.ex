@@ -33,14 +33,14 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :awsS3DataSource => GoogleApi.StorageTransfer.V1.Model.AwsS3Data.t(),
+          :awsS3DataSource => GoogleApi.StorageTransfer.V1.Model.AwsS3Data.t() | nil,
           :azureBlobStorageDataSource =>
-            GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t(),
-          :gcsDataSink => GoogleApi.StorageTransfer.V1.Model.GcsData.t(),
-          :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t(),
-          :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t(),
-          :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t(),
-          :transferOptions => GoogleApi.StorageTransfer.V1.Model.TransferOptions.t()
+            GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t() | nil,
+          :gcsDataSink => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
+          :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
+          :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t() | nil,
+          :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t() | nil,
+          :transferOptions => GoogleApi.StorageTransfer.V1.Model.TransferOptions.t() | nil
         }
 
   field(:awsS3DataSource, as: GoogleApi.StorageTransfer.V1.Model.AwsS3Data)

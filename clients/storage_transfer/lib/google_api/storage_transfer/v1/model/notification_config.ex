@@ -29,9 +29,9 @@ defmodule GoogleApi.StorageTransfer.V1.Model.NotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventTypes => list(String.t()),
-          :payloadFormat => String.t(),
-          :pubsubTopic => String.t()
+          :eventTypes => list(String.t()) | nil,
+          :payloadFormat => String.t() | nil,
+          :pubsubTopic => String.t() | nil
         }
 
   field(:eventTypes, type: :list)

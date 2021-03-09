@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.RunTransferJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectId => String.t()
+          :projectId => String.t() | nil
         }
 
   field(:projectId)
