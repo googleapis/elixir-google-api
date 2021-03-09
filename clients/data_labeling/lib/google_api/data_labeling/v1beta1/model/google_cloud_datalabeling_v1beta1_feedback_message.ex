@@ -32,14 +32,16 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Fee
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :createTime => DateTime.t(),
-          :image => String.t(),
-          :name => String.t(),
+          :body => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :image => String.t() | nil,
+          :name => String.t() | nil,
           :operatorFeedbackMetadata =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata.t()
+            | nil,
           :requesterFeedbackMetadata =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1RequesterFeedbackMetadata.t()
+            | nil
         }
 
   field(:body)

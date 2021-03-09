@@ -29,9 +29,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Exa
 
   @type t :: %__MODULE__{
           :groundTruthExample =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Example.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Example.t() | nil,
           :modelCreatedExamples =>
             list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Example.t())
+            | nil
         }
 
   field(:groundTruthExample,

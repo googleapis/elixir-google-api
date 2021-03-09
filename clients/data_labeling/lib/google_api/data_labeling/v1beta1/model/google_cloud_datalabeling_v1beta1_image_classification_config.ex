@@ -29,9 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ima
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowMultiLabel => boolean(),
-          :annotationSpecSet => String.t(),
-          :answerAggregationType => String.t()
+          :allowMultiLabel => boolean() | nil,
+          :annotationSpecSet => String.t() | nil,
+          :answerAggregationType => String.t() | nil
         }
 
   field(:allowMultiLabel)

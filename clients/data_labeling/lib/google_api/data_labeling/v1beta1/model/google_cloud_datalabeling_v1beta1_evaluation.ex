@@ -33,15 +33,17 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationType => String.t(),
+          :annotationType => String.t() | nil,
           :config =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationConfig.t(),
-          :createTime => DateTime.t(),
-          :evaluatedItemCount => String.t(),
-          :evaluationJobRunTime => DateTime.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationConfig.t()
+            | nil,
+          :createTime => DateTime.t() | nil,
+          :evaluatedItemCount => String.t() | nil,
+          :evaluationJobRunTime => DateTime.t() | nil,
           :evaluationMetrics =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationMetrics.t(),
-          :name => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationMetrics.t()
+            | nil,
+          :name => String.t() | nil
         }
 
   field(:annotationType)

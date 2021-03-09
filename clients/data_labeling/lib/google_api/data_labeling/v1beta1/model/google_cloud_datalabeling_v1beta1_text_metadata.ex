@@ -27,7 +27,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Tex
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t()
+          :languageCode => String.t() | nil
         }
 
   field(:languageCode)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1Im
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :dataset => String.t(),
-          :partialFailures => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t())
+          :createTime => DateTime.t() | nil,
+          :dataset => String.t() | nil,
+          :partialFailures => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t()) | nil
         }
 
   field(:createTime, as: DateTime)

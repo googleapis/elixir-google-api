@@ -28,7 +28,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Cre
 
   @type t :: %__MODULE__{
           :dataset =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset.t() | nil
         }
 
   field(:dataset, as: GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset)

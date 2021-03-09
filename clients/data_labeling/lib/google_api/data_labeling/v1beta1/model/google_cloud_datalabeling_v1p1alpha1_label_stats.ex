@@ -27,7 +27,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exampleCount => map()
+          :exampleCount => map() | nil
         }
 
   field(:exampleCount, type: :map)

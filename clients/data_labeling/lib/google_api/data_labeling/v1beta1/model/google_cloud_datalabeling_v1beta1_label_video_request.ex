@@ -33,16 +33,21 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Lab
 
   @type t :: %__MODULE__{
           :basicConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t()
+            | nil,
           :eventConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EventConfig.t(),
-          :feature => String.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EventConfig.t()
+            | nil,
+          :feature => String.t() | nil,
           :objectDetectionConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ObjectDetectionConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ObjectDetectionConfig.t()
+            | nil,
           :objectTrackingConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ObjectTrackingConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ObjectTrackingConfig.t()
+            | nil,
           :videoClassificationConfig =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoClassificationConfig.t()
+            | nil
         }
 
   field(:basicConfig,

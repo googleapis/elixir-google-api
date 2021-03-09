@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ver
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => integer(),
-          :y => integer()
+          :x => integer() | nil,
+          :y => integer() | nil
         }
 
   field(:x)

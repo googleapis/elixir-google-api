@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Pol
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationSpecSet => String.t(),
-          :instructionMessage => String.t()
+          :annotationSpecSet => String.t() | nil,
+          :instructionMessage => String.t() | nil
         }
 
   field(:annotationSpecSet)

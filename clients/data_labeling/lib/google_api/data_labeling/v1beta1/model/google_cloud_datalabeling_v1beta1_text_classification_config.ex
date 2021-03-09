@@ -29,10 +29,11 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Tex
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowMultiLabel => boolean(),
-          :annotationSpecSet => String.t(),
+          :allowMultiLabel => boolean() | nil,
+          :annotationSpecSet => String.t() | nil,
           :sentimentConfig =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1SentimentConfig.t()
+            | nil
         }
 
   field(:allowMultiLabel)

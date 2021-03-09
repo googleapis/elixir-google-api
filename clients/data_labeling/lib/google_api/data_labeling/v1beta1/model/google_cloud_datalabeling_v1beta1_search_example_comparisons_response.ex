@@ -31,8 +31,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Sea
           :exampleComparisons =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ExampleComparison.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:exampleComparisons,

@@ -27,7 +27,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Pdf
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsFileUri => String.t()
+          :gcsFileUri => String.t() | nil
         }
 
   field(:gcsFileUri)

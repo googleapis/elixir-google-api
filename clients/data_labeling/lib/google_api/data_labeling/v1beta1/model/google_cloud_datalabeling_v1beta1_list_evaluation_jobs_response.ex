@@ -31,8 +31,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Lis
           :evaluationJobs =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJob.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:evaluationJobs,

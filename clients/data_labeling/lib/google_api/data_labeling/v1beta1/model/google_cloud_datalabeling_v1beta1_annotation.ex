@@ -32,12 +32,14 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ann
 
   @type t :: %__MODULE__{
           :annotationMetadata =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationMetadata.t(),
-          :annotationSentiment => String.t(),
-          :annotationSource => String.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationMetadata.t()
+            | nil,
+          :annotationSentiment => String.t() | nil,
+          :annotationSource => String.t() | nil,
           :annotationValue =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationValue.t(),
-          :name => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationValue.t()
+            | nil,
+          :name => String.t() | nil
         }
 
   field(:annotationMetadata,

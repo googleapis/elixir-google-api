@@ -31,12 +31,15 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dat
 
   @type t :: %__MODULE__{
           :imagePayload =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImagePayload.t(),
-          :name => String.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImagePayload.t()
+            | nil,
+          :name => String.t() | nil,
           :textPayload =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextPayload.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextPayload.t()
+            | nil,
           :videoPayload =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoPayload.t()
+            | nil
         }
 
   field(:imagePayload,

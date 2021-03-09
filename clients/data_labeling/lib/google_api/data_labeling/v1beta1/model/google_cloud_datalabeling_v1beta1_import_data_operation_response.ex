@@ -29,9 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Imp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => String.t(),
-          :importCount => integer(),
-          :totalCount => integer()
+          :dataset => String.t() | nil,
+          :importCount => integer() | nil,
+          :totalCount => integer() | nil
         }
 
   field(:dataset)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Bou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iouThreshold => number()
+          :iouThreshold => number() | nil
         }
 
   field(:iouThreshold)

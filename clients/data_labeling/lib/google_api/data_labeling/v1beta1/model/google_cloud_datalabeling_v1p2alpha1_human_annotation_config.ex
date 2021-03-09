@@ -35,15 +35,15 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p2alpha1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotatedDatasetDescription => String.t(),
-          :annotatedDatasetDisplayName => String.t(),
-          :contributorEmails => list(String.t()),
-          :instruction => String.t(),
-          :labelGroup => String.t(),
-          :languageCode => String.t(),
-          :questionDuration => String.t(),
-          :replicaCount => integer(),
-          :userEmailAddress => String.t()
+          :annotatedDatasetDescription => String.t() | nil,
+          :annotatedDatasetDisplayName => String.t() | nil,
+          :contributorEmails => list(String.t()) | nil,
+          :instruction => String.t() | nil,
+          :labelGroup => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :questionDuration => String.t() | nil,
+          :replicaCount => integer() | nil,
+          :userEmailAddress => String.t() | nil
         }
 
   field(:annotatedDatasetDescription)

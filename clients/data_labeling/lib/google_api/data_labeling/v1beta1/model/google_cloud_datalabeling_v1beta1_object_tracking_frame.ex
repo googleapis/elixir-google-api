@@ -30,10 +30,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Obj
 
   @type t :: %__MODULE__{
           :boundingPoly =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BoundingPoly.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BoundingPoly.t()
+            | nil,
           :normalizedBoundingPoly =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly.t(),
-          :timeOffset => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly.t()
+            | nil,
+          :timeOffset => String.t() | nil
         }
 
   field(:boundingPoly,

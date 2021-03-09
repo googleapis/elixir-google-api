@@ -31,13 +31,15 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrC
 
   @type t :: %__MODULE__{
           :annotationSpec =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpec.t(),
-          :areaUnderCurve => number(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpec.t()
+            | nil,
+          :areaUnderCurve => number() | nil,
           :confidenceMetricsEntries =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry.t()
-            ),
-          :meanAveragePrecision => number()
+            )
+            | nil,
+          :meanAveragePrecision => number() | nil
         }
 
   field(:annotationSpec,

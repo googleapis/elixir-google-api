@@ -29,8 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Lis
 
   @type t :: %__MODULE__{
           :dataItems =>
-            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1DataItem.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1DataItem.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dataItems,

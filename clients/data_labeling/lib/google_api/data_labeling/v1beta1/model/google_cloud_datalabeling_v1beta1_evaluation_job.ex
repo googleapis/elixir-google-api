@@ -36,18 +36,20 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationSpecSet => String.t(),
+          :annotationSpecSet => String.t() | nil,
           :attempts =>
-            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Attempt.t()),
-          :createTime => DateTime.t(),
-          :description => String.t(),
+            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Attempt.t())
+            | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
           :evaluationJobConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJobConfig.t(),
-          :labelMissingGroundTruth => boolean(),
-          :modelVersion => String.t(),
-          :name => String.t(),
-          :schedule => String.t(),
-          :state => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJobConfig.t()
+            | nil,
+          :labelMissingGroundTruth => boolean() | nil,
+          :modelVersion => String.t() | nil,
+          :name => String.t() | nil,
+          :schedule => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:annotationSpecSet)

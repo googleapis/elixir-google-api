@@ -29,6 +29,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ann
   @type t :: %__MODULE__{
           :operatorMetadata =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1OperatorMetadata.t()
+            | nil
         }
 
   field(:operatorMetadata,

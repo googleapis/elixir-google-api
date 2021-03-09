@@ -31,12 +31,15 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Lab
 
   @type t :: %__MODULE__{
           :basicConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t(),
-          :feature => String.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t()
+            | nil,
+          :feature => String.t() | nil,
           :textClassificationConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextClassificationConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextClassificationConfig.t()
+            | nil,
           :textEntityExtractionConfig =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextEntityExtractionConfig.t()
+            | nil
         }
 
   field(:basicConfig,

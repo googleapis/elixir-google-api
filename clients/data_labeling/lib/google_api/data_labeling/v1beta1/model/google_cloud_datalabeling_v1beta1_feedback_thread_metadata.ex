@@ -30,10 +30,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Fee
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :lastUpdateTime => DateTime.t(),
-          :status => String.t(),
-          :thumbnail => String.t()
+          :createTime => DateTime.t() | nil,
+          :lastUpdateTime => DateTime.t() | nil,
+          :status => String.t() | nil,
+          :thumbnail => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

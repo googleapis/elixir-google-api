@@ -29,9 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Obj
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationSpecSet => String.t(),
-          :clipLength => integer(),
-          :overlapLength => integer()
+          :annotationSpecSet => String.t() | nil,
+          :clipLength => integer() | nil,
+          :overlapLength => integer() | nil
         }
 
   field(:annotationSpecSet)

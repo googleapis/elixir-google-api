@@ -36,16 +36,16 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Con
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidenceThreshold => number(),
-          :f1Score => number(),
-          :f1ScoreAt1 => number(),
-          :f1ScoreAt5 => number(),
-          :precision => number(),
-          :precisionAt1 => number(),
-          :precisionAt5 => number(),
-          :recall => number(),
-          :recallAt1 => number(),
-          :recallAt5 => number()
+          :confidenceThreshold => number() | nil,
+          :f1Score => number() | nil,
+          :f1ScoreAt1 => number() | nil,
+          :f1ScoreAt5 => number() | nil,
+          :precision => number() | nil,
+          :precisionAt1 => number() | nil,
+          :precisionAt5 => number() | nil,
+          :recall => number() | nil,
+          :recallAt1 => number() | nil,
+          :recallAt5 => number() | nil
         }
 
   field(:confidenceThreshold)

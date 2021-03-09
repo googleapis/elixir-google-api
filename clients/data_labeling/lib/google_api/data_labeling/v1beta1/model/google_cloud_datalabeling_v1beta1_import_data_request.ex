@@ -29,8 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Imp
 
   @type t :: %__MODULE__{
           :inputConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1InputConfig.t(),
-          :userEmailAddress => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1InputConfig.t()
+            | nil,
+          :userEmailAddress => String.t() | nil
         }
 
   field(:inputConfig,

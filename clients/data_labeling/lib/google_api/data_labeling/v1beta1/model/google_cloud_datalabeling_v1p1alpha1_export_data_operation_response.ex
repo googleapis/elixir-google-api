@@ -32,14 +32,16 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotatedDataset => String.t(),
-          :dataset => String.t(),
-          :exportCount => integer(),
+          :annotatedDataset => String.t() | nil,
+          :dataset => String.t() | nil,
+          :exportCount => integer() | nil,
           :labelStats =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1LabelStats.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1LabelStats.t()
+            | nil,
           :outputConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1OutputConfig.t(),
-          :totalCount => integer()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1OutputConfig.t()
+            | nil,
+          :totalCount => integer() | nil
         }
 
   field(:annotatedDataset)

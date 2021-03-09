@@ -43,35 +43,48 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1La
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotatedDataset => String.t(),
-          :createTime => DateTime.t(),
-          :dataset => String.t(),
+          :annotatedDataset => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :dataset => String.t() | nil,
           :imageBoundingBoxDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageBoundingBoxOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageBoundingBoxOperationMetadata.t()
+            | nil,
           :imageBoundingPolyDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageBoundingPolyOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageBoundingPolyOperationMetadata.t()
+            | nil,
           :imageClassificationDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageClassificationOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageClassificationOperationMetadata.t()
+            | nil,
           :imageOrientedBoundingBoxDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageOrientedBoundingBoxOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageOrientedBoundingBoxOperationMetadata.t()
+            | nil,
           :imagePolylineDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImagePolylineOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImagePolylineOperationMetadata.t()
+            | nil,
           :imageSegmentationDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageSegmentationOperationMetadata.t(),
-          :partialFailures => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t()),
-          :progressPercent => integer(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelImageSegmentationOperationMetadata.t()
+            | nil,
+          :partialFailures =>
+            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t()) | nil,
+          :progressPercent => integer() | nil,
           :textClassificationDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelTextClassificationOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelTextClassificationOperationMetadata.t()
+            | nil,
           :textEntityExtractionDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelTextEntityExtractionOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelTextEntityExtractionOperationMetadata.t()
+            | nil,
           :videoClassificationDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoClassificationOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoClassificationOperationMetadata.t()
+            | nil,
           :videoEventDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoEventOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoEventOperationMetadata.t()
+            | nil,
           :videoObjectDetectionDetails =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoObjectDetectionOperationMetadata.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoObjectDetectionOperationMetadata.t()
+            | nil,
           :videoObjectTrackingDetails =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1alpha1LabelVideoObjectTrackingOperationMetadata.t()
+            | nil
         }
 
   field(:annotatedDataset)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ope
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comments => list(String.t()),
-          :labelVotes => integer(),
-          :score => number(),
-          :totalVotes => integer()
+          :comments => list(String.t()) | nil,
+          :labelVotes => integer() | nil,
+          :score => number() | nil,
+          :totalVotes => integer() | nil
         }
 
   field(:comments, type: :list)
