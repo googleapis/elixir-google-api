@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :policies => list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t())
+          :nextPageToken => String.t() | nil,
+          :policies => list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ancestor => list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t())
+          :ancestor => list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t()) | nil
         }
 
   field(:ancestor, as: GoogleApi.CloudResourceManager.V1.Model.Ancestor, type: :list)

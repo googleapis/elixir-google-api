@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.Folder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :lifecycleState => String.t(),
-          :name => String.t(),
-          :parent => String.t()
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :lifecycleState => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

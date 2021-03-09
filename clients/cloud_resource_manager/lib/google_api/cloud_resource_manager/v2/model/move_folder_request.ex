@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.MoveFolderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationParent => String.t()
+          :destinationParent => String.t() | nil
         }
 
   field(:destinationParent)

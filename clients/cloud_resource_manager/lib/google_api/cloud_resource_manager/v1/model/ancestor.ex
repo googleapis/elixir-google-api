@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Ancestor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceId => GoogleApi.CloudResourceManager.V1.Model.ResourceId.t()
+          :resourceId => GoogleApi.CloudResourceManager.V1.Model.ResourceId.t() | nil
         }
 
   field(:resourceId, as: GoogleApi.CloudResourceManager.V1.Model.ResourceId)

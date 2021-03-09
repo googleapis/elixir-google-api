@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.OrganizationOwner do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directoryCustomerId => String.t()
+          :directoryCustomerId => String.t() | nil
         }
 
   field(:directoryCustomerId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ClearOrgPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :constraint => String.t(),
-          :etag => String.t()
+          :constraint => String.t() | nil,
+          :etag => String.t() | nil
         }
 
   field(:constraint)

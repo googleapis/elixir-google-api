@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetOrgPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :constraint => String.t()
+          :constraint => String.t() | nil
         }
 
   field(:constraint)

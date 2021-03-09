@@ -60,6 +60,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_clear_org_policy(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_get_effective_org_policy(
         connection,
@@ -202,6 +204,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_get_org_policy(
         connection,
@@ -274,6 +277,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           {:ok,
            GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_list_available_org_policy_constraints(
         connection,
@@ -351,6 +355,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_list_org_policies(
         connection,
@@ -424,6 +429,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_folders_set_org_policy(
         connection,

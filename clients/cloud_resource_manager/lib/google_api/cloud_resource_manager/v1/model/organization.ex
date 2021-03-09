@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Organization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :displayName => String.t(),
-          :lifecycleState => String.t(),
-          :name => String.t(),
-          :owner => GoogleApi.CloudResourceManager.V1.Model.OrganizationOwner.t()
+          :creationTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :lifecycleState => String.t() | nil,
+          :name => String.t() | nil,
+          :owner => GoogleApi.CloudResourceManager.V1.Model.OrganizationOwner.t() | nil
         }
 
   field(:creationTime, as: DateTime)

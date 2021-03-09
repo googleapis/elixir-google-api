@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstrai
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :constraints => list(GoogleApi.CloudResourceManager.V1.Model.Constraint.t()),
-          :nextPageToken => String.t()
+          :constraints => list(GoogleApi.CloudResourceManager.V1.Model.Constraint.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:constraints, as: GoogleApi.CloudResourceManager.V1.Model.Constraint, type: :list)

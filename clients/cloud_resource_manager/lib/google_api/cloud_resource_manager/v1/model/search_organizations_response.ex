@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :organizations => list(GoogleApi.CloudResourceManager.V1.Model.Organization.t())
+          :nextPageToken => String.t() | nil,
+          :organizations => list(GoogleApi.CloudResourceManager.V1.Model.Organization.t()) | nil
         }
 
   field(:nextPageToken)

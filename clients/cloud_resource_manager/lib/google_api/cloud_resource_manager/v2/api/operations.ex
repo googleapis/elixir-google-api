@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Operations do
   @spec cloudresourcemanager_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_operations_get(
         connection,

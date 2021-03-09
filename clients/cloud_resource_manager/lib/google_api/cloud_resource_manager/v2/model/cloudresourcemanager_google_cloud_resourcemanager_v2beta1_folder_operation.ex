@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.CloudresourcemanagerGoogleClou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationParent => String.t(),
-          :displayName => String.t(),
-          :operationType => String.t(),
-          :sourceParent => String.t()
+          :destinationParent => String.t() | nil,
+          :displayName => String.t() | nil,
+          :operationType => String.t() | nil,
+          :sourceParent => String.t() | nil
         }
 
   field(:destinationParent)
