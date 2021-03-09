@@ -28,8 +28,9 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.ListTrafficStatsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :trafficStats => list(GoogleApi.GmailPostmasterTools.V1beta1.Model.TrafficStats.t())
+          :nextPageToken => String.t() | nil,
+          :trafficStats =>
+            list(GoogleApi.GmailPostmasterTools.V1beta1.Model.TrafficStats.t()) | nil
         }
 
   field(:nextPageToken)

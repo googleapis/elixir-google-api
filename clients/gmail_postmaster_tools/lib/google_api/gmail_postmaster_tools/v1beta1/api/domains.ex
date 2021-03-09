@@ -54,6 +54,7 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Api.Domains do
   @spec gmailpostmastertools_domains_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GmailPostmasterTools.V1beta1.Model.Domain.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gmailpostmastertools_domains_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Api.Domains do
   @spec gmailpostmastertools_domains_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.GmailPostmasterTools.V1beta1.Model.ListDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gmailpostmastertools_domains_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -180,6 +182,7 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Api.Domains do
         ) ::
           {:ok, GoogleApi.GmailPostmasterTools.V1beta1.Model.TrafficStats.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gmailpostmastertools_domains_traffic_stats_get(
         connection,
@@ -259,6 +262,7 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Api.Domains do
         ) ::
           {:ok, GoogleApi.GmailPostmasterTools.V1beta1.Model.ListTrafficStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def gmailpostmastertools_domains_traffic_stats_list(
         connection,

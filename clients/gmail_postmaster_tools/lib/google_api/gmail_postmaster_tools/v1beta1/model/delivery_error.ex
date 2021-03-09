@@ -29,9 +29,9 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.DeliveryError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorClass => String.t(),
-          :errorRatio => float(),
-          :errorType => String.t()
+          :errorClass => String.t() | nil,
+          :errorRatio => float() | nil,
+          :errorType => String.t() | nil
         }
 
   field(:errorClass)

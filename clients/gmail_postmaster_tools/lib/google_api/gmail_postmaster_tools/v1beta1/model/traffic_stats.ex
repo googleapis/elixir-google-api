@@ -37,18 +37,20 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.TrafficStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliveryErrors => list(GoogleApi.GmailPostmasterTools.V1beta1.Model.DeliveryError.t()),
-          :dkimSuccessRatio => float(),
-          :dmarcSuccessRatio => float(),
-          :domainReputation => String.t(),
-          :inboundEncryptionRatio => float(),
-          :ipReputations => list(GoogleApi.GmailPostmasterTools.V1beta1.Model.IpReputation.t()),
-          :name => String.t(),
-          :outboundEncryptionRatio => float(),
+          :deliveryErrors =>
+            list(GoogleApi.GmailPostmasterTools.V1beta1.Model.DeliveryError.t()) | nil,
+          :dkimSuccessRatio => float() | nil,
+          :dmarcSuccessRatio => float() | nil,
+          :domainReputation => String.t() | nil,
+          :inboundEncryptionRatio => float() | nil,
+          :ipReputations =>
+            list(GoogleApi.GmailPostmasterTools.V1beta1.Model.IpReputation.t()) | nil,
+          :name => String.t() | nil,
+          :outboundEncryptionRatio => float() | nil,
           :spammyFeedbackLoops =>
-            list(GoogleApi.GmailPostmasterTools.V1beta1.Model.FeedbackLoop.t()),
-          :spfSuccessRatio => float(),
-          :userReportedSpamRatio => float()
+            list(GoogleApi.GmailPostmasterTools.V1beta1.Model.FeedbackLoop.t()) | nil,
+          :spfSuccessRatio => float() | nil,
+          :userReportedSpamRatio => float() | nil
         }
 
   field(:deliveryErrors,
