@@ -64,6 +64,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         ) ::
           {:ok, GoogleApi.Blogger.V3.Model.PostUserInfo.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def blogger_post_user_infos_get(
         connection,
@@ -149,6 +150,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         ) ::
           {:ok, GoogleApi.Blogger.V3.Model.PostUserInfosList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def blogger_post_user_infos_list(
         connection,

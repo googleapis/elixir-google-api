@@ -30,10 +30,10 @@ defmodule GoogleApi.Blogger.V3.Model.PageList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Blogger.V3.Model.Page.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Blogger.V3.Model.Page.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

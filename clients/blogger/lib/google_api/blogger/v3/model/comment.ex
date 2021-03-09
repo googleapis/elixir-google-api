@@ -37,17 +37,17 @@ defmodule GoogleApi.Blogger.V3.Model.Comment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => GoogleApi.Blogger.V3.Model.CommentAuthor.t(),
-          :blog => GoogleApi.Blogger.V3.Model.CommentBlog.t(),
-          :content => String.t(),
-          :id => String.t(),
-          :inReplyTo => GoogleApi.Blogger.V3.Model.CommentInReplyTo.t(),
-          :kind => String.t(),
-          :post => GoogleApi.Blogger.V3.Model.CommentPost.t(),
-          :published => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :updated => String.t()
+          :author => GoogleApi.Blogger.V3.Model.CommentAuthor.t() | nil,
+          :blog => GoogleApi.Blogger.V3.Model.CommentBlog.t() | nil,
+          :content => String.t() | nil,
+          :id => String.t() | nil,
+          :inReplyTo => GoogleApi.Blogger.V3.Model.CommentInReplyTo.t() | nil,
+          :kind => String.t() | nil,
+          :post => GoogleApi.Blogger.V3.Model.CommentPost.t() | nil,
+          :published => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :updated => String.t() | nil
         }
 
   field(:author, as: GoogleApi.Blogger.V3.Model.CommentAuthor)

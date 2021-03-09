@@ -61,7 +61,10 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_comments_approve(
         connection,
         blog_id,
@@ -135,7 +138,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def blogger_comments_delete(
         connection,
         blog_id,
@@ -211,7 +214,10 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_comments_get(
         connection,
         blog_id,
@@ -288,6 +294,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   @spec blogger_comments_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.CommentList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def blogger_comments_list(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -361,6 +368,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   @spec blogger_comments_list_by_blog(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.CommentList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def blogger_comments_list_by_blog(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -433,7 +441,10 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_comments_mark_as_spam(
         connection,
         blog_id,
@@ -508,7 +519,10 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_comments_remove_content(
         connection,
         blog_id,

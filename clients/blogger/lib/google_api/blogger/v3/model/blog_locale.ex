@@ -29,9 +29,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogLocale do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :language => String.t(),
-          :variant => String.t()
+          :country => String.t() | nil,
+          :language => String.t() | nil,
+          :variant => String.t() | nil
         }
 
   field(:country)

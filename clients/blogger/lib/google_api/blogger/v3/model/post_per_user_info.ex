@@ -31,11 +31,11 @@ defmodule GoogleApi.Blogger.V3.Model.PostPerUserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blogId => String.t(),
-          :hasEditAccess => boolean(),
-          :kind => String.t(),
-          :postId => String.t(),
-          :userId => String.t()
+          :blogId => String.t() | nil,
+          :hasEditAccess => boolean() | nil,
+          :kind => String.t() | nil,
+          :postId => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:blogId)

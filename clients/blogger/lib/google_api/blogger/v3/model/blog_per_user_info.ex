@@ -32,12 +32,12 @@ defmodule GoogleApi.Blogger.V3.Model.BlogPerUserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blogId => String.t(),
-          :hasAdminAccess => boolean(),
-          :kind => String.t(),
-          :photosAlbumKey => String.t(),
-          :role => String.t(),
-          :userId => String.t()
+          :blogId => String.t() | nil,
+          :hasAdminAccess => boolean() | nil,
+          :kind => String.t() | nil,
+          :photosAlbumKey => String.t() | nil,
+          :role => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:blogId)

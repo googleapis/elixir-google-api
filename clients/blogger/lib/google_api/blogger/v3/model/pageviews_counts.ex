@@ -28,8 +28,8 @@ defmodule GoogleApi.Blogger.V3.Model.PageviewsCounts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :timeRange => String.t()
+          :count => String.t() | nil,
+          :timeRange => String.t() | nil
         }
 
   field(:count)

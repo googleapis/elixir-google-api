@@ -29,9 +29,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostUserInfosList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Blogger.V3.Model.PostUserInfo.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.Blogger.V3.Model.PostUserInfo.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Blogger.V3.Model.PostUserInfo, type: :list)

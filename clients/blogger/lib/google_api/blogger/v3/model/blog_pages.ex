@@ -28,8 +28,8 @@ defmodule GoogleApi.Blogger.V3.Model.BlogPages do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :selfLink => String.t(),
-          :totalItems => integer()
+          :selfLink => String.t() | nil,
+          :totalItems => integer() | nil
         }
 
   field(:selfLink)

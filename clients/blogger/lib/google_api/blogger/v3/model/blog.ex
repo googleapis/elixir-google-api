@@ -39,19 +39,19 @@ defmodule GoogleApi.Blogger.V3.Model.Blog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customMetaData => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :locale => GoogleApi.Blogger.V3.Model.BlogLocale.t(),
-          :name => String.t(),
-          :pages => GoogleApi.Blogger.V3.Model.BlogPages.t(),
-          :posts => GoogleApi.Blogger.V3.Model.BlogPosts.t(),
-          :published => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :updated => String.t(),
-          :url => String.t()
+          :customMetaData => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :locale => GoogleApi.Blogger.V3.Model.BlogLocale.t() | nil,
+          :name => String.t() | nil,
+          :pages => GoogleApi.Blogger.V3.Model.BlogPages.t() | nil,
+          :posts => GoogleApi.Blogger.V3.Model.BlogPosts.t() | nil,
+          :published => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :updated => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:customMetaData)

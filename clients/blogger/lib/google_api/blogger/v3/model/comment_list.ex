@@ -31,11 +31,11 @@ defmodule GoogleApi.Blogger.V3.Model.CommentList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Blogger.V3.Model.Comment.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :prevPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Blogger.V3.Model.Comment.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :prevPageToken => String.t() | nil
         }
 
   field(:etag)

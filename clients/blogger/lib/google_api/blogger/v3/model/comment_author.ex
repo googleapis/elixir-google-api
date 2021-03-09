@@ -30,10 +30,10 @@ defmodule GoogleApi.Blogger.V3.Model.CommentAuthor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :id => String.t(),
-          :image => GoogleApi.Blogger.V3.Model.CommentAuthorImage.t(),
-          :url => String.t()
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :image => GoogleApi.Blogger.V3.Model.CommentAuthorImage.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:displayName)
