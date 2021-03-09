@@ -31,9 +31,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Boundin
           :normalizedVertices =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1NormalizedVertex.t()
-            ),
+            )
+            | nil,
           :vertices =>
-            list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Vertex.t())
+            list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Vertex.t()) | nil
         }
 
   field(:normalizedVertices,

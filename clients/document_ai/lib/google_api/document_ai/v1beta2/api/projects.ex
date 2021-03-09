@@ -60,6 +60,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_documents_batch_process(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Document.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_documents_process(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -201,6 +203,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_documents_batch_process(
         connection,
@@ -274,6 +277,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Document.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_documents_process(
         connection,
@@ -346,6 +350,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_operations_get(
         connection,
@@ -412,6 +417,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   @spec documentai_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DocumentAI.V1beta2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

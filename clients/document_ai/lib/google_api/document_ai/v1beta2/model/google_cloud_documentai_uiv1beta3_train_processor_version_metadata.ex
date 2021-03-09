@@ -30,11 +30,14 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Train
 
   @type t :: %__MODULE__{
           :commonMetadata =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            | nil,
           :testDatasetValidation =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t()
+            | nil,
           :trainingDatasetValidation =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t()
+            | nil
         }
 
   field(:commonMetadata,

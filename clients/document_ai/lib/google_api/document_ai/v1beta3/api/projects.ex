@@ -54,6 +54,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @spec documentai_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudLocationLocation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,6 +119,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @spec documentai_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudLocationListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -188,6 +190,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_operations_get(
         connection,
@@ -260,6 +263,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_processors_batch_process(
         connection,
@@ -334,6 +338,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
           {:ok,
            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_processors_process(
         connection,
@@ -411,6 +416,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_processors_human_review_config_review_document(
         connection,
@@ -484,6 +490,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
         ) ::
           {:ok, GoogleApi.DocumentAI.V1beta3.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_processors_processor_versions_batch_process(
         connection,
@@ -558,6 +565,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
           {:ok,
            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def documentai_projects_locations_processors_processor_versions_process(
         connection,

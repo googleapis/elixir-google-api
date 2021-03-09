@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2KeyValu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :valueTypes => list(String.t())
+          :key => String.t() | nil,
+          :valueTypes => list(String.t()) | nil
         }
 
   field(:key)

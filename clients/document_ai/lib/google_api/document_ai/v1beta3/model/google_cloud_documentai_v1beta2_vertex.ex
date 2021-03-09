@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Vertex 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => integer(),
-          :y => integer()
+          :x => integer() | nil,
+          :y => integer() | nil
         }
 
   field(:x)

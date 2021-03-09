@@ -30,13 +30,14 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableEx
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :headerHints => list(String.t()),
-          :modelVersion => String.t(),
+          :enabled => boolean() | nil,
+          :headerHints => list(String.t()) | nil,
+          :modelVersion => String.t() | nil,
           :tableBoundHints =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableBoundHint.t()
             )
+            | nil
         }
 
   field(:enabled)

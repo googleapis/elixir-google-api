@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsUri => String.t(),
-          :mimeType => String.t()
+          :gcsUri => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:gcsUri)

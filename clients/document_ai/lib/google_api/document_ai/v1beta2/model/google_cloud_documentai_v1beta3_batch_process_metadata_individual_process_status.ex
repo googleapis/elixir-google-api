@@ -31,12 +31,13 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3BatchPr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :humanReviewOperation => String.t(),
+          :humanReviewOperation => String.t() | nil,
           :humanReviewStatus =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3HumanReviewStatus.t(),
-          :inputGcsSource => String.t(),
-          :outputGcsDestination => String.t(),
-          :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3HumanReviewStatus.t()
+            | nil,
+          :inputGcsSource => String.t() | nil,
+          :outputGcsDestination => String.t() | nil,
+          :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:humanReviewOperation)

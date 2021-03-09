@@ -29,10 +29,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2InputCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => String.t(),
+          :contents => String.t() | nil,
           :gcsSource =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2GcsSource.t(),
-          :mimeType => String.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2GcsSource.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:contents)

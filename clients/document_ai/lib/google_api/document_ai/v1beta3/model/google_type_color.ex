@@ -30,10 +30,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alpha => number(),
-          :blue => number(),
-          :green => number(),
-          :red => number()
+          :alpha => number() | nil,
+          :blue => number() | nil,
+          :green => number() | nil,
+          :red => number() | nil
         }
 
   field(:alpha)

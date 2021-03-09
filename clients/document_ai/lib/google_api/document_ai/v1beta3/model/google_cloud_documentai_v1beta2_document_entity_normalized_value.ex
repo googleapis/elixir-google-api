@@ -32,12 +32,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypePostalAddress.t(),
-          :booleanValue => boolean(),
-          :dateValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDate.t(),
-          :datetimeValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDateTime.t(),
-          :moneyValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney.t(),
-          :text => String.t()
+          :addressValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypePostalAddress.t() | nil,
+          :booleanValue => boolean() | nil,
+          :dateValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDate.t() | nil,
+          :datetimeValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDateTime.t() | nil,
+          :moneyValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:addressValue, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypePostalAddress)

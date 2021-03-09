@@ -31,11 +31,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   @type t :: %__MODULE__{
           :boundingPoly =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BoundingPoly.t(),
-          :confidence => number(),
-          :orientation => String.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :orientation => String.t() | nil,
           :textAnchor =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentTextAnchor.t()
+            | nil
         }
 
   field(:boundingPoly,

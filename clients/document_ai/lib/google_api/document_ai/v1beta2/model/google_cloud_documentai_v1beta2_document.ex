@@ -40,39 +40,48 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
+          :content => String.t() | nil,
           :entities =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntity.t()
-            ),
+            )
+            | nil,
           :entityRelations =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntityRelation.t()
-            ),
-          :error => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t(),
+            )
+            | nil,
+          :error => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t() | nil,
           :labels =>
-            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentLabel.t()),
-          :mimeType => String.t(),
+            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentLabel.t())
+            | nil,
+          :mimeType => String.t() | nil,
           :pages =>
-            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPage.t()),
+            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPage.t())
+            | nil,
           :revisions =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentRevision.t()
-            ),
+            )
+            | nil,
           :shardInfo =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentShardInfo.t(),
-          :text => String.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentShardInfo.t()
+            | nil,
+          :text => String.t() | nil,
           :textChanges =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextChange.t()
-            ),
+            )
+            | nil,
           :textStyles =>
-            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentStyle.t()),
+            list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentStyle.t())
+            | nil,
           :translations =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTranslation.t()
-            ),
-          :uri => String.t()
+            )
+            | nil,
+          :uri => String.t() | nil
         }
 
   field(:content)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => integer(),
-          :month => integer(),
-          :year => integer()
+          :day => integer() | nil,
+          :month => integer() | nil,
+          :year => integer() | nil
         }
 
   field(:day)

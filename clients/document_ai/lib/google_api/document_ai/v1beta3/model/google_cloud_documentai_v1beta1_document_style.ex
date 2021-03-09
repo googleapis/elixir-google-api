@@ -33,15 +33,17 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t(),
-          :color => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t(),
+          :backgroundColor => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t() | nil,
+          :color => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t() | nil,
           :fontSize =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentStyleFontSize.t(),
-          :fontWeight => String.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentStyleFontSize.t()
+            | nil,
+          :fontWeight => String.t() | nil,
           :textAnchor =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t(),
-          :textDecoration => String.t(),
-          :textStyle => String.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t()
+            | nil,
+          :textDecoration => String.t() | nil,
+          :textStyle => String.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor)

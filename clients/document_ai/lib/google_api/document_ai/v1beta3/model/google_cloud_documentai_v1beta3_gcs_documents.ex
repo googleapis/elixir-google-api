@@ -29,6 +29,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocu
   @type t :: %__MODULE__{
           :documents =>
             list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocument.t())
+            | nil
         }
 
   field(:documents,

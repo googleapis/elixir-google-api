@@ -29,12 +29,13 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExt
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
+          :enabled => boolean() | nil,
           :keyValuePairHints =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2KeyValuePairHint.t()
-            ),
-          :modelVersion => String.t()
+            )
+            | nil,
+          :modelVersion => String.t() | nil
         }
 
   field(:enabled)

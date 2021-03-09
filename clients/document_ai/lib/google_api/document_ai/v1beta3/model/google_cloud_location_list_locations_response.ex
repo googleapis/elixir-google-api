@@ -28,8 +28,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudLocationListLocationsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudLocationLocation.t()),
-          :nextPageToken => String.t()
+          :locations =>
+            list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudLocationLocation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations,

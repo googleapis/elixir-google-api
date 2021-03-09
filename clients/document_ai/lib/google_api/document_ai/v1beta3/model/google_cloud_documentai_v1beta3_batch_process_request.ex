@@ -32,16 +32,20 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
 
   @type t :: %__MODULE__{
           :documentOutputConfig =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t()
+            | nil,
           :inputConfigs =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t()
-            ),
+            )
+            | nil,
           :inputDocuments =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig.t()
+            | nil,
           :outputConfig =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t(),
-          :skipHumanReview => boolean()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t()
+            | nil,
+          :skipHumanReview => boolean() | nil
         }
 
   field(:documentOutputConfig,

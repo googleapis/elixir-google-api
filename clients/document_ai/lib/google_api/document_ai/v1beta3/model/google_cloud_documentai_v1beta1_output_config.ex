@@ -29,8 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1OutputC
 
   @type t :: %__MODULE__{
           :gcsDestination =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1GcsDestination.t(),
-          :pagesPerShard => integer()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1GcsDestination.t()
+            | nil,
+          :pagesPerShard => integer() | nil
         }
 
   field(:gcsDestination,

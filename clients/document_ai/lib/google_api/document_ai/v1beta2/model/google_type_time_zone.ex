@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeTimeZone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :version => String.t()
+          :id => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:id)

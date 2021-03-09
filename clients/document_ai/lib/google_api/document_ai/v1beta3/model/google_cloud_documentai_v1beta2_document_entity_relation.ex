@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t(),
-          :relation => String.t(),
-          :subjectId => String.t()
+          :objectId => String.t() | nil,
+          :relation => String.t() | nil,
+          :subjectId => String.t() | nil
         }
 
   field(:objectId)

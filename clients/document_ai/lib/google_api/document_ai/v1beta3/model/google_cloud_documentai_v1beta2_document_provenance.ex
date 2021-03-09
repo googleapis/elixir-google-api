@@ -30,13 +30,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => integer(),
+          :id => integer() | nil,
           :parents =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentProvenanceParent.t()
-            ),
-          :revision => integer(),
-          :type => String.t()
+            )
+            | nil,
+          :revision => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:id)

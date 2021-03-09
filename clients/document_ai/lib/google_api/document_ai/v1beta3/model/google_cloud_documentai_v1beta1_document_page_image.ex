@@ -30,10 +30,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :height => integer(),
-          :mimeType => String.t(),
-          :width => integer()
+          :content => String.t() | nil,
+          :height => integer() | nil,
+          :mimeType => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:content)

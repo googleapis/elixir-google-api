@@ -27,7 +27,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Evalu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluation => String.t()
+          :evaluation => String.t() | nil
         }
 
   field(:evaluation)
