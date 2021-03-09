@@ -54,7 +54,10 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   *   `{:error, info}` on failure
   """
   @spec blogger_blogs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Blog.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Blog.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_blogs_get(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +117,10 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   *   `{:error, info}` on failure
   """
   @spec blogger_blogs_get_by_url(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Blog.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.Blog.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_blogs_get_by_url(connection, url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -175,7 +181,10 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   *   `{:error, info}` on failure
   """
   @spec blogger_blogs_list_by_user(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.BlogList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Blogger.V3.Model.BlogList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def blogger_blogs_list_by_user(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

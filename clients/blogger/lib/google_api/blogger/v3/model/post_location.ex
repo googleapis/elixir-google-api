@@ -30,10 +30,10 @@ defmodule GoogleApi.Blogger.V3.Model.PostLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lat => float(),
-          :lng => float(),
-          :name => String.t(),
-          :span => String.t()
+          :lat => float() | nil,
+          :lng => float() | nil,
+          :name => String.t() | nil,
+          :span => String.t() | nil
         }
 
   field(:lat)

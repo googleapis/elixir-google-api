@@ -38,18 +38,18 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => GoogleApi.Blogger.V3.Model.PageAuthor.t(),
-          :blog => GoogleApi.Blogger.V3.Model.PageBlog.t(),
-          :content => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :published => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :title => String.t(),
-          :updated => String.t(),
-          :url => String.t()
+          :author => GoogleApi.Blogger.V3.Model.PageAuthor.t() | nil,
+          :blog => GoogleApi.Blogger.V3.Model.PageBlog.t() | nil,
+          :content => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :published => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :title => String.t() | nil,
+          :updated => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:author, as: GoogleApi.Blogger.V3.Model.PageAuthor)

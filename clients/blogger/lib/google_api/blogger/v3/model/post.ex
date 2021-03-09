@@ -45,25 +45,25 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :author => GoogleApi.Blogger.V3.Model.PostAuthor.t(),
-          :blog => GoogleApi.Blogger.V3.Model.PostBlog.t(),
-          :content => String.t(),
-          :customMetaData => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :images => list(GoogleApi.Blogger.V3.Model.PostImages.t()),
-          :kind => String.t(),
-          :labels => list(String.t()),
-          :location => GoogleApi.Blogger.V3.Model.PostLocation.t(),
-          :published => String.t(),
-          :readerComments => String.t(),
-          :replies => GoogleApi.Blogger.V3.Model.PostReplies.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :title => String.t(),
-          :titleLink => String.t(),
-          :updated => String.t(),
-          :url => String.t()
+          :author => GoogleApi.Blogger.V3.Model.PostAuthor.t() | nil,
+          :blog => GoogleApi.Blogger.V3.Model.PostBlog.t() | nil,
+          :content => String.t() | nil,
+          :customMetaData => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :images => list(GoogleApi.Blogger.V3.Model.PostImages.t()) | nil,
+          :kind => String.t() | nil,
+          :labels => list(String.t()) | nil,
+          :location => GoogleApi.Blogger.V3.Model.PostLocation.t() | nil,
+          :published => String.t() | nil,
+          :readerComments => String.t() | nil,
+          :replies => GoogleApi.Blogger.V3.Model.PostReplies.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :title => String.t() | nil,
+          :titleLink => String.t() | nil,
+          :updated => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:author, as: GoogleApi.Blogger.V3.Model.PostAuthor)

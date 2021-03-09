@@ -62,6 +62,7 @@ defmodule GoogleApi.Blogger.V3.Api.BlogUserInfos do
         ) ::
           {:ok, GoogleApi.Blogger.V3.Model.BlogUserInfo.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def blogger_blog_user_infos_get(connection, user_id, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

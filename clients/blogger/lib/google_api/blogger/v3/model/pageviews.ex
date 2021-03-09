@@ -29,9 +29,9 @@ defmodule GoogleApi.Blogger.V3.Model.Pageviews do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blogId => String.t(),
-          :counts => list(GoogleApi.Blogger.V3.Model.PageviewsCounts.t()),
-          :kind => String.t()
+          :blogId => String.t() | nil,
+          :counts => list(GoogleApi.Blogger.V3.Model.PageviewsCounts.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:blogId)

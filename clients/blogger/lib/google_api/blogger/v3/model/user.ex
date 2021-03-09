@@ -35,15 +35,15 @@ defmodule GoogleApi.Blogger.V3.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :about => String.t(),
-          :blogs => GoogleApi.Blogger.V3.Model.UserBlogs.t(),
-          :created => String.t(),
-          :displayName => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :locale => GoogleApi.Blogger.V3.Model.UserLocale.t(),
-          :selfLink => String.t(),
-          :url => String.t()
+          :about => String.t() | nil,
+          :blogs => GoogleApi.Blogger.V3.Model.UserBlogs.t() | nil,
+          :created => String.t() | nil,
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :locale => GoogleApi.Blogger.V3.Model.UserLocale.t() | nil,
+          :selfLink => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:about)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostReplies do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Blogger.V3.Model.Comment.t()),
-          :selfLink => String.t(),
-          :totalItems => String.t()
+          :items => list(GoogleApi.Blogger.V3.Model.Comment.t()) | nil,
+          :selfLink => String.t() | nil,
+          :totalItems => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Blogger.V3.Model.Comment, type: :list)

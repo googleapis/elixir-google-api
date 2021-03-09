@@ -29,9 +29,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blogUserInfos => list(GoogleApi.Blogger.V3.Model.BlogUserInfo.t()),
-          :items => list(GoogleApi.Blogger.V3.Model.Blog.t()),
-          :kind => String.t()
+          :blogUserInfos => list(GoogleApi.Blogger.V3.Model.BlogUserInfo.t()) | nil,
+          :items => list(GoogleApi.Blogger.V3.Model.Blog.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:blogUserInfos, as: GoogleApi.Blogger.V3.Model.BlogUserInfo, type: :list)
