@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.Content do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.Script.V1.Model.File.t()),
-          :scriptId => String.t()
+          :files => list(GoogleApi.Script.V1.Model.File.t()) | nil,
+          :scriptId => String.t() | nil
         }
 
   field(:files, as: GoogleApi.Script.V1.Model.File, type: :list)

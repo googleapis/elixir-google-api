@@ -33,13 +33,13 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :functionName => String.t(),
-          :processStatus => String.t(),
-          :processType => String.t(),
-          :projectName => String.t(),
-          :startTime => DateTime.t(),
-          :userAccessLevel => String.t()
+          :duration => String.t() | nil,
+          :functionName => String.t() | nil,
+          :processStatus => String.t() | nil,
+          :processType => String.t() | nil,
+          :projectName => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :userAccessLevel => String.t() | nil
         }
 
   field(:duration)

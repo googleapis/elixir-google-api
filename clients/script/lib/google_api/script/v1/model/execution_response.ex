@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.ExecutionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => any()
+          :result => any() | nil
         }
 
   field(:result)

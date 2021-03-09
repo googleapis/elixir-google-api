@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.ScriptExecutionResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :returnValue => GoogleApi.Script.V1.Model.Value.t()
+          :returnValue => GoogleApi.Script.V1.Model.Value.t() | nil
         }
 
   field(:returnValue, as: GoogleApi.Script.V1.Model.Value)

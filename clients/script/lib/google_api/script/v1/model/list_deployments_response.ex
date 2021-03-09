@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.ListDeploymentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployments => list(GoogleApi.Script.V1.Model.Deployment.t()),
-          :nextPageToken => String.t()
+          :deployments => list(GoogleApi.Script.V1.Model.Deployment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:deployments, as: GoogleApi.Script.V1.Model.Deployment, type: :list)

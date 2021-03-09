@@ -30,10 +30,10 @@ defmodule GoogleApi.Script.V1.Model.ExecutionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devMode => boolean(),
-          :function => String.t(),
-          :parameters => list(any()),
-          :sessionState => String.t()
+          :devMode => boolean() | nil,
+          :function => String.t() | nil,
+          :parameters => list(any()) | nil,
+          :sessionState => String.t() | nil
         }
 
   field(:devMode)

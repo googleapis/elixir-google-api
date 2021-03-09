@@ -32,12 +32,12 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeAddOnEntryPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addOnType => String.t(),
-          :description => String.t(),
-          :helpUrl => String.t(),
-          :postInstallTipUrl => String.t(),
-          :reportIssueUrl => String.t(),
-          :title => String.t()
+          :addOnType => String.t() | nil,
+          :description => String.t() | nil,
+          :helpUrl => String.t() | nil,
+          :postInstallTipUrl => String.t() | nil,
+          :reportIssueUrl => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:addOnType)

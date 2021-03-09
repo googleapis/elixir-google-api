@@ -29,9 +29,10 @@ defmodule GoogleApi.Script.V1.Model.ExecutionError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :errorType => String.t(),
-          :scriptStackTraceElements => list(GoogleApi.Script.V1.Model.ScriptStackTraceElement.t())
+          :errorMessage => String.t() | nil,
+          :errorType => String.t() | nil,
+          :scriptStackTraceElements =>
+            list(GoogleApi.Script.V1.Model.ScriptStackTraceElement.t()) | nil
         }
 
   field(:errorMessage)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Script.V1.Model.Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deploymentConfig => GoogleApi.Script.V1.Model.DeploymentConfig.t(),
-          :deploymentId => String.t(),
-          :entryPoints => list(GoogleApi.Script.V1.Model.EntryPoint.t()),
-          :updateTime => DateTime.t()
+          :deploymentConfig => GoogleApi.Script.V1.Model.DeploymentConfig.t() | nil,
+          :deploymentId => String.t() | nil,
+          :entryPoints => list(GoogleApi.Script.V1.Model.EntryPoint.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:deploymentConfig, as: GoogleApi.Script.V1.Model.DeploymentConfig)

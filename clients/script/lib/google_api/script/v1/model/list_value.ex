@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.ListValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.Script.V1.Model.Value.t())
+          :values => list(GoogleApi.Script.V1.Model.Value.t()) | nil
         }
 
   field(:values, as: GoogleApi.Script.V1.Model.Value, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Script.V1.Model.Metrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeUsers => list(GoogleApi.Script.V1.Model.MetricsValue.t()),
-          :failedExecutions => list(GoogleApi.Script.V1.Model.MetricsValue.t()),
-          :totalExecutions => list(GoogleApi.Script.V1.Model.MetricsValue.t())
+          :activeUsers => list(GoogleApi.Script.V1.Model.MetricsValue.t()) | nil,
+          :failedExecutions => list(GoogleApi.Script.V1.Model.MetricsValue.t()) | nil,
+          :totalExecutions => list(GoogleApi.Script.V1.Model.MetricsValue.t()) | nil
         }
 
   field(:activeUsers, as: GoogleApi.Script.V1.Model.MetricsValue, type: :list)

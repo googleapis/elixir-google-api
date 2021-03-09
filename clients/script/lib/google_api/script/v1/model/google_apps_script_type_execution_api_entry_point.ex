@@ -28,7 +28,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiEntryPoint d
 
   @type t :: %__MODULE__{
           :entryPointConfig =>
-            GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiConfig.t()
+            GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiConfig.t() | nil
         }
 
   field(:entryPointConfig, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeExecutionApiConfig)

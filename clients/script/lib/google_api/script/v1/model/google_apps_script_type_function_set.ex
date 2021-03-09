@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunction.t())
+          :values => list(GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunction.t()) | nil
         }
 
   field(:values, as: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunction, type: :list)

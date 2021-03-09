@@ -27,7 +27,7 @@ defmodule GoogleApi.Script.V1.Model.UpdateDeploymentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deploymentConfig => GoogleApi.Script.V1.Model.DeploymentConfig.t()
+          :deploymentConfig => GoogleApi.Script.V1.Model.DeploymentConfig.t() | nil
         }
 
   field(:deploymentConfig, as: GoogleApi.Script.V1.Model.DeploymentConfig)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeWebAppConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => String.t(),
-          :executeAs => String.t()
+          :access => String.t() | nil,
+          :executeAs => String.t() | nil
         }
 
   field(:access)
