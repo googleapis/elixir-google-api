@@ -28,9 +28,9 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningListOperatio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :operations =>
-            list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningOperation.t())
+            list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleLongrunningOperation.t()) | nil
         }
 
   field(:nextPageToken)

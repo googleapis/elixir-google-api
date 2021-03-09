@@ -29,6 +29,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   @type t :: %__MODULE__{
           :kmsSettings =>
             GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings.t()
+            | nil
         }
 
   field(:kmsSettings,

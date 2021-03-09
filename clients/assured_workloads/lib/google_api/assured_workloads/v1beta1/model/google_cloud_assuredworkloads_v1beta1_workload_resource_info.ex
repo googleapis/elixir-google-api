@@ -28,8 +28,8 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceId => String.t(),
-          :resourceType => String.t()
+          :resourceId => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:resourceId)

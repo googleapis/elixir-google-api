@@ -36,20 +36,22 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAccount => String.t(),
-          :complianceRegime => String.t(),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :etag => String.t(),
+          :billingAccount => String.t() | nil,
+          :complianceRegime => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
           :kmsSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t(),
-          :labels => map(),
-          :name => String.t(),
-          :provisionedResourcesParent => String.t(),
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t()
+            | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :provisionedResourcesParent => String.t() | nil,
           :resources =>
             list(
               GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t()
             )
+            | nil
         }
 
   field(:billingAccount)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :complianceRegime => String.t(),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :parent => String.t()
+          :complianceRegime => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:complianceRegime)
