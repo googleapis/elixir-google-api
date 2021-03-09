@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocateErrors => list(GoogleApi.ServiceControl.V1.Model.QuotaError.t()),
-          :allocateInfo => GoogleApi.ServiceControl.V1.Model.AllocateInfo.t(),
-          :operationId => String.t(),
-          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()),
-          :serviceConfigId => String.t()
+          :allocateErrors => list(GoogleApi.ServiceControl.V1.Model.QuotaError.t()) | nil,
+          :allocateInfo => GoogleApi.ServiceControl.V1.Model.AllocateInfo.t() | nil,
+          :operationId => String.t() | nil,
+          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()) | nil,
+          :serviceConfigId => String.t() | nil
         }
 
   field(:allocateErrors, as: GoogleApi.ServiceControl.V1.Model.QuotaError, type: :list)

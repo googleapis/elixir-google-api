@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.LinearBuckets do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numFiniteBuckets => integer(),
-          :offset => float(),
-          :width => float()
+          :numFiniteBuckets => integer() | nil,
+          :offset => float() | nil,
+          :width => float() | nil
         }
 
   field(:numFiniteBuckets)

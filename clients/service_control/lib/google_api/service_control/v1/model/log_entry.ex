@@ -38,18 +38,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpRequest => GoogleApi.ServiceControl.V1.Model.HttpRequest.t(),
-          :insertId => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :operation => GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t(),
-          :protoPayload => map(),
-          :severity => String.t(),
-          :sourceLocation => GoogleApi.ServiceControl.V1.Model.LogEntrySourceLocation.t(),
-          :structPayload => map(),
-          :textPayload => String.t(),
-          :timestamp => DateTime.t(),
-          :trace => String.t()
+          :httpRequest => GoogleApi.ServiceControl.V1.Model.HttpRequest.t() | nil,
+          :insertId => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :operation => GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t() | nil,
+          :protoPayload => map() | nil,
+          :severity => String.t() | nil,
+          :sourceLocation => GoogleApi.ServiceControl.V1.Model.LogEntrySourceLocation.t() | nil,
+          :structPayload => map() | nil,
+          :textPayload => String.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :trace => String.t() | nil
         }
 
   field(:httpRequest, as: GoogleApi.ServiceControl.V1.Model.HttpRequest)

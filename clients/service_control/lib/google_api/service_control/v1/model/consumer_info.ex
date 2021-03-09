@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNumber => String.t(),
-          :projectNumber => String.t(),
-          :type => String.t()
+          :consumerNumber => String.t() | nil,
+          :projectNumber => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:consumerNumber)

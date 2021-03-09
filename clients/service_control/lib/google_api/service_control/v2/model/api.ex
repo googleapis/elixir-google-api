@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V2.Model.Api do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operation => String.t(),
-          :protocol => String.t(),
-          :service => String.t(),
-          :version => String.t()
+          :operation => String.t() | nil,
+          :protocol => String.t() | nil,
+          :service => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:operation)

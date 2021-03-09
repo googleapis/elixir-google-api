@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ip => String.t(),
-          :labels => map(),
-          :port => String.t(),
-          :principal => String.t(),
-          :regionCode => String.t()
+          :ip => String.t() | nil,
+          :labels => map() | nil,
+          :port => String.t() | nil,
+          :principal => String.t() | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:ip)

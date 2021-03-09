@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V2.Model.ReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operations => list(GoogleApi.ServiceControl.V2.Model.AttributeContext.t()),
-          :serviceConfigId => String.t()
+          :operations => list(GoogleApi.ServiceControl.V2.Model.AttributeContext.t()) | nil,
+          :serviceConfigId => String.t() | nil
         }
 
   field(:operations, as: GoogleApi.ServiceControl.V2.Model.AttributeContext, type: :list)

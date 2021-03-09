@@ -55,6 +55,7 @@ defmodule GoogleApi.ServiceControl.V2.Api.Services do
   @spec servicecontrol_services_check(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V2.Model.CheckResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicecontrol_services_check(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.ServiceControl.V2.Api.Services do
   @spec servicecontrol_services_report(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V2.Model.ReportResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicecontrol_services_report(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

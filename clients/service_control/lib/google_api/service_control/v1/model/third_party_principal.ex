@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thirdPartyClaims => map()
+          :thirdPartyClaims => map() | nil
         }
 
   field(:thirdPartyClaims, type: :map)

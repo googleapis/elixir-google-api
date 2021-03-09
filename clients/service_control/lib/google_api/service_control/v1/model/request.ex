@@ -38,18 +38,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auth => GoogleApi.ServiceControl.V1.Model.Auth.t(),
-          :headers => map(),
-          :host => String.t(),
-          :id => String.t(),
-          :method => String.t(),
-          :path => String.t(),
-          :protocol => String.t(),
-          :query => String.t(),
-          :reason => String.t(),
-          :scheme => String.t(),
-          :size => String.t(),
-          :time => DateTime.t()
+          :auth => GoogleApi.ServiceControl.V1.Model.Auth.t() | nil,
+          :headers => map() | nil,
+          :host => String.t() | nil,
+          :id => String.t() | nil,
+          :method => String.t() | nil,
+          :path => String.t() | nil,
+          :protocol => String.t() | nil,
+          :query => String.t() | nil,
+          :reason => String.t() | nil,
+          :scheme => String.t() | nil,
+          :size => String.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:auth, as: GoogleApi.ServiceControl.V1.Model.Auth)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportErrors => list(GoogleApi.ServiceControl.V1.Model.ReportError.t()),
-          :serviceConfigId => String.t(),
-          :serviceRolloutId => String.t()
+          :reportErrors => list(GoogleApi.ServiceControl.V1.Model.ReportError.t()) | nil,
+          :serviceConfigId => String.t() | nil,
+          :serviceRolloutId => String.t() | nil
         }
 
   field(:reportErrors, as: GoogleApi.ServiceControl.V1.Model.ReportError, type: :list)

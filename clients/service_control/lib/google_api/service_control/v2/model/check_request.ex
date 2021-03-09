@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.ServiceControl.V2.Model.AttributeContext.t(),
-          :flags => String.t(),
-          :resources => list(GoogleApi.ServiceControl.V2.Model.ResourceInfo.t()),
-          :serviceConfigId => String.t()
+          :attributes => GoogleApi.ServiceControl.V2.Model.AttributeContext.t() | nil,
+          :flags => String.t() | nil,
+          :resources => list(GoogleApi.ServiceControl.V2.Model.ResourceInfo.t()) | nil,
+          :serviceConfigId => String.t() | nil
         }
 
   field(:attributes, as: GoogleApi.ServiceControl.V2.Model.AttributeContext)

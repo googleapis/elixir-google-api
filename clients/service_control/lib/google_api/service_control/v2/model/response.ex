@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceControl.V2.Model.Response do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendLatency => String.t(),
-          :code => String.t(),
-          :headers => map(),
-          :size => String.t(),
-          :time => DateTime.t()
+          :backendLatency => String.t() | nil,
+          :code => String.t() | nil,
+          :headers => map() | nil,
+          :size => String.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:backendLatency)

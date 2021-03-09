@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.AttributeValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :intValue => String.t(),
-          :stringValue => GoogleApi.ServiceControl.V1.Model.TruncatableString.t()
+          :boolValue => boolean() | nil,
+          :intValue => String.t() | nil,
+          :stringValue => GoogleApi.ServiceControl.V1.Model.TruncatableString.t() | nil
         }
 
   field(:boolValue)

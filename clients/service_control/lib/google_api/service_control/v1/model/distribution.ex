@@ -36,16 +36,16 @@ defmodule GoogleApi.ServiceControl.V1.Model.Distribution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketCounts => list(String.t()),
-          :count => String.t(),
-          :exemplars => list(GoogleApi.ServiceControl.V1.Model.Exemplar.t()),
-          :explicitBuckets => GoogleApi.ServiceControl.V1.Model.ExplicitBuckets.t(),
-          :exponentialBuckets => GoogleApi.ServiceControl.V1.Model.ExponentialBuckets.t(),
-          :linearBuckets => GoogleApi.ServiceControl.V1.Model.LinearBuckets.t(),
-          :maximum => float(),
-          :mean => float(),
-          :minimum => float(),
-          :sumOfSquaredDeviation => float()
+          :bucketCounts => list(String.t()) | nil,
+          :count => String.t() | nil,
+          :exemplars => list(GoogleApi.ServiceControl.V1.Model.Exemplar.t()) | nil,
+          :explicitBuckets => GoogleApi.ServiceControl.V1.Model.ExplicitBuckets.t() | nil,
+          :exponentialBuckets => GoogleApi.ServiceControl.V1.Model.ExponentialBuckets.t() | nil,
+          :linearBuckets => GoogleApi.ServiceControl.V1.Model.LinearBuckets.t() | nil,
+          :maximum => float() | nil,
+          :mean => float() | nil,
+          :minimum => float() | nil,
+          :sumOfSquaredDeviation => float() | nil
         }
 
   field(:bucketCounts, type: :list)

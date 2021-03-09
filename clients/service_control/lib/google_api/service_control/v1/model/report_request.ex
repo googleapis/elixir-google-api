@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operations => list(GoogleApi.ServiceControl.V1.Model.Operation.t()),
-          :serviceConfigId => String.t()
+          :operations => list(GoogleApi.ServiceControl.V1.Model.Operation.t()) | nil,
+          :serviceConfigId => String.t() | nil
         }
 
   field(:operations, as: GoogleApi.ServiceControl.V1.Model.Operation, type: :list)

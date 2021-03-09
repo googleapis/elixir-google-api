@@ -32,13 +32,13 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuthenticationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authoritySelector => String.t(),
-          :principalEmail => String.t(),
-          :principalSubject => String.t(),
+          :authoritySelector => String.t() | nil,
+          :principalEmail => String.t() | nil,
+          :principalSubject => String.t() | nil,
           :serviceAccountDelegationInfo =>
-            list(GoogleApi.ServiceControl.V2.Model.ServiceAccountDelegationInfo.t()),
-          :serviceAccountKeyName => String.t(),
-          :thirdPartyPrincipal => map()
+            list(GoogleApi.ServiceControl.V2.Model.ServiceAccountDelegationInfo.t()) | nil,
+          :serviceAccountKeyName => String.t() | nil,
+          :thirdPartyPrincipal => map() | nil
         }
 
   field(:authoritySelector)

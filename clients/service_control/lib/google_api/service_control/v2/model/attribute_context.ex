@@ -34,14 +34,14 @@ defmodule GoogleApi.ServiceControl.V2.Model.AttributeContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :api => GoogleApi.ServiceControl.V2.Model.Api.t(),
-          :destination => GoogleApi.ServiceControl.V2.Model.Peer.t(),
-          :extensions => list(map()),
-          :origin => GoogleApi.ServiceControl.V2.Model.Peer.t(),
-          :request => GoogleApi.ServiceControl.V2.Model.Request.t(),
-          :resource => GoogleApi.ServiceControl.V2.Model.Resource.t(),
-          :response => GoogleApi.ServiceControl.V2.Model.Response.t(),
-          :source => GoogleApi.ServiceControl.V2.Model.Peer.t()
+          :api => GoogleApi.ServiceControl.V2.Model.Api.t() | nil,
+          :destination => GoogleApi.ServiceControl.V2.Model.Peer.t() | nil,
+          :extensions => list(map()) | nil,
+          :origin => GoogleApi.ServiceControl.V2.Model.Peer.t() | nil,
+          :request => GoogleApi.ServiceControl.V2.Model.Request.t() | nil,
+          :resource => GoogleApi.ServiceControl.V2.Model.Resource.t() | nil,
+          :response => GoogleApi.ServiceControl.V2.Model.Response.t() | nil,
+          :source => GoogleApi.ServiceControl.V2.Model.Peer.t() | nil
         }
 
   field(:api, as: GoogleApi.ServiceControl.V2.Model.Api)

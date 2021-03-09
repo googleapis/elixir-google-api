@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceContainer => String.t(),
-          :resourceLocation => String.t(),
-          :resourceName => String.t()
+          :resourceContainer => String.t() | nil,
+          :resourceLocation => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:resourceContainer)

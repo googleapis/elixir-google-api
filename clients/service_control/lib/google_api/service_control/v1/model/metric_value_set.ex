@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.MetricValueSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricName => String.t(),
-          :metricValues => list(GoogleApi.ServiceControl.V1.Model.MetricValue.t())
+          :metricName => String.t() | nil,
+          :metricValues => list(GoogleApi.ServiceControl.V1.Model.MetricValue.t()) | nil
         }
 
   field(:metricName)

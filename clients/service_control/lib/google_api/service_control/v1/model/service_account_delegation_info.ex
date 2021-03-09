@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :firstPartyPrincipal => GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t(),
-          :principalSubject => String.t(),
-          :thirdPartyPrincipal => GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t()
+          :firstPartyPrincipal => GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t() | nil,
+          :principalSubject => String.t() | nil,
+          :thirdPartyPrincipal => GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t() | nil
         }
 
   field(:firstPartyPrincipal, as: GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal)

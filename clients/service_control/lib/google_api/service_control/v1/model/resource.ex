@@ -38,18 +38,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :createTime => DateTime.t(),
-          :deleteTime => DateTime.t(),
-          :displayName => String.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :location => String.t(),
-          :name => String.t(),
-          :service => String.t(),
-          :type => String.t(),
-          :uid => String.t(),
-          :updateTime => DateTime.t()
+          :annotations => map() | nil,
+          :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :service => String.t() | nil,
+          :type => String.t() | nil,
+          :uid => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:annotations, type: :map)

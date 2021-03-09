@@ -28,10 +28,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.Attributes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeMap => %{
-            optional(String.t()) => GoogleApi.ServiceControl.V1.Model.AttributeValue.t()
-          },
-          :droppedAttributesCount => integer()
+          :attributeMap =>
+            %{optional(String.t()) => GoogleApi.ServiceControl.V1.Model.AttributeValue.t()} | nil,
+          :droppedAttributesCount => integer() | nil
         }
 
   field(:attributeMap, as: GoogleApi.ServiceControl.V1.Model.AttributeValue, type: :map)
