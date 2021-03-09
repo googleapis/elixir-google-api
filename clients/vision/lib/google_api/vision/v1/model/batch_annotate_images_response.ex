@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateImagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t())
+          :responses => list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t()) | nil
         }
 
   field(:responses, as: GoogleApi.Vision.V1.Model.AnnotateImageResponse, type: :list)

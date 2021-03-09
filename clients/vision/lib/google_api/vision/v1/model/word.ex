@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.Word do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => number(),
-          :property => GoogleApi.Vision.V1.Model.TextProperty.t(),
-          :symbols => list(GoogleApi.Vision.V1.Model.Symbol.t())
+          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :property => GoogleApi.Vision.V1.Model.TextProperty.t() | nil,
+          :symbols => list(GoogleApi.Vision.V1.Model.Symbol.t()) | nil
         }
 
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.BoundingPoly)

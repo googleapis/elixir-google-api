@@ -31,11 +31,11 @@ defmodule GoogleApi.Vision.V1.Model.WebPage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()),
-          :pageTitle => String.t(),
-          :partialMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()),
-          :score => number(),
-          :url => String.t()
+          :fullMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()) | nil,
+          :pageTitle => String.t() | nil,
+          :partialMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()) | nil,
+          :score => number() | nil,
+          :url => String.t() | nil
         }
 
   field(:fullMatchingImages, as: GoogleApi.Vision.V1.Model.WebImage, type: :list)

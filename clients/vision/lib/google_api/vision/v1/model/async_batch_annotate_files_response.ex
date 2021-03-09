@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateFilesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse.t())
+          :responses => list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse.t()) | nil
         }
 
   field(:responses, as: GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse, type: :list)

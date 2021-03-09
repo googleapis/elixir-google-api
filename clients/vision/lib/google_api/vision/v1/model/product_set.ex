@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.ProductSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :indexError => GoogleApi.Vision.V1.Model.Status.t(),
-          :indexTime => DateTime.t(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :indexError => GoogleApi.Vision.V1.Model.Status.t() | nil,
+          :indexTime => DateTime.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

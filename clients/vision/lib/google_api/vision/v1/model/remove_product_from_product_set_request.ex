@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.RemoveProductFromProductSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :product => String.t()
+          :product => String.t() | nil
         }
 
   field(:product)

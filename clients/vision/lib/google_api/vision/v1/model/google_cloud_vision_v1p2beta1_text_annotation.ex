@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pages => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Page.t()),
-          :text => String.t()
+          :pages => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Page.t()) | nil,
+          :text => String.t() | nil
         }
 
   field(:pages, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Page, type: :list)

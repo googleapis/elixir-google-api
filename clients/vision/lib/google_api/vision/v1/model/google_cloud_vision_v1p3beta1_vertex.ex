@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Vertex do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => integer(),
-          :y => integer()
+          :x => integer() | nil,
+          :y => integer() | nil
         }
 
   field(:x)

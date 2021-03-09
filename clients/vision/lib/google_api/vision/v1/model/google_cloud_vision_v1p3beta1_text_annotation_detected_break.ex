@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1TextAnnotationDete
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isPrefix => boolean(),
-          :type => String.t()
+          :isPrefix => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:isPrefix)

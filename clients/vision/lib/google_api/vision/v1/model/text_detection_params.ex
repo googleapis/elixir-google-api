@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.TextDetectionParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableTextDetectionConfidenceScore => boolean()
+          :enableTextDetectionConfidenceScore => boolean() | nil
         }
 
   field(:enableTextDetectionConfidenceScore)

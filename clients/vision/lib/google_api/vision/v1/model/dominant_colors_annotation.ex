@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.DominantColorsAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colors => list(GoogleApi.Vision.V1.Model.ColorInfo.t())
+          :colors => list(GoogleApi.Vision.V1.Model.ColorInfo.t()) | nil
         }
 
   field(:colors, as: GoogleApi.Vision.V1.Model.ColorInfo, type: :list)

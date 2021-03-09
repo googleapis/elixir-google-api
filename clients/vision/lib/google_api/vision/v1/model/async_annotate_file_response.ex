@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.Vision.V1.Model.OutputConfig.t()
+          :outputConfig => GoogleApi.Vision.V1.Model.OutputConfig.t() | nil
         }
 
   field(:outputConfig, as: GoogleApi.Vision.V1.Model.OutputConfig)

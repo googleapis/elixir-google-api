@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateFileResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.Vision.V1.Model.Status.t(),
-          :inputConfig => GoogleApi.Vision.V1.Model.InputConfig.t(),
-          :responses => list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t()),
-          :totalPages => integer()
+          :error => GoogleApi.Vision.V1.Model.Status.t() | nil,
+          :inputConfig => GoogleApi.Vision.V1.Model.InputConfig.t() | nil,
+          :responses => list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t()) | nil,
+          :totalPages => integer() | nil
         }
 
   field(:error, as: GoogleApi.Vision.V1.Model.Status)

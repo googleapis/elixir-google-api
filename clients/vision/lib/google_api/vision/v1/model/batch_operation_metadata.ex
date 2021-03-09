@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.BatchOperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :state => String.t(),
-          :submitTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :submitTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

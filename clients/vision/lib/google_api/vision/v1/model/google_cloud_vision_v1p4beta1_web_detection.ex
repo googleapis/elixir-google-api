@@ -33,17 +33,23 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetection do
 
   @type t :: %__MODULE__{
           :bestGuessLabels =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebLabel.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebLabel.t())
+            | nil,
           :fullMatchingImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t())
+            | nil,
           :pagesWithMatchingImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebPage.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebPage.t())
+            | nil,
           :partialMatchingImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t())
+            | nil,
           :visuallySimilarImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t())
+            | nil,
           :webEntities =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebEntity.t())
+            | nil
         }
 
   field(:bestGuessLabels,

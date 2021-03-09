@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.PurgeProductsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteOrphanProducts => boolean(),
-          :force => boolean(),
-          :productSetPurgeConfig => GoogleApi.Vision.V1.Model.ProductSetPurgeConfig.t()
+          :deleteOrphanProducts => boolean() | nil,
+          :force => boolean() | nil,
+          :productSetPurgeConfig => GoogleApi.Vision.V1.Model.ProductSetPurgeConfig.t() | nil
         }
 
   field(:deleteOrphanProducts)

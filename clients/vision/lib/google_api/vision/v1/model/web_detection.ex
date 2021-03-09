@@ -32,12 +32,12 @@ defmodule GoogleApi.Vision.V1.Model.WebDetection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bestGuessLabels => list(GoogleApi.Vision.V1.Model.WebLabel.t()),
-          :fullMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()),
-          :pagesWithMatchingImages => list(GoogleApi.Vision.V1.Model.WebPage.t()),
-          :partialMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()),
-          :visuallySimilarImages => list(GoogleApi.Vision.V1.Model.WebImage.t()),
-          :webEntities => list(GoogleApi.Vision.V1.Model.WebEntity.t())
+          :bestGuessLabels => list(GoogleApi.Vision.V1.Model.WebLabel.t()) | nil,
+          :fullMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()) | nil,
+          :pagesWithMatchingImages => list(GoogleApi.Vision.V1.Model.WebPage.t()) | nil,
+          :partialMatchingImages => list(GoogleApi.Vision.V1.Model.WebImage.t()) | nil,
+          :visuallySimilarImages => list(GoogleApi.Vision.V1.Model.WebImage.t()) | nil,
+          :webEntities => list(GoogleApi.Vision.V1.Model.WebEntity.t()) | nil
         }
 
   field(:bestGuessLabels, as: GoogleApi.Vision.V1.Model.WebLabel, type: :list)

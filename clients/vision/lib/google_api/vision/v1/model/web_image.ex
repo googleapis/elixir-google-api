@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.WebImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :score => number(),
-          :url => String.t()
+          :score => number() | nil,
+          :url => String.t() | nil
         }
 
   field(:score)

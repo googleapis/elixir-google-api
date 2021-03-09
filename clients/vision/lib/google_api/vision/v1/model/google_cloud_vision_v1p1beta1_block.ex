@@ -31,12 +31,15 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Block do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockType => String.t(),
-          :boundingBox => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly.t(),
-          :confidence => number(),
-          :paragraphs => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Paragraph.t()),
+          :blockType => String.t() | nil,
+          :boundingBox =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :paragraphs =>
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Paragraph.t()) | nil,
           :property =>
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationTextProperty.t()
+            | nil
         }
 
   field(:blockType)

@@ -28,7 +28,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ImageProperties do
 
   @type t :: %__MODULE__{
           :dominantColors =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1DominantColorsAnnotation.t()
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1DominantColorsAnnotation.t() | nil
         }
 
   field(:dominantColors,

@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateImagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.Vision.V1.Model.OutputConfig.t(),
-          :parent => String.t(),
-          :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t())
+          :outputConfig => GoogleApi.Vision.V1.Model.OutputConfig.t() | nil,
+          :parent => String.t() | nil,
+          :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t()) | nil
         }
 
   field(:outputConfig, as: GoogleApi.Vision.V1.Model.OutputConfig)

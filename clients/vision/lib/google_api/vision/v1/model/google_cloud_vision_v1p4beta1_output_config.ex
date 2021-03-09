@@ -28,9 +28,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchSize => integer(),
+          :batchSize => integer() | nil,
           :gcsDestination =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1GcsDestination.t()
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1GcsDestination.t() | nil
         }
 
   field(:batchSize)

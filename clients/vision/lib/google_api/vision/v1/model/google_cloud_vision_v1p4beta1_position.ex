@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Position do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => number(),
-          :y => number(),
-          :z => number()
+          :x => number() | nil,
+          :y => number() | nil,
+          :z => number() | nil
         }
 
   field(:x)

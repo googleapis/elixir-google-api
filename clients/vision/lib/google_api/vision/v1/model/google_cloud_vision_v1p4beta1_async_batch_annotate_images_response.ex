@@ -27,7 +27,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AsyncBatchAnnotate
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OutputConfig.t()
+          :outputConfig =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OutputConfig.t() | nil
         }
 
   field(:outputConfig, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OutputConfig)

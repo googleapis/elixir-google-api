@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.ProductSetPurgeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :productSetId => String.t()
+          :productSetId => String.t() | nil
         }
 
   field(:productSetId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebLab
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :languageCode => String.t()
+          :label => String.t() | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:label)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cropHintsParams => GoogleApi.Vision.V1.Model.CropHintsParams.t(),
-          :languageHints => list(String.t()),
-          :latLongRect => GoogleApi.Vision.V1.Model.LatLongRect.t(),
-          :productSearchParams => GoogleApi.Vision.V1.Model.ProductSearchParams.t(),
-          :textDetectionParams => GoogleApi.Vision.V1.Model.TextDetectionParams.t(),
-          :webDetectionParams => GoogleApi.Vision.V1.Model.WebDetectionParams.t()
+          :cropHintsParams => GoogleApi.Vision.V1.Model.CropHintsParams.t() | nil,
+          :languageHints => list(String.t()) | nil,
+          :latLongRect => GoogleApi.Vision.V1.Model.LatLongRect.t() | nil,
+          :productSearchParams => GoogleApi.Vision.V1.Model.ProductSearchParams.t() | nil,
+          :textDetectionParams => GoogleApi.Vision.V1.Model.TextDetectionParams.t() | nil,
+          :webDetectionParams => GoogleApi.Vision.V1.Model.WebDetectionParams.t() | nil
         }
 
   field(:cropHintsParams, as: GoogleApi.Vision.V1.Model.CropHintsParams)

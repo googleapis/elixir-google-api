@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.OutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchSize => integer(),
-          :gcsDestination => GoogleApi.Vision.V1.Model.GcsDestination.t()
+          :batchSize => integer() | nil,
+          :gcsDestination => GoogleApi.Vision.V1.Model.GcsDestination.t() | nil
         }
 
   field(:batchSize)

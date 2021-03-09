@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.TextProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectedBreak => GoogleApi.Vision.V1.Model.DetectedBreak.t(),
-          :detectedLanguages => list(GoogleApi.Vision.V1.Model.DetectedLanguage.t())
+          :detectedBreak => GoogleApi.Vision.V1.Model.DetectedBreak.t() | nil,
+          :detectedLanguages => list(GoogleApi.Vision.V1.Model.DetectedLanguage.t()) | nil
         }
 
   field(:detectedBreak, as: GoogleApi.Vision.V1.Model.DetectedBreak)

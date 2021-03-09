@@ -29,11 +29,13 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationText
 
   @type t :: %__MODULE__{
           :detectedBreak =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak.t()
+            | nil,
           :detectedLanguages =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage.t()
             )
+            | nil
         }
 
   field(:detectedBreak,

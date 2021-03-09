@@ -29,9 +29,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1CropHint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t(),
-          :confidence => number(),
-          :importanceFraction => number()
+          :boundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :importanceFraction => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly)

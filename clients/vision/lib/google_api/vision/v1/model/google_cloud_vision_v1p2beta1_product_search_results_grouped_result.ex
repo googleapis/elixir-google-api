@@ -29,15 +29,18 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1BoundingPoly.t(),
+          :boundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1BoundingPoly.t() | nil,
           :objectAnnotations =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation.t()
-            ),
+            )
+            | nil,
           :results =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResultsResult.t()
             )
+            | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1BoundingPoly)

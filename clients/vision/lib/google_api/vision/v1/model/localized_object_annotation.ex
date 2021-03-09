@@ -31,11 +31,11 @@ defmodule GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :languageCode => String.t(),
-          :mid => String.t(),
-          :name => String.t(),
-          :score => number()
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :languageCode => String.t() | nil,
+          :mid => String.t() | nil,
+          :name => String.t() | nil,
+          :score => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)

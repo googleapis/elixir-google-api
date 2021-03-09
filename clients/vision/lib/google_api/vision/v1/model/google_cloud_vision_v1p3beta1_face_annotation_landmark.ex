@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1FaceAnnotationLand
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Position.t(),
-          :type => String.t()
+          :position => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Position.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:position, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Position)

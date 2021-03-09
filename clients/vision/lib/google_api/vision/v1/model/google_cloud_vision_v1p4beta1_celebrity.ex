@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Celebrity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:description)

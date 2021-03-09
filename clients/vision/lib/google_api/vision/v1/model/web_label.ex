@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.WebLabel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :languageCode => String.t()
+          :label => String.t() | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:label)

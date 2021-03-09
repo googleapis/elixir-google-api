@@ -35,16 +35,18 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1EntityAnnotation d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t(),
-          :confidence => number(),
-          :description => String.t(),
-          :locale => String.t(),
+          :boundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :description => String.t() | nil,
+          :locale => String.t() | nil,
           :locations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1LocationInfo.t()),
-          :mid => String.t(),
-          :properties => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Property.t()),
-          :score => number(),
-          :topicality => number()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1LocationInfo.t()) | nil,
+          :mid => String.t() | nil,
+          :properties =>
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Property.t()) | nil,
+          :score => number() | nil,
+          :topicality => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly)

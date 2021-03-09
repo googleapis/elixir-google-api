@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1InputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :gcsSource => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1GcsSource.t(),
-          :mimeType => String.t()
+          :content => String.t() | nil,
+          :gcsSource => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1GcsSource.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:content)

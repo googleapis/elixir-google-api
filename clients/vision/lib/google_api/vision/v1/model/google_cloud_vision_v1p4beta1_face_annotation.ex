@@ -42,24 +42,28 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angerLikelihood => String.t(),
-          :blurredLikelihood => String.t(),
-          :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t(),
-          :detectionConfidence => number(),
-          :fdBoundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t(),
-          :headwearLikelihood => String.t(),
-          :joyLikelihood => String.t(),
-          :landmarkingConfidence => number(),
+          :angerLikelihood => String.t() | nil,
+          :blurredLikelihood => String.t() | nil,
+          :boundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t() | nil,
+          :detectionConfidence => number() | nil,
+          :fdBoundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t() | nil,
+          :headwearLikelihood => String.t() | nil,
+          :joyLikelihood => String.t() | nil,
+          :landmarkingConfidence => number() | nil,
           :landmarks =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotationLandmark.t()),
-          :panAngle => number(),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotationLandmark.t())
+            | nil,
+          :panAngle => number() | nil,
           :recognitionResult =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult.t()),
-          :rollAngle => number(),
-          :sorrowLikelihood => String.t(),
-          :surpriseLikelihood => String.t(),
-          :tiltAngle => number(),
-          :underExposedLikelihood => String.t()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult.t())
+            | nil,
+          :rollAngle => number() | nil,
+          :sorrowLikelihood => String.t() | nil,
+          :surpriseLikelihood => String.t() | nil,
+          :tiltAngle => number() | nil,
+          :underExposedLikelihood => String.t() | nil
         }
 
   field(:angerLikelihood)

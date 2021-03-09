@@ -30,11 +30,13 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateFileRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.Vision.V1.Model.Status.t(),
-          :inputConfig => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1InputConfig.t(),
+          :error => GoogleApi.Vision.V1.Model.Status.t() | nil,
+          :inputConfig =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1InputConfig.t() | nil,
           :responses =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageResponse.t()),
-          :totalPages => integer()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AnnotateImageResponse.t())
+            | nil,
+          :totalPages => integer() | nil
         }
 
   field(:error, as: GoogleApi.Vision.V1.Model.Status)

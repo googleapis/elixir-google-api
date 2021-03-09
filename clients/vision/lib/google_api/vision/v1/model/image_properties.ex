@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dominantColors => GoogleApi.Vision.V1.Model.DominantColorsAnnotation.t()
+          :dominantColors => GoogleApi.Vision.V1.Model.DominantColorsAnnotation.t() | nil
         }
 
   field(:dominantColors, as: GoogleApi.Vision.V1.Model.DominantColorsAnnotation)

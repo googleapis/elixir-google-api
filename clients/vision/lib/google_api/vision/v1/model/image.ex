@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :source => GoogleApi.Vision.V1.Model.ImageSource.t()
+          :content => String.t() | nil,
+          :source => GoogleApi.Vision.V1.Model.ImageSource.t() | nil
         }
 
   field(:content)

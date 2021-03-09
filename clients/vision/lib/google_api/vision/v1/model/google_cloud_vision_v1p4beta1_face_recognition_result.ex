@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :celebrity => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Celebrity.t(),
-          :confidence => number()
+          :celebrity => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Celebrity.t() | nil,
+          :confidence => number() | nil
         }
 
   field(:celebrity, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Celebrity)

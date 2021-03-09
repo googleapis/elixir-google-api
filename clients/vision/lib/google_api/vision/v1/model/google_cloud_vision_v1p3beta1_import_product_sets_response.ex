@@ -29,8 +29,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ImportProductSetsR
 
   @type t :: %__MODULE__{
           :referenceImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ReferenceImage.t()),
-          :statuses => list(GoogleApi.Vision.V1.Model.Status.t())
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ReferenceImage.t()) | nil,
+          :statuses => list(GoogleApi.Vision.V1.Model.Status.t()) | nil
         }
 
   field(:referenceImages,

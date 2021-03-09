@@ -30,9 +30,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ReferenceImage do
 
   @type t :: %__MODULE__{
           :boundingPolys =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t()),
-          :name => String.t(),
-          :uri => String.t()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t()) | nil,
+          :name => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:boundingPolys,

@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateImagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t(),
-          :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t())
+          :parent => String.t() | nil,
+          :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t()) | nil
         }
 
   field(:parent)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.Paragraph do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => number(),
-          :property => GoogleApi.Vision.V1.Model.TextProperty.t(),
-          :words => list(GoogleApi.Vision.V1.Model.Word.t())
+          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :property => GoogleApi.Vision.V1.Model.TextProperty.t() | nil,
+          :words => list(GoogleApi.Vision.V1.Model.Word.t()) | nil
         }
 
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.BoundingPoly)

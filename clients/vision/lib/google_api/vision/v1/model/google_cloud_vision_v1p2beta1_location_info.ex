@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1LocationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latLng => GoogleApi.Vision.V1.Model.LatLng.t()
+          :latLng => GoogleApi.Vision.V1.Model.LatLng.t() | nil
         }
 
   field(:latLng, as: GoogleApi.Vision.V1.Model.LatLng)

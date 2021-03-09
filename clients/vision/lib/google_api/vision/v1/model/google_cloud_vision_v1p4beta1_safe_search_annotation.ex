@@ -31,11 +31,11 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adult => String.t(),
-          :medical => String.t(),
-          :racy => String.t(),
-          :spoof => String.t(),
-          :violence => String.t()
+          :adult => String.t() | nil,
+          :medical => String.t() | nil,
+          :racy => String.t() | nil,
+          :spoof => String.t() | nil,
+          :violence => String.t() | nil
         }
 
   field(:adult)
