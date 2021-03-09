@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSubLite.V1.Model.PartitionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capacity => GoogleApi.PubSubLite.V1.Model.Capacity.t(),
-          :count => String.t(),
-          :scale => integer()
+          :capacity => GoogleApi.PubSubLite.V1.Model.Capacity.t() | nil,
+          :count => String.t() | nil,
+          :scale => integer() | nil
         }
 
   field(:capacity, as: GoogleApi.PubSubLite.V1.Model.Capacity)

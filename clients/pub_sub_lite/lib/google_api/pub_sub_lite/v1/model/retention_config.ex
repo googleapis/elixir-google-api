@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSubLite.V1.Model.RetentionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :perPartitionBytes => String.t(),
-          :period => String.t()
+          :perPartitionBytes => String.t() | nil,
+          :period => String.t() | nil
         }
 
   field(:perPartitionBytes)

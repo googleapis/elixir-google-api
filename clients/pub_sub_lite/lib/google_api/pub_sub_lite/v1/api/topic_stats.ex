@@ -26,7 +26,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.TopicStats do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Compute the head cursor for the partition. The head cursor’s offset is guaranteed to be before or equal to all messages which have not yet been acknowledged to be published, and greater than the offset of any message whose publish has already been acknowledged. It is 0 if there have never been messages on the partition.
+  Compute the head cursor for the partition. The head cursor's offset is guaranteed to be less than or equal to all messages which have not yet been acknowledged as published, and greater than the offset of any message whose publish has already been acknowledged. It is zero if there have never been messages in the partition.
 
   ## Parameters
 
@@ -60,6 +60,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.TopicStats do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ComputeHeadCursorResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_topic_stats_projects_locations_topics_compute_head_cursor(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.TopicStats do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ComputeMessageStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_topic_stats_projects_locations_topics_compute_message_stats(
         connection,

@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.DeliveryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliveryRequirement => String.t()
+          :deliveryRequirement => String.t() | nil
         }
 
   field(:deliveryRequirement)

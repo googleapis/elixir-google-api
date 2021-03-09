@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSubLite.V1.Model.PartitionCursor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cursor => GoogleApi.PubSubLite.V1.Model.Cursor.t(),
-          :partition => String.t()
+          :cursor => GoogleApi.PubSubLite.V1.Model.Cursor.t() | nil,
+          :partition => String.t() | nil
         }
 
   field(:cursor, as: GoogleApi.PubSubLite.V1.Model.Cursor)

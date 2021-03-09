@@ -30,10 +30,10 @@ defmodule GoogleApi.PubSubLite.V1.Model.ComputeMessageStatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageBytes => String.t(),
-          :messageCount => String.t(),
-          :minimumEventTime => DateTime.t(),
-          :minimumPublishTime => DateTime.t()
+          :messageBytes => String.t() | nil,
+          :messageCount => String.t() | nil,
+          :minimumEventTime => DateTime.t() | nil,
+          :minimumPublishTime => DateTime.t() | nil
         }
 
   field(:messageBytes)

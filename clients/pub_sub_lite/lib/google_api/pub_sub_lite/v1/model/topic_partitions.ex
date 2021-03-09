@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.TopicPartitions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionCount => String.t()
+          :partitionCount => String.t() | nil
         }
 
   field(:partitionCount)

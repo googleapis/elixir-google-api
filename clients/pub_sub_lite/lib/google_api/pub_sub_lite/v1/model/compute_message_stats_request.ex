@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSubLite.V1.Model.ComputeMessageStatsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t(),
-          :partition => String.t(),
-          :startCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t()
+          :endCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t() | nil,
+          :partition => String.t() | nil,
+          :startCursor => GoogleApi.PubSubLite.V1.Model.Cursor.t() | nil
         }
 
   field(:endCursor, as: GoogleApi.PubSubLite.V1.Model.Cursor)

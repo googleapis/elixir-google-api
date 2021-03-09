@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSubLite.V1.Model.Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliveryConfig => GoogleApi.PubSubLite.V1.Model.DeliveryConfig.t(),
-          :name => String.t(),
-          :topic => String.t()
+          :deliveryConfig => GoogleApi.PubSubLite.V1.Model.DeliveryConfig.t() | nil,
+          :name => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:deliveryConfig, as: GoogleApi.PubSubLite.V1.Model.DeliveryConfig)

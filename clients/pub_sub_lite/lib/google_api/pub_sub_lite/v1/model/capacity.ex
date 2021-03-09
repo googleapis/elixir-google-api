@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSubLite.V1.Model.Capacity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publishMibPerSec => integer(),
-          :subscribeMibPerSec => integer()
+          :publishMibPerSec => integer() | nil,
+          :subscribeMibPerSec => integer() | nil
         }
 
   field(:publishMibPerSec)

@@ -61,6 +61,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Cursor do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ListPartitionCursorsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_cursor_projects_locations_subscriptions_cursors_list(
         connection,

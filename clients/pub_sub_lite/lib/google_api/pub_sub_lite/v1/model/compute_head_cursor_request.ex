@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.ComputeHeadCursorRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partition => String.t()
+          :partition => String.t() | nil
         }
 
   field(:partition)

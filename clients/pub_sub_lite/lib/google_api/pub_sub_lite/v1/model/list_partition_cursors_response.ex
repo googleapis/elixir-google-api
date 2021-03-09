@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSubLite.V1.Model.ListPartitionCursorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :partitionCursors => list(GoogleApi.PubSubLite.V1.Model.PartitionCursor.t())
+          :nextPageToken => String.t() | nil,
+          :partitionCursors => list(GoogleApi.PubSubLite.V1.Model.PartitionCursor.t()) | nil
         }
 
   field(:nextPageToken)

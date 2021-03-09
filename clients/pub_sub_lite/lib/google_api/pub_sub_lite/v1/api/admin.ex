@@ -61,6 +61,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_subscriptions_create(
         connection,
@@ -130,7 +131,10 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSubLite.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.PubSubLite.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def pubsublite_admin_projects_locations_subscriptions_delete(
         connection,
         name,
@@ -199,6 +203,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_subscriptions_get(
         connection,
@@ -270,6 +275,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ListSubscriptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_subscriptions_list(
         connection,
@@ -345,6 +351,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_subscriptions_patch(
         connection,
@@ -416,7 +423,10 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def pubsublite_admin_projects_locations_topics_create(
         connection,
         parent,
@@ -485,7 +495,10 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSubLite.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.PubSubLite.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def pubsublite_admin_projects_locations_topics_delete(
         connection,
         name,
@@ -552,7 +565,10 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def pubsublite_admin_projects_locations_topics_get(
         connection,
         name,
@@ -621,6 +637,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.TopicPartitions.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_topics_get_partitions(
         connection,
@@ -692,6 +709,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ListTopicsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_topics_list(
         connection,
@@ -763,7 +781,10 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.PubSubLite.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def pubsublite_admin_projects_locations_topics_patch(
         connection,
         name,
@@ -836,6 +857,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
         ) ::
           {:ok, GoogleApi.PubSubLite.V1.Model.ListTopicSubscriptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def pubsublite_admin_projects_locations_topics_subscriptions_list(
         connection,
