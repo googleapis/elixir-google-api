@@ -54,6 +54,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
   @spec sasportal_deployments_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
   @spec sasportal_deployments_devices_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -174,6 +176,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
   @spec sasportal_deployments_devices_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -234,6 +237,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
   @spec sasportal_deployments_devices_move(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_move(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -296,6 +300,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
   @spec sasportal_deployments_devices_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -363,6 +368,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
         ) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_sign_device(
         connection,
@@ -434,6 +440,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Deployments do
         ) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_deployments_devices_update_signed(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListCustomersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customers => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalCustomer.t()),
-          :nextPageToken => String.t()
+          :customers => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalCustomer.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:customers, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalCustomer, type: :list)

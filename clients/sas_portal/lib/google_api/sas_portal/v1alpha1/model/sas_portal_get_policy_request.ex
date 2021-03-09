@@ -27,7 +27,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalGetPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resource => String.t()
+          :resource => String.t() | nil
         }
 
   field(:resource)

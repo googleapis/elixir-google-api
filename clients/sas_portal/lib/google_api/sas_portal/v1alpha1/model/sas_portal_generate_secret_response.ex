@@ -27,7 +27,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalGenerateSecretResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :secret => String.t()
+          :secret => String.t() | nil
         }
 
   field(:secret)

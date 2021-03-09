@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListNodesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :nodes => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalNode.t())
+          :nextPageToken => String.t() | nil,
+          :nodes => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalNode.t()) | nil
         }
 
   field(:nextPageToken)

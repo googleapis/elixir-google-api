@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListDeploymentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployments => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment.t()),
-          :nextPageToken => String.t()
+          :deployments => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:deployments, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment, type: :list)

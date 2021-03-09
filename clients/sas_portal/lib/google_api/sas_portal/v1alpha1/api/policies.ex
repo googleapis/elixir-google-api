@@ -54,6 +54,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Policies do
   @spec sasportal_policies_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_policies_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Policies do
   @spec sasportal_policies_set(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_policies_set(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -170,6 +172,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Policies do
   @spec sasportal_policies_test(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalTestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_policies_test(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

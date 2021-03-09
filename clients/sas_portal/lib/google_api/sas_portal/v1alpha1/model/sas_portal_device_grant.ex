@@ -34,14 +34,14 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelType => String.t(),
-          :expireTime => DateTime.t(),
-          :frequencyRange => GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t(),
-          :grantId => String.t(),
-          :maxEirp => float(),
-          :moveList => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList.t()),
-          :state => String.t(),
-          :suspensionReason => list(String.t())
+          :channelType => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :frequencyRange => GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t() | nil,
+          :grantId => String.t() | nil,
+          :maxEirp => float() | nil,
+          :moveList => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList.t()) | nil,
+          :state => String.t() | nil,
+          :suspensionReason => list(String.t()) | nil
         }
 
   field(:channelType)
