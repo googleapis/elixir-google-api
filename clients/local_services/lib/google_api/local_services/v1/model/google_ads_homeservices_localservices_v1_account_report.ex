@@ -42,23 +42,24 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :aggregatorInfo =>
-            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t(),
-          :averageFiveStarRating => float(),
-          :averageWeeklyBudget => float(),
-          :businessName => String.t(),
-          :currencyCode => String.t(),
-          :currentPeriodChargedLeads => String.t(),
-          :currentPeriodConnectedPhoneCalls => String.t(),
-          :currentPeriodPhoneCalls => String.t(),
-          :currentPeriodTotalCost => float(),
-          :phoneLeadResponsiveness => float(),
-          :previousPeriodChargedLeads => String.t(),
-          :previousPeriodConnectedPhoneCalls => String.t(),
-          :previousPeriodPhoneCalls => String.t(),
-          :previousPeriodTotalCost => float(),
-          :totalReview => integer()
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t()
+            | nil,
+          :averageFiveStarRating => float() | nil,
+          :averageWeeklyBudget => float() | nil,
+          :businessName => String.t() | nil,
+          :currencyCode => String.t() | nil,
+          :currentPeriodChargedLeads => String.t() | nil,
+          :currentPeriodConnectedPhoneCalls => String.t() | nil,
+          :currentPeriodPhoneCalls => String.t() | nil,
+          :currentPeriodTotalCost => float() | nil,
+          :phoneLeadResponsiveness => float() | nil,
+          :previousPeriodChargedLeads => String.t() | nil,
+          :previousPeriodConnectedPhoneCalls => String.t() | nil,
+          :previousPeriodPhoneCalls => String.t() | nil,
+          :previousPeriodTotalCost => float() | nil,
+          :totalReview => integer() | nil
         }
 
   field(:accountId)

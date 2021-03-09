@@ -27,7 +27,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregatorProviderId => String.t()
+          :aggregatorProviderId => String.t() | nil
         }
 
   field(:aggregatorProviderId)
