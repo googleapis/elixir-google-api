@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.DetectedBreak do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isPrefix => boolean(),
-          :type => String.t()
+          :isPrefix => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:isPrefix)

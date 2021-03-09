@@ -29,8 +29,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly do
 
   @type t :: %__MODULE__{
           :normalizedVertices =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1NormalizedVertex.t()),
-          :vertices => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Vertex.t())
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1NormalizedVertex.t()) | nil,
+          :vertices => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1Vertex.t()) | nil
         }
 
   field(:normalizedVertices,

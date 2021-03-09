@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Property do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :uint64Value => String.t(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :uint64Value => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

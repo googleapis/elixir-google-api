@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GroupedResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :objectAnnotations => list(GoogleApi.Vision.V1.Model.ObjectAnnotation.t()),
-          :results => list(GoogleApi.Vision.V1.Model.Result.t())
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :objectAnnotations => list(GoogleApi.Vision.V1.Model.ObjectAnnotation.t()) | nil,
+          :results => list(GoogleApi.Vision.V1.Model.Result.t()) | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)

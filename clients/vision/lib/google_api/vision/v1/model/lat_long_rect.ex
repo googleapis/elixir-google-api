@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.LatLongRect do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxLatLng => GoogleApi.Vision.V1.Model.LatLng.t(),
-          :minLatLng => GoogleApi.Vision.V1.Model.LatLng.t()
+          :maxLatLng => GoogleApi.Vision.V1.Model.LatLng.t() | nil,
+          :minLatLng => GoogleApi.Vision.V1.Model.LatLng.t() | nil
         }
 
   field(:maxLatLng, as: GoogleApi.Vision.V1.Model.LatLng)

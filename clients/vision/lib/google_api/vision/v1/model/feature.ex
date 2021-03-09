@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.Feature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxResults => integer(),
-          :model => String.t(),
-          :type => String.t()
+          :maxResults => integer() | nil,
+          :model => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:maxResults)

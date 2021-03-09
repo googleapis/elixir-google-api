@@ -31,11 +31,12 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1LocalizedObjectAnn
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t(),
-          :languageCode => String.t(),
-          :mid => String.t(),
-          :name => String.t(),
-          :score => number()
+          :boundingPoly =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t() | nil,
+          :languageCode => String.t() | nil,
+          :mid => String.t() | nil,
+          :name => String.t() | nil,
+          :score => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly)

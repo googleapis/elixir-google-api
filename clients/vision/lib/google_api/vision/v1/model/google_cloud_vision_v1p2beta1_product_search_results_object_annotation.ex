@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductSearchResul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :mid => String.t(),
-          :name => String.t(),
-          :score => number()
+          :languageCode => String.t() | nil,
+          :mid => String.t() | nil,
+          :name => String.t() | nil,
+          :score => number() | nil
         }
 
   field(:languageCode)

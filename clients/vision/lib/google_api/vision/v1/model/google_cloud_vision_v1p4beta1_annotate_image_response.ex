@@ -41,33 +41,35 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
 
   @type t :: %__MODULE__{
           :context =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext.t() | nil,
           :cropHintsAnnotation =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1CropHintsAnnotation.t(),
-          :error => GoogleApi.Vision.V1.Model.Status.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1CropHintsAnnotation.t() | nil,
+          :error => GoogleApi.Vision.V1.Model.Status.t() | nil,
           :faceAnnotations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation.t()) | nil,
           :fullTextAnnotation =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotation.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotation.t() | nil,
           :imagePropertiesAnnotation =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageProperties.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageProperties.t() | nil,
           :labelAnnotations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()) | nil,
           :landmarkAnnotations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()) | nil,
           :localizedObjectAnnotations =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation.t()
-            ),
+            )
+            | nil,
           :logoAnnotations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()) | nil,
           :productSearchResults =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ProductSearchResults.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ProductSearchResults.t() | nil,
           :safeSearchAnnotation =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotation.t(),
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotation.t() | nil,
           :textAnnotations =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
-          :webDetection => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetection.t()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()) | nil,
+          :webDetection =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetection.t() | nil
         }
 
   field(:context, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext)

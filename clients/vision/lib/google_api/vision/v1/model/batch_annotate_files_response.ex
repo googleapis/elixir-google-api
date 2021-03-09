@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateFilesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.Vision.V1.Model.AnnotateFileResponse.t())
+          :responses => list(GoogleApi.Vision.V1.Model.AnnotateFileResponse.t()) | nil
         }
 
   field(:responses, as: GoogleApi.Vision.V1.Model.AnnotateFileResponse, type: :list)

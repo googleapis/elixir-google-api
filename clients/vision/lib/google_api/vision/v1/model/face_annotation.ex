@@ -41,21 +41,21 @@ defmodule GoogleApi.Vision.V1.Model.FaceAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angerLikelihood => String.t(),
-          :blurredLikelihood => String.t(),
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :detectionConfidence => number(),
-          :fdBoundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :headwearLikelihood => String.t(),
-          :joyLikelihood => String.t(),
-          :landmarkingConfidence => number(),
-          :landmarks => list(GoogleApi.Vision.V1.Model.Landmark.t()),
-          :panAngle => number(),
-          :rollAngle => number(),
-          :sorrowLikelihood => String.t(),
-          :surpriseLikelihood => String.t(),
-          :tiltAngle => number(),
-          :underExposedLikelihood => String.t()
+          :angerLikelihood => String.t() | nil,
+          :blurredLikelihood => String.t() | nil,
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :detectionConfidence => number() | nil,
+          :fdBoundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :headwearLikelihood => String.t() | nil,
+          :joyLikelihood => String.t() | nil,
+          :landmarkingConfidence => number() | nil,
+          :landmarks => list(GoogleApi.Vision.V1.Model.Landmark.t()) | nil,
+          :panAngle => number() | nil,
+          :rollAngle => number() | nil,
+          :sorrowLikelihood => String.t() | nil,
+          :surpriseLikelihood => String.t() | nil,
+          :tiltAngle => number() | nil,
+          :underExposedLikelihood => String.t() | nil
         }
 
   field(:angerLikelihood)

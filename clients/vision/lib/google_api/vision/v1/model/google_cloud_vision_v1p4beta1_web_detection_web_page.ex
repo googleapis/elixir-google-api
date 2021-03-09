@@ -32,12 +32,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebPag
 
   @type t :: %__MODULE__{
           :fullMatchingImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t()),
-          :pageTitle => String.t(),
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t())
+            | nil,
+          :pageTitle => String.t() | nil,
           :partialMatchingImages =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t()),
-          :score => number(),
-          :url => String.t()
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t())
+            | nil,
+          :score => number() | nil,
+          :url => String.t() | nil
         }
 
   field(:fullMatchingImages,

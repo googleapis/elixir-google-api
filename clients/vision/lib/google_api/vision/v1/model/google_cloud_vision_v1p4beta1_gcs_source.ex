@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1GcsSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uri => String.t()
+          :uri => String.t() | nil
         }
 
   field(:uri)

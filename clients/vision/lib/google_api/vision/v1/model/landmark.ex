@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.Landmark do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.Vision.V1.Model.Position.t(),
-          :type => String.t()
+          :position => GoogleApi.Vision.V1.Model.Position.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:position, as: GoogleApi.Vision.V1.Model.Position)

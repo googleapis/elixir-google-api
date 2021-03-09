@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.CropHint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => number(),
-          :importanceFraction => number()
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :importanceFraction => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)

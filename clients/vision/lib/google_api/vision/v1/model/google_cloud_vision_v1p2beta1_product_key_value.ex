@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductKeyValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

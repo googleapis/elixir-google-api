@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateFileRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :features => list(GoogleApi.Vision.V1.Model.Feature.t()),
-          :imageContext => GoogleApi.Vision.V1.Model.ImageContext.t(),
-          :inputConfig => GoogleApi.Vision.V1.Model.InputConfig.t(),
-          :pages => list(integer())
+          :features => list(GoogleApi.Vision.V1.Model.Feature.t()) | nil,
+          :imageContext => GoogleApi.Vision.V1.Model.ImageContext.t() | nil,
+          :inputConfig => GoogleApi.Vision.V1.Model.InputConfig.t() | nil,
+          :pages => list(integer()) | nil
         }
 
   field(:features, as: GoogleApi.Vision.V1.Model.Feature, type: :list)

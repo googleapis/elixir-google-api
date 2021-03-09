@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateFilesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t(),
-          :requests => list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileRequest.t())
+          :parent => String.t() | nil,
+          :requests => list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileRequest.t()) | nil
         }
 
   field(:parent)

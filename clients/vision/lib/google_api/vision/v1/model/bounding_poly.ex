@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.BoundingPoly do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :normalizedVertices => list(GoogleApi.Vision.V1.Model.NormalizedVertex.t()),
-          :vertices => list(GoogleApi.Vision.V1.Model.Vertex.t())
+          :normalizedVertices => list(GoogleApi.Vision.V1.Model.NormalizedVertex.t()) | nil,
+          :vertices => list(GoogleApi.Vision.V1.Model.Vertex.t()) | nil
         }
 
   field(:normalizedVertices, as: GoogleApi.Vision.V1.Model.NormalizedVertex, type: :list)

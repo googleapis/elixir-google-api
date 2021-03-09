@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.WebDetectionParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeGeoResults => boolean()
+          :includeGeoResults => boolean() | nil
         }
 
   field(:includeGeoResults)

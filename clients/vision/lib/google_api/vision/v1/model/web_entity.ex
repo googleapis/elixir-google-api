@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.WebEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :entityId => String.t(),
-          :score => number()
+          :description => String.t() | nil,
+          :entityId => String.t() | nil,
+          :score => number() | nil
         }
 
   field(:description)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Vision.V1.Model.Block do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockType => String.t(),
-          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => number(),
-          :paragraphs => list(GoogleApi.Vision.V1.Model.Paragraph.t()),
-          :property => GoogleApi.Vision.V1.Model.TextProperty.t()
+          :blockType => String.t() | nil,
+          :boundingBox => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :paragraphs => list(GoogleApi.Vision.V1.Model.Paragraph.t()) | nil,
+          :property => GoogleApi.Vision.V1.Model.TextProperty.t() | nil
         }
 
   field(:blockType)

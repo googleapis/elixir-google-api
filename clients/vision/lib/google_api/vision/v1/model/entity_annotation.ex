@@ -35,15 +35,15 @@ defmodule GoogleApi.Vision.V1.Model.EntityAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => number(),
-          :description => String.t(),
-          :locale => String.t(),
-          :locations => list(GoogleApi.Vision.V1.Model.LocationInfo.t()),
-          :mid => String.t(),
-          :properties => list(GoogleApi.Vision.V1.Model.Property.t()),
-          :score => number(),
-          :topicality => number()
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :confidence => number() | nil,
+          :description => String.t() | nil,
+          :locale => String.t() | nil,
+          :locations => list(GoogleApi.Vision.V1.Model.LocationInfo.t()) | nil,
+          :mid => String.t() | nil,
+          :properties => list(GoogleApi.Vision.V1.Model.Property.t()) | nil,
+          :score => number() | nil,
+          :topicality => number() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)

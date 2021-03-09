@@ -54,6 +54,7 @@ defmodule GoogleApi.Vision.V1.Api.Files do
   @spec vision_files_annotate(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Vision.V1.Model.BatchAnnotateFilesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def vision_files_annotate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -110,7 +111,10 @@ defmodule GoogleApi.Vision.V1.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec vision_files_async_batch_annotate(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def vision_files_async_batch_annotate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

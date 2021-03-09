@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => String.t(),
-          :product => GoogleApi.Vision.V1.Model.Product.t(),
-          :score => number()
+          :image => String.t() | nil,
+          :product => GoogleApi.Vision.V1.Model.Product.t() | nil,
+          :score => number() | nil
         }
 
   field(:image)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1DominantColorsAnno
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colors => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ColorInfo.t())
+          :colors => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ColorInfo.t()) | nil
         }
 
   field(:colors, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ColorInfo, type: :list)

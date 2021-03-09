@@ -31,6 +31,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AsyncBatchAnnotate
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse.t()
             )
+            | nil
         }
 
   field(:responses,

@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.ImportProductSetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :referenceImages => list(GoogleApi.Vision.V1.Model.ReferenceImage.t()),
-          :statuses => list(GoogleApi.Vision.V1.Model.Status.t())
+          :referenceImages => list(GoogleApi.Vision.V1.Model.ReferenceImage.t()) | nil,
+          :statuses => list(GoogleApi.Vision.V1.Model.Status.t()) | nil
         }
 
   field(:referenceImages, as: GoogleApi.Vision.V1.Model.ReferenceImage, type: :list)

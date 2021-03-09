@@ -29,15 +29,17 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexTime => DateTime.t(),
+          :indexTime => DateTime.t() | nil,
           :productGroupedResults =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult.t()
-            ),
+            )
+            | nil,
           :results =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsResult.t()
             )
+            | nil
         }
 
   field(:indexTime, as: DateTime)

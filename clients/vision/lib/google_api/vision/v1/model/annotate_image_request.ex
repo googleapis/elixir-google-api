@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :features => list(GoogleApi.Vision.V1.Model.Feature.t()),
-          :image => GoogleApi.Vision.V1.Model.Image.t(),
-          :imageContext => GoogleApi.Vision.V1.Model.ImageContext.t()
+          :features => list(GoogleApi.Vision.V1.Model.Feature.t()) | nil,
+          :image => GoogleApi.Vision.V1.Model.Image.t() | nil,
+          :imageContext => GoogleApi.Vision.V1.Model.ImageContext.t() | nil
         }
 
   field(:features, as: GoogleApi.Vision.V1.Model.Feature, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Vision.V1.Model.Page do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blocks => list(GoogleApi.Vision.V1.Model.Block.t()),
-          :confidence => number(),
-          :height => integer(),
-          :property => GoogleApi.Vision.V1.Model.TextProperty.t(),
-          :width => integer()
+          :blocks => list(GoogleApi.Vision.V1.Model.Block.t()) | nil,
+          :confidence => number() | nil,
+          :height => integer() | nil,
+          :property => GoogleApi.Vision.V1.Model.TextProperty.t() | nil,
+          :width => integer() | nil
         }
 
   field(:blocks, as: GoogleApi.Vision.V1.Model.Block, type: :list)

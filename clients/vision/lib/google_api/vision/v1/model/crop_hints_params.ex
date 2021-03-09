@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.CropHintsParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspectRatios => list(number())
+          :aspectRatios => list(number()) | nil
         }
 
   field(:aspectRatios, type: :list)

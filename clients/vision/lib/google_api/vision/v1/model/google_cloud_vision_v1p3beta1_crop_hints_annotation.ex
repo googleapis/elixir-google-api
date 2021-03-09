@@ -27,7 +27,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1CropHintsAnnotatio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cropHints => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1CropHint.t())
+          :cropHints =>
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1CropHint.t()) | nil
         }
 
   field(:cropHints, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1CropHint, type: :list)

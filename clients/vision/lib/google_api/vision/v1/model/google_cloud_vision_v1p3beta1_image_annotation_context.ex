@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ImageAnnotationCon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageNumber => integer(),
-          :uri => String.t()
+          :pageNumber => integer() | nil,
+          :uri => String.t() | nil
         }
 
   field(:pageNumber)

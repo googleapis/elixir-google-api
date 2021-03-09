@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1TextAnnotationDete
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :languageCode => String.t()
+          :confidence => number() | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:confidence)

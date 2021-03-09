@@ -30,10 +30,10 @@ defmodule GoogleApi.Vision.V1.Model.ProductSearchParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :filter => String.t(),
-          :productCategories => list(String.t()),
-          :productSet => String.t()
+          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t() | nil,
+          :filter => String.t() | nil,
+          :productCategories => list(String.t()) | nil,
+          :productSet => String.t() | nil
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)

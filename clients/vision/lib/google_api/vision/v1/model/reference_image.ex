@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.ReferenceImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPolys => list(GoogleApi.Vision.V1.Model.BoundingPoly.t()),
-          :name => String.t(),
-          :uri => String.t()
+          :boundingPolys => list(GoogleApi.Vision.V1.Model.BoundingPoly.t()) | nil,
+          :name => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:boundingPolys, as: GoogleApi.Vision.V1.Model.BoundingPoly, type: :list)

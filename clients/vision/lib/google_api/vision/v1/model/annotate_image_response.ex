@@ -40,21 +40,21 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => GoogleApi.Vision.V1.Model.ImageAnnotationContext.t(),
-          :cropHintsAnnotation => GoogleApi.Vision.V1.Model.CropHintsAnnotation.t(),
-          :error => GoogleApi.Vision.V1.Model.Status.t(),
-          :faceAnnotations => list(GoogleApi.Vision.V1.Model.FaceAnnotation.t()),
-          :fullTextAnnotation => GoogleApi.Vision.V1.Model.TextAnnotation.t(),
-          :imagePropertiesAnnotation => GoogleApi.Vision.V1.Model.ImageProperties.t(),
-          :labelAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
-          :landmarkAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
+          :context => GoogleApi.Vision.V1.Model.ImageAnnotationContext.t() | nil,
+          :cropHintsAnnotation => GoogleApi.Vision.V1.Model.CropHintsAnnotation.t() | nil,
+          :error => GoogleApi.Vision.V1.Model.Status.t() | nil,
+          :faceAnnotations => list(GoogleApi.Vision.V1.Model.FaceAnnotation.t()) | nil,
+          :fullTextAnnotation => GoogleApi.Vision.V1.Model.TextAnnotation.t() | nil,
+          :imagePropertiesAnnotation => GoogleApi.Vision.V1.Model.ImageProperties.t() | nil,
+          :labelAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()) | nil,
+          :landmarkAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()) | nil,
           :localizedObjectAnnotations =>
-            list(GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation.t()),
-          :logoAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
-          :productSearchResults => GoogleApi.Vision.V1.Model.ProductSearchResults.t(),
-          :safeSearchAnnotation => GoogleApi.Vision.V1.Model.SafeSearchAnnotation.t(),
-          :textAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()),
-          :webDetection => GoogleApi.Vision.V1.Model.WebDetection.t()
+            list(GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation.t()) | nil,
+          :logoAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()) | nil,
+          :productSearchResults => GoogleApi.Vision.V1.Model.ProductSearchResults.t() | nil,
+          :safeSearchAnnotation => GoogleApi.Vision.V1.Model.SafeSearchAnnotation.t() | nil,
+          :textAnnotations => list(GoogleApi.Vision.V1.Model.EntityAnnotation.t()) | nil,
+          :webDetection => GoogleApi.Vision.V1.Model.WebDetection.t() | nil
         }
 
   field(:context, as: GoogleApi.Vision.V1.Model.ImageAnnotationContext)

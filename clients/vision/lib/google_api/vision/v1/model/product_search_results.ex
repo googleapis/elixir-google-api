@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.ProductSearchResults do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexTime => DateTime.t(),
-          :productGroupedResults => list(GoogleApi.Vision.V1.Model.GroupedResult.t()),
-          :results => list(GoogleApi.Vision.V1.Model.Result.t())
+          :indexTime => DateTime.t() | nil,
+          :productGroupedResults => list(GoogleApi.Vision.V1.Model.GroupedResult.t()) | nil,
+          :results => list(GoogleApi.Vision.V1.Model.Result.t()) | nil
         }
 
   field(:indexTime, as: DateTime)

@@ -30,11 +30,13 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Paragraph do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingBox => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t(),
-          :confidence => number(),
+          :boundingBox =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t() | nil,
+          :confidence => number() | nil,
           :property =>
-            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotationTextProperty.t(),
-          :words => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Word.t())
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotationTextProperty.t()
+            | nil,
+          :words => list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Word.t()) | nil
         }
 
   field(:boundingBox, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.ListProductSetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :productSets => list(GoogleApi.Vision.V1.Model.ProductSet.t())
+          :nextPageToken => String.t() | nil,
+          :productSets => list(GoogleApi.Vision.V1.Model.ProductSet.t()) | nil
         }
 
   field(:nextPageToken)

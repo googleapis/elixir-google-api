@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.ImportProductSetsGcsSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :csvFileUri => String.t()
+          :csvFileUri => String.t() | nil
         }
 
   field(:csvFileUri)

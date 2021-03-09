@@ -27,7 +27,7 @@ defmodule GoogleApi.Vision.V1.Model.ImportProductSetsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputConfig => GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig.t()
+          :inputConfig => GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig.t() | nil
         }
 
   field(:inputConfig, as: GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig)

@@ -31,12 +31,12 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :productCategory => String.t(),
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :productCategory => String.t() | nil,
           :productLabels =>
-            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductKeyValue.t())
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductKeyValue.t()) | nil
         }
 
   field(:description)

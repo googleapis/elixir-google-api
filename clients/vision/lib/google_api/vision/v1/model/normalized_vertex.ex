@@ -28,8 +28,8 @@ defmodule GoogleApi.Vision.V1.Model.NormalizedVertex do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => number(),
-          :y => number()
+          :x => number() | nil,
+          :y => number() | nil
         }
 
   field(:x)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ColorInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Vision.V1.Model.Color.t(),
-          :pixelFraction => number(),
-          :score => number()
+          :color => GoogleApi.Vision.V1.Model.Color.t() | nil,
+          :pixelFraction => number() | nil,
+          :score => number() | nil
         }
 
   field(:color, as: GoogleApi.Vision.V1.Model.Color)

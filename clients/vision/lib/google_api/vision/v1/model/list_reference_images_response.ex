@@ -29,9 +29,9 @@ defmodule GoogleApi.Vision.V1.Model.ListReferenceImagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :pageSize => integer(),
-          :referenceImages => list(GoogleApi.Vision.V1.Model.ReferenceImage.t())
+          :nextPageToken => String.t() | nil,
+          :pageSize => integer() | nil,
+          :referenceImages => list(GoogleApi.Vision.V1.Model.ReferenceImage.t()) | nil
         }
 
   field(:nextPageToken)

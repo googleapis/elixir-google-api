@@ -29,6 +29,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BatchAnnotateFiles
   @type t :: %__MODULE__{
           :responses =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateFileResponse.t())
+            | nil
         }
 
   field(:responses,
