@@ -28,8 +28,8 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :title => String.t()
+          :description => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

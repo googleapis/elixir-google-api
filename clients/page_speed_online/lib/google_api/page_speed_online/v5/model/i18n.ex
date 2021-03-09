@@ -28,7 +28,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.I18n do
 
   @type t :: %__MODULE__{
           :rendererFormattedStrings =>
-            GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings.t()
+            GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings.t() | nil
         }
 
   field(:rendererFormattedStrings, as: GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings)

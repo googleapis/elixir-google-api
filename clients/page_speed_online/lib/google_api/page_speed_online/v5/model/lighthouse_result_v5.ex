@@ -41,25 +41,28 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audits => %{
-            optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5.t()
-          },
-          :categories => GoogleApi.PageSpeedOnline.V5.Model.Categories.t(),
-          :categoryGroups => %{
-            optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5.t()
-          },
-          :configSettings => GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings.t(),
-          :environment => GoogleApi.PageSpeedOnline.V5.Model.Environment.t(),
-          :fetchTime => String.t(),
-          :finalUrl => String.t(),
-          :i18n => GoogleApi.PageSpeedOnline.V5.Model.I18n.t(),
-          :lighthouseVersion => String.t(),
-          :requestedUrl => String.t(),
-          :runWarnings => list(any()),
-          :runtimeError => GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t(),
-          :stackPacks => list(GoogleApi.PageSpeedOnline.V5.Model.StackPack.t()),
-          :timing => GoogleApi.PageSpeedOnline.V5.Model.Timing.t(),
-          :userAgent => String.t()
+          :audits =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5.t()
+            }
+            | nil,
+          :categories => GoogleApi.PageSpeedOnline.V5.Model.Categories.t() | nil,
+          :categoryGroups =>
+            %{optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5.t()}
+            | nil,
+          :configSettings => GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings.t() | nil,
+          :environment => GoogleApi.PageSpeedOnline.V5.Model.Environment.t() | nil,
+          :fetchTime => String.t() | nil,
+          :finalUrl => String.t() | nil,
+          :i18n => GoogleApi.PageSpeedOnline.V5.Model.I18n.t() | nil,
+          :lighthouseVersion => String.t() | nil,
+          :requestedUrl => String.t() | nil,
+          :runWarnings => list(any()) | nil,
+          :runtimeError => GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t() | nil,
+          :stackPacks => list(GoogleApi.PageSpeedOnline.V5.Model.StackPack.t()) | nil,
+          :timing => GoogleApi.PageSpeedOnline.V5.Model.Timing.t() | nil,
+          :userAgent => String.t() | nil
         }
 
   field(:audits, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5, type: :map)

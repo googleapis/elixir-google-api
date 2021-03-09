@@ -37,17 +37,17 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :details => map(),
-          :displayValue => String.t(),
-          :errorMessage => String.t(),
-          :explanation => String.t(),
-          :id => String.t(),
-          :numericValue => float(),
-          :score => any(),
-          :scoreDisplayMode => String.t(),
-          :title => String.t(),
-          :warnings => any()
+          :description => String.t() | nil,
+          :details => map() | nil,
+          :displayValue => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :explanation => String.t() | nil,
+          :id => String.t() | nil,
+          :numericValue => float() | nil,
+          :score => any() | nil,
+          :scoreDisplayMode => String.t() | nil,
+          :title => String.t() | nil,
+          :warnings => any() | nil
         }
 
   field(:description)

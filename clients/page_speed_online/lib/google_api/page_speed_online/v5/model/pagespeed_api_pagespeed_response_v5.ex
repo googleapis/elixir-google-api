@@ -34,16 +34,16 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisUTCTimestamp => String.t(),
-          :captchaResult => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lighthouseResult => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5.t(),
+          :analysisUTCTimestamp => String.t() | nil,
+          :captchaResult => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lighthouseResult => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5.t() | nil,
           :loadingExperience =>
-            GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t(),
+            GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t() | nil,
           :originLoadingExperience =>
-            GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t(),
-          :version => GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion.t()
+            GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t() | nil,
+          :version => GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion.t() | nil
         }
 
   field(:analysisUTCTimestamp)

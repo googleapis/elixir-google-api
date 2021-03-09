@@ -31,11 +31,11 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Categories do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessibility => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t(),
-          :"best-practices" => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t(),
-          :performance => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t(),
-          :pwa => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t(),
-          :seo => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t()
+          :accessibility => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t() | nil,
+          :"best-practices" => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t() | nil,
+          :performance => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t() | nil,
+          :pwa => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t() | nil,
+          :seo => GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t() | nil
         }
 
   field(:accessibility, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5)

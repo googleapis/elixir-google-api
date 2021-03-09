@@ -31,13 +31,13 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :initial_url => String.t(),
-          :metrics => %{
-            optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t()
-          },
-          :origin_fallback => boolean(),
-          :overall_category => String.t()
+          :id => String.t() | nil,
+          :initial_url => String.t() | nil,
+          :metrics =>
+            %{optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t()}
+            | nil,
+          :origin_fallback => boolean() | nil,
+          :overall_category => String.t() | nil
         }
 
   field(:id)

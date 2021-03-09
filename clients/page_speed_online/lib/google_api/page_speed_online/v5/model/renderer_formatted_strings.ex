@@ -42,22 +42,22 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditGroupExpandTooltip => String.t(),
-          :crcInitialNavigation => String.t(),
-          :crcLongestDurationLabel => String.t(),
-          :errorLabel => String.t(),
-          :errorMissingAuditInfo => String.t(),
-          :labDataTitle => String.t(),
-          :lsPerformanceCategoryDescription => String.t(),
-          :manualAuditsGroupTitle => String.t(),
-          :notApplicableAuditsGroupTitle => String.t(),
-          :opportunityResourceColumnLabel => String.t(),
-          :opportunitySavingsColumnLabel => String.t(),
-          :passedAuditsGroupTitle => String.t(),
-          :scorescaleLabel => String.t(),
-          :toplevelWarningsMessage => String.t(),
-          :varianceDisclaimer => String.t(),
-          :warningHeader => String.t()
+          :auditGroupExpandTooltip => String.t() | nil,
+          :crcInitialNavigation => String.t() | nil,
+          :crcLongestDurationLabel => String.t() | nil,
+          :errorLabel => String.t() | nil,
+          :errorMissingAuditInfo => String.t() | nil,
+          :labDataTitle => String.t() | nil,
+          :lsPerformanceCategoryDescription => String.t() | nil,
+          :manualAuditsGroupTitle => String.t() | nil,
+          :notApplicableAuditsGroupTitle => String.t() | nil,
+          :opportunityResourceColumnLabel => String.t() | nil,
+          :opportunitySavingsColumnLabel => String.t() | nil,
+          :passedAuditsGroupTitle => String.t() | nil,
+          :scorescaleLabel => String.t() | nil,
+          :toplevelWarningsMessage => String.t() | nil,
+          :varianceDisclaimer => String.t() | nil,
+          :warningHeader => String.t() | nil
         }
 
   field(:auditGroupExpandTooltip)

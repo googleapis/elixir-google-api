@@ -28,8 +28,8 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :major => String.t(),
-          :minor => String.t()
+          :major => String.t() | nil,
+          :minor => String.t() | nil
         }
 
   field(:major)
