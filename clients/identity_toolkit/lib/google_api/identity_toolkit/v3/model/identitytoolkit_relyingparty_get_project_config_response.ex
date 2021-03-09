@@ -38,18 +38,19 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProje
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowPasswordUser => boolean(),
-          :apiKey => String.t(),
-          :authorizedDomains => list(String.t()),
-          :changeEmailTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t(),
-          :dynamicLinksDomain => String.t(),
-          :enableAnonymousUser => boolean(),
-          :idpConfig => list(GoogleApi.IdentityToolkit.V3.Model.IdpConfig.t()),
-          :legacyResetPasswordTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t(),
-          :projectId => String.t(),
-          :resetPasswordTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t(),
-          :useEmailSending => boolean(),
-          :verifyEmailTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t()
+          :allowPasswordUser => boolean() | nil,
+          :apiKey => String.t() | nil,
+          :authorizedDomains => list(String.t()) | nil,
+          :changeEmailTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t() | nil,
+          :dynamicLinksDomain => String.t() | nil,
+          :enableAnonymousUser => boolean() | nil,
+          :idpConfig => list(GoogleApi.IdentityToolkit.V3.Model.IdpConfig.t()) | nil,
+          :legacyResetPasswordTemplate =>
+            GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t() | nil,
+          :projectId => String.t() | nil,
+          :resetPasswordTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t() | nil,
+          :useEmailSending => boolean() | nil,
+          :verifyEmailTemplate => GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t() | nil
         }
 
   field(:allowPasswordUser)

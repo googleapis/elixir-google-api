@@ -27,7 +27,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVeri
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sessionInfo => String.t()
+          :sessionInfo => String.t() | nil
         }
 
   field(:sessionInfo)

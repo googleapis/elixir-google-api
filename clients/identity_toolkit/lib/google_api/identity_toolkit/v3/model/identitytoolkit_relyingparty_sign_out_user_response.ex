@@ -27,7 +27,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutU
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :localId => String.t()
+          :localId => String.t() | nil
         }
 
   field(:localId)

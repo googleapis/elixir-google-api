@@ -31,11 +31,11 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegatedProjectNumber => String.t(),
-          :email => list(String.t()),
-          :idToken => String.t(),
-          :localId => list(String.t()),
-          :phoneNumber => list(String.t())
+          :delegatedProjectNumber => String.t() | nil,
+          :email => list(String.t()) | nil,
+          :idToken => String.t() | nil,
+          :localId => list(String.t()) | nil,
+          :phoneNumber => list(String.t()) | nil
         }
 
   field(:delegatedProjectNumber)

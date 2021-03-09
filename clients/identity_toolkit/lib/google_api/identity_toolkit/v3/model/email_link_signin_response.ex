@@ -33,13 +33,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :isNewUser => boolean(),
-          :kind => String.t(),
-          :localId => String.t(),
-          :refreshToken => String.t()
+          :email => String.t() | nil,
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :isNewUser => boolean() | nil,
+          :kind => String.t() | nil,
+          :localId => String.t() | nil,
+          :refreshToken => String.t() | nil
         }
 
   field(:email)

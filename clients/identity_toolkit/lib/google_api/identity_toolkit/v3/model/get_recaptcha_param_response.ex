@@ -29,9 +29,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :recaptchaSiteKey => String.t(),
-          :recaptchaStoken => String.t()
+          :kind => String.t() | nil,
+          :recaptchaSiteKey => String.t() | nil,
+          :recaptchaStoken => String.t() | nil
         }
 
   field(:kind)

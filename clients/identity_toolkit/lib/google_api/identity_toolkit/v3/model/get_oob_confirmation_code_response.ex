@@ -29,9 +29,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :kind => String.t(),
-          :oobCode => String.t()
+          :email => String.t() | nil,
+          :kind => String.t() | nil,
+          :oobCode => String.t() | nil
         }
 
   field(:email)

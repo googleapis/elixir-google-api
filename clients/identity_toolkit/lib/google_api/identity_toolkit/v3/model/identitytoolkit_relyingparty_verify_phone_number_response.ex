@@ -36,16 +36,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiresIn => String.t(),
-          :idToken => String.t(),
-          :isNewUser => boolean(),
-          :localId => String.t(),
-          :phoneNumber => String.t(),
-          :refreshToken => String.t(),
-          :temporaryProof => String.t(),
-          :temporaryProofExpiresIn => String.t(),
-          :verificationProof => String.t(),
-          :verificationProofExpiresIn => String.t()
+          :expiresIn => String.t() | nil,
+          :idToken => String.t() | nil,
+          :isNewUser => boolean() | nil,
+          :localId => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :refreshToken => String.t() | nil,
+          :temporaryProof => String.t() | nil,
+          :temporaryProofExpiresIn => String.t() | nil,
+          :verificationProof => String.t() | nil,
+          :verificationProofExpiresIn => String.t() | nil
         }
 
   field(:expiresIn)

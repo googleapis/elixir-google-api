@@ -40,20 +40,20 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :captchaChallenge => String.t(),
-          :captchaResponse => String.t(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :email => String.t(),
-          :emailVerified => boolean(),
-          :idToken => String.t(),
-          :instanceId => String.t(),
-          :localId => String.t(),
-          :password => String.t(),
-          :phoneNumber => String.t(),
-          :photoUrl => String.t(),
-          :tenantId => String.t(),
-          :tenantProjectNumber => String.t()
+          :captchaChallenge => String.t() | nil,
+          :captchaResponse => String.t() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :emailVerified => boolean() | nil,
+          :idToken => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :localId => String.t() | nil,
+          :password => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :photoUrl => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :tenantProjectNumber => String.t() | nil
         }
 
   field(:captchaChallenge)

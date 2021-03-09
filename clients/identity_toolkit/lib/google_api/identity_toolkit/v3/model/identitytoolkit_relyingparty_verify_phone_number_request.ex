@@ -33,13 +33,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :idToken => String.t(),
-          :operation => String.t(),
-          :phoneNumber => String.t(),
-          :sessionInfo => String.t(),
-          :temporaryProof => String.t(),
-          :verificationProof => String.t()
+          :code => String.t() | nil,
+          :idToken => String.t() | nil,
+          :operation => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :sessionInfo => String.t() | nil,
+          :temporaryProof => String.t() | nil,
+          :verificationProof => String.t() | nil
         }
 
   field(:code)

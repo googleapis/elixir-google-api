@@ -32,12 +32,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.EmailTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :format => String.t(),
-          :from => String.t(),
-          :fromDisplayName => String.t(),
-          :replyTo => String.t(),
-          :subject => String.t()
+          :body => String.t() | nil,
+          :format => String.t() | nil,
+          :from => String.t() | nil,
+          :fromDisplayName => String.t() | nil,
+          :replyTo => String.t() | nil,
+          :subject => String.t() | nil
         }
 
   field(:body)

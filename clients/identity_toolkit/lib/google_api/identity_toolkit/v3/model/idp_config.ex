@@ -32,12 +32,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdpConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :enabled => boolean(),
-          :experimentPercent => integer(),
-          :provider => String.t(),
-          :secret => String.t(),
-          :whitelistedAudiences => list(String.t())
+          :clientId => String.t() | nil,
+          :enabled => boolean() | nil,
+          :experimentPercent => integer() | nil,
+          :provider => String.t() | nil,
+          :secret => String.t() | nil,
+          :whitelistedAudiences => list(String.t()) | nil
         }
 
   field(:clientId)

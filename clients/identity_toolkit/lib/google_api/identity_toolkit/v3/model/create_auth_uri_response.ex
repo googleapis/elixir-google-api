@@ -35,15 +35,15 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allProviders => list(String.t()),
-          :authUri => String.t(),
-          :captchaRequired => boolean(),
-          :forExistingProvider => boolean(),
-          :kind => String.t(),
-          :providerId => String.t(),
-          :registered => boolean(),
-          :sessionId => String.t(),
-          :signinMethods => list(String.t())
+          :allProviders => list(String.t()) | nil,
+          :authUri => String.t() | nil,
+          :captchaRequired => boolean() | nil,
+          :forExistingProvider => boolean() | nil,
+          :kind => String.t() | nil,
+          :providerId => String.t() | nil,
+          :registered => boolean() | nil,
+          :sessionId => String.t() | nil,
+          :signinMethods => list(String.t()) | nil
         }
 
   field(:allProviders, type: :list)

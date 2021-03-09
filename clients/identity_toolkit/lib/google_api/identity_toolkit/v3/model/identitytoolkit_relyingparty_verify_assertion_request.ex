@@ -39,19 +39,19 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAs
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoCreate => boolean(),
-          :delegatedProjectNumber => String.t(),
-          :idToken => String.t(),
-          :instanceId => String.t(),
-          :pendingIdToken => String.t(),
-          :postBody => String.t(),
-          :requestUri => String.t(),
-          :returnIdpCredential => boolean(),
-          :returnRefreshToken => boolean(),
-          :returnSecureToken => boolean(),
-          :sessionId => String.t(),
-          :tenantId => String.t(),
-          :tenantProjectNumber => String.t()
+          :autoCreate => boolean() | nil,
+          :delegatedProjectNumber => String.t() | nil,
+          :idToken => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :pendingIdToken => String.t() | nil,
+          :postBody => String.t() | nil,
+          :requestUri => String.t() | nil,
+          :returnIdpCredential => boolean() | nil,
+          :returnRefreshToken => boolean() | nil,
+          :returnSecureToken => boolean() | nil,
+          :sessionId => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :tenantProjectNumber => String.t() | nil
         }
 
   field(:autoCreate)

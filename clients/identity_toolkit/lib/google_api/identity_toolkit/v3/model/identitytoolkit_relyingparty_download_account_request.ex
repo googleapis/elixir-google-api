@@ -30,10 +30,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownload
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegatedProjectNumber => String.t(),
-          :maxResults => integer(),
-          :nextPageToken => String.t(),
-          :targetProjectId => String.t()
+          :delegatedProjectNumber => String.t() | nil,
+          :maxResults => integer() | nil,
+          :nextPageToken => String.t() | nil,
+          :targetProjectId => String.t() | nil
         }
 
   field(:delegatedProjectNumber)

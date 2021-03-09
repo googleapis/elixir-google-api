@@ -28,8 +28,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :message => String.t()
+          :index => integer() | nil,
+          :message => String.t() | nil
         }
 
   field(:index)

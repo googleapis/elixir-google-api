@@ -34,14 +34,14 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t(),
-          :federatedId => String.t(),
-          :phoneNumber => String.t(),
-          :photoUrl => String.t(),
-          :providerId => String.t(),
-          :rawId => String.t(),
-          :screenName => String.t()
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :federatedId => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :photoUrl => String.t() | nil,
+          :providerId => String.t() | nil,
+          :rawId => String.t() | nil,
+          :screenName => String.t() | nil
         }
 
   field(:displayName)

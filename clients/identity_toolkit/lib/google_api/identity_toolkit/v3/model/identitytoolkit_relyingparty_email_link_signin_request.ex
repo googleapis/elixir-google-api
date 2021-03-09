@@ -29,9 +29,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLin
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :idToken => String.t(),
-          :oobCode => String.t()
+          :email => String.t() | nil,
+          :idToken => String.t() | nil,
+          :oobCode => String.t() | nil
         }
 
   field(:email)
