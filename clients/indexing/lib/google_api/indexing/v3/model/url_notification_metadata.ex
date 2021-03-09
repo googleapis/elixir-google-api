@@ -29,9 +29,9 @@ defmodule GoogleApi.Indexing.V3.Model.UrlNotificationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latestRemove => GoogleApi.Indexing.V3.Model.UrlNotification.t(),
-          :latestUpdate => GoogleApi.Indexing.V3.Model.UrlNotification.t(),
-          :url => String.t()
+          :latestRemove => GoogleApi.Indexing.V3.Model.UrlNotification.t() | nil,
+          :latestUpdate => GoogleApi.Indexing.V3.Model.UrlNotification.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:latestRemove, as: GoogleApi.Indexing.V3.Model.UrlNotification)

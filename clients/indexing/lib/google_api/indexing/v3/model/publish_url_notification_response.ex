@@ -27,7 +27,8 @@ defmodule GoogleApi.Indexing.V3.Model.PublishUrlNotificationResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :urlNotificationMetadata => GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t()
+          :urlNotificationMetadata =>
+            GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t() | nil
         }
 
   field(:urlNotificationMetadata, as: GoogleApi.Indexing.V3.Model.UrlNotificationMetadata)
