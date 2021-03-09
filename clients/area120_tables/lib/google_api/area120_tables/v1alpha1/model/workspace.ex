@@ -31,11 +31,11 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Workspace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t()),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

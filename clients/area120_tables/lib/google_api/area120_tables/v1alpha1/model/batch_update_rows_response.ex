@@ -27,7 +27,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.BatchUpdateRowsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rows => list(GoogleApi.Area120Tables.V1alpha1.Model.Row.t())
+          :rows => list(GoogleApi.Area120Tables.V1alpha1.Model.Row.t()) | nil
         }
 
   field(:rows, as: GoogleApi.Area120Tables.V1alpha1.Model.Row, type: :list)

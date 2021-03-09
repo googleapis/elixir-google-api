@@ -31,11 +31,11 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription.t()),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :columns => list(GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:columns, as: GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription, type: :list)

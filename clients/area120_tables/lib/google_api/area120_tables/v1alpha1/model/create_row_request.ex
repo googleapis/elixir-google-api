@@ -29,9 +29,9 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.CreateRowRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t(),
-          :row => GoogleApi.Area120Tables.V1alpha1.Model.Row.t(),
-          :view => String.t()
+          :parent => String.t() | nil,
+          :row => GoogleApi.Area120Tables.V1alpha1.Model.Row.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:parent)

@@ -32,12 +32,13 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataType => String.t(),
-          :id => String.t(),
-          :labels => list(GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem.t()),
-          :lookupDetails => GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t(),
-          :name => String.t(),
-          :relationshipDetails => GoogleApi.Area120Tables.V1alpha1.Model.RelationshipDetails.t()
+          :dataType => String.t() | nil,
+          :id => String.t() | nil,
+          :labels => list(GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem.t()) | nil,
+          :lookupDetails => GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t() | nil,
+          :name => String.t() | nil,
+          :relationshipDetails =>
+            GoogleApi.Area120Tables.V1alpha1.Model.RelationshipDetails.t() | nil
         }
 
   field(:dataType)
