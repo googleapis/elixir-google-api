@@ -55,6 +55,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   @spec translate_projects_detect_language(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V3.Model.DetectLanguageResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_detect_language(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -122,6 +123,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.SupportedLanguages.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_get_supported_languages(
         connection,
@@ -189,6 +191,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   @spec translate_projects_translate_text(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V3.Model.TranslateTextResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_translate_text(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -255,6 +258,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_batch_translate_text(
         connection,
@@ -326,6 +330,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.DetectLanguageResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_detect_language(
         connection,
@@ -391,6 +396,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   @spec translate_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V3.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -457,6 +463,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.SupportedLanguages.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_get_supported_languages(
         connection,
@@ -526,6 +533,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   @spec translate_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V3.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -594,6 +602,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.TranslateTextResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_translate_text(
         connection,
@@ -665,6 +674,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_glossaries_create(
         connection,
@@ -735,6 +745,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_glossaries_delete(
         connection,
@@ -804,6 +815,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Glossary.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_glossaries_get(
         connection,
@@ -876,6 +888,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.ListGlossariesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_glossaries_list(
         connection,
@@ -947,7 +960,10 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Translate.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Translate.V3.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def translate_projects_locations_operations_cancel(
         connection,
         name,
@@ -1015,7 +1031,10 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Translate.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Translate.V3.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def translate_projects_locations_operations_delete(
         connection,
         name,
@@ -1084,6 +1103,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_operations_get(
         connection,
@@ -1156,6 +1176,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_operations_list(
         connection,
@@ -1229,6 +1250,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Translate.V3.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def translate_projects_locations_operations_wait(
         connection,

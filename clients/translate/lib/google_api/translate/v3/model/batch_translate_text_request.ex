@@ -33,15 +33,17 @@ defmodule GoogleApi.Translate.V3.Model.BatchTranslateTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :glossaries => %{
-            optional(String.t()) => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t()
-          },
-          :inputConfigs => list(GoogleApi.Translate.V3.Model.InputConfig.t()),
-          :labels => map(),
-          :models => map(),
-          :outputConfig => GoogleApi.Translate.V3.Model.OutputConfig.t(),
-          :sourceLanguageCode => String.t(),
-          :targetLanguageCodes => list(String.t())
+          :glossaries =>
+            %{
+              optional(String.t()) => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t()
+            }
+            | nil,
+          :inputConfigs => list(GoogleApi.Translate.V3.Model.InputConfig.t()) | nil,
+          :labels => map() | nil,
+          :models => map() | nil,
+          :outputConfig => GoogleApi.Translate.V3.Model.OutputConfig.t() | nil,
+          :sourceLanguageCode => String.t() | nil,
+          :targetLanguageCodes => list(String.t()) | nil
         }
 
   field(:glossaries, as: GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig, type: :map)

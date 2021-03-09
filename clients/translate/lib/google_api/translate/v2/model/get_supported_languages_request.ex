@@ -28,7 +28,7 @@ defmodule GoogleApi.Translate.V2.Model.GetSupportedLanguagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :target => String.t()
+          :target => String.t() | nil
         }
 
   field(:target)

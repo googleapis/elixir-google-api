@@ -28,8 +28,8 @@ defmodule GoogleApi.Translate.V3.Model.InputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => GoogleApi.Translate.V3.Model.GcsSource.t(),
-          :mimeType => String.t()
+          :gcsSource => GoogleApi.Translate.V3.Model.GcsSource.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.Translate.V3.Model.GcsSource)

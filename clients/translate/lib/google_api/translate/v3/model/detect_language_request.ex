@@ -30,10 +30,10 @@ defmodule GoogleApi.Translate.V3.Model.DetectLanguageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :labels => map(),
-          :mimeType => String.t(),
-          :model => String.t()
+          :content => String.t() | nil,
+          :labels => map() | nil,
+          :mimeType => String.t() | nil,
+          :model => String.t() | nil
         }
 
   field(:content)

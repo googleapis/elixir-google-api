@@ -28,8 +28,8 @@ defmodule GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :glossary => String.t(),
-          :ignoreCase => boolean()
+          :glossary => String.t() | nil,
+          :ignoreCase => boolean() | nil
         }
 
   field(:glossary)

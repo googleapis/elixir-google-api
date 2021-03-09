@@ -33,13 +33,13 @@ defmodule GoogleApi.Translate.V3.Model.Glossary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :entryCount => integer(),
-          :inputConfig => GoogleApi.Translate.V3.Model.GlossaryInputConfig.t(),
-          :languageCodesSet => GoogleApi.Translate.V3.Model.LanguageCodesSet.t(),
-          :languagePair => GoogleApi.Translate.V3.Model.LanguageCodePair.t(),
-          :name => String.t(),
-          :submitTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :entryCount => integer() | nil,
+          :inputConfig => GoogleApi.Translate.V3.Model.GlossaryInputConfig.t() | nil,
+          :languageCodesSet => GoogleApi.Translate.V3.Model.LanguageCodesSet.t() | nil,
+          :languagePair => GoogleApi.Translate.V3.Model.LanguageCodePair.t() | nil,
+          :name => String.t() | nil,
+          :submitTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Translate.V3.Model.LanguageCodePair do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceLanguageCode => String.t(),
-          :targetLanguageCode => String.t()
+          :sourceLanguageCode => String.t() | nil,
+          :targetLanguageCode => String.t() | nil
         }
 
   field(:sourceLanguageCode)

@@ -28,7 +28,7 @@ defmodule GoogleApi.Translate.V2.Model.DetectLanguageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :q => list(String.t())
+          :q => list(String.t()) | nil
         }
 
   field(:q, type: :list)

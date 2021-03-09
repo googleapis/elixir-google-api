@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.SupportedLanguages do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languages => list(GoogleApi.Translate.V3.Model.SupportedLanguage.t())
+          :languages => list(GoogleApi.Translate.V3.Model.SupportedLanguage.t()) | nil
         }
 
   field(:languages, as: GoogleApi.Translate.V3.Model.SupportedLanguage, type: :list)

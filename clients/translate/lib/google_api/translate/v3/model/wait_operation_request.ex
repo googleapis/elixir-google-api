@@ -27,7 +27,7 @@ defmodule GoogleApi.Translate.V3.Model.WaitOperationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :timeout => String.t()
+          :timeout => String.t() | nil
         }
 
   field(:timeout)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Translate.V3.Model.SupportedLanguage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :languageCode => String.t(),
-          :supportSource => boolean(),
-          :supportTarget => boolean()
+          :displayName => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :supportSource => boolean() | nil,
+          :supportTarget => boolean() | nil
         }
 
   field(:displayName)
