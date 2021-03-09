@@ -33,13 +33,13 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.Connection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSql => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties.t(),
-          :creationTime => String.t(),
-          :description => String.t(),
-          :friendlyName => String.t(),
-          :hasCredential => boolean(),
-          :lastModifiedTime => String.t(),
-          :name => String.t()
+          :cloudSql => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties.t() | nil,
+          :creationTime => String.t() | nil,
+          :description => String.t() | nil,
+          :friendlyName => String.t() | nil,
+          :hasCredential => boolean() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:cloudSql, as: GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties)

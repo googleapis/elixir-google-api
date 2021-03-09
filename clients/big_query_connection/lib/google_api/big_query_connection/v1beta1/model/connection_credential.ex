@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.ConnectionCredential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSql => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t()
+          :cloudSql => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t() | nil
         }
 
   field(:cloudSql, as: GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential)
