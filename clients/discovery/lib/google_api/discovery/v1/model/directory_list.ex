@@ -29,9 +29,9 @@ defmodule GoogleApi.Discovery.V1.Model.DirectoryList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :discoveryVersion => String.t(),
-          :items => list(GoogleApi.Discovery.V1.Model.DirectoryListItems.t()),
-          :kind => String.t()
+          :discoveryVersion => String.t() | nil,
+          :items => list(GoogleApi.Discovery.V1.Model.DirectoryListItems.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:discoveryVersion)

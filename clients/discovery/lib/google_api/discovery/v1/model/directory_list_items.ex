@@ -38,18 +38,18 @@ defmodule GoogleApi.Discovery.V1.Model.DirectoryListItems do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :discoveryLink => String.t(),
-          :discoveryRestUrl => String.t(),
-          :documentationLink => String.t(),
-          :icons => GoogleApi.Discovery.V1.Model.DirectoryListItemsIcons.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labels => list(String.t()),
-          :name => String.t(),
-          :preferred => boolean(),
-          :title => String.t(),
-          :version => String.t()
+          :description => String.t() | nil,
+          :discoveryLink => String.t() | nil,
+          :discoveryRestUrl => String.t() | nil,
+          :documentationLink => String.t() | nil,
+          :icons => GoogleApi.Discovery.V1.Model.DirectoryListItemsIcons.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labels => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :preferred => boolean() | nil,
+          :title => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:description)

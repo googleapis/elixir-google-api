@@ -41,21 +41,22 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :etagRequired => boolean(),
-          :httpMethod => String.t(),
-          :id => String.t(),
-          :mediaUpload => GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t(),
-          :parameterOrder => list(String.t()),
-          :parameters => %{optional(String.t()) => GoogleApi.Discovery.V1.Model.JsonSchema.t()},
-          :path => String.t(),
-          :request => GoogleApi.Discovery.V1.Model.RestMethodRequest.t(),
-          :response => GoogleApi.Discovery.V1.Model.RestMethodResponse.t(),
-          :scopes => list(String.t()),
-          :supportsMediaDownload => boolean(),
-          :supportsMediaUpload => boolean(),
-          :supportsSubscription => boolean(),
-          :useMediaDownloadService => boolean()
+          :description => String.t() | nil,
+          :etagRequired => boolean() | nil,
+          :httpMethod => String.t() | nil,
+          :id => String.t() | nil,
+          :mediaUpload => GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t() | nil,
+          :parameterOrder => list(String.t()) | nil,
+          :parameters =>
+            %{optional(String.t()) => GoogleApi.Discovery.V1.Model.JsonSchema.t()} | nil,
+          :path => String.t() | nil,
+          :request => GoogleApi.Discovery.V1.Model.RestMethodRequest.t() | nil,
+          :response => GoogleApi.Discovery.V1.Model.RestMethodResponse.t() | nil,
+          :scopes => list(String.t()) | nil,
+          :supportsMediaDownload => boolean() | nil,
+          :supportsMediaUpload => boolean() | nil,
+          :supportsSubscription => boolean() | nil,
+          :useMediaDownloadService => boolean() | nil
         }
 
   field(:description)

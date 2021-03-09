@@ -28,8 +28,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :"$ref" => String.t(),
-          :parameterName => String.t()
+          :"$ref" => String.t() | nil,
+          :parameterName => String.t() | nil
         }
 
   field(:"$ref")

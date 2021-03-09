@@ -46,26 +46,27 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :"$ref" => String.t(),
-          :additionalProperties => GoogleApi.Discovery.V1.Model.JsonSchema.t(),
-          :annotations => GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations.t(),
-          :default => String.t(),
-          :description => String.t(),
-          :enum => list(String.t()),
-          :enumDescriptions => list(String.t()),
-          :format => String.t(),
-          :id => String.t(),
-          :items => GoogleApi.Discovery.V1.Model.JsonSchema.t(),
-          :location => String.t(),
-          :maximum => String.t(),
-          :minimum => String.t(),
-          :pattern => String.t(),
-          :properties => %{optional(String.t()) => GoogleApi.Discovery.V1.Model.JsonSchema.t()},
-          :readOnly => boolean(),
-          :repeated => boolean(),
-          :required => boolean(),
-          :type => String.t(),
-          :variant => GoogleApi.Discovery.V1.Model.JsonSchemaVariant.t()
+          :"$ref" => String.t() | nil,
+          :additionalProperties => GoogleApi.Discovery.V1.Model.JsonSchema.t() | nil,
+          :annotations => GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations.t() | nil,
+          :default => String.t() | nil,
+          :description => String.t() | nil,
+          :enum => list(String.t()) | nil,
+          :enumDescriptions => list(String.t()) | nil,
+          :format => String.t() | nil,
+          :id => String.t() | nil,
+          :items => GoogleApi.Discovery.V1.Model.JsonSchema.t() | nil,
+          :location => String.t() | nil,
+          :maximum => String.t() | nil,
+          :minimum => String.t() | nil,
+          :pattern => String.t() | nil,
+          :properties =>
+            %{optional(String.t()) => GoogleApi.Discovery.V1.Model.JsonSchema.t()} | nil,
+          :readOnly => boolean() | nil,
+          :repeated => boolean() | nil,
+          :required => boolean() | nil,
+          :type => String.t() | nil,
+          :variant => GoogleApi.Discovery.V1.Model.JsonSchemaVariant.t() | nil
         }
 
   field(:"$ref")
