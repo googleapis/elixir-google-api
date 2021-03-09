@@ -27,7 +27,7 @@ defmodule GoogleApi.IAP.V1.Model.CsmSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rctokenAud => String.t()
+          :rctokenAud => String.t() | nil
         }
 
   field(:rctokenAud)

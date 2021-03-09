@@ -28,8 +28,8 @@ defmodule GoogleApi.IAP.V1.Model.GcipSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :loginPageUri => String.t(),
-          :tenantIds => list(String.t())
+          :loginPageUri => String.t() | nil,
+          :tenantIds => list(String.t()) | nil
         }
 
   field(:loginPageUri)

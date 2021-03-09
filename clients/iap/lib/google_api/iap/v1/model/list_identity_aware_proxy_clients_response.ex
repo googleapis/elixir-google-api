@@ -28,8 +28,9 @@ defmodule GoogleApi.IAP.V1.Model.ListIdentityAwareProxyClientsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identityAwareProxyClients => list(GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t()),
-          :nextPageToken => String.t()
+          :identityAwareProxyClients =>
+            list(GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:identityAwareProxyClients,

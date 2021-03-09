@@ -30,10 +30,10 @@ defmodule GoogleApi.IAP.V1.Model.PolicyDelegationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iamPermission => String.t(),
-          :iamServiceName => String.t(),
-          :policyName => GoogleApi.IAP.V1.Model.PolicyName.t(),
-          :resource => GoogleApi.IAP.V1.Model.Resource.t()
+          :iamPermission => String.t() | nil,
+          :iamServiceName => String.t() | nil,
+          :policyName => GoogleApi.IAP.V1.Model.PolicyName.t() | nil,
+          :resource => GoogleApi.IAP.V1.Model.Resource.t() | nil
         }
 
   field(:iamPermission)

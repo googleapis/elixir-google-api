@@ -27,7 +27,7 @@ defmodule GoogleApi.IAP.V1.Model.CorsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowHttpOptions => boolean()
+          :allowHttpOptions => boolean() | nil
         }
 
   field(:allowHttpOptions)

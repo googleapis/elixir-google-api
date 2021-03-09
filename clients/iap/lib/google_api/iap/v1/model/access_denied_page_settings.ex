@@ -27,7 +27,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessDeniedPageSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessDeniedPageUri => String.t()
+          :accessDeniedPageUri => String.t() | nil
         }
 
   field(:accessDeniedPageUri)

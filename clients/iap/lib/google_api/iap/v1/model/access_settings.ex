@@ -30,10 +30,10 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :corsSettings => GoogleApi.IAP.V1.Model.CorsSettings.t(),
-          :gcipSettings => GoogleApi.IAP.V1.Model.GcipSettings.t(),
-          :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t(),
-          :policyDelegationSettings => GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t()
+          :corsSettings => GoogleApi.IAP.V1.Model.CorsSettings.t() | nil,
+          :gcipSettings => GoogleApi.IAP.V1.Model.GcipSettings.t() | nil,
+          :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t() | nil,
+          :policyDelegationSettings => GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t() | nil
         }
 
   field(:corsSettings, as: GoogleApi.IAP.V1.Model.CorsSettings)

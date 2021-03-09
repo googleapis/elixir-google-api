@@ -30,10 +30,10 @@ defmodule GoogleApi.IAP.V1.Model.Brand do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationTitle => String.t(),
-          :name => String.t(),
-          :orgInternalOnly => boolean(),
-          :supportEmail => String.t()
+          :applicationTitle => String.t() | nil,
+          :name => String.t() | nil,
+          :orgInternalOnly => boolean() | nil,
+          :supportEmail => String.t() | nil
         }
 
   field(:applicationTitle)

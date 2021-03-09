@@ -29,9 +29,9 @@ defmodule GoogleApi.IAP.V1.Model.IdentityAwareProxyClient do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :secret => String.t()
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :secret => String.t() | nil
         }
 
   field(:displayName)
