@@ -29,9 +29,9 @@ defmodule GoogleApi.TPU.V1.Model.ListNodesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :nodes => list(GoogleApi.TPU.V1.Model.Node.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :nodes => list(GoogleApi.TPU.V1.Model.Node.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

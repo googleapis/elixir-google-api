@@ -29,9 +29,9 @@ defmodule GoogleApi.TPU.V1.Model.ListAcceleratorTypesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorTypes => list(GoogleApi.TPU.V1.Model.AcceleratorType.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :acceleratorTypes => list(GoogleApi.TPU.V1.Model.AcceleratorType.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:acceleratorTypes, as: GoogleApi.TPU.V1.Model.AcceleratorType, type: :list)

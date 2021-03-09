@@ -44,24 +44,24 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorType => String.t(),
-          :cidrBlock => String.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :health => String.t(),
-          :healthDescription => String.t(),
-          :ipAddress => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :network => String.t(),
-          :networkEndpoints => list(GoogleApi.TPU.V1.Model.NetworkEndpoint.t()),
-          :port => String.t(),
-          :schedulingConfig => GoogleApi.TPU.V1.Model.SchedulingConfig.t(),
-          :serviceAccount => String.t(),
-          :state => String.t(),
-          :symptoms => list(GoogleApi.TPU.V1.Model.Symptom.t()),
-          :tensorflowVersion => String.t(),
-          :useServiceNetworking => boolean()
+          :acceleratorType => String.t() | nil,
+          :cidrBlock => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :health => String.t() | nil,
+          :healthDescription => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :networkEndpoints => list(GoogleApi.TPU.V1.Model.NetworkEndpoint.t()) | nil,
+          :port => String.t() | nil,
+          :schedulingConfig => GoogleApi.TPU.V1.Model.SchedulingConfig.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :state => String.t() | nil,
+          :symptoms => list(GoogleApi.TPU.V1.Model.Symptom.t()) | nil,
+          :tensorflowVersion => String.t() | nil,
+          :useServiceNetworking => boolean() | nil
         }
 
   field(:acceleratorType)

@@ -30,10 +30,10 @@ defmodule GoogleApi.TPU.V1.Model.Symptom do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :details => String.t(),
-          :symptomType => String.t(),
-          :workerId => String.t()
+          :createTime => DateTime.t() | nil,
+          :details => String.t() | nil,
+          :symptomType => String.t() | nil,
+          :workerId => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

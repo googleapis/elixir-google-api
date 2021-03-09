@@ -28,8 +28,8 @@ defmodule GoogleApi.TPU.V1.Model.NetworkEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :port => integer()
+          :ipAddress => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:ipAddress)
