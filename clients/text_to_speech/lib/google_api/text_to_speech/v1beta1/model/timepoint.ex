@@ -28,8 +28,8 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.Timepoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :markName => String.t(),
-          :timeSeconds => float()
+          :markName => String.t() | nil,
+          :timeSeconds => float() | nil
         }
 
   field(:markName)

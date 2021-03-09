@@ -29,9 +29,9 @@ defmodule GoogleApi.TextToSpeech.V1.Model.VoiceSelectionParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :name => String.t(),
-          :ssmlGender => String.t()
+          :languageCode => String.t() | nil,
+          :name => String.t() | nil,
+          :ssmlGender => String.t() | nil
         }
 
   field(:languageCode)

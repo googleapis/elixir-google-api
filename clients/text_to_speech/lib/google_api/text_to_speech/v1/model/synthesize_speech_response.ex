@@ -27,7 +27,7 @@ defmodule GoogleApi.TextToSpeech.V1.Model.SynthesizeSpeechResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioContent => String.t()
+          :audioContent => String.t() | nil
         }
 
   field(:audioContent)

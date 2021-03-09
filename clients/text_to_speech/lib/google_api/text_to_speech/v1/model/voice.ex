@@ -30,10 +30,10 @@ defmodule GoogleApi.TextToSpeech.V1.Model.Voice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCodes => list(String.t()),
-          :name => String.t(),
-          :naturalSampleRateHertz => integer(),
-          :ssmlGender => String.t()
+          :languageCodes => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :naturalSampleRateHertz => integer() | nil,
+          :ssmlGender => String.t() | nil
         }
 
   field(:languageCodes, type: :list)
