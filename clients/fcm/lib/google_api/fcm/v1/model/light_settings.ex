@@ -29,9 +29,9 @@ defmodule GoogleApi.FCM.V1.Model.LightSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.FCM.V1.Model.Color.t(),
-          :lightOffDuration => String.t(),
-          :lightOnDuration => String.t()
+          :color => GoogleApi.FCM.V1.Model.Color.t() | nil,
+          :lightOffDuration => String.t() | nil,
+          :lightOnDuration => String.t() | nil
         }
 
   field(:color, as: GoogleApi.FCM.V1.Model.Color)

@@ -28,8 +28,8 @@ defmodule GoogleApi.FCM.V1.Model.ApnsFcmOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsLabel => String.t(),
-          :image => String.t()
+          :analyticsLabel => String.t() | nil,
+          :image => String.t() | nil
         }
 
   field(:analyticsLabel)

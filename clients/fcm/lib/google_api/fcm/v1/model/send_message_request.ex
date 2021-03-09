@@ -28,8 +28,8 @@ defmodule GoogleApi.FCM.V1.Model.SendMessageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => GoogleApi.FCM.V1.Model.Message.t(),
-          :validateOnly => boolean()
+          :message => GoogleApi.FCM.V1.Model.Message.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:message, as: GoogleApi.FCM.V1.Model.Message)

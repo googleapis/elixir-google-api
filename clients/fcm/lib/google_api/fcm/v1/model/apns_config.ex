@@ -29,9 +29,9 @@ defmodule GoogleApi.FCM.V1.Model.ApnsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fcmOptions => GoogleApi.FCM.V1.Model.ApnsFcmOptions.t(),
-          :headers => map(),
-          :payload => map()
+          :fcmOptions => GoogleApi.FCM.V1.Model.ApnsFcmOptions.t() | nil,
+          :headers => map() | nil,
+          :payload => map() | nil
         }
 
   field(:fcmOptions, as: GoogleApi.FCM.V1.Model.ApnsFcmOptions)
