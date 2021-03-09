@@ -29,9 +29,9 @@ defmodule GoogleApi.TestClient.V2.Model.DateContainer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateTimeVal => DateTime.t(),
-          :dateVal => Date.t(),
-          :googleDateVal => DateTime.t()
+          :dateTimeVal => DateTime.t() | nil,
+          :dateVal => Date.t() | nil,
+          :googleDateVal => DateTime.t() | nil
         }
 
   field(:dateTimeVal, as: DateTime)

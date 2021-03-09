@@ -27,7 +27,7 @@ defmodule GoogleApi.TestClient.V1.Model.NestedContainer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rows => list(list(GoogleApi.TestClient.V1.Model.NestedContainerRows.t()))
+          :rows => list(list(GoogleApi.TestClient.V1.Model.NestedContainerRows.t())) | nil
         }
 
   field(:rows, as: GoogleApi.TestClient.V1.Model.NestedContainerRows, type: :listlist)

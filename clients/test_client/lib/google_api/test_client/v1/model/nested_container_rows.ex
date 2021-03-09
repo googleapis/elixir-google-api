@@ -29,8 +29,8 @@ defmodule GoogleApi.TestClient.V1.Model.NestedContainerRows do
 
   @type t :: %__MODULE__{
           :nestedArrayValue =>
-            list(GoogleApi.TestClient.V1.Model.NestedContainerRowsNestedArrayValue.t()),
-          :primitiveValue => String.t()
+            list(GoogleApi.TestClient.V1.Model.NestedContainerRowsNestedArrayValue.t()) | nil,
+          :primitiveValue => String.t() | nil
         }
 
   field(:nestedArrayValue,

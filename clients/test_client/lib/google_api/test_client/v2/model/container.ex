@@ -33,13 +33,13 @@ defmodule GoogleApi.TestClient.V2.Model.Container do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayRefVal => list(GoogleApi.TestClient.V2.Model.Container.t()),
-          :arrayVal => list(String.t()),
-          :booleanVal => boolean(),
-          :numberVal => number(),
-          :objectRefVal => GoogleApi.TestClient.V2.Model.Container.t(),
-          :objectVal => GoogleApi.TestClient.V2.Model.ContainerObjectVal.t(),
-          :stringVal => String.t()
+          :arrayRefVal => list(GoogleApi.TestClient.V2.Model.Container.t()) | nil,
+          :arrayVal => list(String.t()) | nil,
+          :booleanVal => boolean() | nil,
+          :numberVal => number() | nil,
+          :objectRefVal => GoogleApi.TestClient.V2.Model.Container.t() | nil,
+          :objectVal => GoogleApi.TestClient.V2.Model.ContainerObjectVal.t() | nil,
+          :stringVal => String.t() | nil
         }
 
   field(:arrayRefVal, as: GoogleApi.TestClient.V2.Model.Container, type: :list)
