@@ -38,18 +38,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryOperator do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :enumValues => list(String.t()),
-          :greaterThanOperatorName => String.t(),
-          :isFacetable => boolean(),
-          :isRepeatable => boolean(),
-          :isReturnable => boolean(),
-          :isSortable => boolean(),
-          :isSuggestable => boolean(),
-          :lessThanOperatorName => String.t(),
-          :objectType => String.t(),
-          :operatorName => String.t(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :enumValues => list(String.t()) | nil,
+          :greaterThanOperatorName => String.t() | nil,
+          :isFacetable => boolean() | nil,
+          :isRepeatable => boolean() | nil,
+          :isReturnable => boolean() | nil,
+          :isSortable => boolean() | nil,
+          :isSuggestable => boolean() | nil,
+          :lessThanOperatorName => String.t() | nil,
+          :objectType => String.t() | nil,
+          :operatorName => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

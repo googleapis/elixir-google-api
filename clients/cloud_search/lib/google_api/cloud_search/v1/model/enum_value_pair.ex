@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.EnumValuePair do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :integerValue => integer(),
-          :stringValue => String.t()
+          :integerValue => integer() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:integerValue)

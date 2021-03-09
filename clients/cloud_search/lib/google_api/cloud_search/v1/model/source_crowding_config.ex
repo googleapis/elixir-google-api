@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.SourceCrowdingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numResults => integer(),
-          :numSuggestions => integer()
+          :numResults => integer() | nil,
+          :numSuggestions => integer() | nil
         }
 
   field(:numResults)

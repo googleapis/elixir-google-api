@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.SourceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crowdingConfig => GoogleApi.CloudSearch.V1.Model.SourceCrowdingConfig.t(),
-          :scoringConfig => GoogleApi.CloudSearch.V1.Model.SourceScoringConfig.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t()
+          :crowdingConfig => GoogleApi.CloudSearch.V1.Model.SourceCrowdingConfig.t() | nil,
+          :scoringConfig => GoogleApi.CloudSearch.V1.Model.SourceScoringConfig.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil
         }
 
   field(:crowdingConfig, as: GoogleApi.CloudSearch.V1.Model.SourceCrowdingConfig)

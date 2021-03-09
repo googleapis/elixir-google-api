@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.GSuitePrincipal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gsuiteDomain => boolean(),
-          :gsuiteGroupEmail => String.t(),
-          :gsuiteUserEmail => String.t()
+          :gsuiteDomain => boolean() | nil,
+          :gsuiteGroupEmail => String.t() | nil,
+          :gsuiteUserEmail => String.t() | nil
         }
 
   field(:gsuiteDomain)

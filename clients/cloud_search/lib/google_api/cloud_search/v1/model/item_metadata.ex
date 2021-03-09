@@ -38,18 +38,19 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerName => String.t(),
-          :contentLanguage => String.t(),
-          :createTime => DateTime.t(),
-          :hash => String.t(),
-          :interactions => list(GoogleApi.CloudSearch.V1.Model.Interaction.t()),
-          :keywords => list(String.t()),
-          :mimeType => String.t(),
-          :objectType => String.t(),
-          :searchQualityMetadata => GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata.t(),
-          :sourceRepositoryUrl => String.t(),
-          :title => String.t(),
-          :updateTime => DateTime.t()
+          :containerName => String.t() | nil,
+          :contentLanguage => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :hash => String.t() | nil,
+          :interactions => list(GoogleApi.CloudSearch.V1.Model.Interaction.t()) | nil,
+          :keywords => list(String.t()) | nil,
+          :mimeType => String.t() | nil,
+          :objectType => String.t() | nil,
+          :searchQualityMetadata =>
+            GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata.t() | nil,
+          :sourceRepositoryUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:containerName)

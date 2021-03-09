@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.EnumPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operatorOptions => GoogleApi.CloudSearch.V1.Model.EnumOperatorOptions.t(),
-          :orderedRanking => String.t(),
-          :possibleValues => list(GoogleApi.CloudSearch.V1.Model.EnumValuePair.t())
+          :operatorOptions => GoogleApi.CloudSearch.V1.Model.EnumOperatorOptions.t() | nil,
+          :orderedRanking => String.t() | nil,
+          :possibleValues => list(GoogleApi.CloudSearch.V1.Model.EnumValuePair.t()) | nil
         }
 
   field(:operatorOptions, as: GoogleApi.CloudSearch.V1.Model.EnumOperatorOptions)

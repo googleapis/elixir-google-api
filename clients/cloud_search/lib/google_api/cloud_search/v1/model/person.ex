@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.Person do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddresses => list(GoogleApi.CloudSearch.V1.Model.EmailAddress.t()),
-          :name => String.t(),
-          :obfuscatedId => String.t(),
-          :personNames => list(GoogleApi.CloudSearch.V1.Model.Name.t()),
-          :photos => list(GoogleApi.CloudSearch.V1.Model.Photo.t())
+          :emailAddresses => list(GoogleApi.CloudSearch.V1.Model.EmailAddress.t()) | nil,
+          :name => String.t() | nil,
+          :obfuscatedId => String.t() | nil,
+          :personNames => list(GoogleApi.CloudSearch.V1.Model.Name.t()) | nil,
+          :photos => list(GoogleApi.CloudSearch.V1.Model.Photo.t()) | nil
         }
 
   field(:emailAddresses, as: GoogleApi.CloudSearch.V1.Model.EmailAddress, type: :list)

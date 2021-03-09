@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.EnumValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(String.t())
+          :values => list(String.t()) | nil
         }
 
   field(:values, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.Principal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupResourceName => String.t(),
-          :gsuitePrincipal => GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t(),
-          :userResourceName => String.t()
+          :groupResourceName => String.t() | nil,
+          :gsuitePrincipal => GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t() | nil,
+          :userResourceName => String.t() | nil
         }
 
   field(:groupResourceName)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResetSearchApplicationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t()
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)

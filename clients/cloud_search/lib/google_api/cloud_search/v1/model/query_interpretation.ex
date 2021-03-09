@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryInterpretation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interpretationType => String.t(),
-          :interpretedQuery => String.t(),
-          :reason => String.t()
+          :interpretationType => String.t() | nil,
+          :interpretedQuery => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:interpretationType)

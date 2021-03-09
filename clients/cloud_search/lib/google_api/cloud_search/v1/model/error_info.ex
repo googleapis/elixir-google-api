@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ErrorInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessages => list(GoogleApi.CloudSearch.V1.Model.ErrorMessage.t())
+          :errorMessages => list(GoogleApi.CloudSearch.V1.Model.ErrorMessage.t()) | nil
         }
 
   field(:errorMessages, as: GoogleApi.CloudSearch.V1.Model.ErrorMessage, type: :list)

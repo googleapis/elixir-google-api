@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.TextPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operatorOptions => GoogleApi.CloudSearch.V1.Model.TextOperatorOptions.t(),
-          :retrievalImportance => GoogleApi.CloudSearch.V1.Model.RetrievalImportance.t()
+          :operatorOptions => GoogleApi.CloudSearch.V1.Model.TextOperatorOptions.t() | nil,
+          :retrievalImportance => GoogleApi.CloudSearch.V1.Model.RetrievalImportance.t() | nil
         }
 
   field(:operatorOptions, as: GoogleApi.CloudSearch.V1.Model.TextOperatorOptions)

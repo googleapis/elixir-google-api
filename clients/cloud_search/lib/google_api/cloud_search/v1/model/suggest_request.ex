@@ -30,9 +30,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.SuggestRequest do
 
   @type t :: %__MODULE__{
           :dataSourceRestrictions =>
-            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()),
-          :query => String.t(),
-          :requestOptions => GoogleApi.CloudSearch.V1.Model.RequestOptions.t()
+            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()) | nil,
+          :query => String.t() | nil,
+          :requestOptions => GoogleApi.CloudSearch.V1.Model.RequestOptions.t() | nil
         }
 
   field(:dataSourceRestrictions,

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Name do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t()
+          :displayName => String.t() | nil
         }
 
   field(:displayName)

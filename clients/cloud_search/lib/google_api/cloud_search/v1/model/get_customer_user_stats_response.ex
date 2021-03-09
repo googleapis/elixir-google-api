@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.GetCustomerUserStatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stats => list(GoogleApi.CloudSearch.V1.Model.CustomerUserStats.t())
+          :stats => list(GoogleApi.CloudSearch.V1.Model.CustomerUserStats.t()) | nil
         }
 
   field(:stats, as: GoogleApi.CloudSearch.V1.Model.CustomerUserStats, type: :list)

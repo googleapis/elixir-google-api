@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @spec cloudsearch_settings_datasources_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_datasources_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,6 +119,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_datasources_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -179,6 +181,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @spec cloudsearch_settings_datasources_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_datasources_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -241,6 +244,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @spec cloudsearch_settings_datasources_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListDataSourceResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_datasources_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -307,6 +311,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_datasources_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -367,6 +372,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @spec cloudsearch_settings_searchapplications_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_create(
         connection,
@@ -435,6 +441,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_delete(
         connection,
@@ -506,6 +513,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SearchApplication.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_get(
         connection,
@@ -573,6 +581,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @spec cloudsearch_settings_searchapplications_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListSearchApplicationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -641,6 +650,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_reset(
         connection,
@@ -712,6 +722,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_settings_searchapplications_update(
         connection,

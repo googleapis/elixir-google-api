@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.Schema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectDefinitions => list(GoogleApi.CloudSearch.V1.Model.ObjectDefinition.t()),
-          :operationIds => list(String.t())
+          :objectDefinitions => list(GoogleApi.CloudSearch.V1.Model.ObjectDefinition.t()) | nil,
+          :operationIds => list(String.t()) | nil
         }
 
   field(:objectDefinitions, as: GoogleApi.CloudSearch.V1.Model.ObjectDefinition, type: :list)

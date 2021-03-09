@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplicationUserStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.CloudSearch.V1.Model.Date.t(),
-          :oneDayActiveUsersCount => String.t(),
-          :sevenDaysActiveUsersCount => String.t(),
-          :thirtyDaysActiveUsersCount => String.t()
+          :date => GoogleApi.CloudSearch.V1.Model.Date.t() | nil,
+          :oneDayActiveUsersCount => String.t() | nil,
+          :sevenDaysActiveUsersCount => String.t() | nil,
+          :thirtyDaysActiveUsersCount => String.t() | nil
         }
 
   field(:date, as: GoogleApi.CloudSearch.V1.Model.Date)

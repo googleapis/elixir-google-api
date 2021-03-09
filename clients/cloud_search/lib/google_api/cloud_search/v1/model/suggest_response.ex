@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SuggestResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestResults => list(GoogleApi.CloudSearch.V1.Model.SuggestResult.t())
+          :suggestResults => list(GoogleApi.CloudSearch.V1.Model.SuggestResult.t()) | nil
         }
 
   field(:suggestResults, as: GoogleApi.CloudSearch.V1.Model.SuggestResult, type: :list)

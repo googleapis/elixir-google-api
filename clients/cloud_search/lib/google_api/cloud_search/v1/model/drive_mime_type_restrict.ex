@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t()
+          :type => String.t() | nil
         }
 
   field(:type)

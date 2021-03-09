@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DateValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.CloudSearch.V1.Model.Date.t())
+          :values => list(GoogleApi.CloudSearch.V1.Model.Date.t()) | nil
         }
 
   field(:values, as: GoogleApi.CloudSearch.V1.Model.Date, type: :list)

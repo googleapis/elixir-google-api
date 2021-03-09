@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.IndexItemOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowUnknownGsuitePrincipals => boolean()
+          :allowUnknownGsuitePrincipals => boolean() | nil
         }
 
   field(:allowUnknownGsuitePrincipals)

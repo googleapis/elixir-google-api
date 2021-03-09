@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDisplayOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayLabel => String.t()
+          :displayLabel => String.t() | nil
         }
 
   field(:displayLabel)

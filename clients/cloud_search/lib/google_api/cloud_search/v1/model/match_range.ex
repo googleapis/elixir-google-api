@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.MatchRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => integer(),
-          :start => integer()
+          :end => integer() | nil,
+          :start => integer() | nil
         }
 
   field(:end)

@@ -43,23 +43,28 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanPropertyOptions => GoogleApi.CloudSearch.V1.Model.BooleanPropertyOptions.t(),
-          :datePropertyOptions => GoogleApi.CloudSearch.V1.Model.DatePropertyOptions.t(),
-          :displayOptions => GoogleApi.CloudSearch.V1.Model.PropertyDisplayOptions.t(),
-          :doublePropertyOptions => GoogleApi.CloudSearch.V1.Model.DoublePropertyOptions.t(),
-          :enumPropertyOptions => GoogleApi.CloudSearch.V1.Model.EnumPropertyOptions.t(),
-          :htmlPropertyOptions => GoogleApi.CloudSearch.V1.Model.HtmlPropertyOptions.t(),
-          :integerPropertyOptions => GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions.t(),
-          :isFacetable => boolean(),
-          :isRepeatable => boolean(),
-          :isReturnable => boolean(),
-          :isSortable => boolean(),
-          :isSuggestable => boolean(),
-          :isWildcardSearchable => boolean(),
-          :name => String.t(),
-          :objectPropertyOptions => GoogleApi.CloudSearch.V1.Model.ObjectPropertyOptions.t(),
-          :textPropertyOptions => GoogleApi.CloudSearch.V1.Model.TextPropertyOptions.t(),
-          :timestampPropertyOptions => GoogleApi.CloudSearch.V1.Model.TimestampPropertyOptions.t()
+          :booleanPropertyOptions =>
+            GoogleApi.CloudSearch.V1.Model.BooleanPropertyOptions.t() | nil,
+          :datePropertyOptions => GoogleApi.CloudSearch.V1.Model.DatePropertyOptions.t() | nil,
+          :displayOptions => GoogleApi.CloudSearch.V1.Model.PropertyDisplayOptions.t() | nil,
+          :doublePropertyOptions =>
+            GoogleApi.CloudSearch.V1.Model.DoublePropertyOptions.t() | nil,
+          :enumPropertyOptions => GoogleApi.CloudSearch.V1.Model.EnumPropertyOptions.t() | nil,
+          :htmlPropertyOptions => GoogleApi.CloudSearch.V1.Model.HtmlPropertyOptions.t() | nil,
+          :integerPropertyOptions =>
+            GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions.t() | nil,
+          :isFacetable => boolean() | nil,
+          :isRepeatable => boolean() | nil,
+          :isReturnable => boolean() | nil,
+          :isSortable => boolean() | nil,
+          :isSuggestable => boolean() | nil,
+          :isWildcardSearchable => boolean() | nil,
+          :name => String.t() | nil,
+          :objectPropertyOptions =>
+            GoogleApi.CloudSearch.V1.Model.ObjectPropertyOptions.t() | nil,
+          :textPropertyOptions => GoogleApi.CloudSearch.V1.Model.TextPropertyOptions.t() | nil,
+          :timestampPropertyOptions =>
+            GoogleApi.CloudSearch.V1.Model.TimestampPropertyOptions.t() | nil
         }
 
   field(:booleanPropertyOptions, as: GoogleApi.CloudSearch.V1.Model.BooleanPropertyOptions)

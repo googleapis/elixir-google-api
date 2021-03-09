@@ -36,16 +36,16 @@ defmodule GoogleApi.CloudSearch.V1.Model.Item do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acl => GoogleApi.CloudSearch.V1.Model.ItemAcl.t(),
-          :content => GoogleApi.CloudSearch.V1.Model.ItemContent.t(),
-          :itemType => String.t(),
-          :metadata => GoogleApi.CloudSearch.V1.Model.ItemMetadata.t(),
-          :name => String.t(),
-          :payload => String.t(),
-          :queue => String.t(),
-          :status => GoogleApi.CloudSearch.V1.Model.ItemStatus.t(),
-          :structuredData => GoogleApi.CloudSearch.V1.Model.ItemStructuredData.t(),
-          :version => String.t()
+          :acl => GoogleApi.CloudSearch.V1.Model.ItemAcl.t() | nil,
+          :content => GoogleApi.CloudSearch.V1.Model.ItemContent.t() | nil,
+          :itemType => String.t() | nil,
+          :metadata => GoogleApi.CloudSearch.V1.Model.ItemMetadata.t() | nil,
+          :name => String.t() | nil,
+          :payload => String.t() | nil,
+          :queue => String.t() | nil,
+          :status => GoogleApi.CloudSearch.V1.Model.ItemStatus.t() | nil,
+          :structuredData => GoogleApi.CloudSearch.V1.Model.ItemStructuredData.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:acl, as: GoogleApi.CloudSearch.V1.Model.ItemAcl)

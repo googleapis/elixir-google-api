@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudSearch.V1.Model.PushItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => String.t(),
-          :metadataHash => String.t(),
-          :payload => String.t(),
-          :queue => String.t(),
-          :repositoryError => GoogleApi.CloudSearch.V1.Model.RepositoryError.t(),
-          :structuredDataHash => String.t(),
-          :type => String.t()
+          :contentHash => String.t() | nil,
+          :metadataHash => String.t() | nil,
+          :payload => String.t() | nil,
+          :queue => String.t() | nil,
+          :repositoryError => GoogleApi.CloudSearch.V1.Model.RepositoryError.t() | nil,
+          :structuredDataHash => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:contentHash)

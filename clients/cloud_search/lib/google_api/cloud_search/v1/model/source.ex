@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :predefinedSource => String.t()
+          :name => String.t() | nil,
+          :predefinedSource => String.t() | nil
         }
 
   field(:name)

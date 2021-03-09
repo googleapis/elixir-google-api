@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.RequestOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :languageCode => String.t(),
-          :searchApplicationId => String.t(),
-          :timeZone => String.t()
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :languageCode => String.t() | nil,
+          :searchApplicationId => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)

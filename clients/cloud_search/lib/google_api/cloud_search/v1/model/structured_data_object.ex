@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.StructuredDataObject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :properties => list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t())
+          :properties => list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t()) | nil
         }
 
   field(:properties, as: GoogleApi.CloudSearch.V1.Model.NamedProperty, type: :list)

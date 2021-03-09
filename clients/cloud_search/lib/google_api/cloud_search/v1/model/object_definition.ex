@@ -29,9 +29,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :options => GoogleApi.CloudSearch.V1.Model.ObjectOptions.t(),
-          :propertyDefinitions => list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t())
+          :name => String.t() | nil,
+          :options => GoogleApi.CloudSearch.V1.Model.ObjectOptions.t() | nil,
+          :propertyDefinitions =>
+            list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t()) | nil
         }
 
   field(:name)

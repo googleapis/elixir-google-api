@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :processingErrors => list(GoogleApi.CloudSearch.V1.Model.ProcessingError.t()),
-          :repositoryErrors => list(GoogleApi.CloudSearch.V1.Model.RepositoryError.t())
+          :code => String.t() | nil,
+          :processingErrors => list(GoogleApi.CloudSearch.V1.Model.ProcessingError.t()) | nil,
+          :repositoryErrors => list(GoogleApi.CloudSearch.V1.Model.RepositoryError.t()) | nil
         }
 
   field(:code)

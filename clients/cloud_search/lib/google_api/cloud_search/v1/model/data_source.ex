@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableModifications => boolean(),
-          :disableServing => boolean(),
-          :displayName => String.t(),
-          :indexingServiceAccounts => list(String.t()),
-          :itemsVisibility => list(GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t()),
-          :name => String.t(),
-          :operationIds => list(String.t()),
-          :shortName => String.t()
+          :disableModifications => boolean() | nil,
+          :disableServing => boolean() | nil,
+          :displayName => String.t() | nil,
+          :indexingServiceAccounts => list(String.t()) | nil,
+          :itemsVisibility => list(GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t()) | nil,
+          :name => String.t() | nil,
+          :operationIds => list(String.t()) | nil,
+          :shortName => String.t() | nil
         }
 
   field(:disableModifications)

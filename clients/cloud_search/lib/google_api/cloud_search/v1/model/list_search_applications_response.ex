@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ListSearchApplicationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :searchApplications => list(GoogleApi.CloudSearch.V1.Model.SearchApplication.t())
+          :nextPageToken => String.t() | nil,
+          :searchApplications => list(GoogleApi.CloudSearch.V1.Model.SearchApplication.t()) | nil
         }
 
   field(:nextPageToken)

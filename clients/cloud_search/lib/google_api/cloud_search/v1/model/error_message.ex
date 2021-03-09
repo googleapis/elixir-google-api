@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ErrorMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t()
+          :errorMessage => String.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil
         }
 
   field(:errorMessage)

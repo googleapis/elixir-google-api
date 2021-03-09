@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.DeleteQueueItemsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectorName => String.t(),
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :queue => String.t()
+          :connectorName => String.t() | nil,
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :queue => String.t() | nil
         }
 
   field(:connectorName)

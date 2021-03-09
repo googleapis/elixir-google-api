@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSourceIndexStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.CloudSearch.V1.Model.Date.t(),
-          :itemCountByStatus => list(GoogleApi.CloudSearch.V1.Model.ItemCountByStatus.t())
+          :date => GoogleApi.CloudSearch.V1.Model.Date.t() | nil,
+          :itemCountByStatus => list(GoogleApi.CloudSearch.V1.Model.ItemCountByStatus.t()) | nil
         }
 
   field(:date, as: GoogleApi.CloudSearch.V1.Model.Date)

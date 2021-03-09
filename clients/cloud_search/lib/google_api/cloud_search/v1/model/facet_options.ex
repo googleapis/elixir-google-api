@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numFacetBuckets => integer(),
-          :objectType => String.t(),
-          :operatorName => String.t(),
-          :sourceName => String.t()
+          :numFacetBuckets => integer() | nil,
+          :objectType => String.t() | nil,
+          :operatorName => String.t() | nil,
+          :sourceName => String.t() | nil
         }
 
   field(:numFacetBuckets)

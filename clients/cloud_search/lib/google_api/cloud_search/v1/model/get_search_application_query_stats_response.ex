@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.GetSearchApplicationQueryStatsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stats => list(GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats.t())
+          :stats => list(GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats.t()) | nil
         }
 
   field(:stats, as: GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats, type: :list)

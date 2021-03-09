@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.FilterOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => GoogleApi.CloudSearch.V1.Model.Filter.t(),
-          :objectType => String.t()
+          :filter => GoogleApi.CloudSearch.V1.Model.Filter.t() | nil,
+          :objectType => String.t() | nil
         }
 
   field(:filter, as: GoogleApi.CloudSearch.V1.Model.Filter)

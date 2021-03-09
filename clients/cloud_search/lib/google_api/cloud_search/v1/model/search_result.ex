@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusteredResults => list(GoogleApi.CloudSearch.V1.Model.SearchResult.t()),
-          :debugInfo => GoogleApi.CloudSearch.V1.Model.ResultDebugInfo.t(),
-          :metadata => GoogleApi.CloudSearch.V1.Model.Metadata.t(),
-          :snippet => GoogleApi.CloudSearch.V1.Model.Snippet.t(),
-          :title => String.t(),
-          :url => String.t()
+          :clusteredResults => list(GoogleApi.CloudSearch.V1.Model.SearchResult.t()) | nil,
+          :debugInfo => GoogleApi.CloudSearch.V1.Model.ResultDebugInfo.t() | nil,
+          :metadata => GoogleApi.CloudSearch.V1.Model.Metadata.t() | nil,
+          :snippet => GoogleApi.CloudSearch.V1.Model.Snippet.t() | nil,
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:clusteredResults, as: GoogleApi.CloudSearch.V1.Model.SearchResult, type: :list)

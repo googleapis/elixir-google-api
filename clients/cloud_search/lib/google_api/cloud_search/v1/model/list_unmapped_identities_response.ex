@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ListUnmappedIdentitiesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :unmappedIdentities => list(GoogleApi.CloudSearch.V1.Model.UnmappedIdentity.t())
+          :nextPageToken => String.t() | nil,
+          :unmappedIdentities => list(GoogleApi.CloudSearch.V1.Model.UnmappedIdentity.t()) | nil
         }
 
   field(:nextPageToken)

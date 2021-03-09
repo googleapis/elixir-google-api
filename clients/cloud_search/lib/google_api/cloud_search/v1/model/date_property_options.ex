@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DatePropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operatorOptions => GoogleApi.CloudSearch.V1.Model.DateOperatorOptions.t()
+          :operatorOptions => GoogleApi.CloudSearch.V1.Model.DateOperatorOptions.t() | nil
         }
 
   field(:operatorOptions, as: GoogleApi.CloudSearch.V1.Model.DateOperatorOptions)

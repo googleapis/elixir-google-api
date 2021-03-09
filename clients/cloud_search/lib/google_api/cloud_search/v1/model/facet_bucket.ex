@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :percentage => integer(),
-          :value => GoogleApi.CloudSearch.V1.Model.Value.t()
+          :count => integer() | nil,
+          :percentage => integer() | nil,
+          :value => GoogleApi.CloudSearch.V1.Model.Value.t() | nil
         }
 
   field(:count)

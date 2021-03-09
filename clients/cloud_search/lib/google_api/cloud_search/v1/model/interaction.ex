@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.Interaction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interactionTime => DateTime.t(),
-          :principal => GoogleApi.CloudSearch.V1.Model.Principal.t(),
-          :type => String.t()
+          :interactionTime => DateTime.t() | nil,
+          :principal => GoogleApi.CloudSearch.V1.Model.Principal.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:interactionTime, as: DateTime)

@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buckets => list(GoogleApi.CloudSearch.V1.Model.FacetBucket.t()),
-          :objectType => String.t(),
-          :operatorName => String.t(),
-          :sourceName => String.t()
+          :buckets => list(GoogleApi.CloudSearch.V1.Model.FacetBucket.t()) | nil,
+          :objectType => String.t() | nil,
+          :operatorName => String.t() | nil,
+          :sourceName => String.t() | nil
         }
 
   field(:buckets, as: GoogleApi.CloudSearch.V1.Model.FacetBucket, type: :list)

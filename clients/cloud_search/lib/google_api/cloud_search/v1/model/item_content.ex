@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDataRef => GoogleApi.CloudSearch.V1.Model.UploadItemRef.t(),
-          :contentFormat => String.t(),
-          :hash => String.t(),
-          :inlineContent => String.t()
+          :contentDataRef => GoogleApi.CloudSearch.V1.Model.UploadItemRef.t() | nil,
+          :contentFormat => String.t() | nil,
+          :hash => String.t() | nil,
+          :inlineContent => String.t() | nil
         }
 
   field(:contentDataRef, as: GoogleApi.CloudSearch.V1.Model.UploadItemRef)

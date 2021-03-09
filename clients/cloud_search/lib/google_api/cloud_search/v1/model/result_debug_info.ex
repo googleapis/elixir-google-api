@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResultDebugInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedDebugInfo => String.t()
+          :formattedDebugInfo => String.t() | nil
         }
 
   field(:formattedDebugInfo)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CheckAccessResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasAccess => boolean()
+          :hasAccess => boolean() | nil
         }
 
   field(:hasAccess)

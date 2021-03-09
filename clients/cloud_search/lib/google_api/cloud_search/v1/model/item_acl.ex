@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemAcl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aclInheritanceType => String.t(),
-          :deniedReaders => list(GoogleApi.CloudSearch.V1.Model.Principal.t()),
-          :inheritAclFrom => String.t(),
-          :owners => list(GoogleApi.CloudSearch.V1.Model.Principal.t()),
-          :readers => list(GoogleApi.CloudSearch.V1.Model.Principal.t())
+          :aclInheritanceType => String.t() | nil,
+          :deniedReaders => list(GoogleApi.CloudSearch.V1.Model.Principal.t()) | nil,
+          :inheritAclFrom => String.t() | nil,
+          :owners => list(GoogleApi.CloudSearch.V1.Model.Principal.t()) | nil,
+          :readers => list(GoogleApi.CloudSearch.V1.Model.Principal.t()) | nil
         }
 
   field(:aclInheritanceType)

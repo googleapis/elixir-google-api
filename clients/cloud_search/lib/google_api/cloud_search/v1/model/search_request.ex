@@ -35,15 +35,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
 
   @type t :: %__MODULE__{
           :dataSourceRestrictions =>
-            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()),
-          :facetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()),
-          :pageSize => integer(),
-          :query => String.t(),
+            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()) | nil,
+          :facetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()) | nil,
+          :pageSize => integer() | nil,
+          :query => String.t() | nil,
           :queryInterpretationOptions =>
-            GoogleApi.CloudSearch.V1.Model.QueryInterpretationOptions.t(),
-          :requestOptions => GoogleApi.CloudSearch.V1.Model.RequestOptions.t(),
-          :sortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t(),
-          :start => integer()
+            GoogleApi.CloudSearch.V1.Model.QueryInterpretationOptions.t() | nil,
+          :requestOptions => GoogleApi.CloudSearch.V1.Model.RequestOptions.t() | nil,
+          :sortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t() | nil,
+          :start => integer() | nil
         }
 
   field(:dataSourceRestrictions,

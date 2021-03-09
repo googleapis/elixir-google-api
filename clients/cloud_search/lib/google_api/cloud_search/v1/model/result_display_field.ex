@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResultDisplayField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :operatorName => String.t(),
-          :property => GoogleApi.CloudSearch.V1.Model.NamedProperty.t()
+          :label => String.t() | nil,
+          :operatorName => String.t() | nil,
+          :property => GoogleApi.CloudSearch.V1.Model.NamedProperty.t() | nil
         }
 
   field(:label)
