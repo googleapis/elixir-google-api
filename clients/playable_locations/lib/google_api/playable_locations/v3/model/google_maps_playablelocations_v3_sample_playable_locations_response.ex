@@ -28,11 +28,13 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationsPerGameObjectType => %{
-            optional(String.t()) =>
-              GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SamplePlayableLocationList.t()
-          },
-          :ttl => String.t()
+          :locationsPerGameObjectType =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SamplePlayableLocationList.t()
+            }
+            | nil,
+          :ttl => String.t() | nil
         }
 
   field(:locationsPerGameObjectType,

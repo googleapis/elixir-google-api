@@ -29,11 +29,13 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
 
   @type t :: %__MODULE__{
           :areaFilter =>
-            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleAreaFilter.t(),
+            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleAreaFilter.t()
+            | nil,
           :criteria =>
             list(
               GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleCriterion.t()
             )
+            | nil
         }
 
   field(:areaFilter,

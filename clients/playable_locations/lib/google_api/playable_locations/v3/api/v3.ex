@@ -55,6 +55,7 @@ defmodule GoogleApi.PlayableLocations.V3.Api.V3 do
           {:ok,
            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3LogImpressionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def playablelocations_log_impressions(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -120,6 +121,7 @@ defmodule GoogleApi.PlayableLocations.V3.Api.V3 do
           {:ok,
            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3LogPlayerReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def playablelocations_log_player_reports(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -185,6 +187,7 @@ defmodule GoogleApi.PlayableLocations.V3.Api.V3 do
           {:ok,
            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SamplePlayableLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def playablelocations_sample_playable_locations(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

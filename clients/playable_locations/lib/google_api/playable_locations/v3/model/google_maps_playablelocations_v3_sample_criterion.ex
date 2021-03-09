@@ -29,10 +29,11 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldsToReturn => String.t(),
+          :fieldsToReturn => String.t() | nil,
           :filter =>
-            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleFilter.t(),
-          :gameObjectType => integer()
+            GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleFilter.t()
+            | nil,
+          :gameObjectType => integer() | nil
         }
 
   field(:fieldsToReturn)

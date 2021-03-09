@@ -29,10 +29,11 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3LogI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientInfo => GoogleApi.PlayableLocations.V3.Model.GoogleMapsUnityClientInfo.t(),
+          :clientInfo => GoogleApi.PlayableLocations.V3.Model.GoogleMapsUnityClientInfo.t() | nil,
           :impressions =>
-            list(GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Impression.t()),
-          :requestId => String.t()
+            list(GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Impression.t())
+            | nil,
+          :requestId => String.t() | nil
         }
 
   field(:clientInfo, as: GoogleApi.PlayableLocations.V3.Model.GoogleMapsUnityClientInfo)

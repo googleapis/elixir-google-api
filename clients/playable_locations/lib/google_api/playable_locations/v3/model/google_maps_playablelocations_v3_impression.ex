@@ -29,9 +29,9 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Impr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gameObjectType => integer(),
-          :impressionType => String.t(),
-          :locationName => String.t()
+          :gameObjectType => integer() | nil,
+          :impressionType => String.t() | nil,
+          :locationName => String.t() | nil
         }
 
   field(:gameObjectType)

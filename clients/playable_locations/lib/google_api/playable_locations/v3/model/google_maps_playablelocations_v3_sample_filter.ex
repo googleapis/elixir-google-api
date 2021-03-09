@@ -29,10 +29,11 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includedTypes => list(String.t()),
-          :maxLocationCount => integer(),
+          :includedTypes => list(String.t()) | nil,
+          :maxLocationCount => integer() | nil,
           :spacing =>
             GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SampleSpacingOptions.t()
+            | nil
         }
 
   field(:includedTypes, type: :list)
