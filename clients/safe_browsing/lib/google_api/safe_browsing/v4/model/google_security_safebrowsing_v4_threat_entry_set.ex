@@ -31,14 +31,17 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compressionType => String.t(),
-          :rawHashes => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawHashes.t(),
+          :compressionType => String.t() | nil,
+          :rawHashes =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawHashes.t() | nil,
           :rawIndices =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawIndices.t(),
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawIndices.t() | nil,
           :riceHashes =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RiceDeltaEncoding.t(),
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RiceDeltaEncoding.t()
+            | nil,
           :riceIndices =>
             GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RiceDeltaEncoding.t()
+            | nil
         }
 
   field(:compressionType)

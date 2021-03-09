@@ -54,6 +54,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatHits do
   @spec safebrowsing_threat_hits_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def safebrowsing_threat_hits_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -54,6 +54,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatLists do
           {:ok,
            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ListThreatListsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def safebrowsing_threat_lists_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

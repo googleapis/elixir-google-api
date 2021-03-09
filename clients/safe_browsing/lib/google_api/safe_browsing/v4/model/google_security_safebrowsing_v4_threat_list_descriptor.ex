@@ -29,9 +29,9 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatList
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :platformType => String.t(),
-          :threatEntryType => String.t(),
-          :threatType => String.t()
+          :platformType => String.t() | nil,
+          :threatEntryType => String.t() | nil,
+          :threatType => String.t() | nil
         }
 
   field(:platformType)

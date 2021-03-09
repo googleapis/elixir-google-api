@@ -35,15 +35,18 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThrea
 
   @type t :: %__MODULE__{
           :additions =>
-            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntrySet.t()),
-          :checksum => GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4Checksum.t(),
-          :newClientState => String.t(),
-          :platformType => String.t(),
+            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntrySet.t())
+            | nil,
+          :checksum =>
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4Checksum.t() | nil,
+          :newClientState => String.t() | nil,
+          :platformType => String.t() | nil,
           :removals =>
-            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntrySet.t()),
-          :responseType => String.t(),
-          :threatEntryType => String.t(),
-          :threatType => String.t()
+            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntrySet.t())
+            | nil,
+          :responseType => String.t() | nil,
+          :threatEntryType => String.t() | nil,
+          :threatType => String.t() | nil
         }
 
   field(:additions,

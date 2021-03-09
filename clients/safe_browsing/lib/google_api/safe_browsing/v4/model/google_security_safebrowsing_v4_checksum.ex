@@ -27,7 +27,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4Checksum d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256 => String.t()
+          :sha256 => String.t() | nil
         }
 
   field(:sha256)

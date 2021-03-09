@@ -30,11 +30,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatInfo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :platformTypes => list(String.t()),
+          :platformTypes => list(String.t()) | nil,
           :threatEntries =>
-            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t()),
-          :threatEntryTypes => list(String.t()),
-          :threatTypes => list(String.t())
+            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntry.t())
+            | nil,
+          :threatEntryTypes => list(String.t()) | nil,
+          :threatTypes => list(String.t()) | nil
         }
 
   field(:platformTypes, type: :list)

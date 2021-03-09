@@ -32,12 +32,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThrea
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceLocation => String.t(),
-          :language => String.t(),
-          :maxDatabaseEntries => integer(),
-          :maxUpdateEntries => integer(),
-          :region => String.t(),
-          :supportedCompressions => list(String.t())
+          :deviceLocation => String.t() | nil,
+          :language => String.t() | nil,
+          :maxDatabaseEntries => integer() | nil,
+          :maxUpdateEntries => integer() | nil,
+          :region => String.t() | nil,
+          :supportedCompressions => list(String.t()) | nil
         }
 
   field(:deviceLocation)

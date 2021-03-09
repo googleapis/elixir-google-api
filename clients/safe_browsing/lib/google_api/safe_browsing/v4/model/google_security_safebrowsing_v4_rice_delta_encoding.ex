@@ -30,10 +30,10 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RiceDeltaE
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encodedData => String.t(),
-          :firstValue => String.t(),
-          :numEntries => integer(),
-          :riceParameter => integer()
+          :encodedData => String.t() | nil,
+          :firstValue => String.t() | nil,
+          :numEntries => integer() | nil,
+          :riceParameter => integer() | nil
         }
 
   field(:encodedData)

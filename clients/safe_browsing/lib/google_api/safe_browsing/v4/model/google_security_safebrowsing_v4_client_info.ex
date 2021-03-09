@@ -28,8 +28,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ClientInfo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :clientVersion => String.t()
+          :clientId => String.t() | nil,
+          :clientVersion => String.t() | nil
         }
 
   field(:clientId)

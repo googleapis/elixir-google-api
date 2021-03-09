@@ -31,6 +31,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntr
             list(
               GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntryMetadataMetadataEntry.t()
             )
+            | nil
         }
 
   field(:entries,

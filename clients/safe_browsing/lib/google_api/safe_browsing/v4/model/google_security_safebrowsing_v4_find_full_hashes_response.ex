@@ -30,9 +30,10 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHa
 
   @type t :: %__MODULE__{
           :matches =>
-            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatMatch.t()),
-          :minimumWaitDuration => String.t(),
-          :negativeCacheDuration => String.t()
+            list(GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatMatch.t())
+            | nil,
+          :minimumWaitDuration => String.t() | nil,
+          :negativeCacheDuration => String.t() | nil
         }
 
   field(:matches,

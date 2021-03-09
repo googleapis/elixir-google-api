@@ -28,8 +28,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ThreatEntr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

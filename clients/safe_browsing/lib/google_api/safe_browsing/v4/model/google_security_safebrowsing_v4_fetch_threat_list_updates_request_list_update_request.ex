@@ -32,11 +32,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThrea
 
   @type t :: %__MODULE__{
           :constraints =>
-            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints.t(),
-          :platformType => String.t(),
-          :state => String.t(),
-          :threatEntryType => String.t(),
-          :threatType => String.t()
+            GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints.t()
+            | nil,
+          :platformType => String.t() | nil,
+          :state => String.t() | nil,
+          :threatEntryType => String.t() | nil,
+          :threatType => String.t() | nil
         }
 
   field(:constraints,

@@ -28,8 +28,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4RawHashes 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :prefixSize => integer(),
-          :rawHashes => String.t()
+          :prefixSize => integer() | nil,
+          :rawHashes => String.t() | nil
         }
 
   field(:prefixSize)
