@@ -28,8 +28,8 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeEntitiesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entities => list(GoogleApi.Language.V1.Model.Entity.t()),
-          :language => String.t()
+          :entities => list(GoogleApi.Language.V1.Model.Entity.t()) | nil,
+          :language => String.t() | nil
         }
 
   field(:entities, as: GoogleApi.Language.V1.Model.Entity, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Language.V1.Model.ClassificationCategory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :name => String.t()
+          :confidence => number() | nil,
+          :name => String.t() | nil
         }
 
   field(:confidence)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.Language.V1.Model.Document.t(),
-          :encodingType => String.t(),
-          :features => GoogleApi.Language.V1.Model.Features.t()
+          :document => GoogleApi.Language.V1.Model.Document.t() | nil,
+          :encodingType => String.t() | nil,
+          :features => GoogleApi.Language.V1.Model.Features.t() | nil
         }
 
   field(:document, as: GoogleApi.Language.V1.Model.Document)

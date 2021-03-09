@@ -29,9 +29,9 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :language => String.t(),
-          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t()),
-          :tokens => list(GoogleApi.Language.V1.Model.Token.t())
+          :language => String.t() | nil,
+          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t()) | nil,
+          :tokens => list(GoogleApi.Language.V1.Model.Token.t()) | nil
         }
 
   field(:language)

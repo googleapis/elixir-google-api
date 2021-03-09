@@ -28,8 +28,8 @@ defmodule GoogleApi.Language.V1.Model.DependencyEdge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headTokenIndex => integer(),
-          :label => String.t()
+          :headTokenIndex => integer() | nil,
+          :label => String.t() | nil
         }
 
   field(:headTokenIndex)

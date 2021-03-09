@@ -31,11 +31,11 @@ defmodule GoogleApi.Language.V1.Model.Features do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :classifyText => boolean(),
-          :extractDocumentSentiment => boolean(),
-          :extractEntities => boolean(),
-          :extractEntitySentiment => boolean(),
-          :extractSyntax => boolean()
+          :classifyText => boolean() | nil,
+          :extractDocumentSentiment => boolean() | nil,
+          :extractEntities => boolean() | nil,
+          :extractEntitySentiment => boolean() | nil,
+          :extractSyntax => boolean() | nil
         }
 
   field(:classifyText)

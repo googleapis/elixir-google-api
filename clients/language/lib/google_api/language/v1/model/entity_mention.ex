@@ -29,9 +29,9 @@ defmodule GoogleApi.Language.V1.Model.EntityMention do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t(),
-          :type => String.t()
+          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t() | nil,
+          :text => GoogleApi.Language.V1.Model.TextSpan.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:sentiment, as: GoogleApi.Language.V1.Model.Sentiment)

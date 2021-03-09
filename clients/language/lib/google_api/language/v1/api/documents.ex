@@ -54,6 +54,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_analyze_entities(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeEntitiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_analyze_entities(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_analyze_entity_sentiment(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_analyze_entity_sentiment(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -172,6 +174,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_analyze_sentiment(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeSentimentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_analyze_sentiment(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -230,6 +233,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_analyze_syntax(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_analyze_syntax(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -288,6 +292,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_annotate_text(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnnotateTextResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_annotate_text(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -346,6 +351,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @spec language_documents_classify_text(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.ClassifyTextResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def language_documents_classify_text(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

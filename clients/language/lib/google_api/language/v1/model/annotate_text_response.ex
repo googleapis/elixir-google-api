@@ -32,12 +32,12 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categories => list(GoogleApi.Language.V1.Model.ClassificationCategory.t()),
-          :documentSentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :entities => list(GoogleApi.Language.V1.Model.Entity.t()),
-          :language => String.t(),
-          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t()),
-          :tokens => list(GoogleApi.Language.V1.Model.Token.t())
+          :categories => list(GoogleApi.Language.V1.Model.ClassificationCategory.t()) | nil,
+          :documentSentiment => GoogleApi.Language.V1.Model.Sentiment.t() | nil,
+          :entities => list(GoogleApi.Language.V1.Model.Entity.t()) | nil,
+          :language => String.t() | nil,
+          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t()) | nil,
+          :tokens => list(GoogleApi.Language.V1.Model.Token.t()) | nil
         }
 
   field(:categories, as: GoogleApi.Language.V1.Model.ClassificationCategory, type: :list)

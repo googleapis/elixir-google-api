@@ -38,18 +38,18 @@ defmodule GoogleApi.Language.V1.Model.PartOfSpeech do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspect => String.t(),
-          :case => String.t(),
-          :form => String.t(),
-          :gender => String.t(),
-          :mood => String.t(),
-          :number => String.t(),
-          :person => String.t(),
-          :proper => String.t(),
-          :reciprocity => String.t(),
-          :tag => String.t(),
-          :tense => String.t(),
-          :voice => String.t()
+          :aspect => String.t() | nil,
+          :case => String.t() | nil,
+          :form => String.t() | nil,
+          :gender => String.t() | nil,
+          :mood => String.t() | nil,
+          :number => String.t() | nil,
+          :person => String.t() | nil,
+          :proper => String.t() | nil,
+          :reciprocity => String.t() | nil,
+          :tag => String.t() | nil,
+          :tense => String.t() | nil,
+          :voice => String.t() | nil
         }
 
   field(:aspect)
