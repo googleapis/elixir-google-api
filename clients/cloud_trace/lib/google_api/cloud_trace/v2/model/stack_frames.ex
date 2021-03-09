@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackFrames do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :droppedFramesCount => integer(),
-          :frame => list(GoogleApi.CloudTrace.V2.Model.StackFrame.t())
+          :droppedFramesCount => integer() | nil,
+          :frame => list(GoogleApi.CloudTrace.V2.Model.StackFrame.t()) | nil
         }
 
   field(:droppedFramesCount)

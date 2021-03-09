@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudTrace.V1.Model.TraceSpan do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :kind => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :parentSpanId => String.t(),
-          :spanId => String.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :parentSpanId => String.t() | nil,
+          :spanId => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

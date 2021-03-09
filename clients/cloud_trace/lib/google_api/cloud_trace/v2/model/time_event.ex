@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.TimeEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotation => GoogleApi.CloudTrace.V2.Model.Annotation.t(),
-          :messageEvent => GoogleApi.CloudTrace.V2.Model.MessageEvent.t(),
-          :time => DateTime.t()
+          :annotation => GoogleApi.CloudTrace.V2.Model.Annotation.t() | nil,
+          :messageEvent => GoogleApi.CloudTrace.V2.Model.MessageEvent.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:annotation, as: GoogleApi.CloudTrace.V2.Model.Annotation)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stackFrames => GoogleApi.CloudTrace.V2.Model.StackFrames.t(),
-          :stackTraceHashId => String.t()
+          :stackFrames => GoogleApi.CloudTrace.V2.Model.StackFrames.t() | nil,
+          :stackTraceHashId => String.t() | nil
         }
 
   field(:stackFrames, as: GoogleApi.CloudTrace.V2.Model.StackFrames)

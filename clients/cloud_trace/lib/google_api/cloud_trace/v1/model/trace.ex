@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTrace.V1.Model.Trace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectId => String.t(),
-          :spans => list(GoogleApi.CloudTrace.V1.Model.TraceSpan.t()),
-          :traceId => String.t()
+          :projectId => String.t() | nil,
+          :spans => list(GoogleApi.CloudTrace.V1.Model.TraceSpan.t()) | nil,
+          :traceId => String.t() | nil
         }
 
   field(:projectId)

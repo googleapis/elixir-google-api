@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.Module do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildId => GoogleApi.CloudTrace.V2.Model.TruncatableString.t(),
-          :module => GoogleApi.CloudTrace.V2.Model.TruncatableString.t()
+          :buildId => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil,
+          :module => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil
         }
 
   field(:buildId, as: GoogleApi.CloudTrace.V2.Model.TruncatableString)

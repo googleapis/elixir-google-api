@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.Annotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t(),
-          :description => GoogleApi.CloudTrace.V2.Model.TruncatableString.t()
+          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t() | nil,
+          :description => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil
         }
 
   field(:attributes, as: GoogleApi.CloudTrace.V2.Model.Attributes)
