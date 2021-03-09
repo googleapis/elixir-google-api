@@ -28,8 +28,8 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.ListAvailableVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableVersions => list(GoogleApi.DataFusion.V1beta1.Model.Version.t()),
-          :nextPageToken => String.t()
+          :availableVersions => list(GoogleApi.DataFusion.V1beta1.Model.Version.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:availableVersions, as: GoogleApi.DataFusion.V1beta1.Model.Version, type: :list)

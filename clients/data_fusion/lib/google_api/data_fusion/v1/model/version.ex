@@ -29,9 +29,9 @@ defmodule GoogleApi.DataFusion.V1.Model.Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableFeatures => list(String.t()),
-          :defaultVersion => boolean(),
-          :versionNumber => String.t()
+          :availableFeatures => list(String.t()) | nil,
+          :defaultVersion => boolean() | nil,
+          :versionNumber => String.t() | nil
         }
 
   field(:availableFeatures, type: :list)

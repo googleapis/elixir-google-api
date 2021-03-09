@@ -28,8 +28,8 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.NetworkConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAllocation => String.t(),
-          :network => String.t()
+          :ipAllocation => String.t() | nil,
+          :network => String.t() | nil
         }
 
   field(:ipAllocation)

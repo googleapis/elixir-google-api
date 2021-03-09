@@ -29,9 +29,9 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.ListInstancesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(GoogleApi.DataFusion.V1beta1.Model.Instance.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :instances => list(GoogleApi.DataFusion.V1beta1.Model.Instance.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:instances, as: GoogleApi.DataFusion.V1beta1.Model.Instance, type: :list)

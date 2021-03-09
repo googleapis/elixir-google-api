@@ -28,8 +28,8 @@ defmodule GoogleApi.DataFusion.V1.Model.Accelerator do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorType => String.t(),
-          :state => String.t()
+          :acceleratorType => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:acceleratorType)
