@@ -31,11 +31,11 @@ defmodule GoogleApi.AdSense.V14.Model.Payment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :paymentAmount => String.t(),
-          :paymentAmountCurrencyCode => String.t(),
-          :paymentDate => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :paymentAmount => String.t() | nil,
+          :paymentAmountCurrencyCode => String.t() | nil,
+          :paymentDate => String.t() | nil
         }
 
   field(:id)

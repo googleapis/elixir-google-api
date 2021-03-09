@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnitMobileContentAdsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :markupLanguage => String.t(),
-          :scriptingLanguage => String.t(),
-          :size => String.t(),
-          :type => String.t()
+          :markupLanguage => String.t() | nil,
+          :scriptingLanguage => String.t() | nil,
+          :size => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:markupLanguage)

@@ -33,13 +33,13 @@ defmodule GoogleApi.AdSense.V14.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creation_time => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :premium => boolean(),
-          :subAccounts => list(GoogleApi.AdSense.V14.Model.Account.t()),
-          :timezone => String.t()
+          :creation_time => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :premium => boolean() | nil,
+          :subAccounts => list(GoogleApi.AdSense.V14.Model.Account.t()) | nil,
+          :timezone => String.t() | nil
         }
 
   field(:creation_time)

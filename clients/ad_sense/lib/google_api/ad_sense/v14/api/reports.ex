@@ -61,6 +61,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   @spec adsense_reports_generate(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsense_reports_generate(
         connection,
@@ -138,6 +139,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   @spec adsense_reports_saved_generate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsense_reports_saved_generate(
         connection,
@@ -200,6 +202,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   @spec adsense_reports_saved_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsense_reports_saved_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

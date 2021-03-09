@@ -32,12 +32,12 @@ defmodule GoogleApi.AdSense.V14.Model.Alert do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :isDismissible => boolean(),
-          :kind => String.t(),
-          :message => String.t(),
-          :severity => String.t(),
-          :type => String.t()
+          :id => String.t() | nil,
+          :isDismissible => boolean() | nil,
+          :kind => String.t() | nil,
+          :message => String.t() | nil,
+          :severity => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:id)

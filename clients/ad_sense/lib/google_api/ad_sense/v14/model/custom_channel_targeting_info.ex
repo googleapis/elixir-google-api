@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adsAppearOn => String.t(),
-          :description => String.t(),
-          :location => String.t(),
-          :siteLanguage => String.t()
+          :adsAppearOn => String.t() | nil,
+          :description => String.t() | nil,
+          :location => String.t() | nil,
+          :siteLanguage => String.t() | nil
         }
 
   field(:adsAppearOn)

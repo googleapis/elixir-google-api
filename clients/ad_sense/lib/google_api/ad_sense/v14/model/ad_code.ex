@@ -30,10 +30,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adCode => String.t(),
-          :ampBody => String.t(),
-          :ampHead => String.t(),
-          :kind => String.t()
+          :adCode => String.t() | nil,
+          :ampBody => String.t() | nil,
+          :ampHead => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:adCode)

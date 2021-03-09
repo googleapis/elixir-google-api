@@ -28,8 +28,8 @@ defmodule GoogleApi.AdSense.V14.Model.Payments do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.AdSense.V14.Model.Payment.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.AdSense.V14.Model.Payment.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.AdSense.V14.Model.Payment, type: :list)
