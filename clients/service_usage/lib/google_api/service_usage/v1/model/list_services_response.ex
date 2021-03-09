@@ -28,8 +28,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ListServicesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :services => list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t())
+          :nextPageToken => String.t() | nil,
+          :services =>
+            list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t()) | nil
         }
 
   field(:nextPageToken)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.LoggingDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logs => list(String.t()),
-          :monitoredResource => String.t()
+          :logs => list(String.t()) | nil,
+          :monitoredResource => String.t() | nil
         }
 
   field(:logs, type: :list)

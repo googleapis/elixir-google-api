@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ServiceIdentity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :uniqueId => String.t()
+          :email => String.t() | nil,
+          :uniqueId => String.t() | nil
         }
 
   field(:email)

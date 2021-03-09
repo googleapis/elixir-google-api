@@ -33,13 +33,13 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Method do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()),
-          :requestStreaming => boolean(),
-          :requestTypeUrl => String.t(),
-          :responseStreaming => boolean(),
-          :responseTypeUrl => String.t(),
-          :syntax => String.t()
+          :name => String.t() | nil,
+          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()) | nil,
+          :requestStreaming => boolean() | nil,
+          :requestTypeUrl => String.t() | nil,
+          :responseStreaming => boolean() | nil,
+          :responseTypeUrl => String.t() | nil,
+          :syntax => String.t() | nil
         }
 
   field(:name)

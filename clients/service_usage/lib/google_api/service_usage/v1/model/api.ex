@@ -33,13 +33,13 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Api do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :methods => list(GoogleApi.ServiceUsage.V1.Model.Method.t()),
-          :mixins => list(GoogleApi.ServiceUsage.V1.Model.Mixin.t()),
-          :name => String.t(),
-          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()),
-          :sourceContext => GoogleApi.ServiceUsage.V1.Model.SourceContext.t(),
-          :syntax => String.t(),
-          :version => String.t()
+          :methods => list(GoogleApi.ServiceUsage.V1.Model.Method.t()) | nil,
+          :mixins => list(GoogleApi.ServiceUsage.V1.Model.Mixin.t()) | nil,
+          :name => String.t() | nil,
+          :options => list(GoogleApi.ServiceUsage.V1.Model.Option.t()) | nil,
+          :sourceContext => GoogleApi.ServiceUsage.V1.Model.SourceContext.t() | nil,
+          :syntax => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:methods, as: GoogleApi.ServiceUsage.V1.Model.Method, type: :list)

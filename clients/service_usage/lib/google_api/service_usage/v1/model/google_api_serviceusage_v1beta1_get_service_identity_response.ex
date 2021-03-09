@@ -29,8 +29,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1GetService
 
   @type t :: %__MODULE__{
           :identity =>
-            GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity.t(),
-          :state => String.t()
+            GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:identity, as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity)

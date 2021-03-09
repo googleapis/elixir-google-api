@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.DisableServiceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t()
+          :service => GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t() | nil
         }
 
   field(:service, as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service)

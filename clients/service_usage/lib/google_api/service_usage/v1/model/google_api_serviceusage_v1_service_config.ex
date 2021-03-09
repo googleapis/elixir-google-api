@@ -36,17 +36,17 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apis => list(GoogleApi.ServiceUsage.V1.Model.Api.t()),
-          :authentication => GoogleApi.ServiceUsage.V1.Model.Authentication.t(),
-          :documentation => GoogleApi.ServiceUsage.V1.Model.Documentation.t(),
-          :endpoints => list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t()),
+          :apis => list(GoogleApi.ServiceUsage.V1.Model.Api.t()) | nil,
+          :authentication => GoogleApi.ServiceUsage.V1.Model.Authentication.t() | nil,
+          :documentation => GoogleApi.ServiceUsage.V1.Model.Documentation.t() | nil,
+          :endpoints => list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t()) | nil,
           :monitoredResources =>
-            list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t()),
-          :monitoring => GoogleApi.ServiceUsage.V1.Model.Monitoring.t(),
-          :name => String.t(),
-          :quota => GoogleApi.ServiceUsage.V1.Model.Quota.t(),
-          :title => String.t(),
-          :usage => GoogleApi.ServiceUsage.V1.Model.Usage.t()
+            list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t()) | nil,
+          :monitoring => GoogleApi.ServiceUsage.V1.Model.Monitoring.t() | nil,
+          :name => String.t() | nil,
+          :quota => GoogleApi.ServiceUsage.V1.Model.Quota.t() | nil,
+          :title => String.t() | nil,
+          :usage => GoogleApi.ServiceUsage.V1.Model.Usage.t() | nil
         }
 
   field(:apis, as: GoogleApi.ServiceUsage.V1.Model.Api, type: :list)

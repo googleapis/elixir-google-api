@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ImportConsumerOverridesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :overrides => list(GoogleApi.ServiceUsage.V1.Model.QuotaOverride.t())
+          :overrides => list(GoogleApi.ServiceUsage.V1.Model.QuotaOverride.t()) | nil
         }
 
   field(:overrides, as: GoogleApi.ServiceUsage.V1.Model.QuotaOverride, type: :list)

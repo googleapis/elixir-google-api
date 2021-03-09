@@ -28,8 +28,10 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Logging do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerDestinations => list(GoogleApi.ServiceUsage.V1.Model.LoggingDestination.t()),
-          :producerDestinations => list(GoogleApi.ServiceUsage.V1.Model.LoggingDestination.t())
+          :consumerDestinations =>
+            list(GoogleApi.ServiceUsage.V1.Model.LoggingDestination.t()) | nil,
+          :producerDestinations =>
+            list(GoogleApi.ServiceUsage.V1.Model.LoggingDestination.t()) | nil
         }
 
   field(:consumerDestinations, as: GoogleApi.ServiceUsage.V1.Model.LoggingDestination, type: :list)

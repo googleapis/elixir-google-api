@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GetServiceIdentityResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identity => GoogleApi.ServiceUsage.V1.Model.ServiceIdentity.t(),
-          :state => String.t()
+          :identity => GoogleApi.ServiceUsage.V1.Model.ServiceIdentity.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:identity, as: GoogleApi.ServiceUsage.V1.Model.ServiceIdentity)
