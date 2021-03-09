@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1.Model.UpgradeInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :redisVersion => String.t()
+          :redisVersion => String.t() | nil
         }
 
   field(:redisVersion)

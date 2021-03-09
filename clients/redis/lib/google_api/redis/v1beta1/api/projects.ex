@@ -61,6 +61,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_get(
         connection,
@@ -130,6 +131,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   @spec redis_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -201,6 +203,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_create(
         connection,
@@ -278,6 +281,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_delete(
         connection,
@@ -359,6 +363,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_export(
         connection,
@@ -441,6 +446,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_failover(
         connection,
@@ -522,6 +528,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Instance.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_get(
         connection,
@@ -602,6 +609,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.InstanceAuthString.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_get_auth_string(
         connection,
@@ -683,6 +691,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_import(
         connection,
@@ -764,6 +773,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.ListInstancesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_list(
         connection,
@@ -843,6 +853,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_patch(
         connection,
@@ -926,6 +937,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_instances_upgrade(
         connection,
@@ -1005,7 +1017,10 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Redis.V1beta1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Redis.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def redis_projects_locations_operations_cancel(
         connection,
         projects_id,
@@ -1083,7 +1098,10 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Redis.V1beta1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Redis.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def redis_projects_locations_operations_delete(
         connection,
         projects_id,
@@ -1163,6 +1181,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_operations_get(
         connection,
@@ -1244,6 +1263,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Redis.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def redis_projects_locations_operations_list(
         connection,

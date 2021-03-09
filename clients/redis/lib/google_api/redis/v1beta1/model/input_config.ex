@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.InputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => GoogleApi.Redis.V1beta1.Model.GcsSource.t()
+          :gcsSource => GoogleApi.Redis.V1beta1.Model.GcsSource.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.Redis.V1beta1.Model.GcsSource)

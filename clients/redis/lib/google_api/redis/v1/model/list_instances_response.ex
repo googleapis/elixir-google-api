@@ -29,9 +29,9 @@ defmodule GoogleApi.Redis.V1.Model.ListInstancesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(GoogleApi.Redis.V1.Model.Instance.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :instances => list(GoogleApi.Redis.V1.Model.Instance.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:instances, as: GoogleApi.Redis.V1.Model.Instance, type: :list)
