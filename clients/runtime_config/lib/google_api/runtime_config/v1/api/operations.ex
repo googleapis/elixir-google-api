@@ -55,6 +55,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   @spec runtimeconfig_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def runtimeconfig_operations_cancel(
         connection,
@@ -120,6 +121,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   @spec runtimeconfig_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def runtimeconfig_operations_delete(
         connection,
@@ -186,6 +188,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   @spec runtimeconfig_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def runtimeconfig_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
