@@ -29,9 +29,9 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateAccessTokenRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegates => list(String.t()),
-          :lifetime => String.t(),
-          :scope => list(String.t())
+          :delegates => list(String.t()) | nil,
+          :lifetime => String.t() | nil,
+          :scope => list(String.t()) | nil
         }
 
   field(:delegates, type: :list)

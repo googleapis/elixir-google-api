@@ -29,9 +29,9 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateIdTokenRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audience => String.t(),
-          :delegates => list(String.t()),
-          :includeEmail => boolean()
+          :audience => String.t() | nil,
+          :delegates => list(String.t()) | nil,
+          :includeEmail => boolean() | nil
         }
 
   field(:audience)

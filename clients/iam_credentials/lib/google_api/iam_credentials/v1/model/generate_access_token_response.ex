@@ -28,8 +28,8 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateAccessTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessToken => String.t(),
-          :expireTime => DateTime.t()
+          :accessToken => String.t() | nil,
+          :expireTime => DateTime.t() | nil
         }
 
   field(:accessToken)

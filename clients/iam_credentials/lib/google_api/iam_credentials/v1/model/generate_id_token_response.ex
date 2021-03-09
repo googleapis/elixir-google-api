@@ -27,7 +27,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateIdTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :token => String.t()
+          :token => String.t() | nil
         }
 
   field(:token)
