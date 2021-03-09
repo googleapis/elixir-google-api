@@ -35,15 +35,17 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
 
   @type t :: %__MODULE__{
           :draft =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t(),
-          :id => String.t(),
-          :kind => String.t(),
+            GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t()
+            | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
           :published =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t(),
-          :scoreMax => String.t(),
-          :scoreMin => String.t(),
-          :scoreOrder => String.t(),
-          :token => String.t()
+            GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t()
+            | nil,
+          :scoreMax => String.t() | nil,
+          :scoreMin => String.t() | nil,
+          :scoreOrder => String.t() | nil,
+          :token => String.t() | nil
         }
 
   field(:draft,

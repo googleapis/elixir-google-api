@@ -30,10 +30,10 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageType => String.t(),
-          :kind => String.t(),
-          :resourceId => String.t(),
-          :url => String.t()
+          :imageType => String.t() | nil,
+          :kind => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:imageType)

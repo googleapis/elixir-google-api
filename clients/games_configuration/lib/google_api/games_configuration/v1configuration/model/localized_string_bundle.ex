@@ -28,9 +28,9 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBund
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :translations =>
-            list(GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString.t())
+            list(GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString.t()) | nil
         }
 
   field(:kind)

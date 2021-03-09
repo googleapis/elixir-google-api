@@ -34,16 +34,18 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievementType => String.t(),
+          :achievementType => String.t() | nil,
           :draft =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t(),
-          :id => String.t(),
-          :initialState => String.t(),
-          :kind => String.t(),
+            GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t()
+            | nil,
+          :id => String.t() | nil,
+          :initialState => String.t() | nil,
+          :kind => String.t() | nil,
           :published =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t(),
-          :stepsToUnlock => integer(),
-          :token => String.t()
+            GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t()
+            | nil,
+          :stepsToUnlock => integer() | nil,
+          :token => String.t() | nil
         }
 
   field(:achievementType)

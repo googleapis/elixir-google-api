@@ -31,12 +31,14 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iconUrl => String.t(),
-          :kind => String.t(),
-          :name => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
+          :iconUrl => String.t() | nil,
+          :kind => String.t() | nil,
+          :name =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
           :scoreFormat =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration.t(),
-          :sortRank => integer()
+            GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration.t()
+            | nil,
+          :sortRank => integer() | nil
         }
 
   field(:iconUrl)

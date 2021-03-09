@@ -29,9 +29,9 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :locale => String.t(),
-          :value => String.t()
+          :kind => String.t() | nil,
+          :locale => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:kind)

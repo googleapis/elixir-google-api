@@ -32,12 +32,18 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixCon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :few => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :many => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :one => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :other => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :two => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :zero => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t()
+          :few =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :many =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :one =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :other =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :two =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :zero =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil
         }
 
   field(:few, as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle)

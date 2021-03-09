@@ -30,9 +30,10 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigur
 
   @type t :: %__MODULE__{
           :items =>
-            list(GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+            list(GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t())
+            | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items,
