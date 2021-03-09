@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.MaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailyCycle => GoogleApi.Memcache.V1beta2.Model.DailyCycle.t(),
-          :weeklyCycle => GoogleApi.Memcache.V1beta2.Model.WeeklyCycle.t()
+          :dailyCycle => GoogleApi.Memcache.V1beta2.Model.DailyCycle.t() | nil,
+          :weeklyCycle => GoogleApi.Memcache.V1beta2.Model.WeeklyCycle.t() | nil
         }
 
   field(:dailyCycle, as: GoogleApi.Memcache.V1beta2.Model.DailyCycle)

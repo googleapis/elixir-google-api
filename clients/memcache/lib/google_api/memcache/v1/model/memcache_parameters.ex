@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.MemcacheParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :params => map()
+          :id => String.t() | nil,
+          :params => map() | nil
         }
 
   field(:id)

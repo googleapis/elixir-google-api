@@ -27,9 +27,8 @@ defmodule GoogleApi.Memcache.V1.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableZones => %{
-            optional(String.t()) => GoogleApi.Memcache.V1.Model.ZoneMetadata.t()
-          }
+          :availableZones =>
+            %{optional(String.t()) => GoogleApi.Memcache.V1.Model.ZoneMetadata.t()} | nil
         }
 
   field(:availableZones, as: GoogleApi.Memcache.V1.Model.ZoneMetadata, type: :map)

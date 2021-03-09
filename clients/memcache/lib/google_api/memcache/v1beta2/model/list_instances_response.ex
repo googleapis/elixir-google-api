@@ -29,9 +29,9 @@ defmodule GoogleApi.Memcache.V1beta2.Model.ListInstancesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Memcache.V1beta2.Model.Instance.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Memcache.V1beta2.Model.Instance.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

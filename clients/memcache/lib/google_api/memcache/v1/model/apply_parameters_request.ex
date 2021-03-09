@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.ApplyParametersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applyAll => boolean(),
-          :nodeIds => list(String.t())
+          :applyAll => boolean() | nil,
+          :nodeIds => list(String.t()) | nil
         }
 
   field(:applyAll)

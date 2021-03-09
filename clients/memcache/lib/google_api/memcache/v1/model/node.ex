@@ -32,12 +32,12 @@ defmodule GoogleApi.Memcache.V1.Model.Node do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :nodeId => String.t(),
-          :parameters => GoogleApi.Memcache.V1.Model.MemcacheParameters.t(),
-          :port => integer(),
-          :state => String.t(),
-          :zone => String.t()
+          :host => String.t() | nil,
+          :nodeId => String.t() | nil,
+          :parameters => GoogleApi.Memcache.V1.Model.MemcacheParameters.t() | nil,
+          :port => integer() | nil,
+          :state => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:host)

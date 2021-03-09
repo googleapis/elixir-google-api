@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.ListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.Memcache.V1.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.Memcache.V1.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.Memcache.V1.Model.Location, type: :list)

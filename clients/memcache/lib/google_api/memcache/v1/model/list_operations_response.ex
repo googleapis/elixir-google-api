@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.ListOperationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.Memcache.V1.Model.Operation.t())
+          :nextPageToken => String.t() | nil,
+          :operations => list(GoogleApi.Memcache.V1.Model.Operation.t()) | nil
         }
 
   field(:nextPageToken)

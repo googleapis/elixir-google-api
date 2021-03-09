@@ -31,11 +31,11 @@ defmodule GoogleApi.Memcache.V1.Model.GoogleCloudSaasacceleratorManagementProvid
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canReschedule => boolean(),
-          :endTime => DateTime.t(),
-          :rolloutManagementPolicy => String.t(),
-          :scheduleDeadlineTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :canReschedule => boolean() | nil,
+          :endTime => DateTime.t() | nil,
+          :rolloutManagementPolicy => String.t() | nil,
+          :scheduleDeadlineTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:canReschedule)

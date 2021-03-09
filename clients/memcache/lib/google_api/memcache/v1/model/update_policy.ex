@@ -29,9 +29,10 @@ defmodule GoogleApi.Memcache.V1.Model.UpdatePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => String.t(),
-          :denyMaintenancePeriods => list(GoogleApi.Memcache.V1.Model.DenyMaintenancePeriod.t()),
-          :window => GoogleApi.Memcache.V1.Model.MaintenanceWindow.t()
+          :channel => String.t() | nil,
+          :denyMaintenancePeriods =>
+            list(GoogleApi.Memcache.V1.Model.DenyMaintenancePeriod.t()) | nil,
+          :window => GoogleApi.Memcache.V1.Model.MaintenanceWindow.t() | nil
         }
 
   field(:channel)
