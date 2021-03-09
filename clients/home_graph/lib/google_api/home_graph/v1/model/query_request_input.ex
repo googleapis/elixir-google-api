@@ -27,7 +27,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryRequestInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => GoogleApi.HomeGraph.V1.Model.QueryRequestPayload.t()
+          :payload => GoogleApi.HomeGraph.V1.Model.QueryRequestPayload.t() | nil
         }
 
   field(:payload, as: GoogleApi.HomeGraph.V1.Model.QueryRequestPayload)

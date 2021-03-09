@@ -30,10 +30,10 @@ defmodule GoogleApi.HomeGraph.V1.Model.DeviceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hwVersion => String.t(),
-          :manufacturer => String.t(),
-          :model => String.t(),
-          :swVersion => String.t()
+          :hwVersion => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :swVersion => String.t() | nil
         }
 
   field(:hwVersion)

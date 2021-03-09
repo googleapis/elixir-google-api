@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentId => String.t(),
-          :deviceId => String.t()
+          :agentId => String.t() | nil,
+          :deviceId => String.t() | nil
         }
 
   field(:agentId)

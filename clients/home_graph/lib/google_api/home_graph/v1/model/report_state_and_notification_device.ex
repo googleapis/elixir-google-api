@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifications => map(),
-          :states => map()
+          :notifications => map() | nil,
+          :states => map() | nil
         }
 
   field(:notifications, type: :map)

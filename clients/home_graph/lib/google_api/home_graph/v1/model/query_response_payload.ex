@@ -27,7 +27,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryResponsePayload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => map()
+          :devices => map() | nil
         }
 
   field(:devices, type: :map)

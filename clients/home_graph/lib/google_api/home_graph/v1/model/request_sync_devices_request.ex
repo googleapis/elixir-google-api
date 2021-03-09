@@ -28,8 +28,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.RequestSyncDevicesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUserId => String.t(),
-          :async => boolean()
+          :agentUserId => String.t() | nil,
+          :async => boolean() | nil
         }
 
   field(:agentUserId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryRequestPayload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.HomeGraph.V1.Model.AgentDeviceId.t())
+          :devices => list(GoogleApi.HomeGraph.V1.Model.AgentDeviceId.t()) | nil
         }
 
   field(:devices, as: GoogleApi.HomeGraph.V1.Model.AgentDeviceId, type: :list)
