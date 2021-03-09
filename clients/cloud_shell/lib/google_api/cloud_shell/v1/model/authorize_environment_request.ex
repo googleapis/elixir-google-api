@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudShell.V1.Model.AuthorizeEnvironmentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessToken => String.t(),
-          :expireTime => DateTime.t(),
-          :idToken => String.t()
+          :accessToken => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :idToken => String.t() | nil
         }
 
   field(:accessToken)

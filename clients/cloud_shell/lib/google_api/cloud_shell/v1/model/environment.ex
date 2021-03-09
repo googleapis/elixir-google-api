@@ -35,15 +35,15 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dockerImage => String.t(),
-          :id => String.t(),
-          :name => String.t(),
-          :publicKeys => list(String.t()),
-          :sshHost => String.t(),
-          :sshPort => integer(),
-          :sshUsername => String.t(),
-          :state => String.t(),
-          :webHost => String.t()
+          :dockerImage => String.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :publicKeys => list(String.t()) | nil,
+          :sshHost => String.t() | nil,
+          :sshPort => integer() | nil,
+          :sshUsername => String.t() | nil,
+          :state => String.t() | nil,
+          :webHost => String.t() | nil
         }
 
   field(:dockerImage)
