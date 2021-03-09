@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.ListHoldsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :holds => list(GoogleApi.Vault.V1.Model.Hold.t()),
-          :nextPageToken => String.t()
+          :holds => list(GoogleApi.Vault.V1.Model.Hold.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:holds, as: GoogleApi.Vault.V1.Model.Hold, type: :list)

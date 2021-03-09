@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.TeamDriveInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :teamDriveIds => list(String.t())
+          :teamDriveIds => list(String.t()) | nil
         }
 
   field(:teamDriveIds, type: :list)

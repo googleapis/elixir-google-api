@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.CountArtifactsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :query => GoogleApi.Vault.V1.Model.Query.t(),
-          :view => String.t()
+          :query => GoogleApi.Vault.V1.Model.Query.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:query, as: GoogleApi.Vault.V1.Model.Query)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Vault.V1.Model.Hold do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accounts => list(GoogleApi.Vault.V1.Model.HeldAccount.t()),
-          :corpus => String.t(),
-          :holdId => String.t(),
-          :name => String.t(),
-          :orgUnit => GoogleApi.Vault.V1.Model.HeldOrgUnit.t(),
-          :query => GoogleApi.Vault.V1.Model.CorpusQuery.t(),
-          :updateTime => DateTime.t()
+          :accounts => list(GoogleApi.Vault.V1.Model.HeldAccount.t()) | nil,
+          :corpus => String.t() | nil,
+          :holdId => String.t() | nil,
+          :name => String.t() | nil,
+          :orgUnit => GoogleApi.Vault.V1.Model.HeldOrgUnit.t() | nil,
+          :query => GoogleApi.Vault.V1.Model.CorpusQuery.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:accounts, as: GoogleApi.Vault.V1.Model.HeldAccount, type: :list)

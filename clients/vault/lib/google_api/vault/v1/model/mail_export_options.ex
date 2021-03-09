@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportFormat => String.t(),
-          :showConfidentialModeContent => boolean()
+          :exportFormat => String.t() | nil,
+          :showConfidentialModeContent => boolean() | nil
         }
 
   field(:exportFormat)

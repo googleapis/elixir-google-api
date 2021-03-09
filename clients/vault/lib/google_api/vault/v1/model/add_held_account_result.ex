@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.AddHeldAccountResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.Vault.V1.Model.HeldAccount.t(),
-          :status => GoogleApi.Vault.V1.Model.Status.t()
+          :account => GoogleApi.Vault.V1.Model.HeldAccount.t() | nil,
+          :status => GoogleApi.Vault.V1.Model.Status.t() | nil
         }
 
   field(:account, as: GoogleApi.Vault.V1.Model.HeldAccount)

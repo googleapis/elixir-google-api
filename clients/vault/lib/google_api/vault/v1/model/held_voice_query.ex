@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.HeldVoiceQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coveredData => list(String.t())
+          :coveredData => list(String.t()) | nil
         }
 
   field(:coveredData, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Vault.V1.Model.CountArtifactsMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :matterId => String.t(),
-          :query => GoogleApi.Vault.V1.Model.Query.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :matterId => String.t() | nil,
+          :query => GoogleApi.Vault.V1.Model.Query.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

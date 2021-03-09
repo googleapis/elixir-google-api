@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.HangoutsChatExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportFormat => String.t()
+          :exportFormat => String.t() | nil
         }
 
   field(:exportFormat)

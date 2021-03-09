@@ -31,11 +31,11 @@ defmodule GoogleApi.Vault.V1.Model.HeldAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :email => String.t(),
-          :firstName => String.t(),
-          :holdTime => DateTime.t(),
-          :lastName => String.t()
+          :accountId => String.t() | nil,
+          :email => String.t() | nil,
+          :firstName => String.t() | nil,
+          :holdTime => DateTime.t() | nil,
+          :lastName => String.t() | nil
         }
 
   field(:accountId)

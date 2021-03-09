@@ -32,12 +32,12 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveOptions => GoogleApi.Vault.V1.Model.DriveExportOptions.t(),
-          :groupsOptions => GoogleApi.Vault.V1.Model.GroupsExportOptions.t(),
-          :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t(),
-          :mailOptions => GoogleApi.Vault.V1.Model.MailExportOptions.t(),
-          :region => String.t(),
-          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceExportOptions.t()
+          :driveOptions => GoogleApi.Vault.V1.Model.DriveExportOptions.t() | nil,
+          :groupsOptions => GoogleApi.Vault.V1.Model.GroupsExportOptions.t() | nil,
+          :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t() | nil,
+          :mailOptions => GoogleApi.Vault.V1.Model.MailExportOptions.t() | nil,
+          :region => String.t() | nil,
+          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceExportOptions.t() | nil
         }
 
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveExportOptions)

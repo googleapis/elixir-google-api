@@ -31,11 +31,11 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveQuery => GoogleApi.Vault.V1.Model.HeldDriveQuery.t(),
-          :groupsQuery => GoogleApi.Vault.V1.Model.HeldGroupsQuery.t(),
-          :hangoutsChatQuery => GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t(),
-          :mailQuery => GoogleApi.Vault.V1.Model.HeldMailQuery.t(),
-          :voiceQuery => GoogleApi.Vault.V1.Model.HeldVoiceQuery.t()
+          :driveQuery => GoogleApi.Vault.V1.Model.HeldDriveQuery.t() | nil,
+          :groupsQuery => GoogleApi.Vault.V1.Model.HeldGroupsQuery.t() | nil,
+          :hangoutsChatQuery => GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t() | nil,
+          :mailQuery => GoogleApi.Vault.V1.Model.HeldMailQuery.t() | nil,
+          :voiceQuery => GoogleApi.Vault.V1.Model.HeldVoiceQuery.t() | nil
         }
 
   field(:driveQuery, as: GoogleApi.Vault.V1.Model.HeldDriveQuery)

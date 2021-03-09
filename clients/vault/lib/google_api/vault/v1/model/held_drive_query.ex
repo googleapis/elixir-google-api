@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.HeldDriveQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeSharedDriveFiles => boolean(),
-          :includeTeamDriveFiles => boolean()
+          :includeSharedDriveFiles => boolean() | nil,
+          :includeTeamDriveFiles => boolean() | nil
         }
 
   field(:includeSharedDriveFiles)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeRooms => boolean()
+          :includeRooms => boolean() | nil
         }
 
   field(:includeRooms)

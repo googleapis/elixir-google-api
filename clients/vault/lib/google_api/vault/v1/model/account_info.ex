@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.AccountInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emails => list(String.t())
+          :emails => list(String.t()) | nil
         }
 
   field(:emails, type: :list)

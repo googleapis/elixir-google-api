@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.AddHeldAccountsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountIds => list(String.t()),
-          :emails => list(String.t())
+          :accountIds => list(String.t()) | nil,
+          :emails => list(String.t()) | nil
         }
 
   field(:accountIds, type: :list)

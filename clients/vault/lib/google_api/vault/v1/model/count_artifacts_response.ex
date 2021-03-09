@@ -29,9 +29,9 @@ defmodule GoogleApi.Vault.V1.Model.CountArtifactsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupsCountResult => GoogleApi.Vault.V1.Model.GroupsCountResult.t(),
-          :mailCountResult => GoogleApi.Vault.V1.Model.MailCountResult.t(),
-          :totalCount => String.t()
+          :groupsCountResult => GoogleApi.Vault.V1.Model.GroupsCountResult.t() | nil,
+          :mailCountResult => GoogleApi.Vault.V1.Model.MailCountResult.t() | nil,
+          :totalCount => String.t() | nil
         }
 
   field(:groupsCountResult, as: GoogleApi.Vault.V1.Model.GroupsCountResult)

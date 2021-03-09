@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.HeldOrgUnit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :holdTime => DateTime.t(),
-          :orgUnitId => String.t()
+          :holdTime => DateTime.t() | nil,
+          :orgUnitId => String.t() | nil
         }
 
   field(:holdTime, as: DateTime)

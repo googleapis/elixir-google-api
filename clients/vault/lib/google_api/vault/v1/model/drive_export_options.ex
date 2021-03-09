@@ -27,7 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.DriveExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeAccessInfo => boolean()
+          :includeAccessInfo => boolean() | nil
         }
 
   field(:includeAccessInfo)

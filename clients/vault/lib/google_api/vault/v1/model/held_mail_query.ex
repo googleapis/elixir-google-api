@@ -29,9 +29,9 @@ defmodule GoogleApi.Vault.V1.Model.HeldMailQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :terms => String.t()
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :terms => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

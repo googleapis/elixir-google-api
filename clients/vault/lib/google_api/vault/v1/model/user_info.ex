@@ -28,8 +28,8 @@ defmodule GoogleApi.Vault.V1.Model.UserInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :email => String.t()
+          :displayName => String.t() | nil,
+          :email => String.t() | nil
         }
 
   field(:displayName)

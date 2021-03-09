@@ -36,16 +36,16 @@ defmodule GoogleApi.Vault.V1.Model.Export do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudStorageSink => GoogleApi.Vault.V1.Model.CloudStorageSink.t(),
-          :createTime => DateTime.t(),
-          :exportOptions => GoogleApi.Vault.V1.Model.ExportOptions.t(),
-          :id => String.t(),
-          :matterId => String.t(),
-          :name => String.t(),
-          :query => GoogleApi.Vault.V1.Model.Query.t(),
-          :requester => GoogleApi.Vault.V1.Model.UserInfo.t(),
-          :stats => GoogleApi.Vault.V1.Model.ExportStats.t(),
-          :status => String.t()
+          :cloudStorageSink => GoogleApi.Vault.V1.Model.CloudStorageSink.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :exportOptions => GoogleApi.Vault.V1.Model.ExportOptions.t() | nil,
+          :id => String.t() | nil,
+          :matterId => String.t() | nil,
+          :name => String.t() | nil,
+          :query => GoogleApi.Vault.V1.Model.Query.t() | nil,
+          :requester => GoogleApi.Vault.V1.Model.UserInfo.t() | nil,
+          :stats => GoogleApi.Vault.V1.Model.ExportStats.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:cloudStorageSink, as: GoogleApi.Vault.V1.Model.CloudStorageSink)
