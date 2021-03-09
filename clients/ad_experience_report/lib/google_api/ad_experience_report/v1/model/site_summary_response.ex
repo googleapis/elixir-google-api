@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desktopSummary => GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t(),
-          :mobileSummary => GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t(),
-          :reviewedSite => String.t()
+          :desktopSummary => GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t() | nil,
+          :mobileSummary => GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t() | nil,
+          :reviewedSite => String.t() | nil
         }
 
   field(:desktopSummary, as: GoogleApi.AdExperienceReport.V1.Model.PlatformSummary)
