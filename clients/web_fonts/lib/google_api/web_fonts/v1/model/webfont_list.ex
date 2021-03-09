@@ -28,8 +28,8 @@ defmodule GoogleApi.WebFonts.V1.Model.WebfontList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.WebFonts.V1.Model.Webfont.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.WebFonts.V1.Model.Webfont.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.WebFonts.V1.Model.Webfont, type: :list)

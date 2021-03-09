@@ -54,6 +54,7 @@ defmodule GoogleApi.WebFonts.V1.Api.Webfonts do
   @spec webfonts_webfonts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.WebFonts.V1.Model.WebfontList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def webfonts_webfonts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
