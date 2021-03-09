@@ -28,8 +28,8 @@ defmodule GoogleApi.GroupsMigration.V1.Model.Groups do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :responseCode => String.t()
+          :kind => String.t() | nil,
+          :responseCode => String.t() | nil
         }
 
   field(:kind)

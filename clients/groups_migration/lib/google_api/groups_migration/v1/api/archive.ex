@@ -54,6 +54,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
   @spec groupsmigration_archive_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def groupsmigration_archive_insert(connection, group_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,6 +125,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
         ) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def groupsmigration_archive_insert_iodata(
         connection,
@@ -205,6 +207,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
         ) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def groupsmigration_archive_insert_simple(
         connection,
