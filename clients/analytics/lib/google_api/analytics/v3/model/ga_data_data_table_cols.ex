@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTableCols do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :label => String.t(),
-          :type => String.t()
+          :id => String.t() | nil,
+          :label => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:id)

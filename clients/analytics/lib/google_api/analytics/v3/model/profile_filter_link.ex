@@ -34,12 +34,12 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileFilterLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterRef => GoogleApi.Analytics.V3.Model.FilterRef.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :profileRef => GoogleApi.Analytics.V3.Model.ProfileRef.t(),
-          :rank => integer(),
-          :selfLink => String.t()
+          :filterRef => GoogleApi.Analytics.V3.Model.FilterRef.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :profileRef => GoogleApi.Analytics.V3.Model.ProfileRef.t() | nil,
+          :rank => integer() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:filterRef, as: GoogleApi.Analytics.V3.Model.FilterRef)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :firstStepRequired => boolean(),
-          :matchType => String.t(),
-          :steps => list(GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps.t()),
-          :url => String.t()
+          :caseSensitive => boolean() | nil,
+          :firstStepRequired => boolean() | nil,
+          :matchType => String.t() | nil,
+          :steps => list(GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:caseSensitive)

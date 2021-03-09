@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequestId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :userId => String.t()
+          :type => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:type)

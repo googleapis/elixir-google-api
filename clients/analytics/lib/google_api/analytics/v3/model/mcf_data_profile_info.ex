@@ -32,12 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataProfileInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :internalWebPropertyId => String.t(),
-          :profileId => String.t(),
-          :profileName => String.t(),
-          :tableId => String.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :profileId => String.t() | nil,
+          :profileName => String.t() | nil,
+          :tableId => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

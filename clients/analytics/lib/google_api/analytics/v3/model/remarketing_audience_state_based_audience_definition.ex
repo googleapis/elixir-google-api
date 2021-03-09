@@ -29,8 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefi
 
   @type t :: %__MODULE__{
           :excludeConditions =>
-            GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions.t(),
-          :includeConditions => GoogleApi.Analytics.V3.Model.IncludeConditions.t()
+            GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions.t()
+            | nil,
+          :includeConditions => GoogleApi.Analytics.V3.Model.IncludeConditions.t() | nil
         }
 
   field(:excludeConditions,

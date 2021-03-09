@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.AccountSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :starred => boolean(),
-          :webProperties => list(GoogleApi.Analytics.V3.Model.WebPropertySummary.t())
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :starred => boolean() | nil,
+          :webProperties => list(GoogleApi.Analytics.V3.Model.WebPropertySummary.t()) | nil
         }
 
   field(:id)

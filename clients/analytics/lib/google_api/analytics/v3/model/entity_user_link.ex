@@ -32,12 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entity => GoogleApi.Analytics.V3.Model.EntityUserLinkEntity.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :permissions => GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions.t(),
-          :selfLink => String.t(),
-          :userRef => GoogleApi.Analytics.V3.Model.UserRef.t()
+          :entity => GoogleApi.Analytics.V3.Model.EntityUserLinkEntity.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :permissions => GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions.t() | nil,
+          :selfLink => String.t() | nil,
+          :userRef => GoogleApi.Analytics.V3.Model.UserRef.t() | nil
         }
 
   field(:entity, as: GoogleApi.Analytics.V3.Model.EntityUserLinkEntity)

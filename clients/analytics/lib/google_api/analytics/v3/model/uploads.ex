@@ -33,13 +33,13 @@ defmodule GoogleApi.Analytics.V3.Model.Uploads do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Analytics.V3.Model.Upload.t()),
-          :itemsPerPage => integer(),
-          :kind => String.t(),
-          :nextLink => String.t(),
-          :previousLink => String.t(),
-          :startIndex => integer(),
-          :totalResults => integer()
+          :items => list(GoogleApi.Analytics.V3.Model.Upload.t()) | nil,
+          :itemsPerPage => integer() | nil,
+          :kind => String.t() | nil,
+          :nextLink => String.t() | nil,
+          :previousLink => String.t() | nil,
+          :startIndex => integer() | nil,
+          :totalResults => integer() | nil
         }
 
   field(:items, as: GoogleApi.Analytics.V3.Model.Upload, type: :list)

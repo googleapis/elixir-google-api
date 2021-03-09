@@ -29,8 +29,8 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataRows do
 
   @type t :: %__MODULE__{
           :conversionPathValue =>
-            list(GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue.t()),
-          :primitiveValue => String.t()
+            list(GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue.t()) | nil,
+          :primitiveValue => String.t() | nil
         }
 
   field(:conversionPathValue,

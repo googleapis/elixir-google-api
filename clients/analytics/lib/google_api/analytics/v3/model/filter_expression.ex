@@ -118,12 +118,12 @@ defmodule GoogleApi.Analytics.V3.Model.FilterExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :expressionValue => String.t(),
-          :field => String.t(),
-          :fieldIndex => integer(),
-          :kind => String.t(),
-          :matchType => String.t()
+          :caseSensitive => boolean() | nil,
+          :expressionValue => String.t() | nil,
+          :field => String.t() | nil,
+          :fieldIndex => integer() | nil,
+          :kind => String.t() | nil,
+          :matchType => String.t() | nil
         }
 
   field(:caseSensitive)

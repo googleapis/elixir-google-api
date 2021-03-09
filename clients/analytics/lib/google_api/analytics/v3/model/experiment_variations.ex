@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.ExperimentVariations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :status => String.t(),
-          :url => String.t(),
-          :weight => float(),
-          :won => boolean()
+          :name => String.t() | nil,
+          :status => String.t() | nil,
+          :url => String.t() | nil,
+          :weight => float() | nil,
+          :won => boolean() | nil
         }
 
   field(:name)

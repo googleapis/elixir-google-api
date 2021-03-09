@@ -35,15 +35,15 @@ defmodule GoogleApi.Analytics.V3.Model.Segment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :created => DateTime.t(),
-          :definition => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :segmentId => String.t(),
-          :selfLink => String.t(),
-          :type => String.t(),
-          :updated => DateTime.t()
+          :created => DateTime.t() | nil,
+          :definition => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :segmentId => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :type => String.t() | nil,
+          :updated => DateTime.t() | nil
         }
 
   field(:created, as: DateTime)

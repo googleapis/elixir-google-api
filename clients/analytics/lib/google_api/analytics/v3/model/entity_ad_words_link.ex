@@ -33,13 +33,13 @@ defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adWordsAccounts => list(GoogleApi.Analytics.V3.Model.AdWordsAccount.t()),
-          :entity => GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :profileIds => list(String.t()),
-          :selfLink => String.t()
+          :adWordsAccounts => list(GoogleApi.Analytics.V3.Model.AdWordsAccount.t()) | nil,
+          :entity => GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :profileIds => list(String.t()) | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:adWordsAccounts, as: GoogleApi.Analytics.V3.Model.AdWordsAccount, type: :list)

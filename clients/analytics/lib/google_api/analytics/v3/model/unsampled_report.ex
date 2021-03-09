@@ -45,27 +45,27 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :cloudStorageDownloadDetails =>
-            GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetails.t(),
-          :created => DateTime.t(),
-          :dimensions => String.t(),
-          :downloadType => String.t(),
+            GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetails.t() | nil,
+          :created => DateTime.t() | nil,
+          :dimensions => String.t() | nil,
+          :downloadType => String.t() | nil,
           :driveDownloadDetails =>
-            GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails.t(),
-          :"end-date" => String.t(),
-          :filters => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :metrics => String.t(),
-          :profileId => String.t(),
-          :segment => String.t(),
-          :selfLink => String.t(),
-          :"start-date" => String.t(),
-          :status => String.t(),
-          :title => String.t(),
-          :updated => DateTime.t(),
-          :webPropertyId => String.t()
+            GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails.t() | nil,
+          :"end-date" => String.t() | nil,
+          :filters => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :metrics => String.t() | nil,
+          :profileId => String.t() | nil,
+          :segment => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :"start-date" => String.t() | nil,
+          :status => String.t() | nil,
+          :title => String.t() | nil,
+          :updated => DateTime.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

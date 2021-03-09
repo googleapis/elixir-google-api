@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interactionType => String.t(),
-          :nodeValue => String.t()
+          :interactionType => String.t() | nil,
+          :nodeValue => String.t() | nil
         }
 
   field(:interactionType)

@@ -39,19 +39,19 @@ defmodule GoogleApi.Analytics.V3.Model.FilterAdvancedDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :extractA => String.t(),
-          :extractB => String.t(),
-          :fieldA => String.t(),
-          :fieldAIndex => integer(),
-          :fieldARequired => boolean(),
-          :fieldB => String.t(),
-          :fieldBIndex => integer(),
-          :fieldBRequired => boolean(),
-          :outputConstructor => String.t(),
-          :outputToField => String.t(),
-          :outputToFieldIndex => integer(),
-          :overrideOutputField => boolean()
+          :caseSensitive => boolean() | nil,
+          :extractA => String.t() | nil,
+          :extractB => String.t() | nil,
+          :fieldA => String.t() | nil,
+          :fieldAIndex => integer() | nil,
+          :fieldARequired => boolean() | nil,
+          :fieldB => String.t() | nil,
+          :fieldBIndex => integer() | nil,
+          :fieldBRequired => boolean() | nil,
+          :outputConstructor => String.t() | nil,
+          :outputToField => String.t() | nil,
+          :outputToFieldIndex => integer() | nil,
+          :overrideOutputField => boolean() | nil
         }
 
   field(:caseSensitive)

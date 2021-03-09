@@ -41,22 +41,22 @@ defmodule GoogleApi.Analytics.V3.Model.Filter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advancedDetails => GoogleApi.Analytics.V3.Model.FilterAdvancedDetails.t(),
-          :created => DateTime.t(),
-          :excludeDetails => GoogleApi.Analytics.V3.Model.FilterExpression.t(),
-          :id => String.t(),
-          :includeDetails => GoogleApi.Analytics.V3.Model.FilterExpression.t(),
-          :kind => String.t(),
-          :lowercaseDetails => GoogleApi.Analytics.V3.Model.FilterLowercaseDetails.t(),
-          :name => String.t(),
-          :parentLink => GoogleApi.Analytics.V3.Model.FilterParentLink.t(),
+          :accountId => String.t() | nil,
+          :advancedDetails => GoogleApi.Analytics.V3.Model.FilterAdvancedDetails.t() | nil,
+          :created => DateTime.t() | nil,
+          :excludeDetails => GoogleApi.Analytics.V3.Model.FilterExpression.t() | nil,
+          :id => String.t() | nil,
+          :includeDetails => GoogleApi.Analytics.V3.Model.FilterExpression.t() | nil,
+          :kind => String.t() | nil,
+          :lowercaseDetails => GoogleApi.Analytics.V3.Model.FilterLowercaseDetails.t() | nil,
+          :name => String.t() | nil,
+          :parentLink => GoogleApi.Analytics.V3.Model.FilterParentLink.t() | nil,
           :searchAndReplaceDetails =>
-            GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails.t(),
-          :selfLink => String.t(),
-          :type => String.t(),
-          :updated => DateTime.t(),
-          :uppercaseDetails => GoogleApi.Analytics.V3.Model.FilterUppercaseDetails.t()
+            GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails.t() | nil,
+          :selfLink => String.t() | nil,
+          :type => String.t() | nil,
+          :updated => DateTime.t() | nil,
+          :uppercaseDetails => GoogleApi.Analytics.V3.Model.FilterUppercaseDetails.t() | nil
         }
 
   field(:accountId)

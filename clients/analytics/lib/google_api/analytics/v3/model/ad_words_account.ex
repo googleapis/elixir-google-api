@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.AdWordsAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoTaggingEnabled => boolean(),
-          :customerId => String.t(),
-          :kind => String.t()
+          :autoTaggingEnabled => boolean() | nil,
+          :customerId => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:autoTaggingEnabled)

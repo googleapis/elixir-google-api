@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :webPropertyRef => GoogleApi.Analytics.V3.Model.WebPropertyRef.t()
+          :webPropertyRef => GoogleApi.Analytics.V3.Model.WebPropertyRef.t() | nil
         }
 
   field(:webPropertyRef, as: GoogleApi.Analytics.V3.Model.WebPropertyRef)

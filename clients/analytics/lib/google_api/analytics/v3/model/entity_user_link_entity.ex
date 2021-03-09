@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLinkEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountRef => GoogleApi.Analytics.V3.Model.AccountRef.t(),
-          :profileRef => GoogleApi.Analytics.V3.Model.ProfileRef.t(),
-          :webPropertyRef => GoogleApi.Analytics.V3.Model.WebPropertyRef.t()
+          :accountRef => GoogleApi.Analytics.V3.Model.AccountRef.t() | nil,
+          :profileRef => GoogleApi.Analytics.V3.Model.ProfileRef.t() | nil,
+          :webPropertyRef => GoogleApi.Analytics.V3.Model.WebPropertyRef.t() | nil
         }
 
   field(:accountRef, as: GoogleApi.Analytics.V3.Model.AccountRef)

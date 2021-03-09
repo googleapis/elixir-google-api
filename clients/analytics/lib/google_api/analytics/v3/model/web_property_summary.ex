@@ -34,14 +34,14 @@ defmodule GoogleApi.Analytics.V3.Model.WebPropertySummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :level => String.t(),
-          :name => String.t(),
-          :profiles => list(GoogleApi.Analytics.V3.Model.ProfileSummary.t()),
-          :starred => boolean(),
-          :websiteUrl => String.t()
+          :id => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :level => String.t() | nil,
+          :name => String.t() | nil,
+          :profiles => list(GoogleApi.Analytics.V3.Model.ProfileSummary.t()) | nil,
+          :starred => boolean() | nil,
+          :websiteUrl => String.t() | nil
         }
 
   field(:id)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :href => String.t(),
-          :id => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :href => String.t() | nil,
+          :id => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

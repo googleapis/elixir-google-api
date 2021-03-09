@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.AnalyticsDataimportDeleteUploadDataReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customDataImportUids => list(String.t())
+          :customDataImportUids => list(String.t()) | nil
         }
 
   field(:customDataImportUids, type: :list)

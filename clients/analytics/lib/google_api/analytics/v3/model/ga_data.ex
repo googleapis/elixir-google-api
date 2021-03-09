@@ -43,23 +43,23 @@ defmodule GoogleApi.Analytics.V3.Model.GaData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders => list(GoogleApi.Analytics.V3.Model.GaDataColumnHeaders.t()),
-          :containsSampledData => boolean(),
-          :dataLastRefreshed => String.t(),
-          :dataTable => GoogleApi.Analytics.V3.Model.GaDataDataTable.t(),
-          :id => String.t(),
-          :itemsPerPage => integer(),
-          :kind => String.t(),
-          :nextLink => String.t(),
-          :previousLink => String.t(),
-          :profileInfo => GoogleApi.Analytics.V3.Model.GaDataProfileInfo.t(),
-          :query => GoogleApi.Analytics.V3.Model.GaDataQuery.t(),
-          :rows => list(list(String.t())),
-          :sampleSize => String.t(),
-          :sampleSpace => String.t(),
-          :selfLink => String.t(),
-          :totalResults => integer(),
-          :totalsForAllResults => map()
+          :columnHeaders => list(GoogleApi.Analytics.V3.Model.GaDataColumnHeaders.t()) | nil,
+          :containsSampledData => boolean() | nil,
+          :dataLastRefreshed => String.t() | nil,
+          :dataTable => GoogleApi.Analytics.V3.Model.GaDataDataTable.t() | nil,
+          :id => String.t() | nil,
+          :itemsPerPage => integer() | nil,
+          :kind => String.t() | nil,
+          :nextLink => String.t() | nil,
+          :previousLink => String.t() | nil,
+          :profileInfo => GoogleApi.Analytics.V3.Model.GaDataProfileInfo.t() | nil,
+          :query => GoogleApi.Analytics.V3.Model.GaDataQuery.t() | nil,
+          :rows => list(list(String.t())) | nil,
+          :sampleSize => String.t() | nil,
+          :sampleSpace => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :totalResults => integer() | nil,
+          :totalsForAllResults => map() | nil
         }
 
   field(:columnHeaders, as: GoogleApi.Analytics.V3.Model.GaDataColumnHeaders, type: :list)

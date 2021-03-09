@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.Columns do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeNames => list(String.t()),
-          :etag => String.t(),
-          :items => list(GoogleApi.Analytics.V3.Model.Column.t()),
-          :kind => String.t(),
-          :totalResults => integer()
+          :attributeNames => list(String.t()) | nil,
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Analytics.V3.Model.Column.t()) | nil,
+          :kind => String.t() | nil,
+          :totalResults => integer() | nil
         }
 
   field(:attributeNames, type: :list)

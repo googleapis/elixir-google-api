@@ -36,16 +36,16 @@ defmodule GoogleApi.Analytics.V3.Model.LinkedForeignAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :eligibleForSearch => boolean(),
-          :id => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :linkedAccountId => String.t(),
-          :remarketingAudienceId => String.t(),
-          :status => String.t(),
-          :type => String.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :eligibleForSearch => boolean() | nil,
+          :id => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :linkedAccountId => String.t() | nil,
+          :remarketingAudienceId => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

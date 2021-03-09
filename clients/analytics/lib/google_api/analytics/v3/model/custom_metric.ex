@@ -41,21 +41,21 @@ defmodule GoogleApi.Analytics.V3.Model.CustomMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :active => boolean(),
-          :created => DateTime.t(),
-          :id => String.t(),
-          :index => integer(),
-          :kind => String.t(),
-          :max_value => String.t(),
-          :min_value => String.t(),
-          :name => String.t(),
-          :parentLink => GoogleApi.Analytics.V3.Model.CustomMetricParentLink.t(),
-          :scope => String.t(),
-          :selfLink => String.t(),
-          :type => String.t(),
-          :updated => DateTime.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :active => boolean() | nil,
+          :created => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :index => integer() | nil,
+          :kind => String.t() | nil,
+          :max_value => String.t() | nil,
+          :min_value => String.t() | nil,
+          :name => String.t() | nil,
+          :parentLink => GoogleApi.Analytics.V3.Model.CustomMetricParentLink.t() | nil,
+          :scope => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :type => String.t() | nil,
+          :updated => DateTime.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

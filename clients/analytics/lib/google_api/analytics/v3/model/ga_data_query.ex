@@ -37,17 +37,17 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => String.t(),
-          :"end-date" => String.t(),
-          :filters => String.t(),
-          :ids => String.t(),
-          :"max-results" => integer(),
-          :metrics => list(String.t()),
-          :samplingLevel => String.t(),
-          :segment => String.t(),
-          :sort => list(String.t()),
-          :"start-date" => String.t(),
-          :"start-index" => integer()
+          :dimensions => String.t() | nil,
+          :"end-date" => String.t() | nil,
+          :filters => String.t() | nil,
+          :ids => String.t() | nil,
+          :"max-results" => integer() | nil,
+          :metrics => list(String.t()) | nil,
+          :samplingLevel => String.t() | nil,
+          :segment => String.t() | nil,
+          :sort => list(String.t()) | nil,
+          :"start-date" => String.t() | nil,
+          :"start-index" => integer() | nil
         }
 
   field(:dimensions)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comparisonType => String.t(),
-          :comparisonValue => String.t(),
-          :expression => String.t(),
-          :matchType => String.t(),
-          :type => String.t()
+          :comparisonType => String.t() | nil,
+          :comparisonValue => String.t() | nil,
+          :expression => String.t() | nil,
+          :matchType => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:comparisonType)

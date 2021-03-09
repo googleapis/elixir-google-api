@@ -34,14 +34,14 @@ defmodule GoogleApi.Analytics.V3.Model.CustomMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Analytics.V3.Model.CustomMetric.t()),
-          :itemsPerPage => integer(),
-          :kind => String.t(),
-          :nextLink => String.t(),
-          :previousLink => String.t(),
-          :startIndex => integer(),
-          :totalResults => integer(),
-          :username => String.t()
+          :items => list(GoogleApi.Analytics.V3.Model.CustomMetric.t()) | nil,
+          :itemsPerPage => integer() | nil,
+          :kind => String.t() | nil,
+          :nextLink => String.t() | nil,
+          :previousLink => String.t() | nil,
+          :startIndex => integer() | nil,
+          :totalResults => integer() | nil,
+          :username => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Analytics.V3.Model.CustomMetric, type: :list)

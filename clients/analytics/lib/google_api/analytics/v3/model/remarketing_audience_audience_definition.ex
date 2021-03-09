@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeConditions => GoogleApi.Analytics.V3.Model.IncludeConditions.t()
+          :includeConditions => GoogleApi.Analytics.V3.Model.IncludeConditions.t() | nil
         }
 
   field(:includeConditions, as: GoogleApi.Analytics.V3.Model.IncludeConditions)
