@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.PermissionChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addedPermissions => list(GoogleApi.DriveActivity.V2.Model.Permission.t()),
-          :removedPermissions => list(GoogleApi.DriveActivity.V2.Model.Permission.t())
+          :addedPermissions => list(GoogleApi.DriveActivity.V2.Model.Permission.t()) | nil,
+          :removedPermissions => list(GoogleApi.DriveActivity.V2.Model.Permission.t()) | nil
         }
 
   field(:addedPermissions, as: GoogleApi.DriveActivity.V2.Model.Permission, type: :list)

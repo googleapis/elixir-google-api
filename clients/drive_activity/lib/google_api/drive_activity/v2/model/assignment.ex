@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.Assignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedUser => GoogleApi.DriveActivity.V2.Model.User.t(),
-          :subtype => String.t()
+          :assignedUser => GoogleApi.DriveActivity.V2.Model.User.t() | nil,
+          :subtype => String.t() | nil
         }
 
   field(:assignedUser, as: GoogleApi.DriveActivity.V2.Model.User)

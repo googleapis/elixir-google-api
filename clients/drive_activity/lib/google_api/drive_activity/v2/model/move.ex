@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.Move do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addedParents => list(GoogleApi.DriveActivity.V2.Model.TargetReference.t()),
-          :removedParents => list(GoogleApi.DriveActivity.V2.Model.TargetReference.t())
+          :addedParents => list(GoogleApi.DriveActivity.V2.Model.TargetReference.t()) | nil,
+          :removedParents => list(GoogleApi.DriveActivity.V2.Model.TargetReference.t()) | nil
         }
 
   field(:addedParents, as: GoogleApi.DriveActivity.V2.Model.TargetReference, type: :list)

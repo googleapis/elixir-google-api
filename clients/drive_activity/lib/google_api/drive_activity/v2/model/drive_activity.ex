@@ -32,12 +32,12 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actions => list(GoogleApi.DriveActivity.V2.Model.Action.t()),
-          :actors => list(GoogleApi.DriveActivity.V2.Model.Actor.t()),
-          :primaryActionDetail => GoogleApi.DriveActivity.V2.Model.ActionDetail.t(),
-          :targets => list(GoogleApi.DriveActivity.V2.Model.Target.t()),
-          :timeRange => GoogleApi.DriveActivity.V2.Model.TimeRange.t(),
-          :timestamp => DateTime.t()
+          :actions => list(GoogleApi.DriveActivity.V2.Model.Action.t()) | nil,
+          :actors => list(GoogleApi.DriveActivity.V2.Model.Actor.t()) | nil,
+          :primaryActionDetail => GoogleApi.DriveActivity.V2.Model.ActionDetail.t() | nil,
+          :targets => list(GoogleApi.DriveActivity.V2.Model.Target.t()) | nil,
+          :timeRange => GoogleApi.DriveActivity.V2.Model.TimeRange.t() | nil,
+          :timestamp => DateTime.t() | nil
         }
 
   field(:actions, as: GoogleApi.DriveActivity.V2.Model.Action, type: :list)

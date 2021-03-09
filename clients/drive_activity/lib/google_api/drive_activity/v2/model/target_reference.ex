@@ -29,9 +29,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.TargetReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drive => GoogleApi.DriveActivity.V2.Model.DriveReference.t(),
-          :driveItem => GoogleApi.DriveActivity.V2.Model.DriveItemReference.t(),
-          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDriveReference.t()
+          :drive => GoogleApi.DriveActivity.V2.Model.DriveReference.t() | nil,
+          :driveItem => GoogleApi.DriveActivity.V2.Model.DriveItemReference.t() | nil,
+          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDriveReference.t() | nil
         }
 
   field(:drive, as: GoogleApi.DriveActivity.V2.Model.DriveReference)

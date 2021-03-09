@@ -27,7 +27,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.DataLeakPreventionChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t()
+          :type => String.t() | nil
         }
 
   field(:type)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DriveActivity.V2.Model.FileComment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :legacyCommentId => String.t(),
-          :legacyDiscussionId => String.t(),
-          :linkToDiscussion => String.t(),
-          :parent => GoogleApi.DriveActivity.V2.Model.DriveItem.t()
+          :legacyCommentId => String.t() | nil,
+          :legacyDiscussionId => String.t() | nil,
+          :linkToDiscussion => String.t() | nil,
+          :parent => GoogleApi.DriveActivity.V2.Model.DriveItem.t() | nil
         }
 
   field(:legacyCommentId)

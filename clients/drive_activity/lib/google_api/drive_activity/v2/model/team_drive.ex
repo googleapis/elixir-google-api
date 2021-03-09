@@ -29,9 +29,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.TeamDrive do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :root => GoogleApi.DriveActivity.V2.Model.DriveItem.t(),
-          :title => String.t()
+          :name => String.t() | nil,
+          :root => GoogleApi.DriveActivity.V2.Model.DriveItem.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:name)

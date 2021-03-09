@@ -27,7 +27,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.Copy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :originalObject => GoogleApi.DriveActivity.V2.Model.TargetReference.t()
+          :originalObject => GoogleApi.DriveActivity.V2.Model.TargetReference.t() | nil
         }
 
   field(:originalObject, as: GoogleApi.DriveActivity.V2.Model.TargetReference)

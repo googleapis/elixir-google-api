@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.KnownUser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isCurrentUser => boolean(),
-          :personName => String.t()
+          :isCurrentUser => boolean() | nil,
+          :personName => String.t() | nil
         }
 
   field(:isCurrentUser)

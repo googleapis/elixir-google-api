@@ -30,10 +30,10 @@ defmodule GoogleApi.DriveActivity.V2.Model.Owner do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => GoogleApi.DriveActivity.V2.Model.Domain.t(),
-          :drive => GoogleApi.DriveActivity.V2.Model.DriveReference.t(),
-          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDriveReference.t(),
-          :user => GoogleApi.DriveActivity.V2.Model.User.t()
+          :domain => GoogleApi.DriveActivity.V2.Model.Domain.t() | nil,
+          :drive => GoogleApi.DriveActivity.V2.Model.DriveReference.t() | nil,
+          :teamDrive => GoogleApi.DriveActivity.V2.Model.TeamDriveReference.t() | nil,
+          :user => GoogleApi.DriveActivity.V2.Model.User.t() | nil
         }
 
   field(:domain, as: GoogleApi.DriveActivity.V2.Model.Domain)

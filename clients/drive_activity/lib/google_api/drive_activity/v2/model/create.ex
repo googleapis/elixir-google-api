@@ -29,9 +29,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.Create do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :copy => GoogleApi.DriveActivity.V2.Model.Copy.t(),
-          :new => GoogleApi.DriveActivity.V2.Model.New.t(),
-          :upload => GoogleApi.DriveActivity.V2.Model.Upload.t()
+          :copy => GoogleApi.DriveActivity.V2.Model.Copy.t() | nil,
+          :new => GoogleApi.DriveActivity.V2.Model.New.t() | nil,
+          :upload => GoogleApi.DriveActivity.V2.Model.Upload.t() | nil
         }
 
   field(:copy, as: GoogleApi.DriveActivity.V2.Model.Copy)

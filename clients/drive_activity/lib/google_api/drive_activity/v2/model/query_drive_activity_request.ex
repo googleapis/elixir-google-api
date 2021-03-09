@@ -32,12 +32,13 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ancestorName => String.t(),
-          :consolidationStrategy => GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy.t(),
-          :filter => String.t(),
-          :itemName => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :ancestorName => String.t() | nil,
+          :consolidationStrategy =>
+            GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy.t() | nil,
+          :filter => String.t() | nil,
+          :itemName => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:ancestorName)

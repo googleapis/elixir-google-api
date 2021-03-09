@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activities => list(GoogleApi.DriveActivity.V2.Model.DriveActivity.t()),
-          :nextPageToken => String.t()
+          :activities => list(GoogleApi.DriveActivity.V2.Model.DriveActivity.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:activities, as: GoogleApi.DriveActivity.V2.Model.DriveActivity, type: :list)

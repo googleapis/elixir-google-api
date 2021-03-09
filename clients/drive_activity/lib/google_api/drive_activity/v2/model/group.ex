@@ -28,8 +28,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :title => String.t()
+          :email => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:email)
