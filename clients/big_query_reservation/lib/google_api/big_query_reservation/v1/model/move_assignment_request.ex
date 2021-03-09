@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.MoveAssignmentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationId => String.t()
+          :destinationId => String.t() | nil
         }
 
   field(:destinationId)

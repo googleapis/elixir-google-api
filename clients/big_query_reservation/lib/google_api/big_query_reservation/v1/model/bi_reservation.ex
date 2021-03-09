@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.BiReservation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :size => String.t(),
-          :updateTime => DateTime.t()
+          :name => String.t() | nil,
+          :size => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:name)

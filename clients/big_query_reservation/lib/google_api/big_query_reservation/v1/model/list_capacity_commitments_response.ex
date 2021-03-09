@@ -29,8 +29,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ListCapacityCommitmentsResponse
 
   @type t :: %__MODULE__{
           :capacityCommitments =>
-            list(GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:capacityCommitments,

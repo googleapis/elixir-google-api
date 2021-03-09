@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.SearchAssignmentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignments => list(GoogleApi.BigQueryReservation.V1.Model.Assignment.t()),
-          :nextPageToken => String.t()
+          :assignments => list(GoogleApi.BigQueryReservation.V1.Model.Assignment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:assignments, as: GoogleApi.BigQueryReservation.V1.Model.Assignment, type: :list)
