@@ -28,8 +28,8 @@ defmodule GoogleApi.Genomics.V1.Model.DelayedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cause => String.t(),
-          :metrics => list(String.t())
+          :cause => String.t() | nil,
+          :metrics => list(String.t()) | nil
         }
 
   field(:cause)

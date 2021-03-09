@@ -27,7 +27,7 @@ defmodule GoogleApi.Genomics.V1.Model.ContainerKilledEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionId => integer()
+          :actionId => integer() | nil
         }
 
   field(:actionId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Genomics.V1.Model.ComputeEngine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskNames => list(String.t()),
-          :instanceName => String.t(),
-          :machineType => String.t(),
-          :zone => String.t()
+          :diskNames => list(String.t()) | nil,
+          :instanceName => String.t() | nil,
+          :machineType => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:diskNames, type: :list)

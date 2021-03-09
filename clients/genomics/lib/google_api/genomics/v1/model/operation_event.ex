@@ -29,9 +29,9 @@ defmodule GoogleApi.Genomics.V1.Model.OperationEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :description => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:description)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Genomics.V1.Model.ContainerStartedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionId => integer(),
-          :ipAddress => String.t(),
-          :portMappings => map()
+          :actionId => integer() | nil,
+          :ipAddress => String.t() | nil,
+          :portMappings => map() | nil
         }
 
   field(:actionId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Genomics.V1.Model.FailedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cause => String.t(),
-          :code => String.t()
+          :cause => String.t() | nil,
+          :code => String.t() | nil
         }
 
   field(:cause)
