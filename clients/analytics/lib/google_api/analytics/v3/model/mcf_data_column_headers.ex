@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataColumnHeaders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnType => String.t(),
-          :dataType => String.t(),
-          :name => String.t()
+          :columnType => String.t() | nil,
+          :dataType => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:columnType)

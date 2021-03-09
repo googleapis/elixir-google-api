@@ -50,6 +50,7 @@ defmodule GoogleApi.Analytics.V3.Api.Provisioning do
   @spec analytics_provisioning_create_account_ticket(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.AccountTicket.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analytics_provisioning_create_account_ticket(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -100,6 +101,7 @@ defmodule GoogleApi.Analytics.V3.Api.Provisioning do
   @spec analytics_provisioning_create_account_tree(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.AccountTreeResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analytics_provisioning_create_account_tree(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

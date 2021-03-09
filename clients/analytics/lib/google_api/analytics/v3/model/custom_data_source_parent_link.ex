@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDataSourceParentLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :href => String.t(),
-          :type => String.t()
+          :href => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:href)

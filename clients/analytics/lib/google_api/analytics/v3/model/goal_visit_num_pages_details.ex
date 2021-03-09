@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comparisonType => String.t(),
-          :comparisonValue => String.t()
+          :comparisonType => String.t() | nil,
+          :comparisonValue => String.t() | nil
         }
 
   field(:comparisonType)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentId => String.t()
+          :documentId => String.t() | nil
         }
 
   field(:documentId)

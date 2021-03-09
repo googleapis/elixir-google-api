@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cols => list(GoogleApi.Analytics.V3.Model.GaDataDataTableCols.t()),
-          :rows => list(GoogleApi.Analytics.V3.Model.GaDataDataTableRows.t())
+          :cols => list(GoogleApi.Analytics.V3.Model.GaDataDataTableCols.t()) | nil,
+          :rows => list(GoogleApi.Analytics.V3.Model.GaDataDataTableRows.t()) | nil
         }
 
   field(:cols, as: GoogleApi.Analytics.V3.Model.GaDataDataTableCols, type: :list)

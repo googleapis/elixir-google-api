@@ -44,24 +44,27 @@ defmodule GoogleApi.Analytics.V3.Model.Goal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :active => boolean(),
-          :created => DateTime.t(),
-          :eventDetails => GoogleApi.Analytics.V3.Model.GoalEventDetails.t(),
-          :id => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :parentLink => GoogleApi.Analytics.V3.Model.GoalParentLink.t(),
-          :profileId => String.t(),
-          :selfLink => String.t(),
-          :type => String.t(),
-          :updated => DateTime.t(),
-          :urlDestinationDetails => GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails.t(),
-          :value => number(),
-          :visitNumPagesDetails => GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails.t(),
-          :visitTimeOnSiteDetails => GoogleApi.Analytics.V3.Model.GoalVisitTimeOnSiteDetails.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :active => boolean() | nil,
+          :created => DateTime.t() | nil,
+          :eventDetails => GoogleApi.Analytics.V3.Model.GoalEventDetails.t() | nil,
+          :id => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :parentLink => GoogleApi.Analytics.V3.Model.GoalParentLink.t() | nil,
+          :profileId => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :type => String.t() | nil,
+          :updated => DateTime.t() | nil,
+          :urlDestinationDetails =>
+            GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails.t() | nil,
+          :value => number() | nil,
+          :visitNumPagesDetails =>
+            GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails.t() | nil,
+          :visitTimeOnSiteDetails =>
+            GoogleApi.Analytics.V3.Model.GoalVisitTimeOnSiteDetails.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

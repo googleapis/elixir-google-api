@@ -32,12 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeDataQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => String.t(),
-          :filters => String.t(),
-          :ids => String.t(),
-          :"max-results" => integer(),
-          :metrics => list(String.t()),
-          :sort => list(String.t())
+          :dimensions => String.t() | nil,
+          :filters => String.t() | nil,
+          :ids => String.t() | nil,
+          :"max-results" => integer() | nil,
+          :metrics => list(String.t()) | nil,
+          :sort => list(String.t()) | nil
         }
 
   field(:dimensions)

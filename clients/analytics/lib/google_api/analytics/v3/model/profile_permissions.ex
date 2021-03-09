@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.ProfilePermissions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effective => list(String.t())
+          :effective => list(String.t()) | nil
         }
 
   field(:effective, type: :list)

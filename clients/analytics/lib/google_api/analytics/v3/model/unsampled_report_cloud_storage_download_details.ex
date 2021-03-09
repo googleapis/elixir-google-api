@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetail
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketId => String.t(),
-          :objectId => String.t()
+          :bucketId => String.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:bucketId)

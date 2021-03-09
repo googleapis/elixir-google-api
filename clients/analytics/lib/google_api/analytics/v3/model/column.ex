@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.Column do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :id => String.t(),
-          :kind => String.t()
+          :attributes => map() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:attributes, type: :map)

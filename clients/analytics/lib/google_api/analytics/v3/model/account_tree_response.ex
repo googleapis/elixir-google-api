@@ -30,10 +30,10 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.Analytics.V3.Model.Account.t(),
-          :kind => String.t(),
-          :profile => GoogleApi.Analytics.V3.Model.Profile.t(),
-          :webproperty => GoogleApi.Analytics.V3.Model.Webproperty.t()
+          :account => GoogleApi.Analytics.V3.Model.Account.t() | nil,
+          :kind => String.t() | nil,
+          :profile => GoogleApi.Analytics.V3.Model.Profile.t() | nil,
+          :webproperty => GoogleApi.Analytics.V3.Model.Webproperty.t() | nil
         }
 
   field(:account, as: GoogleApi.Analytics.V3.Model.Account)

@@ -48,25 +48,25 @@ defmodule GoogleApi.Analytics.V3.Model.Webproperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :childLink => GoogleApi.Analytics.V3.Model.WebpropertyChildLink.t(),
-          :created => DateTime.t(),
-          :dataRetentionResetOnNewActivity => boolean(),
-          :dataRetentionTtl => String.t(),
-          :defaultProfileId => String.t(),
-          :id => String.t(),
-          :industryVertical => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :level => String.t(),
-          :name => String.t(),
-          :parentLink => GoogleApi.Analytics.V3.Model.WebpropertyParentLink.t(),
-          :permissions => GoogleApi.Analytics.V3.Model.WebpropertyPermissions.t(),
-          :profileCount => integer(),
-          :selfLink => String.t(),
-          :starred => boolean(),
-          :updated => DateTime.t(),
-          :websiteUrl => String.t()
+          :accountId => String.t() | nil,
+          :childLink => GoogleApi.Analytics.V3.Model.WebpropertyChildLink.t() | nil,
+          :created => DateTime.t() | nil,
+          :dataRetentionResetOnNewActivity => boolean() | nil,
+          :dataRetentionTtl => String.t() | nil,
+          :defaultProfileId => String.t() | nil,
+          :id => String.t() | nil,
+          :industryVertical => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :level => String.t() | nil,
+          :name => String.t() | nil,
+          :parentLink => GoogleApi.Analytics.V3.Model.WebpropertyParentLink.t() | nil,
+          :permissions => GoogleApi.Analytics.V3.Model.WebpropertyPermissions.t() | nil,
+          :profileCount => integer() | nil,
+          :selfLink => String.t() | nil,
+          :starred => boolean() | nil,
+          :updated => DateTime.t() | nil,
+          :websiteUrl => String.t() | nil
         }
 
   field(:accountId)

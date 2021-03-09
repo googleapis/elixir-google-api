@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :field => String.t(),
-          :fieldIndex => integer(),
-          :replaceString => String.t(),
-          :searchString => String.t()
+          :caseSensitive => boolean() | nil,
+          :field => String.t() | nil,
+          :fieldIndex => integer() | nil,
+          :replaceString => String.t() | nil,
+          :searchString => String.t() | nil
         }
 
   field(:caseSensitive)

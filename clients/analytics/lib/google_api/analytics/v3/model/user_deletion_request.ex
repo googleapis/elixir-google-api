@@ -32,12 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletionRequestTime => DateTime.t(),
-          :firebaseProjectId => String.t(),
-          :id => GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t(),
-          :kind => String.t(),
-          :propertyId => String.t(),
-          :webPropertyId => String.t()
+          :deletionRequestTime => DateTime.t() | nil,
+          :firebaseProjectId => String.t() | nil,
+          :id => GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t() | nil,
+          :kind => String.t() | nil,
+          :propertyId => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:deletionRequestTime, as: DateTime)

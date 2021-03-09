@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTableRowsC do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :v => String.t()
+          :v => String.t() | nil
         }
 
   field(:v)

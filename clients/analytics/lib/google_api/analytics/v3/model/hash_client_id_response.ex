@@ -30,10 +30,10 @@ defmodule GoogleApi.Analytics.V3.Model.HashClientIdResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :hashedClientId => String.t(),
-          :kind => String.t(),
-          :webPropertyId => String.t()
+          :clientId => String.t() | nil,
+          :hashedClientId => String.t() | nil,
+          :kind => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:clientId)

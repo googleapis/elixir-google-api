@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclusionDuration => String.t(),
-          :segment => String.t()
+          :exclusionDuration => String.t() | nil,
+          :segment => String.t() | nil
         }
 
   field(:exclusionDuration)

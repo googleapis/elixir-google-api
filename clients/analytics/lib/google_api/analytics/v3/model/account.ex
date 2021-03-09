@@ -35,15 +35,15 @@ defmodule GoogleApi.Analytics.V3.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childLink => GoogleApi.Analytics.V3.Model.AccountChildLink.t(),
-          :created => DateTime.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :permissions => GoogleApi.Analytics.V3.Model.AccountPermissions.t(),
-          :selfLink => String.t(),
-          :starred => boolean(),
-          :updated => DateTime.t()
+          :childLink => GoogleApi.Analytics.V3.Model.AccountChildLink.t() | nil,
+          :created => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :permissions => GoogleApi.Analytics.V3.Model.AccountPermissions.t() | nil,
+          :selfLink => String.t() | nil,
+          :starred => boolean() | nil,
+          :updated => DateTime.t() | nil
         }
 
   field(:childLink, as: GoogleApi.Analytics.V3.Model.AccountChildLink)

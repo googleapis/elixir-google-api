@@ -32,12 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountName => String.t(),
-          :kind => String.t(),
-          :profileName => String.t(),
-          :timezone => String.t(),
-          :webpropertyName => String.t(),
-          :websiteUrl => String.t()
+          :accountName => String.t() | nil,
+          :kind => String.t() | nil,
+          :profileName => String.t() | nil,
+          :timezone => String.t() | nil,
+          :webpropertyName => String.t() | nil,
+          :websiteUrl => String.t() | nil
         }
 
   field(:accountName)

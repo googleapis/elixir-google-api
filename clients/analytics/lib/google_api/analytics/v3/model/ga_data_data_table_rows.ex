@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTableRows do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :c => list(GoogleApi.Analytics.V3.Model.GaDataDataTableRowsC.t())
+          :c => list(GoogleApi.Analytics.V3.Model.GaDataDataTableRowsC.t()) | nil
         }
 
   field(:c, as: GoogleApi.Analytics.V3.Model.GaDataDataTableRowsC, type: :list)

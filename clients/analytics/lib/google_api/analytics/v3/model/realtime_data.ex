@@ -35,15 +35,16 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders => list(GoogleApi.Analytics.V3.Model.RealtimeDataColumnHeaders.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :profileInfo => GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo.t(),
-          :query => GoogleApi.Analytics.V3.Model.RealtimeDataQuery.t(),
-          :rows => list(list(String.t())),
-          :selfLink => String.t(),
-          :totalResults => integer(),
-          :totalsForAllResults => map()
+          :columnHeaders =>
+            list(GoogleApi.Analytics.V3.Model.RealtimeDataColumnHeaders.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :profileInfo => GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo.t() | nil,
+          :query => GoogleApi.Analytics.V3.Model.RealtimeDataQuery.t() | nil,
+          :rows => list(list(String.t())) | nil,
+          :selfLink => String.t() | nil,
+          :totalResults => integer() | nil,
+          :totalsForAllResults => map() | nil
         }
 
   field(:columnHeaders, as: GoogleApi.Analytics.V3.Model.RealtimeDataColumnHeaders, type: :list)

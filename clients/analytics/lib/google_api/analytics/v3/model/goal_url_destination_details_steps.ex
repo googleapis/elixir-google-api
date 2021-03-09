@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :number => integer(),
-          :url => String.t()
+          :name => String.t() | nil,
+          :number => integer() | nil,
+          :url => String.t() | nil
         }
 
   field(:name)

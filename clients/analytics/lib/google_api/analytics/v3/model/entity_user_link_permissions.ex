@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effective => list(String.t()),
-          :local => list(String.t())
+          :effective => list(String.t()) | nil,
+          :local => list(String.t()) | nil
         }
 
   field(:effective, type: :list)

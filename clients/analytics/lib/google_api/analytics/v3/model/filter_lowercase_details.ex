@@ -28,8 +28,8 @@ defmodule GoogleApi.Analytics.V3.Model.FilterLowercaseDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => String.t(),
-          :fieldIndex => integer()
+          :field => String.t() | nil,
+          :fieldIndex => integer() | nil
         }
 
   field(:field)

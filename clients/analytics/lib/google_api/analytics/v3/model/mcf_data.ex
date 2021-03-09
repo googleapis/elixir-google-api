@@ -41,21 +41,21 @@ defmodule GoogleApi.Analytics.V3.Model.McfData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnHeaders => list(GoogleApi.Analytics.V3.Model.McfDataColumnHeaders.t()),
-          :containsSampledData => boolean(),
-          :id => String.t(),
-          :itemsPerPage => integer(),
-          :kind => String.t(),
-          :nextLink => String.t(),
-          :previousLink => String.t(),
-          :profileInfo => GoogleApi.Analytics.V3.Model.McfDataProfileInfo.t(),
-          :query => GoogleApi.Analytics.V3.Model.McfDataQuery.t(),
-          :rows => list(list(GoogleApi.Analytics.V3.Model.McfDataRows.t())),
-          :sampleSize => String.t(),
-          :sampleSpace => String.t(),
-          :selfLink => String.t(),
-          :totalResults => integer(),
-          :totalsForAllResults => map()
+          :columnHeaders => list(GoogleApi.Analytics.V3.Model.McfDataColumnHeaders.t()) | nil,
+          :containsSampledData => boolean() | nil,
+          :id => String.t() | nil,
+          :itemsPerPage => integer() | nil,
+          :kind => String.t() | nil,
+          :nextLink => String.t() | nil,
+          :previousLink => String.t() | nil,
+          :profileInfo => GoogleApi.Analytics.V3.Model.McfDataProfileInfo.t() | nil,
+          :query => GoogleApi.Analytics.V3.Model.McfDataQuery.t() | nil,
+          :rows => list(list(GoogleApi.Analytics.V3.Model.McfDataRows.t())) | nil,
+          :sampleSize => String.t() | nil,
+          :sampleSpace => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :totalResults => integer() | nil,
+          :totalsForAllResults => map() | nil
         }
 
   field(:columnHeaders, as: GoogleApi.Analytics.V3.Model.McfDataColumnHeaders, type: :list)

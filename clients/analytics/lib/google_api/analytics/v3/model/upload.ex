@@ -33,13 +33,13 @@ defmodule GoogleApi.Analytics.V3.Model.Upload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :customDataSourceId => String.t(),
-          :errors => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :status => String.t(),
-          :uploadTime => DateTime.t()
+          :accountId => String.t() | nil,
+          :customDataSourceId => String.t() | nil,
+          :errors => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :status => String.t() | nil,
+          :uploadTime => DateTime.t() | nil
         }
 
   field(:accountId)

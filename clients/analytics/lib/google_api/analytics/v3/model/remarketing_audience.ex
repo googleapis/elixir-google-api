@@ -40,22 +40,22 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :audienceDefinition =>
-            GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition.t(),
-          :audienceType => String.t(),
-          :created => DateTime.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :internalWebPropertyId => String.t(),
-          :kind => String.t(),
-          :linkedAdAccounts => list(GoogleApi.Analytics.V3.Model.LinkedForeignAccount.t()),
-          :linkedViews => list(String.t()),
-          :name => String.t(),
+            GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition.t() | nil,
+          :audienceType => String.t() | nil,
+          :created => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :internalWebPropertyId => String.t() | nil,
+          :kind => String.t() | nil,
+          :linkedAdAccounts => list(GoogleApi.Analytics.V3.Model.LinkedForeignAccount.t()) | nil,
+          :linkedViews => list(String.t()) | nil,
+          :name => String.t() | nil,
           :stateBasedAudienceDefinition =>
-            GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinition.t(),
-          :updated => DateTime.t(),
-          :webPropertyId => String.t()
+            GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinition.t() | nil,
+          :updated => DateTime.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

@@ -42,22 +42,22 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDataSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :childLink => GoogleApi.Analytics.V3.Model.CustomDataSourceChildLink.t(),
-          :created => DateTime.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :importBehavior => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :parentLink => GoogleApi.Analytics.V3.Model.CustomDataSourceParentLink.t(),
-          :profilesLinked => list(String.t()),
-          :schema => list(String.t()),
-          :selfLink => String.t(),
-          :type => String.t(),
-          :updated => DateTime.t(),
-          :uploadType => String.t(),
-          :webPropertyId => String.t()
+          :accountId => String.t() | nil,
+          :childLink => GoogleApi.Analytics.V3.Model.CustomDataSourceChildLink.t() | nil,
+          :created => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :importBehavior => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :parentLink => GoogleApi.Analytics.V3.Model.CustomDataSourceParentLink.t() | nil,
+          :profilesLinked => list(String.t()) | nil,
+          :schema => list(String.t()) | nil,
+          :selfLink => String.t() | nil,
+          :type => String.t() | nil,
+          :updated => DateTime.t() | nil,
+          :uploadType => String.t() | nil,
+          :webPropertyId => String.t() | nil
         }
 
   field(:accountId)

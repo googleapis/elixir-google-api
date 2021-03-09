@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.FilterRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :href => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t()
+          :accountId => String.t() | nil,
+          :href => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:accountId)

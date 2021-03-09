@@ -29,8 +29,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalEventDetails do
 
   @type t :: %__MODULE__{
           :eventConditions =>
-            list(GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions.t()),
-          :useEventValue => boolean()
+            list(GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions.t()) | nil,
+          :useEventValue => boolean() | nil
         }
 
   field(:eventConditions,

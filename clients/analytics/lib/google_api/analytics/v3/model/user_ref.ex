@@ -29,9 +29,9 @@ defmodule GoogleApi.Analytics.V3.Model.UserRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :id => String.t(),
-          :kind => String.t()
+          :email => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:email)

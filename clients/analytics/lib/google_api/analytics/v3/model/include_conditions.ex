@@ -31,11 +31,11 @@ defmodule GoogleApi.Analytics.V3.Model.IncludeConditions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysToLookBack => integer(),
-          :isSmartList => boolean(),
-          :kind => String.t(),
-          :membershipDurationDays => integer(),
-          :segment => String.t()
+          :daysToLookBack => integer() | nil,
+          :isSmartList => boolean() | nil,
+          :kind => String.t() | nil,
+          :membershipDurationDays => integer() | nil,
+          :segment => String.t() | nil
         }
 
   field(:daysToLookBack)
