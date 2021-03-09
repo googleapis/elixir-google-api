@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   @moduledoc """
-  A Cloud SQL instance resource. Next field: 36
+  A Cloud SQL instance resource.
 
   ## Attributes
 
@@ -43,7 +43,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t`, *default:* `nil`) - Configuration specific to failover replicas and read replicas.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation.
-  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - The status indicating if instance satisfies physical zone separation. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - The status indicating if instance satisfiesPzs. Reserved for future use.
   *   `scheduledMaintenance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t`, *default:* `nil`) - The start time of any upcoming scheduled maintenance for this instance.
   *   `secondaryGceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone. Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
@@ -57,40 +57,43 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendType => String.t(),
-          :connectionName => String.t(),
-          :currentDiskSize => String.t(),
-          :databaseVersion => String.t(),
+          :backendType => String.t() | nil,
+          :connectionName => String.t() | nil,
+          :currentDiskSize => String.t() | nil,
+          :databaseVersion => String.t() | nil,
           :diskEncryptionConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t(),
-          :diskEncryptionStatus => GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t(),
-          :etag => String.t(),
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t() | nil,
+          :diskEncryptionStatus =>
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t() | nil,
+          :etag => String.t() | nil,
           :failoverReplica =>
-            GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t(),
-          :gceZone => String.t(),
-          :instanceType => String.t(),
-          :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()),
-          :ipv6Address => String.t(),
-          :kind => String.t(),
-          :masterInstanceName => String.t(),
-          :maxDiskSize => String.t(),
-          :name => String.t(),
+            GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t() | nil,
+          :gceZone => String.t() | nil,
+          :instanceType => String.t() | nil,
+          :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()) | nil,
+          :ipv6Address => String.t() | nil,
+          :kind => String.t() | nil,
+          :masterInstanceName => String.t() | nil,
+          :maxDiskSize => String.t() | nil,
+          :name => String.t() | nil,
           :onPremisesConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t(),
-          :project => String.t(),
-          :region => String.t(),
-          :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t(),
-          :replicaNames => list(String.t()),
-          :rootPassword => String.t(),
-          :satisfiesPzs => boolean(),
-          :scheduledMaintenance => GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t(),
-          :secondaryGceZone => String.t(),
-          :selfLink => String.t(),
-          :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t(),
-          :serviceAccountEmailAddress => String.t(),
-          :settings => GoogleApi.SQLAdmin.V1beta4.Model.Settings.t(),
-          :state => String.t(),
-          :suspensionReason => list(String.t())
+            GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t() | nil,
+          :project => String.t() | nil,
+          :region => String.t() | nil,
+          :replicaConfiguration =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t() | nil,
+          :replicaNames => list(String.t()) | nil,
+          :rootPassword => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
+          :scheduledMaintenance =>
+            GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t() | nil,
+          :secondaryGceZone => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil,
+          :serviceAccountEmailAddress => String.t() | nil,
+          :settings => GoogleApi.SQLAdmin.V1beta4.Model.Settings.t() | nil,
+          :state => String.t() | nil,
+          :suspensionReason => list(String.t()) | nil
         }
 
   field(:backendType)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextVersion => String.t()
+          :kind => String.t() | nil,
+          :nextVersion => String.t() | nil
         }
 
   field(:kind)

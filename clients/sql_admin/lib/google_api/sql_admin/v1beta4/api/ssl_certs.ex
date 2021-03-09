@@ -62,6 +62,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_ssl_certs_create_ephemeral(
         connection,
@@ -138,6 +139,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_ssl_certs_delete(
         connection,
@@ -219,6 +221,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_ssl_certs_get(
         connection,
@@ -293,6 +296,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @spec sql_ssl_certs_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_ssl_certs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -357,6 +361,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @spec sql_ssl_certs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_ssl_certs_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

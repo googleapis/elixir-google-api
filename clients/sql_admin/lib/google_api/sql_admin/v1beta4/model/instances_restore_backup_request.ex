@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :restoreBackupContext => GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext.t()
+          :restoreBackupContext => GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext.t() | nil
         }
 
   field(:restoreBackupContext, as: GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext)

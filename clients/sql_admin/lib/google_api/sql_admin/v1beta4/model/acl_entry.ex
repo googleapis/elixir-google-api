@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.AclEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTime => DateTime.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :value => String.t()
+          :expirationTime => DateTime.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:expirationTime, as: DateTime)

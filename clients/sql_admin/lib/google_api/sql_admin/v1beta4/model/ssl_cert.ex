@@ -35,15 +35,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cert => String.t(),
-          :certSerialNumber => String.t(),
-          :commonName => String.t(),
-          :createTime => DateTime.t(),
-          :expirationTime => DateTime.t(),
-          :instance => String.t(),
-          :kind => String.t(),
-          :selfLink => String.t(),
-          :sha1Fingerprint => String.t()
+          :cert => String.t() | nil,
+          :certSerialNumber => String.t() | nil,
+          :commonName => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :expirationTime => DateTime.t() | nil,
+          :instance => String.t() | nil,
+          :kind => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :sha1Fingerprint => String.t() | nil
         }
 
   field(:cert)

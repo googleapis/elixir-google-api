@@ -62,6 +62,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_projects_instances_reschedule_maintenance(
         connection,
@@ -141,6 +142,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_projects_instances_start_external_sync(
         connection,
@@ -219,6 +221,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
           {:ok,
            GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesVerifyExternalSyncSettingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_projects_instances_verify_external_sync_settings(
         connection,

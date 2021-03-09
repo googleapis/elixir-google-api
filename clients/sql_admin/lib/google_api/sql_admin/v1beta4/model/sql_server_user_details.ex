@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlServerUserDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disabled => boolean(),
-          :serverRoles => list(String.t())
+          :disabled => boolean() | nil,
+          :serverRoles => list(String.t()) | nil
         }
 
   field(:disabled)

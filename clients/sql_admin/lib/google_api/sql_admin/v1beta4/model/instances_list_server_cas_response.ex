@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeVersion => String.t(),
-          :certs => list(GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()),
-          :kind => String.t()
+          :activeVersion => String.t() | nil,
+          :certs => list(GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:activeVersion)

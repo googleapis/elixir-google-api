@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

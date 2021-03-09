@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupId => String.t(),
-          :kind => String.t()
+          :backupId => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:backupId)

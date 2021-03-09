@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :importContext => GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t()
+          :importContext => GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t() | nil
         }
 
   field(:importContext, as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContext)

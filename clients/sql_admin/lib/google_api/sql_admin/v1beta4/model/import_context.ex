@@ -33,13 +33,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bakImportOptions => GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions.t(),
-          :csvImportOptions => GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions.t(),
-          :database => String.t(),
-          :fileType => String.t(),
-          :importUser => String.t(),
-          :kind => String.t(),
-          :uri => String.t()
+          :bakImportOptions =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions.t() | nil,
+          :csvImportOptions =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions.t() | nil,
+          :database => String.t() | nil,
+          :fileType => String.t() | nil,
+          :importUser => String.t() | nil,
+          :kind => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:bakImportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions)

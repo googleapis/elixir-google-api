@@ -31,11 +31,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Tier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :DiskQuota => String.t(),
-          :RAM => String.t(),
-          :kind => String.t(),
-          :region => list(String.t()),
-          :tier => String.t()
+          :DiskQuota => String.t() | nil,
+          :RAM => String.t() | nil,
+          :kind => String.t() | nil,
+          :region => list(String.t()) | nil,
+          :tier => String.t() | nil
         }
 
   field(:DiskQuota)

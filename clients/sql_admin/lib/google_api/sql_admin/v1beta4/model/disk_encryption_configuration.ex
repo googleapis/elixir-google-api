@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :kmsKeyName => String.t()
+          :kind => String.t() | nil,
+          :kmsKeyName => String.t() | nil
         }
 
   field(:kind)

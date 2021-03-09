@@ -36,15 +36,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
 
   @type t :: %__MODULE__{
           :backupRetentionSettings =>
-            GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings.t(),
-          :binaryLogEnabled => boolean(),
-          :enabled => boolean(),
-          :kind => String.t(),
-          :location => String.t(),
-          :pointInTimeRecoveryEnabled => boolean(),
-          :replicationLogArchivingEnabled => boolean(),
-          :startTime => String.t(),
-          :transactionLogRetentionDays => integer()
+            GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings.t() | nil,
+          :binaryLogEnabled => boolean() | nil,
+          :enabled => boolean() | nil,
+          :kind => String.t() | nil,
+          :location => String.t() | nil,
+          :pointInTimeRecoveryEnabled => boolean() | nil,
+          :replicationLogArchivingEnabled => boolean() | nil,
+          :startTime => String.t() | nil,
+          :transactionLogRetentionDays => integer() | nil
         }
 
   field(:backupRetentionSettings, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings)

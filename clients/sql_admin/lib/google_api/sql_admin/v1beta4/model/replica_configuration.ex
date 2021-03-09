@@ -29,10 +29,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failoverTarget => boolean(),
-          :kind => String.t(),
+          :failoverTarget => boolean() | nil,
+          :kind => String.t() | nil,
           :mysqlReplicaConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration.t()
+            GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration.t() | nil
         }
 
   field(:failoverTarget)

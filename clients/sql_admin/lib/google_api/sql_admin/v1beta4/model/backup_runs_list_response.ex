@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupRun, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => String.t(),
-          :startDate => String.t(),
-          :time => String.t()
+          :endDate => String.t() | nil,
+          :startDate => String.t() | nil,
+          :time => String.t() | nil
         }
 
   field(:endDate)

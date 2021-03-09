@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :available => boolean(),
-          :name => String.t()
+          :available => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:available)

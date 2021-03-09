@@ -54,6 +54,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
   @spec sql_flags_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sql_flags_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

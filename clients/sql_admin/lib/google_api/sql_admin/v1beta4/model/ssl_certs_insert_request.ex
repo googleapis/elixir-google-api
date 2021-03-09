@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonName => String.t()
+          :commonName => String.t() | nil
         }
 
   field(:commonName)

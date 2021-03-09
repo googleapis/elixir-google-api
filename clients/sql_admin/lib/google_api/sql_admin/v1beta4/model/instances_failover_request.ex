@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failoverContext => GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext.t()
+          :failoverContext => GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext.t() | nil
         }
 
   field(:failoverContext, as: GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext)

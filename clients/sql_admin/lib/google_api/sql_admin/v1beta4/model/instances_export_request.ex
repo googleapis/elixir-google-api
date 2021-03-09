@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportContext => GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t()
+          :exportContext => GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t() | nil
         }
 
   field(:exportContext, as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContext)

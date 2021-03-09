@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail.t(),
-          :kind => String.t(),
-          :operation => GoogleApi.SQLAdmin.V1beta4.Model.Operation.t(),
-          :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()
+          :clientCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail.t() | nil,
+          :kind => String.t() | nil,
+          :operation => GoogleApi.SQLAdmin.V1beta4.Model.Operation.t() | nil,
+          :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil
         }
 
   field(:clientCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail)

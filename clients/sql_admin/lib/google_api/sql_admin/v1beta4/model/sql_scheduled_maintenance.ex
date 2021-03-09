@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canDefer => boolean(),
-          :canReschedule => boolean(),
-          :startTime => DateTime.t()
+          :canDefer => boolean() | nil,
+          :canReschedule => boolean() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:canDefer)

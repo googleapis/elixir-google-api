@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.Flag.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.Flag.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1beta4.Model.Flag, type: :list)

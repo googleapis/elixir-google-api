@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :warnings => list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t())
+          :items => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :warnings => list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t()) | nil
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Reschedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rescheduleType => String.t(),
-          :scheduleTime => DateTime.t()
+          :rescheduleType => String.t() | nil,
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:rescheduleType)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :logType => String.t()
+          :kind => String.t() | nil,
+          :logType => String.t() | nil
         }
 
   field(:kind)

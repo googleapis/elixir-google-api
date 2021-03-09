@@ -30,9 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
 
   @type t :: %__MODULE__{
           :mysqlExportOptions =>
-            GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t(),
-          :schemaOnly => boolean(),
-          :tables => list(String.t())
+            GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t()
+            | nil,
+          :schemaOnly => boolean() | nil,
+          :tables => list(String.t()) | nil
         }
 
   field(:mysqlExportOptions,

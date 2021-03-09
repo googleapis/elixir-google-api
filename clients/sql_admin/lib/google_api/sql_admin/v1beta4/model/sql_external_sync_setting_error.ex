@@ -17,21 +17,21 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError do
   @moduledoc """
-  External primary instance migration setting error.
+  External primary instance migration setting error/warning.
 
   ## Attributes
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional information about the error encountered.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#migrationSettingError*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Can be *sql#externalSyncSettingError* or *sql#externalSyncSettingWarning*.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Identifies the specific error that occurred.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detail => String.t(),
-          :kind => String.t(),
-          :type => String.t()
+          :detail => String.t() | nil,
+          :kind => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:detail)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesRescheduleMaintenanceRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reschedule => GoogleApi.SQLAdmin.V1beta4.Model.Reschedule.t()
+          :reschedule => GoogleApi.SQLAdmin.V1beta4.Model.Reschedule.t() | nil
         }
 
   field(:reschedule, as: GoogleApi.SQLAdmin.V1beta4.Model.Reschedule)

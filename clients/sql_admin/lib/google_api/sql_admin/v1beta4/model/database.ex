@@ -35,16 +35,16 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Database do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :charset => String.t(),
-          :collation => String.t(),
-          :etag => String.t(),
-          :instance => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :project => String.t(),
-          :selfLink => String.t(),
+          :charset => String.t() | nil,
+          :collation => String.t() | nil,
+          :etag => String.t() | nil,
+          :instance => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :project => String.t() | nil,
+          :selfLink => String.t() | nil,
           :sqlserverDatabaseDetails =>
-            GoogleApi.SQLAdmin.V1beta4.Model.SqlServerDatabaseDetails.t()
+            GoogleApi.SQLAdmin.V1beta4.Model.SqlServerDatabaseDetails.t() | nil
         }
 
   field(:charset)

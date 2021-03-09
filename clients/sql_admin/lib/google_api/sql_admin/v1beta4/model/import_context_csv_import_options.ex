@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(String.t()),
-          :table => String.t()
+          :columns => list(String.t()) | nil,
+          :table => String.t() | nil
         }
 
   field(:columns, type: :list)

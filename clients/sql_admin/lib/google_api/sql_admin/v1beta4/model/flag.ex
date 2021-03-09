@@ -36,16 +36,16 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedIntValues => list(String.t()),
-          :allowedStringValues => list(String.t()),
-          :appliesTo => list(String.t()),
-          :inBeta => boolean(),
-          :kind => String.t(),
-          :maxValue => String.t(),
-          :minValue => String.t(),
-          :name => String.t(),
-          :requiresRestart => boolean(),
-          :type => String.t()
+          :allowedIntValues => list(String.t()) | nil,
+          :allowedStringValues => list(String.t()) | nil,
+          :appliesTo => list(String.t()) | nil,
+          :inBeta => boolean() | nil,
+          :kind => String.t() | nil,
+          :maxValue => String.t() | nil,
+          :minValue => String.t() | nil,
+          :name => String.t() | nil,
+          :requiresRestart => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:allowedIntValues, type: :list)

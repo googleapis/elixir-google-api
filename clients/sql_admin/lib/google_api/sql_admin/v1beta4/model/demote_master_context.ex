@@ -30,10 +30,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :masterInstanceName => String.t(),
-          :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t(),
-          :verifyGtidConsistency => boolean()
+          :kind => String.t() | nil,
+          :masterInstanceName => String.t() | nil,
+          :replicaConfiguration =>
+            GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t() | nil,
+          :verifyGtidConsistency => boolean() | nil
         }
 
   field(:kind)

@@ -42,23 +42,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupKind => String.t(),
-          :description => String.t(),
+          :backupKind => String.t() | nil,
+          :description => String.t() | nil,
           :diskEncryptionConfiguration =>
-            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t(),
-          :diskEncryptionStatus => GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t(),
-          :endTime => DateTime.t(),
-          :enqueuedTime => DateTime.t(),
-          :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t(),
-          :id => String.t(),
-          :instance => String.t(),
-          :kind => String.t(),
-          :location => String.t(),
-          :selfLink => String.t(),
-          :startTime => DateTime.t(),
-          :status => String.t(),
-          :type => String.t(),
-          :windowStartTime => DateTime.t()
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t() | nil,
+          :diskEncryptionStatus =>
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :enqueuedTime => DateTime.t() | nil,
+          :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t() | nil,
+          :id => String.t() | nil,
+          :instance => String.t() | nil,
+          :kind => String.t() | nil,
+          :location => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil,
+          :windowStartTime => DateTime.t() | nil
         }
 
   field(:backupKind)

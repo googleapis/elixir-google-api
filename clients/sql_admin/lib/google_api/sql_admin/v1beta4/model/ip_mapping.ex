@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpMapping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :timeToRetire => DateTime.t(),
-          :type => String.t()
+          :ipAddress => String.t() | nil,
+          :timeToRetire => DateTime.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:ipAddress)

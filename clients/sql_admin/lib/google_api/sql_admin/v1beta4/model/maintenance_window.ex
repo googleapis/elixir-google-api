@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => integer(),
-          :hour => integer(),
-          :kind => String.t(),
-          :updateTrack => String.t()
+          :day => integer() | nil,
+          :hour => integer() | nil,
+          :kind => String.t() | nil,
+          :updateTrack => String.t() | nil
         }
 
   field(:day)

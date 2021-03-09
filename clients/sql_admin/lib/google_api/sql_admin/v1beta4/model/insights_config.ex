@@ -30,10 +30,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queryInsightsEnabled => boolean(),
-          :queryStringLength => integer(),
-          :recordApplicationTags => boolean(),
-          :recordClientAddress => boolean()
+          :queryInsightsEnabled => boolean() | nil,
+          :queryStringLength => integer() | nil,
+          :recordApplicationTags => boolean() | nil,
+          :recordClientAddress => boolean() | nil
         }
 
   field(:queryInsightsEnabled)

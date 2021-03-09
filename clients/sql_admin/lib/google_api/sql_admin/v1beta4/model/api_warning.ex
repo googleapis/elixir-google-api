@@ -29,9 +29,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :message => String.t(),
-          :region => String.t()
+          :code => String.t() | nil,
+          :message => String.t() | nil,
+          :region => String.t() | nil
         }
 
   field(:code)

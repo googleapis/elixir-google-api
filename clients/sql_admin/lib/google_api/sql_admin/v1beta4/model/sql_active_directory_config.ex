@@ -28,8 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t(),
-          :kind => String.t()
+          :domain => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:domain)
