@@ -35,15 +35,15 @@ defmodule GoogleApi.AppEngine.V1.Model.AuthorizedCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateRawData => GoogleApi.AppEngine.V1.Model.CertificateRawData.t(),
-          :displayName => String.t(),
-          :domainMappingsCount => integer(),
-          :domainNames => list(String.t()),
-          :expireTime => DateTime.t(),
-          :id => String.t(),
-          :managedCertificate => GoogleApi.AppEngine.V1.Model.ManagedCertificate.t(),
-          :name => String.t(),
-          :visibleDomainMappings => list(String.t())
+          :certificateRawData => GoogleApi.AppEngine.V1.Model.CertificateRawData.t() | nil,
+          :displayName => String.t() | nil,
+          :domainMappingsCount => integer() | nil,
+          :domainNames => list(String.t()) | nil,
+          :expireTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :managedCertificate => GoogleApi.AppEngine.V1.Model.ManagedCertificate.t() | nil,
+          :name => String.t() | nil,
+          :visibleDomainMappings => list(String.t()) | nil
         }
 
   field(:certificateRawData, as: GoogleApi.AppEngine.V1.Model.CertificateRawData)

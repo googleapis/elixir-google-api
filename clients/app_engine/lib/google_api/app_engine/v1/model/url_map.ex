@@ -34,14 +34,14 @@ defmodule GoogleApi.AppEngine.V1.Model.UrlMap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiEndpoint => GoogleApi.AppEngine.V1.Model.ApiEndpointHandler.t(),
-          :authFailAction => String.t(),
-          :login => String.t(),
-          :redirectHttpResponseCode => String.t(),
-          :script => GoogleApi.AppEngine.V1.Model.ScriptHandler.t(),
-          :securityLevel => String.t(),
-          :staticFiles => GoogleApi.AppEngine.V1.Model.StaticFilesHandler.t(),
-          :urlRegex => String.t()
+          :apiEndpoint => GoogleApi.AppEngine.V1.Model.ApiEndpointHandler.t() | nil,
+          :authFailAction => String.t() | nil,
+          :login => String.t() | nil,
+          :redirectHttpResponseCode => String.t() | nil,
+          :script => GoogleApi.AppEngine.V1.Model.ScriptHandler.t() | nil,
+          :securityLevel => String.t() | nil,
+          :staticFiles => GoogleApi.AppEngine.V1.Model.StaticFilesHandler.t() | nil,
+          :urlRegex => String.t() | nil
         }
 
   field(:apiEndpoint, as: GoogleApi.AppEngine.V1.Model.ApiEndpointHandler)

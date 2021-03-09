@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxInstances => integer(),
-          :minInstances => integer(),
-          :targetCpuUtilization => float(),
-          :targetThroughputUtilization => float()
+          :maxInstances => integer() | nil,
+          :minInstances => integer() | nil,
+          :targetCpuUtilization => float() | nil,
+          :targetThroughputUtilization => float() | nil
         }
 
   field(:maxInstances)

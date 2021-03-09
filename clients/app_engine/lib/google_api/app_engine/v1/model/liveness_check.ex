@@ -33,13 +33,13 @@ defmodule GoogleApi.AppEngine.V1.Model.LivenessCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkInterval => String.t(),
-          :failureThreshold => integer(),
-          :host => String.t(),
-          :initialDelay => String.t(),
-          :path => String.t(),
-          :successThreshold => integer(),
-          :timeout => String.t()
+          :checkInterval => String.t() | nil,
+          :failureThreshold => integer() | nil,
+          :host => String.t() | nil,
+          :initialDelay => String.t() | nil,
+          :path => String.t() | nil,
+          :successThreshold => integer() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:checkInterval)

@@ -54,6 +54,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Application.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_get(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -173,6 +175,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_patch(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -235,6 +238,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_repair(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_repair(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -301,6 +305,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_authorized_certificates_create(
         connection,
@@ -371,7 +376,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def appengine_apps_authorized_certificates_delete(
         connection,
         apps_id,
@@ -446,6 +454,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_authorized_certificates_get(
         connection,
@@ -522,6 +531,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_authorized_certificates_list(
         connection,
@@ -600,6 +610,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_authorized_certificates_patch(
         connection,
@@ -676,6 +687,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_authorized_domains_list(
         connection,
@@ -751,6 +763,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_domain_mappings_create(
         connection,
@@ -824,6 +837,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_domain_mappings_delete(
         connection,
@@ -898,6 +912,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_domain_mappings_get(
         connection,
@@ -967,6 +982,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_domain_mappings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_domain_mappings_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1039,6 +1055,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_domain_mappings_patch(
         connection,
@@ -1114,6 +1131,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_firewall_ingress_rules_batch_update(
         connection,
@@ -1187,6 +1205,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_firewall_ingress_rules_create(
         connection,
@@ -1257,7 +1276,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def appengine_apps_firewall_ingress_rules_delete(
         connection,
         apps_id,
@@ -1330,6 +1352,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_firewall_ingress_rules_get(
         connection,
@@ -1404,6 +1427,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_firewall_ingress_rules_list(
         connection,
@@ -1480,6 +1504,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_firewall_ingress_rules_patch(
         connection,
@@ -1555,6 +1580,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_locations_get(
         connection,
@@ -1624,6 +1650,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_locations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1693,6 +1720,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_operations_get(
         connection,
@@ -1762,6 +1790,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_operations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1831,6 +1860,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_delete(
         connection,
@@ -1902,7 +1932,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.AppEngine.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def appengine_apps_services_get(
         connection,
         apps_id,
@@ -1970,6 +2003,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2041,6 +2075,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_patch(
         connection,
@@ -2118,6 +2153,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_create(
         connection,
@@ -2194,6 +2230,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_delete(
         connection,
@@ -2270,7 +2307,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Version.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.AppEngine.V1.Model.Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def appengine_apps_services_versions_get(
         connection,
         apps_id,
@@ -2349,6 +2389,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_list(
         connection,
@@ -2429,6 +2470,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_patch(
         connection,
@@ -2511,6 +2553,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_instances_debug(
         connection,
@@ -2596,6 +2639,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_instances_delete(
         connection,
@@ -2680,6 +2724,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Instance.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_instances_get(
         connection,
@@ -2764,6 +2809,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListInstancesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def appengine_apps_services_versions_instances_list(
         connection,

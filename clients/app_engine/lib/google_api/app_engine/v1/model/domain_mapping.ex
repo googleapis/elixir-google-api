@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.DomainMapping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :resourceRecords => list(GoogleApi.AppEngine.V1.Model.ResourceRecord.t()),
-          :sslSettings => GoogleApi.AppEngine.V1.Model.SslSettings.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :resourceRecords => list(GoogleApi.AppEngine.V1.Model.ResourceRecord.t()) | nil,
+          :sslSettings => GoogleApi.AppEngine.V1.Model.SslSettings.t() | nil
         }
 
   field(:id)

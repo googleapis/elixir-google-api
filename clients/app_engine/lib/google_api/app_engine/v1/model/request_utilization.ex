@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.RequestUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetConcurrentRequests => integer(),
-          :targetRequestCountPerSecond => integer()
+          :targetConcurrentRequests => integer() | nil,
+          :targetRequestCountPerSecond => integer() | nil
         }
 
   field(:targetConcurrentRequests)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.UrlDispatchRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t(),
-          :path => String.t(),
-          :service => String.t()
+          :domain => String.t() | nil,
+          :path => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:domain)

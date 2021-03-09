@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :networkSettings => GoogleApi.AppEngine.V1.Model.NetworkSettings.t(),
-          :split => GoogleApi.AppEngine.V1.Model.TrafficSplit.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :networkSettings => GoogleApi.AppEngine.V1.Model.NetworkSettings.t() | nil,
+          :split => GoogleApi.AppEngine.V1.Model.TrafficSplit.t() | nil
         }
 
   field(:id)

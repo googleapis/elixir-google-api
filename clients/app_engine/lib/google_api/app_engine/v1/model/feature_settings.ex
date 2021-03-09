@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.FeatureSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :splitHealthChecks => boolean(),
-          :useContainerOptimizedOs => boolean()
+          :splitHealthChecks => boolean() | nil,
+          :useContainerOptimizedOs => boolean() | nil
         }
 
   field(:splitHealthChecks)

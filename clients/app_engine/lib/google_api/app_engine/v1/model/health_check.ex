@@ -33,13 +33,13 @@ defmodule GoogleApi.AppEngine.V1.Model.HealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkInterval => String.t(),
-          :disableHealthCheck => boolean(),
-          :healthyThreshold => integer(),
-          :host => String.t(),
-          :restartThreshold => integer(),
-          :timeout => String.t(),
-          :unhealthyThreshold => integer()
+          :checkInterval => String.t() | nil,
+          :disableHealthCheck => boolean() | nil,
+          :healthyThreshold => integer() | nil,
+          :host => String.t() | nil,
+          :restartThreshold => integer() | nil,
+          :timeout => String.t() | nil,
+          :unhealthyThreshold => integer() | nil
         }
 
   field(:checkInterval)

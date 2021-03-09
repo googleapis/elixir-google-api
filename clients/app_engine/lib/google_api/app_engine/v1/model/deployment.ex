@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudBuildOptions => GoogleApi.AppEngine.V1.Model.CloudBuildOptions.t(),
-          :container => GoogleApi.AppEngine.V1.Model.ContainerInfo.t(),
-          :files => %{optional(String.t()) => GoogleApi.AppEngine.V1.Model.FileInfo.t()},
-          :zip => GoogleApi.AppEngine.V1.Model.ZipInfo.t()
+          :cloudBuildOptions => GoogleApi.AppEngine.V1.Model.CloudBuildOptions.t() | nil,
+          :container => GoogleApi.AppEngine.V1.Model.ContainerInfo.t() | nil,
+          :files => %{optional(String.t()) => GoogleApi.AppEngine.V1.Model.FileInfo.t()} | nil,
+          :zip => GoogleApi.AppEngine.V1.Model.ZipInfo.t() | nil
         }
 
   field(:cloudBuildOptions, as: GoogleApi.AppEngine.V1.Model.CloudBuildOptions)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.SslSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateId => String.t(),
-          :pendingManagedCertificateId => String.t(),
-          :sslManagementType => String.t()
+          :certificateId => String.t() | nil,
+          :pendingManagedCertificateId => String.t() | nil,
+          :sslManagementType => String.t() | nil
         }
 
   field(:certificateId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.NetworkUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetReceivedBytesPerSecond => integer(),
-          :targetReceivedPacketsPerSecond => integer(),
-          :targetSentBytesPerSecond => integer(),
-          :targetSentPacketsPerSecond => integer()
+          :targetReceivedBytesPerSecond => integer() | nil,
+          :targetReceivedPacketsPerSecond => integer() | nil,
+          :targetSentBytesPerSecond => integer() | nil,
+          :targetSentPacketsPerSecond => integer() | nil
         }
 
   field(:targetReceivedBytesPerSecond)

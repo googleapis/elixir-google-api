@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ApiEndpointHandler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :scriptPath => String.t()
+          :scriptPath => String.t() | nil
         }
 
   field(:scriptPath)

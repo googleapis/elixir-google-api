@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.BasicScaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :idleTimeout => String.t(),
-          :maxInstances => integer()
+          :idleTimeout => String.t() | nil,
+          :maxInstances => integer() | nil
         }
 
   field(:idleTimeout)

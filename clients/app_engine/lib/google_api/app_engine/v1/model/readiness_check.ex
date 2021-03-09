@@ -33,13 +33,13 @@ defmodule GoogleApi.AppEngine.V1.Model.ReadinessCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appStartTimeout => String.t(),
-          :checkInterval => String.t(),
-          :failureThreshold => integer(),
-          :host => String.t(),
-          :path => String.t(),
-          :successThreshold => integer(),
-          :timeout => String.t()
+          :appStartTimeout => String.t() | nil,
+          :checkInterval => String.t() | nil,
+          :failureThreshold => integer() | nil,
+          :host => String.t() | nil,
+          :path => String.t() | nil,
+          :successThreshold => integer() | nil,
+          :timeout => String.t() | nil
         }
 
   field(:appStartTimeout)

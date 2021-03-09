@@ -33,13 +33,13 @@ defmodule GoogleApi.AppEngine.V1.Model.StaticFilesHandler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationReadable => boolean(),
-          :expiration => String.t(),
-          :httpHeaders => map(),
-          :mimeType => String.t(),
-          :path => String.t(),
-          :requireMatchingFile => boolean(),
-          :uploadPathRegex => String.t()
+          :applicationReadable => boolean() | nil,
+          :expiration => String.t() | nil,
+          :httpHeaders => map() | nil,
+          :mimeType => String.t() | nil,
+          :path => String.t() | nil,
+          :requireMatchingFile => boolean() | nil,
+          :uploadPathRegex => String.t() | nil
         }
 
   field(:applicationReadable)

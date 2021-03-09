@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudBuildId => String.t()
+          :cloudBuildId => String.t() | nil
         }
 
   field(:cloudBuildId)

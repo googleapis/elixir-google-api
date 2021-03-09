@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainMappings => list(GoogleApi.AppEngine.V1.Model.DomainMapping.t()),
-          :nextPageToken => String.t()
+          :domainMappings => list(GoogleApi.AppEngine.V1.Model.DomainMapping.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:domainMappings, as: GoogleApi.AppEngine.V1.Model.DomainMapping, type: :list)

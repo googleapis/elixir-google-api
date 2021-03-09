@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :flexibleEnvironmentAvailable => boolean(),
-          :searchApiAvailable => boolean(),
-          :standardEnvironmentAvailable => boolean()
+          :flexibleEnvironmentAvailable => boolean() | nil,
+          :searchApiAvailable => boolean() | nil,
+          :standardEnvironmentAvailable => boolean() | nil
         }
 
   field(:flexibleEnvironmentAvailable)

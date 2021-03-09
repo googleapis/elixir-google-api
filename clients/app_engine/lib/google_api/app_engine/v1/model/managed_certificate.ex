@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ManagedCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastRenewalTime => DateTime.t(),
-          :status => String.t()
+          :lastRenewalTime => DateTime.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:lastRenewalTime, as: DateTime)

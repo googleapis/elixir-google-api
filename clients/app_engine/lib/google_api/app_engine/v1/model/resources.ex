@@ -31,11 +31,11 @@ defmodule GoogleApi.AppEngine.V1.Model.Resources do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpu => float(),
-          :diskGb => float(),
-          :kmsKeyReference => String.t(),
-          :memoryGb => float(),
-          :volumes => list(GoogleApi.AppEngine.V1.Model.Volume.t())
+          :cpu => float() | nil,
+          :diskGb => float() | nil,
+          :kmsKeyReference => String.t() | nil,
+          :memoryGb => float() | nil,
+          :volumes => list(GoogleApi.AppEngine.V1.Model.Volume.t()) | nil
         }
 
   field(:cpu)

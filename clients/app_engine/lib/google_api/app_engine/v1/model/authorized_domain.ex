@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.AuthorizedDomain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:id)

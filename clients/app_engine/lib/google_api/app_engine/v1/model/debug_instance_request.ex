@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.DebugInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sshKey => String.t()
+          :sshKey => String.t() | nil
         }
 
   field(:sshKey)

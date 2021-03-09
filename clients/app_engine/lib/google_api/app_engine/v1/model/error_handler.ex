@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.ErrorHandler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t(),
-          :mimeType => String.t(),
-          :staticFile => String.t()
+          :errorCode => String.t() | nil,
+          :mimeType => String.t() | nil,
+          :staticFile => String.t() | nil
         }
 
   field(:errorCode)

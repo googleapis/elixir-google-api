@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.NetworkSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ingressTrafficAllowed => String.t()
+          :ingressTrafficAllowed => String.t() | nil
         }
 
   field(:ingressTrafficAllowed)

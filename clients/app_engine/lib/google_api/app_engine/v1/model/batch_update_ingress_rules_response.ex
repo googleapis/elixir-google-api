@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ingressRules => list(GoogleApi.AppEngine.V1.Model.FirewallRule.t())
+          :ingressRules => list(GoogleApi.AppEngine.V1.Model.FirewallRule.t()) | nil
         }
 
   field(:ingressRules, as: GoogleApi.AppEngine.V1.Model.FirewallRule, type: :list)
