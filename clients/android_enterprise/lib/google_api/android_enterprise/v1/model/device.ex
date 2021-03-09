@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidId => String.t(),
-          :managementType => String.t(),
-          :policy => GoogleApi.AndroidEnterprise.V1.Model.Policy.t(),
-          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t()
+          :androidId => String.t() | nil,
+          :managementType => String.t() | nil,
+          :policy => GoogleApi.AndroidEnterprise.V1.Model.Policy.t() | nil,
+          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t() | nil
         }
 
   field(:androidId)

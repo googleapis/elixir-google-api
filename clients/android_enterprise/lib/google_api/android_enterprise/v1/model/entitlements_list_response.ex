@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entitlement => list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t())
+          :entitlement => list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t()) | nil
         }
 
   field(:entitlement, as: GoogleApi.AndroidEnterprise.V1.Model.Entitlement, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approved => String.t(),
-          :productId => String.t()
+          :approved => String.t() | nil,
+          :productId => String.t() | nil
         }
 
   field(:approved)

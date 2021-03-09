@@ -29,9 +29,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :productId => list(String.t()),
-          :productSetBehavior => String.t(),
-          :productVisibility => list(GoogleApi.AndroidEnterprise.V1.Model.ProductVisibility.t())
+          :productId => list(String.t()) | nil,
+          :productSetBehavior => String.t() | nil,
+          :productVisibility =>
+            list(GoogleApi.AndroidEnterprise.V1.Model.ProductVisibility.t()) | nil
         }
 
   field(:productId, type: :list)

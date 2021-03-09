@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t()),
-          :orderInPage => String.t(),
-          :productId => list(String.t())
+          :id => String.t() | nil,
+          :name => list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t()) | nil,
+          :orderInPage => String.t() | nil,
+          :productId => list(String.t()) | nil
         }
 
   field(:id)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :page => list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t())
+          :page => list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()) | nil
         }
 
   field(:page, as: GoogleApi.AndroidEnterprise.V1.Model.StorePage, type: :list)

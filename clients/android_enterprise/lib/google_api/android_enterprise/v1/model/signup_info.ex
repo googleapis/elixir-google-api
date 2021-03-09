@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.SignupInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionToken => String.t(),
-          :kind => String.t(),
-          :url => String.t()
+          :completionToken => String.t() | nil,
+          :kind => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:completionToken)

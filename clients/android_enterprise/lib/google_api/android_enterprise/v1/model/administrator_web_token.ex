@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :token => String.t()
+          :token => String.t() | nil
         }
 
   field(:token)

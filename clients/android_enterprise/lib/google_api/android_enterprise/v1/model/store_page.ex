@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StorePage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :link => list(String.t()),
-          :name => list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t())
+          :id => String.t() | nil,
+          :link => list(String.t()) | nil,
+          :name => list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t()) | nil
         }
 
   field(:id)

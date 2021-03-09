@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availabilityStatus => String.t(),
-          :productId => String.t()
+          :availabilityStatus => String.t() | nil,
+          :productId => String.t() | nil
         }
 
   field(:availabilityStatus)

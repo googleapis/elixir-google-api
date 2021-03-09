@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isProduction => boolean(),
-          :track => String.t(),
-          :trackId => list(String.t()),
-          :versionCode => integer(),
-          :versionString => String.t()
+          :isProduction => boolean() | nil,
+          :track => String.t() | nil,
+          :trackId => list(String.t()) | nil,
+          :versionCode => integer() | nil,
+          :versionString => String.t() | nil
         }
 
   field(:isProduction)

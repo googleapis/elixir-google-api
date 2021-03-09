@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :placeholder => String.t(),
-          :userValue => String.t()
+          :placeholder => String.t() | nil,
+          :userValue => String.t() | nil
         }
 
   field(:placeholder)

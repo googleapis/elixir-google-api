@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountEmail => String.t()
+          :accountEmail => String.t() | nil
         }
 
   field(:accountEmail)

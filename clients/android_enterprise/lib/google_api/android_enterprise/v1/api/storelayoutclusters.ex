@@ -60,7 +60,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidenterprise_storelayoutclusters_delete(
         connection,
         enterprise_id,
@@ -140,6 +140,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_storelayoutclusters_get(
         connection,
@@ -219,6 +220,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_storelayoutclusters_insert(
         connection,
@@ -296,6 +298,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_storelayoutclusters_list(
         connection,
@@ -377,6 +380,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidenterprise_storelayoutclusters_update(
         connection,

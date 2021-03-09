@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyedAppState => list(GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState.t()),
-          :packageName => String.t()
+          :keyedAppState => list(GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState.t()) | nil,
+          :packageName => String.t() | nil
         }
 
   field(:keyedAppState, as: GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState, type: :list)

@@ -32,12 +32,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoInstallPolicy => GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t(),
-          :autoUpdateMode => String.t(),
-          :managedConfiguration => GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t(),
-          :productId => String.t(),
-          :trackIds => list(String.t()),
-          :tracks => list(String.t())
+          :autoInstallPolicy => GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t() | nil,
+          :autoUpdateMode => String.t() | nil,
+          :managedConfiguration =>
+            GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t() | nil,
+          :productId => String.t() | nil,
+          :trackIds => list(String.t()) | nil,
+          :tracks => list(String.t()) | nil
         }
 
   field(:autoInstallPolicy, as: GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy)

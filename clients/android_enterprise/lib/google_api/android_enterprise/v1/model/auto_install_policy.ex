@@ -31,10 +31,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy do
 
   @type t :: %__MODULE__{
           :autoInstallConstraint =>
-            list(GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint.t()),
-          :autoInstallMode => String.t(),
-          :autoInstallPriority => integer(),
-          :minimumVersionCode => integer()
+            list(GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint.t()) | nil,
+          :autoInstallMode => String.t() | nil,
+          :autoInstallPriority => integer() | nil,
+          :minimumVersionCode => integer() | nil
         }
 
   field(:autoInstallConstraint,

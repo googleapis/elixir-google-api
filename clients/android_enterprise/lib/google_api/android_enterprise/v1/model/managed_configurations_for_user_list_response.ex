@@ -28,7 +28,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForUserListR
 
   @type t :: %__MODULE__{
           :managedConfigurationForUser =>
-            list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t())
+            list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t()) | nil
         }
 
   field(:managedConfigurationForUser,

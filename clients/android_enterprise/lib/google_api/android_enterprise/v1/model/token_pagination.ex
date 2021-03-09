@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.TokenPagination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :previousPageToken => String.t()
+          :nextPageToken => String.t() | nil,
+          :previousPageToken => String.t() | nil
         }
 
   field(:nextPageToken)

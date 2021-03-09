@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Entitlement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :productId => String.t(),
-          :reason => String.t()
+          :productId => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:productId)

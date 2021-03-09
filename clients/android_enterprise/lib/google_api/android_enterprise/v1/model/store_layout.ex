@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :homepageId => String.t(),
-          :storeLayoutType => String.t()
+          :homepageId => String.t() | nil,
+          :storeLayoutType => String.t() | nil
         }
 
   field(:homepageId)

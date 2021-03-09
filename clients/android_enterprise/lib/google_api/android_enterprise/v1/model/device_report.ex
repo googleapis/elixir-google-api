@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appState => list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t()),
-          :lastUpdatedTimestampMillis => String.t()
+          :appState => list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t()) | nil,
+          :lastUpdatedTimestampMillis => String.t() | nil
         }
 
   field(:appState, as: GoogleApi.AndroidEnterprise.V1.Model.AppState, type: :list)

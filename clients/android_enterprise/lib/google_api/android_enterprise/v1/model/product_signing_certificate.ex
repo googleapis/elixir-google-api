@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateHashSha1 => String.t(),
-          :certificateHashSha256 => String.t()
+          :certificateHashSha1 => String.t() | nil,
+          :certificateHashSha256 => String.t() | nil
         }
 
   field(:certificateHashSha1)

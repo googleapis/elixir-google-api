@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :id => String.t(),
-          :publicData => String.t(),
-          :type => String.t()
+          :data => String.t() | nil,
+          :id => String.t() | nil,
+          :publicData => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:data)

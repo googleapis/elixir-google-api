@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Install do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :installState => String.t(),
-          :productId => String.t(),
-          :versionCode => integer()
+          :installState => String.t() | nil,
+          :productId => String.t() | nil,
+          :versionCode => integer() | nil
         }
 
   field(:installState)

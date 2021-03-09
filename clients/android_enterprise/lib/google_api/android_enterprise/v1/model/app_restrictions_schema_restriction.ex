@@ -35,15 +35,16 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction 
 
   @type t :: %__MODULE__{
           :defaultValue =>
-            GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue.t(),
-          :description => String.t(),
-          :entry => list(String.t()),
-          :entryValue => list(String.t()),
-          :key => String.t(),
+            GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue.t()
+            | nil,
+          :description => String.t() | nil,
+          :entry => list(String.t()) | nil,
+          :entryValue => list(String.t()) | nil,
+          :key => String.t() | nil,
           :nestedRestriction =>
-            list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t()),
-          :restrictionType => String.t(),
-          :title => String.t()
+            list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t()) | nil,
+          :restrictionType => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:defaultValue,

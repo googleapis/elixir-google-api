@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductVisibility do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :productId => String.t(),
-          :trackIds => list(String.t()),
-          :tracks => list(String.t())
+          :productId => String.t() | nil,
+          :trackIds => list(String.t()) | nil,
+          :tracks => list(String.t()) | nil
         }
 
   field(:productId)

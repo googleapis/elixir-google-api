@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t(),
-          :userId => String.t()
+          :deviceId => String.t() | nil,
+          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:deviceId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t(),
-          :name => String.t()
+          :key => GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:key, as: GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey)

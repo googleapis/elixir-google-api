@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :managedProperty => list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t())
+          :managedProperty => list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t()) | nil
         }
 
   field(:managedProperty, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty, type: :list)

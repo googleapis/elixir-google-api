@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NotificationSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notification => list(GoogleApi.AndroidEnterprise.V1.Model.Notification.t()),
-          :notificationSetId => String.t()
+          :notification => list(GoogleApi.AndroidEnterprise.V1.Model.Notification.t()) | nil,
+          :notificationSetId => String.t() | nil
         }
 
   field(:notification, as: GoogleApi.AndroidEnterprise.V1.Model.Notification, type: :list)

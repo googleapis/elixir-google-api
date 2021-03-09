@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsApproveRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalUrlInfo => GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo.t(),
-          :approvedPermissions => String.t()
+          :approvalUrlInfo => GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo.t() | nil,
+          :approvedPermissions => String.t() | nil
         }
 
   field(:approvalUrlInfo, as: GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo)

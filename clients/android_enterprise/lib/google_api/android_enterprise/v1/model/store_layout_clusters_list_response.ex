@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cluster => list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t())
+          :cluster => list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()) | nil
         }
 
   field(:cluster, as: GoogleApi.AndroidEnterprise.V1.Model.StoreCluster, type: :list)

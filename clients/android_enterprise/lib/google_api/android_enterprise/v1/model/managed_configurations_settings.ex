@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastUpdatedTimestampMillis => String.t(),
-          :mcmId => String.t(),
-          :name => String.t()
+          :lastUpdatedTimestampMillis => String.t() | nil,
+          :mcmId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:lastUpdatedTimestampMillis)

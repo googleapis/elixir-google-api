@@ -38,19 +38,22 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
 
   @type t :: %__MODULE__{
           :appRestrictionsSchemaChangeEvent =>
-            GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent.t(),
-          :appUpdateEvent => GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent.t(),
+            GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent.t() | nil,
+          :appUpdateEvent => GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent.t() | nil,
           :deviceReportUpdateEvent =>
-            GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t(),
-          :enterpriseId => String.t(),
-          :installFailureEvent => GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t(),
-          :newDeviceEvent => GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t(),
-          :newPermissionsEvent => GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent.t(),
-          :notificationType => String.t(),
-          :productApprovalEvent => GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent.t(),
+            GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t() | nil,
+          :enterpriseId => String.t() | nil,
+          :installFailureEvent =>
+            GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t() | nil,
+          :newDeviceEvent => GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t() | nil,
+          :newPermissionsEvent =>
+            GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent.t() | nil,
+          :notificationType => String.t() | nil,
+          :productApprovalEvent =>
+            GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent.t() | nil,
           :productAvailabilityChangeEvent =>
-            GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent.t(),
-          :timestampMillis => String.t()
+            GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent.t() | nil,
+          :timestampMillis => String.t() | nil
         }
 
   field(:appRestrictionsSchemaChangeEvent,

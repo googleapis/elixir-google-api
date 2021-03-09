@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :dpcPackageName => String.t(),
-          :managementType => String.t(),
-          :userId => String.t()
+          :deviceId => String.t() | nil,
+          :dpcPackageName => String.t() | nil,
+          :managementType => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:deviceId)

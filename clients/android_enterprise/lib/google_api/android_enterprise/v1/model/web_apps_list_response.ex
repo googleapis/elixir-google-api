@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebAppsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :webApp => list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t())
+          :webApp => list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()) | nil
         }
 
   field(:webApp, as: GoogleApi.AndroidEnterprise.V1.Model.WebApp, type: :list)

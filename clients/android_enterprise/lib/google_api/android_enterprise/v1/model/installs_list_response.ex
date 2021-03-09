@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :install => list(GoogleApi.AndroidEnterprise.V1.Model.Install.t())
+          :install => list(GoogleApi.AndroidEnterprise.V1.Model.Install.t()) | nil
         }
 
   field(:install, as: GoogleApi.AndroidEnterprise.V1.Model.Install, type: :list)
