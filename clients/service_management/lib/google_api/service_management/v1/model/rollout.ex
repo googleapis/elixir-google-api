@@ -33,15 +33,15 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :createdBy => String.t(),
+          :createTime => DateTime.t() | nil,
+          :createdBy => String.t() | nil,
           :deleteServiceStrategy =>
-            GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t(),
-          :rolloutId => String.t(),
-          :serviceName => String.t(),
-          :status => String.t(),
+            GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t() | nil,
+          :rolloutId => String.t() | nil,
+          :serviceName => String.t() | nil,
+          :status => String.t() | nil,
           :trafficPercentStrategy =>
-            GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy.t()
+            GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy.t() | nil
         }
 
   field(:createTime, as: DateTime)

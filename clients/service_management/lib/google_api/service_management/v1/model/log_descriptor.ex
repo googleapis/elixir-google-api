@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceManagement.V1.Model.LogDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :labels => list(GoogleApi.ServiceManagement.V1.Model.LabelDescriptor.t()),
-          :name => String.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => list(GoogleApi.ServiceManagement.V1.Model.LabelDescriptor.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:description)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :serviceConfig => GoogleApi.ServiceManagement.V1.Model.Service.t()
+          :serviceConfig => GoogleApi.ServiceManagement.V1.Model.Service.t() | nil
         }
 
   field(:serviceConfig, as: GoogleApi.ServiceManagement.V1.Model.Service)

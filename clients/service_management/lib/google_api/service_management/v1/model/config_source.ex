@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.ServiceManagement.V1.Model.ConfigFile.t()),
-          :id => String.t()
+          :files => list(GoogleApi.ServiceManagement.V1.Model.ConfigFile.t()) | nil,
+          :id => String.t() | nil
         }
 
   field(:files, as: GoogleApi.ServiceManagement.V1.Model.ConfigFile, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.CustomHttpPattern do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :path => String.t()
+          :kind => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:kind)

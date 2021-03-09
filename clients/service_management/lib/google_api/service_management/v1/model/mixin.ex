@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Mixin do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :root => String.t()
+          :name => String.t() | nil,
+          :root => String.t() | nil
         }
 
   field(:name)

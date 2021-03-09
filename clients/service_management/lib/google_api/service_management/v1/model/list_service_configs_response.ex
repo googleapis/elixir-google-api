@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :serviceConfigs => list(GoogleApi.ServiceManagement.V1.Model.Service.t())
+          :nextPageToken => String.t() | nil,
+          :serviceConfigs => list(GoogleApi.ServiceManagement.V1.Model.Service.t()) | nil
         }
 
   field(:nextPageToken)

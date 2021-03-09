@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :rollouts => list(GoogleApi.ServiceManagement.V1.Model.Rollout.t())
+          :nextPageToken => String.t() | nil,
+          :rollouts => list(GoogleApi.ServiceManagement.V1.Model.Rollout.t()) | nil
         }
 
   field(:nextPageToken)

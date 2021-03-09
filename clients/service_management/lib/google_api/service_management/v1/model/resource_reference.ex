@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ResourceReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childType => String.t(),
-          :type => String.t()
+          :childType => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:childType)

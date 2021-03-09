@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Backend do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rules => list(GoogleApi.ServiceManagement.V1.Model.BackendRule.t())
+          :rules => list(GoogleApi.ServiceManagement.V1.Model.BackendRule.t()) | nil
         }
 
   field(:rules, as: GoogleApi.ServiceManagement.V1.Model.BackendRule, type: :list)

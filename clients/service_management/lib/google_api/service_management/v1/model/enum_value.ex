@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.EnumValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :number => integer(),
-          :options => list(GoogleApi.ServiceManagement.V1.Model.Option.t())
+          :name => String.t() | nil,
+          :number => integer() | nil,
+          :options => list(GoogleApi.ServiceManagement.V1.Model.Option.t()) | nil
         }
 
   field(:name)

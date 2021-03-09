@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :percentages => map()
+          :percentages => map() | nil
         }
 
   field(:percentages, type: :map)

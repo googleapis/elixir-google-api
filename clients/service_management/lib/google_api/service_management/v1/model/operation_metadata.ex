@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceManagement.V1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :progressPercentage => integer(),
-          :resourceNames => list(String.t()),
-          :startTime => DateTime.t(),
-          :steps => list(GoogleApi.ServiceManagement.V1.Model.Step.t())
+          :progressPercentage => integer() | nil,
+          :resourceNames => list(String.t()) | nil,
+          :startTime => DateTime.t() | nil,
+          :steps => list(GoogleApi.ServiceManagement.V1.Model.Step.t()) | nil
         }
 
   field(:progressPercentage)

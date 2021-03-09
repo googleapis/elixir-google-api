@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.FlowErrorDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exceptionType => String.t(),
-          :flowStepId => String.t()
+          :exceptionType => String.t() | nil,
+          :flowStepId => String.t() | nil
         }
 
   field(:exceptionType)

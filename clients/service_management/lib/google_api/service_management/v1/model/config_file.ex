@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileContents => String.t(),
-          :filePath => String.t(),
-          :fileType => String.t()
+          :fileContents => String.t() | nil,
+          :filePath => String.t() | nil,
+          :fileType => String.t() | nil
         }
 
   field(:fileContents)
