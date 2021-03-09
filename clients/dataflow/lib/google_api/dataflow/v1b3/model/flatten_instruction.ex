@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlattenInstruction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputs => list(GoogleApi.Dataflow.V1b3.Model.InstructionInput.t())
+          :inputs => list(GoogleApi.Dataflow.V1b3.Model.InstructionInput.t()) | nil
         }
 
   field(:inputs, as: GoogleApi.Dataflow.V1b3.Model.InstructionInput, type: :list)

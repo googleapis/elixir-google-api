@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SplitInt64 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :highBits => integer(),
-          :lowBits => integer()
+          :highBits => integer() | nil,
+          :lowBits => integer() | nil
         }
 
   field(:highBits)

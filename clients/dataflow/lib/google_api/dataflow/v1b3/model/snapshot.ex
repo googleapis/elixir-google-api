@@ -35,15 +35,15 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :description => String.t(),
-          :diskSizeBytes => String.t(),
-          :id => String.t(),
-          :projectId => String.t(),
-          :pubsubMetadata => list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t()),
-          :sourceJobId => String.t(),
-          :state => String.t(),
-          :ttl => String.t()
+          :creationTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :diskSizeBytes => String.t() | nil,
+          :id => String.t() | nil,
+          :projectId => String.t() | nil,
+          :pubsubMetadata => list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t()) | nil,
+          :sourceJobId => String.t() | nil,
+          :state => String.t() | nil,
+          :ttl => String.t() | nil
         }
 
   field(:creationTime, as: DateTime)

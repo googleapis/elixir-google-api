@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CPUTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rate => float(),
-          :timestamp => DateTime.t(),
-          :totalMs => String.t()
+          :rate => float() | nil,
+          :timestamp => DateTime.t() | nil,
+          :totalMs => String.t() | nil
         }
 
   field(:rate)

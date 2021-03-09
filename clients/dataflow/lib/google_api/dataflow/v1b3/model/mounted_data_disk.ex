@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MountedDataDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataDisk => String.t()
+          :dataDisk => String.t() | nil
         }
 
   field(:dataDisk)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Sink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :codec => map(),
-          :spec => map()
+          :codec => map() | nil,
+          :spec => map() | nil
         }
 
   field(:codec, type: :map)

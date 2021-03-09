@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DerivedSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :derivationMode => String.t(),
-          :source => GoogleApi.Dataflow.V1b3.Model.Source.t()
+          :derivationMode => String.t() | nil,
+          :source => GoogleApi.Dataflow.V1b3.Model.Source.t() | nil
         }
 
   field(:derivationMode)

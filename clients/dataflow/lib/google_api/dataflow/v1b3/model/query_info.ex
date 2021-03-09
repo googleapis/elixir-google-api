@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.QueryInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queryProperty => list(String.t())
+          :queryProperty => list(String.t()) | nil
         }
 
   field(:queryProperty, type: :list)

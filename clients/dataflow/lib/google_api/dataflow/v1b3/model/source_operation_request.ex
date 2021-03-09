@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :getMetadata => GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest.t(),
-          :name => String.t(),
-          :originalName => String.t(),
-          :split => GoogleApi.Dataflow.V1b3.Model.SourceSplitRequest.t(),
-          :stageName => String.t(),
-          :systemName => String.t()
+          :getMetadata => GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest.t() | nil,
+          :name => String.t() | nil,
+          :originalName => String.t() | nil,
+          :split => GoogleApi.Dataflow.V1b3.Model.SourceSplitRequest.t() | nil,
+          :stageName => String.t() | nil,
+          :systemName => String.t() | nil
         }
 
   field(:getMetadata, as: GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest)

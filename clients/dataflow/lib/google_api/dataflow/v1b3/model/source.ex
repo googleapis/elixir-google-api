@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseSpecs => list(map()),
-          :codec => map(),
-          :doesNotNeedSplitting => boolean(),
-          :metadata => GoogleApi.Dataflow.V1b3.Model.SourceMetadata.t(),
-          :spec => map()
+          :baseSpecs => list(map()) | nil,
+          :codec => map() | nil,
+          :doesNotNeedSplitting => boolean() | nil,
+          :metadata => GoogleApi.Dataflow.V1b3.Model.SourceMetadata.t() | nil,
+          :spec => map() | nil
         }
 
   field(:baseSpecs, type: :list)

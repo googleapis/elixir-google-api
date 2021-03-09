@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentStateTime => DateTime.t(),
-          :executionStageName => String.t(),
-          :executionStageState => String.t()
+          :currentStateTime => DateTime.t() | nil,
+          :executionStageName => String.t() | nil,
+          :executionStageState => String.t() | nil
         }
 
   field(:currentStateTime, as: DateTime)

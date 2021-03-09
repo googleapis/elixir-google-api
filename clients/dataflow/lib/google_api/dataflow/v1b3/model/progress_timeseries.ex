@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentProgress => float(),
-          :dataPoints => list(GoogleApi.Dataflow.V1b3.Model.Point.t())
+          :currentProgress => float() | nil,
+          :dataPoints => list(GoogleApi.Dataflow.V1b3.Model.Point.t()) | nil
         }
 
   field(:currentProgress)

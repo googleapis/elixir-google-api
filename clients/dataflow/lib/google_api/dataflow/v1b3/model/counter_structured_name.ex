@@ -36,16 +36,16 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredName do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :componentStepName => String.t(),
-          :executionStepName => String.t(),
-          :inputIndex => integer(),
-          :name => String.t(),
-          :origin => String.t(),
-          :originNamespace => String.t(),
-          :originalRequestingStepName => String.t(),
-          :originalStepName => String.t(),
-          :portion => String.t(),
-          :workerId => String.t()
+          :componentStepName => String.t() | nil,
+          :executionStepName => String.t() | nil,
+          :inputIndex => integer() | nil,
+          :name => String.t() | nil,
+          :origin => String.t() | nil,
+          :originNamespace => String.t() | nil,
+          :originalRequestingStepName => String.t() | nil,
+          :originalStepName => String.t() | nil,
+          :portion => String.t() | nil,
+          :workerId => String.t() | nil
         }
 
   field(:componentStepName)

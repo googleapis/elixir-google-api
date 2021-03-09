@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricShortId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricIndex => integer(),
-          :shortId => String.t()
+          :metricIndex => integer() | nil,
+          :shortId => String.t() | nil
         }
 
   field(:metricIndex)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateReportedProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumedParallelism => GoogleApi.Dataflow.V1b3.Model.ReportedParallelism.t(),
-          :fractionConsumed => float(),
-          :position => GoogleApi.Dataflow.V1b3.Model.Position.t(),
-          :remainingParallelism => GoogleApi.Dataflow.V1b3.Model.ReportedParallelism.t()
+          :consumedParallelism => GoogleApi.Dataflow.V1b3.Model.ReportedParallelism.t() | nil,
+          :fractionConsumed => float() | nil,
+          :position => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil,
+          :remainingParallelism => GoogleApi.Dataflow.V1b3.Model.ReportedParallelism.t() | nil
         }
 
   field(:consumedParallelism, as: GoogleApi.Dataflow.V1b3.Model.ReportedParallelism)

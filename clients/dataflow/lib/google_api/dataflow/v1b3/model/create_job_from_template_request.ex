@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t(),
-          :gcsPath => String.t(),
-          :jobName => String.t(),
-          :location => String.t(),
-          :parameters => map()
+          :environment => GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t() | nil,
+          :gcsPath => String.t() | nil,
+          :jobName => String.t() | nil,
+          :location => String.t() | nil,
+          :parameters => map() | nil
         }
 
   field(:environment, as: GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment)

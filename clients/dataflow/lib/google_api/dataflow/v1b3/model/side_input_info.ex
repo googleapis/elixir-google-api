@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SideInputInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => map(),
-          :sources => list(GoogleApi.Dataflow.V1b3.Model.Source.t()),
-          :tag => String.t()
+          :kind => map() | nil,
+          :sources => list(GoogleApi.Dataflow.V1b3.Model.Source.t()) | nil,
+          :tag => String.t() | nil
         }
 
   field(:kind, type: :map)

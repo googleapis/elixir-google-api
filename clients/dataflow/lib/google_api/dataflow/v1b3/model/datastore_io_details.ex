@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DatastoreIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namespace => String.t(),
-          :projectId => String.t()
+          :namespace => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:namespace)

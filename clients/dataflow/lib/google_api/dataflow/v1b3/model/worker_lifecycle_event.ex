@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerStartTime => DateTime.t(),
-          :event => String.t(),
-          :metadata => map()
+          :containerStartTime => DateTime.t() | nil,
+          :event => String.t() | nil,
+          :metadata => map() | nil
         }
 
   field(:containerStartTime, as: DateTime)

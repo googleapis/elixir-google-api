@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stepName => list(String.t())
+          :stepName => list(String.t()) | nil
         }
 
   field(:stepName, type: :list)

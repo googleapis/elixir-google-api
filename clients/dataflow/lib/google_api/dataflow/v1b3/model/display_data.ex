@@ -38,18 +38,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DisplayData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :durationValue => String.t(),
-          :floatValue => number(),
-          :int64Value => String.t(),
-          :javaClassValue => String.t(),
-          :key => String.t(),
-          :label => String.t(),
-          :namespace => String.t(),
-          :shortStrValue => String.t(),
-          :strValue => String.t(),
-          :timestampValue => DateTime.t(),
-          :url => String.t()
+          :boolValue => boolean() | nil,
+          :durationValue => String.t() | nil,
+          :floatValue => number() | nil,
+          :int64Value => String.t() | nil,
+          :javaClassValue => String.t() | nil,
+          :key => String.t() | nil,
+          :label => String.t() | nil,
+          :namespace => String.t() | nil,
+          :shortStrValue => String.t() | nil,
+          :strValue => String.t() | nil,
+          :timestampValue => DateTime.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:boolValue)

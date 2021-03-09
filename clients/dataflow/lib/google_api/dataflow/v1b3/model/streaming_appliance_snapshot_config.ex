@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :importStateEndpoint => String.t(),
-          :snapshotId => String.t()
+          :importStateEndpoint => String.t() | nil,
+          :snapshotId => String.t() | nil
         }
 
   field(:importStateEndpoint)

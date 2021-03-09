@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportedParallelism do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isInfinite => boolean(),
-          :value => float()
+          :isInfinite => boolean() | nil,
+          :value => float() | nil
         }
 
   field(:isInfinite)

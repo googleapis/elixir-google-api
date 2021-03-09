@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attemptId => String.t(),
-          :endTime => DateTime.t(),
-          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()),
-          :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :taskId => String.t()
+          :attemptId => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()) | nil,
+          :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :taskId => String.t() | nil
         }
 
   field(:attemptId)

@@ -45,25 +45,25 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alsologtostderr => boolean(),
-          :baseTaskDir => String.t(),
-          :baseUrl => String.t(),
-          :commandlinesFileName => String.t(),
-          :continueOnException => boolean(),
-          :dataflowApiVersion => String.t(),
-          :harnessCommand => String.t(),
-          :languageHint => String.t(),
-          :logDir => String.t(),
-          :logToSerialconsole => boolean(),
-          :logUploadLocation => String.t(),
-          :oauthScopes => list(String.t()),
-          :parallelWorkerSettings => GoogleApi.Dataflow.V1b3.Model.WorkerSettings.t(),
-          :streamingWorkerMainClass => String.t(),
-          :taskGroup => String.t(),
-          :taskUser => String.t(),
-          :tempStoragePrefix => String.t(),
-          :vmId => String.t(),
-          :workflowFileName => String.t()
+          :alsologtostderr => boolean() | nil,
+          :baseTaskDir => String.t() | nil,
+          :baseUrl => String.t() | nil,
+          :commandlinesFileName => String.t() | nil,
+          :continueOnException => boolean() | nil,
+          :dataflowApiVersion => String.t() | nil,
+          :harnessCommand => String.t() | nil,
+          :languageHint => String.t() | nil,
+          :logDir => String.t() | nil,
+          :logToSerialconsole => boolean() | nil,
+          :logUploadLocation => String.t() | nil,
+          :oauthScopes => list(String.t()) | nil,
+          :parallelWorkerSettings => GoogleApi.Dataflow.V1b3.Model.WorkerSettings.t() | nil,
+          :streamingWorkerMainClass => String.t() | nil,
+          :taskGroup => String.t() | nil,
+          :taskUser => String.t() | nil,
+          :tempStoragePrefix => String.t() | nil,
+          :vmId => String.t() | nil,
+          :workflowFileName => String.t() | nil
         }
 
   field(:alsologtostderr)

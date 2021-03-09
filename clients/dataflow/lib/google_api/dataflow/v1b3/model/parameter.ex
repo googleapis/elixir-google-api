@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Parameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => any()
+          :key => String.t() | nil,
+          :value => any() | nil
         }
 
   field(:key)

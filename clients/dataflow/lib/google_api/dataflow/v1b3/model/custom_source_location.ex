@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stateful => boolean()
+          :stateful => boolean() | nil
         }
 
   field(:stateful)

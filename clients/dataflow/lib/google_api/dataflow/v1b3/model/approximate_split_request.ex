@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fractionConsumed => float(),
-          :fractionOfRemainder => float(),
-          :position => GoogleApi.Dataflow.V1b3.Model.Position.t()
+          :fractionConsumed => float() | nil,
+          :fractionOfRemainder => float() | nil,
+          :position => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil
         }
 
   field(:fractionConsumed)

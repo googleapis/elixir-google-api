@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ComputationTopology do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computationId => String.t(),
-          :inputs => list(GoogleApi.Dataflow.V1b3.Model.StreamLocation.t()),
-          :keyRanges => list(GoogleApi.Dataflow.V1b3.Model.KeyRangeLocation.t()),
-          :outputs => list(GoogleApi.Dataflow.V1b3.Model.StreamLocation.t()),
-          :stateFamilies => list(GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig.t()),
-          :systemStageName => String.t()
+          :computationId => String.t() | nil,
+          :inputs => list(GoogleApi.Dataflow.V1b3.Model.StreamLocation.t()) | nil,
+          :keyRanges => list(GoogleApi.Dataflow.V1b3.Model.KeyRangeLocation.t()) | nil,
+          :outputs => list(GoogleApi.Dataflow.V1b3.Model.StreamLocation.t()) | nil,
+          :stateFamilies => list(GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig.t()) | nil,
+          :systemStageName => String.t() | nil
         }
 
   field(:computationId)

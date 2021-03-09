@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FileIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filePattern => String.t()
+          :filePattern => String.t() | nil
         }
 
   field(:filePattern)

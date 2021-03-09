@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t())
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil
         }
 
   field(:description)

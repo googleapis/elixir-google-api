@@ -28,8 +28,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computationId => String.t(),
-          :rangeAssignments => list(GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment.t())
+          :computationId => String.t() | nil,
+          :rangeAssignments =>
+            list(GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment.t()) | nil
         }
 
   field(:computationId)

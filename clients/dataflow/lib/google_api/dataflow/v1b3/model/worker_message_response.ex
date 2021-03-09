@@ -30,11 +30,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
 
   @type t :: %__MODULE__{
           :workerHealthReportResponse =>
-            GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse.t(),
+            GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse.t() | nil,
           :workerMetricsResponse =>
-            GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse.t(),
+            GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse.t() | nil,
           :workerShutdownNoticeResponse =>
-            GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse.t()
+            GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse.t() | nil
         }
 
   field(:workerHealthReportResponse, as: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportInterval => String.t()
+          :reportInterval => String.t() | nil
         }
 
   field(:reportInterval)

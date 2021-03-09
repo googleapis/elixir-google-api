@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.BigTableIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceId => String.t(),
-          :projectId => String.t(),
-          :tableId => String.t()
+          :instanceId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :tableId => String.t() | nil
         }
 
   field(:instanceId)

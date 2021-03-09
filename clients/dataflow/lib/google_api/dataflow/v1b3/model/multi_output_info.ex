@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tag => String.t()
+          :tag => String.t() | nil
         }
 
   field(:tag)

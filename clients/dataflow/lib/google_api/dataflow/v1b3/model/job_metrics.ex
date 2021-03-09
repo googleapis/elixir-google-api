@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricTime => DateTime.t(),
-          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t())
+          :metricTime => DateTime.t() | nil,
+          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()) | nil
         }
 
   field(:metricTime, as: DateTime)

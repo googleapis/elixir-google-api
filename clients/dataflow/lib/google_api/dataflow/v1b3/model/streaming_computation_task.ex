@@ -30,9 +30,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
 
   @type t :: %__MODULE__{
           :computationRanges =>
-            list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges.t()),
-          :dataDisks => list(GoogleApi.Dataflow.V1b3.Model.MountedDataDisk.t()),
-          :taskType => String.t()
+            list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges.t()) | nil,
+          :dataDisks => list(GoogleApi.Dataflow.V1b3.Model.MountedDataDisk.t()) | nil,
+          :taskType => String.t() | nil
         }
 
   field(:computationRanges,

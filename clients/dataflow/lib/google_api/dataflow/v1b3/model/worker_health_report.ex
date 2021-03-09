@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :msg => String.t(),
-          :pods => list(map()),
-          :reportInterval => String.t(),
-          :vmIsBroken => boolean(),
-          :vmIsHealthy => boolean(),
-          :vmStartupTime => DateTime.t()
+          :msg => String.t() | nil,
+          :pods => list(map()) | nil,
+          :reportInterval => String.t() | nil,
+          :vmIsBroken => boolean() | nil,
+          :vmIsHealthy => boolean() | nil,
+          :vmStartupTime => DateTime.t() | nil
         }
 
   field(:msg)

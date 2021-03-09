@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map()
+          :labels => map() | nil
         }
 
   field(:labels, type: :map)

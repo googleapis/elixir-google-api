@@ -34,14 +34,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :componentSource => list(GoogleApi.Dataflow.V1b3.Model.ComponentSource.t()),
-          :componentTransform => list(GoogleApi.Dataflow.V1b3.Model.ComponentTransform.t()),
-          :id => String.t(),
-          :inputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :outputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()),
-          :prerequisiteStage => list(String.t())
+          :componentSource => list(GoogleApi.Dataflow.V1b3.Model.ComponentSource.t()) | nil,
+          :componentTransform => list(GoogleApi.Dataflow.V1b3.Model.ComponentTransform.t()) | nil,
+          :id => String.t() | nil,
+          :inputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :outputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()) | nil,
+          :prerequisiteStage => list(String.t()) | nil
         }
 
   field(:componentSource, as: GoogleApi.Dataflow.V1b3.Model.ComponentSource, type: :list)

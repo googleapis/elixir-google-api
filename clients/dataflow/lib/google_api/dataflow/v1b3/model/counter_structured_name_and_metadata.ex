@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.Dataflow.V1b3.Model.CounterMetadata.t(),
-          :name => GoogleApi.Dataflow.V1b3.Model.CounterStructuredName.t()
+          :metadata => GoogleApi.Dataflow.V1b3.Model.CounterMetadata.t() | nil,
+          :name => GoogleApi.Dataflow.V1b3.Model.CounterStructuredName.t() | nil
         }
 
   field(:metadata, as: GoogleApi.Dataflow.V1b3.Model.CounterMetadata)

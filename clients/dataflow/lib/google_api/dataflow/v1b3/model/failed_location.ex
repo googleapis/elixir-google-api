@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FailedLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)

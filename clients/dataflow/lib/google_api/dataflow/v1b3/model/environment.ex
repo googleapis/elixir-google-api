@@ -42,22 +42,22 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterManagerApiService => String.t(),
-          :dataset => String.t(),
-          :experiments => list(String.t()),
-          :flexResourceSchedulingGoal => String.t(),
-          :internalExperiments => map(),
-          :sdkPipelineOptions => map(),
-          :serviceAccountEmail => String.t(),
-          :serviceKmsKeyName => String.t(),
-          :serviceOptions => list(String.t()),
-          :shuffleMode => String.t(),
-          :tempStoragePrefix => String.t(),
-          :userAgent => map(),
-          :version => map(),
-          :workerPools => list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t()),
-          :workerRegion => String.t(),
-          :workerZone => String.t()
+          :clusterManagerApiService => String.t() | nil,
+          :dataset => String.t() | nil,
+          :experiments => list(String.t()) | nil,
+          :flexResourceSchedulingGoal => String.t() | nil,
+          :internalExperiments => map() | nil,
+          :sdkPipelineOptions => map() | nil,
+          :serviceAccountEmail => String.t() | nil,
+          :serviceKmsKeyName => String.t() | nil,
+          :serviceOptions => list(String.t()) | nil,
+          :shuffleMode => String.t() | nil,
+          :tempStoragePrefix => String.t() | nil,
+          :userAgent => map() | nil,
+          :version => map() | nil,
+          :workerPools => list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t()) | nil,
+          :workerRegion => String.t() | nil,
+          :workerZone => String.t() | nil
         }
 
   field(:clusterManagerApiService)

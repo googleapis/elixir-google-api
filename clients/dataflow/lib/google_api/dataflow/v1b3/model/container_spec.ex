@@ -30,10 +30,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ContainerSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultEnvironment => GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t(),
-          :image => String.t(),
-          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t(),
-          :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t()
+          :defaultEnvironment =>
+            GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t() | nil,
+          :image => String.t() | nil,
+          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t() | nil,
+          :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t() | nil
         }
 
   field(:defaultEnvironment, as: GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment)

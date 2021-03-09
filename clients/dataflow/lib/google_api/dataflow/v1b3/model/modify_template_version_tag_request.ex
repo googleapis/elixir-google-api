@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :removeOnly => boolean(),
-          :tag => String.t()
+          :removeOnly => boolean() | nil,
+          :tag => String.t() | nil
         }
 
   field(:removeOnly)

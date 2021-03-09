@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataDisks => list(String.t()),
-          :vmInstance => String.t()
+          :dataDisks => list(String.t()) | nil,
+          :vmInstance => String.t() | nil
         }
 
   field(:dataDisks, type: :list)

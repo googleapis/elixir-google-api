@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.HotKeyDetection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hotKeyAge => String.t(),
-          :systemName => String.t(),
-          :userStepName => String.t()
+          :hotKeyAge => String.t() | nil,
+          :systemName => String.t() | nil,
+          :userStepName => String.t() | nil
         }
 
   field(:hotKeyAge)

@@ -33,14 +33,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitStreamChunkSizeBytes => String.t(),
-          :getDataStreamChunkSizeBytes => String.t(),
-          :maxWorkItemCommitBytes => String.t(),
+          :commitStreamChunkSizeBytes => String.t() | nil,
+          :getDataStreamChunkSizeBytes => String.t() | nil,
+          :maxWorkItemCommitBytes => String.t() | nil,
           :streamingComputationConfigs =>
-            list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t()),
-          :userStepToStateFamilyNameMap => map(),
-          :windmillServiceEndpoint => String.t(),
-          :windmillServicePort => String.t()
+            list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t()) | nil,
+          :userStepToStateFamilyNameMap => map() | nil,
+          :windmillServiceEndpoint => String.t() | nil,
+          :windmillServicePort => String.t() | nil
         }
 
   field(:commitStreamChunkSizeBytes)

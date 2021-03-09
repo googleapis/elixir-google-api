@@ -35,15 +35,15 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :artifact => GoogleApi.Dataflow.V1b3.Model.Artifact.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :labels => map(),
-          :projectId => String.t(),
-          :tags => list(String.t()),
-          :type => String.t(),
-          :versionId => String.t()
+          :artifact => GoogleApi.Dataflow.V1b3.Model.Artifact.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :projectId => String.t() | nil,
+          :tags => list(String.t()) | nil,
+          :type => String.t() | nil,
+          :versionId => String.t() | nil
         }
 
   field(:artifact, as: GoogleApi.Dataflow.V1b3.Model.Artifact)

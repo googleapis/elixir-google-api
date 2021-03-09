@@ -40,20 +40,22 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completed => boolean(),
-          :counterUpdates => list(GoogleApi.Dataflow.V1b3.Model.CounterUpdate.t()),
-          :dynamicSourceSplit => GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit.t(),
-          :errors => list(GoogleApi.Dataflow.V1b3.Model.Status.t()),
-          :metricUpdates => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()),
-          :progress => GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t(),
-          :reportIndex => String.t(),
-          :reportedProgress => GoogleApi.Dataflow.V1b3.Model.ApproximateReportedProgress.t(),
-          :requestedLeaseDuration => String.t(),
-          :sourceFork => GoogleApi.Dataflow.V1b3.Model.SourceFork.t(),
-          :sourceOperationResponse => GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse.t(),
-          :stopPosition => GoogleApi.Dataflow.V1b3.Model.Position.t(),
-          :totalThrottlerWaitTimeSeconds => float(),
-          :workItemId => String.t()
+          :completed => boolean() | nil,
+          :counterUpdates => list(GoogleApi.Dataflow.V1b3.Model.CounterUpdate.t()) | nil,
+          :dynamicSourceSplit => GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit.t() | nil,
+          :errors => list(GoogleApi.Dataflow.V1b3.Model.Status.t()) | nil,
+          :metricUpdates => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()) | nil,
+          :progress => GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t() | nil,
+          :reportIndex => String.t() | nil,
+          :reportedProgress =>
+            GoogleApi.Dataflow.V1b3.Model.ApproximateReportedProgress.t() | nil,
+          :requestedLeaseDuration => String.t() | nil,
+          :sourceFork => GoogleApi.Dataflow.V1b3.Model.SourceFork.t() | nil,
+          :sourceOperationResponse =>
+            GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse.t() | nil,
+          :stopPosition => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil,
+          :totalThrottlerWaitTimeSeconds => float() | nil,
+          :workItemId => String.t() | nil
         }
 
   field(:completed)

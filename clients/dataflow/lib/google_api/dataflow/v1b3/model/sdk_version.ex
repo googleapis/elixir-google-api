@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SdkVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sdkSupportStatus => String.t(),
-          :version => String.t(),
-          :versionDisplayName => String.t()
+          :sdkSupportStatus => String.t() | nil,
+          :version => String.t() | nil,
+          :versionDisplayName => String.t() | nil
         }
 
   field(:sdkSupportStatus)

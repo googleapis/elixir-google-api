@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :job => GoogleApi.Dataflow.V1b3.Model.Job.t()
+          :job => GoogleApi.Dataflow.V1b3.Model.Job.t() | nil
         }
 
   field(:job, as: GoogleApi.Dataflow.V1b3.Model.Job)

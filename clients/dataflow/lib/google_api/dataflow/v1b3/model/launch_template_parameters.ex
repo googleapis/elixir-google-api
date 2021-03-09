@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t(),
-          :jobName => String.t(),
-          :parameters => map(),
-          :transformNameMapping => map(),
-          :update => boolean()
+          :environment => GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t() | nil,
+          :jobName => String.t() | nil,
+          :parameters => map() | nil,
+          :transformNameMapping => map() | nil,
+          :update => boolean() | nil
         }
 
   field(:environment, as: GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment)

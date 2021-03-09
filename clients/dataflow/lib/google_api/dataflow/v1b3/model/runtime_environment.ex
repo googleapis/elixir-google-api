@@ -42,22 +42,22 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalExperiments => list(String.t()),
-          :additionalUserLabels => map(),
-          :bypassTempDirValidation => boolean(),
-          :enableStreamingEngine => boolean(),
-          :ipConfiguration => String.t(),
-          :kmsKeyName => String.t(),
-          :machineType => String.t(),
-          :maxWorkers => integer(),
-          :network => String.t(),
-          :numWorkers => integer(),
-          :serviceAccountEmail => String.t(),
-          :subnetwork => String.t(),
-          :tempLocation => String.t(),
-          :workerRegion => String.t(),
-          :workerZone => String.t(),
-          :zone => String.t()
+          :additionalExperiments => list(String.t()) | nil,
+          :additionalUserLabels => map() | nil,
+          :bypassTempDirValidation => boolean() | nil,
+          :enableStreamingEngine => boolean() | nil,
+          :ipConfiguration => String.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :machineType => String.t() | nil,
+          :maxWorkers => integer() | nil,
+          :network => String.t() | nil,
+          :numWorkers => integer() | nil,
+          :serviceAccountEmail => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :tempLocation => String.t() | nil,
+          :workerRegion => String.t() | nil,
+          :workerZone => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:additionalExperiments, type: :list)

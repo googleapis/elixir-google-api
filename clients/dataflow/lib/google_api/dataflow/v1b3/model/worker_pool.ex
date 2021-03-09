@@ -48,29 +48,29 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalingSettings => GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings.t(),
-          :dataDisks => list(GoogleApi.Dataflow.V1b3.Model.Disk.t()),
-          :defaultPackageSet => String.t(),
-          :diskSizeGb => integer(),
-          :diskSourceImage => String.t(),
-          :diskType => String.t(),
-          :ipConfiguration => String.t(),
-          :kind => String.t(),
-          :machineType => String.t(),
-          :metadata => map(),
-          :network => String.t(),
-          :numThreadsPerWorker => integer(),
-          :numWorkers => integer(),
-          :onHostMaintenance => String.t(),
-          :packages => list(GoogleApi.Dataflow.V1b3.Model.Package.t()),
-          :poolArgs => map(),
+          :autoscalingSettings => GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings.t() | nil,
+          :dataDisks => list(GoogleApi.Dataflow.V1b3.Model.Disk.t()) | nil,
+          :defaultPackageSet => String.t() | nil,
+          :diskSizeGb => integer() | nil,
+          :diskSourceImage => String.t() | nil,
+          :diskType => String.t() | nil,
+          :ipConfiguration => String.t() | nil,
+          :kind => String.t() | nil,
+          :machineType => String.t() | nil,
+          :metadata => map() | nil,
+          :network => String.t() | nil,
+          :numThreadsPerWorker => integer() | nil,
+          :numWorkers => integer() | nil,
+          :onHostMaintenance => String.t() | nil,
+          :packages => list(GoogleApi.Dataflow.V1b3.Model.Package.t()) | nil,
+          :poolArgs => map() | nil,
           :sdkHarnessContainerImages =>
-            list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t()),
-          :subnetwork => String.t(),
-          :taskrunnerSettings => GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t(),
-          :teardownPolicy => String.t(),
-          :workerHarnessContainerImage => String.t(),
-          :zone => String.t()
+            list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t()) | nil,
+          :subnetwork => String.t() | nil,
+          :taskrunnerSettings => GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t() | nil,
+          :teardownPolicy => String.t() | nil,
+          :workerHarnessContainerImage => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:autoscalingSettings, as: GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings)

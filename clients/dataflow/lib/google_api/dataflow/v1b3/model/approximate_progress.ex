@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :percentComplete => number(),
-          :position => GoogleApi.Dataflow.V1b3.Model.Position.t(),
-          :remainingTime => String.t()
+          :percentComplete => number() | nil,
+          :position => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil,
+          :remainingTime => String.t() | nil
         }
 
   field(:percentComplete)

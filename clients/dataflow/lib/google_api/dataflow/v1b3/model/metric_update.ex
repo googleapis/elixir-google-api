@@ -37,17 +37,17 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cumulative => boolean(),
-          :distribution => any(),
-          :gauge => any(),
-          :internal => any(),
-          :kind => String.t(),
-          :meanCount => any(),
-          :meanSum => any(),
-          :name => GoogleApi.Dataflow.V1b3.Model.MetricStructuredName.t(),
-          :scalar => any(),
-          :set => any(),
-          :updateTime => DateTime.t()
+          :cumulative => boolean() | nil,
+          :distribution => any() | nil,
+          :gauge => any() | nil,
+          :internal => any() | nil,
+          :kind => String.t() | nil,
+          :meanCount => any() | nil,
+          :meanSum => any() | nil,
+          :name => GoogleApi.Dataflow.V1b3.Model.MetricStructuredName.t() | nil,
+          :scalar => any() | nil,
+          :set => any() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:cumulative)

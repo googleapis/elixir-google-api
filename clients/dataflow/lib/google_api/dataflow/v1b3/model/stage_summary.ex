@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()),
-          :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t(),
-          :stageId => String.t(),
-          :startTime => DateTime.t(),
-          :state => String.t()
+          :endTime => DateTime.t() | nil,
+          :metrics => list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t()) | nil,
+          :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t() | nil,
+          :stageId => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :launchParameter => GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter.t(),
-          :validateOnly => boolean()
+          :launchParameter => GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:launchParameter, as: GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter)

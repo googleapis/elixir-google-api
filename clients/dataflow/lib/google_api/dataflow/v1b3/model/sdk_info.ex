@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SDKInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :language => String.t(),
-          :version => String.t()
+          :language => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:language)

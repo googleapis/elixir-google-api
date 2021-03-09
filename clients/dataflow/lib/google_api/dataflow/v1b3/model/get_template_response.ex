@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t(),
-          :runtimeMetadata => GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata.t(),
-          :status => GoogleApi.Dataflow.V1b3.Model.Status.t(),
-          :templateType => String.t()
+          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t() | nil,
+          :runtimeMetadata => GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata.t() | nil,
+          :status => GoogleApi.Dataflow.V1b3.Model.Status.t() | nil,
+          :templateType => String.t() | nil
         }
 
   field(:metadata, as: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata)

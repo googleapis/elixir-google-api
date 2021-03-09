@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :getMetadata => GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResponse.t(),
-          :split => GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse.t()
+          :getMetadata => GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResponse.t() | nil,
+          :split => GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse.t() | nil
         }
 
   field(:getMetadata, as: GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataResponse)

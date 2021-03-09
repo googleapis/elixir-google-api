@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.InstructionInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputNum => integer(),
-          :producerInstructionIndex => integer()
+          :outputNum => integer() | nil,
+          :producerInstructionIndex => integer() | nil
         }
 
   field(:outputNum)

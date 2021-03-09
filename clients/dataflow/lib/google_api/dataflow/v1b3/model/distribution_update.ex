@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DistributionUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :histogram => GoogleApi.Dataflow.V1b3.Model.Histogram.t(),
-          :max => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :min => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :sum => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :sumOfSquares => float()
+          :count => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :histogram => GoogleApi.Dataflow.V1b3.Model.Histogram.t() | nil,
+          :max => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :min => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :sum => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :sumOfSquares => float() | nil
         }
 
   field(:count, as: GoogleApi.Dataflow.V1b3.Model.SplitInt64)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricStructuredName do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => map(),
-          :name => String.t(),
-          :origin => String.t()
+          :context => map() | nil,
+          :name => String.t() | nil,
+          :origin => String.t() | nil
         }
 
   field(:context, type: :map)

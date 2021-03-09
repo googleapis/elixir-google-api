@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unifiedWorkerResponse => map(),
-          :workItems => list(GoogleApi.Dataflow.V1b3.Model.WorkItem.t())
+          :unifiedWorkerResponse => map() | nil,
+          :workItems => list(GoogleApi.Dataflow.V1b3.Model.WorkItem.t()) | nil
         }
 
   field(:unifiedWorkerResponse, type: :map)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentWorkerTime => DateTime.t(),
-          :location => String.t(),
-          :requestedLeaseDuration => String.t(),
-          :unifiedWorkerRequest => map(),
-          :workItemTypes => list(String.t()),
-          :workerCapabilities => list(String.t()),
-          :workerId => String.t()
+          :currentWorkerTime => DateTime.t() | nil,
+          :location => String.t() | nil,
+          :requestedLeaseDuration => String.t() | nil,
+          :unifiedWorkerRequest => map() | nil,
+          :workItemTypes => list(String.t()) | nil,
+          :workerCapabilities => list(String.t()) | nil,
+          :workerId => String.t() | nil
         }
 
   field(:currentWorkerTime, as: DateTime)

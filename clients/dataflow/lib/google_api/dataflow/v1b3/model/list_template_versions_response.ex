@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ListTemplateVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :templateVersions => list(GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t())
+          :nextPageToken => String.t() | nil,
+          :templateVersions => list(GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t()) | nil
         }
 
   field(:nextPageToken)

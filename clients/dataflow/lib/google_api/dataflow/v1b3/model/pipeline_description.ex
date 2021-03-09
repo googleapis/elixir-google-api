@@ -29,10 +29,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayData => list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t()),
+          :displayData => list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t()) | nil,
           :executionPipelineStage =>
-            list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t()),
-          :originalPipelineTransform => list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t())
+            list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t()) | nil,
+          :originalPipelineTransform =>
+            list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t()) | nil
         }
 
   field(:displayData, as: GoogleApi.Dataflow.V1b3.Model.DisplayData, type: :list)

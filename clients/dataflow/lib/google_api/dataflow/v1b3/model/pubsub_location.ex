@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dropLateData => boolean(),
-          :idLabel => String.t(),
-          :subscription => String.t(),
-          :timestampLabel => String.t(),
-          :topic => String.t(),
-          :trackingSubscription => String.t(),
-          :withAttributes => boolean()
+          :dropLateData => boolean() | nil,
+          :idLabel => String.t() | nil,
+          :subscription => String.t() | nil,
+          :timestampLabel => String.t() | nil,
+          :topic => String.t() | nil,
+          :trackingSubscription => String.t() | nil,
+          :withAttributes => boolean() | nil
         }
 
   field(:dropLateData)
