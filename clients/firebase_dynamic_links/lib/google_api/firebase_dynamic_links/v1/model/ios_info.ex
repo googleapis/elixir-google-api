@@ -33,13 +33,13 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iosAppStoreId => String.t(),
-          :iosBundleId => String.t(),
-          :iosCustomScheme => String.t(),
-          :iosFallbackLink => String.t(),
-          :iosIpadBundleId => String.t(),
-          :iosIpadFallbackLink => String.t(),
-          :iosMinimumVersion => String.t()
+          :iosAppStoreId => String.t() | nil,
+          :iosBundleId => String.t() | nil,
+          :iosCustomScheme => String.t() | nil,
+          :iosFallbackLink => String.t() | nil,
+          :iosIpadBundleId => String.t() | nil,
+          :iosIpadFallbackLink => String.t() | nil,
+          :iosMinimumVersion => String.t() | nil
         }
 
   field(:iosAppStoreId)

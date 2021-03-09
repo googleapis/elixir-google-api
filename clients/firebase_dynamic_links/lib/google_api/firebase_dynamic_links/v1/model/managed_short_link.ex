@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :flaggedAttribute => list(String.t()),
-          :info => GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t(),
-          :link => String.t(),
-          :linkName => String.t(),
-          :visibility => String.t()
+          :creationTime => DateTime.t() | nil,
+          :flaggedAttribute => list(String.t()) | nil,
+          :info => GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t() | nil,
+          :link => String.t() | nil,
+          :linkName => String.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:creationTime, as: DateTime)

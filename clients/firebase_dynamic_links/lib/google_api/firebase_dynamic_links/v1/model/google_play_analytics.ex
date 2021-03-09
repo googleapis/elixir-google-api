@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gclid => String.t(),
-          :utmCampaign => String.t(),
-          :utmContent => String.t(),
-          :utmMedium => String.t(),
-          :utmSource => String.t(),
-          :utmTerm => String.t()
+          :gclid => String.t() | nil,
+          :utmCampaign => String.t() | nil,
+          :utmContent => String.t() | nil,
+          :utmMedium => String.t() | nil,
+          :utmSource => String.t() | nil,
+          :utmTerm => String.t() | nil
         }
 
   field(:gclid)

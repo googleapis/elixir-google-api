@@ -42,22 +42,22 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appMinimumVersion => String.t(),
-          :attributionConfidence => String.t(),
-          :deepLink => String.t(),
-          :externalBrowserDestinationLink => String.t(),
-          :fallbackLink => String.t(),
-          :invitationId => String.t(),
-          :isStrongMatchExecutable => boolean(),
-          :matchMessage => String.t(),
-          :requestIpVersion => String.t(),
-          :requestedLink => String.t(),
-          :resolvedLink => String.t(),
-          :utmCampaign => String.t(),
-          :utmContent => String.t(),
-          :utmMedium => String.t(),
-          :utmSource => String.t(),
-          :utmTerm => String.t()
+          :appMinimumVersion => String.t() | nil,
+          :attributionConfidence => String.t() | nil,
+          :deepLink => String.t() | nil,
+          :externalBrowserDestinationLink => String.t() | nil,
+          :fallbackLink => String.t() | nil,
+          :invitationId => String.t() | nil,
+          :isStrongMatchExecutable => boolean() | nil,
+          :matchMessage => String.t() | nil,
+          :requestIpVersion => String.t() | nil,
+          :requestedLink => String.t() | nil,
+          :resolvedLink => String.t() | nil,
+          :utmCampaign => String.t() | nil,
+          :utmContent => String.t() | nil,
+          :utmMedium => String.t() | nil,
+          :utmSource => String.t() | nil,
+          :utmTerm => String.t() | nil
         }
 
   field(:appMinimumVersion)

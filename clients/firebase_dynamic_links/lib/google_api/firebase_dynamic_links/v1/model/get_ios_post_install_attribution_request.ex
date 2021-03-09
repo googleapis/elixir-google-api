@@ -34,14 +34,14 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appInstallationTime => String.t(),
-          :bundleId => String.t(),
-          :device => GoogleApi.FirebaseDynamicLinks.V1.Model.DeviceInfo.t(),
-          :iosVersion => String.t(),
-          :retrievalMethod => String.t(),
-          :sdkVersion => String.t(),
-          :uniqueMatchLinkToCheck => String.t(),
-          :visualStyle => String.t()
+          :appInstallationTime => String.t() | nil,
+          :bundleId => String.t() | nil,
+          :device => GoogleApi.FirebaseDynamicLinks.V1.Model.DeviceInfo.t() | nil,
+          :iosVersion => String.t() | nil,
+          :retrievalMethod => String.t() | nil,
+          :sdkVersion => String.t() | nil,
+          :uniqueMatchLinkToCheck => String.t() | nil,
+          :visualStyle => String.t() | nil
         }
 
   field(:appInstallationTime)

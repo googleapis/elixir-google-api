@@ -30,10 +30,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :at => String.t(),
-          :ct => String.t(),
-          :mt => String.t(),
-          :pt => String.t()
+          :at => String.t() | nil,
+          :ct => String.t() | nil,
+          :mt => String.t() | nil,
+          :pt => String.t() | nil
         }
 
   field(:at)

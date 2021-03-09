@@ -33,13 +33,13 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DeviceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceModelName => String.t(),
-          :languageCode => String.t(),
-          :languageCodeFromWebview => String.t(),
-          :languageCodeRaw => String.t(),
-          :screenResolutionHeight => String.t(),
-          :screenResolutionWidth => String.t(),
-          :timezone => String.t()
+          :deviceModelName => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :languageCodeFromWebview => String.t() | nil,
+          :languageCodeRaw => String.t() | nil,
+          :screenResolutionHeight => String.t() | nil,
+          :screenResolutionWidth => String.t() | nil,
+          :timezone => String.t() | nil
         }
 
   field(:deviceModelName)

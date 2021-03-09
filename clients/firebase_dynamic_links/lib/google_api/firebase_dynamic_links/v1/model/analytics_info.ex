@@ -28,9 +28,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googlePlayAnalytics => GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics.t(),
+          :googlePlayAnalytics =>
+            GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics.t() | nil,
           :itunesConnectAnalytics =>
-            GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics.t()
+            GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics.t() | nil
         }
 
   field(:googlePlayAnalytics, as: GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics)

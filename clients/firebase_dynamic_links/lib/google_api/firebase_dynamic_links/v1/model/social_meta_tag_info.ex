@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :socialDescription => String.t(),
-          :socialImageLink => String.t(),
-          :socialTitle => String.t()
+          :socialDescription => String.t() | nil,
+          :socialImageLink => String.t() | nil,
+          :socialTitle => String.t() | nil
         }
 
   field(:socialDescription)

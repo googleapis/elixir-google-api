@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customSuffix => String.t(),
-          :option => String.t()
+          :customSuffix => String.t() | nil,
+          :option => String.t() | nil
         }
 
   field(:customSuffix)

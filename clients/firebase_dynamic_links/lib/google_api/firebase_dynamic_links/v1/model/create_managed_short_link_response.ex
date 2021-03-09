@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :managedShortLink => GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink.t(),
-          :previewLink => String.t(),
-          :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t())
+          :managedShortLink => GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink.t() | nil,
+          :previewLink => String.t() | nil,
+          :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t()) | nil
         }
 
   field(:managedShortLink, as: GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink)
