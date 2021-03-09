@@ -35,15 +35,15 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => GoogleApi.Chat.V1.Model.FormAction.t(),
-          :configCompleteRedirectUrl => String.t(),
-          :eventTime => DateTime.t(),
-          :message => GoogleApi.Chat.V1.Model.Message.t(),
-          :space => GoogleApi.Chat.V1.Model.Space.t(),
-          :threadKey => String.t(),
-          :token => String.t(),
-          :type => String.t(),
-          :user => GoogleApi.Chat.V1.Model.User.t()
+          :action => GoogleApi.Chat.V1.Model.FormAction.t() | nil,
+          :configCompleteRedirectUrl => String.t() | nil,
+          :eventTime => DateTime.t() | nil,
+          :message => GoogleApi.Chat.V1.Model.Message.t() | nil,
+          :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
+          :threadKey => String.t() | nil,
+          :token => String.t() | nil,
+          :type => String.t() | nil,
+          :user => GoogleApi.Chat.V1.Model.User.t() | nil
         }
 
   field(:action, as: GoogleApi.Chat.V1.Model.FormAction)

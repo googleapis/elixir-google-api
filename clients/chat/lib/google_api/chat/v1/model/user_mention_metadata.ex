@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.UserMentionMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :user => GoogleApi.Chat.V1.Model.User.t()
+          :type => String.t() | nil,
+          :user => GoogleApi.Chat.V1.Model.User.t() | nil
         }
 
   field(:type)

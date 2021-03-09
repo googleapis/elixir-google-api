@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.ListMembershipsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :memberships => list(GoogleApi.Chat.V1.Model.Membership.t()),
-          :nextPageToken => String.t()
+          :memberships => list(GoogleApi.Chat.V1.Model.Membership.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:memberships, as: GoogleApi.Chat.V1.Model.Membership, type: :list)

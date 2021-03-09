@@ -30,10 +30,10 @@ defmodule GoogleApi.Chat.V1.Model.Card do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cardActions => list(GoogleApi.Chat.V1.Model.CardAction.t()),
-          :header => GoogleApi.Chat.V1.Model.CardHeader.t(),
-          :name => String.t(),
-          :sections => list(GoogleApi.Chat.V1.Model.Section.t())
+          :cardActions => list(GoogleApi.Chat.V1.Model.CardAction.t()) | nil,
+          :header => GoogleApi.Chat.V1.Model.CardHeader.t() | nil,
+          :name => String.t() | nil,
+          :sections => list(GoogleApi.Chat.V1.Model.Section.t()) | nil
         }
 
   field(:cardActions, as: GoogleApi.Chat.V1.Model.CardAction, type: :list)

@@ -34,14 +34,14 @@ defmodule GoogleApi.Chat.V1.Model.Attachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachmentDataRef => GoogleApi.Chat.V1.Model.AttachmentDataRef.t(),
-          :contentName => String.t(),
-          :contentType => String.t(),
-          :downloadUri => String.t(),
-          :driveDataRef => GoogleApi.Chat.V1.Model.DriveDataRef.t(),
-          :name => String.t(),
-          :source => String.t(),
-          :thumbnailUri => String.t()
+          :attachmentDataRef => GoogleApi.Chat.V1.Model.AttachmentDataRef.t() | nil,
+          :contentName => String.t() | nil,
+          :contentType => String.t() | nil,
+          :downloadUri => String.t() | nil,
+          :driveDataRef => GoogleApi.Chat.V1.Model.DriveDataRef.t() | nil,
+          :name => String.t() | nil,
+          :source => String.t() | nil,
+          :thumbnailUri => String.t() | nil
         }
 
   field(:attachmentDataRef, as: GoogleApi.Chat.V1.Model.AttachmentDataRef)

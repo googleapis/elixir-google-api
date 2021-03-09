@@ -52,7 +52,10 @@ defmodule GoogleApi.Chat.V1.Api.Media do
   *   `{:error, info}` on failure
   """
   @spec chat_media_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Media.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Chat.V1.Model.Media.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def chat_media_download(connection, resource_name, optional_params \\ [], opts \\ []) do
     opts =
       if Keyword.get(optional_params, :alt) == "media",

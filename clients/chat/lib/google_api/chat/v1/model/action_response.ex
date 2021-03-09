@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.ActionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :url => String.t()
+          :type => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:type)

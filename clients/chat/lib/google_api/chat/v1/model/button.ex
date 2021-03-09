@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.Button do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageButton => GoogleApi.Chat.V1.Model.ImageButton.t(),
-          :textButton => GoogleApi.Chat.V1.Model.TextButton.t()
+          :imageButton => GoogleApi.Chat.V1.Model.ImageButton.t() | nil,
+          :textButton => GoogleApi.Chat.V1.Model.TextButton.t() | nil
         }
 
   field(:imageButton, as: GoogleApi.Chat.V1.Model.ImageButton)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Chat.V1.Model.WidgetMarkup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buttons => list(GoogleApi.Chat.V1.Model.Button.t()),
-          :image => GoogleApi.Chat.V1.Model.Image.t(),
-          :keyValue => GoogleApi.Chat.V1.Model.KeyValue.t(),
-          :textParagraph => GoogleApi.Chat.V1.Model.TextParagraph.t()
+          :buttons => list(GoogleApi.Chat.V1.Model.Button.t()) | nil,
+          :image => GoogleApi.Chat.V1.Model.Image.t() | nil,
+          :keyValue => GoogleApi.Chat.V1.Model.KeyValue.t() | nil,
+          :textParagraph => GoogleApi.Chat.V1.Model.TextParagraph.t() | nil
         }
 
   field(:buttons, as: GoogleApi.Chat.V1.Model.Button, type: :list)

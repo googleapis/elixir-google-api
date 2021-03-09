@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.SlashCommand do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commandId => String.t()
+          :commandId => String.t() | nil
         }
 
   field(:commandId)

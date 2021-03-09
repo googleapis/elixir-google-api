@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.FormAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionMethodName => String.t(),
-          :parameters => list(GoogleApi.Chat.V1.Model.ActionParameter.t())
+          :actionMethodName => String.t() | nil,
+          :parameters => list(GoogleApi.Chat.V1.Model.ActionParameter.t()) | nil
         }
 
   field(:actionMethodName)

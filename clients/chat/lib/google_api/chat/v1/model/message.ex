@@ -40,20 +40,20 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionResponse => GoogleApi.Chat.V1.Model.ActionResponse.t(),
-          :annotations => list(GoogleApi.Chat.V1.Model.Annotation.t()),
-          :argumentText => String.t(),
-          :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()),
-          :cards => list(GoogleApi.Chat.V1.Model.Card.t()),
-          :createTime => DateTime.t(),
-          :fallbackText => String.t(),
-          :name => String.t(),
-          :previewText => String.t(),
-          :sender => GoogleApi.Chat.V1.Model.User.t(),
-          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommand.t(),
-          :space => GoogleApi.Chat.V1.Model.Space.t(),
-          :text => String.t(),
-          :thread => GoogleApi.Chat.V1.Model.Thread.t()
+          :actionResponse => GoogleApi.Chat.V1.Model.ActionResponse.t() | nil,
+          :annotations => list(GoogleApi.Chat.V1.Model.Annotation.t()) | nil,
+          :argumentText => String.t() | nil,
+          :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()) | nil,
+          :cards => list(GoogleApi.Chat.V1.Model.Card.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :fallbackText => String.t() | nil,
+          :name => String.t() | nil,
+          :previewText => String.t() | nil,
+          :sender => GoogleApi.Chat.V1.Model.User.t() | nil,
+          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommand.t() | nil,
+          :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
+          :text => String.t() | nil,
+          :thread => GoogleApi.Chat.V1.Model.Thread.t() | nil
         }
 
   field(:actionResponse, as: GoogleApi.Chat.V1.Model.ActionResponse)

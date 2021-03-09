@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.TextButton do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :onClick => GoogleApi.Chat.V1.Model.OnClick.t(),
-          :text => String.t()
+          :onClick => GoogleApi.Chat.V1.Model.OnClick.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:onClick, as: GoogleApi.Chat.V1.Model.OnClick)

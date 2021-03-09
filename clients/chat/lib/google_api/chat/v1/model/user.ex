@@ -31,11 +31,11 @@ defmodule GoogleApi.Chat.V1.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :domainId => String.t(),
-          :isAnonymous => boolean(),
-          :name => String.t(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :domainId => String.t() | nil,
+          :isAnonymous => boolean() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

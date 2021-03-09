@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :spaces => list(GoogleApi.Chat.V1.Model.Space.t())
+          :nextPageToken => String.t() | nil,
+          :spaces => list(GoogleApi.Chat.V1.Model.Space.t()) | nil
         }
 
   field(:nextPageToken)

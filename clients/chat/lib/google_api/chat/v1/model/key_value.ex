@@ -34,14 +34,14 @@ defmodule GoogleApi.Chat.V1.Model.KeyValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bottomLabel => String.t(),
-          :button => GoogleApi.Chat.V1.Model.Button.t(),
-          :content => String.t(),
-          :contentMultiline => boolean(),
-          :icon => String.t(),
-          :iconUrl => String.t(),
-          :onClick => GoogleApi.Chat.V1.Model.OnClick.t(),
-          :topLabel => String.t()
+          :bottomLabel => String.t() | nil,
+          :button => GoogleApi.Chat.V1.Model.Button.t() | nil,
+          :content => String.t() | nil,
+          :contentMultiline => boolean() | nil,
+          :icon => String.t() | nil,
+          :iconUrl => String.t() | nil,
+          :onClick => GoogleApi.Chat.V1.Model.OnClick.t() | nil,
+          :topLabel => String.t() | nil
         }
 
   field(:bottomLabel)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Chat.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspectRatio => float(),
-          :imageUrl => String.t(),
-          :onClick => GoogleApi.Chat.V1.Model.OnClick.t()
+          :aspectRatio => float() | nil,
+          :imageUrl => String.t() | nil,
+          :onClick => GoogleApi.Chat.V1.Model.OnClick.t() | nil
         }
 
   field(:aspectRatio)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.OnClick do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => GoogleApi.Chat.V1.Model.FormAction.t(),
-          :openLink => GoogleApi.Chat.V1.Model.OpenLink.t()
+          :action => GoogleApi.Chat.V1.Model.FormAction.t() | nil,
+          :openLink => GoogleApi.Chat.V1.Model.OpenLink.t() | nil
         }
 
   field(:action, as: GoogleApi.Chat.V1.Model.FormAction)
