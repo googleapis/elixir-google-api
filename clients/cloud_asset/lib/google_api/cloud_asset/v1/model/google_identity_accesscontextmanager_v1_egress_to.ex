@@ -31,8 +31,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
           :operations =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ApiOperation.t()
-            ),
-          :resources => list(String.t())
+            )
+            | nil,
+          :resources => list(String.t()) | nil
         }
 
   field(:operations,

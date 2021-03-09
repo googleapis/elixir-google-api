@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.PubsubDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :topic => String.t()
+          :topic => String.t() | nil
         }
 
   field(:topic)

@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1BigQueryDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => String.t(),
-          :partitionKey => String.t(),
-          :tablePrefix => String.t(),
-          :writeDisposition => String.t()
+          :dataset => String.t() | nil,
+          :partitionKey => String.t() | nil,
+          :tablePrefix => String.t() | nil,
+          :writeDisposition => String.t() | nil
         }
 
   field(:dataset)

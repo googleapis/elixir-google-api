@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcA
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedServices => list(String.t()),
-          :enableRestriction => boolean()
+          :allowedServices => list(String.t()) | nil,
+          :enableRestriction => boolean() | nil
         }
 
   field(:allowedServices, type: :list)

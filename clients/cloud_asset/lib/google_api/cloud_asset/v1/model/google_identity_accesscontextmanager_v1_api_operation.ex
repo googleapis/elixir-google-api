@@ -31,8 +31,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ApiO
           :methodSelectors =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1MethodSelector.t()
-            ),
-          :serviceName => String.t()
+            )
+            | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:methodSelectors,

@@ -72,6 +72,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_analyze_iam_policy(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -153,6 +154,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_analyze_iam_policy_longrunning(
         connection,
@@ -231,6 +233,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_batch_get_assets_history(
         connection,
@@ -305,6 +308,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @spec cloudasset_export_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_export_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -376,6 +380,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SearchAllIamPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_search_all_iam_policies(
         connection,
@@ -459,6 +464,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SearchAllResourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudasset_search_all_resources(
         connection,

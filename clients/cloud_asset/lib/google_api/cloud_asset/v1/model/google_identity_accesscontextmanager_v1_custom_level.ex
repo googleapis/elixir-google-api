@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Cust
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expr => GoogleApi.CloudAsset.V1.Model.Expr.t()
+          :expr => GoogleApi.CloudAsset.V1.Model.Expr.t() | nil
         }
 
   field(:expr, as: GoogleApi.CloudAsset.V1.Model.Expr)

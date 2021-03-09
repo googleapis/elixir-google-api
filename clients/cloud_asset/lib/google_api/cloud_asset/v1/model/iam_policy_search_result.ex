@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicySearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :explanation => GoogleApi.CloudAsset.V1.Model.Explanation.t(),
-          :policy => GoogleApi.CloudAsset.V1.Model.Policy.t(),
-          :project => String.t(),
-          :resource => String.t()
+          :explanation => GoogleApi.CloudAsset.V1.Model.Explanation.t() | nil,
+          :policy => GoogleApi.CloudAsset.V1.Model.Policy.t() | nil,
+          :project => String.t() | nil,
+          :resource => String.t() | nil
         }
 
   field(:explanation, as: GoogleApi.CloudAsset.V1.Model.Explanation)

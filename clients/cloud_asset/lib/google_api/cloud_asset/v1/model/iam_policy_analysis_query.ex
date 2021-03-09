@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessSelector => GoogleApi.CloudAsset.V1.Model.AccessSelector.t(),
-          :identitySelector => GoogleApi.CloudAsset.V1.Model.IdentitySelector.t(),
-          :options => GoogleApi.CloudAsset.V1.Model.Options.t(),
-          :resourceSelector => GoogleApi.CloudAsset.V1.Model.ResourceSelector.t(),
-          :scope => String.t()
+          :accessSelector => GoogleApi.CloudAsset.V1.Model.AccessSelector.t() | nil,
+          :identitySelector => GoogleApi.CloudAsset.V1.Model.IdentitySelector.t() | nil,
+          :options => GoogleApi.CloudAsset.V1.Model.Options.t() | nil,
+          :resourceSelector => GoogleApi.CloudAsset.V1.Model.ResourceSelector.t() | nil,
+          :scope => String.t() | nil
         }
 
   field(:accessSelector, as: GoogleApi.CloudAsset.V1.Model.AccessSelector)

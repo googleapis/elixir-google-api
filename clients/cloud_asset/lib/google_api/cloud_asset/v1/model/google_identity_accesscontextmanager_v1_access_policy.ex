@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :title => String.t()
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:etag)

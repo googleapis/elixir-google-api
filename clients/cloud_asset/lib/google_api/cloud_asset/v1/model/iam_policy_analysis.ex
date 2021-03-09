@@ -30,10 +30,12 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysis do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisQuery => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t(),
-          :analysisResults => list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisResult.t()),
-          :fullyExplored => boolean(),
-          :nonCriticalErrors => list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t())
+          :analysisQuery => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t() | nil,
+          :analysisResults =>
+            list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisResult.t()) | nil,
+          :fullyExplored => boolean() | nil,
+          :nonCriticalErrors =>
+            list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t()) | nil
         }
 
   field(:analysisQuery, as: GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery)

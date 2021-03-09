@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudAsset.V1.Model.TemporalAsset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :asset => GoogleApi.CloudAsset.V1.Model.Asset.t(),
-          :deleted => boolean(),
-          :priorAsset => GoogleApi.CloudAsset.V1.Model.Asset.t(),
-          :priorAssetState => String.t(),
-          :window => GoogleApi.CloudAsset.V1.Model.TimeWindow.t()
+          :asset => GoogleApi.CloudAsset.V1.Model.Asset.t() | nil,
+          :deleted => boolean() | nil,
+          :priorAsset => GoogleApi.CloudAsset.V1.Model.Asset.t() | nil,
+          :priorAssetState => String.t() | nil,
+          :window => GoogleApi.CloudAsset.V1.Model.TimeWindow.t() | nil
         }
 
   field(:asset, as: GoogleApi.CloudAsset.V1.Model.Asset)

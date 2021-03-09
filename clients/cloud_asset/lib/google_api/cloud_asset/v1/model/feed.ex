@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetNames => list(String.t()),
-          :assetTypes => list(String.t()),
-          :condition => GoogleApi.CloudAsset.V1.Model.Expr.t(),
-          :contentType => String.t(),
-          :feedOutputConfig => GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t(),
-          :name => String.t()
+          :assetNames => list(String.t()) | nil,
+          :assetTypes => list(String.t()) | nil,
+          :condition => GoogleApi.CloudAsset.V1.Model.Expr.t() | nil,
+          :contentType => String.t() | nil,
+          :feedOutputConfig => GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:assetNames, type: :list)

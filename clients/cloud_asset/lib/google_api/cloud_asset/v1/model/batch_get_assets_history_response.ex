@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assets => list(GoogleApi.CloudAsset.V1.Model.TemporalAsset.t())
+          :assets => list(GoogleApi.CloudAsset.V1.Model.TemporalAsset.t()) | nil
         }
 
   field(:assets, as: GoogleApi.CloudAsset.V1.Model.TemporalAsset, type: :list)

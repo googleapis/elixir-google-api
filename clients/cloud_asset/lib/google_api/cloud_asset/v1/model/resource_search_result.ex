@@ -43,23 +43,23 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalAttributes => map(),
-          :assetType => String.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :folders => list(String.t()),
-          :kmsKey => String.t(),
-          :labels => map(),
-          :location => String.t(),
-          :name => String.t(),
-          :networkTags => list(String.t()),
-          :organization => String.t(),
-          :parentAssetType => String.t(),
-          :parentFullResourceName => String.t(),
-          :project => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :additionalAttributes => map() | nil,
+          :assetType => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :folders => list(String.t()) | nil,
+          :kmsKey => String.t() | nil,
+          :labels => map() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :networkTags => list(String.t()) | nil,
+          :organization => String.t() | nil,
+          :parentAssetType => String.t() | nil,
+          :parentFullResourceName => String.t() | nil,
+          :project => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:additionalAttributes, type: :map)

@@ -32,12 +32,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
 
   @type t :: %__MODULE__{
           :basic =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t(),
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t() | nil,
           :custom =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :title => String.t()
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t()
+            | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:basic, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel)

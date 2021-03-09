@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Meth
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :method => String.t(),
-          :permission => String.t()
+          :method => String.t() | nil,
+          :permission => String.t() | nil
         }
 
   field(:method)

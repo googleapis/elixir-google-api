@@ -29,8 +29,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisOutputConfig do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1BigQueryDestination.t(),
-          :gcsDestination => GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1GcsDestination.t()
+            GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1BigQueryDestination.t() | nil,
+          :gcsDestination =>
+            GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1GcsDestination.t() | nil
         }
 
   field(:bigqueryDestination,

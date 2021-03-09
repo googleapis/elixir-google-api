@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caption => String.t(),
-          :description => String.t(),
-          :hotFixId => String.t(),
-          :installTime => DateTime.t()
+          :caption => String.t() | nil,
+          :description => String.t() | nil,
+          :hotFixId => String.t() | nil,
+          :installTime => DateTime.t() | nil
         }
 
   field(:caption)

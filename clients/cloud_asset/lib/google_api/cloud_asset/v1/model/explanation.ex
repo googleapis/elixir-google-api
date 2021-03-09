@@ -27,9 +27,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Explanation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchedPermissions => %{
-            optional(String.t()) => GoogleApi.CloudAsset.V1.Model.Permissions.t()
-          }
+          :matchedPermissions =>
+            %{optional(String.t()) => GoogleApi.CloudAsset.V1.Model.Permissions.t()} | nil
         }
 
   field(:matchedPermissions, as: GoogleApi.CloudAsset.V1.Model.Permissions, type: :map)

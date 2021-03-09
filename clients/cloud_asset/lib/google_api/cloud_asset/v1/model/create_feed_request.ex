@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.CreateFeedRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feed => GoogleApi.CloudAsset.V1.Model.Feed.t(),
-          :feedId => String.t()
+          :feed => GoogleApi.CloudAsset.V1.Model.Feed.t() | nil,
+          :feedId => String.t() | nil
         }
 
   field(:feed, as: GoogleApi.CloudAsset.V1.Model.Feed)

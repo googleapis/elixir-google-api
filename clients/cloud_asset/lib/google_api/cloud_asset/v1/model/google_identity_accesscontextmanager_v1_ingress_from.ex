@@ -29,12 +29,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identities => list(String.t()),
-          :identityType => String.t(),
+          :identities => list(String.t()) | nil,
+          :identityType => String.t() | nil,
           :sources =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressSource.t()
             )
+            | nil
         }
 
   field(:identities, type: :list)

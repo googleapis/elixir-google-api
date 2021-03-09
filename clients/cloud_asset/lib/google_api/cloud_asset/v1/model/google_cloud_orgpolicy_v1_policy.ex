@@ -33,14 +33,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanPolicy => GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1BooleanPolicy.t(),
-          :constraint => String.t(),
-          :etag => String.t(),
-          :listPolicy => GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1ListPolicy.t(),
+          :booleanPolicy =>
+            GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1BooleanPolicy.t() | nil,
+          :constraint => String.t() | nil,
+          :etag => String.t() | nil,
+          :listPolicy => GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1ListPolicy.t() | nil,
           :restoreDefault =>
-            GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1RestoreDefault.t(),
-          :updateTime => DateTime.t(),
-          :version => integer()
+            GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1RestoreDefault.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :version => integer() | nil
         }
 
   field(:booleanPolicy, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1BooleanPolicy)

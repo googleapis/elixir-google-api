@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.ZypperPatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :patchName => String.t(),
-          :severity => String.t(),
-          :summary => String.t()
+          :category => String.t() | nil,
+          :patchName => String.t() | nil,
+          :severity => String.t() | nil,
+          :summary => String.t() | nil
         }
 
   field(:category)

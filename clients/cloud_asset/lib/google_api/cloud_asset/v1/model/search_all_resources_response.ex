@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.SearchAllResourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :results => list(GoogleApi.CloudAsset.V1.Model.ResourceSearchResult.t())
+          :nextPageToken => String.t() | nil,
+          :results => list(GoogleApi.CloudAsset.V1.Model.ResourceSearchResult.t()) | nil
         }
 
   field(:nextPageToken)

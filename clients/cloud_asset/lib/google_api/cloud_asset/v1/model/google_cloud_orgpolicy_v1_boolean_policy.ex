@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1BooleanPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enforced => boolean()
+          :enforced => boolean() | nil
         }
 
   field(:enforced)

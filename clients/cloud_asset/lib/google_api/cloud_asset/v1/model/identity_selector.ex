@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.IdentitySelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identity => String.t()
+          :identity => String.t() | nil
         }
 
   field(:identity)

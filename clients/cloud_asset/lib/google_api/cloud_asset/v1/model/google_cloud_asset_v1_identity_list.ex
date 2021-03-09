@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1IdentityList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupEdges => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t()),
-          :identities => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Identity.t())
+          :groupEdges => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t()) | nil,
+          :identities => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Identity.t()) | nil
         }
 
   field(:groupEdges, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge, type: :list)

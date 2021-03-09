@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyLongrunningRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisQuery => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t(),
-          :outputConfig => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisOutputConfig.t()
+          :analysisQuery => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t() | nil,
+          :outputConfig => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisOutputConfig.t() | nil
         }
 
   field(:analysisQuery, as: GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery)

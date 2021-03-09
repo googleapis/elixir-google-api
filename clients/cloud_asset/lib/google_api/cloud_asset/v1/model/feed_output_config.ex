@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.FeedOutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsubDestination => GoogleApi.CloudAsset.V1.Model.PubsubDestination.t()
+          :pubsubDestination => GoogleApi.CloudAsset.V1.Model.PubsubDestination.t() | nil
         }
 
   field(:pubsubDestination, as: GoogleApi.CloudAsset.V1.Model.PubsubDestination)

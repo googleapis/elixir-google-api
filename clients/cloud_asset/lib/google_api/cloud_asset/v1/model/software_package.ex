@@ -34,14 +34,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.SoftwarePackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aptPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t(),
-          :cosPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t(),
-          :googetPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t(),
-          :qfePackage => GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage.t(),
-          :wuaPackage => GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage.t(),
-          :yumPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t(),
-          :zypperPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t(),
-          :zypperPatch => GoogleApi.CloudAsset.V1.Model.ZypperPatch.t()
+          :aptPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
+          :cosPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
+          :googetPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
+          :qfePackage =>
+            GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage.t() | nil,
+          :wuaPackage => GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage.t() | nil,
+          :yumPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
+          :zypperPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
+          :zypperPatch => GoogleApi.CloudAsset.V1.Model.ZypperPatch.t() | nil
         }
 
   field(:aptPackage, as: GoogleApi.CloudAsset.V1.Model.VersionedPackage)

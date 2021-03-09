@@ -33,15 +33,17 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :perimeterType => String.t(),
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :perimeterType => String.t() | nil,
           :spec =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig.t(),
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig.t()
+            | nil,
           :status =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig.t(),
-          :title => String.t(),
-          :useExplicitDryRunSpec => boolean()
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig.t()
+            | nil,
+          :title => String.t() | nil,
+          :useExplicitDryRunSpec => boolean() | nil
         }
 
   field(:description)

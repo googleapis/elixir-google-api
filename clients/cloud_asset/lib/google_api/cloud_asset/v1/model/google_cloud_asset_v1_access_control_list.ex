@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accesses => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access.t()),
-          :resourceEdges => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t()),
-          :resources => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource.t())
+          :accesses => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access.t()) | nil,
+          :resourceEdges => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t()) | nil,
+          :resources => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource.t()) | nil
         }
 
   field(:accesses, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access, type: :list)
