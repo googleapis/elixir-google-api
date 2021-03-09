@@ -41,21 +41,21 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackedInstanceCount => String.t(),
-          :applyingPatchesInstanceCount => String.t(),
-          :downloadingPatchesInstanceCount => String.t(),
-          :failedInstanceCount => String.t(),
-          :inactiveInstanceCount => String.t(),
-          :noAgentDetectedInstanceCount => String.t(),
-          :notifiedInstanceCount => String.t(),
-          :pendingInstanceCount => String.t(),
-          :postPatchStepInstanceCount => String.t(),
-          :prePatchStepInstanceCount => String.t(),
-          :rebootingInstanceCount => String.t(),
-          :startedInstanceCount => String.t(),
-          :succeededInstanceCount => String.t(),
-          :succeededRebootRequiredInstanceCount => String.t(),
-          :timedOutInstanceCount => String.t()
+          :ackedInstanceCount => String.t() | nil,
+          :applyingPatchesInstanceCount => String.t() | nil,
+          :downloadingPatchesInstanceCount => String.t() | nil,
+          :failedInstanceCount => String.t() | nil,
+          :inactiveInstanceCount => String.t() | nil,
+          :noAgentDetectedInstanceCount => String.t() | nil,
+          :notifiedInstanceCount => String.t() | nil,
+          :pendingInstanceCount => String.t() | nil,
+          :postPatchStepInstanceCount => String.t() | nil,
+          :prePatchStepInstanceCount => String.t() | nil,
+          :rebootingInstanceCount => String.t() | nil,
+          :startedInstanceCount => String.t() | nil,
+          :succeededInstanceCount => String.t() | nil,
+          :succeededRebootRequiredInstanceCount => String.t() | nil,
+          :timedOutInstanceCount => String.t() | nil
         }
 
   field(:ackedInstanceCount)

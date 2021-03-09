@@ -28,8 +28,9 @@ defmodule GoogleApi.OSConfig.V1.Model.Inventory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => %{optional(String.t()) => GoogleApi.OSConfig.V1.Model.InventoryItem.t()},
-          :osInfo => GoogleApi.OSConfig.V1.Model.InventoryOsInfo.t()
+          :items =>
+            %{optional(String.t()) => GoogleApi.OSConfig.V1.Model.InventoryItem.t()} | nil,
+          :osInfo => GoogleApi.OSConfig.V1.Model.InventoryOsInfo.t() | nil
         }
 
   field(:items, as: GoogleApi.OSConfig.V1.Model.InventoryItem, type: :map)

@@ -29,9 +29,9 @@ defmodule GoogleApi.OSConfig.V1.Model.GcsObject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucket => String.t(),
-          :generationNumber => String.t(),
-          :object => String.t()
+          :bucket => String.t() | nil,
+          :generationNumber => String.t() | nil,
+          :object => String.t() | nil
         }
 
   field(:bucket)

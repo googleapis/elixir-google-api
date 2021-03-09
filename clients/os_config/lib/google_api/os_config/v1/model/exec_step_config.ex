@@ -30,10 +30,10 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecStepConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedSuccessCodes => list(integer()),
-          :gcsObject => GoogleApi.OSConfig.V1.Model.GcsObject.t(),
-          :interpreter => String.t(),
-          :localPath => String.t()
+          :allowedSuccessCodes => list(integer()) | nil,
+          :gcsObject => GoogleApi.OSConfig.V1.Model.GcsObject.t() | nil,
+          :interpreter => String.t() | nil,
+          :localPath => String.t() | nil
         }
 
   field(:allowedSuccessCodes, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.FixedOrPercent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixed => integer(),
-          :percent => integer()
+          :fixed => integer() | nil,
+          :percent => integer() | nil
         }
 
   field(:fixed)

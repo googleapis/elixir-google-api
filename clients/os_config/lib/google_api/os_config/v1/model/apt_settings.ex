@@ -29,9 +29,9 @@ defmodule GoogleApi.OSConfig.V1.Model.AptSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludes => list(String.t()),
-          :exclusivePackages => list(String.t()),
-          :type => String.t()
+          :excludes => list(String.t()) | nil,
+          :exclusivePackages => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:excludes, type: :list)

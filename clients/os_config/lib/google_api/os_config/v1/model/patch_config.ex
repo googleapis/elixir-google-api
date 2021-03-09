@@ -34,14 +34,14 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apt => GoogleApi.OSConfig.V1.Model.AptSettings.t(),
-          :goo => GoogleApi.OSConfig.V1.Model.GooSettings.t(),
-          :postStep => GoogleApi.OSConfig.V1.Model.ExecStep.t(),
-          :preStep => GoogleApi.OSConfig.V1.Model.ExecStep.t(),
-          :rebootConfig => String.t(),
-          :windowsUpdate => GoogleApi.OSConfig.V1.Model.WindowsUpdateSettings.t(),
-          :yum => GoogleApi.OSConfig.V1.Model.YumSettings.t(),
-          :zypper => GoogleApi.OSConfig.V1.Model.ZypperSettings.t()
+          :apt => GoogleApi.OSConfig.V1.Model.AptSettings.t() | nil,
+          :goo => GoogleApi.OSConfig.V1.Model.GooSettings.t() | nil,
+          :postStep => GoogleApi.OSConfig.V1.Model.ExecStep.t() | nil,
+          :preStep => GoogleApi.OSConfig.V1.Model.ExecStep.t() | nil,
+          :rebootConfig => String.t() | nil,
+          :windowsUpdate => GoogleApi.OSConfig.V1.Model.WindowsUpdateSettings.t() | nil,
+          :yum => GoogleApi.OSConfig.V1.Model.YumSettings.t() | nil,
+          :zypper => GoogleApi.OSConfig.V1.Model.ZypperSettings.t() | nil
         }
 
   field(:apt, as: GoogleApi.OSConfig.V1.Model.AptSettings)

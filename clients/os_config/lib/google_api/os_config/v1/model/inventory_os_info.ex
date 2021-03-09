@@ -34,14 +34,14 @@ defmodule GoogleApi.OSConfig.V1.Model.InventoryOsInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :architecture => String.t(),
-          :hostname => String.t(),
-          :kernelRelease => String.t(),
-          :kernelVersion => String.t(),
-          :longName => String.t(),
-          :osconfigAgentVersion => String.t(),
-          :shortName => String.t(),
-          :version => String.t()
+          :architecture => String.t() | nil,
+          :hostname => String.t() | nil,
+          :kernelRelease => String.t() | nil,
+          :kernelVersion => String.t() | nil,
+          :longName => String.t() | nil,
+          :osconfigAgentVersion => String.t() | nil,
+          :shortName => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:architecture)

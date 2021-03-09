@@ -41,22 +41,22 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :dryRun => boolean(),
-          :duration => String.t(),
-          :errorMessage => String.t(),
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :dryRun => boolean() | nil,
+          :duration => String.t() | nil,
+          :errorMessage => String.t() | nil,
           :instanceDetailsSummary =>
-            GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary.t(),
-          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t(),
-          :name => String.t(),
-          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t(),
-          :patchDeployment => String.t(),
-          :percentComplete => float(),
-          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary.t() | nil,
+          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t() | nil,
+          :name => String.t() | nil,
+          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t() | nil,
+          :patchDeployment => String.t() | nil,
+          :percentComplete => float() | nil,
+          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

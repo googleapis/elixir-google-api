@@ -29,9 +29,9 @@ defmodule GoogleApi.OSConfig.V1.Model.WindowsUpdateSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :classifications => list(String.t()),
-          :excludes => list(String.t()),
-          :exclusivePatches => list(String.t())
+          :classifications => list(String.t()) | nil,
+          :excludes => list(String.t()) | nil,
+          :exclusivePatches => list(String.t()) | nil
         }
 
   field(:classifications, type: :list)

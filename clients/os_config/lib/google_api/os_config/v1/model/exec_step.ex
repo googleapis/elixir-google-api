@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :linuxExecStepConfig => GoogleApi.OSConfig.V1.Model.ExecStepConfig.t(),
-          :windowsExecStepConfig => GoogleApi.OSConfig.V1.Model.ExecStepConfig.t()
+          :linuxExecStepConfig => GoogleApi.OSConfig.V1.Model.ExecStepConfig.t() | nil,
+          :windowsExecStepConfig => GoogleApi.OSConfig.V1.Model.ExecStepConfig.t() | nil
         }
 
   field(:linuxExecStepConfig, as: GoogleApi.OSConfig.V1.Model.ExecStepConfig)

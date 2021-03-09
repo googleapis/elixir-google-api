@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.MonthlySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :monthDay => integer(),
-          :weekDayOfMonth => GoogleApi.OSConfig.V1.Model.WeekDayOfMonth.t()
+          :monthDay => integer() | nil,
+          :weekDayOfMonth => GoogleApi.OSConfig.V1.Model.WeekDayOfMonth.t() | nil
         }
 
   field(:monthDay)

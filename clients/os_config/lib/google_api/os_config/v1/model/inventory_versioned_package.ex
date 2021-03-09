@@ -29,9 +29,9 @@ defmodule GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :architecture => String.t(),
-          :packageName => String.t(),
-          :version => String.t()
+          :architecture => String.t() | nil,
+          :packageName => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:architecture)

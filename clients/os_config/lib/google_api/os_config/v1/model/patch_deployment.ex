@@ -37,17 +37,17 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :duration => String.t(),
-          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t(),
-          :lastExecuteTime => DateTime.t(),
-          :name => String.t(),
-          :oneTimeSchedule => GoogleApi.OSConfig.V1.Model.OneTimeSchedule.t(),
-          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t(),
-          :recurringSchedule => GoogleApi.OSConfig.V1.Model.RecurringSchedule.t(),
-          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :duration => String.t() | nil,
+          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t() | nil,
+          :lastExecuteTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :oneTimeSchedule => GoogleApi.OSConfig.V1.Model.OneTimeSchedule.t() | nil,
+          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t() | nil,
+          :recurringSchedule => GoogleApi.OSConfig.V1.Model.RecurringSchedule.t() | nil,
+          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

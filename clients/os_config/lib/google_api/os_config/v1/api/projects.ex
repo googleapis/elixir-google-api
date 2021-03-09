@@ -61,6 +61,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.OSConfig.V1.Model.PatchDeployment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def osconfig_projects_patch_deployments_create(
         connection,
@@ -129,7 +130,11 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.OSConfig.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.OSConfig.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def osconfig_projects_patch_deployments_delete(
         connection,
         name,
@@ -198,6 +203,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.OSConfig.V1.Model.PatchDeployment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def osconfig_projects_patch_deployments_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -264,6 +270,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.OSConfig.V1.Model.ListPatchDeploymentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def osconfig_projects_patch_deployments_list(
         connection,
@@ -331,7 +338,10 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec osconfig_projects_patch_jobs_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def osconfig_projects_patch_jobs_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -390,7 +400,10 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec osconfig_projects_patch_jobs_execute(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def osconfig_projects_patch_jobs_execute(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -448,7 +461,10 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec osconfig_projects_patch_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.OSConfig.V1.Model.PatchJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def osconfig_projects_patch_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -510,6 +526,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   @spec osconfig_projects_patch_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.OSConfig.V1.Model.ListPatchJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def osconfig_projects_patch_jobs_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -580,6 +597,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.OSConfig.V1.Model.ListPatchJobInstanceDetailsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def osconfig_projects_patch_jobs_instance_details_list(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.ListPatchJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :patchJobs => list(GoogleApi.OSConfig.V1.Model.PatchJob.t())
+          :nextPageToken => String.t() | nil,
+          :patchJobs => list(GoogleApi.OSConfig.V1.Model.PatchJob.t()) | nil
         }
 
   field(:nextPageToken)

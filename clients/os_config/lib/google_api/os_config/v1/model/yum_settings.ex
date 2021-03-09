@@ -30,10 +30,10 @@ defmodule GoogleApi.OSConfig.V1.Model.YumSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludes => list(String.t()),
-          :exclusivePackages => list(String.t()),
-          :minimal => boolean(),
-          :security => boolean()
+          :excludes => list(String.t()) | nil,
+          :exclusivePackages => list(String.t()) | nil,
+          :minimal => boolean() | nil,
+          :security => boolean() | nil
         }
 
   field(:excludes, type: :list)

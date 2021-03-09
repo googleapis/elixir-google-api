@@ -38,15 +38,16 @@ defmodule GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage do
           :categories =>
             list(
               GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackageWindowsUpdateCategory.t()
-            ),
-          :description => String.t(),
-          :kbArticleIds => list(String.t()),
-          :lastDeploymentChangeTime => DateTime.t(),
-          :moreInfoUrls => list(String.t()),
-          :revisionNumber => integer(),
-          :supportUrl => String.t(),
-          :title => String.t(),
-          :updateId => String.t()
+            )
+            | nil,
+          :description => String.t() | nil,
+          :kbArticleIds => list(String.t()) | nil,
+          :lastDeploymentChangeTime => DateTime.t() | nil,
+          :moreInfoUrls => list(String.t()) | nil,
+          :revisionNumber => integer() | nil,
+          :supportUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :updateId => String.t() | nil
         }
 
   field(:categories,

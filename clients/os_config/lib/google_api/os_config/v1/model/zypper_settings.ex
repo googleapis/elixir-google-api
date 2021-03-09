@@ -32,12 +32,12 @@ defmodule GoogleApi.OSConfig.V1.Model.ZypperSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categories => list(String.t()),
-          :excludes => list(String.t()),
-          :exclusivePatches => list(String.t()),
-          :severities => list(String.t()),
-          :withOptional => boolean(),
-          :withUpdate => boolean()
+          :categories => list(String.t()) | nil,
+          :excludes => list(String.t()) | nil,
+          :exclusivePatches => list(String.t()) | nil,
+          :severities => list(String.t()) | nil,
+          :withOptional => boolean() | nil,
+          :withUpdate => boolean() | nil
         }
 
   field(:categories, type: :list)

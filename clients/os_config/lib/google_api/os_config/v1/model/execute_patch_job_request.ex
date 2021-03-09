@@ -33,13 +33,13 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :dryRun => boolean(),
-          :duration => String.t(),
-          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t(),
-          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t(),
-          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :dryRun => boolean() | nil,
+          :duration => String.t() | nil,
+          :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t() | nil,
+          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t() | nil,
+          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t() | nil
         }
 
   field(:description)

@@ -27,7 +27,7 @@ defmodule GoogleApi.OSConfig.V1.Model.OneTimeSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executeTime => DateTime.t()
+          :executeTime => DateTime.t() | nil
         }
 
   field(:executeTime, as: DateTime)
