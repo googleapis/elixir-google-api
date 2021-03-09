@@ -54,6 +54,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Autnum do
   @spec domainsrdap_autnum_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domainsrdap_autnum_get(connection, autnum_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -33,13 +33,13 @@ defmodule GoogleApi.DomainsRDAP.V1.Model.RdapResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => list(String.t()),
-          :errorCode => integer(),
-          :jsonResponse => GoogleApi.DomainsRDAP.V1.Model.HttpBody.t(),
-          :lang => String.t(),
-          :notices => list(GoogleApi.DomainsRDAP.V1.Model.Notice.t()),
-          :rdapConformance => list(String.t()),
-          :title => String.t()
+          :description => list(String.t()) | nil,
+          :errorCode => integer() | nil,
+          :jsonResponse => GoogleApi.DomainsRDAP.V1.Model.HttpBody.t() | nil,
+          :lang => String.t() | nil,
+          :notices => list(GoogleApi.DomainsRDAP.V1.Model.Notice.t()) | nil,
+          :rdapConformance => list(String.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:description, type: :list)

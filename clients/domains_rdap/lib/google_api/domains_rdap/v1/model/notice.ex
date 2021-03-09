@@ -30,10 +30,10 @@ defmodule GoogleApi.DomainsRDAP.V1.Model.Notice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => list(String.t()),
-          :links => list(GoogleApi.DomainsRDAP.V1.Model.Link.t()),
-          :title => String.t(),
-          :type => String.t()
+          :description => list(String.t()) | nil,
+          :links => list(GoogleApi.DomainsRDAP.V1.Model.Link.t()) | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description, type: :list)

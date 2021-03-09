@@ -33,13 +33,13 @@ defmodule GoogleApi.DomainsRDAP.V1.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :href => String.t(),
-          :hreflang => String.t(),
-          :media => String.t(),
-          :rel => String.t(),
-          :title => String.t(),
-          :type => String.t(),
-          :value => String.t()
+          :href => String.t() | nil,
+          :hreflang => String.t() | nil,
+          :media => String.t() | nil,
+          :rel => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:href)
