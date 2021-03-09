@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportDelivery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailOwner => boolean(),
-          :emailOwnerDeliveryType => String.t(),
-          :message => String.t(),
-          :recipients => list(GoogleApi.DFAReporting.V34.Model.Recipient.t())
+          :emailOwner => boolean() | nil,
+          :emailOwnerDeliveryType => String.t() | nil,
+          :message => String.t() | nil,
+          :recipients => list(GoogleApi.DFAReporting.V34.Model.Recipient.t()) | nil
         }
 
   field(:emailOwner)

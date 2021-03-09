@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeFieldValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :value => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:id)

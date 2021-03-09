@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReachReportCompatibleFields do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :dimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :kind => String.t(),
-          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()),
-          :pivotedActivityMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()),
-          :reachByFrequencyMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t())
+          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :kind => String.t() | nil,
+          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil,
+          :pivotedActivityMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil,
+          :reachByFrequencyMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil
         }
 
   field(:dimensionFilters, as: GoogleApi.DFAReporting.V34.Model.Dimension, type: :list)

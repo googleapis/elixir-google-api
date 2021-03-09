@@ -29,8 +29,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.AccountPermissionGroupsListResponse d
 
   @type t :: %__MODULE__{
           :accountPermissionGroups =>
-            list(GoogleApi.DFAReporting.V34.Model.AccountPermissionGroup.t()),
-          :kind => String.t()
+            list(GoogleApi.DFAReporting.V34.Model.AccountPermissionGroup.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountPermissionGroups,

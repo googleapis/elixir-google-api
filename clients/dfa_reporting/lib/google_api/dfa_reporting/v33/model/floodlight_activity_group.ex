@@ -38,19 +38,20 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :floodlightConfigurationId => String.t(),
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :floodlightConfigurationId => String.t() | nil,
           :floodlightConfigurationIdDimensionValue =>
-            GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :subaccountId => String.t(),
-          :tagString => String.t(),
-          :type => String.t()
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :tagString => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:accountId)

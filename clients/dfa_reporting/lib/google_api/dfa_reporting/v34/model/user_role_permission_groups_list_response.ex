@@ -28,9 +28,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroupsListResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :userRolePermissionGroups =>
-            list(GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroup.t())
+            list(GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroup.t()) | nil
         }
 
   field(:kind)

@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.FloodlightActivityGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_floodlight_activity_groups_get(
         connection,
@@ -138,6 +139,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.FloodlightActivityGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_floodlight_activity_groups_insert(
         connection,
@@ -219,6 +221,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.FloodlightActivityGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_floodlight_activity_groups_list(
         connection,
@@ -302,6 +305,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.FloodlightActivityGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_floodlight_activity_groups_patch(
         connection,
@@ -377,6 +381,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.FloodlightActivityGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_floodlight_activity_groups_update(
         connection,

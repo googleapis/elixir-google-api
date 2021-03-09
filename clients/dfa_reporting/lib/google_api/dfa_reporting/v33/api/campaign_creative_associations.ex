@@ -62,6 +62,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CampaignCreativeAssociations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_campaign_creative_associations_insert(
         connection,
@@ -144,6 +145,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CampaignCreativeAssociations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_campaign_creative_associations_list(
         connection,

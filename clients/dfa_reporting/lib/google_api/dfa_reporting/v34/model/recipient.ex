@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.Recipient do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliveryType => String.t(),
-          :email => String.t(),
-          :kind => String.t()
+          :deliveryType => String.t() | nil,
+          :email => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:deliveryType)

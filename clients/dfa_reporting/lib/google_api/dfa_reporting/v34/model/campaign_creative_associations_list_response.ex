@@ -30,9 +30,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.CampaignCreativeAssociationsListRespo
 
   @type t :: %__MODULE__{
           :campaignCreativeAssociations =>
-            list(GoogleApi.DFAReporting.V34.Model.CampaignCreativeAssociation.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+            list(GoogleApi.DFAReporting.V34.Model.CampaignCreativeAssociation.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:campaignCreativeAssociations,

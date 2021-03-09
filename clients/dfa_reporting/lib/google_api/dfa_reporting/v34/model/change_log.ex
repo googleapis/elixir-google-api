@@ -40,20 +40,20 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChangeLog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :action => String.t(),
-          :changeTime => DateTime.t(),
-          :fieldName => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :newValue => String.t(),
-          :objectId => String.t(),
-          :objectType => String.t(),
-          :oldValue => String.t(),
-          :subaccountId => String.t(),
-          :transactionId => String.t(),
-          :userProfileId => String.t(),
-          :userProfileName => String.t()
+          :accountId => String.t() | nil,
+          :action => String.t() | nil,
+          :changeTime => DateTime.t() | nil,
+          :fieldName => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :newValue => String.t() | nil,
+          :objectId => String.t() | nil,
+          :objectType => String.t() | nil,
+          :oldValue => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :transactionId => String.t() | nil,
+          :userProfileId => String.t() | nil,
+          :userProfileName => String.t() | nil
         }
 
   field(:accountId)

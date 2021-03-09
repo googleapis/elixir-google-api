@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CountriesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countries => list(GoogleApi.DFAReporting.V33.Model.Country.t()),
-          :kind => String.t()
+          :countries => list(GoogleApi.DFAReporting.V33.Model.Country.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:countries, as: GoogleApi.DFAReporting.V33.Model.Country, type: :list)

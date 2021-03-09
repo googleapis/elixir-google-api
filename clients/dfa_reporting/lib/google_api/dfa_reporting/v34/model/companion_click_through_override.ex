@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompanionClickThroughOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickThroughUrl => GoogleApi.DFAReporting.V34.Model.ClickThroughUrl.t(),
-          :creativeId => String.t()
+          :clickThroughUrl => GoogleApi.DFAReporting.V34.Model.ClickThroughUrl.t() | nil,
+          :creativeId => String.t() | nil
         }
 
   field(:clickThroughUrl, as: GoogleApi.DFAReporting.V34.Model.ClickThroughUrl)

@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelGroupings => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :dimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :kind => String.t(),
-          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()),
-          :pathFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t())
+          :channelGroupings => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :kind => String.t() | nil,
+          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil,
+          :pathFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil
         }
 
   field(:channelGroupings, as: GoogleApi.DFAReporting.V34.Model.Dimension, type: :list)

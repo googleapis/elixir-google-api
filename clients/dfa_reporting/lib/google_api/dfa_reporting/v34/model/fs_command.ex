@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.FsCommand do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :left => integer(),
-          :positionOption => String.t(),
-          :top => integer(),
-          :windowHeight => integer(),
-          :windowWidth => integer()
+          :left => integer() | nil,
+          :positionOption => String.t() | nil,
+          :top => integer() | nil,
+          :windowHeight => integer() | nil,
+          :windowWidth => integer() | nil
         }
 
   field(:left)

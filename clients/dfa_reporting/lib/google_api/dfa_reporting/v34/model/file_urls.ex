@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.FileUrls do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiUrl => String.t(),
-          :browserUrl => String.t()
+          :apiUrl => String.t() | nil,
+          :browserUrl => String.t() | nil
         }
 
   field(:apiUrl)

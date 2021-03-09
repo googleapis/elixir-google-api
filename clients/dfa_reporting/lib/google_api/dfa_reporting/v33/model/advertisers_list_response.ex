@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AdvertisersListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertisers => list(GoogleApi.DFAReporting.V33.Model.Advertiser.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :advertisers => list(GoogleApi.DFAReporting.V33.Model.Advertiser.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:advertisers, as: GoogleApi.DFAReporting.V33.Model.Advertiser, type: :list)

@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserLandingPages do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.LandingPage.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_landing_pages_get(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserLandingPages do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.LandingPage.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_landing_pages_insert(
         connection,
@@ -213,6 +215,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserLandingPages do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserLandingPagesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_landing_pages_list(
         connection,
@@ -297,6 +300,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserLandingPages do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.LandingPage.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_landing_pages_patch(
         connection,
@@ -370,6 +374,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserLandingPages do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.LandingPage.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_landing_pages_update(
         connection,

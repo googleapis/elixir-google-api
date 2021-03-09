@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ListTargetingExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expression => String.t()
+          :expression => String.t() | nil
         }
 
   field(:expression)

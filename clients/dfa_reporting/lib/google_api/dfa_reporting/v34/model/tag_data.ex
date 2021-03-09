@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.TagData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adId => String.t(),
-          :clickTag => String.t(),
-          :creativeId => String.t(),
-          :format => String.t(),
-          :impressionTag => String.t()
+          :adId => String.t() | nil,
+          :clickTag => String.t() | nil,
+          :creativeId => String.t() | nil,
+          :format => String.t() | nil,
+          :impressionTag => String.t() | nil
         }
 
   field(:adId)

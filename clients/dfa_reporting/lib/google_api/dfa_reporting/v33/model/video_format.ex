@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.VideoFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileType => String.t(),
-          :id => integer(),
-          :kind => String.t(),
-          :resolution => GoogleApi.DFAReporting.V33.Model.Size.t(),
-          :targetBitRate => integer()
+          :fileType => String.t() | nil,
+          :id => integer() | nil,
+          :kind => String.t() | nil,
+          :resolution => GoogleApi.DFAReporting.V33.Model.Size.t() | nil,
+          :targetBitRate => integer() | nil
         }
 
   field(:fileType)

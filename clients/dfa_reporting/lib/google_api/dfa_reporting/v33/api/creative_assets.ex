@@ -62,6 +62,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_assets_insert(
         connection,
@@ -147,6 +148,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_assets_insert_iodata(
         connection,
@@ -237,6 +239,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_assets_insert_simple(
         connection,

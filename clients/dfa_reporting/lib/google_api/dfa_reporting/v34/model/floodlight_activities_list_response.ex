@@ -29,9 +29,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivitiesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floodlightActivities => list(GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :floodlightActivities =>
+            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:floodlightActivities,

@@ -29,8 +29,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightConfigurationsListResponse 
 
   @type t :: %__MODULE__{
           :floodlightConfigurations =>
-            list(GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration.t()),
-          :kind => String.t()
+            list(GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:floodlightConfigurations,

@@ -35,15 +35,15 @@ defmodule GoogleApi.DFAReporting.V33.Model.DirectorySite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :inpageTagFormats => list(String.t()),
-          :interstitialTagFormats => list(String.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :settings => GoogleApi.DFAReporting.V33.Model.DirectorySiteSettings.t(),
-          :url => String.t()
+          :active => boolean() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :inpageTagFormats => list(String.t()) | nil,
+          :interstitialTagFormats => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :settings => GoogleApi.DFAReporting.V33.Model.DirectorySiteSettings.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:active)

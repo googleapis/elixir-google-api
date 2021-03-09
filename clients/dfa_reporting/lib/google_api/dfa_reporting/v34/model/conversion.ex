@@ -44,24 +44,25 @@ defmodule GoogleApi.DFAReporting.V34.Model.Conversion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childDirectedTreatment => boolean(),
-          :customVariables => list(GoogleApi.DFAReporting.V34.Model.CustomFloodlightVariable.t()),
-          :dclid => String.t(),
-          :encryptedUserId => String.t(),
-          :encryptedUserIdCandidates => list(String.t()),
-          :floodlightActivityId => String.t(),
-          :floodlightConfigurationId => String.t(),
-          :gclid => String.t(),
-          :kind => String.t(),
-          :limitAdTracking => boolean(),
-          :matchId => String.t(),
-          :mobileDeviceId => String.t(),
-          :nonPersonalizedAd => boolean(),
-          :ordinal => String.t(),
-          :quantity => String.t(),
-          :timestampMicros => String.t(),
-          :treatmentForUnderage => boolean(),
-          :value => float()
+          :childDirectedTreatment => boolean() | nil,
+          :customVariables =>
+            list(GoogleApi.DFAReporting.V34.Model.CustomFloodlightVariable.t()) | nil,
+          :dclid => String.t() | nil,
+          :encryptedUserId => String.t() | nil,
+          :encryptedUserIdCandidates => list(String.t()) | nil,
+          :floodlightActivityId => String.t() | nil,
+          :floodlightConfigurationId => String.t() | nil,
+          :gclid => String.t() | nil,
+          :kind => String.t() | nil,
+          :limitAdTracking => boolean() | nil,
+          :matchId => String.t() | nil,
+          :mobileDeviceId => String.t() | nil,
+          :nonPersonalizedAd => boolean() | nil,
+          :ordinal => String.t() | nil,
+          :quantity => String.t() | nil,
+          :timestampMicros => String.t() | nil,
+          :treatmentForUnderage => boolean() | nil,
+          :value => float() | nil
         }
 
   field(:childDirectedTreatment)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.ClickThroughUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computedClickThroughUrl => String.t(),
-          :customClickThroughUrl => String.t(),
-          :defaultLandingPage => boolean(),
-          :landingPageId => String.t()
+          :computedClickThroughUrl => String.t() | nil,
+          :customClickThroughUrl => String.t() | nil,
+          :defaultLandingPage => boolean() | nil,
+          :landingPageId => String.t() | nil
         }
 
   field(:computedClickThroughUrl)

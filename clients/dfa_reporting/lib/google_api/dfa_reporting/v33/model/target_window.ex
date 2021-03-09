@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.TargetWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customHtml => String.t(),
-          :targetWindowOption => String.t()
+          :customHtml => String.t() | nil,
+          :targetWindowOption => String.t() | nil
         }
 
   field(:customHtml)

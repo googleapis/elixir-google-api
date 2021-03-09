@@ -29,9 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeFieldValuesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeFieldValues => list(GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :creativeFieldValues =>
+            list(GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:creativeFieldValues, as: GoogleApi.DFAReporting.V33.Model.CreativeFieldValue, type: :list)

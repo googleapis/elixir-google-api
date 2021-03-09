@@ -39,21 +39,22 @@ defmodule GoogleApi.DFAReporting.V33.Model.TargetingTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :dayPartTargeting => GoogleApi.DFAReporting.V33.Model.DayPartTargeting.t(),
-          :geoTargeting => GoogleApi.DFAReporting.V33.Model.GeoTargeting.t(),
-          :id => String.t(),
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :dayPartTargeting => GoogleApi.DFAReporting.V33.Model.DayPartTargeting.t() | nil,
+          :geoTargeting => GoogleApi.DFAReporting.V33.Model.GeoTargeting.t() | nil,
+          :id => String.t() | nil,
           :keyValueTargetingExpression =>
-            GoogleApi.DFAReporting.V33.Model.KeyValueTargetingExpression.t(),
-          :kind => String.t(),
-          :languageTargeting => GoogleApi.DFAReporting.V33.Model.LanguageTargeting.t(),
+            GoogleApi.DFAReporting.V33.Model.KeyValueTargetingExpression.t() | nil,
+          :kind => String.t() | nil,
+          :languageTargeting => GoogleApi.DFAReporting.V33.Model.LanguageTargeting.t() | nil,
           :listTargetingExpression =>
-            GoogleApi.DFAReporting.V33.Model.ListTargetingExpression.t(),
-          :name => String.t(),
-          :subaccountId => String.t(),
-          :technologyTargeting => GoogleApi.DFAReporting.V33.Model.TechnologyTargeting.t()
+            GoogleApi.DFAReporting.V33.Model.ListTargetingExpression.t() | nil,
+          :name => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :technologyTargeting => GoogleApi.DFAReporting.V33.Model.TechnologyTargeting.t() | nil
         }
 
   field(:accountId)

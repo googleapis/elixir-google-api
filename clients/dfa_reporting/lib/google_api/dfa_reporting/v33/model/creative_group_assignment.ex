@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeGroupAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeGroupId => String.t(),
-          :creativeGroupNumber => String.t()
+          :creativeGroupId => String.t() | nil,
+          :creativeGroupNumber => String.t() | nil
         }
 
   field(:creativeGroupId)

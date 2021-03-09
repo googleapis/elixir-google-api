@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.ThirdPartyTrackingUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thirdPartyUrlType => String.t(),
-          :url => String.t()
+          :thirdPartyUrlType => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:thirdPartyUrlType)

@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportCrossDimensionReachCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :breakdown => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()),
-          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t(),
-          :dimension => String.t(),
-          :dimensionFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()),
-          :metricNames => list(String.t()),
-          :overlapMetricNames => list(String.t()),
-          :pivoted => boolean()
+          :breakdown => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()) | nil,
+          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t() | nil,
+          :dimension => String.t() | nil,
+          :dimensionFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()) | nil,
+          :metricNames => list(String.t()) | nil,
+          :overlapMetricNames => list(String.t()) | nil,
+          :pivoted => boolean() | nil
         }
 
   field(:breakdown, as: GoogleApi.DFAReporting.V33.Model.SortedDimension, type: :list)

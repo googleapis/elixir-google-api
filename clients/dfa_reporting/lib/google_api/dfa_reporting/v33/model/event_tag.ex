@@ -44,24 +44,25 @@ defmodule GoogleApi.DFAReporting.V33.Model.EventTag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :campaignId => String.t(),
-          :campaignIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :enabledByDefault => boolean(),
-          :excludeFromAdxRequests => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :siteFilterType => String.t(),
-          :siteIds => list(String.t()),
-          :sslCompliant => boolean(),
-          :status => String.t(),
-          :subaccountId => String.t(),
-          :type => String.t(),
-          :url => String.t(),
-          :urlEscapeLevels => integer()
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :campaignId => String.t() | nil,
+          :campaignIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :enabledByDefault => boolean() | nil,
+          :excludeFromAdxRequests => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :siteFilterType => String.t() | nil,
+          :siteIds => list(String.t()) | nil,
+          :sslCompliant => boolean() | nil,
+          :status => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :type => String.t() | nil,
+          :url => String.t() | nil,
+          :urlEscapeLevels => integer() | nil
         }
 
   field(:accountId)

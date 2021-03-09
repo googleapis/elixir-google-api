@@ -34,14 +34,15 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :groupNumber => integer(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :subaccountId => String.t()
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :groupNumber => integer() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :subaccountId => String.t() | nil
         }
 
   field(:accountId)

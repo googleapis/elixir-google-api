@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customEvent => GoogleApi.DFAReporting.V34.Model.CustomEvent.t(),
-          :errors => list(GoogleApi.DFAReporting.V34.Model.CustomEventError.t()),
-          :kind => String.t()
+          :customEvent => GoogleApi.DFAReporting.V34.Model.CustomEvent.t() | nil,
+          :errors => list(GoogleApi.DFAReporting.V34.Model.CustomEventError.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:customEvent, as: GoogleApi.DFAReporting.V34.Model.CustomEvent)

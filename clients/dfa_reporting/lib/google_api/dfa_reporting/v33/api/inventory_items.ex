@@ -63,6 +63,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.InventoryItems do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.InventoryItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_inventory_items_get(
         connection,
@@ -150,6 +151,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.InventoryItems do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.InventoryItemsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_inventory_items_list(
         connection,

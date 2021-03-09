@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_placement_strategies_delete(
         connection,
         profile_id,
@@ -131,6 +131,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_placement_strategies_get(
         connection,
@@ -203,6 +204,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_placement_strategies_insert(
         connection,
@@ -279,6 +281,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementStrategiesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_placement_strategies_list(
         connection,
@@ -359,6 +362,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_placement_strategies_patch(
         connection,
@@ -432,6 +436,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_placement_strategies_update(
         connection,

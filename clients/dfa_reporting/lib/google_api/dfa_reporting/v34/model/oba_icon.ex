@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V34.Model.ObaIcon do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iconClickThroughUrl => String.t(),
-          :iconClickTrackingUrl => String.t(),
-          :iconViewTrackingUrl => String.t(),
-          :program => String.t(),
-          :resourceUrl => String.t(),
-          :size => GoogleApi.DFAReporting.V34.Model.Size.t(),
-          :xPosition => String.t(),
-          :yPosition => String.t()
+          :iconClickThroughUrl => String.t() | nil,
+          :iconClickTrackingUrl => String.t() | nil,
+          :iconViewTrackingUrl => String.t() | nil,
+          :program => String.t() | nil,
+          :resourceUrl => String.t() | nil,
+          :size => GoogleApi.DFAReporting.V34.Model.Size.t() | nil,
+          :xPosition => String.t() | nil,
+          :yPosition => String.t() | nil
         }
 
   field(:iconClickThroughUrl)

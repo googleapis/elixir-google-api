@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.LandingPage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :archived => boolean(),
-          :deepLinks => list(GoogleApi.DFAReporting.V34.Model.DeepLink.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :url => String.t()
+          :advertiserId => String.t() | nil,
+          :archived => boolean() | nil,
+          :deepLinks => list(GoogleApi.DFAReporting.V34.Model.DeepLink.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:advertiserId)

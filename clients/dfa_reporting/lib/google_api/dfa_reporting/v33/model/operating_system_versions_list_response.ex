@@ -28,9 +28,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.OperatingSystemVersionsListResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :operatingSystemVersions =>
-            list(GoogleApi.DFAReporting.V33.Model.OperatingSystemVersion.t())
+            list(GoogleApi.DFAReporting.V33.Model.OperatingSystemVersion.t()) | nil
         }
 
   field(:kind)

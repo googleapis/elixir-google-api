@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.DfpSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dfpNetworkCode => String.t(),
-          :dfpNetworkName => String.t(),
-          :programmaticPlacementAccepted => boolean(),
-          :pubPaidPlacementAccepted => boolean(),
-          :publisherPortalOnly => boolean()
+          :dfpNetworkCode => String.t() | nil,
+          :dfpNetworkName => String.t() | nil,
+          :programmaticPlacementAccepted => boolean() | nil,
+          :pubPaidPlacementAccepted => boolean() | nil,
+          :publisherPortalOnly => boolean() | nil
         }
 
   field(:dfpNetworkCode)

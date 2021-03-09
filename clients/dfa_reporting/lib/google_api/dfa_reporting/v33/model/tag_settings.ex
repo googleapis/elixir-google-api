@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.TagSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicTagEnabled => boolean(),
-          :imageTagEnabled => boolean()
+          :dynamicTagEnabled => boolean() | nil,
+          :imageTagEnabled => boolean() | nil
         }
 
   field(:dynamicTagEnabled)

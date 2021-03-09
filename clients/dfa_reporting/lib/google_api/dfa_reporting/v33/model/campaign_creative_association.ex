@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeId => String.t(),
-          :kind => String.t()
+          :creativeId => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:creativeId)

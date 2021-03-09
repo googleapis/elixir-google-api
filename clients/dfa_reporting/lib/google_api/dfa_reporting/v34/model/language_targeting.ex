@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.LanguageTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languages => list(GoogleApi.DFAReporting.V34.Model.Language.t())
+          :languages => list(GoogleApi.DFAReporting.V34.Model.Language.t()) | nil
         }
 
   field(:languages, as: GoogleApi.DFAReporting.V34.Model.Language, type: :list)

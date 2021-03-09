@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => Date.t(),
-          :kind => String.t(),
-          :relativeDateRange => String.t(),
-          :startDate => Date.t()
+          :endDate => Date.t() | nil,
+          :kind => String.t() | nil,
+          :relativeDateRange => String.t() | nil,
+          :startDate => Date.t() | nil
         }
 
   field(:endDate, as: Date)

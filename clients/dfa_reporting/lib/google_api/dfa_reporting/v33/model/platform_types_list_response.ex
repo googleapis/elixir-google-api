@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.PlatformTypesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :platformTypes => list(GoogleApi.DFAReporting.V33.Model.PlatformType.t())
+          :kind => String.t() | nil,
+          :platformTypes => list(GoogleApi.DFAReporting.V33.Model.PlatformType.t()) | nil
         }
 
   field(:kind)

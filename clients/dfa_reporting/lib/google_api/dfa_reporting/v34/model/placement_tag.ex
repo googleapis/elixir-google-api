@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementTag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :placementId => String.t(),
-          :tagDatas => list(GoogleApi.DFAReporting.V34.Model.TagData.t())
+          :placementId => String.t() | nil,
+          :tagDatas => list(GoogleApi.DFAReporting.V34.Model.TagData.t()) | nil
         }
 
   field(:placementId)

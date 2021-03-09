@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.DimensionValueRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :endDate => Date.t(),
-          :filters => list(GoogleApi.DFAReporting.V33.Model.DimensionFilter.t()),
-          :kind => String.t(),
-          :startDate => Date.t()
+          :dimensionName => String.t() | nil,
+          :endDate => Date.t() | nil,
+          :filters => list(GoogleApi.DFAReporting.V33.Model.DimensionFilter.t()) | nil,
+          :kind => String.t() | nil,
+          :startDate => Date.t() | nil
         }
 
   field(:dimensionName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.ClickThroughUrlSuffixProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickThroughUrlSuffix => String.t(),
-          :overrideInheritedSuffix => boolean()
+          :clickThroughUrlSuffix => String.t() | nil,
+          :overrideInheritedSuffix => boolean() | nil
         }
 
   field(:clickThroughUrlSuffix)

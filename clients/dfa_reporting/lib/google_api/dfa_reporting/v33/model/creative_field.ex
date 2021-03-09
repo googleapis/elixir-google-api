@@ -33,13 +33,14 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :subaccountId => String.t()
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :subaccountId => String.t() | nil
         }
 
   field(:accountId)

@@ -35,16 +35,17 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotateClickEvent => GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation.t(),
+          :annotateClickEvent =>
+            GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation.t() | nil,
           :annotateImpressionEvent =>
-            GoogleApi.DFAReporting.V34.Model.CustomEventImpressionAnnotation.t(),
-          :customVariables => list(GoogleApi.DFAReporting.V34.Model.CustomVariable.t()),
-          :eventType => String.t(),
-          :floodlightConfigurationId => String.t(),
-          :insertEvent => GoogleApi.DFAReporting.V34.Model.CustomEventInsert.t(),
-          :kind => String.t(),
-          :ordinal => String.t(),
-          :timestampMicros => String.t()
+            GoogleApi.DFAReporting.V34.Model.CustomEventImpressionAnnotation.t() | nil,
+          :customVariables => list(GoogleApi.DFAReporting.V34.Model.CustomVariable.t()) | nil,
+          :eventType => String.t() | nil,
+          :floodlightConfigurationId => String.t() | nil,
+          :insertEvent => GoogleApi.DFAReporting.V34.Model.CustomEventInsert.t() | nil,
+          :kind => String.t() | nil,
+          :ordinal => String.t() | nil,
+          :timestampMicros => String.t() | nil
         }
 
   field(:annotateClickEvent, as: GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation)

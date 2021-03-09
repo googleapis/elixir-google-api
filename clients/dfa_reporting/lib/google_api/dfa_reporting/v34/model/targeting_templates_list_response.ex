@@ -29,9 +29,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.TargetingTemplatesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :targetingTemplates => list(GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :targetingTemplates =>
+            list(GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()) | nil
         }
 
   field(:kind)

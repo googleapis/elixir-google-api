@@ -55,6 +55,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Sites do
   @spec dfareporting_sites_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Site.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_sites_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Sites do
   @spec dfareporting_sites_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Site.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_sites_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -191,6 +193,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Sites do
   @spec dfareporting_sites_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.SitesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_sites_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -267,6 +270,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Sites do
   @spec dfareporting_sites_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Site.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_sites_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -329,6 +333,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Sites do
   @spec dfareporting_sites_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Site.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_sites_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

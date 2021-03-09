@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.Activities do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()),
-          :kind => String.t(),
-          :metricNames => list(String.t())
+          :filters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()) | nil,
+          :kind => String.t() | nil,
+          :metricNames => list(String.t()) | nil
         }
 
   field(:filters, as: GoogleApi.DFAReporting.V34.Model.DimensionValue, type: :list)

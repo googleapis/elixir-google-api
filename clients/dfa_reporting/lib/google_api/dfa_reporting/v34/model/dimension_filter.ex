@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.DimensionFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :kind => String.t(),
-          :value => String.t()
+          :dimensionName => String.t() | nil,
+          :kind => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:dimensionName)

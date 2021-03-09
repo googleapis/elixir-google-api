@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.PostalCodesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :postalCodes => list(GoogleApi.DFAReporting.V34.Model.PostalCode.t())
+          :kind => String.t() | nil,
+          :postalCodes => list(GoogleApi.DFAReporting.V34.Model.PostalCode.t()) | nil
         }
 
   field(:kind)

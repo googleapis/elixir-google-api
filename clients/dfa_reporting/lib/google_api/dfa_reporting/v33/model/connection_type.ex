@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConnectionType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:id)

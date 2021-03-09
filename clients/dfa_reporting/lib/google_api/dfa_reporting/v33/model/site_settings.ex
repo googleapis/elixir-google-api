@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.SiteSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeViewOptOut => boolean(),
-          :adBlockingOptOut => boolean(),
-          :disableNewCookie => boolean(),
-          :tagSetting => GoogleApi.DFAReporting.V33.Model.TagSetting.t(),
-          :videoActiveViewOptOutTemplate => boolean(),
-          :vpaidAdapterChoiceTemplate => String.t()
+          :activeViewOptOut => boolean() | nil,
+          :adBlockingOptOut => boolean() | nil,
+          :disableNewCookie => boolean() | nil,
+          :tagSetting => GoogleApi.DFAReporting.V33.Model.TagSetting.t() | nil,
+          :videoActiveViewOptOutTemplate => boolean() | nil,
+          :vpaidAdapterChoiceTemplate => String.t() | nil
         }
 
   field(:activeViewOptOut)

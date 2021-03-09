@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.DV3Ids do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dvCampaignId => String.t(),
-          :dvCreativeId => String.t(),
-          :dvInsertionOrderId => String.t(),
-          :dvLineItemId => String.t(),
-          :dvSiteId => String.t(),
-          :kind => String.t()
+          :dvCampaignId => String.t() | nil,
+          :dvCreativeId => String.t() | nil,
+          :dvInsertionOrderId => String.t() | nil,
+          :dvLineItemId => String.t() | nil,
+          :dvSiteId => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:dvCampaignId)

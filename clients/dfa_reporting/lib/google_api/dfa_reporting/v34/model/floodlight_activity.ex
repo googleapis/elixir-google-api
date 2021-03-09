@@ -55,37 +55,39 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :attributionEnabled => boolean(),
-          :cacheBustingType => String.t(),
-          :countingMethod => String.t(),
-          :defaultTags => list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityDynamicTag.t()),
-          :expectedUrl => String.t(),
-          :floodlightActivityGroupId => String.t(),
-          :floodlightActivityGroupName => String.t(),
-          :floodlightActivityGroupTagString => String.t(),
-          :floodlightActivityGroupType => String.t(),
-          :floodlightConfigurationId => String.t(),
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :attributionEnabled => boolean() | nil,
+          :cacheBustingType => String.t() | nil,
+          :countingMethod => String.t() | nil,
+          :defaultTags =>
+            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityDynamicTag.t()) | nil,
+          :expectedUrl => String.t() | nil,
+          :floodlightActivityGroupId => String.t() | nil,
+          :floodlightActivityGroupName => String.t() | nil,
+          :floodlightActivityGroupTagString => String.t() | nil,
+          :floodlightActivityGroupType => String.t() | nil,
+          :floodlightConfigurationId => String.t() | nil,
           :floodlightConfigurationIdDimensionValue =>
-            GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :floodlightTagType => String.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :notes => String.t(),
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :floodlightTagType => String.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
           :publisherTags =>
-            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityPublisherDynamicTag.t()),
-          :secure => boolean(),
-          :sslCompliant => boolean(),
-          :sslRequired => boolean(),
-          :status => String.t(),
-          :subaccountId => String.t(),
-          :tagFormat => String.t(),
-          :tagString => String.t(),
-          :userDefinedVariableTypes => list(String.t())
+            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityPublisherDynamicTag.t()) | nil,
+          :secure => boolean() | nil,
+          :sslCompliant => boolean() | nil,
+          :sslRequired => boolean() | nil,
+          :status => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :tagFormat => String.t() | nil,
+          :tagString => String.t() | nil,
+          :userDefinedVariableTypes => list(String.t()) | nil
         }
 
   field(:accountId)

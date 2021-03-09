@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CustomRichMediaEvents do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filteredEventIds => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()),
-          :kind => String.t()
+          :filteredEventIds => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:filteredEventIds, as: GoogleApi.DFAReporting.V33.Model.DimensionValue, type: :list)

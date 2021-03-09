@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V33.Model.AdSlot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comment => String.t(),
-          :compatibility => String.t(),
-          :height => String.t(),
-          :linkedPlacementId => String.t(),
-          :name => String.t(),
-          :paymentSourceType => String.t(),
-          :primary => boolean(),
-          :width => String.t()
+          :comment => String.t() | nil,
+          :compatibility => String.t() | nil,
+          :height => String.t() | nil,
+          :linkedPlacementId => String.t() | nil,
+          :name => String.t() | nil,
+          :paymentSourceType => String.t() | nil,
+          :primary => boolean() | nil,
+          :width => String.t() | nil
         }
 
   field(:comment)

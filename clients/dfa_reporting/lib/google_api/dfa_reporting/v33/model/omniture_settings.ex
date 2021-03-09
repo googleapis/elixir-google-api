@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.OmnitureSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :omnitureCostDataEnabled => boolean(),
-          :omnitureIntegrationEnabled => boolean()
+          :omnitureCostDataEnabled => boolean() | nil,
+          :omnitureIntegrationEnabled => boolean() | nil
         }
 
   field(:omnitureCostDataEnabled)

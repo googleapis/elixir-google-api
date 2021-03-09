@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteVideoSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :companionSettings => GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting.t(),
-          :kind => String.t(),
-          :obaEnabled => boolean(),
-          :obaSettings => GoogleApi.DFAReporting.V34.Model.ObaIcon.t(),
-          :orientation => String.t(),
-          :skippableSettings => GoogleApi.DFAReporting.V34.Model.SiteSkippableSetting.t(),
-          :transcodeSettings => GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting.t()
+          :companionSettings => GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting.t() | nil,
+          :kind => String.t() | nil,
+          :obaEnabled => boolean() | nil,
+          :obaSettings => GoogleApi.DFAReporting.V34.Model.ObaIcon.t() | nil,
+          :orientation => String.t() | nil,
+          :skippableSettings => GoogleApi.DFAReporting.V34.Model.SiteSkippableSetting.t() | nil,
+          :transcodeSettings => GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting.t() | nil
         }
 
   field(:companionSettings, as: GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting)

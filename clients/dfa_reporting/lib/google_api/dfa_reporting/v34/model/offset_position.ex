@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.OffsetPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :left => integer(),
-          :top => integer()
+          :left => integer() | nil,
+          :top => integer() | nil
         }
 
   field(:left)

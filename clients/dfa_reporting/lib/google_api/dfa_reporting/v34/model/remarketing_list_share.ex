@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.RemarketingListShare do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :remarketingListId => String.t(),
-          :sharedAccountIds => list(String.t()),
-          :sharedAdvertiserIds => list(String.t())
+          :kind => String.t() | nil,
+          :remarketingListId => String.t() | nil,
+          :sharedAccountIds => list(String.t()) | nil,
+          :sharedAdvertiserIds => list(String.t()) | nil
         }
 
   field(:kind)

@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.Region do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
-          :countryDartId => String.t(),
-          :dartId => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :regionCode => String.t()
+          :countryCode => String.t() | nil,
+          :countryDartId => String.t() | nil,
+          :dartId => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:countryCode)

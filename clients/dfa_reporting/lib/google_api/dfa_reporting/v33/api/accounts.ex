@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Account.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_accounts_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -128,6 +129,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
   @spec dfareporting_accounts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_accounts_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -202,6 +204,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Account.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_accounts_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -264,6 +267,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
   @spec dfareporting_accounts_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Account.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_accounts_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

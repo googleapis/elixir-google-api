@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeClickThroughUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computedClickThroughUrl => String.t(),
-          :customClickThroughUrl => String.t(),
-          :landingPageId => String.t()
+          :computedClickThroughUrl => String.t() | nil,
+          :customClickThroughUrl => String.t() | nil,
+          :landingPageId => String.t() | nil
         }
 
   field(:computedClickThroughUrl)

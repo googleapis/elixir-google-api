@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRolePermissionGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_role_permission_groups_get(
         connection,
@@ -137,6 +138,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRolePermissionGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_role_permission_groups_list(
         connection,

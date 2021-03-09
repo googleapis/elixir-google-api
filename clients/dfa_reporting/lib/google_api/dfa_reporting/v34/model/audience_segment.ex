@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.AudienceSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocation => integer(),
-          :id => String.t(),
-          :name => String.t()
+          :allocation => integer() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:allocation)

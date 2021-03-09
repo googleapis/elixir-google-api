@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.DeliverySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :frequencyCap => GoogleApi.DFAReporting.V33.Model.FrequencyCap.t(),
-          :hardCutoff => boolean(),
-          :impressionRatio => String.t(),
-          :priority => String.t()
+          :frequencyCap => GoogleApi.DFAReporting.V33.Model.FrequencyCap.t() | nil,
+          :hardCutoff => boolean() | nil,
+          :impressionRatio => String.t() | nil,
+          :priority => String.t() | nil
         }
 
   field(:frequencyCap, as: GoogleApi.DFAReporting.V33.Model.FrequencyCap)

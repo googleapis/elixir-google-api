@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.GeoTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cities => list(GoogleApi.DFAReporting.V34.Model.City.t()),
-          :countries => list(GoogleApi.DFAReporting.V34.Model.Country.t()),
-          :excludeCountries => boolean(),
-          :metros => list(GoogleApi.DFAReporting.V34.Model.Metro.t()),
-          :postalCodes => list(GoogleApi.DFAReporting.V34.Model.PostalCode.t()),
-          :regions => list(GoogleApi.DFAReporting.V34.Model.Region.t())
+          :cities => list(GoogleApi.DFAReporting.V34.Model.City.t()) | nil,
+          :countries => list(GoogleApi.DFAReporting.V34.Model.Country.t()) | nil,
+          :excludeCountries => boolean() | nil,
+          :metros => list(GoogleApi.DFAReporting.V34.Model.Metro.t()) | nil,
+          :postalCodes => list(GoogleApi.DFAReporting.V34.Model.PostalCode.t()) | nil,
+          :regions => list(GoogleApi.DFAReporting.V34.Model.Region.t()) | nil
         }
 
   field(:cities, as: GoogleApi.DFAReporting.V34.Model.City, type: :list)

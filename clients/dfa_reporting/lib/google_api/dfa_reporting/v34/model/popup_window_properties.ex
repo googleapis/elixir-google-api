@@ -35,15 +35,15 @@ defmodule GoogleApi.DFAReporting.V34.Model.PopupWindowProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => GoogleApi.DFAReporting.V34.Model.Size.t(),
-          :offset => GoogleApi.DFAReporting.V34.Model.OffsetPosition.t(),
-          :positionType => String.t(),
-          :showAddressBar => boolean(),
-          :showMenuBar => boolean(),
-          :showScrollBar => boolean(),
-          :showStatusBar => boolean(),
-          :showToolBar => boolean(),
-          :title => String.t()
+          :dimension => GoogleApi.DFAReporting.V34.Model.Size.t() | nil,
+          :offset => GoogleApi.DFAReporting.V34.Model.OffsetPosition.t() | nil,
+          :positionType => String.t() | nil,
+          :showAddressBar => boolean() | nil,
+          :showMenuBar => boolean() | nil,
+          :showScrollBar => boolean() | nil,
+          :showStatusBar => boolean() | nil,
+          :showToolBar => boolean() | nil,
+          :title => String.t() | nil
         }
 
   field(:dimension, as: GoogleApi.DFAReporting.V34.Model.Size)

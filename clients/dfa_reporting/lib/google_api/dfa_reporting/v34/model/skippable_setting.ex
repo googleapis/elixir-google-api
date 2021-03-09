@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.SkippableSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :progressOffset => GoogleApi.DFAReporting.V34.Model.VideoOffset.t(),
-          :skipOffset => GoogleApi.DFAReporting.V34.Model.VideoOffset.t(),
-          :skippable => boolean()
+          :kind => String.t() | nil,
+          :progressOffset => GoogleApi.DFAReporting.V34.Model.VideoOffset.t() | nil,
+          :skipOffset => GoogleApi.DFAReporting.V34.Model.VideoOffset.t() | nil,
+          :skippable => boolean() | nil
         }
 
   field(:kind)

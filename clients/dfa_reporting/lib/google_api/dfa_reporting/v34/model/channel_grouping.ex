@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChannelGrouping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fallbackName => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :rules => list(GoogleApi.DFAReporting.V34.Model.ChannelGroupingRule.t())
+          :fallbackName => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :rules => list(GoogleApi.DFAReporting.V34.Model.ChannelGroupingRule.t()) | nil
         }
 
   field(:fallbackName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.OperatingSystemsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :operatingSystems => list(GoogleApi.DFAReporting.V33.Model.OperatingSystem.t())
+          :kind => String.t() | nil,
+          :operatingSystems => list(GoogleApi.DFAReporting.V33.Model.OperatingSystem.t()) | nil
         }
 
   field(:kind)

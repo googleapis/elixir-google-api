@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.ChangeLogsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changeLogs => list(GoogleApi.DFAReporting.V33.Model.ChangeLog.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :changeLogs => list(GoogleApi.DFAReporting.V33.Model.ChangeLog.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:changeLogs, as: GoogleApi.DFAReporting.V33.Model.ChangeLog, type: :list)

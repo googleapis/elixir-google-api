@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accounts => list(GoogleApi.DFAReporting.V33.Model.Account.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :accounts => list(GoogleApi.DFAReporting.V33.Model.Account.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accounts, as: GoogleApi.DFAReporting.V33.Model.Account, type: :list)

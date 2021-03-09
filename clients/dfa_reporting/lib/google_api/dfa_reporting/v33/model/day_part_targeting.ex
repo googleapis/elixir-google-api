@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.DayPartTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysOfWeek => list(String.t()),
-          :hoursOfDay => list(integer()),
-          :userLocalTime => boolean()
+          :daysOfWeek => list(String.t()) | nil,
+          :hoursOfDay => list(integer()) | nil,
+          :userLocalTime => boolean() | nil
         }
 
   field(:daysOfWeek, type: :list)

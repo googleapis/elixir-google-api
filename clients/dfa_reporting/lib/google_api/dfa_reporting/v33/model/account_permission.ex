@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountProfiles => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :level => String.t(),
-          :name => String.t(),
-          :permissionGroupId => String.t()
+          :accountProfiles => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :level => String.t() | nil,
+          :name => String.t() | nil,
+          :permissionGroupId => String.t() | nil
         }
 
   field(:accountProfiles, type: :list)

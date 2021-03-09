@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.DefaultClickThroughEventTagProperties
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultClickThroughEventTagId => String.t(),
-          :overrideInheritedEventTag => boolean()
+          :defaultClickThroughEventTagId => String.t() | nil,
+          :overrideInheritedEventTag => boolean() | nil
         }
 
   field(:defaultClickThroughEventTagId)

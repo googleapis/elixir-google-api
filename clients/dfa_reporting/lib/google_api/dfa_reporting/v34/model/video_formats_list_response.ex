@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.VideoFormatsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :videoFormats => list(GoogleApi.DFAReporting.V34.Model.VideoFormat.t())
+          :kind => String.t() | nil,
+          :videoFormats => list(GoogleApi.DFAReporting.V34.Model.VideoFormat.t()) | nil
         }
 
   field(:kind)

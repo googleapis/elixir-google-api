@@ -37,17 +37,20 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeAssetMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetIdentifier => GoogleApi.DFAReporting.V34.Model.CreativeAssetId.t(),
-          :clickTags => list(GoogleApi.DFAReporting.V34.Model.ClickTag.t()),
-          :counterCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
-          :detectedFeatures => list(String.t()),
-          :exitCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :richMedia => boolean(),
-          :timerCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
-          :warnedValidationRules => list(String.t())
+          :assetIdentifier => GoogleApi.DFAReporting.V34.Model.CreativeAssetId.t() | nil,
+          :clickTags => list(GoogleApi.DFAReporting.V34.Model.ClickTag.t()) | nil,
+          :counterCustomEvents =>
+            list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()) | nil,
+          :detectedFeatures => list(String.t()) | nil,
+          :exitCustomEvents =>
+            list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()) | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :richMedia => boolean() | nil,
+          :timerCustomEvents =>
+            list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()) | nil,
+          :warnedValidationRules => list(String.t()) | nil
         }
 
   field(:assetIdentifier, as: GoogleApi.DFAReporting.V34.Model.CreativeAssetId)

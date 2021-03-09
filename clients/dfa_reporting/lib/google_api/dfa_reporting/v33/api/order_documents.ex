@@ -63,6 +63,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.OrderDocuments do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.OrderDocument.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_order_documents_get(
         connection,
@@ -150,6 +151,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.OrderDocuments do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.OrderDocumentsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_order_documents_list(
         connection,

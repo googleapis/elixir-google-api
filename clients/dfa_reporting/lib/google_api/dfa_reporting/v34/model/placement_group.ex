@@ -52,33 +52,35 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :archived => boolean(),
-          :campaignId => String.t(),
-          :campaignIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :childPlacementIds => list(String.t()),
-          :comment => String.t(),
-          :contentCategoryId => String.t(),
-          :createInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
-          :directorySiteId => String.t(),
-          :directorySiteIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :externalId => String.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
-          :name => String.t(),
-          :placementGroupType => String.t(),
-          :placementStrategyId => String.t(),
-          :pricingSchedule => GoogleApi.DFAReporting.V34.Model.PricingSchedule.t(),
-          :primaryPlacementId => String.t(),
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :archived => boolean() | nil,
+          :campaignId => String.t() | nil,
+          :campaignIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :childPlacementIds => list(String.t()) | nil,
+          :comment => String.t() | nil,
+          :contentCategoryId => String.t() | nil,
+          :createInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t() | nil,
+          :directorySiteId => String.t() | nil,
+          :directorySiteIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :externalId => String.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t() | nil,
+          :name => String.t() | nil,
+          :placementGroupType => String.t() | nil,
+          :placementStrategyId => String.t() | nil,
+          :pricingSchedule => GoogleApi.DFAReporting.V34.Model.PricingSchedule.t() | nil,
+          :primaryPlacementId => String.t() | nil,
           :primaryPlacementIdDimensionValue =>
-            GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :siteId => String.t(),
-          :siteIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :subaccountId => String.t()
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :siteId => String.t() | nil,
+          :siteIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :subaccountId => String.t() | nil
         }
 
   field(:accountId)

@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.Metro do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
-          :countryDartId => String.t(),
-          :dartId => String.t(),
-          :dmaId => String.t(),
-          :kind => String.t(),
-          :metroCode => String.t(),
-          :name => String.t()
+          :countryCode => String.t() | nil,
+          :countryDartId => String.t() | nil,
+          :dartId => String.t() | nil,
+          :dmaId => String.t() | nil,
+          :kind => String.t() | nil,
+          :metroCode => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:countryCode)

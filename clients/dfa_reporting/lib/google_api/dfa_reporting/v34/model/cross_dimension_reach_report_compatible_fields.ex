@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.CrossDimensionReachReportCompatibleFi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :breakdown => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :kind => String.t(),
-          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()),
-          :overlapMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t())
+          :breakdown => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :kind => String.t() | nil,
+          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil,
+          :overlapMetrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil
         }
 
   field(:breakdown, as: GoogleApi.DFAReporting.V34.Model.Dimension, type: :list)

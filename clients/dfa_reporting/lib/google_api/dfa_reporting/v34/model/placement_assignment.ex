@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :placementId => String.t(),
-          :placementIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :sslRequired => boolean()
+          :active => boolean() | nil,
+          :placementId => String.t() | nil,
+          :placementIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :sslRequired => boolean() | nil
         }
 
   field(:active)

@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteContact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :contactType => String.t(),
-          :email => String.t(),
-          :firstName => String.t(),
-          :id => String.t(),
-          :lastName => String.t(),
-          :phone => String.t(),
-          :title => String.t()
+          :address => String.t() | nil,
+          :contactType => String.t() | nil,
+          :email => String.t() | nil,
+          :firstName => String.t() | nil,
+          :id => String.t() | nil,
+          :lastName => String.t() | nil,
+          :phone => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:address)

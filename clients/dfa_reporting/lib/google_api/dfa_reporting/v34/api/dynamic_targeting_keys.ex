@@ -62,7 +62,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.DynamicTargetingKeys do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_dynamic_targeting_keys_delete(
         connection,
         profile_id,
@@ -141,6 +141,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.DynamicTargetingKeys do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.DynamicTargetingKey.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_dynamic_targeting_keys_insert(
         connection,
@@ -215,6 +216,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.DynamicTargetingKeys do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.DynamicTargetingKeysListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_dynamic_targeting_keys_list(
         connection,

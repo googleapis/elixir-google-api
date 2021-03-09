@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.Country do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
-          :dartId => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :sslEnabled => boolean()
+          :countryCode => String.t() | nil,
+          :dartId => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :sslEnabled => boolean() | nil
         }
 
   field(:countryCode)

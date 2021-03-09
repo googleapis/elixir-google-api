@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.DimensionValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :matchType => String.t(),
-          :value => String.t()
+          :dimensionName => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :matchType => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:dimensionName)

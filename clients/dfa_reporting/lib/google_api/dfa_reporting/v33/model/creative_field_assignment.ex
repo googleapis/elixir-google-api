@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeFieldAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeFieldId => String.t(),
-          :creativeFieldValueId => String.t()
+          :creativeFieldId => String.t() | nil,
+          :creativeFieldValueId => String.t() | nil
         }
 
   field(:creativeFieldId)

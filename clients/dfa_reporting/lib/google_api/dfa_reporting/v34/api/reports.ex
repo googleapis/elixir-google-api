@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_reports_delete(
         connection,
         profile_id,
@@ -125,6 +125,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
   @spec dfareporting_reports_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_get(
         connection,
@@ -192,6 +193,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
   @spec dfareporting_reports_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -257,6 +259,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
   @spec dfareporting_reports_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ReportList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -329,6 +332,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_patch(
         connection,
@@ -398,6 +402,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
   @spec dfareporting_reports_run(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.File.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_run(
         connection,
@@ -473,6 +478,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_update(
         connection,
@@ -546,6 +552,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CompatibleFields.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_compatible_fields_query(
         connection,
@@ -623,6 +630,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.File.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_files_get(
         connection,
@@ -710,6 +718,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FileList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_reports_files_list(
         connection,

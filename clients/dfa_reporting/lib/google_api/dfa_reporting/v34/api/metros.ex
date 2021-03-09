@@ -54,6 +54,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Metros do
   @spec dfareporting_metros_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.MetrosListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_metros_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

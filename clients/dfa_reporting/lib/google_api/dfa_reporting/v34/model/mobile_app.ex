@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.MobileApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directory => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :publisherName => String.t(),
-          :title => String.t()
+          :directory => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :publisherName => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:directory)

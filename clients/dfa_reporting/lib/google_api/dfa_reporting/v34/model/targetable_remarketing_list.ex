@@ -38,18 +38,19 @@ defmodule GoogleApi.DFAReporting.V34.Model.TargetableRemarketingList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :active => boolean(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lifeSpan => String.t(),
-          :listSize => String.t(),
-          :listSource => String.t(),
-          :name => String.t(),
-          :subaccountId => String.t()
+          :accountId => String.t() | nil,
+          :active => boolean() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lifeSpan => String.t() | nil,
+          :listSize => String.t() | nil,
+          :listSource => String.t() | nil,
+          :name => String.t() | nil,
+          :subaccountId => String.t() | nil
         }
 
   field(:accountId)

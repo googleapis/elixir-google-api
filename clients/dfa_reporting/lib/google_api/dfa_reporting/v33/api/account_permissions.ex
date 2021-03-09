@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountPermissions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountPermission.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_account_permissions_get(
         connection,
@@ -132,6 +133,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountPermissions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountPermissionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_account_permissions_list(
         connection,

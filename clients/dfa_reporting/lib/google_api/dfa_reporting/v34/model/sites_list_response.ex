@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.SitesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :sites => list(GoogleApi.DFAReporting.V34.Model.Site.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :sites => list(GoogleApi.DFAReporting.V34.Model.Site.t()) | nil
         }
 
   field(:kind)

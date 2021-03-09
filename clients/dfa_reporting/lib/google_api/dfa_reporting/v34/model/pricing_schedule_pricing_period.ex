@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.PricingSchedulePricingPeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => Date.t(),
-          :pricingComment => String.t(),
-          :rateOrCostNanos => String.t(),
-          :startDate => Date.t(),
-          :units => String.t()
+          :endDate => Date.t() | nil,
+          :pricingComment => String.t() | nil,
+          :rateOrCostNanos => String.t() | nil,
+          :startDate => Date.t() | nil,
+          :units => String.t() | nil
         }
 
   field(:endDate, as: Date)

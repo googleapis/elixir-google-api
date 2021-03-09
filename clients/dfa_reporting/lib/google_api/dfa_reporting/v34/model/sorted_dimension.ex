@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.SortedDimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t(),
-          :sortOrder => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :sortOrder => String.t() | nil
         }
 
   field(:kind)

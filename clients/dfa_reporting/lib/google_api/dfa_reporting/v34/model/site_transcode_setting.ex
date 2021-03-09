@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabledVideoFormats => list(integer()),
-          :kind => String.t()
+          :enabledVideoFormats => list(integer()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:enabledVideoFormats, type: :list)

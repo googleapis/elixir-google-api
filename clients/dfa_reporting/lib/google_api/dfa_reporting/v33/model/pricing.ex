@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.Pricing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capCostType => String.t(),
-          :endDate => Date.t(),
-          :flights => list(GoogleApi.DFAReporting.V33.Model.Flight.t()),
-          :groupType => String.t(),
-          :pricingType => String.t(),
-          :startDate => Date.t()
+          :capCostType => String.t() | nil,
+          :endDate => Date.t() | nil,
+          :flights => list(GoogleApi.DFAReporting.V33.Model.Flight.t()) | nil,
+          :groupType => String.t() | nil,
+          :pricingType => String.t() | nil,
+          :startDate => Date.t() | nil
         }
 
   field(:capCostType)

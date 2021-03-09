@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.EncryptionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptionEntityId => String.t(),
-          :encryptionEntityType => String.t(),
-          :encryptionSource => String.t(),
-          :kind => String.t()
+          :encryptionEntityId => String.t() | nil,
+          :encryptionEntityType => String.t() | nil,
+          :encryptionSource => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:encryptionEntityId)

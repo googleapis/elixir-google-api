@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.LastModifiedInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :time => String.t()
+          :time => String.t() | nil
         }
 
   field(:time)

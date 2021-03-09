@@ -29,10 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.TargetableRemarketingListsListRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
           :targetableRemarketingLists =>
-            list(GoogleApi.DFAReporting.V33.Model.TargetableRemarketingList.t())
+            list(GoogleApi.DFAReporting.V33.Model.TargetableRemarketingList.t()) | nil
         }
 
   field(:kind)
