@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.Section do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => String.t(),
-          :widgets => list(GoogleApi.Chat.V1.Model.WidgetMarkup.t())
+          :header => String.t() | nil,
+          :widgets => list(GoogleApi.Chat.V1.Model.WidgetMarkup.t()) | nil
         }
 
   field(:header)

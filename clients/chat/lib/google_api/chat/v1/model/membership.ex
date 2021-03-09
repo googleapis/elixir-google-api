@@ -30,10 +30,10 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :member => GoogleApi.Chat.V1.Model.User.t(),
-          :name => String.t(),
-          :state => String.t()
+          :createTime => DateTime.t() | nil,
+          :member => GoogleApi.Chat.V1.Model.User.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

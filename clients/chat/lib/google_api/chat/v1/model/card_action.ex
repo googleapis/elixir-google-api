@@ -28,8 +28,8 @@ defmodule GoogleApi.Chat.V1.Model.CardAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionLabel => String.t(),
-          :onClick => GoogleApi.Chat.V1.Model.OnClick.t()
+          :actionLabel => String.t() | nil,
+          :onClick => GoogleApi.Chat.V1.Model.OnClick.t() | nil
         }
 
   field(:actionLabel)

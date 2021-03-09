@@ -30,10 +30,10 @@ defmodule GoogleApi.Chat.V1.Model.CardHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageStyle => String.t(),
-          :imageUrl => String.t(),
-          :subtitle => String.t(),
-          :title => String.t()
+          :imageStyle => String.t() | nil,
+          :imageUrl => String.t() | nil,
+          :subtitle => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:imageStyle)

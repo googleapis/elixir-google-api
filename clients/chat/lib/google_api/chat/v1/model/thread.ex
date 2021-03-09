@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.Thread do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)

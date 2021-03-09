@@ -31,11 +31,11 @@ defmodule GoogleApi.Chat.V1.Model.SlashCommandMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bot => GoogleApi.Chat.V1.Model.User.t(),
-          :commandId => String.t(),
-          :commandName => String.t(),
-          :triggersDialog => boolean(),
-          :type => String.t()
+          :bot => GoogleApi.Chat.V1.Model.User.t() | nil,
+          :commandId => String.t() | nil,
+          :commandName => String.t() | nil,
+          :triggersDialog => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:bot, as: GoogleApi.Chat.V1.Model.User)

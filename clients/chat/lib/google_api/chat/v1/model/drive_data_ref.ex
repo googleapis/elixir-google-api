@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.DriveDataRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveFileId => String.t()
+          :driveFileId => String.t() | nil
         }
 
   field(:driveFileId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.TextParagraph do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :text => String.t()
+          :text => String.t() | nil
         }
 
   field(:text)

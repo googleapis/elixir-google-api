@@ -31,11 +31,11 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :singleUserBotDm => boolean(),
-          :threaded => boolean(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :singleUserBotDm => boolean() | nil,
+          :threaded => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

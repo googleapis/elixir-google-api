@@ -54,7 +54,10 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec chat_rooms_messages(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def chat_rooms_messages(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -115,7 +118,10 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec chat_rooms_webhooks(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def chat_rooms_webhooks(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -176,7 +182,10 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec chat_rooms_conversations_messages(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def chat_rooms_conversations_messages(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

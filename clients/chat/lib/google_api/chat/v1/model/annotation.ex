@@ -31,11 +31,11 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :length => integer(),
-          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommandMetadata.t(),
-          :startIndex => integer(),
-          :type => String.t(),
-          :userMention => GoogleApi.Chat.V1.Model.UserMentionMetadata.t()
+          :length => integer() | nil,
+          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommandMetadata.t() | nil,
+          :startIndex => integer() | nil,
+          :type => String.t() | nil,
+          :userMention => GoogleApi.Chat.V1.Model.UserMentionMetadata.t() | nil
         }
 
   field(:length)
