@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.ExpirationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ttl => String.t()
+          :ttl => String.t() | nil
         }
 
   field(:ttl)

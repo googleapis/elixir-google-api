@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.AcknowledgeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackIds => list(String.t())
+          :ackIds => list(String.t()) | nil
         }
 
   field(:ackIds, type: :list)

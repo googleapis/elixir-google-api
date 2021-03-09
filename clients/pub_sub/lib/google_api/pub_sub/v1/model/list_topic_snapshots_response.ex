@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :snapshots => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :snapshots => list(String.t()) | nil
         }
 
   field(:nextPageToken)

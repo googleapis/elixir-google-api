@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subscription => GoogleApi.PubSub.V1.Model.Subscription.t(),
-          :updateMask => String.t()
+          :subscription => GoogleApi.PubSub.V1.Model.Subscription.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:subscription, as: GoogleApi.PubSub.V1.Model.Subscription)

@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshot => GoogleApi.PubSub.V1.Model.Snapshot.t(),
-          :updateMask => String.t()
+          :snapshot => GoogleApi.PubSub.V1.Model.Snapshot.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:snapshot, as: GoogleApi.PubSub.V1.Model.Snapshot)

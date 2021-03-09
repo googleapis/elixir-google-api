@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.ModifyPushConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t()
+          :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t() | nil
         }
 
   field(:pushConfig, as: GoogleApi.PubSub.V1.Model.PushConfig)

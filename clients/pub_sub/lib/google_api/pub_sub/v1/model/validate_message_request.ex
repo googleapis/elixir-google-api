@@ -30,10 +30,10 @@ defmodule GoogleApi.PubSub.V1.Model.ValidateMessageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encoding => String.t(),
-          :message => String.t(),
-          :name => String.t(),
-          :schema => GoogleApi.PubSub.V1.Model.Schema.t()
+          :encoding => String.t() | nil,
+          :message => String.t() | nil,
+          :name => String.t() | nil,
+          :schema => GoogleApi.PubSub.V1.Model.Schema.t() | nil
         }
 
   field(:encoding)

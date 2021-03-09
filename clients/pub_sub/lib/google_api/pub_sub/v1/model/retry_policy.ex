@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.RetryPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maximumBackoff => String.t(),
-          :minimumBackoff => String.t()
+          :maximumBackoff => String.t() | nil,
+          :minimumBackoff => String.t() | nil
         }
 
   field(:maximumBackoff)

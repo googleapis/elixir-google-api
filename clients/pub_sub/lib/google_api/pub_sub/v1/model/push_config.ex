@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSub.V1.Model.PushConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :oidcToken => GoogleApi.PubSub.V1.Model.OidcToken.t(),
-          :pushEndpoint => String.t()
+          :attributes => map() | nil,
+          :oidcToken => GoogleApi.PubSub.V1.Model.OidcToken.t() | nil,
+          :pushEndpoint => String.t() | nil
         }
 
   field(:attributes, type: :map)

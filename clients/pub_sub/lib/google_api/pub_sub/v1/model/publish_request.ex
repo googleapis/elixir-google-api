@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.PublishRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messages => list(GoogleApi.PubSub.V1.Model.PubsubMessage.t())
+          :messages => list(GoogleApi.PubSub.V1.Model.PubsubMessage.t()) | nil
         }
 
   field(:messages, as: GoogleApi.PubSub.V1.Model.PubsubMessage, type: :list)

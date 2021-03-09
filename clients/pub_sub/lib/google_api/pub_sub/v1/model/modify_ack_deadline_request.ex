@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.ModifyAckDeadlineRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ackDeadlineSeconds => integer(),
-          :ackIds => list(String.t())
+          :ackDeadlineSeconds => integer() | nil,
+          :ackIds => list(String.t()) | nil
         }
 
   field(:ackDeadlineSeconds)

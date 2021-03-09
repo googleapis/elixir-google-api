@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.PullRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxMessages => integer(),
-          :returnImmediately => boolean()
+          :maxMessages => integer() | nil,
+          :returnImmediately => boolean() | nil
         }
 
   field(:maxMessages)

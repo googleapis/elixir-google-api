@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.UpdateTopicRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :topic => GoogleApi.PubSub.V1.Model.Topic.t(),
-          :updateMask => String.t()
+          :topic => GoogleApi.PubSub.V1.Model.Topic.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:topic, as: GoogleApi.PubSub.V1.Model.Topic)

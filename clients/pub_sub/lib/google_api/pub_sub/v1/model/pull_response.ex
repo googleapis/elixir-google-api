@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.PullResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :receivedMessages => list(GoogleApi.PubSub.V1.Model.ReceivedMessage.t())
+          :receivedMessages => list(GoogleApi.PubSub.V1.Model.ReceivedMessage.t()) | nil
         }
 
   field(:receivedMessages, as: GoogleApi.PubSub.V1.Model.ReceivedMessage, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.PubSub.V1.Model.Snapshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expireTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :topic => String.t()
+          :expireTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:expireTime, as: DateTime)

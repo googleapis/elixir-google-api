@@ -29,9 +29,9 @@ defmodule GoogleApi.PubSub.V1.Model.Schema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :definition => String.t(),
-          :name => String.t(),
-          :type => String.t()
+          :definition => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:definition)

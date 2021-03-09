@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.ValidateSchemaRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :schema => GoogleApi.PubSub.V1.Model.Schema.t()
+          :schema => GoogleApi.PubSub.V1.Model.Schema.t() | nil
         }
 
   field(:schema, as: GoogleApi.PubSub.V1.Model.Schema)

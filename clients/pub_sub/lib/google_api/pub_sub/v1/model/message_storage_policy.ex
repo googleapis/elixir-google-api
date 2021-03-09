@@ -27,7 +27,7 @@ defmodule GoogleApi.PubSub.V1.Model.MessageStoragePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedPersistenceRegions => list(String.t())
+          :allowedPersistenceRegions => list(String.t()) | nil
         }
 
   field(:allowedPersistenceRegions, type: :list)

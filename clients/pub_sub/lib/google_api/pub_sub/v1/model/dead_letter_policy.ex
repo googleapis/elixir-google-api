@@ -28,8 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.DeadLetterPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deadLetterTopic => String.t(),
-          :maxDeliveryAttempts => integer()
+          :deadLetterTopic => String.t() | nil,
+          :maxDeliveryAttempts => integer() | nil
         }
 
   field(:deadLetterTopic)
