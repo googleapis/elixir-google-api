@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.StopClusterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterUuid => String.t(),
-          :requestId => String.t()
+          :clusterUuid => String.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:clusterUuid)

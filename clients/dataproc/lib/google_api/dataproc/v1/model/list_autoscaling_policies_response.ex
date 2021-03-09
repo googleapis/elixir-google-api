@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ListAutoscalingPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :policies => list(GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t())
+          :nextPageToken => String.t() | nil,
+          :policies => list(GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()) | nil
         }
 
   field(:nextPageToken)

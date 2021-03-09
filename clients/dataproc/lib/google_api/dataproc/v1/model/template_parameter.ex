@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.TemplateParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :fields => list(String.t()),
-          :name => String.t(),
-          :validation => GoogleApi.Dataproc.V1.Model.ParameterValidation.t()
+          :description => String.t() | nil,
+          :fields => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :validation => GoogleApi.Dataproc.V1.Model.ParameterValidation.t() | nil
         }
 
   field(:description)

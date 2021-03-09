@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataproc.V1.Model.PrestoJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientTags => list(String.t()),
-          :continueOnFailure => boolean(),
-          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t(),
-          :outputFormat => String.t(),
-          :properties => map(),
-          :queryFileUri => String.t(),
-          :queryList => GoogleApi.Dataproc.V1.Model.QueryList.t()
+          :clientTags => list(String.t()) | nil,
+          :continueOnFailure => boolean() | nil,
+          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t() | nil,
+          :outputFormat => String.t() | nil,
+          :properties => map() | nil,
+          :queryFileUri => String.t() | nil,
+          :queryList => GoogleApi.Dataproc.V1.Model.QueryList.t() | nil
         }
 
   field(:clientTags, type: :list)

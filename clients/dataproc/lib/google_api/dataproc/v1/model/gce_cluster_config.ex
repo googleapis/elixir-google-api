@@ -38,18 +38,18 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :internalIpOnly => boolean(),
-          :metadata => map(),
-          :networkUri => String.t(),
-          :nodeGroupAffinity => GoogleApi.Dataproc.V1.Model.NodeGroupAffinity.t(),
-          :privateIpv6GoogleAccess => String.t(),
-          :reservationAffinity => GoogleApi.Dataproc.V1.Model.ReservationAffinity.t(),
-          :serviceAccount => String.t(),
-          :serviceAccountScopes => list(String.t()),
-          :shieldedInstanceConfig => GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig.t(),
-          :subnetworkUri => String.t(),
-          :tags => list(String.t()),
-          :zoneUri => String.t()
+          :internalIpOnly => boolean() | nil,
+          :metadata => map() | nil,
+          :networkUri => String.t() | nil,
+          :nodeGroupAffinity => GoogleApi.Dataproc.V1.Model.NodeGroupAffinity.t() | nil,
+          :privateIpv6GoogleAccess => String.t() | nil,
+          :reservationAffinity => GoogleApi.Dataproc.V1.Model.ReservationAffinity.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :serviceAccountScopes => list(String.t()) | nil,
+          :shieldedInstanceConfig => GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :subnetworkUri => String.t() | nil,
+          :tags => list(String.t()) | nil,
+          :zoneUri => String.t() | nil
         }
 
   field(:internalIpOnly)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.Dataproc.V1.Model.Job.t()),
-          :nextPageToken => String.t()
+          :jobs => list(GoogleApi.Dataproc.V1.Model.Job.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:jobs, as: GoogleApi.Dataproc.V1.Model.Job, type: :list)

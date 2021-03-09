@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.EndpointConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableHttpPortAccess => boolean(),
-          :httpPorts => map()
+          :enableHttpPortAccess => boolean() | nil,
+          :httpPorts => map() | nil
         }
 
   field(:enableHttpPortAccess)

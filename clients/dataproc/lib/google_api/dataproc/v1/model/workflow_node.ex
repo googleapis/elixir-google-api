@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => String.t(),
-          :jobId => String.t(),
-          :prerequisiteStepIds => list(String.t()),
-          :state => String.t(),
-          :stepId => String.t()
+          :error => String.t() | nil,
+          :jobId => String.t() | nil,
+          :prerequisiteStepIds => list(String.t()) | nil,
+          :state => String.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:error)

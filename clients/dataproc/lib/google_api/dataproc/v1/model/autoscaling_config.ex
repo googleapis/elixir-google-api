@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.AutoscalingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policyUri => String.t()
+          :policyUri => String.t() | nil
         }
 
   field(:policyUri)

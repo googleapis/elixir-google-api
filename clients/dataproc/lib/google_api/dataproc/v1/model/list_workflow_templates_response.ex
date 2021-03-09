@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :templates => list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t())
+          :nextPageToken => String.t() | nil,
+          :templates => list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()) | nil
         }
 
   field(:nextPageToken)

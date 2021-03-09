@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ParameterValidation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regex => GoogleApi.Dataproc.V1.Model.RegexValidation.t(),
-          :values => GoogleApi.Dataproc.V1.Model.ValueValidation.t()
+          :regex => GoogleApi.Dataproc.V1.Model.RegexValidation.t() | nil,
+          :values => GoogleApi.Dataproc.V1.Model.ValueValidation.t() | nil
         }
 
   field(:regex, as: GoogleApi.Dataproc.V1.Model.RegexValidation)

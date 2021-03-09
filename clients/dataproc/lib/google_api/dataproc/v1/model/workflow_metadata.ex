@@ -40,20 +40,20 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterName => String.t(),
-          :clusterUuid => String.t(),
-          :createCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
-          :dagEndTime => DateTime.t(),
-          :dagStartTime => DateTime.t(),
-          :dagTimeout => String.t(),
-          :deleteCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
-          :endTime => DateTime.t(),
-          :graph => GoogleApi.Dataproc.V1.Model.WorkflowGraph.t(),
-          :parameters => map(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :template => String.t(),
-          :version => integer()
+          :clusterName => String.t() | nil,
+          :clusterUuid => String.t() | nil,
+          :createCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t() | nil,
+          :dagEndTime => DateTime.t() | nil,
+          :dagStartTime => DateTime.t() | nil,
+          :dagTimeout => String.t() | nil,
+          :deleteCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :graph => GoogleApi.Dataproc.V1.Model.WorkflowGraph.t() | nil,
+          :parameters => map() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :template => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:clusterName)

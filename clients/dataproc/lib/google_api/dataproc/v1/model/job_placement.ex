@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.JobPlacement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterLabels => map(),
-          :clusterName => String.t(),
-          :clusterUuid => String.t()
+          :clusterLabels => map() | nil,
+          :clusterName => String.t() | nil,
+          :clusterUuid => String.t() | nil
         }
 
   field(:clusterLabels, type: :map)

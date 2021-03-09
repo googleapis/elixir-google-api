@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.JobReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobId => String.t(),
-          :projectId => String.t()
+          :jobId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:jobId)

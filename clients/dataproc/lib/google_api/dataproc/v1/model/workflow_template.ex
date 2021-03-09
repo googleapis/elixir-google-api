@@ -36,16 +36,16 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :dagTimeout => String.t(),
-          :id => String.t(),
-          :jobs => list(GoogleApi.Dataproc.V1.Model.OrderedJob.t()),
-          :labels => map(),
-          :name => String.t(),
-          :parameters => list(GoogleApi.Dataproc.V1.Model.TemplateParameter.t()),
-          :placement => GoogleApi.Dataproc.V1.Model.WorkflowTemplatePlacement.t(),
-          :updateTime => DateTime.t(),
-          :version => integer()
+          :createTime => DateTime.t() | nil,
+          :dagTimeout => String.t() | nil,
+          :id => String.t() | nil,
+          :jobs => list(GoogleApi.Dataproc.V1.Model.OrderedJob.t()) | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :parameters => list(GoogleApi.Dataproc.V1.Model.TemplateParameter.t()) | nil,
+          :placement => GoogleApi.Dataproc.V1.Model.WorkflowTemplatePlacement.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :version => integer() | nil
         }
 
   field(:createTime, as: DateTime)

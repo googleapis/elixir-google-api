@@ -34,14 +34,14 @@ defmodule GoogleApi.Dataproc.V1.Model.PySparkJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :archiveUris => list(String.t()),
-          :args => list(String.t()),
-          :fileUris => list(String.t()),
-          :jarFileUris => list(String.t()),
-          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t(),
-          :mainPythonFileUri => String.t(),
-          :properties => map(),
-          :pythonFileUris => list(String.t())
+          :archiveUris => list(String.t()) | nil,
+          :args => list(String.t()) | nil,
+          :fileUris => list(String.t()) | nil,
+          :jarFileUris => list(String.t()) | nil,
+          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t() | nil,
+          :mainPythonFileUri => String.t() | nil,
+          :properties => map() | nil,
+          :pythonFileUris => list(String.t()) | nil
         }
 
   field(:archiveUris, type: :list)

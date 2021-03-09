@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.AcceleratorConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorCount => integer(),
-          :acceleratorTypeUri => String.t()
+          :acceleratorCount => integer() | nil,
+          :acceleratorTypeUri => String.t() | nil
         }
 
   field(:acceleratorCount)

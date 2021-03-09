@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkRJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :archiveUris => list(String.t()),
-          :args => list(String.t()),
-          :fileUris => list(String.t()),
-          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t(),
-          :mainRFileUri => String.t(),
-          :properties => map()
+          :archiveUris => list(String.t()) | nil,
+          :args => list(String.t()) | nil,
+          :fileUris => list(String.t()) | nil,
+          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t() | nil,
+          :mainRFileUri => String.t() | nil,
+          :properties => map() | nil
         }
 
   field(:archiveUris, type: :list)

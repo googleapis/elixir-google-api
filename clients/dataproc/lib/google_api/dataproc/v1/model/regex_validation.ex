@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RegexValidation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regexes => list(String.t())
+          :regexes => list(String.t()) | nil
         }
 
   field(:regexes, type: :list)

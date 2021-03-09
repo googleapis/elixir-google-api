@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.JobStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => String.t(),
-          :state => String.t(),
-          :stateStartTime => DateTime.t(),
-          :substate => String.t()
+          :details => String.t() | nil,
+          :state => String.t() | nil,
+          :stateStartTime => DateTime.t() | nil,
+          :substate => String.t() | nil
         }
 
   field(:details)

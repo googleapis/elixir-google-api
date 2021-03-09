@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.SoftwareConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageVersion => String.t(),
-          :optionalComponents => list(String.t()),
-          :properties => map()
+          :imageVersion => String.t() | nil,
+          :optionalComponents => list(String.t()) | nil,
+          :properties => map() | nil
         }
 
   field(:imageVersion)

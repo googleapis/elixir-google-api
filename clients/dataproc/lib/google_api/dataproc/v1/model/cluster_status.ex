@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detail => String.t(),
-          :state => String.t(),
-          :stateStartTime => DateTime.t(),
-          :substate => String.t()
+          :detail => String.t() | nil,
+          :state => String.t() | nil,
+          :stateStartTime => DateTime.t() | nil,
+          :substate => String.t() | nil
         }
 
   field(:detail)

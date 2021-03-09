@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.YarnApplication do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :progress => number(),
-          :state => String.t(),
-          :trackingUrl => String.t()
+          :name => String.t() | nil,
+          :progress => number() | nil,
+          :state => String.t() | nil,
+          :trackingUrl => String.t() | nil
         }
 
   field(:name)

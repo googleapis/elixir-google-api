@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.ManagedCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterName => String.t(),
-          :config => GoogleApi.Dataproc.V1.Model.ClusterConfig.t(),
-          :labels => map()
+          :clusterName => String.t() | nil,
+          :config => GoogleApi.Dataproc.V1.Model.ClusterConfig.t() | nil,
+          :labels => map() | nil
         }
 
   field(:clusterName)

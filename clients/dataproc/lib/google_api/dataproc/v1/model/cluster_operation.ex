@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => String.t(),
-          :operationId => String.t()
+          :done => boolean() | nil,
+          :error => String.t() | nil,
+          :operationId => String.t() | nil
         }
 
   field(:done)

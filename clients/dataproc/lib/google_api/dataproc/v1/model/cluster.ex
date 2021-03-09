@@ -34,14 +34,14 @@ defmodule GoogleApi.Dataproc.V1.Model.Cluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterName => String.t(),
-          :clusterUuid => String.t(),
-          :config => GoogleApi.Dataproc.V1.Model.ClusterConfig.t(),
-          :labels => map(),
-          :metrics => GoogleApi.Dataproc.V1.Model.ClusterMetrics.t(),
-          :projectId => String.t(),
-          :status => GoogleApi.Dataproc.V1.Model.ClusterStatus.t(),
-          :statusHistory => list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t())
+          :clusterName => String.t() | nil,
+          :clusterUuid => String.t() | nil,
+          :config => GoogleApi.Dataproc.V1.Model.ClusterConfig.t() | nil,
+          :labels => map() | nil,
+          :metrics => GoogleApi.Dataproc.V1.Model.ClusterMetrics.t() | nil,
+          :projectId => String.t() | nil,
+          :status => GoogleApi.Dataproc.V1.Model.ClusterStatus.t() | nil,
+          :statusHistory => list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t()) | nil
         }
 
   field(:clusterName)

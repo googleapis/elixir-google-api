@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterLabels => map(),
-          :zone => String.t()
+          :clusterLabels => map() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterLabels, type: :map)

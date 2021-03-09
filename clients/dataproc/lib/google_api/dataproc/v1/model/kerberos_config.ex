@@ -41,21 +41,21 @@ defmodule GoogleApi.Dataproc.V1.Model.KerberosConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crossRealmTrustAdminServer => String.t(),
-          :crossRealmTrustKdc => String.t(),
-          :crossRealmTrustRealm => String.t(),
-          :crossRealmTrustSharedPasswordUri => String.t(),
-          :enableKerberos => boolean(),
-          :kdcDbKeyUri => String.t(),
-          :keyPasswordUri => String.t(),
-          :keystorePasswordUri => String.t(),
-          :keystoreUri => String.t(),
-          :kmsKeyUri => String.t(),
-          :realm => String.t(),
-          :rootPrincipalPasswordUri => String.t(),
-          :tgtLifetimeHours => integer(),
-          :truststorePasswordUri => String.t(),
-          :truststoreUri => String.t()
+          :crossRealmTrustAdminServer => String.t() | nil,
+          :crossRealmTrustKdc => String.t() | nil,
+          :crossRealmTrustRealm => String.t() | nil,
+          :crossRealmTrustSharedPasswordUri => String.t() | nil,
+          :enableKerberos => boolean() | nil,
+          :kdcDbKeyUri => String.t() | nil,
+          :keyPasswordUri => String.t() | nil,
+          :keystorePasswordUri => String.t() | nil,
+          :keystoreUri => String.t() | nil,
+          :kmsKeyUri => String.t() | nil,
+          :realm => String.t() | nil,
+          :rootPrincipalPasswordUri => String.t() | nil,
+          :tgtLifetimeHours => integer() | nil,
+          :truststorePasswordUri => String.t() | nil,
+          :truststoreUri => String.t() | nil
         }
 
   field(:crossRealmTrustAdminServer)

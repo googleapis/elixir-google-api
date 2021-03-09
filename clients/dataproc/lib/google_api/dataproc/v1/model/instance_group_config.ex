@@ -37,17 +37,17 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t()),
-          :diskConfig => GoogleApi.Dataproc.V1.Model.DiskConfig.t(),
-          :imageUri => String.t(),
-          :instanceNames => list(String.t()),
-          :instanceReferences => list(GoogleApi.Dataproc.V1.Model.InstanceReference.t()),
-          :isPreemptible => boolean(),
-          :machineTypeUri => String.t(),
-          :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t(),
-          :minCpuPlatform => String.t(),
-          :numInstances => integer(),
-          :preemptibility => String.t()
+          :accelerators => list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t()) | nil,
+          :diskConfig => GoogleApi.Dataproc.V1.Model.DiskConfig.t() | nil,
+          :imageUri => String.t() | nil,
+          :instanceNames => list(String.t()) | nil,
+          :instanceReferences => list(GoogleApi.Dataproc.V1.Model.InstanceReference.t()) | nil,
+          :isPreemptible => boolean() | nil,
+          :machineTypeUri => String.t() | nil,
+          :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t() | nil,
+          :minCpuPlatform => String.t() | nil,
+          :numInstances => integer() | nil,
+          :preemptibility => String.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Dataproc.V1.Model.AcceleratorConfig, type: :list)

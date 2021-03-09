@@ -62,6 +62,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_create(
         connection,
@@ -135,7 +136,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_delete(
         connection,
         projects_id,
@@ -216,6 +221,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get(
         connection,
@@ -296,7 +302,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get_iam_policy(
         connection,
         projects_id,
@@ -377,6 +386,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListAutoscalingPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_list(
         connection,
@@ -455,7 +465,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_set_iam_policy(
         connection,
         projects_id,
@@ -537,6 +550,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_test_iam_permissions(
         connection,
@@ -621,6 +635,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_update(
         connection,
@@ -702,6 +717,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_create(
         connection,
@@ -776,7 +792,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_delete(
         connection,
         projects_id,
@@ -859,6 +879,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get(
         connection,
@@ -940,7 +961,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get_iam_policy(
         connection,
         projects_id,
@@ -1022,6 +1046,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate(
         connection,
@@ -1103,6 +1128,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate_inline(
         connection,
@@ -1183,6 +1209,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_list(
         connection,
@@ -1261,7 +1288,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_set_iam_policy(
         connection,
         projects_id,
@@ -1343,6 +1373,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_test_iam_permissions(
         connection,
@@ -1427,6 +1458,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_update(
         connection,
@@ -1508,6 +1540,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_create(
         connection,
@@ -1581,7 +1614,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_delete(
         connection,
         projects_id,
@@ -1662,6 +1699,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get(
         connection,
@@ -1742,7 +1780,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get_iam_policy(
         connection,
         projects_id,
@@ -1823,6 +1864,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListAutoscalingPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_list(
         connection,
@@ -1901,7 +1943,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_set_iam_policy(
         connection,
         projects_id,
@@ -1983,6 +2028,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_test_iam_permissions(
         connection,
@@ -2067,6 +2113,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_update(
         connection,
@@ -2149,6 +2196,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_create(
         connection,
@@ -2228,6 +2276,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_delete(
         connection,
@@ -2308,6 +2357,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_diagnose(
         connection,
@@ -2387,7 +2437,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Cluster.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_get(
         connection,
         project_id,
@@ -2463,7 +2516,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_get_iam_policy(
         connection,
         projects_id,
@@ -2545,6 +2601,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_inject_credentials(
         connection,
@@ -2627,6 +2684,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_list(
         connection,
@@ -2709,6 +2767,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_patch(
         connection,
@@ -2789,7 +2848,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_set_iam_policy(
         connection,
         projects_id,
@@ -2871,6 +2933,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_start(
         connection,
@@ -2950,6 +3013,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_stop(
         connection,
@@ -3029,6 +3093,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_clusters_test_iam_permissions(
         connection,
@@ -3110,7 +3175,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_cancel(
         connection,
         project_id,
@@ -3185,7 +3254,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_delete(
         connection,
         project_id,
@@ -3259,7 +3332,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_get(
         connection,
         project_id,
@@ -3335,7 +3412,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_get_iam_policy(
         connection,
         projects_id,
@@ -3419,6 +3499,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_jobs_list(
         connection,
@@ -3498,7 +3579,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_patch(
         connection,
         project_id,
@@ -3576,7 +3661,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_set_iam_policy(
         connection,
         projects_id,
@@ -3653,7 +3741,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_submit(
         connection,
         project_id,
@@ -3728,6 +3820,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_jobs_submit_as_operation(
         connection,
@@ -3805,6 +3898,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_jobs_test_iam_permissions(
         connection,
@@ -3885,7 +3979,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_cancel(
         connection,
         projects_id,
@@ -3962,7 +4060,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_delete(
         connection,
         projects_id,
@@ -4039,6 +4141,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_operations_get(
         connection,
@@ -4115,7 +4218,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_get_iam_policy(
         connection,
         projects_id,
@@ -4197,6 +4303,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_operations_list(
         connection,
@@ -4274,7 +4381,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_set_iam_policy(
         connection,
         projects_id,
@@ -4356,6 +4466,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_operations_test_iam_permissions(
         connection,
@@ -4438,6 +4549,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_create(
         connection,
@@ -4512,7 +4624,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_delete(
         connection,
         projects_id,
@@ -4595,6 +4711,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get(
         connection,
@@ -4676,7 +4793,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get_iam_policy(
         connection,
         projects_id,
@@ -4758,6 +4878,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate(
         connection,
@@ -4839,6 +4960,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate_inline(
         connection,
@@ -4919,6 +5041,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_list(
         connection,
@@ -4997,7 +5120,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_set_iam_policy(
         connection,
         projects_id,
@@ -5079,6 +5205,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_test_iam_permissions(
         connection,
@@ -5163,6 +5290,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_update(
         connection,

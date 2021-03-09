@@ -40,21 +40,21 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalingConfig => GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t(),
-          :configBucket => String.t(),
-          :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t(),
-          :endpointConfig => GoogleApi.Dataproc.V1.Model.EndpointConfig.t(),
-          :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t(),
+          :autoscalingConfig => GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t() | nil,
+          :configBucket => String.t() | nil,
+          :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t() | nil,
+          :endpointConfig => GoogleApi.Dataproc.V1.Model.EndpointConfig.t() | nil,
+          :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t() | nil,
           :initializationActions =>
-            list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
-          :lifecycleConfig => GoogleApi.Dataproc.V1.Model.LifecycleConfig.t(),
-          :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
-          :metastoreConfig => GoogleApi.Dataproc.V1.Model.MetastoreConfig.t(),
-          :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
-          :securityConfig => GoogleApi.Dataproc.V1.Model.SecurityConfig.t(),
-          :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t(),
-          :tempBucket => String.t(),
-          :workerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t()
+            list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()) | nil,
+          :lifecycleConfig => GoogleApi.Dataproc.V1.Model.LifecycleConfig.t() | nil,
+          :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t() | nil,
+          :metastoreConfig => GoogleApi.Dataproc.V1.Model.MetastoreConfig.t() | nil,
+          :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t() | nil,
+          :securityConfig => GoogleApi.Dataproc.V1.Model.SecurityConfig.t() | nil,
+          :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t() | nil,
+          :tempBucket => String.t() | nil,
+          :workerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t() | nil
         }
 
   field(:autoscalingConfig, as: GoogleApi.Dataproc.V1.Model.AutoscalingConfig)

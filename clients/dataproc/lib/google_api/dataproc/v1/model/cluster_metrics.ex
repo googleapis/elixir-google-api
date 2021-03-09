@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hdfsMetrics => map(),
-          :yarnMetrics => map()
+          :hdfsMetrics => map() | nil,
+          :yarnMetrics => map() | nil
         }
 
   field(:hdfsMetrics, type: :map)

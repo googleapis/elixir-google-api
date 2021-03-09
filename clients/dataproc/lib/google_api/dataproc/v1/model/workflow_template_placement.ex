@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplatePlacement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterSelector => GoogleApi.Dataproc.V1.Model.ClusterSelector.t(),
-          :managedCluster => GoogleApi.Dataproc.V1.Model.ManagedCluster.t()
+          :clusterSelector => GoogleApi.Dataproc.V1.Model.ClusterSelector.t() | nil,
+          :managedCluster => GoogleApi.Dataproc.V1.Model.ManagedCluster.t() | nil
         }
 
   field(:clusterSelector, as: GoogleApi.Dataproc.V1.Model.ClusterSelector)

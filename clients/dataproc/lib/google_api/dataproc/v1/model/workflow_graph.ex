@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowGraph do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodes => list(GoogleApi.Dataproc.V1.Model.WorkflowNode.t())
+          :nodes => list(GoogleApi.Dataproc.V1.Model.WorkflowNode.t()) | nil
         }
 
   field(:nodes, as: GoogleApi.Dataproc.V1.Model.WorkflowNode, type: :list)
