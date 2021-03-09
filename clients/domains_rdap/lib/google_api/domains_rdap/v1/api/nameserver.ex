@@ -54,6 +54,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Nameserver do
   @spec domainsrdap_nameserver_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domainsrdap_nameserver_get(connection, nameserver_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

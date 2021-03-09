@@ -54,6 +54,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Domain do
   @spec domainsrdap_domain_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domainsrdap_domain_get(connection, domain_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
