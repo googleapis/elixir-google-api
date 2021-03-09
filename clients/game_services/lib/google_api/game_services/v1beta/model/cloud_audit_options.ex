@@ -29,8 +29,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.CloudAuditOptions do
 
   @type t :: %__MODULE__{
           :authorizationLoggingOptions =>
-            GoogleApi.GameServices.V1beta.Model.AuthorizationLoggingOptions.t(),
-          :logName => String.t()
+            GoogleApi.GameServices.V1beta.Model.AuthorizationLoggingOptions.t() | nil,
+          :logName => String.t() | nil
         }
 
   field(:authorizationLoggingOptions,

@@ -33,13 +33,14 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectionInfo => GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :connectionInfo =>
+            GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:connectionInfo, as: GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo)

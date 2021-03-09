@@ -29,9 +29,10 @@ defmodule GoogleApi.GameServices.V1beta.Model.ListGameServerClustersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gameServerClusters => list(GoogleApi.GameServices.V1beta.Model.GameServerCluster.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :gameServerClusters =>
+            list(GoogleApi.GameServices.V1beta.Model.GameServerCluster.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:gameServerClusters,

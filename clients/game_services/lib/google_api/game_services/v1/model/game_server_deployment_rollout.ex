@@ -32,13 +32,13 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerDeploymentRollout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :defaultGameServerConfig => String.t(),
-          :etag => String.t(),
+          :createTime => DateTime.t() | nil,
+          :defaultGameServerConfig => String.t() | nil,
+          :etag => String.t() | nil,
           :gameServerConfigOverrides =>
-            list(GoogleApi.GameServices.V1.Model.GameServerConfigOverride.t()),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+            list(GoogleApi.GameServices.V1.Model.GameServerConfigOverride.t()) | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.PreviewCreateGameServerClusterResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :targetState => GoogleApi.GameServices.V1beta.Model.TargetState.t()
+          :etag => String.t() | nil,
+          :targetState => GoogleApi.GameServices.V1beta.Model.TargetState.t() | nil
         }
 
   field(:etag)

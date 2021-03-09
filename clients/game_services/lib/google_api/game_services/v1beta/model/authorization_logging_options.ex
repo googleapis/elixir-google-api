@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.AuthorizationLoggingOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissionType => String.t()
+          :permissionType => String.t() | nil
         }
 
   field(:permissionType)

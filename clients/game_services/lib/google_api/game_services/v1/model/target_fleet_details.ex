@@ -28,8 +28,8 @@ defmodule GoogleApi.GameServices.V1.Model.TargetFleetDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscaler => GoogleApi.GameServices.V1.Model.TargetFleetAutoscaler.t(),
-          :fleet => GoogleApi.GameServices.V1.Model.TargetFleet.t()
+          :autoscaler => GoogleApi.GameServices.V1.Model.TargetFleetAutoscaler.t() | nil,
+          :fleet => GoogleApi.GameServices.V1.Model.TargetFleet.t() | nil
         }
 
   field(:autoscaler, as: GoogleApi.GameServices.V1.Model.TargetFleetAutoscaler)

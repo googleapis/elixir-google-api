@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.RealmSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :realms => list(String.t())
+          :realms => list(String.t()) | nil
         }
 
   field(:realms, type: :list)

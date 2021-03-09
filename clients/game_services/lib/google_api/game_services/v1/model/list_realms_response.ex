@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1.Model.ListRealmsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :realms => list(GoogleApi.GameServices.V1.Model.Realm.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :realms => list(GoogleApi.GameServices.V1.Model.Realm.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

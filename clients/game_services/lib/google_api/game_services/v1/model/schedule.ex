@@ -30,10 +30,10 @@ defmodule GoogleApi.GameServices.V1.Model.Schedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cronJobDuration => String.t(),
-          :cronSpec => String.t(),
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :cronJobDuration => String.t() | nil,
+          :cronSpec => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:cronJobDuration)

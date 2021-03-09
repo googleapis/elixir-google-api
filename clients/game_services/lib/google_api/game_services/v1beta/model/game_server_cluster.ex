@@ -34,15 +34,15 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocationPriority => String.t(),
+          :allocationPriority => String.t() | nil,
           :connectionInfo =>
-            GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:allocationPriority)

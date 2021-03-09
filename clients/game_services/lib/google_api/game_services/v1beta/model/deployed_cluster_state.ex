@@ -28,8 +28,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.DeployedClusterState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cluster => String.t(),
-          :fleetDetails => list(GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails.t())
+          :cluster => String.t() | nil,
+          :fleetDetails =>
+            list(GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails.t()) | nil
         }
 
   field(:cluster)

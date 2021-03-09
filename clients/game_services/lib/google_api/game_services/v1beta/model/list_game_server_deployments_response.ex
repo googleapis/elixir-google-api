@@ -30,9 +30,9 @@ defmodule GoogleApi.GameServices.V1beta.Model.ListGameServerDeploymentsResponse 
 
   @type t :: %__MODULE__{
           :gameServerDeployments =>
-            list(GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+            list(GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:gameServerDeployments,

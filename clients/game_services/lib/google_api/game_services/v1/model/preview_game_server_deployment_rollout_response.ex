@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1.Model.PreviewGameServerDeploymentRolloutResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :targetState => GoogleApi.GameServices.V1.Model.TargetState.t(),
-          :unavailable => list(String.t())
+          :etag => String.t() | nil,
+          :targetState => GoogleApi.GameServices.V1.Model.TargetState.t() | nil,
+          :unavailable => list(String.t()) | nil
         }
 
   field(:etag)

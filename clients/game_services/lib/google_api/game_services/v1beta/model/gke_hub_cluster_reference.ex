@@ -27,7 +27,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.GkeHubClusterReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :membership => String.t()
+          :membership => String.t() | nil
         }
 
   field(:membership)

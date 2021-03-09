@@ -30,10 +30,10 @@ defmodule GoogleApi.GameServices.V1beta.Model.Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindingId => String.t(),
-          :condition => GoogleApi.GameServices.V1beta.Model.Expr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :bindingId => String.t() | nil,
+          :condition => GoogleApi.GameServices.V1beta.Model.Expr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:bindingId)

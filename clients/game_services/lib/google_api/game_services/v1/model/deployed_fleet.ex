@@ -30,10 +30,10 @@ defmodule GoogleApi.GameServices.V1.Model.DeployedFleet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fleet => String.t(),
-          :fleetSpec => String.t(),
-          :specSource => GoogleApi.GameServices.V1.Model.SpecSource.t(),
-          :status => GoogleApi.GameServices.V1.Model.DeployedFleetStatus.t()
+          :fleet => String.t() | nil,
+          :fleetSpec => String.t() | nil,
+          :specSource => GoogleApi.GameServices.V1.Model.SpecSource.t() | nil,
+          :status => GoogleApi.GameServices.V1.Model.DeployedFleetStatus.t() | nil
         }
 
   field(:fleet)

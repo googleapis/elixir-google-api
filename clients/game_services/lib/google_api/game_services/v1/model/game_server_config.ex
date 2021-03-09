@@ -33,13 +33,13 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :fleetConfigs => list(GoogleApi.GameServices.V1.Model.FleetConfig.t()),
-          :labels => map(),
-          :name => String.t(),
-          :scalingConfigs => list(GoogleApi.GameServices.V1.Model.ScalingConfig.t()),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :fleetConfigs => list(GoogleApi.GameServices.V1.Model.FleetConfig.t()) | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :scalingConfigs => list(GoogleApi.GameServices.V1.Model.ScalingConfig.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

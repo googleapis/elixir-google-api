@@ -29,9 +29,9 @@ defmodule GoogleApi.GameServices.V1.Model.LogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudAudit => GoogleApi.GameServices.V1.Model.CloudAuditOptions.t(),
-          :counter => GoogleApi.GameServices.V1.Model.CounterOptions.t(),
-          :dataAccess => GoogleApi.GameServices.V1.Model.DataAccessOptions.t()
+          :cloudAudit => GoogleApi.GameServices.V1.Model.CloudAuditOptions.t() | nil,
+          :counter => GoogleApi.GameServices.V1.Model.CounterOptions.t() | nil,
+          :dataAccess => GoogleApi.GameServices.V1.Model.DataAccessOptions.t() | nil
         }
 
   field(:cloudAudit, as: GoogleApi.GameServices.V1.Model.CloudAuditOptions)

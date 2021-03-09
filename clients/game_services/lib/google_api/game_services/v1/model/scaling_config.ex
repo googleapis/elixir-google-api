@@ -30,10 +30,10 @@ defmodule GoogleApi.GameServices.V1.Model.ScalingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fleetAutoscalerSpec => String.t(),
-          :name => String.t(),
-          :schedules => list(GoogleApi.GameServices.V1.Model.Schedule.t()),
-          :selectors => list(GoogleApi.GameServices.V1.Model.LabelSelector.t())
+          :fleetAutoscalerSpec => String.t() | nil,
+          :name => String.t() | nil,
+          :schedules => list(GoogleApi.GameServices.V1.Model.Schedule.t()) | nil,
+          :selectors => list(GoogleApi.GameServices.V1.Model.LabelSelector.t()) | nil
         }
 
   field(:fleetAutoscalerSpec)
