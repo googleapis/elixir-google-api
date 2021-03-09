@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.SourceReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :repository => String.t(),
-          :revisionId => String.t()
+          :repository => String.t() | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:repository)

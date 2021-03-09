@@ -29,9 +29,9 @@ defmodule GoogleApi.Logging.V2.Model.TailLogEntriesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bufferWindow => String.t(),
-          :filter => String.t(),
-          :resourceNames => list(String.t())
+          :bufferWindow => String.t() | nil,
+          :filter => String.t() | nil,
+          :resourceNames => list(String.t()) | nil
         }
 
   field(:bufferWindow)

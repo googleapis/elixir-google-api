@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.SuppressionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t(),
-          :suppressedCount => integer()
+          :reason => String.t() | nil,
+          :suppressedCount => integer() | nil
         }
 
   field(:reason)

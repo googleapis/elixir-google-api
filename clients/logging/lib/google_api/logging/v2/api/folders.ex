@@ -55,6 +55,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   @spec logging_folders_exclusions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_exclusions_create(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -119,7 +120,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_exclusions_delete(
         connection,
         folders_id,
@@ -192,6 +197,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_exclusions_get(
         connection,
@@ -260,6 +266,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   @spec logging_folders_exclusions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_exclusions_list(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -330,6 +337,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_exclusions_patch(
         connection,
@@ -403,7 +411,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_get(
         connection,
         folders_id,
@@ -472,6 +483,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   @spec logging_folders_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_locations_list(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -541,7 +553,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_create(
         connection,
         folders_id,
@@ -615,7 +630,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_delete(
         connection,
         folders_id,
@@ -690,7 +709,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_get(
         connection,
         folders_id,
@@ -767,6 +789,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_locations_buckets_list(
         connection,
@@ -844,7 +867,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_patch(
         connection,
         folders_id,
@@ -921,7 +947,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_undelete(
         connection,
         folders_id,
@@ -1002,7 +1032,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_views_create(
         connection,
         folders_id,
@@ -1083,7 +1116,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_views_delete(
         connection,
         folders_id,
@@ -1165,7 +1202,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_views_get(
         connection,
         folders_id,
@@ -1249,6 +1289,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.ListViewsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_locations_buckets_views_list(
         connection,
@@ -1333,7 +1374,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_locations_buckets_views_patch(
         connection,
         folders_id,
@@ -1412,7 +1456,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_logs_delete(
         connection,
         folders_id,
@@ -1481,6 +1529,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   @spec logging_folders_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_logs_list(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1543,7 +1592,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec logging_folders_sinks_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_sinks_create(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1608,7 +1660,11 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_sinks_delete(
         connection,
         folders_id,
@@ -1679,7 +1735,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_sinks_get(
         connection,
         folders_id,
@@ -1747,6 +1806,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   @spec logging_folders_sinks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_folders_sinks_list(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1816,7 +1876,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_sinks_patch(
         connection,
         folders_id,
@@ -1893,7 +1956,10 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_folders_sinks_update(
         connection,
         folders_id,

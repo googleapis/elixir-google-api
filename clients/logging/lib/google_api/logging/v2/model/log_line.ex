@@ -30,10 +30,10 @@ defmodule GoogleApi.Logging.V2.Model.LogLine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logMessage => String.t(),
-          :severity => String.t(),
-          :sourceLocation => GoogleApi.Logging.V2.Model.SourceLocation.t(),
-          :time => DateTime.t()
+          :logMessage => String.t() | nil,
+          :severity => String.t() | nil,
+          :sourceLocation => GoogleApi.Logging.V2.Model.SourceLocation.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:logMessage)

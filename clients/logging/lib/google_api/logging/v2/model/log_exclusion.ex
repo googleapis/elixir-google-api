@@ -32,12 +32,12 @@ defmodule GoogleApi.Logging.V2.Model.LogExclusion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :disabled => boolean(),
-          :filter => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :disabled => boolean() | nil,
+          :filter => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

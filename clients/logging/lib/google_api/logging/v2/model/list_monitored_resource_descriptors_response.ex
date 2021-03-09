@@ -28,8 +28,9 @@ defmodule GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resourceDescriptors => list(GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor.t())
+          :nextPageToken => String.t() | nil,
+          :resourceDescriptors =>
+            list(GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor.t()) | nil
         }
 
   field(:nextPageToken)

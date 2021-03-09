@@ -32,12 +32,12 @@ defmodule GoogleApi.Logging.V2.Model.WriteLogEntriesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dryRun => boolean(),
-          :entries => list(GoogleApi.Logging.V2.Model.LogEntry.t()),
-          :labels => map(),
-          :logName => String.t(),
-          :partialSuccess => boolean(),
-          :resource => GoogleApi.Logging.V2.Model.MonitoredResource.t()
+          :dryRun => boolean() | nil,
+          :entries => list(GoogleApi.Logging.V2.Model.LogEntry.t()) | nil,
+          :labels => map() | nil,
+          :logName => String.t() | nil,
+          :partialSuccess => boolean() | nil,
+          :resource => GoogleApi.Logging.V2.Model.MonitoredResource.t() | nil
         }
 
   field(:dryRun)

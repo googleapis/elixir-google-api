@@ -38,18 +38,18 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigqueryOptions => GoogleApi.Logging.V2.Model.BigQueryOptions.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :destination => String.t(),
-          :disabled => boolean(),
-          :exclusions => list(GoogleApi.Logging.V2.Model.LogExclusion.t()),
-          :filter => String.t(),
-          :includeChildren => boolean(),
-          :name => String.t(),
-          :outputVersionFormat => String.t(),
-          :updateTime => DateTime.t(),
-          :writerIdentity => String.t()
+          :bigqueryOptions => GoogleApi.Logging.V2.Model.BigQueryOptions.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :destination => String.t() | nil,
+          :disabled => boolean() | nil,
+          :exclusions => list(GoogleApi.Logging.V2.Model.LogExclusion.t()) | nil,
+          :filter => String.t() | nil,
+          :includeChildren => boolean() | nil,
+          :name => String.t() | nil,
+          :outputVersionFormat => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :writerIdentity => String.t() | nil
         }
 
   field(:bigqueryOptions, as: GoogleApi.Logging.V2.Model.BigQueryOptions)

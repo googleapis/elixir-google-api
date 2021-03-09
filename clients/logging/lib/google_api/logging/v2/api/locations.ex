@@ -61,7 +61,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_get(
         connection,
         v2_id,
@@ -133,6 +136,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_locations_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -205,7 +209,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_create(
         connection,
         v2_id,
@@ -283,7 +290,11 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_delete(
         connection,
         v2_id,
@@ -362,7 +373,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_get(
         connection,
         v2_id,
@@ -443,6 +457,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_locations_buckets_list(
         connection,
@@ -524,7 +539,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_patch(
         connection,
         v2_id,
@@ -605,7 +623,11 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_undelete(
         connection,
         v2_id,
@@ -687,7 +709,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_views_create(
         connection,
         v2_id,
@@ -769,7 +794,11 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_views_delete(
         connection,
         v2_id,
@@ -855,7 +884,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_views_get(
         connection,
         v2_id,
@@ -943,6 +975,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.ListViewsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def logging_locations_buckets_views_list(
         connection,
@@ -1028,7 +1061,10 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogView.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def logging_locations_buckets_views_patch(
         connection,
         v2_id,

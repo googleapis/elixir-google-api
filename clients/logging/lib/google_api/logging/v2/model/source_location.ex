@@ -29,9 +29,9 @@ defmodule GoogleApi.Logging.V2.Model.SourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :file => String.t(),
-          :functionName => String.t(),
-          :line => String.t()
+          :file => String.t() | nil,
+          :functionName => String.t() | nil,
+          :line => String.t() | nil
         }
 
   field(:file)

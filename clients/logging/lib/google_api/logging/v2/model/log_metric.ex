@@ -36,16 +36,16 @@ defmodule GoogleApi.Logging.V2.Model.LogMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketOptions => GoogleApi.Logging.V2.Model.BucketOptions.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :filter => String.t(),
-          :labelExtractors => map(),
-          :metricDescriptor => GoogleApi.Logging.V2.Model.MetricDescriptor.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t(),
-          :valueExtractor => String.t(),
-          :version => String.t()
+          :bucketOptions => GoogleApi.Logging.V2.Model.BucketOptions.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :filter => String.t() | nil,
+          :labelExtractors => map() | nil,
+          :metricDescriptor => GoogleApi.Logging.V2.Model.MetricDescriptor.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :valueExtractor => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:bucketOptions, as: GoogleApi.Logging.V2.Model.BucketOptions)

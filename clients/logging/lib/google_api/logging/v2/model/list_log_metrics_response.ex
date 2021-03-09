@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.ListLogMetricsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metrics => list(GoogleApi.Logging.V2.Model.LogMetric.t()),
-          :nextPageToken => String.t()
+          :metrics => list(GoogleApi.Logging.V2.Model.LogMetric.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:metrics, as: GoogleApi.Logging.V2.Model.LogMetric, type: :list)

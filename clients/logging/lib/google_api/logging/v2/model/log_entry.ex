@@ -43,23 +43,23 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpRequest => GoogleApi.Logging.V2.Model.HttpRequest.t(),
-          :insertId => String.t(),
-          :jsonPayload => map(),
-          :labels => map(),
-          :logName => String.t(),
-          :metadata => GoogleApi.Logging.V2.Model.MonitoredResourceMetadata.t(),
-          :operation => GoogleApi.Logging.V2.Model.LogEntryOperation.t(),
-          :protoPayload => map(),
-          :receiveTimestamp => DateTime.t(),
-          :resource => GoogleApi.Logging.V2.Model.MonitoredResource.t(),
-          :severity => String.t(),
-          :sourceLocation => GoogleApi.Logging.V2.Model.LogEntrySourceLocation.t(),
-          :spanId => String.t(),
-          :textPayload => String.t(),
-          :timestamp => DateTime.t(),
-          :trace => String.t(),
-          :traceSampled => boolean()
+          :httpRequest => GoogleApi.Logging.V2.Model.HttpRequest.t() | nil,
+          :insertId => String.t() | nil,
+          :jsonPayload => map() | nil,
+          :labels => map() | nil,
+          :logName => String.t() | nil,
+          :metadata => GoogleApi.Logging.V2.Model.MonitoredResourceMetadata.t() | nil,
+          :operation => GoogleApi.Logging.V2.Model.LogEntryOperation.t() | nil,
+          :protoPayload => map() | nil,
+          :receiveTimestamp => DateTime.t() | nil,
+          :resource => GoogleApi.Logging.V2.Model.MonitoredResource.t() | nil,
+          :severity => String.t() | nil,
+          :sourceLocation => GoogleApi.Logging.V2.Model.LogEntrySourceLocation.t() | nil,
+          :spanId => String.t() | nil,
+          :textPayload => String.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :trace => String.t() | nil,
+          :traceSampled => boolean() | nil
         }
 
   field(:httpRequest, as: GoogleApi.Logging.V2.Model.HttpRequest)
