@@ -29,9 +29,9 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeSentimentResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentSentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :language => String.t(),
-          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t())
+          :documentSentiment => GoogleApi.Language.V1.Model.Sentiment.t() | nil,
+          :language => String.t() | nil,
+          :sentences => list(GoogleApi.Language.V1.Model.Sentence.t()) | nil
         }
 
   field(:documentSentiment, as: GoogleApi.Language.V1.Model.Sentiment)

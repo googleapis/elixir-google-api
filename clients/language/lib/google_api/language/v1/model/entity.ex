@@ -32,12 +32,12 @@ defmodule GoogleApi.Language.V1.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mentions => list(GoogleApi.Language.V1.Model.EntityMention.t()),
-          :metadata => map(),
-          :name => String.t(),
-          :salience => number(),
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :type => String.t()
+          :mentions => list(GoogleApi.Language.V1.Model.EntityMention.t()) | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :salience => number() | nil,
+          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:mentions, as: GoogleApi.Language.V1.Model.EntityMention, type: :list)

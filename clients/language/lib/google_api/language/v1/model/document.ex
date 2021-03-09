@@ -30,10 +30,10 @@ defmodule GoogleApi.Language.V1.Model.Document do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :gcsContentUri => String.t(),
-          :language => String.t(),
-          :type => String.t()
+          :content => String.t() | nil,
+          :gcsContentUri => String.t() | nil,
+          :language => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:content)

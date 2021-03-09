@@ -28,8 +28,8 @@ defmodule GoogleApi.Language.V1.Model.Sentence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t()
+          :sentiment => GoogleApi.Language.V1.Model.Sentiment.t() | nil,
+          :text => GoogleApi.Language.V1.Model.TextSpan.t() | nil
         }
 
   field(:sentiment, as: GoogleApi.Language.V1.Model.Sentiment)

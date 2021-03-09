@@ -30,10 +30,10 @@ defmodule GoogleApi.Language.V1.Model.Token do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dependencyEdge => GoogleApi.Language.V1.Model.DependencyEdge.t(),
-          :lemma => String.t(),
-          :partOfSpeech => GoogleApi.Language.V1.Model.PartOfSpeech.t(),
-          :text => GoogleApi.Language.V1.Model.TextSpan.t()
+          :dependencyEdge => GoogleApi.Language.V1.Model.DependencyEdge.t() | nil,
+          :lemma => String.t() | nil,
+          :partOfSpeech => GoogleApi.Language.V1.Model.PartOfSpeech.t() | nil,
+          :text => GoogleApi.Language.V1.Model.TextSpan.t() | nil
         }
 
   field(:dependencyEdge, as: GoogleApi.Language.V1.Model.DependencyEdge)

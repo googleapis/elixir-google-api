@@ -28,8 +28,8 @@ defmodule GoogleApi.Language.V1.Model.TextSpan do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :beginOffset => integer(),
-          :content => String.t()
+          :beginOffset => integer() | nil,
+          :content => String.t() | nil
         }
 
   field(:beginOffset)

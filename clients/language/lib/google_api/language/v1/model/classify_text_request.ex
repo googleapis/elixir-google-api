@@ -27,7 +27,7 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.Language.V1.Model.Document.t()
+          :document => GoogleApi.Language.V1.Model.Document.t() | nil
         }
 
   field(:document, as: GoogleApi.Language.V1.Model.Document)

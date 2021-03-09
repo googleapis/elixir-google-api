@@ -27,7 +27,7 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categories => list(GoogleApi.Language.V1.Model.ClassificationCategory.t())
+          :categories => list(GoogleApi.Language.V1.Model.ClassificationCategory.t()) | nil
         }
 
   field(:categories, as: GoogleApi.Language.V1.Model.ClassificationCategory, type: :list)
