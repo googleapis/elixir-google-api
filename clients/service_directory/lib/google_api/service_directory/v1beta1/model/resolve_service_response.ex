@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ResolveServiceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => GoogleApi.ServiceDirectory.V1beta1.Model.Service.t()
+          :service => GoogleApi.ServiceDirectory.V1beta1.Model.Service.t() | nil
         }
 
   field(:service, as: GoogleApi.ServiceDirectory.V1beta1.Model.Service)

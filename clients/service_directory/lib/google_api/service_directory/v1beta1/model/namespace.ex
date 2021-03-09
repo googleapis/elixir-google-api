@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Namespace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :name => String.t()
+          :labels => map() | nil,
+          :name => String.t() | nil
         }
 
   field(:labels, type: :map)

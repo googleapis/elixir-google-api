@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.ServiceDirectory.V1beta1.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :bindings => list(GoogleApi.ServiceDirectory.V1beta1.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:bindings, as: GoogleApi.ServiceDirectory.V1beta1.Model.Binding, type: :list)
