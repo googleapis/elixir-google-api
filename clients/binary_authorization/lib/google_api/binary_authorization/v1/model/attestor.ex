@@ -30,10 +30,11 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t(),
-          :userOwnedGrafeasNote => GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t()
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :userOwnedGrafeasNote =>
+            GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t() | nil
         }
 
   field(:description)

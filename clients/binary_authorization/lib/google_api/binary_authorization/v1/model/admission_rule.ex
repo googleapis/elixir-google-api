@@ -29,9 +29,9 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enforcementMode => String.t(),
-          :evaluationMode => String.t(),
-          :requireAttestationsBy => list(String.t())
+          :enforcementMode => String.t() | nil,
+          :evaluationMode => String.t() | nil,
+          :requireAttestationsBy => list(String.t()) | nil
         }
 
   field(:enforcementMode)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()
+          :policy => GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t() | nil
         }
 
   field(:policy, as: GoogleApi.BinaryAuthorization.V1.Model.IamPolicy)

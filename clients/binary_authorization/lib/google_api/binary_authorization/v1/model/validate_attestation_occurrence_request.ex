@@ -29,9 +29,9 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.ValidateAttestationOccurrenceRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestation => GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence.t(),
-          :occurrenceNote => String.t(),
-          :occurrenceResourceUri => String.t()
+          :attestation => GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence.t() | nil,
+          :occurrenceNote => String.t() | nil,
+          :occurrenceResourceUri => String.t() | nil
         }
 
   field(:attestation, as: GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence)

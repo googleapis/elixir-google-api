@@ -28,8 +28,8 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.ValidateAttestationOccurrenceRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :denialReason => String.t(),
-          :result => String.t()
+          :denialReason => String.t() | nil,
+          :result => String.t() | nil
         }
 
   field(:denialReason)

@@ -29,9 +29,9 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jwts => list(GoogleApi.BinaryAuthorization.V1.Model.Jwt.t()),
-          :serializedPayload => String.t(),
-          :signatures => list(GoogleApi.BinaryAuthorization.V1.Model.Signature.t())
+          :jwts => list(GoogleApi.BinaryAuthorization.V1.Model.Jwt.t()) | nil,
+          :serializedPayload => String.t() | nil,
+          :signatures => list(GoogleApi.BinaryAuthorization.V1.Model.Signature.t()) | nil
         }
 
   field(:jwts, as: GoogleApi.BinaryAuthorization.V1.Model.Jwt, type: :list)

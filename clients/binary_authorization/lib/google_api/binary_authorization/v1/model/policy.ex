@@ -37,24 +37,24 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
 
   @type t :: %__MODULE__{
           :admissionWhitelistPatterns =>
-            list(GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern.t()),
-          :clusterAdmissionRules => %{
-            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
-          },
-          :defaultAdmissionRule => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t(),
-          :description => String.t(),
-          :globalPolicyEvaluationMode => String.t(),
-          :istioServiceIdentityAdmissionRules => %{
-            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
-          },
-          :kubernetesNamespaceAdmissionRules => %{
-            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
-          },
-          :kubernetesServiceAccountAdmissionRules => %{
-            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
-          },
-          :name => String.t(),
-          :updateTime => DateTime.t()
+            list(GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern.t()) | nil,
+          :clusterAdmissionRules =>
+            %{optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()}
+            | nil,
+          :defaultAdmissionRule => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t() | nil,
+          :description => String.t() | nil,
+          :globalPolicyEvaluationMode => String.t() | nil,
+          :istioServiceIdentityAdmissionRules =>
+            %{optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()}
+            | nil,
+          :kubernetesNamespaceAdmissionRules =>
+            %{optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()}
+            | nil,
+          :kubernetesServiceAccountAdmissionRules =>
+            %{optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()}
+            | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:admissionWhitelistPatterns,

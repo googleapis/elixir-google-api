@@ -27,7 +27,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Jwt do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compactJwt => String.t()
+          :compactJwt => String.t() | nil
         }
 
   field(:compactJwt)

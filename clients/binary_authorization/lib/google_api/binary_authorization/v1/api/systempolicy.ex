@@ -59,6 +59,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Systempolicy do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def binaryauthorization_systempolicy_get_policy(
         connection,

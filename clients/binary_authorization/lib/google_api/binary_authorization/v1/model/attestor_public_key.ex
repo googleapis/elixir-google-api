@@ -30,10 +30,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.AttestorPublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :asciiArmoredPgpPublicKey => String.t(),
-          :comment => String.t(),
-          :id => String.t(),
-          :pkixPublicKey => GoogleApi.BinaryAuthorization.V1.Model.PkixPublicKey.t()
+          :asciiArmoredPgpPublicKey => String.t() | nil,
+          :comment => String.t() | nil,
+          :id => String.t() | nil,
+          :pkixPublicKey => GoogleApi.BinaryAuthorization.V1.Model.PkixPublicKey.t() | nil
         }
 
   field(:asciiArmoredPgpPublicKey)

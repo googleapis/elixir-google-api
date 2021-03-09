@@ -28,8 +28,8 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.PkixPublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicKeyPem => String.t(),
-          :signatureAlgorithm => String.t()
+          :publicKeyPem => String.t() | nil,
+          :signatureAlgorithm => String.t() | nil
         }
 
   field(:publicKeyPem)
