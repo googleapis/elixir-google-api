@@ -29,9 +29,9 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroublesh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullResourceName => String.t(),
-          :permission => String.t(),
-          :principal => String.t()
+          :fullResourceName => String.t() | nil,
+          :permission => String.t() | nil,
+          :principal => String.t() | nil
         }
 
   field(:fullResourceName)

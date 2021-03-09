@@ -28,8 +28,8 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :membership => String.t(),
-          :relevance => String.t()
+          :membership => String.t() | nil,
+          :relevance => String.t() | nil
         }
 
   field(:membership)

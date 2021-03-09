@@ -31,14 +31,15 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroublesh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => String.t(),
+          :access => String.t() | nil,
           :bindingExplanations =>
             list(
               GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaBindingExplanation.t()
-            ),
-          :fullResourceName => String.t(),
-          :policy => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1Policy.t(),
-          :relevance => String.t()
+            )
+            | nil,
+          :fullResourceName => String.t() | nil,
+          :policy => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1Policy.t() | nil,
+          :relevance => String.t() | nil
         }
 
   field(:access)

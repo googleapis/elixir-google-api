@@ -31,10 +31,10 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1Policy do
 
   @type t :: %__MODULE__{
           :auditConfigs =>
-            list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1AuditConfig.t()),
-          :bindings => list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+            list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs,

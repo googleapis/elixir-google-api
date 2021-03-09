@@ -29,8 +29,8 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1AuditConfig do
 
   @type t :: %__MODULE__{
           :auditLogConfigs =>
-            list(GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1AuditLogConfig.t()),
-          :service => String.t()
+            list(GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1AuditLogConfig.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs,
