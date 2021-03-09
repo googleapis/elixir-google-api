@@ -34,14 +34,14 @@ defmodule GoogleApi.Manufacturers.V1.Model.Issue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attribute => String.t(),
-          :description => String.t(),
-          :destination => String.t(),
-          :resolution => String.t(),
-          :severity => String.t(),
-          :timestamp => DateTime.t(),
-          :title => String.t(),
-          :type => String.t()
+          :attribute => String.t() | nil,
+          :description => String.t() | nil,
+          :destination => String.t() | nil,
+          :resolution => String.t() | nil,
+          :severity => String.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:attribute)

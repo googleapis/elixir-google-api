@@ -28,8 +28,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Capacity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unit => String.t(),
-          :value => String.t()
+          :unit => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:unit)

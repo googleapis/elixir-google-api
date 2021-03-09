@@ -28,8 +28,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.ListProductsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :products => list(GoogleApi.Manufacturers.V1.Model.Product.t())
+          :nextPageToken => String.t() | nil,
+          :products => list(GoogleApi.Manufacturers.V1.Model.Product.t()) | nil
         }
 
   field(:nextPageToken)

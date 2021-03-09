@@ -29,9 +29,9 @@ defmodule GoogleApi.Manufacturers.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageUrl => String.t(),
-          :status => String.t(),
-          :type => String.t()
+          :imageUrl => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:imageUrl)
