@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.Exemplar do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachments => list(map()),
-          :timestamp => DateTime.t(),
-          :value => float()
+          :attachments => list(map()) | nil,
+          :timestamp => DateTime.t() | nil,
+          :value => float() | nil
         }
 
   field(:attachments, type: :list)

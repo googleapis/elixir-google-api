@@ -37,17 +37,17 @@ defmodule GoogleApi.ServiceControl.V1.Model.TraceSpan do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.ServiceControl.V1.Model.Attributes.t(),
-          :childSpanCount => integer(),
-          :displayName => GoogleApi.ServiceControl.V1.Model.TruncatableString.t(),
-          :endTime => DateTime.t(),
-          :name => String.t(),
-          :parentSpanId => String.t(),
-          :sameProcessAsParentSpan => boolean(),
-          :spanId => String.t(),
-          :spanKind => String.t(),
-          :startTime => DateTime.t(),
-          :status => GoogleApi.ServiceControl.V1.Model.Status.t()
+          :attributes => GoogleApi.ServiceControl.V1.Model.Attributes.t() | nil,
+          :childSpanCount => integer() | nil,
+          :displayName => GoogleApi.ServiceControl.V1.Model.TruncatableString.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :parentSpanId => String.t() | nil,
+          :sameProcessAsParentSpan => boolean() | nil,
+          :spanId => String.t() | nil,
+          :spanKind => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t() | nil
         }
 
   field(:attributes, as: GoogleApi.ServiceControl.V1.Model.Attributes)

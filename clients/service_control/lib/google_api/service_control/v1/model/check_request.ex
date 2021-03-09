@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operation => GoogleApi.ServiceControl.V1.Model.Operation.t(),
-          :requestProjectSettings => boolean(),
-          :serviceConfigId => String.t(),
-          :skipActivationCheck => boolean()
+          :operation => GoogleApi.ServiceControl.V1.Model.Operation.t() | nil,
+          :requestProjectSettings => boolean() | nil,
+          :serviceConfigId => String.t() | nil,
+          :skipActivationCheck => boolean() | nil
         }
 
   field(:operation, as: GoogleApi.ServiceControl.V1.Model.Operation)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headers => map(),
-          :status => GoogleApi.ServiceControl.V2.Model.Status.t()
+          :headers => map() | nil,
+          :status => GoogleApi.ServiceControl.V2.Model.Status.t() | nil
         }
 
   field(:headers, type: :map)

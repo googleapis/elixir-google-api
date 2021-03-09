@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AllocateInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unusedArguments => list(String.t())
+          :unusedArguments => list(String.t()) | nil
         }
 
   field(:unusedArguments, type: :list)

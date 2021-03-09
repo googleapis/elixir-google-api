@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ExplicitBuckets do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bounds => list(float())
+          :bounds => list(float()) | nil
         }
 
   field(:bounds, type: :list)

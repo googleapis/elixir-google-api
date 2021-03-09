@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V2.Model.ResourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :permission => String.t(),
-          :type => String.t()
+          :name => String.t() | nil,
+          :permission => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:name)

@@ -35,15 +35,15 @@ defmodule GoogleApi.ServiceControl.V1.Model.MetricValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :distributionValue => GoogleApi.ServiceControl.V1.Model.Distribution.t(),
-          :doubleValue => float(),
-          :endTime => DateTime.t(),
-          :int64Value => String.t(),
-          :labels => map(),
-          :moneyValue => GoogleApi.ServiceControl.V1.Model.Money.t(),
-          :startTime => DateTime.t(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :distributionValue => GoogleApi.ServiceControl.V1.Model.Distribution.t() | nil,
+          :doubleValue => float() | nil,
+          :endTime => DateTime.t() | nil,
+          :int64Value => String.t() | nil,
+          :labels => map() | nil,
+          :moneyValue => GoogleApi.ServiceControl.V1.Model.Money.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

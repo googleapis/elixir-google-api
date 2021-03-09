@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerId => String.t(),
-          :labels => map(),
-          :methodName => String.t(),
-          :operationId => String.t(),
-          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()),
-          :quotaMode => String.t()
+          :consumerId => String.t() | nil,
+          :labels => map() | nil,
+          :methodName => String.t() | nil,
+          :operationId => String.t() | nil,
+          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()) | nil,
+          :quotaMode => String.t() | nil
         }
 
   field(:consumerId)

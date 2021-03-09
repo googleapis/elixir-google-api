@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.TruncatableString do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :truncatedByteCount => integer(),
-          :value => String.t()
+          :truncatedByteCount => integer() | nil,
+          :value => String.t() | nil
         }
 
   field(:truncatedByteCount)

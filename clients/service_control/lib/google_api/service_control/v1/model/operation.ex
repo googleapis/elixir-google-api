@@ -40,20 +40,20 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerId => String.t(),
-          :endTime => DateTime.t(),
-          :extensions => list(map()),
-          :importance => String.t(),
-          :labels => map(),
-          :logEntries => list(GoogleApi.ServiceControl.V1.Model.LogEntry.t()),
-          :metricValueSets => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()),
-          :operationId => String.t(),
-          :operationName => String.t(),
-          :quotaProperties => GoogleApi.ServiceControl.V1.Model.QuotaProperties.t(),
-          :resources => list(GoogleApi.ServiceControl.V1.Model.ResourceInfo.t()),
-          :startTime => DateTime.t(),
-          :traceSpans => list(GoogleApi.ServiceControl.V1.Model.TraceSpan.t()),
-          :userLabels => map()
+          :consumerId => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :extensions => list(map()) | nil,
+          :importance => String.t() | nil,
+          :labels => map() | nil,
+          :logEntries => list(GoogleApi.ServiceControl.V1.Model.LogEntry.t()) | nil,
+          :metricValueSets => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()) | nil,
+          :operationId => String.t() | nil,
+          :operationName => String.t() | nil,
+          :quotaProperties => GoogleApi.ServiceControl.V1.Model.QuotaProperties.t() | nil,
+          :resources => list(GoogleApi.ServiceControl.V1.Model.ResourceInfo.t()) | nil,
+          :startTime => DateTime.t() | nil,
+          :traceSpans => list(GoogleApi.ServiceControl.V1.Model.TraceSpan.t()) | nil,
+          :userLabels => map() | nil
         }
 
   field(:consumerId)

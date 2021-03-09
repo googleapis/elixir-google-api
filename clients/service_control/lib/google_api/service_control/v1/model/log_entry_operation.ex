@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntryOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :first => boolean(),
-          :id => String.t(),
-          :last => boolean(),
-          :producer => String.t()
+          :first => boolean() | nil,
+          :id => String.t() | nil,
+          :last => boolean() | nil,
+          :producer => String.t() | nil
         }
 
   field(:first)

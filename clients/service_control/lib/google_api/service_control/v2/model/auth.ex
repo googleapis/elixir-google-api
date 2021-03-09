@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceControl.V2.Model.Auth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(String.t()),
-          :audiences => list(String.t()),
-          :claims => map(),
-          :presenter => String.t(),
-          :principal => String.t()
+          :accessLevels => list(String.t()) | nil,
+          :audiences => list(String.t()) | nil,
+          :claims => map() | nil,
+          :presenter => String.t() | nil,
+          :principal => String.t() | nil
         }
 
   field(:accessLevels, type: :list)

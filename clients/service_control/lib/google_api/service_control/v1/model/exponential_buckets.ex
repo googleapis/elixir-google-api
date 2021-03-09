@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ExponentialBuckets do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :growthFactor => float(),
-          :numFiniteBuckets => integer(),
-          :scale => float()
+          :growthFactor => float() | nil,
+          :numFiniteBuckets => integer() | nil,
+          :scale => float() | nil
         }
 
   field(:growthFactor)

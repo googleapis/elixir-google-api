@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuthorizationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :granted => boolean(),
-          :permission => String.t(),
-          :resource => String.t(),
-          :resourceAttributes => GoogleApi.ServiceControl.V2.Model.Resource.t()
+          :granted => boolean() | nil,
+          :permission => String.t() | nil,
+          :resource => String.t() | nil,
+          :resourceAttributes => GoogleApi.ServiceControl.V2.Model.Resource.t() | nil
         }
 
   field(:granted)

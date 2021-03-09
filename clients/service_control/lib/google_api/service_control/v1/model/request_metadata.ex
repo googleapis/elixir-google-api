@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.RequestMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :callerIp => String.t(),
-          :callerNetwork => String.t(),
-          :callerSuppliedUserAgent => String.t(),
-          :destinationAttributes => GoogleApi.ServiceControl.V1.Model.Peer.t(),
-          :requestAttributes => GoogleApi.ServiceControl.V1.Model.Request.t()
+          :callerIp => String.t() | nil,
+          :callerNetwork => String.t() | nil,
+          :callerSuppliedUserAgent => String.t() | nil,
+          :destinationAttributes => GoogleApi.ServiceControl.V1.Model.Peer.t() | nil,
+          :requestAttributes => GoogleApi.ServiceControl.V1.Model.Request.t() | nil
         }
 
   field(:callerIp)

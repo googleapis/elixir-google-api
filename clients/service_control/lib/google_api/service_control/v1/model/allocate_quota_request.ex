@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocateOperation => GoogleApi.ServiceControl.V1.Model.QuotaOperation.t(),
-          :serviceConfigId => String.t()
+          :allocateOperation => GoogleApi.ServiceControl.V1.Model.QuotaOperation.t() | nil,
+          :serviceConfigId => String.t() | nil
         }
 
   field(:allocateOperation, as: GoogleApi.ServiceControl.V1.Model.QuotaOperation)

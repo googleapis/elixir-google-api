@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limitExceeded => list(String.t()),
-          :quotaConsumed => map(),
-          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t())
+          :limitExceeded => list(String.t()) | nil,
+          :quotaConsumed => map() | nil,
+          :quotaMetrics => list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t()) | nil
         }
 
   field(:limitExceeded, type: :list)

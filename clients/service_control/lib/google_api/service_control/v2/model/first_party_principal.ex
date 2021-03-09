@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V2.Model.FirstPartyPrincipal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :principalEmail => String.t(),
-          :serviceMetadata => map()
+          :principalEmail => String.t() | nil,
+          :serviceMetadata => map() | nil
         }
 
   field(:principalEmail)

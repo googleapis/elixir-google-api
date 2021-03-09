@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerInfo => GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t(),
-          :unusedArguments => list(String.t())
+          :consumerInfo => GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t() | nil,
+          :unusedArguments => list(String.t()) | nil
         }
 
   field(:consumerInfo, as: GoogleApi.ServiceControl.V1.Model.ConsumerInfo)

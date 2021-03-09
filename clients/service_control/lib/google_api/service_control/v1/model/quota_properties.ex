@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quotaMode => String.t()
+          :quotaMode => String.t() | nil
         }
 
   field(:quotaMode)

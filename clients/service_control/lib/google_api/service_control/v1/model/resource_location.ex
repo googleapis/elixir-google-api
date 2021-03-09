@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentLocations => list(String.t()),
-          :originalLocations => list(String.t())
+          :currentLocations => list(String.t()) | nil,
+          :originalLocations => list(String.t()) | nil
         }
 
   field(:currentLocations, type: :list)

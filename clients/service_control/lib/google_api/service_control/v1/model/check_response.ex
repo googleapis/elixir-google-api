@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkErrors => list(GoogleApi.ServiceControl.V1.Model.CheckError.t()),
-          :checkInfo => GoogleApi.ServiceControl.V1.Model.CheckInfo.t(),
-          :operationId => String.t(),
-          :quotaInfo => GoogleApi.ServiceControl.V1.Model.QuotaInfo.t(),
-          :serviceConfigId => String.t(),
-          :serviceRolloutId => String.t()
+          :checkErrors => list(GoogleApi.ServiceControl.V1.Model.CheckError.t()) | nil,
+          :checkInfo => GoogleApi.ServiceControl.V1.Model.CheckInfo.t() | nil,
+          :operationId => String.t() | nil,
+          :quotaInfo => GoogleApi.ServiceControl.V1.Model.QuotaInfo.t() | nil,
+          :serviceConfigId => String.t() | nil,
+          :serviceRolloutId => String.t() | nil
         }
 
   field(:checkErrors, as: GoogleApi.ServiceControl.V1.Model.CheckError, type: :list)

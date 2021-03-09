@@ -40,20 +40,21 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authenticationInfo => GoogleApi.ServiceControl.V1.Model.AuthenticationInfo.t(),
-          :authorizationInfo => list(GoogleApi.ServiceControl.V1.Model.AuthorizationInfo.t()),
-          :metadata => map(),
-          :methodName => String.t(),
-          :numResponseItems => String.t(),
-          :request => map(),
-          :requestMetadata => GoogleApi.ServiceControl.V1.Model.RequestMetadata.t(),
-          :resourceLocation => GoogleApi.ServiceControl.V1.Model.ResourceLocation.t(),
-          :resourceName => String.t(),
-          :resourceOriginalState => map(),
-          :response => map(),
-          :serviceData => map(),
-          :serviceName => String.t(),
-          :status => GoogleApi.ServiceControl.V1.Model.Status.t()
+          :authenticationInfo => GoogleApi.ServiceControl.V1.Model.AuthenticationInfo.t() | nil,
+          :authorizationInfo =>
+            list(GoogleApi.ServiceControl.V1.Model.AuthorizationInfo.t()) | nil,
+          :metadata => map() | nil,
+          :methodName => String.t() | nil,
+          :numResponseItems => String.t() | nil,
+          :request => map() | nil,
+          :requestMetadata => GoogleApi.ServiceControl.V1.Model.RequestMetadata.t() | nil,
+          :resourceLocation => GoogleApi.ServiceControl.V1.Model.ResourceLocation.t() | nil,
+          :resourceName => String.t() | nil,
+          :resourceOriginalState => map() | nil,
+          :response => map() | nil,
+          :serviceData => map() | nil,
+          :serviceName => String.t() | nil,
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t() | nil
         }
 
   field(:authenticationInfo, as: GoogleApi.ServiceControl.V1.Model.AuthenticationInfo)

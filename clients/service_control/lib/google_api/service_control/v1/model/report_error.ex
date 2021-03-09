@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationId => String.t(),
-          :status => GoogleApi.ServiceControl.V1.Model.Status.t()
+          :operationId => String.t() | nil,
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t() | nil
         }
 
   field(:operationId)

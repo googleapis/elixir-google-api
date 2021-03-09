@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :detail => String.t(),
-          :status => GoogleApi.ServiceControl.V1.Model.Status.t(),
-          :subject => String.t()
+          :code => String.t() | nil,
+          :detail => String.t() | nil,
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t() | nil,
+          :subject => String.t() | nil
         }
 
   field(:code)
