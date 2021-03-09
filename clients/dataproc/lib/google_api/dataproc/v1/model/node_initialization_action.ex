@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.NodeInitializationAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executableFile => String.t(),
-          :executionTimeout => String.t()
+          :executableFile => String.t() | nil,
+          :executionTimeout => String.t() | nil
         }
 
   field(:executableFile)

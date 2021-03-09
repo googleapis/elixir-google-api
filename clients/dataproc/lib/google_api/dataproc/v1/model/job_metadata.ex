@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.JobMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobId => String.t(),
-          :operationType => String.t(),
-          :startTime => DateTime.t(),
-          :status => GoogleApi.Dataproc.V1.Model.JobStatus.t()
+          :jobId => String.t() | nil,
+          :operationType => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => GoogleApi.Dataproc.V1.Model.JobStatus.t() | nil
         }
 
   field(:jobId)

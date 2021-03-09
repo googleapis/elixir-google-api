@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.DiagnoseClusterResults do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputUri => String.t()
+          :outputUri => String.t() | nil
         }
 
   field(:outputUri)

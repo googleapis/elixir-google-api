@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.LoggingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driverLogLevels => map()
+          :driverLogLevels => map() | nil
         }
 
   field(:driverLogLevels, type: :map)

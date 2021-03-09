@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxInstances => integer(),
-          :minInstances => integer(),
-          :weight => integer()
+          :maxInstances => integer() | nil,
+          :minInstances => integer() | nil,
+          :weight => integer() | nil
         }
 
   field(:maxInstances)

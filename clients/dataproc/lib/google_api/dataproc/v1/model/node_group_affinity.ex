@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.NodeGroupAffinity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodeGroupUri => String.t()
+          :nodeGroupUri => String.t() | nil
         }
 
   field(:nodeGroupUri)

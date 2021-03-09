@@ -38,18 +38,18 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t(),
-          :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t(),
-          :labels => map(),
-          :pigJob => GoogleApi.Dataproc.V1.Model.PigJob.t(),
-          :prerequisiteStepIds => list(String.t()),
-          :prestoJob => GoogleApi.Dataproc.V1.Model.PrestoJob.t(),
-          :pysparkJob => GoogleApi.Dataproc.V1.Model.PySparkJob.t(),
-          :scheduling => GoogleApi.Dataproc.V1.Model.JobScheduling.t(),
-          :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t(),
-          :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t(),
-          :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t(),
-          :stepId => String.t()
+          :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t() | nil,
+          :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t() | nil,
+          :labels => map() | nil,
+          :pigJob => GoogleApi.Dataproc.V1.Model.PigJob.t() | nil,
+          :prerequisiteStepIds => list(String.t()) | nil,
+          :prestoJob => GoogleApi.Dataproc.V1.Model.PrestoJob.t() | nil,
+          :pysparkJob => GoogleApi.Dataproc.V1.Model.PySparkJob.t() | nil,
+          :scheduling => GoogleApi.Dataproc.V1.Model.JobScheduling.t() | nil,
+          :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t() | nil,
+          :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t() | nil,
+          :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)

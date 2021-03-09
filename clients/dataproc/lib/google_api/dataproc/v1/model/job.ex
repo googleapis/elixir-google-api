@@ -45,25 +45,25 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :driverControlFilesUri => String.t(),
-          :driverOutputResourceUri => String.t(),
-          :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t(),
-          :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t(),
-          :jobUuid => String.t(),
-          :labels => map(),
-          :pigJob => GoogleApi.Dataproc.V1.Model.PigJob.t(),
-          :placement => GoogleApi.Dataproc.V1.Model.JobPlacement.t(),
-          :prestoJob => GoogleApi.Dataproc.V1.Model.PrestoJob.t(),
-          :pysparkJob => GoogleApi.Dataproc.V1.Model.PySparkJob.t(),
-          :reference => GoogleApi.Dataproc.V1.Model.JobReference.t(),
-          :scheduling => GoogleApi.Dataproc.V1.Model.JobScheduling.t(),
-          :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t(),
-          :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t(),
-          :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t(),
-          :status => GoogleApi.Dataproc.V1.Model.JobStatus.t(),
-          :statusHistory => list(GoogleApi.Dataproc.V1.Model.JobStatus.t()),
-          :yarnApplications => list(GoogleApi.Dataproc.V1.Model.YarnApplication.t())
+          :done => boolean() | nil,
+          :driverControlFilesUri => String.t() | nil,
+          :driverOutputResourceUri => String.t() | nil,
+          :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t() | nil,
+          :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t() | nil,
+          :jobUuid => String.t() | nil,
+          :labels => map() | nil,
+          :pigJob => GoogleApi.Dataproc.V1.Model.PigJob.t() | nil,
+          :placement => GoogleApi.Dataproc.V1.Model.JobPlacement.t() | nil,
+          :prestoJob => GoogleApi.Dataproc.V1.Model.PrestoJob.t() | nil,
+          :pysparkJob => GoogleApi.Dataproc.V1.Model.PySparkJob.t() | nil,
+          :reference => GoogleApi.Dataproc.V1.Model.JobReference.t() | nil,
+          :scheduling => GoogleApi.Dataproc.V1.Model.JobScheduling.t() | nil,
+          :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t() | nil,
+          :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t() | nil,
+          :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t() | nil,
+          :status => GoogleApi.Dataproc.V1.Model.JobStatus.t() | nil,
+          :statusHistory => list(GoogleApi.Dataproc.V1.Model.JobStatus.t()) | nil,
+          :yarnApplications => list(GoogleApi.Dataproc.V1.Model.YarnApplication.t()) | nil
         }
 
   field(:done)

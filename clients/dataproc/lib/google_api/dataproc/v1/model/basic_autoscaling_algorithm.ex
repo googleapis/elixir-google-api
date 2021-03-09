@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.BasicAutoscalingAlgorithm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cooldownPeriod => String.t(),
-          :yarnConfig => GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig.t()
+          :cooldownPeriod => String.t() | nil,
+          :yarnConfig => GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig.t() | nil
         }
 
   field(:cooldownPeriod)

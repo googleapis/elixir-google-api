@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.Dataproc.V1.Model.Policy.t()
+          :policy => GoogleApi.Dataproc.V1.Model.Policy.t() | nil
         }
 
   field(:policy, as: GoogleApi.Dataproc.V1.Model.Policy)

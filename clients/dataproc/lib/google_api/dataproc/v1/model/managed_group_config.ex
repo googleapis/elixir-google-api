@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceGroupManagerName => String.t(),
-          :instanceTemplateName => String.t()
+          :instanceGroupManagerName => String.t() | nil,
+          :instanceTemplateName => String.t() | nil
         }
 
   field(:instanceGroupManagerName)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gracefulDecommissionTimeout => String.t(),
-          :scaleDownFactor => float(),
-          :scaleDownMinWorkerFraction => float(),
-          :scaleUpFactor => float(),
-          :scaleUpMinWorkerFraction => float()
+          :gracefulDecommissionTimeout => String.t() | nil,
+          :scaleDownFactor => float() | nil,
+          :scaleDownMinWorkerFraction => float() | nil,
+          :scaleUpFactor => float() | nil,
+          :scaleUpMinWorkerFraction => float() | nil
         }
 
   field(:gracefulDecommissionTimeout)

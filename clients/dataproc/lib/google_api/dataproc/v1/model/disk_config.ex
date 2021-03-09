@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.DiskConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bootDiskSizeGb => integer(),
-          :bootDiskType => String.t(),
-          :numLocalSsds => integer()
+          :bootDiskSizeGb => integer() | nil,
+          :bootDiskType => String.t() | nil,
+          :numLocalSsds => integer() | nil
         }
 
   field(:bootDiskSizeGb)

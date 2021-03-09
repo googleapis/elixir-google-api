@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceId => String.t(),
-          :instanceName => String.t(),
-          :publicKey => String.t()
+          :instanceId => String.t() | nil,
+          :instanceName => String.t() | nil,
+          :publicKey => String.t() | nil
         }
 
   field(:instanceId)

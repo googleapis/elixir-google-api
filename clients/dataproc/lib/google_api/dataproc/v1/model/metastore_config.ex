@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.MetastoreConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataprocMetastoreService => String.t()
+          :dataprocMetastoreService => String.t() | nil
         }
 
   field(:dataprocMetastoreService)

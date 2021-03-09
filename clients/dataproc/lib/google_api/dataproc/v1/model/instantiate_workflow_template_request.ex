@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataproc.V1.Model.InstantiateWorkflowTemplateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => map(),
-          :requestId => String.t(),
-          :version => integer()
+          :parameters => map() | nil,
+          :requestId => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:parameters, type: :map)

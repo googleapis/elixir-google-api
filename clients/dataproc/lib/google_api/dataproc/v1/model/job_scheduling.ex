@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.JobScheduling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxFailuresPerHour => integer(),
-          :maxFailuresTotal => integer()
+          :maxFailuresPerHour => integer() | nil,
+          :maxFailuresTotal => integer() | nil
         }
 
   field(:maxFailuresPerHour)

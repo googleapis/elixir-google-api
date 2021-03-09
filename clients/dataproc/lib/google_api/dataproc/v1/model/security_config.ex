@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SecurityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kerberosConfig => GoogleApi.Dataproc.V1.Model.KerberosConfig.t()
+          :kerberosConfig => GoogleApi.Dataproc.V1.Model.KerberosConfig.t() | nil
         }
 
   field(:kerberosConfig, as: GoogleApi.Dataproc.V1.Model.KerberosConfig)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.EncryptionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcePdKmsKeyName => String.t()
+          :gcePdKmsKeyName => String.t() | nil
         }
 
   field(:gcePdKmsKeyName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InjectCredentialsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterUuid => String.t(),
-          :credentialsCiphertext => String.t()
+          :clusterUuid => String.t() | nil,
+          :credentialsCiphertext => String.t() | nil
         }
 
   field(:clusterUuid)

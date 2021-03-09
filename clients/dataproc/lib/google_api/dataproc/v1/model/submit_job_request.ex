@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.SubmitJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :job => GoogleApi.Dataproc.V1.Model.Job.t(),
-          :requestId => String.t()
+          :job => GoogleApi.Dataproc.V1.Model.Job.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:job, as: GoogleApi.Dataproc.V1.Model.Job)

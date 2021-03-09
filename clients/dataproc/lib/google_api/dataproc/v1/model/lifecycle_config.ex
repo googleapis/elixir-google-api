@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataproc.V1.Model.LifecycleConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoDeleteTime => DateTime.t(),
-          :autoDeleteTtl => String.t(),
-          :idleDeleteTtl => String.t(),
-          :idleStartTime => DateTime.t()
+          :autoDeleteTime => DateTime.t() | nil,
+          :autoDeleteTtl => String.t() | nil,
+          :idleDeleteTtl => String.t() | nil,
+          :idleStartTime => DateTime.t() | nil
         }
 
   field(:autoDeleteTime, as: DateTime)

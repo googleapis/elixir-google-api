@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataproc.V1.Model.ListClustersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.Dataproc.V1.Model.Cluster.t()),
-          :nextPageToken => String.t()
+          :clusters => list(GoogleApi.Dataproc.V1.Model.Cluster.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:clusters, as: GoogleApi.Dataproc.V1.Model.Cluster, type: :list)

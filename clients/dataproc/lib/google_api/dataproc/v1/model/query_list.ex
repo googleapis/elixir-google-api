@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.QueryList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queries => list(String.t())
+          :queries => list(String.t()) | nil
         }
 
   field(:queries, type: :list)

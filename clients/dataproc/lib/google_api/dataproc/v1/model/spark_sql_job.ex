@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkSqlJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jarFileUris => list(String.t()),
-          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t(),
-          :properties => map(),
-          :queryFileUri => String.t(),
-          :queryList => GoogleApi.Dataproc.V1.Model.QueryList.t(),
-          :scriptVariables => map()
+          :jarFileUris => list(String.t()) | nil,
+          :loggingConfig => GoogleApi.Dataproc.V1.Model.LoggingConfig.t() | nil,
+          :properties => map() | nil,
+          :queryFileUri => String.t() | nil,
+          :queryList => GoogleApi.Dataproc.V1.Model.QueryList.t() | nil,
+          :scriptVariables => map() | nil
         }
 
   field(:jarFileUris, type: :list)

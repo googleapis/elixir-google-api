@@ -31,12 +31,13 @@ defmodule GoogleApi.Dataproc.V1.Model.AutoscalingPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicAlgorithm => GoogleApi.Dataproc.V1.Model.BasicAutoscalingAlgorithm.t(),
-          :id => String.t(),
-          :name => String.t(),
+          :basicAlgorithm => GoogleApi.Dataproc.V1.Model.BasicAutoscalingAlgorithm.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
           :secondaryWorkerConfig =>
-            GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig.t(),
-          :workerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig.t()
+            GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig.t() | nil,
+          :workerConfig =>
+            GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig.t() | nil
         }
 
   field(:basicAlgorithm, as: GoogleApi.Dataproc.V1.Model.BasicAutoscalingAlgorithm)
