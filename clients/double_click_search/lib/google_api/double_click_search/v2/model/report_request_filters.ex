@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t(),
-          :operator => String.t(),
-          :values => list(any())
+          :column => GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t() | nil,
+          :operator => String.t() | nil,
+          :values => list(any()) | nil
         }
 
   field(:column, as: GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec)

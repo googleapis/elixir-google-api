@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.CustomMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => float()
+          :name => String.t() | nil,
+          :value => float() | nil
         }
 
   field(:name)

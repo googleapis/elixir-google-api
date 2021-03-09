@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportFiles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteCount => String.t(),
-          :url => String.t()
+          :byteCount => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:byteCount)

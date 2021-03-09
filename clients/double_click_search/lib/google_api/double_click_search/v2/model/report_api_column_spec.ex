@@ -36,16 +36,16 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnName => String.t(),
-          :customDimensionName => String.t(),
-          :customMetricName => String.t(),
-          :endDate => String.t(),
-          :groupByColumn => boolean(),
-          :headerText => String.t(),
-          :platformSource => String.t(),
-          :productReportPerspective => String.t(),
-          :savedColumnName => String.t(),
-          :startDate => String.t()
+          :columnName => String.t() | nil,
+          :customDimensionName => String.t() | nil,
+          :customMetricName => String.t() | nil,
+          :endDate => String.t() | nil,
+          :groupByColumn => boolean() | nil,
+          :headerText => String.t() | nil,
+          :platformSource => String.t() | nil,
+          :productReportPerspective => String.t() | nil,
+          :savedColumnName => String.t() | nil,
+          :startDate => String.t() | nil
         }
 
   field(:columnName)

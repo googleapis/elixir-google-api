@@ -27,7 +27,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availabilities => list(GoogleApi.DoubleClickSearch.V2.Model.Availability.t())
+          :availabilities => list(GoogleApi.DoubleClickSearch.V2.Model.Availability.t()) | nil
         }
 
   field(:availabilities, as: GoogleApi.DoubleClickSearch.V2.Model.Availability, type: :list)

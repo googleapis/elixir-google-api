@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.SavedColumn do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :savedColumnName => String.t(),
-          :type => String.t()
+          :kind => String.t() | nil,
+          :savedColumnName => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:kind)
