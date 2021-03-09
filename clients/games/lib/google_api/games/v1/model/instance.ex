@@ -35,15 +35,15 @@ defmodule GoogleApi.Games.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acquisitionUri => String.t(),
-          :androidInstance => GoogleApi.Games.V1.Model.InstanceAndroidDetails.t(),
-          :iosInstance => GoogleApi.Games.V1.Model.InstanceIosDetails.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :platformType => String.t(),
-          :realtimePlay => boolean(),
-          :turnBasedPlay => boolean(),
-          :webInstance => GoogleApi.Games.V1.Model.InstanceWebDetails.t()
+          :acquisitionUri => String.t() | nil,
+          :androidInstance => GoogleApi.Games.V1.Model.InstanceAndroidDetails.t() | nil,
+          :iosInstance => GoogleApi.Games.V1.Model.InstanceIosDetails.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :platformType => String.t() | nil,
+          :realtimePlay => boolean() | nil,
+          :turnBasedPlay => boolean() | nil,
+          :webInstance => GoogleApi.Games.V1.Model.InstanceWebDetails.t() | nil
         }
 
   field(:acquisitionUri)

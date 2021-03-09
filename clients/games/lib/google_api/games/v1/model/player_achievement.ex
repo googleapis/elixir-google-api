@@ -33,13 +33,13 @@ defmodule GoogleApi.Games.V1.Model.PlayerAchievement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievementState => String.t(),
-          :currentSteps => integer(),
-          :experiencePoints => String.t(),
-          :formattedCurrentStepsString => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastUpdatedTimestamp => String.t()
+          :achievementState => String.t() | nil,
+          :currentSteps => integer() | nil,
+          :experiencePoints => String.t() | nil,
+          :formattedCurrentStepsString => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastUpdatedTimestamp => String.t() | nil
         }
 
   field(:achievementState)

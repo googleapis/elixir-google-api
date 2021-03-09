@@ -35,15 +35,15 @@ defmodule GoogleApi.Games.V1.Model.LeaderboardEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedScore => String.t(),
-          :formattedScoreRank => String.t(),
-          :kind => String.t(),
-          :player => GoogleApi.Games.V1.Model.Player.t(),
-          :scoreRank => String.t(),
-          :scoreTag => String.t(),
-          :scoreValue => String.t(),
-          :timeSpan => String.t(),
-          :writeTimestampMillis => String.t()
+          :formattedScore => String.t() | nil,
+          :formattedScoreRank => String.t() | nil,
+          :kind => String.t() | nil,
+          :player => GoogleApi.Games.V1.Model.Player.t() | nil,
+          :scoreRank => String.t() | nil,
+          :scoreTag => String.t() | nil,
+          :scoreValue => String.t() | nil,
+          :timeSpan => String.t() | nil,
+          :writeTimestampMillis => String.t() | nil
         }
 
   field(:formattedScore)

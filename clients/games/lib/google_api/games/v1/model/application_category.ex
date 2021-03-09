@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.ApplicationCategory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :primary => String.t(),
-          :secondary => String.t()
+          :kind => String.t() | nil,
+          :primary => String.t() | nil,
+          :secondary => String.t() | nil
         }
 
   field(:kind)

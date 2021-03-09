@@ -24,7 +24,7 @@ defmodule GoogleApi.Games.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage its own configuration data in your Google Drive
+      # See, create, and delete its own configuration data in your Google Drive
       "https://www.googleapis.com/auth/drive.appdata",
 
       # Create, edit, and delete your Google Play Games activity

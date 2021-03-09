@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.EventChild do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childId => String.t(),
-          :kind => String.t()
+          :childId => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:childId)

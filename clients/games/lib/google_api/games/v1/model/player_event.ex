@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.PlayerEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :definitionId => String.t(),
-          :formattedNumEvents => String.t(),
-          :kind => String.t(),
-          :numEvents => String.t(),
-          :playerId => String.t()
+          :definitionId => String.t() | nil,
+          :formattedNumEvents => String.t() | nil,
+          :kind => String.t() | nil,
+          :numEvents => String.t() | nil,
+          :playerId => String.t() | nil
         }
 
   field(:definitionId)

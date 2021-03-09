@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementUnlockResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :newlyUnlocked => boolean()
+          :kind => String.t() | nil,
+          :newlyUnlocked => boolean() | nil
         }
 
   field(:kind)

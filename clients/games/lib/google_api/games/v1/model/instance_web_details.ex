@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.InstanceWebDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :launchUrl => String.t(),
-          :preferred => boolean()
+          :kind => String.t() | nil,
+          :launchUrl => String.t() | nil,
+          :preferred => boolean() | nil
         }
 
   field(:kind)

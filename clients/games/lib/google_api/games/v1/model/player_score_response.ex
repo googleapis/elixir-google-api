@@ -32,12 +32,12 @@ defmodule GoogleApi.Games.V1.Model.PlayerScoreResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :beatenScoreTimeSpans => list(String.t()),
-          :formattedScore => String.t(),
-          :kind => String.t(),
-          :leaderboardId => String.t(),
-          :scoreTag => String.t(),
-          :unbeatenScores => list(GoogleApi.Games.V1.Model.PlayerScore.t())
+          :beatenScoreTimeSpans => list(String.t()) | nil,
+          :formattedScore => String.t() | nil,
+          :kind => String.t() | nil,
+          :leaderboardId => String.t() | nil,
+          :scoreTag => String.t() | nil,
+          :unbeatenScores => list(GoogleApi.Games.V1.Model.PlayerScore.t()) | nil
         }
 
   field(:beatenScoreTimeSpans, type: :list)

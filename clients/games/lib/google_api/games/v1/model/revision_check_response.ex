@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.RevisionCheckResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :kind => String.t(),
-          :revisionStatus => String.t()
+          :apiVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :revisionStatus => String.t() | nil
         }
 
   field(:apiVersion)

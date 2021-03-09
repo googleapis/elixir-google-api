@@ -39,19 +39,19 @@ defmodule GoogleApi.Games.V1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievement_count => integer(),
-          :assets => list(GoogleApi.Games.V1.Model.ImageAsset.t()),
-          :author => String.t(),
-          :category => GoogleApi.Games.V1.Model.ApplicationCategory.t(),
-          :description => String.t(),
-          :enabledFeatures => list(String.t()),
-          :id => String.t(),
-          :instances => list(GoogleApi.Games.V1.Model.Instance.t()),
-          :kind => String.t(),
-          :lastUpdatedTimestamp => String.t(),
-          :leaderboard_count => integer(),
-          :name => String.t(),
-          :themeColor => String.t()
+          :achievement_count => integer() | nil,
+          :assets => list(GoogleApi.Games.V1.Model.ImageAsset.t()) | nil,
+          :author => String.t() | nil,
+          :category => GoogleApi.Games.V1.Model.ApplicationCategory.t() | nil,
+          :description => String.t() | nil,
+          :enabledFeatures => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :instances => list(GoogleApi.Games.V1.Model.Instance.t()) | nil,
+          :kind => String.t() | nil,
+          :lastUpdatedTimestamp => String.t() | nil,
+          :leaderboard_count => integer() | nil,
+          :name => String.t() | nil,
+          :themeColor => String.t() | nil
         }
 
   field(:achievement_count)

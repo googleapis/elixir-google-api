@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.EventUpdateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :definitionId => String.t(),
-          :kind => String.t(),
-          :updateCount => String.t()
+          :definitionId => String.t() | nil,
+          :kind => String.t() | nil,
+          :updateCount => String.t() | nil
         }
 
   field(:definitionId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Games.V1.Model.PlayerLeaderboardScore.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :player => GoogleApi.Games.V1.Model.Player.t()
+          :items => list(GoogleApi.Games.V1.Model.PlayerLeaderboardScore.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :player => GoogleApi.Games.V1.Model.Player.t() | nil
         }
 
   field(:items, as: GoogleApi.Games.V1.Model.PlayerLeaderboardScore, type: :list)

@@ -53,6 +53,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   @spec games_metagame_get_metagame_config(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.MetagameConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_metagame_get_metagame_config(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -120,6 +121,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
         ) ::
           {:ok, GoogleApi.Games.V1.Model.CategoryListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_metagame_list_categories_by_player(
         connection,

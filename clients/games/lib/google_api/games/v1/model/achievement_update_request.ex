@@ -31,11 +31,12 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievementId => String.t(),
-          :incrementPayload => GoogleApi.Games.V1.Model.GamesAchievementIncrement.t(),
-          :kind => String.t(),
-          :setStepsAtLeastPayload => GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast.t(),
-          :updateType => String.t()
+          :achievementId => String.t() | nil,
+          :incrementPayload => GoogleApi.Games.V1.Model.GamesAchievementIncrement.t() | nil,
+          :kind => String.t() | nil,
+          :setStepsAtLeastPayload =>
+            GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast.t() | nil,
+          :updateType => String.t() | nil
         }
 
   field(:achievementId)

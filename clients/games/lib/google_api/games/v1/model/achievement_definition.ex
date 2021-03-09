@@ -39,19 +39,19 @@ defmodule GoogleApi.Games.V1.Model.AchievementDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievementType => String.t(),
-          :description => String.t(),
-          :experiencePoints => String.t(),
-          :formattedTotalSteps => String.t(),
-          :id => String.t(),
-          :initialState => String.t(),
-          :isRevealedIconUrlDefault => boolean(),
-          :isUnlockedIconUrlDefault => boolean(),
-          :kind => String.t(),
-          :name => String.t(),
-          :revealedIconUrl => String.t(),
-          :totalSteps => integer(),
-          :unlockedIconUrl => String.t()
+          :achievementType => String.t() | nil,
+          :description => String.t() | nil,
+          :experiencePoints => String.t() | nil,
+          :formattedTotalSteps => String.t() | nil,
+          :id => String.t() | nil,
+          :initialState => String.t() | nil,
+          :isRevealedIconUrlDefault => boolean() | nil,
+          :isUnlockedIconUrlDefault => boolean() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :revealedIconUrl => String.t() | nil,
+          :totalSteps => integer() | nil,
+          :unlockedIconUrl => String.t() | nil
         }
 
   field(:achievementType)

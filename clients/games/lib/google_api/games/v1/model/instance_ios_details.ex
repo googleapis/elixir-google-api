@@ -33,13 +33,13 @@ defmodule GoogleApi.Games.V1.Model.InstanceIosDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleIdentifier => String.t(),
-          :itunesAppId => String.t(),
-          :kind => String.t(),
-          :preferredForIpad => boolean(),
-          :preferredForIphone => boolean(),
-          :supportIpad => boolean(),
-          :supportIphone => boolean()
+          :bundleIdentifier => String.t() | nil,
+          :itunesAppId => String.t() | nil,
+          :kind => String.t() | nil,
+          :preferredForIpad => boolean() | nil,
+          :preferredForIphone => boolean() | nil,
+          :supportIpad => boolean() | nil,
+          :supportIphone => boolean() | nil
         }
 
   field(:bundleIdentifier)

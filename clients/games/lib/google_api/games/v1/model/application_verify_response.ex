@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.ApplicationVerifyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternate_player_id => String.t(),
-          :kind => String.t(),
-          :player_id => String.t()
+          :alternate_player_id => String.t() | nil,
+          :kind => String.t() | nil,
+          :player_id => String.t() | nil
         }
 
   field(:alternate_player_id)

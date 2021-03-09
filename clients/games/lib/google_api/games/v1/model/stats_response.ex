@@ -37,17 +37,17 @@ defmodule GoogleApi.Games.V1.Model.StatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :avg_session_length_minutes => number(),
-          :churn_probability => number(),
-          :days_since_last_played => integer(),
-          :high_spender_probability => number(),
-          :kind => String.t(),
-          :num_purchases => integer(),
-          :num_sessions => integer(),
-          :num_sessions_percentile => number(),
-          :spend_percentile => number(),
-          :spend_probability => number(),
-          :total_spend_next_28_days => number()
+          :avg_session_length_minutes => number() | nil,
+          :churn_probability => number() | nil,
+          :days_since_last_played => integer() | nil,
+          :high_spender_probability => number() | nil,
+          :kind => String.t() | nil,
+          :num_purchases => integer() | nil,
+          :num_sessions => integer() | nil,
+          :num_sessions_percentile => number() | nil,
+          :spend_percentile => number() | nil,
+          :spend_probability => number() | nil,
+          :total_spend_next_28_days => number() | nil
         }
 
   field(:avg_session_length_minutes)

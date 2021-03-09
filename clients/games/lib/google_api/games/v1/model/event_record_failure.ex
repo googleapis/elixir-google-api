@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.EventRecordFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventId => String.t(),
-          :failureCause => String.t(),
-          :kind => String.t()
+          :eventId => String.t() | nil,
+          :failureCause => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:eventId)

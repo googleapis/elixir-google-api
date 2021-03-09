@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.EventUpdateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchFailures => list(GoogleApi.Games.V1.Model.EventBatchRecordFailure.t()),
-          :eventFailures => list(GoogleApi.Games.V1.Model.EventRecordFailure.t()),
-          :kind => String.t(),
-          :playerEvents => list(GoogleApi.Games.V1.Model.PlayerEvent.t())
+          :batchFailures => list(GoogleApi.Games.V1.Model.EventBatchRecordFailure.t()) | nil,
+          :eventFailures => list(GoogleApi.Games.V1.Model.EventRecordFailure.t()) | nil,
+          :kind => String.t() | nil,
+          :playerEvents => list(GoogleApi.Games.V1.Model.PlayerEvent.t()) | nil
         }
 
   field(:batchFailures, as: GoogleApi.Games.V1.Model.EventBatchRecordFailure, type: :list)

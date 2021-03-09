@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :updates => list(GoogleApi.Games.V1.Model.AchievementUpdateRequest.t())
+          :kind => String.t() | nil,
+          :updates => list(GoogleApi.Games.V1.Model.AchievementUpdateRequest.t()) | nil
         }
 
   field(:kind)

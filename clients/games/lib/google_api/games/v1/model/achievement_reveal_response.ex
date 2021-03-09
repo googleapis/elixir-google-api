@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementRevealResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentState => String.t(),
-          :kind => String.t()
+          :currentState => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:currentState)

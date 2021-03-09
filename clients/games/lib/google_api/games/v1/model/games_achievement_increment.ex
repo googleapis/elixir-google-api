@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.GamesAchievementIncrement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :requestId => String.t(),
-          :steps => integer()
+          :kind => String.t() | nil,
+          :requestId => String.t() | nil,
+          :steps => integer() | nil
         }
 
   field(:kind)

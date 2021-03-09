@@ -37,17 +37,17 @@ defmodule GoogleApi.Games.V1.Model.Snapshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coverImage => GoogleApi.Games.V1.Model.SnapshotImage.t(),
-          :description => String.t(),
-          :driveId => String.t(),
-          :durationMillis => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastModifiedMillis => String.t(),
-          :progressValue => String.t(),
-          :title => String.t(),
-          :type => String.t(),
-          :uniqueName => String.t()
+          :coverImage => GoogleApi.Games.V1.Model.SnapshotImage.t() | nil,
+          :description => String.t() | nil,
+          :driveId => String.t() | nil,
+          :durationMillis => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedMillis => String.t() | nil,
+          :progressValue => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil,
+          :uniqueName => String.t() | nil
         }
 
   field(:coverImage, as: GoogleApi.Games.V1.Model.SnapshotImage)

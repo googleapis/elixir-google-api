@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.SnapshotDataResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => String.t(),
-          :downloadUrl => String.t(),
-          :resourceId => String.t(),
-          :size => String.t()
+          :contentHash => String.t() | nil,
+          :downloadUrl => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :size => String.t() | nil
         }
 
   field(:contentHash)

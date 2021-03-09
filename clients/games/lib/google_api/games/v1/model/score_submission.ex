@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.ScoreSubmission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :leaderboardId => String.t(),
-          :score => String.t(),
-          :scoreTag => String.t(),
-          :signature => String.t()
+          :kind => String.t() | nil,
+          :leaderboardId => String.t() | nil,
+          :score => String.t() | nil,
+          :scoreTag => String.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:kind)
