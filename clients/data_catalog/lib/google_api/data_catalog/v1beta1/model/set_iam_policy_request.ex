@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.DataCatalog.V1beta1.Model.Policy.t()
+          :policy => GoogleApi.DataCatalog.V1beta1.Model.Policy.t() | nil
         }
 
   field(:policy, as: GoogleApi.DataCatalog.V1beta1.Model.Policy)

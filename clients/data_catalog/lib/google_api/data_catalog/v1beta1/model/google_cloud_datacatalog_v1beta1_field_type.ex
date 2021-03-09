@@ -29,8 +29,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Field
 
   @type t :: %__MODULE__{
           :enumType =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldTypeEnumType.t(),
-          :primitiveType => String.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldTypeEnumType.t()
+            | nil,
+          :primitiveType => String.t() | nil
         }
 
   field(:enumType,

@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GetPolicyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestedPolicyVersion => integer()
+          :requestedPolicyVersion => integer() | nil
         }
 
   field(:requestedPolicyVersion)

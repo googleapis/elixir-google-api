@@ -29,6 +29,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Impor
   @type t :: %__MODULE__{
           :taxonomies =>
             list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t())
+            | nil
         }
 
   field(:taxonomies,

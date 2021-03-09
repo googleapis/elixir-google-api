@@ -31,10 +31,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
 
   @type t :: %__MODULE__{
           :dataCatalogTimestamps =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
+            | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:dataCatalogTimestamps,

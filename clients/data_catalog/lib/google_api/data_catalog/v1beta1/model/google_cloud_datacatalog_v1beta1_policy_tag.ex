@@ -31,11 +31,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Polic
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childPolicyTags => list(String.t()),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :parentPolicyTag => String.t()
+          :childPolicyTags => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :parentPolicyTag => String.t() | nil
         }
 
   field(:childPolicyTags, type: :list)

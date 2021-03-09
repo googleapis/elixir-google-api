@@ -33,10 +33,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
           :childPolicyTags =>
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t()
-            ),
-          :description => String.t(),
-          :displayName => String.t(),
-          :policyTag => String.t()
+            )
+            | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :policyTag => String.t() | nil
         }
 
   field(:childPolicyTags,

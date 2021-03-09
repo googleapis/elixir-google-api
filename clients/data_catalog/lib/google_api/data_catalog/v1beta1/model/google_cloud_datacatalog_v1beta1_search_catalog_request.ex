@@ -31,12 +31,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :orderBy => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :query => String.t(),
+          :orderBy => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :query => String.t() | nil,
           :scope =>
             GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogRequestScope.t()
+            | nil
         }
 
   field(:orderBy)

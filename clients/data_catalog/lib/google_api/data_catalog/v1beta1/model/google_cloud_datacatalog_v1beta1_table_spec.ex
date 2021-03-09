@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Table
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupedEntry => String.t()
+          :groupedEntry => String.t() | nil
         }
 
   field(:groupedEntry)

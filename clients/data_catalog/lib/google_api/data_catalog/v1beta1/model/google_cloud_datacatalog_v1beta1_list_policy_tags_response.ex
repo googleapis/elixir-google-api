@@ -28,9 +28,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :policyTags =>
             list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t())
+            | nil
         }
 
   field(:nextPageToken)

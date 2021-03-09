@@ -29,12 +29,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :results =>
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogResult.t()
-            ),
-          :unreachable => list(String.t())
+            )
+            | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

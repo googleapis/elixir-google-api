@@ -33,14 +33,15 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagFi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :displayName => String.t(),
-          :doubleValue => float(),
+          :boolValue => boolean() | nil,
+          :displayName => String.t() | nil,
+          :doubleValue => float() | nil,
           :enumValue =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagFieldEnumValue.t(),
-          :order => integer(),
-          :stringValue => String.t(),
-          :timestampValue => DateTime.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagFieldEnumValue.t()
+            | nil,
+          :order => integer() | nil,
+          :stringValue => String.t() | nil,
+          :timestampValue => DateTime.t() | nil
         }
 
   field(:boolValue)

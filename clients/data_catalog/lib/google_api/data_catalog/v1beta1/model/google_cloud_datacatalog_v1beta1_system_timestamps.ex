@@ -29,9 +29,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Syste
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

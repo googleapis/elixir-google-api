@@ -29,9 +29,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => String.t(),
-          :shardCount => String.t(),
-          :tablePrefix => String.t()
+          :dataset => String.t() | nil,
+          :shardCount => String.t() | nil,
+          :tablePrefix => String.t() | nil
         }
 
   field(:dataset)

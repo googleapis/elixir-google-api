@@ -32,12 +32,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :isRequired => boolean(),
-          :name => String.t(),
-          :order => integer(),
-          :type => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isRequired => boolean() | nil,
+          :name => String.t() | nil,
+          :order => integer() | nil,
+          :type =>
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t() | nil
         }
 
   field(:description)

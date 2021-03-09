@@ -30,10 +30,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeGcpPublicDatasets => boolean(),
-          :includeOrgIds => list(String.t()),
-          :includeProjectIds => list(String.t()),
-          :restrictedLocations => list(String.t())
+          :includeGcpPublicDatasets => boolean() | nil,
+          :includeOrgIds => list(String.t()) | nil,
+          :includeProjectIds => list(String.t()) | nil,
+          :restrictedLocations => list(String.t()) | nil
         }
 
   field(:includeGcpPublicDatasets)

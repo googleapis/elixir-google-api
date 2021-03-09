@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ViewS
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :viewQuery => String.t()
+          :viewQuery => String.t() | nil
         }
 
   field(:viewQuery)

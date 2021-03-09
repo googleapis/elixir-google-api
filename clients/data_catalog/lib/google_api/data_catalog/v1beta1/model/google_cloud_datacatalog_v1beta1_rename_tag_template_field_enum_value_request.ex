@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Renam
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newEnumValueDisplayName => String.t()
+          :newEnumValueDisplayName => String.t() | nil
         }
 
   field(:newEnumValueDisplayName)
