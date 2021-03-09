@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.InsertTableColumnRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertRight => boolean(),
-          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t()
+          :insertRight => boolean() | nil,
+          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t() | nil
         }
 
   field(:insertRight)

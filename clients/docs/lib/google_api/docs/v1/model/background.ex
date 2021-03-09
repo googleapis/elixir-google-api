@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.Background do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Docs.V1.Model.OptionalColor.t()
+          :color => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil
         }
 
   field(:color, as: GoogleApi.Docs.V1.Model.OptionalColor)

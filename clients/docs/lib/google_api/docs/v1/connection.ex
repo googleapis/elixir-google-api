@@ -24,7 +24,7 @@ defmodule GoogleApi.Docs.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your Google Docs documents
+      # See, create, and edit all Google Docs documents you have access to
       "https://www.googleapis.com/auth/documents",
 
       # View your Google Docs documents

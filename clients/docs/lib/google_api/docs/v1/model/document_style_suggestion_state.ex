@@ -44,24 +44,25 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundSuggestionState => GoogleApi.Docs.V1.Model.BackgroundSuggestionState.t(),
-          :defaultFooterIdSuggested => boolean(),
-          :defaultHeaderIdSuggested => boolean(),
-          :evenPageFooterIdSuggested => boolean(),
-          :evenPageHeaderIdSuggested => boolean(),
-          :firstPageFooterIdSuggested => boolean(),
-          :firstPageHeaderIdSuggested => boolean(),
-          :marginBottomSuggested => boolean(),
-          :marginFooterSuggested => boolean(),
-          :marginHeaderSuggested => boolean(),
-          :marginLeftSuggested => boolean(),
-          :marginRightSuggested => boolean(),
-          :marginTopSuggested => boolean(),
-          :pageNumberStartSuggested => boolean(),
-          :pageSizeSuggestionState => GoogleApi.Docs.V1.Model.SizeSuggestionState.t(),
-          :useCustomHeaderFooterMarginsSuggested => boolean(),
-          :useEvenPageHeaderFooterSuggested => boolean(),
-          :useFirstPageHeaderFooterSuggested => boolean()
+          :backgroundSuggestionState =>
+            GoogleApi.Docs.V1.Model.BackgroundSuggestionState.t() | nil,
+          :defaultFooterIdSuggested => boolean() | nil,
+          :defaultHeaderIdSuggested => boolean() | nil,
+          :evenPageFooterIdSuggested => boolean() | nil,
+          :evenPageHeaderIdSuggested => boolean() | nil,
+          :firstPageFooterIdSuggested => boolean() | nil,
+          :firstPageHeaderIdSuggested => boolean() | nil,
+          :marginBottomSuggested => boolean() | nil,
+          :marginFooterSuggested => boolean() | nil,
+          :marginHeaderSuggested => boolean() | nil,
+          :marginLeftSuggested => boolean() | nil,
+          :marginRightSuggested => boolean() | nil,
+          :marginTopSuggested => boolean() | nil,
+          :pageNumberStartSuggested => boolean() | nil,
+          :pageSizeSuggestionState => GoogleApi.Docs.V1.Model.SizeSuggestionState.t() | nil,
+          :useCustomHeaderFooterMarginsSuggested => boolean() | nil,
+          :useEvenPageHeaderFooterSuggested => boolean() | nil,
+          :useFirstPageHeaderFooterSuggested => boolean() | nil
         }
 
   field(:backgroundSuggestionState, as: GoogleApi.Docs.V1.Model.BackgroundSuggestionState)

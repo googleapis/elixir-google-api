@@ -29,10 +29,10 @@ defmodule GoogleApi.Docs.V1.Model.NamedStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namedStyleType => String.t(),
+          :namedStyleType => String.t() | nil,
           :paragraphStyleSuggestionState =>
-            GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t(),
-          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t()
+            GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t() | nil,
+          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t() | nil
         }
 
   field(:namedStyleType)

@@ -33,15 +33,14 @@ defmodule GoogleApi.Docs.V1.Model.TableCell do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()),
-          :endIndex => integer(),
-          :startIndex => integer(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t()),
-          :suggestedTableCellStyleChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTableCellStyle.t()
-          },
-          :tableCellStyle => GoogleApi.Docs.V1.Model.TableCellStyle.t()
+          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()) | nil,
+          :endIndex => integer() | nil,
+          :startIndex => integer() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil,
+          :suggestedTableCellStyleChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTableCellStyle.t()} | nil,
+          :tableCellStyle => GoogleApi.Docs.V1.Model.TableCellStyle.t() | nil
         }
 
   field(:content, as: GoogleApi.Docs.V1.Model.StructuralElement, type: :list)

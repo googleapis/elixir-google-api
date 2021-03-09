@@ -38,18 +38,18 @@ defmodule GoogleApi.Docs.V1.Model.TableCellStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t(),
-          :borderBottom => GoogleApi.Docs.V1.Model.TableCellBorder.t(),
-          :borderLeft => GoogleApi.Docs.V1.Model.TableCellBorder.t(),
-          :borderRight => GoogleApi.Docs.V1.Model.TableCellBorder.t(),
-          :borderTop => GoogleApi.Docs.V1.Model.TableCellBorder.t(),
-          :columnSpan => integer(),
-          :contentAlignment => String.t(),
-          :paddingBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :paddingLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :paddingRight => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :paddingTop => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :rowSpan => integer()
+          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil,
+          :borderBottom => GoogleApi.Docs.V1.Model.TableCellBorder.t() | nil,
+          :borderLeft => GoogleApi.Docs.V1.Model.TableCellBorder.t() | nil,
+          :borderRight => GoogleApi.Docs.V1.Model.TableCellBorder.t() | nil,
+          :borderTop => GoogleApi.Docs.V1.Model.TableCellBorder.t() | nil,
+          :columnSpan => integer() | nil,
+          :contentAlignment => String.t() | nil,
+          :paddingBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :paddingLeft => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :paddingRight => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :paddingTop => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :rowSpan => integer() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Docs.V1.Model.OptionalColor)

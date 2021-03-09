@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.WeightedFontFamily do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fontFamily => String.t(),
-          :weight => integer()
+          :fontFamily => String.t() | nil,
+          :weight => integer() | nil
         }
 
   field(:fontFamily)

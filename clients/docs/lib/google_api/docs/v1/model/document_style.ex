@@ -44,24 +44,24 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :background => GoogleApi.Docs.V1.Model.Background.t(),
-          :defaultFooterId => String.t(),
-          :defaultHeaderId => String.t(),
-          :evenPageFooterId => String.t(),
-          :evenPageHeaderId => String.t(),
-          :firstPageFooterId => String.t(),
-          :firstPageHeaderId => String.t(),
-          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :pageNumberStart => integer(),
-          :pageSize => GoogleApi.Docs.V1.Model.Size.t(),
-          :useCustomHeaderFooterMargins => boolean(),
-          :useEvenPageHeaderFooter => boolean(),
-          :useFirstPageHeaderFooter => boolean()
+          :background => GoogleApi.Docs.V1.Model.Background.t() | nil,
+          :defaultFooterId => String.t() | nil,
+          :defaultHeaderId => String.t() | nil,
+          :evenPageFooterId => String.t() | nil,
+          :evenPageHeaderId => String.t() | nil,
+          :firstPageFooterId => String.t() | nil,
+          :firstPageHeaderId => String.t() | nil,
+          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :pageNumberStart => integer() | nil,
+          :pageSize => GoogleApi.Docs.V1.Model.Size.t() | nil,
+          :useCustomHeaderFooterMargins => boolean() | nil,
+          :useEvenPageHeaderFooter => boolean() | nil,
+          :useFirstPageHeaderFooter => boolean() | nil
         }
 
   field(:background, as: GoogleApi.Docs.V1.Model.Background)

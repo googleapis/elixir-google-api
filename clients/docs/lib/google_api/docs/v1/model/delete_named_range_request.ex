@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :namedRangeId => String.t()
+          :name => String.t() | nil,
+          :namedRangeId => String.t() | nil
         }
 
   field(:name)

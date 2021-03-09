@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObjectProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embeddedObject => GoogleApi.Docs.V1.Model.EmbeddedObject.t(),
-          :positioning => GoogleApi.Docs.V1.Model.PositionedObjectPositioning.t()
+          :embeddedObject => GoogleApi.Docs.V1.Model.EmbeddedObject.t() | nil,
+          :positioning => GoogleApi.Docs.V1.Model.PositionedObjectPositioning.t() | nil
         }
 
   field(:embeddedObject, as: GoogleApi.Docs.V1.Model.EmbeddedObject)

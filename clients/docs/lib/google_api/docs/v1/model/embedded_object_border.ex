@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.EmbeddedObjectBorder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Docs.V1.Model.OptionalColor.t(),
-          :dashStyle => String.t(),
-          :propertyState => String.t(),
-          :width => GoogleApi.Docs.V1.Model.Dimension.t()
+          :color => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil,
+          :dashStyle => String.t() | nil,
+          :propertyState => String.t() | nil,
+          :width => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:color, as: GoogleApi.Docs.V1.Model.OptionalColor)

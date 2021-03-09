@@ -47,27 +47,27 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignment => String.t(),
-          :avoidWidowAndOrphan => boolean(),
-          :borderBetween => GoogleApi.Docs.V1.Model.ParagraphBorder.t(),
-          :borderBottom => GoogleApi.Docs.V1.Model.ParagraphBorder.t(),
-          :borderLeft => GoogleApi.Docs.V1.Model.ParagraphBorder.t(),
-          :borderRight => GoogleApi.Docs.V1.Model.ParagraphBorder.t(),
-          :borderTop => GoogleApi.Docs.V1.Model.ParagraphBorder.t(),
-          :direction => String.t(),
-          :headingId => String.t(),
-          :indentEnd => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :indentFirstLine => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :indentStart => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :keepLinesTogether => boolean(),
-          :keepWithNext => boolean(),
-          :lineSpacing => number(),
-          :namedStyleType => String.t(),
-          :shading => GoogleApi.Docs.V1.Model.Shading.t(),
-          :spaceAbove => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :spaceBelow => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :spacingMode => String.t(),
-          :tabStops => list(GoogleApi.Docs.V1.Model.TabStop.t())
+          :alignment => String.t() | nil,
+          :avoidWidowAndOrphan => boolean() | nil,
+          :borderBetween => GoogleApi.Docs.V1.Model.ParagraphBorder.t() | nil,
+          :borderBottom => GoogleApi.Docs.V1.Model.ParagraphBorder.t() | nil,
+          :borderLeft => GoogleApi.Docs.V1.Model.ParagraphBorder.t() | nil,
+          :borderRight => GoogleApi.Docs.V1.Model.ParagraphBorder.t() | nil,
+          :borderTop => GoogleApi.Docs.V1.Model.ParagraphBorder.t() | nil,
+          :direction => String.t() | nil,
+          :headingId => String.t() | nil,
+          :indentEnd => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :indentFirstLine => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :indentStart => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :keepLinesTogether => boolean() | nil,
+          :keepWithNext => boolean() | nil,
+          :lineSpacing => number() | nil,
+          :namedStyleType => String.t() | nil,
+          :shading => GoogleApi.Docs.V1.Model.Shading.t() | nil,
+          :spaceAbove => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :spaceBelow => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :spacingMode => String.t() | nil,
+          :tabStops => list(GoogleApi.Docs.V1.Model.TabStop.t()) | nil
         }
 
   field(:alignment)

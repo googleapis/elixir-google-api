@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedTextStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t(),
-          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t()
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil,
+          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t() | nil
         }
 
   field(:textStyle, as: GoogleApi.Docs.V1.Model.TextStyle)

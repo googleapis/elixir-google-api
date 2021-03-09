@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SizeSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :heightSuggested => boolean(),
-          :widthSuggested => boolean()
+          :heightSuggested => boolean() | nil,
+          :widthSuggested => boolean() | nil
         }
 
   field(:heightSuggested)

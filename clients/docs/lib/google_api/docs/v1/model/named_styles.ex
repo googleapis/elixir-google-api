@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.NamedStyles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :styles => list(GoogleApi.Docs.V1.Model.NamedStyle.t())
+          :styles => list(GoogleApi.Docs.V1.Model.NamedStyle.t()) | nil
         }
 
   field(:styles, as: GoogleApi.Docs.V1.Model.NamedStyle, type: :list)

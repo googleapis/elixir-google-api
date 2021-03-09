@@ -44,24 +44,24 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnProperties => list(GoogleApi.Docs.V1.Model.SectionColumnProperties.t()),
-          :columnSeparatorStyle => String.t(),
-          :contentDirection => String.t(),
-          :defaultFooterId => String.t(),
-          :defaultHeaderId => String.t(),
-          :evenPageFooterId => String.t(),
-          :evenPageHeaderId => String.t(),
-          :firstPageFooterId => String.t(),
-          :firstPageHeaderId => String.t(),
-          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :pageNumberStart => integer(),
-          :sectionType => String.t(),
-          :useFirstPageHeaderFooter => boolean()
+          :columnProperties => list(GoogleApi.Docs.V1.Model.SectionColumnProperties.t()) | nil,
+          :columnSeparatorStyle => String.t() | nil,
+          :contentDirection => String.t() | nil,
+          :defaultFooterId => String.t() | nil,
+          :defaultHeaderId => String.t() | nil,
+          :evenPageFooterId => String.t() | nil,
+          :evenPageHeaderId => String.t() | nil,
+          :firstPageFooterId => String.t() | nil,
+          :firstPageHeaderId => String.t() | nil,
+          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :pageNumberStart => integer() | nil,
+          :sectionType => String.t() | nil,
+          :useFirstPageHeaderFooter => boolean() | nil
         }
 
   field(:columnProperties, as: GoogleApi.Docs.V1.Model.SectionColumnProperties, type: :list)

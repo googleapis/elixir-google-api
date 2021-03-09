@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.NamedRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :namedRangeId => String.t(),
-          :ranges => list(GoogleApi.Docs.V1.Model.Range.t())
+          :name => String.t() | nil,
+          :namedRangeId => String.t() | nil,
+          :ranges => list(GoogleApi.Docs.V1.Model.Range.t()) | nil
         }
 
   field(:name)

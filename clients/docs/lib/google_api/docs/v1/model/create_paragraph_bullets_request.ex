@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletPreset => String.t(),
-          :range => GoogleApi.Docs.V1.Model.Range.t()
+          :bulletPreset => String.t() | nil,
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil
         }
 
   field(:bulletPreset)

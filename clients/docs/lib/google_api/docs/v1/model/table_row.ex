@@ -33,15 +33,14 @@ defmodule GoogleApi.Docs.V1.Model.TableRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endIndex => integer(),
-          :startIndex => integer(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t()),
-          :suggestedTableRowStyleChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTableRowStyle.t()
-          },
-          :tableCells => list(GoogleApi.Docs.V1.Model.TableCell.t()),
-          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t()
+          :endIndex => integer() | nil,
+          :startIndex => integer() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil,
+          :suggestedTableRowStyleChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTableRowStyle.t()} | nil,
+          :tableCells => list(GoogleApi.Docs.V1.Model.TableCell.t()) | nil,
+          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t() | nil
         }
 
   field(:endIndex)

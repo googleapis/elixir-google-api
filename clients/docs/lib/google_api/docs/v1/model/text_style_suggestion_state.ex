@@ -37,17 +37,17 @@ defmodule GoogleApi.Docs.V1.Model.TextStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColorSuggested => boolean(),
-          :baselineOffsetSuggested => boolean(),
-          :boldSuggested => boolean(),
-          :fontSizeSuggested => boolean(),
-          :foregroundColorSuggested => boolean(),
-          :italicSuggested => boolean(),
-          :linkSuggested => boolean(),
-          :smallCapsSuggested => boolean(),
-          :strikethroughSuggested => boolean(),
-          :underlineSuggested => boolean(),
-          :weightedFontFamilySuggested => boolean()
+          :backgroundColorSuggested => boolean() | nil,
+          :baselineOffsetSuggested => boolean() | nil,
+          :boldSuggested => boolean() | nil,
+          :fontSizeSuggested => boolean() | nil,
+          :foregroundColorSuggested => boolean() | nil,
+          :italicSuggested => boolean() | nil,
+          :linkSuggested => boolean() | nil,
+          :smallCapsSuggested => boolean() | nil,
+          :strikethroughSuggested => boolean() | nil,
+          :underlineSuggested => boolean() | nil,
+          :weightedFontFamilySuggested => boolean() | nil
         }
 
   field(:backgroundColorSuggested)

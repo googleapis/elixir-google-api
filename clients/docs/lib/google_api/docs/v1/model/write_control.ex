@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.WriteControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requiredRevisionId => String.t(),
-          :targetRevisionId => String.t()
+          :requiredRevisionId => String.t() | nil,
+          :targetRevisionId => String.t() | nil
         }
 
   field(:requiredRevisionId)

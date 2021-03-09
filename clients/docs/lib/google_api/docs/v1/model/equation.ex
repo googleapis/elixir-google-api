@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.Equation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t())
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil
         }
 
   field(:suggestedDeletionIds, type: :list)

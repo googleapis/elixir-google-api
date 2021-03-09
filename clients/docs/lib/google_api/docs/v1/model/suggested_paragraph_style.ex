@@ -28,9 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedParagraphStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t(),
+          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t() | nil,
           :paragraphStyleSuggestionState =>
-            GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t()
+            GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t() | nil
         }
 
   field(:paragraphStyle, as: GoogleApi.Docs.V1.Model.ParagraphStyle)

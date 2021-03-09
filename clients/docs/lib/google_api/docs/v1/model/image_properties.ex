@@ -33,13 +33,13 @@ defmodule GoogleApi.Docs.V1.Model.ImageProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angle => number(),
-          :brightness => number(),
-          :contentUri => String.t(),
-          :contrast => number(),
-          :cropProperties => GoogleApi.Docs.V1.Model.CropProperties.t(),
-          :sourceUri => String.t(),
-          :transparency => number()
+          :angle => number() | nil,
+          :brightness => number() | nil,
+          :contentUri => String.t() | nil,
+          :contrast => number() | nil,
+          :cropProperties => GoogleApi.Docs.V1.Model.CropProperties.t() | nil,
+          :sourceUri => String.t() | nil,
+          :transparency => number() | nil
         }
 
   field(:angle)

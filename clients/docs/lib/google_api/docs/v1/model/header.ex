@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.Header do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()),
-          :headerId => String.t()
+          :content => list(GoogleApi.Docs.V1.Model.StructuralElement.t()) | nil,
+          :headerId => String.t() | nil
         }
 
   field(:content, as: GoogleApi.Docs.V1.Model.StructuralElement, type: :list)

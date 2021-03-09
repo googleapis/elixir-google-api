@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.ShadingSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColorSuggested => boolean()
+          :backgroundColorSuggested => boolean() | nil
         }
 
   field(:backgroundColorSuggested)

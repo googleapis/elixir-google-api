@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.UpdateTextStyleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :range => GoogleApi.Docs.V1.Model.Range.t(),
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t()
+          :fields => String.t() | nil,
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil,
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil
         }
 
   field(:fields)

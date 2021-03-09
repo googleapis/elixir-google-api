@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.LinkedContentReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sheetsChartReference => GoogleApi.Docs.V1.Model.SheetsChartReference.t()
+          :sheetsChartReference => GoogleApi.Docs.V1.Model.SheetsChartReference.t() | nil
         }
 
   field(:sheetsChartReference, as: GoogleApi.Docs.V1.Model.SheetsChartReference)

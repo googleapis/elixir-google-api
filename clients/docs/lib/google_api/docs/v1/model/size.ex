@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.Size do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :width => GoogleApi.Docs.V1.Model.Dimension.t()
+          :height => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :width => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:height, as: GoogleApi.Docs.V1.Model.Dimension)

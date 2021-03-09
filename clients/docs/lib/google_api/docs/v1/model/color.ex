@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.Color do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rgbColor => GoogleApi.Docs.V1.Model.RgbColor.t()
+          :rgbColor => GoogleApi.Docs.V1.Model.RgbColor.t() | nil
         }
 
   field(:rgbColor, as: GoogleApi.Docs.V1.Model.RgbColor)

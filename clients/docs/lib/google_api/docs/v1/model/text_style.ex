@@ -37,17 +37,17 @@ defmodule GoogleApi.Docs.V1.Model.TextStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t(),
-          :baselineOffset => String.t(),
-          :bold => boolean(),
-          :fontSize => GoogleApi.Docs.V1.Model.Dimension.t(),
-          :foregroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t(),
-          :italic => boolean(),
-          :link => GoogleApi.Docs.V1.Model.Link.t(),
-          :smallCaps => boolean(),
-          :strikethrough => boolean(),
-          :underline => boolean(),
-          :weightedFontFamily => GoogleApi.Docs.V1.Model.WeightedFontFamily.t()
+          :backgroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil,
+          :baselineOffset => String.t() | nil,
+          :bold => boolean() | nil,
+          :fontSize => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :foregroundColor => GoogleApi.Docs.V1.Model.OptionalColor.t() | nil,
+          :italic => boolean() | nil,
+          :link => GoogleApi.Docs.V1.Model.Link.t() | nil,
+          :smallCaps => boolean() | nil,
+          :strikethrough => boolean() | nil,
+          :underline => boolean() | nil,
+          :weightedFontFamily => GoogleApi.Docs.V1.Model.WeightedFontFamily.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Docs.V1.Model.OptionalColor)

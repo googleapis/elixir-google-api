@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.InsertSectionBreakRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t(),
-          :location => GoogleApi.Docs.V1.Model.Location.t(),
-          :sectionType => String.t()
+          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t() | nil,
+          :location => GoogleApi.Docs.V1.Model.Location.t() | nil,
+          :sectionType => String.t() | nil
         }
 
   field(:endOfSegmentLocation, as: GoogleApi.Docs.V1.Model.EndOfSegmentLocation)

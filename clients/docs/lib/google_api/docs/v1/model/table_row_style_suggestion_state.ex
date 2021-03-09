@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.TableRowStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minRowHeightSuggested => boolean()
+          :minRowHeightSuggested => boolean() | nil
         }
 
   field(:minRowHeightSuggested)

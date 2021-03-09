@@ -30,12 +30,11 @@ defmodule GoogleApi.Docs.V1.Model.PageBreak do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionIds => list(String.t()),
-          :suggestedTextStyleChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t()
-          },
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t()
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionIds => list(String.t()) | nil,
+          :suggestedTextStyleChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t()} | nil,
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil
         }
 
   field(:suggestedDeletionIds, type: :list)

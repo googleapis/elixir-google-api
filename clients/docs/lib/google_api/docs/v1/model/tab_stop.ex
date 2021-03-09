@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.TabStop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignment => String.t(),
-          :offset => GoogleApi.Docs.V1.Model.Dimension.t()
+          :alignment => String.t() | nil,
+          :offset => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:alignment)

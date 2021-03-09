@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableRange => GoogleApi.Docs.V1.Model.TableRange.t()
+          :tableRange => GoogleApi.Docs.V1.Model.TableRange.t() | nil
         }
 
   field(:tableRange, as: GoogleApi.Docs.V1.Model.TableRange)

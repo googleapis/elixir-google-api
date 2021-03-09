@@ -30,12 +30,11 @@ defmodule GoogleApi.Docs.V1.Model.List do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listProperties => GoogleApi.Docs.V1.Model.ListProperties.t(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionId => String.t(),
-          :suggestedListPropertiesChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedListProperties.t()
-          }
+          :listProperties => GoogleApi.Docs.V1.Model.ListProperties.t() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionId => String.t() | nil,
+          :suggestedListPropertiesChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedListProperties.t()} | nil
         }
 
   field(:listProperties, as: GoogleApi.Docs.V1.Model.ListProperties)

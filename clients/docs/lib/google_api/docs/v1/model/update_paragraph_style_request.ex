@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t(),
-          :range => GoogleApi.Docs.V1.Model.Range.t()
+          :fields => String.t() | nil,
+          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t() | nil,
+          :range => GoogleApi.Docs.V1.Model.Range.t() | nil
         }
 
   field(:fields)

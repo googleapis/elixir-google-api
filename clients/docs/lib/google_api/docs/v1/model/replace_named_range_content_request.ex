@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namedRangeId => String.t(),
-          :namedRangeName => String.t(),
-          :text => String.t()
+          :namedRangeId => String.t() | nil,
+          :namedRangeName => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:namedRangeId)

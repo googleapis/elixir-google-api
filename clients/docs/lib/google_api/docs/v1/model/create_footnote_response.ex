@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.CreateFootnoteResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :footnoteId => String.t()
+          :footnoteId => String.t() | nil
         }
 
   field(:footnoteId)

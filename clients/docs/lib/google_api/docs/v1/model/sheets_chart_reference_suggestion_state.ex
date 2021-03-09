@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.SheetsChartReferenceSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartIdSuggested => boolean(),
-          :spreadsheetIdSuggested => boolean()
+          :chartIdSuggested => boolean() | nil,
+          :spreadsheetIdSuggested => boolean() | nil
         }
 
   field(:chartIdSuggested)

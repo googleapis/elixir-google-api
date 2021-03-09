@@ -28,8 +28,8 @@ defmodule GoogleApi.Docs.V1.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :segmentId => String.t()
+          :index => integer() | nil,
+          :segmentId => String.t() | nil
         }
 
   field(:index)

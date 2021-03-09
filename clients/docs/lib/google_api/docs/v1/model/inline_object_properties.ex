@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.InlineObjectProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embeddedObject => GoogleApi.Docs.V1.Model.EmbeddedObject.t()
+          :embeddedObject => GoogleApi.Docs.V1.Model.EmbeddedObject.t() | nil
         }
 
   field(:embeddedObject, as: GoogleApi.Docs.V1.Model.EmbeddedObject)

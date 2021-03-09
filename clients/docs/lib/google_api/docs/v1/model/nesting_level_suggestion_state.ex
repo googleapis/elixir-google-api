@@ -34,14 +34,14 @@ defmodule GoogleApi.Docs.V1.Model.NestingLevelSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletAlignmentSuggested => boolean(),
-          :glyphFormatSuggested => boolean(),
-          :glyphSymbolSuggested => boolean(),
-          :glyphTypeSuggested => boolean(),
-          :indentFirstLineSuggested => boolean(),
-          :indentStartSuggested => boolean(),
-          :startNumberSuggested => boolean(),
-          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t()
+          :bulletAlignmentSuggested => boolean() | nil,
+          :glyphFormatSuggested => boolean() | nil,
+          :glyphSymbolSuggested => boolean() | nil,
+          :glyphTypeSuggested => boolean() | nil,
+          :indentFirstLineSuggested => boolean() | nil,
+          :indentStartSuggested => boolean() | nil,
+          :startNumberSuggested => boolean() | nil,
+          :textStyleSuggestionState => GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t() | nil
         }
 
   field(:bulletAlignmentSuggested)

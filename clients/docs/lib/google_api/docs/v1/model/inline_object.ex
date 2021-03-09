@@ -31,13 +31,13 @@ defmodule GoogleApi.Docs.V1.Model.InlineObject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inlineObjectProperties => GoogleApi.Docs.V1.Model.InlineObjectProperties.t(),
-          :objectId => String.t(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInlineObjectPropertiesChanges => %{
-            optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties.t()
-          },
-          :suggestedInsertionId => String.t()
+          :inlineObjectProperties => GoogleApi.Docs.V1.Model.InlineObjectProperties.t() | nil,
+          :objectId => String.t() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInlineObjectPropertiesChanges =>
+            %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties.t()}
+            | nil,
+          :suggestedInsertionId => String.t() | nil
         }
 
   field(:inlineObjectProperties, as: GoogleApi.Docs.V1.Model.InlineObjectProperties)

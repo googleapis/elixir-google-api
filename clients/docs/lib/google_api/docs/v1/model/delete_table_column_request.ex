@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteTableColumnRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t()
+          :tableCellLocation => GoogleApi.Docs.V1.Model.TableCellLocation.t() | nil
         }
 
   field(:tableCellLocation, as: GoogleApi.Docs.V1.Model.TableCellLocation)

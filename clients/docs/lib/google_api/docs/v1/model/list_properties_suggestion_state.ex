@@ -28,7 +28,7 @@ defmodule GoogleApi.Docs.V1.Model.ListPropertiesSuggestionState do
 
   @type t :: %__MODULE__{
           :nestingLevelsSuggestionStates =>
-            list(GoogleApi.Docs.V1.Model.NestingLevelSuggestionState.t())
+            list(GoogleApi.Docs.V1.Model.NestingLevelSuggestionState.t()) | nil
         }
 
   field(:nestingLevelsSuggestionStates,

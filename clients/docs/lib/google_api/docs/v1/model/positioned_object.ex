@@ -31,14 +31,17 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t(),
-          :positionedObjectProperties => GoogleApi.Docs.V1.Model.PositionedObjectProperties.t(),
-          :suggestedDeletionIds => list(String.t()),
-          :suggestedInsertionId => String.t(),
-          :suggestedPositionedObjectPropertiesChanges => %{
-            optional(String.t()) =>
-              GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties.t()
-          }
+          :objectId => String.t() | nil,
+          :positionedObjectProperties =>
+            GoogleApi.Docs.V1.Model.PositionedObjectProperties.t() | nil,
+          :suggestedDeletionIds => list(String.t()) | nil,
+          :suggestedInsertionId => String.t() | nil,
+          :suggestedPositionedObjectPropertiesChanges =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties.t()
+            }
+            | nil
         }
 
   field(:objectId)

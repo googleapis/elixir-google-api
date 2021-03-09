@@ -29,9 +29,9 @@ defmodule GoogleApi.Docs.V1.Model.NamedStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namedStyleType => String.t(),
-          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t(),
-          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t()
+          :namedStyleType => String.t() | nil,
+          :paragraphStyle => GoogleApi.Docs.V1.Model.ParagraphStyle.t() | nil,
+          :textStyle => GoogleApi.Docs.V1.Model.TextStyle.t() | nil
         }
 
   field(:namedStyleType)

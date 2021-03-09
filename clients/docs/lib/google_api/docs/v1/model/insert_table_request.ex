@@ -30,10 +30,10 @@ defmodule GoogleApi.Docs.V1.Model.InsertTableRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => integer(),
-          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t(),
-          :location => GoogleApi.Docs.V1.Model.Location.t(),
-          :rows => integer()
+          :columns => integer() | nil,
+          :endOfSegmentLocation => GoogleApi.Docs.V1.Model.EndOfSegmentLocation.t() | nil,
+          :location => GoogleApi.Docs.V1.Model.Location.t() | nil,
+          :rows => integer() | nil
         }
 
   field(:columns)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.TableRowStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minRowHeight => GoogleApi.Docs.V1.Model.Dimension.t()
+          :minRowHeight => GoogleApi.Docs.V1.Model.Dimension.t() | nil
         }
 
   field(:minRowHeight, as: GoogleApi.Docs.V1.Model.Dimension)

@@ -28,9 +28,9 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedTableRowStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t(),
+          :tableRowStyle => GoogleApi.Docs.V1.Model.TableRowStyle.t() | nil,
           :tableRowStyleSuggestionState =>
-            GoogleApi.Docs.V1.Model.TableRowStyleSuggestionState.t()
+            GoogleApi.Docs.V1.Model.TableRowStyleSuggestionState.t() | nil
         }
 
   field(:tableRowStyle, as: GoogleApi.Docs.V1.Model.TableRowStyle)

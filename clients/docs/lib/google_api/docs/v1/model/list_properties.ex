@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.ListProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nestingLevels => list(GoogleApi.Docs.V1.Model.NestingLevel.t())
+          :nestingLevels => list(GoogleApi.Docs.V1.Model.NestingLevel.t()) | nil
         }
 
   field(:nestingLevels, as: GoogleApi.Docs.V1.Model.NestingLevel, type: :list)

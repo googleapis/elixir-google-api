@@ -38,18 +38,18 @@ defmodule GoogleApi.Docs.V1.Model.TableCellStyleSuggestionState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColorSuggested => boolean(),
-          :borderBottomSuggested => boolean(),
-          :borderLeftSuggested => boolean(),
-          :borderRightSuggested => boolean(),
-          :borderTopSuggested => boolean(),
-          :columnSpanSuggested => boolean(),
-          :contentAlignmentSuggested => boolean(),
-          :paddingBottomSuggested => boolean(),
-          :paddingLeftSuggested => boolean(),
-          :paddingRightSuggested => boolean(),
-          :paddingTopSuggested => boolean(),
-          :rowSpanSuggested => boolean()
+          :backgroundColorSuggested => boolean() | nil,
+          :borderBottomSuggested => boolean() | nil,
+          :borderLeftSuggested => boolean() | nil,
+          :borderRightSuggested => boolean() | nil,
+          :borderTopSuggested => boolean() | nil,
+          :columnSpanSuggested => boolean() | nil,
+          :contentAlignmentSuggested => boolean() | nil,
+          :paddingBottomSuggested => boolean() | nil,
+          :paddingLeftSuggested => boolean() | nil,
+          :paddingRightSuggested => boolean() | nil,
+          :paddingTopSuggested => boolean() | nil,
+          :rowSpanSuggested => boolean() | nil
         }
 
   field(:backgroundColorSuggested)
