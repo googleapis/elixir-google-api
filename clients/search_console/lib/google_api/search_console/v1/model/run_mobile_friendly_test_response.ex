@@ -31,11 +31,12 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mobileFriendliness => String.t(),
-          :mobileFriendlyIssues => list(GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue.t()),
-          :resourceIssues => list(GoogleApi.SearchConsole.V1.Model.ResourceIssue.t()),
-          :screenshot => GoogleApi.SearchConsole.V1.Model.Image.t(),
-          :testStatus => GoogleApi.SearchConsole.V1.Model.TestStatus.t()
+          :mobileFriendliness => String.t() | nil,
+          :mobileFriendlyIssues =>
+            list(GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue.t()) | nil,
+          :resourceIssues => list(GoogleApi.SearchConsole.V1.Model.ResourceIssue.t()) | nil,
+          :screenshot => GoogleApi.SearchConsole.V1.Model.Image.t() | nil,
+          :testStatus => GoogleApi.SearchConsole.V1.Model.TestStatus.t() | nil
         }
 
   field(:mobileFriendliness)

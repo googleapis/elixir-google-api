@@ -27,7 +27,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.ResourceIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockedResource => GoogleApi.SearchConsole.V1.Model.BlockedResource.t()
+          :blockedResource => GoogleApi.SearchConsole.V1.Model.BlockedResource.t() | nil
         }
 
   field(:blockedResource, as: GoogleApi.SearchConsole.V1.Model.BlockedResource)

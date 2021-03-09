@@ -29,9 +29,9 @@ defmodule GoogleApi.SearchConsole.V1.Model.WmxSitemapContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexed => String.t(),
-          :submitted => String.t(),
-          :type => String.t()
+          :indexed => String.t() | nil,
+          :submitted => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:indexed)

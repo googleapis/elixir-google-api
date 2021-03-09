@@ -28,8 +28,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responseAggregationType => String.t(),
-          :rows => list(GoogleApi.SearchConsole.V1.Model.ApiDataRow.t())
+          :responseAggregationType => String.t() | nil,
+          :rows => list(GoogleApi.SearchConsole.V1.Model.ApiDataRow.t()) | nil
         }
 
   field(:responseAggregationType)
