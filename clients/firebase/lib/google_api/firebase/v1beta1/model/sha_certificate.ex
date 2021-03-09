@@ -29,9 +29,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ShaCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certType => String.t(),
-          :name => String.t(),
-          :shaHash => String.t()
+          :certType => String.t() | nil,
+          :name => String.t() | nil,
+          :shaHash => String.t() | nil
         }
 
   field(:certType)

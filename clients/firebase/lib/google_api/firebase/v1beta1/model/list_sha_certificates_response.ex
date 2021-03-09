@@ -27,7 +27,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListShaCertificatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificates => list(GoogleApi.Firebase.V1beta1.Model.ShaCertificate.t())
+          :certificates => list(GoogleApi.Firebase.V1beta1.Model.ShaCertificate.t()) | nil
         }
 
   field(:certificates, as: GoogleApi.Firebase.V1beta1.Model.ShaCertificate, type: :list)

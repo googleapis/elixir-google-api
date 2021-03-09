@@ -29,9 +29,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :features => list(String.t()),
-          :locationId => String.t(),
-          :type => String.t()
+          :features => list(String.t()) | nil,
+          :locationId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:features, type: :list)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :projectNumber => String.t(),
-          :resources => GoogleApi.Firebase.V1beta1.Model.DefaultResources.t(),
-          :state => String.t()
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :projectNumber => String.t() | nil,
+          :resources => GoogleApi.Firebase.V1beta1.Model.DefaultResources.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:displayName)

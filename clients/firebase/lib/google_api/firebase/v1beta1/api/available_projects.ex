@@ -55,6 +55,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.AvailableProjects do
   @spec firebase_available_projects_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListAvailableProjectsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firebase_available_projects_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

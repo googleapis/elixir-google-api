@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidAppConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configFileContents => String.t(),
-          :configFilename => String.t()
+          :configFileContents => String.t() | nil,
+          :configFilename => String.t() | nil
         }
 
   field(:configFileContents)

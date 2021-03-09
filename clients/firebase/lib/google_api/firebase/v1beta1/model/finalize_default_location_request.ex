@@ -27,7 +27,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FinalizeDefaultLocationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationId => String.t()
+          :locationId => String.t() | nil
         }
 
   field(:locationId)

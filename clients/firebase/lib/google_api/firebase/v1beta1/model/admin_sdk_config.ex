@@ -30,10 +30,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AdminSdkConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databaseURL => String.t(),
-          :locationId => String.t(),
-          :projectId => String.t(),
-          :storageBucket => String.t()
+          :databaseURL => String.t() | nil,
+          :locationId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :storageBucket => String.t() | nil
         }
 
   field(:databaseURL)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AddFirebaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationId => String.t(),
-          :regionCode => String.t(),
-          :timeZone => String.t()
+          :locationId => String.t() | nil,
+          :regionCode => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:locationId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AddGoogleAnalyticsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsAccountId => String.t(),
-          :analyticsPropertyId => String.t()
+          :analyticsAccountId => String.t() | nil,
+          :analyticsPropertyId => String.t() | nil
         }
 
   field(:analyticsAccountId)

@@ -35,15 +35,15 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiKey => String.t(),
-          :appId => String.t(),
-          :authDomain => String.t(),
-          :databaseURL => String.t(),
-          :locationId => String.t(),
-          :measurementId => String.t(),
-          :messagingSenderId => String.t(),
-          :projectId => String.t(),
-          :storageBucket => String.t()
+          :apiKey => String.t() | nil,
+          :appId => String.t() | nil,
+          :authDomain => String.t() | nil,
+          :databaseURL => String.t() | nil,
+          :locationId => String.t() | nil,
+          :measurementId => String.t() | nil,
+          :messagingSenderId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :storageBucket => String.t() | nil
         }
 
   field(:apiKey)

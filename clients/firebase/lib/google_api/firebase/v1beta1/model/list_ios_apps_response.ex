@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListIosAppsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apps => list(GoogleApi.Firebase.V1beta1.Model.IosApp.t()),
-          :nextPageToken => String.t()
+          :apps => list(GoogleApi.Firebase.V1beta1.Model.IosApp.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:apps, as: GoogleApi.Firebase.V1beta1.Model.IosApp, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListAvailableLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.Firebase.V1beta1.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.Firebase.V1beta1.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.Firebase.V1beta1.Model.Location, type: :list)

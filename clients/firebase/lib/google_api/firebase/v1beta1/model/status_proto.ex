@@ -31,11 +31,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canonicalCode => integer(),
-          :code => integer(),
-          :message => String.t(),
-          :messageSet => GoogleApi.Firebase.V1beta1.Model.MessageSet.t(),
-          :space => String.t()
+          :canonicalCode => integer() | nil,
+          :code => integer() | nil,
+          :message => String.t() | nil,
+          :messageSet => GoogleApi.Firebase.V1beta1.Model.MessageSet.t() | nil,
+          :space => String.t() | nil
         }
 
   field(:canonicalCode)

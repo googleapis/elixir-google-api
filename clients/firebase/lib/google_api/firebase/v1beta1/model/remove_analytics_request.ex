@@ -27,7 +27,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveAnalyticsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsPropertyId => String.t()
+          :analyticsPropertyId => String.t() | nil
         }
 
   field(:analyticsPropertyId)

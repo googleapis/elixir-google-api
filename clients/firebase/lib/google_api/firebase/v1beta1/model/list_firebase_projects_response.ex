@@ -28,8 +28,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListFirebaseProjectsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :results => list(GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t())
+          :nextPageToken => String.t() | nil,
+          :results => list(GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t()) | nil
         }
 
   field(:nextPageToken)
