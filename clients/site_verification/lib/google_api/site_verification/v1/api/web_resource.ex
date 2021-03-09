@@ -52,7 +52,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def site_verification_web_resource_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -103,6 +103,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -157,6 +158,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
           {:ok,
            GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_get_token(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -219,6 +221,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         ) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_insert(
         connection,
@@ -276,6 +279,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -329,6 +333,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   @spec site_verification_web_resource_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -389,6 +394,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         ) ::
           {:ok, GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def site_verification_web_resource_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

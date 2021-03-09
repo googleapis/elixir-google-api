@@ -28,8 +28,8 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettoke
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identifier => String.t(),
-          :type => String.t()
+          :identifier => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:identifier)

@@ -29,6 +29,7 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceListRes
   @type t :: %__MODULE__{
           :items =>
             list(GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResource.t())
+            | nil
         }
 
   field(:items,

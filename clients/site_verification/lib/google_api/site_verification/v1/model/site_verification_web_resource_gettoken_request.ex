@@ -29,8 +29,9 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettoke
 
   @type t :: %__MODULE__{
           :site =>
-            GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite.t(),
-          :verificationMethod => String.t()
+            GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite.t()
+            | nil,
+          :verificationMethod => String.t() | nil
         }
 
   field(:site,
