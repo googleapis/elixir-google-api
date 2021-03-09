@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.CaseExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t()
+          :dimensionName => String.t() | nil
         }
 
   field(:dimensionName)

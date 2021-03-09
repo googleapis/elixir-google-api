@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.OrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desc => boolean(),
-          :dimension => GoogleApi.AnalyticsData.V1alpha.Model.DimensionOrderBy.t(),
-          :metric => GoogleApi.AnalyticsData.V1alpha.Model.MetricOrderBy.t(),
-          :pivot => GoogleApi.AnalyticsData.V1alpha.Model.PivotOrderBy.t()
+          :desc => boolean() | nil,
+          :dimension => GoogleApi.AnalyticsData.V1alpha.Model.DimensionOrderBy.t() | nil,
+          :metric => GoogleApi.AnalyticsData.V1alpha.Model.MetricOrderBy.t() | nil,
+          :pivot => GoogleApi.AnalyticsData.V1alpha.Model.PivotOrderBy.t() | nil
         }
 
   field(:desc)

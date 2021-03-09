@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.CohortsRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endOffset => integer(),
-          :granularity => String.t(),
-          :startOffset => integer()
+          :endOffset => integer() | nil,
+          :granularity => String.t() | nil,
+          :startOffset => integer() | nil
         }
 
   field(:endOffset)

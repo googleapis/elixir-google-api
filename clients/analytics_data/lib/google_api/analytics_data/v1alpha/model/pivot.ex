@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Pivot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldNames => list(String.t()),
-          :limit => String.t(),
-          :metricAggregations => list(String.t()),
-          :offset => String.t(),
-          :orderBys => list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t())
+          :fieldNames => list(String.t()) | nil,
+          :limit => String.t() | nil,
+          :metricAggregations => list(String.t()) | nil,
+          :offset => String.t() | nil,
+          :orderBys => list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t()) | nil
         }
 
   field(:fieldNames, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DimensionOrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :orderType => String.t()
+          :dimensionName => String.t() | nil,
+          :orderType => String.t() | nil
         }
 
   field(:dimensionName)

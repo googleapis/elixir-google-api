@@ -33,13 +33,14 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregates => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()),
-          :dimensionHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()),
-          :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t(),
-          :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()),
-          :pivotHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader.t()),
-          :propertyQuota => GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota.t(),
-          :rows => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t())
+          :aggregates => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
+          :dimensionHeaders =>
+            list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()) | nil,
+          :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t() | nil,
+          :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()) | nil,
+          :pivotHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader.t()) | nil,
+          :propertyQuota => GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota.t() | nil,
+          :rows => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil
         }
 
   field(:aggregates, as: GoogleApi.AnalyticsData.V1alpha.Model.Row, type: :list)

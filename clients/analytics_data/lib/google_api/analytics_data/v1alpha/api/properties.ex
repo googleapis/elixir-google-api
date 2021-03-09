@@ -59,6 +59,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.Metadata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_properties_get_metadata(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,6 +125,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsData.V1alpha.Model.RunRealtimeReportResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsdata_properties_run_realtime_report(
         connection,

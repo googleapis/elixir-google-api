@@ -35,15 +35,16 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()),
-          :maximums => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()),
-          :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t(),
-          :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()),
-          :minimums => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()),
-          :propertyQuota => GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota.t(),
-          :rowCount => integer(),
-          :rows => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()),
-          :totals => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t())
+          :dimensionHeaders =>
+            list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()) | nil,
+          :maximums => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
+          :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t() | nil,
+          :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()) | nil,
+          :minimums => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
+          :propertyQuota => GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota.t() | nil,
+          :rowCount => integer() | nil,
+          :rows => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
+          :totals => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil
         }
 
   field(:dimensionHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader, type: :list)

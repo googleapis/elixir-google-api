@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.MetricOrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricName => String.t()
+          :metricName => String.t() | nil
         }
 
   field(:metricName)

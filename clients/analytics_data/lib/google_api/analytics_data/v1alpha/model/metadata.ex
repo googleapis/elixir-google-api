@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata.t()),
-          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata.t()),
-          :name => String.t()
+          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata.t()) | nil,
+          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:dimensions, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata, type: :list)

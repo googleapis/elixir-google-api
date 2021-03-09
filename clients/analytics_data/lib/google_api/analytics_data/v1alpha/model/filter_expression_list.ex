@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expressions => list(GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t())
+          :expressions => list(GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t()) | nil
         }
 
   field(:expressions, as: GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression, type: :list)

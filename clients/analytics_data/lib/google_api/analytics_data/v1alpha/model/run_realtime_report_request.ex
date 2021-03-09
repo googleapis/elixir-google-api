@@ -34,14 +34,14 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunRealtimeReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t(),
-          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t()),
-          :limit => String.t(),
-          :metricAggregations => list(String.t()),
-          :metricFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t(),
-          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t()),
-          :orderBys => list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t()),
-          :returnPropertyQuota => boolean()
+          :dimensionFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t() | nil,
+          :dimensions => list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t()) | nil,
+          :limit => String.t() | nil,
+          :metricAggregations => list(String.t()) | nil,
+          :metricFilter => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t() | nil,
+          :metrics => list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t()) | nil,
+          :orderBys => list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t()) | nil,
+          :returnPropertyQuota => boolean() | nil
         }
 
   field(:dimensionFilter, as: GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.ConcatenateExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delimiter => String.t(),
-          :dimensionNames => list(String.t())
+          :delimiter => String.t() | nil,
+          :dimensionNames => list(String.t()) | nil
         }
 
   field(:delimiter)

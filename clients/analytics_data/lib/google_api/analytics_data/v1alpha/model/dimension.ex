@@ -28,8 +28,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Dimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionExpression => GoogleApi.AnalyticsData.V1alpha.Model.DimensionExpression.t(),
-          :name => String.t()
+          :dimensionExpression =>
+            GoogleApi.AnalyticsData.V1alpha.Model.DimensionExpression.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:dimensionExpression, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionExpression)

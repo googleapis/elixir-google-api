@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PivotDimensionHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionValues => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue.t())
+          :dimensionValues => list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue.t()) | nil
         }
 
   field(:dimensionValues, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionValue, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PivotSelection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :dimensionValue => String.t()
+          :dimensionName => String.t() | nil,
+          :dimensionValue => String.t() | nil
         }
 
   field(:dimensionName)

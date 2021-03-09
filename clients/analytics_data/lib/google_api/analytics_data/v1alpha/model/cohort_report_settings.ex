@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.CohortReportSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accumulate => boolean()
+          :accumulate => boolean() | nil
         }
 
   field(:accumulate)

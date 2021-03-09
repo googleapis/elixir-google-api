@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :andGroup => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList.t(),
-          :filter => GoogleApi.AnalyticsData.V1alpha.Model.Filter.t(),
-          :notExpression => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t(),
-          :orGroup => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList.t()
+          :andGroup => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList.t() | nil,
+          :filter => GoogleApi.AnalyticsData.V1alpha.Model.Filter.t() | nil,
+          :notExpression => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t() | nil,
+          :orGroup => GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList.t() | nil
         }
 
   field(:andGroup, as: GoogleApi.AnalyticsData.V1alpha.Model.FilterExpressionList)

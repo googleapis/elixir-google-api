@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.InListFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :values => list(String.t())
+          :caseSensitive => boolean() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:caseSensitive)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DimensionExpression do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :concatenate => GoogleApi.AnalyticsData.V1alpha.Model.ConcatenateExpression.t(),
-          :lowerCase => GoogleApi.AnalyticsData.V1alpha.Model.CaseExpression.t(),
-          :upperCase => GoogleApi.AnalyticsData.V1alpha.Model.CaseExpression.t()
+          :concatenate => GoogleApi.AnalyticsData.V1alpha.Model.ConcatenateExpression.t() | nil,
+          :lowerCase => GoogleApi.AnalyticsData.V1alpha.Model.CaseExpression.t() | nil,
+          :upperCase => GoogleApi.AnalyticsData.V1alpha.Model.CaseExpression.t() | nil
         }
 
   field(:concatenate, as: GoogleApi.AnalyticsData.V1alpha.Model.ConcatenateExpression)

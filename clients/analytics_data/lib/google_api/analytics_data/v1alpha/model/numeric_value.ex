@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.NumericValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :doubleValue => float(),
-          :int64Value => String.t()
+          :doubleValue => float() | nil,
+          :int64Value => String.t() | nil
         }
 
   field(:doubleValue)

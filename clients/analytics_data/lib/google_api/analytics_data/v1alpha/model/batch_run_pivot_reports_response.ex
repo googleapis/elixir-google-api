@@ -27,7 +27,8 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.BatchRunPivotReportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pivotReports => list(GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse.t())
+          :pivotReports =>
+            list(GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse.t()) | nil
         }
 
   field(:pivotReports,
