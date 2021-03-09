@@ -29,9 +29,9 @@ defmodule GoogleApi.Poly.V1.Model.ListLikedAssetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assets => list(GoogleApi.Poly.V1.Model.Asset.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :assets => list(GoogleApi.Poly.V1.Model.Asset.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:assets, as: GoogleApi.Poly.V1.Model.Asset, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Poly.V1.Model.RemixInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceAsset => list(String.t())
+          :sourceAsset => list(String.t()) | nil
         }
 
   field(:sourceAsset, type: :list)

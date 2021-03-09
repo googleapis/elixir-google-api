@@ -27,7 +27,7 @@ defmodule GoogleApi.Poly.V1.Model.UserAsset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :asset => GoogleApi.Poly.V1.Model.Asset.t()
+          :asset => GoogleApi.Poly.V1.Model.Asset.t() | nil
         }
 
   field(:asset, as: GoogleApi.Poly.V1.Model.Asset)

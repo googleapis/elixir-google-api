@@ -28,8 +28,8 @@ defmodule GoogleApi.Poly.V1.Model.FormatComplexity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lodHint => integer(),
-          :triangleCount => String.t()
+          :lodHint => integer() | nil,
+          :triangleCount => String.t() | nil
         }
 
   field(:lodHint)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Poly.V1.Model.ObjParseError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :endIndex => integer(),
-          :filePath => String.t(),
-          :line => String.t(),
-          :lineNumber => integer(),
-          :startIndex => integer()
+          :code => String.t() | nil,
+          :endIndex => integer() | nil,
+          :filePath => String.t() | nil,
+          :line => String.t() | nil,
+          :lineNumber => integer() | nil,
+          :startIndex => integer() | nil
         }
 
   field(:code)

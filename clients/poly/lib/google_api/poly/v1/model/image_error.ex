@@ -28,8 +28,8 @@ defmodule GoogleApi.Poly.V1.Model.ImageError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :filePath => String.t()
+          :code => String.t() | nil,
+          :filePath => String.t() | nil
         }
 
   field(:code)

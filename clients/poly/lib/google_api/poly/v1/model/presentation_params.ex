@@ -29,9 +29,9 @@ defmodule GoogleApi.Poly.V1.Model.PresentationParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => String.t(),
-          :colorSpace => String.t(),
-          :orientingRotation => GoogleApi.Poly.V1.Model.Quaternion.t()
+          :backgroundColor => String.t() | nil,
+          :colorSpace => String.t() | nil,
+          :orientingRotation => GoogleApi.Poly.V1.Model.Quaternion.t() | nil
         }
 
   field(:backgroundColor)
