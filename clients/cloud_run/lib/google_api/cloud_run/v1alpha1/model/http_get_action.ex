@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :httpHeaders => list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t()),
-          :path => String.t(),
-          :port => GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t(),
-          :scheme => String.t()
+          :host => String.t() | nil,
+          :httpHeaders => list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t()) | nil,
+          :path => String.t() | nil,
+          :port => GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t() | nil,
+          :scheme => String.t() | nil
         }
 
   field(:host)

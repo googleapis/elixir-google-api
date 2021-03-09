@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configMap => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource.t(),
-          :name => String.t(),
-          :secret => GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource.t()
+          :configMap => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource.t() | nil,
+          :name => String.t() | nil,
+          :secret => GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource.t() | nil
         }
 
   field(:configMap, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceTemplateSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spec => GoogleApi.CloudRun.V1alpha1.Model.InstanceSpec.t()
+          :spec => GoogleApi.CloudRun.V1alpha1.Model.InstanceSpec.t() | nil
         }
 
   field(:spec, as: GoogleApi.CloudRun.V1alpha1.Model.InstanceSpec)

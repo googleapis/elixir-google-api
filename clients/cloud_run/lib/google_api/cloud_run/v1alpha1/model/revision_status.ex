@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.RevisionCondition.t()),
-          :imageDigest => String.t(),
-          :logUrl => String.t(),
-          :observedGeneration => integer(),
-          :serviceName => String.t()
+          :conditions => list(GoogleApi.CloudRun.V1alpha1.Model.RevisionCondition.t()) | nil,
+          :imageDigest => String.t() | nil,
+          :logUrl => String.t() | nil,
+          :observedGeneration => integer() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:conditions, as: GoogleApi.CloudRun.V1alpha1.Model.RevisionCondition, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Lifecycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postStart => GoogleApi.CloudRun.V1alpha1.Model.Handler.t(),
-          :preStop => GoogleApi.CloudRun.V1alpha1.Model.Handler.t()
+          :postStart => GoogleApi.CloudRun.V1alpha1.Model.Handler.t() | nil,
+          :preStop => GoogleApi.CloudRun.V1alpha1.Model.Handler.t() | nil
         }
 
   field(:postStart, as: GoogleApi.CloudRun.V1alpha1.Model.Handler)

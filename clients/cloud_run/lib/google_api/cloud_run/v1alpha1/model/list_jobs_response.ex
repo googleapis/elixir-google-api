@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :items => list(GoogleApi.CloudRun.V1alpha1.Model.Job.t()),
-          :kind => String.t(),
-          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t(),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :apiVersion => String.t() | nil,
+          :items => list(GoogleApi.CloudRun.V1alpha1.Model.Job.t()) | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:apiVersion)

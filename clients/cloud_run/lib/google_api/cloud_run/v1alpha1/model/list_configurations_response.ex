@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListConfigurationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :items => list(GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()),
-          :kind => String.t(),
-          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t(),
-          :unreachable => list(String.t())
+          :apiVersion => String.t() | nil,
+          :items => list(GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()) | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:apiVersion)

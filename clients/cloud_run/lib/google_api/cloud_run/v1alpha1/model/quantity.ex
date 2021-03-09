@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Quantity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :string => String.t()
+          :string => String.t() | nil
         }
 
   field(:string)

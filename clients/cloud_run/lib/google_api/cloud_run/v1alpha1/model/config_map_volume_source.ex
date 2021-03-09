@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultMode => integer(),
-          :items => list(GoogleApi.CloudRun.V1alpha1.Model.KeyToPath.t()),
-          :name => String.t(),
-          :optional => boolean()
+          :defaultMode => integer() | nil,
+          :items => list(GoogleApi.CloudRun.V1alpha1.Model.KeyToPath.t()) | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:defaultMode)

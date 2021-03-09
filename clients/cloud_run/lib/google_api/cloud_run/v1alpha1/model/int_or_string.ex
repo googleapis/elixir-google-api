@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.IntOrString do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intVal => integer(),
-          :strVal => String.t(),
-          :type => integer()
+          :intVal => integer() | nil,
+          :strVal => String.t() | nil,
+          :type => integer() | nil
         }
 
   field(:intVal)

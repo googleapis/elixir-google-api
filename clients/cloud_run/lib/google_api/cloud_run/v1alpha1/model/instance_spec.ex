@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeDeadlineSeconds => String.t(),
-          :containers => list(GoogleApi.CloudRun.V1alpha1.Model.Container.t()),
-          :restartPolicy => String.t(),
-          :serviceAccountName => String.t(),
-          :terminationGracePeriodSeconds => String.t(),
-          :volumes => list(GoogleApi.CloudRun.V1alpha1.Model.Volume.t())
+          :activeDeadlineSeconds => String.t() | nil,
+          :containers => list(GoogleApi.CloudRun.V1alpha1.Model.Container.t()) | nil,
+          :restartPolicy => String.t() | nil,
+          :serviceAccountName => String.t() | nil,
+          :terminationGracePeriodSeconds => String.t() | nil,
+          :volumes => list(GoogleApi.CloudRun.V1alpha1.Model.Volume.t()) | nil
         }
 
   field(:activeDeadlineSeconds)

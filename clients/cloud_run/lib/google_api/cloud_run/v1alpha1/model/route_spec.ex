@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :generation => integer(),
-          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t())
+          :generation => integer() | nil,
+          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t()) | nil
         }
 
   field(:generation)

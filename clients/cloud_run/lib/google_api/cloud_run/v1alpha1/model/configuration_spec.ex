@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :generation => integer(),
-          :revisionTemplate => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t(),
-          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t()
+          :generation => integer() | nil,
+          :revisionTemplate => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t() | nil,
+          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t() | nil
         }
 
   field(:generation)

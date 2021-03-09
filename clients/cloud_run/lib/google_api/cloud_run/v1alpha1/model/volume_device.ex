@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devicePath => String.t(),
-          :name => String.t()
+          :devicePath => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:devicePath)

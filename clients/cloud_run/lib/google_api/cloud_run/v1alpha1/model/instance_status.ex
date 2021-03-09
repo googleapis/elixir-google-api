@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionTime => DateTime.t(),
-          :failed => integer(),
-          :index => integer(),
-          :lastExitCode => integer(),
-          :restarted => integer(),
-          :startTime => DateTime.t(),
-          :succeeded => integer()
+          :completionTime => DateTime.t() | nil,
+          :failed => integer() | nil,
+          :index => integer() | nil,
+          :lastExitCode => integer() | nil,
+          :restarted => integer() | nil,
+          :startTime => DateTime.t() | nil,
+          :succeeded => integer() | nil
         }
 
   field(:completionTime, as: DateTime)

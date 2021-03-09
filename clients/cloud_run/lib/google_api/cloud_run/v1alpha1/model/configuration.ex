@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Configuration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :kind => String.t(),
-          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t(),
-          :spec => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t(),
-          :status => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus.t()
+          :apiVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t() | nil,
+          :spec => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t() | nil,
+          :status => GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus.t() | nil
         }
 
   field(:apiVersion)

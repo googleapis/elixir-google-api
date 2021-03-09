@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Capabilities do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :add => list(String.t()),
-          :drop => list(String.t())
+          :add => list(String.t()) | nil,
+          :drop => list(String.t()) | nil
         }
 
   field(:add, type: :list)

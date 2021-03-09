@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Handler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exec => GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t(),
-          :httpGet => GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t(),
-          :tcpSocket => GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t()
+          :exec => GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t() | nil,
+          :httpGet => GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t() | nil,
+          :tcpSocket => GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t() | nil
         }
 
   field(:exec, as: GoogleApi.CloudRun.V1alpha1.Model.ExecAction)

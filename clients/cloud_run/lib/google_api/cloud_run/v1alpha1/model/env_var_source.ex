@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configMapKeyRef => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapKeySelector.t(),
-          :secretKeyRef => GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t()
+          :configMapKeyRef => GoogleApi.CloudRun.V1alpha1.Model.ConfigMapKeySelector.t() | nil,
+          :secretKeyRef => GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t() | nil
         }
 
   field(:configMapKeyRef, as: GoogleApi.CloudRun.V1alpha1.Model.ConfigMapKeySelector)

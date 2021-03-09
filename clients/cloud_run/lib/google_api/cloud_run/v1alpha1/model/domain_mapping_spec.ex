@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateMode => String.t(),
-          :forceOverride => boolean(),
-          :routeName => String.t()
+          :certificateMode => String.t() | nil,
+          :forceOverride => boolean() | nil,
+          :routeName => String.t() | nil
         }
 
   field(:certificateMode)

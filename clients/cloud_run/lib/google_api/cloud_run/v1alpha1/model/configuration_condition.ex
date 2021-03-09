@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastTransitionTime => DateTime.t(),
-          :message => String.t(),
-          :reason => String.t(),
-          :severity => String.t(),
-          :status => String.t(),
-          :type => String.t()
+          :lastTransitionTime => DateTime.t() | nil,
+          :message => String.t() | nil,
+          :reason => String.t() | nil,
+          :severity => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:lastTransitionTime, as: DateTime)
