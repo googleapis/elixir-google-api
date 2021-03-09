@@ -27,10 +27,12 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagem
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eligibilities => %{
-            optional(String.t()) =>
-              GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t()
-          }
+          :eligibilities =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t()
+            }
+            | nil
         }
 
   field(:eligibilities,

@@ -29,9 +29,9 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Schedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => String.t(),
-          :duration => String.t(),
-          :startTime => GoogleApi.ManagedIdentities.V1.Model.TimeOfDay.t()
+          :day => String.t() | nil,
+          :duration => String.t() | nil,
+          :startTime => GoogleApi.ManagedIdentities.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:day)

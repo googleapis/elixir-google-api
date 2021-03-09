@@ -30,10 +30,10 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagem
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :reason => String.t(),
-          :sliName => String.t(),
-          :startTime => DateTime.t()
+          :duration => String.t() | nil,
+          :reason => String.t() | nil,
+          :sliName => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:duration)

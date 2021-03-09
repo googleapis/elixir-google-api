@@ -59,6 +59,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_get(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_list(
         connection,
@@ -206,6 +208,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_attach_trust(
         connection,
@@ -278,6 +281,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_create(
         connection,
@@ -349,6 +353,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_delete(
         connection,
@@ -419,6 +424,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_detach_trust(
         connection,
@@ -489,6 +495,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Domain.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_get(
         connection,
@@ -559,6 +566,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_get_iam_policy(
         connection,
@@ -633,6 +641,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.ListDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_list(
         connection,
@@ -710,6 +719,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_patch(
         connection,
@@ -782,6 +792,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_reconfigure_trust(
         connection,
@@ -853,6 +864,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.ResetAdminPasswordResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_reset_admin_password(
         connection,
@@ -926,6 +938,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_set_iam_policy(
         connection,
@@ -997,6 +1010,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_test_iam_permissions(
         connection,
@@ -1070,6 +1084,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_domains_validate_trust(
         connection,
@@ -1141,6 +1156,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_operations_cancel(
         connection,
@@ -1211,6 +1227,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_operations_delete(
         connection,
@@ -1280,6 +1297,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_operations_get(
         connection,
@@ -1352,6 +1370,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ManagedIdentities.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def managedidentities_projects_locations_global_operations_list(
         connection,

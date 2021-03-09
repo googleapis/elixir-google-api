@@ -28,8 +28,8 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.MaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailyCycle => GoogleApi.ManagedIdentities.V1.Model.DailyCycle.t(),
-          :weeklyCycle => GoogleApi.ManagedIdentities.V1.Model.WeeklyCycle.t()
+          :dailyCycle => GoogleApi.ManagedIdentities.V1.Model.DailyCycle.t() | nil,
+          :weeklyCycle => GoogleApi.ManagedIdentities.V1.Model.WeeklyCycle.t() | nil
         }
 
   field(:dailyCycle, as: GoogleApi.ManagedIdentities.V1.Model.DailyCycle)

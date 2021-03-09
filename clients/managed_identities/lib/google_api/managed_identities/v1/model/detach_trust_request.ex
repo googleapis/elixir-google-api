@@ -27,7 +27,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.DetachTrustRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :trust => GoogleApi.ManagedIdentities.V1.Model.Trust.t()
+          :trust => GoogleApi.ManagedIdentities.V1.Model.Trust.t() | nil
         }
 
   field(:trust, as: GoogleApi.ManagedIdentities.V1.Model.Trust)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.ReconfigureTrustRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetDnsIpAddresses => list(String.t()),
-          :targetDomainName => String.t()
+          :targetDnsIpAddresses => list(String.t()) | nil,
+          :targetDomainName => String.t() | nil
         }
 
   field(:targetDnsIpAddresses, type: :list)
