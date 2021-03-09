@@ -53,6 +53,7 @@ defmodule GoogleApi.Games.V1.Api.Stats do
   @spec games_stats_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.StatsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_stats_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.PlayerScore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedScore => String.t(),
-          :kind => String.t(),
-          :score => String.t(),
-          :scoreTag => String.t(),
-          :timeSpan => String.t()
+          :formattedScore => String.t() | nil,
+          :kind => String.t() | nil,
+          :score => String.t() | nil,
+          :scoreTag => String.t() | nil,
+          :timeSpan => String.t() | nil
         }
 
   field(:formattedScore)

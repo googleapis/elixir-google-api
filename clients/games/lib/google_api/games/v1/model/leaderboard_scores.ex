@@ -32,12 +32,12 @@ defmodule GoogleApi.Games.V1.Model.LeaderboardScores do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Games.V1.Model.LeaderboardEntry.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :numScores => String.t(),
-          :playerScore => GoogleApi.Games.V1.Model.LeaderboardEntry.t(),
-          :prevPageToken => String.t()
+          :items => list(GoogleApi.Games.V1.Model.LeaderboardEntry.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :numScores => String.t() | nil,
+          :playerScore => GoogleApi.Games.V1.Model.LeaderboardEntry.t() | nil,
+          :prevPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Games.V1.Model.LeaderboardEntry, type: :list)

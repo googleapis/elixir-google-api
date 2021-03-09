@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.ImageAsset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :kind => String.t(),
-          :name => String.t(),
-          :url => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :url => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.EventRecordRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentTimeMillis => String.t(),
-          :kind => String.t(),
-          :requestId => String.t(),
-          :timePeriods => list(GoogleApi.Games.V1.Model.EventPeriodUpdate.t())
+          :currentTimeMillis => String.t() | nil,
+          :kind => String.t() | nil,
+          :requestId => String.t() | nil,
+          :timePeriods => list(GoogleApi.Games.V1.Model.EventPeriodUpdate.t()) | nil
         }
 
   field(:currentTimeMillis)

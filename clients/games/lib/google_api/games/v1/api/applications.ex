@@ -54,7 +54,10 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Application.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Games.V1.Model.Application.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def games_applications_get(connection, application_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +117,10 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_get_end_point(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.EndPoint.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Games.V1.Model.EndPoint.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def games_applications_get_end_point(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -170,7 +176,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_played(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def games_applications_played(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -227,6 +233,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   @spec games_applications_verify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.ApplicationVerifyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_applications_verify(connection, application_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.SnapshotRevision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blob => GoogleApi.Games.V1.Model.SnapshotDataResource.t(),
-          :coverImage => GoogleApi.Games.V1.Model.SnapshotCoverImageResource.t(),
-          :id => String.t(),
-          :metadata => GoogleApi.Games.V1.Model.SnapshotMetadata.t()
+          :blob => GoogleApi.Games.V1.Model.SnapshotDataResource.t() | nil,
+          :coverImage => GoogleApi.Games.V1.Model.SnapshotCoverImageResource.t() | nil,
+          :id => String.t() | nil,
+          :metadata => GoogleApi.Games.V1.Model.SnapshotMetadata.t() | nil
         }
 
   field(:blob, as: GoogleApi.Games.V1.Model.SnapshotDataResource)

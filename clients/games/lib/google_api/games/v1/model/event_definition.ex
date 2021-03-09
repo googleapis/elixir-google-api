@@ -34,14 +34,14 @@ defmodule GoogleApi.Games.V1.Model.EventDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childEvents => list(GoogleApi.Games.V1.Model.EventChild.t()),
-          :description => String.t(),
-          :displayName => String.t(),
-          :id => String.t(),
-          :imageUrl => String.t(),
-          :isDefaultImageUrl => boolean(),
-          :kind => String.t(),
-          :visibility => String.t()
+          :childEvents => list(GoogleApi.Games.V1.Model.EventChild.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :imageUrl => String.t() | nil,
+          :isDefaultImageUrl => boolean() | nil,
+          :kind => String.t() | nil,
+          :visibility => String.t() | nil
         }
 
   field(:childEvents, as: GoogleApi.Games.V1.Model.EventChild, type: :list)

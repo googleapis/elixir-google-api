@@ -56,6 +56,7 @@ defmodule GoogleApi.Games.V1.Api.AchievementDefinitions do
   @spec games_achievement_definitions_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementDefinitionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_achievement_definitions_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

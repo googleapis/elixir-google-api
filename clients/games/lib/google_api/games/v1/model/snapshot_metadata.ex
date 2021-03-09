@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.SnapshotMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :deviceName => String.t(),
-          :gameplayDuration => String.t(),
-          :lastModifyTime => DateTime.t(),
-          :progressValue => String.t()
+          :description => String.t() | nil,
+          :deviceName => String.t() | nil,
+          :gameplayDuration => String.t() | nil,
+          :lastModifyTime => DateTime.t() | nil,
+          :progressValue => String.t() | nil
         }
 
   field(:description)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :friendsRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t(),
-          :kind => String.t(),
-          :leaderboard_id => String.t(),
-          :publicRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t(),
-          :scoreString => String.t(),
-          :scoreTag => String.t(),
-          :scoreValue => String.t(),
-          :socialRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t(),
-          :timeSpan => String.t(),
-          :writeTimestamp => String.t()
+          :friendsRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t() | nil,
+          :kind => String.t() | nil,
+          :leaderboard_id => String.t() | nil,
+          :publicRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t() | nil,
+          :scoreString => String.t() | nil,
+          :scoreTag => String.t() | nil,
+          :scoreValue => String.t() | nil,
+          :socialRank => GoogleApi.Games.V1.Model.LeaderboardScoreRank.t() | nil,
+          :timeSpan => String.t() | nil,
+          :writeTimestamp => String.t() | nil
         }
 
   field(:friendsRank, as: GoogleApi.Games.V1.Model.LeaderboardScoreRank)

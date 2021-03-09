@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.SnapshotExtended do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conflictingRevisions => list(GoogleApi.Games.V1.Model.SnapshotRevision.t()),
-          :hasConflictingRevisions => boolean(),
-          :headRevision => GoogleApi.Games.V1.Model.SnapshotRevision.t(),
-          :snapshotName => String.t()
+          :conflictingRevisions => list(GoogleApi.Games.V1.Model.SnapshotRevision.t()) | nil,
+          :hasConflictingRevisions => boolean() | nil,
+          :headRevision => GoogleApi.Games.V1.Model.SnapshotRevision.t() | nil,
+          :snapshotName => String.t() | nil
         }
 
   field(:conflictingRevisions, as: GoogleApi.Games.V1.Model.SnapshotRevision, type: :list)

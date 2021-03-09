@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :friendsListVisibility => String.t(),
-          :kind => String.t(),
-          :profileVisible => boolean()
+          :friendsListVisibility => String.t() | nil,
+          :kind => String.t() | nil,
+          :profileVisible => boolean() | nil
         }
 
   field(:friendsListVisibility)

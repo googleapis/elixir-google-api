@@ -31,11 +31,11 @@ defmodule GoogleApi.Games.V1.Model.LeaderboardScoreRank do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedNumScores => String.t(),
-          :formattedRank => String.t(),
-          :kind => String.t(),
-          :numScores => String.t(),
-          :rank => String.t()
+          :formattedNumScores => String.t() | nil,
+          :formattedRank => String.t() | nil,
+          :kind => String.t() | nil,
+          :numScores => String.t() | nil,
+          :rank => String.t() | nil
         }
 
   field(:formattedNumScores)

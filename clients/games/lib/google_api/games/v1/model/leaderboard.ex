@@ -32,12 +32,12 @@ defmodule GoogleApi.Games.V1.Model.Leaderboard do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iconUrl => String.t(),
-          :id => String.t(),
-          :isIconUrlDefault => boolean(),
-          :kind => String.t(),
-          :name => String.t(),
-          :order => String.t()
+          :iconUrl => String.t() | nil,
+          :id => String.t() | nil,
+          :isIconUrlDefault => boolean() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :order => String.t() | nil
         }
 
   field(:iconUrl)

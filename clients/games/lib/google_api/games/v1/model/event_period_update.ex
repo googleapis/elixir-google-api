@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.EventPeriodUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :timePeriod => GoogleApi.Games.V1.Model.EventPeriodRange.t(),
-          :updates => list(GoogleApi.Games.V1.Model.EventUpdateRequest.t())
+          :kind => String.t() | nil,
+          :timePeriod => GoogleApi.Games.V1.Model.EventPeriodRange.t() | nil,
+          :updates => list(GoogleApi.Games.V1.Model.EventUpdateRequest.t()) | nil
         }
 
   field(:kind)

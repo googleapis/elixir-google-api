@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.InstanceAndroidDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enablePiracyCheck => boolean(),
-          :kind => String.t(),
-          :packageName => String.t(),
-          :preferred => boolean()
+          :enablePiracyCheck => boolean() | nil,
+          :kind => String.t() | nil,
+          :packageName => String.t() | nil,
+          :preferred => boolean() | nil
         }
 
   field(:enablePiracyCheck)

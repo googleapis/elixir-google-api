@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.PlayerScoreListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :submittedScores => list(GoogleApi.Games.V1.Model.PlayerScoreResponse.t())
+          :kind => String.t() | nil,
+          :submittedScores => list(GoogleApi.Games.V1.Model.PlayerScoreResponse.t()) | nil
         }
 
   field(:kind)

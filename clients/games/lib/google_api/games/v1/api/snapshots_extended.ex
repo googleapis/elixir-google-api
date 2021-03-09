@@ -60,6 +60,7 @@ defmodule GoogleApi.Games.V1.Api.SnapshotsExtended do
         ) ::
           {:ok, GoogleApi.Games.V1.Model.ResolveSnapshotHeadResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_snapshots_extended_resolve_snapshot_head(
         connection,

@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.CategoryListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Games.V1.Model.Category.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.Games.V1.Model.Category.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Games.V1.Model.Category, type: :list)

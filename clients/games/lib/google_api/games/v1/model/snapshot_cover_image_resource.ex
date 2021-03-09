@@ -32,12 +32,12 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => String.t(),
-          :downloadUrl => String.t(),
-          :height => integer(),
-          :mimeType => String.t(),
-          :resourceId => String.t(),
-          :width => integer()
+          :contentHash => String.t() | nil,
+          :downloadUrl => String.t() | nil,
+          :height => integer() | nil,
+          :mimeType => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:contentHash)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :steps => integer()
+          :kind => String.t() | nil,
+          :steps => integer() | nil
         }
 
   field(:kind)

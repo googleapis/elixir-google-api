@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.MetagameConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentVersion => integer(),
-          :kind => String.t(),
-          :playerLevels => list(GoogleApi.Games.V1.Model.PlayerLevel.t())
+          :currentVersion => integer() | nil,
+          :kind => String.t() | nil,
+          :playerLevels => list(GoogleApi.Games.V1.Model.PlayerLevel.t()) | nil
         }
 
   field(:currentVersion)

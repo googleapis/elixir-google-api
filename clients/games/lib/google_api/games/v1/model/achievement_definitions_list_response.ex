@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.AchievementDefinitionsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Games.V1.Model.AchievementDefinition.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.Games.V1.Model.AchievementDefinition.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Games.V1.Model.AchievementDefinition, type: :list)

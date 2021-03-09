@@ -27,7 +27,7 @@ defmodule GoogleApi.Games.V1.Model.ResolveSnapshotHeadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshot => GoogleApi.Games.V1.Model.SnapshotExtended.t()
+          :snapshot => GoogleApi.Games.V1.Model.SnapshotExtended.t() | nil
         }
 
   field(:snapshot, as: GoogleApi.Games.V1.Model.SnapshotExtended)

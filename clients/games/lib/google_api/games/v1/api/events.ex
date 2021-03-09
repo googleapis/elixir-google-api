@@ -56,6 +56,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
   @spec games_events_list_by_player(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerEventListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_events_list_by_player(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,6 +119,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
   @spec games_events_list_definitions(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.EventDefinitionListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_events_list_definitions(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -179,6 +181,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
   @spec games_events_record(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.EventUpdateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def games_events_record(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

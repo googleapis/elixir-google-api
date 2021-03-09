@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.EventBatchRecordFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failureCause => String.t(),
-          :kind => String.t(),
-          :range => GoogleApi.Games.V1.Model.EventPeriodRange.t()
+          :failureCause => String.t() | nil,
+          :kind => String.t() | nil,
+          :range => GoogleApi.Games.V1.Model.EventPeriodRange.t() | nil
         }
 
   field(:failureCause)

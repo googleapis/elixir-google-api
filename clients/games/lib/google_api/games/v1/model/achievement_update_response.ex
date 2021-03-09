@@ -32,12 +32,12 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :achievementId => String.t(),
-          :currentState => String.t(),
-          :currentSteps => integer(),
-          :kind => String.t(),
-          :newlyUnlocked => boolean(),
-          :updateOccurred => boolean()
+          :achievementId => String.t() | nil,
+          :currentState => String.t() | nil,
+          :currentSteps => integer() | nil,
+          :kind => String.t() | nil,
+          :newlyUnlocked => boolean() | nil,
+          :updateOccurred => boolean() | nil
         }
 
   field(:achievementId)

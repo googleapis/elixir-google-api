@@ -30,10 +30,10 @@ defmodule GoogleApi.Games.V1.Model.PlayerLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :level => integer(),
-          :maxExperiencePoints => String.t(),
-          :minExperiencePoints => String.t()
+          :kind => String.t() | nil,
+          :level => integer() | nil,
+          :maxExperiencePoints => String.t() | nil,
+          :minExperiencePoints => String.t() | nil
         }
 
   field(:kind)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.AchievementIncrementResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentSteps => integer(),
-          :kind => String.t(),
-          :newlyUnlocked => boolean()
+          :currentSteps => integer() | nil,
+          :kind => String.t() | nil,
+          :newlyUnlocked => boolean() | nil
         }
 
   field(:currentSteps)

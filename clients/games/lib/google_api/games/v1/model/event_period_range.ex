@@ -29,9 +29,9 @@ defmodule GoogleApi.Games.V1.Model.EventPeriodRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :periodEndMillis => String.t(),
-          :periodStartMillis => String.t()
+          :kind => String.t() | nil,
+          :periodEndMillis => String.t() | nil,
+          :periodStartMillis => String.t() | nil
         }
 
   field(:kind)

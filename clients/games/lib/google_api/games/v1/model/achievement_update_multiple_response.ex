@@ -28,8 +28,9 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :updatedAchievements => list(GoogleApi.Games.V1.Model.AchievementUpdateResponse.t())
+          :kind => String.t() | nil,
+          :updatedAchievements =>
+            list(GoogleApi.Games.V1.Model.AchievementUpdateResponse.t()) | nil
         }
 
   field(:kind)

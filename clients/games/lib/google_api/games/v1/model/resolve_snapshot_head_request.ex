@@ -28,8 +28,8 @@ defmodule GoogleApi.Games.V1.Model.ResolveSnapshotHeadRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxConflictsPerSnapshot => integer(),
-          :resolutionPolicy => String.t()
+          :maxConflictsPerSnapshot => integer() | nil,
+          :resolutionPolicy => String.t() | nil
         }
 
   field(:maxConflictsPerSnapshot)
