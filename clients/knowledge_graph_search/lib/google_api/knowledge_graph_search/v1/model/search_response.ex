@@ -29,9 +29,9 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :"@context" => any(),
-          :"@type" => any(),
-          :itemListElement => list(any())
+          :"@context" => any() | nil,
+          :"@type" => any() | nil,
+          :itemListElement => list(any()) | nil
         }
 
   field(:"@context")

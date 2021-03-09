@@ -60,6 +60,7 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
   @spec kgsearch_entities_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def kgsearch_entities_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
