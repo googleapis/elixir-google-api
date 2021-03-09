@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.SlackDelivery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :webhookUri => GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t()
+          :webhookUri => GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t() | nil
         }
 
   field(:webhookUri, as: GoogleApi.CloudBuild.V1.Model.NotifierSecretRef)

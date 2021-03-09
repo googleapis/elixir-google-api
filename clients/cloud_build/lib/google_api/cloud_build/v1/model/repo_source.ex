@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :branchName => String.t(),
-          :commitSha => String.t(),
-          :dir => String.t(),
-          :invertRegex => boolean(),
-          :projectId => String.t(),
-          :repoName => String.t(),
-          :substitutions => map(),
-          :tagName => String.t()
+          :branchName => String.t() | nil,
+          :commitSha => String.t() | nil,
+          :dir => String.t() | nil,
+          :invertRegex => boolean() | nil,
+          :projectId => String.t() | nil,
+          :repoName => String.t() | nil,
+          :substitutions => map() | nil,
+          :tagName => String.t() | nil
         }
 
   field(:branchName)

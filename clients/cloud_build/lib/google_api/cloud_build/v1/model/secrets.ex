@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Secrets do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inline => list(GoogleApi.CloudBuild.V1.Model.InlineSecret.t()),
-          :secretManager => list(GoogleApi.CloudBuild.V1.Model.SecretManagerSecret.t())
+          :inline => list(GoogleApi.CloudBuild.V1.Model.InlineSecret.t()) | nil,
+          :secretManager => list(GoogleApi.CloudBuild.V1.Model.SecretManagerSecret.t()) | nil
         }
 
   field(:inline, as: GoogleApi.CloudBuild.V1.Model.InlineSecret, type: :list)

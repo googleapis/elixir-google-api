@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.CancelBuildRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :projectId => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:id)

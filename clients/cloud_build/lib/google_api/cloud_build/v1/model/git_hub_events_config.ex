@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :installationId => String.t(),
-          :name => String.t(),
-          :owner => String.t(),
-          :pullRequest => GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t(),
-          :push => GoogleApi.CloudBuild.V1.Model.PushFilter.t()
+          :installationId => String.t() | nil,
+          :name => String.t() | nil,
+          :owner => String.t() | nil,
+          :pullRequest => GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t() | nil,
+          :push => GoogleApi.CloudBuild.V1.Model.PushFilter.t() | nil
         }
 
   field(:installationId)

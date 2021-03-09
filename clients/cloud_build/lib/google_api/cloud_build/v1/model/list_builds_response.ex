@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.ListBuildsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :builds => list(GoogleApi.CloudBuild.V1.Model.Build.t()),
-          :nextPageToken => String.t()
+          :builds => list(GoogleApi.CloudBuild.V1.Model.Build.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:builds, as: GoogleApi.CloudBuild.V1.Model.Build, type: :list)

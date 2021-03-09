@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.NotifierMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :notifier => String.t()
+          :name => String.t() | nil,
+          :notifier => String.t() | nil
         }
 
   field(:name)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :build => GoogleApi.CloudBuild.V1.Model.Build.t()
+          :build => GoogleApi.CloudBuild.V1.Model.Build.t() | nil
         }
 
   field(:build, as: GoogleApi.CloudBuild.V1.Model.Build)

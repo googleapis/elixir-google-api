@@ -39,19 +39,19 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :build => GoogleApi.CloudBuild.V1.Model.Build.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :disabled => boolean(),
-          :filename => String.t(),
-          :github => GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t(),
-          :id => String.t(),
-          :ignoredFiles => list(String.t()),
-          :includedFiles => list(String.t()),
-          :name => String.t(),
-          :substitutions => map(),
-          :tags => list(String.t()),
-          :triggerTemplate => GoogleApi.CloudBuild.V1.Model.RepoSource.t()
+          :build => GoogleApi.CloudBuild.V1.Model.Build.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :disabled => boolean() | nil,
+          :filename => String.t() | nil,
+          :github => GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t() | nil,
+          :id => String.t() | nil,
+          :ignoredFiles => list(String.t()) | nil,
+          :includedFiles => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :substitutions => map() | nil,
+          :tags => list(String.t()) | nil,
+          :triggerTemplate => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil
         }
 
   field(:build, as: GoogleApi.CloudBuild.V1.Model.Build)

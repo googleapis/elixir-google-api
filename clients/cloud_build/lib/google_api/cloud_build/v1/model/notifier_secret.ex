@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.NotifierSecret do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

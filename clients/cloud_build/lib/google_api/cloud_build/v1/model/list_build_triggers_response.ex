@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :triggers => list(GoogleApi.CloudBuild.V1.Model.BuildTrigger.t())
+          :nextPageToken => String.t() | nil,
+          :triggers => list(GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()) | nil
         }
 
   field(:nextPageToken)

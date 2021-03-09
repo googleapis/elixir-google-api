@@ -38,18 +38,18 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskSizeGb => String.t(),
-          :dynamicSubstitutions => boolean(),
-          :env => list(String.t()),
-          :logStreamingOption => String.t(),
-          :logging => String.t(),
-          :machineType => String.t(),
-          :requestedVerifyOption => String.t(),
-          :secretEnv => list(String.t()),
-          :sourceProvenanceHash => list(String.t()),
-          :substitutionOption => String.t(),
-          :volumes => list(GoogleApi.CloudBuild.V1.Model.Volume.t()),
-          :workerPool => String.t()
+          :diskSizeGb => String.t() | nil,
+          :dynamicSubstitutions => boolean() | nil,
+          :env => list(String.t()) | nil,
+          :logStreamingOption => String.t() | nil,
+          :logging => String.t() | nil,
+          :machineType => String.t() | nil,
+          :requestedVerifyOption => String.t() | nil,
+          :secretEnv => list(String.t()) | nil,
+          :sourceProvenanceHash => list(String.t()) | nil,
+          :substitutionOption => String.t() | nil,
+          :volumes => list(GoogleApi.CloudBuild.V1.Model.Volume.t()) | nil,
+          :workerPool => String.t() | nil
         }
 
   field(:diskSizeGb)

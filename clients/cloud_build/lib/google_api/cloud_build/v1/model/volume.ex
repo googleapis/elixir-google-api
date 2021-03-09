@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :path => String.t()
+          :name => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:name)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.FileHashes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileHash => list(GoogleApi.CloudBuild.V1.Model.Hash.t())
+          :fileHash => list(GoogleApi.CloudBuild.V1.Model.Hash.t()) | nil
         }
 
   field(:fileHash, as: GoogleApi.CloudBuild.V1.Model.Hash, type: :list)
