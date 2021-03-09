@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.FirebaseRules.V1.Model.File.t())
+          :files => list(GoogleApi.FirebaseRules.V1.Model.File.t()) | nil
         }
 
   field(:files, as: GoogleApi.FirebaseRules.V1.Model.File, type: :list)

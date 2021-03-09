@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Arg do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :anyValue => GoogleApi.FirebaseRules.V1.Model.Empty.t(),
-          :exactValue => any()
+          :anyValue => GoogleApi.FirebaseRules.V1.Model.Empty.t() | nil,
+          :exactValue => any() | nil
         }
 
   field(:anyValue, as: GoogleApi.FirebaseRules.V1.Model.Empty)

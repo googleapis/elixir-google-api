@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseRules.V1.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :fingerprint => String.t(),
-          :name => String.t()
+          :content => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:content)

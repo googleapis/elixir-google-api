@@ -32,12 +32,13 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugMessages => list(String.t()),
-          :errorPosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t(),
-          :expressionReports => list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t()),
-          :functionCalls => list(GoogleApi.FirebaseRules.V1.Model.FunctionCall.t()),
-          :state => String.t(),
-          :visitedExpressions => list(GoogleApi.FirebaseRules.V1.Model.VisitedExpression.t())
+          :debugMessages => list(String.t()) | nil,
+          :errorPosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t() | nil,
+          :expressionReports => list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t()) | nil,
+          :functionCalls => list(GoogleApi.FirebaseRules.V1.Model.FunctionCall.t()) | nil,
+          :state => String.t() | nil,
+          :visitedExpressions =>
+            list(GoogleApi.FirebaseRules.V1.Model.VisitedExpression.t()) | nil
         }
 
   field(:debugMessages, type: :list)

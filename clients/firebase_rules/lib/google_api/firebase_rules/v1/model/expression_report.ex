@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseRules.V1.Model.ExpressionReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :children => list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t()),
-          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t(),
-          :values => list(GoogleApi.FirebaseRules.V1.Model.ValueCount.t())
+          :children => list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t()) | nil,
+          :sourcePosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t() | nil,
+          :values => list(GoogleApi.FirebaseRules.V1.Model.ValueCount.t()) | nil
         }
 
   field(:children, as: GoogleApi.FirebaseRules.V1.Model.ExpressionReport, type: :list)

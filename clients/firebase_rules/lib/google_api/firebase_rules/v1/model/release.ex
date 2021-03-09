@@ -30,10 +30,10 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Release do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :rulesetName => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :rulesetName => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

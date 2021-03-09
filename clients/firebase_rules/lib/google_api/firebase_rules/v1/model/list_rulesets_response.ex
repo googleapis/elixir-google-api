@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :rulesets => list(GoogleApi.FirebaseRules.V1.Model.Ruleset.t())
+          :nextPageToken => String.t() | nil,
+          :rulesets => list(GoogleApi.FirebaseRules.V1.Model.Ruleset.t()) | nil
         }
 
   field(:nextPageToken)

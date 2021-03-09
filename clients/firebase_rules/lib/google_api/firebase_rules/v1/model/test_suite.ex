@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestSuite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testCases => list(GoogleApi.FirebaseRules.V1.Model.TestCase.t())
+          :testCases => list(GoogleApi.FirebaseRules.V1.Model.TestCase.t()) | nil
         }
 
   field(:testCases, as: GoogleApi.FirebaseRules.V1.Model.TestCase, type: :list)

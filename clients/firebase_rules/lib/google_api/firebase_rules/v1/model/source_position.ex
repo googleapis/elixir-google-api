@@ -31,11 +31,11 @@ defmodule GoogleApi.FirebaseRules.V1.Model.SourcePosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => integer(),
-          :currentOffset => integer(),
-          :endOffset => integer(),
-          :fileName => String.t(),
-          :line => integer()
+          :column => integer() | nil,
+          :currentOffset => integer() | nil,
+          :endOffset => integer() | nil,
+          :fileName => String.t() | nil,
+          :line => integer() | nil
         }
 
   field(:column)

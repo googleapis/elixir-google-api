@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :undefined => GoogleApi.FirebaseRules.V1.Model.Empty.t(),
-          :value => any()
+          :undefined => GoogleApi.FirebaseRules.V1.Model.Empty.t() | nil,
+          :value => any() | nil
         }
 
   field(:undefined, as: GoogleApi.FirebaseRules.V1.Model.Empty)
