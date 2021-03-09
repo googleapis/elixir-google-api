@@ -32,12 +32,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audio => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AudioInput.t(),
-          :dtmf => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1DtmfInput.t(),
-          :event => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EventInput.t(),
-          :intent => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInput.t(),
-          :languageCode => String.t(),
-          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput.t()
+          :audio =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AudioInput.t() | nil,
+          :dtmf =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1DtmfInput.t() | nil,
+          :event =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EventInput.t() | nil,
+          :intent =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInput.t() | nil,
+          :languageCode => String.t() | nil,
+          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput.t() | nil
         }
 
   field(:audio, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AudioInput)

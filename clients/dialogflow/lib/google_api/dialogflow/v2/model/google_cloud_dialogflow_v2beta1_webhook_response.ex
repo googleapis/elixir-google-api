@@ -34,18 +34,20 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endInteraction => boolean(),
+          :endInteraction => boolean() | nil,
           :followupEventInput =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput.t() | nil,
           :fulfillmentMessages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t()),
-          :fulfillmentText => String.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t())
+            | nil,
+          :fulfillmentText => String.t() | nil,
           :outputContexts =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()),
-          :payload => map(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()) | nil,
+          :payload => map() | nil,
           :sessionEntityTypes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SessionEntityType.t()),
-          :source => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SessionEntityType.t())
+            | nil,
+          :source => String.t() | nil
         }
 
   field(:endInteraction)

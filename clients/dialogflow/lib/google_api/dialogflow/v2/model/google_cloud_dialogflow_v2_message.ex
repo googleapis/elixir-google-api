@@ -33,14 +33,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :createTime => DateTime.t(),
-          :languageCode => String.t(),
+          :content => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :languageCode => String.t() | nil,
           :messageAnnotation =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation.t(),
-          :name => String.t(),
-          :participant => String.t(),
-          :participantRole => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation.t() | nil,
+          :name => String.t() | nil,
+          :participant => String.t() | nil,
+          :participantRole => String.t() | nil
         }
 
   field(:content)

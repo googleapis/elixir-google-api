@@ -27,7 +27,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3BatchRunTestCas
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestError.t())
+          :errors =>
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestError.t()) | nil
         }
 
   field(:errors, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestError, type: :list)

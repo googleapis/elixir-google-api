@@ -34,19 +34,24 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectIntentResponseId => String.t(),
+          :detectIntentResponseId => String.t() | nil,
           :fulfillmentInfo =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestFulfillmentInfo.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestFulfillmentInfo.t()
+            | nil,
           :intentInfo =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfo.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfo.t()
+            | nil,
           :messages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t()),
-          :pageInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t(),
-          :payload => map(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t())
+            | nil,
+          :pageInfo =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t() | nil,
+          :payload => map() | nil,
           :sentimentAnalysisResult =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult.t()
+            | nil,
           :sessionInfo =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t() | nil
         }
 
   field(:detectIntentResponseId)

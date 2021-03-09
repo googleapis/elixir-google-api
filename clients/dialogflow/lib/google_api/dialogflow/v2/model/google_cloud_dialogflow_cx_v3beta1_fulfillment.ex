@@ -34,15 +34,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillmen
           :conditionalCases =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCases.t()
-            ),
+            )
+            | nil,
           :messages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t()),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t())
+            | nil,
           :setParameterActions =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentSetParameterAction.t()
-            ),
-          :tag => String.t(),
-          :webhook => String.t()
+            )
+            | nil,
+          :tag => String.t() | nil,
+          :webhook => String.t() | nil
         }
 
   field(:conditionalCases,

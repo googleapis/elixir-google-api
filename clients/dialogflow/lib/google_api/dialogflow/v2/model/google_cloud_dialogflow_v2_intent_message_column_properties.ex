@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageColu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => String.t(),
-          :horizontalAlignment => String.t()
+          :header => String.t() | nil,
+          :horizontalAlignment => String.t() | nil
         }
 
   field(:header)

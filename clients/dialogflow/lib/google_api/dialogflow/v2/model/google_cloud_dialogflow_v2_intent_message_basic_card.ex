@@ -34,11 +34,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasi
           :buttons =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCardButton.t()
-            ),
-          :formattedText => String.t(),
-          :image => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
-          :subtitle => String.t(),
-          :title => String.t()
+            )
+            | nil,
+          :formattedText => String.t() | nil,
+          :image =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
+          :subtitle => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:buttons,

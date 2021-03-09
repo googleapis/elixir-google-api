@@ -33,16 +33,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Page do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
+          :displayName => String.t() | nil,
           :entryFulfillment =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t() | nil,
           :eventHandlers =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventHandler.t()),
-          :form => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Form.t(),
-          :name => String.t(),
-          :transitionRouteGroups => list(String.t()),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventHandler.t()) | nil,
+          :form => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Form.t() | nil,
+          :name => String.t() | nil,
+          :transitionRouteGroups => list(String.t()) | nil,
           :transitionRoutes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TransitionRoute.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TransitionRoute.t()) | nil
         }
 
   field(:displayName)

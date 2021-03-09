@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3BatchRunTestCas
 
   @type t :: %__MODULE__{
           :results =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t()) | nil
         }
 
   field(:results,

@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1RunTestCas
 
   @type t :: %__MODULE__{
           :result =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestCaseResult.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestCaseResult.t() | nil
         }
 
   field(:result, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestCaseResult)

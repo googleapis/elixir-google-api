@@ -30,10 +30,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t(),
-          :entityType => String.t(),
-          :text => String.t(),
-          :userDefined => boolean()
+          :alias => String.t() | nil,
+          :entityType => String.t() | nil,
+          :text => String.t() | nil,
+          :userDefined => boolean() | nil
         }
 
   field(:alias)

@@ -28,8 +28,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListContextsRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contexts => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()),
-          :nextPageToken => String.t()
+          :contexts =>
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:contexts, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context, type: :list)

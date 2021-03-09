@@ -31,12 +31,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputAudio => String.t(),
+          :outputAudio => String.t() | nil,
           :outputAudioConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t(),
-          :queryResult => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t(),
-          :responseId => String.t(),
-          :webhookStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t() | nil,
+          :queryResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t() | nil,
+          :responseId => String.t() | nil,
+          :webhookStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:outputAudio)

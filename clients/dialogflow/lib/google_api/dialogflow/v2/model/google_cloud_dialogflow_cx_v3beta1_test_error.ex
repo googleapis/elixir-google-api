@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestError 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t(),
-          :testCase => String.t(),
-          :testTime => DateTime.t()
+          :status => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
+          :testCase => String.t() | nil,
+          :testTime => DateTime.t() | nil
         }
 
   field(:status, as: GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus)

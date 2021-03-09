@@ -29,6 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ImportTest
   @type t :: %__MODULE__{
           :errors =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestCaseError.t())
+            | nil
         }
 
   field(:errors,

@@ -32,9 +32,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :items =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelectItem.t()
-            ),
-          :subtitle => String.t(),
-          :title => String.t()
+            )
+            | nil,
+          :subtitle => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:items,

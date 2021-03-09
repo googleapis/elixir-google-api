@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentSetP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameter => String.t(),
-          :value => any()
+          :parameter => String.t() | nil,
+          :value => any() | nil
         }
 
   field(:parameter)

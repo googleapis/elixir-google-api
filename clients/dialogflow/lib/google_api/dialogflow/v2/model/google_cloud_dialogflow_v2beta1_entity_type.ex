@@ -32,13 +32,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoExpansionMode => String.t(),
-          :displayName => String.t(),
-          :enableFuzzyExtraction => boolean(),
+          :autoExpansionMode => String.t() | nil,
+          :displayName => String.t() | nil,
+          :enableFuzzyExtraction => boolean() | nil,
           :entities =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t()),
-          :kind => String.t(),
-          :name => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t())
+            | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:autoExpansionMode)

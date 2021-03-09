@@ -30,9 +30,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SessionEntit
 
   @type t :: %__MODULE__{
           :entities =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t()),
-          :entityOverrideMode => String.t(),
-          :name => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t())
+            | nil,
+          :entityOverrideMode => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:entities,

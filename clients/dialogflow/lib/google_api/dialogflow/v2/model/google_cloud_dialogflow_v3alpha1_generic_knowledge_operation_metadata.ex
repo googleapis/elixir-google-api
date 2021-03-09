@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV3alpha1GenericKnow
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => String.t()
+          :state => String.t() | nil
         }
 
   field(:state)

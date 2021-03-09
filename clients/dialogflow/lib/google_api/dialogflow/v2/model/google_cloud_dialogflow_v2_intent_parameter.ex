@@ -34,14 +34,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentParameter d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultValue => String.t(),
-          :displayName => String.t(),
-          :entityTypeDisplayName => String.t(),
-          :isList => boolean(),
-          :mandatory => boolean(),
-          :name => String.t(),
-          :prompts => list(String.t()),
-          :value => String.t()
+          :defaultValue => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityTypeDisplayName => String.t() | nil,
+          :isList => boolean() | nil,
+          :mandatory => boolean() | nil,
+          :name => String.t() | nil,
+          :prompts => list(String.t()) | nil,
+          :value => String.t() | nil
         }
 
   field(:defaultValue)

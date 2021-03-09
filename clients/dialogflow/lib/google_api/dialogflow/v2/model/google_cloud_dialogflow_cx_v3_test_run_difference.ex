@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestRunDifferen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)

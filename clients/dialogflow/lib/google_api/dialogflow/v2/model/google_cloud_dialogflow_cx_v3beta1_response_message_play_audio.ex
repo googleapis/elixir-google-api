@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowPlaybackInterruption => boolean(),
-          :audioUri => String.t()
+          :allowPlaybackInterruption => boolean() | nil,
+          :audioUri => String.t() | nil
         }
 
   field(:allowPlaybackInterruption)

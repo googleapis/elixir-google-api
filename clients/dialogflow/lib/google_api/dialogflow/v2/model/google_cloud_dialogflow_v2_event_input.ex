@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :name => String.t(),
-          :parameters => map()
+          :languageCode => String.t() | nil,
+          :name => String.t() | nil,
+          :parameters => map() | nil
         }
 
   field(:languageCode)

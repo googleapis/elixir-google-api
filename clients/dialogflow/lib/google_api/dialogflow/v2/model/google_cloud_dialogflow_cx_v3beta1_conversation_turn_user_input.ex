@@ -29,9 +29,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Conversati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :injectedParameters => map(),
-          :input => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput.t(),
-          :isWebhookEnabled => boolean()
+          :injectedParameters => map() | nil,
+          :input =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput.t() | nil,
+          :isWebhookEnabled => boolean() | nil
         }
 
   field(:injectedParameters, type: :map)

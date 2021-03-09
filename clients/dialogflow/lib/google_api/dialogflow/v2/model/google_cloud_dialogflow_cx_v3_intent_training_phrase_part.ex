@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentTrainingP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameterId => String.t(),
-          :text => String.t()
+          :parameterId => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:parameterId)

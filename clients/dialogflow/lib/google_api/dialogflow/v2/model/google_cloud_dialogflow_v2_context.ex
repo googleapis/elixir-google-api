@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lifespanCount => integer(),
-          :name => String.t(),
-          :parameters => map()
+          :lifespanCount => integer() | nil,
+          :name => String.t() | nil,
+          :parameters => map() | nil
         }
 
   field(:lifespanCount)

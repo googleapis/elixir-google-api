@@ -31,11 +31,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGeneri
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isCloudFunction => boolean(),
-          :password => String.t(),
-          :requestHeaders => map(),
-          :uri => String.t(),
-          :username => String.t()
+          :isCloudFunction => boolean() | nil,
+          :password => String.t() | nil,
+          :requestHeaders => map() | nil,
+          :uri => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:isCloudFunction)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :postbackData => String.t(),
-          :text => String.t()
+          :postbackData => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:postbackData)

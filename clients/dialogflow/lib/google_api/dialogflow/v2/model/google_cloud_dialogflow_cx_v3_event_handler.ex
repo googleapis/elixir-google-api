@@ -31,12 +31,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventHandler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :event => String.t(),
-          :name => String.t(),
-          :targetFlow => String.t(),
-          :targetPage => String.t(),
+          :event => String.t() | nil,
+          :name => String.t() | nil,
+          :targetFlow => String.t() | nil,
+          :targetPage => String.t() | nil,
           :triggerFulfillment =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment.t() | nil
         }
 
   field(:event)

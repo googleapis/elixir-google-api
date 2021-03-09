@@ -42,26 +42,28 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :allRequiredParamsPresent => boolean(),
-          :diagnosticInfo => map(),
+          :action => String.t() | nil,
+          :allRequiredParamsPresent => boolean() | nil,
+          :diagnosticInfo => map() | nil,
           :fulfillmentMessages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t()),
-          :fulfillmentText => String.t(),
-          :intent => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent.t(),
-          :intentDetectionConfidence => number(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t())
+            | nil,
+          :fulfillmentText => String.t() | nil,
+          :intent => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent.t() | nil,
+          :intentDetectionConfidence => number() | nil,
           :knowledgeAnswers =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers.t(),
-          :languageCode => String.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers.t() | nil,
+          :languageCode => String.t() | nil,
           :outputContexts =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()),
-          :parameters => map(),
-          :queryText => String.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context.t()) | nil,
+          :parameters => map() | nil,
+          :queryText => String.t() | nil,
           :sentimentAnalysisResult =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t(),
-          :speechRecognitionConfidence => number(),
-          :webhookPayload => map(),
-          :webhookSource => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t()
+            | nil,
+          :speechRecognitionConfidence => number() | nil,
+          :webhookPayload => map() | nil,
+          :webhookSource => String.t() | nil
         }
 
   field(:action)

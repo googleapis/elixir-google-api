@@ -28,11 +28,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrow
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageDisplayOptions => String.t(),
+          :imageDisplayOptions => String.t() | nil,
           :items =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem.t()
             )
+            | nil
         }
 
   field(:imageDisplayOptions)

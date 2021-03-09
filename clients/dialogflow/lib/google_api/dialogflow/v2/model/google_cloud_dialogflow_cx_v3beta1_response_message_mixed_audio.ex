@@ -31,6 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageMixedAudioSegment.t()
             )
+            | nil
         }
 
   field(:segments,

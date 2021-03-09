@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boost => number(),
-          :phrases => list(String.t())
+          :boost => number() | nil,
+          :phrases => list(String.t()) | nil
         }
 
   field(:boost)

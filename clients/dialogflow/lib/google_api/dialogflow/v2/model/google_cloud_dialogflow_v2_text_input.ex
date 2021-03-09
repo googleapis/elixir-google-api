@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :text => String.t()
+          :languageCode => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:languageCode)

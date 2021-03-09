@@ -29,6 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ReloadDocu
   @type t :: %__MODULE__{
           :genericMetadata =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata.t()
+            | nil
         }
 
   field(:genericMetadata,

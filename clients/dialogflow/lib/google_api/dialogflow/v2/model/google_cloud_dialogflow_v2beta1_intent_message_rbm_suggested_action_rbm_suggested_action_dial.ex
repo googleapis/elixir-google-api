@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :phoneNumber => String.t()
+          :phoneNumber => String.t() | nil
         }
 
   field(:phoneNumber)

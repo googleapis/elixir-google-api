@@ -35,16 +35,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioEncoding => String.t(),
-          :enableWordInfo => boolean(),
-          :languageCode => String.t(),
-          :model => String.t(),
-          :modelVariant => String.t(),
-          :phraseHints => list(String.t()),
-          :sampleRateHertz => integer(),
-          :singleUtterance => boolean(),
+          :audioEncoding => String.t() | nil,
+          :enableWordInfo => boolean() | nil,
+          :languageCode => String.t() | nil,
+          :model => String.t() | nil,
+          :modelVariant => String.t() | nil,
+          :phraseHints => list(String.t()) | nil,
+          :sampleRateHertz => integer() | nil,
+          :singleUtterance => boolean() | nil,
           :speechContexts =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t()) | nil
         }
 
   field(:audioEncoding)

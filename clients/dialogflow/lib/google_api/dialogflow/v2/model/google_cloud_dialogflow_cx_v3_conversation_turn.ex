@@ -29,9 +29,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTur
 
   @type t :: %__MODULE__{
           :userInput =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTurnUserInput.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTurnUserInput.t()
+            | nil,
           :virtualAgentOutput =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTurnVirtualAgentOutput.t()
+            | nil
         }
 
   field(:userInput,

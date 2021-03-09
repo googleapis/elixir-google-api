@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchAgentsRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t()),
-          :nextPageToken => String.t()
+          :agents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:agents, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent, type: :list)

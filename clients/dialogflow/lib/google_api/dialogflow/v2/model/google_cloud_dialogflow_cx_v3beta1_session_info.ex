@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInf
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => map(),
-          :session => String.t()
+          :parameters => map() | nil,
+          :session => String.t() | nil
         }
 
   field(:parameters, type: :map)

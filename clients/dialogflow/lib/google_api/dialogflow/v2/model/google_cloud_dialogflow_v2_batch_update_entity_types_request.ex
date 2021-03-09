@@ -31,10 +31,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntity
 
   @type t :: %__MODULE__{
           :entityTypeBatchInline =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeBatch.t(),
-          :entityTypeBatchUri => String.t(),
-          :languageCode => String.t(),
-          :updateMask => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeBatch.t() | nil,
+          :entityTypeBatchUri => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:entityTypeBatchInline,

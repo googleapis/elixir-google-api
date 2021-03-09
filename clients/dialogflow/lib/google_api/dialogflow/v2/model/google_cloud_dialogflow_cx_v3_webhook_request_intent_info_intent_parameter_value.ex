@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :originalValue => String.t(),
-          :resolvedValue => any()
+          :originalValue => String.t() | nil,
+          :resolvedValue => any() | nil
         }
 
   field(:originalValue)

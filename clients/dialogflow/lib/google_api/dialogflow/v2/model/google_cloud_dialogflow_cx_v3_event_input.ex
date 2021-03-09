@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :event => String.t()
+          :event => String.t() | nil
         }
 
   field(:event)

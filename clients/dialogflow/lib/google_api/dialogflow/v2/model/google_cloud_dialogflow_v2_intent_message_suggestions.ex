@@ -29,6 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSugg
   @type t :: %__MODULE__{
           :suggestions =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestion.t())
+            | nil
         }
 
   field(:suggestions,

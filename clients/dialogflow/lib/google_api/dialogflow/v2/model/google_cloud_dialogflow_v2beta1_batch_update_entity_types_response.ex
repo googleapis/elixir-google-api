@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1BatchUpdateE
 
   @type t :: %__MODULE__{
           :entityTypes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType.t())
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType.t()) | nil
         }
 
   field(:entityTypes,

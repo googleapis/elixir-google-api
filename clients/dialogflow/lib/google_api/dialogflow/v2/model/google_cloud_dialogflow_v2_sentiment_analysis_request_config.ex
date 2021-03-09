@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysis
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyzeQueryTextSentiment => boolean()
+          :analyzeQueryTextSentiment => boolean() | nil
         }
 
   field(:analyzeQueryTextSentiment)

@@ -31,6 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfoFormInf
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo.t()
             )
+            | nil
         }
 
   field(:parameterInfo,

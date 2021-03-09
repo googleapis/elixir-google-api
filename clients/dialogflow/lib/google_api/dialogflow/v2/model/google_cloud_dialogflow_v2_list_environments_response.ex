@@ -29,8 +29,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEnvironmentsR
 
   @type t :: %__MODULE__{
           :environments =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:environments,

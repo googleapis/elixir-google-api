@@ -34,16 +34,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :displayName => String.t(),
+          :creationTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
           :lastTestResult =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :tags => list(String.t()),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestCaseResult.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :tags => list(String.t()) | nil,
           :testCaseConversationTurns =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTurn.t()),
-          :testConfig => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestConfig.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTurn.t())
+            | nil,
+          :testConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TestConfig.t() | nil
         }
 
   field(:creationTime, as: DateTime)

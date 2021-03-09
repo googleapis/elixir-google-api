@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListIntentsRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()),
-          :nextPageToken => String.t()
+          :intents => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:intents, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent, type: :list)

@@ -34,16 +34,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contexts => list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()),
-          :geoLocation => GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t(),
-          :payload => map(),
-          :resetContexts => boolean(),
+          :contexts =>
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()) | nil,
+          :geoLocation => GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t() | nil,
+          :payload => map() | nil,
+          :resetContexts => boolean() | nil,
           :sentimentAnalysisRequestConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t()
+            | nil,
           :sessionEntityTypes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()),
-          :timeZone => String.t(),
-          :webhookHeaders => map()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()) | nil,
+          :timeZone => String.t() | nil,
+          :webhookHeaders => map() | nil
         }
 
   field(:contexts, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context, type: :list)

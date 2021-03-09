@@ -34,16 +34,17 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Intent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :isFallback => boolean(),
-          :labels => map(),
-          :name => String.t(),
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isFallback => boolean() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
           :parameters =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentParameter.t()),
-          :priority => integer(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentParameter.t()) | nil,
+          :priority => integer() | nil,
           :trainingPhrases =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentTrainingPhrase.t())
+            | nil
         }
 
   field(:description)

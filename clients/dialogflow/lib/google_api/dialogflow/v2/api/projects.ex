@@ -54,6 +54,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_delete_agent(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_delete_agent(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -113,6 +114,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_get_agent(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_get_agent(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -176,6 +178,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_set_agent(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_set_agent(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -240,6 +243,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_agent_export(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_export(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -307,6 +311,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_get_fulfillment(
         connection,
@@ -379,6 +384,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationResult.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_get_validation_result(
         connection,
@@ -447,6 +453,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_agent_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_import(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -510,6 +517,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_agent_restore(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_restore(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -574,6 +582,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_agent_search(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchAgentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_search(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -639,6 +648,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_agent_train(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_train(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -708,6 +718,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_update_fulfillment(
         connection,
@@ -782,6 +793,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_batch_delete(
         connection,
@@ -855,6 +867,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_batch_update(
         connection,
@@ -929,6 +942,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_create(
         connection,
@@ -1002,6 +1016,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_delete(
         connection,
@@ -1072,6 +1087,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_get(
         connection,
@@ -1147,6 +1163,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_list(
         connection,
@@ -1225,6 +1242,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_patch(
         connection,
@@ -1300,6 +1318,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_entities_batch_create(
         connection,
@@ -1373,6 +1392,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_entities_batch_delete(
         connection,
@@ -1446,6 +1466,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_entity_types_entities_batch_update(
         connection,
@@ -1520,6 +1541,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEnvironmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_list(
         connection,
@@ -1598,6 +1620,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListIntentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_intents_list(
         connection,
@@ -1674,6 +1697,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_delete_contexts(
         connection,
@@ -1744,6 +1768,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_detect_intent(
         connection,
@@ -1818,6 +1843,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_contexts_create(
         connection,
@@ -1890,6 +1916,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_contexts_delete(
         connection,
@@ -1959,6 +1986,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_contexts_get(
         connection,
@@ -2032,6 +2060,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListContextsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_contexts_list(
         connection,
@@ -2108,6 +2137,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_contexts_patch(
         connection,
@@ -2182,6 +2212,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_entity_types_create(
         connection,
@@ -2254,6 +2285,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_entity_types_delete(
         connection,
@@ -2323,6 +2355,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_entity_types_get(
         connection,
@@ -2397,6 +2430,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
           {:ok,
            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntityTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_entity_types_list(
         connection,
@@ -2476,6 +2510,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_environments_users_sessions_entity_types_patch(
         connection,
@@ -2550,6 +2585,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_batch_delete(
         connection,
@@ -2623,6 +2659,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_batch_update(
         connection,
@@ -2698,6 +2735,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_create(
         connection,
@@ -2772,6 +2810,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_delete(
         connection,
@@ -2843,6 +2882,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2915,6 +2955,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListIntentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_list(
         connection,
@@ -2995,6 +3036,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_intents_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3065,6 +3107,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_delete_contexts(
         connection,
@@ -3135,6 +3178,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_detect_intent(
         connection,
@@ -3209,6 +3253,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_contexts_create(
         connection,
@@ -3281,6 +3326,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_contexts_delete(
         connection,
@@ -3350,6 +3396,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_contexts_get(
         connection,
@@ -3423,6 +3470,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListContextsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_contexts_list(
         connection,
@@ -3499,6 +3547,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_contexts_patch(
         connection,
@@ -3573,6 +3622,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_entity_types_create(
         connection,
@@ -3645,6 +3695,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_entity_types_delete(
         connection,
@@ -3714,6 +3765,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_entity_types_get(
         connection,
@@ -3788,6 +3840,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
           {:ok,
            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntityTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_entity_types_list(
         connection,
@@ -3867,6 +3920,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_agent_sessions_entity_types_patch(
         connection,
@@ -3940,6 +3994,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_locations_operations_cancel(
         connection,
@@ -4009,6 +4064,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_locations_operations_get(
         connection,
@@ -4083,6 +4139,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_locations_operations_list(
         connection,
@@ -4157,6 +4214,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4216,6 +4274,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -4280,6 +4339,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @spec dialogflow_projects_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dialogflow_projects_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -29,9 +29,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   @type t :: %__MODULE__{
           :action =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction.t()
+            | nil,
           :reply =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedReply.t()
+            | nil
         }
 
   field(:action,

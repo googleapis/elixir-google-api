@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ExportAgentReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentUri => String.t()
+          :agentUri => String.t() | nil
         }
 
   field(:agentUri)

@@ -31,12 +31,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputAudio => String.t(),
+          :inputAudio => String.t() | nil,
           :outputAudioConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t(),
-          :outputAudioConfigMask => String.t(),
-          :queryInput => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t(),
-          :queryParams => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t() | nil,
+          :outputAudioConfigMask => String.t() | nil,
+          :queryInput =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t() | nil,
+          :queryParams =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t() | nil
         }
 
   field(:inputAudio)

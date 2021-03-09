@@ -31,12 +31,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMedi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentUrl => String.t(),
-          :description => String.t(),
-          :icon => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
+          :contentUrl => String.t() | nil,
+          :description => String.t() | nil,
+          :icon =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
           :largeImage =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
-          :name => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:contentUrl)

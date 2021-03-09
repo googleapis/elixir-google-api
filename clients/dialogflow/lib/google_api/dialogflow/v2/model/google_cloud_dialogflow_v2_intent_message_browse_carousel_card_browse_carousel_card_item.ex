@@ -31,12 +31,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrow
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :footer => String.t(),
-          :image => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t(),
+          :description => String.t() | nil,
+          :footer => String.t() | nil,
+          :image =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t() | nil,
           :openUriAction =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction.t(),
-          :title => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction.t()
+            | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

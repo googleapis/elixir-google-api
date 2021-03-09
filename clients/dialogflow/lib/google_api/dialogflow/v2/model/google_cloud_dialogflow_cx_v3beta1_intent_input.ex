@@ -27,7 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInpu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intent => String.t()
+          :intent => String.t() | nil
         }
 
   field(:intent)

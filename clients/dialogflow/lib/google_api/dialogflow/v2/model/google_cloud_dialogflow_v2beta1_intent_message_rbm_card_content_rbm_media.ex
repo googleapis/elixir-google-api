@@ -29,9 +29,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileUri => String.t(),
-          :height => String.t(),
-          :thumbnailUri => String.t()
+          :fileUri => String.t() | nil,
+          :height => String.t() | nil,
+          :thumbnailUri => String.t() | nil
         }
 
   field(:fileUri)

@@ -34,16 +34,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
 
   @type t :: %__MODULE__{
           :followupEventInput =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t(),
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t() | nil,
           :fulfillmentMessages =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t()),
-          :fulfillmentText => String.t(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t()) | nil,
+          :fulfillmentText => String.t() | nil,
           :outputContexts =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()),
-          :payload => map(),
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()) | nil,
+          :payload => map() | nil,
           :sessionEntityTypes =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()),
-          :source => String.t()
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()) | nil,
+          :source => String.t() | nil
         }
 
   field(:followupEventInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput)

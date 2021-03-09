@@ -31,11 +31,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :justCollected => boolean(),
-          :required => boolean(),
-          :state => String.t(),
-          :value => any()
+          :displayName => String.t() | nil,
+          :justCollected => boolean() | nil,
+          :required => boolean() | nil,
+          :state => String.t() | nil,
+          :value => any() | nil
         }
 
   field(:displayName)

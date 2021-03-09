@@ -28,8 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLink
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationName => String.t(),
-          :uri => String.t()
+          :destinationName => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:destinationName)
