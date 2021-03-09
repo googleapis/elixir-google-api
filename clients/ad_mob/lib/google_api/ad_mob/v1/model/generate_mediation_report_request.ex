@@ -27,7 +27,7 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateMediationReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportSpec => GoogleApi.AdMob.V1.Model.MediationReportSpec.t()
+          :reportSpec => GoogleApi.AdMob.V1.Model.MediationReportSpec.t() | nil
         }
 
   field(:reportSpec, as: GoogleApi.AdMob.V1.Model.MediationReportSpec)

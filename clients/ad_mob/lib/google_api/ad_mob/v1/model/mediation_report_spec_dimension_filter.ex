@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.MediationReportSpecDimensionFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :matchesAny => GoogleApi.AdMob.V1.Model.StringList.t()
+          :dimension => String.t() | nil,
+          :matchesAny => GoogleApi.AdMob.V1.Model.StringList.t() | nil
         }
 
   field(:dimension)

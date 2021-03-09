@@ -27,7 +27,7 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateNetworkReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportSpec => GoogleApi.AdMob.V1.Model.NetworkReportSpec.t()
+          :reportSpec => GoogleApi.AdMob.V1.Model.NetworkReportSpec.t() | nil
         }
 
   field(:reportSpec, as: GoogleApi.AdMob.V1.Model.NetworkReportSpec)

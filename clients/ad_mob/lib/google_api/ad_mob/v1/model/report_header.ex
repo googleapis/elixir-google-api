@@ -29,9 +29,9 @@ defmodule GoogleApi.AdMob.V1.Model.ReportHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateRange => GoogleApi.AdMob.V1.Model.DateRange.t(),
-          :localizationSettings => GoogleApi.AdMob.V1.Model.LocalizationSettings.t(),
-          :reportingTimeZone => String.t()
+          :dateRange => GoogleApi.AdMob.V1.Model.DateRange.t() | nil,
+          :localizationSettings => GoogleApi.AdMob.V1.Model.LocalizationSettings.t() | nil,
+          :reportingTimeZone => String.t() | nil
         }
 
   field(:dateRange, as: GoogleApi.AdMob.V1.Model.DateRange)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.AdMob.V1.Model.Date.t(),
-          :startDate => GoogleApi.AdMob.V1.Model.Date.t()
+          :endDate => GoogleApi.AdMob.V1.Model.Date.t() | nil,
+          :startDate => GoogleApi.AdMob.V1.Model.Date.t() | nil
         }
 
   field(:endDate, as: GoogleApi.AdMob.V1.Model.Date)

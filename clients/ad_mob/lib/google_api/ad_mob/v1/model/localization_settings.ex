@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.LocalizationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyCode => String.t(),
-          :languageCode => String.t()
+          :currencyCode => String.t() | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:currencyCode)

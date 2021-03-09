@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.ReportWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)

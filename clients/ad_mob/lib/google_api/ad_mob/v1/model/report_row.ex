@@ -28,12 +28,10 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionValues => %{
-            optional(String.t()) => GoogleApi.AdMob.V1.Model.ReportRowDimensionValue.t()
-          },
-          :metricValues => %{
-            optional(String.t()) => GoogleApi.AdMob.V1.Model.ReportRowMetricValue.t()
-          }
+          :dimensionValues =>
+            %{optional(String.t()) => GoogleApi.AdMob.V1.Model.ReportRowDimensionValue.t()} | nil,
+          :metricValues =>
+            %{optional(String.t()) => GoogleApi.AdMob.V1.Model.ReportRowMetricValue.t()} | nil
         }
 
   field(:dimensionValues, as: GoogleApi.AdMob.V1.Model.ReportRowDimensionValue, type: :map)

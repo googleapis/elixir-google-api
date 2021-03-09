@@ -29,9 +29,9 @@ defmodule GoogleApi.AdMob.V1.Model.MediationReportSpecSortCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :metric => String.t(),
-          :order => String.t()
+          :dimension => String.t() | nil,
+          :metric => String.t() | nil,
+          :order => String.t() | nil
         }
 
   field(:dimension)

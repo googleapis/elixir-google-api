@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRowDimensionValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayLabel => String.t(),
-          :value => String.t()
+          :displayLabel => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:displayLabel)
