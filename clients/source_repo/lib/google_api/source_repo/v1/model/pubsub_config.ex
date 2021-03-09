@@ -29,9 +29,9 @@ defmodule GoogleApi.SourceRepo.V1.Model.PubsubConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageFormat => String.t(),
-          :serviceAccountEmail => String.t(),
-          :topic => String.t()
+          :messageFormat => String.t() | nil,
+          :serviceAccountEmail => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:messageFormat)

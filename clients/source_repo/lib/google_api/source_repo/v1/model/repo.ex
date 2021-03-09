@@ -31,13 +31,12 @@ defmodule GoogleApi.SourceRepo.V1.Model.Repo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mirrorConfig => GoogleApi.SourceRepo.V1.Model.MirrorConfig.t(),
-          :name => String.t(),
-          :pubsubConfigs => %{
-            optional(String.t()) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t()
-          },
-          :size => String.t(),
-          :url => String.t()
+          :mirrorConfig => GoogleApi.SourceRepo.V1.Model.MirrorConfig.t() | nil,
+          :name => String.t() | nil,
+          :pubsubConfigs =>
+            %{optional(String.t()) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t()} | nil,
+          :size => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:mirrorConfig, as: GoogleApi.SourceRepo.V1.Model.MirrorConfig)

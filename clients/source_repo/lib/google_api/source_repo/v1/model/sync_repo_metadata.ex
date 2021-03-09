@@ -30,10 +30,10 @@ defmodule GoogleApi.SourceRepo.V1.Model.SyncRepoMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :startTime => DateTime.t(),
-          :statusMessage => String.t(),
-          :updateTime => DateTime.t()
+          :name => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :statusMessage => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:name)

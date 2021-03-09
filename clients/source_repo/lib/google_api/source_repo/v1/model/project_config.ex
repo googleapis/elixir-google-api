@@ -29,11 +29,10 @@ defmodule GoogleApi.SourceRepo.V1.Model.ProjectConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enablePrivateKeyCheck => boolean(),
-          :name => String.t(),
-          :pubsubConfigs => %{
-            optional(String.t()) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t()
-          }
+          :enablePrivateKeyCheck => boolean() | nil,
+          :name => String.t() | nil,
+          :pubsubConfigs =>
+            %{optional(String.t()) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t()} | nil
         }
 
   field(:enablePrivateKeyCheck)
