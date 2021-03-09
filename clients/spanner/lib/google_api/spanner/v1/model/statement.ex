@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.Statement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()},
-          :params => map(),
-          :sql => String.t()
+          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()} | nil,
+          :params => map() | nil,
+          :sql => String.t() | nil
         }
 
   field(:paramTypes, as: GoogleApi.Spanner.V1.Model.Type, type: :map)

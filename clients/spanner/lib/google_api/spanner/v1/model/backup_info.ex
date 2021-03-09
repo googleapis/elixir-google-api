@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.BackupInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backup => String.t(),
-          :createTime => DateTime.t(),
-          :sourceDatabase => String.t(),
-          :versionTime => DateTime.t()
+          :backup => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :sourceDatabase => String.t() | nil,
+          :versionTime => DateTime.t() | nil
         }
 
   field(:backup)

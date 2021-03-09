@@ -35,15 +35,15 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()},
-          :params => map(),
-          :partitionToken => String.t(),
-          :queryMode => String.t(),
-          :queryOptions => GoogleApi.Spanner.V1.Model.QueryOptions.t(),
-          :resumeToken => String.t(),
-          :seqno => String.t(),
-          :sql => String.t(),
-          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
+          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()} | nil,
+          :params => map() | nil,
+          :partitionToken => String.t() | nil,
+          :queryMode => String.t() | nil,
+          :queryOptions => GoogleApi.Spanner.V1.Model.QueryOptions.t() | nil,
+          :resumeToken => String.t() | nil,
+          :seqno => String.t() | nil,
+          :sql => String.t() | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
   field(:paramTypes, as: GoogleApi.Spanner.V1.Model.Type, type: :map)

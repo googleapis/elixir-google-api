@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceConfigs => list(GoogleApi.Spanner.V1.Model.InstanceConfig.t()),
-          :nextPageToken => String.t()
+          :instanceConfigs => list(GoogleApi.Spanner.V1.Model.InstanceConfig.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:instanceConfigs, as: GoogleApi.Spanner.V1.Model.InstanceConfig, type: :list)

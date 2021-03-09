@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ListBackupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backups => list(GoogleApi.Spanner.V1.Model.Backup.t()),
-          :nextPageToken => String.t()
+          :backups => list(GoogleApi.Spanner.V1.Model.Backup.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:backups, as: GoogleApi.Spanner.V1.Model.Backup, type: :list)

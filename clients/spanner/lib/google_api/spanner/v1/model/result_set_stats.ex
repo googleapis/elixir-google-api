@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSetStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queryPlan => GoogleApi.Spanner.V1.Model.QueryPlan.t(),
-          :queryStats => map(),
-          :rowCountExact => String.t(),
-          :rowCountLowerBound => String.t()
+          :queryPlan => GoogleApi.Spanner.V1.Model.QueryPlan.t() | nil,
+          :queryStats => map() | nil,
+          :rowCountExact => String.t() | nil,
+          :rowCountLowerBound => String.t() | nil
         }
 
   field(:queryPlan, as: GoogleApi.Spanner.V1.Model.QueryPlan)

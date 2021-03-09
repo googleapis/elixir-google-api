@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.StructType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.Spanner.V1.Model.Field.t())
+          :fields => list(GoogleApi.Spanner.V1.Model.Field.t()) | nil
         }
 
   field(:fields, as: GoogleApi.Spanner.V1.Model.Field, type: :list)

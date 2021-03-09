@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.Write do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(String.t()),
-          :table => String.t(),
-          :values => list(list(any()))
+          :columns => list(String.t()) | nil,
+          :table => String.t() | nil,
+          :values => list(list(any())) | nil
         }
 
   field(:columns, type: :list)

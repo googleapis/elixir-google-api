@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.EncryptionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptionStatus => GoogleApi.Spanner.V1.Model.Status.t(),
-          :encryptionType => String.t(),
-          :kmsKeyVersion => String.t()
+          :encryptionStatus => GoogleApi.Spanner.V1.Model.Status.t() | nil,
+          :encryptionType => String.t() | nil,
+          :kmsKeyVersion => String.t() | nil
         }
 
   field(:encryptionStatus, as: GoogleApi.Spanner.V1.Model.Status)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.KeyRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endClosed => list(any()),
-          :endOpen => list(any()),
-          :startClosed => list(any()),
-          :startOpen => list(any())
+          :endClosed => list(any()) | nil,
+          :endOpen => list(any()) | nil,
+          :startClosed => list(any()) | nil,
+          :startOpen => list(any()) | nil
         }
 
   field(:endClosed, type: :list)

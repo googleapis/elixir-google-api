@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSetMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rowType => GoogleApi.Spanner.V1.Model.StructType.t(),
-          :transaction => GoogleApi.Spanner.V1.Model.Transaction.t()
+          :rowType => GoogleApi.Spanner.V1.Model.StructType.t() | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.Transaction.t() | nil
         }
 
   field(:rowType, as: GoogleApi.Spanner.V1.Model.StructType)

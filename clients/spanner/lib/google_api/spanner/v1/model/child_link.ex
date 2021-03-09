@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.ChildLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childIndex => integer(),
-          :type => String.t(),
-          :variable => String.t()
+          :childIndex => integer() | nil,
+          :type => String.t() | nil,
+          :variable => String.t() | nil
         }
 
   field(:childIndex)

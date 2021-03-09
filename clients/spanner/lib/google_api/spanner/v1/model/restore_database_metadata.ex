@@ -32,12 +32,12 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupInfo => GoogleApi.Spanner.V1.Model.BackupInfo.t(),
-          :cancelTime => DateTime.t(),
-          :name => String.t(),
-          :optimizeDatabaseOperationName => String.t(),
-          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t(),
-          :sourceType => String.t()
+          :backupInfo => GoogleApi.Spanner.V1.Model.BackupInfo.t() | nil,
+          :cancelTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :optimizeDatabaseOperationName => String.t() | nil,
+          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t() | nil,
+          :sourceType => String.t() | nil
         }
 
   field(:backupInfo, as: GoogleApi.Spanner.V1.Model.BackupInfo)

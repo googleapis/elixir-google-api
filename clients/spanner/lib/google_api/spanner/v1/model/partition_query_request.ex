@@ -31,11 +31,11 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()},
-          :params => map(),
-          :partitionOptions => GoogleApi.Spanner.V1.Model.PartitionOptions.t(),
-          :sql => String.t(),
-          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
+          :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()} | nil,
+          :params => map() | nil,
+          :partitionOptions => GoogleApi.Spanner.V1.Model.PartitionOptions.t() | nil,
+          :sql => String.t() | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
   field(:paramTypes, as: GoogleApi.Spanner.V1.Model.Type, type: :map)

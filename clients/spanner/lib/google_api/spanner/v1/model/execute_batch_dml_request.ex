@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :seqno => String.t(),
-          :statements => list(GoogleApi.Spanner.V1.Model.Statement.t()),
-          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
+          :seqno => String.t() | nil,
+          :statements => list(GoogleApi.Spanner.V1.Model.Statement.t()) | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
   field(:seqno)

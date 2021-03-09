@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ListDatabasesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databases => list(GoogleApi.Spanner.V1.Model.Database.t()),
-          :nextPageToken => String.t()
+          :databases => list(GoogleApi.Spanner.V1.Model.Database.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:databases, as: GoogleApi.Spanner.V1.Model.Database, type: :list)

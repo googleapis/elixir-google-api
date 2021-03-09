@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.TransactionOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionedDml => GoogleApi.Spanner.V1.Model.PartitionedDml.t(),
-          :readOnly => GoogleApi.Spanner.V1.Model.ReadOnly.t(),
-          :readWrite => GoogleApi.Spanner.V1.Model.ReadWrite.t()
+          :partitionedDml => GoogleApi.Spanner.V1.Model.PartitionedDml.t() | nil,
+          :readOnly => GoogleApi.Spanner.V1.Model.ReadOnly.t() | nil,
+          :readWrite => GoogleApi.Spanner.V1.Model.ReadWrite.t() | nil
         }
 
   field(:partitionedDml, as: GoogleApi.Spanner.V1.Model.PartitionedDml)

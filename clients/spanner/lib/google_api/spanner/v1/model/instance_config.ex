@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :replicas => list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t())
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :replicas => list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t()) | nil
         }
 
   field(:displayName)

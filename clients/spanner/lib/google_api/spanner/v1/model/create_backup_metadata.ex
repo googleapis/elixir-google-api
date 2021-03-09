@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.CreateBackupMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancelTime => DateTime.t(),
-          :database => String.t(),
-          :name => String.t(),
-          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t()
+          :cancelTime => DateTime.t() | nil,
+          :database => String.t() | nil,
+          :name => String.t() | nil,
+          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t() | nil
         }
 
   field(:cancelTime, as: DateTime)

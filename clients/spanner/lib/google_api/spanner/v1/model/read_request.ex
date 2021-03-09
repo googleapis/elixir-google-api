@@ -34,14 +34,14 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(String.t()),
-          :index => String.t(),
-          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t(),
-          :limit => String.t(),
-          :partitionToken => String.t(),
-          :resumeToken => String.t(),
-          :table => String.t(),
-          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
+          :columns => list(String.t()) | nil,
+          :index => String.t() | nil,
+          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
+          :limit => String.t() | nil,
+          :partitionToken => String.t() | nil,
+          :resumeToken => String.t() | nil,
+          :table => String.t() | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
   field(:columns, type: :list)

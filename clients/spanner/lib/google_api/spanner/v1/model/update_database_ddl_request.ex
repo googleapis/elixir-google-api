@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationId => String.t(),
-          :statements => list(String.t())
+          :operationId => String.t() | nil,
+          :statements => list(String.t()) | nil
         }
 
   field(:operationId)

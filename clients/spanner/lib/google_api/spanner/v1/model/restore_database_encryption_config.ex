@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptionType => String.t(),
-          :kmsKeyName => String.t()
+          :encryptionType => String.t() | nil,
+          :kmsKeyName => String.t() | nil
         }
 
   field(:encryptionType)

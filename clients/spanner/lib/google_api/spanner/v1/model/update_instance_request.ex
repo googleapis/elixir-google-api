@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldMask => String.t(),
-          :instance => GoogleApi.Spanner.V1.Model.Instance.t()
+          :fieldMask => String.t() | nil,
+          :instance => GoogleApi.Spanner.V1.Model.Instance.t() | nil
         }
 
   field(:fieldMask)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approximateLastUseTime => DateTime.t(),
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t()
+          :approximateLastUseTime => DateTime.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil
         }
 
   field(:approximateLastUseTime, as: DateTime)

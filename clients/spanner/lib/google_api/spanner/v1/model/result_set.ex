@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.Spanner.V1.Model.ResultSetMetadata.t(),
-          :rows => list(list(any())),
-          :stats => GoogleApi.Spanner.V1.Model.ResultSetStats.t()
+          :metadata => GoogleApi.Spanner.V1.Model.ResultSetMetadata.t() | nil,
+          :rows => list(list(any())) | nil,
+          :stats => GoogleApi.Spanner.V1.Model.ResultSetStats.t() | nil
         }
 
   field(:metadata, as: GoogleApi.Spanner.V1.Model.ResultSetMetadata)

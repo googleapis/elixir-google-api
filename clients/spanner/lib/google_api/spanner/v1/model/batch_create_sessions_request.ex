@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.BatchCreateSessionsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sessionCount => integer(),
-          :sessionTemplate => GoogleApi.Spanner.V1.Model.Session.t()
+          :sessionCount => integer() | nil,
+          :sessionTemplate => GoogleApi.Spanner.V1.Model.Session.t() | nil
         }
 
   field(:sessionCount)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :statements => list(String.t())
+          :statements => list(String.t()) | nil
         }
 
   field(:statements, type: :list)

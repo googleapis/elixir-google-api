@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.CommitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mutations => list(GoogleApi.Spanner.V1.Model.Mutation.t()),
-          :returnCommitStats => boolean(),
-          :singleUseTransaction => GoogleApi.Spanner.V1.Model.TransactionOptions.t(),
-          :transactionId => String.t()
+          :mutations => list(GoogleApi.Spanner.V1.Model.Mutation.t()) | nil,
+          :returnCommitStats => boolean() | nil,
+          :singleUseTransaction => GoogleApi.Spanner.V1.Model.TransactionOptions.t() | nil,
+          :transactionId => String.t() | nil
         }
 
   field(:mutations, as: GoogleApi.Spanner.V1.Model.Mutation, type: :list)

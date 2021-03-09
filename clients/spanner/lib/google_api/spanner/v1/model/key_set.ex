@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.KeySet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :all => boolean(),
-          :keys => list(list(any())),
-          :ranges => list(GoogleApi.Spanner.V1.Model.KeyRange.t())
+          :all => boolean() | nil,
+          :keys => list(list(any())) | nil,
+          :ranges => list(GoogleApi.Spanner.V1.Model.KeyRange.t()) | nil
         }
 
   field(:all)

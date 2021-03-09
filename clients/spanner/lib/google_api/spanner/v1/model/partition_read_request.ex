@@ -32,12 +32,12 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionReadRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(String.t()),
-          :index => String.t(),
-          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t(),
-          :partitionOptions => GoogleApi.Spanner.V1.Model.PartitionOptions.t(),
-          :table => String.t(),
-          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
+          :columns => list(String.t()) | nil,
+          :index => String.t() | nil,
+          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
+          :partitionOptions => GoogleApi.Spanner.V1.Model.PartitionOptions.t() | nil,
+          :table => String.t() | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
   field(:columns, type: :list)

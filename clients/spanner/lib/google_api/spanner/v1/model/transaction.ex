@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.Transaction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :readTimestamp => DateTime.t()
+          :id => String.t() | nil,
+          :readTimestamp => DateTime.t() | nil
         }
 
   field(:id)

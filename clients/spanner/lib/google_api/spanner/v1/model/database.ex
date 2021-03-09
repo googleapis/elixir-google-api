@@ -34,14 +34,14 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :earliestVersionTime => DateTime.t(),
-          :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t(),
-          :encryptionInfo => list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t()),
-          :name => String.t(),
-          :restoreInfo => GoogleApi.Spanner.V1.Model.RestoreInfo.t(),
-          :state => String.t(),
-          :versionRetentionPeriod => String.t()
+          :createTime => DateTime.t() | nil,
+          :earliestVersionTime => DateTime.t() | nil,
+          :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t() | nil,
+          :encryptionInfo => list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t()) | nil,
+          :name => String.t() | nil,
+          :restoreInfo => GoogleApi.Spanner.V1.Model.RestoreInfo.t() | nil,
+          :state => String.t() | nil,
+          :versionRetentionPeriod => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

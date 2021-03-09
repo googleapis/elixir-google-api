@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.CommitResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitStats => GoogleApi.Spanner.V1.Model.CommitStats.t(),
-          :commitTimestamp => DateTime.t()
+          :commitStats => GoogleApi.Spanner.V1.Model.CommitStats.t() | nil,
+          :commitTimestamp => DateTime.t() | nil
         }
 
   field(:commitStats, as: GoogleApi.Spanner.V1.Model.CommitStats)

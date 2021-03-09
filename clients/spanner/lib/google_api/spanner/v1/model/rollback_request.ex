@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.RollbackRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transactionId => String.t()
+          :transactionId => String.t() | nil
         }
 
   field(:transactionId)

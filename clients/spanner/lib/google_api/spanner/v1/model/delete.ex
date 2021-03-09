@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.Delete do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t(),
-          :table => String.t()
+          :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
+          :table => String.t() | nil
         }
 
   field(:keySet, as: GoogleApi.Spanner.V1.Model.KeySet)

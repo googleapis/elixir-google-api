@@ -33,13 +33,13 @@ defmodule GoogleApi.Spanner.V1.Model.PlanNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childLinks => list(GoogleApi.Spanner.V1.Model.ChildLink.t()),
-          :displayName => String.t(),
-          :executionStats => map(),
-          :index => integer(),
-          :kind => String.t(),
-          :metadata => map(),
-          :shortRepresentation => GoogleApi.Spanner.V1.Model.ShortRepresentation.t()
+          :childLinks => list(GoogleApi.Spanner.V1.Model.ChildLink.t()) | nil,
+          :displayName => String.t() | nil,
+          :executionStats => map() | nil,
+          :index => integer() | nil,
+          :kind => String.t() | nil,
+          :metadata => map() | nil,
+          :shortRepresentation => GoogleApi.Spanner.V1.Model.ShortRepresentation.t() | nil
         }
 
   field(:childLinks, as: GoogleApi.Spanner.V1.Model.ChildLink, type: :list)

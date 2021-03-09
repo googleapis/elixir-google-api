@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :database => String.t()
+          :database => String.t() | nil
         }
 
   field(:database)
