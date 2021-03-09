@@ -27,7 +27,7 @@ defmodule GoogleApi.VectorTile.V1.Model.RoadInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isPrivate => boolean()
+          :isPrivate => boolean() | nil
         }
 
   field(:isPrivate)

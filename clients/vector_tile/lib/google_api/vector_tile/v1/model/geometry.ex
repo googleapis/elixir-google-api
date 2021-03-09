@@ -30,10 +30,10 @@ defmodule GoogleApi.VectorTile.V1.Model.Geometry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :areas => list(GoogleApi.VectorTile.V1.Model.Area.t()),
-          :extrudedAreas => list(GoogleApi.VectorTile.V1.Model.ExtrudedArea.t()),
-          :lines => list(GoogleApi.VectorTile.V1.Model.Line.t()),
-          :modeledVolumes => list(GoogleApi.VectorTile.V1.Model.ModeledVolume.t())
+          :areas => list(GoogleApi.VectorTile.V1.Model.Area.t()) | nil,
+          :extrudedAreas => list(GoogleApi.VectorTile.V1.Model.ExtrudedArea.t()) | nil,
+          :lines => list(GoogleApi.VectorTile.V1.Model.Line.t()) | nil,
+          :modeledVolumes => list(GoogleApi.VectorTile.V1.Model.ModeledVolume.t()) | nil
         }
 
   field(:areas, as: GoogleApi.VectorTile.V1.Model.Area, type: :list)

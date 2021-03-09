@@ -27,7 +27,7 @@ defmodule GoogleApi.VectorTile.V1.Model.Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :altitudeDiffs => list(integer())
+          :altitudeDiffs => list(integer()) | nil
         }
 
   field(:altitudeDiffs, type: :list)

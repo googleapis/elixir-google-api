@@ -34,14 +34,14 @@ defmodule GoogleApi.VectorTile.V1.Model.Area do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basemapZOrder => GoogleApi.VectorTile.V1.Model.BasemapZOrder.t(),
-          :hasExternalEdges => boolean(),
-          :internalEdges => list(integer()),
-          :loopBreaks => list(integer()),
-          :triangleIndices => list(integer()),
-          :type => String.t(),
-          :vertexOffsets => GoogleApi.VectorTile.V1.Model.Vertex2DList.t(),
-          :zOrder => integer()
+          :basemapZOrder => GoogleApi.VectorTile.V1.Model.BasemapZOrder.t() | nil,
+          :hasExternalEdges => boolean() | nil,
+          :internalEdges => list(integer()) | nil,
+          :loopBreaks => list(integer()) | nil,
+          :triangleIndices => list(integer()) | nil,
+          :type => String.t() | nil,
+          :vertexOffsets => GoogleApi.VectorTile.V1.Model.Vertex2DList.t() | nil,
+          :zOrder => integer() | nil
         }
 
   field(:basemapZOrder, as: GoogleApi.VectorTile.V1.Model.BasemapZOrder)

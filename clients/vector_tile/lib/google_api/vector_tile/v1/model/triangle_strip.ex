@@ -27,7 +27,7 @@ defmodule GoogleApi.VectorTile.V1.Model.TriangleStrip do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vertexIndices => list(integer())
+          :vertexIndices => list(integer()) | nil
         }
 
   field(:vertexIndices, type: :list)

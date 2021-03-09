@@ -28,8 +28,8 @@ defmodule GoogleApi.VectorTile.V1.Model.FirstDerivativeElevationGrid do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :altitudeMultiplier => number(),
-          :rows => list(GoogleApi.VectorTile.V1.Model.Row.t())
+          :altitudeMultiplier => number() | nil,
+          :rows => list(GoogleApi.VectorTile.V1.Model.Row.t()) | nil
         }
 
   field(:altitudeMultiplier)

@@ -71,6 +71,7 @@ defmodule GoogleApi.VectorTile.V1.Api.Featuretiles do
   @spec vectortile_featuretiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.VectorTile.V1.Model.FeatureTile.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def vectortile_featuretiles_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

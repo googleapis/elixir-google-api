@@ -27,7 +27,7 @@ defmodule GoogleApi.VectorTile.V1.Model.ProviderInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t()
+          :description => String.t() | nil
         }
 
   field(:description)

@@ -29,9 +29,9 @@ defmodule GoogleApi.VectorTile.V1.Model.Vertex3DList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :xOffsets => list(integer()),
-          :yOffsets => list(integer()),
-          :zOffsets => list(integer())
+          :xOffsets => list(integer()) | nil,
+          :yOffsets => list(integer()) | nil,
+          :zOffsets => list(integer()) | nil
         }
 
   field(:xOffsets, type: :list)

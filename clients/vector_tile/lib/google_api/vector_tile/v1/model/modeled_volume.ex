@@ -28,8 +28,8 @@ defmodule GoogleApi.VectorTile.V1.Model.ModeledVolume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :strips => list(GoogleApi.VectorTile.V1.Model.TriangleStrip.t()),
-          :vertexOffsets => GoogleApi.VectorTile.V1.Model.Vertex3DList.t()
+          :strips => list(GoogleApi.VectorTile.V1.Model.TriangleStrip.t()) | nil,
+          :vertexOffsets => GoogleApi.VectorTile.V1.Model.Vertex3DList.t() | nil
         }
 
   field(:strips, as: GoogleApi.VectorTile.V1.Model.TriangleStrip, type: :list)
