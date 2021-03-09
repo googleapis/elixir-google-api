@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResultCounts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceResultCounts => list(GoogleApi.CloudSearch.V1.Model.SourceResultCount.t())
+          :sourceResultCounts => list(GoogleApi.CloudSearch.V1.Model.SourceResultCount.t()) | nil
         }
 
   field(:sourceResultCounts, as: GoogleApi.CloudSearch.V1.Model.SourceResultCount, type: :list)

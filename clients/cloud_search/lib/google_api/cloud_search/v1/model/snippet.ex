@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.Snippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchRanges => list(GoogleApi.CloudSearch.V1.Model.MatchRange.t()),
-          :snippet => String.t()
+          :matchRanges => list(GoogleApi.CloudSearch.V1.Model.MatchRange.t()) | nil,
+          :snippet => String.t() | nil
         }
 
   field(:matchRanges, as: GoogleApi.CloudSearch.V1.Model.MatchRange, type: :list)

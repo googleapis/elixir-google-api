@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.EmailAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddress => String.t()
+          :emailAddress => String.t() | nil
         }
 
   field(:emailAddress)

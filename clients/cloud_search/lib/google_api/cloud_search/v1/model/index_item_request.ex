@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.IndexItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectorName => String.t(),
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :indexItemOptions => GoogleApi.CloudSearch.V1.Model.IndexItemOptions.t(),
-          :item => GoogleApi.CloudSearch.V1.Model.Item.t(),
-          :mode => String.t()
+          :connectorName => String.t() | nil,
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :indexItemOptions => GoogleApi.CloudSearch.V1.Model.IndexItemOptions.t() | nil,
+          :item => GoogleApi.CloudSearch.V1.Model.Item.t() | nil,
+          :mode => String.t() | nil
         }
 
   field(:connectorName)

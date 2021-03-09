@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.QuerySource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :operators => list(GoogleApi.CloudSearch.V1.Model.QueryOperator.t()),
-          :shortName => String.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t()
+          :displayName => String.t() | nil,
+          :operators => list(GoogleApi.CloudSearch.V1.Model.QueryOperator.t()) | nil,
+          :shortName => String.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil
         }
 
   field(:displayName)

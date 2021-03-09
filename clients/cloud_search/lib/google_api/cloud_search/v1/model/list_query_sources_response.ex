@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ListQuerySourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sources => list(GoogleApi.CloudSearch.V1.Model.QuerySource.t())
+          :nextPageToken => String.t() | nil,
+          :sources => list(GoogleApi.CloudSearch.V1.Model.QuerySource.t()) | nil
         }
 
   field(:nextPageToken)

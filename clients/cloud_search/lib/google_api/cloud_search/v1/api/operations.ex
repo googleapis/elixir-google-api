@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Operations do
   @spec cloudsearch_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Operations do
   @spec cloudsearch_operations_lro_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_operations_lro_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

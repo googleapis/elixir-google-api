@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Photo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :url => String.t()
+          :url => String.t() | nil
         }
 
   field(:url)

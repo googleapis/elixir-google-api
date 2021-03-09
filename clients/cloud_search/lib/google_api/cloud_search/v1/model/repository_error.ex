@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.RepositoryError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :httpStatusCode => integer(),
-          :type => String.t()
+          :errorMessage => String.t() | nil,
+          :httpStatusCode => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:errorMessage)

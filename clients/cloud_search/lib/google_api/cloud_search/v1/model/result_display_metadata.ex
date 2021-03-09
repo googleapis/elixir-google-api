@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResultDisplayMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metalines => list(GoogleApi.CloudSearch.V1.Model.ResultDisplayLine.t()),
-          :objectTypeLabel => String.t()
+          :metalines => list(GoogleApi.CloudSearch.V1.Model.ResultDisplayLine.t()) | nil,
+          :objectTypeLabel => String.t() | nil
         }
 
   field(:metalines, as: GoogleApi.CloudSearch.V1.Model.ResultDisplayLine, type: :list)

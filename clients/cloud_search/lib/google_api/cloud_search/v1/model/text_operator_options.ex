@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.TextOperatorOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exactMatchWithOperator => boolean(),
-          :operatorName => String.t()
+          :exactMatchWithOperator => boolean() | nil,
+          :operatorName => String.t() | nil
         }
 
   field(:exactMatchWithOperator)

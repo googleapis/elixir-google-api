@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.RetrievalImportance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :importance => String.t()
+          :importance => String.t() | nil
         }
 
   field(:importance)

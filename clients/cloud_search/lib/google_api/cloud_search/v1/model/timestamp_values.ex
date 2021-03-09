@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.TimestampValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(DateTime.t())
+          :values => list(DateTime.t()) | nil
         }
 
   field(:values, as: DateTime, type: :list)

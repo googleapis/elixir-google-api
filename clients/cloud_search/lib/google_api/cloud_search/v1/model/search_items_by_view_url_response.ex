@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchItemsByViewUrlResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.CloudSearch.V1.Model.Item.t()),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.CloudSearch.V1.Model.Item.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.CloudSearch.V1.Model.Item, type: :list)

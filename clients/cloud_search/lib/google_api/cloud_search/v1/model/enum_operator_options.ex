@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.EnumOperatorOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operatorName => String.t()
+          :operatorName => String.t() | nil
         }
 
   field(:operatorName)

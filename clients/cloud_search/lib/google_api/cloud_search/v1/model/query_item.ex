@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isSynthetic => boolean()
+          :isSynthetic => boolean() | nil
         }
 
   field(:isSynthetic)

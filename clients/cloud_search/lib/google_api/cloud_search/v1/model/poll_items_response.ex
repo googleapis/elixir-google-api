@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PollItemsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.CloudSearch.V1.Model.Item.t())
+          :items => list(GoogleApi.CloudSearch.V1.Model.Item.t()) | nil
         }
 
   field(:items, as: GoogleApi.CloudSearch.V1.Model.Item, type: :list)

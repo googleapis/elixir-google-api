@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :greaterThanOperatorName => String.t(),
-          :lessThanOperatorName => String.t(),
-          :operatorName => String.t()
+          :greaterThanOperatorName => String.t() | nil,
+          :lessThanOperatorName => String.t() | nil,
+          :operatorName => String.t() | nil
         }
 
   field(:greaterThanOperatorName)

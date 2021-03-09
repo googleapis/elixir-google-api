@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.FreshnessOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :freshnessDuration => String.t(),
-          :freshnessProperty => String.t()
+          :freshnessDuration => String.t() | nil,
+          :freshnessProperty => String.t() | nil
         }
 
   field(:freshnessDuration)

@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayOptions => GoogleApi.CloudSearch.V1.Model.ResultDisplayMetadata.t(),
-          :fields => list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t()),
-          :mimeType => String.t(),
-          :objectType => String.t(),
-          :owner => GoogleApi.CloudSearch.V1.Model.Person.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :displayOptions => GoogleApi.CloudSearch.V1.Model.ResultDisplayMetadata.t() | nil,
+          :fields => list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t()) | nil,
+          :mimeType => String.t() | nil,
+          :objectType => String.t() | nil,
+          :owner => GoogleApi.CloudSearch.V1.Model.Person.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

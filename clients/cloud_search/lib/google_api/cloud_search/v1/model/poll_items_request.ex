@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.PollItemsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectorName => String.t(),
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :limit => integer(),
-          :queue => String.t(),
-          :statusCodes => list(String.t())
+          :connectorName => String.t() | nil,
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :limit => integer() | nil,
+          :queue => String.t() | nil,
+          :statusCodes => list(String.t()) | nil
         }
 
   field(:connectorName)

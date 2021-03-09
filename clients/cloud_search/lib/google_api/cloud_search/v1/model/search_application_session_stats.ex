@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplicationSessionStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => GoogleApi.CloudSearch.V1.Model.Date.t(),
-          :searchSessionsCount => String.t()
+          :date => GoogleApi.CloudSearch.V1.Model.Date.t() | nil,
+          :searchSessionsCount => String.t() | nil
         }
 
   field(:date, as: GoogleApi.CloudSearch.V1.Model.Date)

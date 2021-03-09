@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DoubleValues do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(float())
+          :values => list(float()) | nil
         }
 
   field(:values, type: :list)

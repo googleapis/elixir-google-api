@@ -36,16 +36,16 @@ defmodule GoogleApi.CloudSearch.V1.Model.NamedProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanValue => boolean(),
-          :dateValues => GoogleApi.CloudSearch.V1.Model.DateValues.t(),
-          :doubleValues => GoogleApi.CloudSearch.V1.Model.DoubleValues.t(),
-          :enumValues => GoogleApi.CloudSearch.V1.Model.EnumValues.t(),
-          :htmlValues => GoogleApi.CloudSearch.V1.Model.HtmlValues.t(),
-          :integerValues => GoogleApi.CloudSearch.V1.Model.IntegerValues.t(),
-          :name => String.t(),
-          :objectValues => GoogleApi.CloudSearch.V1.Model.ObjectValues.t(),
-          :textValues => GoogleApi.CloudSearch.V1.Model.TextValues.t(),
-          :timestampValues => GoogleApi.CloudSearch.V1.Model.TimestampValues.t()
+          :booleanValue => boolean() | nil,
+          :dateValues => GoogleApi.CloudSearch.V1.Model.DateValues.t() | nil,
+          :doubleValues => GoogleApi.CloudSearch.V1.Model.DoubleValues.t() | nil,
+          :enumValues => GoogleApi.CloudSearch.V1.Model.EnumValues.t() | nil,
+          :htmlValues => GoogleApi.CloudSearch.V1.Model.HtmlValues.t() | nil,
+          :integerValues => GoogleApi.CloudSearch.V1.Model.IntegerValues.t() | nil,
+          :name => String.t() | nil,
+          :objectValues => GoogleApi.CloudSearch.V1.Model.ObjectValues.t() | nil,
+          :textValues => GoogleApi.CloudSearch.V1.Model.TextValues.t() | nil,
+          :timestampValues => GoogleApi.CloudSearch.V1.Model.TimestampValues.t() | nil
         }
 
   field(:booleanValue)

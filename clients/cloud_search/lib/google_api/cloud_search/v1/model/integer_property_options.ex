@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maximumValue => String.t(),
-          :minimumValue => String.t(),
-          :operatorOptions => GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions.t(),
-          :orderedRanking => String.t()
+          :maximumValue => String.t() | nil,
+          :minimumValue => String.t() | nil,
+          :operatorOptions => GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions.t() | nil,
+          :orderedRanking => String.t() | nil
         }
 
   field(:maximumValue)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemStructuredData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hash => String.t(),
-          :object => GoogleApi.CloudSearch.V1.Model.StructuredDataObject.t()
+          :hash => String.t() | nil,
+          :object => GoogleApi.CloudSearch.V1.Model.StructuredDataObject.t() | nil
         }
 
   field(:hash)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.UnmappedIdentity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :externalIdentity => GoogleApi.CloudSearch.V1.Model.Principal.t(),
-          :resolutionStatusCode => String.t()
+          :externalIdentity => GoogleApi.CloudSearch.V1.Model.Principal.t() | nil,
+          :resolutionStatusCode => String.t() | nil
         }
 
   field(:externalIdentity, as: GoogleApi.CloudSearch.V1.Model.Principal)

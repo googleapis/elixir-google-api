@@ -37,17 +37,17 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugInfo => GoogleApi.CloudSearch.V1.Model.ResponseDebugInfo.t(),
-          :errorInfo => GoogleApi.CloudSearch.V1.Model.ErrorInfo.t(),
-          :facetResults => list(GoogleApi.CloudSearch.V1.Model.FacetResult.t()),
-          :hasMoreResults => boolean(),
-          :queryInterpretation => GoogleApi.CloudSearch.V1.Model.QueryInterpretation.t(),
-          :resultCountEstimate => String.t(),
-          :resultCountExact => String.t(),
-          :resultCounts => GoogleApi.CloudSearch.V1.Model.ResultCounts.t(),
-          :results => list(GoogleApi.CloudSearch.V1.Model.SearchResult.t()),
-          :spellResults => list(GoogleApi.CloudSearch.V1.Model.SpellResult.t()),
-          :structuredResults => list(GoogleApi.CloudSearch.V1.Model.StructuredResult.t())
+          :debugInfo => GoogleApi.CloudSearch.V1.Model.ResponseDebugInfo.t() | nil,
+          :errorInfo => GoogleApi.CloudSearch.V1.Model.ErrorInfo.t() | nil,
+          :facetResults => list(GoogleApi.CloudSearch.V1.Model.FacetResult.t()) | nil,
+          :hasMoreResults => boolean() | nil,
+          :queryInterpretation => GoogleApi.CloudSearch.V1.Model.QueryInterpretation.t() | nil,
+          :resultCountEstimate => String.t() | nil,
+          :resultCountExact => String.t() | nil,
+          :resultCounts => GoogleApi.CloudSearch.V1.Model.ResultCounts.t() | nil,
+          :results => list(GoogleApi.CloudSearch.V1.Model.SearchResult.t()) | nil,
+          :spellResults => list(GoogleApi.CloudSearch.V1.Model.SpellResult.t()) | nil,
+          :structuredResults => list(GoogleApi.CloudSearch.V1.Model.StructuredResult.t()) | nil
         }
 
   field(:debugInfo, as: GoogleApi.CloudSearch.V1.Model.ResponseDebugInfo)

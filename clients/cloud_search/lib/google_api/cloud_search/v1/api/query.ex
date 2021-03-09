@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SearchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_query_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_suggest(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SuggestResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_query_suggest(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -174,6 +176,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_sources_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListQuerySourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_query_sources_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

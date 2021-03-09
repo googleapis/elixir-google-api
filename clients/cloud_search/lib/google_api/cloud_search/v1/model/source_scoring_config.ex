@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SourceScoringConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceImportance => String.t()
+          :sourceImportance => String.t() | nil
         }
 
   field(:sourceImportance)

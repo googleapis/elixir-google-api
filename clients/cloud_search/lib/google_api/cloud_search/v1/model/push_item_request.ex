@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.PushItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectorName => String.t(),
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :item => GoogleApi.CloudSearch.V1.Model.PushItem.t()
+          :connectorName => String.t() | nil,
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :item => GoogleApi.CloudSearch.V1.Model.PushItem.t() | nil
         }
 
   field(:connectorName)

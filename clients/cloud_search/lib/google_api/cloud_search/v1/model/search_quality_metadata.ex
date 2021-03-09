@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quality => float()
+          :quality => float() | nil
         }
 
   field(:quality)

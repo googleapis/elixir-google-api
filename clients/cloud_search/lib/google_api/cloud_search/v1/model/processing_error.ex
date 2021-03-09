@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.ProcessingError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :errorMessage => String.t(),
-          :fieldViolations => list(GoogleApi.CloudSearch.V1.Model.FieldViolation.t())
+          :code => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :fieldViolations => list(GoogleApi.CloudSearch.V1.Model.FieldViolation.t()) | nil
         }
 
   field(:code)

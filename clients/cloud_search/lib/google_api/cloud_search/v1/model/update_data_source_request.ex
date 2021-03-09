@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.UpdateDataSourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.DataSource.t()
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.DataSource.t() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)

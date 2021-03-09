@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.SuggestResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :peopleSuggestion => GoogleApi.CloudSearch.V1.Model.PeopleSuggestion.t(),
-          :querySuggestion => GoogleApi.CloudSearch.V1.Model.QuerySuggestion.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t(),
-          :suggestedQuery => String.t()
+          :peopleSuggestion => GoogleApi.CloudSearch.V1.Model.PeopleSuggestion.t() | nil,
+          :querySuggestion => GoogleApi.CloudSearch.V1.Model.QuerySuggestion.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil,
+          :suggestedQuery => String.t() | nil
         }
 
   field(:peopleSuggestion, as: GoogleApi.CloudSearch.V1.Model.PeopleSuggestion)

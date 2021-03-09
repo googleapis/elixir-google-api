@@ -35,14 +35,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
 
   @type t :: %__MODULE__{
           :dataSourceRestrictions =>
-            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()),
-          :defaultFacetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()),
-          :defaultSortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :operationIds => list(String.t()),
-          :scoringConfig => GoogleApi.CloudSearch.V1.Model.ScoringConfig.t(),
-          :sourceConfig => list(GoogleApi.CloudSearch.V1.Model.SourceConfig.t())
+            list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()) | nil,
+          :defaultFacetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()) | nil,
+          :defaultSortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :operationIds => list(String.t()) | nil,
+          :scoringConfig => GoogleApi.CloudSearch.V1.Model.ScoringConfig.t() | nil,
+          :sourceConfig => list(GoogleApi.CloudSearch.V1.Model.SourceConfig.t()) | nil
         }
 
   field(:dataSourceRestrictions,

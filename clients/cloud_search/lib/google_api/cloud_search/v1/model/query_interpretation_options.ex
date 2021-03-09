@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryInterpretationOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableNlInterpretation => boolean(),
-          :enableVerbatimMode => boolean()
+          :disableNlInterpretation => boolean() | nil,
+          :enableVerbatimMode => boolean() | nil
         }
 
   field(:disableNlInterpretation)

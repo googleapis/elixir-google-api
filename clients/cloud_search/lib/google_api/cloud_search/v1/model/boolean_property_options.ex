@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.BooleanPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operatorOptions => GoogleApi.CloudSearch.V1.Model.BooleanOperatorOptions.t()
+          :operatorOptions => GoogleApi.CloudSearch.V1.Model.BooleanOperatorOptions.t() | nil
         }
 
   field(:operatorOptions, as: GoogleApi.CloudSearch.V1.Model.BooleanOperatorOptions)

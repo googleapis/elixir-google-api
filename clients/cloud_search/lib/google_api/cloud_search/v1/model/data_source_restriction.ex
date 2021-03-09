@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSourceRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterOptions => list(GoogleApi.CloudSearch.V1.Model.FilterOptions.t()),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t()
+          :filterOptions => list(GoogleApi.CloudSearch.V1.Model.FilterOptions.t()) | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil
         }
 
   field(:filterOptions, as: GoogleApi.CloudSearch.V1.Model.FilterOptions, type: :list)

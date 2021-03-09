@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResultDisplayLine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.CloudSearch.V1.Model.ResultDisplayField.t())
+          :fields => list(GoogleApi.CloudSearch.V1.Model.ResultDisplayField.t()) | nil
         }
 
   field(:fields, as: GoogleApi.CloudSearch.V1.Model.ResultDisplayField, type: :list)

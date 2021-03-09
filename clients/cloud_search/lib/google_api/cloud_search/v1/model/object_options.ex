@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayOptions => GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t(),
-          :freshnessOptions => GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t()
+          :displayOptions => GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t() | nil,
+          :freshnessOptions => GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t() | nil
         }
 
   field(:displayOptions, as: GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions)

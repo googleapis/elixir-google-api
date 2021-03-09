@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DebugOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableDebugging => boolean()
+          :enableDebugging => boolean() | nil
         }
 
   field(:enableDebugging)

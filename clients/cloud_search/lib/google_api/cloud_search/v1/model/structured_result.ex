@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.StructuredResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :person => GoogleApi.CloudSearch.V1.Model.Person.t()
+          :person => GoogleApi.CloudSearch.V1.Model.Person.t() | nil
         }
 
   field(:person, as: GoogleApi.CloudSearch.V1.Model.Person)

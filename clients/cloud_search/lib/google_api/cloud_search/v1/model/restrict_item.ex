@@ -31,11 +31,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.RestrictItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveFollowUpRestrict => GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict.t(),
-          :driveLocationRestrict => GoogleApi.CloudSearch.V1.Model.DriveLocationRestrict.t(),
-          :driveMimeTypeRestrict => GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t(),
-          :driveTimeSpanRestrict => GoogleApi.CloudSearch.V1.Model.DriveTimeSpanRestrict.t(),
-          :searchOperator => String.t()
+          :driveFollowUpRestrict =>
+            GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict.t() | nil,
+          :driveLocationRestrict =>
+            GoogleApi.CloudSearch.V1.Model.DriveLocationRestrict.t() | nil,
+          :driveMimeTypeRestrict =>
+            GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t() | nil,
+          :driveTimeSpanRestrict =>
+            GoogleApi.CloudSearch.V1.Model.DriveTimeSpanRestrict.t() | nil,
+          :searchOperator => String.t() | nil
         }
 
   field(:driveFollowUpRestrict, as: GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict)

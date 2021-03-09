@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metaline do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :properties => list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t())
+          :properties => list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t()) | nil
         }
 
   field(:properties, as: GoogleApi.CloudSearch.V1.Model.DisplayedProperty, type: :list)

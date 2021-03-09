@@ -61,6 +61,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.CheckAccessResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_debug_datasources_items_check_access(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SearchItemsByViewUrlResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_debug_datasources_items_search_by_view_url(
         connection,
@@ -208,6 +210,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListUnmappedIdentitiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_debug_datasources_items_unmappedids_list(
         connection,
@@ -287,6 +290,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListItemNamesForUnmappedIdentityResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_debug_identitysources_items_list_forunmappedidentity(
         connection,
@@ -367,6 +371,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListUnmappedIdentitiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudsearch_debug_identitysources_unmappedids_list(
         connection,

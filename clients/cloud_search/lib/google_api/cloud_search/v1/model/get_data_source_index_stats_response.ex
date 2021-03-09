@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.GetDataSourceIndexStatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stats => list(GoogleApi.CloudSearch.V1.Model.DataSourceIndexStats.t())
+          :stats => list(GoogleApi.CloudSearch.V1.Model.DataSourceIndexStats.t()) | nil
         }
 
   field(:stats, as: GoogleApi.CloudSearch.V1.Model.DataSourceIndexStats, type: :list)

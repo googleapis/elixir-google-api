@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.CompositeFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logicOperator => String.t(),
-          :subFilters => list(GoogleApi.CloudSearch.V1.Model.Filter.t())
+          :logicOperator => String.t() | nil,
+          :subFilters => list(GoogleApi.CloudSearch.V1.Model.Filter.t()) | nil
         }
 
   field(:logicOperator)

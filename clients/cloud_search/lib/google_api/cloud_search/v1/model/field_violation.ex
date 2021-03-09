@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.FieldViolation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :field => String.t()
+          :description => String.t() | nil,
+          :field => String.t() | nil
         }
 
   field(:description)

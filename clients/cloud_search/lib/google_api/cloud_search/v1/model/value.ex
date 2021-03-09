@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanValue => boolean(),
-          :dateValue => GoogleApi.CloudSearch.V1.Model.Date.t(),
-          :doubleValue => float(),
-          :integerValue => String.t(),
-          :stringValue => String.t(),
-          :timestampValue => DateTime.t()
+          :booleanValue => boolean() | nil,
+          :dateValue => GoogleApi.CloudSearch.V1.Model.Date.t() | nil,
+          :doubleValue => float() | nil,
+          :integerValue => String.t() | nil,
+          :stringValue => String.t() | nil,
+          :timestampValue => DateTime.t() | nil
         }
 
   field(:booleanValue)

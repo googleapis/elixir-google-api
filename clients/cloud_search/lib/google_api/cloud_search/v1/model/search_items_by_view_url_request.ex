@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchItemsByViewUrlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :pageToken => String.t(),
-          :viewUrl => String.t()
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :pageToken => String.t() | nil,
+          :viewUrl => String.t() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)

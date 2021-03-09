@@ -27,7 +27,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subobjectProperties => list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t())
+          :subobjectProperties =>
+            list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t()) | nil
         }
 
   field(:subobjectProperties, as: GoogleApi.CloudSearch.V1.Model.PropertyDefinition, type: :list)

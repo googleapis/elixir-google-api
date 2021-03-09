@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.SourceResultCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasMoreResults => boolean(),
-          :resultCountEstimate => String.t(),
-          :resultCountExact => String.t(),
-          :source => GoogleApi.CloudSearch.V1.Model.Source.t()
+          :hasMoreResults => boolean() | nil,
+          :resultCountEstimate => String.t() | nil,
+          :resultCountExact => String.t() | nil,
+          :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil
         }
 
   field(:hasMoreResults)

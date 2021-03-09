@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpellResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestedQuery => String.t()
+          :suggestedQuery => String.t() | nil
         }
 
   field(:suggestedQuery)

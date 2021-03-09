@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metalines => list(GoogleApi.CloudSearch.V1.Model.Metaline.t()),
-          :objectDisplayLabel => String.t()
+          :metalines => list(GoogleApi.CloudSearch.V1.Model.Metaline.t()) | nil,
+          :objectDisplayLabel => String.t() | nil
         }
 
   field(:metalines, as: GoogleApi.CloudSearch.V1.Model.Metaline, type: :list)

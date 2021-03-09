@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemCountByStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :statusCode => String.t()
+          :count => String.t() | nil,
+          :statusCode => String.t() | nil
         }
 
   field(:count)

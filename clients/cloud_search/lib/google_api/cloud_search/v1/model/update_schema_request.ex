@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.UpdateSchemaRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t(),
-          :schema => GoogleApi.CloudSearch.V1.Model.Schema.t(),
-          :validateOnly => boolean()
+          :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
+          :schema => GoogleApi.CloudSearch.V1.Model.Schema.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)
