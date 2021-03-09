@@ -29,9 +29,9 @@ defmodule GoogleApi.TPU.V1.Model.ListTensorFlowVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tensorflowVersions => list(GoogleApi.TPU.V1.Model.TensorFlowVersion.t()),
-          :unreachable => list(String.t())
+          :nextPageToken => String.t() | nil,
+          :tensorflowVersions => list(GoogleApi.TPU.V1.Model.TensorFlowVersion.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)

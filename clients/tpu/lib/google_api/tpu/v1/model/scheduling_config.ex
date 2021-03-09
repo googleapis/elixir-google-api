@@ -28,8 +28,8 @@ defmodule GoogleApi.TPU.V1.Model.SchedulingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :preemptible => boolean(),
-          :reserved => boolean()
+          :preemptible => boolean() | nil,
+          :reserved => boolean() | nil
         }
 
   field(:preemptible)

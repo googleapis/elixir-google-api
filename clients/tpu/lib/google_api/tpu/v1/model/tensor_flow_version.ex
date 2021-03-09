@@ -28,8 +28,8 @@ defmodule GoogleApi.TPU.V1.Model.TensorFlowVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :version => String.t()
+          :name => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:name)

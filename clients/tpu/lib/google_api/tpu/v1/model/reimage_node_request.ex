@@ -27,7 +27,7 @@ defmodule GoogleApi.TPU.V1.Model.ReimageNodeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tensorflowVersion => String.t()
+          :tensorflowVersion => String.t() | nil
         }
 
   field(:tensorflowVersion)

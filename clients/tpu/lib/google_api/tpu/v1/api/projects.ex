@@ -52,7 +52,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,6 +117,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   @spec tpu_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.TPU.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -181,6 +185,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.TPU.V1.Model.AcceleratorType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_accelerator_types_get(
         connection,
@@ -254,6 +259,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.TPU.V1.Model.ListAcceleratorTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_accelerator_types_list(
         connection,
@@ -322,7 +328,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -381,7 +390,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -438,7 +450,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Node.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Node.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -499,6 +514,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   @spec tpu_projects_locations_nodes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.TPU.V1.Model.ListNodesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_nodes_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -559,7 +575,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_reimage(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_reimage(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -618,7 +637,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_start(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_start(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -677,7 +699,10 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec tpu_projects_locations_nodes_stop(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_nodes_stop(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -739,7 +764,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TPU.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.TPU.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_operations_cancel(
         connection,
         name,
@@ -805,7 +834,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TPU.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.TPU.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_operations_delete(
         connection,
         name,
@@ -871,7 +904,11 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TPU.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.TPU.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tpu_projects_locations_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -938,6 +975,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.TPU.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1005,6 +1043,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.TPU.V1.Model.TensorFlowVersion.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_tensorflow_versions_get(
         connection,
@@ -1078,6 +1117,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.TPU.V1.Model.ListTensorFlowVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def tpu_projects_locations_tensorflow_versions_list(
         connection,
