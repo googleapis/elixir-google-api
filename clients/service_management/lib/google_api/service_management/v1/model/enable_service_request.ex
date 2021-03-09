@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.EnableServiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerId => String.t()
+          :consumerId => String.t() | nil
         }
 
   field(:consumerId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.ServiceManagement.V1.Model.Expr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :condition => GoogleApi.ServiceManagement.V1.Model.Expr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.ServiceManagement.V1.Model.Expr)

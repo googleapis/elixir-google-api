@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.CustomErrorRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isErrorType => boolean(),
-          :selector => String.t()
+          :isErrorType => boolean() | nil,
+          :selector => String.t() | nil
         }
 
   field(:isErrorType)

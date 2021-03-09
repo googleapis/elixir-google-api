@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Logging do
 
   @type t :: %__MODULE__{
           :consumerDestinations =>
-            list(GoogleApi.ServiceManagement.V1.Model.LoggingDestination.t()),
+            list(GoogleApi.ServiceManagement.V1.Model.LoggingDestination.t()) | nil,
           :producerDestinations =>
-            list(GoogleApi.ServiceManagement.V1.Model.LoggingDestination.t())
+            list(GoogleApi.ServiceManagement.V1.Model.LoggingDestination.t()) | nil
         }
 
   field(:consumerDestinations,

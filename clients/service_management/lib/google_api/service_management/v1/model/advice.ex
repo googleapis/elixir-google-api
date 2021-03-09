@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Advice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t()
+          :description => String.t() | nil
         }
 
   field(:description)

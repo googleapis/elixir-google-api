@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newConfig => map(),
-          :oldConfig => map()
+          :newConfig => map() | nil,
+          :oldConfig => map() | nil
         }
 
   field(:newConfig, type: :map)

@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ContextRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedRequestExtensions => list(String.t()),
-          :allowedResponseExtensions => list(String.t()),
-          :provided => list(String.t()),
-          :requested => list(String.t()),
-          :selector => String.t()
+          :allowedRequestExtensions => list(String.t()) | nil,
+          :allowedResponseExtensions => list(String.t()) | nil,
+          :provided => list(String.t()) | nil,
+          :requested => list(String.t()) | nil,
+          :selector => String.t() | nil
         }
 
   field(:allowedRequestExtensions, type: :list)

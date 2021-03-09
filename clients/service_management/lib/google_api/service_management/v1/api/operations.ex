@@ -54,6 +54,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   @spec servicemanagement_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicemanagement_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   @spec servicemanagement_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicemanagement_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

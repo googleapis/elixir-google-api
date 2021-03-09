@@ -28,7 +28,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Billing do
 
   @type t :: %__MODULE__{
           :consumerDestinations =>
-            list(GoogleApi.ServiceManagement.V1.Model.BillingDestination.t())
+            list(GoogleApi.ServiceManagement.V1.Model.BillingDestination.t()) | nil
         }
 
   field(:consumerDestinations,

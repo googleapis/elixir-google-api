@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configSource => GoogleApi.ServiceManagement.V1.Model.ConfigSource.t(),
-          :validateOnly => boolean()
+          :configSource => GoogleApi.ServiceManagement.V1.Model.ConfigSource.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:configSource, as: GoogleApi.ServiceManagement.V1.Model.ConfigSource)

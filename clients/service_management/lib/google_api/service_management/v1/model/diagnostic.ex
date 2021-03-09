@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Diagnostic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :location => String.t(),
-          :message => String.t()
+          :kind => String.t() | nil,
+          :location => String.t() | nil,
+          :message => String.t() | nil
         }
 
   field(:kind)

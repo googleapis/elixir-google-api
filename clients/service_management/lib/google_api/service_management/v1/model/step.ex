@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Step do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :status => String.t()
+          :description => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:description)

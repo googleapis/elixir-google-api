@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.MetricDescriptorMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ingestDelay => String.t(),
-          :launchStage => String.t(),
-          :samplePeriod => String.t()
+          :ingestDelay => String.t() | nil,
+          :launchStage => String.t() | nil,
+          :samplePeriod => String.t() | nil
         }
 
   field(:ingestDelay)

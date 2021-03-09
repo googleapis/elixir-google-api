@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advices => list(GoogleApi.ServiceManagement.V1.Model.Advice.t()),
-          :changeType => String.t(),
-          :element => String.t(),
-          :newValue => String.t(),
-          :oldValue => String.t()
+          :advices => list(GoogleApi.ServiceManagement.V1.Model.Advice.t()) | nil,
+          :changeType => String.t() | nil,
+          :element => String.t() | nil,
+          :newValue => String.t() | nil,
+          :oldValue => String.t() | nil
         }
 
   field(:advices, as: GoogleApi.ServiceManagement.V1.Model.Advice, type: :list)

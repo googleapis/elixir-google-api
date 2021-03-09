@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ManagedService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :producerProjectId => String.t(),
-          :serviceName => String.t()
+          :producerProjectId => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:producerProjectId)

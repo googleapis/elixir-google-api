@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Quota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limits => list(GoogleApi.ServiceManagement.V1.Model.QuotaLimit.t()),
-          :metricRules => list(GoogleApi.ServiceManagement.V1.Model.MetricRule.t())
+          :limits => list(GoogleApi.ServiceManagement.V1.Model.QuotaLimit.t()) | nil,
+          :metricRules => list(GoogleApi.ServiceManagement.V1.Model.MetricRule.t()) | nil
         }
 
   field(:limits, as: GoogleApi.ServiceManagement.V1.Model.QuotaLimit, type: :list)

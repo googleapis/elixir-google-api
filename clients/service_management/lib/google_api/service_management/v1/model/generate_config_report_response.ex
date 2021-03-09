@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changeReports => list(GoogleApi.ServiceManagement.V1.Model.ChangeReport.t()),
-          :diagnostics => list(GoogleApi.ServiceManagement.V1.Model.Diagnostic.t()),
-          :id => String.t(),
-          :serviceName => String.t()
+          :changeReports => list(GoogleApi.ServiceManagement.V1.Model.ChangeReport.t()) | nil,
+          :diagnostics => list(GoogleApi.ServiceManagement.V1.Model.Diagnostic.t()) | nil,
+          :id => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:changeReports, as: GoogleApi.ServiceManagement.V1.Model.ChangeReport, type: :list)

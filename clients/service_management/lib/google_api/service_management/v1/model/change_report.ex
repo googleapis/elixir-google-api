@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ChangeReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configChanges => list(GoogleApi.ServiceManagement.V1.Model.ConfigChange.t())
+          :configChanges => list(GoogleApi.ServiceManagement.V1.Model.ConfigChange.t()) | nil
         }
 
   field(:configChanges, as: GoogleApi.ServiceManagement.V1.Model.ConfigChange, type: :list)

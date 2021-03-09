@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.UndeleteServiceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => GoogleApi.ServiceManagement.V1.Model.ManagedService.t()
+          :service => GoogleApi.ServiceManagement.V1.Model.ManagedService.t() | nil
         }
 
   field(:service, as: GoogleApi.ServiceManagement.V1.Model.ManagedService)

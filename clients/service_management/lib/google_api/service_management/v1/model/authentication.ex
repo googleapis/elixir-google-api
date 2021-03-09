@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Authentication do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :providers => list(GoogleApi.ServiceManagement.V1.Model.AuthProvider.t()),
-          :rules => list(GoogleApi.ServiceManagement.V1.Model.AuthenticationRule.t())
+          :providers => list(GoogleApi.ServiceManagement.V1.Model.AuthProvider.t()) | nil,
+          :rules => list(GoogleApi.ServiceManagement.V1.Model.AuthenticationRule.t()) | nil
         }
 
   field(:providers, as: GoogleApi.ServiceManagement.V1.Model.AuthProvider, type: :list)

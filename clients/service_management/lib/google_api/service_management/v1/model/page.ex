@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Page do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :name => String.t(),
-          :subpages => list(GoogleApi.ServiceManagement.V1.Model.Page.t())
+          :content => String.t() | nil,
+          :name => String.t() | nil,
+          :subpages => list(GoogleApi.ServiceManagement.V1.Model.Page.t()) | nil
         }
 
   field(:content)

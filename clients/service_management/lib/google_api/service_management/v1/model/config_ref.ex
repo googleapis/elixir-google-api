@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)
