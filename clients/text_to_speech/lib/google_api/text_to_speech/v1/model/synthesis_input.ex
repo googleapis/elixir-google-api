@@ -28,8 +28,8 @@ defmodule GoogleApi.TextToSpeech.V1.Model.SynthesisInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ssml => String.t(),
-          :text => String.t()
+          :ssml => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:ssml)

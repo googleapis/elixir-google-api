@@ -32,12 +32,12 @@ defmodule GoogleApi.TextToSpeech.V1.Model.AudioConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioEncoding => String.t(),
-          :effectsProfileId => list(String.t()),
-          :pitch => float(),
-          :sampleRateHertz => integer(),
-          :speakingRate => float(),
-          :volumeGainDb => float()
+          :audioEncoding => String.t() | nil,
+          :effectsProfileId => list(String.t()) | nil,
+          :pitch => float() | nil,
+          :sampleRateHertz => integer() | nil,
+          :speakingRate => float() | nil,
+          :volumeGainDb => float() | nil
         }
 
   field(:audioEncoding)

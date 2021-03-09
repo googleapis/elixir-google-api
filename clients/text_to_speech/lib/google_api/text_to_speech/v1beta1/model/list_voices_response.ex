@@ -27,7 +27,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.ListVoicesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :voices => list(GoogleApi.TextToSpeech.V1beta1.Model.Voice.t())
+          :voices => list(GoogleApi.TextToSpeech.V1beta1.Model.Voice.t()) | nil
         }
 
   field(:voices, as: GoogleApi.TextToSpeech.V1beta1.Model.Voice, type: :list)
