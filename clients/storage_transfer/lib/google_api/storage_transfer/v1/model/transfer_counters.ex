@@ -42,22 +42,22 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bytesCopiedToSink => String.t(),
-          :bytesDeletedFromSink => String.t(),
-          :bytesDeletedFromSource => String.t(),
-          :bytesFailedToDeleteFromSink => String.t(),
-          :bytesFoundFromSource => String.t(),
-          :bytesFoundOnlyFromSink => String.t(),
-          :bytesFromSourceFailed => String.t(),
-          :bytesFromSourceSkippedBySync => String.t(),
-          :objectsCopiedToSink => String.t(),
-          :objectsDeletedFromSink => String.t(),
-          :objectsDeletedFromSource => String.t(),
-          :objectsFailedToDeleteFromSink => String.t(),
-          :objectsFoundFromSource => String.t(),
-          :objectsFoundOnlyFromSink => String.t(),
-          :objectsFromSourceFailed => String.t(),
-          :objectsFromSourceSkippedBySync => String.t()
+          :bytesCopiedToSink => String.t() | nil,
+          :bytesDeletedFromSink => String.t() | nil,
+          :bytesDeletedFromSource => String.t() | nil,
+          :bytesFailedToDeleteFromSink => String.t() | nil,
+          :bytesFoundFromSource => String.t() | nil,
+          :bytesFoundOnlyFromSink => String.t() | nil,
+          :bytesFromSourceFailed => String.t() | nil,
+          :bytesFromSourceSkippedBySync => String.t() | nil,
+          :objectsCopiedToSink => String.t() | nil,
+          :objectsDeletedFromSink => String.t() | nil,
+          :objectsDeletedFromSource => String.t() | nil,
+          :objectsFailedToDeleteFromSink => String.t() | nil,
+          :objectsFoundFromSource => String.t() | nil,
+          :objectsFoundOnlyFromSink => String.t() | nil,
+          :objectsFromSourceFailed => String.t() | nil,
+          :objectsFromSourceSkippedBySync => String.t() | nil
         }
 
   field(:bytesCopiedToSink)

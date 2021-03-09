@@ -29,9 +29,9 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :awsAccessKey => GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t(),
-          :bucketName => String.t(),
-          :path => String.t()
+          :awsAccessKey => GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t() | nil,
+          :bucketName => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:awsAccessKey, as: GoogleApi.StorageTransfer.V1.Model.AwsAccessKey)

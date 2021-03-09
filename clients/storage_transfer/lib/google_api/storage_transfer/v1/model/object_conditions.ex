@@ -32,12 +32,12 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludePrefixes => list(String.t()),
-          :includePrefixes => list(String.t()),
-          :lastModifiedBefore => DateTime.t(),
-          :lastModifiedSince => DateTime.t(),
-          :maxTimeElapsedSinceLastModification => String.t(),
-          :minTimeElapsedSinceLastModification => String.t()
+          :excludePrefixes => list(String.t()) | nil,
+          :includePrefixes => list(String.t()) | nil,
+          :lastModifiedBefore => DateTime.t() | nil,
+          :lastModifiedSince => DateTime.t() | nil,
+          :maxTimeElapsedSinceLastModification => String.t() | nil,
+          :minTimeElapsedSinceLastModification => String.t() | nil
         }
 
   field(:excludePrefixes, type: :list)

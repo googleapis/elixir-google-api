@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountEmail => String.t()
+          :accountEmail => String.t() | nil
         }
 
   field(:accountEmail)

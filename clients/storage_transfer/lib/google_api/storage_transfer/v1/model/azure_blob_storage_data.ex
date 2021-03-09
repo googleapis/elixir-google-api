@@ -30,10 +30,10 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :azureCredentials => GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t(),
-          :container => String.t(),
-          :path => String.t(),
-          :storageAccount => String.t()
+          :azureCredentials => GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t() | nil,
+          :container => String.t() | nil,
+          :path => String.t() | nil,
+          :storageAccount => String.t() | nil
         }
 
   field(:azureCredentials, as: GoogleApi.StorageTransfer.V1.Model.AzureCredentials)

@@ -37,17 +37,17 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :deletionTime => DateTime.t(),
-          :description => String.t(),
-          :lastModificationTime => DateTime.t(),
-          :latestOperationName => String.t(),
-          :name => String.t(),
-          :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t(),
-          :projectId => String.t(),
-          :schedule => GoogleApi.StorageTransfer.V1.Model.Schedule.t(),
-          :status => String.t(),
-          :transferSpec => GoogleApi.StorageTransfer.V1.Model.TransferSpec.t()
+          :creationTime => DateTime.t() | nil,
+          :deletionTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :lastModificationTime => DateTime.t() | nil,
+          :latestOperationName => String.t() | nil,
+          :name => String.t() | nil,
+          :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t() | nil,
+          :projectId => String.t() | nil,
+          :schedule => GoogleApi.StorageTransfer.V1.Model.Schedule.t() | nil,
+          :status => String.t() | nil,
+          :transferSpec => GoogleApi.StorageTransfer.V1.Model.TransferSpec.t() | nil
         }
 
   field(:creationTime, as: DateTime)

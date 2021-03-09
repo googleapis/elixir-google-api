@@ -28,8 +28,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :transferJobs => list(GoogleApi.StorageTransfer.V1.Model.TransferJob.t())
+          :nextPageToken => String.t() | nil,
+          :transferJobs => list(GoogleApi.StorageTransfer.V1.Model.TransferJob.t()) | nil
         }
 
   field(:nextPageToken)

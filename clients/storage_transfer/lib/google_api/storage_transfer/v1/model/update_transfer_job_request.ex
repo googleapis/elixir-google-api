@@ -29,9 +29,9 @@ defmodule GoogleApi.StorageTransfer.V1.Model.UpdateTransferJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectId => String.t(),
-          :transferJob => GoogleApi.StorageTransfer.V1.Model.TransferJob.t(),
-          :updateTransferJobFieldMask => String.t()
+          :projectId => String.t() | nil,
+          :transferJob => GoogleApi.StorageTransfer.V1.Model.TransferJob.t() | nil,
+          :updateTransferJobFieldMask => String.t() | nil
         }
 
   field(:projectId)

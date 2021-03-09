@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureCredentials do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sasToken => String.t()
+          :sasToken => String.t() | nil
         }
 
   field(:sasToken)

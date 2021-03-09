@@ -28,8 +28,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessKeyId => String.t(),
-          :secretAccessKey => String.t()
+          :accessKeyId => String.t() | nil,
+          :secretAccessKey => String.t() | nil
         }
 
   field(:accessKeyId)

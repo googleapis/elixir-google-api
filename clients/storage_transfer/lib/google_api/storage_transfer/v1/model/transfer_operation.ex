@@ -36,16 +36,16 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :counters => GoogleApi.StorageTransfer.V1.Model.TransferCounters.t(),
-          :endTime => DateTime.t(),
-          :errorBreakdowns => list(GoogleApi.StorageTransfer.V1.Model.ErrorSummary.t()),
-          :name => String.t(),
-          :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t(),
-          :projectId => String.t(),
-          :startTime => DateTime.t(),
-          :status => String.t(),
-          :transferJobName => String.t(),
-          :transferSpec => GoogleApi.StorageTransfer.V1.Model.TransferSpec.t()
+          :counters => GoogleApi.StorageTransfer.V1.Model.TransferCounters.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :errorBreakdowns => list(GoogleApi.StorageTransfer.V1.Model.ErrorSummary.t()) | nil,
+          :name => String.t() | nil,
+          :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t() | nil,
+          :projectId => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => String.t() | nil,
+          :transferJobName => String.t() | nil,
+          :transferSpec => GoogleApi.StorageTransfer.V1.Model.TransferSpec.t() | nil
         }
 
   field(:counters, as: GoogleApi.StorageTransfer.V1.Model.TransferCounters)

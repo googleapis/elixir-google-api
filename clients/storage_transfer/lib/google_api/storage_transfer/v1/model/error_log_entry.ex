@@ -28,8 +28,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorDetails => list(String.t()),
-          :url => String.t()
+          :errorDetails => list(String.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:errorDetails, type: :list)
