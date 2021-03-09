@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubSubIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subscription => String.t(),
-          :topic => String.t()
+          :subscription => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:subscription)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :parameters => map()
+          :code => String.t() | nil,
+          :parameters => map() | nil
         }
 
   field(:code)

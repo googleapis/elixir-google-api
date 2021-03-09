@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceFork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :primary => GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t(),
-          :primarySource => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t(),
-          :residual => GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t(),
-          :residualSource => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t()
+          :primary => GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t() | nil,
+          :primarySource => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t() | nil,
+          :residual => GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t() | nil,
+          :residualSource => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t() | nil
         }
 
   field(:primary, as: GoogleApi.Dataflow.V1b3.Model.SourceSplitShard)

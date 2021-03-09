@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :source => GoogleApi.Dataflow.V1b3.Model.Source.t()
+          :source => GoogleApi.Dataflow.V1b3.Model.Source.t() | nil
         }
 
   field(:source, as: GoogleApi.Dataflow.V1b3.Model.Source)

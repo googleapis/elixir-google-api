@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Position do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteOffset => String.t(),
-          :concatPosition => GoogleApi.Dataflow.V1b3.Model.ConcatPosition.t(),
-          :end => boolean(),
-          :key => String.t(),
-          :recordIndex => String.t(),
-          :shufflePosition => String.t()
+          :byteOffset => String.t() | nil,
+          :concatPosition => GoogleApi.Dataflow.V1b3.Model.ConcatPosition.t() | nil,
+          :end => boolean() | nil,
+          :key => String.t() | nil,
+          :recordIndex => String.t() | nil,
+          :shufflePosition => String.t() | nil
         }
 
   field(:byteOffset)

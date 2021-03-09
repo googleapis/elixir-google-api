@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :componentId => String.t(),
-          :data => String.t(),
-          :location => String.t(),
-          :workerId => String.t()
+          :componentId => String.t() | nil,
+          :data => String.t() | nil,
+          :location => String.t() | nil,
+          :workerId => String.t() | nil
         }
 
   field(:componentId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :stages => list(GoogleApi.Dataflow.V1b3.Model.StageSummary.t())
+          :nextPageToken => String.t() | nil,
+          :stages => list(GoogleApi.Dataflow.V1b3.Model.StageSummary.t()) | nil
         }
 
   field(:nextPageToken)

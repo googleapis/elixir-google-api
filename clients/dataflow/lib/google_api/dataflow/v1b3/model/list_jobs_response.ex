@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failedLocation => list(GoogleApi.Dataflow.V1b3.Model.FailedLocation.t()),
-          :jobs => list(GoogleApi.Dataflow.V1b3.Model.Job.t()),
-          :nextPageToken => String.t()
+          :failedLocation => list(GoogleApi.Dataflow.V1b3.Model.FailedLocation.t()) | nil,
+          :jobs => list(GoogleApi.Dataflow.V1b3.Model.Job.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:failedLocation, as: GoogleApi.Dataflow.V1b3.Model.FailedLocation, type: :list)

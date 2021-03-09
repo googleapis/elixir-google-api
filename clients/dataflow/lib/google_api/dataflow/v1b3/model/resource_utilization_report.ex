@@ -29,11 +29,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containers => %{
-            optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t()
-          },
-          :cpuTime => list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t()),
-          :memoryInfo => list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t())
+          :containers =>
+            %{optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t()}
+            | nil,
+          :cpuTime => list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t()) | nil,
+          :memoryInfo => list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t()) | nil
         }
 
   field(:containers, as: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport, type: :map)

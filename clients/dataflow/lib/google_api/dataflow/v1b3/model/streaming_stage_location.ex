@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :streamId => String.t()
+          :streamId => String.t() | nil
         }
 
   field(:streamId)

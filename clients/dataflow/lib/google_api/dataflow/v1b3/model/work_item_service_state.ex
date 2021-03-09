@@ -36,16 +36,16 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completeWorkStatus => GoogleApi.Dataflow.V1b3.Model.Status.t(),
-          :harnessData => map(),
-          :hotKeyDetection => GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t(),
-          :leaseExpireTime => DateTime.t(),
-          :metricShortId => list(GoogleApi.Dataflow.V1b3.Model.MetricShortId.t()),
-          :nextReportIndex => String.t(),
-          :reportStatusInterval => String.t(),
-          :splitRequest => GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest.t(),
-          :suggestedStopPoint => GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t(),
-          :suggestedStopPosition => GoogleApi.Dataflow.V1b3.Model.Position.t()
+          :completeWorkStatus => GoogleApi.Dataflow.V1b3.Model.Status.t() | nil,
+          :harnessData => map() | nil,
+          :hotKeyDetection => GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t() | nil,
+          :leaseExpireTime => DateTime.t() | nil,
+          :metricShortId => list(GoogleApi.Dataflow.V1b3.Model.MetricShortId.t()) | nil,
+          :nextReportIndex => String.t() | nil,
+          :reportStatusInterval => String.t() | nil,
+          :splitRequest => GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest.t() | nil,
+          :suggestedStopPoint => GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t() | nil,
+          :suggestedStopPosition => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil
         }
 
   field(:completeWorkStatus, as: GoogleApi.Dataflow.V1b3.Model.Status)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :op => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :op => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

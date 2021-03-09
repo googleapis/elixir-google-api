@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Disk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskType => String.t(),
-          :mountPoint => String.t(),
-          :sizeGb => integer()
+          :diskType => String.t() | nil,
+          :mountPoint => String.t() | nil,
+          :sizeGb => integer() | nil
         }
 
   field(:diskType)

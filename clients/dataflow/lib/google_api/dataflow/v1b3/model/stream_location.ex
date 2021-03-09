@@ -30,10 +30,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customSourceLocation => GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation.t(),
-          :pubsubLocation => GoogleApi.Dataflow.V1b3.Model.PubsubLocation.t(),
-          :sideInputLocation => GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation.t(),
-          :streamingStageLocation => GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation.t()
+          :customSourceLocation => GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation.t() | nil,
+          :pubsubLocation => GoogleApi.Dataflow.V1b3.Model.PubsubLocation.t() | nil,
+          :sideInputLocation =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation.t() | nil,
+          :streamingStageLocation =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation.t() | nil
         }
 
   field(:customSourceLocation, as: GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation)

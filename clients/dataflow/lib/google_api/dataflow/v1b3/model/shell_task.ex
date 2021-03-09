@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ShellTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :command => String.t(),
-          :exitCode => integer()
+          :command => String.t() | nil,
+          :exitCode => integer() | nil
         }
 
   field(:command)

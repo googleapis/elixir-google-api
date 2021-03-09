@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SpannerIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databaseId => String.t(),
-          :instanceId => String.t(),
-          :projectId => String.t()
+          :databaseId => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:databaseId)

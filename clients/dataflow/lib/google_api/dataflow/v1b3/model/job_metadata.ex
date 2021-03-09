@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigTableDetails => list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t()),
-          :bigqueryDetails => list(GoogleApi.Dataflow.V1b3.Model.BigQueryIODetails.t()),
-          :datastoreDetails => list(GoogleApi.Dataflow.V1b3.Model.DatastoreIODetails.t()),
-          :fileDetails => list(GoogleApi.Dataflow.V1b3.Model.FileIODetails.t()),
-          :pubsubDetails => list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t()),
-          :sdkVersion => GoogleApi.Dataflow.V1b3.Model.SdkVersion.t(),
-          :spannerDetails => list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t())
+          :bigTableDetails => list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t()) | nil,
+          :bigqueryDetails => list(GoogleApi.Dataflow.V1b3.Model.BigQueryIODetails.t()) | nil,
+          :datastoreDetails => list(GoogleApi.Dataflow.V1b3.Model.DatastoreIODetails.t()) | nil,
+          :fileDetails => list(GoogleApi.Dataflow.V1b3.Model.FileIODetails.t()) | nil,
+          :pubsubDetails => list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t()) | nil,
+          :sdkVersion => GoogleApi.Dataflow.V1b3.Model.SdkVersion.t() | nil,
+          :spannerDetails => list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t()) | nil
         }
 
   field(:bigTableDetails, as: GoogleApi.Dataflow.V1b3.Model.BigTableIODetails, type: :list)

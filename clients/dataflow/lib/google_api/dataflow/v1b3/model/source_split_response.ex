@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundles => list(GoogleApi.Dataflow.V1b3.Model.DerivedSource.t()),
-          :outcome => String.t(),
-          :shards => list(GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t())
+          :bundles => list(GoogleApi.Dataflow.V1b3.Model.DerivedSource.t()) | nil,
+          :outcome => String.t() | nil,
+          :shards => list(GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t()) | nil
         }
 
   field(:bundles, as: GoogleApi.Dataflow.V1b3.Model.DerivedSource, type: :list)

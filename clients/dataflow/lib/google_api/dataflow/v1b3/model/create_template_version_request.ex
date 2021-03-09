@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CreateTemplateVersionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :templateVersion => GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t()
+          :templateVersion => GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t() | nil
         }
 
   field(:templateVersion, as: GoogleApi.Dataflow.V1b3.Model.TemplateVersion)

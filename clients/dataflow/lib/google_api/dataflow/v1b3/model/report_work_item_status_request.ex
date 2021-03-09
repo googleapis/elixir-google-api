@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentWorkerTime => DateTime.t(),
-          :location => String.t(),
-          :unifiedWorkerRequest => map(),
-          :workItemStatuses => list(GoogleApi.Dataflow.V1b3.Model.WorkItemStatus.t()),
-          :workerId => String.t()
+          :currentWorkerTime => DateTime.t() | nil,
+          :location => String.t() | nil,
+          :unifiedWorkerRequest => map() | nil,
+          :workItemStatuses => list(GoogleApi.Dataflow.V1b3.Model.WorkItemStatus.t()) | nil,
+          :workerId => String.t() | nil
         }
 
   field(:currentWorkerTime, as: DateTime)

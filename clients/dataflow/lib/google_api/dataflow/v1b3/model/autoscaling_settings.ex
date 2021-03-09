@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :maxNumWorkers => integer()
+          :algorithm => String.t() | nil,
+          :maxNumWorkers => integer() | nil
         }
 
   field(:algorithm)

@@ -31,11 +31,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drain => boolean(),
-          :receiveWorkPort => integer(),
-          :snapshotConfig => GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig.t(),
-          :streamingComputationTopology => GoogleApi.Dataflow.V1b3.Model.TopologyConfig.t(),
-          :workerHarnessPort => integer()
+          :drain => boolean() | nil,
+          :receiveWorkPort => integer() | nil,
+          :snapshotConfig =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig.t() | nil,
+          :streamingComputationTopology => GoogleApi.Dataflow.V1b3.Model.TopologyConfig.t() | nil,
+          :workerHarnessPort => integer() | nil
         }
 
   field(:drain)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MapTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :counterPrefix => String.t(),
-          :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()),
-          :stageName => String.t(),
-          :systemName => String.t()
+          :counterPrefix => String.t() | nil,
+          :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()) | nil,
+          :stageName => String.t() | nil,
+          :systemName => String.t() | nil
         }
 
   field(:counterPrefix)

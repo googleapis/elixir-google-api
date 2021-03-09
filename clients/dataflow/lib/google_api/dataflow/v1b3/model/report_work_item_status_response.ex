@@ -28,8 +28,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :unifiedWorkerResponse => map(),
-          :workItemServiceStates => list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t())
+          :unifiedWorkerResponse => map() | nil,
+          :workItemServiceStates =>
+            list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t()) | nil
         }
 
   field(:unifiedWorkerResponse, type: :map)

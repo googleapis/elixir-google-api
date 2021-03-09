@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StateFamilyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isRead => boolean(),
-          :stateFamily => String.t()
+          :isRead => boolean() | nil,
+          :stateFamily => String.t() | nil
         }
 
   field(:isRead)

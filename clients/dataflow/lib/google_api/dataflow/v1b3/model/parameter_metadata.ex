@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :helpText => String.t(),
-          :isOptional => boolean(),
-          :label => String.t(),
-          :name => String.t(),
-          :paramType => String.t(),
-          :regexes => list(String.t())
+          :helpText => String.t() | nil,
+          :isOptional => boolean() | nil,
+          :label => String.t() | nil,
+          :name => String.t() | nil,
+          :paramType => String.t() | nil,
+          :regexes => list(String.t()) | nil
         }
 
   field(:helpText)

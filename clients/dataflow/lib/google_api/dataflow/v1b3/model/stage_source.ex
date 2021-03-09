@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :originalTransformOrCollection => String.t(),
-          :sizeBytes => String.t(),
-          :userName => String.t()
+          :name => String.t() | nil,
+          :originalTransformOrCollection => String.t() | nil,
+          :sizeBytes => String.t() | nil,
+          :userName => String.t() | nil
         }
 
   field(:name)

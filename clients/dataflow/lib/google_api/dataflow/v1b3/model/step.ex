@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Step do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t(),
-          :properties => map()
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :properties => map() | nil
         }
 
   field(:kind)

@@ -41,21 +41,22 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configuration => String.t(),
-          :id => String.t(),
-          :initialReportIndex => String.t(),
-          :jobId => String.t(),
-          :leaseExpireTime => DateTime.t(),
-          :mapTask => GoogleApi.Dataflow.V1b3.Model.MapTask.t(),
-          :packages => list(GoogleApi.Dataflow.V1b3.Model.Package.t()),
-          :projectId => String.t(),
-          :reportStatusInterval => String.t(),
-          :seqMapTask => GoogleApi.Dataflow.V1b3.Model.SeqMapTask.t(),
-          :shellTask => GoogleApi.Dataflow.V1b3.Model.ShellTask.t(),
-          :sourceOperationTask => GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest.t(),
-          :streamingComputationTask => GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask.t(),
-          :streamingConfigTask => GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask.t(),
-          :streamingSetupTask => GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask.t()
+          :configuration => String.t() | nil,
+          :id => String.t() | nil,
+          :initialReportIndex => String.t() | nil,
+          :jobId => String.t() | nil,
+          :leaseExpireTime => DateTime.t() | nil,
+          :mapTask => GoogleApi.Dataflow.V1b3.Model.MapTask.t() | nil,
+          :packages => list(GoogleApi.Dataflow.V1b3.Model.Package.t()) | nil,
+          :projectId => String.t() | nil,
+          :reportStatusInterval => String.t() | nil,
+          :seqMapTask => GoogleApi.Dataflow.V1b3.Model.SeqMapTask.t() | nil,
+          :shellTask => GoogleApi.Dataflow.V1b3.Model.ShellTask.t() | nil,
+          :sourceOperationTask => GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest.t() | nil,
+          :streamingComputationTask =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask.t() | nil,
+          :streamingConfigTask => GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask.t() | nil,
+          :streamingSetupTask => GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask.t() | nil
         }
 
   field(:configuration)

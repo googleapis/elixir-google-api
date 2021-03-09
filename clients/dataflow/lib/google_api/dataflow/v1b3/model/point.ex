@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Point do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :time => DateTime.t(),
-          :value => float()
+          :time => DateTime.t() | nil,
+          :value => float() | nil
         }
 
   field(:time, as: DateTime)

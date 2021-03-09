@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StringList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elements => list(String.t())
+          :elements => list(String.t()) | nil
         }
 
   field(:elements, type: :list)

@@ -34,14 +34,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerSpec => GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t(),
-          :containerSpecGcsPath => String.t(),
-          :environment => GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t(),
-          :jobName => String.t(),
-          :launchOptions => map(),
-          :parameters => map(),
-          :transformNameMappings => map(),
-          :update => boolean()
+          :containerSpec => GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t() | nil,
+          :containerSpecGcsPath => String.t() | nil,
+          :environment => GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t() | nil,
+          :jobName => String.t() | nil,
+          :launchOptions => map() | nil,
+          :parameters => map() | nil,
+          :transformNameMappings => map() | nil,
+          :update => boolean() | nil
         }
 
   field(:containerSpec, as: GoogleApi.Dataflow.V1b3.Model.ContainerSpec)

@@ -35,15 +35,16 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParallelInstruction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :flatten => GoogleApi.Dataflow.V1b3.Model.FlattenInstruction.t(),
-          :name => String.t(),
-          :originalName => String.t(),
-          :outputs => list(GoogleApi.Dataflow.V1b3.Model.InstructionOutput.t()),
-          :parDo => GoogleApi.Dataflow.V1b3.Model.ParDoInstruction.t(),
-          :partialGroupByKey => GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction.t(),
-          :read => GoogleApi.Dataflow.V1b3.Model.ReadInstruction.t(),
-          :systemName => String.t(),
-          :write => GoogleApi.Dataflow.V1b3.Model.WriteInstruction.t()
+          :flatten => GoogleApi.Dataflow.V1b3.Model.FlattenInstruction.t() | nil,
+          :name => String.t() | nil,
+          :originalName => String.t() | nil,
+          :outputs => list(GoogleApi.Dataflow.V1b3.Model.InstructionOutput.t()) | nil,
+          :parDo => GoogleApi.Dataflow.V1b3.Model.ParDoInstruction.t() | nil,
+          :partialGroupByKey =>
+            GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction.t() | nil,
+          :read => GoogleApi.Dataflow.V1b3.Model.ReadInstruction.t() | nil,
+          :systemName => String.t() | nil,
+          :write => GoogleApi.Dataflow.V1b3.Model.WriteInstruction.t() | nil
         }
 
   field(:flatten, as: GoogleApi.Dataflow.V1b3.Model.FlattenInstruction)

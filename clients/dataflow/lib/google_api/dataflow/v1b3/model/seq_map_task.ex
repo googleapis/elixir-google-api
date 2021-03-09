@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SeqMapTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()),
-          :name => String.t(),
-          :outputInfos => list(GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo.t()),
-          :stageName => String.t(),
-          :systemName => String.t(),
-          :userFn => map()
+          :inputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()) | nil,
+          :name => String.t() | nil,
+          :outputInfos => list(GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo.t()) | nil,
+          :stageName => String.t() | nil,
+          :systemName => String.t() | nil,
+          :userFn => map() | nil
         }
 
   field(:inputs, as: GoogleApi.Dataflow.V1b3.Model.SideInputInfo, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()),
-          :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t()
+          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil,
+          :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t() | nil
         }
 
   field(:parameters, as: GoogleApi.Dataflow.V1b3.Model.ParameterMetadata, type: :list)

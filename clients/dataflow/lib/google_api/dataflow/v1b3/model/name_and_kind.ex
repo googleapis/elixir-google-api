@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.NameAndKind do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:kind)

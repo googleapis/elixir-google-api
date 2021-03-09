@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentNumWorkers => String.t(),
-          :description => GoogleApi.Dataflow.V1b3.Model.StructuredMessage.t(),
-          :eventType => String.t(),
-          :targetNumWorkers => String.t(),
-          :time => DateTime.t(),
-          :workerPool => String.t()
+          :currentNumWorkers => String.t() | nil,
+          :description => GoogleApi.Dataflow.V1b3.Model.StructuredMessage.t() | nil,
+          :eventType => String.t() | nil,
+          :targetNumWorkers => String.t() | nil,
+          :time => DateTime.t() | nil,
+          :workerPool => String.t() | nil
         }
 
   field(:currentNumWorkers)

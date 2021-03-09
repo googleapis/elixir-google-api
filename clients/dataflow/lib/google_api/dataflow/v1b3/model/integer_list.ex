@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.IntegerList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elements => list(GoogleApi.Dataflow.V1b3.Model.SplitInt64.t())
+          :elements => list(GoogleApi.Dataflow.V1b3.Model.SplitInt64.t()) | nil
         }
 
   field(:elements, as: GoogleApi.Dataflow.V1b3.Model.SplitInt64, type: :list)

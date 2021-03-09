@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.IntegerGauge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :timestamp => DateTime.t(),
-          :value => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t()
+          :timestamp => DateTime.t() | nil,
+          :value => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil
         }
 
   field(:timestamp, as: DateTime)

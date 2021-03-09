@@ -31,11 +31,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TopologyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computations => list(GoogleApi.Dataflow.V1b3.Model.ComputationTopology.t()),
-          :dataDiskAssignments => list(GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment.t()),
-          :forwardingKeyBits => integer(),
-          :persistentStateVersion => integer(),
-          :userStageToComputationNameMap => map()
+          :computations => list(GoogleApi.Dataflow.V1b3.Model.ComputationTopology.t()) | nil,
+          :dataDiskAssignments =>
+            list(GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment.t()) | nil,
+          :forwardingKeyBits => integer() | nil,
+          :persistentStateVersion => integer() | nil,
+          :userStageToComputationNameMap => map() | nil
         }
 
   field(:computations, as: GoogleApi.Dataflow.V1b3.Model.ComputationTopology, type: :list)

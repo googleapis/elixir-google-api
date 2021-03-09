@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageKey => String.t(),
-          :messageText => String.t(),
-          :parameters => list(GoogleApi.Dataflow.V1b3.Model.Parameter.t())
+          :messageKey => String.t() | nil,
+          :messageText => String.t() | nil,
+          :parameters => list(GoogleApi.Dataflow.V1b3.Model.Parameter.t()) | nil
         }
 
   field(:messageKey)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MemInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentLimitBytes => String.t(),
-          :currentRssBytes => String.t(),
-          :timestamp => DateTime.t(),
-          :totalGbMs => String.t()
+          :currentLimitBytes => String.t() | nil,
+          :currentRssBytes => String.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :totalGbMs => String.t() | nil
         }
 
   field(:currentLimitBytes)

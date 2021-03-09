@@ -27,7 +27,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :workerMessageResponses => list(GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse.t())
+          :workerMessageResponses =>
+            list(GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse.t()) | nil
         }
 
   field(:workerMessageResponses,

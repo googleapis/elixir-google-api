@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataDisk => String.t(),
-          :end => String.t(),
-          :start => String.t()
+          :dataDisk => String.t() | nil,
+          :end => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:dataDisk)

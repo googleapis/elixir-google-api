@@ -41,22 +41,22 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolean => boolean(),
-          :cumulative => boolean(),
-          :distribution => GoogleApi.Dataflow.V1b3.Model.DistributionUpdate.t(),
-          :floatingPoint => float(),
-          :floatingPointList => GoogleApi.Dataflow.V1b3.Model.FloatingPointList.t(),
-          :floatingPointMean => GoogleApi.Dataflow.V1b3.Model.FloatingPointMean.t(),
-          :integer => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :integerGauge => GoogleApi.Dataflow.V1b3.Model.IntegerGauge.t(),
-          :integerList => GoogleApi.Dataflow.V1b3.Model.IntegerList.t(),
-          :integerMean => GoogleApi.Dataflow.V1b3.Model.IntegerMean.t(),
-          :internal => any(),
-          :nameAndKind => GoogleApi.Dataflow.V1b3.Model.NameAndKind.t(),
-          :shortId => String.t(),
-          :stringList => GoogleApi.Dataflow.V1b3.Model.StringList.t(),
+          :boolean => boolean() | nil,
+          :cumulative => boolean() | nil,
+          :distribution => GoogleApi.Dataflow.V1b3.Model.DistributionUpdate.t() | nil,
+          :floatingPoint => float() | nil,
+          :floatingPointList => GoogleApi.Dataflow.V1b3.Model.FloatingPointList.t() | nil,
+          :floatingPointMean => GoogleApi.Dataflow.V1b3.Model.FloatingPointMean.t() | nil,
+          :integer => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :integerGauge => GoogleApi.Dataflow.V1b3.Model.IntegerGauge.t() | nil,
+          :integerList => GoogleApi.Dataflow.V1b3.Model.IntegerList.t() | nil,
+          :integerMean => GoogleApi.Dataflow.V1b3.Model.IntegerMean.t() | nil,
+          :internal => any() | nil,
+          :nameAndKind => GoogleApi.Dataflow.V1b3.Model.NameAndKind.t() | nil,
+          :shortId => String.t() | nil,
+          :stringList => GoogleApi.Dataflow.V1b3.Model.StringList.t() | nil,
           :structuredNameAndMetadata =>
-            GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata.t()
+            GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata.t() | nil
         }
 
   field(:boolean)

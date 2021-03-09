@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ConcatPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :position => GoogleApi.Dataflow.V1b3.Model.Position.t()
+          :index => integer() | nil,
+          :position => GoogleApi.Dataflow.V1b3.Model.Position.t() | nil
         }
 
   field(:index)

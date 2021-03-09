@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t(),
-          :inputElementCodec => map(),
-          :originalCombineValuesInputStoreName => String.t(),
-          :originalCombineValuesStepName => String.t(),
-          :sideInputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()),
-          :valueCombiningFn => map()
+          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t() | nil,
+          :inputElementCodec => map() | nil,
+          :originalCombineValuesInputStoreName => String.t() | nil,
+          :originalCombineValuesStepName => String.t() | nil,
+          :sideInputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()) | nil,
+          :valueCombiningFn => map() | nil
         }
 
   field(:input, as: GoogleApi.Dataflow.V1b3.Model.InstructionInput)

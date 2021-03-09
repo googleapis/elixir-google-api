@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => String.t()
+          :config => String.t() | nil
         }
 
   field(:config)

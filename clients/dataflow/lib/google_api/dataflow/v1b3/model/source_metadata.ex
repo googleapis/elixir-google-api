@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :estimatedSizeBytes => String.t(),
-          :infinite => boolean(),
-          :producesSortedKeys => boolean()
+          :estimatedSizeBytes => String.t() | nil,
+          :infinite => boolean() | nil,
+          :producesSortedKeys => boolean() | nil
         }
 
   field(:estimatedSizeBytes)

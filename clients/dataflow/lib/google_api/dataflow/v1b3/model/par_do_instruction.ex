@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParDoInstruction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t(),
-          :multiOutputInfos => list(GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo.t()),
-          :numOutputs => integer(),
-          :sideInputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()),
-          :userFn => map()
+          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t() | nil,
+          :multiOutputInfos => list(GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo.t()) | nil,
+          :numOutputs => integer() | nil,
+          :sideInputs => list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t()) | nil,
+          :userFn => map() | nil
         }
 
   field(:input, as: GoogleApi.Dataflow.V1b3.Model.InstructionInput)

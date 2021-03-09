@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FloatingPointList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elements => list(float())
+          :elements => list(float()) | nil
         }
 
   field(:elements, type: :list)

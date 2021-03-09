@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :kind => String.t(),
-          :otherUnits => String.t(),
-          :standardUnits => String.t()
+          :description => String.t() | nil,
+          :kind => String.t() | nil,
+          :otherUnits => String.t() | nil,
+          :standardUnits => String.t() | nil
         }
 
   field(:description)

@@ -27,9 +27,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stages => %{
-            optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo.t()
-          }
+          :stages =>
+            %{optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo.t()}
+            | nil
         }
 
   field(:stages, as: GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo, type: :map)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ValidateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :queryInfo => GoogleApi.Dataflow.V1b3.Model.QueryInfo.t()
+          :errorMessage => String.t() | nil,
+          :queryInfo => GoogleApi.Dataflow.V1b3.Model.QueryInfo.t() | nil
         }
 
   field(:errorMessage)

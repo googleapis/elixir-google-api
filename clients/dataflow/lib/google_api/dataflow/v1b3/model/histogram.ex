@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Histogram do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketCounts => list(String.t()),
-          :firstBucketOffset => integer()
+          :bucketCounts => list(String.t()) | nil,
+          :firstBucketOffset => integer() | nil
         }
 
   field(:bucketCounts, type: :list)

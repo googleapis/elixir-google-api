@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerImage => String.t(),
-          :environmentId => String.t(),
-          :useSingleCorePerContainer => boolean()
+          :containerImage => String.t() | nil,
+          :environmentId => String.t() | nil,
+          :useSingleCorePerContainer => boolean() | nil
         }
 
   field(:containerImage)

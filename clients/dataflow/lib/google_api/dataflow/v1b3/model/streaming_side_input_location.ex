@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stateFamily => String.t(),
-          :tag => String.t()
+          :stateFamily => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:stateFamily)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalingEvents => list(GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent.t()),
-          :jobMessages => list(GoogleApi.Dataflow.V1b3.Model.JobMessage.t()),
-          :nextPageToken => String.t()
+          :autoscalingEvents => list(GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent.t()) | nil,
+          :jobMessages => list(GoogleApi.Dataflow.V1b3.Model.JobMessage.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:autoscalingEvents, as: GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent, type: :list)

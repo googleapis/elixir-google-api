@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshots => list(GoogleApi.Dataflow.V1b3.Model.Snapshot.t())
+          :snapshots => list(GoogleApi.Dataflow.V1b3.Model.Snapshot.t()) | nil
         }
 
   field(:snapshots, as: GoogleApi.Dataflow.V1b3.Model.Snapshot, type: :list)

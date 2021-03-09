@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desiredBundleSizeBytes => String.t(),
-          :desiredShardSizeBytes => String.t()
+          :desiredBundleSizeBytes => String.t() | nil,
+          :desiredShardSizeBytes => String.t() | nil
         }
 
   field(:desiredBundleSizeBytes)

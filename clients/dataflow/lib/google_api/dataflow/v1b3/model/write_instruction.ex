@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WriteInstruction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t(),
-          :sink => GoogleApi.Dataflow.V1b3.Model.Sink.t()
+          :input => GoogleApi.Dataflow.V1b3.Model.InstructionInput.t() | nil,
+          :sink => GoogleApi.Dataflow.V1b3.Model.Sink.t() | nil
         }
 
   field(:input, as: GoogleApi.Dataflow.V1b3.Model.InstructionInput)

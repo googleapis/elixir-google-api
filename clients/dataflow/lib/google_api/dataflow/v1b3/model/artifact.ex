@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Artifact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerSpec => GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t(),
-          :jobGraphGcsPath => String.t(),
-          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t()
+          :containerSpec => GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t() | nil,
+          :jobGraphGcsPath => String.t() | nil,
+          :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t() | nil
         }
 
   field(:containerSpec, as: GoogleApi.Dataflow.V1b3.Model.ContainerSpec)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseUrl => String.t(),
-          :reportingEnabled => boolean(),
-          :servicePath => String.t(),
-          :shuffleServicePath => String.t(),
-          :tempStoragePrefix => String.t(),
-          :workerId => String.t()
+          :baseUrl => String.t() | nil,
+          :reportingEnabled => boolean() | nil,
+          :servicePath => String.t() | nil,
+          :shuffleServicePath => String.t() | nil,
+          :tempStoragePrefix => String.t() | nil,
+          :workerId => String.t() | nil
         }
 
   field(:baseUrl)

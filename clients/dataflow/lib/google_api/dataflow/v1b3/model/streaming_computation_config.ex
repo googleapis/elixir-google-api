@@ -31,11 +31,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computationId => String.t(),
-          :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()),
-          :stageName => String.t(),
-          :systemName => String.t(),
-          :transformUserNameToStateFamily => map()
+          :computationId => String.t() | nil,
+          :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()) | nil,
+          :stageName => String.t() | nil,
+          :systemName => String.t() | nil,
+          :transformUserNameToStateFamily => map() | nil
         }
 
   field(:computationId)

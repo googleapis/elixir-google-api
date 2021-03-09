@@ -33,13 +33,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :time => DateTime.t(),
-          :workerHealthReport => GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport.t(),
-          :workerLifecycleEvent => GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent.t(),
-          :workerMessageCode => GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode.t(),
-          :workerMetrics => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t(),
-          :workerShutdownNotice => GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice.t()
+          :labels => map() | nil,
+          :time => DateTime.t() | nil,
+          :workerHealthReport => GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport.t() | nil,
+          :workerLifecycleEvent => GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent.t() | nil,
+          :workerMessageCode => GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode.t() | nil,
+          :workerMetrics => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t() | nil,
+          :workerShutdownNotice => GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice.t() | nil
         }
 
   field(:labels, type: :map)

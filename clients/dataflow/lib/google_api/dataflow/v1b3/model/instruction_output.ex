@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.InstructionOutput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :codec => map(),
-          :name => String.t(),
-          :onlyCountKeyBytes => boolean(),
-          :onlyCountValueBytes => boolean(),
-          :originalName => String.t(),
-          :systemName => String.t()
+          :codec => map() | nil,
+          :name => String.t() | nil,
+          :onlyCountKeyBytes => boolean() | nil,
+          :onlyCountValueBytes => boolean() | nil,
+          :originalName => String.t() | nil,
+          :systemName => String.t() | nil
         }
 
   field(:codec, type: :map)

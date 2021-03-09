@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sink => GoogleApi.Dataflow.V1b3.Model.Sink.t(),
-          :tag => String.t()
+          :sink => GoogleApi.Dataflow.V1b3.Model.Sink.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:sink, as: GoogleApi.Dataflow.V1b3.Model.Sink)

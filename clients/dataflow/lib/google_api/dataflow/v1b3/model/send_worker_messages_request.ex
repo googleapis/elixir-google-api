@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => String.t(),
-          :workerMessages => list(GoogleApi.Dataflow.V1b3.Model.WorkerMessage.t())
+          :location => String.t() | nil,
+          :workerMessages => list(GoogleApi.Dataflow.V1b3.Model.WorkerMessage.t()) | nil
         }
 
   field(:location)

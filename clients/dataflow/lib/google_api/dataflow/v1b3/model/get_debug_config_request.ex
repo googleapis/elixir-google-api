@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetDebugConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :componentId => String.t(),
-          :location => String.t(),
-          :workerId => String.t()
+          :componentId => String.t() | nil,
+          :location => String.t() | nil,
+          :workerId => String.t() | nil
         }
 
   field(:componentId)

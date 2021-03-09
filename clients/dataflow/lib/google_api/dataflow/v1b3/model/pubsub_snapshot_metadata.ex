@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expireTime => DateTime.t(),
-          :snapshotName => String.t(),
-          :topicName => String.t()
+          :expireTime => DateTime.t() | nil,
+          :snapshotName => String.t() | nil,
+          :topicName => String.t() | nil
         }
 
   field(:expireTime, as: DateTime)

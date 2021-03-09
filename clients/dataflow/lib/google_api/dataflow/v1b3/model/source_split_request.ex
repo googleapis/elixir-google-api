@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions.t(),
-          :source => GoogleApi.Dataflow.V1b3.Model.Source.t()
+          :options => GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions.t() | nil,
+          :source => GoogleApi.Dataflow.V1b3.Model.Source.t() | nil
         }
 
   field(:options, as: GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :messageImportance => String.t(),
-          :messageText => String.t(),
-          :time => DateTime.t()
+          :id => String.t() | nil,
+          :messageImportance => String.t() | nil,
+          :messageText => String.t() | nil,
+          :time => DateTime.t() | nil
         }
 
   field(:id)

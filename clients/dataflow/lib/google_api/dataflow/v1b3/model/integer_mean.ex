@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.IntegerMean do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t(),
-          :sum => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t()
+          :count => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil,
+          :sum => GoogleApi.Dataflow.V1b3.Model.SplitInt64.t() | nil
         }
 
   field(:count, as: GoogleApi.Dataflow.V1b3.Model.SplitInt64)

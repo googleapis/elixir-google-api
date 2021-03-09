@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TransformSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayData => list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t()),
-          :id => String.t(),
-          :inputCollectionName => list(String.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :outputCollectionName => list(String.t())
+          :displayData => list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t()) | nil,
+          :id => String.t() | nil,
+          :inputCollectionName => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :outputCollectionName => list(String.t()) | nil
         }
 
   field(:displayData, as: GoogleApi.Dataflow.V1b3.Model.DisplayData, type: :list)

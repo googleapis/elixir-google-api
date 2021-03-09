@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :primary => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t(),
-          :residual => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t()
+          :primary => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t() | nil,
+          :residual => GoogleApi.Dataflow.V1b3.Model.DerivedSource.t() | nil
         }
 
   field(:primary, as: GoogleApi.Dataflow.V1b3.Model.DerivedSource)

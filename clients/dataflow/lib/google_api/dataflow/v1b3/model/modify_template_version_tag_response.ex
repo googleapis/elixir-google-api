@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tags => list(String.t())
+          :tags => list(String.t()) | nil
         }
 
   field(:tags, type: :list)

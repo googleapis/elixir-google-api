@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SnapshotJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :location => String.t(),
-          :snapshotSources => boolean(),
-          :ttl => String.t()
+          :description => String.t() | nil,
+          :location => String.t() | nil,
+          :snapshotSources => boolean() | nil,
+          :ttl => String.t() | nil
         }
 
   field(:description)

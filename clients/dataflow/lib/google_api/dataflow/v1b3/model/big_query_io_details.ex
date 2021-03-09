@@ -30,10 +30,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.BigQueryIODetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => String.t(),
-          :projectId => String.t(),
-          :query => String.t(),
-          :table => String.t()
+          :dataset => String.t() | nil,
+          :projectId => String.t() | nil,
+          :query => String.t() | nil,
+          :table => String.t() | nil
         }
 
   field(:dataset)

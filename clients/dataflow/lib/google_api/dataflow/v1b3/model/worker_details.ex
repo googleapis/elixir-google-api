@@ -28,8 +28,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :workItems => list(GoogleApi.Dataflow.V1b3.Model.WorkItemDetails.t()),
-          :workerName => String.t()
+          :workItems => list(GoogleApi.Dataflow.V1b3.Model.WorkItemDetails.t()) | nil,
+          :workerName => String.t() | nil
         }
 
   field(:workItems, as: GoogleApi.Dataflow.V1b3.Model.WorkItemDetails, type: :list)

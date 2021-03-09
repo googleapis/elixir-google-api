@@ -29,9 +29,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ComponentTransform do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :originalTransform => String.t(),
-          :userName => String.t()
+          :name => String.t() | nil,
+          :originalTransform => String.t() | nil,
+          :userName => String.t() | nil
         }
 
   field(:name)
