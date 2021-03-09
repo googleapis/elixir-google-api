@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipPrefixLength => integer(),
-          :rangeName => String.t(),
-          :requestedAddress => String.t()
+          :ipPrefixLength => integer() | nil,
+          :rangeName => String.t() | nil,
+          :requestedAddress => String.t() | nil
         }
 
   field(:ipPrefixLength)

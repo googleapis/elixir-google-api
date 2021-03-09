@@ -36,16 +36,16 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalBindings => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t()),
-          :body => String.t(),
-          :custom => GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern.t(),
-          :delete => String.t(),
-          :get => String.t(),
-          :patch => String.t(),
-          :post => String.t(),
-          :put => String.t(),
-          :responseBody => String.t(),
-          :selector => String.t()
+          :additionalBindings => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t()) | nil,
+          :body => String.t() | nil,
+          :custom => GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern.t() | nil,
+          :delete => String.t() | nil,
+          :get => String.t() | nil,
+          :patch => String.t() | nil,
+          :post => String.t() | nil,
+          :put => String.t() | nil,
+          :responseBody => String.t() | nil,
+          :selector => String.t() | nil
         }
 
   field(:additionalBindings, as: GoogleApi.ServiceNetworking.V1.Model.HttpRule, type: :list)

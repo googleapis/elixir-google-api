@@ -30,9 +30,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigResponse do
 
   @type t :: %__MODULE__{
           :existingSubnetworkCandidates =>
-            list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t()),
-          :isValid => boolean(),
-          :validationError => String.t()
+            list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t()) | nil,
+          :isValid => boolean() | nil,
+          :validationError => String.t() | nil
         }
 
   field(:existingSubnetworkCandidates,

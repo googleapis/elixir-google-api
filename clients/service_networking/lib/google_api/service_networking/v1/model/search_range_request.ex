@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.SearchRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipPrefixLength => integer(),
-          :network => String.t()
+          :ipPrefixLength => integer() | nil,
+          :network => String.t() | nil
         }
 
   field(:ipPrefixLength)

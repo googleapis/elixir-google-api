@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerProject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectNum => String.t()
+          :projectNum => String.t() | nil
         }
 
   field(:projectNum)

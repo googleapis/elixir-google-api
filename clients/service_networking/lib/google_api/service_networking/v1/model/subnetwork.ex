@@ -32,12 +32,13 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :outsideAllocation => boolean(),
-          :region => String.t(),
-          :secondaryIpRanges => list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t())
+          :ipCidrRange => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :outsideAllocation => boolean() | nil,
+          :region => String.t() | nil,
+          :secondaryIpRanges =>
+            list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t()) | nil
         }
 
   field(:ipCidrRange)

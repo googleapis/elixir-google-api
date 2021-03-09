@@ -37,20 +37,21 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerExportCustomRoutes => boolean(),
-          :consumerExportSubnetRoutesWithPublicIp => boolean(),
-          :consumerImportCustomRoutes => boolean(),
-          :consumerImportSubnetRoutesWithPublicIp => boolean(),
-          :producerExportCustomRoutes => boolean(),
-          :producerExportSubnetRoutesWithPublicIp => boolean(),
-          :producerImportCustomRoutes => boolean(),
-          :producerImportSubnetRoutesWithPublicIp => boolean(),
-          :producerNetwork => String.t(),
+          :consumerExportCustomRoutes => boolean() | nil,
+          :consumerExportSubnetRoutesWithPublicIp => boolean() | nil,
+          :consumerImportCustomRoutes => boolean() | nil,
+          :consumerImportSubnetRoutesWithPublicIp => boolean() | nil,
+          :producerExportCustomRoutes => boolean() | nil,
+          :producerExportSubnetRoutesWithPublicIp => boolean() | nil,
+          :producerImportCustomRoutes => boolean() | nil,
+          :producerImportSubnetRoutesWithPublicIp => boolean() | nil,
+          :producerNetwork => String.t() | nil,
           :reservedRanges =>
             list(
               GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange.t()
-            ),
-          :vpcScReferenceArchitectureEnabled => boolean()
+            )
+            | nil,
+          :vpcScReferenceArchitectureEnabled => boolean() | nil
         }
 
   field(:consumerExportCustomRoutes)

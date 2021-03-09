@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Range do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :network => String.t()
+          :ipCidrRange => String.t() | nil,
+          :network => String.t() | nil
         }
 
   field(:ipCidrRange)

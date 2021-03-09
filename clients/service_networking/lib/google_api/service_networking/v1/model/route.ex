@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Route do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destRange => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :nextHopGateway => String.t()
+          :destRange => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :nextHopGateway => String.t() | nil
         }
 
   field(:destRange)

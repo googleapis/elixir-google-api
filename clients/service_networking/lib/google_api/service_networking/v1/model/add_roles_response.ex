@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddRolesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policyBinding => list(GoogleApi.ServiceNetworking.V1.Model.PolicyBinding.t())
+          :policyBinding => list(GoogleApi.ServiceNetworking.V1.Model.PolicyBinding.t()) | nil
         }
 
   field(:policyBinding, as: GoogleApi.ServiceNetworking.V1.Model.PolicyBinding, type: :list)

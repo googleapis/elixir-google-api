@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Option do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :value => map()
+          :name => String.t() | nil,
+          :value => map() | nil
         }
 
   field(:name)

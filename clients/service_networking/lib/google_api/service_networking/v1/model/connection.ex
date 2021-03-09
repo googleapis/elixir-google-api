@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Connection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :network => String.t(),
-          :peering => String.t(),
-          :reservedPeeringRanges => list(String.t()),
-          :service => String.t()
+          :network => String.t() | nil,
+          :peering => String.t() | nil,
+          :reservedPeeringRanges => list(String.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:network)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Usage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :producerNotificationChannel => String.t(),
-          :requirements => list(String.t()),
-          :rules => list(GoogleApi.ServiceNetworking.V1.Model.UsageRule.t())
+          :producerNotificationChannel => String.t() | nil,
+          :requirements => list(String.t()) | nil,
+          :rules => list(GoogleApi.ServiceNetworking.V1.Model.UsageRule.t()) | nil
         }
 
   field(:producerNotificationChannel)

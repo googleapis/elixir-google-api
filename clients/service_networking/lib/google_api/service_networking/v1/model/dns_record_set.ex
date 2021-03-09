@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(String.t()),
-          :domain => String.t(),
-          :ttl => String.t(),
-          :type => String.t()
+          :data => list(String.t()) | nil,
+          :domain => String.t() | nil,
+          :ttl => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:data, type: :list)

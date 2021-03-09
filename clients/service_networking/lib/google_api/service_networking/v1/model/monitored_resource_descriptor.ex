@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.MonitoredResourceDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :labels => list(GoogleApi.ServiceNetworking.V1.Model.LabelDescriptor.t()),
-          :launchStage => String.t(),
-          :name => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => list(GoogleApi.ServiceNetworking.V1.Model.LabelDescriptor.t()) | nil,
+          :launchStage => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)

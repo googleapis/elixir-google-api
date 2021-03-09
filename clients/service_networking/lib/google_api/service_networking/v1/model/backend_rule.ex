@@ -35,15 +35,15 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.BackendRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :deadline => float(),
-          :disableAuth => boolean(),
-          :jwtAudience => String.t(),
-          :minDeadline => float(),
-          :operationDeadline => float(),
-          :pathTranslation => String.t(),
-          :protocol => String.t(),
-          :selector => String.t()
+          :address => String.t() | nil,
+          :deadline => float() | nil,
+          :disableAuth => boolean() | nil,
+          :jwtAudience => String.t() | nil,
+          :minDeadline => float() | nil,
+          :operationDeadline => float() | nil,
+          :pathTranslation => String.t() | nil,
+          :protocol => String.t() | nil,
+          :selector => String.t() | nil
         }
 
   field(:address)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.PeeredDnsDomain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsSuffix => String.t(),
-          :name => String.t()
+          :dnsSuffix => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:dnsSuffix)

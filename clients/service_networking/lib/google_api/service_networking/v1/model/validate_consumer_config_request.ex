@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :consumerProject => GoogleApi.ServiceNetworking.V1.Model.ConsumerProject.t(),
-          :rangeReservation => GoogleApi.ServiceNetworking.V1.Model.RangeReservation.t(),
-          :validateNetwork => boolean()
+          :consumerNetwork => String.t() | nil,
+          :consumerProject => GoogleApi.ServiceNetworking.V1.Model.ConsumerProject.t() | nil,
+          :rangeReservation => GoogleApi.ServiceNetworking.V1.Model.RangeReservation.t() | nil,
+          :validateNetwork => boolean() | nil
         }
 
   field(:consumerNetwork)
