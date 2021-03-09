@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.SubmissionHistory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gradeHistory => GoogleApi.Classroom.V1.Model.GradeHistory.t(),
-          :stateHistory => GoogleApi.Classroom.V1.Model.StateHistory.t()
+          :gradeHistory => GoogleApi.Classroom.V1.Model.GradeHistory.t() | nil,
+          :stateHistory => GoogleApi.Classroom.V1.Model.StateHistory.t() | nil
         }
 
   field(:gradeHistory, as: GoogleApi.Classroom.V1.Model.GradeHistory)

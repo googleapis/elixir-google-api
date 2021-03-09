@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.ListInvitationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :invitations => list(GoogleApi.Classroom.V1.Model.Invitation.t()),
-          :nextPageToken => String.t()
+          :invitations => list(GoogleApi.Classroom.V1.Model.Invitation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:invitations, as: GoogleApi.Classroom.V1.Model.Invitation, type: :list)

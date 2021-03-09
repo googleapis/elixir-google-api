@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseAlias do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t()
+          :alias => String.t() | nil
         }
 
   field(:alias)

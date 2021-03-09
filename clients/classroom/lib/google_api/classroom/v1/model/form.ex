@@ -30,10 +30,10 @@ defmodule GoogleApi.Classroom.V1.Model.Form do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formUrl => String.t(),
-          :responseUrl => String.t(),
-          :thumbnailUrl => String.t(),
-          :title => String.t()
+          :formUrl => String.t() | nil,
+          :responseUrl => String.t() | nil,
+          :thumbnailUrl => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:formUrl)

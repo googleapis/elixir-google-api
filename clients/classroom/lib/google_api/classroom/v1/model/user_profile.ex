@@ -32,12 +32,12 @@ defmodule GoogleApi.Classroom.V1.Model.UserProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddress => String.t(),
-          :id => String.t(),
-          :name => GoogleApi.Classroom.V1.Model.Name.t(),
-          :permissions => list(GoogleApi.Classroom.V1.Model.GlobalPermission.t()),
-          :photoUrl => String.t(),
-          :verifiedTeacher => boolean()
+          :emailAddress => String.t() | nil,
+          :id => String.t() | nil,
+          :name => GoogleApi.Classroom.V1.Model.Name.t() | nil,
+          :permissions => list(GoogleApi.Classroom.V1.Model.GlobalPermission.t()) | nil,
+          :photoUrl => String.t() | nil,
+          :verifiedTeacher => boolean() | nil
         }
 
   field(:emailAddress)

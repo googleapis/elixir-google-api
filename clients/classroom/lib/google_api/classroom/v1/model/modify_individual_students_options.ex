@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addStudentIds => list(String.t()),
-          :removeStudentIds => list(String.t())
+          :addStudentIds => list(String.t()) | nil,
+          :removeStudentIds => list(String.t()) | nil
         }
 
   field(:addStudentIds, type: :list)

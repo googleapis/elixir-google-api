@@ -30,10 +30,10 @@ defmodule GoogleApi.Classroom.V1.Model.Material do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :driveFile => GoogleApi.Classroom.V1.Model.SharedDriveFile.t(),
-          :form => GoogleApi.Classroom.V1.Model.Form.t(),
-          :link => GoogleApi.Classroom.V1.Model.Link.t(),
-          :youtubeVideo => GoogleApi.Classroom.V1.Model.YouTubeVideo.t()
+          :driveFile => GoogleApi.Classroom.V1.Model.SharedDriveFile.t() | nil,
+          :form => GoogleApi.Classroom.V1.Model.Form.t() | nil,
+          :link => GoogleApi.Classroom.V1.Model.Link.t() | nil,
+          :youtubeVideo => GoogleApi.Classroom.V1.Model.YouTubeVideo.t() | nil
         }
 
   field(:driveFile, as: GoogleApi.Classroom.V1.Model.SharedDriveFile)

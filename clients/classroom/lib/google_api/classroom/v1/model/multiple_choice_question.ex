@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :choices => list(String.t())
+          :choices => list(String.t()) | nil
         }
 
   field(:choices, type: :list)

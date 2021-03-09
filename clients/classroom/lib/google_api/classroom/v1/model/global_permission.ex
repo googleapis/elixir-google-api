@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.GlobalPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permission => String.t()
+          :permission => String.t() | nil
         }
 
   field(:permission)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.ListTopicResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :topic => list(GoogleApi.Classroom.V1.Model.Topic.t())
+          :nextPageToken => String.t() | nil,
+          :topic => list(GoogleApi.Classroom.V1.Model.Topic.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Classroom.V1.Model.AssignmentSubmission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachments => list(GoogleApi.Classroom.V1.Model.Attachment.t())
+          :attachments => list(GoogleApi.Classroom.V1.Model.Attachment.t()) | nil
         }
 
   field(:attachments, as: GoogleApi.Classroom.V1.Model.Attachment, type: :list)

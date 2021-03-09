@@ -28,8 +28,8 @@ defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t())
+          :nextPageToken => String.t() | nil,
+          :studentSubmissions => list(GoogleApi.Classroom.V1.Model.StudentSubmission.t()) | nil
         }
 
   field(:nextPageToken)

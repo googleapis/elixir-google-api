@@ -29,9 +29,9 @@ defmodule GoogleApi.Classroom.V1.Model.Teacher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :courseId => String.t(),
-          :profile => GoogleApi.Classroom.V1.Model.UserProfile.t(),
-          :userId => String.t()
+          :courseId => String.t() | nil,
+          :profile => GoogleApi.Classroom.V1.Model.UserProfile.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:courseId)

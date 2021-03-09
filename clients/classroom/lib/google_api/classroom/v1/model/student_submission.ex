@@ -43,23 +43,24 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateLink => String.t(),
-          :assignedGrade => float(),
-          :assignmentSubmission => GoogleApi.Classroom.V1.Model.AssignmentSubmission.t(),
-          :associatedWithDeveloper => boolean(),
-          :courseId => String.t(),
-          :courseWorkId => String.t(),
-          :courseWorkType => String.t(),
-          :creationTime => DateTime.t(),
-          :draftGrade => float(),
-          :id => String.t(),
-          :late => boolean(),
-          :multipleChoiceSubmission => GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission.t(),
-          :shortAnswerSubmission => GoogleApi.Classroom.V1.Model.ShortAnswerSubmission.t(),
-          :state => String.t(),
-          :submissionHistory => list(GoogleApi.Classroom.V1.Model.SubmissionHistory.t()),
-          :updateTime => DateTime.t(),
-          :userId => String.t()
+          :alternateLink => String.t() | nil,
+          :assignedGrade => float() | nil,
+          :assignmentSubmission => GoogleApi.Classroom.V1.Model.AssignmentSubmission.t() | nil,
+          :associatedWithDeveloper => boolean() | nil,
+          :courseId => String.t() | nil,
+          :courseWorkId => String.t() | nil,
+          :courseWorkType => String.t() | nil,
+          :creationTime => DateTime.t() | nil,
+          :draftGrade => float() | nil,
+          :id => String.t() | nil,
+          :late => boolean() | nil,
+          :multipleChoiceSubmission =>
+            GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission.t() | nil,
+          :shortAnswerSubmission => GoogleApi.Classroom.V1.Model.ShortAnswerSubmission.t() | nil,
+          :state => String.t() | nil,
+          :submissionHistory => list(GoogleApi.Classroom.V1.Model.SubmissionHistory.t()) | nil,
+          :updateTime => DateTime.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:alternateLink)

@@ -30,13 +30,13 @@ defmodule GoogleApi.Classroom.V1.Connection do
       # View announcements in Google Classroom
       "https://www.googleapis.com/auth/classroom.announcements.readonly",
 
-      # Manage your Google Classroom classes
+      # See, edit, create, and permanently delete your Google Classroom classes
       "https://www.googleapis.com/auth/classroom.courses",
 
       # View your Google Classroom classes
       "https://www.googleapis.com/auth/classroom.courses.readonly",
 
-      # Manage your course work and view your grades in Google Classroom
+      # See, create and edit coursework items including assignments, questions, and grades
       "https://www.googleapis.com/auth/classroom.coursework.me",
 
       # View your course work and grades in Google Classroom

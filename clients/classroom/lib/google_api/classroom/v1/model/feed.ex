@@ -29,9 +29,10 @@ defmodule GoogleApi.Classroom.V1.Model.Feed do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :courseRosterChangesInfo => GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t(),
-          :courseWorkChangesInfo => GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t(),
-          :feedType => String.t()
+          :courseRosterChangesInfo =>
+            GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t() | nil,
+          :courseWorkChangesInfo => GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t() | nil,
+          :feedType => String.t() | nil
         }
 
   field(:courseRosterChangesInfo, as: GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo)
