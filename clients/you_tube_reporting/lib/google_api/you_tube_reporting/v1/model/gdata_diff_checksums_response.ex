@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checksumsLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t(),
-          :chunkSizeBytes => String.t(),
-          :objectLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t(),
-          :objectSizeBytes => String.t(),
-          :objectVersion => String.t()
+          :checksumsLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil,
+          :chunkSizeBytes => String.t() | nil,
+          :objectLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil,
+          :objectSizeBytes => String.t() | nil,
+          :objectVersion => String.t() | nil
         }
 
   field(:checksumsLocation, as: GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia)

@@ -56,39 +56,43 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :bigstoreObjectRef => String.t(),
-          :blobRef => String.t(),
-          :blobstore2Info => GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t(),
-          :compositeMedia => list(GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t()),
-          :contentType => String.t(),
-          :contentTypeInfo => GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo.t(),
-          :cosmoBinaryReference => String.t(),
-          :crc32cHash => integer(),
+          :algorithm => String.t() | nil,
+          :bigstoreObjectRef => String.t() | nil,
+          :blobRef => String.t() | nil,
+          :blobstore2Info => GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t() | nil,
+          :compositeMedia =>
+            list(GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t()) | nil,
+          :contentType => String.t() | nil,
+          :contentTypeInfo => GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo.t() | nil,
+          :cosmoBinaryReference => String.t() | nil,
+          :crc32cHash => integer() | nil,
           :diffChecksumsResponse =>
-            GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse.t(),
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse.t() | nil,
           :diffDownloadResponse =>
-            GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t(),
-          :diffUploadRequest => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t(),
-          :diffUploadResponse => GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t(),
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t() | nil,
+          :diffUploadRequest =>
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t() | nil,
+          :diffUploadResponse =>
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t() | nil,
           :diffVersionResponse =>
-            GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t(),
-          :downloadParameters => GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t(),
-          :filename => String.t(),
-          :hash => String.t(),
-          :hashVerified => boolean(),
-          :inline => String.t(),
-          :isPotentialRetry => boolean(),
-          :length => String.t(),
-          :md5Hash => String.t(),
-          :mediaId => String.t(),
-          :objectId => GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t(),
-          :path => String.t(),
-          :referenceType => String.t(),
-          :sha1Hash => String.t(),
-          :sha256Hash => String.t(),
-          :timestamp => String.t(),
-          :token => String.t()
+            GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t() | nil,
+          :downloadParameters =>
+            GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t() | nil,
+          :filename => String.t() | nil,
+          :hash => String.t() | nil,
+          :hashVerified => boolean() | nil,
+          :inline => String.t() | nil,
+          :isPotentialRetry => boolean() | nil,
+          :length => String.t() | nil,
+          :md5Hash => String.t() | nil,
+          :mediaId => String.t() | nil,
+          :objectId => GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t() | nil,
+          :path => String.t() | nil,
+          :referenceType => String.t() | nil,
+          :sha1Hash => String.t() | nil,
+          :sha256Hash => String.t() | nil,
+          :timestamp => String.t() | nil,
+          :token => String.t() | nil
         }
 
   field(:algorithm)

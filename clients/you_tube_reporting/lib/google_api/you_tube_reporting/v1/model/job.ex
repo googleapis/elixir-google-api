@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :id => String.t(),
-          :name => String.t(),
-          :reportTypeId => String.t(),
-          :systemManaged => boolean()
+          :createTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :reportTypeId => String.t() | nil,
+          :systemManaged => boolean() | nil
         }
 
   field(:createTime, as: DateTime)

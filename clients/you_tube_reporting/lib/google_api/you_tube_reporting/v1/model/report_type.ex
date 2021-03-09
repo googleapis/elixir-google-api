@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ReportType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deprecateTime => DateTime.t(),
-          :id => String.t(),
-          :name => String.t(),
-          :systemManaged => boolean()
+          :deprecateTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :systemManaged => boolean() | nil
         }
 
   field(:deprecateTime, as: DateTime)

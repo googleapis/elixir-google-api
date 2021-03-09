@@ -54,6 +54,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
   @spec youtubereporting_media_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.GdataMedia.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtubereporting_media_download(
         connection,

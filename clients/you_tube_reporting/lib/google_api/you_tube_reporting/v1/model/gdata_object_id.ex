@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataObjectId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :generation => String.t(),
-          :objectName => String.t()
+          :bucketName => String.t() | nil,
+          :generation => String.t() | nil,
+          :objectName => String.t() | nil
         }
 
   field(:bucketName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :reportTypes => list(GoogleApi.YouTubeReporting.V1.Model.ReportType.t())
+          :nextPageToken => String.t() | nil,
+          :reportTypes => list(GoogleApi.YouTubeReporting.V1.Model.ReportType.t()) | nil
         }
 
   field(:nextPageToken)

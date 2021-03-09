@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t()
+          :objectLocation => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil
         }
 
   field(:objectLocation, as: GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia)
