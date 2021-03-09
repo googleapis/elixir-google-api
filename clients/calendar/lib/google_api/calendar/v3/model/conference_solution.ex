@@ -29,9 +29,9 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceSolution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iconUri => String.t(),
-          :key => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
-          :name => String.t()
+          :iconUri => String.t() | nil,
+          :key => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:iconUri)

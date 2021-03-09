@@ -31,7 +31,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceRequestStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :statusCode => String.t()
+          :statusCode => String.t() | nil
         }
 
   field(:statusCode)

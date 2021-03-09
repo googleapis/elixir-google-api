@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventReminders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :overrides => list(GoogleApi.Calendar.V3.Model.EventReminder.t()),
-          :useDefault => boolean()
+          :overrides => list(GoogleApi.Calendar.V3.Model.EventReminder.t()) | nil,
+          :useDefault => boolean() | nil
         }
 
   field(:overrides, as: GoogleApi.Calendar.V3.Model.EventReminder, type: :list)

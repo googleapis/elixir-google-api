@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendars => list(String.t()),
-          :errors => list(GoogleApi.Calendar.V3.Model.Error.t())
+          :calendars => list(String.t()) | nil,
+          :errors => list(GoogleApi.Calendar.V3.Model.Error.t()) | nil
         }
 
   field(:calendars, type: :list)

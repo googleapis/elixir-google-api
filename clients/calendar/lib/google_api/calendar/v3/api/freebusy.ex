@@ -50,6 +50,7 @@ defmodule GoogleApi.Calendar.V3.Api.Freebusy do
   @spec calendar_freebusy_query(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.FreeBusyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def calendar_freebusy_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

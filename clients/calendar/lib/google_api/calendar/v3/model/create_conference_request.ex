@@ -30,9 +30,9 @@ defmodule GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conferenceSolutionKey => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t(),
-          :requestId => String.t(),
-          :status => GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t()
+          :conferenceSolutionKey => GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t() | nil,
+          :requestId => String.t() | nil,
+          :status => GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t() | nil
         }
 
   field(:conferenceSolutionKey, as: GoogleApi.Calendar.V3.Model.ConferenceSolutionKey)

@@ -32,8 +32,8 @@ defmodule GoogleApi.Calendar.V3.Model.AclRuleScope do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :value => String.t()
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:type)

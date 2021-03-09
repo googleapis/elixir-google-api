@@ -30,10 +30,10 @@ defmodule GoogleApi.Calendar.V3.Model.Setting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :value => String.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:etag)

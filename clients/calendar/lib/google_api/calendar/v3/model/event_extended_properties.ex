@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventExtendedProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :private => map(),
-          :shared => map()
+          :private => map() | nil,
+          :shared => map() | nil
         }
 
   field(:private, type: :map)

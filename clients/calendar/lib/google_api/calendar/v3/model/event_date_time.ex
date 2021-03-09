@@ -29,9 +29,9 @@ defmodule GoogleApi.Calendar.V3.Model.EventDateTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => Date.t(),
-          :dateTime => DateTime.t(),
-          :timeZone => String.t()
+          :date => Date.t() | nil,
+          :dateTime => DateTime.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:date, as: Date)

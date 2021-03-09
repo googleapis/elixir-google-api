@@ -27,7 +27,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => map()
+          :parameters => map() | nil
         }
 
   field(:parameters, type: :map)

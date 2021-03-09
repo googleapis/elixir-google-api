@@ -62,16 +62,16 @@ defmodule GoogleApi.Calendar.V3.Model.EntryPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessCode => String.t(),
-          :entryPointFeatures => list(String.t()),
-          :entryPointType => String.t(),
-          :label => String.t(),
-          :meetingCode => String.t(),
-          :passcode => String.t(),
-          :password => String.t(),
-          :pin => String.t(),
-          :regionCode => String.t(),
-          :uri => String.t()
+          :accessCode => String.t() | nil,
+          :entryPointFeatures => list(String.t()) | nil,
+          :entryPointType => String.t() | nil,
+          :label => String.t() | nil,
+          :meetingCode => String.t() | nil,
+          :passcode => String.t() | nil,
+          :password => String.t() | nil,
+          :pin => String.t() | nil,
+          :regionCode => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:accessCode)

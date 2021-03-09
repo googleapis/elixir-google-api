@@ -28,8 +28,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :title => String.t(),
-          :url => String.t()
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:title)

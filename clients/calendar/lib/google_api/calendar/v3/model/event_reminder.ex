@@ -32,8 +32,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventReminder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :method => String.t(),
-          :minutes => integer()
+          :method => String.t() | nil,
+          :minutes => integer() | nil
         }
 
   field(:method)

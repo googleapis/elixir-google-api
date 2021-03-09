@@ -41,16 +41,16 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalGuests => integer(),
-          :comment => String.t(),
-          :displayName => String.t(),
-          :email => String.t(),
-          :id => String.t(),
-          :optional => boolean(),
-          :organizer => boolean(),
-          :resource => boolean(),
-          :responseStatus => String.t(),
-          :self => boolean()
+          :additionalGuests => integer() | nil,
+          :comment => String.t() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :id => String.t() | nil,
+          :optional => boolean() | nil,
+          :organizer => boolean() | nil,
+          :resource => boolean() | nil,
+          :responseStatus => String.t() | nil,
+          :self => boolean() | nil
         }
 
   field(:additionalGuests)

@@ -31,7 +31,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedConferenceSolutionTypes => list(String.t())
+          :allowedConferenceSolutionTypes => list(String.t()) | nil
         }
 
   field(:allowedConferenceSolutionTypes, type: :list)
