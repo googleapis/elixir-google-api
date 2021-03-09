@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ResourceProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludesDescendants => boolean()
+          :excludesDescendants => boolean() | nil
         }
 
   field(:excludesDescendants)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessLocations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :principalOfficeCountry => String.t(),
-          :principalPhysicalLocationCountry => String.t()
+          :principalOfficeCountry => String.t() | nil,
+          :principalPhysicalLocationCountry => String.t() | nil
         }
 
   field(:principalOfficeCountry)

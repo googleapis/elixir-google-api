@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApproveDecision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approveTime => DateTime.t(),
-          :expireTime => DateTime.t()
+          :approveTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil
         }
 
   field(:approveTime, as: DateTime)

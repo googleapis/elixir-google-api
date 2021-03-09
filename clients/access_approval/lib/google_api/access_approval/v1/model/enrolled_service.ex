@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.EnrolledService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudProduct => String.t(),
-          :enrollmentLevel => String.t()
+          :cloudProduct => String.t() | nil,
+          :enrollmentLevel => String.t() | nil
         }
 
   field(:cloudProduct)

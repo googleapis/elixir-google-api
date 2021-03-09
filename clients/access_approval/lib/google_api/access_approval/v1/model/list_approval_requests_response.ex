@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.ListApprovalRequestsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalRequests => list(GoogleApi.AccessApproval.V1.Model.ApprovalRequest.t()),
-          :nextPageToken => String.t()
+          :approvalRequests => list(GoogleApi.AccessApproval.V1.Model.ApprovalRequest.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:approvalRequests, as: GoogleApi.AccessApproval.V1.Model.ApprovalRequest, type: :list)

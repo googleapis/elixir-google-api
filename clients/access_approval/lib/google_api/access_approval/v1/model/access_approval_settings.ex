@@ -30,10 +30,10 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enrolledAncestor => boolean(),
-          :enrolledServices => list(GoogleApi.AccessApproval.V1.Model.EnrolledService.t()),
-          :name => String.t(),
-          :notificationEmails => list(String.t())
+          :enrolledAncestor => boolean() | nil,
+          :enrolledServices => list(GoogleApi.AccessApproval.V1.Model.EnrolledService.t()) | nil,
+          :name => String.t() | nil,
+          :notificationEmails => list(String.t()) | nil
         }
 
   field(:enrolledAncestor)
