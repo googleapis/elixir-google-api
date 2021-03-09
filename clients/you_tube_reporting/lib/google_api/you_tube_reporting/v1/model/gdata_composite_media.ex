@@ -37,17 +37,17 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blobRef => String.t(),
-          :blobstore2Info => GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t(),
-          :cosmoBinaryReference => String.t(),
-          :crc32cHash => integer(),
-          :inline => String.t(),
-          :length => String.t(),
-          :md5Hash => String.t(),
-          :objectId => GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t(),
-          :path => String.t(),
-          :referenceType => String.t(),
-          :sha1Hash => String.t()
+          :blobRef => String.t() | nil,
+          :blobstore2Info => GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t() | nil,
+          :cosmoBinaryReference => String.t() | nil,
+          :crc32cHash => integer() | nil,
+          :inline => String.t() | nil,
+          :length => String.t() | nil,
+          :md5Hash => String.t() | nil,
+          :objectId => GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t() | nil,
+          :path => String.t() | nil,
+          :referenceType => String.t() | nil,
+          :sha1Hash => String.t() | nil
         }
 
   field(:blobRef)

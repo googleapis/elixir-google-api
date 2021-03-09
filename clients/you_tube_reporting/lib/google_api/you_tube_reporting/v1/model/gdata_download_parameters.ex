@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowGzipCompression => boolean(),
-          :ignoreRange => boolean()
+          :allowGzipCompression => boolean() | nil,
+          :ignoreRange => boolean() | nil
         }
 
   field(:allowGzipCompression)

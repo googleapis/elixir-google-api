@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bestGuess => String.t(),
-          :fromBytes => String.t(),
-          :fromFileName => String.t(),
-          :fromHeader => String.t(),
-          :fromUrlPath => String.t()
+          :bestGuess => String.t() | nil,
+          :fromBytes => String.t() | nil,
+          :fromFileName => String.t() | nil,
+          :fromHeader => String.t() | nil,
+          :fromUrlPath => String.t() | nil
         }
 
   field(:bestGuess)

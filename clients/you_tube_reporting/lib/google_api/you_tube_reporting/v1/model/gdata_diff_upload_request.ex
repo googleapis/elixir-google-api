@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checksumsInfo => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t(),
-          :objectInfo => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t(),
-          :objectVersion => String.t()
+          :checksumsInfo => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil,
+          :objectInfo => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil,
+          :objectVersion => String.t() | nil
         }
 
   field(:checksumsInfo, as: GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia)

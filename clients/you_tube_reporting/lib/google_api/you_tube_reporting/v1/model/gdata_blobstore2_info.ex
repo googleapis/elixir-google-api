@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blobGeneration => String.t(),
-          :blobId => String.t(),
-          :downloadReadHandle => String.t(),
-          :readToken => String.t(),
-          :uploadMetadataContainer => String.t()
+          :blobGeneration => String.t() | nil,
+          :blobId => String.t() | nil,
+          :downloadReadHandle => String.t() | nil,
+          :readToken => String.t() | nil,
+          :uploadMetadataContainer => String.t() | nil
         }
 
   field(:blobGeneration)

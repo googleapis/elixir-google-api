@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectVersion => String.t(),
-          :originalObject => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t()
+          :objectVersion => String.t() | nil,
+          :originalObject => GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t() | nil
         }
 
   field(:objectVersion)

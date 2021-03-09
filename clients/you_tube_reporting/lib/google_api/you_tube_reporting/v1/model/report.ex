@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :downloadUrl => String.t(),
-          :endTime => DateTime.t(),
-          :id => String.t(),
-          :jobExpireTime => DateTime.t(),
-          :jobId => String.t(),
-          :startTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :downloadUrl => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :jobExpireTime => DateTime.t() | nil,
+          :jobId => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
