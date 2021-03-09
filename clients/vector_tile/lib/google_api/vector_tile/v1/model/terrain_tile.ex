@@ -30,10 +30,12 @@ defmodule GoogleApi.VectorTile.V1.Model.TerrainTile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coordinates => GoogleApi.VectorTile.V1.Model.TileCoordinates.t(),
-          :firstDerivative => GoogleApi.VectorTile.V1.Model.FirstDerivativeElevationGrid.t(),
-          :name => String.t(),
-          :secondDerivative => GoogleApi.VectorTile.V1.Model.SecondDerivativeElevationGrid.t()
+          :coordinates => GoogleApi.VectorTile.V1.Model.TileCoordinates.t() | nil,
+          :firstDerivative =>
+            GoogleApi.VectorTile.V1.Model.FirstDerivativeElevationGrid.t() | nil,
+          :name => String.t() | nil,
+          :secondDerivative =>
+            GoogleApi.VectorTile.V1.Model.SecondDerivativeElevationGrid.t() | nil
         }
 
   field(:coordinates, as: GoogleApi.VectorTile.V1.Model.TileCoordinates)

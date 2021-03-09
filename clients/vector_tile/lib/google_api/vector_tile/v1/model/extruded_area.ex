@@ -29,9 +29,9 @@ defmodule GoogleApi.VectorTile.V1.Model.ExtrudedArea do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :area => GoogleApi.VectorTile.V1.Model.Area.t(),
-          :maxZ => integer(),
-          :minZ => integer()
+          :area => GoogleApi.VectorTile.V1.Model.Area.t() | nil,
+          :maxZ => integer() | nil,
+          :minZ => integer() | nil
         }
 
   field(:area, as: GoogleApi.VectorTile.V1.Model.Area)

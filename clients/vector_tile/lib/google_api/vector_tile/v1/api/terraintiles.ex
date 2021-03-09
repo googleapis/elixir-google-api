@@ -65,6 +65,7 @@ defmodule GoogleApi.VectorTile.V1.Api.Terraintiles do
   @spec vectortile_terraintiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.VectorTile.V1.Model.TerrainTile.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def vectortile_terraintiles_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

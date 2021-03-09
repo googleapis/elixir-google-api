@@ -29,9 +29,9 @@ defmodule GoogleApi.VectorTile.V1.Model.TileCoordinates do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => integer(),
-          :y => integer(),
-          :zoom => integer()
+          :x => integer() | nil,
+          :y => integer() | nil,
+          :zoom => integer() | nil
         }
 
   field(:x)

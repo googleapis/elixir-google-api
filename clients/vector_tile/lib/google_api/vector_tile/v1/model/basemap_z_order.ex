@@ -29,9 +29,9 @@ defmodule GoogleApi.VectorTile.V1.Model.BasemapZOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :zGrade => integer(),
-          :zPlane => integer(),
-          :zWithinGrade => integer()
+          :zGrade => integer() | nil,
+          :zPlane => integer() | nil,
+          :zWithinGrade => integer() | nil
         }
 
   field(:zGrade)

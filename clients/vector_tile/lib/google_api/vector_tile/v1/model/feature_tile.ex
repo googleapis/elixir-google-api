@@ -32,12 +32,12 @@ defmodule GoogleApi.VectorTile.V1.Model.FeatureTile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coordinates => GoogleApi.VectorTile.V1.Model.TileCoordinates.t(),
-          :features => list(GoogleApi.VectorTile.V1.Model.Feature.t()),
-          :name => String.t(),
-          :providers => list(GoogleApi.VectorTile.V1.Model.ProviderInfo.t()),
-          :status => String.t(),
-          :versionId => String.t()
+          :coordinates => GoogleApi.VectorTile.V1.Model.TileCoordinates.t() | nil,
+          :features => list(GoogleApi.VectorTile.V1.Model.Feature.t()) | nil,
+          :name => String.t() | nil,
+          :providers => list(GoogleApi.VectorTile.V1.Model.ProviderInfo.t()) | nil,
+          :status => String.t() | nil,
+          :versionId => String.t() | nil
         }
 
   field(:coordinates, as: GoogleApi.VectorTile.V1.Model.TileCoordinates)

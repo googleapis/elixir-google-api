@@ -28,8 +28,8 @@ defmodule GoogleApi.VectorTile.V1.Model.Relation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :relatedFeatureIndex => integer(),
-          :relationType => String.t()
+          :relatedFeatureIndex => integer() | nil,
+          :relationType => String.t() | nil
         }
 
   field(:relatedFeatureIndex)

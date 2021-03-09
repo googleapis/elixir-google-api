@@ -32,12 +32,12 @@ defmodule GoogleApi.VectorTile.V1.Model.Feature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :geometry => GoogleApi.VectorTile.V1.Model.Geometry.t(),
-          :placeId => String.t(),
-          :relations => list(GoogleApi.VectorTile.V1.Model.Relation.t()),
-          :segmentInfo => GoogleApi.VectorTile.V1.Model.SegmentInfo.t(),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :geometry => GoogleApi.VectorTile.V1.Model.Geometry.t() | nil,
+          :placeId => String.t() | nil,
+          :relations => list(GoogleApi.VectorTile.V1.Model.Relation.t()) | nil,
+          :segmentInfo => GoogleApi.VectorTile.V1.Model.SegmentInfo.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

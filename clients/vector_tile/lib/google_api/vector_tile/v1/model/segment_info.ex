@@ -27,7 +27,7 @@ defmodule GoogleApi.VectorTile.V1.Model.SegmentInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :roadInfo => GoogleApi.VectorTile.V1.Model.RoadInfo.t()
+          :roadInfo => GoogleApi.VectorTile.V1.Model.RoadInfo.t() | nil
         }
 
   field(:roadInfo, as: GoogleApi.VectorTile.V1.Model.RoadInfo)

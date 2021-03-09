@@ -30,10 +30,10 @@ defmodule GoogleApi.VectorTile.V1.Model.SecondDerivativeElevationGrid do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :altitudeMultiplier => number(),
-          :columnCount => integer(),
-          :encodedData => String.t(),
-          :rowCount => integer()
+          :altitudeMultiplier => number() | nil,
+          :columnCount => integer() | nil,
+          :encodedData => String.t() | nil,
+          :rowCount => integer() | nil
         }
 
   field(:altitudeMultiplier)
