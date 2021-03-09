@@ -31,14 +31,15 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Colum
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => String.t(),
-          :description => String.t(),
-          :mode => String.t(),
+          :column => String.t() | nil,
+          :description => String.t() | nil,
+          :mode => String.t() | nil,
           :subcolumns =>
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ColumnSchema.t()
-            ),
-          :type => String.t()
+            )
+            | nil,
+          :type => String.t() | nil
         }
 
   field(:column)

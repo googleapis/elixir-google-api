@@ -29,6 +29,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Impor
   @type t :: %__MODULE__{
           :inlineSource =>
             GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1InlineSource.t()
+            | nil
         }
 
   field(:inlineSource,

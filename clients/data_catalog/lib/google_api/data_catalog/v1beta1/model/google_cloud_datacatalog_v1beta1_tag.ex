@@ -31,14 +31,16 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => String.t(),
-          :fields => %{
-            optional(String.t()) =>
-              GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagField.t()
-          },
-          :name => String.t(),
-          :template => String.t(),
-          :templateDisplayName => String.t()
+          :column => String.t() | nil,
+          :fields =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagField.t()
+            }
+            | nil,
+          :name => String.t() | nil,
+          :template => String.t() | nil,
+          :templateDisplayName => String.t() | nil
         }
 
   field(:column)

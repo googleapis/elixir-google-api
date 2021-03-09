@@ -31,6 +31,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schem
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ColumnSchema.t()
             )
+            | nil
         }
 
   field(:columns,

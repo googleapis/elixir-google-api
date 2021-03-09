@@ -28,9 +28,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filePatterns => list(String.t()),
+          :filePatterns => list(String.t()) | nil,
           :sampleGcsFileSpecs =>
             list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFileSpec.t())
+            | nil
         }
 
   field(:filePatterns, type: :list)

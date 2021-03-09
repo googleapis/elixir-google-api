@@ -29,11 +29,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tableSourceType => String.t(),
+          :tableSourceType => String.t() | nil,
           :tableSpec =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TableSpec.t(),
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TableSpec.t() | nil,
           :viewSpec =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ViewSpec.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ViewSpec.t() | nil
         }
 
   field(:tableSourceType)

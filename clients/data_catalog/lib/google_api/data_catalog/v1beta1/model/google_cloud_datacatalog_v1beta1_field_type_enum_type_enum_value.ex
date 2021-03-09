@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Field
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t()
+          :displayName => String.t() | nil
         }
 
   field(:displayName)

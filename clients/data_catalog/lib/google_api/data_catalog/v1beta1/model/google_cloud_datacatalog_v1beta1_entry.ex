@@ -40,22 +40,27 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
 
   @type t :: %__MODULE__{
           :bigqueryDateShardedSpec =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryDateShardedSpec.t(),
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryDateShardedSpec.t()
+            | nil,
           :bigqueryTableSpec =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryTableSpec.t(),
-          :description => String.t(),
-          :displayName => String.t(),
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryTableSpec.t()
+            | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
           :gcsFilesetSpec =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFilesetSpec.t(),
-          :integratedSystem => String.t(),
-          :linkedResource => String.t(),
-          :name => String.t(),
-          :schema => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schema.t(),
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFilesetSpec.t()
+            | nil,
+          :integratedSystem => String.t() | nil,
+          :linkedResource => String.t() | nil,
+          :name => String.t() | nil,
+          :schema =>
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schema.t() | nil,
           :sourceSystemTimestamps =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t(),
-          :type => String.t(),
-          :userSpecifiedSystem => String.t(),
-          :userSpecifiedType => String.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
+            | nil,
+          :type => String.t() | nil,
+          :userSpecifiedSystem => String.t() | nil,
+          :userSpecifiedType => String.t() | nil
         }
 
   field(:bigqueryDateShardedSpec,

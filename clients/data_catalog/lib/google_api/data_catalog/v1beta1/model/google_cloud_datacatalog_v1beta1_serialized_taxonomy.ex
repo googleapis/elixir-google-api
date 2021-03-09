@@ -30,13 +30,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activatedPolicyTypes => list(String.t()),
-          :description => String.t(),
-          :displayName => String.t(),
+          :activatedPolicyTypes => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
           :policyTags =>
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t()
             )
+            | nil
         }
 
   field(:activatedPolicyTypes, type: :list)

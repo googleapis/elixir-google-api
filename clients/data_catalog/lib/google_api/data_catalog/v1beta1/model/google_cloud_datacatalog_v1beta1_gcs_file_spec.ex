@@ -29,10 +29,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filePath => String.t(),
+          :filePath => String.t() | nil,
           :gcsTimestamps =>
-            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t(),
-          :sizeBytes => String.t()
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
+            | nil,
+          :sizeBytes => String.t() | nil
         }
 
   field(:filePath)

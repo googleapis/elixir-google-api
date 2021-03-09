@@ -31,6 +31,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Expor
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedTaxonomy.t()
             )
+            | nil
         }
 
   field(:taxonomies,

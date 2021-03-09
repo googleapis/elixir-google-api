@@ -29,12 +29,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :fields => %{
-            optional(String.t()) =>
-              GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()
-          },
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :fields =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()
+            }
+            | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

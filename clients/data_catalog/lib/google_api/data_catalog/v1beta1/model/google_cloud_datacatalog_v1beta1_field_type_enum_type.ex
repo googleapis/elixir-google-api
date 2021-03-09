@@ -31,6 +31,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Field
             list(
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldTypeEnumTypeEnumValue.t()
             )
+            | nil
         }
 
   field(:allowedValues,

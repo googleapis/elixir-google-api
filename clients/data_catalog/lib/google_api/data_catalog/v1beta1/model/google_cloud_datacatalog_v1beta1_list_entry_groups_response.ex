@@ -29,8 +29,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListE
 
   @type t :: %__MODULE__{
           :entryGroups =>
-            list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:entryGroups,

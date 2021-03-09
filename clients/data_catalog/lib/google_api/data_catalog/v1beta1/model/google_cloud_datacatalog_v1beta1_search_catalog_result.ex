@@ -31,11 +31,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :linkedResource => String.t(),
-          :modifyTime => DateTime.t(),
-          :relativeResourceName => String.t(),
-          :searchResultSubtype => String.t(),
-          :searchResultType => String.t()
+          :linkedResource => String.t() | nil,
+          :modifyTime => DateTime.t() | nil,
+          :relativeResourceName => String.t() | nil,
+          :searchResultSubtype => String.t() | nil,
+          :searchResultType => String.t() | nil
         }
 
   field(:linkedResource)

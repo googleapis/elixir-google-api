@@ -27,7 +27,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Renam
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newTagTemplateFieldId => String.t()
+          :newTagTemplateFieldId => String.t() | nil
         }
 
   field(:newTagTemplateFieldId)

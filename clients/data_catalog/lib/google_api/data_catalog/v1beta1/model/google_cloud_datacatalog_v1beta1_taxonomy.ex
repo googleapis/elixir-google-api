@@ -32,13 +32,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activatedPolicyTypes => list(String.t()),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :policyTagCount => integer(),
+          :activatedPolicyTypes => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :policyTagCount => integer() | nil,
           :taxonomyTimestamps =>
             GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
+            | nil
         }
 
   field(:activatedPolicyTypes, type: :list)
