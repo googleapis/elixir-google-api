@@ -28,8 +28,8 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Threshold
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spendBasis => String.t(),
-          :thresholdPercent => float()
+          :spendBasis => String.t() | nil,
+          :thresholdPercent => float() | nil
         }
 
   field(:spendBasis)

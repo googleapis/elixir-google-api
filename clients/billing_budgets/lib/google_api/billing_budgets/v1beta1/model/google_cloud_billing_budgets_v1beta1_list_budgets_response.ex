@@ -31,8 +31,9 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
           :budgets =>
             list(
               GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:budgets,

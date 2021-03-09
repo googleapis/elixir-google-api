@@ -60,6 +60,7 @@ defmodule GoogleApi.BillingBudgets.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def billingbudgets_billing_accounts_budgets_create(
         connection,
@@ -132,6 +133,7 @@ defmodule GoogleApi.BillingBudgets.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def billingbudgets_billing_accounts_budgets_delete(
         connection,
@@ -201,6 +203,7 @@ defmodule GoogleApi.BillingBudgets.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def billingbudgets_billing_accounts_budgets_get(
         connection,
@@ -275,6 +278,7 @@ defmodule GoogleApi.BillingBudgets.V1.Api.BillingAccounts do
           {:ok,
            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1ListBudgetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def billingbudgets_billing_accounts_budgets_list(
         connection,
@@ -354,6 +358,7 @@ defmodule GoogleApi.BillingBudgets.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def billingbudgets_billing_accounts_budgets_patch(
         connection,

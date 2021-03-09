@@ -34,15 +34,16 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calendarPeriod => String.t(),
-          :creditTypes => list(String.t()),
-          :creditTypesTreatment => String.t(),
+          :calendarPeriod => String.t() | nil,
+          :creditTypes => list(String.t()) | nil,
+          :creditTypesTreatment => String.t() | nil,
           :customPeriod =>
-            GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod.t(),
-          :labels => map(),
-          :projects => list(String.t()),
-          :services => list(String.t()),
-          :subaccounts => list(String.t())
+            GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod.t()
+            | nil,
+          :labels => map() | nil,
+          :projects => list(String.t()) | nil,
+          :services => list(String.t()) | nil,
+          :subaccounts => list(String.t()) | nil
         }
 
   field(:calendarPeriod)
