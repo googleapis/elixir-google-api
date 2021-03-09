@@ -28,8 +28,8 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t(),
-          :dataTypeName => String.t()
+          :dataSourceId => String.t() | nil,
+          :dataTypeName => String.t() | nil
         }
 
   field(:dataSourceId)

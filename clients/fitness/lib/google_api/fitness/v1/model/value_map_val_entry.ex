@@ -28,8 +28,8 @@ defmodule GoogleApi.Fitness.V1.Model.ValueMapValEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => GoogleApi.Fitness.V1.Model.MapValue.t()
+          :key => String.t() | nil,
+          :value => GoogleApi.Fitness.V1.Model.MapValue.t() | nil
         }
 
   field(:key)

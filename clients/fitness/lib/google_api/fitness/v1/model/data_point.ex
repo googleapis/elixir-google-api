@@ -34,14 +34,14 @@ defmodule GoogleApi.Fitness.V1.Model.DataPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :computationTimeMillis => String.t(),
-          :dataTypeName => String.t(),
-          :endTimeNanos => String.t(),
-          :modifiedTimeMillis => String.t(),
-          :originDataSourceId => String.t(),
-          :rawTimestampNanos => String.t(),
-          :startTimeNanos => String.t(),
-          :value => list(GoogleApi.Fitness.V1.Model.Value.t())
+          :computationTimeMillis => String.t() | nil,
+          :dataTypeName => String.t() | nil,
+          :endTimeNanos => String.t() | nil,
+          :modifiedTimeMillis => String.t() | nil,
+          :originDataSourceId => String.t() | nil,
+          :rawTimestampNanos => String.t() | nil,
+          :startTimeNanos => String.t() | nil,
+          :value => list(GoogleApi.Fitness.V1.Model.Value.t()) | nil
         }
 
   field(:computationTimeMillis)

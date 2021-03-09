@@ -28,8 +28,8 @@ defmodule GoogleApi.Fitness.V1.Model.BucketByTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationMillis => String.t(),
-          :period => GoogleApi.Fitness.V1.Model.BucketByTimePeriod.t()
+          :durationMillis => String.t() | nil,
+          :period => GoogleApi.Fitness.V1.Model.BucketByTimePeriod.t() | nil
         }
 
   field(:durationMillis)

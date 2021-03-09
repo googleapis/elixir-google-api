@@ -35,15 +35,15 @@ defmodule GoogleApi.Fitness.V1.Model.Session do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeTimeMillis => String.t(),
-          :activityType => integer(),
-          :application => GoogleApi.Fitness.V1.Model.Application.t(),
-          :description => String.t(),
-          :endTimeMillis => String.t(),
-          :id => String.t(),
-          :modifiedTimeMillis => String.t(),
-          :name => String.t(),
-          :startTimeMillis => String.t()
+          :activeTimeMillis => String.t() | nil,
+          :activityType => integer() | nil,
+          :application => GoogleApi.Fitness.V1.Model.Application.t() | nil,
+          :description => String.t() | nil,
+          :endTimeMillis => String.t() | nil,
+          :id => String.t() | nil,
+          :modifiedTimeMillis => String.t() | nil,
+          :name => String.t() | nil,
+          :startTimeMillis => String.t() | nil
         }
 
   field(:activeTimeMillis)

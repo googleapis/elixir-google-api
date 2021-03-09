@@ -30,10 +30,10 @@ defmodule GoogleApi.Fitness.V1.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fpVal => float(),
-          :intVal => integer(),
-          :mapVal => list(GoogleApi.Fitness.V1.Model.ValueMapValEntry.t()),
-          :stringVal => String.t()
+          :fpVal => float() | nil,
+          :intVal => integer() | nil,
+          :mapVal => list(GoogleApi.Fitness.V1.Model.ValueMapValEntry.t()) | nil,
+          :stringVal => String.t() | nil
         }
 
   field(:fpVal)

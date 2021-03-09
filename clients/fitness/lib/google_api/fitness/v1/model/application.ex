@@ -30,10 +30,10 @@ defmodule GoogleApi.Fitness.V1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detailsUrl => String.t(),
-          :name => String.t(),
-          :packageName => String.t(),
-          :version => String.t()
+          :detailsUrl => String.t() | nil,
+          :name => String.t() | nil,
+          :packageName => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:detailsUrl)

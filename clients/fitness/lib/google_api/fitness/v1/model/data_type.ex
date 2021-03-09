@@ -28,8 +28,8 @@ defmodule GoogleApi.Fitness.V1.Model.DataType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => list(GoogleApi.Fitness.V1.Model.DataTypeField.t()),
-          :name => String.t()
+          :field => list(GoogleApi.Fitness.V1.Model.DataTypeField.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:field, as: GoogleApi.Fitness.V1.Model.DataTypeField, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Fitness.V1.Model.BucketByTimePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :timeZoneId => String.t(),
-          :type => String.t(),
-          :value => integer()
+          :timeZoneId => String.t() | nil,
+          :type => String.t() | nil,
+          :value => integer() | nil
         }
 
   field(:timeZoneId)

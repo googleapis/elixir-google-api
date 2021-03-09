@@ -32,12 +32,12 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activity => integer(),
-          :dataset => list(GoogleApi.Fitness.V1.Model.Dataset.t()),
-          :endTimeMillis => String.t(),
-          :session => GoogleApi.Fitness.V1.Model.Session.t(),
-          :startTimeMillis => String.t(),
-          :type => String.t()
+          :activity => integer() | nil,
+          :dataset => list(GoogleApi.Fitness.V1.Model.Dataset.t()) | nil,
+          :endTimeMillis => String.t() | nil,
+          :session => GoogleApi.Fitness.V1.Model.Session.t() | nil,
+          :startTimeMillis => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:activity)

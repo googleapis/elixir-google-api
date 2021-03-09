@@ -30,10 +30,10 @@ defmodule GoogleApi.Fitness.V1.Model.ListSessionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletedSession => list(GoogleApi.Fitness.V1.Model.Session.t()),
-          :hasMoreData => boolean(),
-          :nextPageToken => String.t(),
-          :session => list(GoogleApi.Fitness.V1.Model.Session.t())
+          :deletedSession => list(GoogleApi.Fitness.V1.Model.Session.t()) | nil,
+          :hasMoreData => boolean() | nil,
+          :nextPageToken => String.t() | nil,
+          :session => list(GoogleApi.Fitness.V1.Model.Session.t()) | nil
         }
 
   field(:deletedSession, as: GoogleApi.Fitness.V1.Model.Session, type: :list)

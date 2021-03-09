@@ -27,7 +27,7 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucket => list(GoogleApi.Fitness.V1.Model.AggregateBucket.t())
+          :bucket => list(GoogleApi.Fitness.V1.Model.AggregateBucket.t()) | nil
         }
 
   field(:bucket, as: GoogleApi.Fitness.V1.Model.AggregateBucket, type: :list)

@@ -55,6 +55,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   @spec fitness_users_data_sources_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -122,6 +123,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_delete(
         connection,
@@ -195,6 +197,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_get(
         connection,
@@ -262,6 +265,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   @spec fitness_users_data_sources_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.ListDataSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -330,6 +334,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_update(
         connection,
@@ -406,6 +411,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_data_sources_data_point_changes_list(
         connection,
@@ -484,7 +490,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def fitness_users_data_sources_datasets_delete(
         connection,
         user_id,
@@ -563,7 +569,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Fitness.V1.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Fitness.V1.Model.Dataset.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def fitness_users_data_sources_datasets_get(
         connection,
         user_id,
@@ -642,7 +651,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Fitness.V1.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Fitness.V1.Model.Dataset.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def fitness_users_data_sources_datasets_patch(
         connection,
         user_id,
@@ -713,6 +725,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   @spec fitness_users_dataset_aggregate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.AggregateResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_dataset_aggregate(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -778,7 +791,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def fitness_users_sessions_delete(
         connection,
         user_id,
@@ -850,6 +863,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   @spec fitness_users_sessions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.ListSessionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def fitness_users_sessions_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -921,7 +935,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Fitness.V1.Model.Session.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Fitness.V1.Model.Session.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def fitness_users_sessions_update(
         connection,
         user_id,
