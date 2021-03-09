@@ -29,9 +29,9 @@ defmodule GoogleApi.Indexing.V3.Model.UrlNotification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifyTime => DateTime.t(),
-          :type => String.t(),
-          :url => String.t()
+          :notifyTime => DateTime.t() | nil,
+          :type => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:notifyTime, as: DateTime)
