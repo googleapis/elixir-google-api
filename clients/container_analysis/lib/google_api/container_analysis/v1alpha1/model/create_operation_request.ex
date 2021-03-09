@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.CreateOperationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t(),
-          :operationId => String.t()
+          :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t() | nil,
+          :operationId => String.t() | nil
         }
 
   field(:operation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation)

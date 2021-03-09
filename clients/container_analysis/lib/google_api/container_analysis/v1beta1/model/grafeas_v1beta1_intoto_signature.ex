@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoSignatur
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyid => String.t(),
-          :sig => String.t()
+          :keyid => String.t() | nil,
+          :sig => String.t() | nil
         }
 
   field(:keyid)

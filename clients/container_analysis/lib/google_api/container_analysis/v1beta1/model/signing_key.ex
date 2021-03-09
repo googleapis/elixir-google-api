@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.SigningKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyId => String.t(),
-          :keyScheme => String.t(),
-          :keyType => String.t(),
-          :publicKeyValue => String.t()
+          :keyId => String.t() | nil,
+          :keyScheme => String.t() | nil,
+          :keyType => String.t() | nil,
+          :publicKeyValue => String.t() | nil
         }
 
   field(:keyId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :provenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t(),
-          :provenanceBytes => String.t()
+          :provenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t() | nil,
+          :provenanceBytes => String.t() | nil
         }
 
   field(:provenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance)

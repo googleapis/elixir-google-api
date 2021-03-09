@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :installation => GoogleApi.ContainerAnalysis.V1beta1.Model.Installation.t()
+          :installation => GoogleApi.ContainerAnalysis.V1beta1.Model.Installation.t() | nil
         }
 
   field(:installation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Installation)

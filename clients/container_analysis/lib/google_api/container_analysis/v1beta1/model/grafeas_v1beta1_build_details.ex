@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1BuildDetails d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :provenance => GoogleApi.ContainerAnalysis.V1beta1.Model.BuildProvenance.t(),
-          :provenanceBytes => String.t()
+          :provenance => GoogleApi.ContainerAnalysis.V1beta1.Model.BuildProvenance.t() | nil,
+          :provenanceBytes => String.t() | nil
         }
 
   field(:provenance, as: GoogleApi.ContainerAnalysis.V1beta1.Model.BuildProvenance)

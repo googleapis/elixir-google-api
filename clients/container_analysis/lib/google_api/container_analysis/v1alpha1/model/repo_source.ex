@@ -31,11 +31,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.RepoSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :branchName => String.t(),
-          :commitSha => String.t(),
-          :projectId => String.t(),
-          :repoName => String.t(),
-          :tagName => String.t()
+          :branchName => String.t() | nil,
+          :commitSha => String.t() | nil,
+          :projectId => String.t() | nil,
+          :repoName => String.t() | nil,
+          :tagName => String.t() | nil
         }
 
   field(:branchName)

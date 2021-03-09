@@ -43,23 +43,23 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Note do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestationAuthority => GoogleApi.ContainerAnalysis.V1beta1.Model.Authority.t(),
-          :baseImage => GoogleApi.ContainerAnalysis.V1beta1.Model.Basis.t(),
-          :build => GoogleApi.ContainerAnalysis.V1beta1.Model.Build.t(),
-          :createTime => DateTime.t(),
-          :deployable => GoogleApi.ContainerAnalysis.V1beta1.Model.Deployable.t(),
-          :discovery => GoogleApi.ContainerAnalysis.V1beta1.Model.Discovery.t(),
-          :expirationTime => DateTime.t(),
-          :intoto => GoogleApi.ContainerAnalysis.V1beta1.Model.InToto.t(),
-          :kind => String.t(),
-          :longDescription => String.t(),
-          :name => String.t(),
-          :package => GoogleApi.ContainerAnalysis.V1beta1.Model.Package.t(),
-          :relatedNoteNames => list(String.t()),
-          :relatedUrl => list(GoogleApi.ContainerAnalysis.V1beta1.Model.RelatedUrl.t()),
-          :shortDescription => String.t(),
-          :updateTime => DateTime.t(),
-          :vulnerability => GoogleApi.ContainerAnalysis.V1beta1.Model.Vulnerability.t()
+          :attestationAuthority => GoogleApi.ContainerAnalysis.V1beta1.Model.Authority.t() | nil,
+          :baseImage => GoogleApi.ContainerAnalysis.V1beta1.Model.Basis.t() | nil,
+          :build => GoogleApi.ContainerAnalysis.V1beta1.Model.Build.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deployable => GoogleApi.ContainerAnalysis.V1beta1.Model.Deployable.t() | nil,
+          :discovery => GoogleApi.ContainerAnalysis.V1beta1.Model.Discovery.t() | nil,
+          :expirationTime => DateTime.t() | nil,
+          :intoto => GoogleApi.ContainerAnalysis.V1beta1.Model.InToto.t() | nil,
+          :kind => String.t() | nil,
+          :longDescription => String.t() | nil,
+          :name => String.t() | nil,
+          :package => GoogleApi.ContainerAnalysis.V1beta1.Model.Package.t() | nil,
+          :relatedNoteNames => list(String.t()) | nil,
+          :relatedUrl => list(GoogleApi.ContainerAnalysis.V1beta1.Model.RelatedUrl.t()) | nil,
+          :shortDescription => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :vulnerability => GoogleApi.ContainerAnalysis.V1beta1.Model.Vulnerability.t() | nil
         }
 
   field(:attestationAuthority, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Authority)

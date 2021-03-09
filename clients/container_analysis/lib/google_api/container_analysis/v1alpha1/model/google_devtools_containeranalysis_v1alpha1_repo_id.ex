@@ -29,8 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
 
   @type t :: %__MODULE__{
           :projectRepoId =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1ProjectRepoId.t(),
-          :uid => String.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1ProjectRepoId.t()
+            | nil,
+          :uid => String.t() | nil
         }
 
   field(:projectRepoId,

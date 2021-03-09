@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.RepoId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectRepoId => GoogleApi.ContainerAnalysis.V1beta1.Model.ProjectRepoId.t(),
-          :uid => String.t()
+          :projectRepoId => GoogleApi.ContainerAnalysis.V1beta1.Model.ProjectRepoId.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:projectRepoId, as: GoogleApi.ContainerAnalysis.V1beta1.Model.ProjectRepoId)

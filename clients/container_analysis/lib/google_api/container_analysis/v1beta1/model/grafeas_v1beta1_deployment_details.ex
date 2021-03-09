@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DeploymentDeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployment => GoogleApi.ContainerAnalysis.V1beta1.Model.Deployment.t()
+          :deployment => GoogleApi.ContainerAnalysis.V1beta1.Model.Deployment.t() | nil
         }
 
   field(:deployment, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Deployment)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Signature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicKeyId => String.t(),
-          :signature => String.t()
+          :publicKeyId => String.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:publicKeyId)

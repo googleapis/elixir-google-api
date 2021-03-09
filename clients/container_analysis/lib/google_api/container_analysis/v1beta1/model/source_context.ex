@@ -30,10 +30,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.SourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRepo => GoogleApi.ContainerAnalysis.V1beta1.Model.CloudRepoSourceContext.t(),
-          :gerrit => GoogleApi.ContainerAnalysis.V1beta1.Model.GerritSourceContext.t(),
-          :git => GoogleApi.ContainerAnalysis.V1beta1.Model.GitSourceContext.t(),
-          :labels => map()
+          :cloudRepo =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.CloudRepoSourceContext.t() | nil,
+          :gerrit => GoogleApi.ContainerAnalysis.V1beta1.Model.GerritSourceContext.t() | nil,
+          :git => GoogleApi.ContainerAnalysis.V1beta1.Model.GitSourceContext.t() | nil,
+          :labels => map() | nil
         }
 
   field(:cloudRepo, as: GoogleApi.ContainerAnalysis.V1beta1.Model.CloudRepoSourceContext)

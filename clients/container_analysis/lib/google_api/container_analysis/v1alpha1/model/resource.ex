@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash.t(),
-          :name => String.t(),
-          :uri => String.t()
+          :contentHash => GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash.t() | nil,
+          :name => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:contentHash, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash)

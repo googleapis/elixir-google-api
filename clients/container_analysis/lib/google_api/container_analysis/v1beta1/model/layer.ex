@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Layer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arguments => String.t(),
-          :directive => String.t()
+          :arguments => String.t() | nil,
+          :directive => String.t() | nil
         }
 
   field(:arguments)

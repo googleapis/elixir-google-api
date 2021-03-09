@@ -32,12 +32,12 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Command do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
-          :dir => String.t(),
-          :env => list(String.t()),
-          :id => String.t(),
-          :name => String.t(),
-          :waitFor => list(String.t())
+          :args => list(String.t()) | nil,
+          :dir => String.t() | nil,
+          :env => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :waitFor => list(String.t()) | nil
         }
 
   field(:args, type: :list)

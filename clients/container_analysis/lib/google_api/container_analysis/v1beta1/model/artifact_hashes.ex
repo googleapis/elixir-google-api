@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactHashes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256 => String.t()
+          :sha256 => String.t() | nil
         }
 
   field(:sha256)

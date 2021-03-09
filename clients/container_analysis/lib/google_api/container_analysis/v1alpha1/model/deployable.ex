@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceUri => list(String.t())
+          :resourceUri => list(String.t()) | nil
         }
 
   field(:resourceUri, type: :list)

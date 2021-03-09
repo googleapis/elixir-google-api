@@ -41,26 +41,28 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestation => GoogleApi.ContainerAnalysis.V1beta1.Model.Details.t(),
-          :build => GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1BuildDetails.t(),
-          :createTime => DateTime.t(),
+          :attestation => GoogleApi.ContainerAnalysis.V1beta1.Model.Details.t() | nil,
+          :build =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1BuildDetails.t() | nil,
+          :createTime => DateTime.t() | nil,
           :deployment =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DeploymentDetails.t(),
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DeploymentDetails.t() | nil,
           :derivedImage =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails.t(),
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails.t() | nil,
           :discovered =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetails.t(),
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetails.t() | nil,
           :installation =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails.t(),
-          :intoto => GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoDetails.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :noteName => String.t(),
-          :remediation => String.t(),
-          :resource => GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t(),
-          :updateTime => DateTime.t(),
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails.t() | nil,
+          :intoto =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoDetails.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :noteName => String.t() | nil,
+          :remediation => String.t() | nil,
+          :resource => GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t() | nil,
+          :updateTime => DateTime.t() | nil,
           :vulnerability =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1VulnerabilityDetails.t()
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1VulnerabilityDetails.t() | nil
         }
 
   field(:attestation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Details)

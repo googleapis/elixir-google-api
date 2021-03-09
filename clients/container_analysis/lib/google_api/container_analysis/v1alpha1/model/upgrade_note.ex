@@ -30,9 +30,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote do
 
   @type t :: %__MODULE__{
           :distributions =>
-            list(GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t()),
-          :package => String.t(),
-          :version => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t()
+            list(GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t()) | nil,
+          :package => String.t() | nil,
+          :version => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t() | nil
         }
 
   field(:distributions,

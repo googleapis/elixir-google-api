@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Attestation do
 
   @type t :: %__MODULE__{
           :genericSignedAttestation =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.GenericSignedAttestation.t(),
+            GoogleApi.ContainerAnalysis.V1beta1.Model.GenericSignedAttestation.t() | nil,
           :pgpSignedAttestation =>
-            GoogleApi.ContainerAnalysis.V1beta1.Model.PgpSignedAttestation.t()
+            GoogleApi.ContainerAnalysis.V1beta1.Model.PgpSignedAttestation.t() | nil
         }
 
   field(:genericSignedAttestation,

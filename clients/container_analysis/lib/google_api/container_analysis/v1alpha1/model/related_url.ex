@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :url => String.t()
+          :label => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:label)

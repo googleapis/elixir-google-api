@@ -29,8 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoDetails 
 
   @type t :: %__MODULE__{
           :signatures =>
-            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoSignature.t()),
-          :signed => GoogleApi.ContainerAnalysis.V1beta1.Model.Link.t()
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoSignature.t())
+            | nil,
+          :signed => GoogleApi.ContainerAnalysis.V1beta1.Model.Link.t() | nil
         }
 
   field(:signatures,

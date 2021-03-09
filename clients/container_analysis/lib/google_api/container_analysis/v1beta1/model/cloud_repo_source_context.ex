@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.CloudRepoSourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliasContext => GoogleApi.ContainerAnalysis.V1beta1.Model.AliasContext.t(),
-          :repoId => GoogleApi.ContainerAnalysis.V1beta1.Model.RepoId.t(),
-          :revisionId => String.t()
+          :aliasContext => GoogleApi.ContainerAnalysis.V1beta1.Model.AliasContext.t() | nil,
+          :repoId => GoogleApi.ContainerAnalysis.V1beta1.Model.RepoId.t() | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:aliasContext, as: GoogleApi.ContainerAnalysis.V1beta1.Model.AliasContext)

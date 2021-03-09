@@ -29,9 +29,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distribution => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t(),
-          :package => String.t(),
-          :parsedVersion => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t()
+          :distribution =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t() | nil,
+          :package => String.t() | nil,
+          :parsedVersion => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t() | nil
         }
 
   field(:distribution, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution)

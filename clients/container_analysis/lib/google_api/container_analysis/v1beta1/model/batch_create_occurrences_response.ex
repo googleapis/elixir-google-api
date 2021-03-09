@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.BatchCreateOccurrencesRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :occurrences => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence.t())
+          :occurrences => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence.t()) | nil
         }
 
   field(:occurrences, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisKind => String.t()
+          :analysisKind => String.t() | nil
         }
 
   field(:analysisKind)

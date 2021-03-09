@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthorityHint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :humanReadableName => String.t()
+          :humanReadableName => String.t() | nil
         }
 
   field(:humanReadableName)

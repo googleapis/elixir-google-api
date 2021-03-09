@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GoogleDevtoolsContaineranaly
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

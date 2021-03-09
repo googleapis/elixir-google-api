@@ -31,11 +31,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisStatus => String.t(),
-          :analysisStatusError => GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t(),
-          :continuousAnalysis => String.t(),
-          :cpe => String.t(),
-          :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t()
+          :analysisStatus => String.t() | nil,
+          :analysisStatusError => GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t() | nil,
+          :continuousAnalysis => String.t() | nil,
+          :cpe => String.t() | nil,
+          :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t() | nil
         }
 
   field(:analysisStatus)

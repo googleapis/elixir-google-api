@@ -31,13 +31,13 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byproducts => GoogleApi.ContainerAnalysis.V1beta1.Model.ByProducts.t(),
-          :command => list(String.t()),
-          :environment => GoogleApi.ContainerAnalysis.V1beta1.Model.Environment.t(),
+          :byproducts => GoogleApi.ContainerAnalysis.V1beta1.Model.ByProducts.t() | nil,
+          :command => list(String.t()) | nil,
+          :environment => GoogleApi.ContainerAnalysis.V1beta1.Model.Environment.t() | nil,
           :materials =>
-            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoArtifact.t()),
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoArtifact.t()) | nil,
           :products =>
-            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoArtifact.t())
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoArtifact.t()) | nil
         }
 
   field(:byproducts, as: GoogleApi.ContainerAnalysis.V1beta1.Model.ByProducts)

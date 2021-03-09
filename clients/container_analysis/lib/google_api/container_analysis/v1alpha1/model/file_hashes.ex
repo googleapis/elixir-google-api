@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileHashes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileHash => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash.t())
+          :fileHash => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash.t()) | nil
         }
 
   field(:fileHash, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Hash, type: :list)

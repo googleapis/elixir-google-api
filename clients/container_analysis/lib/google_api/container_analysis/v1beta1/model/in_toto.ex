@@ -32,12 +32,14 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.InToto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expectedCommand => list(String.t()),
-          :expectedMaterials => list(GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactRule.t()),
-          :expectedProducts => list(GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactRule.t()),
-          :signingKeys => list(GoogleApi.ContainerAnalysis.V1beta1.Model.SigningKey.t()),
-          :stepName => String.t(),
-          :threshold => String.t()
+          :expectedCommand => list(String.t()) | nil,
+          :expectedMaterials =>
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactRule.t()) | nil,
+          :expectedProducts =>
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactRule.t()) | nil,
+          :signingKeys => list(GoogleApi.ContainerAnalysis.V1beta1.Model.SigningKey.t()) | nil,
+          :stepName => String.t() | nil,
+          :threshold => String.t() | nil
         }
 
   field(:expectedCommand, type: :list)

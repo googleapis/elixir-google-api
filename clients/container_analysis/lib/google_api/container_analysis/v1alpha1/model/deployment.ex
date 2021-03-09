@@ -33,13 +33,13 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :config => String.t(),
-          :deployTime => DateTime.t(),
-          :platform => String.t(),
-          :resourceUri => list(String.t()),
-          :undeployTime => DateTime.t(),
-          :userEmail => String.t()
+          :address => String.t() | nil,
+          :config => String.t() | nil,
+          :deployTime => DateTime.t() | nil,
+          :platform => String.t() | nil,
+          :resourceUri => list(String.t()) | nil,
+          :undeployTime => DateTime.t() | nil,
+          :userEmail => String.t() | nil
         }
 
   field(:address)

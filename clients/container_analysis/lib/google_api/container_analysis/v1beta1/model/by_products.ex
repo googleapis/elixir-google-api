@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ByProducts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customValues => map()
+          :customValues => map() | nil
         }
 
   field(:customValues, type: :map)

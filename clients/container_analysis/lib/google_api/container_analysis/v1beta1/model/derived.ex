@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Derived do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseResourceUrl => String.t(),
-          :distance => integer(),
-          :fingerprint => GoogleApi.ContainerAnalysis.V1beta1.Model.Fingerprint.t(),
-          :layerInfo => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Layer.t())
+          :baseResourceUrl => String.t() | nil,
+          :distance => integer() | nil,
+          :fingerprint => GoogleApi.ContainerAnalysis.V1beta1.Model.Fingerprint.t() | nil,
+          :layerInfo => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Layer.t()) | nil
         }
 
   field(:baseResourceUrl)

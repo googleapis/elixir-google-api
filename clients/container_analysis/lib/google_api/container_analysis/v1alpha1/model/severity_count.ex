@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.SeverityCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :severity => String.t()
+          :count => String.t() | nil,
+          :severity => String.t() | nil
         }
 
   field(:count)

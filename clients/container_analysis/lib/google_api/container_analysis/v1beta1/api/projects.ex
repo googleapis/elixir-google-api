@@ -60,6 +60,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.BatchCreateNotesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_batch_create(
         connection,
@@ -134,6 +135,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_create(
         connection,
@@ -207,6 +209,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_delete(
         connection,
@@ -280,6 +283,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_get(
         connection,
@@ -354,6 +358,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_get_iam_policy(
         connection,
@@ -429,6 +434,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ListNotesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_list(
         connection,
@@ -507,6 +513,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_patch(
         connection,
@@ -583,6 +590,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_set_iam_policy(
         connection,
@@ -658,6 +666,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_test_iam_permissions(
         connection,
@@ -737,6 +746,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ListNoteOccurrencesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_notes_occurrences_list(
         connection,
@@ -814,6 +824,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.BatchCreateOccurrencesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_batch_create(
         connection,
@@ -888,6 +899,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_create(
         connection,
@@ -960,6 +972,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_delete(
         connection,
@@ -1033,6 +1046,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_get(
         connection,
@@ -1107,6 +1121,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_iam_policy(
         connection,
@@ -1181,6 +1196,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_notes(
         connection,
@@ -1253,6 +1269,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityOccurrencesSummary.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_vulnerability_summary(
         connection,
@@ -1329,6 +1346,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ListOccurrencesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_list(
         connection,
@@ -1407,6 +1425,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_patch(
         connection,
@@ -1483,6 +1502,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_set_iam_policy(
         connection,
@@ -1558,6 +1578,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_occurrences_test_iam_permissions(
         connection,
@@ -1637,6 +1658,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ScanConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_scan_configs_get(
         connection,
@@ -1711,6 +1733,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ListScanConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_scan_configs_list(
         connection,
@@ -1788,6 +1811,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.ScanConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_projects_scan_configs_update(
         connection,

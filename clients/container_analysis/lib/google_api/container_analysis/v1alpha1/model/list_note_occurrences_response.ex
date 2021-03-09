@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNoteOccurrencesResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :occurrences => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t())
+          :nextPageToken => String.t() | nil,
+          :occurrences => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t()) | nil
         }
 
   field(:nextPageToken)

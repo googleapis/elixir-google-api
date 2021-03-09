@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.FixableTotalByDigest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixableCount => String.t(),
-          :resource => GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t(),
-          :severity => String.t(),
-          :totalCount => String.t()
+          :fixableCount => String.t() | nil,
+          :resource => GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t() | nil,
+          :severity => String.t() | nil,
+          :totalCount => String.t() | nil
         }
 
   field(:fixableCount)

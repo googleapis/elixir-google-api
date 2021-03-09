@@ -27,7 +27,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.BatchCreateNotesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notes => %{optional(String.t()) => GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
+          :notes =>
+            %{optional(String.t()) => GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()} | nil
         }
 
   field(:notes, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Note, type: :map)

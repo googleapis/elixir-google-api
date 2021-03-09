@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Package do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distribution => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution.t()),
-          :name => String.t()
+          :distribution => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:distribution, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution, type: :list)

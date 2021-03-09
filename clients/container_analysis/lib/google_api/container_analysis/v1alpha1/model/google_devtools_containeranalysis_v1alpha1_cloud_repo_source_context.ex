@@ -30,10 +30,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
 
   @type t :: %__MODULE__{
           :aliasContext =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1AliasContext.t(),
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1AliasContext.t()
+            | nil,
           :repoId =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1RepoId.t(),
-          :revisionId => String.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1RepoId.t()
+            | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:aliasContext,

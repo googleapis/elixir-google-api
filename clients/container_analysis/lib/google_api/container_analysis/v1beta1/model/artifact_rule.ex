@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :artifactRule => list(String.t())
+          :artifactRule => list(String.t()) | nil
         }
 
   field(:artifactRule, type: :list)
