@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.WindowsDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpeUri => String.t(),
-          :description => String.t(),
-          :fixingKbs => list(GoogleApi.ContainerAnalysis.V1beta1.Model.KnowledgeBase.t()),
-          :name => String.t()
+          :cpeUri => String.t() | nil,
+          :description => String.t() | nil,
+          :fixingKbs => list(GoogleApi.ContainerAnalysis.V1beta1.Model.KnowledgeBase.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:cpeUri)

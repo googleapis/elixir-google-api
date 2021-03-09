@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :v1Name => String.t(),
-          :v2Blob => list(String.t()),
-          :v2Name => String.t()
+          :v1Name => String.t() | nil,
+          :v2Blob => list(String.t()) | nil,
+          :v2Name => String.t() | nil
         }
 
   field(:v1Name)

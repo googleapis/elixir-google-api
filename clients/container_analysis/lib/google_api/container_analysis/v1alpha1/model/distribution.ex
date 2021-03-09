@@ -32,12 +32,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Distribution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :architecture => String.t(),
-          :cpeUri => String.t(),
-          :description => String.t(),
-          :latestVersion => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t(),
-          :maintainer => String.t(),
-          :url => String.t()
+          :architecture => String.t() | nil,
+          :cpeUri => String.t() | nil,
+          :description => String.t() | nil,
+          :latestVersion => GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t() | nil,
+          :maintainer => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:architecture)

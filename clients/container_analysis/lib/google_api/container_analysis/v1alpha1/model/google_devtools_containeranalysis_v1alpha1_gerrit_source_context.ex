@@ -31,10 +31,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
 
   @type t :: %__MODULE__{
           :aliasContext =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1AliasContext.t(),
-          :gerritProject => String.t(),
-          :hostUri => String.t(),
-          :revisionId => String.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1AliasContext.t()
+            | nil,
+          :gerritProject => String.t() | nil,
+          :hostUri => String.t() | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:aliasContext,

@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Authority do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hint => GoogleApi.ContainerAnalysis.V1beta1.Model.Hint.t()
+          :hint => GoogleApi.ContainerAnalysis.V1beta1.Model.Hint.t() | nil
         }
 
   field(:hint, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Hint)

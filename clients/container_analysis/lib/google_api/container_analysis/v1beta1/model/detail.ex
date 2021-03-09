@@ -37,17 +37,18 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Detail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpeUri => String.t(),
-          :description => String.t(),
-          :fixedLocation => GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t(),
-          :isObsolete => boolean(),
-          :maxAffectedVersion => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t(),
-          :minAffectedVersion => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t(),
-          :package => String.t(),
-          :packageType => String.t(),
-          :severityName => String.t(),
-          :source => String.t(),
-          :sourceUpdateTime => DateTime.t()
+          :cpeUri => String.t() | nil,
+          :description => String.t() | nil,
+          :fixedLocation =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t() | nil,
+          :isObsolete => boolean() | nil,
+          :maxAffectedVersion => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t() | nil,
+          :minAffectedVersion => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t() | nil,
+          :package => String.t() | nil,
+          :packageType => String.t() | nil,
+          :severityName => String.t() | nil,
+          :source => String.t() | nil,
+          :sourceUpdateTime => DateTime.t() | nil
         }
 
   field(:cpeUri)

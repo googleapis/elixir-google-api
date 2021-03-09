@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :derivedImage => GoogleApi.ContainerAnalysis.V1beta1.Model.Derived.t()
+          :derivedImage => GoogleApi.ContainerAnalysis.V1beta1.Model.Derived.t() | nil
         }
 
   field(:derivedImage, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Derived)

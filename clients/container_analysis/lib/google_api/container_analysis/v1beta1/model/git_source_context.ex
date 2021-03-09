@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GitSourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :revisionId => String.t(),
-          :url => String.t()
+          :revisionId => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:revisionId)

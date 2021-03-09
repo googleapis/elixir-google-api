@@ -28,7 +28,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation do
 
   @type t :: %__MODULE__{
           :pgpSignedAttestation =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.PgpSignedAttestation.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.PgpSignedAttestation.t() | nil
         }
 
   field(:pgpSignedAttestation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PgpSignedAttestation)

@@ -35,15 +35,18 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Source do
           :additionalContexts =>
             list(
               GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1SourceContext.t()
-            ),
-          :artifactStorageSource => GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t(),
+            )
+            | nil,
+          :artifactStorageSource =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t() | nil,
           :context =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1SourceContext.t(),
-          :fileHashes => %{
-            optional(String.t()) => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileHashes.t()
-          },
-          :repoSource => GoogleApi.ContainerAnalysis.V1alpha1.Model.RepoSource.t(),
-          :storageSource => GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1SourceContext.t()
+            | nil,
+          :fileHashes =>
+            %{optional(String.t()) => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileHashes.t()}
+            | nil,
+          :repoSource => GoogleApi.ContainerAnalysis.V1alpha1.Model.RepoSource.t() | nil,
+          :storageSource => GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t() | nil
         }
 
   field(:additionalContexts,

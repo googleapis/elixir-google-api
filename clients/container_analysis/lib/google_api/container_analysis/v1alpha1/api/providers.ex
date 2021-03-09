@@ -62,6 +62,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_create(
         connection,
@@ -136,6 +137,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_delete(
         connection,
@@ -209,6 +211,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_get(
         connection,
@@ -283,6 +286,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_get_iam_policy(
         connection,
@@ -359,6 +363,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNotesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_list(
         connection,
@@ -438,6 +443,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_patch(
         connection,
@@ -514,6 +520,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_set_iam_policy(
         connection,
@@ -589,6 +596,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_test_iam_permissions(
         connection,
@@ -668,6 +676,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNoteOccurrencesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def containeranalysis_providers_notes_occurrences_list(
         connection,

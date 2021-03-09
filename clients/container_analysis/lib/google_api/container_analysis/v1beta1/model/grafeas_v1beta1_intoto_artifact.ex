@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoArtifact
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hashes => GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactHashes.t(),
-          :resourceUri => String.t()
+          :hashes => GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactHashes.t() | nil,
+          :resourceUri => String.t() | nil
         }
 
   field(:hashes, as: GoogleApi.ContainerAnalysis.V1beta1.Model.ArtifactHashes)

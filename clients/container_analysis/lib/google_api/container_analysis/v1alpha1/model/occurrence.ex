@@ -42,23 +42,23 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation.t(),
-          :buildDetails => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails.t(),
-          :createTime => DateTime.t(),
-          :deployment => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t(),
-          :derivedImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t(),
-          :discovered => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered.t(),
-          :installation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :noteName => String.t(),
-          :remediation => String.t(),
-          :resource => GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t(),
-          :resourceUrl => String.t(),
-          :updateTime => DateTime.t(),
-          :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence.t(),
+          :attestation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation.t() | nil,
+          :buildDetails => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deployment => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t() | nil,
+          :derivedImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t() | nil,
+          :discovered => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered.t() | nil,
+          :installation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :noteName => String.t() | nil,
+          :remediation => String.t() | nil,
+          :resource => GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t() | nil,
+          :resourceUrl => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence.t() | nil,
           :vulnerabilityDetails =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityDetails.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityDetails.t() | nil
         }
 
   field(:attestation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation)

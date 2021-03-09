@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GenericSignedAttestation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :serializedPayload => String.t(),
-          :signatures => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Signature.t())
+          :contentType => String.t() | nil,
+          :serializedPayload => String.t() | nil,
+          :signatures => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Signature.t()) | nil
         }
 
   field(:contentType)

@@ -31,11 +31,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ScanConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :enabled => boolean(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :enabled => boolean() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

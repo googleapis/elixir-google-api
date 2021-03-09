@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisStatus => String.t(),
-          :analysisStatusError => GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t(),
-          :continuousAnalysis => String.t(),
-          :lastAnalysisTime => DateTime.t()
+          :analysisStatus => String.t() | nil,
+          :analysisStatusError => GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t() | nil,
+          :continuousAnalysis => String.t() | nil,
+          :lastAnalysisTime => DateTime.t() | nil
         }
 
   field(:analysisStatus)

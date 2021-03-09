@@ -30,9 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageIssue do
 
   @type t :: %__MODULE__{
           :affectedLocation =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation.t(),
-          :fixedLocation => GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation.t(),
-          :severityName => String.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation.t() | nil,
+          :fixedLocation =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation.t() | nil,
+          :severityName => String.t() | nil
         }
 
   field(:affectedLocation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation)

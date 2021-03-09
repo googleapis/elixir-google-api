@@ -31,11 +31,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :epoch => integer(),
-          :inclusive => boolean(),
-          :kind => String.t(),
-          :name => String.t(),
-          :revision => String.t()
+          :epoch => integer() | nil,
+          :inclusive => boolean() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :revision => String.t() | nil
         }
 
   field(:epoch)

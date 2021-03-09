@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ListNotesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :notes => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t())
+          :nextPageToken => String.t() | nil,
+          :notes => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()) | nil
         }
 
   field(:nextPageToken)

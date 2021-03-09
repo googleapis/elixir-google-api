@@ -37,17 +37,17 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.CVSSv3 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attackComplexity => String.t(),
-          :attackVector => String.t(),
-          :availabilityImpact => String.t(),
-          :baseScore => number(),
-          :confidentialityImpact => String.t(),
-          :exploitabilityScore => number(),
-          :impactScore => number(),
-          :integrityImpact => String.t(),
-          :privilegesRequired => String.t(),
-          :scope => String.t(),
-          :userInteraction => String.t()
+          :attackComplexity => String.t() | nil,
+          :attackVector => String.t() | nil,
+          :availabilityImpact => String.t() | nil,
+          :baseScore => number() | nil,
+          :confidentialityImpact => String.t() | nil,
+          :exploitabilityScore => number() | nil,
+          :impactScore => number() | nil,
+          :integrityImpact => String.t() | nil,
+          :privilegesRequired => String.t() | nil,
+          :scope => String.t() | nil,
+          :userInteraction => String.t() | nil
         }
 
   field(:attackComplexity)

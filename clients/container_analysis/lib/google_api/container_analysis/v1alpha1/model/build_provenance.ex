@@ -39,19 +39,19 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildOptions => map(),
-          :builderVersion => String.t(),
-          :builtArtifacts => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Artifact.t()),
-          :commands => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Command.t()),
-          :createTime => DateTime.t(),
-          :creator => String.t(),
-          :finishTime => DateTime.t(),
-          :id => String.t(),
-          :logsBucket => String.t(),
-          :projectId => String.t(),
-          :sourceProvenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.Source.t(),
-          :startTime => DateTime.t(),
-          :triggerId => String.t()
+          :buildOptions => map() | nil,
+          :builderVersion => String.t() | nil,
+          :builtArtifacts => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Artifact.t()) | nil,
+          :commands => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Command.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :creator => String.t() | nil,
+          :finishTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :logsBucket => String.t() | nil,
+          :projectId => String.t() | nil,
+          :sourceProvenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.Source.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :triggerId => String.t() | nil
         }
 
   field(:buildOptions, type: :map)

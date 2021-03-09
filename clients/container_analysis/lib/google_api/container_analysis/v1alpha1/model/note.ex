@@ -43,22 +43,23 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
 
   @type t :: %__MODULE__{
           :attestationAuthority =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority.t(),
-          :baseImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis.t(),
-          :buildType => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType.t(),
-          :createTime => DateTime.t(),
-          :deployable => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t(),
-          :discovery => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t(),
-          :expirationTime => DateTime.t(),
-          :kind => String.t(),
-          :longDescription => String.t(),
-          :name => String.t(),
-          :package => GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t(),
-          :relatedUrl => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t()),
-          :shortDescription => String.t(),
-          :updateTime => DateTime.t(),
-          :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t(),
-          :vulnerabilityType => GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority.t() | nil,
+          :baseImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis.t() | nil,
+          :buildType => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deployable => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t() | nil,
+          :discovery => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t() | nil,
+          :expirationTime => DateTime.t() | nil,
+          :kind => String.t() | nil,
+          :longDescription => String.t() | nil,
+          :name => String.t() | nil,
+          :package => GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t() | nil,
+          :relatedUrl => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t()) | nil,
+          :shortDescription => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t() | nil,
+          :vulnerabilityType =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t() | nil
         }
 
   field(:attestationAuthority, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority)

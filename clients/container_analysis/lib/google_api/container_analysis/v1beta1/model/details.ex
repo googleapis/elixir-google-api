@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Details do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestation => GoogleApi.ContainerAnalysis.V1beta1.Model.Attestation.t()
+          :attestation => GoogleApi.ContainerAnalysis.V1beta1.Model.Attestation.t() | nil
         }
 
   field(:attestation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Attestation)

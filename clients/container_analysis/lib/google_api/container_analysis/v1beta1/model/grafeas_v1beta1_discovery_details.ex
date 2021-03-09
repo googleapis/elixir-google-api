@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetai
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :discovered => GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered.t()
+          :discovered => GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered.t() | nil
         }
 
   field(:discovered, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered)

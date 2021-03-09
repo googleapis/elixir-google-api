@@ -31,12 +31,15 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
 
   @type t :: %__MODULE__{
           :cloudRepo =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1CloudRepoSourceContext.t(),
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1CloudRepoSourceContext.t()
+            | nil,
           :gerrit =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1GerritSourceContext.t(),
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1GerritSourceContext.t()
+            | nil,
           :git =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1GitSourceContext.t(),
-          :labels => map()
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1GitSourceContext.t()
+            | nil,
+          :labels => map() | nil
         }
 
   field(:cloudRepo,

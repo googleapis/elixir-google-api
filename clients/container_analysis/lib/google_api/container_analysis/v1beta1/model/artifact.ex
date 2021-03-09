@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Artifact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checksum => String.t(),
-          :id => String.t(),
-          :names => list(String.t())
+          :checksum => String.t() | nil,
+          :id => String.t() | nil,
+          :names => list(String.t()) | nil
         }
 
   field(:checksum)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint.t(),
-          :resourceUrl => String.t()
+          :fingerprint => GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint.t() | nil,
+          :resourceUrl => String.t() | nil
         }
 
   field(:fingerprint, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint)

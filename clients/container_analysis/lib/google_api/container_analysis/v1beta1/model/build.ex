@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Build do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :builderVersion => String.t(),
-          :signature => GoogleApi.ContainerAnalysis.V1beta1.Model.BuildSignature.t()
+          :builderVersion => String.t() | nil,
+          :signature => GoogleApi.ContainerAnalysis.V1beta1.Model.BuildSignature.t() | nil
         }
 
   field(:builderVersion)

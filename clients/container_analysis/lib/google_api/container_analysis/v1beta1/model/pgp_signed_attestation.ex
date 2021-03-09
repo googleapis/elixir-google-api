@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.PgpSignedAttestation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :pgpKeyId => String.t(),
-          :signature => String.t()
+          :contentType => String.t() | nil,
+          :pgpKeyId => String.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:contentType)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GetVulnzOccurrencesSummaryR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :counts => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.SeverityCount.t())
+          :counts => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.SeverityCount.t()) | nil
         }
 
   field(:counts, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.SeverityCount, type: :list)

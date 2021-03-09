@@ -30,10 +30,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :classification => String.t(),
-          :cpeUri => String.t(),
-          :cve => list(String.t()),
-          :severity => String.t()
+          :classification => String.t() | nil,
+          :cpeUri => String.t() | nil,
+          :cve => list(String.t()) | nil,
+          :severity => String.t() | nil
         }
 
   field(:classification)

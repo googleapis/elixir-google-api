@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:kind)

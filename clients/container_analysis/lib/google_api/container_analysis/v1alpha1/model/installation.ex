@@ -28,8 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Location.t()),
-          :name => String.t()
+          :location => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Location.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:location, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Location, type: :list)

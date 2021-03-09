@@ -29,9 +29,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpeUri => String.t(),
-          :path => String.t(),
-          :version => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t()
+          :cpeUri => String.t() | nil,
+          :path => String.t() | nil,
+          :version => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t() | nil
         }
 
   field(:cpeUri)

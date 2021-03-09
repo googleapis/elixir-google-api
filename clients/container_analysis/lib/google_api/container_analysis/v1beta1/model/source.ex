@@ -31,12 +31,12 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Source do
 
   @type t :: %__MODULE__{
           :additionalContexts =>
-            list(GoogleApi.ContainerAnalysis.V1beta1.Model.SourceContext.t()),
-          :artifactStorageSourceUri => String.t(),
-          :context => GoogleApi.ContainerAnalysis.V1beta1.Model.SourceContext.t(),
-          :fileHashes => %{
-            optional(String.t()) => GoogleApi.ContainerAnalysis.V1beta1.Model.FileHashes.t()
-          }
+            list(GoogleApi.ContainerAnalysis.V1beta1.Model.SourceContext.t()) | nil,
+          :artifactStorageSourceUri => String.t() | nil,
+          :context => GoogleApi.ContainerAnalysis.V1beta1.Model.SourceContext.t() | nil,
+          :fileHashes =>
+            %{optional(String.t()) => GoogleApi.ContainerAnalysis.V1beta1.Model.FileHashes.t()}
+            | nil
         }
 
   field(:additionalContexts,
