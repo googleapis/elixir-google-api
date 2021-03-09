@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1Con
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :ipPrefixLength => integer(),
-          :name => String.t()
+          :address => String.t() | nil,
+          :ipPrefixLength => integer() | nil,
+          :name => String.t() | nil
         }
 
   field(:address)

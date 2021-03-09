@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.UpdateConsumerConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerConfig => GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig.t()
+          :consumerConfig => GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig.t() | nil
         }
 
   field(:consumerConfig, as: GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig)

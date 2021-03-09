@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.UsageRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowUnregisteredCalls => boolean(),
-          :selector => String.t(),
-          :skipServiceControl => boolean()
+          :allowUnregisteredCalls => boolean() | nil,
+          :selector => String.t() | nil,
+          :skipServiceControl => boolean() | nil
         }
 
   field(:allowUnregisteredCalls)

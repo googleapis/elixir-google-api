@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.JwtLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => String.t(),
-          :query => String.t(),
-          :valuePrefix => String.t()
+          :header => String.t() | nil,
+          :query => String.t() | nil,
+          :valuePrefix => String.t() | nil
         }
 
   field(:header)

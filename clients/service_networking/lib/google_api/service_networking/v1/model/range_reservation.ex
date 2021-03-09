@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RangeReservation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipPrefixLength => integer(),
-          :requestedRanges => list(String.t()),
-          :secondaryRangeIpPrefixLengths => list(integer()),
-          :subnetworkCandidates => list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t())
+          :ipPrefixLength => integer() | nil,
+          :requestedRanges => list(String.t()) | nil,
+          :secondaryRangeIpPrefixLengths => list(integer()) | nil,
+          :subnetworkCandidates => list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t()) | nil
         }
 
   field(:ipPrefixLength)

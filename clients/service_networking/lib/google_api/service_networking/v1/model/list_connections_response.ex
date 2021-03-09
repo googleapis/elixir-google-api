@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ListConnectionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connections => list(GoogleApi.ServiceNetworking.V1.Model.Connection.t())
+          :connections => list(GoogleApi.ServiceNetworking.V1.Model.Connection.t()) | nil
         }
 
   field(:connections, as: GoogleApi.ServiceNetworking.V1.Model.Connection, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.SystemParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpHeader => String.t(),
-          :name => String.t(),
-          :urlQueryParameter => String.t()
+          :httpHeader => String.t() | nil,
+          :name => String.t() | nil,
+          :urlQueryParameter => String.t() | nil
         }
 
   field(:httpHeader)

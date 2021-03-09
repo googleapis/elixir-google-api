@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RemoveDnsZoneRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :name => String.t()
+          :consumerNetwork => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:consumerNetwork)

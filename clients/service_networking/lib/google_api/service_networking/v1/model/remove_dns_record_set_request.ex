@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RemoveDnsRecordSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :dnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t(),
-          :zone => String.t()
+          :consumerNetwork => String.t() | nil,
+          :dnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:consumerNetwork)

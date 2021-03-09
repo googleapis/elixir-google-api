@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.OAuthRequirements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canonicalScopes => String.t()
+          :canonicalScopes => String.t() | nil
         }
 
   field(:canonicalScopes)

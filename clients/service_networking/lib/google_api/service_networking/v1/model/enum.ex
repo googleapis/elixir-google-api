@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Enum do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enumvalue => list(GoogleApi.ServiceNetworking.V1.Model.EnumValue.t()),
-          :name => String.t(),
-          :options => list(GoogleApi.ServiceNetworking.V1.Model.Option.t()),
-          :sourceContext => GoogleApi.ServiceNetworking.V1.Model.SourceContext.t(),
-          :syntax => String.t()
+          :enumvalue => list(GoogleApi.ServiceNetworking.V1.Model.EnumValue.t()) | nil,
+          :name => String.t() | nil,
+          :options => list(GoogleApi.ServiceNetworking.V1.Model.Option.t()) | nil,
+          :sourceContext => GoogleApi.ServiceNetworking.V1.Model.SourceContext.t() | nil,
+          :syntax => String.t() | nil
         }
 
   field(:enumvalue, as: GoogleApi.ServiceNetworking.V1.Model.EnumValue, type: :list)

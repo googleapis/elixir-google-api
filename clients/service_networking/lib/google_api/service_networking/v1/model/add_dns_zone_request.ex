@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddDnsZoneRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :dnsSuffix => String.t(),
-          :name => String.t()
+          :consumerNetwork => String.t() | nil,
+          :dnsSuffix => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:consumerNetwork)

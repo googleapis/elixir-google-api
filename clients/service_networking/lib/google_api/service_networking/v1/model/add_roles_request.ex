@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddRolesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :policyBinding => list(GoogleApi.ServiceNetworking.V1.Model.PolicyBinding.t())
+          :consumerNetwork => String.t() | nil,
+          :policyBinding => list(GoogleApi.ServiceNetworking.V1.Model.PolicyBinding.t()) | nil
         }
 
   field(:consumerNetwork)

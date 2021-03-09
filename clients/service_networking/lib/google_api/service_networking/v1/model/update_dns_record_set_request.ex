@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.UpdateDnsRecordSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t(),
-          :existingDnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t(),
-          :newDnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t(),
-          :zone => String.t()
+          :consumerNetwork => String.t() | nil,
+          :existingDnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t() | nil,
+          :newDnsRecordSet => GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:consumerNetwork)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.SystemParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rules => list(GoogleApi.ServiceNetworking.V1.Model.SystemParameterRule.t())
+          :rules => list(GoogleApi.ServiceNetworking.V1.Model.SystemParameterRule.t()) | nil
         }
 
   field(:rules, as: GoogleApi.ServiceNetworking.V1.Model.SystemParameterRule, type: :list)

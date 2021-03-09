@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.EnableVpcServiceControlsRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerNetwork => String.t()
+          :consumerNetwork => String.t() | nil
         }
 
   field(:consumerNetwork)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.CustomError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rules => list(GoogleApi.ServiceNetworking.V1.Model.CustomErrorRule.t()),
-          :types => list(String.t())
+          :rules => list(GoogleApi.ServiceNetworking.V1.Model.CustomErrorRule.t()) | nil,
+          :types => list(String.t()) | nil
         }
 
   field(:rules, as: GoogleApi.ServiceNetworking.V1.Model.CustomErrorRule, type: :list)

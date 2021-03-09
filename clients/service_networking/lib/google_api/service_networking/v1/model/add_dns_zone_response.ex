@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddDnsZoneResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerPeeringZone => GoogleApi.ServiceNetworking.V1.Model.DnsZone.t(),
-          :producerPrivateZone => GoogleApi.ServiceNetworking.V1.Model.DnsZone.t()
+          :consumerPeeringZone => GoogleApi.ServiceNetworking.V1.Model.DnsZone.t() | nil,
+          :producerPrivateZone => GoogleApi.ServiceNetworking.V1.Model.DnsZone.t() | nil
         }
 
   field(:consumerPeeringZone, as: GoogleApi.ServiceNetworking.V1.Model.DnsZone)

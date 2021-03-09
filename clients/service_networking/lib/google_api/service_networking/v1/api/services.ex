@@ -60,6 +60,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_add_subnetwork(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_disable_vpc_service_controls(
         connection,
@@ -202,6 +204,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_enable_vpc_service_controls(
         connection,
@@ -273,6 +276,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_search_range(
         connection,
@@ -339,6 +343,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   @spec servicenetworking_services_validate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_validate(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -407,6 +412,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_connections_create(
         connection,
@@ -478,6 +484,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ListConnectionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_connections_list(
         connection,
@@ -553,6 +560,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_connections_patch(
         connection,
@@ -626,6 +634,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_dns_record_sets_add(
         connection,
@@ -697,6 +706,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_dns_record_sets_remove(
         connection,
@@ -768,6 +778,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_dns_record_sets_update(
         connection,
@@ -839,6 +850,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_dns_zones_add(
         connection,
@@ -910,6 +922,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_dns_zones_remove(
         connection,
@@ -980,6 +993,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_projects_global_networks_get(
         connection,
@@ -1050,6 +1064,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_projects_global_networks_update_consumer_config(
         connection,
@@ -1121,6 +1136,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_projects_global_networks_peered_dns_domains_create(
         connection,
@@ -1191,6 +1207,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_projects_global_networks_peered_dns_domains_delete(
         connection,
@@ -1260,6 +1277,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ListPeeredDnsDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_projects_global_networks_peered_dns_domains_list(
         connection,
@@ -1327,6 +1345,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   @spec servicenetworking_services_roles_add(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def servicenetworking_services_roles_add(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

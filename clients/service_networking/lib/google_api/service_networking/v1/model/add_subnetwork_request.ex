@@ -36,17 +36,17 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumer => String.t(),
-          :consumerNetwork => String.t(),
-          :description => String.t(),
-          :ipPrefixLength => integer(),
-          :region => String.t(),
-          :requestedAddress => String.t(),
-          :requestedRanges => list(String.t()),
+          :consumer => String.t() | nil,
+          :consumerNetwork => String.t() | nil,
+          :description => String.t() | nil,
+          :ipPrefixLength => integer() | nil,
+          :region => String.t() | nil,
+          :requestedAddress => String.t() | nil,
+          :requestedRanges => list(String.t()) | nil,
           :secondaryIpRangeSpecs =>
-            list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()),
-          :subnetwork => String.t(),
-          :subnetworkUsers => list(String.t())
+            list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()) | nil,
+          :subnetwork => String.t() | nil,
+          :subnetworkUsers => list(String.t()) | nil
         }
 
   field(:consumer)

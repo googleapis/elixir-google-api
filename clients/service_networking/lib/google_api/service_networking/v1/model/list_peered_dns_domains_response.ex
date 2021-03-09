@@ -27,7 +27,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ListPeeredDnsDomainsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :peeredDnsDomains => list(GoogleApi.ServiceNetworking.V1.Model.PeeredDnsDomain.t())
+          :peeredDnsDomains =>
+            list(GoogleApi.ServiceNetworking.V1.Model.PeeredDnsDomain.t()) | nil
         }
 
   field(:peeredDnsDomains, as: GoogleApi.ServiceNetworking.V1.Model.PeeredDnsDomain, type: :list)

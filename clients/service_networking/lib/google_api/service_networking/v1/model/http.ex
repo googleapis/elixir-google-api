@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Http do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullyDecodeReservedExpansion => boolean(),
-          :rules => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t())
+          :fullyDecodeReservedExpansion => boolean() | nil,
+          :rules => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t()) | nil
         }
 
   field(:fullyDecodeReservedExpansion)

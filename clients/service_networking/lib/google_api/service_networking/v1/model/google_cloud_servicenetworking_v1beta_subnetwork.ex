@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :outsideAllocation => boolean()
+          :ipCidrRange => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :outsideAllocation => boolean() | nil
         }
 
   field(:ipCidrRange)
