@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :versionId => String.t()
+          :versionId => String.t() | nil
         }
 
   field(:versionId)

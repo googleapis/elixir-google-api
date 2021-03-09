@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :functions => list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :functions => list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:functions, as: GoogleApi.CloudFunctions.V1.Model.CloudFunction, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uploadUrl => String.t()
+          :uploadUrl => String.t() | nil
         }
 
   field(:uploadUrl)

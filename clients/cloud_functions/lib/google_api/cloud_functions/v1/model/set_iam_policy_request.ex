@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.CloudFunctions.V1.Model.Policy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.CloudFunctions.V1.Model.Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.CloudFunctions.V1.Model.Policy)

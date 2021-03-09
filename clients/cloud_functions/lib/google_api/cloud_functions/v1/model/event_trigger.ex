@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudFunctions.V1.Model.EventTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventType => String.t(),
-          :failurePolicy => GoogleApi.CloudFunctions.V1.Model.FailurePolicy.t(),
-          :resource => String.t(),
-          :service => String.t()
+          :eventType => String.t() | nil,
+          :failurePolicy => GoogleApi.CloudFunctions.V1.Model.FailurePolicy.t() | nil,
+          :resource => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:eventType)

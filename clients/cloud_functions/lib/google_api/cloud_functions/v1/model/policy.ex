@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudFunctions.V1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.CloudFunctions.V1.Model.AuditConfig.t()),
-          :bindings => list(GoogleApi.CloudFunctions.V1.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs => list(GoogleApi.CloudFunctions.V1.Model.AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.CloudFunctions.V1.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.CloudFunctions.V1.Model.AuditConfig, type: :list)
