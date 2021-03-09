@@ -54,6 +54,7 @@ defmodule GoogleApi.VerifiedAccess.V1.Api.Challenge do
   @spec verifiedaccess_challenge_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.VerifiedAccess.V1.Model.Challenge.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def verifiedaccess_challenge_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.VerifiedAccess.V1.Api.Challenge do
   @spec verifiedaccess_challenge_verify(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseResult.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def verifiedaccess_challenge_verify(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

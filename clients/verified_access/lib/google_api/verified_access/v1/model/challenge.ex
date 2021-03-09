@@ -28,8 +28,8 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.Challenge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternativeChallenge => GoogleApi.VerifiedAccess.V1.Model.SignedData.t(),
-          :challenge => GoogleApi.VerifiedAccess.V1.Model.SignedData.t()
+          :alternativeChallenge => GoogleApi.VerifiedAccess.V1.Model.SignedData.t() | nil,
+          :challenge => GoogleApi.VerifiedAccess.V1.Model.SignedData.t() | nil
         }
 
   field(:alternativeChallenge, as: GoogleApi.VerifiedAccess.V1.Model.SignedData)
