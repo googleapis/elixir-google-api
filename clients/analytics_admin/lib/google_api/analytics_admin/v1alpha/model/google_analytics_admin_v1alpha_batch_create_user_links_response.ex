@@ -29,6 +29,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatc
   @type t :: %__MODULE__{
           :userLinks =>
             list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t())
+            | nil
         }
 
   field(:userLinks,

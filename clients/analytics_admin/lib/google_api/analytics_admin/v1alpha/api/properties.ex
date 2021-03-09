@@ -54,6 +54,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   @spec analyticsadmin_properties_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   @spec analyticsadmin_properties_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -176,6 +178,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   @spec analyticsadmin_properties_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -242,6 +245,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListPropertiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -311,6 +315,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   @spec analyticsadmin_properties_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -382,6 +387,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_android_app_data_streams_create(
         connection,
@@ -458,6 +464,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_android_app_data_streams_delete(
         connection,
@@ -530,6 +537,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_android_app_data_streams_get(
         connection,
@@ -608,6 +616,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListAndroidAppDataStreamsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_android_app_data_streams_list(
         connection,
@@ -688,6 +697,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_android_app_data_streams_patch(
         connection,
@@ -767,6 +777,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_firebase_links_create(
         connection,
@@ -843,6 +854,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_firebase_links_delete(
         connection,
@@ -917,6 +929,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListFirebaseLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_firebase_links_list(
         connection,
@@ -997,6 +1010,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_firebase_links_patch(
         connection,
@@ -1076,6 +1090,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_google_ads_links_create(
         connection,
@@ -1152,6 +1167,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_google_ads_links_delete(
         connection,
@@ -1226,6 +1242,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_google_ads_links_list(
         connection,
@@ -1306,6 +1323,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_google_ads_links_patch(
         connection,
@@ -1385,6 +1403,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_ios_app_data_streams_create(
         connection,
@@ -1461,6 +1480,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_ios_app_data_streams_delete(
         connection,
@@ -1533,6 +1553,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_ios_app_data_streams_get(
         connection,
@@ -1611,6 +1632,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListIosAppDataStreamsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_ios_app_data_streams_list(
         connection,
@@ -1691,6 +1713,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_ios_app_data_streams_patch(
         connection,
@@ -1770,6 +1793,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAuditUserLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_audit(
         connection,
@@ -1848,6 +1872,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateUserLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_batch_create(
         connection,
@@ -1925,6 +1950,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_batch_delete(
         connection,
@@ -1999,6 +2025,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetUserLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_batch_get(
         connection,
@@ -2077,6 +2104,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateUserLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_batch_update(
         connection,
@@ -2155,6 +2183,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_create(
         connection,
@@ -2229,6 +2258,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_delete(
         connection,
@@ -2300,6 +2330,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_get(
         connection,
@@ -2375,6 +2406,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListUserLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_list(
         connection,
@@ -2453,6 +2485,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_user_links_patch(
         connection,
@@ -2528,6 +2561,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_create(
         connection,
@@ -2604,6 +2638,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
         ) ::
           {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_delete(
         connection,
@@ -2676,6 +2711,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_get(
         connection,
@@ -2752,6 +2788,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaEnhancedMeasurementSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_get_enhanced_measurement_settings(
         connection,
@@ -2828,6 +2865,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGlobalSiteTag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_get_global_site_tag(
         connection,
@@ -2906,6 +2944,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListWebDataStreamsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_list(
         connection,
@@ -2986,6 +3025,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_patch(
         connection,
@@ -3066,6 +3106,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaEnhancedMeasurementSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_properties_web_data_streams_update_enhanced_measurement_settings(
         connection,

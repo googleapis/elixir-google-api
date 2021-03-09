@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcco
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :deleted => boolean(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :regionCode => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :deleted => boolean() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :regionCode => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

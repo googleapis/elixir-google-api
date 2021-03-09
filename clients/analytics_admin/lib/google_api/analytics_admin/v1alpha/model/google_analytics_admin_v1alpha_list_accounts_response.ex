@@ -29,8 +29,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaList
 
   @type t :: %__MODULE__{
           :accounts =>
-            list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accounts,

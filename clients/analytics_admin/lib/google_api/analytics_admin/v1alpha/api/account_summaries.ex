@@ -56,6 +56,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.AccountSummaries do
           {:ok,
            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListAccountSummariesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def analyticsadmin_account_summaries_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

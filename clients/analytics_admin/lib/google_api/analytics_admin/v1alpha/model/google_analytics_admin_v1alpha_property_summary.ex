@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :property => String.t()
+          :displayName => String.t() | nil,
+          :property => String.t() | nil
         }
 
   field(:displayName)

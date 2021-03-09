@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProv
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountTicketId => String.t()
+          :accountTicketId => String.t() | nil
         }
 
   field(:accountTicketId)

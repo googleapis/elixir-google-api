@@ -31,6 +31,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatc
             list(
               GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUpdateUserLinkRequest.t()
             )
+            | nil
         }
 
   field(:requests,

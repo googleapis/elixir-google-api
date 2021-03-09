@@ -29,10 +29,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCrea
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifyNewUser => boolean(),
-          :parent => String.t(),
+          :notifyNewUser => boolean() | nil,
+          :parent => String.t() | nil,
           :userLink =>
-            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t() | nil
         }
 
   field(:notifyNewUser)

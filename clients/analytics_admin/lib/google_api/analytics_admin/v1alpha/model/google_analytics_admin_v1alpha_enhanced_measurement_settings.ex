@@ -38,18 +38,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaEnha
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileDownloadsEnabled => boolean(),
-          :name => String.t(),
-          :outboundClicksEnabled => boolean(),
-          :pageChangesEnabled => boolean(),
-          :pageLoadsEnabled => boolean(),
-          :pageViewsEnabled => boolean(),
-          :scrollsEnabled => boolean(),
-          :searchQueryParameter => String.t(),
-          :siteSearchEnabled => boolean(),
-          :streamEnabled => boolean(),
-          :uriQueryParameter => String.t(),
-          :videoEngagementEnabled => boolean()
+          :fileDownloadsEnabled => boolean() | nil,
+          :name => String.t() | nil,
+          :outboundClicksEnabled => boolean() | nil,
+          :pageChangesEnabled => boolean() | nil,
+          :pageLoadsEnabled => boolean() | nil,
+          :pageViewsEnabled => boolean() | nil,
+          :scrollsEnabled => boolean() | nil,
+          :searchQueryParameter => String.t() | nil,
+          :siteSearchEnabled => boolean() | nil,
+          :streamEnabled => boolean() | nil,
+          :uriQueryParameter => String.t() | nil,
+          :videoEngagementEnabled => boolean() | nil
         }
 
   field(:fileDownloadsEnabled)

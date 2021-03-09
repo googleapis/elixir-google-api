@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:pageSize)

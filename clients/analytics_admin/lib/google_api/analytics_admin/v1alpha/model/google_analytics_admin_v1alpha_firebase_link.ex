@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFire
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :maximumUserAccess => String.t(),
-          :name => String.t(),
-          :project => String.t()
+          :createTime => DateTime.t() | nil,
+          :maximumUserAccess => String.t() | nil,
+          :name => String.t() | nil,
+          :project => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
