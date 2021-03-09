@@ -28,8 +28,8 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Tag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :version => String.t()
+          :name => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:name)

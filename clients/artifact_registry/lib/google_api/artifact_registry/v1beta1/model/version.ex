@@ -31,11 +31,11 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :relatedTags => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :relatedTags => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.ListFilesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.ArtifactRegistry.V1beta1.Model.File.t()),
-          :nextPageToken => String.t()
+          :files => list(GoogleApi.ArtifactRegistry.V1beta1.Model.File.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:files, as: GoogleApi.ArtifactRegistry.V1beta1.Model.File, type: :list)

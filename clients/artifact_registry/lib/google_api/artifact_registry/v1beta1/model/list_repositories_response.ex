@@ -28,8 +28,8 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.ListRepositoriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :repositories => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Repository.t())
+          :nextPageToken => String.t() | nil,
+          :repositories => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Repository.t()) | nil
         }
 
   field(:nextPageToken)
