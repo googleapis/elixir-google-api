@@ -31,11 +31,11 @@ defmodule GoogleApi.Reseller.V1.Model.ChangePlanRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dealCode => String.t(),
-          :kind => String.t(),
-          :planName => String.t(),
-          :purchaseOrderId => String.t(),
-          :seats => GoogleApi.Reseller.V1.Model.Seats.t()
+          :dealCode => String.t() | nil,
+          :kind => String.t() | nil,
+          :planName => String.t() | nil,
+          :purchaseOrderId => String.t() | nil,
+          :seats => GoogleApi.Reseller.V1.Model.Seats.t() | nil
         }
 
   field(:dealCode)

@@ -52,7 +52,10 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   *   `{:error, info}` on failure
   """
   @spec reseller_customers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def reseller_customers_get(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,7 +113,10 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   *   `{:error, info}` on failure
   """
   @spec reseller_customers_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def reseller_customers_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -168,7 +174,10 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   *   `{:error, info}` on failure
   """
   @spec reseller_customers_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def reseller_customers_patch(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -227,7 +236,10 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   *   `{:error, info}` on failure
   """
   @spec reseller_customers_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Reseller.V1.Model.Customer.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def reseller_customers_update(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -34,14 +34,14 @@ defmodule GoogleApi.Reseller.V1.Model.Customer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateEmail => String.t(),
-          :customerDomain => String.t(),
-          :customerDomainVerified => boolean(),
-          :customerId => String.t(),
-          :kind => String.t(),
-          :phoneNumber => String.t(),
-          :postalAddress => GoogleApi.Reseller.V1.Model.Address.t(),
-          :resourceUiUrl => String.t()
+          :alternateEmail => String.t() | nil,
+          :customerDomain => String.t() | nil,
+          :customerDomainVerified => boolean() | nil,
+          :customerId => String.t() | nil,
+          :kind => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :postalAddress => GoogleApi.Reseller.V1.Model.Address.t() | nil,
+          :resourceUiUrl => String.t() | nil
         }
 
   field(:alternateEmail)

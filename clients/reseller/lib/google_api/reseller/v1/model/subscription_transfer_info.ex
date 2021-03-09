@@ -28,8 +28,8 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minimumTransferableSeats => integer(),
-          :transferabilityExpirationTime => String.t()
+          :minimumTransferableSeats => integer() | nil,
+          :transferabilityExpirationTime => String.t() | nil
         }
 
   field(:minimumTransferableSeats)

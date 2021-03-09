@@ -28,8 +28,8 @@ defmodule GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :serviceAccountEmailAddresses => list(String.t()),
-          :topicName => String.t()
+          :serviceAccountEmailAddresses => list(String.t()) | nil,
+          :topicName => String.t() | nil
         }
 
   field(:serviceAccountEmailAddresses, type: :list)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Reseller.V1.Model.Address do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressLine1 => String.t(),
-          :addressLine2 => String.t(),
-          :addressLine3 => String.t(),
-          :contactName => String.t(),
-          :countryCode => String.t(),
-          :kind => String.t(),
-          :locality => String.t(),
-          :organizationName => String.t(),
-          :postalCode => String.t(),
-          :region => String.t()
+          :addressLine1 => String.t() | nil,
+          :addressLine2 => String.t() | nil,
+          :addressLine3 => String.t() | nil,
+          :contactName => String.t() | nil,
+          :countryCode => String.t() | nil,
+          :kind => String.t() | nil,
+          :locality => String.t() | nil,
+          :organizationName => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :region => String.t() | nil
         }
 
   field(:addressLine1)

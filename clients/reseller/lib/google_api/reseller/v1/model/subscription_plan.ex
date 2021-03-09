@@ -30,9 +30,9 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionPlan do
 
   @type t :: %__MODULE__{
           :commitmentInterval =>
-            GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval.t(),
-          :isCommitmentPlan => boolean(),
-          :planName => String.t()
+            GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval.t() | nil,
+          :isCommitmentPlan => boolean() | nil,
+          :planName => String.t() | nil
         }
 
   field(:commitmentInterval, as: GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval)

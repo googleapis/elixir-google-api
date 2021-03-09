@@ -61,6 +61,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_activate(
         connection,
@@ -138,6 +139,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_change_plan(
         connection,
@@ -216,6 +218,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_change_renewal_settings(
         connection,
@@ -294,6 +297,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_change_seats(
         connection,
@@ -370,7 +374,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def reseller_subscriptions_delete(
         connection,
         customer_id,
@@ -445,6 +449,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_get(
         connection,
@@ -513,6 +518,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   @spec reseller_subscriptions_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_insert(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -578,6 +584,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   @spec reseller_subscriptions_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscriptions.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -647,6 +654,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_start_paid_service(
         connection,
@@ -723,6 +731,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         ) ::
           {:ok, GoogleApi.Reseller.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def reseller_subscriptions_suspend(
         connection,
