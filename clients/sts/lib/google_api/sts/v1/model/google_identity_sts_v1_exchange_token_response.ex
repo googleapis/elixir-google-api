@@ -30,10 +30,10 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access_token => String.t(),
-          :expires_in => integer(),
-          :issued_token_type => String.t(),
-          :token_type => String.t()
+          :access_token => String.t() | nil,
+          :expires_in => integer() | nil,
+          :issued_token_type => String.t() | nil,
+          :token_type => String.t() | nil
         }
 
   field(:access_token)

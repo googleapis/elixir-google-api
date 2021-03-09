@@ -33,13 +33,13 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audience => String.t(),
-          :grantType => String.t(),
-          :options => String.t(),
-          :requestedTokenType => String.t(),
-          :scope => String.t(),
-          :subjectToken => String.t(),
-          :subjectTokenType => String.t()
+          :audience => String.t() | nil,
+          :grantType => String.t() | nil,
+          :options => String.t() | nil,
+          :requestedTokenType => String.t() | nil,
+          :scope => String.t() | nil,
+          :subjectToken => String.t() | nil,
+          :subjectTokenType => String.t() | nil
         }
 
   field(:audience)
