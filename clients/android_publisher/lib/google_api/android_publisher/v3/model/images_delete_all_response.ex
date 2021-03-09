@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleted => list(GoogleApi.AndroidPublisher.V3.Model.Image.t())
+          :deleted => list(GoogleApi.AndroidPublisher.V3.Model.Image.t()) | nil
         }
 
   field(:deleted, as: GoogleApi.AndroidPublisher.V3.Model.Image, type: :list)

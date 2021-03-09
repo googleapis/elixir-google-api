@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.PageInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resultPerPage => integer(),
-          :startIndex => integer(),
-          :totalResults => integer()
+          :resultPerPage => integer() | nil,
+          :startIndex => integer() | nil,
+          :totalResults => integer() | nil
         }
 
   field(:resultPerPage)

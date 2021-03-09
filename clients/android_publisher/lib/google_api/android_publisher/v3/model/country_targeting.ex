@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.CountryTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countries => list(String.t()),
-          :includeRestOfWorld => boolean()
+          :countries => list(String.t()) | nil,
+          :includeRestOfWorld => boolean() | nil
         }
 
   field(:countries, type: :list)

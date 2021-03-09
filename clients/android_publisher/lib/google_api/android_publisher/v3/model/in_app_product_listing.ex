@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProductListing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :benefits => list(String.t()),
-          :description => String.t(),
-          :title => String.t()
+          :benefits => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:benefits, type: :list)

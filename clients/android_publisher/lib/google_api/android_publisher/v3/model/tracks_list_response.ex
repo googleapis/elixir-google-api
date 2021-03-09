@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TracksListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :tracks => list(GoogleApi.AndroidPublisher.V3.Model.Track.t())
+          :kind => String.t() | nil,
+          :tracks => list(GoogleApi.AndroidPublisher.V3.Model.Track.t()) | nil
         }
 
   field(:kind)

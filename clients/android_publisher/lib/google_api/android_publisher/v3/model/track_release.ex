@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t(),
-          :inAppUpdatePriority => integer(),
-          :name => String.t(),
-          :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()),
-          :status => String.t(),
-          :userFraction => float(),
-          :versionCodes => list(String.t())
+          :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t() | nil,
+          :inAppUpdatePriority => integer() | nil,
+          :name => String.t() | nil,
+          :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()) | nil,
+          :status => String.t() | nil,
+          :userFraction => float() | nil,
+          :versionCodes => list(String.t()) | nil
         }
 
   field(:countryTargeting, as: GoogleApi.AndroidPublisher.V3.Model.CountryTargeting)

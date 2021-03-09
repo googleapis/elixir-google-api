@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.UsesPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxSdkVersion => integer(),
-          :name => String.t()
+          :maxSdkVersion => integer() | nil,
+          :name => String.t() | nil
         }
 
   field(:maxSdkVersion)

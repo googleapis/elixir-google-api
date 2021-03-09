@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Review do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorName => String.t(),
-          :comments => list(GoogleApi.AndroidPublisher.V3.Model.Comment.t()),
-          :reviewId => String.t()
+          :authorName => String.t() | nil,
+          :comments => list(GoogleApi.AndroidPublisher.V3.Model.Comment.t()) | nil,
+          :reviewId => String.t() | nil
         }
 
   field(:authorName)

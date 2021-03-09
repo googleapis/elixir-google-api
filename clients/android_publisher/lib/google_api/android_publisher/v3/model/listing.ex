@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Listing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullDescription => String.t(),
-          :language => String.t(),
-          :shortDescription => String.t(),
-          :title => String.t(),
-          :video => String.t()
+          :fullDescription => String.t() | nil,
+          :language => String.t() | nil,
+          :shortDescription => String.t() | nil,
+          :title => String.t() | nil,
+          :video => String.t() | nil
         }
 
   field(:fullDescription)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesDeferRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deferralInfo => GoogleApi.AndroidPublisher.V3.Model.SubscriptionDeferralInfo.t()
+          :deferralInfo => GoogleApi.AndroidPublisher.V3.Model.SubscriptionDeferralInfo.t() | nil
         }
 
   field(:deferralInfo, as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionDeferralInfo)

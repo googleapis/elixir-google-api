@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :orderId => String.t(),
-          :purchaseTimeMillis => String.t(),
-          :purchaseToken => String.t(),
-          :voidedReason => integer(),
-          :voidedSource => integer(),
-          :voidedTimeMillis => String.t()
+          :kind => String.t() | nil,
+          :orderId => String.t() | nil,
+          :purchaseTimeMillis => String.t() | nil,
+          :purchaseToken => String.t() | nil,
+          :voidedReason => integer() | nil,
+          :voidedSource => integer() | nil,
+          :voidedTimeMillis => String.t() | nil
         }
 
   field(:kind)

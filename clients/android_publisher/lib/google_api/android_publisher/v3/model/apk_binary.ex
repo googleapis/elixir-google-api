@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ApkBinary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha1 => String.t(),
-          :sha256 => String.t()
+          :sha1 => String.t() | nil,
+          :sha256 => String.t() | nil
         }
 
   field(:sha1)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeveloperComment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastModified => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t(),
-          :text => String.t()
+          :lastModified => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:lastModified, as: GoogleApi.AndroidPublisher.V3.Model.Timestamp)

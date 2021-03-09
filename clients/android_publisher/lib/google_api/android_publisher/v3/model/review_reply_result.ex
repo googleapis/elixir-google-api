@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastEdited => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t(),
-          :replyText => String.t()
+          :lastEdited => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t() | nil,
+          :replyText => String.t() | nil
         }
 
   field(:lastEdited, as: GoogleApi.AndroidPublisher.V3.Model.Timestamp)

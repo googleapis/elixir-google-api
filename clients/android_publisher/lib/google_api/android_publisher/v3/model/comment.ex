@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Comment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :developerComment => GoogleApi.AndroidPublisher.V3.Model.DeveloperComment.t(),
-          :userComment => GoogleApi.AndroidPublisher.V3.Model.UserComment.t()
+          :developerComment => GoogleApi.AndroidPublisher.V3.Model.DeveloperComment.t() | nil,
+          :userComment => GoogleApi.AndroidPublisher.V3.Model.UserComment.t() | nil
         }
 
   field(:developerComment, as: GoogleApi.AndroidPublisher.V3.Model.DeveloperComment)

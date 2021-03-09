@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageInfo => GoogleApi.AndroidPublisher.V3.Model.PageInfo.t(),
-          :reviews => list(GoogleApi.AndroidPublisher.V3.Model.Review.t()),
-          :tokenPagination => GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t()
+          :pageInfo => GoogleApi.AndroidPublisher.V3.Model.PageInfo.t() | nil,
+          :reviews => list(GoogleApi.AndroidPublisher.V3.Model.Review.t()) | nil,
+          :tokenPagination => GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t() | nil
         }
 
   field(:pageInfo, as: GoogleApi.AndroidPublisher.V3.Model.PageInfo)

@@ -41,21 +41,21 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationLabel => String.t(),
-          :certificateBase64s => list(String.t()),
-          :externallyHostedUrl => String.t(),
-          :fileSha1Base64 => String.t(),
-          :fileSha256Base64 => String.t(),
-          :fileSize => String.t(),
-          :iconBase64 => String.t(),
-          :maximumSdk => integer(),
-          :minimumSdk => integer(),
-          :nativeCodes => list(String.t()),
-          :packageName => String.t(),
-          :usesFeatures => list(String.t()),
-          :usesPermissions => list(GoogleApi.AndroidPublisher.V3.Model.UsesPermission.t()),
-          :versionCode => integer(),
-          :versionName => String.t()
+          :applicationLabel => String.t() | nil,
+          :certificateBase64s => list(String.t()) | nil,
+          :externallyHostedUrl => String.t() | nil,
+          :fileSha1Base64 => String.t() | nil,
+          :fileSha256Base64 => String.t() | nil,
+          :fileSize => String.t() | nil,
+          :iconBase64 => String.t() | nil,
+          :maximumSdk => integer() | nil,
+          :minimumSdk => integer() | nil,
+          :nativeCodes => list(String.t()) | nil,
+          :packageName => String.t() | nil,
+          :usesFeatures => list(String.t()) | nil,
+          :usesPermissions => list(GoogleApi.AndroidPublisher.V3.Model.UsesPermission.t()) | nil,
+          :versionCode => integer() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:applicationLabel)

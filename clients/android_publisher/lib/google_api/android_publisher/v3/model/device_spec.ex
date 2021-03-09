@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :screenDensity => integer(),
-          :supportedAbis => list(String.t()),
-          :supportedLocales => list(String.t())
+          :screenDensity => integer() | nil,
+          :supportedAbis => list(String.t()) | nil,
+          :supportedLocales => list(String.t()) | nil
         }
 
   field(:screenDensity)

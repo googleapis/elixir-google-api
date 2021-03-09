@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Testers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleGroups => list(String.t())
+          :googleGroups => list(String.t()) | nil
         }
 
   field(:googleGroups, type: :list)

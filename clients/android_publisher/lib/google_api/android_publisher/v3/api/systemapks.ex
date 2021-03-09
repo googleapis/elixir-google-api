@@ -62,6 +62,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.Variant.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_systemapks_variants_create(
         connection,
@@ -138,7 +139,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidpublisher_systemapks_variants_download(
         connection,
         package_name,
@@ -223,6 +224,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.Variant.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_systemapks_variants_get(
         connection,
@@ -301,6 +303,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.SystemApksListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_systemapks_variants_list(
         connection,

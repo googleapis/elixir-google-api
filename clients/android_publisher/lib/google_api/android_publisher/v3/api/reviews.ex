@@ -62,6 +62,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.Review.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_reviews_get(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
   @spec androidpublisher_reviews_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ReviewsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_reviews_list(connection, package_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -206,6 +208,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_reviews_reply(
         connection,

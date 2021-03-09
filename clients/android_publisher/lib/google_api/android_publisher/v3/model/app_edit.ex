@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AppEdit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiryTimeSeconds => String.t(),
-          :id => String.t()
+          :expiryTimeSeconds => String.t() | nil,
+          :id => String.t() | nil
         }
 
   field(:expiryTimeSeconds)

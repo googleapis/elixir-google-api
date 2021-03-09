@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesAcknowledgeRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :developerPayload => String.t()
+          :developerPayload => String.t() | nil
         }
 
   field(:developerPayload)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SystemApksListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :variants => list(GoogleApi.AndroidPublisher.V3.Model.Variant.t())
+          :variants => list(GoogleApi.AndroidPublisher.V3.Model.Variant.t()) | nil
         }
 
   field(:variants, as: GoogleApi.AndroidPublisher.V3.Model.Variant, type: :list)

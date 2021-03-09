@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Variant do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceSpec => GoogleApi.AndroidPublisher.V3.Model.DeviceSpec.t(),
-          :variantId => integer()
+          :deviceSpec => GoogleApi.AndroidPublisher.V3.Model.DeviceSpec.t() | nil,
+          :variantId => integer() | nil
         }
 
   field(:deviceSpec, as: GoogleApi.AndroidPublisher.V3.Model.DeviceSpec)

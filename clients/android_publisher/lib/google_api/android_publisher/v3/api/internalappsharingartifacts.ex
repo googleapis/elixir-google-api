@@ -59,6 +59,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadapk(
         connection,
@@ -139,6 +140,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadapk_iodata(
         connection,
@@ -218,7 +220,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadapk_resumable(
         connection,
         package_name,
@@ -298,6 +300,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadapk_simple(
         connection,
@@ -378,6 +381,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadbundle(
         connection,
@@ -458,6 +462,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadbundle_iodata(
         connection,
@@ -537,7 +542,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadbundle_resumable(
         connection,
         package_name,
@@ -617,6 +622,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androidpublisher_internalappsharingartifacts_uploadbundle_simple(
         connection,

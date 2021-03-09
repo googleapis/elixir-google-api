@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.VoidedPurchasesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageInfo => GoogleApi.AndroidPublisher.V3.Model.PageInfo.t(),
-          :tokenPagination => GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t(),
-          :voidedPurchases => list(GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase.t())
+          :pageInfo => GoogleApi.AndroidPublisher.V3.Model.PageInfo.t() | nil,
+          :tokenPagination => GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t() | nil,
+          :voidedPurchases => list(GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase.t()) | nil
         }
 
   field(:pageInfo, as: GoogleApi.AndroidPublisher.V3.Model.PageInfo)

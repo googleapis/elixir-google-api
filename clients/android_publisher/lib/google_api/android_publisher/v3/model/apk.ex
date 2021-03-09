@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Apk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binary => GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t(),
-          :versionCode => integer()
+          :binary => GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t() | nil,
+          :versionCode => integer() | nil
         }
 
   field(:binary, as: GoogleApi.AndroidPublisher.V3.Model.ApkBinary)

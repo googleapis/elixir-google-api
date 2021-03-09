@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesDeferResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newExpiryTimeMillis => String.t()
+          :newExpiryTimeMillis => String.t() | nil
         }
 
   field(:newExpiryTimeMillis)
