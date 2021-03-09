@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availabilityDomainCount => integer(),
-          :collocation => String.t(),
-          :vmCount => integer()
+          :availabilityDomainCount => integer() | nil,
+          :collocation => String.t() | nil,
+          :vmCount => integer() | nil
         }
 
   field(:availabilityDomainCount)

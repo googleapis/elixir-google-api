@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyResourceStatus do
   @type t :: %__MODULE__{
           :instanceSchedulePolicy =>
             GoogleApi.Compute.V1.Model.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus.t()
+            | nil
         }
 
   field(:instanceSchedulePolicy,

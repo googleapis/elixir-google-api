@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapValidationResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :loadErrors => list(String.t()),
-          :loadSucceeded => boolean(),
-          :testFailures => list(GoogleApi.Compute.V1.Model.TestFailure.t()),
-          :testPassed => boolean()
+          :loadErrors => list(String.t()) | nil,
+          :loadSucceeded => boolean() | nil,
+          :testFailures => list(GoogleApi.Compute.V1.Model.TestFailure.t()) | nil,
+          :testPassed => boolean() | nil
         }
 
   field(:loadErrors, type: :list)

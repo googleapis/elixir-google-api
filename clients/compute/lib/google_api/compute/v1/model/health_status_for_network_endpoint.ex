@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendService => GoogleApi.Compute.V1.Model.BackendServiceReference.t(),
-          :forwardingRule => GoogleApi.Compute.V1.Model.ForwardingRuleReference.t(),
-          :healthCheck => GoogleApi.Compute.V1.Model.HealthCheckReference.t(),
-          :healthCheckService => GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t(),
-          :healthState => String.t()
+          :backendService => GoogleApi.Compute.V1.Model.BackendServiceReference.t() | nil,
+          :forwardingRule => GoogleApi.Compute.V1.Model.ForwardingRuleReference.t() | nil,
+          :healthCheck => GoogleApi.Compute.V1.Model.HealthCheckReference.t() | nil,
+          :healthCheckService => GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t() | nil,
+          :healthState => String.t() | nil
         }
 
   field(:backendService, as: GoogleApi.Compute.V1.Model.BackendServiceReference)

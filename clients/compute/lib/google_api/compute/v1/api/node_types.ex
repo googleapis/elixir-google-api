@@ -66,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   @spec compute_node_types_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeTypeAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_types_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -130,7 +131,10 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.NodeType.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.NodeType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_node_types_get(
         connection,
         project,
@@ -206,6 +210,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   @spec compute_node_types_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeTypeList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

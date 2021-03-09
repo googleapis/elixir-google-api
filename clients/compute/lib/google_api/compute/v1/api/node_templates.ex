@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeTemplateAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_templates_aggregated_list(
         connection,
@@ -145,7 +146,10 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_node_templates_delete(
         connection,
         project,
@@ -215,6 +219,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeTemplate.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_templates_get(
         connection,
@@ -282,7 +287,11 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_node_templates_get_iam_policy(
         connection,
         project,
@@ -357,7 +366,10 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_node_templates_insert(
         connection,
         project,
@@ -439,6 +451,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeTemplateList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_templates_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -503,7 +516,11 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_node_templates_set_iam_policy(
         connection,
         project,
@@ -577,6 +594,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_node_templates_test_iam_permissions(
         connection,

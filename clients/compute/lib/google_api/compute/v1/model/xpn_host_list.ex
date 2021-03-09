@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.XpnHostList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.Project.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.XpnHostListWarning.t()
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.Project.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.XpnHostListWarning.t() | nil
         }
 
   field(:id)

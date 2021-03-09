@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthChecksScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthChecks => list(GoogleApi.Compute.V1.Model.HealthCheck.t()),
-          :warning => GoogleApi.Compute.V1.Model.HealthChecksScopedListWarning.t()
+          :healthChecks => list(GoogleApi.Compute.V1.Model.HealthCheck.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.HealthChecksScopedListWarning.t() | nil
         }
 
   field(:healthChecks, as: GoogleApi.Compute.V1.Model.HealthCheck, type: :list)

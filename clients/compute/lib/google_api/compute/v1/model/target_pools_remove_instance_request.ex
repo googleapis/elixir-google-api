@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPoolsRemoveInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(GoogleApi.Compute.V1.Model.InstanceReference.t())
+          :instances => list(GoogleApi.Compute.V1.Model.InstanceReference.t()) | nil
         }
 
   field(:instances, as: GoogleApi.Compute.V1.Model.InstanceReference, type: :list)

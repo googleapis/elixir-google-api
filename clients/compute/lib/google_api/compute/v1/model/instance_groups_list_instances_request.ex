@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupsListInstancesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceState => String.t()
+          :instanceState => String.t() | nil
         }
 
   field(:instanceState)

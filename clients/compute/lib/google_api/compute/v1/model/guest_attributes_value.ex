@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.GuestAttributesValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Compute.V1.Model.GuestAttributesEntry.t())
+          :items => list(GoogleApi.Compute.V1.Model.GuestAttributesEntry.t()) | nil
         }
 
   field(:items, as: GoogleApi.Compute.V1.Model.GuestAttributesEntry, type: :list)

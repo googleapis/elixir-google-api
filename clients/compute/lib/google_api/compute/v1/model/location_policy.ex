@@ -27,9 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => %{
-            optional(String.t()) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t()
-          }
+          :locations =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t()} | nil
         }
 
   field(:locations, as: GoogleApi.Compute.V1.Model.LocationPolicyLocation, type: :map)

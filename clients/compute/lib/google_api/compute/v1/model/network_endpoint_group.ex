@@ -45,23 +45,24 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :appEngine => GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t(),
-          :cloudFunction => GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t(),
-          :cloudRun => GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t(),
-          :creationTimestamp => String.t(),
-          :defaultPort => integer(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :networkEndpointType => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :size => integer(),
-          :subnetwork => String.t(),
-          :zone => String.t()
+          :annotations => map() | nil,
+          :appEngine => GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t() | nil,
+          :cloudFunction =>
+            GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t() | nil,
+          :cloudRun => GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :defaultPort => integer() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :networkEndpointType => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :size => integer() | nil,
+          :subnetwork => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:annotations, type: :map)

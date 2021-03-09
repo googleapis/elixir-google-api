@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.CacheInvalidationRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :path => String.t()
+          :host => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:host)

@@ -40,16 +40,18 @@ defmodule GoogleApi.Compute.V1.Model.BulkInsertInstanceResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :instanceProperties => GoogleApi.Compute.V1.Model.InstanceProperties.t(),
-          :locationPolicy => GoogleApi.Compute.V1.Model.LocationPolicy.t(),
-          :minCount => String.t(),
-          :namePattern => String.t(),
-          :perInstanceProperties => %{
-            optional(String.t()) =>
-              GoogleApi.Compute.V1.Model.BulkInsertInstanceResourcePerInstanceProperties.t()
-          },
-          :sourceInstanceTemplate => String.t()
+          :count => String.t() | nil,
+          :instanceProperties => GoogleApi.Compute.V1.Model.InstanceProperties.t() | nil,
+          :locationPolicy => GoogleApi.Compute.V1.Model.LocationPolicy.t() | nil,
+          :minCount => String.t() | nil,
+          :namePattern => String.t() | nil,
+          :perInstanceProperties =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.BulkInsertInstanceResourcePerInstanceProperties.t()
+            }
+            | nil,
+          :sourceInstanceTemplate => String.t() | nil
         }
 
   field(:count)

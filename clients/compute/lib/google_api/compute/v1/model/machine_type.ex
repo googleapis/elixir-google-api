@@ -44,22 +44,22 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.Compute.V1.Model.MachineTypeAccelerators.t()),
-          :creationTimestamp => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :guestCpus => integer(),
-          :id => String.t(),
-          :imageSpaceGb => integer(),
-          :isSharedCpu => boolean(),
-          :kind => String.t(),
-          :maximumPersistentDisks => integer(),
-          :maximumPersistentDisksSizeGb => String.t(),
-          :memoryMb => integer(),
-          :name => String.t(),
-          :scratchDisks => list(GoogleApi.Compute.V1.Model.MachineTypeScratchDisks.t()),
-          :selfLink => String.t(),
-          :zone => String.t()
+          :accelerators => list(GoogleApi.Compute.V1.Model.MachineTypeAccelerators.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :guestCpus => integer() | nil,
+          :id => String.t() | nil,
+          :imageSpaceGb => integer() | nil,
+          :isSharedCpu => boolean() | nil,
+          :kind => String.t() | nil,
+          :maximumPersistentDisks => integer() | nil,
+          :maximumPersistentDisksSizeGb => String.t() | nil,
+          :memoryMb => integer() | nil,
+          :name => String.t() | nil,
+          :scratchDisks => list(GoogleApi.Compute.V1.Model.MachineTypeScratchDisks.t()) | nil,
+          :selfLink => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Compute.V1.Model.MachineTypeAccelerators, type: :list)

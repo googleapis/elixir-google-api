@@ -36,8 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => String.t(),
-          :urlMask => String.t()
+          :function => String.t() | nil,
+          :urlMask => String.t() | nil
         }
 
   field(:function)

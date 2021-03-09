@@ -40,9 +40,9 @@ defmodule GoogleApi.Compute.V1.Model.HttpRetryPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numRetries => integer(),
-          :perTryTimeout => GoogleApi.Compute.V1.Model.Duration.t(),
-          :retryConditions => list(String.t())
+          :numRetries => integer() | nil,
+          :perTryTimeout => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :retryConditions => list(String.t()) | nil
         }
 
   field(:numRetries)

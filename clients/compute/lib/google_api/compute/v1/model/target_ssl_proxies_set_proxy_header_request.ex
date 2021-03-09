@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxiesSetProxyHeaderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :proxyHeader => String.t()
+          :proxyHeader => String.t() | nil
         }
 
   field(:proxyHeader)

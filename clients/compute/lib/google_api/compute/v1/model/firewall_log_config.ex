@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.FirewallLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean(),
-          :metadata => String.t()
+          :enable => boolean() | nil,
+          :metadata => String.t() | nil
         }
 
   field(:enable)

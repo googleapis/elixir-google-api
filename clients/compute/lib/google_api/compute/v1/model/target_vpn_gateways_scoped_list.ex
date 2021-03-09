@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.TargetVpnGatewaysScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetVpnGateways => list(GoogleApi.Compute.V1.Model.TargetVpnGateway.t()),
-          :warning => GoogleApi.Compute.V1.Model.TargetVpnGatewaysScopedListWarning.t()
+          :targetVpnGateways => list(GoogleApi.Compute.V1.Model.TargetVpnGateway.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.TargetVpnGatewaysScopedListWarning.t() | nil
         }
 
   field(:targetVpnGateways, as: GoogleApi.Compute.V1.Model.TargetVpnGateway, type: :list)

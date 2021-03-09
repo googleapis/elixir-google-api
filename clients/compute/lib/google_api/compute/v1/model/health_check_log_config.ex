@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheckLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean()
+          :enable => boolean() | nil
         }
 
   field(:enable)

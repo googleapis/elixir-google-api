@@ -41,15 +41,15 @@ defmodule GoogleApi.Compute.V1.Model.TargetTcpProxy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :proxyBind => boolean(),
-          :proxyHeader => String.t(),
-          :selfLink => String.t(),
-          :service => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :proxyBind => boolean() | nil,
+          :proxyHeader => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:creationTimestamp)

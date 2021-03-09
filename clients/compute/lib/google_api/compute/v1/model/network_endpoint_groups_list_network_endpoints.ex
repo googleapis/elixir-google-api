@@ -31,12 +31,12 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpoints d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.NetworkEndpointWithHealthStatus.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.NetworkEndpointWithHealthStatus.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
           :warning =>
-            GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpointsWarning.t()
+            GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpointsWarning.t() | nil
         }
 
   field(:id)

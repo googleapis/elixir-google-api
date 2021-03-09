@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :updateAutoLearnPolicy => boolean()
+          :updateAutoLearnPolicy => boolean() | nil
         }
 
   field(:updateAutoLearnPolicy)

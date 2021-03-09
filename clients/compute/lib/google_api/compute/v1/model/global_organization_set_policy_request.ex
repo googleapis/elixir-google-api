@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.GlobalOrganizationSetPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.Compute.V1.Model.Binding.t()),
-          :etag => String.t(),
-          :policy => GoogleApi.Compute.V1.Model.Policy.t()
+          :bindings => list(GoogleApi.Compute.V1.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :policy => GoogleApi.Compute.V1.Model.Policy.t() | nil
         }
 
   field(:bindings, as: GoogleApi.Compute.V1.Model.Binding, type: :list)

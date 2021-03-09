@@ -46,12 +46,12 @@ defmodule GoogleApi.Compute.V1.Model.HttpRedirectAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostRedirect => String.t(),
-          :httpsRedirect => boolean(),
-          :pathRedirect => String.t(),
-          :prefixRedirect => String.t(),
-          :redirectResponseCode => String.t(),
-          :stripQuery => boolean()
+          :hostRedirect => String.t() | nil,
+          :httpsRedirect => boolean() | nil,
+          :pathRedirect => String.t() | nil,
+          :prefixRedirect => String.t() | nil,
+          :redirectResponseCode => String.t() | nil,
+          :stripQuery => boolean() | nil
         }
 
   field(:hostRedirect)

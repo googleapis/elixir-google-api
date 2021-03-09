@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorInstanceActionDeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :instance => String.t(),
-          :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t()
+          :action => String.t() | nil,
+          :instance => String.t() | nil,
+          :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t() | nil
         }
 
   field(:action)

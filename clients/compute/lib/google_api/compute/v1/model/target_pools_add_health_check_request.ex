@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPoolsAddHealthCheckRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthChecks => list(GoogleApi.Compute.V1.Model.HealthCheckReference.t())
+          :healthChecks => list(GoogleApi.Compute.V1.Model.HealthCheckReference.t()) | nil
         }
 
   field(:healthChecks, as: GoogleApi.Compute.V1.Model.HealthCheckReference, type: :list)

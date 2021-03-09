@@ -47,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `confidentialInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - 
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `postKeyRevocationActionType` (*type:* `String.t`, *default:* `nil`) - PostKeyRevocationActionType of the instance.
   *   `kind` (*type:* `String.t`, *default:* `compute#instance`) - [Output Only] Type of the resource. Always compute#instance for instances.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -82,46 +83,48 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advancedMachineFeatures => GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t(),
-          :machineType => String.t(),
-          :tags => GoogleApi.Compute.V1.Model.Tags.t(),
-          :lastSuspendedTimestamp => String.t(),
-          :statusMessage => String.t(),
-          :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()),
-          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
-          :satisfiesPzs => boolean(),
-          :metadata => GoogleApi.Compute.V1.Model.Metadata.t(),
+          :advancedMachineFeatures =>
+            GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t() | nil,
+          :machineType => String.t() | nil,
+          :tags => GoogleApi.Compute.V1.Model.Tags.t() | nil,
+          :lastSuspendedTimestamp => String.t() | nil,
+          :statusMessage => String.t() | nil,
+          :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()) | nil,
+          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
+          :satisfiesPzs => boolean() | nil,
+          :metadata => GoogleApi.Compute.V1.Model.Metadata.t() | nil,
           :confidentialInstanceConfig =>
-            GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t(),
-          :zone => String.t(),
-          :description => String.t(),
-          :kind => String.t(),
-          :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t(),
-          :name => String.t(),
-          :displayDevice => GoogleApi.Compute.V1.Model.DisplayDevice.t(),
-          :startRestricted => boolean(),
-          :fingerprint => String.t(),
-          :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()),
-          :hostname => String.t(),
-          :status => String.t(),
-          :deletionProtection => boolean(),
-          :resourcePolicies => list(String.t()),
-          :disks => list(GoogleApi.Compute.V1.Model.AttachedDisk.t()),
-          :privateIpv6GoogleAccess => String.t(),
+            GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t() | nil,
+          :zone => String.t() | nil,
+          :description => String.t() | nil,
+          :postKeyRevocationActionType => String.t() | nil,
+          :kind => String.t() | nil,
+          :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :name => String.t() | nil,
+          :displayDevice => GoogleApi.Compute.V1.Model.DisplayDevice.t() | nil,
+          :startRestricted => boolean() | nil,
+          :fingerprint => String.t() | nil,
+          :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()) | nil,
+          :hostname => String.t() | nil,
+          :status => String.t() | nil,
+          :deletionProtection => boolean() | nil,
+          :resourcePolicies => list(String.t()) | nil,
+          :disks => list(GoogleApi.Compute.V1.Model.AttachedDisk.t()) | nil,
+          :privateIpv6GoogleAccess => String.t() | nil,
           :shieldedInstanceIntegrityPolicy =>
-            GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy.t(),
-          :lastStopTimestamp => String.t(),
-          :minCpuPlatform => String.t(),
-          :labelFingerprint => String.t(),
-          :creationTimestamp => String.t(),
-          :id => String.t(),
-          :canIpForward => boolean(),
-          :labels => map(),
-          :lastStartTimestamp => String.t(),
-          :selfLink => String.t(),
-          :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t(),
-          :cpuPlatform => String.t(),
-          :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t()
+            GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy.t() | nil,
+          :lastStopTimestamp => String.t() | nil,
+          :minCpuPlatform => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :id => String.t() | nil,
+          :canIpForward => boolean() | nil,
+          :labels => map() | nil,
+          :lastStartTimestamp => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t() | nil,
+          :cpuPlatform => String.t() | nil,
+          :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t() | nil
         }
 
   field(:advancedMachineFeatures, as: GoogleApi.Compute.V1.Model.AdvancedMachineFeatures)
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:confidentialInstanceConfig, as: GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig)
   field(:zone)
   field(:description)
+  field(:postKeyRevocationActionType)
   field(:kind)
   field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)
   field(:name)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => integer(),
-          :ipAddress => String.t()
+          :id => integer() | nil,
+          :ipAddress => String.t() | nil
         }
 
   field(:id)

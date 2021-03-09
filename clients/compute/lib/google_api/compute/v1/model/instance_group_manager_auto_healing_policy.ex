@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthCheck => String.t(),
-          :initialDelaySec => integer()
+          :healthCheck => String.t() | nil,
+          :initialDelaySec => integer() | nil
         }
 
   field(:healthCheck)

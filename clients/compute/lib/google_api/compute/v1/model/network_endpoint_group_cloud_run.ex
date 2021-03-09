@@ -41,9 +41,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => String.t(),
-          :tag => String.t(),
-          :urlMask => String.t()
+          :service => String.t() | nil,
+          :tag => String.t() | nil,
+          :urlMask => String.t() | nil
         }
 
   field(:service)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.DisksScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disks => list(GoogleApi.Compute.V1.Model.Disk.t()),
-          :warning => GoogleApi.Compute.V1.Model.DisksScopedListWarning.t()
+          :disks => list(GoogleApi.Compute.V1.Model.Disk.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.DisksScopedListWarning.t() | nil
         }
 
   field(:disks, as: GoogleApi.Compute.V1.Model.Disk, type: :list)

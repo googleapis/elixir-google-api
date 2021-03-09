@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworksScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subnetworks => list(GoogleApi.Compute.V1.Model.Subnetwork.t()),
-          :warning => GoogleApi.Compute.V1.Model.SubnetworksScopedListWarning.t()
+          :subnetworks => list(GoogleApi.Compute.V1.Model.Subnetwork.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.SubnetworksScopedListWarning.t() | nil
         }
 
   field(:subnetworks, as: GoogleApi.Compute.V1.Model.Subnetwork, type: :list)

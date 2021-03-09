@@ -27,7 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vpnConnections => list(GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection.t())
+          :vpnConnections =>
+            list(GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection.t()) | nil
         }
 
   field(:vpnConnections, as: GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStatefulPerInstan
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allEffective => boolean()
+          :allEffective => boolean() | nil
         }
 
   field(:allEffective)

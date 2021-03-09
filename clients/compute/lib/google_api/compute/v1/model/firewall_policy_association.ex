@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyAssociation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachmentTarget => String.t(),
-          :displayName => String.t(),
-          :firewallPolicyId => String.t(),
-          :name => String.t()
+          :attachmentTarget => String.t() | nil,
+          :displayName => String.t() | nil,
+          :firewallPolicyId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:attachmentTarget)

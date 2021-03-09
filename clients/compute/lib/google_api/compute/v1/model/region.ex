@@ -39,17 +39,17 @@ defmodule GoogleApi.Compute.V1.Model.Region do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :supportsPzs => boolean(),
-          :zones => list(String.t())
+          :creationTimestamp => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()) | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :supportsPzs => boolean() | nil,
+          :zones => list(String.t()) | nil
         }
 
   field(:creationTimestamp)

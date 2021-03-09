@@ -31,8 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse do
           :firewallPolicys =>
             list(
               GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.t()
-            ),
-          :firewalls => list(GoogleApi.Compute.V1.Model.Firewall.t())
+            )
+            | nil,
+          :firewalls => list(GoogleApi.Compute.V1.Model.Firewall.t()) | nil
         }
 
   field(:firewallPolicys,

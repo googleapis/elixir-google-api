@@ -30,8 +30,8 @@ defmodule GoogleApi.Compute.V1.Model.HttpFaultAbort do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpStatus => integer(),
-          :percentage => float()
+          :httpStatus => integer() | nil,
+          :percentage => float() | nil
         }
 
   field(:httpStatus)

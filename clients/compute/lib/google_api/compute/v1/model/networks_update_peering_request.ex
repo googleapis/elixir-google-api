@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworksUpdatePeeringRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :networkPeering => GoogleApi.Compute.V1.Model.NetworkPeering.t()
+          :networkPeering => GoogleApi.Compute.V1.Model.NetworkPeering.t() | nil
         }
 
   field(:networkPeering, as: GoogleApi.Compute.V1.Model.NetworkPeering)

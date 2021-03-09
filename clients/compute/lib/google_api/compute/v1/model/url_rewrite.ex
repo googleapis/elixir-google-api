@@ -30,8 +30,8 @@ defmodule GoogleApi.Compute.V1.Model.UrlRewrite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostRewrite => String.t(),
-          :pathPrefixRewrite => String.t()
+          :hostRewrite => String.t() | nil,
+          :pathPrefixRewrite => String.t() | nil
         }
 
   field(:hostRewrite)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersDeleteInstancesRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(String.t())
+          :instances => list(String.t()) | nil
         }
 
   field(:instances, type: :list)

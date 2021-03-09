@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig.t(),
-          :expr => GoogleApi.Compute.V1.Model.Expr.t(),
-          :versionedExpr => String.t()
+          :config => GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig.t() | nil,
+          :expr => GoogleApi.Compute.V1.Model.Expr.t() | nil,
+          :versionedExpr => String.t() | nil
         }
 
   field(:config, as: GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig)

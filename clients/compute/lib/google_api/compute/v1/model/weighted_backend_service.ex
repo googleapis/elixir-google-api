@@ -34,9 +34,9 @@ defmodule GoogleApi.Compute.V1.Model.WeightedBackendService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendService => String.t(),
-          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
-          :weight => integer()
+          :backendService => String.t() | nil,
+          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t() | nil,
+          :weight => integer() | nil
         }
 
   field(:backendService)

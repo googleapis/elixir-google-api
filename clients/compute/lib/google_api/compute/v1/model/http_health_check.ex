@@ -39,13 +39,13 @@ defmodule GoogleApi.Compute.V1.Model.HTTPHealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :port => integer(),
-          :portName => String.t(),
-          :portSpecification => String.t(),
-          :proxyHeader => String.t(),
-          :requestPath => String.t(),
-          :response => String.t()
+          :host => String.t() | nil,
+          :port => integer() | nil,
+          :portName => String.t() | nil,
+          :portSpecification => String.t() | nil,
+          :proxyHeader => String.t() | nil,
+          :requestPath => String.t() | nil,
+          :response => String.t() | nil
         }
 
   field(:host)

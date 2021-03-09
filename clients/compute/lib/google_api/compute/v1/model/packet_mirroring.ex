@@ -45,20 +45,20 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroring do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectorIlb => GoogleApi.Compute.V1.Model.PacketMirroringForwardingRuleInfo.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :enable => String.t(),
-          :filter => GoogleApi.Compute.V1.Model.PacketMirroringFilter.t(),
-          :id => String.t(),
-          :kind => String.t(),
+          :collectorIlb => GoogleApi.Compute.V1.Model.PacketMirroringForwardingRuleInfo.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :enable => String.t() | nil,
+          :filter => GoogleApi.Compute.V1.Model.PacketMirroringFilter.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
           :mirroredResources =>
-            GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfo.t(),
-          :name => String.t(),
-          :network => GoogleApi.Compute.V1.Model.PacketMirroringNetworkInfo.t(),
-          :priority => integer(),
-          :region => String.t(),
-          :selfLink => String.t()
+            GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfo.t() | nil,
+          :name => String.t() | nil,
+          :network => GoogleApi.Compute.V1.Model.PacketMirroringNetworkInfo.t() | nil,
+          :priority => integer() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:collectorIlb, as: GoogleApi.Compute.V1.Model.PacketMirroringForwardingRuleInfo)

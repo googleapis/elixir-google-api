@@ -39,14 +39,14 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectOutageNotification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :affectedCircuits => list(String.t()),
-          :description => String.t(),
-          :endTime => String.t(),
-          :issueType => String.t(),
-          :name => String.t(),
-          :source => String.t(),
-          :startTime => String.t(),
-          :state => String.t()
+          :affectedCircuits => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :endTime => String.t() | nil,
+          :issueType => String.t() | nil,
+          :name => String.t() | nil,
+          :source => String.t() | nil,
+          :startTime => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:affectedCircuits, type: :list)

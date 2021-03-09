@@ -37,15 +37,15 @@ defmodule GoogleApi.Compute.V1.Model.LicenseCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :licenseAlias => list(GoogleApi.Compute.V1.Model.LicenseCodeLicenseAlias.t()),
-          :name => String.t(),
-          :selfLink => String.t(),
-          :state => String.t(),
-          :transferable => boolean()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :licenseAlias => list(GoogleApi.Compute.V1.Model.LicenseCodeLicenseAlias.t()) | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :state => String.t() | nil,
+          :transferable => boolean() | nil
         }
 
   field(:creationTimestamp)

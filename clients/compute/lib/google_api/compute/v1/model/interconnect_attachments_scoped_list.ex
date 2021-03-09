@@ -28,8 +28,10 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interconnectAttachments => list(GoogleApi.Compute.V1.Model.InterconnectAttachment.t()),
-          :warning => GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning.t()
+          :interconnectAttachments =>
+            list(GoogleApi.Compute.V1.Model.InterconnectAttachment.t()) | nil,
+          :warning =>
+            GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning.t() | nil
         }
 
   field(:interconnectAttachments,

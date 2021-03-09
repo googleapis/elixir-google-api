@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.RouterList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.Router.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.RouterListWarning.t()
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.Router.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.RouterListWarning.t() | nil
         }
 
   field(:id)

@@ -39,10 +39,10 @@ defmodule GoogleApi.Compute.V1.Model.GRPCHealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :grpcServiceName => String.t(),
-          :port => integer(),
-          :portName => String.t(),
-          :portSpecification => String.t()
+          :grpcServiceName => String.t() | nil,
+          :port => integer() | nil,
+          :portName => String.t() | nil,
+          :portSpecification => String.t() | nil
         }
 
   field(:grpcServiceName)

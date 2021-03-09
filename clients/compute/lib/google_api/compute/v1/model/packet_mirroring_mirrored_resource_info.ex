@@ -36,10 +36,12 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfo do
 
   @type t :: %__MODULE__{
           :instances =>
-            list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoInstanceInfo.t()),
+            list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoInstanceInfo.t())
+            | nil,
           :subnetworks =>
-            list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoSubnetInfo.t()),
-          :tags => list(String.t())
+            list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoSubnetInfo.t())
+            | nil,
+          :tags => list(String.t()) | nil
         }
 
   field(:instances,

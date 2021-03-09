@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namespace => String.t(),
-          :service => String.t(),
-          :serviceDirectoryRegion => String.t()
+          :namespace => String.t() | nil,
+          :service => String.t() | nil,
+          :serviceDirectoryRegion => String.t() | nil
         }
 
   field(:namespace)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.NetworksAddPeeringRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoCreateRoutes => boolean(),
-          :name => String.t(),
-          :networkPeering => GoogleApi.Compute.V1.Model.NetworkPeering.t(),
-          :peerNetwork => String.t()
+          :autoCreateRoutes => boolean() | nil,
+          :name => String.t() | nil,
+          :networkPeering => GoogleApi.Compute.V1.Model.NetworkPeering.t() | nil,
+          :peerNetwork => String.t() | nil
         }
 
   field(:autoCreateRoutes)

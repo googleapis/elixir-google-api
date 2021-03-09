@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworksSetPrivateIpGoogleAccessRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :privateIpGoogleAccess => boolean()
+          :privateIpGoogleAccess => boolean() | nil
         }
 
   field(:privateIpGoogleAccess)

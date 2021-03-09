@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean(),
-          :sampleRate => number()
+          :enable => boolean() | nil,
+          :sampleRate => number() | nil
         }
 
   field(:enable)

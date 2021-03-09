@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplateNodeTypeFlexibility do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpus => String.t(),
-          :localSsd => String.t(),
-          :memory => String.t()
+          :cpus => String.t() | nil,
+          :localSsd => String.t() | nil,
+          :memory => String.t() | nil
         }
 
   field(:cpus)

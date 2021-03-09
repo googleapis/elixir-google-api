@@ -68,18 +68,18 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :balancingMode => String.t(),
-          :capacityScaler => number(),
-          :description => String.t(),
-          :failover => boolean(),
-          :group => String.t(),
-          :maxConnections => integer(),
-          :maxConnectionsPerEndpoint => integer(),
-          :maxConnectionsPerInstance => integer(),
-          :maxRate => integer(),
-          :maxRatePerEndpoint => number(),
-          :maxRatePerInstance => number(),
-          :maxUtilization => number()
+          :balancingMode => String.t() | nil,
+          :capacityScaler => number() | nil,
+          :description => String.t() | nil,
+          :failover => boolean() | nil,
+          :group => String.t() | nil,
+          :maxConnections => integer() | nil,
+          :maxConnectionsPerEndpoint => integer() | nil,
+          :maxConnectionsPerInstance => integer() | nil,
+          :maxRate => integer() | nil,
+          :maxRatePerEndpoint => number() | nil,
+          :maxRatePerInstance => number() | nil,
+          :maxUtilization => number() | nil
         }
 
   field(:balancingMode)

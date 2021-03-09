@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.LicenseResourceCommitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => String.t(),
-          :coresPerLicense => String.t(),
-          :license => String.t()
+          :amount => String.t() | nil,
+          :coresPerLicense => String.t() | nil,
+          :license => String.t() | nil
         }
 
   field(:amount)

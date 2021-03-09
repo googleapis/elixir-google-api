@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainStatus => map(),
-          :domains => list(String.t()),
-          :status => String.t()
+          :domainStatus => map() | nil,
+          :domains => list(String.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:domainStatus, type: :map)

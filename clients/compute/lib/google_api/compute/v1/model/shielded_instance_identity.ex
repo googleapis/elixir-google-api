@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceIdentity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptionKey => GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t(),
-          :kind => String.t(),
-          :signingKey => GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t()
+          :encryptionKey => GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t() | nil,
+          :kind => String.t() | nil,
+          :signingKey => GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t() | nil
         }
 
   field(:encryptionKey, as: GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry)

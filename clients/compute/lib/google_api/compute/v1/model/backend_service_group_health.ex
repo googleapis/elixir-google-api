@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceGroupHealth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :healthStatus => list(GoogleApi.Compute.V1.Model.HealthStatus.t()),
-          :kind => String.t()
+          :annotations => map() | nil,
+          :healthStatus => list(GoogleApi.Compute.V1.Model.HealthStatus.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:annotations, type: :map)

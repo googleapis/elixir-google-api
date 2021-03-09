@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.LocalDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskCount => integer(),
-          :diskSizeGb => integer(),
-          :diskType => String.t()
+          :diskCount => integer() | nil,
+          :diskSizeGb => integer() | nil,
+          :diskType => String.t() | nil
         }
 
   field(:diskCount)

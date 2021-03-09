@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerListWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.Compute.V1.Model.InstanceGroupManagerListWarningData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data => list(GoogleApi.Compute.V1.Model.InstanceGroupManagerListWarningData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

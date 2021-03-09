@@ -30,11 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :peerExternalGateway => String.t(),
-          :peerGcpGateway => String.t(),
+          :peerExternalGateway => String.t() | nil,
+          :peerGcpGateway => String.t() | nil,
           :state =>
-            GoogleApi.Compute.V1.Model.VpnGatewayStatusHighAvailabilityRequirementState.t(),
-          :tunnels => list(GoogleApi.Compute.V1.Model.VpnGatewayStatusTunnel.t())
+            GoogleApi.Compute.V1.Model.VpnGatewayStatusHighAvailabilityRequirementState.t() | nil,
+          :tunnels => list(GoogleApi.Compute.V1.Model.VpnGatewayStatusTunnel.t()) | nil
         }
 
   field(:peerExternalGateway)

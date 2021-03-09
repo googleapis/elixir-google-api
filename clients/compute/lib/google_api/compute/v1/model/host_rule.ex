@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.HostRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :hosts => list(String.t()),
-          :pathMatcher => String.t()
+          :description => String.t() | nil,
+          :hosts => list(String.t()) | nil,
+          :pathMatcher => String.t() | nil
         }
 
   field(:description)

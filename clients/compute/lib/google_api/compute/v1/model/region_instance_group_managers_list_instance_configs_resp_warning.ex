@@ -30,12 +30,13 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersListInstanceConf
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
+          :code => String.t() | nil,
           :data =>
             list(
               GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersListInstanceConfigsRespWarningData.t()
-            ),
-          :message => String.t()
+            )
+            | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

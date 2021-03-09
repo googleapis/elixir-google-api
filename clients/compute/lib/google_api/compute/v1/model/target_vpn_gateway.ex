@@ -39,17 +39,17 @@ defmodule GoogleApi.Compute.V1.Model.TargetVpnGateway do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :forwardingRules => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :tunnels => list(String.t())
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :forwardingRules => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :tunnels => list(String.t()) | nil
         }
 
   field(:creationTimestamp)

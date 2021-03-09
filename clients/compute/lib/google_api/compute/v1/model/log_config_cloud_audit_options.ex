@@ -29,8 +29,8 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
 
   @type t :: %__MODULE__{
           :authorizationLoggingOptions =>
-            GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t(),
-          :logName => String.t()
+            GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t() | nil,
+          :logName => String.t() | nil
         }
 
   field(:authorizationLoggingOptions, as: GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions)

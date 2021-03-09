@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maintenanceDuration => GoogleApi.Compute.V1.Model.Duration.t(),
-          :startTime => String.t()
+          :maintenanceDuration => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:maintenanceDuration, as: GoogleApi.Compute.V1.Model.Duration)

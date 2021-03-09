@@ -66,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   @spec compute_vpn_tunnels_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnTunnelAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_tunnels_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -135,7 +136,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_tunnels_delete(
         connection,
         project,
@@ -203,7 +207,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.VpnTunnel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.VpnTunnel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_tunnels_get(
         connection,
         project,
@@ -274,7 +281,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_tunnels_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -344,6 +354,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   @spec compute_vpn_tunnels_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnTunnelList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_tunnels_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

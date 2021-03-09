@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ImageRawDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerType => String.t(),
-          :sha1Checksum => String.t(),
-          :source => String.t()
+          :containerType => String.t() | nil,
+          :sha1Checksum => String.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:containerType)

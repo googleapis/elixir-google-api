@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.PacketMirroringAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_packet_mirrorings_aggregated_list(
         connection,
@@ -147,7 +148,10 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_packet_mirrorings_delete(
         connection,
         project,
@@ -217,6 +221,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.PacketMirroring.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_packet_mirrorings_get(
         connection,
@@ -288,7 +293,10 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_packet_mirrorings_insert(
         connection,
         project,
@@ -370,6 +378,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.PacketMirroringList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_packet_mirrorings_list(
         connection,
@@ -446,7 +455,10 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_packet_mirrorings_patch(
         connection,
         project,
@@ -518,6 +530,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_packet_mirrorings_test_iam_permissions(
         connection,

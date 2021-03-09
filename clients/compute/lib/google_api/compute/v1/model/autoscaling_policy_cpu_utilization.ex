@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :utilizationTarget => float()
+          :utilizationTarget => float() | nil
         }
 
   field(:utilizationTarget)

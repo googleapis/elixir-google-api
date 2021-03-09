@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersPatchPerInstanceConfig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :perInstanceConfigs => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t())
+          :perInstanceConfigs => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t()) | nil
         }
 
   field(:perInstanceConfigs, as: GoogleApi.Compute.V1.Model.PerInstanceConfig, type: :list)

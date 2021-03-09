@@ -33,15 +33,14 @@ defmodule GoogleApi.Compute.V1.Model.CommitmentAggregatedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => %{
-            optional(String.t()) => GoogleApi.Compute.V1.Model.CommitmentsScopedList.t()
-          },
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :unreachables => list(String.t()),
-          :warning => GoogleApi.Compute.V1.Model.CommitmentAggregatedListWarning.t()
+          :id => String.t() | nil,
+          :items =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.CommitmentsScopedList.t()} | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :unreachables => list(String.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.CommitmentAggregatedListWarning.t() | nil
         }
 
   field(:id)

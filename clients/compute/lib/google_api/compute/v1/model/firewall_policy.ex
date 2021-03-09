@@ -41,19 +41,19 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :associations => list(GoogleApi.Compute.V1.Model.FirewallPolicyAssociation.t()),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :ruleTupleCount => integer(),
-          :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()),
-          :selfLink => String.t(),
-          :selfLinkWithId => String.t()
+          :associations => list(GoogleApi.Compute.V1.Model.FirewallPolicyAssociation.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :ruleTupleCount => integer() | nil,
+          :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
+          :selfLink => String.t() | nil,
+          :selfLinkWithId => String.t() | nil
         }
 
   field(:associations, as: GoogleApi.Compute.V1.Model.FirewallPolicyAssociation, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPoliciesWafConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :wafRules => GoogleApi.Compute.V1.Model.PreconfiguredWafSet.t()
+          :wafRules => GoogleApi.Compute.V1.Model.PreconfiguredWafSet.t() | nil
         }
 
   field(:wafRules, as: GoogleApi.Compute.V1.Model.PreconfiguredWafSet)

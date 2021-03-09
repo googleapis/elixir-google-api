@@ -47,17 +47,17 @@ defmodule GoogleApi.Compute.V1.Model.DiskType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :defaultDiskSizeGb => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :validDiskSize => String.t(),
-          :zone => String.t()
+          :creationTimestamp => String.t() | nil,
+          :defaultDiskSizeGb => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :validDiskSize => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:creationTimestamp)

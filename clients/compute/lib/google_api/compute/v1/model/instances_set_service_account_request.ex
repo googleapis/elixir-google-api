@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.InstancesSetServiceAccountRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :scopes => list(String.t())
+          :email => String.t() | nil,
+          :scopes => list(String.t()) | nil
         }
 
   field(:email)

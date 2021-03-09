@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableIntegrityMonitoring => boolean(),
-          :enableSecureBoot => boolean(),
-          :enableVtpm => boolean()
+          :enableIntegrityMonitoring => boolean() | nil,
+          :enableSecureBoot => boolean() | nil,
+          :enableVtpm => boolean() | nil
         }
 
   field(:enableIntegrityMonitoring)

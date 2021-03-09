@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ReservationsResizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :specificSkuCount => String.t()
+          :specificSkuCount => String.t() | nil
         }
 
   field(:specificSkuCount)

@@ -70,21 +70,21 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :defaultRouteAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
-          :defaultService => String.t(),
-          :defaultUrlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
-          :hostRules => list(GoogleApi.Compute.V1.Model.HostRule.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :pathMatchers => list(GoogleApi.Compute.V1.Model.PathMatcher.t()),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :tests => list(GoogleApi.Compute.V1.Model.UrlMapTest.t())
+          :creationTimestamp => String.t() | nil,
+          :defaultRouteAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t() | nil,
+          :defaultService => String.t() | nil,
+          :defaultUrlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t() | nil,
+          :hostRules => list(GoogleApi.Compute.V1.Model.HostRule.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :pathMatchers => list(GoogleApi.Compute.V1.Model.PathMatcher.t()) | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :tests => list(GoogleApi.Compute.V1.Model.UrlMapTest.t()) | nil
         }
 
   field(:creationTimestamp)

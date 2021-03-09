@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestHeadersToAdd => list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t()),
-          :requestHeadersToRemove => list(String.t()),
-          :responseHeadersToAdd => list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t()),
-          :responseHeadersToRemove => list(String.t())
+          :requestHeadersToAdd => list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t()) | nil,
+          :requestHeadersToRemove => list(String.t()) | nil,
+          :responseHeadersToAdd => list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t()) | nil,
+          :responseHeadersToRemove => list(String.t()) | nil
         }
 
   field(:requestHeadersToAdd, as: GoogleApi.Compute.V1.Model.HttpHeaderOption, type: :list)

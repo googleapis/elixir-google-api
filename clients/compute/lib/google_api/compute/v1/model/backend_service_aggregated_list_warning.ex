@@ -30,9 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarningData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data =>
+            list(GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarningData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

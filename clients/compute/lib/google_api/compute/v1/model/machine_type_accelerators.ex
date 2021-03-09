@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.MachineTypeAccelerators do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :guestAcceleratorCount => integer(),
-          :guestAcceleratorType => String.t()
+          :guestAcceleratorCount => integer() | nil,
+          :guestAcceleratorType => String.t() | nil
         }
 
   field(:guestAcceleratorCount)

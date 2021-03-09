@@ -49,7 +49,10 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   *   `{:error, info}` on failure
   """
   @spec compute_regions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Region.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Region.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_regions_get(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -116,6 +119,7 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   @spec compute_regions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_regions_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

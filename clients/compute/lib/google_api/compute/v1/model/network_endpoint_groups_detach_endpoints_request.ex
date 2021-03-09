@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsDetachEndpointsRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :networkEndpoints => list(GoogleApi.Compute.V1.Model.NetworkEndpoint.t())
+          :networkEndpoints => list(GoogleApi.Compute.V1.Model.NetworkEndpoint.t()) | nil
         }
 
   field(:networkEndpoints, as: GoogleApi.Compute.V1.Model.NetworkEndpoint, type: :list)

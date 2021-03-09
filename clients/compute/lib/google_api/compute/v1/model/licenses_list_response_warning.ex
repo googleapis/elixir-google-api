@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.LicensesListResponseWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.Compute.V1.Model.LicensesListResponseWarningData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data => list(GoogleApi.Compute.V1.Model.LicensesListResponseWarningData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.InitialStateConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dbs => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()),
-          :dbxs => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()),
-          :keks => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()),
-          :pk => GoogleApi.Compute.V1.Model.FileContentBuffer.t()
+          :dbs => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()) | nil,
+          :dbxs => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()) | nil,
+          :keks => list(GoogleApi.Compute.V1.Model.FileContentBuffer.t()) | nil,
+          :pk => GoogleApi.Compute.V1.Model.FileContentBuffer.t() | nil
         }
 
   field(:dbs, as: GoogleApi.Compute.V1.Model.FileContentBuffer, type: :list)

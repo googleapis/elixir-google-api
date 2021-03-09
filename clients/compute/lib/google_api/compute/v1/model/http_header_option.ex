@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderOption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headerName => String.t(),
-          :headerValue => String.t(),
-          :replace => boolean()
+          :headerName => String.t() | nil,
+          :headerValue => String.t() | nil,
+          :replace => boolean() | nil
         }
 
   field(:headerName)

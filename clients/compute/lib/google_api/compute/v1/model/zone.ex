@@ -39,17 +39,17 @@ defmodule GoogleApi.Compute.V1.Model.Zone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableCpuPlatforms => list(String.t()),
-          :creationTimestamp => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :supportsPzs => boolean()
+          :availableCpuPlatforms => list(String.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :supportsPzs => boolean() | nil
         }
 
   field(:availableCpuPlatforms, type: :list)

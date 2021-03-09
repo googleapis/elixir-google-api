@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SslPoliciesListAvailableFeaturesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :features => list(String.t())
+          :features => list(String.t()) | nil
         }
 
   field(:features, type: :list)

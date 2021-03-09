@@ -38,14 +38,14 @@ defmodule GoogleApi.Compute.V1.Model.NotificationEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :grpcSettings => GoogleApi.Compute.V1.Model.NotificationEndpointGrpcSettings.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :selfLink => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :grpcSettings => GoogleApi.Compute.V1.Model.NotificationEndpointGrpcSettings.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:creationTimestamp)

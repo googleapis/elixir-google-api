@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.PerInstanceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :preservedState => GoogleApi.Compute.V1.Model.PreservedState.t(),
-          :status => String.t()
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :preservedState => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:fingerprint)

@@ -40,18 +40,18 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bgp => GoogleApi.Compute.V1.Model.RouterBgp.t(),
-          :bgpPeers => list(GoogleApi.Compute.V1.Model.RouterBgpPeer.t()),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :interfaces => list(GoogleApi.Compute.V1.Model.RouterInterface.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :nats => list(GoogleApi.Compute.V1.Model.RouterNat.t()),
-          :network => String.t(),
-          :region => String.t(),
-          :selfLink => String.t()
+          :bgp => GoogleApi.Compute.V1.Model.RouterBgp.t() | nil,
+          :bgpPeers => list(GoogleApi.Compute.V1.Model.RouterBgpPeer.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :interfaces => list(GoogleApi.Compute.V1.Model.RouterInterface.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :nats => list(GoogleApi.Compute.V1.Model.RouterNat.t()) | nil,
+          :network => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:bgp, as: GoogleApi.Compute.V1.Model.RouterBgp)

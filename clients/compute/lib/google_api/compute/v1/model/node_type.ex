@@ -40,18 +40,18 @@ defmodule GoogleApi.Compute.V1.Model.NodeType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuPlatform => String.t(),
-          :creationTimestamp => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :guestCpus => integer(),
-          :id => String.t(),
-          :kind => String.t(),
-          :localSsdGb => integer(),
-          :memoryMb => integer(),
-          :name => String.t(),
-          :selfLink => String.t(),
-          :zone => String.t()
+          :cpuPlatform => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :guestCpus => integer() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :localSsdGb => integer() | nil,
+          :memoryMb => integer() | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:cpuPlatform)

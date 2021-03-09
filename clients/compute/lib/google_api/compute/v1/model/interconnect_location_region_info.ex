@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expectedRttMs => String.t(),
-          :locationPresence => String.t(),
-          :region => String.t()
+          :expectedRttMs => String.t() | nil,
+          :locationPresence => String.t() | nil,
+          :region => String.t() | nil
         }
 
   field(:expectedRttMs)

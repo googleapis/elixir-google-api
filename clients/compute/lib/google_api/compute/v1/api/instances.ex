@@ -61,7 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_bulk_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -131,6 +134,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   @spec compute_instances_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -198,6 +202,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_test_iam_permissions(
         connection,
@@ -274,7 +279,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_reset(
         connection,
         project,
@@ -348,7 +356,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_service_account(
         connection,
         project,
@@ -423,7 +434,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_tags(
         connection,
         project,
@@ -498,7 +512,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_update_shielded_instance_config(
         connection,
         project,
@@ -575,7 +592,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_stop(
         connection,
         project,
@@ -651,7 +671,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_add_access_config(
         connection,
         project,
@@ -722,7 +745,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_simulate_maintenance_event(
         connection,
         project,
@@ -792,7 +818,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_iam_policy(
         connection,
         project,
@@ -866,7 +896,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_start_with_encryption_key(
         connection,
         project,
@@ -944,7 +977,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_machine_resources(
         connection,
         project,
@@ -1022,7 +1058,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_labels(
         connection,
         project,
@@ -1091,7 +1130,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Instance.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Instance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_get(
         connection,
         project,
@@ -1164,7 +1206,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_scheduling(
         connection,
         project,
@@ -1241,7 +1286,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_update(
         connection,
         project,
@@ -1317,7 +1365,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_delete(
         connection,
         project,
@@ -1392,7 +1443,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_detach_disk(
         connection,
         project,
@@ -1468,7 +1522,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_min_cpu_platform(
         connection,
         project,
@@ -1545,7 +1602,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_update_access_config(
         connection,
         project,
@@ -1619,7 +1679,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_get_iam_policy(
         connection,
         project,
@@ -1691,6 +1755,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.GuestAttributes.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_get_guest_attributes(
         connection,
@@ -1772,7 +1837,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_delete_access_config(
         connection,
         project,
@@ -1853,7 +1921,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_remove_resource_policies(
         connection,
         project,
@@ -1931,7 +2002,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_update_display_device(
         connection,
         project,
@@ -2009,7 +2083,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_metadata(
         connection,
         project,
@@ -2080,6 +2157,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ShieldedInstanceIdentity.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_get_shielded_instance_identity(
         connection,
@@ -2152,6 +2230,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.Screenshot.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_get_screenshot(
         connection,
@@ -2224,7 +2303,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_start(
         connection,
         project,
@@ -2298,7 +2380,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_deletion_protection(
         connection,
         project,
@@ -2376,7 +2461,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_add_resource_policies(
         connection,
         project,
@@ -2452,6 +2540,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_get_effective_firewalls(
         connection,
@@ -2543,6 +2632,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceListReferrers.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_list_referrers(
         connection,
@@ -2622,7 +2712,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_attach_disk(
         connection,
         project,
@@ -2698,7 +2791,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_machine_type(
         connection,
         project,
@@ -2771,7 +2867,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec compute_instances_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2839,7 +2938,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_shielded_instance_integrity_policy(
         connection,
         project,
@@ -2919,7 +3021,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_update_network_interface(
         connection,
         project,
@@ -3002,7 +3107,10 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_instances_set_disk_auto_delete(
         connection,
         project,
@@ -3082,6 +3190,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SerialPortOutput.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_get_serial_port_output(
         connection,
@@ -3160,6 +3269,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   @spec compute_instances_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_instances_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

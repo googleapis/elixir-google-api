@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineTypeScratchDisks do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskGb => integer()
+          :diskGb => integer() | nil
         }
 
   field(:diskGb)

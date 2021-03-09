@@ -37,17 +37,17 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoCreateRoutes => boolean(),
-          :exchangeSubnetRoutes => boolean(),
-          :exportCustomRoutes => boolean(),
-          :exportSubnetRoutesWithPublicIp => boolean(),
-          :importCustomRoutes => boolean(),
-          :importSubnetRoutesWithPublicIp => boolean(),
-          :name => String.t(),
-          :network => String.t(),
-          :peerMtu => integer(),
-          :state => String.t(),
-          :stateDetails => String.t()
+          :autoCreateRoutes => boolean() | nil,
+          :exchangeSubnetRoutes => boolean() | nil,
+          :exportCustomRoutes => boolean() | nil,
+          :exportSubnetRoutesWithPublicIp => boolean() | nil,
+          :importCustomRoutes => boolean() | nil,
+          :importSubnetRoutesWithPublicIp => boolean() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :peerMtu => integer() | nil,
+          :state => String.t() | nil,
+          :stateDetails => String.t() | nil
         }
 
   field(:autoCreateRoutes)

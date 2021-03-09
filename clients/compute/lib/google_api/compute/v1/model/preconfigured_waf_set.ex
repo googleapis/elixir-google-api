@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.PreconfiguredWafSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expressionSets => list(GoogleApi.Compute.V1.Model.WafExpressionSet.t())
+          :expressionSets => list(GoogleApi.Compute.V1.Model.WafExpressionSet.t()) | nil
         }
 
   field(:expressionSets, as: GoogleApi.Compute.V1.Model.WafExpressionSet, type: :list)

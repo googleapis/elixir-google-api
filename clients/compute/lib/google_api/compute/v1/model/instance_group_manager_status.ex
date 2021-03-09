@@ -30,10 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscaler => String.t(),
-          :isStable => boolean(),
-          :stateful => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t(),
-          :versionTarget => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t()
+          :autoscaler => String.t() | nil,
+          :isStable => boolean() | nil,
+          :stateful => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t() | nil,
+          :versionTarget =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t() | nil
         }
 
   field(:autoscaler)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectCircuitInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerDemarcId => String.t(),
-          :googleCircuitId => String.t(),
-          :googleDemarcId => String.t()
+          :customerDemarcId => String.t() | nil,
+          :googleCircuitId => String.t() | nil,
+          :googleDemarcId => String.t() | nil
         }
 
   field(:customerDemarcId)

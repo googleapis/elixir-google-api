@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetTcpProxiesSetBackendServiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => String.t()
+          :service => String.t() | nil
         }
 
   field(:service)

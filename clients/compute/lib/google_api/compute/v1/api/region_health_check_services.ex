@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_health_check_services_delete(
         connection,
         project,
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.HealthCheckService.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_health_check_services_get(
         connection,
@@ -211,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_health_check_services_insert(
         connection,
         project,
@@ -293,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.HealthCheckServicesList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_health_check_services_list(
         connection,
@@ -369,7 +377,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_health_check_services_patch(
         connection,
         project,

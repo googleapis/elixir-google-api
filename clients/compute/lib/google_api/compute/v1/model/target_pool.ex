@@ -51,18 +51,18 @@ defmodule GoogleApi.Compute.V1.Model.TargetPool do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupPool => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :failoverRatio => number(),
-          :healthChecks => list(String.t()),
-          :id => String.t(),
-          :instances => list(String.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :sessionAffinity => String.t()
+          :backupPool => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :failoverRatio => number() | nil,
+          :healthChecks => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :instances => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :sessionAffinity => String.t() | nil
         }
 
   field(:backupPool)

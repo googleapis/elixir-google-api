@@ -47,19 +47,19 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :IPv4Range => String.t(),
-          :autoCreateSubnetworks => boolean(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :gatewayIPv4 => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :mtu => integer(),
-          :name => String.t(),
-          :peerings => list(GoogleApi.Compute.V1.Model.NetworkPeering.t()),
-          :routingConfig => GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t(),
-          :selfLink => String.t(),
-          :subnetworks => list(String.t())
+          :IPv4Range => String.t() | nil,
+          :autoCreateSubnetworks => boolean() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :gatewayIPv4 => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :mtu => integer() | nil,
+          :name => String.t() | nil,
+          :peerings => list(GoogleApi.Compute.V1.Model.NetworkPeering.t()) | nil,
+          :routingConfig => GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t() | nil,
+          :selfLink => String.t() | nil,
+          :subnetworks => list(String.t()) | nil
         }
 
   field(:IPv4Range)

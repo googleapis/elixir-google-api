@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableConfidentialCompute => boolean()
+          :enableConfidentialCompute => boolean() | nil
         }
 
   field(:enableConfidentialCompute)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.NamedPort do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :port => integer()
+          :name => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:name)

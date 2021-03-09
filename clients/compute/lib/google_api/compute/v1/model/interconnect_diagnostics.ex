@@ -29,9 +29,10 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnostics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arpCaches => list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t()),
-          :links => list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus.t()),
-          :macAddress => String.t()
+          :arpCaches =>
+            list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t()) | nil,
+          :links => list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus.t()) | nil,
+          :macAddress => String.t() | nil
         }
 
   field(:arpCaches, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry, type: :list)

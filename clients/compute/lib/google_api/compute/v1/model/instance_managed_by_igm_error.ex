@@ -29,10 +29,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceManagedByIgmError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorManagedInstanceError.t(),
+          :error =>
+            GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorManagedInstanceError.t() | nil,
           :instanceActionDetails =>
-            GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorInstanceActionDetails.t(),
-          :timestamp => String.t()
+            GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorInstanceActionDetails.t() | nil,
+          :timestamp => String.t() | nil
         }
 
   field(:error, as: GoogleApi.Compute.V1.Model.InstanceManagedByIgmErrorManagedInstanceError)

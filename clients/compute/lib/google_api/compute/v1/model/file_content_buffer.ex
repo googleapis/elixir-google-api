@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.FileContentBuffer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :fileType => String.t()
+          :content => String.t() | nil,
+          :fileType => String.t() | nil
         }
 
   field(:content)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesSetMinCpuPlatformRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minCpuPlatform => String.t()
+          :minCpuPlatform => String.t() | nil
         }
 
   field(:minCpuPlatform)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ProjectsDisableXpnResourceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :xpnResource => GoogleApi.Compute.V1.Model.XpnResourceId.t()
+          :xpnResource => GoogleApi.Compute.V1.Model.XpnResourceId.t() | nil
         }
 
   field(:xpnResource, as: GoogleApi.Compute.V1.Model.XpnResourceId)

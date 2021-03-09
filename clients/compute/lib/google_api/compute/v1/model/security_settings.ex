@@ -34,8 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.SecuritySettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientTlsPolicy => String.t(),
-          :subjectAltNames => list(String.t())
+          :clientTlsPolicy => String.t() | nil,
+          :subjectAltNames => list(String.t()) | nil
         }
 
   field(:clientTlsPolicy)

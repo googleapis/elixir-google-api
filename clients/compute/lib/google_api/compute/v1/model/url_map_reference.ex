@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :urlMap => String.t()
+          :urlMap => String.t() | nil
         }
 
   field(:urlMap)

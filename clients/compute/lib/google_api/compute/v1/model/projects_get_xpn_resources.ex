@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ProjectsGetXpnResources do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Compute.V1.Model.XpnResourceId.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Compute.V1.Model.XpnResourceId.t()) | nil
         }
 
   field(:kind)

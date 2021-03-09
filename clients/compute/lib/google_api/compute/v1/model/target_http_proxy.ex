@@ -50,16 +50,16 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpProxy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :proxyBind => boolean(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :urlMap => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :proxyBind => boolean() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :urlMap => String.t() | nil
         }
 
   field(:creationTimestamp)

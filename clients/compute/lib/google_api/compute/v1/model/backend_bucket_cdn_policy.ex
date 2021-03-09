@@ -38,12 +38,12 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheMode => String.t(),
-          :clientTtl => integer(),
-          :defaultTtl => integer(),
-          :maxTtl => integer(),
-          :signedUrlCacheMaxAgeSec => String.t(),
-          :signedUrlKeyNames => list(String.t())
+          :cacheMode => String.t() | nil,
+          :clientTtl => integer() | nil,
+          :defaultTtl => integer() | nil,
+          :maxTtl => integer() | nil,
+          :signedUrlCacheMaxAgeSec => String.t() | nil,
+          :signedUrlKeyNames => list(String.t()) | nil
         }
 
   field(:cacheMode)

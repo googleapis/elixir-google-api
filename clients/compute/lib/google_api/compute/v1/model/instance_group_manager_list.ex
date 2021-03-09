@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.InstanceGroupManager.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.InstanceGroupManagerListWarning.t()
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.InstanceGroupManager.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.InstanceGroupManagerListWarning.t() | nil
         }
 
   field(:id)

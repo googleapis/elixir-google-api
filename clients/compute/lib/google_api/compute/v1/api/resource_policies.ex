@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_resource_policies_aggregated_list(
         connection,
@@ -147,7 +148,10 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_resource_policies_delete(
         connection,
         project,
@@ -217,6 +221,7 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ResourcePolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_resource_policies_get(
         connection,
@@ -284,7 +289,11 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_resource_policies_get_iam_policy(
         connection,
         project,
@@ -359,7 +368,10 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_resource_policies_insert(
         connection,
         project,
@@ -441,6 +453,7 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ResourcePolicyList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_resource_policies_list(
         connection,
@@ -511,7 +524,11 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_resource_policies_set_iam_policy(
         connection,
         project,
@@ -585,6 +602,7 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_resource_policies_test_iam_permissions(
         connection,

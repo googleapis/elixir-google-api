@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :description => String.t(),
-          :kind => String.t(),
-          :match => GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher.t(),
-          :preview => boolean(),
-          :priority => integer()
+          :action => String.t() | nil,
+          :description => String.t() | nil,
+          :kind => String.t() | nil,
+          :match => GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher.t() | nil,
+          :preview => boolean() | nil,
+          :priority => integer() | nil
         }
 
   field(:action)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxiesSetSslCertificatesRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sslCertificates => list(String.t())
+          :sslCertificates => list(String.t()) | nil
         }
 
   field(:sslCertificates, type: :list)

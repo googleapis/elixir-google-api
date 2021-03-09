@@ -43,13 +43,14 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :corsPolicy => GoogleApi.Compute.V1.Model.CorsPolicy.t(),
-          :faultInjectionPolicy => GoogleApi.Compute.V1.Model.HttpFaultInjection.t(),
-          :requestMirrorPolicy => GoogleApi.Compute.V1.Model.RequestMirrorPolicy.t(),
-          :retryPolicy => GoogleApi.Compute.V1.Model.HttpRetryPolicy.t(),
-          :timeout => GoogleApi.Compute.V1.Model.Duration.t(),
-          :urlRewrite => GoogleApi.Compute.V1.Model.UrlRewrite.t(),
-          :weightedBackendServices => list(GoogleApi.Compute.V1.Model.WeightedBackendService.t())
+          :corsPolicy => GoogleApi.Compute.V1.Model.CorsPolicy.t() | nil,
+          :faultInjectionPolicy => GoogleApi.Compute.V1.Model.HttpFaultInjection.t() | nil,
+          :requestMirrorPolicy => GoogleApi.Compute.V1.Model.RequestMirrorPolicy.t() | nil,
+          :retryPolicy => GoogleApi.Compute.V1.Model.HttpRetryPolicy.t() | nil,
+          :timeout => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :urlRewrite => GoogleApi.Compute.V1.Model.UrlRewrite.t() | nil,
+          :weightedBackendServices =>
+            list(GoogleApi.Compute.V1.Model.WeightedBackendService.t()) | nil
         }
 
   field(:corsPolicy, as: GoogleApi.Compute.V1.Model.CorsPolicy)

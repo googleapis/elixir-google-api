@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalersScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalers => list(GoogleApi.Compute.V1.Model.Autoscaler.t()),
-          :warning => GoogleApi.Compute.V1.Model.AutoscalersScopedListWarning.t()
+          :autoscalers => list(GoogleApi.Compute.V1.Model.Autoscaler.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.AutoscalersScopedListWarning.t() | nil
         }
 
   field(:autoscalers, as: GoogleApi.Compute.V1.Model.Autoscaler, type: :list)

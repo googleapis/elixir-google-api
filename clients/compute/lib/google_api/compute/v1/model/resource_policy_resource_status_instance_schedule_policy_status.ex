@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyResourceStatusInstanceSchedul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastRunStartTime => String.t(),
-          :nextRunStartTime => String.t()
+          :lastRunStartTime => String.t() | nil,
+          :nextRunStartTime => String.t() | nil
         }
 
   field(:lastRunStartTime)

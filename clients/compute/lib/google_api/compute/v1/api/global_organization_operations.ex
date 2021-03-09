@@ -53,7 +53,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOrganizationOperations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def compute_global_organization_operations_delete(
         connection,
         operation,
@@ -114,7 +114,10 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOrganizationOperations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_global_organization_operations_get(
         connection,
         operation,
@@ -186,6 +189,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOrganizationOperations do
   @spec compute_global_organization_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.OperationList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_global_organization_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

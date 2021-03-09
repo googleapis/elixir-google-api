@@ -33,13 +33,13 @@ defmodule GoogleApi.Compute.V1.Model.Rule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :conditions => list(GoogleApi.Compute.V1.Model.Condition.t()),
-          :description => String.t(),
-          :ins => list(String.t()),
-          :logConfigs => list(GoogleApi.Compute.V1.Model.LogConfig.t()),
-          :notIns => list(String.t()),
-          :permissions => list(String.t())
+          :action => String.t() | nil,
+          :conditions => list(GoogleApi.Compute.V1.Model.Condition.t()) | nil,
+          :description => String.t() | nil,
+          :ins => list(String.t()) | nil,
+          :logConfigs => list(GoogleApi.Compute.V1.Model.LogConfig.t()) | nil,
+          :notIns => list(String.t()) | nil,
+          :permissions => list(String.t()) | nil
         }
 
   field(:action)

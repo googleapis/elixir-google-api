@@ -31,9 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableConnectionDrainOnFailover => boolean(),
-          :dropTrafficIfUnhealthy => boolean(),
-          :failoverRatio => number()
+          :disableConnectionDrainOnFailover => boolean() | nil,
+          :dropTrafficIfUnhealthy => boolean() | nil,
+          :failoverRatio => number() | nil
         }
 
   field(:disableConnectionDrainOnFailover)

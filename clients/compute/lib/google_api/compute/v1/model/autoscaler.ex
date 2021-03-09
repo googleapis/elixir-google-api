@@ -55,19 +55,19 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalingPolicy => GoogleApi.Compute.V1.Model.AutoscalingPolicy.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :recommendedSize => integer(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :statusDetails => list(GoogleApi.Compute.V1.Model.AutoscalerStatusDetails.t()),
-          :target => String.t(),
-          :zone => String.t()
+          :autoscalingPolicy => GoogleApi.Compute.V1.Model.AutoscalingPolicy.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :recommendedSize => integer() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :statusDetails => list(GoogleApi.Compute.V1.Model.AutoscalerStatusDetails.t()) | nil,
+          :target => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:autoscalingPolicy, as: GoogleApi.Compute.V1.Model.AutoscalingPolicy)

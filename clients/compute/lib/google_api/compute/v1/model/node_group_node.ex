@@ -36,16 +36,16 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
-          :cpuOvercommitType => String.t(),
-          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()),
-          :instances => list(String.t()),
-          :name => String.t(),
-          :nodeType => String.t(),
-          :satisfiesPzs => boolean(),
-          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t(),
-          :serverId => String.t(),
-          :status => String.t()
+          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
+          :cpuOvercommitType => String.t() | nil,
+          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()) | nil,
+          :instances => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :nodeType => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
+          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t() | nil,
+          :serverId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

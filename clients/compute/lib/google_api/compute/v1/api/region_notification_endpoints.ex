@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_notification_endpoints_delete(
         connection,
         project,
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NotificationEndpoint.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_notification_endpoints_get(
         connection,
@@ -211,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_notification_endpoints_insert(
         connection,
         project,
@@ -293,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NotificationEndpointList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_notification_endpoints_list(
         connection,

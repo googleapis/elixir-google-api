@@ -41,16 +41,17 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiseMode => String.t(),
-          :advertisedGroups => list(String.t()),
-          :advertisedIpRanges => list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()),
-          :advertisedRoutePriority => integer(),
-          :interfaceName => String.t(),
-          :ipAddress => String.t(),
-          :managementType => String.t(),
-          :name => String.t(),
-          :peerAsn => integer(),
-          :peerIpAddress => String.t()
+          :advertiseMode => String.t() | nil,
+          :advertisedGroups => list(String.t()) | nil,
+          :advertisedIpRanges =>
+            list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()) | nil,
+          :advertisedRoutePriority => integer() | nil,
+          :interfaceName => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :managementType => String.t() | nil,
+          :name => String.t() | nil,
+          :peerAsn => integer() | nil,
+          :peerIpAddress => String.t() | nil
         }
 
   field(:advertiseMode)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersCreateInstancesRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t())
+          :instances => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t()) | nil
         }
 
   field(:instances, as: GoogleApi.Compute.V1.Model.PerInstanceConfig, type: :list)

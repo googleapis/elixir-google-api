@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourceCommitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorType => String.t(),
-          :amount => String.t(),
-          :type => String.t()
+          :acceleratorType => String.t() | nil,
+          :amount => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:acceleratorType)

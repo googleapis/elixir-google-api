@@ -40,15 +40,15 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :instance => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :natPolicy => String.t(),
-          :selfLink => String.t(),
-          :zone => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :instance => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :natPolicy => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:creationTimestamp)

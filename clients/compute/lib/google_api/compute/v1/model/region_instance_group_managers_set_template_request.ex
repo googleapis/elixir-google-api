@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersSetTemplateReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceTemplate => String.t()
+          :instanceTemplate => String.t() | nil
         }
 
   field(:instanceTemplate)

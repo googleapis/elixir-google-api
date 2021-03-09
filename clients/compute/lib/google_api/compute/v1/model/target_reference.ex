@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :target => String.t()
+          :target => String.t() | nil
         }
 
   field(:target)

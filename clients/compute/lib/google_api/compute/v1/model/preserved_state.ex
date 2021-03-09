@@ -28,10 +28,10 @@ defmodule GoogleApi.Compute.V1.Model.PreservedState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disks => %{
-            optional(String.t()) => GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk.t()
-          },
-          :metadata => map()
+          :disks =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk.t()}
+            | nil,
+          :metadata => map() | nil
         }
 
   field(:disks, as: GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk, type: :map)

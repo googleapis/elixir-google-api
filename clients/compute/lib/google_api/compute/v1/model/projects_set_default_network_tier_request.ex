@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ProjectsSetDefaultNetworkTierRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :networkTier => String.t()
+          :networkTier => String.t() | nil
         }
 
   field(:networkTier)

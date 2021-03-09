@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapsho
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chainName => String.t(),
-          :guestFlush => boolean(),
-          :labels => map(),
-          :storageLocations => list(String.t())
+          :chainName => String.t() | nil,
+          :guestFlush => boolean() | nil,
+          :labels => map() | nil,
+          :storageLocations => list(String.t()) | nil
         }
 
   field(:chainName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AddressesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addresses => list(GoogleApi.Compute.V1.Model.Address.t()),
-          :warning => GoogleApi.Compute.V1.Model.AddressesScopedListWarning.t()
+          :addresses => list(GoogleApi.Compute.V1.Model.Address.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.AddressesScopedListWarning.t() | nil
         }
 
   field(:addresses, as: GoogleApi.Compute.V1.Model.Address, type: :list)

@@ -52,25 +52,25 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowed => list(GoogleApi.Compute.V1.Model.FirewallAllowed.t()),
-          :creationTimestamp => String.t(),
-          :denied => list(GoogleApi.Compute.V1.Model.FirewallDenied.t()),
-          :description => String.t(),
-          :destinationRanges => list(String.t()),
-          :direction => String.t(),
-          :disabled => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :logConfig => GoogleApi.Compute.V1.Model.FirewallLogConfig.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :priority => integer(),
-          :selfLink => String.t(),
-          :sourceRanges => list(String.t()),
-          :sourceServiceAccounts => list(String.t()),
-          :sourceTags => list(String.t()),
-          :targetServiceAccounts => list(String.t()),
-          :targetTags => list(String.t())
+          :allowed => list(GoogleApi.Compute.V1.Model.FirewallAllowed.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :denied => list(GoogleApi.Compute.V1.Model.FirewallDenied.t()) | nil,
+          :description => String.t() | nil,
+          :destinationRanges => list(String.t()) | nil,
+          :direction => String.t() | nil,
+          :disabled => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :logConfig => GoogleApi.Compute.V1.Model.FirewallLogConfig.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :priority => integer() | nil,
+          :selfLink => String.t() | nil,
+          :sourceRanges => list(String.t()) | nil,
+          :sourceServiceAccounts => list(String.t()) | nil,
+          :sourceTags => list(String.t()) | nil,
+          :targetServiceAccounts => list(String.t()) | nil,
+          :targetTags => list(String.t()) | nil
         }
 
   field(:allowed, as: GoogleApi.Compute.V1.Model.FirewallAllowed, type: :list)

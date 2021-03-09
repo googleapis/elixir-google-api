@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => String.t()
+          :instance => String.t() | nil
         }
 
   field(:instance)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificatesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sslCertificates => list(GoogleApi.Compute.V1.Model.SslCertificate.t()),
-          :warning => GoogleApi.Compute.V1.Model.SslCertificatesScopedListWarning.t()
+          :sslCertificates => list(GoogleApi.Compute.V1.Model.SslCertificate.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.SslCertificatesScopedListWarning.t() | nil
         }
 
   field(:sslCertificates, as: GoogleApi.Compute.V1.Model.SslCertificate, type: :list)

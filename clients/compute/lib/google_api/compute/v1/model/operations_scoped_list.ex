@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.OperationsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operations => list(GoogleApi.Compute.V1.Model.Operation.t()),
-          :warning => GoogleApi.Compute.V1.Model.OperationsScopedListWarning.t()
+          :operations => list(GoogleApi.Compute.V1.Model.Operation.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.OperationsScopedListWarning.t() | nil
         }
 
   field(:operations, as: GoogleApi.Compute.V1.Model.Operation, type: :list)

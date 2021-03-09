@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.LicenseCodeLicenseAlias do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :selfLink => String.t()
+          :description => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:description)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworksExpandIpCidrRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t()
+          :ipCidrRange => String.t() | nil
         }
 
   field(:ipCidrRange)

@@ -37,14 +37,14 @@ defmodule GoogleApi.Compute.V1.Model.CorsPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowCredentials => boolean(),
-          :allowHeaders => list(String.t()),
-          :allowMethods => list(String.t()),
-          :allowOriginRegexes => list(String.t()),
-          :allowOrigins => list(String.t()),
-          :disabled => boolean(),
-          :exposeHeaders => list(String.t()),
-          :maxAge => integer()
+          :allowCredentials => boolean() | nil,
+          :allowHeaders => list(String.t()) | nil,
+          :allowMethods => list(String.t()) | nil,
+          :allowOriginRegexes => list(String.t()) | nil,
+          :allowOrigins => list(String.t()) | nil,
+          :disabled => boolean() | nil,
+          :exposeHeaders => list(String.t()) | nil,
+          :maxAge => integer() | nil
         }
 
   field(:allowCredentials)

@@ -27,7 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors.t())
+          :errors =>
+            list(GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors.t()) | nil
         }
 
   field(:errors,

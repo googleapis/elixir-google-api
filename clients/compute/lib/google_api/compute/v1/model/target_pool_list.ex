@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.TargetPoolList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.TargetPool.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.TargetPoolListWarning.t()
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.TargetPool.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.TargetPoolListWarning.t() | nil
         }
 
   field(:id)

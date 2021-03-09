@@ -44,8 +44,8 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalerStatusDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => String.t(),
-          :type => String.t()
+          :message => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:message)

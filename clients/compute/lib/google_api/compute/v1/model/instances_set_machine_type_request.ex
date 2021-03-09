@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesSetMachineTypeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :machineType => String.t()
+          :machineType => String.t() | nil
         }
 
   field(:machineType)

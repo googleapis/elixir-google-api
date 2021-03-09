@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RequestMirrorPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendService => String.t()
+          :backendService => String.t() | nil
         }
 
   field(:backendService)

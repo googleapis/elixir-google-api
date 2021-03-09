@@ -31,9 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.MetadataItems.t()),
-          :kind => String.t()
+          :fingerprint => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.MetadataItems.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:fingerprint)

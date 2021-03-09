@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :secondaryIpRangeNames => list(String.t()),
-          :sourceIpRangesToNat => list(String.t())
+          :name => String.t() | nil,
+          :secondaryIpRangeNames => list(String.t()) | nil,
+          :sourceIpRangesToNat => list(String.t()) | nil
         }
 
   field(:name)

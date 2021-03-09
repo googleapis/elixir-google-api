@@ -66,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   @spec compute_addresses_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AddressAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_addresses_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -135,7 +136,10 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_addresses_delete(
         connection,
         project,
@@ -203,7 +207,10 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Address.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Address.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_addresses_get(
         connection,
         project,
@@ -268,7 +275,10 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   *   `{:error, info}` on failure
   """
   @spec compute_addresses_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_addresses_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -338,6 +348,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   @spec compute_addresses_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AddressList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_addresses_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

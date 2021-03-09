@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ConnectionDraining do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drainingTimeoutSec => integer()
+          :drainingTimeoutSec => integer() | nil
         }
 
   field(:drainingTimeoutSec)

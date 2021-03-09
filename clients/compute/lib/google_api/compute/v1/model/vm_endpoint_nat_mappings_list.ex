@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :result => list(GoogleApi.Compute.V1.Model.VmEndpointNatMappings.t()),
-          :selfLink => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.VmEndpointNatMappingsListWarning.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :result => list(GoogleApi.Compute.V1.Model.VmEndpointNatMappings.t()) | nil,
+          :selfLink => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.VmEndpointNatMappingsListWarning.t() | nil
         }
 
   field(:id)

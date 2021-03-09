@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.HttpFaultInjection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abort => GoogleApi.Compute.V1.Model.HttpFaultAbort.t(),
-          :delay => GoogleApi.Compute.V1.Model.HttpFaultDelay.t()
+          :abort => GoogleApi.Compute.V1.Model.HttpFaultAbort.t() | nil,
+          :delay => GoogleApi.Compute.V1.Model.HttpFaultDelay.t() | nil
         }
 
   field(:abort, as: GoogleApi.Compute.V1.Model.HttpFaultAbort)

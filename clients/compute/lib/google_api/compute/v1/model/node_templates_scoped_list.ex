@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplatesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodeTemplates => list(GoogleApi.Compute.V1.Model.NodeTemplate.t()),
-          :warning => GoogleApi.Compute.V1.Model.NodeTemplatesScopedListWarning.t()
+          :nodeTemplates => list(GoogleApi.Compute.V1.Model.NodeTemplate.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.NodeTemplatesScopedListWarning.t() | nil
         }
 
   field(:nodeTemplates, as: GoogleApi.Compute.V1.Model.NodeTemplate, type: :list)

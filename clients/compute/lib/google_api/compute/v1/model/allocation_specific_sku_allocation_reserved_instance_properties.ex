@@ -31,14 +31,15 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
+          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
           :localSsds =>
             list(
               GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.t()
-            ),
-          :locationHint => String.t(),
-          :machineType => String.t(),
-          :minCpuPlatform => String.t()
+            )
+            | nil,
+          :locationHint => String.t() | nil,
+          :machineType => String.t() | nil,
+          :minCpuPlatform => String.t() | nil
         }
 
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

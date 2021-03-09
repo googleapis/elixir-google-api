@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.SerialPortOutput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => String.t(),
-          :kind => String.t(),
-          :next => String.t(),
-          :selfLink => String.t(),
-          :start => String.t()
+          :contents => String.t() | nil,
+          :kind => String.t() | nil,
+          :next => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:contents)

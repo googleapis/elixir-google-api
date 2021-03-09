@@ -30,11 +30,13 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicy do
 
   @type t :: %__MODULE__{
           :retentionPolicy =>
-            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.t(),
+            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.t()
+            | nil,
           :schedule =>
-            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySchedule.t(),
+            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySchedule.t() | nil,
           :snapshotProperties =>
             GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapshotProperties.t()
+            | nil
         }
 
   field(:retentionPolicy,
