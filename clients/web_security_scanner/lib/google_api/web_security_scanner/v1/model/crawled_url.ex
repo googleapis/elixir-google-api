@@ -29,9 +29,9 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.CrawledUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :httpMethod => String.t(),
-          :url => String.t()
+          :body => String.t() | nil,
+          :httpMethod => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:body)

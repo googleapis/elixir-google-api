@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ListCrawledUrlsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crawledUrls => list(GoogleApi.WebSecurityScanner.V1.Model.CrawledUrl.t()),
-          :nextPageToken => String.t()
+          :crawledUrls => list(GoogleApi.WebSecurityScanner.V1.Model.CrawledUrl.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:crawledUrls, as: GoogleApi.WebSecurityScanner.V1.Model.CrawledUrl, type: :list)

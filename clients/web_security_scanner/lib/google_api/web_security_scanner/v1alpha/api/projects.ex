@@ -60,6 +60,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_create(
         connection,
@@ -130,6 +131,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_delete(
         connection,
@@ -199,6 +201,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_get(
         connection,
@@ -270,6 +273,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ListScanConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_list(
         connection,
@@ -345,6 +349,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_patch(
         connection,
@@ -417,6 +422,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanRun.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_start(
         connection,
@@ -487,6 +493,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanRun.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_get(
         connection,
@@ -558,6 +565,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ListScanRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_list(
         connection,
@@ -632,6 +640,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ScanRun.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_stop(
         connection,
@@ -704,6 +713,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ListCrawledUrlsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_crawled_urls_list(
         connection,
@@ -777,6 +787,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ListFindingTypeStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_finding_type_stats_list(
         connection,
@@ -848,6 +859,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_findings_get(
         connection,
@@ -920,6 +932,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
         ) ::
           {:ok, GoogleApi.WebSecurityScanner.V1alpha.Model.ListFindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def websecurityscanner_projects_scan_configs_scan_runs_findings_list(
         connection,

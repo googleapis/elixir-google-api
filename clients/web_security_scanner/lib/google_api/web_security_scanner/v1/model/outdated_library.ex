@@ -29,9 +29,9 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :learnMoreUrls => list(String.t()),
-          :libraryName => String.t(),
-          :version => String.t()
+          :learnMoreUrls => list(String.t()) | nil,
+          :libraryName => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:learnMoreUrls, type: :list)

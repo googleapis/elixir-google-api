@@ -27,7 +27,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameterNames => list(String.t())
+          :parameterNames => list(String.t()) | nil
         }
 
   field(:parameterNames, type: :list)

@@ -37,17 +37,18 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :errorTrace => GoogleApi.WebSecurityScanner.V1.Model.ScanRunErrorTrace.t(),
-          :executionState => String.t(),
-          :hasVulnerabilities => boolean(),
-          :name => String.t(),
-          :progressPercent => integer(),
-          :resultState => String.t(),
-          :startTime => DateTime.t(),
-          :urlsCrawledCount => String.t(),
-          :urlsTestedCount => String.t(),
-          :warningTraces => list(GoogleApi.WebSecurityScanner.V1.Model.ScanRunWarningTrace.t())
+          :endTime => DateTime.t() | nil,
+          :errorTrace => GoogleApi.WebSecurityScanner.V1.Model.ScanRunErrorTrace.t() | nil,
+          :executionState => String.t() | nil,
+          :hasVulnerabilities => boolean() | nil,
+          :name => String.t() | nil,
+          :progressPercent => integer() | nil,
+          :resultState => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :urlsCrawledCount => String.t() | nil,
+          :urlsTestedCount => String.t() | nil,
+          :warningTraces =>
+            list(GoogleApi.WebSecurityScanner.V1.Model.ScanRunWarningTrace.t()) | nil
         }
 
   field(:endTime, as: DateTime)

@@ -29,9 +29,9 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanRunErrorTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :mostCommonHttpErrorCode => integer(),
-          :scanConfigError => GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError.t()
+          :code => String.t() | nil,
+          :mostCommonHttpErrorCode => integer() | nil,
+          :scanConfigError => GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError.t() | nil
         }
 
   field(:code)

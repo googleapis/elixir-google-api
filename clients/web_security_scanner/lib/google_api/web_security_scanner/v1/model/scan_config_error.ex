@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :fieldName => String.t()
+          :code => String.t() | nil,
+          :fieldName => String.t() | nil
         }
 
   field(:code)

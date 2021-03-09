@@ -43,23 +43,24 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :description => String.t(),
-          :finalUrl => String.t(),
-          :findingType => String.t(),
-          :form => GoogleApi.WebSecurityScanner.V1.Model.Form.t(),
-          :frameUrl => String.t(),
-          :fuzzedUrl => String.t(),
-          :httpMethod => String.t(),
-          :name => String.t(),
-          :outdatedLibrary => GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary.t(),
-          :reproductionUrl => String.t(),
-          :severity => String.t(),
-          :trackingId => String.t(),
-          :violatingResource => GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource.t(),
-          :vulnerableHeaders => GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders.t(),
-          :vulnerableParameters => GoogleApi.WebSecurityScanner.V1.Model.VulnerableParameters.t(),
-          :xss => GoogleApi.WebSecurityScanner.V1.Model.Xss.t()
+          :body => String.t() | nil,
+          :description => String.t() | nil,
+          :finalUrl => String.t() | nil,
+          :findingType => String.t() | nil,
+          :form => GoogleApi.WebSecurityScanner.V1.Model.Form.t() | nil,
+          :frameUrl => String.t() | nil,
+          :fuzzedUrl => String.t() | nil,
+          :httpMethod => String.t() | nil,
+          :name => String.t() | nil,
+          :outdatedLibrary => GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary.t() | nil,
+          :reproductionUrl => String.t() | nil,
+          :severity => String.t() | nil,
+          :trackingId => String.t() | nil,
+          :violatingResource => GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource.t() | nil,
+          :vulnerableHeaders => GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders.t() | nil,
+          :vulnerableParameters =>
+            GoogleApi.WebSecurityScanner.V1.Model.VulnerableParameters.t() | nil,
+          :xss => GoogleApi.WebSecurityScanner.V1.Model.Xss.t() | nil
         }
 
   field(:body)

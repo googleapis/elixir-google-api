@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.Authentication do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customAccount => GoogleApi.WebSecurityScanner.V1alpha.Model.CustomAccount.t(),
-          :googleAccount => GoogleApi.WebSecurityScanner.V1alpha.Model.GoogleAccount.t()
+          :customAccount => GoogleApi.WebSecurityScanner.V1alpha.Model.CustomAccount.t() | nil,
+          :googleAccount => GoogleApi.WebSecurityScanner.V1alpha.Model.GoogleAccount.t() | nil
         }
 
   field(:customAccount, as: GoogleApi.WebSecurityScanner.V1alpha.Model.CustomAccount)

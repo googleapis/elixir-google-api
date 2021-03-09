@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Form do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionUri => String.t(),
-          :fields => list(String.t())
+          :actionUri => String.t() | nil,
+          :fields => list(String.t()) | nil
         }
 
   field(:actionUri)

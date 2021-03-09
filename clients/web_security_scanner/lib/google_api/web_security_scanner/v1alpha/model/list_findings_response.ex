@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.ListFindingsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findings => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Finding.t()),
-          :nextPageToken => String.t()
+          :findings => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Finding.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:findings, as: GoogleApi.WebSecurityScanner.V1alpha.Model.Finding, type: :list)

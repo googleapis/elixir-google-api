@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findingCount => integer(),
-          :findingType => String.t()
+          :findingCount => integer() | nil,
+          :findingType => String.t() | nil
         }
 
   field(:findingCount)

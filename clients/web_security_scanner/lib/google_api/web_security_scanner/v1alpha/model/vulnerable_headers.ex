@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableHeaders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headers => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Header.t()),
-          :missingHeaders => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Header.t())
+          :headers => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Header.t()) | nil,
+          :missingHeaders => list(GoogleApi.WebSecurityScanner.V1alpha.Model.Header.t()) | nil
         }
 
   field(:headers, as: GoogleApi.WebSecurityScanner.V1alpha.Model.Header, type: :list)
