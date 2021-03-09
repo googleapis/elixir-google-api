@@ -30,12 +30,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t(),
-          :fields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
+          :condition => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t() | nil,
+          :fields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil,
           :infoTypeTransformations =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t() | nil,
           :primitiveTransformation =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t() | nil
         }
 
   field(:condition, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition)

@@ -36,18 +36,18 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :errors => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t()),
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :errors => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t()) | nil,
           :inspectDetails =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t(),
-          :jobTriggerName => String.t(),
-          :name => String.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t() | nil,
+          :jobTriggerName => String.t() | nil,
+          :name => String.t() | nil,
           :riskDetails =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :type => String.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

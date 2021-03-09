@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :recordKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey.t(),
-          :tableLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableLocation.t()
+          :fieldId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :recordKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey.t() | nil,
+          :tableLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableLocation.t() | nil
         }
 
   field(:fieldId, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

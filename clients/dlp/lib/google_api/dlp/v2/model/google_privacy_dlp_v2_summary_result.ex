@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :count => String.t(),
-          :details => String.t()
+          :code => String.t() | nil,
+          :count => String.t() | nil,
+          :details => String.t() | nil
         }
 
   field(:code)

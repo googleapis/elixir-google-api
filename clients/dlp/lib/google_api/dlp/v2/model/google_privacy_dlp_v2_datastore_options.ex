@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KindExpression.t(),
-          :partitionId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t()
+          :kind => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KindExpression.t() | nil,
+          :partitionId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t() | nil
         }
 
   field(:kind, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KindExpression)

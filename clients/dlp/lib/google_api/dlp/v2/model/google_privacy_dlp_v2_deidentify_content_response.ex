@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t(),
-          :overview => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationOverview.t()
+          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t() | nil,
+          :overview => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationOverview.t() | nil
         }
 
   field(:item, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem)

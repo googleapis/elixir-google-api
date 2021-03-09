@@ -32,12 +32,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :deidentifyConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :deidentifyConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

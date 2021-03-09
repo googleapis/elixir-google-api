@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Bucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :max => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t(),
-          :min => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t(),
-          :replacementValue => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()
+          :max => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil,
+          :min => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil,
+          :replacementValue => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil
         }
 
   field(:max, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value)

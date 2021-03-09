@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:field, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

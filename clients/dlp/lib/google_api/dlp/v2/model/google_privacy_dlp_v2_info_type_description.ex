@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :supportedBy => list(String.t())
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :supportedBy => list(String.t()) | nil
         }
 
   field(:description)

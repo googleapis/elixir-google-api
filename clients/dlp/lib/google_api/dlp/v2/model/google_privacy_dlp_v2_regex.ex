@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupIndexes => list(integer()),
-          :pattern => String.t()
+          :groupIndexes => list(integer()) | nil,
+          :pattern => String.t() | nil
         }
 
   field(:groupIndexes, type: :list)

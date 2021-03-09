@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :charactersToSkip => String.t(),
-          :commonCharactersToIgnore => String.t()
+          :charactersToSkip => String.t() | nil,
+          :commonCharactersToIgnore => String.t() | nil
         }
 
   field(:charactersToSkip)

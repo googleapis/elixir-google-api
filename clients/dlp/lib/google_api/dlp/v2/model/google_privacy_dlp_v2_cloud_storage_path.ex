@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :path => String.t()
+          :path => String.t() | nil
         }
 
   field(:path)

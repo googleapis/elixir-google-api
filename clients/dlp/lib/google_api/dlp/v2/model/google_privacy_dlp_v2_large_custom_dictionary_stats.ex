@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approxNumPhrases => String.t()
+          :approxNumPhrases => String.t() | nil
         }
 
   field(:approxNumPhrases)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :extractedText => String.t(),
-          :inspectResult => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult.t(),
-          :redactedImage => String.t()
+          :extractedText => String.t() | nil,
+          :inspectResult => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult.t() | nil,
+          :redactedImage => String.t() | nil
         }
 
   field(:extractedText)

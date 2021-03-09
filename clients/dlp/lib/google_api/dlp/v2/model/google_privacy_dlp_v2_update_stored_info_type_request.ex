@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UpdateStoredInfoTypeRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t(),
-          :updateMask => String.t()
+          :config => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:config, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig)

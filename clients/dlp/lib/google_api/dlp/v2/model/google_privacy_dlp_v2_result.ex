@@ -30,10 +30,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hybridStats => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t(),
-          :infoTypeStats => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t()),
-          :processedBytes => String.t(),
-          :totalEstimatedBytes => String.t()
+          :hybridStats =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t() | nil,
+          :infoTypeStats =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t()) | nil,
+          :processedBytes => String.t() | nil,
+          :totalEstimatedBytes => String.t() | nil
         }
 
   field(:hybridStats, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics)

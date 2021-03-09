@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRuleSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()),
-          :rules => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRule.t())
+          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()) | nil,
+          :rules => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRule.t()) | nil
         }
 
   field(:infoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType, type: :list)

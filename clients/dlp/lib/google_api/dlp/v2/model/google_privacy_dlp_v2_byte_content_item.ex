@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :type => String.t()
+          :data => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:data)

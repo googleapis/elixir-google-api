@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigQueryKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t(),
-          :datastoreKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t(),
-          :idValues => list(String.t())
+          :bigQueryKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t() | nil,
+          :datastoreKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t() | nil,
+          :idValues => list(String.t()) | nil
         }
 
   field(:bigQueryKey, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey)

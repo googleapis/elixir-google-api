@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BoundingBox do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :left => integer(),
-          :top => integer(),
-          :width => integer()
+          :height => integer() | nil,
+          :left => integer() | nil,
+          :top => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

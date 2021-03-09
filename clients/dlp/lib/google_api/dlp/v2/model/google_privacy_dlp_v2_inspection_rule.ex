@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclusionRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule.t(),
-          :hotwordRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule.t()
+          :exclusionRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule.t() | nil,
+          :hotwordRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule.t() | nil
         }
 
   field(:exclusionRule, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateTime => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime.t()
+          :dateTime => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime.t() | nil
         }
 
   field(:dateTime, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime)

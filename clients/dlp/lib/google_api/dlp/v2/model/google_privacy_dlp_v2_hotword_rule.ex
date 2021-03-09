@@ -29,10 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hotwordRegex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t(),
+          :hotwordRegex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t() | nil,
           :likelihoodAdjustment =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LikelihoodAdjustment.t(),
-          :proximity => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Proximity.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LikelihoodAdjustment.t() | nil,
+          :proximity => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Proximity.t() | nil
         }
 
   field(:hotwordRegex, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex)

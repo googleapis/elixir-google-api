@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationQuasiIdValues d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :estimatedAnonymity => String.t(),
-          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t())
+          :estimatedAnonymity => String.t() | nil,
+          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()) | nil
         }
 
   field(:estimatedAnonymity)

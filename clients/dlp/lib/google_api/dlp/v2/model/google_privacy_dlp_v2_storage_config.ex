@@ -31,12 +31,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigQueryOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t(),
+          :bigQueryOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t() | nil,
           :cloudStorageOptions =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t(),
-          :datastoreOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t(),
-          :hybridOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions.t(),
-          :timespanConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t() | nil,
+          :datastoreOptions =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t() | nil,
+          :hybridOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions.t() | nil,
+          :timespanConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t() | nil
         }
 
   field(:bigQueryOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions)

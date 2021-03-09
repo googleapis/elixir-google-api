@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buckets => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Bucket.t())
+          :buckets => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Bucket.t()) | nil
         }
 
   field(:buckets, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Bucket, type: :list)

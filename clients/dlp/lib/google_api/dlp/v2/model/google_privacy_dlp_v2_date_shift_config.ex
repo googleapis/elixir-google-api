@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t(),
-          :lowerBoundDays => integer(),
-          :upperBoundDays => integer()
+          :context => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t() | nil,
+          :lowerBoundDays => integer() | nil,
+          :upperBoundDays => integer() | nil
         }
 
   field(:context, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

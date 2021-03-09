@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2EntityId.t(),
-          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t())
+          :entityId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2EntityId.t() | nil,
+          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil
         }
 
   field(:entityId, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2EntityId)

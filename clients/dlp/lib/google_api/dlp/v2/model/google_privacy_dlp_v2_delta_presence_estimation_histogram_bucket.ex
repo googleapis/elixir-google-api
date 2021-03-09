@@ -31,14 +31,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationHistog
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketSize => String.t(),
-          :bucketValueCount => String.t(),
+          :bucketSize => String.t() | nil,
+          :bucketValueCount => String.t() | nil,
           :bucketValues =>
             list(
               GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues.t()
-            ),
-          :maxProbability => float(),
-          :minProbability => float()
+            )
+            | nil,
+          :maxProbability => float() | nil,
+          :minProbability => float() | nil
         }
 
   field(:bucketSize)

@@ -30,10 +30,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :equivalenceClassSize => String.t(),
-          :numDistinctSensitiveValues => String.t(),
-          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()),
-          :topSensitiveValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t())
+          :equivalenceClassSize => String.t() | nil,
+          :numDistinctSensitiveValues => String.t() | nil,
+          :quasiIdsValues => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()) | nil,
+          :topSensitiveValues =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t()) | nil
         }
 
   field(:equivalenceClassSize)

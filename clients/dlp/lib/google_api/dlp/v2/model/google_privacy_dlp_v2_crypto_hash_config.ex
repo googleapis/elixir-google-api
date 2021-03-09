@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t()
+          :cryptoKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t() | nil
         }
 
   field(:cryptoKey, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey)

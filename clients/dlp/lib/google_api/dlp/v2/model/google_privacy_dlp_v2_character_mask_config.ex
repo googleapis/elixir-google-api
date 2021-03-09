@@ -30,10 +30,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :charactersToIgnore => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore.t()),
-          :maskingCharacter => String.t(),
-          :numberToMask => integer(),
-          :reverseOrder => boolean()
+          :charactersToIgnore =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore.t()) | nil,
+          :maskingCharacter => String.t() | nil,
+          :numberToMask => integer() | nil,
+          :reverseOrder => boolean() | nil
         }
 
   field(:charactersToIgnore,

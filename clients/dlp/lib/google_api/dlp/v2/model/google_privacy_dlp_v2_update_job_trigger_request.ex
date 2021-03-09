@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UpdateJobTriggerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobTrigger => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t(),
-          :updateMask => String.t()
+          :jobTrigger => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:jobTrigger, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger)

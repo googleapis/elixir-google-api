@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => GoogleApi.DLP.V2.Model.GoogleRpcStatus.t(),
-          :timestamps => list(DateTime.t())
+          :details => GoogleApi.DLP.V2.Model.GoogleRpcStatus.t() | nil,
+          :timestamps => list(DateTime.t()) | nil
         }
 
   field(:details, as: GoogleApi.DLP.V2.Model.GoogleRpcStatus)

@@ -31,6 +31,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult
             list(
               GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket.t()
             )
+            | nil
         }
 
   field(:deltaPresenceEstimationHistogram,

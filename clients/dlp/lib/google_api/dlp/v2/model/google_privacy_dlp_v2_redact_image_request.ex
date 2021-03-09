@@ -31,12 +31,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t(),
+          :byteItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t() | nil,
           :imageRedactionConfigs =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig.t()),
-          :includeFindings => boolean(),
-          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
-          :locationId => String.t()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig.t()) | nil,
+          :includeFindings => boolean() | nil,
+          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil,
+          :locationId => String.t() | nil
         }
 
   field(:byteItem, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem)

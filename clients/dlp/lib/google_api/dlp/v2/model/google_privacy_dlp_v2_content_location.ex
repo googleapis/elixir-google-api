@@ -33,13 +33,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerName => String.t(),
-          :containerTimestamp => DateTime.t(),
-          :containerVersion => String.t(),
-          :documentLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation.t(),
-          :imageLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation.t(),
-          :metadataLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation.t(),
-          :recordLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation.t()
+          :containerName => String.t() | nil,
+          :containerTimestamp => DateTime.t() | nil,
+          :containerVersion => String.t() | nil,
+          :documentLocation =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation.t() | nil,
+          :imageLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation.t() | nil,
+          :metadataLocation =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation.t() | nil,
+          :recordLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation.t() | nil
         }
 
   field(:containerName)

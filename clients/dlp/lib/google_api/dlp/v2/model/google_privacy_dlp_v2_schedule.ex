@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :recurrencePeriodDuration => String.t()
+          :recurrencePeriodDuration => String.t() | nil
         }
 
   field(:recurrencePeriodDuration)

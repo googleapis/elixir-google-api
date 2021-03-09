@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
-          :inspectTemplateName => String.t(),
-          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t(),
-          :locationId => String.t()
+          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil,
+          :inspectTemplateName => String.t() | nil,
+          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t() | nil,
+          :locationId => String.t() | nil
         }
 
   field(:inspectConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig)

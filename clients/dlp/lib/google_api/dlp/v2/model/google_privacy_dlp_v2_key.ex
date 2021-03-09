@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Key do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t(),
-          :path => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PathElement.t())
+          :partitionId => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t() | nil,
+          :path => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PathElement.t()) | nil
         }
 
   field(:partitionId, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId)

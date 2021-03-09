@@ -57,6 +57,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   @spec dlp_locations_info_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dlp_locations_info_types_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

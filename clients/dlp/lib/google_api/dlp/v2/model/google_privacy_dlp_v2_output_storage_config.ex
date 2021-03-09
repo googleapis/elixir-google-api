@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputSchema => String.t(),
-          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+          :outputSchema => String.t() | nil,
+          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:outputSchema)

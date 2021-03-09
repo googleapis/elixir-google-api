@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Condition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
-          :operator => String.t(),
-          :value => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
+          :operator => String.t() | nil,
+          :value => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil
         }
 
   field(:field, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identifyingFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t())
+          :identifyingFields => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil
         }
 
   field(:identifyingFields, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)

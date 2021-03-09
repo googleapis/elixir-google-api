@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partToExtract => String.t()
+          :partToExtract => String.t() | nil
         }
 
   field(:partToExtract)

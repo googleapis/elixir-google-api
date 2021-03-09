@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil
         }
 
   field(:field, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

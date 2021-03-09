@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectDlpJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hybridItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem.t()
+          :hybridItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem.t() | nil
         }
 
   field(:hybridItem, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem)

@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :leaveUntransformed => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed.t(),
-          :throwError => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ThrowError.t()
+          :leaveUntransformed =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed.t() | nil,
+          :throwError => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ThrowError.t() | nil
         }
 
   field(:leaveUntransformed, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed)

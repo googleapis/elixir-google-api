@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findings => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding.t()),
-          :findingsTruncated => boolean()
+          :findings => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding.t()) | nil,
+          :findingsTruncated => boolean() | nil
         }
 
   field(:findings, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding, type: :list)

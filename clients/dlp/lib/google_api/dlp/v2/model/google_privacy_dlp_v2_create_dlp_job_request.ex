@@ -30,10 +30,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateDlpJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inspectJob => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t(),
-          :jobId => String.t(),
-          :locationId => String.t(),
-          :riskJob => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig.t()
+          :inspectJob => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t() | nil,
+          :jobId => String.t() | nil,
+          :locationId => String.t() | nil,
+          :riskJob => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig.t() | nil
         }
 
   field(:inspectJob, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig)

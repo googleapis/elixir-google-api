@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult.t()
+          :result => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult.t() | nil
         }
 
   field(:result, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newValue => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()
+          :newValue => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil
         }
 
   field(:newValue, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value)

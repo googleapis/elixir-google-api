@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingBoxes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BoundingBox.t())
+          :boundingBoxes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BoundingBox.t()) | nil
         }
 
   field(:boundingBoxes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BoundingBox, type: :list)

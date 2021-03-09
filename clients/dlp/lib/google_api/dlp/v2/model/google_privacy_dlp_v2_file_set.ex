@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :regexFileSet => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageRegexFileSet.t(),
-          :url => String.t()
+          :regexFileSet =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageRegexFileSet.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:regexFileSet, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageRegexFileSet)

@@ -32,12 +32,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bytesLimitPerFile => String.t(),
-          :bytesLimitPerFilePercent => integer(),
-          :fileSet => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileSet.t(),
-          :fileTypes => list(String.t()),
-          :filesLimitPercent => integer(),
-          :sampleMethod => String.t()
+          :bytesLimitPerFile => String.t() | nil,
+          :bytesLimitPerFilePercent => integer() | nil,
+          :fileSet => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileSet.t() | nil,
+          :fileTypes => list(String.t()) | nil,
+          :filesLimitPercent => integer() | nil,
+          :sampleMethod => String.t() | nil
         }
 
   field(:bytesLimitPerFile)

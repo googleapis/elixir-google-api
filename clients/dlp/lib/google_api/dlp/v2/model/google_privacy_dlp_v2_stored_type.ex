@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t()
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

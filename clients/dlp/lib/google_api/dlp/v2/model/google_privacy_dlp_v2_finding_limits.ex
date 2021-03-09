@@ -30,9 +30,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
 
   @type t :: %__MODULE__{
           :maxFindingsPerInfoType =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit.t()),
-          :maxFindingsPerItem => integer(),
-          :maxFindingsPerRequest => integer()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit.t()) | nil,
+          :maxFindingsPerItem => integer() | nil,
+          :maxFindingsPerRequest => integer() | nil
         }
 
   field(:maxFindingsPerInfoType,

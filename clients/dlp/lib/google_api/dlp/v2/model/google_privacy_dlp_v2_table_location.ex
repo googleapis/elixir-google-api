@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rowIndex => String.t()
+          :rowIndex => String.t() | nil
         }
 
   field(:rowIndex)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hotwordRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule.t()
+          :hotwordRule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule.t() | nil
         }
 
   field(:hotwordRule, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HotwordRule)

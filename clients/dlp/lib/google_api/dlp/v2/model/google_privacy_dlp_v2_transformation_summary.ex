@@ -33,14 +33,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t(),
+          :field => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t() | nil,
           :fieldTransformations =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t()),
-          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
-          :recordSuppress => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t(),
-          :results => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult.t()),
-          :transformation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t(),
-          :transformedBytes => String.t()
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t()) | nil,
+          :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
+          :recordSuppress => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t() | nil,
+          :results => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult.t()) | nil,
+          :transformation =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t() | nil,
+          :transformedBytes => String.t() | nil
         }
 
   field(:field, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId)

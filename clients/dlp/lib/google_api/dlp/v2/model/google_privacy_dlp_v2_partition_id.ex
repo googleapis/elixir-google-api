@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namespaceId => String.t(),
-          :projectId => String.t()
+          :namespaceId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:namespaceId)

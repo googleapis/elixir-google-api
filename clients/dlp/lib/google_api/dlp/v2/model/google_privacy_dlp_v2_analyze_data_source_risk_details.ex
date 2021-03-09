@@ -36,19 +36,23 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
 
   @type t :: %__MODULE__{
           :categoricalStatsResult =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult.t() | nil,
           :deltaPresenceEstimationResult =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult.t(),
-          :kAnonymityResult => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult.t() | nil,
+          :kAnonymityResult =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult.t() | nil,
           :kMapEstimationResult =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult.t(),
-          :lDiversityResult => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult.t() | nil,
+          :lDiversityResult =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t() | nil,
           :numericalStatsResult =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t(),
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t() | nil,
           :requestedOptions =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions.t(),
-          :requestedPrivacyMetric => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t(),
-          :requestedSourceTable => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions.t() | nil,
+          :requestedPrivacyMetric =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t() | nil,
+          :requestedSourceTable =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:categoricalStatsResult,

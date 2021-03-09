@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t(),
-          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table.t(),
-          :value => String.t()
+          :byteItem => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t() | nil,
+          :table => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:byteItem, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem)

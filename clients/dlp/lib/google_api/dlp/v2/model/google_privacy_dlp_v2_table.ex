@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :headers => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()),
-          :rows => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row.t())
+          :headers => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t()) | nil,
+          :rows => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row.t()) | nil
         }
 
   field(:headers, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId, type: :list)

@@ -28,7 +28,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult do
 
   @type t :: %__MODULE__{
           :kMapEstimationHistogram =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket.t())
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket.t()) | nil
         }
 
   field(:kMapEstimationHistogram,

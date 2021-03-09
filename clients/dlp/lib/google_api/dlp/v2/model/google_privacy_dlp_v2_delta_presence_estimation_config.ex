@@ -29,9 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auxiliaryTables => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StatisticalTable.t()),
-          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiId.t()),
-          :regionCode => String.t()
+          :auxiliaryTables =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StatisticalTable.t()) | nil,
+          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiId.t()) | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:auxiliaryTables,

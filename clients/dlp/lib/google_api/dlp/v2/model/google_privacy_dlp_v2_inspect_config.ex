@@ -34,14 +34,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentOptions => list(String.t()),
-          :customInfoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType.t()),
-          :excludeInfoTypes => boolean(),
-          :includeQuote => boolean(),
-          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()),
-          :limits => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits.t(),
-          :minLikelihood => String.t(),
-          :ruleSet => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRuleSet.t())
+          :contentOptions => list(String.t()) | nil,
+          :customInfoTypes =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType.t()) | nil,
+          :excludeInfoTypes => boolean() | nil,
+          :includeQuote => boolean() | nil,
+          :infoTypes => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t()) | nil,
+          :limits => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits.t() | nil,
+          :minLikelihood => String.t() | nil,
+          :ruleSet => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRuleSet.t()) | nil
         }
 
   field(:contentOptions, type: :list)

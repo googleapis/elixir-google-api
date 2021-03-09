@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actions => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t()),
-          :privacyMetric => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t(),
-          :sourceTable => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
+          :actions => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t()) | nil,
+          :privacyMetric => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t() | nil,
+          :sourceTable => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil
         }
 
   field(:actions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action, type: :list)

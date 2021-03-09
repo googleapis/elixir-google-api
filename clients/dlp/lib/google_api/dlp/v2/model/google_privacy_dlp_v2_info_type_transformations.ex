@@ -28,7 +28,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations do
 
   @type t :: %__MODULE__{
           :transformations =>
-            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t())
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t()) | nil
         }
 
   field(:transformations,

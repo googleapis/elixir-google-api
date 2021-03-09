@@ -29,9 +29,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auxiliaryTables => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable.t()),
-          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField.t()),
-          :regionCode => String.t()
+          :auxiliaryTables =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable.t()) | nil,
+          :quasiIds => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField.t()) | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:auxiliaryTables, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable, type: :list)

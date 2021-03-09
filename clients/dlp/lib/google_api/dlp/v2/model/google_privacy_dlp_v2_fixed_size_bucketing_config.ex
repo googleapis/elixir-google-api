@@ -29,9 +29,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketSize => float(),
-          :lowerBound => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t(),
-          :upperBound => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()
+          :bucketSize => float() | nil,
+          :lowerBound => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil,
+          :upperBound => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t() | nil
         }
 
   field(:bucketSize)

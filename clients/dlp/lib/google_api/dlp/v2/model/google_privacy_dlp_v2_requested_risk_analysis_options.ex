@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig.t()
+          :jobConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig.t() | nil
         }
 
   field(:jobConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig)

@@ -28,8 +28,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UpdateDeidentifyTemplateReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deidentifyTemplate => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t(),
-          :updateMask => String.t()
+          :deidentifyTemplate =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:deidentifyTemplate, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate)

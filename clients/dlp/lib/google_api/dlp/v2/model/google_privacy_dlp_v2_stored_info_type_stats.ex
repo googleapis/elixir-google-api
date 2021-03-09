@@ -28,7 +28,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeStats do
 
   @type t :: %__MODULE__{
           :largeCustomDictionary =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryStats.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryStats.t() | nil
         }
 
   field(:largeCustomDictionary,
