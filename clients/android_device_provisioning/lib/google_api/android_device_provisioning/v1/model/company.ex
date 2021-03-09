@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminEmails => list(String.t()),
-          :companyId => String.t(),
-          :companyName => String.t(),
-          :name => String.t(),
-          :ownerEmails => list(String.t()),
-          :termsStatus => String.t()
+          :adminEmails => list(String.t()) | nil,
+          :companyId => String.t() | nil,
+          :companyName => String.t() | nil,
+          :name => String.t() | nil,
+          :ownerEmails => list(String.t()) | nil,
+          :termsStatus => String.t() | nil
         }
 
   field(:adminEmails, type: :list)

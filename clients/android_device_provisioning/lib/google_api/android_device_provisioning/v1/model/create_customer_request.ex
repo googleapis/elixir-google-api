@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customer => GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()
+          :customer => GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t() | nil
         }
 
   field(:customer, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company)

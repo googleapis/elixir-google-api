@@ -31,11 +31,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :sectionType => String.t(),
-          :vacationModeDays => integer(),
-          :vacationModeExpireTime => DateTime.t()
+          :deviceId => String.t() | nil,
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
+          :sectionType => String.t() | nil,
+          :vacationModeDays => integer() | nil,
+          :vacationModeExpireTime => DateTime.t() | nil
         }
 
   field(:deviceId)

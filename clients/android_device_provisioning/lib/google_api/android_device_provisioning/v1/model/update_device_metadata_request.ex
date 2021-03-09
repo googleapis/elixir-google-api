@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t()
+          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil
         }
 
   field(:deviceMetadata, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata)

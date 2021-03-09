@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => String.t()
+          :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)

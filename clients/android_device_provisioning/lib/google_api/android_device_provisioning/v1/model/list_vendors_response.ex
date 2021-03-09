@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :totalSize => integer(),
-          :vendors => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t())
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil,
+          :vendors => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()) | nil
         }
 
   field(:nextPageToken)

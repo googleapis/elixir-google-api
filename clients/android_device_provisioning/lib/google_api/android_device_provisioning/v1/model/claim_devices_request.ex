@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDevicesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :claims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t())
+          :claims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t()) | nil
         }
 
   field(:claims, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim, type: :list)

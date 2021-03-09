@@ -28,7 +28,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataInBat
 
   @type t :: %__MODULE__{
           :updates =>
-            list(GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t())
+            list(GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t()) | nil
         }
 
   field(:updates,

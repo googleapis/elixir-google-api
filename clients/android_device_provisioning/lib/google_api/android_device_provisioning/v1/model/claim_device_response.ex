@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :deviceName => String.t()
+          :deviceId => String.t() | nil,
+          :deviceName => String.t() | nil
         }
 
   field(:deviceId)

@@ -32,12 +32,14 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Device do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :claims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim.t()),
-          :configuration => String.t(),
-          :deviceId => String.t(),
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t(),
-          :name => String.t()
+          :claims => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim.t()) | nil,
+          :configuration => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
+          :deviceMetadata =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:claims, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim, type: :list)

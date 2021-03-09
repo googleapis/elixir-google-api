@@ -59,6 +59,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def androiddeviceprovisioning_operations_get(
         connection,

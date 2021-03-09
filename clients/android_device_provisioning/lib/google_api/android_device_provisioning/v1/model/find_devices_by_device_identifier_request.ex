@@ -29,9 +29,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :limit => String.t(),
-          :pageToken => String.t()
+          :deviceIdentifier =>
+            GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
+          :limit => String.t() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)

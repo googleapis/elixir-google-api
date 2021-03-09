@@ -29,8 +29,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperati
 
   @type t :: %__MODULE__{
           :perDeviceStatus =>
-            list(GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice.t()),
-          :successCount => integer()
+            list(GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice.t()) | nil,
+          :successCount => integer() | nil
         }
 
   field(:perDeviceStatus,

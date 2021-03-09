@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dpcs => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc.t())
+          :dpcs => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc.t()) | nil
         }
 
   field(:dpcs, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc, type: :list)

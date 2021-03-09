@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imei => String.t(),
-          :manufacturer => String.t(),
-          :meid => String.t(),
-          :model => String.t(),
-          :serialNumber => String.t()
+          :imei => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :meid => String.t() | nil,
+          :model => String.t() | nil,
+          :serialNumber => String.t() | nil
         }
 
   field(:imei)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerApplyConfiguratio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configuration => String.t(),
-          :device => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t()
+          :configuration => String.t() | nil,
+          :device => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t() | nil
         }
 
   field(:configuration)

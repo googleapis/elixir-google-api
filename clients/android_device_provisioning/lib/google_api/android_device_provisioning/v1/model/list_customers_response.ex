@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customers => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :customers => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:customers, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Company, type: :list)

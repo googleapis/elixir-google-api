@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerRemoveConfigurati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :device => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t()
+          :device => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t() | nil
         }
 
   field(:device, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference)

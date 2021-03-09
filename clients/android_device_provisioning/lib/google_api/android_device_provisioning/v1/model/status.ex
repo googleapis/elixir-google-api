@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Status do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => integer(),
-          :details => list(map()),
-          :message => String.t()
+          :code => integer() | nil,
+          :details => list(map()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)
