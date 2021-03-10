@@ -3961,6 +3961,4972 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
+  Returns the list of all answer records in the specified project in reverse chronological order.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list all answer records for in reverse chronological order. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Required. Filters to restrict results to specific answer records. Filter on answer record type. Currently predicates on `type` is supported, valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`. For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of records to return in a single page. The server may return fewer records than this. If unspecified, we use 10. The maximum is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The ListAnswerRecordsResponse.next_page_token value returned from a previous list request used to continue listing on the next page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_answer_records_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_answer_records_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/answerRecords", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified answer record.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The unique identifier of this answer record. Format: `projects//locations//answerRecords/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_answer_records_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_answer_records_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord{}]
+    )
+  end
+
+  @doc """
+  Creates a conversation profile in the specified project. ConversationProfile.CreateTime and ConversationProfile.UpdateTime aren't populated in the response. You can retrieve them via GetConversationProfile API.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to create a conversation profile for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversation_profiles_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversation_profiles_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/conversationProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified conversation profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the conversation profile to delete. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversation_profiles_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversation_profiles_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Retrieves the specified conversation profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The resource name of the conversation profile. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversation_profiles_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversation_profiles_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all conversation profiles in the specified project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list all conversation profiles from. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversation_profiles_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversation_profiles_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/conversationProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified conversation profile. ConversationProfile.CreateTime and ConversationProfile.UpdateTime aren't populated in the response. You can retrieve them via GetConversationProfile API.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this conversation profile. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversation_profiles_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversation_profiles_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Completes the specified conversation. Finished conversations are purged from the database after 30 days.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource identifier of the conversation to close. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CompleteConversationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_complete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_complete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:complete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Creates a new conversation. Conversations are auto-completed after 24 hours. Conversation Lifecycle: There are two stages during a conversation: Automated Agent Stage and Assist Stage. For Automated Agent Stage, there will be a dialogflow agent responding to user queries. For Assist Stage, there's no dialogflow agent responding to user queries. But we will provide suggestions which are generated from conversation. If Conversation.conversation_profile is configured for a dialogflow agent, conversation will start from `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And during `Automated Agent Stage`, once an Intent with Intent.live_agent_handoff is triggered, conversation will transfer to Assist Stage.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the project creating the conversation. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:conversationId` (*type:* `String.t`) - Optional. Identifier of the conversation. Generally it's auto generated by Google. Only set it if you cannot wait for the response to return a auto-generated one to you. The conversation ID must be compliant with the regression fomula "a-zA-Z*" with the characters length in range of [3,64]. If the field is provided, the caller is resposible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the consistency for whether to use custom ID or not under a project to better ensure uniqueness.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :conversationId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/conversations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Retrieves the specific conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the conversation. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all conversations in the specified project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project from which to list all conversation. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters conversations listed in the response. In general, the expression must specify the field name, a comparison operator, and the value to use for filtering: - The value must be a string, a number, or a boolean. - The comparison operator must be either `=`,`!=`, `>`, or `<`. - To filter on multiple expressions, separate the expressions with `AND` or `OR` (omitting both implies `AND`). - For clarity, expressions can be enclosed in parentheses. Only `lifecycle_state` can be filtered on in this way. For example, the following expression only returns `COMPLETED` conversations: `lifecycle_state = "COMPLETED"` For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/conversations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Creates a call matcher that links incoming SIP calls to the specified conversation if they fulfill specified criteria.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the conversation adding the call matcher. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_call_matchers_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_call_matchers_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/callMatchers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher{}]
+    )
+  end
+
+  @doc """
+  Requests deletion of a call matcher.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of the CallMatcher to delete. Format: `projects//locations//conversations//callMatchers/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_call_matchers_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_call_matchers_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Returns the list of all call matchers in the specified conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The conversation to list all call matchers from. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_call_matchers_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_call_matchers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/callMatchers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse{}]
+    )
+  end
+
+  @doc """
+  Lists messages that belong to a given conversation. `messages` are ordered by `create_time` in descending order. To fetch updates without duplication, send request with filter `create_time_epoch_microseconds > [first item's create_time of previous request]` and empty page_token.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the conversation to list messages for. Format: `projects//locations//conversations/`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Filter on message fields. Currently predicates on `create_time` and `create_time_epoch_microseconds` are supported. `create_time` only support milliseconds accuracy. E.g., `create_time_epoch_microseconds > 1551790877964485` or `create_time > 2017-01-15T01:30:15.01Z`. For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_messages_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_messages_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/messages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse{}]
+    )
+  end
+
+  @doc """
+  Adds a text (chat, for example), or audio (phone recording, for example) message from a participant into the conversation. Note: Always use agent versions for production traffic sent to virtual agents. See [Versions and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `participant` (*type:* `String.t`) - Required. The name of the participant this text comes from. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_analyze_content(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_analyze_content(
+        connection,
+        participant,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+participant}:analyzeContent", %{
+        "participant" => URI.encode(participant, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a new participant in a conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the conversation adding the participant. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/participants", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Retrieves a conversation participant.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the participant. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all participants in the specified conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The conversation to list all participants from. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/participants", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the specified participant.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this participant. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to specify which fields to update.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Gets suggested articles for a participant based on specific historical messages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the participant to fetch suggestion for. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_suggestions_suggest_articles(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_suggestions_suggest_articles(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/suggestions:suggestArticles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse{}]
+    )
+  end
+
+  @doc """
+  Gets suggested faq answers for a participant based on specific historical messages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the participant to fetch suggestion for. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_conversations_participants_suggestions_suggest_faq_answers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_conversations_participants_suggestions_suggest_faq_answers(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/suggestions:suggestFaqAnswers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Creates a knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to create a knowledge base for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/knowledgeBases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the knowledge base to delete. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. Force deletes the knowledge base. When set to true, any documents in the knowledge base are also deleted.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :force => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Retrieves the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the knowledge base to retrieve. Format `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all knowledge bases of the specified agent.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list of knowledge bases for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 10 and at most 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/knowledgeBases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The knowledge base resource name. The name must be empty when creating a knowledge base. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Optional. Not specified means `update all`. Currently, only `display_name` can be updated, an InvalidArgument will be returned for attempting to update other fields.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Creates a new document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The knowledge base to create a document for. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/documents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to delete. Format: `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Retrieves the specified document.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to retrieve. Format `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all documents of the knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The knowledge base to list all documents for. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 10 and at most 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/documents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the specified document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The document resource name. The name must be empty when creating a document. Format: `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Optional. Not specified means `update all`. Currently, only `display_name` can be updated, an InvalidArgument will be returned for attempting to update other fields.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Reloads the specified document from its specified source, content_uri or content. The previously loaded content of the document will be deleted. Note: Even when the content of the document has not changed, there still may be side effects because of internal implementation changes. Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use `projects.knowledgeBases.documents`. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to reload. Format: `projects//locations//knowledgeBases//documents/`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ReloadDocumentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_knowledge_bases_documents_reload(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_knowledge_bases_documents_reload(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:reload", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all answer records in the specified project in reverse chronological order.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list all answer records for in reverse chronological order. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Required. Filters to restrict results to specific answer records. Filter on answer record type. Currently predicates on `type` is supported, valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`. For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of records to return in a single page. The server may return fewer records than this. If unspecified, we use 10. The maximum is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The ListAnswerRecordsResponse.next_page_token value returned from a previous list request used to continue listing on the next page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_answer_records_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_answer_records_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/answerRecords", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListAnswerRecordsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified answer record.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The unique identifier of this answer record. Format: `projects//locations//answerRecords/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_answer_records_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_answer_records_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerRecord{}]
+    )
+  end
+
+  @doc """
+  Creates a conversation profile in the specified project. ConversationProfile.CreateTime and ConversationProfile.UpdateTime aren't populated in the response. You can retrieve them via GetConversationProfile API.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to create a conversation profile for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversation_profiles_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversation_profiles_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/conversationProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified conversation profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the conversation profile to delete. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversation_profiles_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversation_profiles_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Retrieves the specified conversation profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The resource name of the conversation profile. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversation_profiles_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversation_profiles_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all conversation profiles in the specified project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list all conversation profiles from. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversation_profiles_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversation_profiles_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/conversationProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationProfilesResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified conversation profile. ConversationProfile.CreateTime and ConversationProfile.UpdateTime aren't populated in the response. You can retrieve them via GetConversationProfile API.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this conversation profile. Format: `projects//locations//conversationProfiles/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversation_profiles_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversation_profiles_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile{}]
+    )
+  end
+
+  @doc """
+  Completes the specified conversation. Finished conversations are purged from the database after 30 days.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource identifier of the conversation to close. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CompleteConversationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_complete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_complete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:complete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Creates a new conversation. Conversations are auto-completed after 24 hours. Conversation Lifecycle: There are two stages during a conversation: Automated Agent Stage and Assist Stage. For Automated Agent Stage, there will be a dialogflow agent responding to user queries. For Assist Stage, there's no dialogflow agent responding to user queries. But we will provide suggestions which are generated from conversation. If Conversation.conversation_profile is configured for a dialogflow agent, conversation will start from `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And during `Automated Agent Stage`, once an Intent with Intent.live_agent_handoff is triggered, conversation will transfer to Assist Stage.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the project creating the conversation. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:conversationId` (*type:* `String.t`) - Optional. Identifier of the conversation. Generally it's auto generated by Google. Only set it if you cannot wait for the response to return a auto-generated one to you. The conversation ID must be compliant with the regression fomula "a-zA-Z*" with the characters length in range of [3,64]. If the field is provided, the caller is resposible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the consistency for whether to use custom ID or not under a project to better ensure uniqueness.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :conversationId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/conversations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Retrieves the specific conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the conversation. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all conversations in the specified project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project from which to list all conversation. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters conversations listed in the response. In general, the expression must specify the field name, a comparison operator, and the value to use for filtering: - The value must be a string, a number, or a boolean. - The comparison operator must be either `=`,`!=`, `>`, or `<`. - To filter on multiple expressions, separate the expressions with `AND` or `OR` (omitting both implies `AND`). - For clarity, expressions can be enclosed in parentheses. Only `lifecycle_state` can be filtered on in this way. For example, the following expression only returns `COMPLETED` conversations: `lifecycle_state = "COMPLETED"` For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/conversations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListConversationsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Creates a call matcher that links incoming SIP calls to the specified conversation if they fulfill specified criteria.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the conversation adding the call matcher. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CreateCallMatcherRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_call_matchers_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_call_matchers_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/callMatchers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CallMatcher{}]
+    )
+  end
+
+  @doc """
+  Requests deletion of a call matcher.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of the CallMatcher to delete. Format: `projects//locations//conversations//callMatchers/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_call_matchers_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_call_matchers_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Returns the list of all call matchers in the specified conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The conversation to list all call matchers from. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_call_matchers_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_call_matchers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/callMatchers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListCallMatchersResponse{}]
+    )
+  end
+
+  @doc """
+  Lists messages that belong to a given conversation. `messages` are ordered by `create_time` in descending order. To fetch updates without duplication, send request with filter `create_time_epoch_microseconds > [first item's create_time of previous request]` and empty page_token.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the conversation to list messages for. Format: `projects//locations//conversations/`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Filter on message fields. Currently predicates on `create_time` and `create_time_epoch_microseconds` are supported. `create_time` only support milliseconds accuracy. E.g., `create_time_epoch_microseconds > 1551790877964485` or `create_time > 2017-01-15T01:30:15.01Z`. For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_messages_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_messages_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/messages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListMessagesResponse{}]
+    )
+  end
+
+  @doc """
+  Adds a text (chat, for example), or audio (phone recording, for example) message from a participant into the conversation. Note: Always use agent versions for production traffic sent to virtual agents. See [Versions and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `participant` (*type:* `String.t`) - Required. The name of the participant this text comes from. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_analyze_content(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_analyze_content(
+        connection,
+        participant,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+participant}:analyzeContent", %{
+        "participant" => URI.encode(participant, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a new participant in a conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource identifier of the conversation adding the participant. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/participants", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Retrieves a conversation participant.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the participant. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all participants in the specified conversation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The conversation to list all participants from. Format: `projects//locations//conversations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/participants", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListParticipantsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the specified participant.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this participant. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to specify which fields to update.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant{}]
+    )
+  end
+
+  @doc """
+  Gets suggested articles for a participant based on specific historical messages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the participant to fetch suggestion for. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_suggestions_suggest_articles(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_suggestions_suggest_articles(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/suggestions:suggestArticles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse{}]
+    )
+  end
+
+  @doc """
+  Gets suggested faq answers for a participant based on specific historical messages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the participant to fetch suggestion for. Format: `projects//locations//conversations//participants/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_conversations_participants_suggestions_suggest_faq_answers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_conversations_participants_suggestions_suggest_faq_answers(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/suggestions:suggestFaqAnswers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Creates a knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to create a knowledge base for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/knowledgeBases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the knowledge base to delete. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. Force deletes the knowledge base. When set to true, any documents in the knowledge base are also deleted.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :force => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Retrieves the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the knowledge base to retrieve. Format `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all knowledge bases of the specified agent.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The project to list of knowledge bases for. Format: `projects//locations/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 10 and at most 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/knowledgeBases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListKnowledgeBasesResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates the specified knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The knowledge base resource name. The name must be empty when creating a knowledge base. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Optional. Not specified means `update all`. Currently, only `display_name` can be updated, an InvalidArgument will be returned for attempting to update other fields.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeBase{}]
+    )
+  end
+
+  @doc """
+  Creates a new document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The knowledge base to create a document for. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/documents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Deletes the specified document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to delete. Format: `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Retrieves the specified document.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to retrieve. Format `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all documents of the knowledge base.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The knowledge base to list all documents for. Format: `projects//locations//knowledgeBases/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return in a single page. By default 10 and at most 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/documents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListDocumentsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the specified document. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Optional. The document resource name. The name must be empty when creating a document. Format: `projects//locations//knowledgeBases//documents/`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Optional. Not specified means `update all`. Currently, only `display_name` can be updated, an InvalidArgument will be returned for attempting to update other fields.
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Reloads the specified document from its specified source, content_uri or content. The previously loaded content of the document will be deleted. Note: Even when the content of the document has not changed, there still may be side effects because of internal implementation changes. Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use `projects.knowledgeBases.documents`. Operation 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the document to reload. Format: `projects//locations//knowledgeBases//documents/`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ReloadDocumentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dialogflow_projects_locations_knowledge_bases_documents_reload(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def dialogflow_projects_locations_knowledge_bases_documents_reload(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:reload", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
   Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
