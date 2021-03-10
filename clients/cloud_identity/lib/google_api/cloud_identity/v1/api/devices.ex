@@ -105,7 +105,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
       *   `:body` (*type:* `GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -132,7 +131,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :customer => :query,
       :body => :body
     }
 
@@ -167,7 +165,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -192,8 +189,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :customer => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -229,7 +225,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Customer in the format: `customers/{customer_id}`, where customer_id is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -254,8 +249,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :customer => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -292,7 +286,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer in the format: `customers/{customer_id}`, where customer_id is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
       *   `:filter` (*type:* `String.t`) - Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.
       *   `:orderBy` (*type:* `String.t`) - Optional. Order specification for devices in the response. Only one of the following field names may be used to specify the order: `create_time`, `last_sync_time`, `model`, `os_version`, `device_type` and `serial_number`. `desc` may be specified optionally at the end to specify results to be sorted in descending order. Default order is ascending.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of Devices to return. If unspecified, at most 20 Devices will be returned. The maximum value is 100; values above 100 will be coerced to 100.
@@ -324,7 +317,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :customer => :query,
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
@@ -647,7 +639,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -682,8 +673,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :customer => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -719,7 +709,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -749,8 +738,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :customer => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -789,7 +777,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
       *   `:filter` (*type:* `String.t`) - Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.
       *   `:orderBy` (*type:* `String.t`) - Optional. Order specification for devices in the response.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of DeviceUsers to return. If unspecified, at most 5 DeviceUsers will be returned. The maximum value is 20; values above 20 will be coerced to 20.
@@ -830,7 +817,6 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :customer => :query,
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
@@ -1017,7 +1003,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientStates/{partner_id}`, where device_id is the unique ID assigned to the Device, device_user_id is the unique ID assigned to the User and partner_id identifies the partner storing the data. To get the client state for devices belonging to your own organization, the `partnerId` is in the format: `customerId-*anystring*`. Where the `customerId` is your organization's customer ID and `anystring` is any suffix. This suffix is used in setting up Custom Access Levels in Context-Aware Access. You may use `my_customer` instead of the customer ID for devices managed by your own organization.
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientStates/{partner_id}`, where `device_id` is the unique ID assigned to the Device, `device_user_id` is the unique ID assigned to the User and `partner_id` identifies the partner storing the data. To get the client state for devices belonging to your own organization, the `partnerId` is in the format: `customerId-*anystring*`. Where the `customerId` is your organization's customer ID and `anystring` is any suffix. This suffix is used in setting up Custom Access Levels in Context-Aware Access. You may use `my_customer` instead of the customer ID for devices managed by your own organization. You may specify `-` in place of the `{device_id}`, so the ClientState resource name can be: `devices/-/deviceUsers/{device_user_resource_id}/clientStates/{partner_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1030,7 +1016,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
+      *   `:customer` (*type:* `String.t`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1105,7 +1091,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
+      *   `:customer` (*type:* `String.t`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
       *   `:filter` (*type:* `String.t`) - Optional. Additional restrictions when fetching list of client states.
       *   `:orderBy` (*type:* `String.t`) - Optional. Order specification for client states in the response.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListClientStates` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListClientStates` must match the call that provided the page token.
@@ -1190,7 +1176,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
+      *   `:customer` (*type:* `String.t`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
       *   `:updateMask` (*type:* `String.t`) - Optional. Comma-separated list of fully qualified names of fields to be updated. If not specified, all updatable fields in ClientState are updated.
       *   `:body` (*type:* `GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ClientState.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
