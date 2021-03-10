@@ -24,10 +24,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   *   `action` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the action associated with the intent. Note: The action name must not contain whitespaces.
   *   `defaultResponsePlatforms` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of this intent.
+  *   `endInteraction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that this intent ends an interaction. Some integrations (e.g., Actions on Google or Dialogflow phone gateway) use this information to close interaction with an end user. Default is false.
   *   `events` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of event names that trigger the intent. If the collection of input contexts is not empty, all of the contexts must be present in the active user session for an event to trigger this intent. Event names are limited to 150 characters.
   *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupIntentInfo.t)`, *default:* `nil`) - Read-only. Information about all followup intents that have this intent as a direct or indirect parent. We populate this field only in the output.
   *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be triggered. Format: `projects//agent/sessions/-/contexts/`.
   *   `isFallback` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether this is a fallback intent.
+  *   `liveAgentHandoff` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that a live agent should be brought in to handle the interaction with the user. In most cases, when you set this flag to true, you would also want to set end_interaction to true as well. Default is false.
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages corresponding to the `Response` field in the Dialogflow console.
   *   `mlDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is disabled for the intent. Note: If `ml_disabled` setting is set to true, then this intent is not taken into account during inference in `ML ONLY` match mode. Also, auto-markup in the UI is turned off.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent. Required for Intents.UpdateIntent and Intents.BatchUpdateIntents methods. Format: `projects//agent/intents/`.
@@ -47,6 +49,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
           :action => String.t() | nil,
           :defaultResponsePlatforms => list(String.t()) | nil,
           :displayName => String.t() | nil,
+          :endInteraction => boolean() | nil,
           :events => list(String.t()) | nil,
           :followupIntentInfo =>
             list(
@@ -55,6 +58,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
             | nil,
           :inputContextNames => list(String.t()) | nil,
           :isFallback => boolean() | nil,
+          :liveAgentHandoff => boolean() | nil,
           :messages =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t()) | nil,
           :mlDisabled => boolean() | nil,
@@ -76,6 +80,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   field(:action)
   field(:defaultResponsePlatforms, type: :list)
   field(:displayName)
+  field(:endInteraction)
   field(:events, type: :list)
 
   field(:followupIntentInfo,
@@ -85,6 +90,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
 
   field(:inputContextNames, type: :list)
   field(:isFallback)
+  field(:liveAgentHandoff)
 
   field(:messages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage,

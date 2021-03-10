@@ -29,6 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo.t)`, *default:* `nil`) - Output only. Information about all followup intents that have this intent as a direct or indirect parent. We populate this field only in the output.
   *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be triggered. Formats: - `projects//agent/sessions/-/contexts/` - `projects//locations//agent/sessions/-/contexts/`
   *   `isFallback` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether this is a fallback intent.
+  *   `liveAgentHandoff` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that a live agent should be brought in to handle the interaction with the user. In most cases, when you set this flag to true, you would also want to set end_interaction to true as well. Default is false.
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages corresponding to the `Response` field in the Dialogflow console.
   *   `mlDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is disabled for the intent. Note: If `ml_disabled` setting is set to true, then this intent is not taken into account during inference in `ML ONLY` match mode. Also, auto-markup in the UI is turned off.
   *   `mlEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is enabled for the intent. Note: If `ml_enabled` setting is set to false, then this intent is not taken into account during inference in `ML ONLY` match mode. Also, auto-markup in the UI is turned off. DEPRECATED! Please use `ml_disabled` field instead. NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false, then the default value is determined as follows: - Before April 15th, 2018 the default is: ml_enabled = false / ml_disabled = true. - After April 15th, 2018 the default is: ml_enabled = true / ml_disabled = false.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
             | nil,
           :inputContextNames => list(String.t()) | nil,
           :isFallback => boolean() | nil,
+          :liveAgentHandoff => boolean() | nil,
           :messages =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t())
             | nil,
@@ -94,6 +96,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
 
   field(:inputContextNames, type: :list)
   field(:isFallback)
+  field(:liveAgentHandoff)
 
   field(:messages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage,
