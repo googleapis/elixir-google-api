@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.BatchWriteRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :writes => list(GoogleApi.Firestore.V1.Model.Write.t())
+          :labels => map() | nil,
+          :writes => list(GoogleApi.Firestore.V1.Model.Write.t()) | nil
         }
 
   field(:labels, type: :map)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Firestore.V1.Model.DocumentDelete do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => String.t(),
-          :readTime => DateTime.t(),
-          :removedTargetIds => list(integer())
+          :document => String.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :removedTargetIds => list(integer()) | nil
         }
 
   field(:document)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :streamId => String.t(),
-          :streamToken => String.t(),
-          :writes => list(GoogleApi.Firestore.V1beta1.Model.Write.t())
+          :labels => map() | nil,
+          :streamId => String.t() | nil,
+          :streamToken => String.t() | nil,
+          :writes => list(GoogleApi.Firestore.V1beta1.Model.Write.t()) | nil
         }
 
   field(:labels, type: :map)

@@ -32,12 +32,13 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexOperationMetad
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :index => String.t(),
-          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :progressDocuments => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :startTime => DateTime.t(),
-          :state => String.t()
+          :endTime => DateTime.t() | nil,
+          :index => String.t() | nil,
+          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :progressDocuments =>
+            GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

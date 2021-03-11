@@ -34,14 +34,14 @@ defmodule GoogleApi.Firestore.V1.Model.StructuredQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endAt => GoogleApi.Firestore.V1.Model.Cursor.t(),
-          :from => list(GoogleApi.Firestore.V1.Model.CollectionSelector.t()),
-          :limit => integer(),
-          :offset => integer(),
-          :orderBy => list(GoogleApi.Firestore.V1.Model.Order.t()),
-          :select => GoogleApi.Firestore.V1.Model.Projection.t(),
-          :startAt => GoogleApi.Firestore.V1.Model.Cursor.t(),
-          :where => GoogleApi.Firestore.V1.Model.Filter.t()
+          :endAt => GoogleApi.Firestore.V1.Model.Cursor.t() | nil,
+          :from => list(GoogleApi.Firestore.V1.Model.CollectionSelector.t()) | nil,
+          :limit => integer() | nil,
+          :offset => integer() | nil,
+          :orderBy => list(GoogleApi.Firestore.V1.Model.Order.t()) | nil,
+          :select => GoogleApi.Firestore.V1.Model.Projection.t() | nil,
+          :startAt => GoogleApi.Firestore.V1.Model.Cursor.t() | nil,
+          :where => GoogleApi.Firestore.V1.Model.Filter.t() | nil
         }
 
   field(:endAt, as: GoogleApi.Firestore.V1.Model.Cursor)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.DocumentTransform do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => String.t(),
-          :fieldTransforms => list(GoogleApi.Firestore.V1.Model.FieldTransform.t())
+          :document => String.t() | nil,
+          :fieldTransforms => list(GoogleApi.Firestore.V1.Model.FieldTransform.t()) | nil
         }
 
   field(:document)

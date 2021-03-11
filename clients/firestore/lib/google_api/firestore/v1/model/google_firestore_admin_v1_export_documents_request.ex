@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionIds => list(String.t()),
-          :outputUriPrefix => String.t()
+          :collectionIds => list(String.t()) | nil,
+          :outputUriPrefix => String.t() | nil
         }
 
   field(:collectionIds, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:pageSize)

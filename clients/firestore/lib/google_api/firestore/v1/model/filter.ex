@@ -29,9 +29,9 @@ defmodule GoogleApi.Firestore.V1.Model.Filter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compositeFilter => GoogleApi.Firestore.V1.Model.CompositeFilter.t(),
-          :fieldFilter => GoogleApi.Firestore.V1.Model.FieldFilter.t(),
-          :unaryFilter => GoogleApi.Firestore.V1.Model.UnaryFilter.t()
+          :compositeFilter => GoogleApi.Firestore.V1.Model.CompositeFilter.t() | nil,
+          :fieldFilter => GoogleApi.Firestore.V1.Model.FieldFilter.t() | nil,
+          :unaryFilter => GoogleApi.Firestore.V1.Model.UnaryFilter.t() | nil
         }
 
   field(:compositeFilter, as: GoogleApi.Firestore.V1.Model.CompositeFilter)

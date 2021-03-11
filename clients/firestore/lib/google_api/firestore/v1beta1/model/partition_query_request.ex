@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.PartitionQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :partitionCount => String.t(),
-          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t()
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :partitionCount => String.t() | nil,
+          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t() | nil
         }
 
   field(:pageSize)

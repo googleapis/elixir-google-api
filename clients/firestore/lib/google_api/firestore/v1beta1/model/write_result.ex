@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transformResults => list(GoogleApi.Firestore.V1beta1.Model.Value.t()),
-          :updateTime => DateTime.t()
+          :transformResults => list(GoogleApi.Firestore.V1beta1.Model.Value.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:transformResults, as: GoogleApi.Firestore.V1beta1.Model.Value, type: :list)

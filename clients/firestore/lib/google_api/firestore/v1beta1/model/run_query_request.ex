@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RunQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newTransaction => GoogleApi.Firestore.V1beta1.Model.TransactionOptions.t(),
-          :readTime => DateTime.t(),
-          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t(),
-          :transaction => String.t()
+          :newTransaction => GoogleApi.Firestore.V1beta1.Model.TransactionOptions.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:newTransaction, as: GoogleApi.Firestore.V1beta1.Model.TransactionOptions)

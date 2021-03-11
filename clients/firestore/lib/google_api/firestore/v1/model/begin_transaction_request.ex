@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.BeginTransactionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.Firestore.V1.Model.TransactionOptions.t()
+          :options => GoogleApi.Firestore.V1.Model.TransactionOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.Firestore.V1.Model.TransactionOptions)

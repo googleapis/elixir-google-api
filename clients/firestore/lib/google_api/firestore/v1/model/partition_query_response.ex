@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.PartitionQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :partitions => list(GoogleApi.Firestore.V1.Model.Cursor.t())
+          :nextPageToken => String.t() | nil,
+          :partitions => list(GoogleApi.Firestore.V1.Model.Cursor.t()) | nil
         }
 
   field(:nextPageToken)

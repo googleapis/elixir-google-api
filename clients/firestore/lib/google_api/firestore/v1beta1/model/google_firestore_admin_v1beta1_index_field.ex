@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexFiel
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldPath => String.t(),
-          :mode => String.t()
+          :fieldPath => String.t() | nil,
+          :mode => String.t() | nil
         }
 
   field(:fieldPath)

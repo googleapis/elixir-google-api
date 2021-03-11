@@ -23,15 +23,15 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexField do
 
   *   `arrayConfig` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports operations on `array_value`s.
   *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Can be __name__. For single field indexes, this must match the name of the field or may be omitted.
-  *   `order` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports ordering by the specified order or comparing using =, <, <=, >, >=.
+  *   `order` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports ordering by the specified order or comparing using =, !=, <, <=, >, >=.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayConfig => String.t(),
-          :fieldPath => String.t(),
-          :order => String.t()
+          :arrayConfig => String.t() | nil,
+          :fieldPath => String.t() | nil,
+          :order => String.t() | nil
         }
 
   field(:arrayConfig)

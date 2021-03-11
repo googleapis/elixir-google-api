@@ -37,17 +37,17 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayValue => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
-          :booleanValue => boolean(),
-          :bytesValue => String.t(),
-          :doubleValue => float(),
-          :geoPointValue => GoogleApi.Firestore.V1beta1.Model.LatLng.t(),
-          :integerValue => String.t(),
-          :mapValue => GoogleApi.Firestore.V1beta1.Model.MapValue.t(),
-          :nullValue => String.t(),
-          :referenceValue => String.t(),
-          :stringValue => String.t(),
-          :timestampValue => DateTime.t()
+          :arrayValue => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t() | nil,
+          :booleanValue => boolean() | nil,
+          :bytesValue => String.t() | nil,
+          :doubleValue => float() | nil,
+          :geoPointValue => GoogleApi.Firestore.V1beta1.Model.LatLng.t() | nil,
+          :integerValue => String.t() | nil,
+          :mapValue => GoogleApi.Firestore.V1beta1.Model.MapValue.t() | nil,
+          :nullValue => String.t() | nil,
+          :referenceValue => String.t() | nil,
+          :stringValue => String.t() | nil,
+          :timestampValue => DateTime.t() | nil
         }
 
   field(:arrayValue, as: GoogleApi.Firestore.V1beta1.Model.ArrayValue)

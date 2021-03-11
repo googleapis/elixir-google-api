@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Document do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :fields => %{optional(String.t()) => GoogleApi.Firestore.V1beta1.Model.Value.t()},
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :fields => %{optional(String.t()) => GoogleApi.Firestore.V1beta1.Model.Value.t()} | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

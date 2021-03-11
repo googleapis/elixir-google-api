@@ -32,12 +32,12 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentDocument => GoogleApi.Firestore.V1.Model.Precondition.t(),
-          :delete => String.t(),
-          :transform => GoogleApi.Firestore.V1.Model.DocumentTransform.t(),
-          :update => GoogleApi.Firestore.V1.Model.Document.t(),
-          :updateMask => GoogleApi.Firestore.V1.Model.DocumentMask.t(),
-          :updateTransforms => list(GoogleApi.Firestore.V1.Model.FieldTransform.t())
+          :currentDocument => GoogleApi.Firestore.V1.Model.Precondition.t() | nil,
+          :delete => String.t() | nil,
+          :transform => GoogleApi.Firestore.V1.Model.DocumentTransform.t() | nil,
+          :update => GoogleApi.Firestore.V1.Model.Document.t() | nil,
+          :updateMask => GoogleApi.Firestore.V1.Model.DocumentMask.t() | nil,
+          :updateTransforms => list(GoogleApi.Firestore.V1.Model.FieldTransform.t()) | nil
         }
 
   field(:currentDocument, as: GoogleApi.Firestore.V1.Model.Precondition)

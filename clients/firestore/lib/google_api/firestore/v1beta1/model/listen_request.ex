@@ -29,9 +29,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListenRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addTarget => GoogleApi.Firestore.V1beta1.Model.Target.t(),
-          :labels => map(),
-          :removeTarget => integer()
+          :addTarget => GoogleApi.Firestore.V1beta1.Model.Target.t() | nil,
+          :labels => map() | nil,
+          :removeTarget => integer() | nil
         }
 
   field(:addTarget, as: GoogleApi.Firestore.V1beta1.Model.Target)

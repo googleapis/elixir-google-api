@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.Firestore.V1.Model.Document.t(),
-          :readTime => DateTime.t(),
-          :skippedResults => integer(),
-          :transaction => String.t()
+          :document => GoogleApi.Firestore.V1.Model.Document.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :skippedResults => integer() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:document, as: GoogleApi.Firestore.V1.Model.Document)

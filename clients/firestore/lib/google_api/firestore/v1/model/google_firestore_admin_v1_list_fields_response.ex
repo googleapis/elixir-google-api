@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ListFieldsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field.t()),
-          :nextPageToken => String.t()
+          :fields => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:fields, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field, type: :list)

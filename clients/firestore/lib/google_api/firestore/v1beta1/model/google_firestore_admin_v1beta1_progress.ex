@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :workCompleted => String.t(),
-          :workEstimated => String.t()
+          :workCompleted => String.t() | nil,
+          :workEstimated => String.t() | nil
         }
 
   field(:workCompleted)

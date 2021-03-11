@@ -33,13 +33,13 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldTransform do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appendMissingElements => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
-          :fieldPath => String.t(),
-          :increment => GoogleApi.Firestore.V1beta1.Model.Value.t(),
-          :maximum => GoogleApi.Firestore.V1beta1.Model.Value.t(),
-          :minimum => GoogleApi.Firestore.V1beta1.Model.Value.t(),
-          :removeAllFromArray => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
-          :setToServerValue => String.t()
+          :appendMissingElements => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t() | nil,
+          :fieldPath => String.t() | nil,
+          :increment => GoogleApi.Firestore.V1beta1.Model.Value.t() | nil,
+          :maximum => GoogleApi.Firestore.V1beta1.Model.Value.t() | nil,
+          :minimum => GoogleApi.Firestore.V1beta1.Model.Value.t() | nil,
+          :removeAllFromArray => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t() | nil,
+          :setToServerValue => String.t() | nil
         }
 
   field(:appendMissingElements, as: GoogleApi.Firestore.V1beta1.Model.ArrayValue)

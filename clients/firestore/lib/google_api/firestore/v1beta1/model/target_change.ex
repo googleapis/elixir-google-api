@@ -31,11 +31,11 @@ defmodule GoogleApi.Firestore.V1beta1.Model.TargetChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cause => GoogleApi.Firestore.V1beta1.Model.Status.t(),
-          :readTime => DateTime.t(),
-          :resumeToken => String.t(),
-          :targetChangeType => String.t(),
-          :targetIds => list(integer())
+          :cause => GoogleApi.Firestore.V1beta1.Model.Status.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :resumeToken => String.t() | nil,
+          :targetChangeType => String.t() | nil,
+          :targetIds => list(integer()) | nil
         }
 
   field(:cause, as: GoogleApi.Firestore.V1beta1.Model.Status)

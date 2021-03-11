@@ -60,6 +60,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_export_documents(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_import_documents(
         connection,
@@ -206,6 +208,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_batch_get(
         connection,
@@ -279,6 +282,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.BatchWriteResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_batch_write(
         connection,
@@ -350,6 +354,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.BeginTransactionResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_begin_transaction(
         connection,
@@ -423,6 +428,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.CommitResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_commit(
         connection,
@@ -498,6 +504,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Document.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_create_document(
         connection,
@@ -574,6 +581,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_delete(
         connection,
@@ -648,6 +656,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Document.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_get(
         connection,
@@ -729,6 +738,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_list(
         connection,
@@ -810,6 +820,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_list_collection_ids(
         connection,
@@ -883,6 +894,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.ListenResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_listen(
         connection,
@@ -954,6 +966,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.PartitionQueryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_partition_query(
         connection,
@@ -1031,6 +1044,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Document.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_patch(
         connection,
@@ -1106,6 +1120,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_rollback(
         connection,
@@ -1177,6 +1192,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.RunQueryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_run_query(
         connection,
@@ -1248,6 +1264,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.WriteResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_documents_write(
         connection,
@@ -1319,6 +1336,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_indexes_create(
         connection,
@@ -1391,6 +1409,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_indexes_delete(
         connection,
@@ -1460,6 +1479,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_indexes_get(
         connection,
@@ -1535,6 +1555,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ListIndexesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def firestore_projects_databases_indexes_list(
         connection,
