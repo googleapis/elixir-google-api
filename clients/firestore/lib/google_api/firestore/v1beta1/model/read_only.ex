@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ReadOnly do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :readTime => DateTime.t()
+          :readTime => DateTime.t() | nil
         }
 
   field(:readTime, as: DateTime)

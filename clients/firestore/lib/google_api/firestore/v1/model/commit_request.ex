@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.CommitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transaction => String.t(),
-          :writes => list(GoogleApi.Firestore.V1.Model.Write.t())
+          :transaction => String.t() | nil,
+          :writes => list(GoogleApi.Firestore.V1.Model.Write.t()) | nil
         }
 
   field(:transaction)

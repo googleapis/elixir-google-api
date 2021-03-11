@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1.Model.BatchGetDocumentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :found => GoogleApi.Firestore.V1.Model.Document.t(),
-          :missing => String.t(),
-          :readTime => DateTime.t(),
-          :transaction => String.t()
+          :found => GoogleApi.Firestore.V1.Model.Document.t() | nil,
+          :missing => String.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:found, as: GoogleApi.Firestore.V1.Model.Document)

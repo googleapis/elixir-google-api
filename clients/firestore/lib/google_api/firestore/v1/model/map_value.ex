@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.MapValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => %{optional(String.t()) => GoogleApi.Firestore.V1.Model.Value.t()}
+          :fields => %{optional(String.t()) => GoogleApi.Firestore.V1.Model.Value.t()} | nil
         }
 
   field(:fields, as: GoogleApi.Firestore.V1.Model.Value, type: :map)

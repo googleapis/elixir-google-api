@@ -33,13 +33,14 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionIds => list(String.t()),
-          :endTime => DateTime.t(),
-          :inputUriPrefix => String.t(),
-          :operationState => String.t(),
-          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :progressDocuments => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :startTime => DateTime.t()
+          :collectionIds => list(String.t()) | nil,
+          :endTime => DateTime.t() | nil,
+          :inputUriPrefix => String.t() | nil,
+          :operationState => String.t() | nil,
+          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :progressDocuments =>
+            GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:collectionIds, type: :list)

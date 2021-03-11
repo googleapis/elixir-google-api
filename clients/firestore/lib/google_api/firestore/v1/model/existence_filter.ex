@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.ExistenceFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :targetId => integer()
+          :count => integer() | nil,
+          :targetId => integer() | nil
         }
 
   field(:count)

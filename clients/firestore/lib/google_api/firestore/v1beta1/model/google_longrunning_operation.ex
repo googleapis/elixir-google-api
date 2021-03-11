@@ -31,11 +31,11 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleLongrunningOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.Firestore.V1beta1.Model.Status.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.Firestore.V1beta1.Model.Status.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

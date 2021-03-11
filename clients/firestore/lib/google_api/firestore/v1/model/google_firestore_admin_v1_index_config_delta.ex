@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfigDelta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changeType => String.t(),
-          :index => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t()
+          :changeType => String.t() | nil,
+          :index => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t() | nil
         }
 
   field(:changeType)

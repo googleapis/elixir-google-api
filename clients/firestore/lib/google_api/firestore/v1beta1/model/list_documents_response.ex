@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListDocumentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documents => list(GoogleApi.Firestore.V1beta1.Model.Document.t()),
-          :nextPageToken => String.t()
+          :documents => list(GoogleApi.Firestore.V1beta1.Model.Document.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:documents, as: GoogleApi.Firestore.V1beta1.Model.Document, type: :list)

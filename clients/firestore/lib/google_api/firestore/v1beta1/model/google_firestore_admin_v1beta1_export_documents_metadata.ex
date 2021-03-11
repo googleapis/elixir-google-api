@@ -33,15 +33,15 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ExportDoc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionIds => list(String.t()),
-          :endTime => DateTime.t(),
-          :operationState => String.t(),
-          :outputUriPrefix => String.t(),
+          :collectionIds => list(String.t()) | nil,
+          :endTime => DateTime.t() | nil,
+          :operationState => String.t() | nil,
+          :outputUriPrefix => String.t() | nil,
           :progressBytes =>
-            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t(),
+            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t() | nil,
           :progressDocuments =>
-            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t(),
-          :startTime => DateTime.t()
+            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:collectionIds, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ListIndexesResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexes => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t()),
-          :nextPageToken => String.t()
+          :indexes => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:indexes, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index, type: :list)

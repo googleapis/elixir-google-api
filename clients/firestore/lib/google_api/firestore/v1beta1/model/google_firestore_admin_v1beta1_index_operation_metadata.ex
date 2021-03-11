@@ -32,13 +32,13 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexOper
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancelled => boolean(),
+          :cancelled => boolean() | nil,
           :documentProgress =>
-            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t(),
-          :endTime => DateTime.t(),
-          :index => String.t(),
-          :operationType => String.t(),
-          :startTime => DateTime.t()
+            GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :index => String.t() | nil,
+          :operationType => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:cancelled)

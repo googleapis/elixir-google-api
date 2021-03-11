@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.ReadWrite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :retryTransaction => String.t()
+          :retryTransaction => String.t() | nil
         }
 
   field(:retryTransaction)

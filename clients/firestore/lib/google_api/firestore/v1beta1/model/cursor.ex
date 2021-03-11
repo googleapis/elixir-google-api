@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Cursor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :before => boolean(),
-          :values => list(GoogleApi.Firestore.V1beta1.Model.Value.t())
+          :before => boolean() | nil,
+          :values => list(GoogleApi.Firestore.V1beta1.Model.Value.t()) | nil
         }
 
   field(:before)

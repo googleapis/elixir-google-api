@@ -29,8 +29,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ListIndex
 
   @type t :: %__MODULE__{
           :indexes =>
-            list(GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:indexes,

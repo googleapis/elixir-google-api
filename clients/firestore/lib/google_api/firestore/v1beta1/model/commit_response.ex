@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CommitResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitTime => DateTime.t(),
-          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t())
+          :commitTime => DateTime.t() | nil,
+          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t()) | nil
         }
 
   field(:commitTime, as: DateTime)

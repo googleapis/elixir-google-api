@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Order do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :direction => String.t(),
-          :field => GoogleApi.Firestore.V1beta1.Model.FieldReference.t()
+          :direction => String.t() | nil,
+          :field => GoogleApi.Firestore.V1beta1.Model.FieldReference.t() | nil
         }
 
   field(:direction)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RollbackRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transaction => String.t()
+          :transaction => String.t() | nil
         }
 
   field(:transaction)

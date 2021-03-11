@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionIds => list(String.t()),
-          :nextPageToken => String.t()
+          :collectionIds => list(String.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:collectionIds, type: :list)

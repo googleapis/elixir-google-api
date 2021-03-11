@@ -31,11 +31,11 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentChange => GoogleApi.Firestore.V1beta1.Model.DocumentChange.t(),
-          :documentDelete => GoogleApi.Firestore.V1beta1.Model.DocumentDelete.t(),
-          :documentRemove => GoogleApi.Firestore.V1beta1.Model.DocumentRemove.t(),
-          :filter => GoogleApi.Firestore.V1beta1.Model.ExistenceFilter.t(),
-          :targetChange => GoogleApi.Firestore.V1beta1.Model.TargetChange.t()
+          :documentChange => GoogleApi.Firestore.V1beta1.Model.DocumentChange.t() | nil,
+          :documentDelete => GoogleApi.Firestore.V1beta1.Model.DocumentDelete.t() | nil,
+          :documentRemove => GoogleApi.Firestore.V1beta1.Model.DocumentRemove.t() | nil,
+          :filter => GoogleApi.Firestore.V1beta1.Model.ExistenceFilter.t() | nil,
+          :targetChange => GoogleApi.Firestore.V1beta1.Model.TargetChange.t() | nil
         }
 
   field(:documentChange, as: GoogleApi.Firestore.V1beta1.Model.DocumentChange)

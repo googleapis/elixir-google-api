@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CollectionSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allDescendants => boolean(),
-          :collectionId => String.t()
+          :allDescendants => boolean() | nil,
+          :collectionId => String.t() | nil
         }
 
   field(:allDescendants)

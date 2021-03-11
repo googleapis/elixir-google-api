@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.Projection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.Firestore.V1.Model.FieldReference.t())
+          :fields => list(GoogleApi.Firestore.V1.Model.FieldReference.t()) | nil
         }
 
   field(:fields, as: GoogleApi.Firestore.V1.Model.FieldReference, type: :list)

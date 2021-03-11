@@ -32,12 +32,12 @@ defmodule GoogleApi.Firestore.V1.Model.Target do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documents => GoogleApi.Firestore.V1.Model.DocumentsTarget.t(),
-          :once => boolean(),
-          :query => GoogleApi.Firestore.V1.Model.QueryTarget.t(),
-          :readTime => DateTime.t(),
-          :resumeToken => String.t(),
-          :targetId => integer()
+          :documents => GoogleApi.Firestore.V1.Model.DocumentsTarget.t() | nil,
+          :once => boolean() | nil,
+          :query => GoogleApi.Firestore.V1.Model.QueryTarget.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :resumeToken => String.t() | nil,
+          :targetId => integer() | nil
         }
 
   field(:documents, as: GoogleApi.Firestore.V1.Model.DocumentsTarget)

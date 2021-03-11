@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Precondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exists => boolean(),
-          :updateTime => DateTime.t()
+          :exists => boolean() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:exists)

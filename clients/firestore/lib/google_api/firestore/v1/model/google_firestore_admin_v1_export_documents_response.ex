@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputUriPrefix => String.t()
+          :outputUriPrefix => String.t() | nil
         }
 
   field(:outputUriPrefix)

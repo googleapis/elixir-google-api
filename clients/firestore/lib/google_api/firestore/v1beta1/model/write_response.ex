@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.WriteResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitTime => DateTime.t(),
-          :streamId => String.t(),
-          :streamToken => String.t(),
-          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t())
+          :commitTime => DateTime.t() | nil,
+          :streamId => String.t() | nil,
+          :streamToken => String.t() | nil,
+          :writeResults => list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t()) | nil
         }
 
   field(:commitTime, as: DateTime)

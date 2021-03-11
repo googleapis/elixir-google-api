@@ -30,10 +30,10 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ancestorField => String.t(),
-          :indexes => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t()),
-          :reverting => boolean(),
-          :usesAncestorConfig => boolean()
+          :ancestorField => String.t() | nil,
+          :indexes => list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t()) | nil,
+          :reverting => boolean() | nil,
+          :usesAncestorConfig => boolean() | nil
         }
 
   field(:ancestorField)

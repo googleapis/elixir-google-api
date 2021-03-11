@@ -29,9 +29,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => GoogleApi.Firestore.V1beta1.Model.FieldReference.t(),
-          :op => String.t(),
-          :value => GoogleApi.Firestore.V1beta1.Model.Value.t()
+          :field => GoogleApi.Firestore.V1beta1.Model.FieldReference.t() | nil,
+          :op => String.t() | nil,
+          :value => GoogleApi.Firestore.V1beta1.Model.Value.t() | nil
         }
 
   field(:field, as: GoogleApi.Firestore.V1beta1.Model.FieldReference)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldPath => String.t()
+          :fieldPath => String.t() | nil
         }
 
   field(:fieldPath)

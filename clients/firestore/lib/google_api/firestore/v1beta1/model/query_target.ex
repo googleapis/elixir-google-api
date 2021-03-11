@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.QueryTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t(),
-          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t()
+          :parent => String.t() | nil,
+          :structuredQuery => GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t() | nil
         }
 
   field(:parent)

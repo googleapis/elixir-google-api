@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.BeginTransactionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transaction => String.t()
+          :transaction => String.t() | nil
         }
 
   field(:transaction)

@@ -30,11 +30,12 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionId => String.t(),
+          :collectionId => String.t() | nil,
           :fields =>
-            list(GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexField.t()),
-          :name => String.t(),
-          :state => String.t()
+            list(GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexField.t())
+            | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:collectionId)

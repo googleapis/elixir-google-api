@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.DocumentMask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldPaths => list(String.t())
+          :fieldPaths => list(String.t()) | nil
         }
 
   field(:fieldPaths, type: :list)

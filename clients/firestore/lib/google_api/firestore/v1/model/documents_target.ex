@@ -27,7 +27,7 @@ defmodule GoogleApi.Firestore.V1.Model.DocumentsTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documents => list(String.t())
+          :documents => list(String.t()) | nil
         }
 
   field(:documents, type: :list)

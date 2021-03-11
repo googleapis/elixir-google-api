@@ -29,9 +29,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.DocumentChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.Firestore.V1beta1.Model.Document.t(),
-          :removedTargetIds => list(integer()),
-          :targetIds => list(integer())
+          :document => GoogleApi.Firestore.V1beta1.Model.Document.t() | nil,
+          :removedTargetIds => list(integer()) | nil,
+          :targetIds => list(integer()) | nil
         }
 
   field(:document, as: GoogleApi.Firestore.V1beta1.Model.Document)

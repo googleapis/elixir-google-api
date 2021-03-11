@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collectionIds => list(String.t()),
-          :inputUriPrefix => String.t()
+          :collectionIds => list(String.t()) | nil,
+          :inputUriPrefix => String.t() | nil
         }
 
   field(:collectionIds, type: :list)

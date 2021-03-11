@@ -31,11 +31,11 @@ defmodule GoogleApi.Firestore.V1.Model.BatchGetDocumentsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documents => list(String.t()),
-          :mask => GoogleApi.Firestore.V1.Model.DocumentMask.t(),
-          :newTransaction => GoogleApi.Firestore.V1.Model.TransactionOptions.t(),
-          :readTime => DateTime.t(),
-          :transaction => String.t()
+          :documents => list(String.t()) | nil,
+          :mask => GoogleApi.Firestore.V1.Model.DocumentMask.t() | nil,
+          :newTransaction => GoogleApi.Firestore.V1.Model.TransactionOptions.t() | nil,
+          :readTime => DateTime.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:documents, type: :list)

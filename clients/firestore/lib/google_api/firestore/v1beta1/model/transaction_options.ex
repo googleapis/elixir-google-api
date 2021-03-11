@@ -28,8 +28,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.TransactionOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :readOnly => GoogleApi.Firestore.V1beta1.Model.ReadOnly.t(),
-          :readWrite => GoogleApi.Firestore.V1beta1.Model.ReadWrite.t()
+          :readOnly => GoogleApi.Firestore.V1beta1.Model.ReadOnly.t() | nil,
+          :readWrite => GoogleApi.Firestore.V1beta1.Model.ReadWrite.t() | nil
         }
 
   field(:readOnly, as: GoogleApi.Firestore.V1beta1.Model.ReadOnly)

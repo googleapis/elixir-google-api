@@ -33,14 +33,15 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1FieldOperationMetad
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :field => String.t(),
+          :endTime => DateTime.t() | nil,
+          :field => String.t() | nil,
           :indexConfigDeltas =>
-            list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfigDelta.t()),
-          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :progressDocuments => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t(),
-          :startTime => DateTime.t(),
-          :state => String.t()
+            list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfigDelta.t()) | nil,
+          :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :progressDocuments =>
+            GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:endTime, as: DateTime)
