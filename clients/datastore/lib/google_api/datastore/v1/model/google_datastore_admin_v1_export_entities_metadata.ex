@@ -31,11 +31,13 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesMetad
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t(),
-          :entityFilter => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t(),
-          :outputUrlPrefix => String.t(),
-          :progressBytes => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t(),
-          :progressEntities => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t()
+          :common => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t() | nil,
+          :entityFilter =>
+            GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t() | nil,
+          :outputUrlPrefix => String.t() | nil,
+          :progressBytes => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t() | nil,
+          :progressEntities =>
+            GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t() | nil
         }
 
   field(:common, as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata)

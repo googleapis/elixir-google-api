@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kinds => list(String.t()),
-          :namespaceIds => list(String.t())
+          :kinds => list(String.t()) | nil,
+          :namespaceIds => list(String.t()) | nil
         }
 
   field(:kinds, type: :list)

@@ -30,12 +30,11 @@ defmodule GoogleApi.Datastore.V1.Model.GqlQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowLiterals => boolean(),
-          :namedBindings => %{
-            optional(String.t()) => GoogleApi.Datastore.V1.Model.GqlQueryParameter.t()
-          },
-          :positionalBindings => list(GoogleApi.Datastore.V1.Model.GqlQueryParameter.t()),
-          :queryString => String.t()
+          :allowLiterals => boolean() | nil,
+          :namedBindings =>
+            %{optional(String.t()) => GoogleApi.Datastore.V1.Model.GqlQueryParameter.t()} | nil,
+          :positionalBindings => list(GoogleApi.Datastore.V1.Model.GqlQueryParameter.t()) | nil,
+          :queryString => String.t() | nil
         }
 
   field(:allowLiterals)

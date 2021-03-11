@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.AllocateIdsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keys => list(GoogleApi.Datastore.V1.Model.Key.t())
+          :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil
         }
 
   field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)

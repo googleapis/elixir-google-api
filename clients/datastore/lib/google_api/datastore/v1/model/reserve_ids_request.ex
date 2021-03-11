@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.ReserveIdsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databaseId => String.t(),
-          :keys => list(GoogleApi.Datastore.V1.Model.Key.t())
+          :databaseId => String.t() | nil,
+          :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil
         }
 
   field(:databaseId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.LatLng do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latitude => float(),
-          :longitude => float()
+          :latitude => float() | nil,
+          :longitude => float() | nil
         }
 
   field(:latitude)

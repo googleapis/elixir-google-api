@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.TransactionOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :readOnly => GoogleApi.Datastore.V1.Model.ReadOnly.t(),
-          :readWrite => GoogleApi.Datastore.V1.Model.ReadWrite.t()
+          :readOnly => GoogleApi.Datastore.V1.Model.ReadOnly.t() | nil,
+          :readWrite => GoogleApi.Datastore.V1.Model.ReadWrite.t() | nil
         }
 
   field(:readOnly, as: GoogleApi.Datastore.V1.Model.ReadOnly)

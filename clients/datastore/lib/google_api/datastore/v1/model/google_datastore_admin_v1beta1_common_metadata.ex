@@ -31,11 +31,11 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :labels => map(),
-          :operationType => String.t(),
-          :startTime => DateTime.t(),
-          :state => String.t()
+          :endTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :operationType => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:endTime, as: DateTime)

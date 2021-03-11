@@ -29,9 +29,10 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexOperationMetad
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t(),
-          :indexId => String.t(),
-          :progressEntities => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t()
+          :common => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t() | nil,
+          :indexId => String.t() | nil,
+          :progressEntities =>
+            GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t() | nil
         }
 
   field(:common, as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata)

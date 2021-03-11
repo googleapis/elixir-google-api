@@ -29,9 +29,9 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deferred => list(GoogleApi.Datastore.V1.Model.Key.t()),
-          :found => list(GoogleApi.Datastore.V1.Model.EntityResult.t()),
-          :missing => list(GoogleApi.Datastore.V1.Model.EntityResult.t())
+          :deferred => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
+          :found => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
+          :missing => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil
         }
 
   field(:deferred, as: GoogleApi.Datastore.V1.Model.Key, type: :list)

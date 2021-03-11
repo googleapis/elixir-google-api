@@ -29,9 +29,9 @@ defmodule GoogleApi.Datastore.V1.Model.CommitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mode => String.t(),
-          :mutations => list(GoogleApi.Datastore.V1.Model.Mutation.t()),
-          :transaction => String.t()
+          :mode => String.t() | nil,
+          :mutations => list(GoogleApi.Datastore.V1.Model.Mutation.t()) | nil,
+          :transaction => String.t() | nil
         }
 
   field(:mode)

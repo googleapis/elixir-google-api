@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :direction => String.t(),
-          :name => String.t()
+          :direction => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:direction)

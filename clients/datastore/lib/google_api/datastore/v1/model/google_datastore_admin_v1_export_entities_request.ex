@@ -29,9 +29,10 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityFilter => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t(),
-          :labels => map(),
-          :outputUrlPrefix => String.t()
+          :entityFilter =>
+            GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t() | nil,
+          :labels => map() | nil,
+          :outputUrlPrefix => String.t() | nil
         }
 
   field(:entityFilter, as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter)

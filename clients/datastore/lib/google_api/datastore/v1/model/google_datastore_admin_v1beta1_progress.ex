@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :workCompleted => String.t(),
-          :workEstimated => String.t()
+          :workCompleted => String.t() | nil,
+          :workEstimated => String.t() | nil
         }
 
   field(:workCompleted)

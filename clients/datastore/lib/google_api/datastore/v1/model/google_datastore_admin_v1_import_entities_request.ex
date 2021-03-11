@@ -29,9 +29,10 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ImportEntitiesReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityFilter => GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t(),
-          :inputUrl => String.t(),
-          :labels => map()
+          :entityFilter =>
+            GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t() | nil,
+          :inputUrl => String.t() | nil,
+          :labels => map() | nil
         }
 
   field(:entityFilter, as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter)

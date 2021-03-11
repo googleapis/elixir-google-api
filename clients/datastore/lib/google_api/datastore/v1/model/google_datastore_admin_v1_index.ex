@@ -32,13 +32,13 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ancestor => String.t(),
-          :indexId => String.t(),
-          :kind => String.t(),
-          :projectId => String.t(),
+          :ancestor => String.t() | nil,
+          :indexId => String.t() | nil,
+          :kind => String.t() | nil,
+          :projectId => String.t() | nil,
           :properties =>
-            list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t()),
-          :state => String.t()
+            list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t()) | nil,
+          :state => String.t() | nil
         }
 
   field(:ancestor)

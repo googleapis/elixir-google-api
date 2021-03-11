@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.ReadWrite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :previousTransaction => String.t()
+          :previousTransaction => String.t() | nil
         }
 
   field(:previousTransaction)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transactionOptions => GoogleApi.Datastore.V1.Model.TransactionOptions.t()
+          :transactionOptions => GoogleApi.Datastore.V1.Model.TransactionOptions.t() | nil
         }
 
   field(:transactionOptions, as: GoogleApi.Datastore.V1.Model.TransactionOptions)

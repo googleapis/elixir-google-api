@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputUrl => String.t()
+          :outputUrl => String.t() | nil
         }
 
   field(:outputUrl)
