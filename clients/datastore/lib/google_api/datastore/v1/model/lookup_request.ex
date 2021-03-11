@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keys => list(GoogleApi.Datastore.V1.Model.Key.t()),
-          :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t()
+          :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
+          :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
         }
 
   field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)

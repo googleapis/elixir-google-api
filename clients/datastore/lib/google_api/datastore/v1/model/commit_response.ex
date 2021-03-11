@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.CommitResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexUpdates => integer(),
-          :mutationResults => list(GoogleApi.Datastore.V1.Model.MutationResult.t())
+          :indexUpdates => integer() | nil,
+          :mutationResults => list(GoogleApi.Datastore.V1.Model.MutationResult.t()) | nil
         }
 
   field(:indexUpdates)

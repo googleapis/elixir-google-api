@@ -31,11 +31,11 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseVersion => String.t(),
-          :delete => GoogleApi.Datastore.V1.Model.Key.t(),
-          :insert => GoogleApi.Datastore.V1.Model.Entity.t(),
-          :update => GoogleApi.Datastore.V1.Model.Entity.t(),
-          :upsert => GoogleApi.Datastore.V1.Model.Entity.t()
+          :baseVersion => String.t() | nil,
+          :delete => GoogleApi.Datastore.V1.Model.Key.t() | nil,
+          :insert => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :update => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :upsert => GoogleApi.Datastore.V1.Model.Entity.t() | nil
         }
 
   field(:baseVersion)

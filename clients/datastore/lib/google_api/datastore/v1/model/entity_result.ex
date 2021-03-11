@@ -29,9 +29,9 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cursor => String.t(),
-          :entity => GoogleApi.Datastore.V1.Model.Entity.t(),
-          :version => String.t()
+          :cursor => String.t() | nil,
+          :entity => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:cursor)

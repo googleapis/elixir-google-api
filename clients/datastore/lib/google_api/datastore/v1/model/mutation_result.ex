@@ -29,9 +29,9 @@ defmodule GoogleApi.Datastore.V1.Model.MutationResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conflictDetected => boolean(),
-          :key => GoogleApi.Datastore.V1.Model.Key.t(),
-          :version => String.t()
+          :conflictDetected => boolean() | nil,
+          :key => GoogleApi.Datastore.V1.Model.Key.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:conflictDetected)

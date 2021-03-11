@@ -30,10 +30,10 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gqlQuery => GoogleApi.Datastore.V1.Model.GqlQuery.t(),
-          :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t(),
-          :query => GoogleApi.Datastore.V1.Model.Query.t(),
-          :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t()
+          :gqlQuery => GoogleApi.Datastore.V1.Model.GqlQuery.t() | nil,
+          :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t() | nil,
+          :query => GoogleApi.Datastore.V1.Model.Query.t() | nil,
+          :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
         }
 
   field(:gqlQuery, as: GoogleApi.Datastore.V1.Model.GqlQuery)

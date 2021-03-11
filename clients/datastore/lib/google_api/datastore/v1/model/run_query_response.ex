@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batch => GoogleApi.Datastore.V1.Model.QueryResultBatch.t(),
-          :query => GoogleApi.Datastore.V1.Model.Query.t()
+          :batch => GoogleApi.Datastore.V1.Model.QueryResultBatch.t() | nil,
+          :query => GoogleApi.Datastore.V1.Model.Query.t() | nil
         }
 
   field(:batch, as: GoogleApi.Datastore.V1.Model.QueryResultBatch)

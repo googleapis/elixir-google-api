@@ -29,9 +29,9 @@ defmodule GoogleApi.Datastore.V1.Model.PropertyFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :op => String.t(),
-          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t(),
-          :value => GoogleApi.Datastore.V1.Model.Value.t()
+          :op => String.t() | nil,
+          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t() | nil,
+          :value => GoogleApi.Datastore.V1.Model.Value.t() | nil
         }
 
   field(:op)

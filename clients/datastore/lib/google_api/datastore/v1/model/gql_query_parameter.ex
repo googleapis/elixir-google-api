@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.GqlQueryParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cursor => String.t(),
-          :value => GoogleApi.Datastore.V1.Model.Value.t()
+          :cursor => String.t() | nil,
+          :value => GoogleApi.Datastore.V1.Model.Value.t() | nil
         }
 
   field(:cursor)

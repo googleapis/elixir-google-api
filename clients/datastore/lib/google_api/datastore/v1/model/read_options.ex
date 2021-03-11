@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :readConsistency => String.t(),
-          :transaction => String.t()
+          :readConsistency => String.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:readConsistency)

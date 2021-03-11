@@ -33,13 +33,13 @@ defmodule GoogleApi.Datastore.V1.Model.QueryResultBatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endCursor => String.t(),
-          :entityResultType => String.t(),
-          :entityResults => list(GoogleApi.Datastore.V1.Model.EntityResult.t()),
-          :moreResults => String.t(),
-          :skippedCursor => String.t(),
-          :skippedResults => integer(),
-          :snapshotVersion => String.t()
+          :endCursor => String.t() | nil,
+          :entityResultType => String.t() | nil,
+          :entityResults => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
+          :moreResults => String.t() | nil,
+          :skippedCursor => String.t() | nil,
+          :skippedResults => integer() | nil,
+          :snapshotVersion => String.t() | nil
         }
 
   field(:endCursor)

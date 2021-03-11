@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => GoogleApi.Datastore.V1.Model.Key.t(),
-          :properties => %{optional(String.t()) => GoogleApi.Datastore.V1.Model.Value.t()}
+          :key => GoogleApi.Datastore.V1.Model.Key.t() | nil,
+          :properties => %{optional(String.t()) => GoogleApi.Datastore.V1.Model.Value.t()} | nil
         }
 
   field(:key, as: GoogleApi.Datastore.V1.Model.Key)

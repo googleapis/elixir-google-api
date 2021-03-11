@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.Filter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compositeFilter => GoogleApi.Datastore.V1.Model.CompositeFilter.t(),
-          :propertyFilter => GoogleApi.Datastore.V1.Model.PropertyFilter.t()
+          :compositeFilter => GoogleApi.Datastore.V1.Model.CompositeFilter.t() | nil,
+          :propertyFilter => GoogleApi.Datastore.V1.Model.PropertyFilter.t() | nil
         }
 
   field(:compositeFilter, as: GoogleApi.Datastore.V1.Model.CompositeFilter)

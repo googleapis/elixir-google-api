@@ -39,19 +39,19 @@ defmodule GoogleApi.Datastore.V1.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayValue => GoogleApi.Datastore.V1.Model.ArrayValue.t(),
-          :blobValue => String.t(),
-          :booleanValue => boolean(),
-          :doubleValue => float(),
-          :entityValue => GoogleApi.Datastore.V1.Model.Entity.t(),
-          :excludeFromIndexes => boolean(),
-          :geoPointValue => GoogleApi.Datastore.V1.Model.LatLng.t(),
-          :integerValue => String.t(),
-          :keyValue => GoogleApi.Datastore.V1.Model.Key.t(),
-          :meaning => integer(),
-          :nullValue => String.t(),
-          :stringValue => String.t(),
-          :timestampValue => DateTime.t()
+          :arrayValue => GoogleApi.Datastore.V1.Model.ArrayValue.t() | nil,
+          :blobValue => String.t() | nil,
+          :booleanValue => boolean() | nil,
+          :doubleValue => float() | nil,
+          :entityValue => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :excludeFromIndexes => boolean() | nil,
+          :geoPointValue => GoogleApi.Datastore.V1.Model.LatLng.t() | nil,
+          :integerValue => String.t() | nil,
+          :keyValue => GoogleApi.Datastore.V1.Model.Key.t() | nil,
+          :meaning => integer() | nil,
+          :nullValue => String.t() | nil,
+          :stringValue => String.t() | nil,
+          :timestampValue => DateTime.t() | nil
         }
 
   field(:arrayValue, as: GoogleApi.Datastore.V1.Model.ArrayValue)

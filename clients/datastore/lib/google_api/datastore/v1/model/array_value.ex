@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.ArrayValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.Datastore.V1.Model.Value.t())
+          :values => list(GoogleApi.Datastore.V1.Model.Value.t()) | nil
         }
 
   field(:values, as: GoogleApi.Datastore.V1.Model.Value, type: :list)

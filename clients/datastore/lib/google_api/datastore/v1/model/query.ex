@@ -35,15 +35,15 @@ defmodule GoogleApi.Datastore.V1.Model.Query do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :distinctOn => list(GoogleApi.Datastore.V1.Model.PropertyReference.t()),
-          :endCursor => String.t(),
-          :filter => GoogleApi.Datastore.V1.Model.Filter.t(),
-          :kind => list(GoogleApi.Datastore.V1.Model.KindExpression.t()),
-          :limit => integer(),
-          :offset => integer(),
-          :order => list(GoogleApi.Datastore.V1.Model.PropertyOrder.t()),
-          :projection => list(GoogleApi.Datastore.V1.Model.Projection.t()),
-          :startCursor => String.t()
+          :distinctOn => list(GoogleApi.Datastore.V1.Model.PropertyReference.t()) | nil,
+          :endCursor => String.t() | nil,
+          :filter => GoogleApi.Datastore.V1.Model.Filter.t() | nil,
+          :kind => list(GoogleApi.Datastore.V1.Model.KindExpression.t()) | nil,
+          :limit => integer() | nil,
+          :offset => integer() | nil,
+          :order => list(GoogleApi.Datastore.V1.Model.PropertyOrder.t()) | nil,
+          :projection => list(GoogleApi.Datastore.V1.Model.Projection.t()) | nil,
+          :startCursor => String.t() | nil
         }
 
   field(:distinctOn, as: GoogleApi.Datastore.V1.Model.PropertyReference, type: :list)

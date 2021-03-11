@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.Key do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t(),
-          :path => list(GoogleApi.Datastore.V1.Model.PathElement.t())
+          :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t() | nil,
+          :path => list(GoogleApi.Datastore.V1.Model.PathElement.t()) | nil
         }
 
   field(:partitionId, as: GoogleApi.Datastore.V1.Model.PartitionId)

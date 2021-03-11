@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexes => list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t()),
-          :nextPageToken => String.t()
+          :indexes => list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:indexes, as: GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index, type: :list)

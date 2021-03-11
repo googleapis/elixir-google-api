@@ -27,7 +27,7 @@ defmodule GoogleApi.Datastore.V1.Model.Projection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t()
+          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t() | nil
         }
 
   field(:property, as: GoogleApi.Datastore.V1.Model.PropertyReference)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Datastore.V1.Model.PropertyOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :direction => String.t(),
-          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t()
+          :direction => String.t() | nil,
+          :property => GoogleApi.Datastore.V1.Model.PropertyReference.t() | nil
         }
 
   field(:direction)
