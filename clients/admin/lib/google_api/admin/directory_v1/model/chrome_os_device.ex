@@ -30,6 +30,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
   *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#update_chrome_device) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
   *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
+  *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - List of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
   *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
   *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t)`, *default:* `nil`) - List of recent device users, in descending order, by last login time.
@@ -72,6 +73,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :osVersion => String.t() | nil,
           :orgUnitPath => String.t() | nil,
           :firmwareVersion => String.t() | nil,
+          :screenshotFiles =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
           :annotatedUser => String.t() | nil,
           :kind => String.t() | nil,
           :recentUsers => list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t()) | nil,
@@ -121,6 +124,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:osVersion)
   field(:orgUnitPath)
   field(:firmwareVersion)
+
+  field(:screenshotFiles,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles,
+    type: :list
+  )
+
   field(:annotatedUser)
   field(:kind)
   field(:recentUsers, as: GoogleApi.Admin.Directory_v1.Model.RecentUsers, type: :list)
