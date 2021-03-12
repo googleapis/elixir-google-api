@@ -573,7 +573,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Raw text query to search for in rows of the table. Special characters must be escaped. Logical operators and field specific filtering not supported.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter to only include resources matching the requirements. For more information, see [Filtering list results](https://support.google.com/area120-tables/answer/10503371).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of rows to return. The service may return fewer than this value. If unspecified, at most 50 rows are returned. The maximum value is 1,000; values above 1,000 are coerced to 1,000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListRows` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRows` must match the call that provided the page token.
       *   `:view` (*type:* `String.t`) - Optional. Column key to use for values in the row. Defaults to user entered name.
