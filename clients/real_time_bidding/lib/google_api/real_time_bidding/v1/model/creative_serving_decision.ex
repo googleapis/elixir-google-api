@@ -21,6 +21,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
 
   ## Attributes
 
+  *   `adTechnologyProviders` (*type:* `GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders.t`, *default:* `nil`) - The detected ad technology providers.
   *   `chinaPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - The policy compliance of this creative in China. When approved or disapproved, this applies to both deals and open auction in China. When pending review, this creative is allowed to serve for deals but not for open auction.
   *   `dealsPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - Policy compliance of this creative when bidding on Programmatic Guaranteed and Preferred Deals (outside of Russia and China).
   *   `detectedAdvertisers` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t)`, *default:* `nil`) - Detected advertisers and brands.
@@ -40,6 +41,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :adTechnologyProviders =>
+            GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders.t() | nil,
           :chinaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
           :dealsPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil,
           :detectedAdvertisers =>
@@ -59,6 +62,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
           :russiaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t() | nil
         }
 
+  field(:adTechnologyProviders, as: GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders)
   field(:chinaPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
   field(:dealsPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
 
