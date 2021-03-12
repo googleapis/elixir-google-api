@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecretManager.V1.Model.Topic do
   @moduledoc """
-  A Pub/Sub topic which SM will publish to when control plane events occur on this secret.
+  A Pub/Sub topic which Secret Manager will publish to when control plane events occur on this secret.
 
   ## Attributes
 
