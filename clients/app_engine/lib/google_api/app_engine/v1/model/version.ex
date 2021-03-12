@@ -46,6 +46,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `network` (*type:* `GoogleApi.AppEngine.V1.Model.Network.t`, *default:* `nil`) - Extra network settings. Only applicable in the App Engine flexible environment.
   *   `versionUrl` (*type:* `String.t`, *default:* `nil`) - Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
   *   `endpointsApiService` (*type:* `GoogleApi.AppEngine.V1.Model.EndpointsApiService.t`, *default:* `nil`) - Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.
   *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
   *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view=FULL is set.
   *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
@@ -89,6 +90,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
           :network => GoogleApi.AppEngine.V1.Model.Network.t() | nil,
           :versionUrl => String.t() | nil,
           :endpointsApiService => GoogleApi.AppEngine.V1.Model.EndpointsApiService.t() | nil,
+          :serviceAccount => String.t() | nil,
           :vpcAccessConnector => GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t() | nil,
           :readinessCheck => GoogleApi.AppEngine.V1.Model.ReadinessCheck.t() | nil,
           :env => String.t() | nil,
@@ -129,6 +131,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   field(:network, as: GoogleApi.AppEngine.V1.Model.Network)
   field(:versionUrl)
   field(:endpointsApiService, as: GoogleApi.AppEngine.V1.Model.EndpointsApiService)
+  field(:serviceAccount)
   field(:vpcAccessConnector, as: GoogleApi.AppEngine.V1.Model.VpcAccessConnector)
   field(:readinessCheck, as: GoogleApi.AppEngine.V1.Model.ReadinessCheck)
   field(:env)
