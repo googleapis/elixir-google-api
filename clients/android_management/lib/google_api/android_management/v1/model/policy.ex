@@ -32,6 +32,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `removeUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether removing other users is disabled.
   *   `shortSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the settings screen wherever functionality has been disabled by the admin. If the message is longer than 200 characters it may be truncated.
   *   `credentialsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring user credentials is disabled.
+  *   `oncCertificateProviders` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t)`, *default:* `nil`) - This feature is not generally available.
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default permission policy for runtime permission requests.
   *   `addUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding new users and profiles is disabled.
   *   `setupActions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t)`, *default:* `nil`) - Actions to take during the setup process.
@@ -121,6 +122,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :shortSupportMessage =>
             GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
           :credentialsConfigDisabled => boolean() | nil,
+          :oncCertificateProviders =>
+            list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t()) | nil,
           :defaultPermissionPolicy => String.t() | nil,
           :addUserDisabled => boolean() | nil,
           :setupActions => list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t()) | nil,
@@ -218,6 +221,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:removeUserDisabled)
   field(:shortSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
   field(:credentialsConfigDisabled)
+
+  field(:oncCertificateProviders,
+    as: GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider,
+    type: :list
+  )
+
   field(:defaultPermissionPolicy)
   field(:addUserDisabled)
   field(:setupActions, as: GoogleApi.AndroidManagement.V1.Model.SetupAction, type: :list)
