@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.SlashCommand do
   @moduledoc """
-  A Slash Command in Hangouts Chat.
+  A Slash Command in Chat.
 
   ## Attributes
 
