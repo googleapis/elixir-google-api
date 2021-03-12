@@ -21,7 +21,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.Copy do
 
   ## Attributes
 
-  *   `originalObject` (*type:* `GoogleApi.DriveActivity.V2.Model.TargetReference.t`, *default:* `nil`) - The the original object.
+  *   `originalObject` (*type:* `GoogleApi.DriveActivity.V2.Model.TargetReference.t`, *default:* `nil`) - The original object.
   """
 
   use GoogleApi.Gax.ModelBase

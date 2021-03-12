@@ -22,7 +22,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.Domain do
   ## Attributes
 
   *   `legacyId` (*type:* `String.t`, *default:* `nil`) - An opaque string used to identify this domain.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the domain, e.g. "google.com".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the domain, e.g. `google.com`.
   """
 
   use GoogleApi.Gax.ModelBase

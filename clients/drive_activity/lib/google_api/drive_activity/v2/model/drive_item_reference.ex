@@ -25,7 +25,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveItemReference do
   *   `driveFolder` (*type:* `GoogleApi.DriveActivity.V2.Model.DriveFolder.t`, *default:* `nil`) - The Drive item is a folder. Includes information about the type of folder.
   *   `file` (*type:* `GoogleApi.DriveActivity.V2.Model.File.t`, *default:* `nil`) - This field is deprecated; please use the `driveFile` field instead.
   *   `folder` (*type:* `GoogleApi.DriveActivity.V2.Model.Folder.t`, *default:* `nil`) - This field is deprecated; please use the `driveFolder` field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The target Drive item. The format is "items/ITEM_ID".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The target Drive item. The format is `items/ITEM_ID`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the Drive item.
   """
 
