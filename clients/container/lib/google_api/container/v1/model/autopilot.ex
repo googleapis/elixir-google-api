@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.Autopilot do
   @moduledoc """
-  Autopilot is the configuration for Autopilot settings on the cluster. It is the official product name of what is previously known as AutoGKE
+  Autopilot is the configuration for Autopilot settings on the cluster.
 
   ## Attributes
 
