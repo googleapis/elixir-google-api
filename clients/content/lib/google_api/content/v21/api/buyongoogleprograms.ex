@@ -87,7 +87,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/buyongoogleprograms/{regionCode}", %{
+      |> Request.url("/{merchantId}/buyongoogleprograms/{regionCode}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "regionCode" => URI.encode(region_code, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -159,7 +159,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/buyongoogleprograms/{regionCode}/onboard", %{
+      |> Request.url("/{merchantId}/buyongoogleprograms/{regionCode}/onboard", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "regionCode" => URI.encode(region_code, &URI.char_unreserved?/1)
       })

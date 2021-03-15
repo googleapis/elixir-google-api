@@ -76,7 +76,7 @@ defmodule GoogleApi.Content.V21.Api.Reports do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/reports/search", %{
+      |> Request.url("/{merchantId}/reports/search", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -89,7 +89,7 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/orderreturns/{returnId}/acknowledge", %{
+      |> Request.url("/{merchantId}/orderreturns/{returnId}/acknowledge", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnId" => URI.encode(return_id, &URI.char_unreserved?/1)
       })
@@ -164,7 +164,7 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/orderreturns/createOrderReturn", %{
+      |> Request.url("/{merchantId}/orderreturns/createOrderReturn", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -233,7 +233,7 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/orderreturns/{returnId}", %{
+      |> Request.url("/{merchantId}/orderreturns/{returnId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnId" => URI.encode(return_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -316,7 +316,7 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/orderreturns", %{
+      |> Request.url("/{merchantId}/orderreturns", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -391,7 +391,7 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/orderreturns/{returnId}/process", %{
+      |> Request.url("/{merchantId}/orderreturns/{returnId}/process", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnId" => URI.encode(return_id, &URI.char_unreserved?/1)
       })

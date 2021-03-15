@@ -81,7 +81,7 @@ defmodule GoogleApi.Content.V21.Api.Csses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{cssGroupId}/csses/{cssDomainId}", %{
+      |> Request.url("/{cssGroupId}/csses/{cssDomainId}", %{
         "cssGroupId" => URI.encode(css_group_id, &URI.char_unreserved?/1),
         "cssDomainId" => URI.encode(css_domain_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -146,7 +146,7 @@ defmodule GoogleApi.Content.V21.Api.Csses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{cssGroupId}/csses", %{
+      |> Request.url("/{cssGroupId}/csses", %{
         "cssGroupId" => URI.encode(css_group_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -221,7 +221,7 @@ defmodule GoogleApi.Content.V21.Api.Csses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{cssGroupId}/csses/{cssDomainId}/updatelabels", %{
+      |> Request.url("/{cssGroupId}/csses/{cssDomainId}/updatelabels", %{
         "cssGroupId" => URI.encode(css_group_id, &URI.char_unreserved?/1),
         "cssDomainId" => URI.encode(css_domain_id, &URI.char_unreserved?/1)
       })

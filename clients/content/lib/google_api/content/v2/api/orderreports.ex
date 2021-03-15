@@ -92,7 +92,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/orderreports/disbursements", %{
+      |> Request.url("/{merchantId}/orderreports/disbursements", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -175,13 +175,10 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/content/v2/{merchantId}/orderreports/disbursements/{disbursementId}/transactions",
-        %{
-          "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-          "disbursementId" => URI.encode(disbursement_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/{merchantId}/orderreports/disbursements/{disbursementId}/transactions", %{
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "disbursementId" => URI.encode(disbursement_id, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -87,7 +87,7 @@ defmodule GoogleApi.Content.V21.Api.Settlementreports do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/settlementreports/{settlementId}", %{
+      |> Request.url("/{merchantId}/settlementreports/{settlementId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "settlementId" => URI.encode(settlement_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -156,7 +156,7 @@ defmodule GoogleApi.Content.V21.Api.Settlementreports do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/settlementreports", %{
+      |> Request.url("/{merchantId}/settlementreports", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -77,7 +77,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/liasettings/batch", %{})
+      |> Request.url("/liasettings/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -144,7 +144,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/liasettings/{accountId}", %{
+      |> Request.url("/{merchantId}/liasettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -218,7 +218,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/liasettings/{accountId}/accessiblegmbaccounts", %{
+      |> Request.url("/{merchantId}/liasettings/{accountId}/accessiblegmbaccounts", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -285,7 +285,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/liasettings", %{
+      |> Request.url("/{merchantId}/liasettings", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -344,7 +344,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/liasettings/posdataproviders", %{})
+      |> Request.url("/liasettings/posdataproviders", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -420,7 +420,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/liasettings/{accountId}/requestgmbaccess", %{
+      |> Request.url("/{merchantId}/liasettings/{accountId}/requestgmbaccess", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -501,7 +501,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/content/v2/{merchantId}/liasettings/{accountId}/requestinventoryverification/{country}",
+        "/{merchantId}/liasettings/{accountId}/requestinventoryverification/{country}",
         %{
           "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
@@ -593,13 +593,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/content/v2/{merchantId}/liasettings/{accountId}/setinventoryverificationcontact",
-        %{
-          "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/{merchantId}/liasettings/{accountId}/setinventoryverificationcontact", %{
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+      })
       |> Request.add_param(:query, :country, country)
       |> Request.add_param(:query, :language, language)
       |> Request.add_param(:query, :contactName, contact_name)
@@ -684,7 +681,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/liasettings/{accountId}/setposdataprovider", %{
+      |> Request.url("/{merchantId}/liasettings/{accountId}/setposdataprovider", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -765,7 +762,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/content/v2/{merchantId}/liasettings/{accountId}", %{
+      |> Request.url("/{merchantId}/liasettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

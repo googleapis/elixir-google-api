@@ -75,7 +75,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/pos/batch", %{})
+      |> Request.url("/pos/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -145,7 +145,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1),
         "storeCode" => URI.encode(store_code, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -223,7 +223,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1),
         "storeCode" => URI.encode(store_code, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -294,7 +294,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/store", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/store", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
@@ -364,7 +364,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/inventory", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/inventory", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
@@ -432,7 +432,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/store", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/store", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
@@ -502,7 +502,7 @@ defmodule GoogleApi.Content.V21.Api.Pos do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/pos/{targetMerchantId}/sale", %{
+      |> Request.url("/{merchantId}/pos/{targetMerchantId}/sale", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })

@@ -81,7 +81,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/returnpolicyonline", %{
+      |> Request.url("/{merchantId}/returnpolicyonline", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -150,7 +150,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
+      |> Request.url("/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnPolicyId" => URI.encode(return_policy_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -224,7 +224,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
+      |> Request.url("/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnPolicyId" => URI.encode(return_policy_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -285,7 +285,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/returnpolicyonline", %{
+      |> Request.url("/{merchantId}/returnpolicyonline", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -362,7 +362,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/content/v2.1/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
+      |> Request.url("/{merchantId}/returnpolicyonline/{returnPolicyId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnPolicyId" => URI.encode(return_policy_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

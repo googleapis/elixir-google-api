@@ -89,7 +89,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/acknowledge", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/acknowledge", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -163,7 +163,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/testorders/{orderId}/advance", %{
+      |> Request.url("/{merchantId}/testorders/{orderId}/advance", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -229,7 +229,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/cancel", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/cancel", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -305,7 +305,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/cancelLineItem", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/cancelLineItem", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -383,7 +383,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/testorders/{orderId}/cancelByCustomer", %{
+      |> Request.url("/{merchantId}/testorders/{orderId}/cancelByCustomer", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -448,7 +448,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/testorders", %{
+      |> Request.url("/{merchantId}/testorders", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -525,7 +525,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/testreturn", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/testreturn", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -589,7 +589,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/orders/batch", %{})
+      |> Request.url("/orders/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -648,7 +648,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}", %{
+      |> Request.url("/{merchantId}/orders/{orderId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -722,7 +722,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/ordersbymerchantid/{merchantOrderId}", %{
+      |> Request.url("/{merchantId}/ordersbymerchantid/{merchantOrderId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "merchantOrderId" =>
           URI.encode(merchant_order_id, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -801,7 +801,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/testordertemplates/{templateName}", %{
+      |> Request.url("/{merchantId}/testordertemplates/{templateName}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "templateName" => URI.encode(template_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -879,7 +879,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/inStoreRefundLineItem", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/inStoreRefundLineItem", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -956,7 +956,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/orders", %{
+      |> Request.url("/{merchantId}/orders", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1019,7 +1019,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/refund", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/refund", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1095,7 +1095,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/rejectReturnLineItem", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/rejectReturnLineItem", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1173,7 +1173,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/returnLineItem", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/returnLineItem", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1251,7 +1251,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/returnRefundLineItem", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/returnRefundLineItem", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1329,7 +1329,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/setLineItemMetadata", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/setLineItemMetadata", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1407,7 +1407,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/shipLineItems", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/shipLineItems", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1485,7 +1485,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/updateLineItemShippingDetails", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/updateLineItemShippingDetails", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1563,7 +1563,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/updateMerchantOrderId", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/updateMerchantOrderId", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -1641,7 +1641,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/orders/{orderId}/updateShipment", %{
+      |> Request.url("/{merchantId}/orders/{orderId}/updateShipment", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })

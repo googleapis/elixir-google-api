@@ -73,7 +73,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/accounts/authinfo", %{})
+      |> Request.url("/accounts/authinfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -146,7 +146,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}/claimwebsite", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}/claimwebsite", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -210,7 +210,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/accounts/batch", %{})
+      |> Request.url("/accounts/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -276,7 +276,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -340,7 +340,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -403,7 +403,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/accounts", %{
+      |> Request.url("/{merchantId}/accounts", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -472,7 +472,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}/link", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}/link", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -541,7 +541,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/accounts", %{
+      |> Request.url("/{merchantId}/accounts", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -618,7 +618,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}/listlinks", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}/listlinks", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -688,7 +688,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -764,7 +764,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/accounts/{accountId}/updatelabels", %{
+      |> Request.url("/{merchantId}/accounts/{accountId}/updatelabels", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
@@ -834,7 +834,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/accounts/{accountId}/credentials", %{
+      |> Request.url("/accounts/{accountId}/credentials", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -896,7 +896,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/accounts/{accountId}/labels", %{
+      |> Request.url("/accounts/{accountId}/labels", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -965,7 +965,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/accounts/{accountId}/labels/{labelId}", %{
+      |> Request.url("/accounts/{accountId}/labels/{labelId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "labelId" => URI.encode(label_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -1030,7 +1030,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/accounts/{accountId}/labels", %{
+      |> Request.url("/accounts/{accountId}/labels", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1105,7 +1105,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/content/v2.1/accounts/{accountId}/labels/{labelId}", %{
+      |> Request.url("/accounts/{accountId}/labels/{labelId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "labelId" => URI.encode(label_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -1178,7 +1178,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/accounts/{accountId}/returncarrier", %{
+      |> Request.url("/accounts/{accountId}/returncarrier", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1247,7 +1247,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/accounts/{accountId}/returncarrier/{carrierAccountId}", %{
+      |> Request.url("/accounts/{accountId}/returncarrier/{carrierAccountId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "carrierAccountId" =>
           URI.encode(carrier_account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -1314,7 +1314,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/accounts/{accountId}/returncarrier", %{
+      |> Request.url("/accounts/{accountId}/returncarrier", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1391,7 +1391,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/content/v2.1/accounts/{accountId}/returncarrier/{carrierAccountId}", %{
+      |> Request.url("/accounts/{accountId}/returncarrier/{carrierAccountId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "carrierAccountId" =>
           URI.encode(carrier_account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
