@@ -474,8 +474,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentTimeMillis` (*type:* `String.t`) - The client's current time in milliseconds since epoch.
-      *   `:modifiedTimeMillis` (*type:* `String.t`) - When the operation was performed on the client.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -510,9 +508,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :currentTimeMillis => :query,
-      :modifiedTimeMillis => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -634,7 +630,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentTimeMillis` (*type:* `String.t`) - The client's current time in milliseconds since epoch. Note that the minStartTimeNs and maxEndTimeNs properties in the request body are in nanoseconds instead of milliseconds.
       *   `:body` (*type:* `GoogleApi.Fitness.V1.Model.Dataset.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -675,7 +670,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :currentTimeMillis => :query,
       :body => :body
     }
 
@@ -777,7 +771,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentTimeMillis` (*type:* `String.t`) - The client's current time in milliseconds since epoch.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -810,8 +803,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :currentTimeMillis => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -919,7 +911,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentTimeMillis` (*type:* `String.t`) - The client's current time in milliseconds since epoch.
       *   `:body` (*type:* `GoogleApi.Fitness.V1.Model.Session.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -958,7 +949,6 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :currentTimeMillis => :query,
       :body => :body
     }
 

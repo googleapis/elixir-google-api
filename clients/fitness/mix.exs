@@ -18,7 +18,7 @@
 defmodule GoogleApi.Fitness.Mixfile do
   use Mix.Project
 
-  @version "0.24.0"
+  @version "0.25.0"
 
   def project() do
     [
