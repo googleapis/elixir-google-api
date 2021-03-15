@@ -76,7 +76,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/collections", %{
+      |> Request.url("/{merchantId}/collections", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -145,7 +145,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/{merchantId}/collections/{collectionId}", %{
+      |> Request.url("/{merchantId}/collections/{collectionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "collectionId" => URI.encode(collection_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -213,7 +213,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/collections/{collectionId}", %{
+      |> Request.url("/{merchantId}/collections/{collectionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "collectionId" => URI.encode(collection_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -278,7 +278,7 @@ defmodule GoogleApi.Content.V21.Api.Collections do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/collections", %{
+      |> Request.url("/{merchantId}/collections", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

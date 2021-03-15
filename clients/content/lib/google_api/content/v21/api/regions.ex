@@ -78,7 +78,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/regions", %{
+      |> Request.url("/{merchantId}/regions", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -142,7 +142,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2.1/{merchantId}/regions/{regionId}", %{
+      |> Request.url("/{merchantId}/regions/{regionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "regionId" => URI.encode(region_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -204,7 +204,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/regions/{regionId}", %{
+      |> Request.url("/{merchantId}/regions/{regionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "regionId" => URI.encode(region_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -269,7 +269,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/regions", %{
+      |> Request.url("/{merchantId}/regions", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -334,7 +334,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/content/v2.1/{merchantId}/regions/{regionId}", %{
+      |> Request.url("/{merchantId}/regions/{regionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "regionId" => URI.encode(region_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

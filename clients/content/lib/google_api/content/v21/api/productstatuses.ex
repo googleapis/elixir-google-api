@@ -75,7 +75,7 @@ defmodule GoogleApi.Content.V21.Api.Productstatuses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/productstatuses/batch", %{})
+      |> Request.url("/productstatuses/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -150,7 +150,7 @@ defmodule GoogleApi.Content.V21.Api.Productstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/productstatuses/{productId}", %{
+      |> Request.url("/{merchantId}/productstatuses/{productId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "productId" => URI.encode(product_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -217,7 +217,7 @@ defmodule GoogleApi.Content.V21.Api.Productstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/productstatuses", %{
+      |> Request.url("/{merchantId}/productstatuses", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -302,7 +302,7 @@ defmodule GoogleApi.Content.V21.Api.Productstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/productstatuses/{productId}/repricingreports", %{
+      |> Request.url("/{merchantId}/productstatuses/{productId}/repricingreports", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })

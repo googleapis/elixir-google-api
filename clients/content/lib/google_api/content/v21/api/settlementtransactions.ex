@@ -93,13 +93,10 @@ defmodule GoogleApi.Content.V21.Api.Settlementtransactions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/content/v2.1/{merchantId}/settlementreports/{settlementId}/transactions",
-        %{
-          "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-          "settlementId" => URI.encode(settlement_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/{merchantId}/settlementreports/{settlementId}/transactions", %{
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "settlementId" => URI.encode(settlement_id, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -77,7 +77,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/shippingsettings/batch", %{})
+      |> Request.url("/shippingsettings/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -150,7 +150,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings/{accountId}", %{
+      |> Request.url("/{merchantId}/shippingsettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -221,7 +221,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedCarriers", %{
+      |> Request.url("/{merchantId}/supportedCarriers", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -293,7 +293,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedHolidays", %{
+      |> Request.url("/{merchantId}/supportedHolidays", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -365,7 +365,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedPickupServices", %{
+      |> Request.url("/{merchantId}/supportedPickupServices", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -432,7 +432,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings", %{
+      |> Request.url("/{merchantId}/shippingsettings", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -511,7 +511,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings/{accountId}", %{
+      |> Request.url("/{merchantId}/shippingsettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

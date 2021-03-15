@@ -87,7 +87,7 @@ defmodule GoogleApi.Content.V21.Api.Collectionstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/collectionstatuses/{collectionId}", %{
+      |> Request.url("/{merchantId}/collectionstatuses/{collectionId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "collectionId" => URI.encode(collection_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -152,7 +152,7 @@ defmodule GoogleApi.Content.V21.Api.Collectionstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2.1/{merchantId}/collectionstatuses", %{
+      |> Request.url("/{merchantId}/collectionstatuses", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

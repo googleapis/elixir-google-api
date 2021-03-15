@@ -89,7 +89,7 @@ defmodule GoogleApi.Content.V21.Api.Orderinvoices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/orderinvoices/{orderId}/createChargeInvoice", %{
+      |> Request.url("/{merchantId}/orderinvoices/{orderId}/createChargeInvoice", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
@@ -167,7 +167,7 @@ defmodule GoogleApi.Content.V21.Api.Orderinvoices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/orderinvoices/{orderId}/createRefundInvoice", %{
+      |> Request.url("/{merchantId}/orderinvoices/{orderId}/createRefundInvoice", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })

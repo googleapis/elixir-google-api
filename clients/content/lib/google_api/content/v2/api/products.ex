@@ -77,7 +77,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/products/batch", %{})
+      |> Request.url("/products/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -143,7 +143,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/content/v2/{merchantId}/products/{productId}", %{
+      |> Request.url("/{merchantId}/products/{productId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "productId" => URI.encode(product_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -205,7 +205,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/products/{productId}", %{
+      |> Request.url("/{merchantId}/products/{productId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "productId" => URI.encode(product_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -270,7 +270,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/{merchantId}/products", %{
+      |> Request.url("/{merchantId}/products", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -336,7 +336,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/products", %{
+      |> Request.url("/{merchantId}/products", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

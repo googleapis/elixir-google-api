@@ -81,7 +81,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/orderreturns/{returnId}", %{
+      |> Request.url("/{merchantId}/orderreturns/{returnId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "returnId" => URI.encode(return_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -152,7 +152,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreturns do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/orderreturns", %{
+      |> Request.url("/{merchantId}/orderreturns", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

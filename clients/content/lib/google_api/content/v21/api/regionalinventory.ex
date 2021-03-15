@@ -75,7 +75,7 @@ defmodule GoogleApi.Content.V21.Api.Regionalinventory do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/regionalinventory/batch", %{})
+      |> Request.url("/regionalinventory/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -150,7 +150,7 @@ defmodule GoogleApi.Content.V21.Api.Regionalinventory do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2.1/{merchantId}/products/{productId}/regionalinventory", %{
+      |> Request.url("/{merchantId}/products/{productId}/regionalinventory", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
