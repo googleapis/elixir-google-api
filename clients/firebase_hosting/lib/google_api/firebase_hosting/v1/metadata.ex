@@ -20,7 +20,7 @@ defmodule GoogleApi.FirebaseHosting.V1 do
   API client metadata for GoogleApi.FirebaseHosting.V1.
   """
 
-  @discovery_revision "20210311"
+  @discovery_revision "20210315"
 
   def discovery_revision(), do: @discovery_revision
 end

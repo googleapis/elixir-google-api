@@ -24,7 +24,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CloneVersionRequest do
   *   `exclude` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that do not match any of the RegEx values in this list will be included in the new version.
   *   `finalize` (*type:* `boolean()`, *default:* `nil`) - If true, the call to `CloneVersion` immediately finalizes the version after cloning is complete. If false, the cloned version will have a status of `CREATED`. Use [`UpdateVersion`](patch) to set the status of the version to `FINALIZED`.
   *   `include` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter.t`, *default:* `nil`) - If provided, only paths that match one or more RegEx values in this list will be included in the new version.
-  *   `sourceVersion` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for the version to be cloned, in the format: sites/SITE_NAME/versions/VERSION_ID
+  *   `sourceVersion` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for the version to be cloned, in the format: sites/SITE_ID/versions/VERSION_ID
   """
 
   use GoogleApi.Gax.ModelBase

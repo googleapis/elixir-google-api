@@ -24,7 +24,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Channel do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the channel was created.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the channel will be automatically deleted. If null, the channel will not be automatically deleted. This field is present in the output whether it's set directly or via the `ttl` field.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Text labels used for extra metadata and/or filtering.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully-qualified identifier for the channel, in the format: sites/ SITE_NAME/channels/CHANNEL_ID
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully-qualified resource name for the channel, in the format: sites/ SITE_ID/channels/CHANNEL_ID
   *   `release` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`, *default:* `nil`) - Output only. The current release for the channel, if any.
   *   `retainedReleaseCount` (*type:* `integer()`, *default:* `nil`) - The number of previous releases to retain on the channel for rollback or other purposes. Must be a number between 1-100. Defaults to 10 for new channels.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. A time-to-live for this channel. Sets `expire_time` to the provided duration past the time of the request.
