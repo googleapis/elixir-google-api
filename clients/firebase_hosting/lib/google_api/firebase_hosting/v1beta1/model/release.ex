@@ -22,7 +22,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - The deploy description when the release was created. The value can be up to 512 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in either of the following formats: - sites/SITE_NAME/releases/RELEASE_ID - sites/SITE_NAME/channels/CHANNEL_ID/releases/RELEASE_ID This name is provided in the response body when you call [`releases.create`](sites.releases/create) or [`channels.releases.create`](sites.channels.releases/create).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in either of the following formats: - sites/SITE_ID/releases/RELEASE_ID - sites/SITE_ID/channels/CHANNEL_ID/releases/RELEASE_ID This name is provided in the response body when you call [`releases.create`](sites.releases/create) or [`channels.releases.create`](sites.channels.releases/create).
   *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version is set to be public.
   *   `releaseUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who created the release.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Explains the reason for the release. Specify a value for this field only when creating a `SITE_DISABLE` type release.

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListSitesResponse do
   @moduledoc """
-  The response from ListSites.
+
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token returned when the list of results is too large to fit in a single response. If the string is empty, the response is the last or only page of results. Use the token in a follow-up call to `ListSites` to find the next group of Sites. Page tokens are short-lived and should not be stored.
-  *   `sites` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Site.t)`, *default:* `nil`) - A list of Site objects from the parent Firebase Project.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist beyond the ones in this response. Include this token in your next call to `ListSites`. Page tokens are short-lived and should not be stored.
+  *   `sites` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Site.t)`, *default:* `nil`) - A list of Site objects associated with the specified Firebase project.
   """
 
   use GoogleApi.Gax.ModelBase

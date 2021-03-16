@@ -155,7 +155,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site in which to create this channel, in the format: sites/ SITE_NAME
+  *   `parent` (*type:* `String.t`) - Required. The site in which to create this channel, in the format: sites/ SITE_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -224,7 +224,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fully-qualified identifier for the channel, in the format: sites/SITE_NAME/channels/CHANNEL_ID
+  *   `name` (*type:* `String.t`) - Required. The fully-qualified resource name for the channel, in the format: sites/SITE_ID/channels/CHANNEL_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -289,7 +289,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fully-qualified identifier for the channel, in the format: sites/SITE_NAME/channels/CHANNEL_ID
+  *   `name` (*type:* `String.t`) - Required. The fully-qualified resource name for the channel, in the format: sites/SITE_ID/channels/CHANNEL_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -349,7 +349,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site for which to list channels, in the format: sites/ SITE_NAME
+  *   `parent` (*type:* `String.t`) - Required. The site for which to list channels, in the format: sites/SITE_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -415,7 +415,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully-qualified identifier for the channel, in the format: sites/ SITE_NAME/channels/CHANNEL_ID
+  *   `name` (*type:* `String.t`) - The fully-qualified resource name for the channel, in the format: sites/ SITE_ID/channels/CHANNEL_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -479,7 +479,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site or channel to which the release belongs, in either of the following formats: - sites/SITE_NAME - sites/SITE_NAME/channels/CHANNEL_ID
+  *   `parent` (*type:* `String.t`) - Required. The site or channel to which the release belongs, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -492,7 +492,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:versionName` (*type:* `String.t`) -  The unique identifier for a version, in the format: sites/SITE_NAME /versions/VERSION_ID The SITE_NAME in this version identifier must match the SITE_NAME in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
+      *   `:versionName` (*type:* `String.t`) -  The unique identifier for a version, in the format: sites/SITE_ID/versions/ VERSION_ID The SITE_ID in this version identifier must match the SITE_ID in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -553,7 +553,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list releases, in either of the following formats: - sites/SITE_NAME - sites/SITE_NAME/channels/CHANNEL_ID 
+  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list releases, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -939,7 +939,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site or channel to which the release belongs, in either of the following formats: - sites/SITE_NAME - sites/SITE_NAME/channels/CHANNEL_ID
+  *   `parent` (*type:* `String.t`) - Required. The site or channel to which the release belongs, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -952,7 +952,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:versionName` (*type:* `String.t`) -  The unique identifier for a version, in the format: sites/SITE_NAME /versions/VERSION_ID The SITE_NAME in this version identifier must match the SITE_NAME in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
+      *   `:versionName` (*type:* `String.t`) -  The unique identifier for a version, in the format: sites/SITE_ID/versions/ VERSION_ID The SITE_ID in this version identifier must match the SITE_ID in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1008,7 +1008,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list releases, in either of the following formats: - sites/SITE_NAME - sites/SITE_NAME/channels/CHANNEL_ID 
+  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list releases, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1074,7 +1074,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The target site for the cloned version, in the format: sites/ SITE_NAME
+  *   `parent` (*type:* `String.t`) - Required. The target site for the cloned version, in the format: sites/ SITE_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1136,7 +1136,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site in which to create the version, in the format: sites/ SITE_NAME
+  *   `parent` (*type:* `String.t`) - Required. The site in which to create the version, in the format: sites/ SITE_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1207,7 +1207,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fully-qualified identifier for the version, in the format: sites/SITE_NAME/versions/VERSION_ID
+  *   `name` (*type:* `String.t`) - Required. The fully-qualified resource name for the version, in the format: sites/SITE_ID/versions/VERSION_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1272,7 +1272,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list versions, in either of the following formats: - sites/SITE_NAME - sites/SITE_NAME/channels/CHANNEL_ID 
+  *   `parent` (*type:* `String.t`) - Required. The site or channel for which to list versions, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1340,7 +1340,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully-qualified identifier for the version, in the format: sites/ SITE_NAME/versions/VERSION_ID This name is provided in the response body when you call [`CreateVersion`](sites.versions/create).
+  *   `name` (*type:* `String.t`) - The fully-qualified resource name for the version, in the format: sites/ SITE_ID/versions/VERSION_ID This name is provided in the response body when you call [`CreateVersion`](sites.versions/create).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1404,7 +1404,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The version to which to add files, in the format: sites/SITE_NAME /versions/VERSION_ID
+  *   `parent` (*type:* `String.t`) - Required. The version to which to add files, in the format: sites/SITE_ID /versions/VERSION_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1478,7 +1478,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The version for which to list files, in the format: sites/ SITE_NAME/versions/VERSION_ID
+  *   `parent` (*type:* `String.t`) - Required. The version for which to list files, in the format: sites/SITE_ID /versions/VERSION_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
