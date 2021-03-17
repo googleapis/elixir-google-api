@@ -791,7 +791,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
       *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent channel.
       *   `:filter` (*type:* `String.t`) - Allows filtering by site fields. Supported syntax: * Filter expressions for site currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `urlOrAppId` Examples: * All sites for which the URL or app ID contains "google": `urlOrAppId : "google"`
       *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `urlOrAppId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `urlOrAppId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `10000`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListSites` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
