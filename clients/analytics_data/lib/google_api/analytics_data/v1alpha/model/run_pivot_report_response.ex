@@ -23,6 +23,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse do
 
   *   `aggregates` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t)`, *default:* `nil`) - Aggregation of metric values. Can be totals, minimums, or maximums. The returned aggregations are controlled by the metric_aggregations in the pivot. The type of aggregation returned in each row is shown by the dimension_values which are set to "RESERVED_".
   *   `dimensionHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t)`, *default:* `nil`) - Describes dimension columns. The number of DimensionHeaders and ordering of DimensionHeaders matches the dimensions present in rows.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this message is. This `kind` is always the fixed string "analyticsData#runPivotReport". Useful to distinguish between response types in JSON.
   *   `metadata` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t`, *default:* `nil`) - Metadata for the report.
   *   `metricHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t)`, *default:* `nil`) - Describes metric columns. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows.
   *   `pivotHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader.t)`, *default:* `nil`) - Summarizes the columns and rows created by a pivot. Each pivot in the request produces one header in the response. If we have a request like this: "pivots": [{ "fieldNames": ["country", "city"] }, { "fieldNames": "eventName" }] We will have the following `pivotHeaders` in the response: "pivotHeaders" : [{ "dimensionHeaders": [{ "dimensionValues": [ { "value": "United Kingdom" }, { "value": "London" } ] }, { "dimensionValues": [ { "value": "Japan" }, { "value": "Osaka" } ] }] }, { "dimensionHeaders": [{ "dimensionValues": [{ "value": "session_start" }] }, { "dimensionValues": [{ "value": "scroll" }] }] }]
@@ -36,6 +37,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse do
           :aggregates => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
           :dimensionHeaders =>
             list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()) | nil,
+          :kind => String.t() | nil,
           :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t() | nil,
           :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()) | nil,
           :pivotHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader.t()) | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse do
 
   field(:aggregates, as: GoogleApi.AnalyticsData.V1alpha.Model.Row, type: :list)
   field(:dimensionHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader, type: :list)
+  field(:kind)
   field(:metadata, as: GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData)
   field(:metricHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader, type: :list)
   field(:pivotHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader, type: :list)

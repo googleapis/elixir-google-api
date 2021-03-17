@@ -21,15 +21,19 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.BatchRunPivotReportsResponse do
 
   ## Attributes
 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this message is. This `kind` is always the fixed string "analyticsData#batchRunPivotReports". Useful to distinguish between response types in JSON.
   *   `pivotReports` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse.t)`, *default:* `nil`) - Individual responses. Each response has a separate pivot report request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :kind => String.t() | nil,
           :pivotReports =>
             list(GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse.t()) | nil
         }
+
+  field(:kind)
 
   field(:pivotReports,
     as: GoogleApi.AnalyticsData.V1alpha.Model.RunPivotReportResponse,
