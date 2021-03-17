@@ -88,7 +88,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   end
 
   @doc """
-  Create a new ResourceRecordSet.
+  Creates a new ResourceRecordSet.
 
   ## Parameters
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   end
 
   @doc """
-  Delete a previously created ResourceRecordSet.
+  Deletes a previously created ResourceRecordSet.
 
   ## Parameters
 
@@ -255,7 +255,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   end
 
   @doc """
-  Fetch the representation of an existing ResourceRecordSet.
+  Fetches the representation of an existing ResourceRecordSet.
 
   ## Parameters
 
@@ -342,7 +342,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   end
 
   @doc """
-  Apply a partial update to an existing ResourceRecordSet.
+  Applies a partial update to an existing ResourceRecordSet.
 
   ## Parameters
 

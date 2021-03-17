@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetch the representation of an existing DnsKey.
+  Fetches the representation of an existing DnsKey.
 
   ## Parameters
 
@@ -111,7 +111,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   end
 
   @doc """
-  Enumerate DnsKeys to a ResourceRecordSet collection.
+  Enumerates DnsKeys to a ResourceRecordSet collection.
 
   ## Parameters
 
