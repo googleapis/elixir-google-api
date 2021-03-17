@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse do
   ## Attributes
 
   *   `dimensionHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t)`, *default:* `nil`) - Describes dimension columns. The number of DimensionHeaders and ordering of DimensionHeaders matches the dimensions present in rows.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this message is. This `kind` is always the fixed string "analyticsData#runReport". Useful to distinguish between response types in JSON.
   *   `maximums` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t)`, *default:* `nil`) - If requested, the maximum values of metrics.
   *   `metadata` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t`, *default:* `nil`) - Metadata for the report.
   *   `metricHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t)`, *default:* `nil`) - Describes metric columns. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows.
@@ -37,6 +38,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse do
   @type t :: %__MODULE__{
           :dimensionHeaders =>
             list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader.t()) | nil,
+          :kind => String.t() | nil,
           :maximums => list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t()) | nil,
           :metadata => GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData.t() | nil,
           :metricHeaders => list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t()) | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse do
         }
 
   field(:dimensionHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.DimensionHeader, type: :list)
+  field(:kind)
   field(:maximums, as: GoogleApi.AnalyticsData.V1alpha.Model.Row, type: :list)
   field(:metadata, as: GoogleApi.AnalyticsData.V1alpha.Model.ResponseMetaData)
   field(:metricHeaders, as: GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader, type: :list)
