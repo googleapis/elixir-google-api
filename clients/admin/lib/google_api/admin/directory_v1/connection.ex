@@ -24,6 +24,12 @@ defmodule GoogleApi.Admin.Directory_v1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # See, add, edit, and permanently delete the printers that your organization can use with Chrome
+      "https://www.googleapis.com/auth/admin.chrome.printers",
+
+      # See the printers that your organization can use with Chrome
+      "https://www.googleapis.com/auth/admin.chrome.printers.readonly",
+
       # View and manage customer related information
       "https://www.googleapis.com/auth/admin.directory.customer",
 
