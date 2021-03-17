@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a new ManagedZone.
+  Creates a new ManagedZone.
 
   ## Parameters
 
@@ -90,7 +90,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Delete a previously created ManagedZone.
+  Deletes a previously created ManagedZone.
 
   ## Parameters
 
@@ -157,7 +157,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Fetch the representation of an existing ManagedZone.
+  Fetches the representation of an existing ManagedZone.
 
   ## Parameters
 
@@ -221,7 +221,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Enumerate ManagedZones that have been created but not yet deleted.
+  Enumerates ManagedZones that have been created but not yet deleted.
 
   ## Parameters
 
@@ -287,7 +287,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Apply a partial update to an existing ManagedZone.
+  Applies a partial update to an existing ManagedZone.
 
   ## Parameters
 
@@ -359,7 +359,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Update an existing ManagedZone.
+  Updates an existing ManagedZone.
 
   ## Parameters
 

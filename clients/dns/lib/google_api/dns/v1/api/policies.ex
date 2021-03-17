@@ -279,7 +279,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Apply a partial update to an existing Policy.
+  Applies a partial update to an existing Policy.
 
   ## Parameters
 
@@ -345,7 +345,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Update an existing Policy.
+  Updates an existing Policy.
 
   ## Parameters
 
