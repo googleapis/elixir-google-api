@@ -31,21 +31,40 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
   ## Attributes
 
-  *   `affinityCookieTtlSec` (*type:* `integer()`, *default:* `nil`) - Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
 
-      If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
+      Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
-      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-  *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
-  *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
-  *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
+      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
 
-      This field is applicable to either:  
+      Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+  *   `enableCDN` (*type:* `boolean()`, *default:* `nil`) - If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+  *   `securitySettings` (*type:* `GoogleApi.Compute.V1.Model.SecuritySettings.t`, *default:* `nil`) - This field specifies the security policy that applies to this backend service. This field is applicable to either:  
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
-      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+  *   `customRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied requests.
+  *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+  *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+
+
+
+      Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
+  *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Type of session affinity to use. The default is NONE.
+
+      When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+
+      When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
+
+      When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
 
       Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-  *   `connectionDraining` (*type:* `GoogleApi.Compute.V1.Model.ConnectionDraining.t`, *default:* `nil`) - 
+  *   `maxStreamDuration` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+      If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+      This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+  *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
   *   `consistentHash` (*type:* `GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t`, *default:* `nil`) - Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
 
       This field is applicable to either:  
@@ -53,20 +72,29 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
 
       Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-  *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `customRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied requests.
-  *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied responses.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `enableCDN` (*type:* `boolean()`, *default:* `nil`) - If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
-  *   `failoverPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t`, *default:* `nil`) - Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a BackendService.
-  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
-  *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
+  *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied responses.
+  *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
+  *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
+  *   `affinityCookieTtlSec` (*type:* `integer()`, *default:* `nil`) - Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
+
+      If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
+
+      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
+
+      This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
+
+      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+  *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `localityLbPolicy` (*type:* `String.t`, *default:* `nil`) - The load balancing algorithm used within the scope of the locality. The possible values are:  
       - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. 
       - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. 
@@ -82,117 +110,94 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
 
       Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  *   `connectionDraining` (*type:* `GoogleApi.Compute.V1.Model.ConnectionDraining.t`, *default:* `nil`) - 
   *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t`, *default:* `nil`) - This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
-  *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
+  *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `failoverPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t`, *default:* `nil`) - Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+  *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
 
       This field is applicable to either:  
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
 
       Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-
-      Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
-  *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-
-
-
-      Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
-
-      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-
-      Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-  *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
-  *   `securitySettings` (*type:* `GoogleApi.Compute.V1.Model.SecuritySettings.t`, *default:* `nil`) - This field specifies the security policy that applies to this backend service. This field is applicable to either:  
-      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
-      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Type of session affinity to use. The default is NONE.
-
-      When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-
-      When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-
-      When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-
-      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-  *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :affinityCookieTtlSec => integer() | nil,
-          :backends => list(GoogleApi.Compute.V1.Model.Backend.t()) | nil,
+          :port => integer() | nil,
+          :protocol => String.t() | nil,
+          :enableCDN => boolean() | nil,
+          :securitySettings => GoogleApi.Compute.V1.Model.SecuritySettings.t() | nil,
+          :customRequestHeaders => list(String.t()) | nil,
+          :timeoutSec => integer() | nil,
+          :portName => String.t() | nil,
+          :description => String.t() | nil,
+          :kind => String.t() | nil,
+          :sessionAffinity => String.t() | nil,
+          :maxStreamDuration => GoogleApi.Compute.V1.Model.Duration.t() | nil,
           :cdnPolicy => GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t() | nil,
-          :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t() | nil,
-          :connectionDraining => GoogleApi.Compute.V1.Model.ConnectionDraining.t() | nil,
           :consistentHash =>
             GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t() | nil,
-          :creationTimestamp => String.t() | nil,
-          :customRequestHeaders => list(String.t()) | nil,
-          :customResponseHeaders => list(String.t()) | nil,
-          :description => String.t() | nil,
-          :enableCDN => boolean() | nil,
-          :failoverPolicy => GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t() | nil,
-          :fingerprint => String.t() | nil,
-          :healthChecks => list(String.t()) | nil,
-          :iap => GoogleApi.Compute.V1.Model.BackendServiceIAP.t() | nil,
-          :id => String.t() | nil,
-          :kind => String.t() | nil,
-          :loadBalancingScheme => String.t() | nil,
-          :localityLbPolicy => String.t() | nil,
-          :logConfig => GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t() | nil,
           :name => String.t() | nil,
-          :network => String.t() | nil,
-          :outlierDetection => GoogleApi.Compute.V1.Model.OutlierDetection.t() | nil,
-          :port => integer() | nil,
-          :portName => String.t() | nil,
-          :protocol => String.t() | nil,
-          :region => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :customResponseHeaders => list(String.t()) | nil,
+          :backends => list(GoogleApi.Compute.V1.Model.Backend.t()) | nil,
           :securityPolicy => String.t() | nil,
-          :securitySettings => GoogleApi.Compute.V1.Model.SecuritySettings.t() | nil,
+          :region => String.t() | nil,
+          :network => String.t() | nil,
+          :affinityCookieTtlSec => integer() | nil,
+          :outlierDetection => GoogleApi.Compute.V1.Model.OutlierDetection.t() | nil,
+          :loadBalancingScheme => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :localityLbPolicy => String.t() | nil,
+          :connectionDraining => GoogleApi.Compute.V1.Model.ConnectionDraining.t() | nil,
+          :logConfig => GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t() | nil,
+          :iap => GoogleApi.Compute.V1.Model.BackendServiceIAP.t() | nil,
+          :healthChecks => list(String.t()) | nil,
+          :id => String.t() | nil,
           :selfLink => String.t() | nil,
-          :sessionAffinity => String.t() | nil,
-          :timeoutSec => integer() | nil
+          :failoverPolicy => GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t() | nil,
+          :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t() | nil
         }
 
-  field(:affinityCookieTtlSec)
-  field(:backends, as: GoogleApi.Compute.V1.Model.Backend, type: :list)
-  field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy)
-  field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
-  field(:connectionDraining, as: GoogleApi.Compute.V1.Model.ConnectionDraining)
-  field(:consistentHash, as: GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings)
-  field(:creationTimestamp)
-  field(:customRequestHeaders, type: :list)
-  field(:customResponseHeaders, type: :list)
-  field(:description)
-  field(:enableCDN)
-  field(:failoverPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy)
-  field(:fingerprint)
-  field(:healthChecks, type: :list)
-  field(:iap, as: GoogleApi.Compute.V1.Model.BackendServiceIAP)
-  field(:id)
-  field(:kind)
-  field(:loadBalancingScheme)
-  field(:localityLbPolicy)
-  field(:logConfig, as: GoogleApi.Compute.V1.Model.BackendServiceLogConfig)
-  field(:name)
-  field(:network)
-  field(:outlierDetection, as: GoogleApi.Compute.V1.Model.OutlierDetection)
   field(:port)
-  field(:portName)
   field(:protocol)
-  field(:region)
-  field(:securityPolicy)
+  field(:enableCDN)
   field(:securitySettings, as: GoogleApi.Compute.V1.Model.SecuritySettings)
-  field(:selfLink)
-  field(:sessionAffinity)
+  field(:customRequestHeaders, type: :list)
   field(:timeoutSec)
+  field(:portName)
+  field(:description)
+  field(:kind)
+  field(:sessionAffinity)
+  field(:maxStreamDuration, as: GoogleApi.Compute.V1.Model.Duration)
+  field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy)
+  field(:consistentHash, as: GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings)
+  field(:name)
+  field(:fingerprint)
+  field(:customResponseHeaders, type: :list)
+  field(:backends, as: GoogleApi.Compute.V1.Model.Backend, type: :list)
+  field(:securityPolicy)
+  field(:region)
+  field(:network)
+  field(:affinityCookieTtlSec)
+  field(:outlierDetection, as: GoogleApi.Compute.V1.Model.OutlierDetection)
+  field(:loadBalancingScheme)
+  field(:creationTimestamp)
+  field(:localityLbPolicy)
+  field(:connectionDraining, as: GoogleApi.Compute.V1.Model.ConnectionDraining)
+  field(:logConfig, as: GoogleApi.Compute.V1.Model.BackendServiceLogConfig)
+  field(:iap, as: GoogleApi.Compute.V1.Model.BackendServiceIAP)
+  field(:healthChecks, type: :list)
+  field(:id)
+  field(:selfLink)
+  field(:failoverPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy)
+  field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.BackendService do

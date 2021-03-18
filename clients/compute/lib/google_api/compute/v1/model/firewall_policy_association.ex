@@ -22,9 +22,10 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyAssociation do
   ## Attributes
 
   *   `attachmentTarget` (*type:* `String.t`, *default:* `nil`) - The target that the firewall policy is attached to.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The display name of the firewall policy of the association.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
   *   `firewallPolicyId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The firewall policy ID of the association.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name for an association.
+  *   `shortName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The short name of the firewall policy of the association.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyAssociation do
           :attachmentTarget => String.t() | nil,
           :displayName => String.t() | nil,
           :firewallPolicyId => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :shortName => String.t() | nil
         }
 
   field(:attachmentTarget)
   field(:displayName)
   field(:firewallPolicyId)
   field(:name)
+  field(:shortName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallPolicyAssociation do

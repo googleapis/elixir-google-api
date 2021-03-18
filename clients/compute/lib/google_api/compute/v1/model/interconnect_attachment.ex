@@ -47,9 +47,13 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
       - AVAILABILITY_DOMAIN_ANY 
       - AVAILABILITY_DOMAIN_1 
       - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+  *   `encryption` (*type:* `String.t`, *default:* `nil`) - Indicates the user-supplied encryption option of this interconnect attachment: 
+      - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment. 
+      - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
   *   `googleReferenceId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `interconnect` (*type:* `String.t`, *default:* `nil`) - URL of the underlying Interconnect object that this attachment's traffic will traverse through.
+  *   `ipsecInternalAddresses` (*type:* `list(String.t)`, *default:* `nil`) - URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway?s IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway?s interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
   *   `kind` (*type:* `String.t`, *default:* `compute#interconnectAttachment`) - [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
   *   `mtu` (*type:* `integer()`, *default:* `nil`) - Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -89,9 +93,11 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
           :dataplaneVersion => integer() | nil,
           :description => String.t() | nil,
           :edgeAvailabilityDomain => String.t() | nil,
+          :encryption => String.t() | nil,
           :googleReferenceId => String.t() | nil,
           :id => String.t() | nil,
           :interconnect => String.t() | nil,
+          :ipsecInternalAddresses => list(String.t()) | nil,
           :kind => String.t() | nil,
           :mtu => integer() | nil,
           :name => String.t() | nil,
@@ -119,9 +125,11 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   field(:dataplaneVersion)
   field(:description)
   field(:edgeAvailabilityDomain)
+  field(:encryption)
   field(:googleReferenceId)
   field(:id)
   field(:interconnect)
+  field(:ipsecInternalAddresses, type: :list)
   field(:kind)
   field(:mtu)
   field(:name)
