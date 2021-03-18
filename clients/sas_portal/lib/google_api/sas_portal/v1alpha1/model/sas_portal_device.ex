@@ -22,6 +22,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
   ## Attributes
 
   *   `activeConfig` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t`, *default:* `nil`) - Output only. Current configuration of the device as registered to the SAS.
+  *   `currentChannels` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalChannelWithScore.t)`, *default:* `nil`) - Output only. Current channels with scores.
   *   `deviceMetadata` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t`, *default:* `nil`) - Device parameters that can be overridden by both SAS Portal and SAS registration requests.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Device display name.
   *   `fccId` (*type:* `String.t`, *default:* `nil`) - The FCC identifier of the device.
@@ -37,6 +38,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
 
   @type t :: %__MODULE__{
           :activeConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t() | nil,
+          :currentChannels =>
+            list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalChannelWithScore.t()) | nil,
           :deviceMetadata => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t() | nil,
           :displayName => String.t() | nil,
           :fccId => String.t() | nil,
@@ -50,6 +53,12 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
         }
 
   field(:activeConfig, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig)
+
+  field(:currentChannels,
+    as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalChannelWithScore,
+    type: :list
+  )
+
   field(:deviceMetadata, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata)
   field(:displayName)
   field(:fccId)
