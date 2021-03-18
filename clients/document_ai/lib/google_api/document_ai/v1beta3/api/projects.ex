@@ -106,9 +106,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
-      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in [AIP-160](https://google.aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service will select a default.
+      *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -234,7 +234,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of Processor or ProcessorVersion. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVerions/{processorVersion}
+  *   `name` (*type:* `String.t`) - Required. The resource name of Processor or ProcessorVersion. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -308,7 +308,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Processor or ProcessorVersion to use for processing. If a Processor is specified, the server will use its default version. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVerions/{processorVersion}
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Processor or ProcessorVersion to use for processing. If a Processor is specified, the server will use its default version. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -461,7 +461,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of Processor or ProcessorVersion. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVerions/{processorVersion}
+  *   `name` (*type:* `String.t`) - Required. The resource name of Processor or ProcessorVersion. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -535,7 +535,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Processor or ProcessorVersion to use for processing. If a Processor is specified, the server will use its default version. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVerions/{processorVersion}
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Processor or ProcessorVersion to use for processing. If a Processor is specified, the server will use its default version. Format: projects/{project}/locations/{location}/processors/{processor}, or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
