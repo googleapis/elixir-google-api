@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig do
   ## Attributes
 
   *   `queryInsightsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Query Insights feature is enabled.
-  *   `queryStringLength` (*type:* `integer()`, *default:* `nil`) - Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value.
+  *   `queryStringLength` (*type:* `integer()`, *default:* `nil`) - Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database.
   *   `recordApplicationTags` (*type:* `boolean()`, *default:* `nil`) - Whether Query Insights will record application tags from query when enabled.
   *   `recordClientAddress` (*type:* `boolean()`, *default:* `nil`) - Whether Query Insights will record client address when enabled.
   """
