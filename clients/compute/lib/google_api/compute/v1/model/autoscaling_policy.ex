@@ -31,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   *   `minNumReplicas` (*type:* `integer()`, *default:* `nil`) - The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Defines operating mode for this policy.
   *   `scaleInControl` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t`, *default:* `nil`) - 
+  *   `scalingSchedules` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.AutoscalingPolicyScalingSchedule.t}`, *default:* `nil`) - Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,13 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
           :maxNumReplicas => integer() | nil,
           :minNumReplicas => integer() | nil,
           :mode => String.t() | nil,
-          :scaleInControl => GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t() | nil
+          :scaleInControl => GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t() | nil,
+          :scalingSchedules =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.AutoscalingPolicyScalingSchedule.t()
+            }
+            | nil
         }
 
   field(:coolDownPeriodSec)
@@ -64,6 +71,11 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   field(:minNumReplicas)
   field(:mode)
   field(:scaleInControl, as: GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl)
+
+  field(:scalingSchedules,
+    as: GoogleApi.Compute.V1.Model.AutoscalingPolicyScalingSchedule,
+    type: :map
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AutoscalingPolicy do

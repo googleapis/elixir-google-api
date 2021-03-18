@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface do
   ## Attributes
 
   *   `id` (*type:* `integer()`, *default:* `nil`) - The numeric ID of this VPN gateway interface.
+  *   `interconnectAttachment` (*type:* `String.t`, *default:* `nil`) - URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] The external IP address for this VPN gateway interface.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface do
 
   @type t :: %__MODULE__{
           :id => integer() | nil,
+          :interconnectAttachment => String.t() | nil,
           :ipAddress => String.t() | nil
         }
 
   field(:id)
+  field(:interconnectAttachment)
   field(:ipAddress)
 end
 

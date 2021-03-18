@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Scheduling do
   @moduledoc """
-  Sets the scheduling options for an Instance. NextID: 17
+  Sets the scheduling options for an Instance. NextID: 20
 
   ## Attributes
 

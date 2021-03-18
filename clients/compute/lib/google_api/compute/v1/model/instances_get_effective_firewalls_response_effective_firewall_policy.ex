@@ -21,9 +21,10 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The display name of the firewall policy.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the firewall policy.
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - The rules that apply to the network.
+  *   `shortName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The short name of the firewall policy.
   *   `type` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of the firewall policy.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
+          :shortName => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:displayName)
   field(:name)
   field(:rules, as: GoogleApi.Compute.V1.Model.FirewallPolicyRule, type: :list)
+  field(:shortName)
   field(:type)
 end
 

@@ -26,6 +26,9 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteAction do
   *   `faultInjectionPolicy` (*type:* `GoogleApi.Compute.V1.Model.HttpFaultInjection.t`, *default:* `nil`) - The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by Loadbalancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the Loadbalancer for a percentage of requests.
       timeout and retry_policy will be ignored by clients that are configured with a fault_injection_policy.
       Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+  *   `maxStreamDuration` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+      If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+      This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
   *   `requestMirrorPolicy` (*type:* `GoogleApi.Compute.V1.Model.RequestMirrorPolicy.t`, *default:* `nil`) - Specifies the policy on how requests intended for the route's backends are shadowed to a separate mirrored backend service. Loadbalancer does not wait for responses from the shadow service. Prior to sending traffic to the shadow service, the host / authority header is suffixed with -shadow.
       Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `retryPolicy` (*type:* `GoogleApi.Compute.V1.Model.HttpRetryPolicy.t`, *default:* `nil`) - Specifies the retry policy associated with this route.
@@ -45,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteAction do
   @type t :: %__MODULE__{
           :corsPolicy => GoogleApi.Compute.V1.Model.CorsPolicy.t() | nil,
           :faultInjectionPolicy => GoogleApi.Compute.V1.Model.HttpFaultInjection.t() | nil,
+          :maxStreamDuration => GoogleApi.Compute.V1.Model.Duration.t() | nil,
           :requestMirrorPolicy => GoogleApi.Compute.V1.Model.RequestMirrorPolicy.t() | nil,
           :retryPolicy => GoogleApi.Compute.V1.Model.HttpRetryPolicy.t() | nil,
           :timeout => GoogleApi.Compute.V1.Model.Duration.t() | nil,
@@ -55,6 +59,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteAction do
 
   field(:corsPolicy, as: GoogleApi.Compute.V1.Model.CorsPolicy)
   field(:faultInjectionPolicy, as: GoogleApi.Compute.V1.Model.HttpFaultInjection)
+  field(:maxStreamDuration, as: GoogleApi.Compute.V1.Model.Duration)
   field(:requestMirrorPolicy, as: GoogleApi.Compute.V1.Model.RequestMirrorPolicy)
   field(:retryPolicy, as: GoogleApi.Compute.V1.Model.HttpRetryPolicy)
   field(:timeout, as: GoogleApi.Compute.V1.Model.Duration)

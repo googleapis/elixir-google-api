@@ -41,6 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `recommendedSize` (*type:* `integer()`, *default:* `nil`) - [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+  *   `scalingScheduleStatus` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.ScalingScheduleStatus.t}`, *default:* `nil`) - [Output Only] Status information of existing scaling schedules.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the autoscaler configuration. Current set of possible values:  
       - PENDING: Autoscaler backend hasn't read new/updated configuration. 
@@ -63,6 +64,8 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
           :name => String.t() | nil,
           :recommendedSize => integer() | nil,
           :region => String.t() | nil,
+          :scalingScheduleStatus =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.ScalingScheduleStatus.t()} | nil,
           :selfLink => String.t() | nil,
           :status => String.t() | nil,
           :statusDetails => list(GoogleApi.Compute.V1.Model.AutoscalerStatusDetails.t()) | nil,
@@ -78,6 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   field(:name)
   field(:recommendedSize)
   field(:region)
+  field(:scalingScheduleStatus, as: GoogleApi.Compute.V1.Model.ScalingScheduleStatus, type: :map)
   field(:selfLink)
   field(:status)
   field(:statusDetails, as: GoogleApi.Compute.V1.Model.AutoscalerStatusDetails, type: :list)
