@@ -22,7 +22,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Req
   ## Attributes
 
   *   `actionId` (*type:* `String.t`, *default:* `nil`) - An identifier that ties multiple requests to the same action. For example, multiple requests to the CAS, Action Cache, and Execution API are used in order to compile foo.cc.
+  *   `actionMnemonic` (*type:* `String.t`, *default:* `nil`) - A brief description of the kind of action, for example, CppCompile or GoLink. There is no standard agreed set of values for this, and they are expected to vary between different client tools.
+  *   `configurationId` (*type:* `String.t`, *default:* `nil`) - An identifier for the configuration in which the target was built, e.g. for differentiating building host tools or different target platforms. There is no expectation that this value will have any particular structure, or equality across invocations, though some client tools may offer these guarantees.
   *   `correlatedInvocationsId` (*type:* `String.t`, *default:* `nil`) - An identifier to tie multiple tool invocations together. For example, runs of foo_test, bar_test and baz_test on a post-submit of a given patch.
+  *   `targetId` (*type:* `String.t`, *default:* `nil`) - An identifier for the target which produced this action. No guarantees are made around how many actions may relate to a single target.
   *   `toolDetails` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ToolDetails.t`, *default:* `nil`) - The details for the tool invoking the requests.
   *   `toolInvocationId` (*type:* `String.t`, *default:* `nil`) - An identifier that ties multiple actions together to a final result. For example, multiple actions are required to build and run foo_test.
   """
@@ -31,7 +34,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Req
 
   @type t :: %__MODULE__{
           :actionId => String.t() | nil,
+          :actionMnemonic => String.t() | nil,
+          :configurationId => String.t() | nil,
           :correlatedInvocationsId => String.t() | nil,
+          :targetId => String.t() | nil,
           :toolDetails =>
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ToolDetails.t()
             | nil,
@@ -39,7 +45,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Req
         }
 
   field(:actionId)
+  field(:actionMnemonic)
+  field(:configurationId)
   field(:correlatedInvocationsId)
+  field(:targetId)
 
   field(:toolDetails,
     as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ToolDetails

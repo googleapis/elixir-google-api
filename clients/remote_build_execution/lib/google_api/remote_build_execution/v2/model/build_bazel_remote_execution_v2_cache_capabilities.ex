@@ -25,6 +25,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Cac
   *   `cachePriorityCapabilities` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t`, *default:* `nil`) - Supported cache priority range for both CAS and ActionCache.
   *   `digestFunction` (*type:* `list(String.t)`, *default:* `nil`) - All the digest functions supported by the remote cache. Remote cache may support multiple digest functions simultaneously.
   *   `maxBatchTotalSizeBytes` (*type:* `String.t`, *default:* `nil`) - Maximum total size of blobs to be uploaded/downloaded using batch methods. A value of 0 means no limit is set, although in practice there will always be a message size limitation of the protocol in use, e.g. GRPC.
+  *   `supportedCompressor` (*type:* `list(String.t)`, *default:* `nil`) - Compressors supported by the "compressed-blobs" bytestream resources. Servers MUST support identity/no-compression, even if it is not listed here. Note that this does not imply which if any compressors are supported by the server at the gRPC level.
   *   `symlinkAbsolutePathStrategy` (*type:* `String.t`, *default:* `nil`) - Whether absolute symlink targets are supported.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Cac
             | nil,
           :digestFunction => list(String.t()) | nil,
           :maxBatchTotalSizeBytes => String.t() | nil,
+          :supportedCompressor => list(String.t()) | nil,
           :symlinkAbsolutePathStrategy => String.t() | nil
         }
 
@@ -53,6 +55,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Cac
 
   field(:digestFunction, type: :list)
   field(:maxBatchTotalSizeBytes)
+  field(:supportedCompressor, type: :list)
   field(:symlinkAbsolutePathStrategy)
 end
 
