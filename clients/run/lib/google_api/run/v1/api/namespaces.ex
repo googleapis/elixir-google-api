@@ -278,6 +278,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.DomainMapping.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -309,6 +310,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :dryRun => :query,
       :body => :body
     }
 
@@ -347,6 +349,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -387,6 +390,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :uploadType => :query,
       :upload_protocol => :query,
       :apiVersion => :query,
+      :dryRun => :query,
       :kind => :query,
       :propagationPolicy => :query
     }
@@ -588,6 +592,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -628,6 +633,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :uploadType => :query,
       :upload_protocol => :query,
       :apiVersion => :query,
+      :dryRun => :query,
       :kind => :query,
       :propagationPolicy => :query
     }
@@ -971,6 +977,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -997,6 +1004,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :dryRun => :query,
       :body => :body
     }
 
@@ -1035,6 +1043,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1075,6 +1084,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :uploadType => :query,
       :upload_protocol => :query,
       :apiVersion => :query,
+      :dryRun => :query,
       :kind => :query,
       :propagationPolicy => :query
     }
@@ -1268,6 +1278,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1306,6 +1317,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :dryRun => :query,
       :body => :body
     }
 
