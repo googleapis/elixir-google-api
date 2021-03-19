@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.User do
   @moduledoc """
-  A user in Hangouts Chat.
+  A user in Google Chat.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name.
   *   `domainId` (*type:* `String.t`, *default:* `nil`) - Obfuscated domain information.
-  *   `isAnonymous` (*type:* `boolean()`, *default:* `nil`) - True when the user is deleted or the user's proifle is not visible.
+  *   `isAnonymous` (*type:* `boolean()`, *default:* `nil`) - True when the user is deleted or the user's profile is not visible.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the format "users/*".
   *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
