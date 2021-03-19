@@ -21,7 +21,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
 
   ## Attributes
 
-  *   `endUserSuggestionConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionConfig.t`, *default:* `nil`) - Configuration for agent assistance of end user participant.
   *   `humanAgentSuggestionConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionConfig.t`, *default:* `nil`) - Configuration for agent assistance of human agent participant.
   *   `messageAnalysisConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigMessageAnalysisConfig.t`, *default:* `nil`) - Configuration for message analysis.
   *   `notificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Pub/Sub topic on which to publish new agent assistant events.
@@ -30,9 +29,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endUserSuggestionConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionConfig.t()
-            | nil,
           :humanAgentSuggestionConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionConfig.t()
             | nil,
@@ -42,11 +38,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
           :notificationConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil
         }
-
-  field(:endUserSuggestionConfig,
-    as:
-      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionConfig
-  )
 
   field(:humanAgentSuggestionConfig,
     as:

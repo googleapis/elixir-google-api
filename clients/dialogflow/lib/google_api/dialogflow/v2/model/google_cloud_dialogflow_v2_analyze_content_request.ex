@@ -21,7 +21,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
 
   ## Attributes
 
-  *   `audioInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput.t`, *default:* `nil`) - The natural language speech audio to be processed.
   *   `eventInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t`, *default:* `nil`) - An input event to send to Dialogflow.
   *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - Parameters for a Dialogflow virtual-agent query.
   *   `replyAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Speech synthesis configuration. The speech synthesis settings for a virtual agent that may be configured for the associated conversation profile are not used when calling AnalyzeContent. If this configuration is not supplied, speech synthesis is disabled.
@@ -32,8 +31,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioInput =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput.t() | nil,
           :eventInput =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t() | nil,
           :queryParams =>
@@ -44,7 +41,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
           :textInput => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t() | nil
         }
 
-  field(:audioInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput)
   field(:eventInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput)
   field(:queryParams, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters)
 
