@@ -25,7 +25,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Create time of the conversation profile.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human readable name for this profile. Max length 1024 bytes.
   *   `humanAgentAssistantConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfig.t`, *default:* `nil`) - Configuration for agent assistance to use with this profile.
-  *   `humanAgentHandoffConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfig.t`, *default:* `nil`) - Configuration for connecting to a live agent.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language which represents the conversationProfile. If unspecified, the default language code en-us applies. Users need to create a ConversationProfile for each language they want to support.
   *   `loggingConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2LoggingConfig.t`, *default:* `nil`) - Configuration for logging conversation lifecycle events.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this conversation profile. Format: `projects//locations//conversationProfiles/`.
@@ -45,8 +44,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
           :humanAgentAssistantConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfig.t()
             | nil,
-          :humanAgentHandoffConfig =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfig.t() | nil,
           :languageCode => String.t() | nil,
           :loggingConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2LoggingConfig.t() | nil,
@@ -69,10 +66,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
 
   field(:humanAgentAssistantConfig,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfig
-  )
-
-  field(:humanAgentHandoffConfig,
-    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfig
   )
 
   field(:languageCode)
