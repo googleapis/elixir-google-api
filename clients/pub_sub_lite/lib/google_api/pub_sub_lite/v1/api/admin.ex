@@ -44,6 +44,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:skipBacklog` (*type:* `boolean()`) - If true, the newly created subscription will only receive messages published after the subscription was created. Otherwise, the entire message backlog will be received on the subscription. Defaults to false.
       *   `:subscriptionId` (*type:* `String.t`) - Required. The ID to use for the subscription, which will become the final component of the subscription's name. This value is structured like: `my-sub-name`.
       *   `:body` (*type:* `GoogleApi.PubSubLite.V1.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -81,6 +82,7 @@ defmodule GoogleApi.PubSubLite.V1.Api.Admin do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :skipBacklog => :query,
       :subscriptionId => :query,
       :body => :body
     }
