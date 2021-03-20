@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
   @moduledoc """
-  The details of probing from the latest run.
+  Results of active probing from the last run of the test.
 
   ## Attributes
 
-  *   `abortCause` (*type:* `String.t`, *default:* `nil`) - Causes that the probing was aborted.
-  *   `endpointInfo` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - Derived from the test input. The actual source and destination endpoint where the probing was run.
-  *   `error` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Status.t`, *default:* `nil`) - The details of an internal failure or a cancellation of reachability analysis.
-  *   `probingLatency` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t`, *default:* `nil`) - One way probing latency distribution. The latency is measured as duration of packet traversal of Google Cloud network, from source to destination endpoint.
-  *   `result` (*type:* `String.t`, *default:* `nil`) - The overall reachability result of the test.
+  *   `abortCause` (*type:* `String.t`, *default:* `nil`) - The reason probing was aborted.
+  *   `endpointInfo` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - The source and destination endpoints derived from the test input and used for active probing.
+  *   `error` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Status.t`, *default:* `nil`) - Details about an internal failure or the cancellation of active probing.
+  *   `probingLatency` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t`, *default:* `nil`) - Latency as measured by active probing in one direction: from the source to the destination endpoint.
+  *   `result` (*type:* `String.t`, *default:* `nil`) - The overall result of active probing.
   *   `sentProbeCount` (*type:* `integer()`, *default:* `nil`) - Number of probes sent.
-  *   `successfulProbeCount` (*type:* `integer()`, *default:* `nil`) - Number of probes that reached destination.
-  *   `verifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the reachability state was verified.
+  *   `successfulProbeCount` (*type:* `integer()`, *default:* `nil`) - Number of probes that reached the destination.
+  *   `verifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that reachability was assessed through active probing.
   """
 
   use GoogleApi.Gax.ModelBase
