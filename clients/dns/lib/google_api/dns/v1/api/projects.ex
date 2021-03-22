@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetch the representation of an existing Project.
+  Fetches the representation of an existing Project.
 
   ## Parameters
 
