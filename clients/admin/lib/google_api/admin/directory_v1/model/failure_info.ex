@@ -23,8 +23,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.FailureInfo do
 
   *   `errorCode` (*type:* `String.t`, *default:* `nil`) - Canonical code for why the update failed to apply.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Failure reason message.
-  *   `printer` (*type:* `GoogleApi.Admin.Directory_v1.Model.Printer.t`, *default:* `nil`) - Failed printers.
-  *   `printerIds` (*type:* `String.t`, *default:* `nil`) - Ids of failed printers.
+  *   `printer` (*type:* `GoogleApi.Admin.Directory_v1.Model.Printer.t`, *default:* `nil`) - Failed printer.
+  *   `printerId` (*type:* `String.t`, *default:* `nil`) - Id of a failed printer.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.FailureInfo do
           :errorCode => String.t() | nil,
           :errorMessage => String.t() | nil,
           :printer => GoogleApi.Admin.Directory_v1.Model.Printer.t() | nil,
-          :printerIds => String.t() | nil
+          :printerId => String.t() | nil
         }
 
   field(:errorCode)
   field(:errorMessage)
   field(:printer, as: GoogleApi.Admin.Directory_v1.Model.Printer)
-  field(:printerIds)
+  field(:printerId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Admin.Directory_v1.Model.FailureInfo do
