@@ -28,7 +28,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   *   `industryCategory` (*type:* `String.t`, *default:* `nil`) - Industry associated with this property Example: AUTOMOTIVE, FOOD_AND_DRINK
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this property. Format: properties/{property_id} Example: "properties/1000"
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of this property's logical parent. Note: The Property-Moving UI can be used to change the parent. Format: accounts/{account} Example: "accounts/100"
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Reporting Time Zone, used as the day boundary for reports, regardless of where the data originates. If the time zone honors DST, Analytics will automatically adjust for the changes. NOTE: Changing the time zone only affects data going forward, and is not applied retroactively. Format: https://www.iana.org/time-zones Example: "America/Los_Angeles"
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Required. Reporting Time Zone, used as the day boundary for reports, regardless of where the data originates. If the time zone honors DST, Analytics will automatically adjust for the changes. NOTE: Changing the time zone only affects data going forward, and is not applied retroactively. Format: https://www.iana.org/time-zones Example: "America/Los_Angeles"
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when entity payload fields were last updated.
   """
 
