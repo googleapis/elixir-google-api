@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Model.AclRule do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the ACL rule.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the Access Control List (ACL) rule. See Sharing calendars.
   *   `kind` (*type:* `String.t`, *default:* `calendar#aclRule`) - Type of the resource ("calendar#aclRule").
   *   `role` (*type:* `String.t`, *default:* `nil`) - The role assigned to the scope. Possible values are:  
       - "none" - Provides no access. 
@@ -30,7 +30,7 @@ defmodule GoogleApi.Calendar.V3.Model.AclRule do
       - "reader" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. 
       - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
       - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
-  *   `scope` (*type:* `GoogleApi.Calendar.V3.Model.AclRuleScope.t`, *default:* `nil`) - The scope of the rule.
+  *   `scope` (*type:* `GoogleApi.Calendar.V3.Model.AclRuleScope.t`, *default:* `nil`) - The extent to which calendar access is granted by this ACL rule.
   """
 
   use GoogleApi.Gax.ModelBase
