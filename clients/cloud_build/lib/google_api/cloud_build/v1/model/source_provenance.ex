@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.SourceProvenance do
   *   `fileHashes` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.FileHashes.t}`, *default:* `nil`) - Output only. Hash(es) of the build source, which can be used to verify that the original source integrity was maintained in the build. Note that `FileHashes` will only be populated if `BuildOptions` has requested a `SourceProvenanceHash`. The keys to this map are file paths used as build source and the values contain the hash values for those files. If the build source came in a single package such as a gzipped tarfile (`.tar.gz`), the `FileHash` will be for the single path to that file.
   *   `resolvedRepoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - A copy of the build's `source.repo_source`, if exists, with any revisions resolved.
   *   `resolvedStorageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - A copy of the build's `source.storage_source`, if exists, with any generations resolved.
+  *   `resolvedStorageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - A copy of the build's `source.storage_source_manifest`, if exists, with any revisions resolved. This feature is in Preview.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,15 @@ defmodule GoogleApi.CloudBuild.V1.Model.SourceProvenance do
           :fileHashes =>
             %{optional(String.t()) => GoogleApi.CloudBuild.V1.Model.FileHashes.t()} | nil,
           :resolvedRepoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
-          :resolvedStorageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil
+          :resolvedStorageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil,
+          :resolvedStorageSourceManifest =>
+            GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t() | nil
         }
 
   field(:fileHashes, as: GoogleApi.CloudBuild.V1.Model.FileHashes, type: :map)
   field(:resolvedRepoSource, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
   field(:resolvedStorageSource, as: GoogleApi.CloudBuild.V1.Model.StorageSource)
+  field(:resolvedStorageSourceManifest, as: GoogleApi.CloudBuild.V1.Model.StorageSourceManifest)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.SourceProvenance do

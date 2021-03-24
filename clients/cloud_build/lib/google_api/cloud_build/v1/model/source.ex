@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
 
   *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
+  *   `storageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :repoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
-          :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil
+          :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil,
+          :storageSourceManifest => GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t() | nil
         }
 
   field(:repoSource, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
   field(:storageSource, as: GoogleApi.CloudBuild.V1.Model.StorageSource)
+  field(:storageSourceManifest, as: GoogleApi.CloudBuild.V1.Model.StorageSourceManifest)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Source do
