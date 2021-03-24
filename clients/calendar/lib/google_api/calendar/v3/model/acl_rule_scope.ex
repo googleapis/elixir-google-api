@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Calendar.V3.Model.AclRuleScope do
   @moduledoc """
-  The scope of the rule.
+  The extent to which calendar access is granted by this ACL rule.
 
   ## Attributes
 
