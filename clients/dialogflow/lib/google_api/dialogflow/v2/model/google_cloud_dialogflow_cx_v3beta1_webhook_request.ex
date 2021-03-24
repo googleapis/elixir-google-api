@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequest do
   @moduledoc """
-  The request message for a webhook call.
+  The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases.
 
   ## Attributes
 
