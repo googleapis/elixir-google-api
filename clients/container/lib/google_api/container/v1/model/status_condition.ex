@@ -21,17 +21,20 @@ defmodule GoogleApi.Container.V1.Model.StatusCondition do
 
   ## Attributes
 
-  *   `code` (*type:* `String.t`, *default:* `nil`) - Machine-friendly representation of the condition
+  *   `canonicalCode` (*type:* `String.t`, *default:* `nil`) - Canonical code of the condition.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Machine-friendly representation of the condition Deprecated. Use canonical_code instead.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Human-friendly representation of the condition
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :canonicalCode => String.t() | nil,
           :code => String.t() | nil,
           :message => String.t() | nil
         }
 
+  field(:canonicalCode)
   field(:code)
   field(:message)
 end
