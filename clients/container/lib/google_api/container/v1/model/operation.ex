@@ -21,18 +21,19 @@ defmodule GoogleApi.Container.V1.Model.Operation do
 
   ## Attributes
 
-  *   `clusterConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state.
+  *   `clusterConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state. Deprecated. Use field error instead.
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Detailed operation progress, if available.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation completed, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `error` (*type:* `GoogleApi.Container.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure.
   *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned ID for the operation.
-  *   `nodepoolConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state.
+  *   `nodepoolConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state. Deprecated. Use field error instead.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `progress` (*type:* `GoogleApi.Container.V1.Model.OperationProgress.t`, *default:* `nil`) - Output only. [Output only] Progress information for an operation.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URL for the resource.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation started, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The current status of the operation.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. If an error has occurred, a textual description of the error.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. If an error has occurred, a textual description of the error. Deprecated. Use the field error instead.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URL for the target of the operation.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation is taking place. This field is deprecated, use location instead.
   """
@@ -43,6 +44,7 @@ defmodule GoogleApi.Container.V1.Model.Operation do
           :clusterConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
           :detail => String.t() | nil,
           :endTime => String.t() | nil,
+          :error => GoogleApi.Container.V1.Model.Status.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
           :nodepoolConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   field(:clusterConditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:detail)
   field(:endTime)
+  field(:error, as: GoogleApi.Container.V1.Model.Status)
   field(:location)
   field(:name)
   field(:nodepoolConditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
