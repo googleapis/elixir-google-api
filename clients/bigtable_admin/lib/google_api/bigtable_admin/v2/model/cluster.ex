@@ -22,6 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   ## Attributes
 
   *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of storage used by this cluster to serve its parent instance's tables, unless explicitly overridden.
+  *   `encryptionConfig` (*type:* `GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t`, *default:* `nil`) - Immutable. The encryption configuration for CMEK-protected clusters.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best performance, clients should be located as close as possible to this cluster. Currently only zones are supported, so values should be of the form `projects/{project}/locations/{zone}`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this cluster. More nodes enable higher throughput and more consistent performance.
@@ -32,6 +33,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
 
   @type t :: %__MODULE__{
           :defaultStorageType => String.t() | nil,
+          :encryptionConfig => GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
           :serveNodes => integer() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
         }
 
   field(:defaultStorageType)
+  field(:encryptionConfig, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig)
   field(:location)
   field(:name)
   field(:serveNodes)
