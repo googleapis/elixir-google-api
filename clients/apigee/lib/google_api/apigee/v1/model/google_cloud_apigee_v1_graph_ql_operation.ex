@@ -22,18 +22,18 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperation do
   ## Attributes
 
   *   `operation` (*type:* `String.t`, *default:* `nil`) - GraphQL operation name, along with operation type which will be used to associate quotas with. If no name is specified, the quota will be applied to all graphQL operations irrespective of their operation names in the payload.
-  *   `operationType` (*type:* `list(String.t)`, *default:* `nil`) - Required. `query`, `mutation` and `subscription` are the three operation types offered by graphQL. Currently we support only `query` and `mutation`.
+  *   `operationTypes` (*type:* `list(String.t)`, *default:* `nil`) - Required. `query`, `mutation` and `subscription` are the three operation types offered by graphQL. Currently we support only `query` and `mutation`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :operation => String.t() | nil,
-          :operationType => list(String.t()) | nil
+          :operationTypes => list(String.t()) | nil
         }
 
   field(:operation)
-  field(:operationType, type: :list)
+  field(:operationTypes, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperation do
