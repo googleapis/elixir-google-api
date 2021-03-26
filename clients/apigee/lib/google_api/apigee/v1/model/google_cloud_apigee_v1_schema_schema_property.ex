@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty do
   @moduledoc """
-  Message type for schema property
+  Properties for the schema field.
 
   ## Attributes
 
-  *   `createTime` (*type:* `String.t`, *default:* `nil`) - Creation time of the field
-  *   `custom` (*type:* `String.t`, *default:* `nil`) - Custom is a flag signifying if the field was provided as part of the standard dataset or a custom field created by the customer
+  *   `createTime` (*type:* `String.t`, *default:* `nil`) - Time the field was created in RFC3339 string form. For example: `2016-02-26T10:23:09.592Z`.
+  *   `custom` (*type:* `String.t`, *default:* `nil`) - Flag that specifies whether the field is standard in the dataset or a custom field created by the customer. `true` indicates that it is a custom field.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Data type of the field.
   """
 
