@@ -21,15 +21,18 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ClusterState do
 
   ## Attributes
 
+  *   `encryptionInfo` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t)`, *default:* `nil`) - Output only. The encryption information for the table in this cluster. If the encryption key protecting this resource is customer managed, then its version can be rotated in Cloud Key Management Service (Cloud KMS). The primary version of the key and its status will be reflected here when changes propagate from Cloud KMS.
   *   `replicationState` (*type:* `String.t`, *default:* `nil`) - Output only. The state of replication for the table in this cluster.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :encryptionInfo => list(GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t()) | nil,
           :replicationState => String.t() | nil
         }
 
+  field(:encryptionInfo, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo, type: :list)
   field(:replicationState)
 end
 

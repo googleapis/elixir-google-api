@@ -21,6 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
 
   ## Attributes
 
+  *   `encryptionInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t`, *default:* `nil`) - Output only. The encryption information for the backup.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. `end_time` is the time that the backup was finished. The row data in the backup will be no newer than this timestamp.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The expiration time of the backup, with microseconds granularity that must be at least 6 hours and at most 30 days from the time the request is received. Once the `expire_time` has passed, Cloud Bigtable will delete the backup and free the resources used by the backup.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
@@ -33,6 +34,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :encryptionInfo => GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t() | nil,
           :endTime => DateTime.t() | nil,
           :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
           :state => String.t() | nil
         }
 
+  field(:encryptionInfo, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo)
   field(:endTime, as: DateTime)
   field(:expireTime, as: DateTime)
   field(:name)
