@@ -21,15 +21,18 @@ defmodule GoogleApi.Compute.V1.Model.DistributionPolicy do
 
   ## Attributes
 
+  *   `targetShape` (*type:* `String.t`, *default:* `nil`) - The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
   *   `zones` (*type:* `list(GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration.t)`, *default:* `nil`) - Zones where the regional managed instance group will create and manage its instances.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :targetShape => String.t() | nil,
           :zones => list(GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration.t()) | nil
         }
 
+  field(:targetShape)
   field(:zones, as: GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration, type: :list)
 end
 
