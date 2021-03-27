@@ -118,9 +118,9 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
-      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in [AIP-160](https://google.aip.dev/160).
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service will select a default.
+      *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -166,7 +166,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.
+  `ApplyParameters` restarts the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.
 
   ## Parameters
 
@@ -268,7 +268,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the user project / location If any of the above are not met, will raise an invalid argument error.
+      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the user project / location. If any of the above are not met, the API raises an invalid argument error.
       *   `:body` (*type:* `GoogleApi.Memcache.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -508,10 +508,10 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - List filter. For example, exclude all Memcached instances with name as my-instance by specifying "name != my-instance".
+      *   `:filter` (*type:* `String.t`) - List filter. For example, exclude all Memcached instances with name as my-instance by specifying `"name != my-instance"`.
       *   `:orderBy` (*type:* `String.t`) - Sort results. Supported values are "name", "name desc" or "" (unsorted).
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the `page_size` value, the response may include a partial list and a caller should only rely on response's `next_page_token` to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -576,7 +576,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which zones Memcached nodes within an instances should be provisioned in. Refer to [zones] field for more details.
+  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at the regional level so `location_id` here refers to a Google Cloud region; however, users may choose which zones Memcached nodes should be provisioned in within an instance. Refer to zones field for more details.
   *   `locations_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -656,7 +656,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+  Updates the defined Memcached parameters for an existing instance. This method only stages the parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the Memcached instance.
 
   ## Parameters
 

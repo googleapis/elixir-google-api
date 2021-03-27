@@ -21,8 +21,8 @@ defmodule GoogleApi.Memcache.V1.Model.ApplyParametersRequest do
 
   ## Attributes
 
-  *   `applyAll` (*type:* `boolean()`, *default:* `nil`) - Whether to apply instance-level parameter group to all nodes. If set to true, will explicitly restrict users from specifying any nodes, and apply parameter group updates to all nodes within the instance.
-  *   `nodeIds` (*type:* `list(String.t)`, *default:* `nil`) - Nodes to which we should apply the instance-level parameter group.
+  *   `applyAll` (*type:* `boolean()`, *default:* `nil`) - Whether to apply instance-level parameter group to all nodes. If set to true, users are restricted from specifying individual nodes, and `ApplyParameters` updates all nodes within the instance.
+  *   `nodeIds` (*type:* `list(String.t)`, *default:* `nil`) - Nodes to which the instance-level parameter group is applied.
   """
 
   use GoogleApi.Gax.ModelBase
