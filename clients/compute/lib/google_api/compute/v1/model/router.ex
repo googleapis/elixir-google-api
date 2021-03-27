@@ -28,6 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `encryptedInterconnectRouter` (*type:* `boolean()`, *default:* `nil`) - Field to indicate if a router is dedicated to use with encrypted Interconnect Attachment (IPsec-encrypted Cloud Interconnect feature).
+      Not currently available in all Interconnect locations.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `interfaces` (*type:* `list(GoogleApi.Compute.V1.Model.RouterInterface.t)`, *default:* `nil`) - Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
   *   `kind` (*type:* `String.t`, *default:* `compute#router`) - [Output Only] Type of resource. Always compute#router for routers.

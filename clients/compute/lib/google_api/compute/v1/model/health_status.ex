@@ -22,6 +22,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   ## Attributes
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations for network endpoint.
+  *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - URL of the forwarding rule associated with the health status of the instance.
+  *   `forwardingRuleIp` (*type:* `String.t`, *default:* `nil`) - A forwarding rule IP address assigned to this instance.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
@@ -34,6 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
 
   @type t :: %__MODULE__{
           :annotations => map() | nil,
+          :forwardingRule => String.t() | nil,
+          :forwardingRuleIp => String.t() | nil,
           :healthState => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
@@ -43,6 +47,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
         }
 
   field(:annotations, type: :map)
+  field(:forwardingRule)
+  field(:forwardingRuleIp)
   field(:healthState)
   field(:instance)
   field(:ipAddress)

@@ -1329,7 +1329,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Deletes the specified Instance resource. For more information, see Stopping or Deleting an Instance.
+  Deletes the specified Instance resource. For more information, see Deleting an instance.
 
   ## Parameters
 

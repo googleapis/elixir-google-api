@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRule do
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `kind` (*type:* `String.t`, *default:* `compute#securityPolicyRule`) - [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
   *   `match` (*type:* `GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher.t`, *default:* `nil`) - A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
