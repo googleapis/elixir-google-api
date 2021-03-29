@@ -21,17 +21,24 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudMemcacheV1beta2LocationMet
 
   ## Attributes
 
-  *   `availableZones` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.ZoneMetadata.t}`, *default:* `nil`) - Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by GCE. These keys can be specified in the `zones` field when creating a Memcached instance.
+  *   `availableZones` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.GoogleCloudMemcacheV1beta2ZoneMetadata.t}`, *default:* `nil`) - Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by GCE. These keys can be specified in the `zones` field when creating a Memcached instance.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :availableZones =>
-            %{optional(String.t()) => GoogleApi.Memcache.V1beta2.Model.ZoneMetadata.t()} | nil
+            %{
+              optional(String.t()) =>
+                GoogleApi.Memcache.V1beta2.Model.GoogleCloudMemcacheV1beta2ZoneMetadata.t()
+            }
+            | nil
         }
 
-  field(:availableZones, as: GoogleApi.Memcache.V1beta2.Model.ZoneMetadata, type: :map)
+  field(:availableZones,
+    as: GoogleApi.Memcache.V1beta2.Model.GoogleCloudMemcacheV1beta2ZoneMetadata,
+    type: :map
+  )
 end
 
 defimpl Poison.Decoder,
