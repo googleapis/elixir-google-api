@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Tiers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists all available machine types (tiers) for Cloud SQL, for example, db-n1-standard-1. For related information, see Pricing.
+  Lists all available machine types (tiers) for Cloud SQL, for example, db-custom-1-3840. For related information, see Pricing.
 
   ## Parameters
 

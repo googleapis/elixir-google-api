@@ -43,7 +43,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `settingsVersion` (*type:* `String.t`, *default:* `nil`) - The version of instance settings. This is a required field for update method to make sure concurrent updates are handled properly. During update, use the most recent settingsVersion value for this instance and do not try to update this value.
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
-  *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example *db-n1-standard-1* (MySQL instances) or *db-custom-1-3840* (PostgreSQL instances).
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example *db-custom-1-3840* .
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-provided labels, represented as a dictionary where each label is a single key value pair.
   """
 
