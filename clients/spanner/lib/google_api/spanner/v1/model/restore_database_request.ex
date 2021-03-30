@@ -23,7 +23,7 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest do
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore. Values are of the form `projects//instances//backups/`.
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the database to create and restore to. This database must not already exist. The `database_id` appended to `parent` forms the full database name of the form `projects//instances//databases/`.
-  *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t`, *default:* `nil`) - Optional. An encryption configuration describing the encryption type and key resources in Cloud KMS used to encrypt/decrypt the database to restore to. If this field is not specified, the restored database will use the same encryption configuration as the backup by default, namely encryption_type = `USE_CONFIG_DEFAULT_OR_DATABASE_ENCRYPTION`.
+  *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t`, *default:* `nil`) - Optional. An encryption configuration describing the encryption type and key resources in Cloud KMS used to encrypt/decrypt the database to restore to. If this field is not specified, the restored database will use the same encryption configuration as the backup by default, namely encryption_type = `USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION`.
   """
 
   use GoogleApi.Gax.ModelBase

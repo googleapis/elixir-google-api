@@ -26,6 +26,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - If present, results will be restricted to the specified partition previously created using PartitionQuery(). There must be an exact match for the values of fields common to this message and the PartitionQueryRequest message used to create this partition_token.
   *   `queryMode` (*type:* `String.t`, *default:* `nil`) - Used to control the amount of debugging information returned in ResultSetStats. If partition_token is set, query_mode can only be set to QueryMode.NORMAL.
   *   `queryOptions` (*type:* `GoogleApi.Spanner.V1.Model.QueryOptions.t`, *default:* `nil`) - Query optimizer configuration to use for the given query.
+  *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request.
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - If this request is resuming a previously interrupted SQL statement execution, `resume_token` should be copied from the last PartialResultSet yielded before the interruption. Doing this enables the new SQL statement execution to resume where the last one left off. The rest of the request parameters must exactly match the request that yielded this token.
   *   `seqno` (*type:* `String.t`, *default:* `nil`) - A per-transaction sequence number used to identify this request. This field makes each request idempotent such that if the request is received multiple times, at most one will succeed. The sequence number must be monotonically increasing within the transaction. If a request arrives for the first time with an out-of-order sequence number, the transaction may be aborted. Replays of previously handled requests will yield the same response as the first execution. Required for DML statements. Ignored for queries.
   *   `sql` (*type:* `String.t`, *default:* `nil`) - Required. The SQL string.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
           :partitionToken => String.t() | nil,
           :queryMode => String.t() | nil,
           :queryOptions => GoogleApi.Spanner.V1.Model.QueryOptions.t() | nil,
+          :requestOptions => GoogleApi.Spanner.V1.Model.RequestOptions.t() | nil,
           :resumeToken => String.t() | nil,
           :seqno => String.t() | nil,
           :sql => String.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   field(:partitionToken)
   field(:queryMode)
   field(:queryOptions, as: GoogleApi.Spanner.V1.Model.QueryOptions)
+  field(:requestOptions, as: GoogleApi.Spanner.V1.Model.RequestOptions)
   field(:resumeToken)
   field(:seqno)
   field(:sql)

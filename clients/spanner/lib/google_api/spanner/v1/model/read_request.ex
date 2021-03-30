@@ -26,6 +26,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   *   `keySet` (*type:* `GoogleApi.Spanner.V1.Model.KeySet.t`, *default:* `nil`) - Required. `key_set` identifies the rows to be yielded. `key_set` names the primary keys of the rows in table to be yielded, unless index is present. If index is present, then key_set instead names index keys in index. If the partition_token field is empty, rows are yielded in table primary key order (if index is empty) or index key order (if index is non-empty). If the partition_token field is not empty, rows will be yielded in an unspecified order. It is not an error for the `key_set` to name rows that do not exist in the database. Read yields nothing for nonexistent rows.
   *   `limit` (*type:* `String.t`, *default:* `nil`) - If greater than zero, only the first `limit` rows are yielded. If `limit` is zero, the default is no limit. A limit cannot be specified if `partition_token` is set.
   *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - If present, results will be restricted to the specified partition previously created using PartitionRead(). There must be an exact match for the values of fields common to this message and the PartitionReadRequest message used to create this partition_token.
+  *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request.
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - If this request is resuming a previously interrupted read, `resume_token` should be copied from the last PartialResultSet yielded before the interruption. Doing this enables the new read to resume where the last read left off. The rest of the request parameters must exactly match the request that yielded this token.
   *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The name of the table in the database to be read.
   *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - The transaction to use. If none is provided, the default is a temporary read-only transaction with strong concurrency.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
           :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
           :limit => String.t() | nil,
           :partitionToken => String.t() | nil,
+          :requestOptions => GoogleApi.Spanner.V1.Model.RequestOptions.t() | nil,
           :resumeToken => String.t() | nil,
           :table => String.t() | nil,
           :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
@@ -49,6 +51,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   field(:keySet, as: GoogleApi.Spanner.V1.Model.KeySet)
   field(:limit)
   field(:partitionToken)
+  field(:requestOptions, as: GoogleApi.Spanner.V1.Model.RequestOptions)
   field(:resumeToken)
   field(:table)
   field(:transaction, as: GoogleApi.Spanner.V1.Model.TransactionSelector)
