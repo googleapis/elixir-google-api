@@ -57,6 +57,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
   *   `adsGrouping` (*type:* `String.t`, *default:* `nil`) - Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.
   *   `installment` (*type:* `GoogleApi.Content.V21.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
+  *   `additionalSizeType` (*type:* `String.t`, *default:* `nil`) - Additional cut of the item. Used together with size_type to represent combined size types for apparel items.
   *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
   *   `adsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `shipping` (*type:* `list(GoogleApi.Content.V21.Model.ProductShipping.t)`, *default:* `nil`) - Shipping rules.
@@ -143,6 +144,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :multipack => String.t() | nil,
           :adsGrouping => String.t() | nil,
           :installment => GoogleApi.Content.V21.Model.Installment.t() | nil,
+          :additionalSizeType => String.t() | nil,
           :costOfGoodsSold => GoogleApi.Content.V21.Model.Price.t() | nil,
           :adsRedirect => String.t() | nil,
           :shipping => list(GoogleApi.Content.V21.Model.ProductShipping.t()) | nil,
@@ -225,6 +227,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:multipack)
   field(:adsGrouping)
   field(:installment, as: GoogleApi.Content.V21.Model.Installment)
+  field(:additionalSizeType)
   field(:costOfGoodsSold, as: GoogleApi.Content.V21.Model.Price)
   field(:adsRedirect)
   field(:shipping, as: GoogleApi.Content.V21.Model.ProductShipping, type: :list)
