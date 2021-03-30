@@ -25,7 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Tier do
   *   `RAM` (*type:* `String.t`, *default:* `nil`) - The maximum RAM usage of this tier in bytes.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#tier*.
   *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The applicable regions for this tier.
-  *   `tier` (*type:* `String.t`, *default:* `nil`) - An identifier for the machine type, for example, db-n1-standard-1. For related information, see Pricing.
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - An identifier for the machine type, for example, db-custom-1-3840. For related information, see Pricing.
   """
 
   use GoogleApi.Gax.ModelBase
