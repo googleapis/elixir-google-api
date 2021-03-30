@@ -21,15 +21,18 @@ defmodule GoogleApi.Dataproc.V1.Model.SecurityConfig do
 
   ## Attributes
 
+  *   `identityConfig` (*type:* `GoogleApi.Dataproc.V1.Model.IdentityConfig.t`, *default:* `nil`) - Optional. Identity related configuration, including service account based secure multi-tenancy user mappings.
   *   `kerberosConfig` (*type:* `GoogleApi.Dataproc.V1.Model.KerberosConfig.t`, *default:* `nil`) - Optional. Kerberos related configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :identityConfig => GoogleApi.Dataproc.V1.Model.IdentityConfig.t() | nil,
           :kerberosConfig => GoogleApi.Dataproc.V1.Model.KerberosConfig.t() | nil
         }
 
+  field(:identityConfig, as: GoogleApi.Dataproc.V1.Model.IdentityConfig)
   field(:kerberosConfig, as: GoogleApi.Dataproc.V1.Model.KerberosConfig)
 end
 
