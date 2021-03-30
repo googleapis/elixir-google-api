@@ -22,15 +22,18 @@ defmodule GoogleApi.Spanner.V1.Model.BeginTransactionRequest do
   ## Attributes
 
   *   `options` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Required. Options for the new transaction.
+  *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request. Priority is ignored for this request. Setting the priority in this request_options struct will not do anything. To set the priority for a transaction, set it on the reads and writes that are part of this transaction instead.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.Spanner.V1.Model.TransactionOptions.t() | nil
+          :options => GoogleApi.Spanner.V1.Model.TransactionOptions.t() | nil,
+          :requestOptions => GoogleApi.Spanner.V1.Model.RequestOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.Spanner.V1.Model.TransactionOptions)
+  field(:requestOptions, as: GoogleApi.Spanner.V1.Model.RequestOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.BeginTransactionRequest do
