@@ -25,7 +25,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Service do
   *   `authentication` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration.
   *   `backend` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Backend.t`, *default:* `nil`) - API backend configuration.
   *   `billing` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Billing.t`, *default:* `nil`) - Billing configuration.
-  *   `configVersion` (*type:* `integer()`, *default:* `nil`) - Deprecated. The service config compiler always sets this field to `3`.
+  *   `configVersion` (*type:* `integer()`, *default:* `nil`) - Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`.
   *   `context` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Context.t`, *default:* `nil`) - Context configuration.
   *   `control` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Control.t`, *default:* `nil`) - Configuration for the service control plane.
   *   `customError` (*type:* `GoogleApi.ServiceNetworking.V1.Model.CustomError.t`, *default:* `nil`) - Custom error configuration.
