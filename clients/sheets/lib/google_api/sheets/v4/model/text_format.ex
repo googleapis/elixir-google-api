@@ -27,6 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color of the text.
   *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color of the text. If foreground_color is also set, this field takes precedence.
   *   `italic` (*type:* `boolean()`, *default:* `nil`) - True if the text is italicized.
+  *   `link` (*type:* `GoogleApi.Sheets.V4.Model.Link.t`, *default:* `nil`) - The link destination of the text, if any. Setting a link in a format run will clear an existing cell-level link. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults.
   *   `strikethrough` (*type:* `boolean()`, *default:* `nil`) - True if the text has a strikethrough.
   *   `underline` (*type:* `boolean()`, *default:* `nil`) - True if the text is underlined.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
           :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
           :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
           :italic => boolean() | nil,
+          :link => GoogleApi.Sheets.V4.Model.Link.t() | nil,
           :strikethrough => boolean() | nil,
           :underline => boolean() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   field(:foregroundColor, as: GoogleApi.Sheets.V4.Model.Color)
   field(:foregroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:italic)
+  field(:link, as: GoogleApi.Sheets.V4.Model.Link)
   field(:strikethrough)
   field(:underline)
 end
