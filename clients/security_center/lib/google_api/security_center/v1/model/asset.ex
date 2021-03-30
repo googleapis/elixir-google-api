@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
 
   ## Attributes
 
+  *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the resource. It's either "organizations/{organization_id}/assets/{asset_id}", "folders/{folder_id}/assets/{asset_id}" or "projects/{project_number}/assets/{asset_id}", depending on the closest CRM ancestor of the resource.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was created in Security Command Center.
   *   `iamPolicy` (*type:* `GoogleApi.SecurityCenter.V1.Model.IamPolicy.t`, *default:* `nil`) - Cloud IAM Policy information associated with the Google Cloud resource described by the Security Command Center asset. This information is managed and defined by the Google Cloud resource and cannot be modified by the user.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this asset. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/assets/{asset_id}".
@@ -33,6 +34,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :canonicalName => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :iamPolicy => GoogleApi.SecurityCenter.V1.Model.IamPolicy.t() | nil,
           :name => String.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:canonicalName)
   field(:createTime, as: DateTime)
   field(:iamPolicy, as: GoogleApi.SecurityCenter.V1.Model.IamPolicy)
   field(:name)
