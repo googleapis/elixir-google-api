@@ -20,7 +20,7 @@ defmodule GoogleApi.ServiceManagement.V1 do
   API client metadata for GoogleApi.ServiceManagement.V1.
   """
 
-  @discovery_revision "20210319"
+  @discovery_revision "20210326"
 
   def discovery_revision(), do: @discovery_revision
 end
