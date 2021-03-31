@@ -32,6 +32,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Detail do
   *   `severityName` (*type:* `String.t`, *default:* `nil`) - The severity (eg: distro assigned severity) for this vulnerability.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source from which the information in this Detail was obtained.
   *   `sourceUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this information was last changed at the source. This is an upstream timestamp from the underlying information source - e.g. Ubuntu security tracker.
+  *   `vendor` (*type:* `String.t`, *default:* `nil`) - The name of the vendor of the product.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +49,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Detail do
           :packageType => String.t() | nil,
           :severityName => String.t() | nil,
           :source => String.t() | nil,
-          :sourceUpdateTime => DateTime.t() | nil
+          :sourceUpdateTime => DateTime.t() | nil,
+          :vendor => String.t() | nil
         }
 
   field(:cpeUri)
@@ -62,6 +64,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Detail do
   field(:severityName)
   field(:source)
   field(:sourceUpdateTime, as: DateTime)
+  field(:vendor)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1beta1.Model.Detail do
