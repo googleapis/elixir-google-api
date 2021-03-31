@@ -24,7 +24,7 @@ defmodule GoogleApi.HomeGraph.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # New Service: https://www.googleapis.com/auth/homegraph
+      # Private Service: https://www.googleapis.com/auth/homegraph
       "https://www.googleapis.com/auth/homegraph"
     ],
     otp_app: :google_api_home_graph,
