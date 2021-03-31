@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Normali
   ## Attributes
 
   *   `x` (*type:* `number()`, *default:* `nil`) - X coordinate.
-  *   `y` (*type:* `number()`, *default:* `nil`) - Y coordinate.
+  *   `y` (*type:* `number()`, *default:* `nil`) - Y coordinate (starts from the top of the image).
   """
 
   use GoogleApi.Gax.ModelBase

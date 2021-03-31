@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Vertex 
   ## Attributes
 
   *   `x` (*type:* `integer()`, *default:* `nil`) - X coordinate.
-  *   `y` (*type:* `integer()`, *default:* `nil`) - Y coordinate.
+  *   `y` (*type:* `integer()`, *default:* `nil`) - Y coordinate (starts from the top of the image).
   """
 
   use GoogleApi.Gax.ModelBase
