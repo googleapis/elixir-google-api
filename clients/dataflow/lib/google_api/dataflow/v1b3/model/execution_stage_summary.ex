@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
   *   `componentTransform` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ComponentTransform.t)`, *default:* `nil`) - Transforms that comprise this execution stage.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated id for this stage.
   *   `inputSource` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StageSource.t)`, *default:* `nil`) - Input sources for this stage.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of tranform this stage is executing.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of transform this stage is executing.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated name for this stage.
   *   `outputSource` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StageSource.t)`, *default:* `nil`) - Output sources for this stage.
   *   `prerequisiteStage` (*type:* `list(String.t)`, *default:* `nil`) - Other stages that must complete before this stage can run.

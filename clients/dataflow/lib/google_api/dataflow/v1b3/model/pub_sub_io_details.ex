@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.PubSubIODetails do
   @moduledoc """
-  Metadata for a PubSub connector used by the job.
+  Metadata for a Pub/Sub connector used by the job.
 
   ## Attributes
 

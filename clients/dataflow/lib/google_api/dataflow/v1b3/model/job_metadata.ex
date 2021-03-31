@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
 
   ## Attributes
 
-  *   `bigTableDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t)`, *default:* `nil`) - Identification of a BigTable source used in the Dataflow job.
+  *   `bigTableDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t)`, *default:* `nil`) - Identification of a Cloud BigTable source used in the Dataflow job.
   *   `bigqueryDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigQueryIODetails.t)`, *default:* `nil`) - Identification of a BigQuery source used in the Dataflow job.
   *   `datastoreDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.DatastoreIODetails.t)`, *default:* `nil`) - Identification of a Datastore source used in the Dataflow job.
   *   `fileDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.FileIODetails.t)`, *default:* `nil`) - Identification of a File source used in the Dataflow job.

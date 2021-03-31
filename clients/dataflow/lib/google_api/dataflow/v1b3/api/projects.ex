@@ -2870,7 +2870,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on Cloud Storage. The file must be a Json serialized DynamicTemplateFieSpec object.
       *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.
       *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
       *   `:validateOnly` (*type:* `boolean()`) - If true, the request is validated but not actually executed. Defaults to false.
@@ -3226,7 +3226,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on Cloud Storage. The file must be a Json serialized DynamicTemplateFieSpec object.
       *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.
       *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
       *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.

@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter do
   ## Attributes
 
   *   `containerSpec` (*type:* `GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t`, *default:* `nil`) - Spec about the container image to launch.
-  *   `containerSpecGcsPath` (*type:* `String.t`, *default:* `nil`) - Gcs path to a file with json serialized ContainerSpec as content.
+  *   `containerSpecGcsPath` (*type:* `String.t`, *default:* `nil`) - Cloud Storage path to a file with json serialized ContainerSpec as content.
   *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t`, *default:* `nil`) - The runtime environment for the FlexTemplate job
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job. For update job request, job name should be same as the existing running job.
   *   `launchOptions` (*type:* `map()`, *default:* `nil`) - Launch options for this flex template job. This is a common set of options across languages and templates. This should not be used to pass job parameters.
