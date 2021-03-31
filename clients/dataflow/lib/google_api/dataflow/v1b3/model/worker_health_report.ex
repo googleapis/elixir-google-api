@@ -21,9 +21,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
 
   ## Attributes
 
-  *   `msg` (*type:* `String.t`, *default:* `nil`) - A message describing any unusual health reports.
+  *   `msg` (*type:* `String.t`, *default:* `nil`) - Message describing any unusual health reports.
   *   `pods` (*type:* `list(map())`, *default:* `nil`) - The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_pod This field is used by the worker to send the status of the indvidual containers running on each worker.
   *   `reportInterval` (*type:* `String.t`, *default:* `nil`) - The interval at which the worker is sending health reports. The default value of 0 should be interpreted as the field is not being explicitly set by the worker.
+  *   `vmBrokenCode` (*type:* `String.t`, *default:* `nil`) - Code to describe a specific reason, if known, that a VM has reported broken state.
   *   `vmIsBroken` (*type:* `boolean()`, *default:* `nil`) - Whether the VM is in a permanently broken state. Broken VMs should be abandoned or deleted ASAP to avoid assigning or completing any work.
   *   `vmIsHealthy` (*type:* `boolean()`, *default:* `nil`) - Whether the VM is currently healthy.
   *   `vmStartupTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the VM was booted.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
           :msg => String.t() | nil,
           :pods => list(map()) | nil,
           :reportInterval => String.t() | nil,
+          :vmBrokenCode => String.t() | nil,
           :vmIsBroken => boolean() | nil,
           :vmIsHealthy => boolean() | nil,
           :vmStartupTime => DateTime.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
   field(:msg)
   field(:pods, type: :list)
   field(:reportInterval)
+  field(:vmBrokenCode)
   field(:vmIsBroken)
   field(:vmIsHealthy)
   field(:vmStartupTime, as: DateTime)
