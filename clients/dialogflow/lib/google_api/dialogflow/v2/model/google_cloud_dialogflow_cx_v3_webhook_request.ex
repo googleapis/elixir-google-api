@@ -29,6 +29,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
   *   `payload` (*type:* `map()`, *default:* `nil`) - Custom data set in QueryParameters.payload.
   *   `sentimentAnalysisResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResult.t`, *default:* `nil`) - The sentiment analysis result of the current user request. The field is filled when sentiment analysis is configured to be enabled for the request.
   *   `sessionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo.t`, *default:* `nil`) - Information about session status.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - If natural language text was provided as input, this field will contain a copy of the text.
+  *   `transcript` (*type:* `String.t`, *default:* `nil`) - If natural language speech audio was provided as input, this field will contain the transcript for the audio.
+  *   `triggerEvent` (*type:* `String.t`, *default:* `nil`) - If an event was provided as input, this field will contain the name of the event.
+  *   `triggerIntent` (*type:* `String.t`, *default:* `nil`) - If an intent was provided as input, this field will contain a copy of the intent identifier. Format: `projects//locations//agents//intents/`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +53,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResult.t()
             | nil,
           :sessionInfo =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo.t() | nil
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo.t() | nil,
+          :text => String.t() | nil,
+          :transcript => String.t() | nil,
+          :triggerEvent => String.t() | nil,
+          :triggerIntent => String.t() | nil
         }
 
   field(:detectIntentResponseId)
@@ -76,6 +84,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
   )
 
   field(:sessionInfo, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3SessionInfo)
+  field(:text)
+  field(:transcript)
+  field(:triggerEvent)
+  field(:triggerIntent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest do
