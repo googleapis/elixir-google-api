@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Connection do
       # View and manage your data in Google BigQuery
       "https://www.googleapis.com/auth/bigquery",
 
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud Platform data
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_big_query_reservation,
