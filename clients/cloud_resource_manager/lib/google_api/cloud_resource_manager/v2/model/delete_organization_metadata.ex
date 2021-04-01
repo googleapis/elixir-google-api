@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudResourceManager.V2.Model.DeleteOrganizationMetadata do
   @moduledoc """
-  A status object which is used as the `metadata` field for the Operation returned by DeleteOrganization.
+  A status object which is used as the `metadata` field for the operation returned by DeleteOrganization.
 
   ## Attributes
 

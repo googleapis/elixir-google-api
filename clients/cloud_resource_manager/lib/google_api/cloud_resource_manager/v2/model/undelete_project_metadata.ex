@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudResourceManager.V2.Model.UndeleteProjectMetadata do
   @moduledoc """
-  A status object which is used as the `metadata` field for the Operation returned by UndeleteProject.
+  A status object which is used as the `metadata` field for the Operation returned by `UndeleteProject`.
 
   ## Attributes
 

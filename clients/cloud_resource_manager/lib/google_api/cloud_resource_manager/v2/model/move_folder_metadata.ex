@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudResourceManager.V2.Model.MoveFolderMetadata do
   @moduledoc """
-  Metadata pertaining to the Folder move process.
+  Metadata pertaining to the folder move process.
 
   ## Attributes
 
