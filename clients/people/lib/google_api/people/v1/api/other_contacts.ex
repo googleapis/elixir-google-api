@@ -165,7 +165,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   end
 
   @doc """
-  Provides a list of contacts in the authenticated user's other contacts that matches the search query.
+  Provides a list of contacts in the authenticated user's other contacts that matches the search query. The query matches on a contact's `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source.
 
   ## Parameters
 
