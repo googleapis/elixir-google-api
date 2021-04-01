@@ -26,7 +26,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a batch of new contacts and return the PersonResponses for the newly created contacts.
+  Create a batch of new contacts and return the PersonResponses for the newly created contacts. Limited to 10 parallel requests per user.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Delete a batch of contacts. Any non-contact data will not be deleted.
+  Delete a batch of contacts. Any non-contact data will not be deleted. Limited to 10 parallel requests per user.
 
   ## Parameters
 
@@ -144,7 +144,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts.
+  Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Limited to 10 parallel requests per user.
 
   ## Parameters
 
@@ -592,7 +592,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of contacts in the authenticated user's grouped contacts that matches the search query.
+  Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. The query matches on a contact's `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT" source.
 
   ## Parameters
 
