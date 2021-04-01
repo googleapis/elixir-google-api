@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AccountReport do
   @moduledoc """
-  An Account Report of a GLS account identified by their account id containing aggregate data gathered from a particular date range.
+  An Account Report of a GLS account identified by their account id containing aggregate data gathered from a particular date range. Next ID: 18
 
   ## Attributes
 
@@ -31,6 +31,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
   *   `currentPeriodConnectedPhoneCalls` (*type:* `String.t`, *default:* `nil`) - Number of connected phone calls (duration over 30s) in current specified period.
   *   `currentPeriodPhoneCalls` (*type:* `String.t`, *default:* `nil`) - Number of phone calls in current specified period, including both connected and unconnected calls.
   *   `currentPeriodTotalCost` (*type:* `float()`, *default:* `nil`) - Total cost of the account in current specified period in the account's specified currency.
+  *   `impressionsLastTwoDays` (*type:* `String.t`, *default:* `nil`) - Number of impressions that customers have had in the past 2 days.
   *   `phoneLeadResponsiveness` (*type:* `float()`, *default:* `nil`) - Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received.
   *   `previousPeriodChargedLeads` (*type:* `String.t`, *default:* `nil`) - Number of charged leads the account received in previous specified period.
   *   `previousPeriodConnectedPhoneCalls` (*type:* `String.t`, *default:* `nil`) - Number of connected phone calls (duration over 30s) in previous specified period.
@@ -54,6 +55,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
           :currentPeriodConnectedPhoneCalls => String.t() | nil,
           :currentPeriodPhoneCalls => String.t() | nil,
           :currentPeriodTotalCost => float() | nil,
+          :impressionsLastTwoDays => String.t() | nil,
           :phoneLeadResponsiveness => float() | nil,
           :previousPeriodChargedLeads => String.t() | nil,
           :previousPeriodConnectedPhoneCalls => String.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
   field(:currentPeriodConnectedPhoneCalls)
   field(:currentPeriodPhoneCalls)
   field(:currentPeriodTotalCost)
+  field(:impressionsLastTwoDays)
   field(:phoneLeadResponsiveness)
   field(:previousPeriodChargedLeads)
   field(:previousPeriodConnectedPhoneCalls)
