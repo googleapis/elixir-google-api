@@ -3522,7 +3522,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new line item with settings (including targeting) inherited from the insertion order. Returns the newly created line item if successful. There are default values based on the three fields: * The insertion order's InsertionOrderType * The insertion order's InsertionOrderAutomationType * The given line_item_type
+  Creates a new line item with settings (including targeting) inherited from the insertion order and an `ENTITY_STATUS_DRAFT` entity_status. Returns the newly created line item if successful. There are default values based on the three fields: * The insertion order's insertion_order_type * The insertion order's automation_type * The given line_item_type
 
   ## Parameters
 
@@ -5976,7 +5976,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Replaces all negative keywords in a single negative keyword list. The operation will replace the keywords in a negative keywords with keywords provided in ReplaceNegativeKeywordsRequest.new_negative_keywords.
+  Replaces all negative keywords in a single negative keyword list. The operation will replace the keywords in a negative keyword list with keywords provided in ReplaceNegativeKeywordsRequest.new_negative_keywords.
 
   ## Parameters
 
