@@ -47,6 +47,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       *   `:operatingSystemType` (*type:* `String.t`) - The type of operating system associated with the account.
       *   `:projectId` (*type:* `String.t`) - The project ID of the Google Cloud Platform project.
       *   `:systemId` (*type:* `String.t`) - A system ID for filtering the results of the request.
+      *   `:view` (*type:* `String.t`) - The view configures whether to retrieve security keys information.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -74,7 +75,8 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       :upload_protocol => :query,
       :operatingSystemType => :query,
       :projectId => :query,
-      :systemId => :query
+      :systemId => :query,
+      :view => :query
     }
 
     request =
@@ -111,6 +113,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:projectId` (*type:* `String.t`) - The project ID of the Google Cloud Platform project.
+      *   `:view` (*type:* `String.t`) - The view configures whether to retrieve security keys information.
       *   `:body` (*type:* `GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -138,6 +141,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       :uploadType => :query,
       :upload_protocol => :query,
       :projectId => :query,
+      :view => :query,
       :body => :body
     }
 
