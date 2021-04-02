@@ -22,6 +22,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   ## Attributes
 
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Required. The type of hardware accelerators associated with this node.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The API version that created this Node.
   *   `cidrBlock` (*type:* `String.t`, *default:* `nil`) - The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the node was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-supplied description of the TPU. Maximum of 512 characters.
@@ -45,6 +46,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
 
   @type t :: %__MODULE__{
           :acceleratorType => String.t() | nil,
+          :apiVersion => String.t() | nil,
           :cidrBlock => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
         }
 
   field(:acceleratorType)
+  field(:apiVersion)
   field(:cidrBlock)
   field(:createTime, as: DateTime)
   field(:description)
