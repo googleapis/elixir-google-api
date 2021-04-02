@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent workspace. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name (https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -259,7 +259,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or a Monitoring Workspace. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project (https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Workspace. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project in which to create the alerting policy. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a workspace, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the alerting policy. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a workspace, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -253,7 +253,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project whose alert policies are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose alert policies are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -412,7 +412,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the time series. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the time series. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -486,7 +486,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project in which to create the group. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the group. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -705,7 +705,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project whose groups are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose groups are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -939,7 +939,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: 4 projects/PROJECT_ID_OR_NUMBER
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1161,7 +1161,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1319,7 +1319,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1480,7 +1480,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID_OR_NUMBER] Note that this names the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID_OR_NUMBER] Note that this names (https://cloud.google.com/monitoring/api/v3#project_name) the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1557,7 +1557,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container into which the channel will be written, this does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container into which the channel will be written, this does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1864,7 +1864,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2183,7 +2183,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2255,7 +2255,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project, organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name), organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2350,7 +2350,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2422,7 +2422,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project in which to create the Uptime check. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the Uptime check. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2644,7 +2644,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project whose Uptime check configurations are listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Uptime check configurations are listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
