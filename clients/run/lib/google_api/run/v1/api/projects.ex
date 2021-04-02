@@ -428,7 +428,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.DomainMapping.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -508,7 +508,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -768,7 +768,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1190,7 +1190,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1270,7 +1270,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1604,7 +1604,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dryRun` (*type:* `String.t`) - DryRun is a query string parameter which indicates that the server should run validation without persisting the request.
+      *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
