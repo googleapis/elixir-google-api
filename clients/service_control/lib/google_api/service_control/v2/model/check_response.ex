@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckResponse do
   ## Attributes
 
   *   `headers` (*type:* `map()`, *default:* `nil`) - Returns a set of request contexts generated from the `CheckRequest`.
-  *   `status` (*type:* `GoogleApi.ServiceControl.V2.Model.Status.t`, *default:* `nil`) - An 'OK' status allows the operation. Any other status indicates a denial; [google.rpc.Status.details]() would contain additional details about the denial.
+  *   `status` (*type:* `GoogleApi.ServiceControl.V2.Model.Status.t`, *default:* `nil`) - Operation is allowed when this field is not set. Any non-'OK' status indicates a denial; [google.rpc.Status.details]() would contain additional details about the denial.
   """
 
   use GoogleApi.Gax.ModelBase
