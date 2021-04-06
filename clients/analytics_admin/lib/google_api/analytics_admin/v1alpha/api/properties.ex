@@ -110,11 +110,11 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec analyticsadmin_properties_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty.t()}
+          {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -145,7 +145,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty{}]
+      opts ++
+        [struct: %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty{}]
     )
   end
 

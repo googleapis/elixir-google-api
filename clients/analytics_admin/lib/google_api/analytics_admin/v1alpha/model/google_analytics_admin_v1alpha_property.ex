@@ -23,8 +23,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the entity was originally created.
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency type used in reports involving monetary values. Format: https://en.wikipedia.org/wiki/ISO_4217 Examples: "USD", "EUR", "JPY"
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this Property is soft-deleted or not. Deleted properties are excluded from List results unless specifically requested.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If set, the time at which this property was trashed. If not set, then this property is not currently in the trash can.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name for this property. The max allowed display name length is 100 UTF-16 code units.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If set, the time at which this trashed property will be permanently deleted. If not set, then this property is not currently in the trash can and is not slated to be deleted.
   *   `industryCategory` (*type:* `String.t`, *default:* `nil`) - Industry associated with this property Example: AUTOMOTIVE, FOOD_AND_DRINK
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this property. Format: properties/{property_id} Example: "properties/1000"
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of this property's logical parent. Note: The Property-Moving UI can be used to change the parent. Format: accounts/{account} Example: "accounts/100"
@@ -37,8 +38,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :currencyCode => String.t() | nil,
-          :deleted => boolean() | nil,
+          :deleteTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
           :industryCategory => String.t() | nil,
           :name => String.t() | nil,
           :parent => String.t() | nil,
@@ -48,8 +50,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
 
   field(:createTime, as: DateTime)
   field(:currencyCode)
-  field(:deleted)
+  field(:deleteTime, as: DateTime)
   field(:displayName)
+  field(:expireTime, as: DateTime)
   field(:industryCategory)
   field(:name)
   field(:parent)
