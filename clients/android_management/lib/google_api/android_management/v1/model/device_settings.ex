@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceSettings do
   *   `isDeviceSecure` (*type:* `boolean()`, *default:* `nil`) - Whether the device is secured with PIN/password.
   *   `isEncrypted` (*type:* `boolean()`, *default:* `nil`) - Whether the storage encryption is enabled.
   *   `unknownSourcesEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether installing apps from unknown sources is enabled.
-  *   `verifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Verify Apps (Google Play Protect (https://support.google.com/googleplay/answer/2812853)) is enabled on the device.
+  *   `verifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Google Play Protect verification (https://support.google.com/accounts/answer/2812853) is enforced on the device.
   """
 
   use GoogleApi.Gax.ModelBase
