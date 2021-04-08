@@ -24,9 +24,13 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
   *   `arimaCoefficients` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t`, *default:* `nil`) - Arima coefficients.
   *   `arimaFittingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t`, *default:* `nil`) - Arima fitting metrics.
   *   `hasDrift` (*type:* `boolean()`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false when d is not 1.
+  *   `hasHolidayEffect` (*type:* `boolean()`, *default:* `nil`) - If true, holiday_effect is a part of time series decomposition result.
+  *   `hasSpikesAndDips` (*type:* `boolean()`, *default:* `nil`) - If true, spikes_and_dips is a part of time series decomposition result.
+  *   `hasStepChanges` (*type:* `boolean()`, *default:* `nil`) - If true, step_changes is a part of time series decomposition result.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - Non-seasonal order.
   *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one time series.
   *   `timeSeriesId` (*type:* `String.t`, *default:* `nil`) - The time_series_id value for this time series. It will be one of the unique values from the time_series_id_column specified during ARIMA model training. Only present when time_series_id_column training option was used.
+  *   `timeSeriesIds` (*type:* `list(String.t)`, *default:* `nil`) - The tuple of time_series_ids identifying this time series. It will be one of the unique tuples of values present in the time_series_id_columns specified during ARIMA model training. Only present when time_series_id_columns training option was used and the order of values here are same as the order of time_series_id_columns.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,17 +39,25 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
           :arimaCoefficients => GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t() | nil,
           :arimaFittingMetrics => GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t() | nil,
           :hasDrift => boolean() | nil,
+          :hasHolidayEffect => boolean() | nil,
+          :hasSpikesAndDips => boolean() | nil,
+          :hasStepChanges => boolean() | nil,
           :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t() | nil,
           :seasonalPeriods => list(String.t()) | nil,
-          :timeSeriesId => String.t() | nil
+          :timeSeriesId => String.t() | nil,
+          :timeSeriesIds => list(String.t()) | nil
         }
 
   field(:arimaCoefficients, as: GoogleApi.BigQuery.V2.Model.ArimaCoefficients)
   field(:arimaFittingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics)
   field(:hasDrift)
+  field(:hasHolidayEffect)
+  field(:hasSpikesAndDips)
+  field(:hasStepChanges)
   field(:nonSeasonalOrder, as: GoogleApi.BigQuery.V2.Model.ArimaOrder)
   field(:seasonalPeriods, type: :list)
   field(:timeSeriesId)
+  field(:timeSeriesIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
