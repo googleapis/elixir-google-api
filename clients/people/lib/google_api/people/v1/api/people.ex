@@ -612,6 +612,7 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of results to return.
       *   `:query` (*type:* `String.t`) - Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo", "foo n", "nam", etc., but not "oo n".
       *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -639,7 +640,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :upload_protocol => :query,
       :pageSize => :query,
       :query => :query,
-      :readMask => :query
+      :readMask => :query,
+      :sources => :query
     }
 
     request =
