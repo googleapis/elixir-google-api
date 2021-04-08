@@ -107,11 +107,11 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.YouTube.V3.Model.VideoRatingListResponse{}}` on success
+  *   `{:ok, %GoogleApi.YouTube.V3.Model.VideoGetRatingResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_get_rating(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.VideoRatingListResponse.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.VideoGetRatingResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -141,7 +141,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.VideoRatingListResponse{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.VideoGetRatingResponse{}])
   end
 
   @doc """
