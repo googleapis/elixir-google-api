@@ -33,6 +33,7 @@ defmodule GoogleApi.Run.V1.Model.Container do
   *   `readinessProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   *   `resources` (*type:* `GoogleApi.Run.V1.Model.ResourceRequirements.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: supported Cloud Run for Anthos: supported Compute Resources required by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
   *   `securityContext` (*type:* `GoogleApi.Run.V1.Model.SecurityContext.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Security options the pod should run with. More info: https://kubernetes.io/docs/concepts/policy/security-context/ More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+  *   `startupProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: not supported Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not be added to service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   *   `terminationMessagePath` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log.
   *   `terminationMessagePolicy` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
   *   `volumeMounts` (*type:* `list(GoogleApi.Run.V1.Model.VolumeMount.t)`, *default:* `nil`) - (Optional) Cloud Run fully managed: supported Volume to mount into the container's filesystem. Only supports SecretVolumeSources. Cloud Run for Anthos: supported Pod volumes to mount into the container's filesystem.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Run.V1.Model.Container do
           :readinessProbe => GoogleApi.Run.V1.Model.Probe.t() | nil,
           :resources => GoogleApi.Run.V1.Model.ResourceRequirements.t() | nil,
           :securityContext => GoogleApi.Run.V1.Model.SecurityContext.t() | nil,
+          :startupProbe => GoogleApi.Run.V1.Model.Probe.t() | nil,
           :terminationMessagePath => String.t() | nil,
           :terminationMessagePolicy => String.t() | nil,
           :volumeMounts => list(GoogleApi.Run.V1.Model.VolumeMount.t()) | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.Run.V1.Model.Container do
   field(:readinessProbe, as: GoogleApi.Run.V1.Model.Probe)
   field(:resources, as: GoogleApi.Run.V1.Model.ResourceRequirements)
   field(:securityContext, as: GoogleApi.Run.V1.Model.SecurityContext)
+  field(:startupProbe, as: GoogleApi.Run.V1.Model.Probe)
   field(:terminationMessagePath)
   field(:terminationMessagePolicy)
   field(:volumeMounts, as: GoogleApi.Run.V1.Model.VolumeMount, type: :list)
