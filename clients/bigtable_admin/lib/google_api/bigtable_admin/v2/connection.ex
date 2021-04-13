@@ -45,7 +45,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Connection do
       # Administer your Cloud Bigtable tables
       "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
 
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud Platform data
       "https://www.googleapis.com/auth/cloud-platform",
 
       # View your data across Google Cloud Platform services
