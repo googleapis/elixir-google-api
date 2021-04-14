@@ -21,10 +21,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment do
 
   ## Attributes
 
-  *   `agentVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The agent version loaded into this environment. Format: `projects//agent/versions/`.
+  *   `agentVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The agent version loaded into this environment. Supported formats: - `projects//agent/versions/` - `projects//locations//agent/versions/`
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The developer-provided description for this environment. The maximum length is 500 characters. If exceeded, the request is rejected.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of this agent environment. Format: `projects//agent/environments/`. For Environment ID, "-" is reserved for 'draft' environment.
+  *   `fulfillment` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t`, *default:* `nil`) - Optional. The fulfillment settings to use for this environment.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this environment. This field is read-only, i.e., it cannot be set by create and update methods.
+  *   `textToSpeechSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextToSpeechSettings.t`, *default:* `nil`) - Optional. Text to speech settings for this environment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update time of this environment. This field is read-only, i.e., it cannot be set by create and update methods.
   """
 
@@ -33,15 +35,25 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment do
   @type t :: %__MODULE__{
           :agentVersion => String.t() | nil,
           :description => String.t() | nil,
+          :fulfillment =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
+          :textToSpeechSettings =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextToSpeechSettings.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:agentVersion)
   field(:description)
+  field(:fulfillment, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment)
   field(:name)
   field(:state)
+
+  field(:textToSpeechSettings,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextToSpeechSettings
+  )
+
   field(:updateTime, as: DateTime)
 end
 
