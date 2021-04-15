@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
 
   ## Attributes
 
+  *   `contextAttributes` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ContextAttribute.t)`, *default:* `nil`) - Context attributes for the request which will be used to adjust ranking of search results. The maximum number of elements is 10.
   *   `dataSourceRestrictions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t)`, *default:* `nil`) - The sources to use for querying. If not specified, all data sources from the current search application are used.
   *   `facetOptions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t)`, *default:* `nil`) - 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested.
@@ -34,6 +35,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contextAttributes => list(GoogleApi.CloudSearch.V1.Model.ContextAttribute.t()) | nil,
           :dataSourceRestrictions =>
             list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t()) | nil,
           :facetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()) | nil,
@@ -45,6 +47,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
           :sortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t() | nil,
           :start => integer() | nil
         }
+
+  field(:contextAttributes, as: GoogleApi.CloudSearch.V1.Model.ContextAttribute, type: :list)
 
   field(:dataSourceRestrictions,
     as: GoogleApi.CloudSearch.V1.Model.DataSourceRestriction,
