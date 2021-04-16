@@ -21,18 +21,24 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Train
 
   ## Attributes
 
+  *   `datasetErrorCount` (*type:* `integer()`, *default:* `nil`) - The total number of dataset errors.
   *   `datasetErrors` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training.
+  *   `documentErrorCount` (*type:* `integer()`, *default:* `nil`) - The total number of document errors.
   *   `documentErrors` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :datasetErrorCount => integer() | nil,
           :datasetErrors => list(GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus.t()) | nil,
+          :documentErrorCount => integer() | nil,
           :documentErrors => list(GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus.t()) | nil
         }
 
+  field(:datasetErrorCount)
   field(:datasetErrors, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus, type: :list)
+  field(:documentErrorCount)
   field(:documentErrors, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleRpcStatus, type: :list)
 end
 
