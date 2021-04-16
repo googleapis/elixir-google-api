@@ -32,6 +32,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
   *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - The initial number of Google Compute Engine instances for the job.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account to run the job as.
+  *   `stagingLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path for staging local files. Must be a valid Cloud Storage URL, beginning with `gs://`.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK" or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a Shared VPC network, you must use the complete URL.
   *   `tempLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.
   *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.
@@ -53,6 +54,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
           :network => String.t() | nil,
           :numWorkers => integer() | nil,
           :serviceAccountEmail => String.t() | nil,
+          :stagingLocation => String.t() | nil,
           :subnetwork => String.t() | nil,
           :tempLocation => String.t() | nil,
           :workerRegion => String.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   field(:network)
   field(:numWorkers)
   field(:serviceAccountEmail)
+  field(:stagingLocation)
   field(:subnetwork)
   field(:tempLocation)
   field(:workerRegion)
