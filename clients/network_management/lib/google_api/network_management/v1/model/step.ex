@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1.Model.AbortInfo.t`, *default:* `nil`) - Display info of the final state "abort" and reason.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
+  *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display info of a Cloud SQL instance.
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display info of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
   *   `drop` (*type:* `GoogleApi.NetworkManagement.V1.Model.DropInfo.t`, *default:* `nil`) - Display info of the final state "drop" and reason.
@@ -30,6 +31,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   *   `firewall` (*type:* `GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t`, *default:* `nil`) - Display info of a Compute Engine firewall rule.
   *   `forward` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t`, *default:* `nil`) - Display info of the final state "forward" and reason.
   *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display info of a Compute Engine forwarding rule.
+  *   `gkeMaster` (*type:* `GoogleApi.NetworkManagement.V1.Model.GKEMasterInfo.t`, *default:* `nil`) - Display info of a Google Kubernetes Engine cluster master.
   *   `instance` (*type:* `GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t`, *default:* `nil`) - Display info of a Compute Engine instance.
   *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display info of the load balancers.
   *   `network` (*type:* `GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t`, *default:* `nil`) - Display info of a GCP network.
@@ -45,6 +47,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   @type t :: %__MODULE__{
           :abort => GoogleApi.NetworkManagement.V1.Model.AbortInfo.t() | nil,
           :causesDrop => boolean() | nil,
+          :cloudSqlInstance =>
+            GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t() | nil,
           :deliver => GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t() | nil,
           :description => String.t() | nil,
           :drop => GoogleApi.NetworkManagement.V1.Model.DropInfo.t() | nil,
@@ -52,6 +56,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
           :firewall => GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t() | nil,
           :forward => GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t() | nil,
           :forwardingRule => GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t() | nil,
+          :gkeMaster => GoogleApi.NetworkManagement.V1.Model.GKEMasterInfo.t() | nil,
           :instance => GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t() | nil,
           :loadBalancer => GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t() | nil,
           :network => GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t() | nil,
@@ -64,6 +69,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
 
   field(:abort, as: GoogleApi.NetworkManagement.V1.Model.AbortInfo)
   field(:causesDrop)
+  field(:cloudSqlInstance, as: GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo)
   field(:deliver, as: GoogleApi.NetworkManagement.V1.Model.DeliverInfo)
   field(:description)
   field(:drop, as: GoogleApi.NetworkManagement.V1.Model.DropInfo)
@@ -71,6 +77,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   field(:firewall, as: GoogleApi.NetworkManagement.V1.Model.FirewallInfo)
   field(:forward, as: GoogleApi.NetworkManagement.V1.Model.ForwardInfo)
   field(:forwardingRule, as: GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo)
+  field(:gkeMaster, as: GoogleApi.NetworkManagement.V1.Model.GKEMasterInfo)
   field(:instance, as: GoogleApi.NetworkManagement.V1.Model.InstanceInfo)
   field(:loadBalancer, as: GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo)
   field(:network, as: GoogleApi.NetworkManagement.V1.Model.NetworkInfo)
