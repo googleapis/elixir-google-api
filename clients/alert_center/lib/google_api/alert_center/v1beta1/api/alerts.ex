@@ -43,16 +43,17 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsResponse{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_batch_delete(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsResponse.t()}
+          {:ok,
+           GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -82,7 +83,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse{}
+        ]
     )
   end
 
@@ -104,16 +109,17 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsResponse{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_batch_undelete(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsResponse.t()}
+          {:ok,
+           GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -143,7 +149,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse{}
+        ]
     )
   end
 
@@ -171,11 +181,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleProtobufEmpty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -206,7 +216,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleProtobufEmpty{}]
+    )
   end
 
   @doc """
@@ -233,11 +245,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.Alert{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Alert.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -268,7 +280,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.Alert{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert{}]
+    )
   end
 
   @doc """
@@ -295,11 +309,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertMetadata{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_get_metadata(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertMetadata.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -330,7 +344,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata{}])
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertMetadata{}]
+    )
   end
 
   @doc """
@@ -360,11 +377,12 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse.t()}
+          {:ok,
+           GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -398,7 +416,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertsResponse{}
+        ]
     )
   end
 
@@ -421,16 +443,16 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.UndeleteAlertRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1UndeleteAlertRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.Alert{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Alert.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -461,7 +483,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.Alert{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Alert{}]
+    )
   end
 
   @doc """
@@ -484,16 +508,16 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
-      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t`) - 
+      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertFeedback.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertFeedback{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_feedback_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertFeedback.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -525,7 +549,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback{}])
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1AlertFeedback{}]
+    )
   end
 
   @doc """
@@ -553,11 +580,12 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_alerts_feedback_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse.t()}
+          {:ok,
+           GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -590,7 +618,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse{}
+        ]
     )
   end
 end
