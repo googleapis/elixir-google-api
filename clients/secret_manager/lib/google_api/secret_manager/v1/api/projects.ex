@@ -119,7 +119,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in [AIP-160](https://google.aip.dev/160).
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service will select a default.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service selects a default.
       *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -853,12 +853,12 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   end
 
   @doc """
-  Accesses a SecretVersion. This call returns the secret data. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
+  Accesses a SecretVersion. This call returns the secret data. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1185,12 +1185,12 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   end
 
   @doc """
-  Gets metadata for a SecretVersion. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
+  Gets metadata for a SecretVersion. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
