@@ -103,6 +103,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sorting order for the list of tables on createTime/updateTime.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of tables to return. The service may return fewer than this value. If unspecified, at most 20 tables are returned. The maximum value is 100; values above 100 are coerced to 100.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListTables` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTables` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -130,6 +131,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -574,6 +576,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Filter to only include resources matching the requirements. For more information, see [Filtering list results](https://support.google.com/area120-tables/answer/10503371).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sorting order for the list of rows on createTime/updateTime.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of rows to return. The service may return fewer than this value. If unspecified, at most 50 rows are returned. The maximum value is 1,000; values above 1,000 are coerced to 1,000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListRows` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRows` must match the call that provided the page token.
       *   `:view` (*type:* `String.t`) - Optional. Column key to use for values in the row. Defaults to user entered name.
@@ -603,6 +606,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
