@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomerSettings do
 
   ## Attributes
 
+  *   `auditLoggingSettings` (*type:* `GoogleApi.CloudSearch.V1.Model.AuditLoggingSettings.t`, *default:* `nil`) - Audit Logging settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request.
   *   `vpcSettings` (*type:* `GoogleApi.CloudSearch.V1.Model.VPCSettings.t`, *default:* `nil`) - VPC SC settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :auditLoggingSettings => GoogleApi.CloudSearch.V1.Model.AuditLoggingSettings.t() | nil,
           :vpcSettings => GoogleApi.CloudSearch.V1.Model.VPCSettings.t() | nil
         }
 
+  field(:auditLoggingSettings, as: GoogleApi.CloudSearch.V1.Model.AuditLoggingSettings)
   field(:vpcSettings, as: GoogleApi.CloudSearch.V1.Model.VPCSettings)
 end
 
