@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
   ## Attributes
 
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `progress` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress.t`, *default:* `nil`) - Progress of the operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetResourceName` (*type:* `String.t`, *default:* `nil`) - Name of the resource for which the operation is operating on.
   """
@@ -30,11 +31,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
 
   @type t :: %__MODULE__{
           :operationType => String.t() | nil,
+          :progress =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress.t() | nil,
           :state => String.t() | nil,
           :targetResourceName => String.t() | nil
         }
 
   field(:operationType)
+  field(:progress, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress)
   field(:state)
   field(:targetResourceName)
 end
