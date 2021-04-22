@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
 
   *   `containerName` (*type:* `String.t`, *default:* `nil`) - The name of the container for this item. Deletion of the container item leads to automatic deletion of this item. Note: ACLs are not inherited from a container item. To provide ACL inheritance for an item, use the inheritAclFrom field. The maximum length is 1536 characters.
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code for the item, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. The maximum length is 32 characters.
+  *   `contextAttributes` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ContextAttribute.t)`, *default:* `nil`) - A set of named attributes associated with the item. This can be used for influencing the ranking of the item based on the context in the request. The maximum number of elements is 10.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the item was created in the source repository.
   *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing value provided by the API caller. This can be used with the items.push method to calculate modified state. The maximum length is 2048 characters.
   *   `interactions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Interaction.t)`, *default:* `nil`) - A list of interactions for the item. Interactions are used to improve Search quality, but are not exposed to end users. The maximum number of elements is 1000.
@@ -40,6 +41,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
   @type t :: %__MODULE__{
           :containerName => String.t() | nil,
           :contentLanguage => String.t() | nil,
+          :contextAttributes => list(GoogleApi.CloudSearch.V1.Model.ContextAttribute.t()) | nil,
           :createTime => DateTime.t() | nil,
           :hash => String.t() | nil,
           :interactions => list(GoogleApi.CloudSearch.V1.Model.Interaction.t()) | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
 
   field(:containerName)
   field(:contentLanguage)
+  field(:contextAttributes, as: GoogleApi.CloudSearch.V1.Model.ContextAttribute, type: :list)
   field(:createTime, as: DateTime)
   field(:hash)
   field(:interactions, as: GoogleApi.CloudSearch.V1.Model.Interaction, type: :list)

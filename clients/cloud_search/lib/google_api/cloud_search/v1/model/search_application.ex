@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
   *   `defaultFacetOptions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t)`, *default:* `nil`) - The default fields for returning facet results. The sources specified here also have been included in data_source_restrictions above.
   *   `defaultSortOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.SortOptions.t`, *default:* `nil`) - The default options for sorting the search results
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the Search Application. The maximum length is 300 characters.
+  *   `enableAuditLog` (*type:* `boolean()`, *default:* `nil`) - Indicates whether audit logging is on/off for requests made for the search application in query APIs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Search Application. Format: searchapplications/{application_id}.
   *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. IDs of the Long Running Operations (LROs) currently running for this schema. Output only field.
   *   `scoringConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.ScoringConfig.t`, *default:* `nil`) - Configuration for ranking results.
@@ -39,6 +40,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
           :defaultFacetOptions => list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t()) | nil,
           :defaultSortOptions => GoogleApi.CloudSearch.V1.Model.SortOptions.t() | nil,
           :displayName => String.t() | nil,
+          :enableAuditLog => boolean() | nil,
           :name => String.t() | nil,
           :operationIds => list(String.t()) | nil,
           :scoringConfig => GoogleApi.CloudSearch.V1.Model.ScoringConfig.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
   field(:defaultFacetOptions, as: GoogleApi.CloudSearch.V1.Model.FacetOptions, type: :list)
   field(:defaultSortOptions, as: GoogleApi.CloudSearch.V1.Model.SortOptions)
   field(:displayName)
+  field(:enableAuditLog)
   field(:name)
   field(:operationIds, type: :list)
   field(:scoringConfig, as: GoogleApi.CloudSearch.V1.Model.ScoringConfig)
