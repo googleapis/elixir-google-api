@@ -24,6 +24,10 @@ defmodule GoogleApi.Content.V21.Model.ProductShipping do
   *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country to which an item will ship.
   *   `locationGroupName` (*type:* `String.t`, *default:* `nil`) - The location where the shipping is applicable, represented by a location group name.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.
+  *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximum handling time (inclusive) between when the order is received and shipped in business days. 0 means that the order is shipped on the same day as it is received if it happens before the cut-off time. Both maxHandlingTime and maxTransitTime are required if providing shipping speeds.
+  *   `maxTransitTime` (*type:* `String.t`, *default:* `nil`) - Maximum transit time (inclusive) between when the order has shipped and when it is delivered in business days. 0 means that the order is delivered on the same day as it ships. Both maxHandlingTime and maxTransitTime are required if providing shipping speeds.
+  *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimum handling time (inclusive) between when the order is received and shipped in business days. 0 means that the order is shipped on the same day as it is received if it happens before the cut-off time. minHandlingTime can only be present together with maxHandlingTime; but it is not required if maxHandlingTime is present.
+  *   `minTransitTime` (*type:* `String.t`, *default:* `nil`) - Minimum transit time (inclusive) between when the order has shipped and when it is delivered in business days. 0 means that the order is delivered on the same day as it ships. minTransitTime can only be present together with maxTransitTime; but it is not required if maxTransitTime is present.
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Fixed shipping price, represented as a number.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The geographic region to which a shipping rate applies.
@@ -36,6 +40,10 @@ defmodule GoogleApi.Content.V21.Model.ProductShipping do
           :country => String.t() | nil,
           :locationGroupName => String.t() | nil,
           :locationId => String.t() | nil,
+          :maxHandlingTime => String.t() | nil,
+          :maxTransitTime => String.t() | nil,
+          :minHandlingTime => String.t() | nil,
+          :minTransitTime => String.t() | nil,
           :postalCode => String.t() | nil,
           :price => GoogleApi.Content.V21.Model.Price.t() | nil,
           :region => String.t() | nil,
@@ -45,6 +53,10 @@ defmodule GoogleApi.Content.V21.Model.ProductShipping do
   field(:country)
   field(:locationGroupName)
   field(:locationId)
+  field(:maxHandlingTime)
+  field(:maxTransitTime)
+  field(:minHandlingTime)
+  field(:minTransitTime)
   field(:postalCode)
   field(:price, as: GoogleApi.Content.V21.Model.Price)
   field(:region)

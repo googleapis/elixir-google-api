@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.Metrics do
   ## Attributes
 
   *   `clicks` (*type:* `String.t`, *default:* `nil`) - Number of clicks.
-  *   `ctr` (*type:* `float()`, *default:* `nil`) - Number of clicks merchant's products receive (clicks) divided by the number of times the products are shown (impressions).
+  *   `ctr` (*type:* `float()`, *default:* `nil`) - Click-through rate - the number of clicks merchant's products receive (clicks) divided by the number of times the products are shown (impressions).
   *   `impressions` (*type:* `String.t`, *default:* `nil`) - Number of times merchant's products are shown.
   """
 
