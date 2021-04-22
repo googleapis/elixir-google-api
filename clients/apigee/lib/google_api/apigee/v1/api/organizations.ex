@@ -419,6 +419,68 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
+  Configures the add-ons for the Apigee organization. The existing add-on configuration will be fully replaced.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `org` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request: `organizations/{org}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SetAddonsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_set_addons(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_set_addons(connection, org, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+org}:setAddons", %{
+        "org" => URI.encode(org, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation{}])
+  end
+
+  @doc """
   Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.
 
   ## Parameters
@@ -1705,6 +1767,372 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute{}]
     )
+  end
+
+  @doc """
+  Create a rate plan that is associated with an API product in an organization. Using rate plans, API product owners can monetize their API products by configuring one or more of the following: - Billing frequency - Initial setup fees for using an API product - Payment funding model (postpaid only) - Fixed recurring or consumption-based charges for using an API product - Revenue sharing with developer partners An API product can have multiple rate plans associated with it but *only one* rate plan can be active at any point of time. **Note: From the developer's perspective, they purchase API products not rate plans.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Name of the API product that is associated with the rate plan. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_apiproducts_rateplans_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_apiproducts_rateplans_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/rateplans", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}])
+  end
+
+  @doc """
+  Deletes a rate plan.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. ID of the rate plan. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}/rateplans/{rateplan}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_apiproducts_rateplans_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_apiproducts_rateplans_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}])
+  end
+
+  @doc """
+  Gets the details of a rate plan.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the rate plan. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}/rateplans/{rateplan}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_apiproducts_rateplans_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_apiproducts_rateplans_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}])
+  end
+
+  @doc """
+  Lists all the rate plans for an API product.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Name of the API product. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}` Use `organizations/{org}/apiproducts/-` to return rate plans for all API products within the organization.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:count` (*type:* `integer()`) - Number of rate plans to return in the API call. Use with the `startKey` parameter to provide more targeted filtering. The maximum limit is 1000. Defaults to 100.
+      *   `:expand` (*type:* `boolean()`) - Flag that specifies whether to expand the results. Set to `true` to get expanded details about each API. Defaults to `false`.
+      *   `:orderBy` (*type:* `String.t`) - Name of the attribute used for sorting. Valid values include: * `name`: Name of the rate plan. * `state`: State of the rate plan (`DRAFT`, `PUBLISHED`). * `startTime`: Time when the rate plan becomes active. * `endTime`: Time when the rate plan expires. **Note**: Not supported by Apigee at this time.
+      *   `:startKey` (*type:* `String.t`) - Name of the rate plan from which to start displaying the list of rate plans. If omitted, the list starts from the first item. For example, to view the rate plans from 51-150, set the value of `startKey` to the name of the 51st rate plan and set the value of `count` to 100.
+      *   `:state` (*type:* `String.t`) - State of the rate plans (`DRAFT`, `PUBLISHED`) that you want to display.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListRatePlansResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_apiproducts_rateplans_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListRatePlansResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_apiproducts_rateplans_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :count => :query,
+      :expand => :query,
+      :orderBy => :query,
+      :startKey => :query,
+      :state => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/rateplans", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListRatePlansResponse{}]
+    )
+  end
+
+  @doc """
+  Updates an existing rate plan.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the rate plan. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}/rateplans/{rateplan}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_apiproducts_rateplans_update(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_apiproducts_rateplans_update(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan{}])
   end
 
   @doc """
@@ -5225,6 +5653,307 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute{}]
+    )
+  end
+
+  @doc """
+  Creates a subscription to an API product. 
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Email address of the developer that is purchasing a subscription to the API product. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_developers_subscriptions_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_developers_subscriptions_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/subscriptions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}]
+    )
+  end
+
+  @doc """
+  Expires an API product subscription immediately.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the API product subscription. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/subscriptions/{subscription}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ExpireDeveloperSubscriptionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_developers_subscriptions_expire(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_developers_subscriptions_expire(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:expire", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}]
+    )
+  end
+
+  @doc """
+  Gets details for an API product subscription.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the API product subscription. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/subscriptions/{subscription}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_developers_subscriptions_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_developers_subscriptions_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperSubscription{}]
+    )
+  end
+
+  @doc """
+  Lists all API product subscriptions for a developer.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:count` (*type:* `integer()`) - Number of API product subscriptions to return in the API call. Use with `startKey` to provide more targeted filtering. Defaults to 100. The maximum limit is 1000.
+      *   `:startKey` (*type:* `String.t`) - Name of the API product subscription from which to start displaying the list of subscriptions. If omitted, the list starts from the first item. For example, to view the API product subscriptions from 51-150, set the value of `startKey` to the name of the 51st subscription and set the value of `count` to 100.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDeveloperSubscriptionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec apigee_organizations_developers_subscriptions_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDeveloperSubscriptionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def apigee_organizations_developers_subscriptions_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :count => :query,
+      :startKey => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/subscriptions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDeveloperSubscriptionsResponse{}
+        ]
     )
   end
 
@@ -11878,6 +12607,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:environments` (*type:* `list(String.t)`) - Optional. List of environments that will be attached to the instance during creation.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -11909,6 +12639,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :environments => :query,
       :body => :body
     }
 
