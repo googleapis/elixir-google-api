@@ -68,11 +68,13 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
   *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
   *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id for the cluster.
   *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
   *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
+  *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Configuration of Confidential Nodes
   *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   """
 
@@ -130,11 +132,13 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
           :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
           :initialClusterVersion => String.t() | nil,
+          :id => String.t() | nil,
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil,
           :selfLink => String.t() | nil,
           :servicesIpv4Cidr => String.t() | nil,
           :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t() | nil,
+          :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
           :verticalPodAutoscaling => GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil
         }
 
@@ -189,11 +193,13 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
   field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:initialClusterVersion)
+  field(:id)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
   field(:selfLink)
   field(:servicesIpv4Cidr)
   field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
+  field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
   field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
 end
 
