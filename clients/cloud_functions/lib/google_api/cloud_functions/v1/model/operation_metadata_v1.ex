@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   ## Attributes
 
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call. This field is only populated for Create and Update operations.
+  *   `buildName` (*type:* `String.t`, *default:* `nil`) - The Cloud Build Name of the function deployment. This field is only populated for Create and Update operations. projects//locations//builds/.
   *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
   *   `sourceToken` (*type:* `String.t`, *default:* `nil`) - An identifier for Firebase function sources. Disclaimer: This field is only supported for Firebase function deployments.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/locations/region-1/functions/function-1
@@ -34,6 +35,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
 
   @type t :: %__MODULE__{
           :buildId => String.t() | nil,
+          :buildName => String.t() | nil,
           :request => map() | nil,
           :sourceToken => String.t() | nil,
           :target => String.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
         }
 
   field(:buildId)
+  field(:buildName)
   field(:request, type: :map)
   field(:sourceToken)
   field(:target)
