@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList do
   ## Attributes
 
   *   `accesses` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access.t)`, *default:* `nil`) - The accesses that match one of the following conditions: - The access_selector, if it is specified in request; - Otherwise, access specifiers reachable from the policy binding's role.
+  *   `conditionEvaluation` (*type:* `GoogleApi.CloudAsset.V1.Model.ConditionEvaluation.t`, *default:* `nil`) - Condition evaluation for this AccessControlList, if there is a condition defined in the above IAM policy binding.
   *   `resourceEdges` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t)`, *default:* `nil`) - Resource edges of the graph starting from the policy attached resource to any descendant resources. The Edge.source_node contains the full resource name of a parent resource and Edge.target_node contains the full resource name of a child resource. This field is present only if the output_resource_edges option is enabled in request.
   *   `resources` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource.t)`, *default:* `nil`) - The resources that match one of the following conditions: - The resource_selector, if it is specified in request; - Otherwise, resources reachable from the policy attached resource.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList do
 
   @type t :: %__MODULE__{
           :accesses => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access.t()) | nil,
+          :conditionEvaluation => GoogleApi.CloudAsset.V1.Model.ConditionEvaluation.t() | nil,
           :resourceEdges => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge.t()) | nil,
           :resources => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource.t()) | nil
         }
 
   field(:accesses, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access, type: :list)
+  field(:conditionEvaluation, as: GoogleApi.CloudAsset.V1.Model.ConditionEvaluation)
   field(:resourceEdges, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge, type: :list)
   field(:resources, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource, type: :list)
 end
