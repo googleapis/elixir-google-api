@@ -20,7 +20,7 @@ defmodule GoogleApi.Memcache.V1 do
   API client metadata for GoogleApi.Memcache.V1.
   """
 
-  @discovery_revision "20210324"
+  @discovery_revision "20210413"
 
   def discovery_revision(), do: @discovery_revision
 end
