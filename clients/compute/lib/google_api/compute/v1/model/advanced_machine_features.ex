@@ -22,15 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
   ## Attributes
 
   *   `enableNestedVirtualization` (*type:* `boolean()`, *default:* `nil`) - Whether to enable nested virtualization or not (default is false).
+  *   `threadsPerCore` (*type:* `integer()`, *default:* `nil`) - The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableNestedVirtualization => boolean() | nil
+          :enableNestedVirtualization => boolean() | nil,
+          :threadsPerCore => integer() | nil
         }
 
   field(:enableNestedVirtualization)
+  field(:threadsPerCore)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
