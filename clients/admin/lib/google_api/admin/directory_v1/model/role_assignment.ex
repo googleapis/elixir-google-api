@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
   @moduledoc """
-
+  Defines an assignment of a role.
 
   ## Attributes
 
