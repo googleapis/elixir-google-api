@@ -182,7 +182,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 10 will be capped to 10.
       *   `:query` (*type:* `String.t`) - Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo", "foo n", "nam", etc., but not "oo n".
       *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * names * phoneNumbers
   *   `opts` (*type:* `keyword()`) - Call options
