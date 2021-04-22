@@ -27,7 +27,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Connection do
       # View and manage your Google Cloud Platform billing accounts
       "https://www.googleapis.com/auth/cloud-billing",
 
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud Platform data
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_billing_budgets,
