@@ -31,6 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Detail do
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package; whether native or non native(ruby gems, node.js packages etc)
   *   `severityName` (*type:* `String.t`, *default:* `nil`) - The severity (eg: distro assigned severity) for this vulnerability.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source from which the information in this Detail was obtained.
+  *   `vendor` (*type:* `String.t`, *default:* `nil`) - The vendor of the product. e.g. "google"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +47,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Detail do
           :package => String.t() | nil,
           :packageType => String.t() | nil,
           :severityName => String.t() | nil,
-          :source => String.t() | nil
+          :source => String.t() | nil,
+          :vendor => String.t() | nil
         }
 
   field(:cpeUri)
@@ -59,6 +61,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Detail do
   field(:packageType)
   field(:severityName)
   field(:source)
+  field(:vendor)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1alpha1.Model.Detail do
