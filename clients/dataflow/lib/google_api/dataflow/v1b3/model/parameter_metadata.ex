@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
 
   ## Attributes
 
+  *   `customMetadata` (*type:* `map()`, *default:* `nil`) - Optional. Additional metadata for describing this parameter.
   *   `helpText` (*type:* `String.t`, *default:* `nil`) - Required. The help text to display for the parameter.
   *   `isOptional` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the parameter is optional. Defaults to false.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Required. The label to display for the parameter.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customMetadata => map() | nil,
           :helpText => String.t() | nil,
           :isOptional => boolean() | nil,
           :label => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
           :regexes => list(String.t()) | nil
         }
 
+  field(:customMetadata, type: :map)
   field(:helpText)
   field(:isOptional)
   field(:label)

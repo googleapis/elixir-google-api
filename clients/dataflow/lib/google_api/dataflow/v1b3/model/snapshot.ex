@@ -27,6 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this snapshot.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project this snapshot belongs to.
   *   `pubsubMetadata` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t)`, *default:* `nil`) - PubSub snapshot metadata.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Cloud region where this snapshot lives in, e.g., "us-central1".
   *   `sourceJobId` (*type:* `String.t`, *default:* `nil`) - The job this snapshot was created from.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the snapshot.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - The time after which this snapshot will be automatically deleted.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
           :id => String.t() | nil,
           :projectId => String.t() | nil,
           :pubsubMetadata => list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t()) | nil,
+          :region => String.t() | nil,
           :sourceJobId => String.t() | nil,
           :state => String.t() | nil,
           :ttl => String.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   field(:id)
   field(:projectId)
   field(:pubsubMetadata, as: GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata, type: :list)
+  field(:region)
   field(:sourceJobId)
   field(:state)
   field(:ttl)
