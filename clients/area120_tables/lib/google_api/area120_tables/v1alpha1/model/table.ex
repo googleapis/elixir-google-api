@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
   @moduledoc """
-  A single table.
+  A single table. NextId: 7
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the table was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable title of the table.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the table. Table names have the form `tables/{table}`.
+  *   `savedViews` (*type:* `list(GoogleApi.Area120Tables.V1alpha1.Model.SavedView.t)`, *default:* `nil`) - Saved views for this table.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the table was last updated excluding updates to individual rows
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
+          :savedViews => list(GoogleApi.Area120Tables.V1alpha1.Model.SavedView.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:name)
+  field(:savedViews, as: GoogleApi.Area120Tables.V1alpha1.Model.SavedView, type: :list)
   field(:updateTime, as: DateTime)
 end
 
