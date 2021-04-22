@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   ## Attributes
 
+  *   `cleanSpikesAndDips` (*type:* `boolean()`, *default:* `nil`) - If true, clean spikes and dips in the input time series.
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
   *   `horizon` (*type:* `String.t`, *default:* `nil`) - The number of periods ahead that need to be forecasted.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
@@ -53,13 +54,16 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names. Suppose there is a struct A with field b. When false (default), the output feature name is A_b. When true, the output feature name is A.b.
   *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix factorization.
+  *   `decomposeTimeSeries` (*type:* `boolean()`, *default:* `nil`) - If true, perform decompose time series and save the results.
   *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
   *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The time series id column that was used during ARIMA model training.
+  *   `adjustStepChanges` (*type:* `boolean()`, *default:* `nil`) - If true, detect step changes and make data adjustment in the input time series.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - A specification of the non-seasonal part of the ARIMA model: the three components (p, d, q) are the AR order, the degree of differencing, and the MA order.
   *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
+  *   `timeSeriesIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - The time series id columns that were used during ARIMA model training.
   *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate strategy.
   *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative training algorithms.
@@ -69,6 +73,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cleanSpikesAndDips => boolean() | nil,
           :subsample => float() | nil,
           :horizon => String.t() | nil,
           :modelUri => String.t() | nil,
@@ -101,19 +106,23 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :optimizationStrategy => String.t() | nil,
           :preserveInputStructs => boolean() | nil,
           :feedbackType => String.t() | nil,
+          :decomposeTimeSeries => boolean() | nil,
           :distanceType => String.t() | nil,
           :maxTreeDepth => String.t() | nil,
           :inputLabelColumns => list(String.t()) | nil,
           :timeSeriesIdColumn => String.t() | nil,
+          :adjustStepChanges => boolean() | nil,
           :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t() | nil,
           :numClusters => String.t() | nil,
           :batchSize => String.t() | nil,
+          :timeSeriesIdColumns => list(String.t()) | nil,
           :kmeansInitializationMethod => String.t() | nil,
           :initialLearnRate => float() | nil,
           :maxIterations => String.t() | nil,
           :itemColumn => String.t() | nil
         }
 
+  field(:cleanSpikesAndDips)
   field(:subsample)
   field(:horizon)
   field(:modelUri)
@@ -146,13 +155,16 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:optimizationStrategy)
   field(:preserveInputStructs)
   field(:feedbackType)
+  field(:decomposeTimeSeries)
   field(:distanceType)
   field(:maxTreeDepth)
   field(:inputLabelColumns, type: :list)
   field(:timeSeriesIdColumn)
+  field(:adjustStepChanges)
   field(:nonSeasonalOrder, as: GoogleApi.BigQuery.V2.Model.ArimaOrder)
   field(:numClusters)
   field(:batchSize)
+  field(:timeSeriesIdColumns, type: :list)
   field(:kmeansInitializationMethod)
   field(:initialLearnRate)
   field(:maxIterations)
