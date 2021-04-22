@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.Trace do
   @moduledoc """
-  Trace represents one simulated packet forwarding path. * Each trace contains multiple ordered Steps. * Each step is in a particular state with associated configuration. * State is categorized as final or non-final states. * Each final state has a reason associated. * Each trace must end with a final state (the last step). ``` |---------------------Trace----------------------| Step1(State) Step2(State) --- StepN(State(final)) ```
+  Trace represents one simulated packet forwarding path. * Each trace contains multiple ordered steps. * Each step is in a particular state with associated configuration. * State is categorized as final or non-final states. * Each final state has a reason associated. * Each trace must end with a final state (the last step). ``` |---------------------Trace----------------------| Step1(State) Step2(State) --- StepN(State(final)) ```
 
   ## Attributes
 
