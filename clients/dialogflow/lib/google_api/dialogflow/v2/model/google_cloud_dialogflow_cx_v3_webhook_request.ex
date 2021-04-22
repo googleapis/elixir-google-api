@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
   *   `detectIntentResponseId` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the DetectIntentResponse that will be returned to the API caller.
   *   `fulfillmentInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestFulfillmentInfo.t`, *default:* `nil`) - Always present. Information about the fulfillment that triggered this webhook call.
   *   `intentInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfo.t`, *default:* `nil`) - Information about the last matched intent.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language code specified in the original request.
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user. Webhook can choose to append or replace this list in WebhookResponse.fulfillment_response;
   *   `pageInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfo.t`, *default:* `nil`) - Information about page status.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Custom data set in QueryParameters.payload.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
           :intentInfo =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfo.t()
             | nil,
+          :languageCode => String.t() | nil,
           :messages =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage.t()) | nil,
           :pageInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3PageInfo.t() | nil,
@@ -69,6 +71,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequest 
   field(:intentInfo,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfo
   )
+
+  field(:languageCode)
 
   field(:messages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage,
