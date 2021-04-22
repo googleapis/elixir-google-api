@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
   ## Attributes
 
   *   `accessSelector` (*type:* `GoogleApi.CloudAsset.V1.Model.AccessSelector.t`, *default:* `nil`) - Optional. Specifies roles or permissions for analysis. This is optional.
+  *   `conditionContext` (*type:* `GoogleApi.CloudAsset.V1.Model.ConditionContext.t`, *default:* `nil`) - Optional. The hypothetical context for IAM conditions evaluation.
   *   `identitySelector` (*type:* `GoogleApi.CloudAsset.V1.Model.IdentitySelector.t`, *default:* `nil`) - Optional. Specifies an identity for analysis.
   *   `options` (*type:* `GoogleApi.CloudAsset.V1.Model.Options.t`, *default:* `nil`) - Optional. The query options.
   *   `resourceSelector` (*type:* `GoogleApi.CloudAsset.V1.Model.ResourceSelector.t`, *default:* `nil`) - Optional. Specifies a resource for analysis.
@@ -32,6 +33,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
 
   @type t :: %__MODULE__{
           :accessSelector => GoogleApi.CloudAsset.V1.Model.AccessSelector.t() | nil,
+          :conditionContext => GoogleApi.CloudAsset.V1.Model.ConditionContext.t() | nil,
           :identitySelector => GoogleApi.CloudAsset.V1.Model.IdentitySelector.t() | nil,
           :options => GoogleApi.CloudAsset.V1.Model.Options.t() | nil,
           :resourceSelector => GoogleApi.CloudAsset.V1.Model.ResourceSelector.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
         }
 
   field(:accessSelector, as: GoogleApi.CloudAsset.V1.Model.AccessSelector)
+  field(:conditionContext, as: GoogleApi.CloudAsset.V1.Model.ConditionContext)
   field(:identitySelector, as: GoogleApi.CloudAsset.V1.Model.IdentitySelector)
   field(:options, as: GoogleApi.CloudAsset.V1.Model.Options)
   field(:resourceSelector, as: GoogleApi.CloudAsset.V1.Model.ResourceSelector)
