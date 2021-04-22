@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.Response do
 
   ## Attributes
 
-  *   `backendLatency` (*type:* `String.t`, *default:* `nil`) - The length of time it takes the backend service to fully respond to a request. Measured from when the destination service starts to send the request to the backend until when the destination service receives the complete response from the backend.
+  *   `backendLatency` (*type:* `String.t`, *default:* `nil`) - The amount of time it takes the backend service to fully respond to a request. Measured from when the destination service starts to send the request to the backend until when the destination service receives the complete response from the backend.
   *   `code` (*type:* `String.t`, *default:* `nil`) - The HTTP response status code, such as `200` and `404`.
   *   `headers` (*type:* `map()`, *default:* `nil`) - The HTTP response headers. If multiple headers share the same key, they must be merged according to HTTP spec. All header keys must be lowercased, because HTTP header keys are case-insensitive.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The HTTP response size in bytes. If unknown, it must be -1.
