@@ -24,6 +24,7 @@ defmodule GoogleApi.People.V1.Model.ListOtherContactsResponse do
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `sync_token` to retrieve changes since the last request. Request must set `request_sync_token` to return the sync token.
   *   `otherContacts` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of "Other contacts" returned as Person resources. "Other contacts" support a limited subset of fields. See ListOtherContactsRequest.request_mask for more detailed information.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of other contacts in the list without pagination.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.People.V1.Model.ListOtherContactsResponse do
   @type t :: %__MODULE__{
           :nextPageToken => String.t() | nil,
           :nextSyncToken => String.t() | nil,
-          :otherContacts => list(GoogleApi.People.V1.Model.Person.t()) | nil
+          :otherContacts => list(GoogleApi.People.V1.Model.Person.t()) | nil,
+          :totalSize => integer() | nil
         }
 
   field(:nextPageToken)
   field(:nextSyncToken)
   field(:otherContacts, as: GoogleApi.People.V1.Model.Person, type: :list)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.ListOtherContactsResponse do
