@@ -24,7 +24,7 @@ defmodule GoogleApi.Spanner.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud Platform data
       "https://www.googleapis.com/auth/cloud-platform",
 
       # Administer your Spanner databases
