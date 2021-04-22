@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
   *   `isDefaultBroadcast` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this broadcast is the default broadcast. Internal only.
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - The id of the live chat for this broadcast.
   *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast was added to YouTube's live broadcast schedule.
-  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to start.
-  *   `scheduledStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to end.
+  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to end.
+  *   `scheduledStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to start.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The broadcast's title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource.
   """
