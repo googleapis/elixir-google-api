@@ -24,7 +24,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1Annotat
   *   `force` (*type:* `boolean()`, *default:* `nil`) - Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE.
   *   `schemaType` (*type:* `String.t`, *default:* `nil`) - Specifies the schema format to export.
   *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, must be of the form bq://projectId.bqDatasetId.tableId.
-  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Determines whether existing tables in the destination dataset are overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored.
+  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Determines if existing data in the destination dataset is overwritten, appended to, or not written if the tables contain data. If a write_disposition is specified, the `force` parameter is ignored.
   """
 
   use GoogleApi.Gax.ModelBase
