@@ -10,12 +10,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - elixir: "1.6.6"
-            otp: "21.3.8.21"
-          - elixir: "1.9.4"
-            otp: "22.3.4.16"
+          - elixir: "1.7.4"
+            otp: "22.3.4.17"
           - elixir: "1.10.4"
-            otp: "23.2.7"
+            otp: "23.3.1"
+          - elixir: "1.11.4"
+            otp: "23.3.1"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
