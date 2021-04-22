@@ -22,7 +22,7 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget do
   ## Attributes
 
   *   `amount` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1BudgetAmount.t`, *default:* `nil`) - Required. Budgeted amount.
-  *   `budgetFilter` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Filter.t`, *default:* `nil`) - Optional. Filters that define which resources are used to compute the actual spend against the budget.
+  *   `budgetFilter` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Filter.t`, *default:* `nil`) - Optional. Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User data for display name in UI. The name must be less than or equal to 60 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
