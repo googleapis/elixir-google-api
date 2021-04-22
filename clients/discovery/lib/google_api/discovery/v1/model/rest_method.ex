@@ -23,6 +23,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this method.
   *   `etagRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header.
+  *   `flatPath` (*type:* `String.t`, *default:* `nil`) - The URI path of this REST method in (RFC 6570) format without level 2 features ({+var}). Supplementary to the path property.
   *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - HTTP method used by this method.
   *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for this method. This property can be used to match methods between different versions of Discovery.
   *   `mediaUpload` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t`, *default:* `nil`) - Media upload parameters.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
   @type t :: %__MODULE__{
           :description => String.t() | nil,
           :etagRequired => boolean() | nil,
+          :flatPath => String.t() | nil,
           :httpMethod => String.t() | nil,
           :id => String.t() | nil,
           :mediaUpload => GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
 
   field(:description)
   field(:etagRequired)
+  field(:flatPath)
   field(:httpMethod)
   field(:id)
   field(:mediaUpload, as: GoogleApi.Discovery.V1.Model.RestMethodMediaUpload)
