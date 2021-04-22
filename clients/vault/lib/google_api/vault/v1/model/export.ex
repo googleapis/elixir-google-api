@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.Export do
   @moduledoc """
-  An export
+  An export To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 
   ## Attributes
 
