@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicy do
 
   ## Attributes
 
-  *   `locations` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t}`, *default:* `nil`) - Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, like: zones/us-central1-a.
+  *   `locations` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t}`, *default:* `nil`) - Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
   """
 
   use GoogleApi.Gax.ModelBase
