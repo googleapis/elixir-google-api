@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGeneri
 
   ## Attributes
 
-  *   `isCloudFunction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if generic web service is created through Cloud Functions integration. Defaults to false.
+  *   `isCloudFunction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if generic web service is created through Cloud Functions integration. Defaults to false. is_cloud_function is deprecated. Cloud functions can be configured by its uri as a regular web service now.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. The password for HTTP Basic authentication.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - Optional. The HTTP request headers to send together with fulfillment requests.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The fulfillment URI for receiving POST requests. It must use https protocol.

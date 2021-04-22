@@ -21,11 +21,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The human-readable name of the fulfillment, unique within the agent.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The human-readable name of the fulfillment, unique within the agent. This field is not used for Fulfillment in an Environment.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether fulfillment is enabled.
   *   `features` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentFeature.t)`, *default:* `nil`) - Optional. The field defines whether the fulfillment is enabled for certain features.
   *   `genericWebService` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGenericWebService.t`, *default:* `nil`) - Configuration for a generic web service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the fulfillment. Format: `projects//agent/fulfillment`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the fulfillment. Supported formats: - `projects//agent/fulfillment` - `projects//locations//agent/fulfillment` This field is not used for Fulfillment in an Environment.
   """
 
   use GoogleApi.Gax.ModelBase
