@@ -18,7 +18,7 @@
 defmodule GoogleApi.Chat.Mixfile do
   use Mix.Project
 
-  @version "0.23.2"
+  @version "0.23.3"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Chat.Mixfile do
 
   defp description() do
     """
-    Google Chat API client library. Enables bots to fetch information and perform actions in Google Chat.
+    Google Chat API client library. Enables bots to fetch information and perform actions in Google Chat. Authentication using a service account is a prerequisite for using the Google Chat REST API.
     """
   end
 
