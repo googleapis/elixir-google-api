@@ -25,7 +25,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Channel do
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the channel. Assigned by the system.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the channel. Must be UTF-8 encoded with a maximum length of 240 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the channel.
+  *   `negativelyTargetedLineItemCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of line items that are directly targeting this channel negatively.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner that owns the channel.
+  *   `positivelyTargetedLineItemCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of line items that are directly targeting this channel positively.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,14 +37,18 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Channel do
           :channelId => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
-          :partnerId => String.t() | nil
+          :negativelyTargetedLineItemCount => String.t() | nil,
+          :partnerId => String.t() | nil,
+          :positivelyTargetedLineItemCount => String.t() | nil
         }
 
   field(:advertiserId)
   field(:channelId)
   field(:displayName)
   field(:name)
+  field(:negativelyTargetedLineItemCount)
   field(:partnerId)
+  field(:positivelyTargetedLineItemCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.Channel do

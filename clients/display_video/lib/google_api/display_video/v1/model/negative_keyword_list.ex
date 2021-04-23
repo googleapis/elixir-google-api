@@ -25,6 +25,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the negative keyword list. Must be UTF-8 encoded with a maximum size of 255 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the negative keyword list.
   *   `negativeKeywordListId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the negative keyword list. Assigned by the system.
+  *   `targetedLineItemCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of line items that are directly targeting this negative keyword list.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList do
           :advertiserId => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
-          :negativeKeywordListId => String.t() | nil
+          :negativeKeywordListId => String.t() | nil,
+          :targetedLineItemCount => String.t() | nil
         }
 
   field(:advertiserId)
   field(:displayName)
   field(:name)
   field(:negativeKeywordListId)
+  field(:targetedLineItemCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList do
