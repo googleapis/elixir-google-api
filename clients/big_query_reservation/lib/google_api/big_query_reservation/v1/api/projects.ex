@@ -344,6 +344,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:capacityCommitmentId` (*type:* `String.t`) - The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split or merged.
       *   `:enforceSingleAdminProjectPerOrg` (*type:* `boolean()`) - If true, fail the request if another project in the organization has a capacity commitment.
       *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -381,6 +382,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :capacityCommitmentId => :query,
       :enforceSingleAdminProjectPerOrg => :query,
       :body => :body
     }
@@ -1226,6 +1228,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:assignmentId` (*type:* `String.t`) - The optional assignment ID. Assignment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters.
       *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Assignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1262,6 +1265,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :assignmentId => :query,
       :body => :body
     }
 
@@ -1487,6 +1491,80 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:move", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQueryReservation.V1.Model.Assignment{}])
+  end
+
+  @doc """
+  Updates an existing assignment. Only the `priority` field can be updated.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Assignment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigQueryReservation.V1.Model.Assignment{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigqueryreservation_projects_locations_reservations_assignments_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigQueryReservation.V1.Model.Assignment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def bigqueryreservation_projects_locations_reservations_assignments_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
