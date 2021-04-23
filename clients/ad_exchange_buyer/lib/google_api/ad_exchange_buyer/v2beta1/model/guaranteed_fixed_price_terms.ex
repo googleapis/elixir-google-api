@@ -24,7 +24,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
   *   `fixedPrices` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Fixed price for the specified buyer.
   *   `guaranteedImpressions` (*type:* `String.t`, *default:* `nil`) - Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy.
   *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. Required for deal, optional for product.
+  *   `impressionCap` (*type:* `String.t`, *default:* `nil`) - The lifetime impression cap for CPM sponsorship deals. The deal will stop serving when the cap is reached.
   *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types.
+  *   `percentShareOfVoice` (*type:* `String.t`, *default:* `nil`) - For sponsorship deals, this is the percentage of the seller's eligible impressions that the deal will serve until the cap is reached.
+  *   `reservationType` (*type:* `String.t`, *default:* `nil`) - The reservation type for a Programmatic Guaranteed deal. This indicates whether the number of impressions is fixed, or a percent of available impressions. If not specified, the default reservation type is STANDARD.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +36,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
           :fixedPrices => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t()) | nil,
           :guaranteedImpressions => String.t() | nil,
           :guaranteedLooks => String.t() | nil,
-          :minimumDailyLooks => String.t() | nil
+          :impressionCap => String.t() | nil,
+          :minimumDailyLooks => String.t() | nil,
+          :percentShareOfVoice => String.t() | nil,
+          :reservationType => String.t() | nil
         }
 
   field(:fixedPrices, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer, type: :list)
   field(:guaranteedImpressions)
   field(:guaranteedLooks)
+  field(:impressionCap)
   field(:minimumDailyLooks)
+  field(:percentShareOfVoice)
+  field(:reservationType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
