@@ -28,6 +28,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance}.
   *   `networks` (*type:* `list(GoogleApi.File.V1.Model.NetworkConfig.t)`, *default:* `nil`) - VPC networks to which the instance is connected. For this version, only a single network is supported.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The instance state.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the instance state, if available.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The service tier of the instance.
@@ -43,6 +44,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
           :labels => map() | nil,
           :name => String.t() | nil,
           :networks => list(GoogleApi.File.V1.Model.NetworkConfig.t()) | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :statusMessage => String.t() | nil,
           :tier => String.t() | nil
@@ -55,6 +57,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   field(:labels, type: :map)
   field(:name)
   field(:networks, as: GoogleApi.File.V1.Model.NetworkConfig, type: :list)
+  field(:satisfiesPzs)
   field(:state)
   field(:statusMessage)
   field(:tier)
