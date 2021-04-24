@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressFrom do
   @moduledoc """
-  Defines the conditions under which an IngressPolicy matches a request. Conditions are based on information about the source of the request.
+  Defines the conditions under which an IngressPolicy matches a request. Conditions are based on information about the source of the request. The request must satisfy what is defined in `sources` AND identity related fields in order to match.
 
   ## Attributes
 
