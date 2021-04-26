@@ -18,7 +18,7 @@
 defmodule GoogleApi.OSConfig.Mixfile do
   use Mix.Project
 
-  @version "0.11.0"
+  @version "0.12.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.OSConfig.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/os_config",
-        "Homepage" => "https://cloud.google.com/compute/docs/manage-os"
+        "Homepage" => "https://cloud.google.com/compute/docs/osconfig/rest"
       }
     ]
   end
