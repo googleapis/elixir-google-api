@@ -22,19 +22,22 @@ defmodule GoogleApi.Content.V21.Model.CarriersCarrier do
   ## Attributes
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR country code of the carrier (e.g., "US"). Always present.
+  *   `eddServices` (*type:* `list(String.t)`, *default:* `nil`) - A list of services supported for EDD (Estimated Delivery Date) calculation. This is the list of valid values for WarehouseBasedDeliveryTime.carrierService.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the carrier (e.g., `"UPS"`). Always present.
-  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - A list of supported services (e.g., `"ground"`) for that carrier. Contains at least one service.
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - A list of supported services (e.g., `"ground"`) for that carrier. Contains at least one service. This is the list of valid values for CarrierRate.carrierService.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :country => String.t() | nil,
+          :eddServices => list(String.t()) | nil,
           :name => String.t() | nil,
           :services => list(String.t()) | nil
         }
 
   field(:country)
+  field(:eddServices, type: :list)
   field(:name)
   field(:services, type: :list)
 end
