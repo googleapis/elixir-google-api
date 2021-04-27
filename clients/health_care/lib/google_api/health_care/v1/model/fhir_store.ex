@@ -21,6 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
 
   ## Attributes
 
+  *   `defaultSearchHandlingStrict` (*type:* `boolean()`, *default:* `nil`) - If true, overrides the default search behavior for this FHIR store to `handling=strict` which returns an error for unrecognized search parameters. If false, uses the FHIR specification default `handling=lenient` which ignores unrecognized search parameters. The handling can always be changed from the default on an individual API call by setting the HTTP header `Prefer: handling=strict` or `Prefer: handling=lenient`.
   *   `disableReferentialIntegrity` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether to disable referential integrity in this FHIR store. This field is immutable after FHIR store creation. The default value is false, meaning that the API enforces referential integrity and fails the requests that result in inconsistent state in the FHIR store. When this field is set to true, the API skips referential integrity checks. Consequently, operations that rely on references, such as GetPatientEverything, do not return all the results if broken references exist.
   *   `disableResourceVersioning` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether to disable resource versioning for this FHIR store. This field can not be changed after the creation of FHIR store. If set to false, which is the default behavior, all write operations cause historical versions to be recorded automatically. The historical versions can be fetched through the history APIs, but cannot be updated. If set to true, no historical versions are kept. The server sends errors for attempts to read the historical versions.
   *   `enableUpdateCreate` (*type:* `boolean()`, *default:* `nil`) - Whether this FHIR store has the [updateCreate capability](https://www.hl7.org/fhir/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate). This determines if the client can use an Update operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through the Create operation and attempts to update a non-existent resource return errors. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources.
@@ -34,6 +35,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultSearchHandlingStrict => boolean() | nil,
           :disableReferentialIntegrity => boolean() | nil,
           :disableResourceVersioning => boolean() | nil,
           :enableUpdateCreate => boolean() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
           :version => String.t() | nil
         }
 
+  field(:defaultSearchHandlingStrict)
   field(:disableReferentialIntegrity)
   field(:disableResourceVersioning)
   field(:enableUpdateCreate)
