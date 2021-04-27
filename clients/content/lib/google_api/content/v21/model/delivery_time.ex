@@ -30,6 +30,7 @@ defmodule GoogleApi.Content.V21.Model.DeliveryTime do
   *   `minTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both.
   *   `transitBusinessDayConfig` (*type:* `GoogleApi.Content.V21.Model.BusinessDayConfig.t`, *default:* `nil`) - The business days during which orders can be in-transit. If not provided, Monday to Friday business days will be assumed.
   *   `transitTimeTable` (*type:* `GoogleApi.Content.V21.Model.TransitTable.t`, *default:* `nil`) - Transit time table, number of business days spent in transit based on row and column dimensions. Either `{min,max}TransitTimeInDays` or `transitTimeTable` can be set, but not both.
+  *   `warehouseBasedDeliveryTimes` (*type:* `list(GoogleApi.Content.V21.Model.WarehouseBasedDeliveryTime.t)`, *default:* `nil`) - Indicates that the delivery time should be calculated per warehouse (shipping origin location) based on the settings of the selected carrier. When set, no other transit time related field in DeliveryTime should be set.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,9 @@ defmodule GoogleApi.Content.V21.Model.DeliveryTime do
           :minHandlingTimeInDays => integer() | nil,
           :minTransitTimeInDays => integer() | nil,
           :transitBusinessDayConfig => GoogleApi.Content.V21.Model.BusinessDayConfig.t() | nil,
-          :transitTimeTable => GoogleApi.Content.V21.Model.TransitTable.t() | nil
+          :transitTimeTable => GoogleApi.Content.V21.Model.TransitTable.t() | nil,
+          :warehouseBasedDeliveryTimes =>
+            list(GoogleApi.Content.V21.Model.WarehouseBasedDeliveryTime.t()) | nil
         }
 
   field(:cutoffTime, as: GoogleApi.Content.V21.Model.CutoffTime)
@@ -55,6 +58,11 @@ defmodule GoogleApi.Content.V21.Model.DeliveryTime do
   field(:minTransitTimeInDays)
   field(:transitBusinessDayConfig, as: GoogleApi.Content.V21.Model.BusinessDayConfig)
   field(:transitTimeTable, as: GoogleApi.Content.V21.Model.TransitTable)
+
+  field(:warehouseBasedDeliveryTimes,
+    as: GoogleApi.Content.V21.Model.WarehouseBasedDeliveryTime,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.DeliveryTime do

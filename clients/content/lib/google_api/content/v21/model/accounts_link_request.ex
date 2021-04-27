@@ -22,9 +22,10 @@ defmodule GoogleApi.Content.V21.Model.AccountsLinkRequest do
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The `"request"` action is only available to select merchants. Acceptable values are: - "`approve`" - "`remove`" - "`request`" 
-  *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts. Acceptable values are: - "`channelPartner`" - "`eCommercePlatform`" 
+  *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts. Acceptable values are: - "`channelPartner`" - "`eCommercePlatform`" - "`paymentServiceProvider`" 
   *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the linked account.
-  *   `services` (*type:* `list(String.t)`, *default:* `nil`) -  Acceptable values are: - "`shoppingAdsProductManagement`" - "`shoppingActionsProductManagement`" - "`shoppingActionsOrderManagement`" 
+  *   `paymentServiceProviderLinkInfo` (*type:* `GoogleApi.Content.V21.Model.PaymentServiceProviderLinkInfo.t`, *default:* `nil`) - Additional information required for `paymentServiceProvider` link type.
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) -  Acceptable values are: - "`shoppingAdsProductManagement`" - "`shoppingActionsProductManagement`" - "`shoppingActionsOrderManagement`" - "`paymentProcessing`" 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +34,19 @@ defmodule GoogleApi.Content.V21.Model.AccountsLinkRequest do
           :action => String.t() | nil,
           :linkType => String.t() | nil,
           :linkedAccountId => String.t() | nil,
+          :paymentServiceProviderLinkInfo =>
+            GoogleApi.Content.V21.Model.PaymentServiceProviderLinkInfo.t() | nil,
           :services => list(String.t()) | nil
         }
 
   field(:action)
   field(:linkType)
   field(:linkedAccountId)
+
+  field(:paymentServiceProviderLinkInfo,
+    as: GoogleApi.Content.V21.Model.PaymentServiceProviderLinkInfo
+  )
+
   field(:services, type: :list)
 end
 
