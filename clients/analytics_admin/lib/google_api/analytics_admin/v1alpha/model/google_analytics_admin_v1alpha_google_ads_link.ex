@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoog
 
   ## Attributes
 
-  *   `adsPersonalizationEnabled` (*type:* `boolean()`, *default:* `nil`) - Enable personalized advertising features with this integration. Automatically publish my Google Analytics audience lists and Google Analytics remarketing events/parameters to the linked Google Ads account. If this field is not set on create/update it will be defaulted to true.
+  *   `adsPersonalizationEnabled` (*type:* `boolean()`, *default:* `nil`) - Enable personalized advertising features with this integration. Automatically publish my Google Analytics audience lists and Google Analytics remarketing events/parameters to the linked Google Ads account. If this field is not set on create/update, it will be defaulted to true.
   *   `canManageClients` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, this link is for a Google Ads manager account.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this link was originally created.
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - Immutable. Google Ads customer ID.
