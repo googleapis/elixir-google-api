@@ -33,7 +33,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - List of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
   *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
-  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t)`, *default:* `nil`) - List of recent device users, in descending order, by last login time.
+  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - List of recent device users, in descending order, by last login time.
   *   `supportEndDate` (*type:* `DateTime.t`, *default:* `nil`) - Final date the device will be supported (Read-only)
   *   `lastSync` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
@@ -77,7 +77,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
           :annotatedUser => String.t() | nil,
           :kind => String.t() | nil,
-          :recentUsers => list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t()) | nil,
+          :recentUsers =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()) | nil,
           :supportEndDate => DateTime.t() | nil,
           :lastSync => DateTime.t() | nil,
           :deviceId => String.t() | nil,
@@ -132,7 +133,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
 
   field(:annotatedUser)
   field(:kind)
-  field(:recentUsers, as: GoogleApi.Admin.Directory_v1.Model.RecentUsers, type: :list)
+
+  field(:recentUsers,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers,
+    type: :list
+  )
+
   field(:supportEndDate, as: DateTime)
   field(:lastSync, as: DateTime)
   field(:deviceId)
