@@ -45,6 +45,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:changesNotSentForReview` (*type:* `boolean()`) - Indicates that the changes in this edit will not be reviewed until they are explicitly sent for review from the Google Play Console UI. These changes will be added to any other changes that are not yet sent for review.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -81,7 +82,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :changesNotSentForReview => :query
     }
 
     request =
