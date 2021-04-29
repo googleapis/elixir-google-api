@@ -425,7 +425,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   end
 
   @doc """
-  Lists managed services. Returns all public services. For authenticated users, also returns all services the calling user has "servicemanagement.services.get" permission for. **BETA:** If the caller specifies the `consumer_id`, it returns only the services enabled on the consumer. The `consumer_id` must have the format of "project:{PROJECT-ID}".
+  Lists managed services. Returns all public services. For authenticated users, also returns all services the calling user has "servicemanagement.services.get" permission for.
 
   ## Parameters
 
