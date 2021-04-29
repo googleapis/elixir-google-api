@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   @moduledoc """
-  Note: this resource requires whitelisting for access. Please contact your account manager for access to Marketplace resources. Represents a publisher profile (https://support.google.com/admanager/answer/6035806) in Marketplace. All fields are read only. All string fields are free-form text entered by the publisher unless noted otherwise.
+  Represents a publisher profile (https://support.google.com/admanager/answer/6035806) in Marketplace. All fields are read only. All string fields are free-form text entered by the publisher unless noted otherwise.
 
   ## Attributes
 
