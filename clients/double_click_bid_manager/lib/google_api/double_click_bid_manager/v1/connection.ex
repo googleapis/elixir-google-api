@@ -23,10 +23,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [
-      # View and manage your reports in DoubleClick Bid Manager
-      "https://www.googleapis.com/auth/doubleclickbidmanager"
-    ],
+    scopes: [],
     otp_app: :google_api_double_click_bid_manager,
     base_url: "https://doubleclickbidmanager.googleapis.com/doubleclickbidmanager/v1/"
 end
