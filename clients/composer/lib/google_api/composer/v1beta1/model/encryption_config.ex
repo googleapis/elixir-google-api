@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Composer.V1beta1.Model.EncryptionConfig do
   @moduledoc """
-  The encryption options for the Composer environment and its dependencies.
+  The encryption options for the Cloud Composer environment and its dependencies.
 
   ## Attributes
 
