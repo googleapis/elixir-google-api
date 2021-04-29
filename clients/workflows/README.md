@@ -2,7 +2,7 @@
 
 Workflows API client library.
 
-Orchestrate Workflows consisting of Google Cloud APIs, SaaS APIs or private API endpoints.
+Manage workflow definitions. To execute workflows and manage executions, see the Workflows Executions API.
 
 ## Installation
 
