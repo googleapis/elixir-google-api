@@ -18,7 +18,7 @@
 defmodule GoogleApi.Workflows.Mixfile do
   use Mix.Project
 
-  @version "0.3.2"
+  @version "0.3.3"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Workflows.Mixfile do
 
   defp description() do
     """
-    Workflows API client library. Orchestrate Workflows consisting of Google Cloud APIs, SaaS APIs or private API endpoints.
+    Workflows API client library. Manage workflow definitions. To execute workflows and manage executions, see the Workflows Executions API.
     """
   end
 
