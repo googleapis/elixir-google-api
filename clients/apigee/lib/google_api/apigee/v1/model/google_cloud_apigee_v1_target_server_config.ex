@@ -24,6 +24,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
   *   `host` (*type:* `String.t`, *default:* `nil`) - Host name of the target server.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Target server revision name in the following format: `organizations/{org}/environments/{env}/targetservers/{targetserver}/revisions/{rev}`
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port number for the target server.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol used by this target server.
   *   `tlsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t`, *default:* `nil`) - TLS settings for the target server.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
           :host => String.t() | nil,
           :name => String.t() | nil,
           :port => integer() | nil,
+          :protocol => String.t() | nil,
           :tlsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t() | nil
         }
 
   field(:host)
   field(:name)
   field(:port)
+  field(:protocol)
   field(:tlsInfo, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig)
 end
 
