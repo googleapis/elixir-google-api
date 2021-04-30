@@ -28,6 +28,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   *   `privateApps` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t`, *default:* `nil`) - Options for displaying the Private Apps page.
   *   `storeBuilder` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t`, *default:* `nil`) - Options for displaying the Organize apps page.
   *   `webApps` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t`, *default:* `nil`) - Options for displaying the Web Apps page.
+  *   `zeroTouch` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecZeroTouch.t`, *default:* `nil`) - Options for displaying the Zero Touch page.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
           :storeBuilder =>
             GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t() | nil,
           :webApps =>
-            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t() | nil
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t() | nil,
+          :zeroTouch =>
+            GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecZeroTouch.t() | nil
         }
 
   field(:managedConfigurations,
@@ -65,6 +68,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   )
 
   field(:webApps, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps)
+  field(:zeroTouch, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecZeroTouch)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
