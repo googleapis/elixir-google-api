@@ -26,6 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
   *   `isEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource id of this target server. Values must match the regular expression 
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - Immutable. The protocol used by this TargetServer.
   *   `sSLInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t`, *default:* `nil`) - Optional. Specifies TLS configuration info for this TargetServer. The JSON name is `sSLInfo` for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
           :isEnabled => boolean() | nil,
           :name => String.t() | nil,
           :port => integer() | nil,
+          :protocol => String.t() | nil,
           :sSLInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
   field(:isEnabled)
   field(:name)
   field(:port)
+  field(:protocol)
   field(:sSLInfo, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo)
 end
 
