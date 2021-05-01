@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
 
   ## Attributes
 
-  *   `autoscalingPolicy` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicy.t`, *default:* `nil`) - The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+  *   `autoscalingPolicy` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicy.t`, *default:* `nil`) - The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
 
       If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.

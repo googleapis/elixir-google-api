@@ -24,7 +24,6 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
   *   `destIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
   *   `layer4Configs` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t)`, *default:* `nil`) - Pairs of IP protocols and ports that the rule should match.
   *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
-  *   `srcSecureLabels` (*type:* `list(String.t)`, *default:* `nil`) - List of firewall label values, which should be matched at the source of the traffic. Maximum number of source label values allowed is 256.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,8 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
           :destIpRanges => list(String.t()) | nil,
           :layer4Configs =>
             list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t()) | nil,
-          :srcIpRanges => list(String.t()) | nil,
-          :srcSecureLabels => list(String.t()) | nil
+          :srcIpRanges => list(String.t()) | nil
         }
 
   field(:destIpRanges, type: :list)
@@ -45,7 +43,6 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
   )
 
   field(:srcIpRanges, type: :list)
-  field(:srcSecureLabels, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do

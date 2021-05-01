@@ -32,7 +32,6 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
   *   `networkInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkInterface.t)`, *default:* `nil`) - An array of network access configurations for this interface.
-  *   `postKeyRevocationActionType` (*type:* `String.t`, *default:* `nil`) - PostKeyRevocationActionType of the instance.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
   *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that instances can consume from.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies (names, not ULRs) applied to instances created from these properties.
@@ -58,7 +57,6 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
           :metadata => GoogleApi.Compute.V1.Model.Metadata.t() | nil,
           :minCpuPlatform => String.t() | nil,
           :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()) | nil,
-          :postKeyRevocationActionType => String.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
           :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t() | nil,
           :resourcePolicies => list(String.t()) | nil,
@@ -79,7 +77,6 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   field(:metadata, as: GoogleApi.Compute.V1.Model.Metadata)
   field(:minCpuPlatform)
   field(:networkInterfaces, as: GoogleApi.Compute.V1.Model.NetworkInterface, type: :list)
-  field(:postKeyRevocationActionType)
   field(:privateIpv6GoogleAccess)
   field(:reservationAffinity, as: GoogleApi.Compute.V1.Model.ReservationAffinity)
   field(:resourcePolicies, type: :list)
