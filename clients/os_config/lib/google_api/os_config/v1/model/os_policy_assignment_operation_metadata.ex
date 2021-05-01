@@ -22,7 +22,7 @@ defmodule GoogleApi.OSConfig.V1.Model.OSPolicyAssignmentOperationMetadata do
   ## Attributes
 
   *   `apiMethod` (*type:* `String.t`, *default:* `nil`) - The OS policy assignment API method.
-  *   `osPolicyAssignment` (*type:* `String.t`, *default:* `nil`) - Reference to the `OSPolicyAssignment` API resource. Format: projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}
+  *   `osPolicyAssignment` (*type:* `String.t`, *default:* `nil`) - Reference to the `OSPolicyAssignment` API resource. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}`
   *   `rolloutStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Rollout start time
   *   `rolloutState` (*type:* `String.t`, *default:* `nil`) - State of the rollout
   *   `rolloutUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Rollout update time
