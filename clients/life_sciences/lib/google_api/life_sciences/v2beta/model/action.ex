@@ -29,6 +29,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
   *   `disableImagePrefetch` (*type:* `boolean()`, *default:* `nil`) - All container images are typically downloaded before any actions are executed. This helps prevent typos in URIs or issues like lack of disk space from wasting large amounts of compute resources. If set, this flag prevents the worker from downloading the image until just before the action is executed.
   *   `disableStandardErrorCapture` (*type:* `boolean()`, *default:* `nil`) - A small portion of the container's standard error stream is typically captured and returned inside the `ContainerStoppedEvent`. Setting this flag disables this functionality.
   *   `enableFuse` (*type:* `boolean()`, *default:* `nil`) - Enable access to the FUSE device for this action. Filesystems can then be mounted into disks shared with other actions. The other actions do not need the `enable_fuse` flag to access the mounted filesystem. This has the effect of causing the container to be executed with `CAP_SYS_ADMIN` and exposes `/dev/fuse` to the container, so use it only for containers you trust.
+  *   `encryptedEnvironment` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Secret.t`, *default:* `nil`) - The encrypted environment to pass into the container. This environment is merged with values specified in the google.cloud.lifesciences.v2beta.Pipeline message, overwriting any duplicate values. The secret must decrypt to a JSON-encoded dictionary where key-value pairs serve as environment variable names and their values. The decoded environment variables can overwrite the values specified by the `environment` field.
   *   `entrypoint` (*type:* `String.t`, *default:* `nil`) - If specified, overrides the `ENTRYPOINT` specified in the container.
   *   `environment` (*type:* `map()`, *default:* `nil`) - The environment to pass into the container. This environment is merged with values specified in the google.cloud.lifesciences.v2beta.Pipeline message, overwriting any duplicate values. In addition to the values passed here, a few other values are automatically injected into the environment. These cannot be hidden or overwritten. `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed because an action has exited with a non-zero status (and did not have the `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional debug or logging actions should execute. `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last non-background action that executed. This can be used by workflow engine authors to determine whether an individual action has succeeded or failed.
   *   `ignoreExitStatus` (*type:* `boolean()`, *default:* `nil`) - Normally, a non-zero exit status causes the pipeline to fail. This flag allows execution of other actions to continue instead.
@@ -53,6 +54,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
           :disableImagePrefetch => boolean() | nil,
           :disableStandardErrorCapture => boolean() | nil,
           :enableFuse => boolean() | nil,
+          :encryptedEnvironment => GoogleApi.LifeSciences.V2beta.Model.Secret.t() | nil,
           :entrypoint => String.t() | nil,
           :environment => map() | nil,
           :ignoreExitStatus => boolean() | nil,
@@ -74,6 +76,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
   field(:disableImagePrefetch)
   field(:disableStandardErrorCapture)
   field(:enableFuse)
+  field(:encryptedEnvironment, as: GoogleApi.LifeSciences.V2beta.Model.Secret)
   field(:entrypoint)
   field(:environment, type: :map)
   field(:ignoreExitStatus)
