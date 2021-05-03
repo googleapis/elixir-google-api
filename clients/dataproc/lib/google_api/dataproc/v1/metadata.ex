@@ -20,7 +20,7 @@ defmodule GoogleApi.Dataproc.V1 do
   API client metadata for GoogleApi.Dataproc.V1.
   """
 
-  @discovery_revision "20210406"
+  @discovery_revision "20210421"
 
   def discovery_revision(), do: @discovery_revision
 end
