@@ -23,11 +23,11 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
 
   *   `conferenceId` (*type:* `String.t`, *default:* `nil`) - The ID of the conference.
       Can be used by developers to keep track of conferences, should not be displayed to users.
-      Values for solution types:  
-      - "eventHangout": unset.
-      - "eventNamedHangout": the name of the Hangout.
-      - "hangoutsMeet": the 10-letter meeting code, for example "aaa-bbbb-ccc".
-      - "addOn": defined by 3P conference provider.  Optional.
+      The ID value is formed differently for each conference solution type: `
+      - eventHangout: ID is not set.
+      - eventNamedHangout: ID is the name of the Hangout.
+      - hangoutsMeet: ID is the 10-letter meeting code, for example aaa-bbbb-ccc.
+      - addOn: ID is defined by the third-party provider.  Optional.
   *   `conferenceSolution` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolution.t`, *default:* `nil`) - The conference solution, such as Hangouts or Google Meet.
       Unset for a conference with a failed create request.
       Either conferenceSolution and at least one entryPoint, or createRequest is required.
