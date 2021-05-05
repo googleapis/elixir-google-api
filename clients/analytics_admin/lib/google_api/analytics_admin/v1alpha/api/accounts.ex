@@ -1207,7 +1207,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Example format: properties/1234/userLinks/5678
+  *   `name` (*type:* `String.t`) - Output only. Example format: properties/1234/userLinks/5678
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
