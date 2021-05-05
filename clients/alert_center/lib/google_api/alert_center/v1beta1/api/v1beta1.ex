@@ -48,11 +48,11 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.Settings{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_get_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -81,10 +81,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.Settings{}])
   end
 
   @doc """
@@ -106,16 +103,16 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert settings are associated with. Inferred from the caller identity if not provided.
-      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings.t`) - 
+      *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.Settings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings{}}` on success
+  *   `{:ok, %GoogleApi.AlertCenter.V1beta1.Model.Settings{}}` on success
   *   `{:error, info}` on failure
   """
   @spec alertcenter_update_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -145,9 +142,6 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [struct: %GoogleApi.AlertCenter.V1beta1.Model.GoogleAppsAlertcenterV1beta1Settings{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.AlertCenter.V1beta1.Model.Settings{}])
   end
 end
