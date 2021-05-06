@@ -30,6 +30,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the latest data used to generate the insight.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the insight.
   *   `observationPeriod` (*type:* `String.t`, *default:* `nil`) - Observation period that led to the insight. The source data used to generate the insight ends at last_refresh_time and begins at (last_refresh_time - observation_period).
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Insight's severity.
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo.t`, *default:* `nil`) - Information state and metadata.
   *   `targetResources` (*type:* `list(String.t)`, *default:* `nil`) - Fully qualified resource names that this insight is targeting.
   """
@@ -50,6 +51,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
           :lastRefreshTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :observationPeriod => String.t() | nil,
+          :severity => String.t() | nil,
           :stateInfo =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo.t() | nil,
           :targetResources => list(String.t()) | nil
@@ -68,6 +70,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
   field(:lastRefreshTime, as: DateTime)
   field(:name)
   field(:observationPeriod)
+  field(:severity)
   field(:stateInfo, as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo)
   field(:targetResources, type: :list)
 end
