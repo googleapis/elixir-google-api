@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo do
   @moduledoc """
-  For display only. Metadata associated with a Google Kubernetes Engine cluster master.
+  For display only. Metadata associated with a Google Kubernetes Engine (GKE) cluster master.
 
   ## Attributes
 
-  *   `clusterNetworkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Google Kubernetes Engine cluster network.
-  *   `clusterUri` (*type:* `String.t`, *default:* `nil`) - URI of a Google Kubernetes Engine cluster.
-  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of a Google Kubernetes Engine cluster master.
-  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of a Google Kubernetes Engine cluster master.
+  *   `clusterNetworkUri` (*type:* `String.t`, *default:* `nil`) - URI of a GKE cluster network.
+  *   `clusterUri` (*type:* `String.t`, *default:* `nil`) - URI of a GKE cluster.
+  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of a GKE cluster master.
+  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of a GKE cluster master.
   """
 
   use GoogleApi.Gax.ModelBase

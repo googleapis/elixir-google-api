@@ -22,9 +22,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Cloud SQL instance.
-  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of Cloud SQL instance.
-  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of Cloud SQL instance.
-  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud SQL instance network or empty string if instance does not have one.
+  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of a Cloud SQL instance.
+  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of a Cloud SQL instance.
+  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud SQL instance network or empty string if the instance does not have one.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Region in which the Cloud SQL instance is running.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud SQL instance.
   """

@@ -23,7 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpnTunnelInfo do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a VPN tunnel.
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine network where the VPN tunnel is configured.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Name of a GCP region where this VPN tunnel is configured.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Name of a Google Cloud region where this VPN tunnel is configured.
   *   `remoteGateway` (*type:* `String.t`, *default:* `nil`) - URI of a VPN gateway at remote end of the tunnel.
   *   `remoteGatewayIp` (*type:* `String.t`, *default:* `nil`) - Remote VPN gateway's IP address.
   *   `routingType` (*type:* `String.t`, *default:* `nil`) - Type of the routing policy.
