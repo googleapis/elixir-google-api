@@ -29,6 +29,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time this recommendation was refreshed by the system that created it in the first place.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of recommendation.
   *   `primaryImpact` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t`, *default:* `nil`) - The primary impact that this recommendation can have while trying to optimize for one category.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - Recommendation's priority.
   *   `recommenderSubtype` (*type:* `String.t`, *default:* `nil`) - Contains an identifier for a subtype of recommendations produced for the same recommender. Subtype is a function of content and impact, meaning a new subtype might be added when significant changes to `content` or `primary_impact.category` are introduced. See the Recommenders section to see a list of subtypes for a given Recommender. Examples: For recommender = "google.iam.policy.Recommender", recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationStateInfo.t`, *default:* `nil`) - Information for state. Contains state and metadata.
   """
@@ -53,6 +54,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
           :name => String.t() | nil,
           :primaryImpact =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t() | nil,
+          :priority => String.t() | nil,
           :recommenderSubtype => String.t() | nil,
           :stateInfo =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationStateInfo.t()
@@ -83,6 +85,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact
   )
 
+  field(:priority)
   field(:recommenderSubtype)
 
   field(:stateInfo,
