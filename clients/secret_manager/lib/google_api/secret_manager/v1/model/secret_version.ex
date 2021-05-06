@@ -23,6 +23,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the SecretVersion was created.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. Etag of the currently stored SecretVersion.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. SecretVersion IDs in a Secret start at 1 and are incremented for each subsequent version of the secret.
   *   `replicationStatus` (*type:* `GoogleApi.SecretManager.V1.Model.ReplicationStatus.t`, *default:* `nil`) - The replication status of the SecretVersion.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the SecretVersion.
@@ -33,6 +34,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :destroyTime => DateTime.t() | nil,
+          :etag => String.t() | nil,
           :name => String.t() | nil,
           :replicationStatus => GoogleApi.SecretManager.V1.Model.ReplicationStatus.t() | nil,
           :state => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
 
   field(:createTime, as: DateTime)
   field(:destroyTime, as: DateTime)
+  field(:etag)
   field(:name)
   field(:replicationStatus, as: GoogleApi.SecretManager.V1.Model.ReplicationStatus)
   field(:state)

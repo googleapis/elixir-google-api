@@ -22,6 +22,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the Secret was created.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag of the currently stored Secret.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent on input.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\\p{Ll}\\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
@@ -35,6 +36,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :etag => String.t() | nil,
           :expireTime => DateTime.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
         }
 
   field(:createTime, as: DateTime)
+  field(:etag)
   field(:expireTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)

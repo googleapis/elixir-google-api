@@ -21,11 +21,16 @@ defmodule GoogleApi.SecretManager.V1.Model.DestroySecretVersionRequest do
 
   ## Attributes
 
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag of the SecretVersion. The request succeeds if it matches the etag of the currently stored secret version object. If the etag is omitted, the request succeeds.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :etag => String.t() | nil
+        }
+
+  field(:etag)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecretManager.V1.Model.DestroySecretVersionRequest do
