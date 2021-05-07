@@ -21,6 +21,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
 
   ## Attributes
 
+  *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
+  *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address of the endpoint, which can be an external or internal IP. An IPv6 address is only allowed when the test's destination is a [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
   *   `network` (*type:* `String.t`, *default:* `nil`) - A Compute Engine network URI.
@@ -32,6 +34,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudSqlInstance => String.t() | nil,
+          :gkeMasterCluster => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
           :network => String.t() | nil,
@@ -40,6 +44,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
           :projectId => String.t() | nil
         }
 
+  field(:cloudSqlInstance)
+  field(:gkeMasterCluster)
   field(:instance)
   field(:ipAddress)
   field(:network)

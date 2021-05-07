@@ -21,25 +21,25 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
 
   ## Attributes
 
-  *   `abort` (*type:* `GoogleApi.NetworkManagement.V1.Model.AbortInfo.t`, *default:* `nil`) - Display info of the final state "abort" and reason.
+  *   `abort` (*type:* `GoogleApi.NetworkManagement.V1.Model.AbortInfo.t`, *default:* `nil`) - Display information of the final state "abort" and reason.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
-  *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display info of a Cloud SQL instance.
-  *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display info of the final state "deliver" and reason.
+  *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display information of a Cloud SQL instance.
+  *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display information of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
-  *   `drop` (*type:* `GoogleApi.NetworkManagement.V1.Model.DropInfo.t`, *default:* `nil`) - Display info of the final state "drop" and reason.
-  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t`, *default:* `nil`) - Display info of the source and destination under analysis. The endpoint info in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy.
-  *   `firewall` (*type:* `GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t`, *default:* `nil`) - Display info of a Compute Engine firewall rule.
-  *   `forward` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t`, *default:* `nil`) - Display info of the final state "forward" and reason.
-  *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display info of a Compute Engine forwarding rule.
-  *   `gkeMaster` (*type:* `GoogleApi.NetworkManagement.V1.Model.GKEMasterInfo.t`, *default:* `nil`) - Display info of a Google Kubernetes Engine cluster master.
-  *   `instance` (*type:* `GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t`, *default:* `nil`) - Display info of a Compute Engine instance.
-  *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display info of the load balancers.
-  *   `network` (*type:* `GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t`, *default:* `nil`) - Display info of a GCP network.
+  *   `drop` (*type:* `GoogleApi.NetworkManagement.V1.Model.DropInfo.t`, *default:* `nil`) - Display information of the final state "drop" and reason.
+  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t`, *default:* `nil`) - Display information of the source and destination under analysis. The endpoint information in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy.
+  *   `firewall` (*type:* `GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t`, *default:* `nil`) - Display information of a Compute Engine firewall rule.
+  *   `forward` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t`, *default:* `nil`) - Display information of the final state "forward" and reason.
+  *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display information of a Compute Engine forwarding rule.
+  *   `gkeMaster` (*type:* `GoogleApi.NetworkManagement.V1.Model.GKEMasterInfo.t`, *default:* `nil`) - Display information of a Google Kubernetes Engine cluster master.
+  *   `instance` (*type:* `GoogleApi.NetworkManagement.V1.Model.InstanceInfo.t`, *default:* `nil`) - Display information of a Compute Engine instance.
+  *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display information of the load balancers.
+  *   `network` (*type:* `GoogleApi.NetworkManagement.V1.Model.NetworkInfo.t`, *default:* `nil`) - Display information of a Google Cloud network.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that contains the configuration this step is validating.
-  *   `route` (*type:* `GoogleApi.NetworkManagement.V1.Model.RouteInfo.t`, *default:* `nil`) - Display info of a Compute Engine route.
+  *   `route` (*type:* `GoogleApi.NetworkManagement.V1.Model.RouteInfo.t`, *default:* `nil`) - Display information of a Compute Engine route.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Each step is in one of the pre-defined states.
-  *   `vpnGateway` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t`, *default:* `nil`) - Display info of a Compute Engine VPN gateway.
-  *   `vpnTunnel` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t`, *default:* `nil`) - Display info of a Compute Engine VPN tunnel.
+  *   `vpnGateway` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN gateway.
+  *   `vpnTunnel` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN tunnel.
   """
 
   use GoogleApi.Gax.ModelBase
