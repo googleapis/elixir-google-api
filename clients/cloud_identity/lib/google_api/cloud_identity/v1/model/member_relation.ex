@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MemberRelation do
 
   ## Attributes
 
-  *   `member` (*type:* `String.t`, *default:* `nil`) - Resource name for this member if member is a GROUP, otherwise it is empty.
+  *   `member` (*type:* `String.t`, *default:* `nil`) - Resource name for this member.
   *   `preferredMemberKey` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.EntityKey.t)`, *default:* `nil`) - Entity key has an id and a namespace. In case of discussion forums, the id will be an email address without a namespace.
   *   `relationType` (*type:* `String.t`, *default:* `nil`) - The relation between the group and the transitive member.
   *   `roles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole.t)`, *default:* `nil`) - The membership role details (i.e name of role and expiry time).

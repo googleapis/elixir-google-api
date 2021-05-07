@@ -207,7 +207,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Lists the `Group`s under a customer or namespace.
+  Lists the `Group` resources under a customer or namespace.
 
   ## Parameters
 
@@ -226,7 +226,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `View.BASIC` and to 50 for `View.FULL`. Must not be greater than 1000 for `View.BASIC` or 500 for `View.FULL`.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous list request, if any.
-      *   `:parent` (*type:* `String.t`) - Required. The parent resource under which to list all `Group`s. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups.
+      *   `:parent` (*type:* `String.t`) - Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with "C" (for example, 'C046psxkn').
       *   `:view` (*type:* `String.t`) - The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -399,7 +399,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Searches for `Group`s matching a specified query.
+  Searches for `Group` resources matching a specified query.
 
   ## Parameters
 
@@ -418,7 +418,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous search request, if any.
-      *   `:query` (*type:* `String.t`) - Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`).
+      *   `:query` (*type:* `String.t`) - Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`). The `customer_id` must begin with "C" (for example, 'C046psxkn').
       *   `:view` (*type:* `String.t`) - The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1050,7 +1050,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000).
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
-      *   `:query` (*type:* `String.t`) - Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Certain groups are uniquely identified by both a 'member_key_id' and a 'member_key_namespace', which requires an additional query input: 'member_key_namespace'. Example query: `member_key_id == 'member_key_id_value' && in labels`
+      *   `:query` (*type:* `String.t`) - Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. Default locale used on device, in IETF BCP-47 format.
   *   `lastSyncTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last time when user synced with policies.
   *   `managementState` (*type:* `String.t`, *default:* `nil`) - Output only. Management state of the user on the device.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{user_id}`, where user_id is the ID of the user associated with the user session.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{device_user_id}`, where `device_user_id` uniquely identifies a user's use of a device.
   *   `passwordState` (*type:* `String.t`, *default:* `nil`) - Password state of the DeviceUser object
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - Output only. User agent on the device for this specific user
   *   `userEmail` (*type:* `String.t`, *default:* `nil`) - Email address of the user registered on the device.
