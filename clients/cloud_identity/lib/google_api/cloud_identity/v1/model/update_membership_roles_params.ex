@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams do
 
   ## Attributes
 
-  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - The fully-qualified names of fields to update. May only contain the field `expiry_detail`.
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - The fully-qualified names of fields to update. May only contain the field `expiry_detail.expire_time`.
   *   `membershipRole` (*type:* `GoogleApi.CloudIdentity.V1.Model.MembershipRole.t`, *default:* `nil`) - The `MembershipRole`s to be updated. Only `MEMBER` `MembershipRole` can currently be updated.
   """
 
