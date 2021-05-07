@@ -32,6 +32,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
   *   `schema` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schema.t`, *default:* `nil`) - Schema of the entry. An entry might not have any schema attached to it.
   *   `sourceSystemTimestamps` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps about the underlying resource, not about this Data Catalog entry. Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty timestamp.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entry. Only used for Entries with types in the EntryType enum.
+  *   `usageSignal` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1UsageSignal.t`, *default:* `nil`) - Output only. Statistics on the usage level of the resource.
   *   `userSpecifiedSystem` (*type:* `String.t`, *default:* `nil`) - This field indicates the entry's source system that Data Catalog does not integrate with. `user_specified_system` strings must begin with a letter or underscore and can only contain letters, numbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long.
   *   `userSpecifiedType` (*type:* `String.t`, *default:* `nil`) - Entry type if it does not fit any of the input-allowed values listed in `EntryType` enum above. When creating an entry, users should check the enum values first, if nothing matches the entry to be created, then provide a custom value, for example "my_special_type". `user_specified_type` strings must begin with a letter or underscore and can only contain letters, numbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long. Currently, only FILESET enum value is allowed. All other entries created through Data Catalog must use `user_specified_type`.
   """
@@ -59,6 +60,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
             GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
             | nil,
           :type => String.t() | nil,
+          :usageSignal =>
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1UsageSignal.t() | nil,
           :userSpecifiedSystem => String.t() | nil,
           :userSpecifiedType => String.t() | nil
         }
@@ -88,6 +91,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
   )
 
   field(:type)
+
+  field(:usageSignal,
+    as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1UsageSignal
+  )
+
   field(:userSpecifiedSystem)
   field(:userSpecifiedType)
 end
