@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudRun.V1alpha1 do
   API client metadata for GoogleApi.CloudRun.V1alpha1.
   """
 
-  @discovery_revision "20210409"
+  @discovery_revision "20210503"
 
   def discovery_revision(), do: @discovery_revision
 end

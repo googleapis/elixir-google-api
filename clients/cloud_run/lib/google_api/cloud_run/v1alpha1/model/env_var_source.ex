@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource do
   ## Attributes
 
   *   `configMapKeyRef` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigMapKeySelector.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run on GKE: supported Selects a key of a ConfigMap. +optional
-  *   `secretKeyRef` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run on GKE: supported Selects a key of a secret in the pod's namespace +optional
+  *   `secretKeyRef` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Cloud Run fully managed: supported. Selects a key (version) of a secret in Secret Manager. Cloud Run for Anthos: supported. Selects a key of a secret in the pod's namespace. +optional
   """
 
   use GoogleApi.Gax.ModelBase
