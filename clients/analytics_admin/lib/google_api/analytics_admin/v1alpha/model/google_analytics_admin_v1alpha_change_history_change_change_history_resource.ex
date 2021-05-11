@@ -23,6 +23,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
 
   *   `account` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t`, *default:* `nil`) - A snapshot of an Account resource in change history.
   *   `androidAppDataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t`, *default:* `nil`) - A snapshot of an AndroidAppDataStream resource in change history.
+  *   `conversionEvent` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t`, *default:* `nil`) - A snapshot of a ConversionEvent resource in change history.
+  *   `customDimension` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomDimension.t`, *default:* `nil`) - A snapshot of a CustomDimension resource in change history.
+  *   `customMetric` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomMetric.t`, *default:* `nil`) - A snapshot of a CustomMetric resource in change history.
   *   `firebaseLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t`, *default:* `nil`) - A snapshot of a FirebaseLink resource in change history.
   *   `googleAdsLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t`, *default:* `nil`) - A snapshot of a GoogleAdsLink resource in change history.
   *   `iosAppDataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t`, *default:* `nil`) - A snapshot of an IosAppDataStream resource in change history.
@@ -37,6 +40,15 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t() | nil,
           :androidAppDataStream =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t()
+            | nil,
+          :conversionEvent =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t()
+            | nil,
+          :customDimension =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomDimension.t()
+            | nil,
+          :customMetric =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomMetric.t()
             | nil,
           :firebaseLink =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t()
@@ -58,6 +70,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
 
   field(:androidAppDataStream,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream
+  )
+
+  field(:conversionEvent,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent
+  )
+
+  field(:customDimension,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomDimension
+  )
+
+  field(:customMetric,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomMetric
   )
 
   field(:firebaseLink,
