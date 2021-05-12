@@ -47,6 +47,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `Build`. These are not docker tags.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is ten minutes.
   *   `timing` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t}`, *default:* `nil`) - Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. If the build does not specify source or images, these keys will not be included.
+  *   `warnings` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Warning.t)`, *default:* `nil`) - Output only. Non-fatal problems encountered during the execution of the build.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -77,7 +78,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
           :substitutions => map() | nil,
           :tags => list(String.t()) | nil,
           :timeout => String.t() | nil,
-          :timing => %{optional(String.t()) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t()} | nil
+          :timing => %{optional(String.t()) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t()} | nil,
+          :warnings => list(GoogleApi.CloudBuild.V1.Model.Warning.t()) | nil
         }
 
   field(:artifacts, as: GoogleApi.CloudBuild.V1.Model.Artifacts)
@@ -106,6 +108,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   field(:tags, type: :list)
   field(:timeout)
   field(:timing, as: GoogleApi.CloudBuild.V1.Model.TimeSpan, type: :map)
+  field(:warnings, as: GoogleApi.CloudBuild.V1.Model.Warning, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Build do
