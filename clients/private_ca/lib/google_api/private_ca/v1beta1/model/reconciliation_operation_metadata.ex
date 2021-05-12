@@ -21,16 +21,19 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.ReconciliationOperationMetadata do
 
   ## Attributes
 
-  *   `deleteResource` (*type:* `boolean()`, *default:* `nil`) - If set to TRUE, the resource has to be deleted. When using this bit, the CLH should fail the operation.
+  *   `deleteResource` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED. Use exclusive_action instead.
+  *   `exclusiveAction` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteResource => boolean() | nil
+          :deleteResource => boolean() | nil,
+          :exclusiveAction => String.t() | nil
         }
 
   field(:deleteResource)
+  field(:exclusiveAction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PrivateCA.V1beta1.Model.ReconciliationOperationMetadata do
