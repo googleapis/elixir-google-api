@@ -25,6 +25,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Time when the operation was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The display name of the workload.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Optional. The parent of the workload.
+  *   `resourceSettings` (*type:* `list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadResourceSettings.t)`, *default:* `nil`) - Optional. Resource properties in the input that are used for creating/customizing workload resources.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,24 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
           :complianceRegime => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
-          :parent => String.t() | nil
+          :parent => String.t() | nil,
+          :resourceSettings =>
+            list(
+              GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadResourceSettings.t()
+            )
+            | nil
         }
 
   field(:complianceRegime)
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:parent)
+
+  field(:resourceSettings,
+    as:
+      GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadResourceSettings,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,
