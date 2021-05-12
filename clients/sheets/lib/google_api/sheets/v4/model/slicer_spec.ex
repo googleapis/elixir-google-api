@@ -28,7 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
   *   `dataRange` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The data range of the slicer.
   *   `filterCriteria` (*type:* `GoogleApi.Sheets.V4.Model.FilterCriteria.t`, *default:* `nil`) - The filtering criteria of the slicer.
   *   `horizontalAlignment` (*type:* `String.t`, *default:* `nil`) - The horizontal alignment of title in the slicer. If unspecified, defaults to `LEFT`
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format of title in the slicer.
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format of title in the slicer. The link field is not supported.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the slicer.
   """
 

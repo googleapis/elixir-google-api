@@ -38,10 +38,10 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   *   `scorecardChart` (*type:* `GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t`, *default:* `nil`) - A scorecard chart specification.
   *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The order to sort the chart data by. Only a single sort spec is supported. Only supported for data source charts.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the chart.
-  *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format. Strikethrough and underline are not supported.
+  *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format. Strikethrough, underline, and link are not supported.
   *   `subtitleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The subtitle text position. This field is optional.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the chart.
-  *   `titleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The title text format. Strikethrough and underline are not supported.
+  *   `titleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The title text format. Strikethrough, underline, and link are not supported.
   *   `titleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The title text position. This field is optional.
   *   `treemapChart` (*type:* `GoogleApi.Sheets.V4.Model.TreemapChartSpec.t`, *default:* `nil`) - A treemap chart specification.
   *   `waterfallChart` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartSpec.t`, *default:* `nil`) - A waterfall chart specification.

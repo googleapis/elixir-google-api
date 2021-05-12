@@ -33,7 +33,7 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartSpec do
   *   `minValue` (*type:* `float()`, *default:* `nil`) - The minimum possible data value. Cells with values less than this will have the same color as cells with this value. If not specified, defaults to the actual minimum value from color_data, or the minimum value from size_data if color_data is not specified.
   *   `parentLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data the contains the treemap cells' parent labels.
   *   `sizeData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data that determines the size of each treemap data cell. This data is expected to be numeric. The cells corresponding to non-numeric or missing data will not be rendered. If color_data is not specified, this data is used to determine data cell background colors as well.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format for all labels on the chart.
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format for all labels on the chart. The link field is not supported.
   """
 
   use GoogleApi.Gax.ModelBase
