@@ -24,7 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.ExtendedValue do
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Represents a boolean value.
   *   `errorValue` (*type:* `GoogleApi.Sheets.V4.Model.ErrorValue.t`, *default:* `nil`) - Represents an error. This field is read-only.
   *   `formulaValue` (*type:* `String.t`, *default:* `nil`) - Represents a formula.
-  *   `numberValue` (*type:* `float()`, *default:* `nil`) - Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in "serial number" format.
+  *   `numberValue` (*type:* `float()`, *default:* `nil`) - Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - Represents a string value. Leading single quotes are not included. For example, if the user typed `'123` into the UI, this would be represented as a `stringValue` of `"123"`.
   """
 

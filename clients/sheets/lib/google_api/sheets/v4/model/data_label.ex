@@ -23,7 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataLabel do
 
   *   `customLabelData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - Data to use for custom labels. Only used if type is set to CUSTOM. This data must be the same length as the series or other element this data label is applied to. In addition, if the series is split into multiple source ranges, this source data must come from the next column in the source data. For example, if the series is B2:B4,E6:E8 then this data must come from C2:C4,F6:F8.
   *   `placement` (*type:* `String.t`, *default:* `nil`) - The placement of the data label relative to the labeled data.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format used for the data label.
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The text format used for the data label. The link field is not supported.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the data label.
   """
 

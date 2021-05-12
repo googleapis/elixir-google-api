@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.KeyValueFormat do
   ## Attributes
 
   *   `position` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - Specifies the horizontal text positioning of key value. This field is optional. If not specified, default positioning is used.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for key value.
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for key value. The link field is not supported.
   """
 
   use GoogleApi.Gax.ModelBase

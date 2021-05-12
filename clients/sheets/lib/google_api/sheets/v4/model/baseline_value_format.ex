@@ -28,7 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.BaselineValueFormat do
   *   `position` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - Specifies the horizontal text positioning of baseline value. This field is optional. If not specified, default positioning is used.
   *   `positiveColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for key value. This field is optional.
   *   `positiveColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for key value. This field is optional. If positive_color is also set, this field takes precedence.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for baseline value.
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for baseline value. The link field is not supported.
   """
 
   use GoogleApi.Gax.ModelBase

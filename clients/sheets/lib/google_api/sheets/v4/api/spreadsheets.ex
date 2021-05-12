@@ -535,8 +535,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeValuesInResponse` (*type:* `boolean()`) - Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.
       *   `:insertDataOption` (*type:* `String.t`) - How the input data should be inserted.
-      *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-      *   `:responseValueRenderOption` (*type:* `String.t`) - Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
+      *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+      *   `:responseValueRenderOption` (*type:* `String.t`) - Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.
       *   `:valueInputOption` (*type:* `String.t`) - How the input data should be interpreted.
       *   `:body` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -764,7 +764,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dateTimeRenderOption` (*type:* `String.t`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+      *   `:dateTimeRenderOption` (*type:* `String.t`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
       *   `:ranges` (*type:* `list(String.t)`) - The A1 notation or R1C1 notation of the range to retrieve values from.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
@@ -1134,9 +1134,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dateTimeRenderOption` (*type:* `String.t`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+      *   `:dateTimeRenderOption` (*type:* `String.t`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
-      *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
+      *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output. The default render option is FORMATTED_VALUE.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1215,8 +1215,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeValuesInResponse` (*type:* `boolean()`) - Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than the range actually written, the response includes all values in the requested range (excluding trailing empty rows and columns).
-      *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
-      *   `:responseValueRenderOption` (*type:* `String.t`) - Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
+      *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
+      *   `:responseValueRenderOption` (*type:* `String.t`) - Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.
       *   `:valueInputOption` (*type:* `String.t`) - How the input data should be interpreted.
       *   `:body` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options

@@ -29,7 +29,7 @@ defmodule GoogleApi.Sheets.V4.Model.CellFormat do
   *   `numberFormat` (*type:* `GoogleApi.Sheets.V4.Model.NumberFormat.t`, *default:* `nil`) - A format describing how number values should be represented to the user.
   *   `padding` (*type:* `GoogleApi.Sheets.V4.Model.Padding.t`, *default:* `nil`) - The padding of the cell.
   *   `textDirection` (*type:* `String.t`, *default:* `nil`) - The direction of the text in the cell.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text in the cell (unless overridden by a format run).
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text in the cell (unless overridden by a format run). Setting a cell-level link will clear the cell's existing links. Setting a link in a format run will clear the cell-level link.
   *   `textRotation` (*type:* `GoogleApi.Sheets.V4.Model.TextRotation.t`, *default:* `nil`) - The rotation applied to text in a cell
   *   `verticalAlignment` (*type:* `String.t`, *default:* `nil`) - The vertical alignment of the value in the cell.
   *   `wrapStrategy` (*type:* `String.t`, *default:* `nil`) - The wrap strategy for the value in the cell.
