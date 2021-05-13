@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   ## Attributes
 
   *   `id` (*type:* `integer()`, *default:* `nil`) - The id of the parent provenance.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the parent revisions corresponding collection of items (eg. list of entities, properties within entities, etc.)
   *   `revision` (*type:* `integer()`, *default:* `nil`) - The index of the [Document.revisions] identifying the parent revision.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
 
   @type t :: %__MODULE__{
           :id => integer() | nil,
+          :index => integer() | nil,
           :revision => integer() | nil
         }
 
   field(:id)
+  field(:index)
   field(:revision)
 end
 
