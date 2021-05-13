@@ -570,7 +570,8 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:count` (*type:* `integer()`) - The number of IDs to return.
-      *   `:space` (*type:* `String.t`) - The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'.
+      *   `:space` (*type:* `String.t`) - The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'. (Default: 'drive')
+      *   `:type` (*type:* `String.t`) - The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that 'shortcuts' are only supported in the drive 'space'. (Default: 'files')
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -593,7 +594,8 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :count => :query,
-      :space => :query
+      :space => :query,
+      :type => :query
     }
 
     request =
