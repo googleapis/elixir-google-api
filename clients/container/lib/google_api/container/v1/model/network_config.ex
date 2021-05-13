@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
 
   ## Attributes
 
+  *   `datapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation.
   *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
@@ -31,6 +32,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :datapathProvider => String.t() | nil,
           :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
           :enableIntraNodeVisibility => boolean() | nil,
           :network => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :subnetwork => String.t() | nil
         }
 
+  field(:datapathProvider)
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:enableIntraNodeVisibility)
   field(:network)

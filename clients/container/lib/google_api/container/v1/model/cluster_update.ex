@@ -26,6 +26,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
+  *   `desiredDatapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for the cluster.
   *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
           :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
+          :desiredDatapathProvider => String.t() | nil,
           :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
           :desiredImageType => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
@@ -89,6 +91,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
+  field(:desiredDatapathProvider)
   field(:desiredDefaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:desiredImageType)
 
