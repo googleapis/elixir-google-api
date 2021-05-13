@@ -31,6 +31,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed Redis endpoint used by clients to connect to the service.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone for the instance. For STANDARD_HA tier, instances will be created across two zones for protection against zonal failures. If alternative_location_id is also provided, it must be different from location_id.
+  *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenancePolicy.t`, *default:* `nil`) - Optional. The maintenance policy for the instance. If not provided, maintenance events can be performed at any time.
+  *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Date and time of upcoming maintenance events which have been scheduled.
   *   `memorySizeGb` (*type:* `integer()`, *default:* `nil`) - Required. Redis memory size in GiB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details.
   *   `persistenceIamIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation.
@@ -58,6 +60,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
           :host => String.t() | nil,
           :labels => map() | nil,
           :locationId => String.t() | nil,
+          :maintenancePolicy => GoogleApi.Redis.V1beta1.Model.MaintenancePolicy.t() | nil,
+          :maintenanceSchedule => GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t() | nil,
           :memorySizeGb => integer() | nil,
           :name => String.t() | nil,
           :persistenceIamIdentity => String.t() | nil,
@@ -82,6 +86,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   field(:host)
   field(:labels, type: :map)
   field(:locationId)
+  field(:maintenancePolicy, as: GoogleApi.Redis.V1beta1.Model.MaintenancePolicy)
+  field(:maintenanceSchedule, as: GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule)
   field(:memorySizeGb)
   field(:name)
   field(:persistenceIamIdentity)
