@@ -23,13 +23,7 @@ defmodule GoogleApi.Genomics.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [
-      # View and manage your data across Google Cloud Platform services
-      "https://www.googleapis.com/auth/cloud-platform",
-
-      # View and manage Genomics data
-      "https://www.googleapis.com/auth/genomics"
-    ],
+    scopes: [],
     otp_app: :google_api_genomics,
     base_url: "https://genomics.googleapis.com/"
 end
