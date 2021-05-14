@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevisionStatus do
   ## Attributes
 
   *   `errors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError.t)`, *default:* `nil`) - Errors reported when attempting to load this revision.
-  *   `jsonSpec` (*type:* `String.t`, *default:* `nil`) - The json content of the resource revision.
+  *   `jsonSpec` (*type:* `String.t`, *default:* `nil`) - The json content of the resource revision. Large specs should be sent individually via the spec field to avoid hitting request size limits.
   *   `replicas` (*type:* `integer()`, *default:* `nil`) - The number of replicas that have successfully loaded this revision.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - The revision of the resource.
   """
