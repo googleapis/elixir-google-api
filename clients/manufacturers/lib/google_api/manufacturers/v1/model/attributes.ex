@@ -37,7 +37,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `theme` (*type:* `String.t`, *default:* `nil`) - The theme of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#theme.
   *   `productPageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the detail page of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productpage.
   *   `productLine` (*type:* `String.t`, *default:* `nil`) - The name of the group of products related to the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productline.
-  *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The size type of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#sizetype.
+  *   `sizeType` (*type:* `list(String.t)`, *default:* `nil`) - The size type of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#sizetype.
   *   `productDetail` (*type:* `list(GoogleApi.Manufacturers.V1.Model.ProductDetail.t)`, *default:* `nil`) - The details of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productdetail.
   *   `targetClientId` (*type:* `String.t`, *default:* `nil`) - The target client id. Should only be used in the accounts of the data partners.
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#material.
@@ -79,7 +79,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :theme => String.t() | nil,
           :productPageUrl => String.t() | nil,
           :productLine => String.t() | nil,
-          :sizeType => String.t() | nil,
+          :sizeType => list(String.t()) | nil,
           :productDetail => list(GoogleApi.Manufacturers.V1.Model.ProductDetail.t()) | nil,
           :targetClientId => String.t() | nil,
           :material => String.t() | nil,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:theme)
   field(:productPageUrl)
   field(:productLine)
-  field(:sizeType)
+  field(:sizeType, type: :list)
   field(:productDetail, as: GoogleApi.Manufacturers.V1.Model.ProductDetail, type: :list)
   field(:targetClientId)
   field(:material)
