@@ -24,9 +24,10 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `feedId` (*type:* `String.t`, *default:* `nil`) - The Content API feed id.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`delete`" - "`get`" - "`insert`" 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`delete`" - "`get`" - "`insert`" - "`update`" 
   *   `product` (*type:* `GoogleApi.Content.V21.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is `insert`.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is `get` or `delete`.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The list of product attributes to be updated. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
           :merchantId => String.t() | nil,
           :method => String.t() | nil,
           :product => GoogleApi.Content.V21.Model.Product.t() | nil,
-          :productId => String.t() | nil
+          :productId => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:batchId)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
   field(:method)
   field(:product, as: GoogleApi.Content.V21.Model.Product)
   field(:productId)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
