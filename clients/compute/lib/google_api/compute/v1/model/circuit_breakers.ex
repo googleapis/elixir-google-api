@@ -21,11 +21,11 @@ defmodule GoogleApi.Compute.V1.Model.CircuitBreakers do
 
   ## Attributes
 
-  *   `maxConnections` (*type:* `integer()`, *default:* `nil`) - The maximum number of connections to the backend service. If not specified, there is no limit.
-  *   `maxPendingRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
+  *   `maxConnections` (*type:* `integer()`, *default:* `nil`) - Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  *   `maxPendingRequests` (*type:* `integer()`, *default:* `nil`) - Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `maxRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel requests that allowed to the backend service. If not specified, there is no limit.
-  *   `maxRequestsPerConnection` (*type:* `integer()`, *default:* `nil`) - Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
-  *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel retries allowed to the backend cluster. If not specified, the default is 1.
+  *   `maxRequestsPerConnection` (*type:* `integer()`, *default:* `nil`) - Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   """
 
   use GoogleApi.Gax.ModelBase

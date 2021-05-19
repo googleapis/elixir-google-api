@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.BulkInsertInstanceResource do
   @moduledoc """
-
+  A transient resource used in compute.instances.bulkInsert and compute.regionInstances.bulkInsert and compute.regionInstances.recommendLocations. This resource is not persisted anywhere, it is used only for processing the requests.
 
   ## Attributes
 

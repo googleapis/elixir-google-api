@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxiesSetSslCertificatesRequest d
 
   ## Attributes
 
-  *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently exactly one ssl certificate must be specified.
+  *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - New set of URLs to SslCertificate resources to associate with this TargetSslProxy. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
   """
 
   use GoogleApi.Gax.ModelBase

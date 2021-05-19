@@ -23,7 +23,13 @@ defmodule GoogleApi.Compute.V1.Model.ImageRawDisk do
 
   *   `containerType` (*type:* `String.t`, *default:* `nil`) - The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
   *   `sha1Checksum` (*type:* `String.t`, *default:* `nil`) - [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - The full Google Cloud Storage URL where the disk image is stored.
+
+      In order to create an image, you must provide the full or partial URL of one of the following:  
+      - The rawDisk.source URL  
+      - The sourceDisk URL  
+      - The sourceImage URL  
+      - The sourceSnapshot URL
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicyLocation do
 
   ## Attributes
 
-  *   `preference` (*type:* `String.t`, *default:* `nil`) - Preference for a given locaction: ALLOW or DENY.
+  *   `preference` (*type:* `String.t`, *default:* `nil`) - Preference for a given location: ALLOW or DENY.
   """
 
   use GoogleApi.Gax.ModelBase

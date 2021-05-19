@@ -21,6 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
 
   ## Attributes
 
+  *   `externalIpv6` (*type:* `String.t`, *default:* `nil`) - [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+  *   `externalIpv6PrefixLength` (*type:* `integer()`, *default:* `nil`) - [Output Only] The prefix length of the external IPv6 range.
   *   `kind` (*type:* `String.t`, *default:* `compute#accessConfig`) - [Output Only] Type of the resource. Always compute#accessConfig for access configs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
   *   `natIP` (*type:* `String.t`, *default:* `nil`) - An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
@@ -37,6 +39,8 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :externalIpv6 => String.t() | nil,
+          :externalIpv6PrefixLength => integer() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
           :natIP => String.t() | nil,
@@ -46,6 +50,8 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
           :type => String.t() | nil
         }
 
+  field(:externalIpv6)
+  field(:externalIpv6PrefixLength)
   field(:kind)
   field(:name)
   field(:natIP)
