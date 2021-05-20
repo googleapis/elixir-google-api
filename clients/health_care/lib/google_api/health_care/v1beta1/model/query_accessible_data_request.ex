@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.QueryAccessibleDataRequest do
 
   ## Attributes
 
-  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentGcsDestination.t`, *default:* `nil`) - The Cloud Storage destination. The Cloud Healthcare API service account must have the `roles/storage.objectAdmin` Cloud IAM role for this Cloud Storage location.
+  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentGcsDestination.t`, *default:* `nil`) - The Cloud Storage destination. The Cloud Healthcare API service account must have the `roles/storage.objectAdmin` Cloud IAM role for this Cloud Storage location. The object name is in the following format: query-accessible-data-result-{operation_id}.txt where each line contains a single data_id.
   *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
   *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - Optional. The values of resource attributes associated with the type of resources being requested. If no values are specified, then all resource types are included in the output.
   """
