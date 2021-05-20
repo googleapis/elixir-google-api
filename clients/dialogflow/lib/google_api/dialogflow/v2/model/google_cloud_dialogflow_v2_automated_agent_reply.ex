@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AutomatedAgentRep
 
   ## Attributes
 
-  *   `detectIntentResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t`, *default:* `nil`) - Response of the Dialogflow Sessions.DetectIntent call.
+  *   `detectIntentResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t`, *default:* `nil`) - Required. Response of the Dialogflow Sessions.DetectIntent call.
   """
 
   use GoogleApi.Gax.ModelBase
