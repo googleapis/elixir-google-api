@@ -24,6 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotRe
   *   `cpuUsedPercent` (*type:* `float()`, *default:* `nil`) - 
   *   `diskUsage` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t`, *default:* `nil`) - 
   *   `memoryUsage` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t`, *default:* `nil`) - 
+  *   `totalDiskIoStats` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageIOStats.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,6 +36,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotRe
             | nil,
           :memoryUsage =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t()
+            | nil,
+          :totalDiskIoStats =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageIOStats.t()
             | nil
         }
 
@@ -46,6 +50,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotRe
 
   field(:memoryUsage,
     as: GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat
+  )
+
+  field(:totalDiskIoStats,
+    as: GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageIOStats
   )
 end
 
