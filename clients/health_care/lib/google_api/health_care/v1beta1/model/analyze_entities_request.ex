@@ -22,15 +22,18 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesRequest do
   ## Attributes
 
   *   `documentContent` (*type:* `String.t`, *default:* `nil`) - document_content is a document to be annotated.
+  *   `licensedVocabularies` (*type:* `list(String.t)`, *default:* `nil`) - A list of licensed vocabularies to use in the request, in addition to the default unlicensed vocabularies.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentContent => String.t() | nil
+          :documentContent => String.t() | nil,
+          :licensedVocabularies => list(String.t()) | nil
         }
 
   field(:documentContent)
+  field(:licensedVocabularies, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesRequest do
