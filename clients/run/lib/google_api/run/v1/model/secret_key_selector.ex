@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.SecretKeySelector do
   @moduledoc """
-  Cloud Run fully managed: not supported Cloud Run for Anthos: supported SecretKeySelector selects a key of a Secret.
+  Cloud Run fully managed: supported Cloud Run for Anthos: supported SecretKeySelector selects a key of a Secret.
 
   ## Attributes
 
