@@ -21,19 +21,25 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Namespace do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the namespace was created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels associated with this namespace. No more than 64 user labels can be associated with a given resource. Label keys and values can be no longer than 63 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the namespace was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t() | nil,
           :labels => map() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
+  field(:createTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceDirectory.V1beta1.Model.Namespace do
