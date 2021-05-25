@@ -1558,6 +1558,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger's name. - `display_name`: corresponds to JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
       *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by a server.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls.
+      *   `:type` (*type:* `String.t`) - The type of jobs. Will use `DlpJobType.INSPECT` if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1587,7 +1588,8 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       :locationId => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :type => :query
     }
 
     request =
@@ -3551,6 +3553,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger's name. - `display_name`: corresponds to JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
       *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by a server.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls.
+      *   `:type` (*type:* `String.t`) - The type of jobs. Will use `DlpJobType.INSPECT` if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3590,7 +3593,8 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       :locationId => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :type => :query
     }
 
     request =
