@@ -39,6 +39,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   *   `householdIncomeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeTargetingOptionDetails.t`, *default:* `nil`) - Household income details.
   *   `languageDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.LanguageTargetingOptionDetails.t`, *default:* `nil`) - Language resource details.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this targeting option.
+  *   `nativeContentPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails.t`, *default:* `nil`) - Native content position details.
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t`, *default:* `nil`) - On screen position details.
   *   `operatingSystemDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails.t`, *default:* `nil`) - Operating system resources details.
   *   `parentalStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t`, *default:* `nil`) - Parental status details.
@@ -91,6 +92,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
           :languageDetails =>
             GoogleApi.DisplayVideo.V1.Model.LanguageTargetingOptionDetails.t() | nil,
           :name => String.t() | nil,
+          :nativeContentPositionDetails =>
+            GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails.t() | nil,
           :onScreenPositionDetails =>
             GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t() | nil,
           :operatingSystemDetails =>
@@ -157,6 +160,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
 
   field(:languageDetails, as: GoogleApi.DisplayVideo.V1.Model.LanguageTargetingOptionDetails)
   field(:name)
+
+  field(:nativeContentPositionDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails
+  )
 
   field(:onScreenPositionDetails,
     as: GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails
