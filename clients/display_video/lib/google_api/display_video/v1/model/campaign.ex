@@ -22,6 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the campaign belongs to.
+  *   `campaignBudgets` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CampaignBudget.t)`, *default:* `nil`) - The list of budgets available to this campaign. Setting no budget gives an unlimited campaign budget.
   *   `campaignFlight` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t`, *default:* `nil`) - Required. The planned spend and duration of the campaign.
   *   `campaignGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t`, *default:* `nil`) - Required. The goal of the campaign.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the campaign. Assigned by the system.
@@ -36,6 +37,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
 
   @type t :: %__MODULE__{
           :advertiserId => String.t() | nil,
+          :campaignBudgets => list(GoogleApi.DisplayVideo.V1.Model.CampaignBudget.t()) | nil,
           :campaignFlight => GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t() | nil,
           :campaignGoal => GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t() | nil,
           :campaignId => String.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
         }
 
   field(:advertiserId)
+  field(:campaignBudgets, as: GoogleApi.DisplayVideo.V1.Model.CampaignBudget, type: :list)
   field(:campaignFlight, as: GoogleApi.DisplayVideo.V1.Model.CampaignFlight)
   field(:campaignGoal, as: GoogleApi.DisplayVideo.V1.Model.CampaignGoal)
   field(:campaignId)

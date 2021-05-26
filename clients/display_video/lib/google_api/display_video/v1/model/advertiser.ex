@@ -31,6 +31,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
   *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t`, *default:* `nil`) - Integration details of the advertiser. Only integrationCode is currently applicable to advertiser. Other fields of IntegrationDetails are not supported and will be ignored if provided.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the advertiser.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the partner that the advertiser belongs to.
+  *   `prismaEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether integration with Mediaocean (Prisma) is enabled. By enabling this: On behalf of my company, I authorize Mediaocean (Prisma) to send budget segment plans to Google, and I authorize Google to send corresponding reporting and invoices from DV360 to Mediaocean for the purposes of budget planning, billing, and reconciliation for this advertiser.
   *   `servingConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t`, *default:* `nil`) - Targeting settings related to ad serving of the advertiser.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the advertiser was last updated. Assigned by the system.
   """
@@ -49,6 +50,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
           :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t() | nil,
           :name => String.t() | nil,
           :partnerId => String.t() | nil,
+          :prismaEnabled => boolean() | nil,
           :servingConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -63,6 +65,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
   field(:integrationDetails, as: GoogleApi.DisplayVideo.V1.Model.IntegrationDetails)
   field(:name)
   field(:partnerId)
+  field(:prismaEnabled)
   field(:servingConfig, as: GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig)
   field(:updateTime, as: DateTime)
 end
