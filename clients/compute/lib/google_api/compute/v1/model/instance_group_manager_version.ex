@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the version. Unique among all versions in the scope of this managed instance group.
   *   `targetSize` (*type:* `GoogleApi.Compute.V1.Model.FixedOrPercent.t`, *default:* `nil`) - Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:  
       - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. 
-      - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+      - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
   """
 
   use GoogleApi.Gax.ModelBase
