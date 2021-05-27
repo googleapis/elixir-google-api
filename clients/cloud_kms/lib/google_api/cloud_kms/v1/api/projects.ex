@@ -1444,7 +1444,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on an asymmetric key.
+  Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on a key whose purpose is not ENCRYPT_DECRYPT.
 
   ## Parameters
 
