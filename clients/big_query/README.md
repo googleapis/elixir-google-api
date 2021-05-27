@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_big_query, "~> 0.62"}]
+  [{:google_api_big_query, "~> 0.63"}]
 end
 ```
 
