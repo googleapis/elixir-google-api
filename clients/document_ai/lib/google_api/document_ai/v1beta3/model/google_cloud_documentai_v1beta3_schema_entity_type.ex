@@ -23,7 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3SchemaE
 
   *   `baseType` (*type:* `String.t`, *default:* `nil`) - Type of the entity. It must be one of the following: `document` - the entity represents a classification of a logical document. `object` - if the entity has properties it is likely an object (or or a document.) `datetime` - the entity is a date or time value. `money` - the entity represents a money value amount. `number` - the entity is a number - integer or floating point. `string` - the entity is a string value. `boolean` - the entity is a boolean value. `address` - the entity is a location address.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the entity type.
-  *   `enumValues` (*type:* `list(String.t)`, *default:* `nil`) - For some entity types there are only a few possible values. They can be specified here.
+  *   `enumValues` (*type:* `list(String.t)`, *default:* `nil`) - If specified, lists all the possible values for this entity.
   *   `occurrenceType` (*type:* `String.t`, *default:* `nil`) - Occurrence type limits the number of times an entity type appears in the document.
   *   `properties` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3SchemaEntityType.t)`, *default:* `nil`) - Describing the nested structure of an entity. An EntityType may consist of several other EntityTypes. For example, in a document there can be an EntityType 'ID', which consists of EntityType 'name' and 'address', with corresponding attributes, such as TEXT for both types and ONCE for occurrence types.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Source of this entity type.
