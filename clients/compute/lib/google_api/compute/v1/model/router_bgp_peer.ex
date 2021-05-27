@@ -27,6 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
       - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
   *   `advertisedIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t)`, *default:* `nil`) - User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
   *   `advertisedRoutePriority` (*type:* `integer()`, *default:* `nil`) - The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+  *   `enable` (*type:* `String.t`, *default:* `nil`) - The status of the BGP peer connection.
+      If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
   *   `interfaceName` (*type:* `String.t`, *default:* `nil`) - Name of the interface the BGP peer is associated with.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
   *   `managementType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource that configures and manages this BGP peer. 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
           :advertisedIpRanges =>
             list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()) | nil,
           :advertisedRoutePriority => integer() | nil,
+          :enable => String.t() | nil,
           :interfaceName => String.t() | nil,
           :ipAddress => String.t() | nil,
           :managementType => String.t() | nil,
@@ -57,6 +60,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   field(:advertisedGroups, type: :list)
   field(:advertisedIpRanges, as: GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange, type: :list)
   field(:advertisedRoutePriority)
+  field(:enable)
   field(:interfaceName)
   field(:ipAddress)
   field(:managementType)

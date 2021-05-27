@@ -35,7 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   *   `network` (*type:* `String.t`, *default:* `nil`) - URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the VPN gateway resides.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `vpnInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t)`, *default:* `nil`) - A list of interfaces on this VPN gateway.
+  *   `vpnInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t)`, *default:* `nil`) - The list of VPN interfaces associated with this VPN gateway.
   """
 
   use GoogleApi.Gax.ModelBase
