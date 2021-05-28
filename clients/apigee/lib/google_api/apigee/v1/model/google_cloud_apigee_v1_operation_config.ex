@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
   @moduledoc """
-  OperationConfig binds the resources in a proxy or remote service with the allowed REST methods and its associated quota enforcement.
+  Binds the resources in an API proxy or remote service with the allowed REST methods and associated quota enforcement.
 
   ## Attributes
 
-  *   `apiSource` (*type:* `String.t`, *default:* `nil`) - Required. API proxy or remote service name with which the resources, methods, and quota are associated.
+  *   `apiSource` (*type:* `String.t`, *default:* `nil`) - Required. Name of the API proxy or remote service with which the resources, methods, and quota are associated.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - Custom attributes associated with the operation.
-  *   `operations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t)`, *default:* `nil`) - List of resource/method pairs for the proxy/remote service, upon which quota will applied. **Note**: Currently, you can specify only a single resource/method pair. The call will fail if more than one resource/method pair is provided.
-  *   `quota` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t`, *default:* `nil`) - Quota parameters to be enforced for the resources, methods, api_source combination. If none are specified, quota enforcement will not be done.
+  *   `operations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t)`, *default:* `nil`) - List of resource/method pairs for the API proxy or remote service to which quota will applied. **Note**: Currently, you can specify only a single resource/method pair. The call will fail if more than one resource/method pair is provided.
+  *   `quota` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t`, *default:* `nil`) - Quota parameters to be enforced for the resources, methods, and API source combination. If none are specified, quota enforcement will not be done.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation do
   @moduledoc """
-  Operation represents the pairing of REST resource path and the actions (verbs) allowed on the resource path.
+  Represents the pairing of REST resource path and the actions (verbs) allowed on the resource path.
 
   ## Attributes
 
   *   `methods` (*type:* `list(String.t)`, *default:* `nil`) - methods refers to the REST verbs as in https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html. When none specified, all verb types are allowed.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - Required. resource represents REST resource path associated with the proxy/remote service.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - Required. REST resource path associated with the API proxy or remote service.
   """
 
   use GoogleApi.Gax.ModelBase

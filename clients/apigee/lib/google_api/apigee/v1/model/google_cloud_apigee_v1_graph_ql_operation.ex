@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperation do
   @moduledoc """
-  GraphQLOperation represents the pairing of graphQL operation types and the graphQL operation name.
+  Represents the pairing of GraphQL operation types and the GraphQL operation name.
 
   ## Attributes
 
-  *   `operation` (*type:* `String.t`, *default:* `nil`) - GraphQL operation name, along with operation type which will be used to associate quotas with. If no name is specified, the quota will be applied to all graphQL operations irrespective of their operation names in the payload.
-  *   `operationTypes` (*type:* `list(String.t)`, *default:* `nil`) - Required. `query`, `mutation` and `subscription` are the three operation types offered by graphQL. Currently we support only `query` and `mutation`.
+  *   `operation` (*type:* `String.t`, *default:* `nil`) - GraphQL operation name. The name and operation type will be used to apply quotas. If no name is specified, the quota will be applied to all GraphQL operations irrespective of their operation names in the payload.
+  *   `operationTypes` (*type:* `list(String.t)`, *default:* `nil`) - Required. GraphQL operation types. Valid values include `query` or `mutation`. **Note**: Apigee does not currently support `subscription` types.
   """
 
   use GoogleApi.Gax.ModelBase
