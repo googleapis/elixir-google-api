@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
 
   ## Attributes
 
-  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - The form action data associated with an interactive card that was clicked. Only populated for CARD_CLICKED events. See the [Interactive Cards guide](/hangouts/chat/how-tos/cards-onclick) for more information.
-  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the bot should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/hangouts/chat/how-tos/auth-3p) for more information.
+  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - The form action data associated with an interactive card that was clicked. Only populated for CARD_CLICKED events. See the [Interactive Cards guide](/chat/how-tos/cards-onclick) for more information.
+  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the bot should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/chat/how-tos/auth-3p) for more information.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event was dispatched.
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The room or DM in which the event occurred.
