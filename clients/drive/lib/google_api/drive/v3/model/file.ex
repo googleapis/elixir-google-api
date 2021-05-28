@@ -58,7 +58,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
   *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
   *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.
-  *   `owners` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives.
+  *   `owners` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - The owner of this file. Only certain legacy files may have more than one owner. This field isn't populated for items in shared drives.
   *   `driveId` (*type:* `String.t`, *default:* `nil`) - ID of the shared drive the file resides in. Only populated for items in shared drives.
   *   `parents` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the parent folders which contain the file.
       If not specified as part of a create request, the file will be placed directly in the user's My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list.
