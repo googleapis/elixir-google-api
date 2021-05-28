@@ -21,7 +21,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
 
   ## Attributes
 
-  *   `awsAccessKey` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t`, *default:* `nil`) - Required. Input only. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials).
+  *   `awsAccessKey` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t`, *default:* `nil`) - Input only. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials).
   *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. S3 Bucket name (see [Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
   *   `path` (*type:* `String.t`, *default:* `nil`) - Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
   """
