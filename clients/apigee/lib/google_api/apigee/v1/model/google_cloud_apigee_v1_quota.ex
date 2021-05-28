@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota do
   @moduledoc """
-  Quota contains the essential parameters needed that can be applied on a proxy/remote service, resources and methods combination associated with this API product. While setting of Quota is optional, setting it prevents requests from exceeding the provisioned parameters.
+  Quota contains the essential parameters needed that can be applied on the resources, methods, API source combination associated with this API product. While Quota is optional, setting it prevents requests from exceeding the provisioned parameters.
 
   ## Attributes
 

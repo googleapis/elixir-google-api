@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperationGroup do
 
   ## Attributes
 
-  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Flag that specifes whether the configuration is for Apigee API proxy or a remote service. Valid values are `proxy` or `remoteservice`. Defaults to `proxy`. Set to `proxy` when Apigee API proxies are associated with the API product. Set to `remoteservice` when non-Apigee proxies like Istio-Envoy are associated with the API product.
+  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Flag that specifies whether the configuration is for Apigee API proxy or a remote service. Valid values include `proxy` or `remoteservice`. Defaults to `proxy`. Set to `proxy` when Apigee API proxies are associated with the API product. Set to `remoteservice` when non-Apigee proxies like Istio-Envoy are associated with the API product.
   *   `operationConfigs` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperationConfig.t)`, *default:* `nil`) - Required. List of operation configurations for either Apigee API proxies or other remote services that are associated with this API product.
   """
 

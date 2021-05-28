@@ -1131,7 +1131,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an API product in an organization. You create API products after you have proxied backend services using API proxies. An API product is a collection of API resources combined with quota settings and metadata that you can use to deliver customized and productized API bundles to your developer community. This metadata can include: - Scope - Environments - API proxies - Extensible profile API products enable you repackage APIs on-the-fly, without having to do any additional coding or configuration. Apigee recommends that you start with a simple API product including only required elements. You then provision credentials to apps to enable them to start testing your APIs. After you have authentication and authorization working against a simple API product, you can iterate to create finer grained API products, defining different sets of API resources for each API product. **WARNING:** - If you don't specify an API proxy in the request body, *any* app associated with the product can make calls to *any* API in your entire organization. - If you don't specify an environment in the request body, the product allows access to all environments. For more information, see What is an API product?
+  Creates an API product in an organization. You create API products after you have proxied backend services using API proxies. An API product is a collection of API resources combined with quota settings and metadata that you can use to deliver customized and productized API bundles to your developer community. This metadata can include: - Scope - Environments - API proxies - Extensible profile API products enable you repackage APIs on the fly, without having to do any additional coding or configuration. Apigee recommends that you start with a simple API product including only required elements. You then provision credentials to apps to enable them to start testing your APIs. After you have authentication and authorization working against a simple API product, you can iterate to create finer-grained API products, defining different sets of API resources for each API product. **WARNING:** - If you don't specify an API proxy in the request body, *any* app associated with the product can make calls to *any* API in your entire organization. - If you don't specify an environment in the request body, the product allows access to all environments. For more information, see What is an API product?
 
   ## Parameters
 
@@ -1334,7 +1334,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The limit on the number of API products returned by the API is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters.
+  Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The maximum number of API products returned is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters.
 
   ## Parameters
 
@@ -1411,7 +1411,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing API product. You must include all required values, whether or not you are updating them, as well as any optional values that you are updating. The API product name required in the request URL is the internal name of the product, not the Display Name. While they may be the same, it depends on whether the API product was created via UI or API. View the list of API products to identify their internal names.
+  Updates an existing API product. You must include all required values, whether or not you are updating them, as well as any optional values that you are updating. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via UI or API. View the list of API products to identify their internal names.
 
   ## Parameters
 
@@ -4781,7 +4781,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
+  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
 
   ## Parameters
 
@@ -4927,7 +4927,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Returns details for a consumer key for a developer app, including the key and secret value, associated API products, and other information.
+  Gets details for a consumer key for a developer app, including the key and secret value, associated API products, and other information.
 
   ## Parameters
 
@@ -5221,7 +5221,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Approve or revoke an app's consumer key. After a consumer key is approved, the app can use it to access APIs. A consumer key that is revoked or pending cannot be used to access an API. Any access tokens associated with a revoked consumer key will remain active. However, Apigee hybrid checks the status of the consumer key and if set to `revoked` will not allow access to the API.
+  Approves or revokes the consumer key for an API product. After a consumer key is approved, the app can use it to access APIs. A consumer key that is revoked or pending cannot be used to access an API. Any access tokens associated with a revoked consumer key will remain active. However, Apigee checks the status of the consumer key and if set to `revoked` will not allow access to the API.
 
   ## Parameters
 
@@ -5293,7 +5293,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
+  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
 
   ## Parameters
 
@@ -8051,6 +8051,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:override` (*type:* `boolean()`) - Flag that specifies whether the new deployment replaces other deployed revisions of the API proxy in the environment. Set `override` to `true` to replace other deployed revisions. By default, `override` is `false` and the deployment is rejected if other revisions of the API proxy are deployed in the environment.
       *   `:sequencedRollout` (*type:* `boolean()`) - Flag that specifies whether to enable sequenced rollout. If set to `true`, a best-effort attempt will be made to roll out the routing rules corresponding to this deployment and the environment changes to add this deployment in a safe order. This reduces the risk of downtime that could be caused by changing the environment group's routing before the new destination for the affected traffic is ready to receive it. This should only be necessary if the new deployment will be capturing traffic from another environment under a shared environment group or if traffic will be rerouted to a different environment due to a base path removal. The [GenerateDeployChangeReport API](GenerateDeployChangeReport) may be used to examine routing changes before issuing the deployment request, and its response will indicate if a sequenced rollout is recommended for the deployment.
+      *   `:serviceAccount` (*type:* `String.t`) - Google Cloud IAM service account. The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be `{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -8087,7 +8088,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :uploadType => :query,
       :upload_protocol => :query,
       :override => :query,
-      :sequencedRollout => :query
+      :sequencedRollout => :query,
+      :serviceAccount => :query
     }
 
     request =
@@ -11172,6 +11174,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:override` (*type:* `boolean()`) - Flag that specifies whether the new deployment replaces other deployed revisions of the shared flow in the environment. Set `override` to `true` to replace other deployed revisions. By default, `override` is `false` and the deployment is rejected if other revisions of the shared flow are deployed in the environment.
+      *   `:serviceAccount` (*type:* `String.t`) - Google Cloud IAM service account. The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be `{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -11207,7 +11210,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :override => :query
+      :override => :query,
+      :serviceAccount => :query
     }
 
     request =
