@@ -26,6 +26,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
   *   `connectionId` (*type:* `String.t`, *default:* `nil`) - [Optional, Trusted Tester] Connection for external data source.
   *   `csvOptions` (*type:* `GoogleApi.BigQuery.V2.Model.CsvOptions.t`, *default:* `nil`) - Additional properties to set if sourceFormat is set to CSV.
+  *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - [Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is ["NUMERIC", "BIGNUMERIC"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to ["NUMERIC", "STRING"] for ORC and ["NUMERIC"] for the other file formats.
   *   `googleSheetsOptions` (*type:* `GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t`, *default:* `nil`) - [Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS.
   *   `hivePartitioningOptions` (*type:* `GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t`, *default:* `nil`) - [Optional] Options to configure hive partitioning support.
   *   `ignoreUnknownValues` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored.
@@ -44,6 +45,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :compression => String.t() | nil,
           :connectionId => String.t() | nil,
           :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t() | nil,
+          :decimalTargetTypes => list(String.t()) | nil,
           :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t() | nil,
           :hivePartitioningOptions =>
             GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:compression)
   field(:connectionId)
   field(:csvOptions, as: GoogleApi.BigQuery.V2.Model.CsvOptions)
+  field(:decimalTargetTypes, type: :list)
   field(:googleSheetsOptions, as: GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions)
   field(:hivePartitioningOptions, as: GoogleApi.BigQuery.V2.Model.HivePartitioningOptions)
   field(:ignoreUnknownValues)

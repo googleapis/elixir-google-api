@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.SnapshotDefinition do
 
   ## Attributes
 
-  *   `baseTableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of the table that is snapshotted.
-  *   `snapshotTime` (*type:* `DateTime.t`, *default:* `nil`) - [Required] The time at which the base table was snapshot.
+  *   `baseTableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of the table that was snapshot.
+  *   `snapshotTime` (*type:* `DateTime.t`, *default:* `nil`) - [Required] The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format.
   """
 
   use GoogleApi.Gax.ModelBase

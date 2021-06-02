@@ -30,6 +30,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `ddlTargetRoutine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - The DDL target routine. Present only for CREATE/DROP FUNCTION/PROCEDURE queries.
   *   `ddlTargetRowAccessPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - [Output-only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries.
   *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
+  *   `dmlStats` (*type:* `any()`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
   *   `estimatedBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] The original estimate of bytes processed for the job.
   *   `modelTraining` (*type:* `GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t`, *default:* `nil`) - [Output-only, Beta] Information about create model query job progress.
   *   `modelTrainingCurrentIteration` (*type:* `integer()`, *default:* `nil`) - [Output-only, Beta] Deprecated; do not use.
@@ -63,6 +64,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :ddlTargetRowAccessPolicy =>
             GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t() | nil,
           :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :dmlStats => any() | nil,
           :estimatedBytesProcessed => String.t() | nil,
           :modelTraining => GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t() | nil,
           :modelTrainingCurrentIteration => integer() | nil,
@@ -93,6 +95,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:ddlTargetRoutine, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
   field(:ddlTargetRowAccessPolicy, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
   field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:dmlStats)
   field(:estimatedBytesProcessed)
   field(:modelTraining, as: GoogleApi.BigQuery.V2.Model.BigQueryModelTraining)
   field(:modelTrainingCurrentIteration)
