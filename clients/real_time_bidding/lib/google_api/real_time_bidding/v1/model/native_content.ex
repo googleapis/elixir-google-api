@@ -33,6 +33,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.NativeContent do
   *   `priceDisplayText` (*type:* `String.t`, *default:* `nil`) - The price of the promoted app including currency info.
   *   `starRating` (*type:* `float()`, *default:* `nil`) - The app rating in the app store. Must be in the range [0-5].
   *   `videoUrl` (*type:* `String.t`, *default:* `nil`) - The URL to fetch a native video ad.
+  *   `videoVastXml` (*type:* `String.t`, *default:* `nil`) - The contents of a VAST document for a native video ad.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.NativeContent do
           :logo => GoogleApi.RealTimeBidding.V1.Model.Image.t() | nil,
           :priceDisplayText => String.t() | nil,
           :starRating => float() | nil,
-          :videoUrl => String.t() | nil
+          :videoUrl => String.t() | nil,
+          :videoVastXml => String.t() | nil
         }
 
   field(:advertiserName)
@@ -64,6 +66,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.NativeContent do
   field(:priceDisplayText)
   field(:starRating)
   field(:videoUrl)
+  field(:videoVastXml)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.RealTimeBidding.V1.Model.NativeContent do

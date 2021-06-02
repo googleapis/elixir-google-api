@@ -20,7 +20,7 @@ defmodule GoogleApi.RealTimeBidding.V1 do
   API client metadata for GoogleApi.RealTimeBidding.V1.
   """
 
-  @discovery_revision "20210311"
+  @discovery_revision "20210529"
 
   def discovery_revision(), do: @discovery_revision
 end
