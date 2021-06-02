@@ -58,7 +58,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.User do
   *   `nonEditableAliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of the user's non-editable alias email addresses. These are typically outside the account's primary domain or sub-domain.
   *   `emails` (*type:* `any()`, *default:* `nil`) - A list of the user's email addresses. The maximum allowed data size for this field is 10Kb.
   *   `isAdmin` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates a user with super admininistrator privileges. The `isAdmin` property can only be edited in the [Make a user an administrator](/admin-sdk/directory/v1/guides/manage-users.html#make_admin) operation ( [makeAdmin](/admin-sdk/directory/v1/reference/users/makeAdmin.html) method). If edited in the user [insert](/admin-sdk/directory/v1/reference/users/insert.html) or [update](/admin-sdk/directory/v1/reference/users/update.html) methods, the edit is ignored by the API service.
-  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of the user's alias email addresses.
+  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A list of the user's alias email addresses.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the user. A user `id` can be used as a user request URI's `userKey`.
   *   `isEnforcedIn2Sv` (*type:* `boolean()`, *default:* `nil`) - Output only. Is 2-step verification enforced (Read-only)
   *   `thumbnailPhotoUrl` (*type:* `String.t`, *default:* `nil`) - Output only. Photo Url of the user (Read-only)
