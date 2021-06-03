@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
 
   ## Attributes
 
+  *   `featuredPart` (*type:* `boolean()`, *default:* `nil`) - 
   *   `gaia` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t`, *default:* `nil`) - 
@@ -29,11 +30,13 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :featuredPart => boolean() | nil,
           :gaia => String.t() | nil,
           :id => String.t() | nil,
           :snippet => GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t() | nil
         }
 
+  field(:featuredPart)
   field(:gaia)
   field(:id)
   field(:snippet, as: GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet)
