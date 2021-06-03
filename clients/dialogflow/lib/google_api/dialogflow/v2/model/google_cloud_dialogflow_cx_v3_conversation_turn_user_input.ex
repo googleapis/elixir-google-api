@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTur
 
   ## Attributes
 
+  *   `enableSentimentAnalysis` (*type:* `boolean()`, *default:* `nil`) - Whether sentiment analysis is enabled.
   *   `injectedParameters` (*type:* `map()`, *default:* `nil`) - Parameters that need to be injected into the conversation during intent detection.
   *   `input` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3QueryInput.t`, *default:* `nil`) - Supports text input, event input, dtmf input in the test case.
   *   `isWebhookEnabled` (*type:* `boolean()`, *default:* `nil`) - If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ConversationTur
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enableSentimentAnalysis => boolean() | nil,
           :injectedParameters => map() | nil,
           :input => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3QueryInput.t() | nil,
           :isWebhookEnabled => boolean() | nil
         }
 
+  field(:enableSentimentAnalysis)
   field(:injectedParameters, type: :map)
   field(:input, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3QueryInput)
   field(:isWebhookEnabled)
