@@ -3016,12 +3016,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Create a new table by restoring from a completed backup. The new table must be in the same instance as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.
+  Create a new table by restoring from a completed backup. The new table must be in the same project as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored table. This instance must be the parent of the source backup. Values are of the form `projects//instances/`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored table. This instance must be in the same project as the source backup. Values are of the form `projects//instances/`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
