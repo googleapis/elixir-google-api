@@ -21,6 +21,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalSetPolicyRequest do
 
   ## Attributes
 
+  *   `disableNotification` (*type:* `boolean()`, *default:* `nil`) - Optional. Set the field as true when we would like to disable the onboarding notification.
   *   `policy` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy.t`, *default:* `nil`) - Required. The policy to be applied to the `resource`.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - Required. The resource for which the policy is being specified. This policy replaces any existing policy.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalSetPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disableNotification => boolean() | nil,
           :policy => GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy.t() | nil,
           :resource => String.t() | nil
         }
 
+  field(:disableNotification)
   field(:policy, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy)
   field(:resource)
 end
