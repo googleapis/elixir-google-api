@@ -45,7 +45,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:groupFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
       *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if not set, which will return zero members.
-      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the contact groups to get.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the contact groups to get. There is a maximum of 200 resource names.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
