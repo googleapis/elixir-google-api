@@ -21,15 +21,15 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CampaignBudget do
 
   ## Attributes
 
-  *   `budgetAmountMicros` (*type:* `String.t`, *default:* `nil`) - Required. The budget amount the insertion order will spend for the given date_range. The amount is in micros. Must be greater than 0. For example, 500000000 represents 500 standard units of the currency.
-  *   `budgetId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the campaign budget. If not included, budget is assumed to be new.
-  *   `budgetUnit` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The budget unit specifies whether the budget is currency based or impression based.
-  *   `dateRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.DateRange.t`, *default:* `nil`) - Required. The flight start and end time settings of the segment. Both `start_date` and `end_date` must be before the year 2037.
+  *   `budgetAmountMicros` (*type:* `String.t`, *default:* `nil`) - Required. The total amount the linked insertion order segments can budget. The amount is in micros. Must be greater than 0. For example, 500000000 represents 500 standard units of the currency.
+  *   `budgetId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the campaign budget. Assigned by the system. Do not set for new budgets. Must be included when updating or adding budgets to campaign_budgets. Otherwise, a new ID will be generated and assigned.
+  *   `budgetUnit` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Specifies whether the budget is measured in currency or impressions.
+  *   `dateRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.DateRange.t`, *default:* `nil`) - Required. The date range for the campaign budget. Linked budget segments may have a different date range. They are resolved relative to the parent advertiser's time zone. Both `start_date` and `end_date` must be before the year 2037.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the budget. Must be UTF-8 encoded with a maximum size of 240 bytes.
-  *   `externalBudgetId` (*type:* `String.t`, *default:* `nil`) - Immutable. Must be unique under the campaign. If set, all impressions served against this budget will include this ID on the invoice if the customer has opted into budget-segment-level billing.
-  *   `externalBudgetSource` (*type:* `String.t`, *default:* `nil`) - Required. The external source of the budget segment.
-  *   `invoiceGroupingId` (*type:* `String.t`, *default:* `nil`) - Immutable. If set, all external_budget_id sharing the same invoice_grouping_id will include this ID on the invoice if the customer has opted into budget-segment-level billing.
-  *   `prismaConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaConfig.t`, *default:* `nil`) - Required for MediaOcean budgets. Additional metadata set by the MediaOcean Prisma tool.
+  *   `externalBudgetId` (*type:* `String.t`, *default:* `nil`) - Immutable. The ID identifying this budget to the external source. If this field is set and the invoice detail level of the corresponding billing profile is set to "Budget level PO", all impressions served against this budget will include this ID on the invoice. Must be unique under the campaign.
+  *   `externalBudgetSource` (*type:* `String.t`, *default:* `nil`) - Required. The external source of the budget.
+  *   `invoiceGroupingId` (*type:* `String.t`, *default:* `nil`) - Immutable. The ID used to group budgets to be included the same invoice. If this field is set and the invoice level of the corresponding billing profile is set to "Budget invoice grouping ID", all external_budget_id sharing the same invoice_grouping_id will be grouped in the same invoice.
+  *   `prismaConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaConfig.t`, *default:* `nil`) - Additional metadata for use by the Mediaocean Prisma tool. Required for Mediaocean budgets. Only applicable to prisma_enabled advertisers.
   """
 
   use GoogleApi.Gax.ModelBase

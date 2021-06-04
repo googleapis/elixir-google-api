@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListInvoicesResponse do
   @moduledoc """
-  Response message for InvoiceService.ListInvoices.
+
 
   ## Attributes
 
   *   `invoices` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Invoice.t)`, *default:* `nil`) - The list of invoices. This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the [ListInvoicesRequest.page_token] field in the subsequent call to `ListInvoices` method to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListInvoices` method to retrieve the next page of results. This token will be absent if there are no more invoices to return.
   """
 
   use GoogleApi.Gax.ModelBase

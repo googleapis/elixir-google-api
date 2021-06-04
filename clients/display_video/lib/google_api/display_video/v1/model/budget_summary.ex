@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BudgetSummary do
   @moduledoc """
-  Represents a summarized budget information associated with this invoice.
+  Summarized information of an individual campaign budget.
 
   ## Attributes
 
-  *   `externalBudgetId` (*type:* `String.t`, *default:* `nil`) - Output only. External budget id.
-  *   `preTaxAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The pre-tax amount for this budget, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
-  *   `prismaCpeCode` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaCpeCode.t`, *default:* `nil`) - Output only. Codes specific to the MediaOcean Prisma tool.
-  *   `taxAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The tax amount for this budget, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
-  *   `totalAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The total amount of charges for this budget, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
+  *   `externalBudgetId` (*type:* `String.t`, *default:* `nil`) - Corresponds to the external_budget_id of a campaign budget. If the value is not set in the campaign budget, this field will be empty.
+  *   `preTaxAmountMicros` (*type:* `String.t`, *default:* `nil`) - The sum of charges made under this budget before taxes, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
+  *   `prismaCpeCode` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaCpeCode.t`, *default:* `nil`) - Relevant client, product, and estimate codes from the Mediaocean Prisma tool. Only applicable for campaign budgets with an external_budget_source of EXTERNAL_BUDGET_SOURCE_MEDIA_OCEAN.
+  *   `taxAmountMicros` (*type:* `String.t`, *default:* `nil`) - The amount of tax applied to charges under this budget, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
+  *   `totalAmountMicros` (*type:* `String.t`, *default:* `nil`) - The total sum of charges made under this budget, including tax, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
   """
 
   use GoogleApi.Gax.ModelBase

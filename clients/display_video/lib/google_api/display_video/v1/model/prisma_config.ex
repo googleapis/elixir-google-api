@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.PrismaConfig do
   @moduledoc """
-  Settings specific to the MediaOcean Prisma tool.
+  Settings specific to the Mediaocean Prisma tool.
 
   ## Attributes
 
-  *   `prismaCpeCode` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaCpeCode.t`, *default:* `nil`) - Required. Google Payments Center supports searching and filtering on this code.
+  *   `prismaCpeCode` (*type:* `GoogleApi.DisplayVideo.V1.Model.PrismaCpeCode.t`, *default:* `nil`) - Required. Relevant client, product, and estimate codes from the Mediaocean Prisma tool.
   *   `prismaType` (*type:* `String.t`, *default:* `nil`) - Required. The Prisma type.
   *   `supplier` (*type:* `String.t`, *default:* `nil`) - Required. The entity allocated this budget (DSP, site, etc.).
   """

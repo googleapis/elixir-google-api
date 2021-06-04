@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.LookupInvoiceCurrencyResponse do
   @moduledoc """
-  Response message for InvoiceService.LookupInvoiceCurrency.
+
 
   ## Attributes
 
-  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Output only. Invoice currency code in ISO 4217 format.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency used by the advertiser in ISO 4217 format.
   """
 
   use GoogleApi.Gax.ModelBase

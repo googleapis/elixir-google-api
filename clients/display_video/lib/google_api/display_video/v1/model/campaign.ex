@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the campaign belongs to.
-  *   `campaignBudgets` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CampaignBudget.t)`, *default:* `nil`) - The list of budgets available to this campaign. Setting no budget gives an unlimited campaign budget.
+  *   `campaignBudgets` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CampaignBudget.t)`, *default:* `nil`) - The list of budgets available to this campaign. If this field is not set, the campaign uses an unlimited budget.
   *   `campaignFlight` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t`, *default:* `nil`) - Required. The planned spend and duration of the campaign.
   *   `campaignGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t`, *default:* `nil`) - Required. The goal of the campaign.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the campaign. Assigned by the system.
