@@ -17,30 +17,30 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.Invoice do
   @moduledoc """
-  A single Invoice.
+  A single invoice.
 
   ## Attributes
 
-  *   `budgetInvoiceGroupingId` (*type:* `String.t`, *default:* `nil`) - Output only. Budget invoice grouping ID associated with the budget segment in the insertion order.
-  *   `budgetSummaries` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.BudgetSummary.t)`, *default:* `nil`) - Output only. The list of summarized budget information associated with this invoice.
-  *   `correctedInvoiceId` (*type:* `String.t`, *default:* `nil`) - Output only. The originally issued invoice that is being adjusted by this invoice, if applicable. If there is a corrected invoice, the replaced_invoice_ids field will be empty. May appear on invoice PDF as `Reference invoice number`.
-  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Output only. Invoice currency code in ISO 4217 format.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name of the invoice.
-  *   `dueDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - Output only. The invoice due date.
-  *   `invoiceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the invoice.
-  *   `invoiceType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of invoice document.
-  *   `issueDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - Output only. The date when the invoice was issued.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the invoice.
-  *   `nonBudgetMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The total amount of costs or adjustments not tied to a particular budget, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
-  *   `paymentsAccountId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the payments account the invoice belongs to. Appears on the invoice PDF as `Billing Account Number`.
-  *   `paymentsProfileId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the payments profile the invoice belongs to. Appears on the invoice PDF as `Billing ID`.
-  *   `pdfUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL to download a PDF copy of the invoice. Note that this URL is user specific and requires a valid OAuth 2.0 access token to access. The access token must be provided in an `Authorization: Bearer` HTTP header and be authorized for one of the following scopes: * `https://www.googleapis.com/auth/display-video-mediaplanning` * `https://www.googleapis.com/auth/display-video` The URL will only be usable for 7 days from when the api is called.
-  *   `purchaseOrderNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Purchase order number associated with the invoice.
-  *   `replacedInvoiceIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The originally issued invoice(s) that is being cancelled by this invoice, if applicable. If there are any replaced invoices, the corrected_invoice_id field will be empty. May appear on invoice PDF as `Replaced invoice numbers`. Note: There may be multiple replaced invoices due to consolidation of multiple invoices into a single invoice.
-  *   `serviceDateRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.DateRange.t`, *default:* `nil`) - Output only. Service start and end dates which are covered by this invoice.
-  *   `subtotalAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The pre-tax subtotal amount, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
-  *   `totalAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The invoice total amount, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
-  *   `totalTaxAmountMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The sum of all taxes in invoice, in micros of the invoice's currency. For example if currency_code is `USD`, then 1000000 micros is one US dollar.
+  *   `budgetInvoiceGroupingId` (*type:* `String.t`, *default:* `nil`) - The budget grouping ID for this invoice. This field will only be set if the invoice level of the corresponding billing profile was set to "Budget invoice grouping ID".
+  *   `budgetSummaries` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.BudgetSummary.t)`, *default:* `nil`) - The list of summarized information for each budget associated with this invoice. This field will only be set if the invoice detail level of the corresponding billing profile was set to "Budget level PO".
+  *   `correctedInvoiceId` (*type:* `String.t`, *default:* `nil`) - The ID of the original invoice being adjusted by this invoice, if applicable. May appear on the invoice PDF as `Reference invoice number`. If replaced_invoice_ids is set, this field will be empty.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency used in the invoice in ISO 4217 format.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the invoice.
+  *   `dueDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The date when the invoice is due.
+  *   `invoiceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the invoice.
+  *   `invoiceType` (*type:* `String.t`, *default:* `nil`) - The type of invoice document.
+  *   `issueDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The date when the invoice was issued.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the invoice.
+  *   `nonBudgetMicros` (*type:* `String.t`, *default:* `nil`) - The total amount of costs or adjustments not tied to a particular budget, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
+  *   `paymentsAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the payments account the invoice belongs to. Appears on the invoice PDF as `Billing Account Number`.
+  *   `paymentsProfileId` (*type:* `String.t`, *default:* `nil`) - The ID of the payments profile the invoice belongs to. Appears on the invoice PDF as `Billing ID`.
+  *   `pdfUrl` (*type:* `String.t`, *default:* `nil`) - The URL to download a PDF copy of the invoice. This URL is user specific and requires a valid OAuth 2.0 access token to access. The access token must be provided in an `Authorization: Bearer` HTTP header and be authorized for one of the following scopes: * `https://www.googleapis.com/auth/display-video-mediaplanning` * `https://www.googleapis.com/auth/display-video` The URL will be valid for 7 days after retrieval of this invoice object or until this invoice is retrieved again.
+  *   `purchaseOrderNumber` (*type:* `String.t`, *default:* `nil`) - Purchase order number associated with the invoice.
+  *   `replacedInvoiceIds` (*type:* `list(String.t)`, *default:* `nil`) - The ID(s) of any originally issued invoice that is being cancelled by this invoice, if applicable. Multiple invoices may be listed if those invoices are being consolidated into a single invoice. May appear on invoice PDF as `Replaced invoice numbers`. If corrected_invoice_id is set, this field will be empty.
+  *   `serviceDateRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.DateRange.t`, *default:* `nil`) - The service start and end dates which are covered by this invoice.
+  *   `subtotalAmountMicros` (*type:* `String.t`, *default:* `nil`) - The pre-tax subtotal amount, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
+  *   `totalAmountMicros` (*type:* `String.t`, *default:* `nil`) - The invoice total amount, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
+  *   `totalTaxAmountMicros` (*type:* `String.t`, *default:* `nil`) - The sum of all taxes in invoice, in micros of the invoice's currency. For example, if currency_code is `USD`, then 1000000 represents one US dollar.
   """
 
   use GoogleApi.Gax.ModelBase
