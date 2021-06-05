@@ -21,21 +21,27 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.AuditRefs do
 
   ## Attributes
 
+  *   `acronym` (*type:* `String.t`, *default:* `nil`) - The conventional acronym for the audit/metric.
   *   `group` (*type:* `String.t`, *default:* `nil`) - The category group that the audit belongs to (optional).
   *   `id` (*type:* `String.t`, *default:* `nil`) - The audit ref id.
+  *   `relevantAudits` (*type:* `list(String.t)`, *default:* `nil`) - Any audit IDs closely relevant to this one.
   *   `weight` (*type:* `float()`, *default:* `nil`) - The weight this audit's score has on the overall category score.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acronym => String.t() | nil,
           :group => String.t() | nil,
           :id => String.t() | nil,
+          :relevantAudits => list(String.t()) | nil,
           :weight => float() | nil
         }
 
+  field(:acronym)
   field(:group)
   field(:id)
+  field(:relevantAudits, type: :list)
   field(:weight)
 end
 
