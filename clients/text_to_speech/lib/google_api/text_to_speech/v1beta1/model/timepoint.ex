@@ -21,7 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.Timepoint do
 
   ## Attributes
 
-  *   `markName` (*type:* `String.t`, *default:* `nil`) - Timepoint name as received from the client within tag.
+  *   `markName` (*type:* `String.t`, *default:* `nil`) - Timepoint name as received from the client within `` tag.
   *   `timeSeconds` (*type:* `float()`, *default:* `nil`) - Time offset in seconds from the start of the synthesized audio.
   """
 
