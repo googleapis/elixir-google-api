@@ -8051,7 +8051,6 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:override` (*type:* `boolean()`) - Flag that specifies whether the new deployment replaces other deployed revisions of the API proxy in the environment. Set `override` to `true` to replace other deployed revisions. By default, `override` is `false` and the deployment is rejected if other revisions of the API proxy are deployed in the environment.
       *   `:sequencedRollout` (*type:* `boolean()`) - Flag that specifies whether to enable sequenced rollout. If set to `true`, a best-effort attempt will be made to roll out the routing rules corresponding to this deployment and the environment changes to add this deployment in a safe order. This reduces the risk of downtime that could be caused by changing the environment group's routing before the new destination for the affected traffic is ready to receive it. This should only be necessary if the new deployment will be capturing traffic from another environment under a shared environment group or if traffic will be rerouted to a different environment due to a base path removal. The [GenerateDeployChangeReport API](GenerateDeployChangeReport) may be used to examine routing changes before issuing the deployment request, and its response will indicate if a sequenced rollout is recommended for the deployment.
-      *   `:serviceAccount` (*type:* `String.t`) - Google Cloud IAM service account. The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be `{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -8088,8 +8087,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :uploadType => :query,
       :upload_protocol => :query,
       :override => :query,
-      :sequencedRollout => :query,
-      :serviceAccount => :query
+      :sequencedRollout => :query
     }
 
     request =
@@ -11174,7 +11172,6 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:override` (*type:* `boolean()`) - Flag that specifies whether the new deployment replaces other deployed revisions of the shared flow in the environment. Set `override` to `true` to replace other deployed revisions. By default, `override` is `false` and the deployment is rejected if other revisions of the shared flow are deployed in the environment.
-      *   `:serviceAccount` (*type:* `String.t`) - Google Cloud IAM service account. The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be `{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -11210,8 +11207,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :override => :query,
-      :serviceAccount => :query
+      :override => :query
     }
 
     request =
