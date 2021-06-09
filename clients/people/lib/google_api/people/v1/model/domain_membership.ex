@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.People.V1.Model.DomainMembership do
   @moduledoc """
-  A G Suite Domain membership.
+  A Google Workspace Domain membership.
 
   ## Attributes
 
-  *   `inViewerDomain` (*type:* `boolean()`, *default:* `nil`) - True if the person is in the viewer's G Suite domain.
+  *   `inViewerDomain` (*type:* `boolean()`, *default:* `nil`) - True if the person is in the viewer's Google Workspace domain.
   """
 
   use GoogleApi.Gax.ModelBase
