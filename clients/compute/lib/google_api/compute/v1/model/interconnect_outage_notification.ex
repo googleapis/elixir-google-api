@@ -33,7 +33,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectOutageNotification do
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Scheduled start time for the outage (milliseconds since Unix epoch).
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of this notification, which can take one of the following values: 
       - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. 
-      - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+      - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. 
+      - COMPLETED: The outage associated with this notification is complete.  Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
   """
 
   use GoogleApi.Gax.ModelBase
