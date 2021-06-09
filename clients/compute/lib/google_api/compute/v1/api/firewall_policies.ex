@@ -599,7 +599,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   end
 
   @doc """
-  Lists all the policies that have been configured for the specified project.
+  Lists all the policies that have been configured for the specified folder or organization.
 
   ## Parameters
 
