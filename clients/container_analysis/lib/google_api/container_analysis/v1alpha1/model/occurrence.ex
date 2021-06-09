@@ -23,6 +23,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
 
   *   `attestation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation.t`, *default:* `nil`) - Describes an attestation of an artifact.
   *   `buildDetails` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails.t`, *default:* `nil`) - Build details for a verifiable build.
+  *   `compliance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceOccurrence.t`, *default:* `nil`) - Describes whether or not a resource passes compliance checks.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this `Occurrence` was created.
   *   `deployment` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t`, *default:* `nil`) - Describes the deployment of an artifact on a runtime.
   *   `derivedImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t`, *default:* `nil`) - Describes how this resource derives from the basis in the associated note.
@@ -44,6 +45,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   @type t :: %__MODULE__{
           :attestation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation.t() | nil,
           :buildDetails => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails.t() | nil,
+          :compliance =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceOccurrence.t() | nil,
           :createTime => DateTime.t() | nil,
           :deployment => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t() | nil,
           :derivedImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t() | nil,
@@ -63,6 +66,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
 
   field(:attestation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Attestation)
   field(:buildDetails, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails)
+  field(:compliance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceOccurrence)
   field(:createTime, as: DateTime)
   field(:deployment, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment)
   field(:derivedImage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived)
