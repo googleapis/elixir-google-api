@@ -33,6 +33,7 @@ defmodule GoogleApi.Genomics.V1.Model.VirtualMachine do
   *   `network` (*type:* `GoogleApi.Genomics.V1.Model.Network.t`, *default:* `nil`) - The VM network configuration.
   *   `nvidiaDriverVersion` (*type:* `String.t`, *default:* `nil`) - The NVIDIA driver version to use when attaching an NVIDIA GPU accelerator. The version specified here must be compatible with the GPU libraries contained in the container being executed, and must be one of the drivers hosted in the `nvidia-drivers-us-public` bucket on Google Cloud Storage.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - If true, allocate a preemptible VM.
+  *   `reservation` (*type:* `String.t`, *default:* `nil`) - If specified, the VM will only be allocated inside the matching reservation. It will fail if the VM parameters don't match the reservation.
   *   `serviceAccount` (*type:* `GoogleApi.Genomics.V1.Model.ServiceAccount.t`, *default:* `nil`) - The service account to install on the VM. This account does not need any permissions other than those required by the pipeline.
   *   `volumes` (*type:* `list(GoogleApi.Genomics.V1.Model.Volume.t)`, *default:* `nil`) - The list of disks and other storage to create or attach to the VM. Specify either the `volumes[]` field or the `disks[]` field, but not both.
   """
@@ -52,6 +53,7 @@ defmodule GoogleApi.Genomics.V1.Model.VirtualMachine do
           :network => GoogleApi.Genomics.V1.Model.Network.t() | nil,
           :nvidiaDriverVersion => String.t() | nil,
           :preemptible => boolean() | nil,
+          :reservation => String.t() | nil,
           :serviceAccount => GoogleApi.Genomics.V1.Model.ServiceAccount.t() | nil,
           :volumes => list(GoogleApi.Genomics.V1.Model.Volume.t()) | nil
         }
@@ -68,6 +70,7 @@ defmodule GoogleApi.Genomics.V1.Model.VirtualMachine do
   field(:network, as: GoogleApi.Genomics.V1.Model.Network)
   field(:nvidiaDriverVersion)
   field(:preemptible)
+  field(:reservation)
   field(:serviceAccount, as: GoogleApi.Genomics.V1.Model.ServiceAccount)
   field(:volumes, as: GoogleApi.Genomics.V1.Model.Volume, type: :list)
 end
