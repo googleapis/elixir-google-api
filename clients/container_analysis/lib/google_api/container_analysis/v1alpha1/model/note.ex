@@ -24,6 +24,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `attestationAuthority` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority.t`, *default:* `nil`) - A note describing an attestation role.
   *   `baseImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis.t`, *default:* `nil`) - A note describing a base image.
   *   `buildType` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType.t`, *default:* `nil`) - Build provenance type for a verifiable build.
+  *   `compliance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote.t`, *default:* `nil`) - A note describing a compliance check.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was created. This field can be used as a filter in list requests.
   *   `deployable` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t`, *default:* `nil`) - A note describing something that can be deployed.
   *   `discovery` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t`, *default:* `nil`) - A note describing a provider/analysis type.
@@ -46,6 +47,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
             GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority.t() | nil,
           :baseImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis.t() | nil,
           :buildType => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType.t() | nil,
+          :compliance => GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote.t() | nil,
           :createTime => DateTime.t() | nil,
           :deployable => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t() | nil,
           :discovery => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
 
   field(:baseImage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis)
   field(:buildType, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType)
+  field(:compliance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote)
   field(:createTime, as: DateTime)
   field(:deployable, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable)
   field(:discovery, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery)
