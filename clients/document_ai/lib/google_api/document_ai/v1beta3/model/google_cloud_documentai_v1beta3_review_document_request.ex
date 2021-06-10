@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewDocumentRequest do
   @moduledoc """
-  Request message for review document method. Next Id: 5.
+  Request message for review document method. Next Id: 6.
 
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document that needs human review.
   *   `enableSchemaValidation` (*type:* `boolean()`, *default:* `nil`) - Whether the validation should be performed on the ad-hoc review request.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - The priority of the human review task.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
           :enableSchemaValidation => boolean() | nil,
           :inlineDocument =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
+          :priority => String.t() | nil
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
@@ -42,6 +44,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
   field(:inlineDocument,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document
   )
+
+  field(:priority)
 end
 
 defimpl Poison.Decoder,
