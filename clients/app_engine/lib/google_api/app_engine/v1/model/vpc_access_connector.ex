@@ -21,15 +21,18 @@ defmodule GoogleApi.AppEngine.V1.Model.VpcAccessConnector do
 
   ## Attributes
 
+  *   `egressSetting` (*type:* `String.t`, *default:* `nil`) - The egress setting for the connector, controlling what traffic is diverted through it.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :egressSetting => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:egressSetting)
   field(:name)
 end
 
