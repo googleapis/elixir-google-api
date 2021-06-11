@@ -26,6 +26,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all bot mentions stripped out.
   *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User uploaded attachment.
   *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message.
+  *   `cardsV2` (*type:* `list(GoogleApi.Chat.V1.Model.CardWithId.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI elements and editable widgets, such as: formatted text, buttons, clickable images, checkboxes, radio buttons. Cards are normally displayed below the plain-text body of the message. This v2 allows input widgets. The string key is a unique identifier among cards in the same message for identifying inputs.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Hangouts Chat server.
   *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications).
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
@@ -45,6 +46,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :argumentText => String.t() | nil,
           :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()) | nil,
           :cards => list(GoogleApi.Chat.V1.Model.Card.t()) | nil,
+          :cardsV2 => list(GoogleApi.Chat.V1.Model.CardWithId.t()) | nil,
           :createTime => DateTime.t() | nil,
           :fallbackText => String.t() | nil,
           :name => String.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:argumentText)
   field(:attachment, as: GoogleApi.Chat.V1.Model.Attachment, type: :list)
   field(:cards, as: GoogleApi.Chat.V1.Model.Card, type: :list)
+  field(:cardsV2, as: GoogleApi.Chat.V1.Model.CardWithId, type: :list)
   field(:createTime, as: DateTime)
   field(:fallbackText)
   field(:name)
