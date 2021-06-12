@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   @moduledoc """
-  The request for FirebaseRulesService.UpdateReleasePatch.
+  The request for FirebaseRulesService.UpdateRelease.
 
   ## Attributes
 
