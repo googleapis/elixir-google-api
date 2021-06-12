@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.ServiceAccountDelegationInfo do
   ## Attributes
 
   *   `firstPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V2.Model.FirstPartyPrincipal.t`, *default:* `nil`) - First party (Google) identity as the real authority.
-  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - A string representing the principal_subject associated with the identity. See go/3pical for more info on how principal_subject is formatted.
+  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - A string representing the principal_subject associated with the identity. For most identities, the format will be `principal://iam.googleapis.com/{identity pool name}/subject/{subject)` except for some GKE identities (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy format `serviceAccount:{identity pool name}[{subject}]`
   *   `thirdPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V2.Model.ThirdPartyPrincipal.t`, *default:* `nil`) - Third party identity as the real authority.
   """
 
