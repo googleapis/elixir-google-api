@@ -18,7 +18,7 @@
 defmodule GoogleApi.ManagedIdentities.Mixfile do
   use Mix.Project
 
-  @version "0.10.2"
+  @version "0.11.0"
 
   def project() do
     [
