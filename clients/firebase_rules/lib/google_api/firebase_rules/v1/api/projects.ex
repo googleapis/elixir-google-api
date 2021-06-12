@@ -31,7 +31,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Tests may either provide `source` or a `Ruleset` resource name. For tests against `source`, the resource name must refer to the project: Format: `projects/{project_id}` For tests against a `Ruleset`, this must be the `Ruleset` resource name: Format: `projects/{project_id}/rulesets/{ruleset_id}`
+  *   `name` (*type:* `String.t`) - Required. Tests may either provide `source` or a `Ruleset` resource name. For tests against `source`, the resource name must refer to the project: Format: `projects/{project_id}` For tests against a `Ruleset`, this must be the `Ruleset` resource name: Format: `projects/{project_id}/rulesets/{ruleset_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -93,7 +93,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the project which owns this `Release`. Format: `projects/{project_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the project which owns this `Release`. Format: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -160,7 +160,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the `Release` to delete. Format: `projects/{project_id}/releases/{release_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the `Release` to delete. Format: `projects/{project_id}/releases/{release_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -225,7 +225,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the `Release`. Format: `projects/{project_id}/releases/{release_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name of the `Release`. Format: `projects/{project_id}/releases/{release_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -285,7 +285,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the `Release`. Format: `projects/{project_id}/releases/{release_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name of the `Release`. Format: `projects/{project_id}/releases/{release_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -359,7 +359,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the project. Format: `projects/{project_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the project. Format: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -372,7 +372,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - `Release` filter. The list method supports filters with restrictions on the `Release.name`, `Release.ruleset_name`, and `Release.test_suite_name`. Example 1: A filter of 'name=prod*' might return `Release`s with names within 'projects/foo' prefixed with 'prod': Name | Ruleset Name ------------------------------|------------- projects/foo/releases/prod | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v2 | projects/foo/rulesets/uuid8888 Example 2: A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for 'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234': Name | Ruleset Name ------------------------------|------------- projects/foo/releases/prod | projects/foo/rulesets/1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/1234 In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used. e.g. `test_suite_name=projects/foo/testsuites/uuid1`
+      *   `:filter` (*type:* `String.t`) - `Release` filter. The list method supports filters with restrictions on the `Release.name`, and `Release.ruleset_name`. Example 1: A filter of 'name=prod*' might return `Release`s with names within 'projects/foo' prefixed with 'prod': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v2 -> projects/foo/rulesets/uuid8888 Example 2: A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for 'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/1234 In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used.
       *   `:pageSize` (*type:* `integer()`) - Page size to load. Maximum of 100. Defaults to 10. Note: `page_size` is just a hint and the service may choose to load fewer than `page_size` results due to the size of the output. To traverse all of the releases, the caller should iterate until the `page_token` on the response is empty.
       *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of `Release` instances.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -420,12 +420,12 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   end
 
   @doc """
-  Update a `Release` via PATCH. Only updates to the `ruleset_name` and `test_suite_name` fields will be honored. `Release` rename is not supported. To create a `Release` use the CreateRelease method.
+  Update a `Release` via PATCH. Only updates to `ruleset_name` will be honored. `Release` rename is not supported. To create a `Release` use the CreateRelease method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the project which owns this `Release`. Format: `projects/{project_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the project which owns this `Release`. Format: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -492,7 +492,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for Project which owns this `Ruleset`. Format: `projects/{project_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for Project which owns this `Ruleset`. Format: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -559,7 +559,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the ruleset to delete. Format: `projects/{project_id}/rulesets/{ruleset_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the ruleset to delete. Format: `projects/{project_id}/rulesets/{ruleset_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -624,7 +624,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the ruleset to get. Format: `projects/{project_id}/rulesets/{ruleset_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the ruleset to get. Format: `projects/{project_id}/rulesets/{ruleset_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -684,7 +684,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseRules.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the project. Format: `projects/{project_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the project. Format: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
