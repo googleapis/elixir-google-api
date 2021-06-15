@@ -18,7 +18,7 @@
 defmodule GoogleApi.Firestore.Mixfile do
   use Mix.Project
 
-  @version "0.21.3"
+  @version "0.21.4"
 
   def project() do
     [
