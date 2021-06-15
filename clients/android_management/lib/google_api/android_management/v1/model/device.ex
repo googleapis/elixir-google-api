@@ -52,6 +52,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `appliedPolicyVersion` (*type:* `String.t`, *default:* `nil`) - The version of the policy currently applied to the device.
   *   `policyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device's user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred.
   *   `apiLevel` (*type:* `integer()`, *default:* `nil`) - The API level of the Android platform version running on the device.
+  *   `appliedPasswordPolicies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t)`, *default:* `nil`) - The password requirements currently applied to the device. The applied requirements may be slightly different from those specified in passwordPolicies in some cases. fieldPath is set based on passwordPolicies.
   *   `enrollmentTokenName` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token, this field contains the name of the token.
   *   `softwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t`, *default:* `nil`) - Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy.
   *   `ownership` (*type:* `String.t`, *default:* `nil`) - Ownership of the managed device.
@@ -96,6 +97,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :appliedPolicyVersion => String.t() | nil,
           :policyName => String.t() | nil,
           :apiLevel => integer() | nil,
+          :appliedPasswordPolicies =>
+            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()) | nil,
           :enrollmentTokenName => String.t() | nil,
           :softwareInfo => GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t() | nil,
           :ownership => String.t() | nil
@@ -151,6 +154,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:appliedPolicyVersion)
   field(:policyName)
   field(:apiLevel)
+
+  field(:appliedPasswordPolicies,
+    as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements,
+    type: :list
+  )
+
   field(:enrollmentTokenName)
   field(:softwareInfo, as: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo)
   field(:ownership)

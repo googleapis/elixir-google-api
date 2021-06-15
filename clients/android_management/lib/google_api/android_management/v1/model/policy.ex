@@ -83,7 +83,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `uninstallAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user uninstallation of applications is disabled.
   *   `openNetworkConfiguration` (*type:* `map()`, *default:* `nil`) - Network configuration for the device. See configure networks for more information.
   *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.
-  *   `appAutoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - The app auto update policy, which controls when automatic app updates can be applied.
+  *   `appAutoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use autoUpdateMode instead.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
   *   `permissionGrants` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t)`, *default:* `nil`) - Explicit permission or group grants or denials for all apps. These values override the default_permission_policy.
   *   `applications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t)`, *default:* `nil`) - Policy applied to apps.
   *   `statusBarDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the status bar is disabled. This disables notifications, quick settings, and other screen overlays that allow escape from full-screen mode. DEPRECATED. To disable the status bar on a kiosk device, use InstallType KIOSK or kioskCustomLauncherEnabled.
