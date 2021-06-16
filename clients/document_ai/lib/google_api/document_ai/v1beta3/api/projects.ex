@@ -334,6 +334,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @spec documentai_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -344,6 +345,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   def documentai_projects_locations_operations_get(
         connection,
         name,
+        project_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -364,8 +366,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta3/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/operations/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "project_id" => project_id,
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -936,6 +939,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @spec documentai_projects_locations_processors_process(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -947,6 +951,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   def documentai_projects_locations_processors_process(
         connection,
         name,
+        project_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -968,8 +973,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta3/{+name}:process", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/processors/{+name}:process", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "project_id" => project_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1089,6 +1095,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @spec documentai_projects_locations_processors_processor_versions_batch_process(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1099,6 +1106,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   def documentai_projects_locations_processors_processor_versions_batch_process(
         connection,
         name,
+        project_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1120,8 +1128,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta3/{+name}:batchProcess", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/processors/{+name}:batchProcess", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "project_id" => project_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

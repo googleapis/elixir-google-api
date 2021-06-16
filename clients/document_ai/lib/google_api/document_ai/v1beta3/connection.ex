@@ -28,5 +28,5 @@ defmodule GoogleApi.DocumentAI.V1beta3.Connection do
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_document_ai,
-    base_url: "https://documentai.googleapis.com/"
+    base_url: "https://us-documentai.googleapis.com/"
 end
