@@ -24,6 +24,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `datapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation.
   *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
+  *   `enableL4ilbSubsetting` (*type:* `boolean()`, *default:* `nil`) - Whether L4ILB Subsetting is enabled for this cluster.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
@@ -35,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :datapathProvider => String.t() | nil,
           :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
           :enableIntraNodeVisibility => boolean() | nil,
+          :enableL4ilbSubsetting => boolean() | nil,
           :network => String.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
           :subnetwork => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   field(:datapathProvider)
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:enableIntraNodeVisibility)
+  field(:enableL4ilbSubsetting)
   field(:network)
   field(:privateIpv6GoogleAccess)
   field(:subnetwork)

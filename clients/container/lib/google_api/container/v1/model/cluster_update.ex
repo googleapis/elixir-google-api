@@ -30,6 +30,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
+  *   `desiredL4ilbSubsettingConfig` (*type:* `GoogleApi.Container.V1.Model.ILBSubsettingConfig.t`, *default:* `nil`) - The desired L4 Internal Load Balancer Subsetting configuration.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This list must always include the cluster's primary zone. Warning: changing cluster locations will update the locations of all node pools and will result in nodes being added and/or removed.
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
@@ -62,6 +63,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredImageType => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t() | nil,
+          :desiredL4ilbSubsettingConfig =>
+            GoogleApi.Container.V1.Model.ILBSubsettingConfig.t() | nil,
           :desiredLocations => list(String.t()) | nil,
           :desiredLoggingService => String.t() | nil,
           :desiredMasterAuthorizedNetworksConfig =>
@@ -99,6 +102,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     as: GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig
   )
 
+  field(:desiredL4ilbSubsettingConfig, as: GoogleApi.Container.V1.Model.ILBSubsettingConfig)
   field(:desiredLocations, type: :list)
   field(:desiredLoggingService)
 
