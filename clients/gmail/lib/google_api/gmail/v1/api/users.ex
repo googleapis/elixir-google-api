@@ -650,7 +650,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeSpamTrash` (*type:* `boolean()`) - Include drafts from `SPAM` and `TRASH` in the results.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of drafts to return.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1335,7 +1335,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:historyTypes` (*type:* `list(String.t)`) - History types to be returned by the function
       *   `:labelId` (*type:* `String.t`) - Only return messages with a label matching the ID.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of history records to return.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:startHistoryId` (*type:* `String.t`) - Required. Returns history records after the specified `startHistoryId`. The supplied `startHistoryId` should be obtained from the `historyId` of a message, thread, or previous `list` response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date `startHistoryId` typically returns an `HTTP 404` error code. A `historyId` is typically valid for at least a week, but in some rare circumstances may be valid for only a few hours. If you receive an `HTTP 404` error response, your application should perform a full sync. If you receive no `nextPageToken` in the response, there are no updates to retrieve and you can store the returned `historyId` for a future request.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2679,7 +2679,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from `SPAM` and `TRASH` in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return messages with labels that match all of the specified label IDs.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -5782,7 +5782,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeSpamTrash` (*type:* `boolean()`) - Include threads from `SPAM` and `TRASH` in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return threads with labels that match all of the specified label IDs.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of threads to return.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
