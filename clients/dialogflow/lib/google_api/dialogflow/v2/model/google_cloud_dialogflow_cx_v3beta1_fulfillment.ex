@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillmen
 
   *   `conditionalCases` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCases.t)`, *default:* `nil`) - Conditional cases for this fulfillment.
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user.
+  *   `returnPartialResponses` (*type:* `boolean()`, *default:* `nil`) - Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
   *   `setParameterActions` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentSetParameterAction.t)`, *default:* `nil`) - Set parameter values before executing the webhook.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - The tag used by the webhook to identify which fulfillment is being called. This field is required if `webhook` is specified.
   *   `webhook` (*type:* `String.t`, *default:* `nil`) - The webhook to call. Format: `projects//locations//agents//webhooks/`.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillmen
           :messages =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t())
             | nil,
+          :returnPartialResponses => boolean() | nil,
           :setParameterActions =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentSetParameterAction.t()
@@ -57,6 +59,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillmen
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage,
     type: :list
   )
+
+  field(:returnPartialResponses)
 
   field(:setParameterActions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1FulfillmentSetParameterAction,
