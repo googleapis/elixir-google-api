@@ -163,7 +163,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:updateMask` (*type:* `String.t`) - Required. Standard field mask for the set of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Application.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1037,7 +1037,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:updateMask` (*type:* `String.t`) - Required. Standard field mask for the set of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.DomainMapping.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2057,7 +2057,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:migrateTraffic` (*type:* `boolean()`) - Set to true to gradually shift traffic to one or more versions that you specify. By default, traffic is shifted immediately. For gradual traffic migration, the target versions must be located within instances that are configured for both warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType) and automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling). You must specify the shardBy (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy) field in the Service resource. Gradual traffic migration is not supported in the App Engine flexible environment. For examples, see Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
-      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:updateMask` (*type:* `String.t`) - Required. Standard field mask for the set of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
