@@ -23,17 +23,20 @@ defmodule GoogleApi.Drive.V3.Model.FileShortcutDetails do
 
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - The ID of the file that this shortcut points to.
   *   `targetMimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the target's MIME type, captured when the shortcut is created.
+  *   `targetResourceKey` (*type:* `String.t`, *default:* `nil`) - The ResourceKey for the target file.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :targetId => String.t() | nil,
-          :targetMimeType => String.t() | nil
+          :targetMimeType => String.t() | nil,
+          :targetResourceKey => String.t() | nil
         }
 
   field(:targetId)
   field(:targetMimeType)
+  field(:targetResourceKey)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileShortcutDetails do
