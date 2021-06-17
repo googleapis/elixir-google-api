@@ -33,6 +33,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canModifyContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify restrictions on content of this file.
   *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder.
   *   `canTrash` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this file to trash.
+  *   `canChangeSecurityUpdateEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the securityUpdateEnabled field on link share metadata.
   *   `canUntrash` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can restore this file from trash.
   *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add children to this folder. This is always false when the item is not a folder.
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the sharing settings for this file.
@@ -72,6 +73,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canModifyContentRestriction => boolean() | nil,
           :canCopy => boolean() | nil,
           :canTrash => boolean() | nil,
+          :canChangeSecurityUpdateEnabled => boolean() | nil,
           :canUntrash => boolean() | nil,
           :canAddChildren => boolean() | nil,
           :canShare => boolean() | nil,
@@ -108,6 +110,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canModifyContentRestriction)
   field(:canCopy)
   field(:canTrash)
+  field(:canChangeSecurityUpdateEnabled)
   field(:canUntrash)
   field(:canAddChildren)
   field(:canShare)

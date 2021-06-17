@@ -27,6 +27,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
       This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
   *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
       If an unsupported color is specified, the closest color in the palette will be used instead.
+  *   `resourceKey` (*type:* `String.t`, *default:* `nil`) - A key needed to access the item via a shared link.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
       Note that setting modifiedTime will also update modifiedByMeTime for the user.
   *   `contentRestrictions` (*type:* `list(GoogleApi.Drive.V3.Model.ContentRestriction.t)`, *default:* `nil`) - Restrictions for accessing the content of the file. Only populated if such a restriction exists.
@@ -81,6 +82,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `imageMediaMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t`, *default:* `nil`) - Additional metadata about image media, if available.
   *   `thumbnailVersion` (*type:* `String.t`, *default:* `nil`) - The thumbnail version for use in thumbnail cache invalidation.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was created (RFC 3339 date-time).
+  *   `linkShareMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileLinkShareMetadata.t`, *default:* `nil`) - Contains details about the link URLs that clients are using to refer to this item.
   *   `writersCanShare` (*type:* `boolean()`, *default:* `nil`) - Whether users with only writer permission can modify the file's permissions. Not populated for items in shared drives.
   *   `permissionIds` (*type:* `list(String.t)`, *default:* `nil`) - List of permission IDs for users with access to this file.
   *   `trashedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the item was trashed (RFC 3339 date-time). Only populated for items in shared drives.
@@ -95,6 +97,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :modifiedByMe => boolean() | nil,
           :fullFileExtension => String.t() | nil,
           :folderColorRgb => String.t() | nil,
+          :resourceKey => String.t() | nil,
           :modifiedTime => DateTime.t() | nil,
           :contentRestrictions => list(GoogleApi.Drive.V3.Model.ContentRestriction.t()) | nil,
           :size => String.t() | nil,
@@ -143,6 +146,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :imageMediaMetadata => GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t() | nil,
           :thumbnailVersion => String.t() | nil,
           :createdTime => DateTime.t() | nil,
+          :linkShareMetadata => GoogleApi.Drive.V3.Model.FileLinkShareMetadata.t() | nil,
           :writersCanShare => boolean() | nil,
           :permissionIds => list(String.t()) | nil,
           :trashedTime => DateTime.t() | nil,
@@ -154,6 +158,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   field(:modifiedByMe)
   field(:fullFileExtension)
   field(:folderColorRgb)
+  field(:resourceKey)
   field(:modifiedTime, as: DateTime)
   field(:contentRestrictions, as: GoogleApi.Drive.V3.Model.ContentRestriction, type: :list)
   field(:size)
@@ -202,6 +207,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   field(:imageMediaMetadata, as: GoogleApi.Drive.V3.Model.FileImageMediaMetadata)
   field(:thumbnailVersion)
   field(:createdTime, as: DateTime)
+  field(:linkShareMetadata, as: GoogleApi.Drive.V3.Model.FileLinkShareMetadata)
   field(:writersCanShare)
   field(:permissionIds, type: :list)
   field(:trashedTime, as: DateTime)
