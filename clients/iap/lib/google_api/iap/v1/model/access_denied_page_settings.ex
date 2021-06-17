@@ -22,15 +22,18 @@ defmodule GoogleApi.IAP.V1.Model.AccessDeniedPageSettings do
   ## Attributes
 
   *   `accessDeniedPageUri` (*type:* `String.t`, *default:* `nil`) - The URI to be redirected to when access is denied.
+  *   `generateTroubleshootingUri` (*type:* `boolean()`, *default:* `nil`) - Whether to generate a troubleshooting URL on access denied events to this application.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessDeniedPageUri => String.t() | nil
+          :accessDeniedPageUri => String.t() | nil,
+          :generateTroubleshootingUri => boolean() | nil
         }
 
   field(:accessDeniedPageUri)
+  field(:generateTroubleshootingUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAP.V1.Model.AccessDeniedPageSettings do
