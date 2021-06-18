@@ -18,7 +18,7 @@
 defmodule GoogleApi.Run.Mixfile do
   use Mix.Project
 
-  @version "0.24.2"
+  @version "0.24.3"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Run.Mixfile do
 
   defp description() do
     """
-    Cloud Run Admin API client library. Deploy and manage user provided container images that scale automatically based on HTTP traffic.
+    Cloud Run Admin API client library. Deploy and manage user provided container images that scale automatically based on incoming requets. The Cloud Run Admin API follows the Knative Serving API specification.
     """
   end
 
