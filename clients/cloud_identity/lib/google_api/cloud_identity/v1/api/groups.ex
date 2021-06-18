@@ -290,7 +290,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"groupKey.id"` (*type:* `String.t`) - The ID of the entity. For Google-managed entities, the `id` should be the email address of an existing group or user. For external-identity-mapped entities, the `id` must be a string conforming to the Identity Source's requirements. Must be unique within a `namespace`.
-      *   `:"groupKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.
+      *   `:"groupKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -353,7 +353,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The fully-qualified names of fields to update. May only contain the following fields: `display_name`, `description`.
+      *   `:updateMask` (*type:* `String.t`) - Required. The fully-qualified names of fields to update. May only contain the following fields: `display_name`, `description`, `labels`.
       *   `:body` (*type:* `GoogleApi.CloudIdentity.V1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -899,7 +899,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"memberKey.id"` (*type:* `String.t`) - The ID of the entity. For Google-managed entities, the `id` should be the email address of an existing group or user. For external-identity-mapped entities, the `id` must be a string conforming to the Identity Source's requirements. Must be unique within a `namespace`.
-      *   `:"memberKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.
+      *   `:"memberKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
