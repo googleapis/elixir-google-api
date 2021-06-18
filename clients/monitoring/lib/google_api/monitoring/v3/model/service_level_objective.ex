@@ -27,6 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `rollingPeriod` (*type:* `String.t`, *default:* `nil`) - A rolling time period, semantically "in the past ". Must be an integer multiple of 1 day no larger than 30 days.
   *   `serviceLevelIndicator` (*type:* `GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t`, *default:* `nil`) - The definition of good service, used to measure and calculate the quality of the Service's performance with respect to a single aspect of service quality.
+  *   `userLabels` (*type:* `map()`, *default:* `nil`) - Labels which have been used to annotate the service-level objective. Label keys must start with a letter. Label keys and values may contain lowercase letters, numbers, underscores, and dashes. Label keys and values have a maximum length of 63 characters, and must be less than 128 bytes in size. Up to 64 label entries may be stored. For labels which do not have a semantic value, the empty string may be supplied for the label value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
           :goal => float() | nil,
           :name => String.t() | nil,
           :rollingPeriod => String.t() | nil,
-          :serviceLevelIndicator => GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t() | nil
+          :serviceLevelIndicator => GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t() | nil,
+          :userLabels => map() | nil
         }
 
   field(:calendarPeriod)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
   field(:name)
   field(:rollingPeriod)
   field(:serviceLevelIndicator, as: GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator)
+  field(:userLabels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
