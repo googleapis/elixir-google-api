@@ -20,7 +20,7 @@ defmodule GoogleApi.Jobs.V3 do
   API client metadata for GoogleApi.Jobs.V3.
   """
 
-  @discovery_revision "20210506"
+  @discovery_revision "20210611"
 
   def discovery_revision(), do: @discovery_revision
 end
