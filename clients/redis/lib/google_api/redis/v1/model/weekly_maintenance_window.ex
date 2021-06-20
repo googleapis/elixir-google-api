@@ -22,7 +22,7 @@ defmodule GoogleApi.Redis.V1.Model.WeeklyMaintenanceWindow do
   ## Attributes
 
   *   `day` (*type:* `String.t`, *default:* `nil`) - Required. The day of week that maintenance updates occur.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. Duration of the maintenance window. The current window is fixed at 3 hours.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
   *   `startTime` (*type:* `GoogleApi.Redis.V1.Model.TimeOfDay.t`, *default:* `nil`) - Required. Start time of the window in UTC time.
   """
 
