@@ -21,11 +21,16 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.QueryAccessibleDataResponse do
 
   ## Attributes
 
+  *   `gcsUris` (*type:* `list(String.t)`, *default:* `nil`) - List of files, each of which contains a list of data_id(s) that are consented for a specified use in the request.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :gcsUris => list(String.t()) | nil
+        }
+
+  field(:gcsUris, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.QueryAccessibleDataResponse do
