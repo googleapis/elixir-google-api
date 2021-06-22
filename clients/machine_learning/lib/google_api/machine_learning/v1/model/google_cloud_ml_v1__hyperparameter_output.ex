@@ -30,6 +30,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Start time for the trial.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the trial.
   *   `trialId` (*type:* `String.t`, *default:* `nil`) - The trial id for these results.
+  *   `webAccessUris` (*type:* `map()`, *default:* `nil`) - The web URIs for the training job. Currently for debug terminal access to the job. Only set for in-progress hyperparameter tuning trials with web access enabled.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,7 +51,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
           :isTrialStoppedEarly => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
-          :trialId => String.t() | nil
+          :trialId => String.t() | nil,
+          :webAccessUris => map() | nil
         }
 
   field(:allMetrics,
@@ -75,6 +77,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
   field(:startTime, as: DateTime)
   field(:state)
   field(:trialId)
+  field(:webAccessUris, type: :map)
 end
 
 defimpl Poison.Decoder,
