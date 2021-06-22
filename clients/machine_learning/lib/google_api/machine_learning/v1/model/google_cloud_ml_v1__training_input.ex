@@ -22,6 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   ## Attributes
 
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Command-line arguments passed to the training application when it starts. If your job uses a custom container, then the arguments are passed to the container's `ENTRYPOINT` command.
+  *   `enableWebAccess` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable web access for the training job.
   *   `encryptionConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t`, *default:* `nil`) - Optional. Options for using customer-managed encryption keys (CMEK) to protect resources created by a training job, instead of using Google's default encryption. If this is set, then all resources created by the training job will be encrypted with the customer-managed encryption key that you specify. [Learn how and when to use CMEK with AI Platform Training](/ai-platform/training/docs/cmek).
   *   `evaluatorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for evaluators. You should only set `evaluatorConfig.acceleratorConfig` if `evaluatorType` is set to a Compute Engine machine type. [Learn about restrictions on accelerator configurations for training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu) Set `evaluatorConfig.imageUri` only if you build a custom image for your evaluator. If `evaluatorConfig.imageUri` has not been set, AI Platform uses the value of `masterConfig.imageUri`. Learn more about [configuring custom containers](/ai-platform/training/docs/distributed-training-containers).
   *   `evaluatorCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of evaluator replicas to use for the training job. Each replica in the cluster will be of the type specified in `evaluator_type`. This value can only be used when `scale_tier` is set to `CUSTOM`. If you set this value, you must also set `evaluator_type`. The default value is zero.
@@ -52,6 +53,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
   @type t :: %__MODULE__{
           :args => list(String.t()) | nil,
+          :enableWebAccess => boolean() | nil,
           :encryptionConfig =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t() | nil,
           :evaluatorConfig =>
@@ -85,6 +87,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
         }
 
   field(:args, type: :list)
+  field(:enableWebAccess)
 
   field(:encryptionConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig)
 

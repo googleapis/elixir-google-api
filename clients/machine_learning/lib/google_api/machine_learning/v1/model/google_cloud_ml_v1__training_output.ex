@@ -28,6 +28,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
   *   `isBuiltInAlgorithmJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a built-in Algorithm job.
   *   `isHyperparameterTuningJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a hyperparameter tuning job.
   *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials. Only set for hyperparameter tuning jobs.
+  *   `webAccessUris` (*type:* `map()`, *default:* `nil`) - Output only. The web URIs for the training job. Currently for debug terminal access to the job.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +43,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
           :isHyperparameterTuningJob => boolean() | nil,
           :trials =>
             list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t())
-            | nil
+            | nil,
+          :webAccessUris => map() | nil
         }
 
   field(:builtInAlgorithmOutput,
@@ -59,6 +61,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput,
     type: :list
   )
+
+  field(:webAccessUris, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
