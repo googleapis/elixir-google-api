@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.SuperChatEvents do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the superChatEvent resource parts that the API response will include. Supported values are id and snippet.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the superChatEvent resource parts that the API response will include. This parameter is currently not supported.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
