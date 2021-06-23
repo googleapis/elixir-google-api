@@ -91,7 +91,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Create a new contact group owned by the authenticated user.
+  Create a new contact group owned by the authenticated user. Created contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.
 
   ## Parameters
 
@@ -348,7 +348,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Update the name of an existing contact group owned by the authenticated user.
+  Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.
 
   ## Parameters
 
