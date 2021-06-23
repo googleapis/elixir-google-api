@@ -28,7 +28,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
   *   `memberCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of contacts in the group irrespective of max members in specified in the request.
   *   `memberResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of contact person resource names that are members of the contact group. The field is only populated for GET requests and will only return as many members as `maxMembers` in the get request.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.ContactGroupMetadata.t`, *default:* `nil`) - Output only. Metadata about the contact group.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The contact group name set by the group owner or a system provided name for system groups.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The contact group name set by the group owner or a system provided name for system groups. For [`contactGroups.create`](/people/api/rest/v1/contactGroups/create) or [`contactGroups.update`](/people/api/rest/v1/contactGroups/update) the name must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`.
   """
 
