@@ -45,7 +45,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowPlus` (*type:* `boolean()`) - Parses org unit path without url decode to allow for plus in ou name
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -78,8 +77,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :allowPlus => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -117,7 +115,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowPlus` (*type:* `boolean()`) - Parses org unit path without url decode to allow for plus in ou name
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -148,8 +145,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :allowPlus => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -313,7 +309,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowPlus` (*type:* `boolean()`) - Parses org unit path without url decode to allow for plus in ou name
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.OrgUnit.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -346,7 +341,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :allowPlus => :query,
       :body => :body
     }
 
@@ -385,7 +379,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowPlus` (*type:* `boolean()`) - Parses org unit path without url decode to allow for plus in ou name
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.OrgUnit.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -424,7 +417,6 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :allowPlus => :query,
       :body => :body
     }
 
