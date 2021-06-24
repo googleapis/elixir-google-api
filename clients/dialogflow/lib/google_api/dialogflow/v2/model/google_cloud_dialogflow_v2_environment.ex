@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment do
 
   ## Attributes
 
-  *   `agentVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The agent version loaded into this environment. Supported formats: - `projects//agent/versions/` - `projects//locations//agent/versions/`
+  *   `agentVersion` (*type:* `String.t`, *default:* `nil`) - Required. The agent version loaded into this environment. Supported formats: - `projects//agent/versions/` - `projects//locations//agent/versions/`
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The developer-provided description for this environment. The maximum length is 500 characters. If exceeded, the request is rejected.
   *   `fulfillment` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t`, *default:* `nil`) - Optional. The fulfillment settings to use for this environment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
