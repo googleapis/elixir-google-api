@@ -27,7 +27,7 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
   *   `notificationsRule` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1NotificationsRule.t`, *default:* `nil`) - Optional. Rules to apply to notifications sent based on budget spend and thresholds.
-  *   `thresholdRules` (*type:* `list(GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1ThresholdRule.t)`, *default:* `nil`) - Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget.
+  *   `thresholdRules` (*type:* `list(GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1ThresholdRule.t)`, *default:* `nil`) - Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
   """
 
   use GoogleApi.Gax.ModelBase
