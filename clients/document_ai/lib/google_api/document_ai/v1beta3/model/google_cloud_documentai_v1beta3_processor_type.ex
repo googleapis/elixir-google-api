@@ -25,7 +25,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `availableLocations` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorTypeLocationInfo.t)`, *default:* `nil`) - The locations in which this processor is available.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The processor category, used by UI to group processor types.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: projects/{project}/processorTypes/{processor_type}
-  *   `schema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Schema.t`, *default:* `nil`) - The schema of the default version of this processor type.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the processor, e.g, "invoice_parsing".
   """
 
@@ -40,8 +39,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
             | nil,
           :category => String.t() | nil,
           :name => String.t() | nil,
-          :schema =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Schema.t() | nil,
           :type => String.t() | nil
         }
 
@@ -54,7 +51,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   field(:category)
   field(:name)
-  field(:schema, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Schema)
   field(:type)
 end
 
