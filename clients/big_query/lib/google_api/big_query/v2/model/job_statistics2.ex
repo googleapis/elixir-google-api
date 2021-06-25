@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
 
   ## Attributes
 
+  *   `biEngineStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t`, *default:* `nil`) - BI Engine specific Statistics. [Output-only] BI Engine specific Statistics.
   *   `billingTier` (*type:* `integer()`, *default:* `nil`) - [Output-only] Billing tier for the job.
   *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Whether the query result was fetched from the query cache.
   *   `ddlAffectedRowAccessPolicyCount` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Preview] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
@@ -30,7 +31,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `ddlTargetRoutine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - The DDL target routine. Present only for CREATE/DROP FUNCTION/PROCEDURE queries.
   *   `ddlTargetRowAccessPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - [Output-only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries.
   *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
-  *   `dmlStats` (*type:* `any()`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
+  *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
   *   `estimatedBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] The original estimate of bytes processed for the job.
   *   `modelTraining` (*type:* `GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t`, *default:* `nil`) - [Output-only, Beta] Information about create model query job progress.
   *   `modelTrainingCurrentIteration` (*type:* `integer()`, *default:* `nil`) - [Output-only, Beta] Deprecated; do not use.
@@ -54,6 +55,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :biEngineStatistics => GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t() | nil,
           :billingTier => integer() | nil,
           :cacheHit => boolean() | nil,
           :ddlAffectedRowAccessPolicyCount => String.t() | nil,
@@ -64,7 +66,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :ddlTargetRowAccessPolicy =>
             GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t() | nil,
           :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
-          :dmlStats => any() | nil,
+          :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
           :estimatedBytesProcessed => String.t() | nil,
           :modelTraining => GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t() | nil,
           :modelTrainingCurrentIteration => integer() | nil,
@@ -86,6 +88,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :undeclaredQueryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()) | nil
         }
 
+  field(:biEngineStatistics, as: GoogleApi.BigQuery.V2.Model.BiEngineStatistics)
   field(:billingTier)
   field(:cacheHit)
   field(:ddlAffectedRowAccessPolicyCount)
@@ -95,7 +98,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:ddlTargetRoutine, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
   field(:ddlTargetRowAccessPolicy, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
   field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
-  field(:dmlStats)
+  field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
   field(:estimatedBytesProcessed)
   field(:modelTraining, as: GoogleApi.BigQuery.V2.Model.BigQueryModelTraining)
   field(:modelTrainingCurrentIteration)
