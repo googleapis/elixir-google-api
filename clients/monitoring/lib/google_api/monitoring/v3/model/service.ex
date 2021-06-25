@@ -30,7 +30,6 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `telemetry` (*type:* `GoogleApi.Monitoring.V3.Model.Telemetry.t`, *default:* `nil`) - Configuration for how to query telemetry on a Service.
-  *   `userLabels` (*type:* `map()`, *default:* `nil`) - Labels which have been used to annotate the service. Label keys must start with a letter. Label keys and values may contain lowercase letters, numbers, underscores, and dashes. Label keys and values have a maximum length of 63 characters, and must be less than 128 bytes in size. Up to 64 label entries may be stored. For labels which do not have a semantic value, the empty string may be supplied for the label value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,8 +43,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
           :istioCanonicalService => GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t() | nil,
           :meshIstio => GoogleApi.Monitoring.V3.Model.MeshIstio.t() | nil,
           :name => String.t() | nil,
-          :telemetry => GoogleApi.Monitoring.V3.Model.Telemetry.t() | nil,
-          :userLabels => map() | nil
+          :telemetry => GoogleApi.Monitoring.V3.Model.Telemetry.t() | nil
         }
 
   field(:appEngine, as: GoogleApi.Monitoring.V3.Model.AppEngine)
@@ -57,7 +55,6 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   field(:meshIstio, as: GoogleApi.Monitoring.V3.Model.MeshIstio)
   field(:name)
   field(:telemetry, as: GoogleApi.Monitoring.V3.Model.Telemetry)
-  field(:userLabels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Service do
