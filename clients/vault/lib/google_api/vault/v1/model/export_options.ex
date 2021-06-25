@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   @moduledoc """
-  Export advanced options
+  Additional options for exports
 
   ## Attributes
 
-  *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveExportOptions.t`, *default:* `nil`) - Option available for Drive export.
-  *   `groupsOptions` (*type:* `GoogleApi.Vault.V1.Model.GroupsExportOptions.t`, *default:* `nil`) - Option available for groups export.
-  *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t`, *default:* `nil`) - Option available for hangouts chat export.
-  *   `mailOptions` (*type:* `GoogleApi.Vault.V1.Model.MailExportOptions.t`, *default:* `nil`) - Option available for mail export.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - The requested export location.
-  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceExportOptions.t`, *default:* `nil`) - Option available for voice export.
+  *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveExportOptions.t`, *default:* `nil`) - Options for Drive exports.
+  *   `groupsOptions` (*type:* `GoogleApi.Vault.V1.Model.GroupsExportOptions.t`, *default:* `nil`) - Options for Groups exports.
+  *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t`, *default:* `nil`) - Options for Chat exports.
+  *   `mailOptions` (*type:* `GoogleApi.Vault.V1.Model.MailExportOptions.t`, *default:* `nil`) - Options for Gmail exports.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The requested data region for the export.
+  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceExportOptions.t`, *default:* `nil`) - Options for Voice exports.
   """
 
   use GoogleApi.Gax.ModelBase

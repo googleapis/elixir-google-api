@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldDriveQuery do
   @moduledoc """
-  Query options for Drive holds.
+  Options for Drive holds.
 
   ## Attributes
 
-  *   `includeSharedDriveFiles` (*type:* `boolean()`, *default:* `nil`) - If true, include files in shared drives in the hold.
-  *   `includeTeamDriveFiles` (*type:* `boolean()`, *default:* `nil`) - If true, include files in Team Drives in the hold.
+  *   `includeSharedDriveFiles` (*type:* `boolean()`, *default:* `nil`) - To include files in shared drives in the hold, set to **true**.
+  *   `includeTeamDriveFiles` (*type:* `boolean()`, *default:* `nil`) - To include files in Team Drives in the hold, set to **true**.
   """
 
   use GoogleApi.Gax.ModelBase

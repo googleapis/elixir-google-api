@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.VoiceExportOptions do
   @moduledoc """
-  The options for voice export.
+  The options for Voice exports.
 
   ## Attributes
 
-  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The export format for voice export.
+  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported text messages.
   """
 
   use GoogleApi.Gax.ModelBase

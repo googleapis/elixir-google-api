@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.SharedDriveInfo do
   @moduledoc """
-  Shared drives to search
+  The shared drives to search
 
   ## Attributes
 
-  *   `sharedDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - List of Shared drive IDs, as provided by Drive API.
+  *   `sharedDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of shared drive IDs, as provided by the [Drive API](https://developers.google.com/drive).
   """
 
   use GoogleApi.Gax.ModelBase

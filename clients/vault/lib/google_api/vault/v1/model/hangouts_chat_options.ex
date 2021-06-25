@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.HangoutsChatOptions do
   @moduledoc """
-  Hangouts chat search advanced options
+  Additional options for Google Chat search
 
   ## Attributes
 
-  *   `includeRooms` (*type:* `boolean()`, *default:* `nil`) - Set to true to include rooms.
+  *   `includeRooms` (*type:* `boolean()`, *default:* `nil`) - For searches by account or organizational unit, set to **true** to include rooms.
   """
 
   use GoogleApi.Gax.ModelBase

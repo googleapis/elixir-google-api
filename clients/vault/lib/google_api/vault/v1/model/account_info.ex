@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.AccountInfo do
   @moduledoc """
-  Accounts to search
+  The accounts to search
 
   ## Attributes
 

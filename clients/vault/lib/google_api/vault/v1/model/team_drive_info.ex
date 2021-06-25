@@ -21,7 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.TeamDriveInfo do
 
   ## Attributes
 
-  *   `teamDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - List of Team Drive IDs, as provided by Drive API.
+  *   `teamDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - List of Team Drive IDs, as provided by the [Drive API](https://developers.google.com/drive).
   """
 
   use GoogleApi.Gax.ModelBase

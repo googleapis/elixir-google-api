@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.Vault.V1.Model.Export do
   @moduledoc """
-  An export To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
+  An export. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 
   ## Attributes
 
-  *   `cloudStorageSink` (*type:* `GoogleApi.Vault.V1.Model.CloudStorageSink.t`, *default:* `nil`) - Output only. Export sink for cloud storage files.
+  *   `cloudStorageSink` (*type:* `GoogleApi.Vault.V1.Model.CloudStorageSink.t`, *default:* `nil`) - Output only. The sink for export files in Cloud Storage.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the export was created.
-  *   `exportOptions` (*type:* `GoogleApi.Vault.V1.Model.ExportOptions.t`, *default:* `nil`) - Advanced options of the export.
+  *   `exportOptions` (*type:* `GoogleApi.Vault.V1.Model.ExportOptions.t`, *default:* `nil`) - Additional export options.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The generated export ID.
   *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The export name.
-  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The search query being exported.
+  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The query parameters used to create the export.
   *   `requester` (*type:* `GoogleApi.Vault.V1.Model.UserInfo.t`, *default:* `nil`) - Output only. The requester of the export.
-  *   `stats` (*type:* `GoogleApi.Vault.V1.Model.ExportStats.t`, *default:* `nil`) - Output only. Export statistics.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The export status.
+  *   `stats` (*type:* `GoogleApi.Vault.V1.Model.ExportStats.t`, *default:* `nil`) - Output only. Details about the export progress and size.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The status of the export.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.GroupsExportOptions do
   @moduledoc """
-  The options for groups export.
+  Options for Groups exports.
 
   ## Attributes
 
-  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The export format for groups export.
+  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported messages.
   """
 
   use GoogleApi.Gax.ModelBase

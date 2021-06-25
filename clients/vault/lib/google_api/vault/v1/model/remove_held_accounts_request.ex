@@ -21,7 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.RemoveHeldAccountsRequest do
 
   ## Attributes
 
-  *   `accountIds` (*type:* `list(String.t)`, *default:* `nil`) - Account IDs to identify HeldAccounts to remove.
+  *   `accountIds` (*type:* `list(String.t)`, *default:* `nil`) - The account IDs of the accounts to remove from the hold.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.ReopenMatterResponse do
 
   ## Attributes
 
-  *   `matter` (*type:* `GoogleApi.Vault.V1.Model.Matter.t`, *default:* `nil`) - The updated matter, with state OPEN.
+  *   `matter` (*type:* `GoogleApi.Vault.V1.Model.Matter.t`, *default:* `nil`) - The updated matter, with state **OPEN**.
   """
 
   use GoogleApi.Gax.ModelBase

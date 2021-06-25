@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.AccountCount do
   @moduledoc """
-  Count number for each account.
+  The results count for each account.
 
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.Vault.V1.Model.UserInfo.t`, *default:* `nil`) - Account owner.
-  *   `count` (*type:* `String.t`, *default:* `nil`) - The number of artifacts found for this account.
+  *   `count` (*type:* `String.t`, *default:* `nil`) - The number of results (messages or files) found for this account.
   """
 
   use GoogleApi.Gax.ModelBase

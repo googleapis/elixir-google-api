@@ -17,27 +17,27 @@
 
 defmodule GoogleApi.Vault.V1.Model.Query do
   @moduledoc """
-  A query definition relevant for search & export.
+  The query definition used for search and export.
 
   ## Attributes
 
-  *   `accountInfo` (*type:* `GoogleApi.Vault.V1.Model.AccountInfo.t`, *default:* `nil`) - When 'ACCOUNT' is chosen as search method, account_info needs to be specified.
-  *   `corpus` (*type:* `String.t`, *default:* `nil`) - The corpus to search.
-  *   `dataScope` (*type:* `String.t`, *default:* `nil`) - The data source to search from.
-  *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveOptions.t`, *default:* `nil`) - For Drive search, specify more options in this field.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
-  *   `hangoutsChatInfo` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatInfo.t`, *default:* `nil`) - When 'ROOM' is chosen as search method, hangout_chats_info needs to be specified. (read-only)
-  *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatOptions.t`, *default:* `nil`) - For hangouts chat search, specify more options in this field. (read-only)
-  *   `mailOptions` (*type:* `GoogleApi.Vault.V1.Model.MailOptions.t`, *default:* `nil`) - For mail search, specify more options in this field.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The search method to use. This field is similar to the search_method field but is introduced to support shared drives. It supports all search method types. In case the search_method is TEAM_DRIVE the response of this field will be SHARED_DRIVE only.
-  *   `orgUnitInfo` (*type:* `GoogleApi.Vault.V1.Model.OrgUnitInfo.t`, *default:* `nil`) - When 'ORG_UNIT' is chosen as as search method, org_unit_info needs to be specified.
+  *   `accountInfo` (*type:* `GoogleApi.Vault.V1.Model.AccountInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **ACCOUNT**.
+  *   `corpus` (*type:* `String.t`, *default:* `nil`) - The Google Workspace service to search.
+  *   `dataScope` (*type:* `String.t`, *default:* `nil`) - The data source to search.
+  *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveOptions.t`, *default:* `nil`) - Set Drive search-specific options.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.
+  *   `hangoutsChatInfo` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **ROOM**. (read-only)
+  *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatOptions.t`, *default:* `nil`) - Set Chat search-specific options. (read-only)
+  *   `mailOptions` (*type:* `GoogleApi.Vault.V1.Model.MailOptions.t`, *default:* `nil`) - Set Gmail search-specific options.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The entity to search. This field replaces **searchMethod** to support shared drives. When **searchMethod** is **TEAM_DRIVE**, the response of this field is **SHARED_DRIVE**.
+  *   `orgUnitInfo` (*type:* `GoogleApi.Vault.V1.Model.OrgUnitInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **ORG_UNIT**.
   *   `searchMethod` (*type:* `String.t`, *default:* `nil`) - The search method to use.
-  *   `sharedDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.SharedDriveInfo.t`, *default:* `nil`) - When 'SHARED_DRIVE' is chosen as search method, shared_drive_info needs to be specified.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
-  *   `teamDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.TeamDriveInfo.t`, *default:* `nil`) - When 'TEAM_DRIVE' is chosen as search method, team_drive_info needs to be specified.
-  *   `terms` (*type:* `String.t`, *default:* `nil`) - The corpus-specific search operators used to generate search results.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone name. It should be an IANA TZ name, such as "America/Los_Angeles". For more information, see Time Zone.
-  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceOptions.t`, *default:* `nil`) - For voice search, specify more options in this field.
+  *   `sharedDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.SharedDriveInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **SHARED_DRIVE**.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.
+  *   `teamDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.TeamDriveInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **TEAM_DRIVE**.
+  *   `terms` (*type:* `String.t`, *default:* `nil`) - Service-specific [search operators](https://support.google.com/vault/answer/2474474) to filter search results.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone name. It should be an IANA TZ name, such as "America/Los_Angeles". For a list of time zone names, see [Time Zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For more information about how Vault uses time zones, see [the Vault help center](https://support.google.com/vault/answer/6092995#time).
+  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceOptions.t`, *default:* `nil`) - Set Voice search-specific options.
   """
 
   use GoogleApi.Gax.ModelBase

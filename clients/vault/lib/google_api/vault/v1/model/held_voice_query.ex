@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldVoiceQuery do
   @moduledoc """
-  Query options for Voice holds.
+  Options for Voice holds.
 
   ## Attributes
 
-  *   `coveredData` (*type:* `list(String.t)`, *default:* `nil`) - Data covered by this rule. Should be non-empty. Order does not matter and duplicates will be ignored.
+  *   `coveredData` (*type:* `list(String.t)`, *default:* `nil`) - A list of data types covered by the hold. Should be non-empty. Order does not matter and duplicates are ignored.
   """
 
   use GoogleApi.Gax.ModelBase

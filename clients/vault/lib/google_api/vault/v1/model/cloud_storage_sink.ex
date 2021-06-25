@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.CloudStorageSink do
   @moduledoc """
-  Export sink for cloud storage files.
+  Export sink for Cloud Storage files.
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.Vault.V1.Model.CloudStorageFile.t)`, *default:* `nil`) - Output only. The exported files on cloud storage.
+  *   `files` (*type:* `list(GoogleApi.Vault.V1.Model.CloudStorageFile.t)`, *default:* `nil`) - Output only. The exported files in Cloud Storage.
   """
 
   use GoogleApi.Gax.ModelBase

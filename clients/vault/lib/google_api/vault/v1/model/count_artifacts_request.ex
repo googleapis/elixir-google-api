@@ -22,7 +22,7 @@ defmodule GoogleApi.Vault.V1.Model.CountArtifactsRequest do
   ## Attributes
 
   *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The search query.
-  *   `view` (*type:* `String.t`, *default:* `nil`) - Specifies the granularity of the count result returned in response.
+  *   `view` (*type:* `String.t`, *default:* `nil`) - Sets the granularity of the count results.
   """
 
   use GoogleApi.Gax.ModelBase

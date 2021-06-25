@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.HangoutsChatExportOptions do
   @moduledoc """
-  The options for hangouts chat export.
+  Options for Chat exports.
 
   ## Attributes
 
-  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The export format for hangouts chat export.
+  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported messages.
   """
 
   use GoogleApi.Gax.ModelBase

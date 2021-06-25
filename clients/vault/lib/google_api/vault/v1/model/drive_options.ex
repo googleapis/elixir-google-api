@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Vault.V1.Model.DriveOptions do
   @moduledoc """
-  Drive search advanced options
+  Additional options for Drive search
 
   ## Attributes
 
-  *   `includeSharedDrives` (*type:* `boolean()`, *default:* `nil`) - Set to true to include shared drive.
+  *   `includeSharedDrives` (*type:* `boolean()`, *default:* `nil`) - Set to **true** to include shared drives.
   *   `includeTeamDrives` (*type:* `boolean()`, *default:* `nil`) - Set to true to include Team Drive.
-  *   `versionDate` (*type:* `DateTime.t`, *default:* `nil`) - Search the versions of the Drive file as of the reference date. These timestamps are in GMT and rounded down to the given date.
+  *   `versionDate` (*type:* `DateTime.t`, *default:* `nil`) - Search the current version of the Drive file, but export the contents of the last version saved before 12:00 AM UTC on the specified date. Enter the date in UTC.
   """
 
   use GoogleApi.Gax.ModelBase

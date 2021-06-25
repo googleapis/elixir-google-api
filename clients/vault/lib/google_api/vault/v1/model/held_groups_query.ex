@@ -21,9 +21,9 @@ defmodule GoogleApi.Vault.V1.Model.HeldGroupsQuery do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
-  *   `terms` (*type:* `String.t`, *default:* `nil`) - The search terms for the hold.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.
+  *   `terms` (*type:* `String.t`, *default:* `nil`) - The [search operators](https://support.google.com/vault/answer/2474474) used to refine the messages covered by the hold.
   """
 
   use GoogleApi.Gax.ModelBase

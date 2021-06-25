@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.MailOptions do
   @moduledoc """
-  Mail search advanced options
+  Additional options for Gmail search
 
   ## Attributes
 
-  *   `excludeDrafts` (*type:* `boolean()`, *default:* `nil`) - Set to true to exclude drafts.
+  *   `excludeDrafts` (*type:* `boolean()`, *default:* `nil`) - Set to **true** to exclude drafts.
   """
 
   use GoogleApi.Gax.ModelBase
