@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Vault.V1.Model.ExportStats do
   @moduledoc """
-  Stats of an export.
+  Progress information for an export.
 
   ## Attributes
 
-  *   `exportedArtifactCount` (*type:* `String.t`, *default:* `nil`) - The number of documents already processed by the export.
+  *   `exportedArtifactCount` (*type:* `String.t`, *default:* `nil`) - The number of messages or files already processed for export.
   *   `sizeInBytes` (*type:* `String.t`, *default:* `nil`) - The size of export in bytes.
-  *   `totalArtifactCount` (*type:* `String.t`, *default:* `nil`) - The number of documents to be exported.
+  *   `totalArtifactCount` (*type:* `String.t`, *default:* `nil`) - The number of messages or files to be exported.
   """
 
   use GoogleApi.Gax.ModelBase

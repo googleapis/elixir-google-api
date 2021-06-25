@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.AddHeldAccountResult do
   @moduledoc """
-  A status detailing the status of each account creation, and the HeldAccount, if successful.
+  The status of each account creation, and the **HeldAccount**, if successful.
 
   ## Attributes
 
-  *   `account` (*type:* `GoogleApi.Vault.V1.Model.HeldAccount.t`, *default:* `nil`) - If present, this account was successfully created.
-  *   `status` (*type:* `GoogleApi.Vault.V1.Model.Status.t`, *default:* `nil`) - This represents the success status. If failed, check message.
+  *   `account` (*type:* `GoogleApi.Vault.V1.Model.HeldAccount.t`, *default:* `nil`) - Returned when the account was successfully created.
+  *   `status` (*type:* `GoogleApi.Vault.V1.Model.Status.t`, *default:* `nil`) - Reports the request status. If it failed, returns an error message.
   """
 
   use GoogleApi.Gax.ModelBase

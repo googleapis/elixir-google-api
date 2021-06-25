@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Vault.V1.Model.CloudStorageFile do
   @moduledoc """
-  An export file on cloud storage
+  The export file in Cloud Storage
 
   ## Attributes
 
-  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - The cloud storage bucket name of this export file. Can be used in cloud storage JSON/XML API, but not to list the bucket contents. Instead, you can get individual export files by object name.
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage bucket for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis), but not to list the bucket contents. Instead, you can [get individual export files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by object name.
   *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - The md5 hash of the file.
-  *   `objectName` (*type:* `String.t`, *default:* `nil`) - The cloud storage object name of this export file. Can be used in cloud storage JSON/XML API.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the export file.
+  *   `objectName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage object for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis).
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The export file size.
   """
 
   use GoogleApi.Gax.ModelBase

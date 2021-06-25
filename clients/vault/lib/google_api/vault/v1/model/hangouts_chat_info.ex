@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.HangoutsChatInfo do
   @moduledoc """
-  Accounts to search
+  The Chat spaces to search
 
   ## Attributes
 
-  *   `roomId` (*type:* `list(String.t)`, *default:* `nil`) - A set of rooms to search.
+  *   `roomId` (*type:* `list(String.t)`, *default:* `nil`) - A list of Chat spaces IDs, as provided by the [Chat API](https://developers.google.com/hangouts/chat).
   """
 
   use GoogleApi.Gax.ModelBase

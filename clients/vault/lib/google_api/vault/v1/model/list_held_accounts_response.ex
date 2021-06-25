@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.ListHeldAccountsResponse do
   @moduledoc """
-  Returns a list of held accounts for a hold.
+  Returns a list of the accounts covered by a hold.
 
   ## Attributes
 

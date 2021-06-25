@@ -21,9 +21,9 @@ defmodule GoogleApi.Vault.V1.Model.CountArtifactsResponse do
 
   ## Attributes
 
-  *   `groupsCountResult` (*type:* `GoogleApi.Vault.V1.Model.GroupsCountResult.t`, *default:* `nil`) - Count metrics of Groups.
-  *   `mailCountResult` (*type:* `GoogleApi.Vault.V1.Model.MailCountResult.t`, *default:* `nil`) - Count metrics of Mail.
-  *   `totalCount` (*type:* `String.t`, *default:* `nil`) - Total count of artifacts. For mail and groups, artifacts refers to messages.
+  *   `groupsCountResult` (*type:* `GoogleApi.Vault.V1.Model.GroupsCountResult.t`, *default:* `nil`) - Count metrics for Groups.
+  *   `mailCountResult` (*type:* `GoogleApi.Vault.V1.Model.MailCountResult.t`, *default:* `nil`) - Count metrics for Gmail and classic Hangouts.
+  *   `totalCount` (*type:* `String.t`, *default:* `nil`) - Total count of messages.
   """
 
   use GoogleApi.Gax.ModelBase

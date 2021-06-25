@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.VoiceOptions do
   @moduledoc """
-  Voice search options
+  Additional options for Voice search
 
   ## Attributes
 

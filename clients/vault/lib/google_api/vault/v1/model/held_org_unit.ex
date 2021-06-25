@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldOrgUnit do
   @moduledoc """
-  A organizational unit being held in a particular hold. This structure is immutable.
+  The organizational unit covered by a hold. This structure is immutable.
 
   ## Attributes
 
-  *   `holdTime` (*type:* `DateTime.t`, *default:* `nil`) - When the org unit was put on hold. This property is immutable.
-  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The org unit's immutable ID as provided by the Admin SDK.
+  *   `holdTime` (*type:* `DateTime.t`, *default:* `nil`) - When the organizational unit was put on hold. This property is immutable.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit's immutable ID as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).
   """
 
   use GoogleApi.Gax.ModelBase

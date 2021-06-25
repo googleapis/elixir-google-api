@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery do
   @moduledoc """
-  Query options for hangouts chat holds.
+  Options for Chat holds.
 
   ## Attributes
 
-  *   `includeRooms` (*type:* `boolean()`, *default:* `nil`) - If true, include rooms the user has participated in.
+  *   `includeRooms` (*type:* `boolean()`, *default:* `nil`) - To include messages in Chat spaces the user was a member of, set to **true**.
   """
 
   use GoogleApi.Gax.ModelBase

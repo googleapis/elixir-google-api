@@ -24,7 +24,7 @@ defmodule GoogleApi.Vault.V1.Model.GroupsCountResult do
   *   `accountCountErrors` (*type:* `list(GoogleApi.Vault.V1.Model.AccountCountError.t)`, *default:* `nil`) - Error occurred when querying these accounts.
   *   `accountCounts` (*type:* `list(GoogleApi.Vault.V1.Model.AccountCount.t)`, *default:* `nil`) - Subtotal count per matching account that have more than zero messages.
   *   `matchingAccountsCount` (*type:* `String.t`, *default:* `nil`) - Total number of accounts that can be queried and have more than zero messages.
-  *   `nonQueryableAccounts` (*type:* `list(String.t)`, *default:* `nil`) - When data scope is HELD_DATA in the request Query, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.
+  *   `nonQueryableAccounts` (*type:* `list(String.t)`, *default:* `nil`) - When **DataScope** is **HELD_DATA**, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.
   *   `queriedAccountsCount` (*type:* `String.t`, *default:* `nil`) - Total number of accounts involved in this count operation.
   """
 

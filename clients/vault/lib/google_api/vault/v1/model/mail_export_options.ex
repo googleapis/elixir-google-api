@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
   @moduledoc """
-  The options for mail export.
+  Options for Gmail exports.
 
   ## Attributes
 
-  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The export file format.
-  *   `showConfidentialModeContent` (*type:* `boolean()`, *default:* `nil`) - Set to true to export confidential mode content.
+  *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported messages.
+  *   `showConfidentialModeContent` (*type:* `boolean()`, *default:* `nil`) - To export confidential mode content, set to **true**.
   """
 
   use GoogleApi.Gax.ModelBase

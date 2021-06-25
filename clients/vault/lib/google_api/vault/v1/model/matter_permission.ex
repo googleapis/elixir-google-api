@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.MatterPermission do
   @moduledoc """
-  Currently each matter only has one owner, and all others are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.
+  Users can be matter owners or collaborators. Each matter has only one owner. All others users who can access the matter are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID, as provided by Admin SDK.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The user's role in this matter.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID, as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The user's role for the matter.
   """
 
   use GoogleApi.Gax.ModelBase

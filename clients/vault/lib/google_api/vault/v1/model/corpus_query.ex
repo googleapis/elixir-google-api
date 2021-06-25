@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
   @moduledoc """
-  Corpus specific queries.
+  Service-specific options for holds.
 
   ## Attributes
 
-  *   `driveQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldDriveQuery.t`, *default:* `nil`) - Details pertaining to Drive holds. If set, corpus must be Drive.
-  *   `groupsQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldGroupsQuery.t`, *default:* `nil`) - Details pertaining to Groups holds. If set, corpus must be Groups.
-  *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Details pertaining to Hangouts Chat holds. If set, corpus must be Hangouts Chat.
-  *   `mailQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldMailQuery.t`, *default:* `nil`) - Details pertaining to mail holds. If set, corpus must be mail.
-  *   `voiceQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldVoiceQuery.t`, *default:* `nil`) - Details pertaining to Voice holds. If set, corpus must be Voice.
+  *   `driveQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldDriveQuery.t`, *default:* `nil`) - Service-specific options for Drive holds. If set, **CorpusType** must be **DRIVE**.
+  *   `groupsQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldGroupsQuery.t`, *default:* `nil`) - Service-specific options for Groups holds. If set, **CorpusType** must be **GROUPS**.
+  *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Service-specific options for Chat holds. If set, **CorpusType** must be **HANGOUTS_CHAT**.
+  *   `mailQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldMailQuery.t`, *default:* `nil`) - Service-specific options for Gmail holds. If set, **CorpusType** must be **MAIL**.
+  *   `voiceQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldVoiceQuery.t`, *default:* `nil`) - Service-specific options for Voice holds. If set, **CorpusType** must be **VOICE**.
   """
 
   use GoogleApi.Gax.ModelBase

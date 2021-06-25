@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.DriveExportOptions do
   @moduledoc """
-  The options for Drive export.
+  Options for Drive exports.
 
   ## Attributes
 
-  *   `includeAccessInfo` (*type:* `boolean()`, *default:* `nil`) - Set to true to include access level information for users with indirect access to files.
+  *   `includeAccessInfo` (*type:* `boolean()`, *default:* `nil`) - To include access level information for users with [indirect access](https://support.google.com/vault/answer/6099459#metadata) to files, set to **true**.
   """
 
   use GoogleApi.Gax.ModelBase

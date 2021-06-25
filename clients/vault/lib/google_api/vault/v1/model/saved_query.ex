@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Vault.V1.Model.SavedQuery do
   @moduledoc """
-  Definition of the saved query. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
+  The definition of a saved query. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The server generated timestamp at which saved query was created.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of the saved query.
-  *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID of the associated matter. The server does not look at this field during create and always uses matter id in the URL.
-  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The underlying Query object which contains all the information of the saved query.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The server-generated timestamp when the saved query was created.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the saved query.
+  *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID of the matter the saved query is saved in. The server does not use this field during create and always uses matter ID in the URL.
+  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The search parameters of the saved query.
   *   `savedQueryId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the saved query.
   """
 

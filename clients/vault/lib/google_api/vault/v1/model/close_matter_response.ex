@@ -21,7 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.CloseMatterResponse do
 
   ## Attributes
 
-  *   `matter` (*type:* `GoogleApi.Vault.V1.Model.Matter.t`, *default:* `nil`) - The updated matter, with state CLOSED.
+  *   `matter` (*type:* `GoogleApi.Vault.V1.Model.Matter.t`, *default:* `nil`) - The updated matter, with state **CLOSED**.
   """
 
   use GoogleApi.Gax.ModelBase

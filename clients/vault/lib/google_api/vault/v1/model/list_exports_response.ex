@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.ListExportsResponse do
   @moduledoc """
-  The holds for a matter.
+  The exports for a matter.
 
   ## Attributes
 
