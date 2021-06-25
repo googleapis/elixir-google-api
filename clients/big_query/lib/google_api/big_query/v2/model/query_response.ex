@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
   ## Attributes
 
   *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - Whether the query result was fetched from the query cache.
-  *   `dmlStats` (*type:* `any()`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
+  *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
   *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - [Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful.
   *   `jobComplete` (*type:* `boolean()`, *default:* `nil`) - Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available.
   *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Reference to the Job that was created to run the query. This field will be present even if the original request timed out, in which case GetQueryResults can be used to read the results once the query has completed. Since this API only returns the first page of results, subsequent pages can be fetched via the same mechanism (GetQueryResults).
@@ -40,7 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
 
   @type t :: %__MODULE__{
           :cacheHit => boolean() | nil,
-          :dmlStats => any() | nil,
+          :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
           :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()) | nil,
           :jobComplete => boolean() | nil,
           :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t() | nil,
@@ -55,7 +55,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
         }
 
   field(:cacheHit)
-  field(:dmlStats)
+  field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
   field(:errors, as: GoogleApi.BigQuery.V2.Model.ErrorProto, type: :list)
   field(:jobComplete)
   field(:jobReference, as: GoogleApi.BigQuery.V2.Model.JobReference)
