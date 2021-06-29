@@ -21,11 +21,16 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
 
   ## Attributes
 
+  *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If populated, the Antenna Model Pattern to use. Format is: RecordCreatorId:PatternId
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :antennaModel => String.t() | nil
+        }
+
+  field(:antennaModel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
