@@ -22,7 +22,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.SqlIpConfig do
   ## Attributes
 
   *   `authorizedNetworks` (*type:* `list(GoogleApi.DataMigration.V1beta1.Model.SqlAclEntry.t)`, *default:* `nil`) - The list of external networks that are allowed to connect to the instance using the IP. See https://en.wikipedia.org/wiki/CIDR_notation#CIDR_notation, also known as 'slash' notation (e.g. `192.168.100.0/24`).
-  *   `enableIpv4` (*type:* `boolean()`, *default:* `nil`) - Whether the instance should be assigned an IPv4 address or not.
+  *   `enableIpv4` (*type:* `boolean()`, *default:* `nil`) - Whether the instance is assigned a public IP address or not.
   *   `privateNetwork` (*type:* `String.t`, *default:* `nil`) - The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `/projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set.
   *   `requireSsl` (*type:* `boolean()`, *default:* `nil`) - Whether SSL connections over IP should be enforced or not.
   """
