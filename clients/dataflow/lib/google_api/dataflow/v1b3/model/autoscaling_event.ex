@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.AutoscalingEvent do
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - The type of autoscaling event to report.
   *   `targetNumWorkers` (*type:* `String.t`, *default:* `nil`) - The target number of workers the worker pool wants to resize to use.
   *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The time this event was emitted to indicate a new target or current num_workers value.
-  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - A short and friendly name for the worker pool this event refers to, populated from the value of PoolStageRelation::user_pool_name.
+  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - A short and friendly name for the worker pool this event refers to.
   """
 
   use GoogleApi.Gax.ModelBase
