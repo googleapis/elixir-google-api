@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
 
   *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
-  *   `storageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview.
+  *   `storageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
   """
 
   use GoogleApi.Gax.ModelBase
