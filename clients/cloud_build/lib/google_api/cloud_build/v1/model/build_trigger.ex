@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
 
   ## Attributes
 
+  *   `autodetect` (*type:* `boolean()`, *default:* `nil`) - Autodetect build configuration. The following precedence is used (case insensitive): 1. cloudbuild.yaml 2. cloudbuild.yml 3. cloudbuild.json 4. Dockerfile Currently only available for GitHub App Triggers.
   *   `build` (*type:* `GoogleApi.CloudBuild.V1.Model.Build.t`, *default:* `nil`) - Contents of the build template.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the trigger was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this trigger.
@@ -43,6 +44,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autodetect => boolean() | nil,
           :build => GoogleApi.CloudBuild.V1.Model.Build.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
           :webhookConfig => GoogleApi.CloudBuild.V1.Model.WebhookConfig.t() | nil
         }
 
+  field(:autodetect)
   field(:build, as: GoogleApi.CloudBuild.V1.Model.Build)
   field(:createTime, as: DateTime)
   field(:description)
