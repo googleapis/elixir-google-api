@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   ## Attributes
 
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
+  *   `desiredAuthenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - The desired authenticator groups config for the cluster.
   *   `desiredAutopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - The desired Autopilot configuration for the cluster.
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
@@ -53,6 +54,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   @type t :: %__MODULE__{
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
+          :desiredAuthenticatorGroupsConfig =>
+            GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
           :desiredAutopilot => GoogleApi.Container.V1.Model.Autopilot.t() | nil,
           :desiredBinaryAuthorization =>
             GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
@@ -90,6 +93,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
+
+  field(:desiredAuthenticatorGroupsConfig,
+    as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig
+  )
+
   field(:desiredAutopilot, as: GoogleApi.Container.V1.Model.Autopilot)
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
