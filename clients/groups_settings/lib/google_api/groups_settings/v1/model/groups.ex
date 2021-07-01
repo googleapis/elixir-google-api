@@ -262,6 +262,7 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
       - OWNERS_ONLY 
       - NONE
   *   `customFooterText` (*type:* `String.t`, *default:* `nil`) - Set the content of custom footer text. The maximum number of characters is 1,000.
+  *   `default_sender` (*type:* `String.t`, *default:* `nil`) - Default sender for members who can post messages as the group. Possible values are: - `DEFAULT_SELF`: By default messages will be sent from the user - `GROUP`: By default messages will be sent from the group
   *   `whoCanBanUsers` (*type:* `String.t`, *default:* `nil`) - Specifies who can deny membership to users. This permission will be deprecated once it is merged into the new whoCanModerateMembers setting. Possible values are:  
       - ALL_MEMBERS 
       - OWNERS_AND_MANAGERS 
@@ -344,6 +345,7 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
           :enableCollaborativeInbox => String.t() | nil,
           :whoCanAssistContent => String.t() | nil,
           :customFooterText => String.t() | nil,
+          :default_sender => String.t() | nil,
           :whoCanBanUsers => String.t() | nil,
           :whoCanDeleteAnyPost => String.t() | nil,
           :whoCanHideAbuse => String.t() | nil,
@@ -407,6 +409,7 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   field(:enableCollaborativeInbox)
   field(:whoCanAssistContent)
   field(:customFooterText)
+  field(:default_sender)
   field(:whoCanBanUsers)
   field(:whoCanDeleteAnyPost)
   field(:whoCanHideAbuse)
