@@ -247,7 +247,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of shared drives to return.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of shared drives to return per page.
       *   `:pageToken` (*type:* `String.t`) - Page token for shared drives.
       *   `:q` (*type:* `String.t`) - Query string for searching shared drives.
       *   `:useDomainAdminAccess` (*type:* `boolean()`) - Issue the request as a domain administrator; if set to true, then all shared drives of the domain in which the requester is an administrator are returned.
