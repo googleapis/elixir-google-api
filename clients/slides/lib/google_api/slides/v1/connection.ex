@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Connection do
       # See, edit, create, and delete all of your Google Drive files
       "https://www.googleapis.com/auth/drive",
 
-      # View and manage Google Drive files and folders that you have opened or created with this app
+      # See, edit, create, and delete only the specific Google Drive files you use with this app
       "https://www.googleapis.com/auth/drive.file",
 
       # See and download all your Google Drive files

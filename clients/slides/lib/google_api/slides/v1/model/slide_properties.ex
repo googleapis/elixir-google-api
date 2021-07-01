@@ -21,6 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.SlideProperties do
 
   ## Attributes
 
+  *   `isSkipped` (*type:* `boolean()`, *default:* `nil`) - Whether the slide is skipped in the presentation mode. Defaults to false.
   *   `layoutObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the layout that this slide is based on. This property is read-only.
   *   `masterObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the master that this slide is based on. This property is read-only.
   *   `notesPage` (*type:* `GoogleApi.Slides.V1.Model.Page.t`, *default:* `nil`) - The notes page that this slide is associated with. It defines the visual appearance of a notes page when printing or exporting slides with speaker notes. A notes page inherits properties from the notes master. The placeholder shape with type BODY on the notes page contains the speaker notes for this slide. The ID of this shape is identified by the speakerNotesObjectId field. The notes page is read-only except for the text content and styles of the speaker notes shape. This property is read-only.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Slides.V1.Model.SlideProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :isSkipped => boolean() | nil,
           :layoutObjectId => String.t() | nil,
           :masterObjectId => String.t() | nil,
           :notesPage => GoogleApi.Slides.V1.Model.Page.t() | nil
         }
 
+  field(:isSkipped)
   field(:layoutObjectId)
   field(:masterObjectId)
   field(:notesPage, as: GoogleApi.Slides.V1.Model.Page)
