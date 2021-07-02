@@ -20,7 +20,7 @@ defmodule GoogleApi.StorageTransfer.V1 do
   API client metadata for GoogleApi.StorageTransfer.V1.
   """
 
-  @discovery_revision "20210617"
+  @discovery_revision "20210624"
 
   def discovery_revision(), do: @discovery_revision
 end
