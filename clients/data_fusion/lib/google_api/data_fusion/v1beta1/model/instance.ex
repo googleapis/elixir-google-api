@@ -25,6 +25,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `apiEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Endpoint on which the REST APIs is accessible.
   *   `availableVersion` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.Version.t)`, *default:* `nil`) - Available versions that the instance can be upgraded to using UpdateInstanceRequest.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
+  *   `cryptoKeyConfig` (*type:* `GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig.t`, *default:* `nil`) - The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.
   *   `dataprocServiceAccount` (*type:* `String.t`, *default:* `nil`) - User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines. This allows users to have fine-grained access control on Dataproc's accesses to cloud resources.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
@@ -56,6 +57,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :apiEndpoint => String.t() | nil,
           :availableVersion => list(GoogleApi.DataFusion.V1beta1.Model.Version.t()) | nil,
           :createTime => DateTime.t() | nil,
+          :cryptoKeyConfig => GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig.t() | nil,
           :dataprocServiceAccount => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:apiEndpoint)
   field(:availableVersion, as: GoogleApi.DataFusion.V1beta1.Model.Version, type: :list)
   field(:createTime, as: DateTime)
+  field(:cryptoKeyConfig, as: GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig)
   field(:dataprocServiceAccount)
   field(:description)
   field(:displayName)
