@@ -38,6 +38,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this resource belongs to, in the form of projects/{PROJECT_NUMBER}. This field is available when the resource belongs to a project. To search against `project`: * use a field query. Example: `project:12345` * use a free text query. Example: `12345` * specify the `scope` field as this project in your search request.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of this resource. Different resources types have different state definitions that are mapped from various fields of different resource types. This field is available only when the resource's proto contains it. Example: If the resource is an instance provided by Compute Engine, its state will include PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition in [API Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances). If the resource is a project provided by Cloud Resource Manager, its state will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and DELETE_IN_PROGRESS. See `lifecycleState` definition in [API Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects). To search against the `state`: * use a field query. Example: `state:RUNNING` * use a free text query. Example: `RUNNING`
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of this resource, at which the resource was last modified or deleted. The granularity is in seconds. Timestamp.nanos will always be 0. This field is available only when the resource's proto contains it. To search against `update_time`: * use a field query. - value in seconds since unix epoch. Example: `updateTime < 1609459200` - value in date string. Example: `updateTime < 2021-01-01` - value in date-time string (must be quoted). Example: `updateTime < "2021-01-01T00:00:00"`
+  *   `versionedResources` (*type:* `list(GoogleApi.CloudAsset.V1.Model.VersionedResource.t)`, *default:* `nil`) - Versioned resource representations of this resource. This is repeated because there could be multiple versions of resource representations during version migration. This `versioned_resources` field is not searchable. Some attributes of the resource representations are exposed in `additional_attributes` field, so as to allow users to search on them.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -59,7 +60,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
           :parentFullResourceName => String.t() | nil,
           :project => String.t() | nil,
           :state => String.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :versionedResources => list(GoogleApi.CloudAsset.V1.Model.VersionedResource.t()) | nil
         }
 
   field(:additionalAttributes, type: :map)
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   field(:project)
   field(:state)
   field(:updateTime, as: DateTime)
+  field(:versionedResources, as: GoogleApi.CloudAsset.V1.Model.VersionedResource, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
