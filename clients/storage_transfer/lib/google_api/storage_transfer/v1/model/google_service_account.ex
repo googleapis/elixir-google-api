@@ -22,15 +22,18 @@ defmodule GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
   ## Attributes
 
   *   `accountEmail` (*type:* `String.t`, *default:* `nil`) - Email address of the service account.
+  *   `subjectId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the service account.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountEmail => String.t() | nil
+          :accountEmail => String.t() | nil,
+          :subjectId => String.t() | nil
         }
 
   field(:accountEmail)
+  field(:subjectId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount do
