@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader do
   @moduledoc """
-  HTTPHeader describes a custom header to be used in HTTP probes
+  Not supported by Cloud Run HTTPHeader describes a custom header to be used in HTTP probes
 
   ## Attributes
 

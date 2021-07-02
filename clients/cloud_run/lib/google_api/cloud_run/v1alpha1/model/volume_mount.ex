@@ -17,29 +17,26 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeMount do
   @moduledoc """
-  VolumeMount describes a mounting of a Volume within a container.
+  Not supported by Cloud Run VolumeMount describes a mounting of a Volume within a container.
 
   ## Attributes
 
   *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Path within the container at which the volume should be mounted. Must not contain ':'.
-  *   `mountPropagation` (*type:* `String.t`, *default:* `nil`) - mountPropagation determines how mounts are propagated from the host to container and the other way around. When not set, MountPropagationHostToContainer is used. This field is beta in 1.10. +optional
   *   `name` (*type:* `String.t`, *default:* `nil`) - This must match the Name of a Volume.
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false. +optional
-  *   `subPath` (*type:* `String.t`, *default:* `nil`) - Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root). +optional
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - (Optional) Only true is accepted. Defaults to true.
+  *   `subPath` (*type:* `String.t`, *default:* `nil`) - (Optional) Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :mountPath => String.t() | nil,
-          :mountPropagation => String.t() | nil,
           :name => String.t() | nil,
           :readOnly => boolean() | nil,
           :subPath => String.t() | nil
         }
 
   field(:mountPath)
-  field(:mountPropagation)
   field(:name)
   field(:readOnly)
   field(:subPath)

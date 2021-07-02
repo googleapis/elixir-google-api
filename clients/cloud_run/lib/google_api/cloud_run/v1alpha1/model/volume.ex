@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.Volume do
   @moduledoc """
-  Volume represents a named volume in a container.
+  Not supported by Cloud Run Volume represents a named volume in a container.
 
   ## Attributes
 

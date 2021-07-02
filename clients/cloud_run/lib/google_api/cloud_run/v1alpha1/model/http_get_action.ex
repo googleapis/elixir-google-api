@@ -17,15 +17,14 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction do
   @moduledoc """
-  HTTPGetAction describes an action based on HTTP Get requests.
+  Not supported by Cloud Run HTTPGetAction describes an action based on HTTP Get requests.
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead. +optional
-  *   `httpHeaders` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers. +optional
-  *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server. +optional
-  *   `port` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t`, *default:* `nil`) - Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  *   `scheme` (*type:* `String.t`, *default:* `nil`) - Scheme to use for connecting to the host. Defaults to HTTP. +optional
+  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional) Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  *   `httpHeaders` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t)`, *default:* `nil`) - (Optional) Custom headers to set in the request. HTTP allows repeated headers.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - (Optional) Path to access on the HTTP server.
+  *   `scheme` (*type:* `String.t`, *default:* `nil`) - (Optional) Scheme to use for connecting to the host. Defaults to HTTP.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,14 +33,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction do
           :host => String.t() | nil,
           :httpHeaders => list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t()) | nil,
           :path => String.t() | nil,
-          :port => GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t() | nil,
           :scheme => String.t() | nil
         }
 
   field(:host)
   field(:httpHeaders, as: GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader, type: :list)
   field(:path)
-  field(:port, as: GoogleApi.CloudRun.V1alpha1.Model.IntOrString)
   field(:scheme)
 end
 

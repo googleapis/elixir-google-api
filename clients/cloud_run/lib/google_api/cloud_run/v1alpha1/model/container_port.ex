@@ -21,26 +21,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ContainerPort do
 
   ## Attributes
 
-  *   `containerPort` (*type:* `integer()`, *default:* `nil`) - Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  *   `hostIP` (*type:* `String.t`, *default:* `nil`) - What host IP to bind the external port to. +optional
-  *   `hostPort` (*type:* `integer()`, *default:* `nil`) - Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this. +optional
-  *   `name` (*type:* `String.t`, *default:* `nil`) - If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services. +optional
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - Protocol for port. Must be UDP or TCP. Defaults to "TCP". +optional
+  *   `containerPort` (*type:* `integer()`, *default:* `nil`) - (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - (Optional) If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - (Optional) Protocol for port. Must be "TCP". Defaults to "TCP".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :containerPort => integer() | nil,
-          :hostIP => String.t() | nil,
-          :hostPort => integer() | nil,
           :name => String.t() | nil,
           :protocol => String.t() | nil
         }
 
   field(:containerPort)
-  field(:hostIP)
-  field(:hostPort)
   field(:name)
   field(:protocol)
 end
