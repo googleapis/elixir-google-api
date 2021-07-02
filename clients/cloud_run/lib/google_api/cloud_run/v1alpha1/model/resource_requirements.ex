@@ -21,27 +21,19 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ResourceRequirements do
 
   ## Attributes
 
-  *   `limits` (*type:* `map()`, *default:* `nil`) - Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
-  *   `limitsInMap` (*type:* `%{optional(String.t) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t}`, *default:* `nil`) - Limits describes the maximum amount of compute resources allowed. This is a temporary field created to migrate away from the map limits field. This is done to become compliant with k8s style API. This field is deprecated in favor of limits field.
-  *   `requests` (*type:* `map()`, *default:* `nil`) - Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
-  *   `requestsInMap` (*type:* `%{optional(String.t) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t}`, *default:* `nil`) - Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. This is a temporary field created to migrate away from the map requests field. This is done to become compliant with k8s style API. This field is deprecated in favor of requests field.
+  *   `limits` (*type:* `map()`, *default:* `nil`) - (Optional) Only memory and CPU are supported. Note: The only supported values for CPU are '1', '2', and '4'. Setting 4 CPU requires at least 2Gi of memory. Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+  *   `requests` (*type:* `map()`, *default:* `nil`) - (Optional) Only memory and CPU are supported. Note: The only supported values for CPU are '1' and '2'. Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :limits => map() | nil,
-          :limitsInMap =>
-            %{optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()} | nil,
-          :requests => map() | nil,
-          :requestsInMap =>
-            %{optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.Quantity.t()} | nil
+          :requests => map() | nil
         }
 
   field(:limits, type: :map)
-  field(:limitsInMap, as: GoogleApi.CloudRun.V1alpha1.Model.Quantity, type: :map)
   field(:requests, type: :map)
-  field(:requestsInMap, as: GoogleApi.CloudRun.V1alpha1.Model.Quantity, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ResourceRequirements do

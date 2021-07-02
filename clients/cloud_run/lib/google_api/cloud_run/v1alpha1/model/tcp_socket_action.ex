@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction do
   @moduledoc """
-  TCPSocketAction describes an action based on opening a socket
+  Not supported by Cloud Run TCPSocketAction describes an action based on opening a socket
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Optional: Host name to connect to, defaults to the pod IP. +optional
-  *   `port` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t`, *default:* `nil`) - Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional) Optional: Host name to connect to, defaults to the pod IP.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :host => String.t() | nil,
-          :port => GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t() | nil
+          :port => integer() | nil
         }
 
   field(:host)
-  field(:port, as: GoogleApi.CloudRun.V1alpha1.Model.IntOrString)
+  field(:port)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction do

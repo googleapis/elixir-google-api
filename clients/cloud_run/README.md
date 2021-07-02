@@ -2,7 +2,7 @@
 
 Cloud Run Admin API client library.
 
-Deploy and manage user provided container images that scale automatically based on incoming requets. The Cloud Run Admin API follows the Knative Serving API specification.
+Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API follows the Knative Serving API specification.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_run, "~> 0.44"}]
+  [{:google_api_cloud_run, "~> 0.45"}]
 end
 ```
 
