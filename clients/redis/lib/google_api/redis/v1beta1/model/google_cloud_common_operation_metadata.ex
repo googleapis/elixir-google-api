@@ -21,13 +21,13 @@ defmodule GoogleApi.Redis.V1beta1.Model.GoogleCloudCommonOperationMetadata do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] API version used to start the operation.
-  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - [Output only] Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - [Output only] The time the operation was created.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - [Output only] The time the operation finished running.
-  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - [Output only] Human-readable status of the operation, if any.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined resource path for the target of the operation.
-  *   `verb` (*type:* `String.t`, *default:* `nil`) - [Output only] Name of the verb executed by the operation.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
+  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
+  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined resource path for the target of the operation.
+  *   `verb` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the verb executed by the operation.
   """
 
   use GoogleApi.Gax.ModelBase
