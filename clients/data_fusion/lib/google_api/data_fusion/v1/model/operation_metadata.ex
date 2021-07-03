@@ -21,7 +21,7 @@ defmodule GoogleApi.DataFusion.V1.Model.OperationMetadata do
 
   ## Attributes
 
-  *   `additionalStatus` (*type:* `map()`, *default:* `nil`) - Map to hold any additonal status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING
+  *   `additionalStatus` (*type:* `map()`, *default:* `nil`) - Map to hold any additional status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version used to start the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
