@@ -27,12 +27,13 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Google Cloud Storage.
   *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build logs are stored.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
+  *   `pool` (*type:* `GoogleApi.CloudBuild.V1.Model.PoolOption.t`, *default:* `nil`) - Optional. Specification for execution on a `WorkerPool`. See [running builds in a custom worker pool](https://cloud.google.com/build/docs/custom-workers/run-builds-in-custom-worker-pool) for more information.
   *   `requestedVerifyOption` (*type:* `String.t`, *default:* `nil`) - Requested verifiability options.
   *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`. These variables will be available to all build steps in this build.
   *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
   *   `substitutionOption` (*type:* `String.t`, *default:* `nil`) - Option to specify behavior when there is an error in the substitution checks. NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot be overridden in the build configuration file.
   *   `volumes` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Volume.t)`, *default:* `nil`) - Global list of volumes to mount for ALL build steps Each volume is created as an empty volume prior to starting the build process. Upon completion of the build, volumes and their contents are discarded. Global volume names and paths cannot conflict with the volumes defined a build step. Using a global volume in a build with only one step is not valid as it is indicative of a build request with an incorrect configuration.
-  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build. Format: projects/{project}/locations/{location}/workerPools/{workerPool} This field is in beta and is available only to restricted users.
+  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - This field deprecated; please use `pool.name` instead.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,6 +45,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
           :logStreamingOption => String.t() | nil,
           :logging => String.t() | nil,
           :machineType => String.t() | nil,
+          :pool => GoogleApi.CloudBuild.V1.Model.PoolOption.t() | nil,
           :requestedVerifyOption => String.t() | nil,
           :secretEnv => list(String.t()) | nil,
           :sourceProvenanceHash => list(String.t()) | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   field(:logStreamingOption)
   field(:logging)
   field(:machineType)
+  field(:pool, as: GoogleApi.CloudBuild.V1.Model.PoolOption)
   field(:requestedVerifyOption)
   field(:secretEnv, type: :list)
   field(:sourceProvenanceHash, type: :list)
