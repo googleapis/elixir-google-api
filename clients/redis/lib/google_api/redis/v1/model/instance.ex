@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1.Model.Instance do
   @moduledoc """
-  A Google Cloud Redis instance.
+  A Google Cloud Redis instance. next id = 30
 
   ## Attributes
 
