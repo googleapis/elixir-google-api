@@ -27,6 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.KeyRangeInfo do
   *   `keysCount` (*type:* `String.t`, *default:* `nil`) - The number of keys this range covers.
   *   `metric` (*type:* `GoogleApi.Spanner.V1.Model.LocalizedString.t`, *default:* `nil`) - The name of the metric. e.g. "latency".
   *   `startKeyIndex` (*type:* `integer()`, *default:* `nil`) - The index of the start key in indexed_keys.
+  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - The time offset. This is the time since the start of the time interval.
   *   `unit` (*type:* `GoogleApi.Spanner.V1.Model.LocalizedString.t`, *default:* `nil`) - The unit of the metric. This is an unstructured field and will be mapped as is to the user.
   *   `value` (*type:* `number()`, *default:* `nil`) - The value of the metric.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.Spanner.V1.Model.KeyRangeInfo do
           :keysCount => String.t() | nil,
           :metric => GoogleApi.Spanner.V1.Model.LocalizedString.t() | nil,
           :startKeyIndex => integer() | nil,
+          :timeOffset => String.t() | nil,
           :unit => GoogleApi.Spanner.V1.Model.LocalizedString.t() | nil,
           :value => number() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.Spanner.V1.Model.KeyRangeInfo do
   field(:keysCount)
   field(:metric, as: GoogleApi.Spanner.V1.Model.LocalizedString)
   field(:startKeyIndex)
+  field(:timeOffset)
   field(:unit, as: GoogleApi.Spanner.V1.Model.LocalizedString)
   field(:value)
 end
