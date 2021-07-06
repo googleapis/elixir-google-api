@@ -21,6 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
 
   ## Attributes
 
+  *   `alertStrategy` (*type:* `GoogleApi.Monitoring.V3.Model.AlertStrategy.t`, *default:* `nil`) - Control over how this alert policy's notification channels are notified.
   *   `combiner` (*type:* `String.t`, *default:* `nil`) - How to combine the results of multiple conditions to determine if an incident should be opened. If condition_time_series_query_language is present, this must be COMBINE_UNSPECIFIED.
   *   `conditions` (*type:* `list(GoogleApi.Monitoring.V3.Model.Condition.t)`, *default:* `nil`) - A list of conditions for the policy. The conditions are combined by AND or OR according to the combiner field. If the combined conditions evaluate to true, then an incident is created. A policy can have from one to six conditions. If condition_time_series_query_language is present, it must be the only condition.
   *   `creationRecord` (*type:* `GoogleApi.Monitoring.V3.Model.MutationRecord.t`, *default:* `nil`) - A read-only record of the creation of the alerting policy. If provided in a call to create or update, this field will be ignored.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alertStrategy => GoogleApi.Monitoring.V3.Model.AlertStrategy.t() | nil,
           :combiner => String.t() | nil,
           :conditions => list(GoogleApi.Monitoring.V3.Model.Condition.t()) | nil,
           :creationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
           :validity => GoogleApi.Monitoring.V3.Model.Status.t() | nil
         }
 
+  field(:alertStrategy, as: GoogleApi.Monitoring.V3.Model.AlertStrategy)
   field(:combiner)
   field(:conditions, as: GoogleApi.Monitoring.V3.Model.Condition, type: :list)
   field(:creationRecord, as: GoogleApi.Monitoring.V3.Model.MutationRecord)

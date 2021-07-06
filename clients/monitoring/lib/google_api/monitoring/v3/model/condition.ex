@@ -22,6 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
   ## Attributes
 
   *   `conditionAbsent` (*type:* `GoogleApi.Monitoring.V3.Model.MetricAbsence.t`, *default:* `nil`) - A condition that checks that a time series continues to receive new data points.
+  *   `conditionMatchedLog` (*type:* `GoogleApi.Monitoring.V3.Model.LogMatch.t`, *default:* `nil`) - A condition that checks for log messages matching given constraints. If set, no other conditions can be present.
   *   `conditionMonitoringQueryLanguage` (*type:* `GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t`, *default:* `nil`) - A condition that uses the Monitoring Query Language to define alerts.
   *   `conditionThreshold` (*type:* `GoogleApi.Monitoring.V3.Model.MetricThreshold.t`, *default:* `nil`) - A condition that compares a time series against a threshold.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short name or phrase used to identify the condition in dashboards, notifications, and incidents. To avoid confusion, don't use the same display name for multiple conditions in the same policy.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
 
   @type t :: %__MODULE__{
           :conditionAbsent => GoogleApi.Monitoring.V3.Model.MetricAbsence.t() | nil,
+          :conditionMatchedLog => GoogleApi.Monitoring.V3.Model.LogMatch.t() | nil,
           :conditionMonitoringQueryLanguage =>
             GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t() | nil,
           :conditionThreshold => GoogleApi.Monitoring.V3.Model.MetricThreshold.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
         }
 
   field(:conditionAbsent, as: GoogleApi.Monitoring.V3.Model.MetricAbsence)
+  field(:conditionMatchedLog, as: GoogleApi.Monitoring.V3.Model.LogMatch)
 
   field(:conditionMonitoringQueryLanguage,
     as: GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition
