@@ -23,7 +23,9 @@ defmodule GoogleApi.Composer.V1beta1.Model.CheckUpgradeResponse do
 
   *   `buildLogUri` (*type:* `String.t`, *default:* `nil`) - Output only. Url for a docker build log of an upgraded image.
   *   `containsPypiModulesConflict` (*type:* `String.t`, *default:* `nil`) - Output only. Whether build has succeeded or failed on modules conflicts.
+  *   `imageVersion` (*type:* `String.t`, *default:* `nil`) - Composer image for which the build was happening.
   *   `pypiConflictBuildLogExtract` (*type:* `String.t`, *default:* `nil`) - Output only. Extract from a docker image build log containing information about pypi modules conflicts.
+  *   `pypiDependencies` (*type:* `map()`, *default:* `nil`) - Pypi dependencies specified in the environment configuration, at the time when the build was triggered.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,16 @@ defmodule GoogleApi.Composer.V1beta1.Model.CheckUpgradeResponse do
   @type t :: %__MODULE__{
           :buildLogUri => String.t() | nil,
           :containsPypiModulesConflict => String.t() | nil,
-          :pypiConflictBuildLogExtract => String.t() | nil
+          :imageVersion => String.t() | nil,
+          :pypiConflictBuildLogExtract => String.t() | nil,
+          :pypiDependencies => map() | nil
         }
 
   field(:buildLogUri)
   field(:containsPypiModulesConflict)
+  field(:imageVersion)
   field(:pypiConflictBuildLogExtract)
+  field(:pypiDependencies, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.CheckUpgradeResponse do
