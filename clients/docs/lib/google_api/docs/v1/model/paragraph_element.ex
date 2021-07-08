@@ -30,6 +30,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   *   `inlineObjectElement` (*type:* `GoogleApi.Docs.V1.Model.InlineObjectElement.t`, *default:* `nil`) - An inline object paragraph element.
   *   `pageBreak` (*type:* `GoogleApi.Docs.V1.Model.PageBreak.t`, *default:* `nil`) - A page break paragraph element.
   *   `person` (*type:* `GoogleApi.Docs.V1.Model.Person.t`, *default:* `nil`) - A paragraph element that links to a person or email address.
+  *   `richLink` (*type:* `GoogleApi.Docs.V1.Model.RichLink.t`, *default:* `nil`) - A paragraph element that links to a Google resource (such as a file in Drive, a Youtube video, a Calendar event, etc.)
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this paragraph element, in UTF-16 code units.
   *   `textRun` (*type:* `GoogleApi.Docs.V1.Model.TextRun.t`, *default:* `nil`) - A text run paragraph element.
   """
@@ -46,6 +47,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
           :inlineObjectElement => GoogleApi.Docs.V1.Model.InlineObjectElement.t() | nil,
           :pageBreak => GoogleApi.Docs.V1.Model.PageBreak.t() | nil,
           :person => GoogleApi.Docs.V1.Model.Person.t() | nil,
+          :richLink => GoogleApi.Docs.V1.Model.RichLink.t() | nil,
           :startIndex => integer() | nil,
           :textRun => GoogleApi.Docs.V1.Model.TextRun.t() | nil
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   field(:inlineObjectElement, as: GoogleApi.Docs.V1.Model.InlineObjectElement)
   field(:pageBreak, as: GoogleApi.Docs.V1.Model.PageBreak)
   field(:person, as: GoogleApi.Docs.V1.Model.Person)
+  field(:richLink, as: GoogleApi.Docs.V1.Model.RichLink)
   field(:startIndex)
   field(:textRun, as: GoogleApi.Docs.V1.Model.TextRun)
 end
