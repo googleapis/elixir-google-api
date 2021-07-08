@@ -24,16 +24,16 @@ defmodule GoogleApi.Docs.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, create, and edit all Google Docs documents you have access to
+      # See, edit, create, and delete all your Google Docs documents
       "https://www.googleapis.com/auth/documents",
 
-      # View your Google Docs documents
+      # See all your Google Docs documents
       "https://www.googleapis.com/auth/documents.readonly",
 
       # See, edit, create, and delete all of your Google Drive files
       "https://www.googleapis.com/auth/drive",
 
-      # View and manage Google Drive files and folders that you have opened or created with this app
+      # See, edit, create, and delete only the specific Google Drive files you use with this app
       "https://www.googleapis.com/auth/drive.file",
 
       # See and download all your Google Drive files
