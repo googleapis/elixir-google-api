@@ -26,7 +26,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The attendee's name, if available. Optional.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.
       Required when adding an attendee.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The attendee's Profile ID, if available.
   *   `optional` (*type:* `boolean()`, *default:* `false`) - Whether this is an optional attendee. Optional. The default is False.
   *   `organizer` (*type:* `boolean()`, *default:* `nil`) - Whether the attendee is the organizer of the event. Read-only. The default is False.
   *   `resource` (*type:* `boolean()`, *default:* `false`) - Whether the attendee is a resource. Can only be set when the attendee is added to the event for the first time. Subsequent modifications are ignored. Optional. The default is False.

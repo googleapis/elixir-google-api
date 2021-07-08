@@ -23,7 +23,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
 
   *   `conferenceId` (*type:* `String.t`, *default:* `nil`) - The ID of the conference.
       Can be used by developers to keep track of conferences, should not be displayed to users.
-      The ID value is formed differently for each conference solution type: `
+      The ID value is formed differently for each conference solution type:  
       - eventHangout: ID is not set.
       - eventNamedHangout: ID is the name of the Hangout.
       - hangoutsMeet: ID is the 10-letter meeting code, for example aaa-bbbb-ccc.
