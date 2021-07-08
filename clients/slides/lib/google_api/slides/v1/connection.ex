@@ -33,16 +33,16 @@ defmodule GoogleApi.Slides.V1.Connection do
       # See and download all your Google Drive files
       "https://www.googleapis.com/auth/drive.readonly",
 
-      # View and manage your Google Slides presentations
+      # See, edit, create, and delete all your Google Slides presentations
       "https://www.googleapis.com/auth/presentations",
 
-      # View your Google Slides presentations
+      # See all your Google Slides presentations
       "https://www.googleapis.com/auth/presentations.readonly",
 
-      # See, edit, create, and delete your spreadsheets in Google Drive
+      # See, edit, create, and delete all your Google Sheets spreadsheets
       "https://www.googleapis.com/auth/spreadsheets",
 
-      # View your Google Spreadsheets
+      # See all your Google Sheets spreadsheets
       "https://www.googleapis.com/auth/spreadsheets.readonly"
     ],
     otp_app: :google_api_slides,

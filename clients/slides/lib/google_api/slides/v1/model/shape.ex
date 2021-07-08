@@ -21,7 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.Shape do
 
   ## Attributes
 
-  *   `placeholder` (*type:* `GoogleApi.Slides.V1.Model.Placeholder.t`, *default:* `nil`) - Placeholders are shapes that are inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.
+  *   `placeholder` (*type:* `GoogleApi.Slides.V1.Model.Placeholder.t`, *default:* `nil`) - Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.
   *   `shapeProperties` (*type:* `GoogleApi.Slides.V1.Model.ShapeProperties.t`, *default:* `nil`) - The properties of the shape.
   *   `shapeType` (*type:* `String.t`, *default:* `nil`) - The type of the shape.
   *   `text` (*type:* `GoogleApi.Slides.V1.Model.TextContent.t`, *default:* `nil`) - The text content of the shape.

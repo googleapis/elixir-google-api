@@ -21,7 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.DeleteObjectRequest do
 
   ## Attributes
 
-  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting shapes are also deleted.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting placeholders are also deleted.
   """
 
   use GoogleApi.Gax.ModelBase
