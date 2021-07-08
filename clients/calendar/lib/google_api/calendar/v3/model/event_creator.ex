@@ -23,7 +23,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventCreator do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The creator's name, if available.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The creator's email address, if available.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The creator's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The creator's Profile ID, if available.
   *   `self` (*type:* `boolean()`, *default:* `false`) - Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 

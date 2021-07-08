@@ -23,7 +23,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventOrganizer do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The organizer's name, if available.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The organizer's email address, if available. It must be a valid email address as per RFC5322.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The organizer's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The organizer's Profile ID, if available.
   *   `self` (*type:* `boolean()`, *default:* `false`) - Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 
