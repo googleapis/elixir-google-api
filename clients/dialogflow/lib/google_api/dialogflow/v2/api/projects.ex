@@ -1587,7 +1587,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the environment to delete. / Format: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Required. The name of the environment to delete. / Format: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1657,7 +1657,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Required. The name of the environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1729,7 +1729,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment to retrieve history for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `parent` (*type:* `String.t`) - Required. The name of the environment to retrieve history for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1800,7 +1800,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Returns the list of all non-draft environments of the specified agent.
+  Returns the list of all non-default environments of the specified agent.
 
   ## Parameters
 
@@ -1877,12 +1877,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates the specified agent environment. This method allows you to deploy new agent versions into the environment. When an environment is pointed to a new agent version by setting `environment.agent_version`, the environment is temporarily set to the `LOADING` state. During that time, the environment keeps on serving the previous version of the agent. After the new agent version is done loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID in environment name to update version in "draft" environment. WARNING: this will negate all recent changes to draft and can't be undone. You may want to save the draft to a version before calling this function.
+  Updates the specified agent environment. This method allows you to deploy new agent versions into the environment. When an environment is pointed to a new agent version by setting `environment.agent_version`, the environment is temporarily set to the `LOADING` state. During that time, the environment continues serving the previous version of the agent. After the new agent version is done loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID in environment name to update an agent version in the default environment. WARNING: this will negate all recent changes to the draft agent and can't be undone. You may want to save the draft agent to a version before calling this method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1895,7 +1895,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowLoadToDraftAndDiscardChanges` (*type:* `boolean()`) - Optional. This field is used to prevent accidental overwrite of the draft environment, which is an operation that cannot be undone. To confirm that the caller desires this overwrite, this field must be explicitly set to true when updating the draft environment (environment ID = `-`).
+      *   `:allowLoadToDraftAndDiscardChanges` (*type:* `boolean()`) - Optional. This field is used to prevent accidental overwrite of the default environment, which is an operation that cannot be undone. To confirm that the caller desires this overwrite, this field must be explicitly set to true when updating the default environment (environment ID = `-`).
       *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -9415,7 +9415,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the environment to delete. / Format: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Required. The name of the environment to delete. / Format: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9485,7 +9485,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Required. The name of the environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9557,7 +9557,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment to retrieve history for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `parent` (*type:* `String.t`) - Required. The name of the environment to retrieve history for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9628,7 +9628,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Returns the list of all non-draft environments of the specified agent.
+  Returns the list of all non-default environments of the specified agent.
 
   ## Parameters
 
@@ -9705,12 +9705,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates the specified agent environment. This method allows you to deploy new agent versions into the environment. When an environment is pointed to a new agent version by setting `environment.agent_version`, the environment is temporarily set to the `LOADING` state. During that time, the environment keeps on serving the previous version of the agent. After the new agent version is done loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID in environment name to update version in "draft" environment. WARNING: this will negate all recent changes to draft and can't be undone. You may want to save the draft to a version before calling this function.
+  Updates the specified agent environment. This method allows you to deploy new agent versions into the environment. When an environment is pointed to a new agent version by setting `environment.agent_version`, the environment is temporarily set to the `LOADING` state. During that time, the environment continues serving the previous version of the agent. After the new agent version is done loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID in environment name to update an agent version in the default environment. WARNING: this will negate all recent changes to the draft agent and can't be undone. You may want to save the draft agent to a version before calling this method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `name` (*type:* `String.t`) - Output only. The unique identifier of this agent environment. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9723,7 +9723,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowLoadToDraftAndDiscardChanges` (*type:* `boolean()`) - Optional. This field is used to prevent accidental overwrite of the draft environment, which is an operation that cannot be undone. To confirm that the caller desires this overwrite, this field must be explicitly set to true when updating the draft environment (environment ID = `-`).
+      *   `:allowLoadToDraftAndDiscardChanges` (*type:* `boolean()`) - Optional. This field is used to prevent accidental overwrite of the default environment, which is an operation that cannot be undone. To confirm that the caller desires this overwrite, this field must be explicitly set to true when updating the default environment (environment ID = `-`).
       *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Environment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
