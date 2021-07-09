@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EnvironmentHistor
 
   *   `entries` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EnvironmentHistoryEntry.t)`, *default:* `nil`) - Output only. The list of agent environments. There will be a maximum number of items returned based on the page_size field in the request.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. Token to retrieve the next page of results, or empty if there are no more results in the list.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the environment this history is for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/`
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the environment this history is for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
   """
 
   use GoogleApi.Gax.ModelBase
