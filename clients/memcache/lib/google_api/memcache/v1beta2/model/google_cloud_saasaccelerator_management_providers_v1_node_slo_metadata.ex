@@ -24,6 +24,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   *   `exclusions` (*type:* `list(GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t)`, *default:* `nil`) - By default node is eligible if instance is eligible. But individual node might be excluded from SLO by adding entry here. For semantic see SloMetadata.exclusions. If both instance and node level exclusions are present for time period, the node level's reason will be reported by Eligibility Exporter.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the node, if different from instance location.
   *   `nodeId` (*type:* `String.t`, *default:* `nil`) - The id of the node. This should be equal to SaasInstanceNode.node_id.
+  *   `perSliEligibility` (*type:* `GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility.t`, *default:* `nil`) - If present, this will override eligibility for the node coming from instance or exclusions for specified SLIs.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,10 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
             )
             | nil,
           :location => String.t() | nil,
-          :nodeId => String.t() | nil
+          :nodeId => String.t() | nil,
+          :perSliEligibility =>
+            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility.t()
+            | nil
         }
 
   field(:exclusions,
@@ -46,6 +50,11 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
 
   field(:location)
   field(:nodeId)
+
+  field(:perSliEligibility,
+    as:
+      GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility
+  )
 end
 
 defimpl Poison.Decoder,
