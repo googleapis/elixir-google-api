@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.SqlIntegration do
   @moduledoc """
-  Represents the Sql instance integrated with AD.
+  Represents the SQL instance integrated with Managed AD.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time sql integration was created. Synthetic field is populated automatically by CCFE.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the sql integration in the form of `projects/{project_id}/locations/global/domains/{domain_name}/sqlIntegrations/{sql_integration}`
-  *   `sqlInstance` (*type:* `String.t`, *default:* `nil`) - The full resource name of an integrated sql instance
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the sql integration.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time sql integration was updated. Synthetic field is populated automatically by CCFE.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the SQL integration was created.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the SQL integration in the form of `projects/{project_id}/locations/global/domains/{domain_name}/sqlIntegrations/{sql_integration}`
+  *   `sqlInstance` (*type:* `String.t`, *default:* `nil`) - The full resource name of an integrated SQL instance
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the SQL integration.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the SQL integration was updated.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,6 +22,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
   ## Attributes
 
   *   `admin` (*type:* `String.t`, *default:* `nil`) - Optional. The name of delegated administrator account used to perform Active Directory operations. If not specified, `setupadmin` will be used.
+  *   `auditLogsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Configuration for audit logs. True if audit logs are enabled, else false. Default is audit logs disabled.
   *   `authorizedNetworks` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) the domain instance is connected to. Networks can be added using UpdateDomain. The domain is only available on networks listed in `authorized_networks`. If CIDR subnets overlap between networks, domain creation will fail.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `fqdn` (*type:* `String.t`, *default:* `nil`) - Output only. The fully-qualified domain name of the exposed domain used by clients to connect to the service. Similar to what would be chosen for an Active Directory set up on an internal network.
@@ -39,6 +40,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
 
   @type t :: %__MODULE__{
           :admin => String.t() | nil,
+          :auditLogsEnabled => boolean() | nil,
           :authorizedNetworks => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :fqdn => String.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
         }
 
   field(:admin)
+  field(:auditLogsEnabled)
   field(:authorizedNetworks, type: :list)
   field(:createTime, as: DateTime)
   field(:fqdn)
