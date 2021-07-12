@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudKMS.Mixfile do
   use Mix.Project
 
-  @version "0.32.3"
+  @version "0.32.4"
 
   def project() do
     [
