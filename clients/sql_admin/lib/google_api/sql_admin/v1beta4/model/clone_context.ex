@@ -25,7 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   *   `destinationInstanceName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance to be created as a clone.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#cloneContext*.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
-  *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Reserved for future use.
+  *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp, if specified, identifies the time to which the source instance is cloned.
   """
 
   use GoogleApi.Gax.ModelBase

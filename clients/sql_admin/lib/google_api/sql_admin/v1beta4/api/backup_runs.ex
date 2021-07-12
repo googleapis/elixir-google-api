@@ -232,13 +232,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   end
 
   @doc """
-  Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the backup initiation time.
+  Lists all backup runs associated with the project or a given instance and configuration in the reverse chronological order of the backup initiation time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
-  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID, or "-" for all instances. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
