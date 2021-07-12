@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tasks, "~> 0.12"}]
+  [{:google_api_tasks, "~> 0.13"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/](https://cloud.google.com/).
+Product documentation is available at [https://developers.google.com/tasks/](https://developers.google.com/tasks/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_tasks](https://hexdocs.pm/google_api_tasks).
