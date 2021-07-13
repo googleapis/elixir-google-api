@@ -62,6 +62,7 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   *   `mergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t`, *default:* `nil`) - Merges cells in a Table.
   *   `unmergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a Table.
   *   `refreshSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t`, *default:* `nil`) - Refreshes a Google Sheets chart.
+  *   `updateSlideProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Slide
   *   `updateLineCategory` (*type:* `GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t`, *default:* `nil`) - Updates the category of a line.
   *   `updateParagraphStyle` (*type:* `GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t`, *default:* `nil`) - Updates the styling of paragraphs within a Shape or Table.
   """
@@ -127,6 +128,8 @@ defmodule GoogleApi.Slides.V1.Model.Request do
           :mergeTableCells => GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t() | nil,
           :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t() | nil,
           :refreshSheetsChart => GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t() | nil,
+          :updateSlideProperties =>
+            GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest.t() | nil,
           :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t() | nil,
           :updateParagraphStyle => GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t() | nil
         }
@@ -192,6 +195,7 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   field(:mergeTableCells, as: GoogleApi.Slides.V1.Model.MergeTableCellsRequest)
   field(:unmergeTableCells, as: GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest)
   field(:refreshSheetsChart, as: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest)
+  field(:updateSlideProperties, as: GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest)
   field(:updateLineCategory, as: GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest)
   field(:updateParagraphStyle, as: GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest)
 end
