@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
   *   `enableAuditLog` (*type:* `boolean()`, *default:* `nil`) - Indicates whether audit logging is on/off for requests made for the search application in query APIs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Search Application. Format: searchapplications/{application_id}.
   *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. IDs of the Long Running Operations (LROs) currently running for this schema. Output only field.
+  *   `queryInterpretationConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretationConfig.t`, *default:* `nil`) - The default options for query interpretation
   *   `scoringConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.ScoringConfig.t`, *default:* `nil`) - Configuration for ranking results.
   *   `sourceConfig` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SourceConfig.t)`, *default:* `nil`) - Configuration for a sources specified in data_source_restrictions.
   """
@@ -43,6 +44,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
           :enableAuditLog => boolean() | nil,
           :name => String.t() | nil,
           :operationIds => list(String.t()) | nil,
+          :queryInterpretationConfig =>
+            GoogleApi.CloudSearch.V1.Model.QueryInterpretationConfig.t() | nil,
           :scoringConfig => GoogleApi.CloudSearch.V1.Model.ScoringConfig.t() | nil,
           :sourceConfig => list(GoogleApi.CloudSearch.V1.Model.SourceConfig.t()) | nil
         }
@@ -58,6 +61,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
   field(:enableAuditLog)
   field(:name)
   field(:operationIds, type: :list)
+  field(:queryInterpretationConfig, as: GoogleApi.CloudSearch.V1.Model.QueryInterpretationConfig)
   field(:scoringConfig, as: GoogleApi.CloudSearch.V1.Model.ScoringConfig)
   field(:sourceConfig, as: GoogleApi.CloudSearch.V1.Model.SourceConfig, type: :list)
 end
