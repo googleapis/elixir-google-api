@@ -20,7 +20,7 @@ defmodule GoogleApi.Slides.V1 do
   API client metadata for GoogleApi.Slides.V1.
   """
 
-  @discovery_revision "20210629"
+  @discovery_revision "20210706"
 
   def discovery_revision(), do: @discovery_revision
 end
