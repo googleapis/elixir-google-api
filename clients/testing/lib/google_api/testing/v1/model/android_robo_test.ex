@@ -28,6 +28,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   *   `maxDepth` (*type:* `integer()`, *default:* `nil`) - The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50.
   *   `maxSteps` (*type:* `integer()`, *default:* `nil`) - The max number of steps Robo can execute. Default is no limit.
   *   `roboDirectives` (*type:* `list(GoogleApi.Testing.V1.Model.RoboDirective.t)`, *default:* `nil`) - A set of directives Robo should apply during the crawl. This allows users to customize the crawl. For example, the username and password for a test account can be provided.
+  *   `roboMode` (*type:* `String.t`, *default:* `nil`) - The mode in which Robo should run. Most clients should allow the server to populate this field automatically.
   *   `roboScript` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - A JSON file with a sequence of actions Robo should perform as a prologue for the crawl.
   *   `startingIntents` (*type:* `list(GoogleApi.Testing.V1.Model.RoboStartingIntent.t)`, *default:* `nil`) - The intents used to launch the app for the crawl. If none are provided, then the main launcher activity is launched. If some are provided, then only those provided are launched (the main launcher activity must be provided explicitly).
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
           :maxDepth => integer() | nil,
           :maxSteps => integer() | nil,
           :roboDirectives => list(GoogleApi.Testing.V1.Model.RoboDirective.t()) | nil,
+          :roboMode => String.t() | nil,
           :roboScript => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
           :startingIntents => list(GoogleApi.Testing.V1.Model.RoboStartingIntent.t()) | nil
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   field(:maxDepth)
   field(:maxSteps)
   field(:roboDirectives, as: GoogleApi.Testing.V1.Model.RoboDirective, type: :list)
+  field(:roboMode)
   field(:roboScript, as: GoogleApi.Testing.V1.Model.FileReference)
   field(:startingIntents, as: GoogleApi.Testing.V1.Model.RoboStartingIntent, type: :list)
 end
