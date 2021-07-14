@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.ListEnterprisesResponse do
   @moduledoc """
-  This feature is not generally available yet. Response to a request to list enterprises.
+  Response to a request to list enterprises.
 
   ## Attributes
 
-  *   `enterprises` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Enterprise.t)`, *default:* `nil`) - This feature is not generally available yet. The list of enterprises.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This feature is not generally available yet. If there are more results, a token to retrieve next page of results.
+  *   `enterprises` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Enterprise.t)`, *default:* `nil`) - The list of enterprises.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results, a token to retrieve next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -43,10 +43,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:agreementAccepted` (*type:* `boolean()`) - This feature is not generally available yet. Whether the managed Google Play Agreement is presented and agreed.
-      *   `:enterpriseToken` (*type:* `String.t`) - The enterprise token appended to the callback URL.
+      *   `:agreementAccepted` (*type:* `boolean()`) - Whether the enterprise admin has seen and agreed to the managed Google Play Agreement (https://www.android.com/enterprise/terms/). Always set this to true when creating an EMM-managed enterprise. Do not create the enterprise until the admin has viewed and accepted the agreement.
+      *   `:enterpriseToken` (*type:* `String.t`) - The enterprise token appended to the callback URL. Only set this when creating a customer-managed enterprise.
       *   `:projectId` (*type:* `String.t`) - The ID of the Google Cloud Platform project which will own the enterprise.
-      *   `:signupUrlName` (*type:* `String.t`) - The name of the SignupUrl used to sign up for the enterprise.
+      *   `:signupUrlName` (*type:* `String.t`) - The name of the SignupUrl used to sign up for the enterprise. Only set this when creating a customer-managed enterprise.
       *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Enterprise.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -93,12 +93,12 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  This feature is not generally available yet. Deletes an enterprise.
+  Deletes an enterprise. Only available for EMM-managed enterprises.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - This feature is not generally available yet. The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `name` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -213,7 +213,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  This feature is not generally available yet. Lists enterprises that are managed by an EMM. Only partial views are returned.
+  Lists EMM-managed enterprises. Only BASIC fields are returned.
 
   ## Parameters
 
@@ -230,10 +230,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - This feature is not generally available yet. The requested page size. The actual page size may be fixed to a min or max value.
-      *   `:pageToken` (*type:* `String.t`) - This feature is not generally available yet. A token identifying a page of results returned by the server.
-      *   `:projectId` (*type:* `String.t`) - Required. This feature is not generally available yet. The ID of the Cloud project of the EMM the enterprises belongs to.
-      *   `:view` (*type:* `String.t`) - This feature is not generally available yet. View that specify that partial response should be returned.
+      *   `:pageSize` (*type:* `integer()`) - The requested page size. The actual page size may be fixed to a min or max value.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
+      *   `:projectId` (*type:* `String.t`) - Required. The Cloud project ID of the EMM managing the enterprises.
+      *   `:view` (*type:* `String.t`) - Specifies which Enterprise fields to return. This method only supports BASIC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
