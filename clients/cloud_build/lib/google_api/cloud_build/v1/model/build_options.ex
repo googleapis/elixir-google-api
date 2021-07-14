@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Google Cloud Storage.
   *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build logs are stored.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
-  *   `pool` (*type:* `GoogleApi.CloudBuild.V1.Model.PoolOption.t`, *default:* `nil`) - Optional. Specification for execution on a `WorkerPool`. See [running builds in a custom worker pool](https://cloud.google.com/build/docs/custom-workers/run-builds-in-custom-worker-pool) for more information.
+  *   `pool` (*type:* `GoogleApi.CloudBuild.V1.Model.PoolOption.t`, *default:* `nil`) - Optional. Specification for execution on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information.
   *   `requestedVerifyOption` (*type:* `String.t`, *default:* `nil`) - Requested verifiability options.
   *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`. These variables will be available to all build steps in this build.
   *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
