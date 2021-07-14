@@ -20,7 +20,7 @@ defmodule GoogleApi.Calendar.V3 do
   API client metadata for GoogleApi.Calendar.V3.
   """
 
-  @discovery_revision "20210703"
+  @discovery_revision "20210710"
 
   def discovery_revision(), do: @discovery_revision
 end
