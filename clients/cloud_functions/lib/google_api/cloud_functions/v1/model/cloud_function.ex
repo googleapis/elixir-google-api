@@ -36,6 +36,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
   *   `network` (*type:* `String.t`, *default:* `nil`) - The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either `projects/{project}/global/networks/{network}` or `{network}`, where {project} is a project id where the network is defined, and {network} is the short name of the network. This field is mutually exclusive with `vpc_connector` and will be replaced by it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+  *   `secretEnvironmentVariables` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.SecretEnvVar.t)`, *default:* `nil`) - Secret environment variables configuration.
+  *   `secretVolumes` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.SecretVolume.t)`, *default:* `nil`) - Secret volumes configuration.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email of the function's service account. If empty, defaults to `{project_id}@appspot.gserviceaccount.com`.
   *   `sourceArchiveUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URL, starting with gs://, pointing to the zip archive which contains the function.
   *   `sourceRepository` (*type:* `GoogleApi.CloudFunctions.V1.Model.SourceRepository.t`, *default:* `nil`) - **Beta Feature** The source repository where a function is hosted.
@@ -67,6 +69,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :runtime => String.t() | nil,
+          :secretEnvironmentVariables =>
+            list(GoogleApi.CloudFunctions.V1.Model.SecretEnvVar.t()) | nil,
+          :secretVolumes => list(GoogleApi.CloudFunctions.V1.Model.SecretVolume.t()) | nil,
           :serviceAccountEmail => String.t() | nil,
           :sourceArchiveUrl => String.t() | nil,
           :sourceRepository => GoogleApi.CloudFunctions.V1.Model.SourceRepository.t() | nil,
@@ -95,6 +100,13 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:name)
   field(:network)
   field(:runtime)
+
+  field(:secretEnvironmentVariables,
+    as: GoogleApi.CloudFunctions.V1.Model.SecretEnvVar,
+    type: :list
+  )
+
+  field(:secretVolumes, as: GoogleApi.CloudFunctions.V1.Model.SecretVolume, type: :list)
   field(:serviceAccountEmail)
   field(:sourceArchiveUrl)
   field(:sourceRepository, as: GoogleApi.CloudFunctions.V1.Model.SourceRepository)
