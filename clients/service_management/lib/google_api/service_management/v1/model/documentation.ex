@@ -26,7 +26,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Documentation do
   *   `pages` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Page.t)`, *default:* `nil`) - The top level pages for the documentation set.
   *   `rules` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.DocumentationRule.t)`, *default:* `nil`) - A list of documentation rules that apply to individual API elements. **NOTE:** All service configuration rules follow "last one wins" order.
   *   `serviceRootUrl` (*type:* `String.t`, *default:* `nil`) - Specifies the service root url if the default one (the service name from the yaml file) is not suitable. This can be seen in any fully specified service urls as well as sections that show a base that other urls are relative to.
-  *   `summary` (*type:* `String.t`, *default:* `nil`) - A short summary of what the service does. Can only be provided by plain text.
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - A short description of what the service does. The summary must be plain text. It becomes the overview of the service displayed in Google Cloud Console. NOTE: This field is equivalent to the standard field `description`.
   """
 
   use GoogleApi.Gax.ModelBase
