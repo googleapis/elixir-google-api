@@ -28,7 +28,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   *   `environmentVariables` (*type:* `list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Environment variables to set for the test (only applicable for instrumentation tests).
   *   `filesToPush` (*type:* `list(GoogleApi.Testing.V1.Model.DeviceFile.t)`, *default:* `nil`) - List of files to push to the device before starting the test.
   *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.
+  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Deprecated: Systrace uses Python 2 which has been sunset 2020-01-01. Support of Systrace may stop at any time, at which point no Systrace file will be provided in the results. Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.
   """
 
   use GoogleApi.Gax.ModelBase
