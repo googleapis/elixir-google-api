@@ -21,11 +21,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Expor
 
   ## Attributes
 
+  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage URI containing the output artifacts.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :gcsUri => String.t() | nil
+        }
+
+  field(:gcsUri)
 end
 
 defimpl Poison.Decoder,
