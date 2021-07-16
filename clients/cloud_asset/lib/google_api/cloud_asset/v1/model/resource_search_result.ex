@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
 
   *   `additionalAttributes` (*type:* `map()`, *default:* `nil`) - The additional searchable attributes of this resource. The attributes may vary from one resource type to another. Examples: `projectId` for Project, `dnsName` for DNS ManagedZone. This field contains a subset of the resource metadata fields that are returned by the List or Get APIs provided by the corresponding GCP service (e.g., Compute Engine). see [API references and supported searchable attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types) to see which fields are included. You can search values of these fields through free text search. However, you should not consume the field programically as the field names and values may change as the GCP service updates to a new incompatible API version. To search against the `additional_attributes`: * use a free text query to match the attributes values. Example: to search `additional_attributes = { dnsName: "foobar" }`, you can issue a query `foobar`.
   *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of this resource. Example: `compute.googleapis.com/Disk`. To search against the `asset_type`: * specify the `asset_type` field in your search request.
+  *   `attachedResources` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AttachedResource.t)`, *default:* `nil`) - Attached resources of this resource. For example, an OSConfig Inventory is an attached resource of a Compute Instance. This field is repeated because a resource could have multiple attached resources. This `attached_resources` field is not searchable. Some attributes of the attached resources are exposed in `additional_attributes` field, so as to allow users to search on them.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The create timestamp of this resource, at which the resource was created. The granularity is in seconds. Timestamp.nanos will always be 0. This field is available only when the resource's proto contains it. To search against `create_time`: * use a field query. - value in seconds since unix epoch. Example: `createTime > 1609459200` - value in date string. Example: `createTime > 2021-01-01` - value in date-time string (must be quoted). Example: `createTime > "2021-01-01T00:00:00"`
   *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of this resource. Maximum length could be up to 1M bytes. This field is available only when the resource's proto contains it. To search against the `description`: * use a field query. Example: `description:"important instance"` * use a free text query. Example: `"important instance"`
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of this resource. This field is available only when the resource's proto contains it. To search against the `display_name`: * use a field query. Example: `displayName:"My Instance"` * use a free text query. Example: `"My Instance"`
@@ -46,6 +47,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   @type t :: %__MODULE__{
           :additionalAttributes => map() | nil,
           :assetType => String.t() | nil,
+          :attachedResources => list(GoogleApi.CloudAsset.V1.Model.AttachedResource.t()) | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
 
   field(:additionalAttributes, type: :map)
   field(:assetType)
+  field(:attachedResources, as: GoogleApi.CloudAsset.V1.Model.AttachedResource, type: :list)
   field(:createTime, as: DateTime)
   field(:description)
   field(:displayName)
