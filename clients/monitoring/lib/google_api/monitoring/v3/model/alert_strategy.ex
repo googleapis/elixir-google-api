@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   ## Attributes
 
-  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.Providing this for alert policies that are not log-based is unimplemented.
+  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based.
   """
 
   use GoogleApi.Gax.ModelBase
