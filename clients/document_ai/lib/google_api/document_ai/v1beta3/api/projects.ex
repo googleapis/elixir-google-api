@@ -366,7 +366,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/operations/{+name}", %{
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/eu/operations/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1),
         "project_id" => project_id,
       })
@@ -973,7 +973,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/processors/{+name}:process", %{
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/eu/processors/{+name}:process", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1),
         "project_id" => project_id
       })
@@ -1128,7 +1128,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta3/projects/{+project_id}/locations/us/processors/{+name}:batchProcess", %{
+      |> Request.url("/v1beta3/projects/{+project_id}/locations/eu/processors/{+name}:batchProcess", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1),
         "project_id" => project_id
       })
