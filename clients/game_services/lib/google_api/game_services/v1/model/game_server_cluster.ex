@@ -21,6 +21,7 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerCluster do
 
   ## Attributes
 
+  *   `clusterState` (*type:* `GoogleApi.GameServices.V1.Model.KubernetesClusterState.t`, *default:* `nil`) - Output only. The state of the Kubernetes cluster, this will be available if 'view' is set to `FULL` in the relevant List/Get/Preview request.
   *   `connectionInfo` (*type:* `GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo.t`, *default:* `nil`) - The game server cluster connection information. This information is used to manage game server clusters.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the cluster.
@@ -33,6 +34,7 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusterState => GoogleApi.GameServices.V1.Model.KubernetesClusterState.t() | nil,
           :connectionInfo =>
             GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerCluster do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:clusterState, as: GoogleApi.GameServices.V1.Model.KubernetesClusterState)
   field(:connectionInfo, as: GoogleApi.GameServices.V1.Model.GameServerClusterConnectionInfo)
   field(:createTime, as: DateTime)
   field(:description)

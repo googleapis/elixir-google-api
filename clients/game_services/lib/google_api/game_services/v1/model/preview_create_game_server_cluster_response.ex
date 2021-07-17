@@ -21,6 +21,7 @@ defmodule GoogleApi.GameServices.V1.Model.PreviewCreateGameServerClusterResponse
 
   ## Attributes
 
+  *   `clusterState` (*type:* `GoogleApi.GameServices.V1.Model.KubernetesClusterState.t`, *default:* `nil`) - Output only. The state of the Kubernetes cluster in preview, this will be available if 'view' is set to `FULL` in the relevant List/Get/Preview request.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag of the game server cluster.
   *   `targetState` (*type:* `GoogleApi.GameServices.V1.Model.TargetState.t`, *default:* `nil`) - The target state.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.GameServices.V1.Model.PreviewCreateGameServerClusterResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusterState => GoogleApi.GameServices.V1.Model.KubernetesClusterState.t() | nil,
           :etag => String.t() | nil,
           :targetState => GoogleApi.GameServices.V1.Model.TargetState.t() | nil
         }
 
+  field(:clusterState, as: GoogleApi.GameServices.V1.Model.KubernetesClusterState)
   field(:etag)
   field(:targetState, as: GoogleApi.GameServices.V1.Model.TargetState)
 end
