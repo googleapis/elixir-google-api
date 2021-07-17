@@ -2229,6 +2229,7 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does not return the `cluster_state` field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2263,7 +2264,8 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :view => :query
     }
 
     request =
@@ -2303,6 +2305,7 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server will pick an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerClusters left to be queried.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
+      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does not return the `cluster_state` field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2341,7 +2344,8 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
@@ -2455,6 +2459,7 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to be created.
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview.
+      *   `:view` (*type:* `String.t`) - Optional. This field is deprecated, preview will always return KubernetesClusterState.
       *   `:body` (*type:* `GoogleApi.GameServices.V1.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2493,6 +2498,7 @@ defmodule GoogleApi.GameServices.V1.Api.Projects do
       :upload_protocol => :query,
       :gameServerClusterId => :query,
       :previewTime => :query,
+      :view => :query,
       :body => :body
     }
 
