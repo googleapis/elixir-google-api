@@ -36,7 +36,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `addresses` (*type:* `list(GoogleApi.People.V1.Model.Address.t)`, *default:* `nil`) - The person's street addresses.
   *   `clientData` (*type:* `list(GoogleApi.People.V1.Model.ClientData.t)`, *default:* `nil`) - The person's client data.
   *   `skills` (*type:* `list(GoogleApi.People.V1.Model.Skill.t)`, *default:* `nil`) - The person's skills.
-  *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers. For [`connections.list`](/people/api/rest/v1/people.connections/list), [`otherContacts.list`](/people/api/rest/v1/otherContacts/list), and [`people.listDirectoryPeople`](/people/api/rest/v1/people/listDirectoryPeople) the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling ['people.get'](/people/api/rest/v1/people/get).
+  *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople.
   *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
   *   `ageRanges` (*type:* `list(GoogleApi.People.V1.Model.AgeRangeType.t)`, *default:* `nil`) - Output only. The person's age ranges.
   *   `coverPhotos` (*type:* `list(GoogleApi.People.V1.Model.CoverPhoto.t)`, *default:* `nil`) - Output only. The person's cover photos.
@@ -53,7 +53,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `userDefined` (*type:* `list(GoogleApi.People.V1.Model.UserDefined.t)`, *default:* `nil`) - The person's user defined data.
   *   `relationshipInterests` (*type:* `list(GoogleApi.People.V1.Model.RelationshipInterest.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned The person's relationship interests.
   *   `memberships` (*type:* `list(GoogleApi.People.V1.Model.Membership.t)`, *default:* `nil`) - The person's group memberships.
-  *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses. For [`connections.list`](/people/api/rest/v1/people.connections/list), [`otherContacts.list`](/people/api/rest/v1/otherContacts/list), and [`people.listDirectoryPeople`](/people/api/rest/v1/people/listDirectoryPeople) the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling ['people.get'](/people/api/rest/v1/people/get).
+  *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople.
   *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The person's age range.
   *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of `people/{person_id}`.

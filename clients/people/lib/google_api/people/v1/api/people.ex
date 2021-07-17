@@ -395,7 +395,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list).
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -475,7 +475,7 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.
-      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list). There is a maximum of 200 resource names.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`. There is a maximum of 200 resource names.
       *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -521,7 +521,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of domain profiles and domain contacts in the authenticated user's domain directory.
+  Provides a list of domain profiles and domain contacts in the authenticated user's domain directory. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. See example usage at [List the directory people that have changed](/people/v1/directory#list_the_directory_people_that_have_changed).
 
   ## Parameters
 
@@ -540,11 +540,11 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDirectoryPeople` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the page token.
       *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
-      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead.
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should return `next_sync_token`. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.listDirectoryPeople`.
       *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListDirectoryPeople` must match the call that provided the sync token.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the sync token. More details about sync behavior at `people.listDirectoryPeople`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -676,7 +676,7 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `SearchDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the first call that provided the page token.
       *   `:query` (*type:* `String.t`) - Required. Prefix query that matches fields in the person. Does NOT use the read_mask for determining what fields to match.
       *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
       *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
@@ -858,7 +858,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of the authenticated user's contacts. The request returns a 400 error if `personFields` is not specified. The request returns a 410 error if `sync_token` is specified and is expired. Sync tokens expire after 7 days to prevent data drift between clients and the server. To handle a sync token expired error, a request should be sent without `sync_token` to get all contacts.
+  Provides a list of the authenticated user's contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. See example usage at [List the user's contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed).
 
   ## Parameters
 
@@ -877,13 +877,13 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnections` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.connections.list` must match the first call that provided the page token.
       *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.
-      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token` on the last page, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial full sync requests that specify `request_sync_token` and do not specify `sync_token` have an additional rate limit per user. Each client should generally only be doing a full sync once every few days per user and so should not hit this limit.
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.connections.list`.
       *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to `LAST_MODIFIED_ASCENDING`.
       *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call. Provide this to retrieve only the resources changed since the last request. When the `syncToken` is specified, resources deleted since the last sync will be returned as a person with [`PersonMetadata.deleted`](/people/api/rest/v1/people#Person.PersonMetadata.FIELDS.deleted) set to true. When the `syncToken` is specified, all other parameters provided to `ListConnections` except `page_size` and `page_token` must match the initial call that provided the sync token. Sync tokens expire after seven days, after which a full sync request without a `sync_token` should be made.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.connections.list` must match the first call that provided the sync token. More details about sync behavior at `people.connections.list`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
