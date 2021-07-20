@@ -22,7 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo do
   ## Attributes
 
   *   `attachmentsSha256Hash` (*type:* `list(String.t)`, *default:* `nil`) - The `SHA256` hash of email's attachment and all MIME parts.
-  *   `date` (*type:* `DateTime.t`, *default:* `nil`) - The date the malicious email was sent.
+  *   `date` (*type:* `DateTime.t`, *default:* `nil`) - The date of the event related to this email.
   *   `md5HashMessageBody` (*type:* `String.t`, *default:* `nil`) - The hash of the message body text.
   *   `md5HashSubject` (*type:* `String.t`, *default:* `nil`) - The MD5 Hash of email's subject (only available for reported emails).
   *   `messageBodySnippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the message body text (only available for reported emails).
