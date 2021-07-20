@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.ExportResourcesRequest do
 
   ## Attributes
 
-  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type. Note that unlike in FhirStore.StreamConfig.BigQueryDestination, BigQuery views will not be created by ExportResources.
+  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type. Unlike when setting `BigQueryDestination` for `StreamConfig`, `ExportResources` does not create BigQuery views.
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Healthcare Service Agent account requires the `roles/storage.objectAdmin` role on the Cloud Storage location. The exported outputs are organized by FHIR resource types. The server creates one object per resource type. Each object contains newline delimited JSON, and each line is a FHIR resource.
   """
 
