@@ -28,7 +28,7 @@ defmodule GoogleApi.Gax.MixProject do
     [
       {:tesla, "~> 1.2"},
       {:poison, ">= 3.0.0 and < 5.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev},
+      {:ex_doc, "~> 0.25", only: :dev},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
