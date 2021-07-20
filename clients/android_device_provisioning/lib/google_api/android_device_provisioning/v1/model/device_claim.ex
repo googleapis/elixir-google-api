@@ -21,6 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
 
   ## Attributes
 
+  *   `additionalService` (*type:* `String.t`, *default:* `nil`) - The Additional service registered for the device.
   *   `ownerCompanyId` (*type:* `String.t`, *default:* `nil`) - The ID of the Customer that purchased the device.
   *   `resellerId` (*type:* `String.t`, *default:* `nil`) - The ID of the reseller that claimed the device.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of claim made on the device.
@@ -31,6 +32,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalService => String.t() | nil,
           :ownerCompanyId => String.t() | nil,
           :resellerId => String.t() | nil,
           :sectionType => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
           :vacationModeStartTime => DateTime.t() | nil
         }
 
+  field(:additionalService)
   field(:ownerCompanyId)
   field(:resellerId)
   field(:sectionType)
