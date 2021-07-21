@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataproc.V1.Model.BatchOperationMetadata do
   *   `batchUuid` (*type:* `String.t`, *default:* `nil`) - Batch UUID for the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Short description of the operation.
-  *   `doneTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation was finished.
+  *   `doneTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation finished.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with the operation.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `warnings` (*type:* `list(String.t)`, *default:* `nil`) - Warnings encountered during operation execution.

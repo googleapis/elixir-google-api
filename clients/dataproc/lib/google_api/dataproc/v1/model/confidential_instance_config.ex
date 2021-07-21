@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.ConfidentialInstanceConfig do
   @moduledoc """
-  Confidential Instance Config for clusters using Confidential VMs (https://cloud.google.com/compute/confidential-vm/docs) NEXT ID: 2
+  Confidential Instance Config for clusters using Confidential VMs (https://cloud.google.com/compute/confidential-vm/docs)
 
   ## Attributes
 
