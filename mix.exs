@@ -49,7 +49,7 @@ defmodule GoogleApis.Mixfile do
       {:oauth2, "~> 0.9"},
       {:temp, "~> 0.4"},
       {:jason, "~> 1.1"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 4.0"}
     ]
   end
 end
