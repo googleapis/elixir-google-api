@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.SecretEnvVar do
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - Name of the environment variable.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project whose secret manager data is being referenced. Cross project secrets are not supported.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project identifier (preferrably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function's project assuming that the secret exists in the same project as of the function.
   *   `secret` (*type:* `String.t`, *default:* `nil`) - Name of the secret in secret manager (not the full resource name).
   *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the secret (version number or the string 'latest'). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new clones start.
   """

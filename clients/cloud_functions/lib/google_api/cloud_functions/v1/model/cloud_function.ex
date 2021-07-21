@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   @moduledoc """
-  Describes a Cloud Function that contains user computation executed in response to an event. It encapsulate function and triggers configurations.
+  Describes a Cloud Function that contains user computation executed in response to an event. It encapsulate function and triggers configurations. Next tag: 35
 
   ## Attributes
 
