@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Bundle do
   @moduledoc """
-  Information about a bundle. The resource for BundlesService.
+  Information about an app bundle. The resource for BundlesService.
 
   ## Attributes
 
