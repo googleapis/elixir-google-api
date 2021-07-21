@@ -340,11 +340,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -678,11 +678,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -936,11 +936,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1102,11 +1102,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1515,11 +1515,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
