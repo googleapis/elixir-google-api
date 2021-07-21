@@ -23,6 +23,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
+  *   `securityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,6 +32,9 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
           :category => String.t() | nil,
           :costProjection =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection.t()
+            | nil,
+          :securityProjection =>
+            GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t()
             | nil
         }
 
@@ -38,6 +42,10 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
 
   field(:costProjection,
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection
+  )
+
+  field(:securityProjection,
+    as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection
   )
 end
 
