@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.SecretVolume do
   ## Attributes
 
   *   `mountPath` (*type:* `String.t`, *default:* `nil`) - The path within the container to mount the secret volume. For example, setting the mount_path as `/etc/secrets` would mount the secret value files under the `/etc/secrets` directory. This directory will also be completely shadowed and unavailable to mount any other secrets. Recommended mount paths: /etc/secrets Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project whose secret manager data is being referenced. Cross project secrets are not supported.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project identifier (preferrably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function's project assuming that the secret exists in the same project as of the function.
   *   `secret` (*type:* `String.t`, *default:* `nil`) - Name of the secret in secret manager (not the full resource name).
   *   `versions` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.SecretVersion.t)`, *default:* `nil`) - List of secret versions to mount for this secret. If empty, the `latest` version of the secret will be made available in a file named after the secret under the mount point.
   """
