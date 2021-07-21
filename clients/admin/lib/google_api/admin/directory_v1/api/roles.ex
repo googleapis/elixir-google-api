@@ -273,7 +273,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   end
 
   @doc """
-  Patch role via Apiary Patch Orchestration
+  Patches a role.
 
   ## Parameters
 

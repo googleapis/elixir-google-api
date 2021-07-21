@@ -410,7 +410,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Sign a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.
+  Signs a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.
 
   ## Parameters
 
@@ -588,7 +588,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Watch for changes in users list
+  Watches for changes in users list.
 
   ## Parameters
 
@@ -865,7 +865,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Watch for changes in users list.
+  Watches for changes in users list.
 
   ## Parameters
 

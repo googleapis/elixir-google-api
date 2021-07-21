@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.TwoStepVerification do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Turn off 2-Step Verification for user.
+  Turns off 2-Step Verification for user.
 
   ## Parameters
 

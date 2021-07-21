@@ -86,7 +86,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
   end
 
   @doc """
-  Patch Customers via Apiary Patch Orchestration
+  Patches a customer.
 
   ## Parameters
 

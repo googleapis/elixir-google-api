@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Channels do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Stop watching resources through this channel.
+  Stops watching resources through this channel.
 
   ## Parameters
 

@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.34"}]
+  [{:google_api_admin, "~> 0.35"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [http://developers.google.com/admin-sdk/](http://developers.google.com/admin-sdk/).
+Product documentation is available at [https://developers.google.com/admin-sdk/](https://developers.google.com/admin-sdk/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_admin](https://hexdocs.pm/google_api_admin).
