@@ -1793,7 +1793,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/location`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/{location}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
