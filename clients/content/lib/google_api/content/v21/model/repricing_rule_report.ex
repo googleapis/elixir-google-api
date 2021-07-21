@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleReport do
 
   ## Attributes
 
-  *   `buyboxWinningRuleStats` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleReportBuyboxWinningRuleStats.t`, *default:* `nil`) - Stats specific to buybox winning rules for rule report.
+  *   `buyboxWinningRuleStats` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleReportBuyboxWinningRuleStats.t`, *default:* `nil`) - Stats specific to buybox winning rules for rule report (deprecated).
   *   `date` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Date of the stats in this report. The report starts and ends according to the merchant's timezone.
   *   `impactedProducts` (*type:* `list(String.t)`, *default:* `nil`) - List of product ids that are impacted by this rule during this reporting period. Out of stock products and products not searched for by customers are examples of non-impacted products.
   *   `inapplicabilityDetails` (*type:* `list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t)`, *default:* `nil`) - List of all reasons the rule did not apply to the inapplicable products during the specified reporting period.

@@ -21,7 +21,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsLineItem do
 
   ## Attributes
 
-  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item. This value is assigned by Google when an order is created.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item. This value is assigned by Google when an order is created. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity of this line item.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsLineItem do
 
   @type t :: %__MODULE__{
           :lineItemId => String.t() | nil,
+          :productId => String.t() | nil,
           :quantity => integer() | nil
         }
 
   field(:lineItemId)
+  field(:productId)
   field(:quantity)
 end
 

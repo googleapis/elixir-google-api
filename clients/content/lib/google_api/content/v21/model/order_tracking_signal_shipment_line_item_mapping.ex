@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalShipmentLineItemMapping
 
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - Required. The line item ID.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The line item quantity in the shipment.
-  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Required. The shipment ID.
+  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Required. The shipment ID. This field will be hashed in returned OrderTrackingSignal creation response.
   """
 
   use GoogleApi.Gax.ModelBase
