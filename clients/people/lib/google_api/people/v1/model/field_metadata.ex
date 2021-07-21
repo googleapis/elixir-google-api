@@ -21,8 +21,9 @@ defmodule GoogleApi.People.V1.Model.FieldMetadata do
 
   ## Attributes
 
-  *   `primary` (*type:* `boolean()`, *default:* `nil`) - True if the field is the primary field; false if the field is a secondary field.
+  *   `primary` (*type:* `boolean()`, *default:* `nil`) - True if the field is the primary field for the person.
   *   `source` (*type:* `GoogleApi.People.V1.Model.Source.t`, *default:* `nil`) - The source of the field.
+  *   `sourcePrimary` (*type:* `boolean()`, *default:* `nil`) - True if the field is the primary field for the source.
   *   `verified` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the field is verified; false if the field is unverified. A verified field is typically a name, email address, phone number, or website that has been confirmed to be owned by the person.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.People.V1.Model.FieldMetadata do
   @type t :: %__MODULE__{
           :primary => boolean() | nil,
           :source => GoogleApi.People.V1.Model.Source.t() | nil,
+          :sourcePrimary => boolean() | nil,
           :verified => boolean() | nil
         }
 
   field(:primary)
   field(:source, as: GoogleApi.People.V1.Model.Source)
+  field(:sourcePrimary)
   field(:verified)
 end
 
