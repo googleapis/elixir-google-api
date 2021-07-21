@@ -25,6 +25,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   *   `buyerPitchStatement` (*type:* `String.t`, *default:* `nil`) - A pitch statement for the buyer
   *   `directContact` (*type:* `String.t`, *default:* `nil`) - Direct contact for the publisher profile.
   *   `exchange` (*type:* `String.t`, *default:* `nil`) - Exchange where this publisher profile is from. E.g. AdX, Rubicon etc...
+  *   `forecastInventory` (*type:* `String.t`, *default:* `nil`) - 
   *   `googlePlusLink` (*type:* `String.t`, *default:* `nil`) - Link to publisher's Google+ page.
   *   `isParent` (*type:* `boolean()`, *default:* `nil`) - True, if this is the parent profile, which represents all domains owned by the publisher.
   *   `isPublished` (*type:* `boolean()`, *default:* `nil`) - True, if this profile is published. Deprecated for state.
@@ -54,6 +55,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
           :buyerPitchStatement => String.t() | nil,
           :directContact => String.t() | nil,
           :exchange => String.t() | nil,
+          :forecastInventory => String.t() | nil,
           :googlePlusLink => String.t() | nil,
           :isParent => boolean() | nil,
           :isPublished => boolean() | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   field(:buyerPitchStatement)
   field(:directContact)
   field(:exchange)
+  field(:forecastInventory)
   field(:googlePlusLink)
   field(:isParent)
   field(:isPublished)
