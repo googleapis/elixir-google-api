@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete schema
+  Deletes a schema.
 
   ## Parameters
 
@@ -91,7 +91,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   end
 
   @doc """
-  Retrieve schema
+  Retrieves a schema.
 
   ## Parameters
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   end
 
   @doc """
-  Create schema.
+  Creates a schema.
 
   ## Parameters
 
@@ -221,7 +221,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   end
 
   @doc """
-  Retrieve all schemas for a customer
+  Retrieves all schemas for a customer.
 
   ## Parameters
 
@@ -281,7 +281,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   end
 
   @doc """
-  Patch Schema via Apiary Patch Orchestration
+  Patches a schema.
 
   ## Parameters
 
@@ -351,7 +351,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   end
 
   @doc """
-  Update schema
+  Updates a schema.
 
   ## Parameters
 

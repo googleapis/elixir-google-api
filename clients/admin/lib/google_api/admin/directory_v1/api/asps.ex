@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete an ASP issued by a user.
+  Deletes an ASP issued by a user.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   end
 
   @doc """
-  Get information about an ASP issued by a user.
+  Gets information about an ASP issued by a user.
 
   ## Parameters
 
@@ -147,7 +147,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   end
 
   @doc """
-  List the ASPs issued by a user.
+  Lists the ASPs issued by a user.
 
   ## Parameters
 

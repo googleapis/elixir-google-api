@@ -309,7 +309,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   end
 
   @doc """
-  Patches a building via Apiary Patch Orchestration.
+  Patches a building.
 
   ## Parameters
 
@@ -758,7 +758,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   end
 
   @doc """
-  Patches a calendar resource via Apiary Patch Orchestration.
+  Patches a calendar resource.
 
   ## Parameters
 
@@ -1188,7 +1188,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   end
 
   @doc """
-  Patches a feature via Apiary Patch Orchestration.
+  Patches a feature.
 
   ## Parameters
 

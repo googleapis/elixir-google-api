@@ -18,7 +18,7 @@
 defmodule GoogleApi.Admin.Mixfile do
   use Mix.Project
 
-  @version "0.34.1"
+  @version "0.35.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/admin",
-        "Homepage" => "http://developers.google.com/admin-sdk/"
+        "Homepage" => "https://developers.google.com/admin-sdk/"
       }
     ]
   end

@@ -100,7 +100,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
   end
 
   @doc """
-  Retrieve a role assignment.
+  Retrieves a role assignment.
 
   ## Parameters
 

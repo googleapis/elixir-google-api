@@ -202,7 +202,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Retrieve all groups of a domain or of a user given a userKey (paginated)
+  Retrieves all groups of a domain or of a user given a userKey (paginated).
 
   ## Parameters
 

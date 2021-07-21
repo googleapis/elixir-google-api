@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Generate new backup verification codes for the user.
+  Generates new backup verification codes for the user.
 
   ## Parameters
 
@@ -92,7 +92,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
   end
 
   @doc """
-  Invalidate the current backup verification codes for the user.
+  Invalidates the current backup verification codes for the user.
 
   ## Parameters
 

@@ -251,7 +251,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Move or insert multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.
+  Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.
 
   ## Parameters
 

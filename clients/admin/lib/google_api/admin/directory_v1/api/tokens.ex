@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete all access tokens issued by a user for an application.
+  Deletes all access tokens issued by a user for an application.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
   end
 
   @doc """
-  Get information about an access token issued by a user.
+  Gets information about an access token issued by a user.
 
   ## Parameters
 
