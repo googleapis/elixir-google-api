@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse do
   @moduledoc """
-  Response listing all bundles.
+  Response listing all app bundles.
 
   ## Attributes
 
-  *   `bundles` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t)`, *default:* `nil`) - All bundles.
+  *   `bundles` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t)`, *default:* `nil`) - All app bundles.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#bundlesListResponse").
   """
 
