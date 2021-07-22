@@ -21,7 +21,7 @@ defmodule GoogleApi.Reseller.V1.Model.PrimaryAdmin do
 
   ## Attributes
 
-  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - Primary admin's domained email This email's domain will be used to create TEAM customer
+  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - The business email of the primary administrator of the customer. The email verification link is sent to this email address at the time of customer creation. Primary administrators have access to the customer's Admin Console, including the ability to invite and evict users and manage the administrative needs of the customer.
   """
 
   use GoogleApi.Gax.ModelBase
