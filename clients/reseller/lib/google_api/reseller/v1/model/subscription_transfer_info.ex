@@ -21,7 +21,7 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo do
 
   ## Attributes
 
-  *   `currentLegacySkuId` (*type:* `String.t`, *default:* `nil`) - Sku id of the current resold subscription. This is populated only when customer has subscription with legacy sku and the subscription resource is populated with recommeded sku for transfer in.
+  *   `currentLegacySkuId` (*type:* `String.t`, *default:* `nil`) - The `skuId` of the current resold subscription. This is populated only when the customer has a subscription with a legacy SKU and the subscription resource is populated with the `skuId` of the SKU recommended for the transfer.
   *   `minimumTransferableSeats` (*type:* `integer()`, *default:* `nil`) - When inserting a subscription, this is the minimum number of seats listed in the transfer order for this product. For example, if the customer has 20 users, the reseller cannot place a transfer order of 15 seats. The minimum is 20 seats.
   *   `transferabilityExpirationTime` (*type:* `String.t`, *default:* `nil`) - The time when transfer token or intent to transfer will expire. The time is in milliseconds using UNIX Epoch format.
   """
