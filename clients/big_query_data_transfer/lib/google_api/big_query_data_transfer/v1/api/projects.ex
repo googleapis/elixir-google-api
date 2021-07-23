@@ -836,7 +836,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about all data transfers in the project.
+  Returns information about all transfer configs owned by a project in the specified location.
 
   ## Parameters
 
@@ -1664,7 +1664,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about all data transfers in the project.
+  Returns information about all transfer configs owned by a project in the specified location.
 
   ## Parameters
 
