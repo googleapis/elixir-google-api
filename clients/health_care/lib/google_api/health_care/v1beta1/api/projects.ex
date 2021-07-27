@@ -13027,7 +13027,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Analyze heathcare entity in a document. Its response includes the recognized entity mentions and the relationships between them. AnalyzeEntities uses context aware models to detect entities.
+  Analyze heathcare entity in a document. Its response includes the recognized entity mentions and the relationships between them. AnalyzeEntities uses context aware models to detect entities. This method can only analyze documents written in English.
 
   ## Parameters
 
