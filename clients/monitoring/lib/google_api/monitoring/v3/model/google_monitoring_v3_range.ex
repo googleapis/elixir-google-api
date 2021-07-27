@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range do
   @moduledoc """
-  Range of numerical values, inclusive of min and exclusive of max. If the open range "< range.max" is desired, set range.min = -infinity. If the open range ">= range.min" is desired, set range.max = infinity.
+  Range of numerical values within min and max. If the open range "< range.max" is desired, set range.min = -infinity. If the open range ">= range.min" is desired, set range.max = infinity.
 
   ## Attributes
 
