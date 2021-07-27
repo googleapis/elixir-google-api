@@ -23,8 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   *   `backupKind` (*type:* `String.t`, *default:* `nil`) - Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
-  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Encryption configuration specific to a backup. Applies only to Second Generation instances.
-  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Encryption status specific to a backup. Applies only to Second Generation instances.
+  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Encryption configuration specific to a backup.
+  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Encryption status specific to a backup.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*.
   *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*.
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if the run has the FAILED status.

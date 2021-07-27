@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  List all available database flags for Cloud SQL instances.
+  Lists all available database flags for Cloud SQL instances.
 
   ## Parameters
 

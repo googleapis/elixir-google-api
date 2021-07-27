@@ -29,7 +29,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   *   `maxValue` (*type:* `String.t`, *default:* `nil`) - For *INTEGER* flags, the maximum allowed value.
   *   `minValue` (*type:* `String.t`, *default:* `nil`) - For *INTEGER* flags, the minimum allowed value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - This is the name of the flag. Flag names always use underscores, not hyphens, for example: *max_allowed_packet*
-  *   `requiresRestart` (*type:* `boolean()`, *default:* `nil`) - Indicates whether changing this flag will trigger a database restart. Only applicable to Second Generation instances.
+  *   `requiresRestart` (*type:* `boolean()`, *default:* `nil`) - Indicates whether changing this flag will trigger a database restart.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the flag. Flags are typed to being *BOOLEAN*, *STRING*, *INTEGER* or *NONE*. *NONE* is used for flags which do not take a value, such as *skip_grant_tables*.
   """
 

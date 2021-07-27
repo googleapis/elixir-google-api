@@ -33,7 +33,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
-  *   `id` (*type:* `String.t`) - The ID of the Backup Run to delete. To find a Backup Run ID, use the list method.
+  *   `id` (*type:* `String.t`) - The ID of the backup run to delete. To find a backup run ID, use the list method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -104,7 +104,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
-  *   `id` (*type:* `String.t`) - The ID of this Backup Run.
+  *   `id` (*type:* `String.t`) - The ID of this backup run.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -168,7 +168,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   end
 
   @doc """
-  Creates a new backup run on demand. This method is applicable only to Second Generation instances.
+  Creates a new backup run on demand.
 
   ## Parameters
 
