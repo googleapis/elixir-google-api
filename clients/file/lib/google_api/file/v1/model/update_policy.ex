@@ -22,7 +22,7 @@ defmodule GoogleApi.File.V1.Model.UpdatePolicy do
   ## Attributes
 
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Optional. Relative scheduling channel applied to resource.
-  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.File.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. User can specify zero or more non-overlapping deny periods. For V1, Maximum number of deny_maintenance_periods is expected to be one.
+  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.File.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. User can specify zero or more non-overlapping deny periods. Maximum number of deny_maintenance_periods expected is one.
   *   `window` (*type:* `GoogleApi.File.V1.Model.MaintenanceWindow.t`, *default:* `nil`) - Optional. Maintenance window that is applied to resources covered by this policy.
   """
 
