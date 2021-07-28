@@ -34,6 +34,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
   *   `noteName` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The analysis note associated with this occurrence, in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used as a filter in list requests.
   *   `remediation` (*type:* `String.t`, *default:* `nil`) - A description of actions that can be taken to remedy the note.
   *   `resource` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t`, *default:* `nil`) - Required. Immutable. The resource for which the occurrence applies.
+  *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentOccurrence.t`, *default:* `nil`) - Describes a specific SPDX Document.
+  *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.FileOccurrence.t`, *default:* `nil`) - Describes a specific SPDX File.
+  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.PackageOccurrence.t`, *default:* `nil`) - Describes a specific SPDX Package.
+  *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipOccurrence.t`, *default:* `nil`) - Describes a specific SPDX Relationship.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this occurrence was last updated.
   *   `vulnerability` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1VulnerabilityDetails.t`, *default:* `nil`) - Describes a security vulnerability.
   """
@@ -60,6 +64,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
           :noteName => String.t() | nil,
           :remediation => String.t() | nil,
           :resource => GoogleApi.ContainerAnalysis.V1beta1.Model.Resource.t() | nil,
+          :sbom => GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentOccurrence.t() | nil,
+          :spdxFile => GoogleApi.ContainerAnalysis.V1beta1.Model.FileOccurrence.t() | nil,
+          :spdxPackage => GoogleApi.ContainerAnalysis.V1beta1.Model.PackageOccurrence.t() | nil,
+          :spdxRelationship =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipOccurrence.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vulnerability =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1VulnerabilityDetails.t() | nil
@@ -80,6 +89,10 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
   field(:noteName)
   field(:remediation)
   field(:resource, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Resource)
+  field(:sbom, as: GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentOccurrence)
+  field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1beta1.Model.FileOccurrence)
+  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1beta1.Model.PackageOccurrence)
+  field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipOccurrence)
   field(:updateTime, as: DateTime)
 
   field(:vulnerability,
