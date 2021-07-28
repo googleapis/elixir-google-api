@@ -35,6 +35,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   *   `remediation` (*type:* `String.t`, *default:* `nil`) - A description of actions that can be taken to remedy the `Note`
   *   `resource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t`, *default:* `nil`) -  The resource for which the `Occurrence` applies.
   *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The unique URL of the image or the container for which the `Occurrence` applies. For example, https://gcr.io/project/image@sha256:foo This field can be used as a filter in list requests.
+  *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence.t`, *default:* `nil`) - Describes a specific software bill of materials document.
+  *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence.t`, *default:* `nil`) - Describes a specific SPDX File.
+  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageOccurrence.t`, *default:* `nil`) - Describes a specific SPDX Package.
+  *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipOccurrence.t`, *default:* `nil`) - Describes a specific relationship between SPDX elements.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this `Occurrence` was last updated.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence.t`, *default:* `nil`) - Describes an upgrade.
   *   `vulnerabilityDetails` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityDetails.t`, *default:* `nil`) - Details of a security vulnerability note.
@@ -58,6 +62,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
           :remediation => String.t() | nil,
           :resource => GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t() | nil,
           :resourceUrl => String.t() | nil,
+          :sbom => GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence.t() | nil,
+          :spdxFile => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence.t() | nil,
+          :spdxPackage => GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageOccurrence.t() | nil,
+          :spdxRelationship =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipOccurrence.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence.t() | nil,
           :vulnerabilityDetails =>
@@ -78,6 +87,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   field(:remediation)
   field(:resource, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource)
   field(:resourceUrl)
+  field(:sbom, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence)
+  field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence)
+  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageOccurrence)
+  field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipOccurrence)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence)
 

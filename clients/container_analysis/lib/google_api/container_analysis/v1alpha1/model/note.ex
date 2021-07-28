@@ -34,7 +34,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the note in the form "projects/{provider_project_id}/notes/{NOTE_ID}"
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t`, *default:* `nil`) - A note describing a package hosted by various package managers.
   *   `relatedUrl` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t)`, *default:* `nil`) - URLs associated with this note
+  *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t`, *default:* `nil`) - A note describing a software bill of materials.
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this `Note`.
+  *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t`, *default:* `nil`) - A note describing an SPDX File.
+  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote.t`, *default:* `nil`) - A note describing an SPDX Package.
+  *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t`, *default:* `nil`) - A note describing a relationship between SPDX elements.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t`, *default:* `nil`) - A note describing an upgrade.
   *   `vulnerabilityType` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t`, *default:* `nil`) - A package vulnerability type of note.
@@ -57,7 +61,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
           :name => String.t() | nil,
           :package => GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t() | nil,
           :relatedUrl => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t()) | nil,
+          :sbom => GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t() | nil,
           :shortDescription => String.t() | nil,
+          :spdxFile => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t() | nil,
+          :spdxPackage => GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote.t() | nil,
+          :spdxRelationship =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t() | nil,
           :vulnerabilityType =>
@@ -78,7 +87,11 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   field(:name)
   field(:package, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Package)
   field(:relatedUrl, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl, type: :list)
+  field(:sbom, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote)
   field(:shortDescription)
+  field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote)
+  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote)
+  field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote)
   field(:vulnerabilityType, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType)
