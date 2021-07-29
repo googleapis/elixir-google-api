@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey do
   @moduledoc """
-  This is a data encryption key (DEK) (as opposed to a key encryption key (KEK) stored by KMS). When using KMS to wrap/unwrap DEKs, be sure to set an appropriate IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot unwrap the data crypto key.
+  This is a data encryption key (DEK) (as opposed to a key encryption key (KEK) stored by Cloud Key Management Service (Cloud KMS). When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate IAM policy on the KEK to ensure an attacker cannot unwrap the DEK.
 
   ## Attributes
 
-  *   `kmsWrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t`, *default:* `nil`) - Kms wrapped key
+  *   `kmsWrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t`, *default:* `nil`) - Key wrapped using Cloud KMS
   *   `transient` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey.t`, *default:* `nil`) - Transient crypto key
   *   `unwrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey.t`, *default:* `nil`) - Unwrapped crypto key
   """
