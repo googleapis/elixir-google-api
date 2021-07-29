@@ -699,7 +699,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:pageSize` (*type:* `integer()`) - The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
       *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
       *   `:q` (*type:* `String.t`) - A query for filtering the file results. See the "Search for Files" guide for supported syntax.
-      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
+      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the corpus. Supported values are 'drive' and 'appDataFolder'.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
       *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.

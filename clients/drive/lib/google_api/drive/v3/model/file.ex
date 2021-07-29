@@ -25,7 +25,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `modifiedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been modified by this user.
   *   `fullFileExtension` (*type:* `String.t`, *default:* `nil`) - The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
       This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
-  *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
+  *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder or shortcut to a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
       If an unsupported color is specified, the closest color in the palette will be used instead.
   *   `resourceKey` (*type:* `String.t`, *default:* `nil`) - A key needed to access the item via a shared link.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
