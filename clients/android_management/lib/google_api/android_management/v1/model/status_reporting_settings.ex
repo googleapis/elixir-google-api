@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   *   `deviceSettingsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether device settings reporting is enabled.
   *   `displayInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether displays reporting is enabled. Report data is not available for personally owned devices with work profiles.
   *   `hardwareStatusEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether hardware status reporting is enabled. Report data is not available for personally owned devices with work profiles.
-  *   `memoryInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether memory reporting is enabled.
+  *   `memoryInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether memory event reporting is enabled.
   *   `networkInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether network info reporting is enabled.
   *   `powerManagementEventsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether power management event reporting is enabled. Report data is not available for personally owned devices with work profiles.
   *   `softwareInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether software info reporting is enabled.

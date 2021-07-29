@@ -20,7 +20,7 @@ defmodule GoogleApi.AndroidManagement.V1 do
   API client metadata for GoogleApi.AndroidManagement.V1.
   """
 
-  @discovery_revision "20210713"
+  @discovery_revision "20210719"
 
   def discovery_revision(), do: @discovery_revision
 end
