@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
   @moduledoc """
-  GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. This message is experimental.
+  GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received.
 
   ## Attributes
 
+  *   `enterpriseConfigResourceName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the github enterprise config that should be applied to this installation. For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
   *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emits the GitHub event.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository. For example: The name for https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
   *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository. For example: The owner for https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".
@@ -31,6 +32,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enterpriseConfigResourceName => String.t() | nil,
           :installationId => String.t() | nil,
           :name => String.t() | nil,
           :owner => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
           :push => GoogleApi.CloudBuild.V1.Model.PushFilter.t() | nil
         }
 
+  field(:enterpriseConfigResourceName)
   field(:installationId)
   field(:name)
   field(:owner)
