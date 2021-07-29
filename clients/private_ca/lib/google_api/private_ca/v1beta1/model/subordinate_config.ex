@@ -21,7 +21,7 @@ defmodule GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfig do
 
   ## Attributes
 
-  *   `certificateAuthority` (*type:* `String.t`, *default:* `nil`) - Required. This can refer to a CertificateAuthority in the same project that was used to create a subordinate CertificateAuthority. This field is used for information and usability purposes only. The resource name is in the format `projects/*/locations/*/certificateAuthorities/*`.
+  *   `certificateAuthority` (*type:* `String.t`, *default:* `nil`) - Required. This can refer to a CertificateAuthority that was used to create a subordinate CertificateAuthority. This field is used for information and usability purposes only. The resource name is in the format `projects/*/locations/*/certificateAuthorities/*`.
   *   `pemIssuerChain` (*type:* `GoogleApi.PrivateCA.V1beta1.Model.SubordinateConfigChain.t`, *default:* `nil`) - Required. Contains the PEM certificate chain for the issuers of this CertificateAuthority, but not pem certificate for this CA itself.
   """
 
