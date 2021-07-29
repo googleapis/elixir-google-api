@@ -25,7 +25,10 @@ defmodule GoogleApi.FCM.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # See, edit, configure, and delete your Google Cloud Platform data
-      "https://www.googleapis.com/auth/cloud-platform"
+      "https://www.googleapis.com/auth/cloud-platform",
+
+      # Send messages and manage messaging subscriptions for your Firebase applications
+      "https://www.googleapis.com/auth/firebase.messaging"
     ],
     otp_app: :google_api_fcm,
     base_url: "https://fcm.googleapis.com/"
