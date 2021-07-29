@@ -28,7 +28,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `enrollmentTokenData` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token with additional data provided, this field contains that data.
   *   `memoryEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t)`, *default:* `nil`) - Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy.
   *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
-  *   `memoryInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t`, *default:* `nil`) - Memory information. This information is only available if memoryInfoEnabled is true in the device's policy.
+  *   `memoryInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t`, *default:* `nil`) - Memory information: contains information about device memory and storage.
   *   `policyCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether the device is compliant with its policy.
   *   `deviceSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceSettings.t`, *default:* `nil`) - Device settings information. This information is only available if deviceSettingsEnabled is true in the device's policy.
   *   `lastPolicyComplianceReportTime` (*type:* `DateTime.t`, *default:* `nil`) - Deprecated.
