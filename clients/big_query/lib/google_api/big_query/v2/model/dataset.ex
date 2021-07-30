@@ -31,6 +31,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - [Output-only] A hash of the resource.
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for the dataset.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output-only] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.
+  *   `isCaseInsensitive` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if table names are case insensitive in the dataset.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#dataset`) - [Output-only] The resource type.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch.
@@ -53,6 +54,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :etag => String.t() | nil,
           :friendlyName => String.t() | nil,
           :id => String.t() | nil,
+          :isCaseInsensitive => boolean() | nil,
           :kind => String.t() | nil,
           :labels => map() | nil,
           :lastModifiedTime => String.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:etag)
   field(:friendlyName)
   field(:id)
+  field(:isCaseInsensitive)
   field(:kind)
   field(:labels, type: :map)
   field(:lastModifiedTime)
