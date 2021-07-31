@@ -27,6 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data source.
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' "last modification time" do not exclude objects in a data sink.
+  *   `posixDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data source.
   *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - If the option delete_objects_unique_in_sink is `true` and time-based object conditions such as 'last modification time' are specified, the request fails with an INVALID_ARGUMENT error.
   """
 
@@ -40,6 +41,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
           :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
           :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t() | nil,
           :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t() | nil,
+          :posixDataSource => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
           :transferOptions => GoogleApi.StorageTransfer.V1.Model.TransferOptions.t() | nil
         }
 
@@ -49,6 +51,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   field(:gcsDataSource, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:httpDataSource, as: GoogleApi.StorageTransfer.V1.Model.HttpData)
   field(:objectConditions, as: GoogleApi.StorageTransfer.V1.Model.ObjectConditions)
+  field(:posixDataSource, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)
   field(:transferOptions, as: GoogleApi.StorageTransfer.V1.Model.TransferOptions)
 end
 
