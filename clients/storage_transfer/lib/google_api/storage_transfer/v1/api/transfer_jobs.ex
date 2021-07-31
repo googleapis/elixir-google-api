@@ -90,7 +90,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `job_name` (*type:* `String.t`) - Required. " The job to get.
+  *   `job_name` (*type:* `String.t`) - Required. The job to get.
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
