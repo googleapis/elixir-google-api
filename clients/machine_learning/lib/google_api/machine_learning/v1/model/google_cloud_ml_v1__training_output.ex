@@ -28,7 +28,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
   *   `isBuiltInAlgorithmJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a built-in Algorithm job.
   *   `isHyperparameterTuningJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a hyperparameter tuning job.
   *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials. Only set for hyperparameter tuning jobs.
-  *   `webAccessUris` (*type:* `map()`, *default:* `nil`) - Output only. The web URIs for the training job. Currently for debug terminal access to the job.
+  *   `webAccessUris` (*type:* `map()`, *default:* `nil`) - Output only. URIs for accessing [interactive shells](https://cloud.google.com/ai-platform/training/docs/monitor-debug-interactive-shell) (one URI for each training node). Only available if training_input.enable_web_access is `true`. The keys are names of each node in the training job; for example, `master-replica-0` for the master node, `worker-replica-0` for the first worker, and `ps-replica-0` for the first parameter server. The values are the URIs for each node's interactive shell.
   """
 
   use GoogleApi.Gax.ModelBase
