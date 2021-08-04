@@ -43,6 +43,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.V1 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:webhookKey` (*type:* `String.t`) - For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation.
       *   `:body` (*type:* `GoogleApi.CloudBuild.V1.Model.HttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -69,6 +70,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.V1 do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :webhookKey => :query,
       :body => :body
     }
 
