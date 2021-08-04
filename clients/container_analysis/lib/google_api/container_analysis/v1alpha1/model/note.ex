@@ -28,6 +28,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was created. This field can be used as a filter in list requests.
   *   `deployable` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t`, *default:* `nil`) - A note describing something that can be deployed.
   *   `discovery` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t`, *default:* `nil`) - A note describing a provider/analysis type.
+  *   `dsseAttestation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationNote.t`, *default:* `nil`) - A note describing a dsse attestation note.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Time of expiration for this note, null if note does not expire.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which kind of note is specified. This field can be used as a filter in list requests.
   *   `longDescription` (*type:* `String.t`, *default:* `nil`) - A detailed description of this `Note`.
@@ -55,6 +56,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
           :createTime => DateTime.t() | nil,
           :deployable => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t() | nil,
           :discovery => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t() | nil,
+          :dsseAttestation =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationNote.t() | nil,
           :expirationTime => DateTime.t() | nil,
           :kind => String.t() | nil,
           :longDescription => String.t() | nil,
@@ -81,6 +84,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   field(:createTime, as: DateTime)
   field(:deployable, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable)
   field(:discovery, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery)
+  field(:dsseAttestation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationNote)
   field(:expirationTime, as: DateTime)
   field(:kind)
   field(:longDescription)
