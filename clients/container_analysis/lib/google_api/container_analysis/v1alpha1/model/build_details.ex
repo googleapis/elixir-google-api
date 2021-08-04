@@ -21,6 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
 
   ## Attributes
 
+  *   `intotoProvenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t`, *default:* `nil`) - In-toto Provenance representation as defined in spec.
   *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t`, *default:* `nil`) - The actual provenance
   *   `provenanceBytes` (*type:* `String.t`, *default:* `nil`) - Serialized JSON representation of the provenance, used in generating the `BuildSignature` in the corresponding Result. After verifying the signature, `provenance_bytes` can be unmarshalled and compared to the provenance to confirm that it is unchanged. A base64-encoded string representation of the provenance bytes is used for the signature in order to interoperate with openssl which expects this format for signature verification. The serialized form is captured both to avoid ambiguity in how the provenance is marshalled to json as well to prevent incompatibilities with future changes.
   """
@@ -28,10 +29,13 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :intotoProvenance =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t() | nil,
           :provenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t() | nil,
           :provenanceBytes => String.t() | nil
         }
 
+  field(:intotoProvenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance)
   field(:provenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance)
   field(:provenanceBytes)
 end

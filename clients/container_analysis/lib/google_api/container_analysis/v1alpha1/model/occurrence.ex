@@ -28,6 +28,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   *   `deployment` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t`, *default:* `nil`) - Describes the deployment of an artifact on a runtime.
   *   `derivedImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t`, *default:* `nil`) - Describes how this resource derives from the basis in the associated note.
   *   `discovered` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered.t`, *default:* `nil`) - Describes the initial scan status for this resource.
+  *   `dsseAttestation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationOccurrence.t`, *default:* `nil`) - This represents a DSSE attestation occurrence
+  *   `envelope` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Envelope.t`, *default:* `nil`) - https://github.com/secure-systems-lab/dsse
   *   `installation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation.t`, *default:* `nil`) - Describes the installation of a package on the linked resource.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which of the `Occurrence` details are specified. This field can be used as a filter in list requests.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the `Occurrence` in the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
@@ -55,6 +57,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
           :deployment => GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t() | nil,
           :derivedImage => GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t() | nil,
           :discovered => GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered.t() | nil,
+          :dsseAttestation =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationOccurrence.t() | nil,
+          :envelope => GoogleApi.ContainerAnalysis.V1alpha1.Model.Envelope.t() | nil,
           :installation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
@@ -80,6 +85,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   field(:deployment, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment)
   field(:derivedImage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived)
   field(:discovered, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered)
+
+  field(:dsseAttestation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DSSEAttestationOccurrence)
+
+  field(:envelope, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Envelope)
   field(:installation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation)
   field(:kind)
   field(:name)
