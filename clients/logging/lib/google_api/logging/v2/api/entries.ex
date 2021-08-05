@@ -26,7 +26,7 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Copies a set of log entries from a logging bucket to a Cloud Storage bucket.
+  Copies a set of log entries from a log bucket to a Cloud Storage bucket.
 
   ## Parameters
 

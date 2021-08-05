@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Logging.V2.Model.LogView do
   @moduledoc """
-  Describes a view over logs in a bucket.
+  Describes a view over log entries in a bucket.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the view.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this view.
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: originating project/folder/organization/billing account. resource type log id Example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the view. For example "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Filter that restricts which log entries in a bucket are visible in this view.Filters are restricted to be a logical AND of ==/!= of any of the following: originating project/folder/organization/billing account. resource type log idFor example:SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the view.For example:projects/my-project/locations/global/buckets/my-bucket/views/my-view
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the view.
   """
 

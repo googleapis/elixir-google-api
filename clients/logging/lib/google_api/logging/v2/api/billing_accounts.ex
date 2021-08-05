@@ -26,12 +26,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets a bucket.
+  Gets a log bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -100,12 +100,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Gets a view.
+  Gets a view on a log bucket..
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -186,7 +186,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-logging-project" "organizations/123456789"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -258,7 +258,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -332,7 +332,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -480,7 +480,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -703,12 +703,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Creates a bucket that can be used to store log entries. Once a bucket has been created, the region cannot be changed.
+  Creates a log bucket that can be used to store log entries. After a bucket has been created, the bucket's location cannot be changed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" Example: "projects/my-logging-project/locations/global"
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -781,12 +781,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Deletes a bucket. Moves the bucket to the DELETE_REQUESTED state. After 7 days, the bucket will be purged and all logs in the bucket will be permanently deleted.
+  Deletes a log bucket.Changes the bucket's lifecycle_state to the DELETE_REQUESTED state. After 7 days, the bucket will be purged and all log entries in the bucket will be permanently deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -862,7 +862,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Lists buckets.
+  Lists log buckets.
 
   ## Parameters
 
@@ -940,12 +940,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Updates a bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be returned.A buckets region may not be modified after it is created.
+  Updates a log bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a lifecycle_state of DELETE_REQUESTED, then FAILED_PRECONDITION will be returned.After a bucket has been created, the bucket's location cannot be changed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id". Also requires permission "resourcemanager.projects.updateLiens" to set the locked property
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -960,7 +960,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask that specifies the fields in bucket that need an update. A bucket field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=retention_days.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask that specifies the fields in bucket that need an update. A bucket field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see: https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=retention_days
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogBucket.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1025,12 +1025,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Undeletes a bucket. A bucket that has been deleted may be undeleted within the grace period of 7 days.
+  Undeletes a log bucket. A bucket that has been deleted can be undeleted within the grace period of 7 days.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1108,12 +1108,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Creates a view over logs in a bucket. A bucket may contain a maximum of 50 views.
+  Creates a view over log entries in a log bucket. A bucket may contain a maximum of 50 views.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket in which to create the view "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-logging-project/locations/my-location/buckets/my-bucket"
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket in which to create the view `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"` For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1193,12 +1193,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Deletes a view from a bucket.
+  Deletes a view on a log bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
@@ -1278,7 +1278,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Lists views on a bucket.
+  Lists views on a log bucket.
 
   ## Parameters
 
@@ -1298,7 +1298,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request.Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
       *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1363,12 +1363,12 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Updates a view. This method replaces the following fields in the existing view with values from the new view: filter.
+  Updates a view on a log bucket. This method replaces the following fields in the existing view with values from the new view: filter.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
   *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
@@ -1384,7 +1384,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in view that need an update. A field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in view that need an update. A field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogView.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1842,7 +1842,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-project" "organizations/123456789"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1855,7 +1855,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
+      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Cloud Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1916,7 +1916,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1990,7 +1990,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2133,7 +2133,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2148,7 +2148,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field: If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity. If the old value is false and the new value is true, then writer_identity is changed to a unique service account. It is an error if the old value is true and the new value is set to false or defaulted to false.
-      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes: destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:destination,filter,includeChildrenAt some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2213,7 +2213,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2228,7 +2228,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field: If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity. If the old value is false and the new value is true, then writer_identity is changed to a unique service account. It is an error if the old value is true and the new value is set to false or defaulted to false.
-      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes: destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:destination,filter,includeChildrenAt some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
