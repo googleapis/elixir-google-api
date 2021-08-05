@@ -27,7 +27,7 @@ defmodule GoogleApi.Logging.V2.Model.CopyLogEntriesMetadata do
   *   `request` (*type:* `GoogleApi.Logging.V2.Model.CopyLogEntriesRequest.t`, *default:* `nil`) - CopyLogEntries RPC request.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The create time of an operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of an operation.
-  *   `writerIdentity` (*type:* `String.t`, *default:* `nil`) - The IAM identity of a service account that must be granted access to the destination. If the service account is not granted permission to the destination within an hour, the operation will be cancelled. Example: "serviceAccount:foo@bar.com"
+  *   `writerIdentity` (*type:* `String.t`, *default:* `nil`) - The IAM identity of a service account that must be granted access to the destination.If the service account is not granted permission to the destination within an hour, the operation will be cancelled.For example: "serviceAccount:foo@bar.com"
   """
 
   use GoogleApi.Gax.ModelBase

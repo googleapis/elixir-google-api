@@ -31,7 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-project" "organizations/123456789"
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -45,7 +45,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
+      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Cloud Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -97,7 +97,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -168,7 +168,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -305,7 +305,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -321,7 +321,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field: If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity. If the old value is false and the new value is true, then writer_identity is changed to a unique service account. It is an error if the old value is true and the new value is set to false or defaulted to false.
-      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes: destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:destination,filter,includeChildrenAt some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

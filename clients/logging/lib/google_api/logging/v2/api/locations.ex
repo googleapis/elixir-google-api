@@ -172,12 +172,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Creates a bucket that can be used to store log entries. Once a bucket has been created, the region cannot be changed.
+  Creates a log bucket that can be used to store log entries. After a bucket has been created, the bucket's location cannot be changed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" Example: "projects/my-logging-project/locations/global"
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -254,12 +254,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Deletes a bucket. Moves the bucket to the DELETE_REQUESTED state. After 7 days, the bucket will be purged and all logs in the bucket will be permanently deleted.
+  Deletes a log bucket.Changes the bucket's lifecycle_state to the DELETE_REQUESTED state. After 7 days, the bucket will be purged and all log entries in the bucket will be permanently deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -336,12 +336,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Gets a bucket.
+  Gets a log bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -418,7 +418,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Lists buckets.
+  Lists log buckets.
 
   ## Parameters
 
@@ -500,12 +500,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Updates a bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be returned.A buckets region may not be modified after it is created.
+  Updates a log bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a lifecycle_state of DELETE_REQUESTED, then FAILED_PRECONDITION will be returned.After a bucket has been created, the bucket's location cannot be changed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id". Also requires permission "resourcemanager.projects.updateLiens" to set the locked property
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -521,7 +521,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask that specifies the fields in bucket that need an update. A bucket field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=retention_days.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask that specifies the fields in bucket that need an update. A bucket field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see: https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=retention_days
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogBucket.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -586,12 +586,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Undeletes a bucket. A bucket that has been deleted may be undeleted within the grace period of 7 days.
+  Undeletes a log bucket. A bucket that has been deleted can be undeleted within the grace period of 7 days.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -670,12 +670,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Creates a view over logs in a bucket. A bucket may contain a maximum of 50 views.
+  Creates a view over log entries in a log bucket. A bucket may contain a maximum of 50 views.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket in which to create the view "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" Example: "projects/my-logging-project/locations/my-location/buckets/my-bucket"
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket in which to create the view `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"` For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
@@ -756,12 +756,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Deletes a view from a bucket.
+  Deletes a view on a log bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -845,12 +845,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Gets a view.
+  Gets a view on a log bucket..
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -934,7 +934,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Lists views on a bucket.
+  Lists views on a log bucket.
 
   ## Parameters
 
@@ -955,7 +955,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request.Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
       *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1020,12 +1020,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Updates a view. This method replaces the following fields in the existing view with values from the new view: filter.
+  Updates a view on a log bucket. This method replaces the following fields in the existing view with values from the new view: filter.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" Example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
@@ -1042,7 +1042,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in view that need an update. A field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in view that need an update. A field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogView.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
