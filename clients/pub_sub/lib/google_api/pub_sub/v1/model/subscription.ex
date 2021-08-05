@@ -34,6 +34,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   *   `retainAckedMessages` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to retain acknowledged messages. If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the `message_retention_duration` window. This must be true if you would like to [`Seek` to a timestamp] (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in the past to replay previously-acknowledged messages.
   *   `retryPolicy` (*type:* `GoogleApi.PubSub.V1.Model.RetryPolicy.t`, *default:* `nil`) - A policy that specifies how Pub/Sub retries message delivery for this subscription. If not set, the default retry policy is applied. This generally implies that messages will be retried as soon as possible for healthy subscribers. RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message.
   *   `topic` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted.
+  *   `topicMessageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
           :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t() | nil,
           :retainAckedMessages => boolean() | nil,
           :retryPolicy => GoogleApi.PubSub.V1.Model.RetryPolicy.t() | nil,
-          :topic => String.t() | nil
+          :topic => String.t() | nil,
+          :topicMessageRetentionDuration => String.t() | nil
         }
 
   field(:ackDeadlineSeconds)
@@ -67,6 +69,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   field(:retainAckedMessages)
   field(:retryPolicy, as: GoogleApi.PubSub.V1.Model.RetryPolicy)
   field(:topic)
+  field(:topicMessageRetentionDuration)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.Subscription do
