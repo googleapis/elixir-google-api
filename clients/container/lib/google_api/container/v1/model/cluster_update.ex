@@ -33,9 +33,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredL4ilbSubsettingConfig` (*type:* `GoogleApi.Container.V1.Model.ILBSubsettingConfig.t`, *default:* `nil`) - The desired L4 Internal Load Balancer Subsetting configuration.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This list must always include the cluster's primary zone. Warning: changing cluster locations will update the locations of all node pools and will result in nodes being added and/or removed.
+  *   `desiredLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - The desired logging configuration.
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the default Kubernetes version
+  *   `desiredMonitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - The desired monitoring configuration.
   *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics. Currently available options: * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
   *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool.
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
@@ -69,10 +71,12 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredL4ilbSubsettingConfig =>
             GoogleApi.Container.V1.Model.ILBSubsettingConfig.t() | nil,
           :desiredLocations => list(String.t()) | nil,
+          :desiredLoggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
           :desiredLoggingService => String.t() | nil,
           :desiredMasterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
           :desiredMasterVersion => String.t() | nil,
+          :desiredMonitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
           :desiredMonitoringService => String.t() | nil,
           :desiredNodePoolAutoscaling =>
             GoogleApi.Container.V1.Model.NodePoolAutoscaling.t() | nil,
@@ -112,6 +116,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredL4ilbSubsettingConfig, as: GoogleApi.Container.V1.Model.ILBSubsettingConfig)
   field(:desiredLocations, type: :list)
+  field(:desiredLoggingConfig, as: GoogleApi.Container.V1.Model.LoggingConfig)
   field(:desiredLoggingService)
 
   field(:desiredMasterAuthorizedNetworksConfig,
@@ -119,6 +124,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredMasterVersion)
+  field(:desiredMonitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
   field(:desiredMonitoringService)
   field(:desiredNodePoolAutoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
   field(:desiredNodePoolId)
