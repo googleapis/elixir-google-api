@@ -295,7 +295,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{policy_id}`
+  *   `name` (*type:* `String.t`) - Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -661,7 +661,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length of the `short_name` component is 50 characters.
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum length of the `access_level` component is 50 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1169,7 +1169,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
