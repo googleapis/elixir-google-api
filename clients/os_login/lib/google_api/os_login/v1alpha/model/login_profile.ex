@@ -23,6 +23,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. A unique user ID.
   *   `posixAccounts` (*type:* `list(GoogleApi.OSLogin.V1alpha.Model.PosixAccount.t)`, *default:* `nil`) - The list of POSIX accounts associated with the user.
+  *   `securityKeys` (*type:* `list(GoogleApi.OSLogin.V1alpha.Model.SecurityKey.t)`, *default:* `nil`) - The registered security key credentials for a user.
   *   `sshPublicKeys` (*type:* `%{optional(String.t) => GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t}`, *default:* `nil`) - A map from SSH public key fingerprint to the associated key object.
   """
 
@@ -31,12 +32,14 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
   @type t :: %__MODULE__{
           :name => String.t() | nil,
           :posixAccounts => list(GoogleApi.OSLogin.V1alpha.Model.PosixAccount.t()) | nil,
+          :securityKeys => list(GoogleApi.OSLogin.V1alpha.Model.SecurityKey.t()) | nil,
           :sshPublicKeys =>
             %{optional(String.t()) => GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()} | nil
         }
 
   field(:name)
   field(:posixAccounts, as: GoogleApi.OSLogin.V1alpha.Model.PosixAccount, type: :list)
+  field(:securityKeys, as: GoogleApi.OSLogin.V1alpha.Model.SecurityKey, type: :list)
   field(:sshPublicKeys, as: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey, type: :map)
 end
 
