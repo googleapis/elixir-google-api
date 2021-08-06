@@ -22,6 +22,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKey was created.
+  *   `destroyScheduledDuration` (*type:* `String.t`, *default:* `nil`) - Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 24 hours.
+  *   `importOnly` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether this key may contain imported versions only.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `nextRotationTime` (*type:* `DateTime.t`, *default:* `nil`) - At next_rotation_time, the Key Management Service will automatically: 1. Create a new version of this CryptoKey. 2. Mark the new version as primary. Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted.
@@ -35,6 +37,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :destroyScheduledDuration => String.t() | nil,
+          :importOnly => boolean() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :nextRotationTime => DateTime.t() | nil,
@@ -45,6 +49,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
         }
 
   field(:createTime, as: DateTime)
+  field(:destroyScheduledDuration)
+  field(:importOnly)
   field(:labels, type: :map)
   field(:name)
   field(:nextRotationTime, as: DateTime)
