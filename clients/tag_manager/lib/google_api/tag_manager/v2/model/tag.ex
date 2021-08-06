@@ -24,6 +24,7 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `blockingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking rule IDs. If any of the listed rules evaluate to true, the tag will not fire. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `blockingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking trigger IDs. If any of the listed triggers evaluate to true, the tag will not fire. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `consentSettings` (*type:* `GoogleApi.TagManager.V2.Model.TagConsentSetting.t`, *default:* `nil`) - Consent settings of a tag. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Tag as computed at storage time. This value is recomputed whenever the tag is modified.
   *   `firingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Firing rule IDs. A tag will fire when any of the listed rules are true and all of its blockingRuleIds (if any specified) are false. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
@@ -55,6 +56,7 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
           :accountId => String.t() | nil,
           :blockingRuleId => list(String.t()) | nil,
           :blockingTriggerId => list(String.t()) | nil,
+          :consentSettings => GoogleApi.TagManager.V2.Model.TagConsentSetting.t() | nil,
           :containerId => String.t() | nil,
           :fingerprint => String.t() | nil,
           :firingRuleId => list(String.t()) | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
   field(:accountId)
   field(:blockingRuleId, type: :list)
   field(:blockingTriggerId, type: :list)
+  field(:consentSettings, as: GoogleApi.TagManager.V2.Model.TagConsentSetting)
   field(:containerId)
   field(:fingerprint)
   field(:firingRuleId, type: :list)
