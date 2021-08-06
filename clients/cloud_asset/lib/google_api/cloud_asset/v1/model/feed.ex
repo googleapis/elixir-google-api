@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name and type will be returned.
   *   `feedOutputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t`, *default:* `nil`) - Required. Feed output configuration defining where the asset updates are published to.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The format will be projects/{project_number}/feeds/{client-assigned_feed_identifier} or folders/{folder_number}/feeds/{client-assigned_feed_identifier} or organizations/{organization_number}/feeds/{client-assigned_feed_identifier} The client-assigned feed identifier must be unique within the parent project/folder/organization.
+  *   `relationshipTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of relationship types to output, for example: `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if content_type=RELATIONSHIP. * If specified: it outputs specified relationship updates on the [asset_names] or the [asset_types]. It returns an error if any of the [relationship_types] doesn't belong to the supported relationship types of the [asset_names] or [asset_types], or any of the [asset_names] or the [asset_types] doesn't belong to the source types of the [relationship_types]. * Otherwise: it outputs the supported relationships of the types of [asset_names] and [asset_types] or returns an error if any of the [asset_names] or the [asset_types] has no replationship support. See [Introduction to Cloud Asset Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all supported asset types and relationship types.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
           :condition => GoogleApi.CloudAsset.V1.Model.Expr.t() | nil,
           :contentType => String.t() | nil,
           :feedOutputConfig => GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :relationshipTypes => list(String.t()) | nil
         }
 
   field(:assetNames, type: :list)
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   field(:contentType)
   field(:feedOutputConfig, as: GoogleApi.CloudAsset.V1.Model.FeedOutputConfig)
   field(:name)
+  field(:relationshipTypes, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudAsset.V1.Model.Feed do
