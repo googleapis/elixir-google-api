@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
 
   *   `autoprovisioningLocations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the NodePool's nodes can be created by NAP.
   *   `autoprovisioningNodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t`, *default:* `nil`) - AutoprovisioningNodePoolDefaults contains defaults for a node pool created by NAP.
+  *   `autoscalingProfile` (*type:* `String.t`, *default:* `nil`) - Defines autoscaling behaviour.
   *   `enableNodeAutoprovisioning` (*type:* `boolean()`, *default:* `nil`) - Enables automatic node pool creation and deletion.
   *   `resourceLimits` (*type:* `list(GoogleApi.Container.V1.Model.ResourceLimit.t)`, *default:* `nil`) - Contains global constraints regarding minimum and maximum amount of resources in the cluster.
   """
@@ -33,6 +34,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
           :autoprovisioningLocations => list(String.t()) | nil,
           :autoprovisioningNodePoolDefaults =>
             GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t() | nil,
+          :autoscalingProfile => String.t() | nil,
           :enableNodeAutoprovisioning => boolean() | nil,
           :resourceLimits => list(GoogleApi.Container.V1.Model.ResourceLimit.t()) | nil
         }
@@ -43,6 +45,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
     as: GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults
   )
 
+  field(:autoscalingProfile)
   field(:enableNodeAutoprovisioning)
   field(:resourceLimits, as: GoogleApi.Container.V1.Model.ResourceLimit, type: :list)
 end

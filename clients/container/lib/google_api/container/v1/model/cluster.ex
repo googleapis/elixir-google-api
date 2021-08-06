@@ -40,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this cluster.
   *   `privateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Configuration for private cluster.
   *   `enableKubernetesAlpha` (*type:* `boolean()`, *default:* `nil`) - Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation.
+  *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - Logging configuration for the cluster.
   *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `resourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - Configuration for exporting resource usages. Resource usage export is disabled when this config is unspecified.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint. The endpoint can be accessed from the internet at `https://username:password@endpoint/`. See the `masterAuth` property of this resource for username and password information.
@@ -67,6 +68,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
   *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
   *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
+  *   `monitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - Monitoring configuration for the cluster.
   *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id for the cluster.
   *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
@@ -102,6 +104,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :description => String.t() | nil,
           :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
           :enableKubernetesAlpha => boolean() | nil,
+          :loggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
           :loggingService => String.t() | nil,
           :resourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
@@ -131,6 +134,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
           :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
           :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
+          :monitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
           :initialClusterVersion => String.t() | nil,
           :id => String.t() | nil,
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil,
@@ -161,6 +165,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:description)
   field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:enableKubernetesAlpha)
+  field(:loggingConfig, as: GoogleApi.Container.V1.Model.LoggingConfig)
   field(:loggingService)
   field(:resourceUsageExportConfig, as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig)
   field(:endpoint)
@@ -192,6 +197,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
   field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
+  field(:monitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
   field(:initialClusterVersion)
   field(:id)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
