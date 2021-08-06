@@ -285,6 +285,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       *   `:contentType` (*type:* `String.t`) - Optional. The content type.
       *   `:"readTimeWindow.endTime"` (*type:* `DateTime.t`) - End time of the time window (inclusive). If not specified, the current timestamp is used instead.
       *   `:"readTimeWindow.startTime"` (*type:* `DateTime.t`) - Start time of the time window (exclusive).
+      *   `:relationshipTypes` (*type:* `list(String.t)`) - Optional. A list of relationship types to output, for example: `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if content_type=RELATIONSHIP. * If specified: it outputs specified relationships' history on the [asset_names]. It returns an error if any of the [relationship_types] doesn't belong to the supported relationship types of the [asset_names] or if any of the [asset_names]'s types doesn't belong to the source types of the [relationship_types]. * Otherwise: it outputs the supported relationships' history on the [asset_names] or returns an error if any of the [asset_names]'s types has no relationship support. See [Introduction to Cloud Asset Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all supported asset types and relationship types.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -325,7 +326,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       :assetNames => :query,
       :contentType => :query,
       :"readTimeWindow.endTime" => :query,
-      :"readTimeWindow.startTime" => :query
+      :"readTimeWindow.startTime" => :query,
+      :relationshipTypes => :query
     }
 
     request =

@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name will be returned.
   *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.OutputConfig.t`, *default:* `nil`) - Required. Output configuration indicating where the results will be output to.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp to take an asset snapshot. This can only be set to a timestamp between the current time and the current time minus 35 days (inclusive). If not specified, the current time will be used. Due to delays in resource data collection and indexing, there is a volatile window during which running the same query may get different results.
+  *   `relationshipTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of relationship types to export, for example: `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if content_type=RELATIONSHIP. * If specified: it snapshots specified relationships. It returns an error if any of the [relationship_types] doesn't belong to the supported relationship types of the [asset_types] or if any of the [asset_types] doesn't belong to the source types of the [relationship_types]. * Otherwise: it snapshots the supported relationships for all [asset_types] or returns an error if any of the [asset_types] has no relationship support. An unspecified asset types field means all supported asset_types. See [Introduction to Cloud Asset Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all supported asset types and relationship types.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
           :assetTypes => list(String.t()) | nil,
           :contentType => String.t() | nil,
           :outputConfig => GoogleApi.CloudAsset.V1.Model.OutputConfig.t() | nil,
-          :readTime => DateTime.t() | nil
+          :readTime => DateTime.t() | nil,
+          :relationshipTypes => list(String.t()) | nil
         }
 
   field(:assetTypes, type: :list)
   field(:contentType)
   field(:outputConfig, as: GoogleApi.CloudAsset.V1.Model.OutputConfig)
   field(:readTime, as: DateTime)
+  field(:relationshipTypes, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
