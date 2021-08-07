@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.Inventory do
   @moduledoc """
-  The inventory details of a VM.
+  This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
 
   ## Attributes
 
   *   `items` (*type:* `%{optional(String.t) => GoogleApi.OSConfig.V1.Model.InventoryItem.t}`, *default:* `nil`) - Inventory items related to the VM keyed by an opaque unique identifier for each inventory item. The identifier is unique to each distinct and addressable inventory item and will change, when there is a new package version.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The `Inventory` API resource name. Format: `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
   *   `osInfo` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryOsInfo.t`, *default:* `nil`) - Base level operating system information for the VM.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of the last reported inventory for the VM.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +32,15 @@ defmodule GoogleApi.OSConfig.V1.Model.Inventory do
   @type t :: %__MODULE__{
           :items =>
             %{optional(String.t()) => GoogleApi.OSConfig.V1.Model.InventoryItem.t()} | nil,
-          :osInfo => GoogleApi.OSConfig.V1.Model.InventoryOsInfo.t() | nil
+          :name => String.t() | nil,
+          :osInfo => GoogleApi.OSConfig.V1.Model.InventoryOsInfo.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:items, as: GoogleApi.OSConfig.V1.Model.InventoryItem, type: :map)
+  field(:name)
   field(:osInfo, as: GoogleApi.OSConfig.V1.Model.InventoryOsInfo)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OSConfig.V1.Model.Inventory do
