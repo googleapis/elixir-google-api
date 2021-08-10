@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.AppsOutage do
   @moduledoc """
-  An outage incident reported by Google for a Google Workspace (formerly G Suite) application.
+  An outage incident reported for a Google Workspace service.
 
   ## Attributes
 
   *   `dashboardUri` (*type:* `String.t`, *default:* `nil`) - Link to the outage event in Google Workspace Status Dashboard
-  *   `nextUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp by which the next update shall be provided.
+  *   `nextUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp by which the next update is expected to arrive.
   *   `products` (*type:* `list(String.t)`, *default:* `nil`) - List of products impacted by the outage.
-  *   `resolutionTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the outage expected or confirmed resolution. (Used only when known).
+  *   `resolutionTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when the outage is expected to be resolved, or has confirmed resolution. Provided only when known.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Current outage status.
   """
 
