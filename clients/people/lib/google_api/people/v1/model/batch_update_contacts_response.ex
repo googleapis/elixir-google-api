@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.BatchUpdateContactsResponse do
   @moduledoc """
-  The response to a request to create a batch of contacts.
+  If not successful, returns BatchUpdateContactsErrorDetails.contacts, a list of errors corresponding to each contact. The response to a request to update a batch of contacts.
 
   ## Attributes
 
