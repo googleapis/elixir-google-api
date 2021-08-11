@@ -25,7 +25,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   *   `appCategoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AppCategoryTargetingOptionDetails.t`, *default:* `nil`) - App category details.
   *   `authorizedSellerStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t`, *default:* `nil`) - Authorized seller status resource details.
   *   `browserDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t`, *default:* `nil`) - Browser details.
-  *   `businessChainDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BusinessChainTargetingOptionDetails.t`, *default:* `nil`) - Business chain resource details.
   *   `carrierAndIspDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t`, *default:* `nil`) - Carrier and ISP details.
   *   `categoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.CategoryTargetingOptionDetails.t`, *default:* `nil`) - Category resource details.
   *   `contentInstreamPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionTargetingOptionDetails.t`, *default:* `nil`) - Content instream position details.
@@ -45,7 +44,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t`, *default:* `nil`) - On screen position details.
   *   `operatingSystemDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails.t`, *default:* `nil`) - Operating system resources details.
   *   `parentalStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t`, *default:* `nil`) - Parental status details.
-  *   `poiDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.PoiTargetingOptionDetails.t`, *default:* `nil`) - POI resource details.
   *   `sensitiveCategoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t`, *default:* `nil`) - Sensitive Category details.
   *   `subExchangeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails.t`, *default:* `nil`) - Sub-exchange details.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique identifier for this targeting option. The tuple {`targeting_type`, `targeting_option_id`} will be unique.
@@ -66,8 +64,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
             GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t() | nil,
           :browserDetails =>
             GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t() | nil,
-          :businessChainDetails =>
-            GoogleApi.DisplayVideo.V1.Model.BusinessChainTargetingOptionDetails.t() | nil,
           :carrierAndIspDetails =>
             GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t() | nil,
           :categoryDetails =>
@@ -106,7 +102,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
             GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails.t() | nil,
           :parentalStatusDetails =>
             GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t() | nil,
-          :poiDetails => GoogleApi.DisplayVideo.V1.Model.PoiTargetingOptionDetails.t() | nil,
           :sensitiveCategoryDetails =>
             GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t() | nil,
           :subExchangeDetails =>
@@ -130,10 +125,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   )
 
   field(:browserDetails, as: GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails)
-
-  field(:businessChainDetails,
-    as: GoogleApi.DisplayVideo.V1.Model.BusinessChainTargetingOptionDetails
-  )
 
   field(:carrierAndIspDetails,
     as: GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails
@@ -189,8 +180,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   field(:parentalStatusDetails,
     as: GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails
   )
-
-  field(:poiDetails, as: GoogleApi.DisplayVideo.V1.Model.PoiTargetingOptionDetails)
 
   field(:sensitiveCategoryDetails,
     as: GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails
