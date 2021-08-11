@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the container image that will run this particular build step. If the image is available in the host's Docker daemon's cache, it will be run directly. If not, the host will attempt to pull the image first, using the builder service account's credentials if necessary. The Docker daemon's cache will already have the latest versions of all of the officially supported build steps ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)). The Docker daemon will also have cached many of the layers for some popular images, like "ubuntu", "debian", but they will be refreshed at the time you attempt to use them. If you built an image in a previous build step, it will be stored in the host's Docker daemon's cache and is available to use as the name for a later build step.
   *   `pullTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Output only. Stores timing information for pulling this build step's builder image only.
+  *   `script` (*type:* `String.t`, *default:* `nil`) - A shell script to be executed in the step. When script is provided, the user cannot specify the entrypoint or args.
   *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the build step. At this time, build step status is only updated on build completion; step status is not updated in real-time as the build progresses.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Time limit for executing this build step. If not defined, the step has no time limit and will be allowed to continue to run until either it completes or the build itself times out.
@@ -46,6 +47,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
           :id => String.t() | nil,
           :name => String.t() | nil,
           :pullTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil,
+          :script => String.t() | nil,
           :secretEnv => list(String.t()) | nil,
           :status => String.t() | nil,
           :timeout => String.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
   field(:id)
   field(:name)
   field(:pullTiming, as: GoogleApi.CloudBuild.V1.Model.TimeSpan)
+  field(:script)
   field(:secretEnv, type: :list)
   field(:status)
   field(:timeout)

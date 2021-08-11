@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
 
   ## Attributes
 
+  *   `approval` (*type:* `GoogleApi.CloudBuild.V1.Model.BuildApproval.t`, *default:* `nil`) - Output only. Describes this build's approval configuration, status, and result.
   *   `artifacts` (*type:* `GoogleApi.CloudBuild.V1.Model.Artifacts.t`, *default:* `nil`) - Artifacts produced by the build that should be uploaded upon successful completion of all build steps.
   *   `availableSecrets` (*type:* `GoogleApi.CloudBuild.V1.Model.Secrets.t`, *default:* `nil`) - Secrets and secret environment variables.
   *   `buildTriggerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the `BuildTrigger` that triggered this build, if it was triggered automatically.
@@ -54,6 +55,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :approval => GoogleApi.CloudBuild.V1.Model.BuildApproval.t() | nil,
           :artifacts => GoogleApi.CloudBuild.V1.Model.Artifacts.t() | nil,
           :availableSecrets => GoogleApi.CloudBuild.V1.Model.Secrets.t() | nil,
           :buildTriggerId => String.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
           :warnings => list(GoogleApi.CloudBuild.V1.Model.Warning.t()) | nil
         }
 
+  field(:approval, as: GoogleApi.CloudBuild.V1.Model.BuildApproval)
   field(:artifacts, as: GoogleApi.CloudBuild.V1.Model.Artifacts)
   field(:availableSecrets, as: GoogleApi.CloudBuild.V1.Model.Secrets)
   field(:buildTriggerId)
