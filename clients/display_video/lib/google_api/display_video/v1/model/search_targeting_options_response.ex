@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SearchTargetingOptionsResponse do
   @moduledoc """
-  Response message for SearchTargetingOptionsResponse.
+  Response message for SearchTargetingOptions.
 
   ## Attributes
 
