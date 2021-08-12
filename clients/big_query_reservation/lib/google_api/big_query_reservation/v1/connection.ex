@@ -24,10 +24,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data in Google BigQuery
+      # View and manage your data in Google BigQuery and see the email address for your Google Account
       "https://www.googleapis.com/auth/bigquery",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_big_query_reservation,
