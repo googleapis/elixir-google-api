@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.JobCondition do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Optional. One-word CamelCase reason for the condition's last transition.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Optional. How to interpret failures of this condition, one of Error, Warning, Info
   *   `status` (*type:* `String.t`, *default:* `nil`) - Required. Status of the condition, one of True, False, Unknown.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting Types include: * "Completed": True when the Job has successfully completed. * "Started": True when the Job has successfully started running. * "ResourcesAvailable": True when underlying resources have been provisioned.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types include: * "Completed": True when the Job has successfully completed. * "Started": True when the Job has successfully started running. * "ResourcesAvailable": True when underlying resources have been provisioned.
   """
 
   use GoogleApi.Gax.ModelBase
