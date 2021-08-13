@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   @moduledoc """
-
+  Next ID: 29
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase
+  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase
   *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
   *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is 'fanFundingEvent'.
   *   `hasDisplayContent` (*type:* `boolean()`, *default:* `nil`) - Whether the message has display content that should be displayed to users.
