@@ -24,7 +24,7 @@ defmodule GoogleApi.Monitoring.V3.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
       # View and write monitoring data for all of your Google and third-party Cloud and API projects
