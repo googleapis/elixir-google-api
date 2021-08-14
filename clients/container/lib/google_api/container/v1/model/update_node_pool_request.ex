@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   ## Attributes
 
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
+  *   `gvnic` (*type:* `GoogleApi.Container.V1.Model.VirtualNIC.t`, *default:* `nil`) - Enable or disable gvnic on the node pool.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
   *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   @type t :: %__MODULE__{
           :clusterId => String.t() | nil,
+          :gvnic => GoogleApi.Container.V1.Model.VirtualNIC.t() | nil,
           :imageType => String.t() | nil,
           :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
         }
 
   field(:clusterId)
+  field(:gvnic, as: GoogleApi.Container.V1.Model.VirtualNIC)
   field(:imageType)
   field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
