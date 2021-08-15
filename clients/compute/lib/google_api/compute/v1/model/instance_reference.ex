@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceReference do
 
   ## Attributes
 
-  *   `instance` (*type:* `String.t`, *default:* `nil`) - The URL for a specific instance.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - The URL for a specific instance. @required compute.instancegroups.addInstances/removeInstances
   """
 
   use GoogleApi.Gax.ModelBase

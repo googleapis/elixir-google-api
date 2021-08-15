@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.HttpsHealthCheck do
   @moduledoc """
-  Represents a legacy HTTPS Health Check resource.
-
-  Legacy health checks are required by network load balancers. For more information, read Health Check Concepts.
+  Represents a legacy HTTPS Health Check resource. Legacy HTTPS health checks have been deprecated. If you are using a target pool-based network load balancer, you must use a legacy HTTP (not HTTPS) health check. For all other load balancers, including backend service-based network load balancers, and for managed instance group auto-healing, you must use modern (non-legacy) health checks. For more information, see Health checks overview .
 
   ## Attributes
 

@@ -17,15 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   @moduledoc """
-  Whether the instance is a standby. Properties of a standby instance comparing to the regular instance: ========================================================================= | regular | standby ========================================================================= managed by IGM? | yes | yes added to the IG? | yes | yes counts towards IGM's target size? | yes | no taken into account by Autoscaler? | yes | no receives traffic from LB? | yes | no =========================================================================
-
-  Represents a Managed Instance Group resource.
-
-  An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups.
-
-  For zonal Managed Instance Group, use the instanceGroupManagers resource.
-
-  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for {$api_version}.instanceGroupManagers ==) (== resource_for {$api_version}.regionInstanceGroupManagers ==)
+  Represents a Managed Instance Group resource. An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups. For zonal Managed Instance Group, use the instanceGroupManagers resource. For regional Managed Instance Group, use the regionInstanceGroupManagers resource.
 
   ## Attributes
 
@@ -33,11 +25,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `baseInstanceName` (*type:* `String.t`, *default:* `nil`) - The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
   *   `currentActions` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary.t`, *default:* `nil`) - [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource.
   *   `distributionPolicy` (*type:* `GoogleApi.Compute.V1.Model.DistributionPolicy.t`, *default:* `nil`) - Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-
-      To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] A unique identifier for this resource type. The server generates this identifier.
   *   `instanceGroup` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Instance Group resource.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
@@ -51,9 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `targetPools` (*type:* `list(String.t)`, *default:* `nil`) - The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
   *   `targetSize` (*type:* `integer()`, *default:* `nil`) - The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
   *   `updatePolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy.t`, *default:* `nil`) - The update policy for this managed instance group.
-  *   `versions` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t)`, *default:* `nil`) - Specifies the instance templates used by this managed instance group to create instances.
-
-      Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+  *   `versions` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t)`, *default:* `nil`) - Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
   """
 

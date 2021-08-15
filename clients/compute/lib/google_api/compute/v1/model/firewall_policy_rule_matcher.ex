@@ -21,9 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
 
   ## Attributes
 
-  *   `destIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
+  *   `destIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
   *   `layer4Configs` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t)`, *default:* `nil`) - Pairs of IP protocols and ports that the rule should match.
-  *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
+  *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
   """
 
   use GoogleApi.Gax.ModelBase

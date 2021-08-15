@@ -17,20 +17,15 @@
 
 defmodule GoogleApi.Compute.V1.Model.SslPolicy do
   @moduledoc """
-  Represents an SSL Policy resource.
-
-  Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+  Represents an SSL Policy resource. Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read SSL Policy Concepts.
 
   ## Attributes
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `customFeatures` (*type:* `list(String.t)`, *default:* `nil`) - A list of features enabled when the selected profile is CUSTOM. The
-      - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+  *   `customFeatures` (*type:* `list(String.t)`, *default:* `nil`) - A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `enabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] The list of features enabled in the SSL policy.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-
-      To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#sslPolicy`) - [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
   *   `minTlsVersion` (*type:* `String.t`, *default:* `nil`) - The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.

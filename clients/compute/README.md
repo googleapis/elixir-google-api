@@ -2,7 +2,7 @@
 
 Compute Engine API client library.
 
-Creates and runs virtual machines on Google Cloud Platform.
+Creates and runs virtual machines on Google Cloud Platform. 
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_compute, "~> 0.39"}]
+  [{:google_api_compute, "~> 0.40"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/compute/docs/reference/latest/](https://developers.google.com/compute/docs/reference/latest/).
+Product documentation is available at [https://cloud.google.com/compute/](https://cloud.google.com/compute/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_compute](https://hexdocs.pm/google_api_compute).

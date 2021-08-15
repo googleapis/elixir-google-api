@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   @moduledoc """
-  Represent a sole-tenant Node Group resource.
-
-  A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
+  Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
 
   ## Attributes
 
@@ -30,7 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#nodeGroup`) - [Output Only] The type of the resource. Always compute#nodeGroup for node group.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
-  *   `maintenancePolicy` (*type:* `String.t`, *default:* `nil`) - Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+  *   `maintenancePolicy` (*type:* `String.t`, *default:* `nil`) - Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
   *   `maintenanceWindow` (*type:* `GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `nodeTemplate` (*type:* `String.t`, *default:* `nil`) - URL of the node template to create the node group from.

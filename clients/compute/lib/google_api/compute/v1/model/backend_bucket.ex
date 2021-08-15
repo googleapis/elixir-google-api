@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   @moduledoc """
-  Represents a Cloud Storage Bucket resource.
-
-  This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
+  Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
 
   ## Attributes
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Region do
   @moduledoc """
-  Represents a Region resource.
-
-  A region is a geographical area where a resource is located. For more information, read Regions and Zones. (== resource_for {$api_version}.regions ==)
+  Represents a Region resource. A region is a geographical area where a resource is located. For more information, read Regions and Zones.
 
   ## Attributes
 

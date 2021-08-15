@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.SerialPortOutput do
   @moduledoc """
-  An instance's serial console output.
+  An instance serial console output.
 
   ## Attributes
 

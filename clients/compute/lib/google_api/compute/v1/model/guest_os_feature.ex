@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.GuestOsFeature do
 
   ## Attributes
 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The ID of a supported feature. Read Enabling guest operating system features to see a list of available options.
   """
 
   use GoogleApi.Gax.ModelBase

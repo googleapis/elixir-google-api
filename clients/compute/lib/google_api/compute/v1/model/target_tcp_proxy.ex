@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.TargetTcpProxy do
   @moduledoc """
-  Represents a Target TCP Proxy resource.
-
-  A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules reference target TCP proxy, and the target proxy then references an external backend service. For more information, read TCP Proxy Load Balancing overview. (== resource_for {$api_version}.targetTcpProxies ==)
+  Represents a Target TCP Proxy resource. A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules reference target TCP proxy, and the target proxy then references an external backend service. For more information, read TCP Proxy Load Balancing overview.
 
   ## Attributes
 
@@ -28,11 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetTcpProxy do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#targetTcpProxy`) - [Output Only] Type of the resource. Always compute#targetTcpProxy for target TCP proxies.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-  *   `proxyBind` (*type:* `boolean()`, *default:* `nil`) - This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-
-      When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-
-      The default is false.
+  *   `proxyBind` (*type:* `boolean()`, *default:* `nil`) - This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
   *   `proxyHeader` (*type:* `String.t`, *default:* `nil`) - Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `service` (*type:* `String.t`, *default:* `nil`) - URL to the BackendService resource.

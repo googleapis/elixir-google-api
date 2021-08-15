@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   @moduledoc """
-  Represents an Interconnect Attachment (VLAN) Location resource.
-
-  You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read  Creating VLAN Attachments.
+  Represents an Interconnect Attachment (VLAN) Location resource. You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read Creating VLAN Attachments.
 
   ## Attributes
 
   *   `address` (*type:* `String.t`, *default:* `nil`) - [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
   *   `availabilityZone` (*type:* `String.t`, *default:* `nil`) - [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
   *   `city` (*type:* `String.t`, *default:* `nil`) - [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
-  *   `continent` (*type:* `String.t`, *default:* `nil`) - [Output Only] Continent for this location, which can take one of the following values: 
-      - AFRICA 
-      - ASIA_PAC 
-      - EUROPE 
-      - NORTH_AMERICA 
-      - SOUTH_AMERICA
+  *   `continent` (*type:* `String.t`, *default:* `nil`) - [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional description of the resource.
   *   `facilityProvider` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the provider for this facility (e.g., EQUINIX).
@@ -42,9 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   *   `peeringdbFacilityId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
   *   `regionInfos` (*type:* `list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t)`, *default:* `nil`) - [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of this InterconnectLocation, which can take one of the following values: 
-      - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. 
-      - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
   """
 
   use GoogleApi.Gax.ModelBase

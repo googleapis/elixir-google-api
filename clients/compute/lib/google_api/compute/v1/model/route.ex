@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Route do
   @moduledoc """
-  Represents a Route resource.
-
-  A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview. (== resource_for {$api_version}.routes ==)
+  Represents a Route resource. A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview.
 
   ## Attributes
 
@@ -30,13 +28,9 @@ defmodule GoogleApi.Compute.V1.Model.Route do
   *   `kind` (*type:* `String.t`, *default:* `compute#route`) - [Output Only] Type of this resource. Always compute#routes for Route resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Fully-qualified URL of the network that this route applies to.
-  *   `nextHopGateway` (*type:* `String.t`, *default:* `nil`) - The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
-  *   `nextHopIlb` (*type:* `String.t`, *default:* `nil`) - The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:  
-      - 10.128.0.56 
-      - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule 
-      - regions/region/forwardingRules/forwardingRule
-  *   `nextHopInstance` (*type:* `String.t`, *default:* `nil`) - The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
-      https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+  *   `nextHopGateway` (*type:* `String.t`, *default:* `nil`) - The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+  *   `nextHopIlb` (*type:* `String.t`, *default:* `nil`) - The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule 
+  *   `nextHopInstance` (*type:* `String.t`, *default:* `nil`) - The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
   *   `nextHopIp` (*type:* `String.t`, *default:* `nil`) - The network IP address of an instance that should handle matching packets. Only IPv4 is supported.
   *   `nextHopNetwork` (*type:* `String.t`, *default:* `nil`) - The URL of the local network if it should handle matching packets.
   *   `nextHopPeering` (*type:* `String.t`, *default:* `nil`) - [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.

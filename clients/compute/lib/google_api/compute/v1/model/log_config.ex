@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Compute.V1.Model.LogConfig do
   @moduledoc """
-  Specifies what kind of log the caller must write
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `cloudAudit` (*type:* `GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions.t`, *default:* `nil`) - Cloud audit options.
-  *   `counter` (*type:* `GoogleApi.Compute.V1.Model.LogConfigCounterOptions.t`, *default:* `nil`) - Counter options.
-  *   `dataAccess` (*type:* `GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.t`, *default:* `nil`) - Data access options.
+  *   `cloudAudit` (*type:* `GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `counter` (*type:* `GoogleApi.Compute.V1.Model.LogConfigCounterOptions.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `dataAccess` (*type:* `GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

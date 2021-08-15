@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
   @moduledoc """
-  Write a Data Access (Gin) log
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `logMode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `logMode` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

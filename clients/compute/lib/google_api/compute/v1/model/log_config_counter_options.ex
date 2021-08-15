@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptions do
   @moduledoc """
-  Increment a streamz counter with the specified metric and field names.
-
-  Metric names should start with a '/', generally be lowercase-only, and end in "_count". Field names should not contain an initial slash. The actual exported metric names will have "/iam/policy" prepended.
-
-  Field names correspond to IAM request parameters and field values are their respective values.
-
-  Supported field names: - "authority", which is "[token]" if IAMContext.token is present, otherwise the value of IAMContext.authority_selector if present, and otherwise a representation of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a token or authority selector is present; or - "" (empty string), resulting in a counter with no fields.
-
-  Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==> increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `customFields` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t)`, *default:* `nil`) - Custom fields.
-  *   `field` (*type:* `String.t`, *default:* `nil`) - The field value to attribute.
-  *   `metric` (*type:* `String.t`, *default:* `nil`) - The metric to update.
+  *   `customFields` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `metric` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

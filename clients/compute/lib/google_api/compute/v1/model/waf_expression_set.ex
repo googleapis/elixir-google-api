@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.WafExpressionSet do
 
   *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - A list of alternate IDs. The format should be: - E.g. XSS-stable Generic suffix like "stable" is particularly useful if a policy likes to avail newer set of expressions without having to change the policy. A given alias name can't be used for more than one entity set.
   *   `expressions` (*type:* `list(GoogleApi.Compute.V1.Model.WafExpressionSetExpression.t)`, *default:* `nil`) - List of available expressions.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Google specified expression set ID. The format should be: - E.g. XSS-20170329
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
   """
 
   use GoogleApi.Gax.ModelBase

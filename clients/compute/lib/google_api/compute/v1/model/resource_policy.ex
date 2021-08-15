@@ -19,8 +19,6 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
   @moduledoc """
   Represents a Resource Policy resource. You can use resource policies to schedule actions for some Compute Engine resources. For example, you can use them to schedule persistent disk snapshots.
 
-  (== resource_for {$api_version}.resourcePolicies ==)
-
   ## Attributes
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.

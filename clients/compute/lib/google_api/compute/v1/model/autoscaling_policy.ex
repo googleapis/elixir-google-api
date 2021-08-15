@@ -21,9 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
 
   ## Attributes
 
-  *   `coolDownPeriodSec` (*type:* `integer()`, *default:* `nil`) - The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-
-      Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+  *   `coolDownPeriodSec` (*type:* `integer()`, *default:* `nil`) - The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
   *   `cpuUtilization` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization.t`, *default:* `nil`) - Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
   *   `customMetricUtilizations` (*type:* `list(GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization.t)`, *default:* `nil`) - Configuration parameters of autoscaling based on a custom metric.
   *   `loadBalancingUtilization` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization.t`, *default:* `nil`) - Configuration parameters of autoscaling based on load balancer.

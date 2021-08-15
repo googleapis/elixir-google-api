@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   @moduledoc """
-  Represents a Cloud VPN Tunnel resource.
-
-  For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+  Represents a Cloud VPN Tunnel resource. For more information about VPN, read the the Cloud VPN Overview.
 
   ## Attributes
 
@@ -41,22 +39,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sharedSecret` (*type:* `String.t`, *default:* `nil`) - Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
   *   `sharedSecretHash` (*type:* `String.t`, *default:* `nil`) - Hash of the shared secret.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the VPN tunnel, which can be one of the following: 
-      - PROVISIONING: Resource is being allocated for the VPN tunnel. 
-      - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. 
-      - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. 
-      - ESTABLISHED: Secure session is successfully established with the peer VPN. 
-      - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS 
-      - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). 
-      - NEGOTIATION_FAILURE: Handshake failed. 
-      - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. 
-      - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. 
-      - NO_INCOMING_PACKETS: No incoming packets from peer. 
-      - REJECTED: Tunnel configuration was rejected, can be result of being denied access. 
-      - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. 
-      - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. 
-      - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. 
-      - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel. 
   *   `targetVpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
   *   `vpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
   *   `vpnGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The interface ID of the VPN gateway with which this VPN tunnel is associated.

@@ -24,9 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `dnsVerificationIp` (*type:* `String.t`, *default:* `nil`) - The IPv4 address to be used for reverse DNS verification.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-
-      To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource type. The server generates this identifier.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IPv4 address range, in CIDR format, represented by this public advertised prefix.
   *   `kind` (*type:* `String.t`, *default:* `compute#publicAdvertisedPrefix`) - [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions do
   @moduledoc """
-  Authorization-related information used by Cloud Audit Logging.
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `permissionType` (*type:* `String.t`, *default:* `nil`) - The type of the permission that was checked.
+  *   `permissionType` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

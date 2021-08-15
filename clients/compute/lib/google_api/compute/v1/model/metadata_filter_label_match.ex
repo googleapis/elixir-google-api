@@ -21,10 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.MetadataFilterLabelMatch do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of metadata label.
-      The name can have a maximum length of 1024 characters and must be at least 1 character long.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the label must match the specified value.
-      value can have a maximum length of 1024 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the label must match the specified value. value can have a maximum length of 1024 characters.
   """
 
   use GoogleApi.Gax.ModelBase

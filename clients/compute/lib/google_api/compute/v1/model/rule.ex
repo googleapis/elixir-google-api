@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.Compute.V1.Model.Rule do
   @moduledoc """
-  A rule to be applied in a Policy.
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Required
-  *   `conditions` (*type:* `list(GoogleApi.Compute.V1.Model.Condition.t)`, *default:* `nil`) - Additional restrictions that must be met. All conditions must pass for the rule to match.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of the rule.
-  *   `ins` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
-  *   `logConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfig.t)`, *default:* `nil`) - The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
-  *   `notIns` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `conditions` (*type:* `list(GoogleApi.Compute.V1.Model.Condition.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `ins` (*type:* `list(String.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `logConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfig.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `notIns` (*type:* `list(String.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

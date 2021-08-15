@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The name of the encryption key that is stored in Google Cloud KMS.
   *   `kmsKeyServiceAccount` (*type:* `String.t`, *default:* `nil`) - The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
   *   `rawKey` (*type:* `String.t`, *default:* `nil`) - Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+  *   `rsaEncryptedKey` (*type:* `String.t`, *default:* `nil`) - Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem 
   *   `sha256` (*type:* `String.t`, *default:* `nil`) - [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
           :kmsKeyName => String.t() | nil,
           :kmsKeyServiceAccount => String.t() | nil,
           :rawKey => String.t() | nil,
+          :rsaEncryptedKey => String.t() | nil,
           :sha256 => String.t() | nil
         }
 
   field(:kmsKeyName)
   field(:kmsKeyServiceAccount)
   field(:rawKey)
+  field(:rsaEncryptedKey)
   field(:sha256)
 end
 

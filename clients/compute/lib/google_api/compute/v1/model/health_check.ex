@@ -17,23 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   @moduledoc """
-  Represents a Health Check resource.
-
-  Google Compute Engine has two Health Check resources:
-
-  * [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-
-  Internal HTTP(S) load balancers must use regional health checks (`compute.v1.regionHealthChecks`).
-
-  Traffic Director must use global health checks (`compute.v1.HealthChecks`).
-
-  Internal TCP/UDP load balancers can use either regional or global health checks (`compute.v1.regionHealthChecks` or `compute.v1.HealthChecks`).
-
-  External HTTP(S), TCP proxy, and SSL proxy load balancers as well as managed instance group auto-healing must use global health checks (`compute.v1.HealthChecks`).
-
-  Network load balancers must use legacy HTTP health checks (httpHealthChecks).
-
-  For more information, see Health checks overview.
+  Represents a Health Check resource. Google Compute Engine has two Health Check resources: * [Global](/compute/docs/reference/rest/v1/healthChecks) * [Regional](/compute/docs/reference/rest/v1/regionHealthChecks) Internal HTTP(S) load balancers must use regional health checks (`compute.v1.regionHealthChecks`). Traffic Director must use global health checks (`compute.v1.HealthChecks`). Internal TCP/UDP load balancers can use either regional or global health checks (`compute.v1.regionHealthChecks` or `compute.v1.HealthChecks`). External HTTP(S), TCP proxy, and SSL proxy load balancers as well as managed instance group auto-healing must use global health checks (`compute.v1.HealthChecks`). Backend service-based network load balancers must use regional health checks (`compute.v1.regionHealthChecks`). Target pool-based network load balancers must use legacy HTTP health checks (`compute.v1.httpHealthChecks`). For more information, see Health checks overview.
 
   ## Attributes
 

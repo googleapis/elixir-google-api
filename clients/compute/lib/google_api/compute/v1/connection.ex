@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
       # View and manage your Google Compute Engine resources
@@ -33,13 +33,13 @@ defmodule GoogleApi.Compute.V1.Connection do
       # View your Google Compute Engine resources
       "https://www.googleapis.com/auth/compute.readonly",
 
-      # Manage your data and permissions in Google Cloud Storage
+      # Manage your data and permissions in Cloud Storage and see the email address for your Google Account
       "https://www.googleapis.com/auth/devstorage.full_control",
 
       # View your data in Google Cloud Storage
       "https://www.googleapis.com/auth/devstorage.read_only",
 
-      # Manage your data in Google Cloud Storage
+      # Manage your data in Cloud Storage and see the email address of your Google Account
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
     otp_app: :google_api_compute,

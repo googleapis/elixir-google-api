@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.CircuitBreakers do
   @moduledoc """
-  Settings controlling the volume of connections to a backend service.
+  Settings controlling the volume of requests, connections and retries to this backend service.
 
   ## Attributes
 

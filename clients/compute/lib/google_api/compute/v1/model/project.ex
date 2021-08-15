@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Project do
   @moduledoc """
-  Represents a Project resource.
-
-  A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
+  Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
 
   ## Attributes
 
@@ -29,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   *   `defaultServiceAccount` (*type:* `String.t`, *default:* `nil`) - [Output Only] Default service account used by VMs running in this project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional textual description of the resource.
   *   `enabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Restricted features enabled for use on this project.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
   *   `kind` (*type:* `String.t`, *default:* `compute#project`) - [Output Only] Type of the resource. Always compute#project for projects.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this project.

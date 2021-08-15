@@ -21,9 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
 
   ## Attributes
 
-  *   `automaticRestart` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-
-      By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+  *   `automaticRestart` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
   *   `minNodeCpus` (*type:* `integer()`, *default:* `nil`) - The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
   *   `nodeAffinities` (*type:* `list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t)`, *default:* `nil`) - A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
