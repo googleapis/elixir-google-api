@@ -22,8 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineTypesScopedListWarning do
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
-  *   `data` (*type:* `list(GoogleApi.Compute.V1.Model.MachineTypesScopedListWarningData.t)`, *default:* `nil`) - [Output Only] Metadata about this warning in key: value format. For example:
-      "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+  *   `data` (*type:* `list(GoogleApi.Compute.V1.Model.MachineTypesScopedListWarningData.t)`, *default:* `nil`) - [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
   *   `message` (*type:* `String.t`, *default:* `nil`) - [Output Only] A human-readable description of the warning code.
   """
 

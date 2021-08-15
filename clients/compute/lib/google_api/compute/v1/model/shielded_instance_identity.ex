@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceIdentity do
   @moduledoc """
-  A shielded Instance identity entry.
+  A Shielded Instance Identity.
 
   ## Attributes
 

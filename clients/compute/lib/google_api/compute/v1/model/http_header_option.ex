@@ -23,8 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderOption do
 
   *   `headerName` (*type:* `String.t`, *default:* `nil`) - The name of the header.
   *   `headerValue` (*type:* `String.t`, *default:* `nil`) - The value of the header to add.
-  *   `replace` (*type:* `boolean()`, *default:* `nil`) - If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-      The default value is false.
+  *   `replace` (*type:* `boolean()`, *default:* `nil`) - If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
   """
 
   use GoogleApi.Gax.ModelBase

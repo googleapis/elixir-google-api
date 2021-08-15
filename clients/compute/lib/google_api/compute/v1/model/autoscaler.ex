@@ -17,23 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   @moduledoc """
-  Represents an Autoscaler resource.
-
-  Google Compute Engine has two Autoscaler resources:
-
-  * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
-
-  Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
-
-  For zonal managed instance groups resource, use the autoscaler resource.
-
-  For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
+  Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource.
 
   ## Attributes
 
-  *   `autoscalingPolicy` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicy.t`, *default:* `nil`) - The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-
-      If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+  *   `autoscalingPolicy` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicy.t`, *default:* `nil`) - The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -43,11 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
   *   `scalingScheduleStatus` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.ScalingScheduleStatus.t}`, *default:* `nil`) - [Output Only] Status information of existing scaling schedules.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the autoscaler configuration. Current set of possible values:  
-      - PENDING: Autoscaler backend hasn't read new/updated configuration. 
-      - DELETING: Configuration is being deleted. 
-      - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. 
-      - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
   *   `statusDetails` (*type:* `list(GoogleApi.Compute.V1.Model.AutoscalerStatusDetails.t)`, *default:* `nil`) - [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
   *   `target` (*type:* `String.t`, *default:* `nil`) - URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).

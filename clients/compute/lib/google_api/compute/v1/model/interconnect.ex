@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Interconnect do
   @moduledoc """
-  Represents an Interconnect resource.
-
-  An Interconnect resource is a dedicated connection between the GCP network and your on-premises network. For more information, read the  Dedicated Interconnect Overview. (== resource_for {$api_version}.interconnects ==)
+  Represents an Interconnect resource. An Interconnect resource is a dedicated connection between the GCP network and your on-premises network. For more information, read the Dedicated Interconnect Overview.
 
   ## Attributes
 
@@ -33,28 +31,18 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   *   `googleReferenceId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `interconnectAttachments` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
-  *   `interconnectType` (*type:* `String.t`, *default:* `nil`) - Type of interconnect, which can take one of the following values: 
-      - PARTNER: A partner-managed interconnection shared between customers though a partner. 
-      - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+  *   `interconnectType` (*type:* `String.t`, *default:* `nil`) - Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
   *   `kind` (*type:* `String.t`, *default:* `compute#interconnect`) - [Output Only] Type of the resource. Always compute#interconnect for interconnects.
-  *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of link requested, which can take one of the following values: 
-      - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics 
-      - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+  *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
   *   `location` (*type:* `String.t`, *default:* `nil`) - URL of the InterconnectLocation object that represents where this connection is to be provisioned.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `nocContactEmail` (*type:* `String.t`, *default:* `nil`) - Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Stackdriver logs alerting and Cloud Notifications.
-  *   `operationalStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: 
-      - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. 
-      - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. 
-      - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+  *   `operationalStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
   *   `provisionedLinkCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Number of links actually provisioned in this interconnect.
   *   `requestedLinkCount` (*type:* `integer()`, *default:* `nil`) - Target number of physical links in the link bundle, as requested by the customer.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current state of Interconnect functionality, which can take one of the following values: 
-      - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. 
-      - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. 
-      - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
   """
 
   use GoogleApi.Gax.ModelBase

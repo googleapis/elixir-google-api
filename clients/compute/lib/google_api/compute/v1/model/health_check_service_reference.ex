@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.HealthCheckServiceReference do
   @moduledoc """
-  A full or valid partial URL to a health check service. For example, the following are valid URLs:  
-  - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service 
-  - projects/project-id/regions/us-west1/healthCheckServices/health-check-service 
-  - regions/us-west1/healthCheckServices/health-check-service
+  A full or valid partial URL to a health check service. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service - projects/project-id/regions/us-west1/healthCheckServices/health-check-service - regions/us-west1/healthCheckServices/health-check-service 
 
   ## Attributes
 

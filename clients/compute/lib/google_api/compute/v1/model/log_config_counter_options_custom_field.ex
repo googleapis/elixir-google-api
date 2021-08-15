@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField do
   @moduledoc """
-  Custom fields. These can be used to create a counter with arbitrary field/value pairs. See: go/rpcsp-custom-fields.
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name is the field name.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

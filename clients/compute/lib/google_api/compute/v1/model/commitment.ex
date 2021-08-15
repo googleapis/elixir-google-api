@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Commitment do
   @moduledoc """
-  Represents a regional Commitment resource.
-
-  Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (== resource_for {$api_version}.regionCommitments ==)
+  Represents a regional Commitment resource. Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
 
   ## Attributes
 
@@ -39,6 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `startTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment start time in RFC3339 text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -59,7 +58,8 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :selfLink => String.t() | nil,
           :startTimestamp => String.t() | nil,
           :status => String.t() | nil,
-          :statusMessage => String.t() | nil
+          :statusMessage => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:category)
@@ -78,6 +78,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   field(:startTimestamp)
   field(:status)
   field(:statusMessage)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Commitment do

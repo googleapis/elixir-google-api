@@ -21,14 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceMoveRequest do
 
   ## Attributes
 
-  *   `destinationZone` (*type:* `String.t`, *default:* `nil`) - The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone:  
-      - https://www.googleapis.com/compute/v1/projects/project/zones/zone 
-      - projects/project/zones/zone 
-      - zones/zone
-  *   `targetInstance` (*type:* `String.t`, *default:* `nil`) - The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance:  
-      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance 
-      - projects/project/zones/zone/instances/instance 
-      - zones/zone/instances/instance
+  *   `destinationZone` (*type:* `String.t`, *default:* `nil`) - The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone 
+  *   `targetInstance` (*type:* `String.t`, *default:* `nil`) - The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
   @moduledoc """
-  Write a Cloud Audit log
+  This is deprecated and has no effect. Do not use.
 
   ## Attributes
 
-  *   `authorizationLoggingOptions` (*type:* `GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t`, *default:* `nil`) - Information used by the Cloud Audit Logging pipeline.
-  *   `logName` (*type:* `String.t`, *default:* `nil`) - The log_name to populate in the Cloud Audit Record.
+  *   `authorizationLoggingOptions` (*type:* `GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
+  *   `logName` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase

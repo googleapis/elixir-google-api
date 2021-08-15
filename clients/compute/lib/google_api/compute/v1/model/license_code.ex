@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.LicenseCode do
   @moduledoc """
-  Represents a License Code resource.
-
-  A License Code is a unique identifier used to represent a license resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenseCodes ==)
+  Represents a License Code resource. A License Code is a unique identifier used to represent a license resource. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. 
 
   ## Attributes
 

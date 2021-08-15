@@ -21,16 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
 
   ## Attributes
 
-  *   `currentAction` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: 
-      - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. 
-      - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. 
-      - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. 
-      - RECREATING The managed instance group is recreating this instance. 
-      - DELETING The managed instance group is permanently deleting this instance. 
-      - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. 
-      - RESTARTING The managed instance group is restarting the instance. 
-      - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. 
-      - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+  *   `currentAction` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
   *   `instanceHealth` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t)`, *default:* `nil`) - [Output Only] Health state of the instance per health-check.

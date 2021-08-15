@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.MetadataItems do
   @moduledoc """
-
+  Metadata
 
   ## Attributes
 

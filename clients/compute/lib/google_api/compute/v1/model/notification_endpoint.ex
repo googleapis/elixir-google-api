@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NotificationEndpoint do
   @moduledoc """
-  Represents a notification endpoint.
-
-  A notification endpoint resource defines an endpoint to receive notifications when there are status changes detected by the associated health check service.
-
-  For more information, see  Health checks overview. (== resource_for {$api_version}.notificationEndpoint ==) (== resource_for {$api_version}.regionNotificationEndpoints ==)
+  Represents a notification endpoint. A notification endpoint resource defines an endpoint to receive notifications when there are status changes detected by the associated health check service. For more information, see Health checks overview.
 
   ## Attributes
 

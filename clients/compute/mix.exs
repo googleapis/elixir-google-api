@@ -18,7 +18,7 @@
 defmodule GoogleApi.Compute.Mixfile do
   use Mix.Project
 
-  @version "0.39.1"
+  @version "0.40.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Compute.Mixfile do
 
   defp description() do
     """
-    Compute Engine API client library. Creates and runs virtual machines on Google Cloud Platform.
+    Compute Engine API client library. Creates and runs virtual machines on Google Cloud Platform. 
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Compute.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/compute",
-        "Homepage" => "https://developers.google.com/compute/docs/reference/latest/"
+        "Homepage" => "https://cloud.google.com/compute/"
       }
     ]
   end

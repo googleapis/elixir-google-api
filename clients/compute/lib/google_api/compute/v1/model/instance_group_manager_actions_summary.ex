@@ -22,9 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   ## Attributes
 
   *   `abandoning` (*type:* `integer()`, *default:* `nil`) - [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
-  *   `creating` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully.
-
-      If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+  *   `creating` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
   *   `creatingWithoutRetries` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
   *   `deleting` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
   *   `none` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.

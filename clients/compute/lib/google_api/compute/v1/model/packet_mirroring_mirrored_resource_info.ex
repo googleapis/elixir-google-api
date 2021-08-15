@@ -21,14 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfo do
 
   ## Attributes
 
-  *   `instances` (*type:* `list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoInstanceInfo.t)`, *default:* `nil`) - A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring.
-
-      Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring.
-
-      You may specify a maximum of 50 Instances.
-  *   `subnetworks` (*type:* `list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoSubnetInfo.t)`, *default:* `nil`) - A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring.
-
-      You may specify a maximum of 5 subnetworks.
+  *   `instances` (*type:* `list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoInstanceInfo.t)`, *default:* `nil`) - A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+  *   `subnetworks` (*type:* `list(GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfoSubnetInfo.t)`, *default:* `nil`) - A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
   """
 

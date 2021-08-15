@@ -21,10 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPoolsRemoveHealthCheckRequest do
 
   ## Attributes
 
-  *   `healthChecks` (*type:* `list(GoogleApi.Compute.V1.Model.HealthCheckReference.t)`, *default:* `nil`) - Health check URL to be removed. This can be a full or valid partial URL. For example, the following are valid URLs:  
-      - https://www.googleapis.com/compute/beta/projects/project/global/httpHealthChecks/health-check 
-      - projects/project/global/httpHealthChecks/health-check 
-      - global/httpHealthChecks/health-check
+  *   `healthChecks` (*type:* `list(GoogleApi.Compute.V1.Model.HealthCheckReference.t)`, *default:* `nil`) - Health check URL to be removed. This can be a full or valid partial URL. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project /global/httpHealthChecks/health-check - projects/project/global/httpHealthChecks/health-check - global/httpHealthChecks/health-check 
   """
 
   use GoogleApi.Gax.ModelBase

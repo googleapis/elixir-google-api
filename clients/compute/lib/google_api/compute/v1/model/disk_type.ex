@@ -17,17 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.DiskType do
   @moduledoc """
-  Represents a Disk Type resource.
-
-  Google Compute Engine has two Disk Type resources:
-
-  * [Regional](/compute/docs/reference/rest/{$api_version}/regionDiskTypes) * [Zonal](/compute/docs/reference/rest/{$api_version}/diskTypes)
-
-  You can choose from a variety of disk types based on your needs. For more information, read Storage options.
-
-  The diskTypes resource represents disk types for a zonal persistent disk. For more information, read Zonal persistent disks.
-
-  The regionDiskTypes resource represents disk types for a regional persistent disk. For more information, read Regional persistent disks. (== resource_for {$api_version}.diskTypes ==) (== resource_for {$api_version}.regionDiskTypes ==)
+  Represents a Disk Type resource. Google Compute Engine has two Disk Type resources: * [Regional](/compute/docs/reference/rest/v1/regionDiskTypes) * [Zonal](/compute/docs/reference/rest/v1/diskTypes) You can choose from a variety of disk types based on your needs. For more information, read Storage options. The diskTypes resource represents disk types for a zonal persistent disk. For more information, read Zonal persistent disks. The regionDiskTypes resource represents disk types for a regional persistent disk. For more information, read Regional persistent disks.
 
   ## Attributes
 

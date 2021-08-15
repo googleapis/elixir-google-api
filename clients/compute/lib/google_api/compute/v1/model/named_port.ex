@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NamedPort do
   @moduledoc """
-  The named port. For example: .
+  The named port. For example: <"http", 80>.
 
   ## Attributes
 

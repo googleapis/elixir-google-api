@@ -22,8 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.Reference do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `compute#reference`) - [Output Only] Type of the resource. Always compute#reference for references.
-  *   `referenceType` (*type:* `String.t`, *default:* `nil`) - A description of the reference type with no implied semantics. Possible values include:  
-      - MEMBER_OF
+  *   `referenceType` (*type:* `String.t`, *default:* `nil`) - A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF 
   *   `referrer` (*type:* `String.t`, *default:* `nil`) - URL of the resource which refers to the target.
   *   `target` (*type:* `String.t`, *default:* `nil`) - URL of the resource to which this reference points.
   """

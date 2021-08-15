@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.Compute.V1.Model.Network do
   @moduledoc """
-  Represents a VPC Network resource.
-
-  Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
+  Represents a VPC Network resource. Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network.
 
   ## Attributes
 
   *   `IPv4Range` (*type:* `String.t`, *default:* `nil`) - Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-  *   `autoCreateSubnetworks` (*type:* `boolean()`, *default:* `nil`) - Must be set to create a VPC network. If not set, a legacy network is created.
-
-      When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
-
-      An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
-
-      For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+  *   `autoCreateSubnetworks` (*type:* `boolean()`, *default:* `nil`) - Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworks insert method.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this field when you create the resource.
   *   `gatewayIPv4` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routing out of the network, selected by GCP.

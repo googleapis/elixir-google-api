@@ -22,8 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpFaultDelay do
   ## Attributes
 
   *   `fixedDelay` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the value of the fixed delay interval.
-  *   `percentage` (*type:* `float()`, *default:* `nil`) - The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-      The value must be between 0.0 and 100.0 inclusive.
+  *   `percentage` (*type:* `float()`, *default:* `nil`) - The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
   """
 
   use GoogleApi.Gax.ModelBase
