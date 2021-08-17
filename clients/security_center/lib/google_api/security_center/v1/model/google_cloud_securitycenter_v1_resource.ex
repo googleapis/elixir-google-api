@@ -27,6 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource 
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
   *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of project that the resource belongs to.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The full resource type of the resource.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource 
           :parent => String.t() | nil,
           :parentDisplayName => String.t() | nil,
           :project => String.t() | nil,
-          :projectDisplayName => String.t() | nil
+          :projectDisplayName => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)
@@ -46,6 +48,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource 
   field(:parentDisplayName)
   field(:project)
   field(:projectDisplayName)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource do
