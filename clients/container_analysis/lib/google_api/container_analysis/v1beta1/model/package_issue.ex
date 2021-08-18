@@ -22,7 +22,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.PackageIssue do
   ## Attributes
 
   *   `affectedLocation` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t`, *default:* `nil`) - Required. The location of the vulnerability.
+  *   `effectiveSeverity` (*type:* `String.t`, *default:* `nil`) - Output only. The distro or language system assigned severity for this vulnerability when that is available and note provider assigned severity when it is not available.
   *   `fixedLocation` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t`, *default:* `nil`) - The location of the available fix for vulnerability.
+  *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package (e.g. OS, MAVEN, GO).
   *   `severityName` (*type:* `String.t`, *default:* `nil`) - Deprecated, use Details.effective_severity instead The severity (e.g., distro assigned severity) for this vulnerability.
   """
 
@@ -31,13 +33,17 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.PackageIssue do
   @type t :: %__MODULE__{
           :affectedLocation =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t() | nil,
+          :effectiveSeverity => String.t() | nil,
           :fixedLocation =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation.t() | nil,
+          :packageType => String.t() | nil,
           :severityName => String.t() | nil
         }
 
   field(:affectedLocation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation)
+  field(:effectiveSeverity)
   field(:fixedLocation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.VulnerabilityLocation)
+  field(:packageType)
   field(:severityName)
 end
 
