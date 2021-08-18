@@ -541,7 +541,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -623,7 +623,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -779,7 +779,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1433,7 +1433,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1519,7 +1519,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1686,7 +1686,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/githubEnterpriseConfig/{$config_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/githubEnterpriseConfigs/{$config_id}"
   *   `locations_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
   *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

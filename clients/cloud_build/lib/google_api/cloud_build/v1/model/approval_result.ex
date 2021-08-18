@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.ApprovalResult do
   ## Attributes
 
   *   `approvalTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the approval decision was made.
-  *   `approverAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Email of the user that called the ApproveBuild API to approve or reject a build at the time that the API was called (the user's actual email that is tied to their GAIA ID may have changed). This field is not stored, rather, it is calculated on the fly using approver_id.
+  *   `approverAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Email of the user that called the ApproveBuild API to approve or reject a build at the time that the API was called.
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Optional. An optional comment for this manual approval result.
   *   `decision` (*type:* `String.t`, *default:* `nil`) - Required. The decision of this manual approval.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Optional. An optional URL tied to this manual approval result. This field is essentially the same as comment, except that it will be rendered by the UI differently. An example use case is a link to an external job that approved this Build.
