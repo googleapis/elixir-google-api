@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   @moduledoc """
-  A Google Cloud Redis instance. next id = 30
+  A Google Cloud Redis instance. next id = 36
 
   ## Attributes
 
@@ -30,7 +30,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - An arbitrary and optional user-provided name for the instance.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed Redis endpoint used by clients to connect to the service.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone for the instance. For STANDARD_HA tier, instances will be created across two zones for protection against zonal failures. If alternative_location_id is also provided, it must be different from location_id.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone from the specified region for the instance. For standard tier, instances will be created across two zones for protection against zonal failures. If [alternative_location_id] is also provided, it must be different from [location_id].
   *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenancePolicy.t`, *default:* `nil`) - Optional. The maintenance policy for the instance. If not provided, maintenance events can be performed at any time.
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Date and time of upcoming maintenance events which have been scheduled.
   *   `memorySizeGb` (*type:* `integer()`, *default:* `nil`) - Required. Redis memory size in GiB.
