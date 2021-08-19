@@ -27,10 +27,10 @@ defmodule GoogleApi.AppEngine.V1.Connection do
       # View and manage your applications deployed on Google App Engine
       "https://www.googleapis.com/auth/appengine.admin",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
-      # View your data across Google Cloud Platform services
+      # View your data across Google Cloud services and see the email address of your Google Account
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
     otp_app: :google_api_app_engine,

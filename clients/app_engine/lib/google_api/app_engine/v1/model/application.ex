@@ -34,6 +34,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the Application resource. This identifier is equivalent to the project ID of the Google Cloud Platform project where you want to deploy your application. Example: myapp.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
   *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Serving status of this application.
   """
 
@@ -53,6 +54,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
           :id => String.t() | nil,
           :locationId => String.t() | nil,
           :name => String.t() | nil,
+          :serviceAccount => String.t() | nil,
           :servingStatus => String.t() | nil
         }
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   field(:id)
   field(:locationId)
   field(:name)
+  field(:serviceAccount)
   field(:servingStatus)
 end
 
