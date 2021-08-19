@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeMount do
   @moduledoc """
-  Not supported by Cloud Run VolumeMount describes a mounting of a Volume within a container.
+  VolumeMount describes a mounting of a Volume within a container.
 
   ## Attributes
 
   *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Path within the container at which the volume should be mounted. Must not contain ':'.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - This must match the Name of a Volume.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the volume. There must be a corresponding Volume with the same name.
   *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - (Optional) Only true is accepted. Defaults to true.
   *   `subPath` (*type:* `String.t`, *default:* `nil`) - (Optional) Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   """
