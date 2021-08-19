@@ -22,9 +22,9 @@ defmodule GoogleApi.VectorTile.V1.Model.TerrainTile do
   ## Attributes
 
   *   `coordinates` (*type:* `GoogleApi.VectorTile.V1.Model.TileCoordinates.t`, *default:* `nil`) - The global tile coordinates that uniquely identify this tile.
-  *   `firstDerivative` (*type:* `GoogleApi.VectorTile.V1.Model.FirstDerivativeElevationGrid.t`, *default:* `nil`) - Terrain elevation data encoded as a FirstDerivativeElevationGrid.
+  *   `firstDerivative` (*type:* `GoogleApi.VectorTile.V1.Model.FirstDerivativeElevationGrid.t`, *default:* `nil`) - Terrain elevation data encoded as a FirstDerivativeElevationGrid. cs/symbol:FirstDerivativeElevationGrid.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the tile. The tile resource name is prefixed by its collection ID `terrain/` followed by the resource ID, which encodes the tile's global x and y coordinates and zoom level as `@,,z`. For example, `terrain/@1,2,3z`.
-  *   `secondDerivative` (*type:* `GoogleApi.VectorTile.V1.Model.SecondDerivativeElevationGrid.t`, *default:* `nil`) - Terrain elevation data encoded as a SecondDerivativeElevationGrid. .
+  *   `secondDerivative` (*type:* `GoogleApi.VectorTile.V1.Model.SecondDerivativeElevationGrid.t`, *default:* `nil`) - Terrain elevation data encoded as a SecondDerivativeElevationGrid. cs/symbol:SecondDerivativeElevationGrid. See go/byte-encoded-terrain for more details.
   """
 
   use GoogleApi.Gax.ModelBase
