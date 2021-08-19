@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.Volume do
   @moduledoc """
-  Not supported by Cloud Run Volume represents a named volume in a container.
+  Volume represents a named volume in a container.
 
   ## Attributes
 
   *   `configMap` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Volume's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Volume's name. In Cloud Run Fully Managed, the name 'cloudsql' is reserved.
   *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource.t`, *default:* `nil`) - 
   """
 
