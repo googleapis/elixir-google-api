@@ -26,7 +26,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Server-specified ETag for the instance resource to prevent simultaneous updates from overwriting each other.
   *   `fileShares` (*type:* `list(GoogleApi.File.V1.Model.FileShareConfig.t)`, *default:* `nil`) - File system shares on the instance. For this version, only a single file share is supported.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`.
   *   `networks` (*type:* `list(GoogleApi.File.V1.Model.NetworkConfig.t)`, *default:* `nil`) - VPC networks to which the instance is connected. For this version, only a single network is supported.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The instance state.
