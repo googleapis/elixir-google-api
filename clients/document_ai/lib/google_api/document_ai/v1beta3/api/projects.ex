@@ -259,7 +259,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   *   `{:ok, %GoogleApi.DocumentAI.V1beta3.Model.GoogleProtobufEmpty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec documentai_projects_locations_operations_cancel_operation(
+  @spec documentai_projects_locations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
           keyword(),
@@ -269,7 +269,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def documentai_projects_locations_operations_cancel_operation(
+  def documentai_projects_locations_operations_cancel(
         connection,
         name,
         optional_params \\ [],
@@ -291,8 +291,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
 
     request =
       Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v1beta3/{+name}", %{
+      |> Request.method(:post)
+      |> Request.url("/v1beta3/{+name}:cancel", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
