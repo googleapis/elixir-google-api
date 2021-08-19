@@ -24,25 +24,25 @@ defmodule GoogleApi.BigQuery.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data in Google BigQuery
+      # View and manage your data in Google BigQuery and see the email address for your Google Account
       "https://www.googleapis.com/auth/bigquery",
 
       # Insert data into Google BigQuery
       "https://www.googleapis.com/auth/bigquery.insertdata",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
-      # View your data across Google Cloud Platform services
+      # View your data across Google Cloud services and see the email address of your Google Account
       "https://www.googleapis.com/auth/cloud-platform.read-only",
 
-      # Manage your data and permissions in Google Cloud Storage
+      # Manage your data and permissions in Cloud Storage and see the email address for your Google Account
       "https://www.googleapis.com/auth/devstorage.full_control",
 
       # View your data in Google Cloud Storage
       "https://www.googleapis.com/auth/devstorage.read_only",
 
-      # Manage your data in Google Cloud Storage
+      # Manage your data in Cloud Storage and see the email address of your Google Account
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
     otp_app: :google_api_big_query,
