@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `availableMemoryMb` (*type:* `integer()`, *default:* `nil`) - The amount of memory in MB available for a function. Defaults to 256MB.
   *   `buildEnvironmentVariables` (*type:* `map()`, *default:* `nil`) - Build environment variables that shall be available during build time.
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build ID of the latest successful deployment of the function.
+  *   `buildName` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build Name of the function deployment. projects//locations//builds/.
   *   `buildWorkerPool` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Build Custom Worker Pool that should be used to build the function. The format of this field is `projects/{project}/locations/{region}/workerPools/{workerPool}` where {project} and {region} are the project id and region respectively where the worker pool is defined and {workerPool} is the short name of the worker pool. If the project id is not the same as the function, then the Cloud Functions Service Agent (service-@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role Cloud Build Custom Workers Builder (roles/cloudbuild.customworkers.builder) in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of a function.
   *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named "function". For Node.js this is name of a function exported by the module specified in `source_location`.
@@ -33,6 +34,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `ingressSettings` (*type:* `String.t`, *default:* `nil`) - The ingress settings for the function, controlling what traffic can reach it.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this Cloud Function.
   *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - The limit on the maximum number of function instances that may coexist at a given time. In some cases, such as rapid traffic surges, Cloud Functions may, for a short period of time, create more instances than the specified max instances limit. If your function cannot tolerate this temporary behavior, you may want to factor in a safety margin and set a lower max instances value than your function can tolerate. See the [Max Instances](https://cloud.google.com/functions/docs/max-instances) Guide for more details.
+  *   `minInstances` (*type:* `integer()`, *default:* `nil`) - A lower bound for the number function instances that may coexist at a given time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
   *   `network` (*type:* `String.t`, *default:* `nil`) - The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either `projects/{project}/global/networks/{network}` or `{network}`, where {project} is a project id where the network is defined, and {network} is the short name of the network. This field is mutually exclusive with `vpc_connector` and will be replaced by it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](/sdk/gcloud/reference/functions/deploy#--runtime).
@@ -57,6 +59,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :availableMemoryMb => integer() | nil,
           :buildEnvironmentVariables => map() | nil,
           :buildId => String.t() | nil,
+          :buildName => String.t() | nil,
           :buildWorkerPool => String.t() | nil,
           :description => String.t() | nil,
           :entryPoint => String.t() | nil,
@@ -66,6 +69,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :ingressSettings => String.t() | nil,
           :labels => map() | nil,
           :maxInstances => integer() | nil,
+          :minInstances => integer() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
           :runtime => String.t() | nil,
@@ -88,6 +92,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:availableMemoryMb)
   field(:buildEnvironmentVariables, type: :map)
   field(:buildId)
+  field(:buildName)
   field(:buildWorkerPool)
   field(:description)
   field(:entryPoint)
@@ -97,6 +102,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:ingressSettings)
   field(:labels, type: :map)
   field(:maxInstances)
+  field(:minInstances)
   field(:name)
   field(:network)
   field(:runtime)
