@@ -20,7 +20,7 @@ defmodule GoogleApi.DisplayVideo.V1 do
   API client metadata for GoogleApi.DisplayVideo.V1.
   """
 
-  @discovery_revision "20210809"
+  @discovery_revision "20210819"
 
   def discovery_revision(), do: @discovery_revision
 end
