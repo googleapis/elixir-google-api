@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InappproductsListResponse do
 
   *   `inappproduct` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t)`, *default:* `nil`) - All in-app products.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#inappproductsListResponse").
-  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - Information about the current page.
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - Deprecated and unset.
   *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - Pagination token, to handle a number of products that is over one page.
   """
 

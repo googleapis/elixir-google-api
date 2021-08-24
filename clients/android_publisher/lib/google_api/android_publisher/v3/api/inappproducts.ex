@@ -244,7 +244,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  Lists all in-app products - both managed products and subscriptions.
+  Lists all in-app products - both managed products and subscriptions. If an app has a large number of in-app products, the response may be paginated. In this case the response field `tokenPagination.nextPageToken` will be set and the caller should provide its value as a `token` request parameter to retrieve the next page.
 
   ## Parameters
 
@@ -262,8 +262,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - How many results the list operation should return.
-      *   `:startIndex` (*type:* `integer()`) - The index of the first element to return.
+      *   `:maxResults` (*type:* `integer()`) - Deprecated and ignored. The page size is determined by the server.
+      *   `:startIndex` (*type:* `integer()`) - Deprecated and ignored. Set the `token` parameter to rertieve the next page.
       *   `:token` (*type:* `String.t`) - Pagination token. If empty, list starts at the first product.
   *   `opts` (*type:* `keyword()`) - Call options
 
