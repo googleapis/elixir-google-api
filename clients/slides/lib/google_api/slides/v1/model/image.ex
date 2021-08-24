@@ -23,6 +23,7 @@ defmodule GoogleApi.Slides.V1.Model.Image do
 
   *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - An URL to an image with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change.
   *   `imageProperties` (*type:* `GoogleApi.Slides.V1.Model.ImageProperties.t`, *default:* `nil`) - The properties of the image.
+  *   `placeholder` (*type:* `GoogleApi.Slides.V1.Model.Placeholder.t`, *default:* `nil`) - Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the image is a placeholder image and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.
   *   `sourceUrl` (*type:* `String.t`, *default:* `nil`) - The source URL is the URL used to insert the image. The source URL can be empty.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Slides.V1.Model.Image do
   @type t :: %__MODULE__{
           :contentUrl => String.t() | nil,
           :imageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t() | nil,
+          :placeholder => GoogleApi.Slides.V1.Model.Placeholder.t() | nil,
           :sourceUrl => String.t() | nil
         }
 
   field(:contentUrl)
   field(:imageProperties, as: GoogleApi.Slides.V1.Model.ImageProperties)
+  field(:placeholder, as: GoogleApi.Slides.V1.Model.Placeholder)
   field(:sourceUrl)
 end
 
