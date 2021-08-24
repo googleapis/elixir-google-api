@@ -35,6 +35,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding. This field is managed by the source that writes the finding.
   *   `sourceProperties` (*type:* `map()`, *default:* `nil`) - Source specific properties. These properties are managed by the source that writes the finding. The key names in the source_properties map must be between 1 and 255 characters, and must start with a letter and contain alphanumeric characters or underscores only.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the finding.
+  *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability specific fields like cve, cvss scores etc. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
           :severity => String.t() | nil,
           :sourceProperties => map() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil
         }
 
   field(:canonicalName)
@@ -70,6 +72,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:severity)
   field(:sourceProperties, type: :map)
   field(:state)
+  field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Finding do
