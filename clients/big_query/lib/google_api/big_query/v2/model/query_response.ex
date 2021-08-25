@@ -31,7 +31,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token used for paging results.
   *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableRow.t)`, *default:* `nil`) - An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - The schema of the results. Present only when the query completes successfully.
-  *   `sessionInfoTemplate` (*type:* `GoogleApi.BigQuery.V2.Model.SessionInfo.t`, *default:* `nil`) - [Output-only] [Preview] Information of the session if this job is part of one.
+  *   `sessionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.SessionInfo.t`, *default:* `nil`) - [Output-only] [Preview] Information of the session if this job is part of one.
   *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run.
   *   `totalRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results.
   """
@@ -49,7 +49,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
           :pageToken => String.t() | nil,
           :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()) | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
-          :sessionInfoTemplate => GoogleApi.BigQuery.V2.Model.SessionInfo.t() | nil,
+          :sessionInfo => GoogleApi.BigQuery.V2.Model.SessionInfo.t() | nil,
           :totalBytesProcessed => String.t() | nil,
           :totalRows => String.t() | nil
         }
@@ -64,7 +64,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
   field(:pageToken)
   field(:rows, as: GoogleApi.BigQuery.V2.Model.TableRow, type: :list)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
-  field(:sessionInfoTemplate, as: GoogleApi.BigQuery.V2.Model.SessionInfo)
+  field(:sessionInfo, as: GoogleApi.BigQuery.V2.Model.SessionInfo)
   field(:totalBytesProcessed)
   field(:totalRows)
 end
