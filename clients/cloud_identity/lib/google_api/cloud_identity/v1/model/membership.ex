@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Membership do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the `Membership` was created.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group_id}/memberships/{membership_id}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group}/memberships/{membership}`.
   *   `preferredMemberKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. The `EntityKey` of the member.
   *   `roles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t)`, *default:* `nil`) - The `MembershipRole`s that apply to the `Membership`. If unspecified, defaults to a single `MembershipRole` with `name` `MEMBER`. Must not contain duplicate `MembershipRole`s with the same `name`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the membership.
