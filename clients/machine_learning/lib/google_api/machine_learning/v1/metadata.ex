@@ -20,7 +20,7 @@ defmodule GoogleApi.MachineLearning.V1 do
   API client metadata for GoogleApi.MachineLearning.V1.
   """
 
-  @discovery_revision "20210729"
+  @discovery_revision "20210816"
 
   def discovery_revision(), do: @discovery_revision
 end
