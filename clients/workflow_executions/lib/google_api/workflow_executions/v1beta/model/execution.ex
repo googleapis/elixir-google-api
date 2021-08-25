@@ -22,6 +22,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Execution do
   ## Attributes
 
   *   `argument` (*type:* `String.t`, *default:* `nil`) - Input parameters of the execution represented as a JSON string. The size limit is 32KB. *Note*: If you are using the REST API directly to run your workflow, you must escape any JSON string value of `argument`. Example: `'{"argument":"{\\"firstName\\":\\"FIRST\\",\\"lastName\\":\\"LAST\\"}"}'`
+  *   `callLogLevel` (*type:* `String.t`, *default:* `nil`) - The call logging level associated to this execution.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the end of execution, successful or not.
   *   `error` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.Error.t`, *default:* `nil`) - Output only. The error which caused the execution to finish prematurely. The value is only present if the execution's state is `FAILED` or `CANCELLED`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -35,6 +36,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Execution do
 
   @type t :: %__MODULE__{
           :argument => String.t() | nil,
+          :callLogLevel => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.WorkflowExecutions.V1beta.Model.Error.t() | nil,
           :name => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Execution do
         }
 
   field(:argument)
+  field(:callLogLevel)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.WorkflowExecutions.V1beta.Model.Error)
   field(:name)
