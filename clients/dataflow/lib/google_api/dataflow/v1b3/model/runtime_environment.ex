@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
 
   ## Attributes
 
-  *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job.
+  *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job, specified with the `--experiments` option.
   *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
   *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Whether to bypass the safety checks for the job's temporary directory. Use with caution.
   *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Streaming Engine for the job.
