@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   *   `diskSizeBytes` (*type:* `String.t`, *default:* `nil`) - The disk byte size of the snapshot. Only available for snapshots in READY state.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this snapshot.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project this snapshot belongs to.
-  *   `pubsubMetadata` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t)`, *default:* `nil`) - PubSub snapshot metadata.
+  *   `pubsubMetadata` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t)`, *default:* `nil`) - Pub/Sub snapshot metadata.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Cloud region where this snapshot lives in, e.g., "us-central1".
   *   `sourceJobId` (*type:* `String.t`, *default:* `nil`) - The job this snapshot was created from.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the snapshot.

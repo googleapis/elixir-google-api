@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.BigTableIODetails do
   @moduledoc """
-  Metadata for a Cloud BigTable connector used by the job.
+  Metadata for a Cloud Bigtable connector used by the job.
 
   ## Attributes
 

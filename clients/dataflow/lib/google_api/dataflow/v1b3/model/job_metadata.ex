@@ -21,11 +21,11 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
 
   ## Attributes
 
-  *   `bigTableDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t)`, *default:* `nil`) - Identification of a Cloud BigTable source used in the Dataflow job.
+  *   `bigTableDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigTableIODetails.t)`, *default:* `nil`) - Identification of a Cloud Bigtable source used in the Dataflow job.
   *   `bigqueryDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.BigQueryIODetails.t)`, *default:* `nil`) - Identification of a BigQuery source used in the Dataflow job.
   *   `datastoreDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.DatastoreIODetails.t)`, *default:* `nil`) - Identification of a Datastore source used in the Dataflow job.
   *   `fileDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.FileIODetails.t)`, *default:* `nil`) - Identification of a File source used in the Dataflow job.
-  *   `pubsubDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t)`, *default:* `nil`) - Identification of a PubSub source used in the Dataflow job.
+  *   `pubsubDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t)`, *default:* `nil`) - Identification of a Pub/Sub source used in the Dataflow job.
   *   `sdkVersion` (*type:* `GoogleApi.Dataflow.V1b3.Model.SdkVersion.t`, *default:* `nil`) - The SDK version used to run the job.
   *   `spannerDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t)`, *default:* `nil`) - Identification of a Spanner source used in the Dataflow job.
   """

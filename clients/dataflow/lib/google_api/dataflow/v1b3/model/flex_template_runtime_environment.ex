@@ -23,16 +23,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
 
   *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job.
   *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
+  *   `autoscalingAlgorithm` (*type:* `String.t`, *default:* `nil`) - The algorithm to use for autoscaling
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Worker disk size, in gigabytes.
+  *   `dumpHeapOnOom` (*type:* `boolean()`, *default:* `nil`) - If true, save a heap dump before killing a thread or process which is GC thrashing or out of memory. The location of the heap file will either be echoed back to the user, or the user will be given the opportunity to download the heap file.
   *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Streaming Engine for the job.
   *   `flexrsGoal` (*type:* `String.t`, *default:* `nil`) - Set FlexRS goal for the job. https://cloud.google.com/dataflow/docs/guides/flexrs
   *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for the job. Defaults to the value from the template if not specified.
-  *   `maxNumWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of workers to cap scaling at.
   *   `maxWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
   *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - The initial number of Google Compute Engine instances for the job.
+  *   `saveHeapDumpsToGcsPath` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket (directory) to upload heap dumps to the given location. Enabling this implies that heap dumps should be generated on OOM (dump_heap_on_oom is set to true).
   *   `sdkContainerImage` (*type:* `String.t`, *default:* `nil`) - Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account to run the job as.
   *   `stagingLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path for staging local files. Must be a valid Cloud Storage URL, beginning with `gs://`.
@@ -48,16 +50,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   @type t :: %__MODULE__{
           :additionalExperiments => list(String.t()) | nil,
           :additionalUserLabels => map() | nil,
+          :autoscalingAlgorithm => String.t() | nil,
           :diskSizeGb => integer() | nil,
+          :dumpHeapOnOom => boolean() | nil,
           :enableStreamingEngine => boolean() | nil,
           :flexrsGoal => String.t() | nil,
           :ipConfiguration => String.t() | nil,
           :kmsKeyName => String.t() | nil,
           :machineType => String.t() | nil,
-          :maxNumWorkers => integer() | nil,
           :maxWorkers => integer() | nil,
           :network => String.t() | nil,
           :numWorkers => integer() | nil,
+          :saveHeapDumpsToGcsPath => String.t() | nil,
           :sdkContainerImage => String.t() | nil,
           :serviceAccountEmail => String.t() | nil,
           :stagingLocation => String.t() | nil,
@@ -70,16 +74,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
 
   field(:additionalExperiments, type: :list)
   field(:additionalUserLabels, type: :map)
+  field(:autoscalingAlgorithm)
   field(:diskSizeGb)
+  field(:dumpHeapOnOom)
   field(:enableStreamingEngine)
   field(:flexrsGoal)
   field(:ipConfiguration)
   field(:kmsKeyName)
   field(:machineType)
-  field(:maxNumWorkers)
   field(:maxWorkers)
   field(:network)
   field(:numWorkers)
+  field(:saveHeapDumpsToGcsPath)
   field(:sdkContainerImage)
   field(:serviceAccountEmail)
   field(:stagingLocation)
