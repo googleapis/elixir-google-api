@@ -22,8 +22,11 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - The form action data associated with an interactive card that was clicked. Only populated for CARD_CLICKED events. See the [Interactive Cards guide](/chat/how-tos/cards-onclick) for more information.
+  *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - This will include form information for dialogs such as form inputs, action parameters.
   *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the bot should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/chat/how-tos/auth-3p) for more information.
+  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of dialog event we have received.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event was dispatched.
+  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - Whether or not this event is related to dialogs request, submit or cancel. This will be set to true when we want a request/submit/cancel event.
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The room or DM in which the event occurred.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The bot-defined key for the thread related to the event. See the thread_key field of the `spaces.message.create` request for more information.
@@ -36,8 +39,11 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
 
   @type t :: %__MODULE__{
           :action => GoogleApi.Chat.V1.Model.FormAction.t() | nil,
+          :common => GoogleApi.Chat.V1.Model.CommonEventObject.t() | nil,
           :configCompleteRedirectUrl => String.t() | nil,
+          :dialogEventType => String.t() | nil,
           :eventTime => DateTime.t() | nil,
+          :isDialogEvent => boolean() | nil,
           :message => GoogleApi.Chat.V1.Model.Message.t() | nil,
           :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
           :threadKey => String.t() | nil,
@@ -47,8 +53,11 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
         }
 
   field(:action, as: GoogleApi.Chat.V1.Model.FormAction)
+  field(:common, as: GoogleApi.Chat.V1.Model.CommonEventObject)
   field(:configCompleteRedirectUrl)
+  field(:dialogEventType)
   field(:eventTime, as: DateTime)
+  field(:isDialogEvent)
   field(:message, as: GoogleApi.Chat.V1.Model.Message)
   field(:space, as: GoogleApi.Chat.V1.Model.Space)
   field(:threadKey)
