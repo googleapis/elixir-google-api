@@ -40,7 +40,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - Output only. Device manufacturer. Example: Motorola.
   *   `meid` (*type:* `String.t`, *default:* `nil`) - Output only. MEID number of device if CDMA device; empty otherwise.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Output only. Model name of device. Example: Pixel 3.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique id assigned to the Device.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device}`, where device is the unique id assigned to the Device.
   *   `networkOperator` (*type:* `String.t`, *default:* `nil`) - Output only. Mobile or network operator of device, if available.
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - Output only. OS version of the device. Example: Android 8.1.0.
   *   `otherAccounts` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Domain name for Google accounts on device. Type for other accounts on device. On Android, will only be populated if |ownership_privilege| is |PROFILE_OWNER| or |DEVICE_OWNER|. Does not include the account signed in to the device policy app if that account's domain has only one account. Examples: "com.example", "xyz.com".

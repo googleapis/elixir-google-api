@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1WipeD
 
   ## Attributes
 
-  *   `customer` (*type:* `String.t`, *default:* `nil`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
+  *   `customer` (*type:* `String.t`, *default:* `nil`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs.
   """
 
   use GoogleApi.Gax.ModelBase
