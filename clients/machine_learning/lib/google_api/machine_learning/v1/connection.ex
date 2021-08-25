@@ -24,10 +24,10 @@ defmodule GoogleApi.MachineLearning.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
-      # View your data across Google Cloud Platform services
+      # View your data across Google Cloud services and see the email address of your Google Account
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
     otp_app: :google_api_machine_learning,
