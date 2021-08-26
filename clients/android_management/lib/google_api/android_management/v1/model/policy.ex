@@ -50,6 +50,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `alwaysOnVpnPackage` (*type:* `GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t`, *default:* `nil`) - Configuration for an always-on VPN connection. Use with vpn_config_disabled to prevent modification of this setting.
   *   `longSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the device administators settings screen.
   *   `androidDevicePolicyTracks` (*type:* `list(String.t)`, *default:* `nil`) - The app tracks for Android Device Policy the device can access. The device receives the latest version among all accessible tracks. If no tracks are specified, then the device only uses the production track.
+  *   `crossProfilePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t`, *default:* `nil`) - Cross-profile policies applied on the device.
   *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED - Use wifi_config_disabled.
   *   `minimumApiLevel` (*type:* `integer()`, *default:* `nil`) - The minimum allowed Android API level.
   *   `installUnknownSourcesAllowed` (*type:* `boolean()`, *default:* `nil`) - This field has no effect.
@@ -146,6 +147,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
             GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t() | nil,
           :longSupportMessage => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
           :androidDevicePolicyTracks => list(String.t()) | nil,
+          :crossProfilePolicies =>
+            GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t() | nil,
           :wifiConfigsLockdownEnabled => boolean() | nil,
           :minimumApiLevel => integer() | nil,
           :installUnknownSourcesAllowed => boolean() | nil,
@@ -256,6 +259,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:alwaysOnVpnPackage, as: GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage)
   field(:longSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
   field(:androidDevicePolicyTracks, type: :list)
+  field(:crossProfilePolicies, as: GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies)
   field(:wifiConfigsLockdownEnabled)
   field(:minimumApiLevel)
   field(:installUnknownSourcesAllowed)
