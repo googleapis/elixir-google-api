@@ -183,7 +183,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:view` (*type:* `String.t`) - The set of fields to return in the response. If not set, returns a Schema with `name` and `type`, but not `definition`. Set to `FULL` to retrieve all fields.
+      *   `:view` (*type:* `String.t`) - The set of fields to return in the response. If not set, returns a Schema with all fields filled out. Set to `BASIC` to omit the `definition`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
