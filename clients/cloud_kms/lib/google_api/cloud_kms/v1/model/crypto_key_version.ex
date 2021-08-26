@@ -28,11 +28,12 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED.
   *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was generated.
-  *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of an import failure. Only present if state is IMPORT_FAILED.
-  *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used to import this CryptoKeyVersion. Only present if the underlying key material was imported.
-  *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material was imported.
+  *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED.
+  *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported.
+  *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material was most recently imported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
   *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion.
+  *   `reimportEligible` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not this key version is eligible for reimport, by being specified as a target in ImportCryptoKeyVersionRequest.crypto_key_version.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the CryptoKeyVersion.
   """
 
@@ -52,6 +53,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
           :importTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :protectionLevel => String.t() | nil,
+          :reimportEligible => boolean() | nil,
           :state => String.t() | nil
         }
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   field(:importTime, as: DateTime)
   field(:name)
   field(:protectionLevel)
+  field(:reimportEligible)
   field(:state)
 end
 
