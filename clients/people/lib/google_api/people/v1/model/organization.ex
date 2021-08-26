@@ -21,11 +21,13 @@ defmodule GoogleApi.People.V1.Model.Organization do
 
   ## Attributes
 
+  *   `costCenter` (*type:* `String.t`, *default:* `nil`) - The person's cost center at the organization.
   *   `current` (*type:* `boolean()`, *default:* `nil`) - True if the organization is the person's current organization; false if the organization is a past organization.
   *   `department` (*type:* `String.t`, *default:* `nil`) - The person's department at the organization.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain name associated with the organization; for example, `google.com`.
   *   `endDate` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The end date when the person left the organization.
   *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `fullTimeEquivalentMillipercent` (*type:* `integer()`, *default:* `nil`) - The person's full-time equivalent millipercent within the organization (100000 = 100%).
   *   `jobDescription` (*type:* `String.t`, *default:* `nil`) - The person's job description at the organization.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the organization office the person works at.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the organization.
@@ -40,11 +42,13 @@ defmodule GoogleApi.People.V1.Model.Organization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :costCenter => String.t() | nil,
           :current => boolean() | nil,
           :department => String.t() | nil,
           :domain => String.t() | nil,
           :endDate => GoogleApi.People.V1.Model.Date.t() | nil,
           :formattedType => String.t() | nil,
+          :fullTimeEquivalentMillipercent => integer() | nil,
           :jobDescription => String.t() | nil,
           :location => String.t() | nil,
           :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
@@ -56,11 +60,13 @@ defmodule GoogleApi.People.V1.Model.Organization do
           :type => String.t() | nil
         }
 
+  field(:costCenter)
   field(:current)
   field(:department)
   field(:domain)
   field(:endDate, as: GoogleApi.People.V1.Model.Date)
   field(:formattedType)
+  field(:fullTimeEquivalentMillipercent)
   field(:jobDescription)
   field(:location)
   field(:metadata, as: GoogleApi.People.V1.Model.FieldMetadata)
