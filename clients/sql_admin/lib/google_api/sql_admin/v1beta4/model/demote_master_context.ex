@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#demoteMasterContext*.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as on-premises primary instance in the replication setup.
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t`, *default:* `nil`) - Configuration specific to read-replicas replicating from the on-premises primary instance.
+  *   `skipReplicationSetup` (*type:* `boolean()`, *default:* `nil`) - Flag to skip replication setup on the instance.
   *   `verifyGtidConsistency` (*type:* `boolean()`, *default:* `nil`) - Verify GTID consistency for demote operation. Default value: *True*. Setting this flag to false enables you to bypass GTID consistency check between on-premises primary instance and Cloud SQL instance during the demotion operation but also exposes you to the risk of future replication failures. Change the value only if you know the reason for the GTID divergence and are confident that doing so will not cause any replication issues.
   """
 
@@ -34,12 +35,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
           :masterInstanceName => String.t() | nil,
           :replicaConfiguration =>
             GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t() | nil,
+          :skipReplicationSetup => boolean() | nil,
           :verifyGtidConsistency => boolean() | nil
         }
 
   field(:kind)
   field(:masterInstanceName)
   field(:replicaConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration)
+  field(:skipReplicationSetup)
   field(:verifyGtidConsistency)
 end
 
