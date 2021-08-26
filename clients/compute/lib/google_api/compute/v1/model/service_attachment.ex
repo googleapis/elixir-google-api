@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   @moduledoc """
-  Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service. next tag = 19
+  Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service. next tag = 20
 
   ## Attributes
 
