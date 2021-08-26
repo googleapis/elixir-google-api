@@ -1108,7 +1108,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   end
 
   @doc """
-  Creates a view over log entries in a log bucket. A bucket may contain a maximum of 50 views.
+  Creates a view over log entries in a log bucket. A bucket may contain a maximum of 30 views.
 
   ## Parameters
 
