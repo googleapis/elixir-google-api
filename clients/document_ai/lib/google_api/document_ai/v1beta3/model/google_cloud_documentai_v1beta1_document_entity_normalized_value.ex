@@ -25,8 +25,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value. Can be used for entities with binary values, or for checkboxes.
   *   `dateValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDate.t`, *default:* `nil`) - Date value. Includes year, month, day. See also: https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
   *   `datetimeValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDateTime.t`, *default:* `nil`) - DateTime value. Includes date, time, and timezone. See also: https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+  *   `floatValue` (*type:* `number()`, *default:* `nil`) - Float value.
+  *   `integerValue` (*type:* `integer()`, *default:* `nil`) - Integer value.
   *   `moneyValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney.t`, *default:* `nil`) - Money value. See also: https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Required. Normalized entity value stored as a string. This field is populated for supported document type (e.g. Invoice). For some entity types, one of respective 'structured_value' fields may also be populated. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Optional. An optional field to store a normalized string. For some entity types, one of respective 'structured_value' fields may also be populated. Also not all the types of 'structured_value' will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,6 +38,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
           :booleanValue => boolean() | nil,
           :dateValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDate.t() | nil,
           :datetimeValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDateTime.t() | nil,
+          :floatValue => number() | nil,
+          :integerValue => integer() | nil,
           :moneyValue => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney.t() | nil,
           :text => String.t() | nil
         }
@@ -44,6 +48,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   field(:booleanValue)
   field(:dateValue, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDate)
   field(:datetimeValue, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeDateTime)
+  field(:floatValue)
+  field(:integerValue)
   field(:moneyValue, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney)
   field(:text)
 end
