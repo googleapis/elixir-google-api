@@ -2148,12 +2148,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Imports a new CryptoKeyVersion into an existing CryptoKey using the wrapped key material provided in the request. The version ID will be assigned the next sequential id within the CryptoKey.
+  Import wrapped key material into a CryptoKeyVersion. All requests must specify a CryptoKey. If a CryptoKeyVersion is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the CryptoKey.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to be imported into.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to be imported into. The create permission is only required on this key when creating a new CryptoKeyVersion.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
