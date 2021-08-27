@@ -192,7 +192,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.TargetingTypes do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `targeting_type` (*type:* `String.t`) - Required. The type of targeting options to retrieve. Accepted values are: * `TARGETING_TYPE_GEO_REGION`
+  *   `targeting_type` (*type:* `String.t`) - Required. The type of targeting options to retrieve. Accepted values are: * `TARGETING_TYPE_GEO_REGION` * `TARGETING_TYPE_POI` * `TARGETING_TYPE_BUSINESS_CHAIN`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
