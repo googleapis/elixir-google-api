@@ -18,7 +18,7 @@
 defmodule GoogleApi.Vault.Mixfile do
   use Mix.Project
 
-  @version "0.19.3"
+  @version "0.19.4"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Vault.Mixfile do
 
   defp description() do
     """
-    G Suite Vault API client library.
+    Google Vault API client library.
     """
   end
 
