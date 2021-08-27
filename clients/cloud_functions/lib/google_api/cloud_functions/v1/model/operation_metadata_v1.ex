@@ -22,10 +22,10 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   ## Attributes
 
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call. This field is only populated for Create and Update operations.
-  *   `buildName` (*type:* `String.t`, *default:* `nil`) - The Cloud Build Name of the function deployment. This field is only populated for Create and Update operations. projects//locations//builds/.
+  *   `buildName` (*type:* `String.t`, *default:* `nil`) - The Cloud Build Name of the function deployment. This field is only populated for Create and Update operations. `projects//locations//builds/`.
   *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
   *   `sourceToken` (*type:* `String.t`, *default:* `nil`) - An identifier for Firebase function sources. Disclaimer: This field is only supported for Firebase function deployments.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/locations/region-1/functions/function-1
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example `projects/project-1/locations/region-1/functions/function-1`
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of operation.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of the operation.
   *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version id of the function created or updated by an API call. This field is only populated for Create and Update operations.
