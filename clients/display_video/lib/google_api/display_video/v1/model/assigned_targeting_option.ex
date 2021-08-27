@@ -31,6 +31,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   *   `contentOutstreamPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content outstream position details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
   *   `operatingSystemDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OperatingSystemAssignedTargetingOptionDetails.t`, *default:* `nil`) - Operating system details. This field will be populated when the targeting_type is `TARGETING_TYPE_OPERATING_SYSTEM`.
   *   `keywordDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.KeywordAssignedTargetingOptionDetails.t`, *default:* `nil`) - Keyword details. This field will be populated when the targeting_type is `TARGETING_TYPE_KEYWORD`. A maximum of 5000 direct negative keywords can be assigned to a resource. No limit on number of positive keywords that can be assigned.
+  *   `poiDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.PoiAssignedTargetingOptionDetails.t`, *default:* `nil`) - POI details. This field will be populated when the targeting_type is `TARGETING_TYPE_POI`.
   *   `geoRegionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.GeoRegionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Geographic region details. This field will be populated when the targeting_type is `TARGETING_TYPE_GEO_REGION`.
   *   `ageRangeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AgeRangeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Age range details. This field will be populated when the targeting_type is `TARGETING_TYPE_AGE_RANGE`.
   *   `viewabilityDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ViewabilityAssignedTargetingOptionDetails.t`, *default:* `nil`) - Viewability details. This field will be populated when the targeting_type is `TARGETING_TYPE_VIEWABILITY`. You can only target one viewability option per resource.
@@ -54,6 +55,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   *   `digitalContentLabelExclusionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelAssignedTargetingOptionDetails.t`, *default:* `nil`) - Digital content label details. This field will be populated when the targeting_type is `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION`. Digital content labels are targeting exclusions. Advertiser level digital content label exclusions, if set, are always applied in serving (even though they aren't visible in resource settings). Resource settings can exclude content labels in addition to advertiser exclusions, but can't override them. A line item won't serve if all the digital content labels are excluded.
   *   `nativeContentPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.NativeContentPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Native content position details. This field will be populated when the targeting_type is `TARGETING_TYPE_NATIVE_CONTENT_POSITION`.
   *   `sensitiveCategoryExclusionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOptionDetails.t`, *default:* `nil`) - Sensitive category details. This field will be populated when the targeting_type is `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`. Sensitive categories are targeting exclusions. Advertiser level sensitive category exclusions, if set, are always applied in serving (even though they aren't visible in resource settings). Resource settings can exclude sensitive categories in addition to advertiser exclusions, but can't override them.
+  *   `businessChainDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BusinessChainAssignedTargetingOptionDetails.t`, *default:* `nil`) - Business chain details. This field will be populated when the targeting_type is `TARGETING_TYPE_BUSINESS_CHAIN`.
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - On screen position details. This field will be populated when the targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
   *   `audienceGroupDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDetails.t`, *default:* `nil`) - Audience targeting details. This field will be populated when the targeting_type is `TARGETING_TYPE_AUDIENCE_GROUP`. You can only target one audience group option per resource.
   *   `dayAndTimeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DayAndTimeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Day and time details. This field will be populated when the targeting_type is `TARGETING_TYPE_DAY_AND_TIME`.
@@ -93,6 +95,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
             | nil,
           :keywordDetails =>
             GoogleApi.DisplayVideo.V1.Model.KeywordAssignedTargetingOptionDetails.t() | nil,
+          :poiDetails =>
+            GoogleApi.DisplayVideo.V1.Model.PoiAssignedTargetingOptionDetails.t() | nil,
           :geoRegionDetails =>
             GoogleApi.DisplayVideo.V1.Model.GeoRegionAssignedTargetingOptionDetails.t() | nil,
           :ageRangeDetails =>
@@ -146,6 +150,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
           :sensitiveCategoryExclusionDetails =>
             GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOptionDetails.t()
             | nil,
+          :businessChainDetails =>
+            GoogleApi.DisplayVideo.V1.Model.BusinessChainAssignedTargetingOptionDetails.t() | nil,
           :onScreenPositionDetails =>
             GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptionDetails.t()
             | nil,
@@ -206,6 +212,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   )
 
   field(:keywordDetails, as: GoogleApi.DisplayVideo.V1.Model.KeywordAssignedTargetingOptionDetails)
+
+  field(:poiDetails, as: GoogleApi.DisplayVideo.V1.Model.PoiAssignedTargetingOptionDetails)
 
   field(:geoRegionDetails,
     as: GoogleApi.DisplayVideo.V1.Model.GeoRegionAssignedTargetingOptionDetails
@@ -283,6 +291,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
 
   field(:sensitiveCategoryExclusionDetails,
     as: GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOptionDetails
+  )
+
+  field(:businessChainDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.BusinessChainAssignedTargetingOptionDetails
   )
 
   field(:onScreenPositionDetails,

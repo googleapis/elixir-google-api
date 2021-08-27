@@ -23,11 +23,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique ID of the advertiser that owns the custom bidding algorithm.
   *   `customBiddingAlgorithmId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the custom bidding algorithm. Assigned by the system.
+  *   `customBiddingAlgorithmState` (*type:* `String.t`, *default:* `nil`) - Output only. The status of custom bidding algorithm.
   *   `customBiddingAlgorithmType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of custom bidding algorithm.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the custom bidding algorithm. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Controls whether or not the custom bidding algorithm can be used as a bidding strategy. Accepted values are: * `ENTITY_STATUS_ACTIVE` * `ENTITY_STATUS_ARCHIVED`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the custom bidding algorithm.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique ID of the partner that owns the custom bidding algorithm.
+  *   `sharedAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the advertisers who have access to this algorithm. This field will not be set if the algorithm owner is a partner and is being retrieved using an advertiser accessor.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,20 +37,24 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
   @type t :: %__MODULE__{
           :advertiserId => String.t() | nil,
           :customBiddingAlgorithmId => String.t() | nil,
+          :customBiddingAlgorithmState => String.t() | nil,
           :customBiddingAlgorithmType => String.t() | nil,
           :displayName => String.t() | nil,
           :entityStatus => String.t() | nil,
           :name => String.t() | nil,
-          :partnerId => String.t() | nil
+          :partnerId => String.t() | nil,
+          :sharedAdvertiserIds => list(String.t()) | nil
         }
 
   field(:advertiserId)
   field(:customBiddingAlgorithmId)
+  field(:customBiddingAlgorithmState)
   field(:customBiddingAlgorithmType)
   field(:displayName)
   field(:entityStatus)
   field(:name)
   field(:partnerId)
+  field(:sharedAdvertiserIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
