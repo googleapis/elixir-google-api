@@ -672,7 +672,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   end
 
   @doc """
-  Stops a node.
+  Stops a node, this operation is only available with single TPU nodes.
 
   ## Parameters
 
