@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.ContactInfo do
   @moduledoc """
-  Contact details for LaForge enterprises.
+  Contact details for managed Google Play enterprises.
 
   ## Attributes
 
