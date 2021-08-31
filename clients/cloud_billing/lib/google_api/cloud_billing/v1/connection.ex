@@ -30,7 +30,7 @@ defmodule GoogleApi.CloudBilling.V1.Connection do
       # View your Google Cloud Platform billing accounts
       "https://www.googleapis.com/auth/cloud-billing.readonly",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_cloud_billing,
