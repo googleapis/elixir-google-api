@@ -18,7 +18,7 @@
 defmodule GoogleApi.HealthCare.Mixfile do
   use Mix.Project
 
-  @version "0.38.3"
+  @version "0.39.0"
 
   def project() do
     [
