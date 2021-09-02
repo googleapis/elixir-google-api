@@ -301,7 +301,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of Folders to return in the response.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of Folders to return in the response. The server can return fewer folders than requested. If unspecified, server picks an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional. A pagination token returned from a previous call to `ListFolders` that indicates where this listing should continue from.
       *   `:parent` (*type:* `String.t`) - Required. The resource name of the Organization or Folder whose Folders are being listed. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`. Access to this method is controlled by checking the `resourcemanager.folders.list` permission on the `parent`.
       *   `:showDeleted` (*type:* `boolean()`) - Optional. Controls whether Folders in the DELETE_REQUESTED state should be returned. Defaults to false.
