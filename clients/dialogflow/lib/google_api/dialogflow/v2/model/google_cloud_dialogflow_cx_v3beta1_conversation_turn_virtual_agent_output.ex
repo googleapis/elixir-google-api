@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Conversati
   ## Attributes
 
   *   `currentPage` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Page.t`, *default:* `nil`) - The Page on which the utterance was spoken. Only name and displayName will be set.
-  *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - Required. Input only. The diagnostic info output for the turn.
+  *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - Required. Input only. The diagnostic info output for the turn. Required to calculate the testing coverage.
   *   `differences` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestRunDifference.t)`, *default:* `nil`) - Output only. If this is part of a result conversation turn, the list of differences between the original run and the replay for this output, if any.
   *   `sessionParameters` (*type:* `map()`, *default:* `nil`) - The session parameters available to the bot at this point.
   *   `status` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Response error from the agent in the test result. If set, other output is empty.
