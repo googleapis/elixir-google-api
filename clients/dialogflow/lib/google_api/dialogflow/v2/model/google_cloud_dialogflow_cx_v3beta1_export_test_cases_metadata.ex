@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ExportTestCasesMetadata do
   @moduledoc """
-  Metadata returned for the TestCases.ExportTestCases long running operation.
+  Metadata returned for the TestCases.ExportTestCases long running operation. This message currently has no fields.
 
   ## Attributes
 

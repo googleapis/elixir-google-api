@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3RunTestCaseMetadata do
   @moduledoc """
-  Metadata returned for the TestCases.RunTestCase long running operation.
+  Metadata returned for the TestCases.RunTestCase long running operation. This message currently has no fields.
 
   ## Attributes
 
