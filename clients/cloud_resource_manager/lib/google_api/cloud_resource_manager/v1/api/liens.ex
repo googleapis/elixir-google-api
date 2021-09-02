@@ -222,7 +222,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. This is a suggestion for the server.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. This is a suggestion for the server. The server can return fewer liens than requested. If unspecified, server picks an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
       *   `:parent` (*type:* `String.t`) - Required. The name of the resource to list all attached Liens. For example, `projects/1234`. (google.api.field_policy).resource_type annotation is not set since the parent depends on the meta api implementation. This field could be a project or other sub project resources.
   *   `opts` (*type:* `keyword()`) - Call options
