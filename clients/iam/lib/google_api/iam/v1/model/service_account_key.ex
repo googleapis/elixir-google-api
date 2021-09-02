@@ -21,6 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   ## Attributes
 
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - The key status.
   *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Specifies the algorithm (and possibly key size) for the key.
   *   `keyOrigin` (*type:* `String.t`, *default:* `nil`) - The key origin.
   *   `keyType` (*type:* `String.t`, *default:* `nil`) - The key type.
@@ -35,6 +36,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disabled => boolean() | nil,
           :keyAlgorithm => String.t() | nil,
           :keyOrigin => String.t() | nil,
           :keyType => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
           :validBeforeTime => DateTime.t() | nil
         }
 
+  field(:disabled)
   field(:keyAlgorithm)
   field(:keyOrigin)
   field(:keyType)
