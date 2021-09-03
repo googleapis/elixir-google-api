@@ -45,10 +45,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Connection do
       # Administer your Cloud Bigtable tables
       "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
-      # View your data across Google Cloud Platform services
+      # View your data across Google Cloud services and see the email address of your Google Account
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
     otp_app: :google_api_bigtable_admin,
