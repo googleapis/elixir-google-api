@@ -34,6 +34,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   *   `returnType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Optional if language = "SQL"; required otherwise. Cannot be set if routine_type = "TABLE_VALUED_FUNCTION". If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: "FLOAT64"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64.
   *   `routineReference` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - Required. Reference describing the ID of this routine.
   *   `routineType` (*type:* `String.t`, *default:* `nil`) - Required. The type of routine.
+  *   `strictMode` (*type:* `boolean()`, *default:* `nil`) - Optional. Can be set for procedures only. If true (default), the definition body will be validated in the creation and the updates of the procedure. For procedures with an argument of ANY TYPE, the definition body validtion is not supported at creation/update time, and thus this field must be set to false explicitly.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
           :returnTableType => GoogleApi.BigQuery.V2.Model.StandardSqlTableType.t() | nil,
           :returnType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
           :routineReference => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
-          :routineType => String.t() | nil
+          :routineType => String.t() | nil,
+          :strictMode => boolean() | nil
         }
 
   field(:arguments, as: GoogleApi.BigQuery.V2.Model.Argument, type: :list)
@@ -67,6 +69,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   field(:returnType, as: GoogleApi.BigQuery.V2.Model.StandardSqlDataType)
   field(:routineReference, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
   field(:routineType)
+  field(:strictMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Routine do
