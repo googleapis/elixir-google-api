@@ -21,15 +21,18 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   ## Attributes
 
+  *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this log, any open incidents will close
   *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoClose => String.t() | nil,
           :notificationRateLimit => GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t() | nil
         }
 
+  field(:autoClose)
   field(:notificationRateLimit, as: GoogleApi.Monitoring.V3.Model.NotificationRateLimit)
 end
 
