@@ -21,6 +21,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
 
   ## Attributes
 
+  *   `correctedKeyText` (*type:* `String.t`, *default:* `nil`) - Created for Labeling UI to export key text. If corrections were made to the text identified by the `field_name.text_anchor`, this field will contain the correction.
+  *   `correctedValueText` (*type:* `String.t`, *default:* `nil`) - Created for Labeling UI to export value text. If corrections were made to the text identified by the `field_value.text_anchor`, this field will contain the correction.
   *   `fieldName` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t`, *default:* `nil`) - Layout for the FormField name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
   *   `fieldValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t`, *default:* `nil`) - Layout for the FormField value.
   *   `nameDetectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages for name together with confidence.
@@ -32,6 +34,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :correctedKeyText => String.t() | nil,
+          :correctedValueText => String.t() | nil,
           :fieldName =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
             | nil,
@@ -53,6 +57,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
             | nil,
           :valueType => String.t() | nil
         }
+
+  field(:correctedKeyText)
+  field(:correctedValueText)
 
   field(:fieldName,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout
