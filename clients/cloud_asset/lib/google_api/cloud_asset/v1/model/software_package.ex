@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.SoftwarePackage do
   *   `cosPackage` (*type:* `GoogleApi.CloudAsset.V1.Model.VersionedPackage.t`, *default:* `nil`) - Details of a COS package.
   *   `googetPackage` (*type:* `GoogleApi.CloudAsset.V1.Model.VersionedPackage.t`, *default:* `nil`) - Details of a Googet package. For details about the googet package manager, see https://github.com/google/googet.
   *   `qfePackage` (*type:* `GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage.t`, *default:* `nil`) - Details of a Windows Quick Fix engineering package. See https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering for info in Windows Quick Fix Engineering.
+  *   `windowsApplication` (*type:* `GoogleApi.CloudAsset.V1.Model.WindowsApplication.t`, *default:* `nil`) - Details of Windows Application.
   *   `wuaPackage` (*type:* `GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage.t`, *default:* `nil`) - Details of a Windows Update package. See https://docs.microsoft.com/en-us/windows/win32/api/_wua/ for information about Windows Update.
   *   `yumPackage` (*type:* `GoogleApi.CloudAsset.V1.Model.VersionedPackage.t`, *default:* `nil`) - Yum package info. For details about the yum package manager, see https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-yum.
   *   `zypperPackage` (*type:* `GoogleApi.CloudAsset.V1.Model.VersionedPackage.t`, *default:* `nil`) - Details of a Zypper package. For details about the Zypper package manager, see https://en.opensuse.org/SDB:Zypper_manual.
@@ -39,6 +40,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.SoftwarePackage do
           :googetPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
           :qfePackage =>
             GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage.t() | nil,
+          :windowsApplication => GoogleApi.CloudAsset.V1.Model.WindowsApplication.t() | nil,
           :wuaPackage => GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage.t() | nil,
           :yumPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
           :zypperPackage => GoogleApi.CloudAsset.V1.Model.VersionedPackage.t() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.SoftwarePackage do
   field(:cosPackage, as: GoogleApi.CloudAsset.V1.Model.VersionedPackage)
   field(:googetPackage, as: GoogleApi.CloudAsset.V1.Model.VersionedPackage)
   field(:qfePackage, as: GoogleApi.CloudAsset.V1.Model.WindowsQuickFixEngineeringPackage)
+  field(:windowsApplication, as: GoogleApi.CloudAsset.V1.Model.WindowsApplication)
   field(:wuaPackage, as: GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage)
   field(:yumPackage, as: GoogleApi.CloudAsset.V1.Model.VersionedPackage)
   field(:zypperPackage, as: GoogleApi.CloudAsset.V1.Model.VersionedPackage)
