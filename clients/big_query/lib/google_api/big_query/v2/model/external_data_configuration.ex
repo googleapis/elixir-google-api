@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   ## Attributes
 
   *   `autodetect` (*type:* `boolean()`, *default:* `nil`) - Try to detect schema and format options automatically. Any option specified explicitly will be honored.
+  *   `avroOptions` (*type:* `GoogleApi.BigQuery.V2.Model.AvroOptions.t`, *default:* `nil`) - Additional properties to set if sourceFormat is set to Avro.
   *   `bigtableOptions` (*type:* `GoogleApi.BigQuery.V2.Model.BigtableOptions.t`, *default:* `nil`) - [Optional] Additional options if sourceFormat is set to BIGTABLE.
   *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
   *   `connectionId` (*type:* `String.t`, *default:* `nil`) - [Optional, Trusted Tester] Connection for external data source.
@@ -41,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
 
   @type t :: %__MODULE__{
           :autodetect => boolean() | nil,
+          :avroOptions => GoogleApi.BigQuery.V2.Model.AvroOptions.t() | nil,
           :bigtableOptions => GoogleApi.BigQuery.V2.Model.BigtableOptions.t() | nil,
           :compression => String.t() | nil,
           :connectionId => String.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
         }
 
   field(:autodetect)
+  field(:avroOptions, as: GoogleApi.BigQuery.V2.Model.AvroOptions)
   field(:bigtableOptions, as: GoogleApi.BigQuery.V2.Model.BigtableOptions)
   field(:compression)
   field(:connectionId)
