@@ -30,6 +30,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   *   `flexrsGoal` (*type:* `String.t`, *default:* `nil`) - Set FlexRS goal for the job. https://cloud.google.com/dataflow/docs/guides/flexrs
   *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/
+  *   `launcherMachineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for launching the job. The default is n1-standard-1.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for the job. Defaults to the value from the template if not specified.
   *   `maxWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
@@ -57,6 +58,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
           :flexrsGoal => String.t() | nil,
           :ipConfiguration => String.t() | nil,
           :kmsKeyName => String.t() | nil,
+          :launcherMachineType => String.t() | nil,
           :machineType => String.t() | nil,
           :maxWorkers => integer() | nil,
           :network => String.t() | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   field(:flexrsGoal)
   field(:ipConfiguration)
   field(:kmsKeyName)
+  field(:launcherMachineType)
   field(:machineType)
   field(:maxWorkers)
   field(:network)
