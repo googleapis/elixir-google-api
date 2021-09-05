@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.WmxSitemapContent do
 
   ## Attributes
 
-  *   `indexed` (*type:* `String.t`, *default:* `nil`) - The number of URLs from the sitemap that were indexed (of the content type).
+  *   `indexed` (*type:* `String.t`, *default:* `nil`) - *Deprecated; do not use.*
   *   `submitted` (*type:* `String.t`, *default:* `nil`) - The number of URLs in the sitemap (of the content type).
   *   `type` (*type:* `String.t`, *default:* `nil`) - The specific type of content in this sitemap. For example: `web`.
   """
