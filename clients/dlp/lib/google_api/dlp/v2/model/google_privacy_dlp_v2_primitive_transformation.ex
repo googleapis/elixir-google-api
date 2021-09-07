@@ -29,7 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
   *   `dateShiftConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t`, *default:* `nil`) - Date Shift
   *   `fixedSizeBucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t`, *default:* `nil`) - Fixed size bucketing
   *   `redactConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t`, *default:* `nil`) - Redact
-  *   `replaceConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t`, *default:* `nil`) - Replace
+  *   `replaceConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t`, *default:* `nil`) - Replace with a specified value.
   *   `replaceWithInfoTypeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t`, *default:* `nil`) - Replace with infotype
   *   `timePartConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t`, *default:* `nil`) - Time extraction
   """
