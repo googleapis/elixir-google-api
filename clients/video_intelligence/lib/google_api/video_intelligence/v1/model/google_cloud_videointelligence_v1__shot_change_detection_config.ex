@@ -21,7 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sh
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for shot change detection. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for shot change detection. Supported values: "builtin/stable" (the default if unset), "builtin/latest", and "builtin/legacy".
   """
 
   use GoogleApi.Gax.ModelBase
