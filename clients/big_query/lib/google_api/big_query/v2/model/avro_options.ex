@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.AvroOptions do
 
   ## Attributes
 
-  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If set to true will enable interpreting logical types into their corresponding types (ie. TIMESTAMP), instead of only using their raw types (ie. INTEGER).
+  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If sourceFormat is set to "AVRO", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).
   """
 
   use GoogleApi.Gax.ModelBase

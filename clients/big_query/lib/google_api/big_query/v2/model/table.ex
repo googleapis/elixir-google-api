@@ -23,6 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was created, in milliseconds since the epoch.
+  *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - [Output-only] The default collation of the table.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of this table.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - [Output-only] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change.
@@ -57,6 +58,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   @type t :: %__MODULE__{
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
           :creationTime => String.t() | nil,
+          :defaultCollation => String.t() | nil,
           :description => String.t() | nil,
           :encryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
@@ -90,6 +92,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:creationTime)
+  field(:defaultCollation)
   field(:description)
   field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
   field(:etag)
