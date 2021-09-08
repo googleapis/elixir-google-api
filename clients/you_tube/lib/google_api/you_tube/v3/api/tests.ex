@@ -44,6 +44,7 @@ defmodule GoogleApi.YouTube.V3.Api.Tests do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:externalChannelId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.TestItem.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -70,6 +71,7 @@ defmodule GoogleApi.YouTube.V3.Api.Tests do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :externalChannelId => :query,
       :body => :body
     }
 
