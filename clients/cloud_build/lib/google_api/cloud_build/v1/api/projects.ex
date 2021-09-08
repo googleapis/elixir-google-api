@@ -462,7 +462,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Create an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Create an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
@@ -536,7 +536,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Delete an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Delete an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
@@ -618,7 +618,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Retrieve a GitHubEnterpriseConfig. This API is experimental.
+  Retrieve a GitHubEnterpriseConfig.
 
   ## Parameters
 
@@ -700,7 +700,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  List all GitHubEnterpriseConfigs for a given project. This API is experimental.
+  List all GitHubEnterpriseConfigs for a given project.
 
   ## Parameters
 
@@ -774,7 +774,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Update an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Update an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
@@ -1347,7 +1347,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Create an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Create an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
@@ -1428,7 +1428,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Delete an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Delete an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
@@ -1514,7 +1514,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Retrieve a GitHubEnterpriseConfig. This API is experimental.
+  Retrieve a GitHubEnterpriseConfig.
 
   ## Parameters
 
@@ -1600,7 +1600,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  List all GitHubEnterpriseConfigs for a given project. This API is experimental.
+  List all GitHubEnterpriseConfigs for a given project.
 
   ## Parameters
 
@@ -1681,7 +1681,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Update an association between a GCP project and a GitHub Enterprise server. This API is experimental.
+  Update an association between a GCP project and a GitHub Enterprise server.
 
   ## Parameters
 
