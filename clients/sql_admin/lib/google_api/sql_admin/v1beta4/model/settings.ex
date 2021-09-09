@@ -41,6 +41,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `pricingPlan` (*type:* `String.t`, *default:* `nil`) - The pricing plan for this instance. This can be either *PER_USE* or *PACKAGE*. Only *PER_USE* is supported for Second Generation instances.
   *   `replicationType` (*type:* `String.t`, *default:* `nil`) - The type of replication this instance uses. This can be either *ASYNCHRONOUS* or *SYNCHRONOUS*. (Deprecated_ This property was only applicable to First Generation instances.
   *   `settingsVersion` (*type:* `String.t`, *default:* `nil`) - The version of instance settings. This is a required field for update method to make sure concurrent updates are handled properly. During update, use the most recent settingsVersion value for this instance and do not try to update this value.
+  *   `sqlServerAuditConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig.t`, *default:* `nil`) - SQL Server specific audit configuration.
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example *db-custom-1-3840* .
@@ -72,6 +73,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
           :pricingPlan => String.t() | nil,
           :replicationType => String.t() | nil,
           :settingsVersion => String.t() | nil,
+          :sqlServerAuditConfig =>
+            GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig.t() | nil,
           :storageAutoResize => boolean() | nil,
           :storageAutoResizeLimit => String.t() | nil,
           :tier => String.t() | nil,
@@ -103,6 +106,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   field(:pricingPlan)
   field(:replicationType)
   field(:settingsVersion)
+  field(:sqlServerAuditConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig)
   field(:storageAutoResize)
   field(:storageAutoResizeLimit)
   field(:tier)

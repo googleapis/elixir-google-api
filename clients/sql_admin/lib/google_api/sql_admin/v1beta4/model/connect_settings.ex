@@ -25,6 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The **databaseVersion** field cannot be changed after instance creation. MySQL instances: **MYSQL_8_0**, **MYSQL_5_7** (default), or **MYSQL_5_6**. PostgreSQL instances: **POSTGRES_9_6**, **POSTGRES_10**, **POSTGRES_11** or **POSTGRES_12** (default). SQL Server instances: **SQLSERVER_2017_STANDARD** (default), **SQLSERVER_2017_ENTERPRISE**, **SQLSERVER_2017_EXPRESS**, or **SQLSERVER_2017_WEB**.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#connectSettings`.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The cloud region for the instance. e.g. **us-central1**, **europe-west1**. The region cannot be changed after instance creation.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
           :databaseVersion => String.t() | nil,
           :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()) | nil,
           :kind => String.t() | nil,
+          :region => String.t() | nil,
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
   field(:databaseVersion)
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping, type: :list)
   field(:kind)
+  field(:region)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
 end
 
