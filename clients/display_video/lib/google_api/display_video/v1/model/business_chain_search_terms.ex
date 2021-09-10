@@ -21,19 +21,19 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BusinessChainSearchTerms do
 
   ## Attributes
 
-  *   `businessChain` (*type:* `String.t`, *default:* `nil`) - The search query for the desired business chain. The query must be the full name of the business, e.g. "KFC", "mercedes-benz".
-  *   `region` (*type:* `String.t`, *default:* `nil`) - The search query for the desired geo region, e.g. "Seattle", "United State".
+  *   `businessChainQuery` (*type:* `String.t`, *default:* `nil`) - The search query for the desired business chain. The query must be the full name of the business, e.g. "KFC", "mercedes-benz".
+  *   `regionQuery` (*type:* `String.t`, *default:* `nil`) - The search query for the desired geo region, e.g. "Seattle", "United State".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :businessChain => String.t() | nil,
-          :region => String.t() | nil
+          :businessChainQuery => String.t() | nil,
+          :regionQuery => String.t() | nil
         }
 
-  field(:businessChain)
-  field(:region)
+  field(:businessChainQuery)
+  field(:regionQuery)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.BusinessChainSearchTerms do
