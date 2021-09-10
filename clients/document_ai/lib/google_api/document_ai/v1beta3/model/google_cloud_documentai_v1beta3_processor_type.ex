@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   ## Attributes
 
-  *   `allowCreation` (*type:* `boolean()`, *default:* `nil`) - Whether the processor type allows creation. If yes, user can create a processor of this processor type. Otherwise, user needs to require for whitelisting.
+  *   `allowCreation` (*type:* `boolean()`, *default:* `nil`) - Whether the processor type allows creation. If yes, user can create a processor of this processor type. Otherwise, user needs to request access.
   *   `availableLocations` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorTypeLocationInfo.t)`, *default:* `nil`) - The locations in which this processor is available.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The processor category, used by UI to group processor types.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: projects/{project}/processorTypes/{processor_type}
