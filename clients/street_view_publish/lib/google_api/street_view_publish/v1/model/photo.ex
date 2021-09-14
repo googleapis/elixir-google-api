@@ -32,6 +32,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The thumbnail URL for showing a preview of the given photo.
   *   `transferStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Status of rights transfer on this photo.
   *   `uploadReference` (*type:* `GoogleApi.StreetViewPublish.V1.Model.UploadRef.t`, *default:* `nil`) - Required when creating a photo. Input only. The resource URL where the photo bytes are uploaded to.
+  *   `uploadTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the image was uploaded.
   *   `viewCount` (*type:* `String.t`, *default:* `nil`) - Output only. View count of the photo.
   """
 
@@ -49,6 +50,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
           :thumbnailUrl => String.t() | nil,
           :transferStatus => String.t() | nil,
           :uploadReference => GoogleApi.StreetViewPublish.V1.Model.UploadRef.t() | nil,
+          :uploadTime => DateTime.t() | nil,
           :viewCount => String.t() | nil
         }
 
@@ -63,6 +65,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   field(:thumbnailUrl)
   field(:transferStatus)
   field(:uploadReference, as: GoogleApi.StreetViewPublish.V1.Model.UploadRef)
+  field(:uploadTime, as: DateTime)
   field(:viewCount)
 end
 
