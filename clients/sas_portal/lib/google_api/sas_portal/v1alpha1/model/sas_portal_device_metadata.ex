@@ -22,15 +22,21 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
   ## Attributes
 
   *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If populated, the Antenna Model Pattern to use. Format is: RecordCreatorId:PatternId
+  *   `commonChannelGroup` (*type:* `String.t`, *default:* `nil`) - CCG. A group of CBSDs in the same ICG requesting a common primary channel assignment. See CBRSA-TS-2001 V3.0.0 for more details.
+  *   `interferenceCoordinationGroup` (*type:* `String.t`, *default:* `nil`) - ICG. A group of CBSDs that manage their own interference with the group. See CBRSA-TS-2001 V3.0.0 for more details.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :antennaModel => String.t() | nil
+          :antennaModel => String.t() | nil,
+          :commonChannelGroup => String.t() | nil,
+          :interferenceCoordinationGroup => String.t() | nil
         }
 
   field(:antennaModel)
+  field(:commonChannelGroup)
+  field(:interferenceCoordinationGroup)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
