@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.Attachment do
   @moduledoc """
-  An attachment in Hangouts Chat.
+  An attachment in Google Chat.
 
   ## Attributes
 

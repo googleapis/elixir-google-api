@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.Membership do
   @moduledoc """
-  Represents a membership relation in Hangouts Chat.
+  Represents a membership relation in Google Chat.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the membership a.k.a the time at which the member joined the space, if applicable.
-  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A User in Hangout Chat
+  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A user in Google Chat.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the membership.
   """
