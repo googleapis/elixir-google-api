@@ -370,7 +370,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields update.
+      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to update.
       *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkloadIdentityPool.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
