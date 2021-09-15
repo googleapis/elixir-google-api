@@ -18,7 +18,7 @@
 defmodule GoogleApi.Redis.Mixfile do
   use Mix.Project
 
-  @version "0.27.5"
+  @version "0.27.6"
 
   def project() do
     [
