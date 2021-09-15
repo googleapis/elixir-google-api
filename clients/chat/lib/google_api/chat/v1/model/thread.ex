@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.Thread do
   @moduledoc """
-  A thread in Hangouts Chat.
+  A thread in Google Chat.
 
   ## Attributes
 

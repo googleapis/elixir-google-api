@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.Space do
   @moduledoc """
-  A room or DM in Hangouts Chat.
+  A space in Google Chat. Spaces are conversations between two or more users or 1:1 messages between a user and a Chat bot.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name (only if the space is a room). Please note that this field might not be populated in direct messages between humans.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name (only if the space is of type `ROOM`). Please note that this field might not be populated in direct messages between humans.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space, in the form "spaces/*". Example: spaces/AAAAMpdlehYs
   *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Whether the space is a DM between a bot and a single human.
   *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Whether the messages are threaded in this space.

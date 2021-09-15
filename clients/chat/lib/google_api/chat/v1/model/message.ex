@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.Message do
   @moduledoc """
-  A message in Hangouts Chat.
+  A message in Google Chat.
 
   ## Attributes
 
@@ -26,9 +26,9 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all bot mentions stripped out.
   *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User uploaded attachment.
   *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Hangouts Chat server.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Google Chat server.
   *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications).
-  *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was last updated in Hangouts Chat server. If the message was never updated, this field will be same as create_time.
+  *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was last updated in Google Chat server. If the message was never updated, this field will be same as create_time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `previewText` (*type:* `String.t`, *default:* `nil`) - Text for generating preview chips. This text will not be displayed to the user, but any links to images, web pages, videos, etc. included here will generate preview chips.
   *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user who created the message.
