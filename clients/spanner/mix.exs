@@ -18,7 +18,7 @@
 defmodule GoogleApi.Spanner.Mixfile do
   use Mix.Project
 
-  @version "0.34.3"
+  @version "0.34.4"
 
   def project() do
     [
