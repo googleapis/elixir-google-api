@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   *   `advertisedGroups` (*type:* `list(String.t)`, *default:* `nil`) - User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
   *   `advertisedIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t)`, *default:* `nil`) - User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
   *   `advertisedRoutePriority` (*type:* `integer()`, *default:* `nil`) - The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+  *   `bfd` (*type:* `GoogleApi.Compute.V1.Model.RouterBgpPeerBfd.t`, *default:* `nil`) - BFD configuration for the BGP peering.
   *   `enable` (*type:* `String.t`, *default:* `nil`) - The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
   *   `interfaceName` (*type:* `String.t`, *default:* `nil`) - Name of the interface the BGP peer is associated with.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `peerAsn` (*type:* `integer()`, *default:* `nil`) - Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+  *   `routerApplianceInstance` (*type:* `String.t`, *default:* `nil`) - URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,19 +44,22 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
           :advertisedIpRanges =>
             list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()) | nil,
           :advertisedRoutePriority => integer() | nil,
+          :bfd => GoogleApi.Compute.V1.Model.RouterBgpPeerBfd.t() | nil,
           :enable => String.t() | nil,
           :interfaceName => String.t() | nil,
           :ipAddress => String.t() | nil,
           :managementType => String.t() | nil,
           :name => String.t() | nil,
           :peerAsn => integer() | nil,
-          :peerIpAddress => String.t() | nil
+          :peerIpAddress => String.t() | nil,
+          :routerApplianceInstance => String.t() | nil
         }
 
   field(:advertiseMode)
   field(:advertisedGroups, type: :list)
   field(:advertisedIpRanges, as: GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange, type: :list)
   field(:advertisedRoutePriority)
+  field(:bfd, as: GoogleApi.Compute.V1.Model.RouterBgpPeerBfd)
   field(:enable)
   field(:interfaceName)
   field(:ipAddress)
@@ -62,6 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   field(:name)
   field(:peerAsn)
   field(:peerIpAddress)
+  field(:routerApplianceInstance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.RouterBgpPeer do

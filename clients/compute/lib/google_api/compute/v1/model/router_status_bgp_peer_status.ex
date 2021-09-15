@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. Unique within the Routers resource.
   *   `numLearnedRoutes` (*type:* `integer()`, *default:* `nil`) - Number of routes learned from the remote BGP Peer.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the remote BGP interface.
+  *   `routerApplianceInstance` (*type:* `String.t`, *default:* `nil`) - [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
   *   `state` (*type:* `String.t`, *default:* `nil`) - BGP state as specified in RFC1771.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the BGP peer: {UP, DOWN}
   *   `uptime` (*type:* `String.t`, *default:* `nil`) - Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
@@ -42,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
           :name => String.t() | nil,
           :numLearnedRoutes => integer() | nil,
           :peerIpAddress => String.t() | nil,
+          :routerApplianceInstance => String.t() | nil,
           :state => String.t() | nil,
           :status => String.t() | nil,
           :uptime => String.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   field(:name)
   field(:numLearnedRoutes)
   field(:peerIpAddress)
+  field(:routerApplianceInstance)
   field(:state)
   field(:status)
   field(:uptime)
