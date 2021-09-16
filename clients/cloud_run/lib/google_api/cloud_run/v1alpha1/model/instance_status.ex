@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus do
   *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the instance was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
   *   `failed` (*type:* `integer()`, *default:* `nil`) - Optional. The number of times this instance exited with code > 0; +optional
   *   `index` (*type:* `integer()`, *default:* `nil`) - Required. Index of the instance, unique per Job, and beginning at 0.
+  *   `lastAttemptResult` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.InstanceAttemptResult.t`, *default:* `nil`) - Optional. Result of the last attempt of this instance. +optional
   *   `lastExitCode` (*type:* `integer()`, *default:* `nil`) - Optional. Last exit code seen for this instance. +optional
   *   `restarted` (*type:* `integer()`, *default:* `nil`) - Optional. The number of times this instance was restarted. Instances are restarted according the restartPolicy configured in the Job template. +optional
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the instance was created by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
@@ -36,6 +37,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus do
           :completionTime => DateTime.t() | nil,
           :failed => integer() | nil,
           :index => integer() | nil,
+          :lastAttemptResult => GoogleApi.CloudRun.V1alpha1.Model.InstanceAttemptResult.t() | nil,
           :lastExitCode => integer() | nil,
           :restarted => integer() | nil,
           :startTime => DateTime.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.InstanceStatus do
   field(:completionTime, as: DateTime)
   field(:failed)
   field(:index)
+  field(:lastAttemptResult, as: GoogleApi.CloudRun.V1alpha1.Model.InstanceAttemptResult)
   field(:lastExitCode)
   field(:restarted)
   field(:startTime, as: DateTime)
