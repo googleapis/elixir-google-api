@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudRun.Mixfile do
   use Mix.Project
 
-  @version "0.45.2"
+  @version "0.46.0"
 
   def project() do
     [
