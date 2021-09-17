@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
   @moduledoc """
-  A Assignment allows a project to submit jobs of a certain type using slots from the specified reservation.
+  An assignment allows a project to submit jobs of a certain type using slots from the specified reservation.
 
   ## Attributes
 
