@@ -27,6 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. It does not override the permission_grants which applies to all apps.
   *   `delegatedScopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes delegated to the app from Android Device Policy.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the app is disabled. When disabled, the app data is still preserved.
+  *   `extensionConfig` (*type:* `GoogleApi.AndroidManagement.V1.Model.ExtensionConfig.t`, *default:* `nil`) - Configuration to enable this app as an extension app, with the capability of interacting with Android Device Policy offline.This field can be set for at most one app.
   *   `installType` (*type:* `String.t`, *default:* `nil`) - The type of installation to perform.
   *   `lockTaskAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to to configure a dedicated device.
   *   `managedConfiguration` (*type:* `map()`, *default:* `nil`) - Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: *type* *JSON value* BOOL true or false STRING string INTEGER number CHOICE string MULTISELECT array of strings HIDDEN string BUNDLE_ARRAY array of objects 
@@ -45,6 +46,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
           :defaultPermissionPolicy => String.t() | nil,
           :delegatedScopes => list(String.t()) | nil,
           :disabled => boolean() | nil,
+          :extensionConfig => GoogleApi.AndroidManagement.V1.Model.ExtensionConfig.t() | nil,
           :installType => String.t() | nil,
           :lockTaskAllowed => boolean() | nil,
           :managedConfiguration => map() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   field(:defaultPermissionPolicy)
   field(:delegatedScopes, type: :list)
   field(:disabled)
+  field(:extensionConfig, as: GoogleApi.AndroidManagement.V1.Model.ExtensionConfig)
   field(:installType)
   field(:lockTaskAllowed)
   field(:managedConfiguration, type: :map)
