@@ -45,6 +45,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:externalChannelId` (*type:* `String.t`) - Channel ID to which changes should be applied, for delegation.
       *   `:part` (*type:* `list(String.t)`) - Do not use. Required for compatibility.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -79,6 +80,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :externalChannelId => :query,
       :part => :query
     }
 
@@ -115,6 +117,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:externalChannelId` (*type:* `String.t`) - Channel ID to which changes should be applied, for delegation.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -146,6 +149,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :externalChannelId => :query,
       :body => :body
     }
 
@@ -181,6 +185,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:externalChannelId` (*type:* `String.t`) - Channel ID to which changes should be applied, for delegation.
       *   `:linkingToken` (*type:* `String.t`) - Get a third party link with the given linking token.
       *   `:type` (*type:* `String.t`) - Get a third party link of the given type.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -208,6 +213,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :externalChannelId => :query,
       :linkingToken => :query,
       :type => :query
     }
@@ -244,6 +250,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:externalChannelId` (*type:* `String.t`) - Channel ID to which changes should be applied, for delegation.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -275,6 +282,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :externalChannelId => :query,
       :body => :body
     }
 
