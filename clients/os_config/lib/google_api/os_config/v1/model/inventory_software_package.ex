@@ -25,6 +25,7 @@ defmodule GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage do
   *   `cosPackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t`, *default:* `nil`) - Details of a COS package.
   *   `googetPackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t`, *default:* `nil`) - Details of a Googet package. For details about the googet package manager, see https://github.com/google/googet.
   *   `qfePackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryWindowsQuickFixEngineeringPackage.t`, *default:* `nil`) - Details of a Windows Quick Fix engineering package. See https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering for info in Windows Quick Fix Engineering.
+  *   `windowsApplication` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryWindowsApplication.t`, *default:* `nil`) - Details of Windows Application.
   *   `wuaPackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage.t`, *default:* `nil`) - Details of a Windows Update package. See https://docs.microsoft.com/en-us/windows/win32/api/_wua/ for information about Windows Update.
   *   `yumPackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t`, *default:* `nil`) - Yum package info. For details about the yum package manager, see https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-yum.
   *   `zypperPackage` (*type:* `GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t`, *default:* `nil`) - Details of a Zypper package. For details about the Zypper package manager, see https://en.opensuse.org/SDB:Zypper_manual.
@@ -39,6 +40,8 @@ defmodule GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage do
           :googetPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
           :qfePackage =>
             GoogleApi.OSConfig.V1.Model.InventoryWindowsQuickFixEngineeringPackage.t() | nil,
+          :windowsApplication =>
+            GoogleApi.OSConfig.V1.Model.InventoryWindowsApplication.t() | nil,
           :wuaPackage => GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage.t() | nil,
           :yumPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
           :zypperPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
@@ -49,6 +52,7 @@ defmodule GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage do
   field(:cosPackage, as: GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage)
   field(:googetPackage, as: GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage)
   field(:qfePackage, as: GoogleApi.OSConfig.V1.Model.InventoryWindowsQuickFixEngineeringPackage)
+  field(:windowsApplication, as: GoogleApi.OSConfig.V1.Model.InventoryWindowsApplication)
   field(:wuaPackage, as: GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage)
   field(:yumPackage, as: GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage)
   field(:zypperPackage, as: GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage)
