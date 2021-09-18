@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse do
   @moduledoc """
-  Database instance list operations response.
+  Operations list response.
 
   ## Attributes
 
