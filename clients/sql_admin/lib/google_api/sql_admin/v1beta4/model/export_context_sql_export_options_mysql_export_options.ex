@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExp
 
   ## Attributes
 
-  *   `masterData` (*type:* `integer()`, *default:* `nil`) - Option to include SQL statement required to set up replication. If set to *1*, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to *2*, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than *1*, --set-gtid-purged is set to OFF.
+  *   `masterData` (*type:* `integer()`, *default:* `nil`) - Option to include SQL statement required to set up replication. * If set to **1**, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. * If set to **2**, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. * If set to any value other than **1**, --set-gtid-purged is set to OFF.
   """
 
   use GoogleApi.Gax.ModelBase
