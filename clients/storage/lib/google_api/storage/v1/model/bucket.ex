@@ -24,6 +24,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.BucketAccessControl.t)`, *default:* `nil`) - Access controls on the bucket.
   *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
   *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
+  *   `customPlacementConfig` (*type:* `GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t`, *default:* `nil`) - The bucket's custom placement configuration for Custom Dual Regions.
   *   `defaultEventBasedHold` (*type:* `boolean()`, *default:* `nil`) - The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed.
   *   `defaultObjectAcl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Default access controls to apply to new objects when no ACL is provided.
   *   `encryption` (*type:* `GoogleApi.Storage.V1.Model.BucketEncryption.t`, *default:* `nil`) - Encryption configuration for a bucket.
@@ -49,7 +50,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the bucket in RFC 3339 format.
   *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
   *   `website` (*type:* `GoogleApi.Storage.V1.Model.BucketWebsite.t`, *default:* `nil`) - The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
-  *   `zoneAffinity` (*type:* `list(String.t)`, *default:* `nil`) - The zone or zones from which the bucket is intended to use zonal quota. Requests for data from outside the specified affinities are still allowed but won't be able to use zonal quota. The zone or zones need to be within the bucket location otherwise the requests will fail with a 400 Bad Request response.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,6 +58,8 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :acl => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()) | nil,
           :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil,
           :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()) | nil,
+          :customPlacementConfig =>
+            GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t() | nil,
           :defaultEventBasedHold => boolean() | nil,
           :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
           :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t() | nil,
@@ -82,13 +84,13 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :timeCreated => DateTime.t() | nil,
           :updated => DateTime.t() | nil,
           :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t() | nil,
-          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t() | nil,
-          :zoneAffinity => list(String.t()) | nil
+          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t() | nil
         }
 
   field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
   field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
   field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
+  field(:customPlacementConfig, as: GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig)
   field(:defaultEventBasedHold)
   field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
   field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
@@ -114,7 +116,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:updated, as: DateTime)
   field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
   field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
-  field(:zoneAffinity, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do
