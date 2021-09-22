@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.LoggingConfig do
   @moduledoc """
-  Logging configure.
+  Logging configuration.
 
   ## Attributes
 

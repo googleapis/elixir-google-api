@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.PosixFilesystem do
   @moduledoc """
-  A POSIX filesystem data source or sink.
+  A POSIX filesystem resource.
 
   ## Attributes
 
