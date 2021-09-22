@@ -27,67 +27,67 @@ defmodule GoogleApi.Fitness.V1.Connection do
       # Use Google Fit to see and store your physical activity data
       "https://www.googleapis.com/auth/fitness.activity.read",
 
-      # See and add to your Google Fit physical activity data
+      # Add to your Google Fit physical activity data
       "https://www.googleapis.com/auth/fitness.activity.write",
 
       # See info about your blood glucose in Google Fit. I consent to Google sharing my blood glucose information with this app.
       "https://www.googleapis.com/auth/fitness.blood_glucose.read",
 
-      # See and add info about your blood glucose to Google Fit. I consent to Google sharing my blood glucose information with this app.
+      # Add info about your blood glucose to Google Fit. I consent to Google using my blood glucose information with this app.
       "https://www.googleapis.com/auth/fitness.blood_glucose.write",
 
       # See info about your blood pressure in Google Fit. I consent to Google sharing my blood pressure information with this app.
       "https://www.googleapis.com/auth/fitness.blood_pressure.read",
 
-      # See and add info about your blood pressure in Google Fit. I consent to Google sharing my blood pressure information with this app.
+      # Add info about your blood pressure in Google Fit. I consent to Google using my blood pressure information with this app.
       "https://www.googleapis.com/auth/fitness.blood_pressure.write",
 
-      # See info about your body measurements and heart rate in Google Fit
+      # See info about your body measurements in Google Fit
       "https://www.googleapis.com/auth/fitness.body.read",
 
-      # See and add info about your body measurements and heart rate to Google Fit
+      # Add info about your body measurements to Google Fit
       "https://www.googleapis.com/auth/fitness.body.write",
 
       # See info about your body temperature in Google Fit. I consent to Google sharing my body temperature information with this app.
       "https://www.googleapis.com/auth/fitness.body_temperature.read",
 
-      # See and add to info about your body temperature in Google Fit. I consent to Google sharing my body temperature information with this app.
+      # Add to info about your body temperature in Google Fit. I consent to Google using my body temperature information with this app.
       "https://www.googleapis.com/auth/fitness.body_temperature.write",
 
       # See your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.
       "https://www.googleapis.com/auth/fitness.heart_rate.read",
 
-      # See and add to your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.
+      # Add to your heart rate data in Google Fit. I consent to Google using my heart rate information with this app.
       "https://www.googleapis.com/auth/fitness.heart_rate.write",
 
       # See your Google Fit speed and distance data
       "https://www.googleapis.com/auth/fitness.location.read",
 
-      # See and add to your Google Fit location data
+      # Add to your Google Fit location data
       "https://www.googleapis.com/auth/fitness.location.write",
 
       # See info about your nutrition in Google Fit
       "https://www.googleapis.com/auth/fitness.nutrition.read",
 
-      # See and add to info about your nutrition in Google Fit
+      # Add to info about your nutrition in Google Fit
       "https://www.googleapis.com/auth/fitness.nutrition.write",
 
       # See info about your oxygen saturation in Google Fit. I consent to Google sharing my oxygen saturation information with this app.
       "https://www.googleapis.com/auth/fitness.oxygen_saturation.read",
 
-      # See and add info about your oxygen saturation in Google Fit. I consent to Google sharing my oxygen saturation information with this app.
+      # Add info about your oxygen saturation in Google Fit. I consent to Google using my oxygen saturation information with this app.
       "https://www.googleapis.com/auth/fitness.oxygen_saturation.write",
 
       # See info about your reproductive health in Google Fit. I consent to Google sharing my reproductive health information with this app.
       "https://www.googleapis.com/auth/fitness.reproductive_health.read",
 
-      # See and add info about your reproductive health in Google Fit. I consent to Google sharing my reproductive health information with this app.
+      # Add info about your reproductive health in Google Fit. I consent to Google using my reproductive health information with this app.
       "https://www.googleapis.com/auth/fitness.reproductive_health.write",
 
       # See your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.
       "https://www.googleapis.com/auth/fitness.sleep.read",
 
-      # See and add to your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.
+      # Add to your sleep data in Google Fit. I consent to Google using my sleep information with this app.
       "https://www.googleapis.com/auth/fitness.sleep.write"
     ],
     otp_app: :google_api_fitness,
