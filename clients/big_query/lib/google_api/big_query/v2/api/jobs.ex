@@ -82,13 +82,13 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Requests that a job is deleted. This call will return when the job is deleted. This method is available in limited preview.
+  Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Project ID of the job to be deleted.
-  *   `job_id` (*type:* `String.t`) - Required. Job ID of the job to be deleted. If this is a parent job which has child jobs, all child jobs will be deleted as well. Deletion of child jobs directly is not allowed.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the job for which metadata is to be deleted.
+  *   `job_id` (*type:* `String.t`) - Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
