@@ -2852,7 +2852,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey. The API is currently in preview phase.
+  Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey.
 
   ## Parameters
 
@@ -2935,7 +2935,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Enable a ServiceAccountKey. The API is currently in preview phase.
+  Enable a ServiceAccountKey.
 
   ## Parameters
 
