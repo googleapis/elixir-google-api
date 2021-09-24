@@ -753,7 +753,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content. This method supports patch semantics.
+  Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.
 
   ## Parameters
 
@@ -825,7 +825,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content. This method supports patch semantics.
+  Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.
 
   ## Parameters
 
@@ -917,7 +917,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content. This method supports patch semantics.
+  Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.
 
   ## Parameters
 
@@ -999,7 +999,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content. This method supports patch semantics.
+  Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.
 
   ## Parameters
 
