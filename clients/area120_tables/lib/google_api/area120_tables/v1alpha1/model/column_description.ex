@@ -27,6 +27,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
   *   `lookupDetails` (*type:* `GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t`, *default:* `nil`) - Optional. Indicates that this is a lookup column whose value is derived from the relationship column specified in the details. Lookup columns can not be updated directly. To change the value you must update the associated relationship column.
   *   `multipleValuesDisallowed` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether or not multiple values are allowed for array types where such a restriction is possible.
   *   `name` (*type:* `String.t`, *default:* `nil`) - column name
+  *   `readonly` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that values for the column cannot be set by the user.
   *   `relationshipDetails` (*type:* `GoogleApi.Area120Tables.V1alpha1.Model.RelationshipDetails.t`, *default:* `nil`) - Optional. Additional details about a relationship column. Specified when data_type is relationship.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
           :lookupDetails => GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t() | nil,
           :multipleValuesDisallowed => boolean() | nil,
           :name => String.t() | nil,
+          :readonly => boolean() | nil,
           :relationshipDetails =>
             GoogleApi.Area120Tables.V1alpha1.Model.RelationshipDetails.t() | nil
         }
@@ -49,6 +51,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
   field(:lookupDetails, as: GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails)
   field(:multipleValuesDisallowed)
   field(:name)
+  field(:readonly)
   field(:relationshipDetails, as: GoogleApi.Area120Tables.V1alpha1.Model.RelationshipDetails)
 end
 
