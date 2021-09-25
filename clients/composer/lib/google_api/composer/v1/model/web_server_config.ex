@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Composer.V1.Model.WebServerConfig do
   @moduledoc """
-  The configuration settings for the Airflow web server App Engine instance.
+  The configuration settings for the Airflow web server App Engine instance. Supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*
 
   ## Attributes
 

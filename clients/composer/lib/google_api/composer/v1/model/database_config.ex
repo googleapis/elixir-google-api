@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Composer.V1.Model.DatabaseConfig do
   @moduledoc """
-  The configuration of Cloud SQL instance that is used by the Apache Airflow software.
+  The configuration of Cloud SQL instance that is used by the Apache Airflow software. Supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
 
   ## Attributes
 
