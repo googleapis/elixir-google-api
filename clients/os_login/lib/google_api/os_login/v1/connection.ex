@@ -24,11 +24,17 @@ defmodule GoogleApi.OSLogin.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
+      # View your data across Google Cloud services and see the email address of your Google Account
+      "https://www.googleapis.com/auth/cloud-platform.read-only",
+
       # View and manage your Google Compute Engine resources
-      "https://www.googleapis.com/auth/compute"
+      "https://www.googleapis.com/auth/compute",
+
+      # View your Google Compute Engine resources
+      "https://www.googleapis.com/auth/compute.readonly"
     ],
     otp_app: :google_api_os_login,
     base_url: "https://oslogin.googleapis.com/"
