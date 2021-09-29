@@ -21,11 +21,16 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny do
 
   ## Attributes
 
+  *   `clusterIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all clusters are eligible.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :clusterIds => list(String.t()) | nil
+        }
+
+  field(:clusterIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny do
