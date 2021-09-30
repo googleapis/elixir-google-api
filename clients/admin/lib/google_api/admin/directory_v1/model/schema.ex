@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Schema do
   *   `fields` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec.t)`, *default:* `nil`) - A list of fields in the schema.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#schema`) - Kind of resource this is.
   *   `schemaId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the schema (Read-only)
-  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - The schema's name.
+  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - The schema's name. Each `schema_name` must be unique within a customer. Reusing a name results in a `409: Entity already exists` error.
   """
 
   use GoogleApi.Gax.ModelBase

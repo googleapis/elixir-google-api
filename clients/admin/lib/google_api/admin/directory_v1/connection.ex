@@ -108,7 +108,7 @@ defmodule GoogleApi.Admin.Directory_v1.Connection do
       # View user schemas on your domain
       "https://www.googleapis.com/auth/admin.directory.userschema.readonly",
 
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_admin,

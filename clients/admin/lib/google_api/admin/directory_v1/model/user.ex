@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.User do
   *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full path of the parent organization associated with the user. If the parent organization is the top-level, it is represented as a forward slash (`/`).
   *   `suspensionReason` (*type:* `String.t`, *default:* `nil`) - Output only. Has the reason a user account is suspended either by the administrator or by Google at the time of suspension. The property is returned only if the `suspended` property is `true`.
   *   `agreedToTerms` (*type:* `boolean()`, *default:* `nil`) - Output only. This property is `true` if the user has completed an initial login and accepted the Terms of Service agreement.
-  *   `customSchemas` (*type:* `%{optional(String.t) => GoogleApi.Admin.Directory_v1.Model.UserCustomProperties.t}`, *default:* `nil`) - Custom fields of the user.
+  *   `customSchemas` (*type:* `%{optional(String.t) => GoogleApi.Admin.Directory_v1.Model.UserCustomProperties.t}`, *default:* `nil`) - Custom fields of the user. The key is a `schema_name` and its values are `'field_name': 'field_value'`.
   *   `externalIds` (*type:* `any()`, *default:* `nil`) - A list of external IDs for the user, such as an employee or network ID. The maximum allowed data size for this field is 2Kb.
   *   `gender` (*type:* `any()`, *default:* `nil`) - The user's gender. The maximum allowed data size for this field is 1Kb.
   *   `recoveryPhone` (*type:* `String.t`, *default:* `nil`) - Recovery phone of the user. The phone number must be in the E.164 format, starting with the plus sign (+). Example: *+16506661212*.
