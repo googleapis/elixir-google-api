@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail.
+  *   `expirationTimestampMillis` (*type:* `String.t`, *default:* `nil`) - [Optional] The expiration timestamp for the destination table. If this field is set: For a new table, it will set the table's expiration time (even if there is a dataset level default table expiration time). For an existing table, it will update the table's expiration time. If this field is not set: For a new table, if dataset level default table expiration time is present, that will be applied. For an existing table, no change is made to the table's expiration time. Additionally this field is only applied when data is written to an empty table (WRITE_EMPTY) or data is overwritten to a table (WRITE_TRUNCATE).
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail.
   *   `labels` (*type:* `map()`, *default:* `nil`) - [Optional] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
 
   @type t :: %__MODULE__{
           :description => String.t() | nil,
+          :expirationTimestampMillis => String.t() | nil,
           :friendlyName => String.t() | nil,
           :labels => map() | nil
         }
 
   field(:description)
+  field(:expirationTimestampMillis)
   field(:friendlyName)
   field(:labels, type: :map)
 end
