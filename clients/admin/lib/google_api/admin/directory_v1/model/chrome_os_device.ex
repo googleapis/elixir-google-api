@@ -46,6 +46,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `meid` (*type:* `String.t`, *default:* `nil`) - The Mobile Equipment Identifier (MEID) or the International Mobile Equipment Identity (IMEI) for the 3G mobile card in a mobile device. A MEID/IMEI is typically used when adding a device to a wireless carrier's post-pay service plan. If the device does not have this information, this property is not included in the response. For more information on how to export a MEID/IMEI list, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices.html#export_meid).
   *   `tpmVersionInfo` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t`, *default:* `nil`) - Trusted Platform Module (TPM) (Read-only)
   *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - List of active time ranges (Read-only).
+  *   `cpuInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t)`, *default:* `nil`) - Information regarding CPU specs in the device.
   *   `bootMode` (*type:* `String.t`, *default:* `nil`) - The boot mode for the device. The possible values are: * `Verified`: The device is running a valid version of the Chrome OS. * `Dev`: The devices's developer hardware switch is enabled. When booted, the device has a command line shell. For an example of a developer switch, see the [Chromebook developer information](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook#TOC-Developer-switch).
   *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on the ethernet network interface.
   *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
@@ -93,6 +94,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
             GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t() | nil,
           :activeTimeRanges =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t()) | nil,
+          :cpuInfo => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t()) | nil,
           :bootMode => String.t() | nil,
           :ethernetMacAddress => String.t() | nil,
           :lastEnrollmentTime => DateTime.t() | nil,
@@ -156,6 +158,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
     type: :list
   )
 
+  field(:cpuInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo, type: :list)
   field(:bootMode)
   field(:ethernetMacAddress)
   field(:lastEnrollmentTime, as: DateTime)
