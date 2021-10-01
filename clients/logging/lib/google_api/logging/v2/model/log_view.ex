@@ -25,7 +25,6 @@ defmodule GoogleApi.Logging.V2.Model.LogView do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this view.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Filter that restricts which log entries in a bucket are visible in this view.Filters are restricted to be a logical AND of ==/!= of any of the following: originating project/folder/organization/billing account. resource type log idFor example:SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the view.For example:projects/my-project/locations/global/buckets/my-bucket/views/my-view
-  *   `schema` (*type:* `GoogleApi.Logging.V2.Model.TableSchema.t`, *default:* `nil`) - Describes the schema of the logs stored in the bucket that are accessible via this view.This field is only populated for views in analytics-enabled buckets.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the view.
   """
 
@@ -36,7 +35,6 @@ defmodule GoogleApi.Logging.V2.Model.LogView do
           :description => String.t() | nil,
           :filter => String.t() | nil,
           :name => String.t() | nil,
-          :schema => GoogleApi.Logging.V2.Model.TableSchema.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -44,7 +42,6 @@ defmodule GoogleApi.Logging.V2.Model.LogView do
   field(:description)
   field(:filter)
   field(:name)
-  field(:schema, as: GoogleApi.Logging.V2.Model.TableSchema)
   field(:updateTime, as: DateTime)
 end
 

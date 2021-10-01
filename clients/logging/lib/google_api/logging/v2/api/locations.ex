@@ -756,7 +756,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Deletes a view on a log bucket.
+  Deletes a view on a log bucket. If an UNAVAILABLE error is returned, this indicates that system is not in a state where it can delete the view. If this occurs, please try again in a few minutes.
 
   ## Parameters
 
@@ -1020,7 +1020,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Updates a view on a log bucket. This method replaces the following fields in the existing view with values from the new view: filter.
+  Updates a view on a log bucket. This method replaces the following fields in the existing view with values from the new view: filter. If an UNAVAILABLE error is returned, this indicates that system is not in a state where it can update the view. If this occurs, please try again in a few minutes.
 
   ## Parameters
 
