@@ -18,7 +18,7 @@
 defmodule GoogleApi.DisplayVideo.Mixfile do
   use Mix.Project
 
-  @version "0.28.1"
+  @version "0.28.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DisplayVideo.Mixfile do
 
   defp description() do
     """
-    Display & Video 360 API client library. Display & Video 360 API allows users to manage and create campaigns and reports.
+    Display & Video 360 API client library. Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
     """
   end
 
