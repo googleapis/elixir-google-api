@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   ## Attributes
 
-  *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this log, any open incidents will close
+  *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this long, any open incidents will close
   *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based.
   """
 
