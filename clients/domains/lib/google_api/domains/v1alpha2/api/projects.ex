@@ -518,7 +518,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
   end
 
   @doc """
-  Deletes a `Registration` resource. This method only works on resources in one of the following states: * `state` is `EXPORTED` with `expire_time` in the past * `state` is `REGISTRATION_FAILED`
+  Deletes a `Registration` resource. For `Registration` resources , this method works if: * `state` is `EXPORTED` with `expire_time` in the past * `state` is `REGISTRATION_FAILED` When an active domain is successfully deleted, you can continue to use the domain in [Google Domains](https://domains.google/) until it expires. The calling user becomes the domain's sole owner in Google Domains, and permissions for the domain are subsequently managed there. The domain will not renew automatically unless the new owner sets up billing in Google Domains.
 
   ## Parameters
 
@@ -588,7 +588,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
   end
 
   @doc """
-  Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to use the domain in [Google Domains](https://domains.google/) until it expires. If the export is successful: * The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud Domains * Because individual users can own domains in Google Domains, the calling user becomes the domain's sole owner. Permissions for the domain are subsequently managed in Google Domains. * Without further action, the domain does not renew automatically. The new owner can set up billing in Google Domains to renew the domain if needed.
+  Exports a `Registration` resource, such that it is no longer managed by Cloud Domains. When an active domain is successfully exported, you can continue to use the domain in [Google Domains](https://domains.google/) until it expires. The calling user becomes the domain's sole owner in Google Domains, and permissions for the domain are subsequently managed there. The domain will not renew automatically unless the new owner sets up billing in Google Domains.
 
   ## Parameters
 
