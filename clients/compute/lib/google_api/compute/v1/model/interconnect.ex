@@ -41,6 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
   *   `provisionedLinkCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Number of links actually provisioned in this interconnect.
   *   `requestedLinkCount` (*type:* `integer()`, *default:* `nil`) - Target number of physical links in the link bundle, as requested by the customer.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
   """
@@ -69,6 +70,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
           :peerIpAddress => String.t() | nil,
           :provisionedLinkCount => integer() | nil,
           :requestedLinkCount => integer() | nil,
+          :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
           :state => String.t() | nil
         }
@@ -98,6 +100,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   field(:peerIpAddress)
   field(:provisionedLinkCount)
   field(:requestedLinkCount)
+  field(:satisfiesPzs)
   field(:selfLink)
   field(:state)
 end

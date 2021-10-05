@@ -45,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   *   `privateInterconnectInfo` (*type:* `GoogleApi.Compute.V1.Model.InterconnectAttachmentPrivateInfo.t`, *default:* `nil`) - [Output Only] Information specific to an InterconnectAttachment. This property is populated if the interconnect that this is attached to is of type DEDICATED.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `router` (*type:* `String.t`, *default:* `nil`) - URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network & region within which the Cloud Router is configured.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted. 
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner. 
@@ -80,6 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
             GoogleApi.Compute.V1.Model.InterconnectAttachmentPrivateInfo.t() | nil,
           :region => String.t() | nil,
           :router => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
           :state => String.t() | nil,
           :type => String.t() | nil,
@@ -112,6 +114,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
 
   field(:region)
   field(:router)
+  field(:satisfiesPzs)
   field(:selfLink)
   field(:state)
   field(:type)

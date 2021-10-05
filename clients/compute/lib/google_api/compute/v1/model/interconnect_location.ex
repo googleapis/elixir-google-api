@@ -36,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   *   `regionInfos` (*type:* `list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t)`, *default:* `nil`) - [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+  *   `supportsPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -56,7 +57,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
           :regionInfos =>
             list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t()) | nil,
           :selfLink => String.t() | nil,
-          :status => String.t() | nil
+          :status => String.t() | nil,
+          :supportsPzs => boolean() | nil
         }
 
   field(:address)
@@ -74,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   field(:regionInfos, as: GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo, type: :list)
   field(:selfLink)
   field(:status)
+  field(:supportsPzs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectLocation do

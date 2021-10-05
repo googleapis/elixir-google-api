@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKeyProtectedDisk do
   ## Attributes
 
   *   `diskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Decrypts data associated with the disk with a customer-supplied encryption key.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name 
   """
 
   use GoogleApi.Gax.ModelBase
