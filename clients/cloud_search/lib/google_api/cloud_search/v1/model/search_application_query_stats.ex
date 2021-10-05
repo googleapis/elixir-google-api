@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats do
   @moduledoc """
-
+  Search application level query stats per date
 
   ## Attributes
 
