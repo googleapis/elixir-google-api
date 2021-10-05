@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1BindingExplanationAnnotatedMembership do
   @moduledoc """
-  Details about whether the binding includes the member.
+  Details about whether the binding includes the principal.
 
   ## Attributes
 
-  *   `membership` (*type:* `String.t`, *default:* `nil`) - Indicates whether the binding includes the member.
-  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the member's status to the overall determination for the binding.
+  *   `membership` (*type:* `String.t`, *default:* `nil`) - Indicates whether the binding includes the principal.
+  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the principal's status to the overall determination for the binding.
   """
 
   use GoogleApi.Gax.ModelBase
