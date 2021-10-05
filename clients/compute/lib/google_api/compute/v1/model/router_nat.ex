@@ -29,9 +29,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
   *   `natIpAllocateOption` (*type:* `String.t`, *default:* `nil`) - Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
   *   `natIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources used for this Nat service. These IP addresses must be valid static external IP addresses assigned to the project.
+  *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.RouterNatRule.t)`, *default:* `nil`) - A list of rules associated with this NAT.
   *   `sourceSubnetworkIpRangesToNat` (*type:* `String.t`, *default:* `nil`) - Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
   *   `subnetworks` (*type:* `list(GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat.t)`, *default:* `nil`) - A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
   *   `tcpEstablishedIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set.
+  *   `tcpTimeWaitTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
   *   `tcpTransitoryIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set.
   *   `udpIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for UDP connections. Defaults to 30s if not set.
   """
@@ -47,9 +49,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
           :name => String.t() | nil,
           :natIpAllocateOption => String.t() | nil,
           :natIps => list(String.t()) | nil,
+          :rules => list(GoogleApi.Compute.V1.Model.RouterNatRule.t()) | nil,
           :sourceSubnetworkIpRangesToNat => String.t() | nil,
           :subnetworks => list(GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat.t()) | nil,
           :tcpEstablishedIdleTimeoutSec => integer() | nil,
+          :tcpTimeWaitTimeoutSec => integer() | nil,
           :tcpTransitoryIdleTimeoutSec => integer() | nil,
           :udpIdleTimeoutSec => integer() | nil
         }
@@ -62,9 +66,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   field(:name)
   field(:natIpAllocateOption)
   field(:natIps, type: :list)
+  field(:rules, as: GoogleApi.Compute.V1.Model.RouterNatRule, type: :list)
   field(:sourceSubnetworkIpRangesToNat)
   field(:subnetworks, as: GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat, type: :list)
   field(:tcpEstablishedIdleTimeoutSec)
+  field(:tcpTimeWaitTimeoutSec)
   field(:tcpTransitoryIdleTimeoutSec)
   field(:udpIdleTimeoutSec)
 end

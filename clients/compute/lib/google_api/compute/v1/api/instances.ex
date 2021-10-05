@@ -100,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Retrieves aggregated list of all of the instances in your project across all regions and zones.
+  Retrieves an aggregated list of all of the instances in your project across all regions and zones. The performance of this method degrades when a filter is specified on a project that has a very large number of instances.
 
   ## Parameters
 

@@ -182,7 +182,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   end
 
   @doc """
-  Retrieves the specified Operations resource. Gets a list of operations by making a `list()` request.
+  Retrieves the specified Operations resource.
 
   ## Parameters
 

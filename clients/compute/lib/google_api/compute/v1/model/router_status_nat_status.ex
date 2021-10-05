@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusNatStatus do
   *   `minExtraNatIpsNeeded` (*type:* `integer()`, *default:* `nil`) - The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name of this NAT.
   *   `numVmEndpointsWithNatMappings` (*type:* `integer()`, *default:* `nil`) - Number of VM endpoints (i.e., Nics) that can use NAT.
+  *   `ruleStatus` (*type:* `list(GoogleApi.Compute.V1.Model.RouterStatusNatStatusNatRuleStatus.t)`, *default:* `nil`) - Status of rules in this NAT.
   *   `userAllocatedNatIpResources` (*type:* `list(String.t)`, *default:* `nil`) - A list of fully qualified URLs of reserved IP address resources.
   *   `userAllocatedNatIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
   """
@@ -40,6 +41,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusNatStatus do
           :minExtraNatIpsNeeded => integer() | nil,
           :name => String.t() | nil,
           :numVmEndpointsWithNatMappings => integer() | nil,
+          :ruleStatus =>
+            list(GoogleApi.Compute.V1.Model.RouterStatusNatStatusNatRuleStatus.t()) | nil,
           :userAllocatedNatIpResources => list(String.t()) | nil,
           :userAllocatedNatIps => list(String.t()) | nil
         }
@@ -50,6 +53,12 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusNatStatus do
   field(:minExtraNatIpsNeeded)
   field(:name)
   field(:numVmEndpointsWithNatMappings)
+
+  field(:ruleStatus,
+    as: GoogleApi.Compute.V1.Model.RouterStatusNatStatusNatRuleStatus,
+    type: :list
+  )
+
   field(:userAllocatedNatIpResources, type: :list)
   field(:userAllocatedNatIps, type: :list)
 end
