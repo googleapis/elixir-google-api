@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   ## Attributes
 
   *   `authenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - Configuration controlling RBAC group membership information.
+  *   `meshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
   *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
   *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use node_pools.instance_group_urls.
   *   `currentMasterVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] The current software version of the master endpoint.
@@ -85,6 +86,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   @type t :: %__MODULE__{
           :authenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
+          :meshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
           :clusterIpv4Cidr => String.t() | nil,
           :instanceGroupUrls => list(String.t()) | nil,
           :currentMasterVersion => String.t() | nil,
@@ -147,6 +149,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
         }
 
   field(:authenticatorGroupsConfig, as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig)
+  field(:meshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
   field(:clusterIpv4Cidr)
   field(:instanceGroupUrls, type: :list)
   field(:currentMasterVersion)
