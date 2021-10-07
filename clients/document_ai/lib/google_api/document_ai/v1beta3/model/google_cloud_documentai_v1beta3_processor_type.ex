@@ -17,15 +17,16 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorType do
   @moduledoc """
-  A processor type is responsible for performing a certain document understanding task on a certain type of document. All processor types are created by the documentai service internally. User will only list all available processor types via UI. For different users (projects), the available processor types may be different since we'll expose the access of some types via EAP whitelisting. We make the ProcessorType a resource under location so we have a unified API and keep the possibility that UI will load different available processor types from different regions. But for alpha the behavior is that the user will always get the union of all available processor types among all regions no matter which regionalized endpoint is called, and then we use the 'available_locations' field to show under which regions a processor type is available. For example, users can call either the 'US' or 'EU' endpoint to feach processor types. In the return, we will have an 'invoice parsing' processor with 'available_locations' field only containing 'US'. So the user can try to create an 'invoice parsing' processor under the location 'US'. Such attempt of creating under the location 'EU' will fail. Next ID: 8.
+  A processor type is responsible for performing a certain document understanding task on a certain type of document. All processor types are created by the documentai service internally. User will only list all available processor types via UI. For different users (projects), the available processor types may be different since we'll expose the access of some types via EAP whitelisting. We make the ProcessorType a resource under location so we have a unified API and keep the possibility that UI will load different available processor types from different regions. But for alpha the behavior is that the user will always get the union of all available processor types among all regions no matter which regionalized endpoint is called, and then we use the 'available_locations' field to show under which regions a processor type is available. For example, users can call either the 'US' or 'EU' endpoint to feach processor types. In the return, we will have an 'invoice parsing' processor with 'available_locations' field only containing 'US'. So the user can try to create an 'invoice parsing' processor under the location 'US'. Such attempt of creating under the location 'EU' will fail. Next ID: 9.
 
   ## Attributes
 
   *   `allowCreation` (*type:* `boolean()`, *default:* `nil`) - Whether the processor type allows creation. If yes, user can create a processor of this processor type. Otherwise, user needs to request access.
   *   `availableLocations` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorTypeLocationInfo.t)`, *default:* `nil`) - The locations in which this processor is available.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The processor category, used by UI to group processor types.
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Launch stage of the processor type
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: projects/{project}/processorTypes/{processor_type}
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the processor, e.g, "invoice_parsing".
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the processor, e.g., "invoice_parsing".
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,6 +39,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
             )
             | nil,
           :category => String.t() | nil,
+          :launchStage => String.t() | nil,
           :name => String.t() | nil,
           :type => String.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   )
 
   field(:category)
+  field(:launchStage)
   field(:name)
   field(:type)
 end
