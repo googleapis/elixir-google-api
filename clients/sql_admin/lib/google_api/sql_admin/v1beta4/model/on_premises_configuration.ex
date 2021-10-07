@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the replica's private key. The corresponsing public key is encoded in the client's certificate.
   *   `dumpFilePath` (*type:* `String.t`, *default:* `nil`) - The dump file to create the Cloud SQL replica.
   *   `hostPort` (*type:* `String.t`, *default:* `nil`) - The host and port of the on-premises instance in host:port format
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#onPremisesConfiguration*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#onPremisesConfiguration**.
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for connecting to on-premises instance.
   *   `sourceInstance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstanceReference.t`, *default:* `nil`) - The reference to Cloud SQL instance if the source is Cloud SQL.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username for connecting to on-premises instance.
