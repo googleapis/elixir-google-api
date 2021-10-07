@@ -30,7 +30,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if the run has the FAILED status.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this backup run. Unique only for a specific Cloud SQL instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#backupRun*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#backupRun**.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backups.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example **2012-11-15T16:19:00.094Z**.

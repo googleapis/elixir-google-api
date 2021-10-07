@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.GenerateEphemeralCertRequest do
   *   `access_token` (*type:* `String.t`, *default:* `nil`) - Optional. Access token to include in the signed certificate.
   *   `public_key` (*type:* `String.t`, *default:* `nil`) - PEM encoded public key to include in the signed certificate.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Optional snapshot read timestamp to trade freshness for performance.
+  *   `validDuration` (*type:* `String.t`, *default:* `nil`) - Optional. If set, it will contain the cert valid duration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.GenerateEphemeralCertRequest do
   @type t :: %__MODULE__{
           :access_token => String.t() | nil,
           :public_key => String.t() | nil,
-          :readTime => DateTime.t() | nil
+          :readTime => DateTime.t() | nil,
+          :validDuration => String.t() | nil
         }
 
   field(:access_token)
   field(:public_key)
   field(:readTime, as: DateTime)
+  field(:validDuration)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.GenerateEphemeralCertRequest do

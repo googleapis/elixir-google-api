@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#demoteMasterContext*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#demoteMasterContext**.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as on-premises primary instance in the replication setup.
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t`, *default:* `nil`) - Configuration specific to read-replicas replicating from the on-premises primary instance.
   *   `skipReplicationSetup` (*type:* `boolean()`, *default:* `nil`) - Flag to skip replication setup on the instance.

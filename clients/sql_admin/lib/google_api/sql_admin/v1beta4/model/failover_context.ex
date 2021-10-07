@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#failoverContext*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#failoverContext**.
   *   `settingsVersion` (*type:* `String.t`, *default:* `nil`) - The current settings version of this instance. Request will be rejected if this version doesn't match the current settings version.
   """
 
