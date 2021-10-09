@@ -22,6 +22,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
   ## Attributes
 
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - Data type of the column Supported types are auto_id, boolean, boolean_list, creator, create_timestamp, date, dropdown, location, integer, integer_list, number, number_list, person, person_list, tags, check_list, text, text_list, update_timestamp, updater, relationship, file_attachment_list. These types directly map to the column types supported on Tables website.
+  *   `dateDetails` (*type:* `GoogleApi.Area120Tables.V1alpha1.Model.DateDetails.t`, *default:* `nil`) - Optional. Additional details about a date column.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Internal id for a column.
   *   `labels` (*type:* `list(GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem.t)`, *default:* `nil`) - Optional. Range of labeled values for the column. Some columns like tags and drop-downs limit the values to a set of possible values. We return the range of values in such cases to help clients implement better user data validation.
   *   `lookupDetails` (*type:* `GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t`, *default:* `nil`) - Optional. Indicates that this is a lookup column whose value is derived from the relationship column specified in the details. Lookup columns can not be updated directly. To change the value you must update the associated relationship column.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
 
   @type t :: %__MODULE__{
           :dataType => String.t() | nil,
+          :dateDetails => GoogleApi.Area120Tables.V1alpha1.Model.DateDetails.t() | nil,
           :id => String.t() | nil,
           :labels => list(GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem.t()) | nil,
           :lookupDetails => GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription do
         }
 
   field(:dataType)
+  field(:dateDetails, as: GoogleApi.Area120Tables.V1alpha1.Model.DateDetails)
   field(:id)
   field(:labels, as: GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem, type: :list)
   field(:lookupDetails, as: GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails)
