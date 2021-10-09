@@ -35,10 +35,15 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Date and time of upcoming maintenance events which have been scheduled.
   *   `memorySizeGb` (*type:* `integer()`, *default:* `nil`) - Required. Redis memory size in GiB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details.
+  *   `nodes` (*type:* `list(GoogleApi.Redis.V1beta1.Model.NodeInfo.t)`, *default:* `nil`) - Output only. Info per node.
   *   `persistenceIamIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the exposed Redis endpoint.
+  *   `readEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'.
+  *   `readEndpointPort` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'.
+  *   `readReplicasMode` (*type:* `String.t`, *default:* `nil`) - Optional. Read replica mode.
   *   `redisConfigs` (*type:* `map()`, *default:* `nil`) - Optional. Redis configuration parameters, according to http://redis.io/topics/config. Currently, the only supported parameters are: Redis version 3.2 and newer: * maxmemory-policy * notify-keyspace-events Redis version 4.0 and newer: * activedefrag * lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and newer: * stream-node-max-bytes * stream-node-max-entries
   *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility
+  *   `replicaCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of replica nodes. Valid range for standard tier is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults to 0.
   *   `reservedIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29.
   *   `serverCaCerts` (*type:* `list(GoogleApi.Redis.V1beta1.Model.TlsCertificate.t)`, *default:* `nil`) - Output only. List of server CA certificates for the instance.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this instance.
@@ -64,10 +69,15 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
           :maintenanceSchedule => GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t() | nil,
           :memorySizeGb => integer() | nil,
           :name => String.t() | nil,
+          :nodes => list(GoogleApi.Redis.V1beta1.Model.NodeInfo.t()) | nil,
           :persistenceIamIdentity => String.t() | nil,
           :port => integer() | nil,
+          :readEndpoint => String.t() | nil,
+          :readEndpointPort => integer() | nil,
+          :readReplicasMode => String.t() | nil,
           :redisConfigs => map() | nil,
           :redisVersion => String.t() | nil,
+          :replicaCount => integer() | nil,
           :reservedIpRange => String.t() | nil,
           :serverCaCerts => list(GoogleApi.Redis.V1beta1.Model.TlsCertificate.t()) | nil,
           :state => String.t() | nil,
@@ -90,10 +100,15 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   field(:maintenanceSchedule, as: GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule)
   field(:memorySizeGb)
   field(:name)
+  field(:nodes, as: GoogleApi.Redis.V1beta1.Model.NodeInfo, type: :list)
   field(:persistenceIamIdentity)
   field(:port)
+  field(:readEndpoint)
+  field(:readEndpointPort)
+  field(:readReplicasMode)
   field(:redisConfigs, type: :map)
   field(:redisVersion)
+  field(:replicaCount)
   field(:reservedIpRange)
   field(:serverCaCerts, as: GoogleApi.Redis.V1beta1.Model.TlsCertificate, type: :list)
   field(:state)
