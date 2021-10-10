@@ -1724,7 +1724,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:peeringId` (*type:* `String.t`) - Required. Peering Id, unique name to identify peering.
+      *   `:peeringId` (*type:* `String.t`) - Required. Peering Id, unique name to identify peering. It should follow the regex format "^(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)$"
       *   `:body` (*type:* `GoogleApi.ManagedIdentities.V1.Model.Peering.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
