@@ -23,6 +23,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Identifies account that received the lead.
   *   `aggregatorInfo` (*type:* `GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t`, *default:* `nil`) - Aggregator specific information related to the lead.
+  *   `bookingLead` (*type:* `GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1BookingLead.t`, *default:* `nil`) - More information associated to only booking leads.
   *   `businessName` (*type:* `String.t`, *default:* `nil`) - Business name associated to the account.
   *   `chargeStatus` (*type:* `String.t`, *default:* `nil`) - Whether the lead has been charged.
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency code.
@@ -44,6 +45,9 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
           :accountId => String.t() | nil,
           :aggregatorInfo =>
             GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t()
+            | nil,
+          :bookingLead =>
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1BookingLead.t()
             | nil,
           :businessName => String.t() | nil,
           :chargeStatus => String.t() | nil,
@@ -68,6 +72,10 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
 
   field(:aggregatorInfo,
     as: GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo
+  )
+
+  field(:bookingLead,
+    as: GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1BookingLead
   )
 
   field(:businessName)

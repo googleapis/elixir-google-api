@@ -20,7 +20,7 @@ defmodule GoogleApi.LocalServices.V1 do
   API client metadata for GoogleApi.LocalServices.V1.
   """
 
-  @discovery_revision "20210330"
+  @discovery_revision "20211011"
 
   def discovery_revision(), do: @discovery_revision
 end
