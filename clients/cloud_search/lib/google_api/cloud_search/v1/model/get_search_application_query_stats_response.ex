@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.GetSearchApplicationQueryStatsResponse do
   @moduledoc """
-  Response format for getting query stats at a search application level between given dates.
+  Response format for getting query stats for a search application between given dates.
 
   ## Attributes
 
-  *   `stats` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats.t)`, *default:* `nil`) - Search application level query stats per date
+  *   `stats` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats.t)`, *default:* `nil`) - Query stats per date for a search application.
   """
 
   use GoogleApi.Gax.ModelBase
