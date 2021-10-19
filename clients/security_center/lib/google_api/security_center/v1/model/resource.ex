@@ -21,31 +21,37 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of the resource.
   *   `folders` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Folder.t)`, *default:* `nil`) - Contains a Folder message for each folder in the assets ancestry. The first folder is the deepest nested folder, and the last folder is the folder directly under the Organization.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `parentName` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
   *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of project that the resource belongs to.
   *   `projectName` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The full resource type of the resource.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()) | nil,
           :name => String.t() | nil,
           :parentDisplayName => String.t() | nil,
           :parentName => String.t() | nil,
           :projectDisplayName => String.t() | nil,
-          :projectName => String.t() | nil
+          :projectName => String.t() | nil,
+          :type => String.t() | nil
         }
 
+  field(:displayName)
   field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)
   field(:name)
   field(:parentDisplayName)
   field(:parentName)
   field(:projectDisplayName)
   field(:projectName)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Resource do
