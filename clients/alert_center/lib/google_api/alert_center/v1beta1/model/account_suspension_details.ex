@@ -22,7 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AccountSuspensionDetails do
   ## Attributes
 
   *   `abuseReason` (*type:* `String.t`, *default:* `nil`) - The reason why this account is receiving an account suspension warning.
-  *   `productName` (*type:* `String.t`, *default:* `nil`) - The name of the product being abused. This is restricted to only the following values: "Gmail" "Payments" "Voice" "Workspace" "Other"
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - The name of the product being abused. This is restricted to only the following values: "Gmail" "Google Workspace" "Payments" "Voice" "YouTube" "Other"
   """
 
   use GoogleApi.Gax.ModelBase
