@@ -38,7 +38,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t`, *default:* `nil`) - A note describing a software bill of materials.
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this `Note`.
   *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t`, *default:* `nil`) - A note describing an SPDX File.
-  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote.t`, *default:* `nil`) - A note describing an SPDX Package.
+  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote.t`, *default:* `nil`) - A note describing an SPDX Package.
   *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t`, *default:* `nil`) - A note describing a relationship between SPDX elements.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t`, *default:* `nil`) - A note describing an upgrade.
@@ -67,7 +67,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
           :sbom => GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t() | nil,
           :shortDescription => String.t() | nil,
           :spdxFile => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t() | nil,
-          :spdxPackage => GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote.t() | nil,
+          :spdxPackage => GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote.t() | nil,
           :spdxRelationship =>
             GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -94,7 +94,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   field(:sbom, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote)
   field(:shortDescription)
   field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote)
-  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageNote)
+  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote)
   field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote)

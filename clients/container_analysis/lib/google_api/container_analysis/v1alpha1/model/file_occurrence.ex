@@ -27,8 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence do
   *   `copyright` (*type:* `String.t`, *default:* `nil`) - Identify the copyright holder of the file, as well as any dates present
   *   `filesLicenseInfo` (*type:* `list(String.t)`, *default:* `nil`) - This field contains the license information actually found in the file, if any
   *   `id` (*type:* `String.t`, *default:* `nil`) - Uniquely identify any element in an SPDX document which may be referenced by other elements
-  *   `licenseComments` (*type:* `String.t`, *default:* `nil`) - This field provides a place for the SPDX file creator to record any relevant background references or analysis that went in to arriving at the Concluded License for a file
-  *   `licenseConcluded` (*type:* `String.t`, *default:* `nil`) - This field contains the license the SPDX file creator has concluded as governing the file or alternative values if the governing license cannot be determined
+  *   `licenseConcluded` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.License.t`, *default:* `nil`) - This field contains the license the SPDX file creator has concluded as governing the file or alternative values if the governing license cannot be determined
   *   `notice` (*type:* `String.t`, *default:* `nil`) - This field provides a place for the SPDX file creator to record license notices or other such related notices found in the file
   """
 
@@ -41,8 +40,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence do
           :copyright => String.t() | nil,
           :filesLicenseInfo => list(String.t()) | nil,
           :id => String.t() | nil,
-          :licenseComments => String.t() | nil,
-          :licenseConcluded => String.t() | nil,
+          :licenseConcluded => GoogleApi.ContainerAnalysis.V1alpha1.Model.License.t() | nil,
           :notice => String.t() | nil
         }
 
@@ -52,8 +50,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence do
   field(:copyright)
   field(:filesLicenseInfo, type: :list)
   field(:id)
-  field(:licenseComments)
-  field(:licenseConcluded)
+  field(:licenseConcluded, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.License)
   field(:notice)
 end
 

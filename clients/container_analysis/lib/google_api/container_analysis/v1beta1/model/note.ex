@@ -35,11 +35,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Note do
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Package.t`, *default:* `nil`) - A note describing a package hosted by various package managers.
   *   `relatedNoteNames` (*type:* `list(String.t)`, *default:* `nil`) - Other notes related to this note.
   *   `relatedUrl` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.RelatedUrl.t)`, *default:* `nil`) - URLs associated with this note.
-  *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentNote.t`, *default:* `nil`) - A note describing SPDX Document which represents SBOM.
+  *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentNote.t`, *default:* `nil`) - A note describing a software bill of materials.
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this note.
-  *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.FileNote.t`, *default:* `nil`) - A note describing SPDX File.
-  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.PackageNote.t`, *default:* `nil`) - A note describing SPDX Package.
-  *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipNote.t`, *default:* `nil`) - A note describing SPDX Relationship.
+  *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.FileNote.t`, *default:* `nil`) - A note describing an SPDX File.
+  *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.PackageInfoNote.t`, *default:* `nil`) - A note describing an SPDX Package.
+  *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipNote.t`, *default:* `nil`) - A note describing an SPDX File.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `vulnerability` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Vulnerability.t`, *default:* `nil`) - A note describing a package vulnerability.
   """
@@ -64,7 +64,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Note do
           :sbom => GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentNote.t() | nil,
           :shortDescription => String.t() | nil,
           :spdxFile => GoogleApi.ContainerAnalysis.V1beta1.Model.FileNote.t() | nil,
-          :spdxPackage => GoogleApi.ContainerAnalysis.V1beta1.Model.PackageNote.t() | nil,
+          :spdxPackage => GoogleApi.ContainerAnalysis.V1beta1.Model.PackageInfoNote.t() | nil,
           :spdxRelationship =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipNote.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -88,7 +88,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Note do
   field(:sbom, as: GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentNote)
   field(:shortDescription)
   field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1beta1.Model.FileNote)
-  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1beta1.Model.PackageNote)
+  field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1beta1.Model.PackageInfoNote)
   field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1beta1.Model.RelationshipNote)
   field(:updateTime, as: DateTime)
   field(:vulnerability, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Vulnerability)

@@ -21,11 +21,16 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote do
 
   ## Attributes
 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of relationship between the source and target SPDX elements
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :type => String.t() | nil
+        }
+
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote do
