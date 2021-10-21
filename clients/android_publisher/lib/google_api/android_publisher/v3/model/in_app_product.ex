@@ -25,12 +25,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price. Cannot be zero, as in-app products are never free. Always in the developer's Checkout merchant currency.
   *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Allows developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values are P0D (zero days), P3D (three days), P7D (seven days), P14D (14 days), and P30D (30 days).
   *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data. Map key is the language of the localized data, as defined by BCP-47, e.g. "en-US".
+  *   `managedProductTaxesAndComplianceSettings` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ManagedProductTaxAndComplianceSettings.t`, *default:* `nil`) - Details about taxes and legal compliance. Only applicable to managed products.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the parent app.
   *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these can be zero, as in-app products are never free. Map key is region code, as defined by ISO 3166-2.
   *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - The type of the product, e.g. a recurring subscription.
   *   `sku` (*type:* `String.t`, *default:* `nil`) - Stock-keeping-unit (SKU) of the product, unique within an app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the product, e.g. whether it's active.
   *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are P1W (one week), P1M (one month), P3M (three months), P6M (six months), and P1Y (one year).
+  *   `subscriptionTaxesAndComplianceSettings` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings.t`, *default:* `nil`) - Details about taxes and legal compliance. Only applicable to subscription products.
   *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything between P7D (seven days) and P999D (999 days).
   """
 
@@ -43,6 +45,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
           :listings =>
             %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t()}
             | nil,
+          :managedProductTaxesAndComplianceSettings =>
+            GoogleApi.AndroidPublisher.V3.Model.ManagedProductTaxAndComplianceSettings.t() | nil,
           :packageName => String.t() | nil,
           :prices =>
             %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.Price.t()} | nil,
@@ -50,6 +54,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
           :sku => String.t() | nil,
           :status => String.t() | nil,
           :subscriptionPeriod => String.t() | nil,
+          :subscriptionTaxesAndComplianceSettings =>
+            GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings.t() | nil,
           :trialPeriod => String.t() | nil
         }
 
@@ -57,12 +63,22 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   field(:defaultPrice, as: GoogleApi.AndroidPublisher.V3.Model.Price)
   field(:gracePeriod)
   field(:listings, as: GoogleApi.AndroidPublisher.V3.Model.InAppProductListing, type: :map)
+
+  field(:managedProductTaxesAndComplianceSettings,
+    as: GoogleApi.AndroidPublisher.V3.Model.ManagedProductTaxAndComplianceSettings
+  )
+
   field(:packageName)
   field(:prices, as: GoogleApi.AndroidPublisher.V3.Model.Price, type: :map)
   field(:purchaseType)
   field(:sku)
   field(:status)
   field(:subscriptionPeriod)
+
+  field(:subscriptionTaxesAndComplianceSettings,
+    as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings
+  )
+
   field(:trialPeriod)
 end
 
