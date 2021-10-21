@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportData do
   ## Attributes
 
   *   `dataLastRefreshed` (*type:* `DateTime.t`, *default:* `nil`) - The last time the data in the report was refreshed. All the hits received before this timestamp are included in the calculation of the report.
+  *   `emptyReason` (*type:* `String.t`, *default:* `nil`) - If empty reason is specified, the report is empty for this reason.
   *   `isDataGolden` (*type:* `boolean()`, *default:* `nil`) - Indicates if response to this request is golden or not. Data is golden when the exact same request will not produce any new results if asked at a later point in time.
   *   `maximums` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - Minimum and maximum values seen over all matching rows. These are both empty when `hideValueRanges` in the request is false, or when rowCount is zero.
   *   `minimums` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - Minimum and maximum values seen over all matching rows. These are both empty when `hideValueRanges` in the request is false, or when rowCount is zero.
@@ -36,6 +37,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportData do
 
   @type t :: %__MODULE__{
           :dataLastRefreshed => DateTime.t() | nil,
+          :emptyReason => String.t() | nil,
           :isDataGolden => boolean() | nil,
           :maximums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil,
           :minimums => list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t()) | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportData do
         }
 
   field(:dataLastRefreshed, as: DateTime)
+  field(:emptyReason)
   field(:isDataGolden)
   field(:maximums, as: GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues, type: :list)
   field(:minimums, as: GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues, type: :list)
