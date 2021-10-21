@@ -33,6 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
   *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - [Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
   *   `estimatedBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] The original estimate of bytes processed for the job.
+  *   `mlStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.MlStatistics.t`, *default:* `nil`) - [Output-only] Statistics of a BigQuery ML training job.
   *   `modelTraining` (*type:* `GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t`, *default:* `nil`) - [Output-only, Beta] Information about create model query job progress.
   *   `modelTrainingCurrentIteration` (*type:* `integer()`, *default:* `nil`) - [Output-only, Beta] Deprecated; do not use.
   *   `modelTrainingExpectedTotalIteration` (*type:* `String.t`, *default:* `nil`) - [Output-only, Beta] Deprecated; do not use.
@@ -68,6 +69,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
           :estimatedBytesProcessed => String.t() | nil,
+          :mlStatistics => GoogleApi.BigQuery.V2.Model.MlStatistics.t() | nil,
           :modelTraining => GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t() | nil,
           :modelTrainingCurrentIteration => integer() | nil,
           :modelTrainingExpectedTotalIteration => String.t() | nil,
@@ -100,6 +102,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
   field(:estimatedBytesProcessed)
+  field(:mlStatistics, as: GoogleApi.BigQuery.V2.Model.MlStatistics)
   field(:modelTraining, as: GoogleApi.BigQuery.V2.Model.BigQueryModelTraining)
   field(:modelTrainingCurrentIteration)
   field(:modelTrainingExpectedTotalIteration)
