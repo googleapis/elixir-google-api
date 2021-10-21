@@ -31,7 +31,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Reseller.V1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Either the customer's primary domain name or the customer's unique identifier. If using the domain name, we do not recommend using a `customerId` as a key for persistent data. If the domain name for a `customerId` is changed, the Google system automatically updates.
+  *   `customer_id` (*type:* `String.t`) - This can be either the customer's primary domain name or the customer's unique identifier. If the domain name for a customer changes, the old domain name cannot be used to access the customer, but the customer's unique identifier (as returned by the API) can always be used. We recommend storing the unique identifier in your systems where applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -152,7 +152,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Reseller.V1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Either the customer's primary domain name or the customer's unique identifier. If using the domain name, we do not recommend using a `customerId` as a key for persistent data. If the domain name for a `customerId` is changed, the Google system automatically updates.
+  *   `customer_id` (*type:* `String.t`) - This can be either the customer's primary domain name or the customer's unique identifier. If the domain name for a customer changes, the old domain name cannot be used to access the customer, but the customer's unique identifier (as returned by the API) can always be used. We recommend storing the unique identifier in your systems where applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -214,7 +214,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Reseller.V1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Either the customer's primary domain name or the customer's unique identifier. If using the domain name, we do not recommend using a `customerId` as a key for persistent data. If the domain name for a `customerId` is changed, the Google system automatically updates.
+  *   `customer_id` (*type:* `String.t`) - This can be either the customer's primary domain name or the customer's unique identifier. If the domain name for a customer changes, the old domain name cannot be used to access the customer, but the customer's unique identifier (as returned by the API) can always be used. We recommend storing the unique identifier in your systems where applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
