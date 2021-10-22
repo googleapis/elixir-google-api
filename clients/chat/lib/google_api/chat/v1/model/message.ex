@@ -29,7 +29,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Google Chat server.
   *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications).
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was last updated in Google Chat server. If the message was never updated, this field will be same as create_time.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in the form `spaces/*/messages/*`. Example: `spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4`
   *   `previewText` (*type:* `String.t`, *default:* `nil`) - Text for generating preview chips. This text will not be displayed to the user, but any links to images, web pages, videos, etc. included here will generate preview chips.
   *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user who created the message.
   *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommand.t`, *default:* `nil`) - Slash command information, if applicable.
