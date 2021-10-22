@@ -26,6 +26,67 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomBiddingAlgorithms do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Creates a new custom bidding algorithm. Returns the newly created custom bidding algorithm if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_create(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/customBiddingAlgorithms", %{})
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm{}]
+    )
+  end
+
+  @doc """
   Gets a custom bidding algorithm.
 
   ## Parameters
@@ -170,6 +231,402 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomBiddingAlgorithms do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingAlgorithmsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates an existing custom bidding algorithm. Returns the updated custom bidding algorithm if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `custom_bidding_algorithm_id` (*type:* `String.t`) - Output only. The unique ID of the custom bidding algorithm. Assigned by the system.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_patch(
+        connection,
+        custom_bidding_algorithm_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/customBiddingAlgorithms/{+customBiddingAlgorithmId}", %{
+        "customBiddingAlgorithmId" =>
+          URI.encode(custom_bidding_algorithm_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm{}]
+    )
+  end
+
+  @doc """
+  Creates a custom bidding script reference object for a script file. The resulting reference object provides a resource path to which the script file should be uploaded. This reference object should be included in when creating a new custom bidding script object.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `custom_bidding_algorithm_id` (*type:* `String.t`) - Required. The ID of the custom bidding algorithm owns the script.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent custom bidding algorithm.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent custom bidding algorithm. Only this partner will have write access to this custom bidding script.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScriptRef{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_upload_script(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingScriptRef.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_upload_script(
+        connection,
+        custom_bidding_algorithm_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/customBiddingAlgorithms/{+customBiddingAlgorithmId}:uploadScript", %{
+        "customBiddingAlgorithmId" =>
+          URI.encode(custom_bidding_algorithm_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScriptRef{}]
+    )
+  end
+
+  @doc """
+  Creates a new custom bidding script. Returns the newly created script if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `custom_bidding_algorithm_id` (*type:* `String.t`) - Required. The ID of the custom bidding algorithm that owns the script.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent custom bidding algorithm.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent custom bidding algorithm. Only this partner will have write access to this custom bidding script.
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_scripts_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_scripts_create(
+        connection,
+        custom_bidding_algorithm_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/customBiddingAlgorithms/{+customBiddingAlgorithmId}/scripts", %{
+        "customBiddingAlgorithmId" =>
+          URI.encode(custom_bidding_algorithm_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript{}])
+  end
+
+  @doc """
+  Gets a custom bidding script.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `custom_bidding_algorithm_id` (*type:* `String.t`) - Required. The ID of the custom bidding algorithm owns the script.
+  *   `custom_bidding_script_id` (*type:* `String.t`) - Required. The ID of the custom bidding script to fetch.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent custom bidding algorithm.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent custom bidding algorithm. Only this partner will have write access to this custom bidding script.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_scripts_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_scripts_get(
+        connection,
+        custom_bidding_algorithm_id,
+        custom_bidding_script_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/customBiddingAlgorithms/{+customBiddingAlgorithmId}/scripts/{+customBiddingScriptId}",
+        %{
+          "customBiddingAlgorithmId" =>
+            URI.encode(custom_bidding_algorithm_id, &URI.char_unreserved?/1),
+          "customBiddingScriptId" => URI.encode(custom_bidding_script_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript{}])
+  end
+
+  @doc """
+  Lists custom bidding scripts that belong to the given algorithm. The order is defined by the order_by parameter.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `custom_bidding_algorithm_id` (*type:* `String.t`) - Required. The ID of the custom bidding algorithm owns the script.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent custom bidding algorithm.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `createTime desc` (default) The default sorting order is descending. To specify ascending order for a field, the suffix "desc" should be removed. Example: `createTime`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListCustomBiddingScripts` method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent custom bidding algorithm. Only this partner will have write access to this custom bidding script.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingScriptsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_custom_bidding_algorithms_scripts_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingScriptsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def displayvideo_custom_bidding_algorithms_scripts_list(
+        connection,
+        custom_bidding_algorithm_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/customBiddingAlgorithms/{+customBiddingAlgorithmId}/scripts", %{
+        "customBiddingAlgorithmId" =>
+          URI.encode(custom_bidding_algorithm_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingScriptsResponse{}]
     )
   end
 end
