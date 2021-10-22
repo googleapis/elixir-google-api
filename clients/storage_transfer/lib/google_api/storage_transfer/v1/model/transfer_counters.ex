@@ -32,6 +32,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   *   `directoriesFailedToListFromSource` (*type:* `String.t`, *default:* `nil`) - For transfers involving PosixFilesystem only. Number of listing failures for each directory found at the source. Potential failures when listing a directory include permission failure or block failure. If listing a directory fails, no files in the directory are transferred.
   *   `directoriesFoundFromSource` (*type:* `String.t`, *default:* `nil`) - For transfers involving PosixFilesystem only. Number of directories found while listing. For example, if the root directory of the transfer is `base/` and there are two other directories, `a/` and `b/` under this directory, the count after listing `base/`, `base/a/` and `base/b/` is 3.
   *   `directoriesSuccessfullyListedFromSource` (*type:* `String.t`, *default:* `nil`) - For transfers involving PosixFilesystem only. Number of successful listings for each directory found at the source.
+  *   `intermediateObjectsCleanedUp` (*type:* `String.t`, *default:* `nil`) - Number of successfully cleaned up intermediate objects.
+  *   `intermediateObjectsFailedCleanedUp` (*type:* `String.t`, *default:* `nil`) - Number of intermediate objects failed cleaned up.
   *   `objectsCopiedToSink` (*type:* `String.t`, *default:* `nil`) - Objects that are copied to the data sink.
   *   `objectsDeletedFromSink` (*type:* `String.t`, *default:* `nil`) - Objects that are deleted from the data sink.
   *   `objectsDeletedFromSource` (*type:* `String.t`, *default:* `nil`) - Objects that are deleted from the data source.
@@ -56,6 +58,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
           :directoriesFailedToListFromSource => String.t() | nil,
           :directoriesFoundFromSource => String.t() | nil,
           :directoriesSuccessfullyListedFromSource => String.t() | nil,
+          :intermediateObjectsCleanedUp => String.t() | nil,
+          :intermediateObjectsFailedCleanedUp => String.t() | nil,
           :objectsCopiedToSink => String.t() | nil,
           :objectsDeletedFromSink => String.t() | nil,
           :objectsDeletedFromSource => String.t() | nil,
@@ -77,6 +81,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   field(:directoriesFailedToListFromSource)
   field(:directoriesFoundFromSource)
   field(:directoriesSuccessfullyListedFromSource)
+  field(:intermediateObjectsCleanedUp)
+  field(:intermediateObjectsFailedCleanedUp)
   field(:objectsCopiedToSink)
   field(:objectsDeletedFromSink)
   field(:objectsDeletedFromSource)
