@@ -31,7 +31,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the space, in the form "spaces/*". Example: spaces/AAAAMpdlehY
+  *   `name` (*type:* `String.t`) - Required. Resource name of the space, in the form "spaces/*". Example: spaces/AAAAAAAAAAAA
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -165,6 +165,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. If a message has already been created in the space with this request ID, the subsequent request will return the existing message and no new message will be created.
       *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Google Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -192,6 +193,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :requestId => :query,
       :threadKey => :query,
       :body => :body
     }
@@ -353,6 +355,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. If a message has already been created in the space with this request ID, the subsequent request will return the existing message and no new message will be created.
       *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Google Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -380,6 +383,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :requestId => :query,
       :threadKey => :query,
       :body => :body
     }
@@ -524,7 +528,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - 
+  *   `name` (*type:* `String.t`) - Resource name in the form `spaces/*/messages/*`. Example: `spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
