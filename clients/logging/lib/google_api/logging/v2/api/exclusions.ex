@@ -26,7 +26,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new exclusion in a specified parent resource. Only log entries belonging to that resource can be excluded. You can have up to 10 exclusions in a resource.
+  Creates a new exclusion in the _Default sink in a specified parent resource. Only log entries belonging to that resource can be excluded. You can have up to 10 exclusions in a resource.
 
   ## Parameters
 
@@ -96,7 +96,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   end
 
   @doc """
-  Deletes an exclusion.
+  Deletes an exclusion in the _Default sink.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   end
 
   @doc """
-  Gets the description of an exclusion.
+  Gets the description of an exclusion in the _Default sink.
 
   ## Parameters
 
@@ -252,7 +252,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   end
 
   @doc """
-  Lists all the exclusions in a parent resource.
+  Lists all the exclusions on the _Default sink in a parent resource.
 
   ## Parameters
 
@@ -318,7 +318,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   end
 
   @doc """
-  Changes one or more properties of an existing exclusion.
+  Changes one or more properties of an existing exclusion in the _Default sink.
 
   ## Parameters
 
