@@ -22,6 +22,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   ## Attributes
 
   *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.BucketAccessControl.t)`, *default:* `nil`) - Access controls on the bucket.
+  *   `autoclass` (*type:* `GoogleApi.Storage.V1.Model.BucketAutoclass.t`, *default:* `nil`) - The bucket's Autoclass configuration.
   *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
   *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
   *   `customPlacementConfig` (*type:* `GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t`, *default:* `nil`) - The bucket's custom placement configuration for Custom Dual Regions.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
 
   @type t :: %__MODULE__{
           :acl => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()) | nil,
+          :autoclass => GoogleApi.Storage.V1.Model.BucketAutoclass.t() | nil,
           :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil,
           :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()) | nil,
           :customPlacementConfig =>
@@ -88,6 +90,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
         }
 
   field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
+  field(:autoclass, as: GoogleApi.Storage.V1.Model.BucketAutoclass)
   field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
   field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
   field(:customPlacementConfig, as: GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig)
