@@ -201,7 +201,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   *   `{:ok, %GoogleApi.OSConfig.V1.Model.OSPolicyAssignmentReport{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec osconfig_projects_locations_instances_os_policy_assignments_get_report(
+  @spec osconfig_projects_locations_instances_os_policy_assignments_reports_get(
           Tesla.Env.client(),
           String.t(),
           keyword(),
@@ -211,7 +211,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def osconfig_projects_locations_instances_os_policy_assignments_get_report(
+  def osconfig_projects_locations_instances_os_policy_assignments_reports_get(
         connection,
         name,
         optional_params \\ [],
