@@ -565,7 +565,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist. When set to `false`, the target document must not exist.
-      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time.
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1025,7 +1025,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist. When set to `false`, the target document must not exist.
-      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time.
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:"updateMask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:body` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`) - 
