@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.RestoreInstanceRequest do
   @moduledoc """
-  RestoreInstanceRequest restores an existing instances's file share from a backup.
+  RestoreInstanceRequest restores an existing instance's file share from a backup.
 
   ## Attributes
 
