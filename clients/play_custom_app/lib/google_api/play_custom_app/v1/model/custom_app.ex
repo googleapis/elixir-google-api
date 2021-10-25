@@ -22,6 +22,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
   ## Attributes
 
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Default listing language in BCP 47 format.
+  *   `organizations` (*type:* `list(GoogleApi.PlayCustomApp.V1.Model.Organization.t)`, *default:* `nil`) - Organizations to which the custom app should be made available. If the request contains any organizations, then the app will be restricted to only these organizations. To support the organization linked to the developer account, the organization ID should be provided explicitly together with other organizations. If no organizations are provided, then the app is only available to the organization linked to the developer account.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Output only. Package name of the created Android app. Only present in the API response.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title for the Android app.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
 
   @type t :: %__MODULE__{
           :languageCode => String.t() | nil,
+          :organizations => list(GoogleApi.PlayCustomApp.V1.Model.Organization.t()) | nil,
           :packageName => String.t() | nil,
           :title => String.t() | nil
         }
 
   field(:languageCode)
+  field(:organizations, as: GoogleApi.PlayCustomApp.V1.Model.Organization, type: :list)
   field(:packageName)
   field(:title)
 end
