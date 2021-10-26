@@ -72,6 +72,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `monitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - Monitoring configuration for the cluster.
   *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id for the cluster.
+  *   `nodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.NodePoolDefaults.t`, *default:* `nil`) - Default NodePool settings for the entire cluster. These settings are overridden if specified on the specific NodePool object.
   *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
@@ -139,6 +140,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :monitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
           :initialClusterVersion => String.t() | nil,
           :id => String.t() | nil,
+          :nodePoolDefaults => GoogleApi.Container.V1.Model.NodePoolDefaults.t() | nil,
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil,
           :selfLink => String.t() | nil,
           :servicesIpv4Cidr => String.t() | nil,
@@ -203,6 +205,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:monitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
   field(:initialClusterVersion)
   field(:id)
+  field(:nodePoolDefaults, as: GoogleApi.Container.V1.Model.NodePoolDefaults)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
   field(:selfLink)
   field(:servicesIpv4Cidr)
