@@ -23,12 +23,13 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `desiredAuthenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - The desired authenticator groups config for the cluster.
-  *   `desiredAutopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - The desired Autopilot configuration for the cluster.
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredDatapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for the cluster.
   *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
+  *   `desiredDnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
+  *   `desiredGcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - The desired GCFS config for the cluster
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredL4ilbSubsettingConfig` (*type:* `GoogleApi.Container.V1.Model.ILBSubsettingConfig.t`, *default:* `nil`) - The desired L4 Internal Load Balancer Subsetting configuration.
@@ -59,13 +60,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
           :desiredAuthenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
-          :desiredAutopilot => GoogleApi.Container.V1.Model.Autopilot.t() | nil,
           :desiredBinaryAuthorization =>
             GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
           :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :desiredDatapathProvider => String.t() | nil,
           :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
+          :desiredDnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
+          :desiredGcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :desiredImageType => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t() | nil,
@@ -104,12 +106,13 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig
   )
 
-  field(:desiredAutopilot, as: GoogleApi.Container.V1.Model.Autopilot)
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:desiredDatapathProvider)
   field(:desiredDefaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
+  field(:desiredDnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
+  field(:desiredGcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:desiredImageType)
 
   field(:desiredIntraNodeVisibilityConfig,

@@ -25,6 +25,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) -  The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
+  *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - Google Container File System (image streaming) configs.
   *   `gvnic` (*type:* `GoogleApi.Container.V1.Model.VirtualNIC.t`, *default:* `nil`) - Enable or disable gvnic in the node pool.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type to use for this node. Note that for a given image type, the latest version of it will be used.
   *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
@@ -53,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :bootDiskKmsKey => String.t() | nil,
           :diskSizeGb => integer() | nil,
           :diskType => String.t() | nil,
+          :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :gvnic => GoogleApi.Container.V1.Model.VirtualNIC.t() | nil,
           :imageType => String.t() | nil,
           :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:bootDiskKmsKey)
   field(:diskSizeGb)
   field(:diskType)
+  field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:gvnic, as: GoogleApi.Container.V1.Model.VirtualNIC)
   field(:imageType)
   field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)

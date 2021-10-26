@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
 
   *   `datapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation.
   *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
+  *   `dnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
   *   `enableL4ilbSubsetting` (*type:* `boolean()`, *default:* `nil`) - Whether L4ILB Subsetting is enabled for this cluster.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
@@ -35,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   @type t :: %__MODULE__{
           :datapathProvider => String.t() | nil,
           :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
+          :dnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
           :enableIntraNodeVisibility => boolean() | nil,
           :enableL4ilbSubsetting => boolean() | nil,
           :network => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
 
   field(:datapathProvider)
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
+  field(:dnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
   field(:enableIntraNodeVisibility)
   field(:enableL4ilbSubsetting)
   field(:network)
