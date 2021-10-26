@@ -57,7 +57,7 @@ jobs:
                 repo: context.repo.repo,
                 title: "chore: Automatic update of apis.json",
                 head: context.repo.owner + ":action/auto-update-api-list",
-                base: "master",
+                base: "main",
                 maintainer_can_modify: true,
                 body: "Created by the update-api-list workflow.\n\nBe sure to review and edit CHECKME entries before merging."
               });
