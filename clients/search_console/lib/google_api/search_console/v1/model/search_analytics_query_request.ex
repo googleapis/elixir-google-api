@@ -30,6 +30,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryRequest do
   *   `searchType` (*type:* `String.t`, *default:* `nil`) - [Optional; Default is \\"web\\"] The search type to filter for.
   *   `startDate` (*type:* `String.t`, *default:* `nil`) -  [Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range.
   *   `startRow` (*type:* `integer()`, *default:* `nil`) - [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. [Optional; Default is \\"web\\"] Type of report: search type, or either Discover or Gnews.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryRequest do
           :rowLimit => integer() | nil,
           :searchType => String.t() | nil,
           :startDate => String.t() | nil,
-          :startRow => integer() | nil
+          :startRow => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:aggregationType)
@@ -61,6 +63,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryRequest do
   field(:searchType)
   field(:startDate)
   field(:startRow)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryRequest do
