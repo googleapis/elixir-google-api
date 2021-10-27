@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   @moduledoc """
-
+  NEXT ID: 9
 
   ## Attributes
 
@@ -26,6 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the API proxy bundle as a URI.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the API or shared flow revision to be deployed in the following format: `organizations/{org}/apis/{api}/revisions/{rev}` or `organizations/{org}/sharedflows/{sharedflow}/revisions/{rev}`
   *   `proxyUid` (*type:* `String.t`, *default:* `nil`) - Unique ID of the API proxy revision.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account identity associated with this deployment. If non-empty, will be in the following format: `projects/-/serviceAccounts/{account_email}`
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique ID. The ID will only change if the deployment is deleted and recreated.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
           :location => String.t() | nil,
           :name => String.t() | nil,
           :proxyUid => String.t() | nil,
+          :serviceAccount => String.t() | nil,
           :uid => String.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   field(:location)
   field(:name)
   field(:proxyUid)
+  field(:serviceAccount)
   field(:uid)
 end
 

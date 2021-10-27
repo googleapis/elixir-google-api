@@ -34,7 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RatePlan do
   *   `fixedRecurringFee` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - Fixed amount that is charged at a defined interval and billed in advance of use of the API product. The fee will be prorated for the first billing period.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the rate plan was last modified in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the rate plan.
-  *   `paymentFundingModel` (*type:* `String.t`, *default:* `nil`) - Flag that specifies the billing account type, prepaid or postpaid.
+  *   `paymentFundingModel` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: This field is no longer supported and will eventually be removed when Apigee Hybrid 1.5/1.6 is no longer supported. Instead, use the `billingType` field inside `DeveloperMonetizationConfig` resource. Flag that specifies the billing account type, prepaid or postpaid.
   *   `revenueShareRates` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevenueShareRange.t)`, *default:* `nil`) - Details of the revenue sharing model.
   *   `revenueShareType` (*type:* `String.t`, *default:* `nil`) - Method used to calculate the revenue that is shared with developers.
   *   `setupFee` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - Initial, one-time fee paid when purchasing the API product.
