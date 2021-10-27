@@ -23,7 +23,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceReference do
 
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the Compute Engine instance.
   *   `instanceName` (*type:* `String.t`, *default:* `nil`) - The user-friendly name of the Compute Engine instance.
-  *   `publicKey` (*type:* `String.t`, *default:* `nil`) - The public key used for sharing data with this instance.
+  *   `publicEciesKey` (*type:* `String.t`, *default:* `nil`) - The public ECIES key used for sharing data with this instance.
+  *   `publicKey` (*type:* `String.t`, *default:* `nil`) - The public RSA key used for sharing data with this instance.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,11 +32,13 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceReference do
   @type t :: %__MODULE__{
           :instanceId => String.t() | nil,
           :instanceName => String.t() | nil,
+          :publicEciesKey => String.t() | nil,
           :publicKey => String.t() | nil
         }
 
   field(:instanceId)
   field(:instanceName)
+  field(:publicEciesKey)
   field(:publicKey)
 end
 
