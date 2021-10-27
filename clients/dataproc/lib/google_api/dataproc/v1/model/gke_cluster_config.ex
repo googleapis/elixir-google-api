@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GkeClusterConfig do
   @moduledoc """
-  The GKE config for this cluster.
+  The cluster's GKE config.
 
   ## Attributes
 

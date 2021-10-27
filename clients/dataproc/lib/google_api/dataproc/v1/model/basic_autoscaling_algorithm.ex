@@ -22,17 +22,21 @@ defmodule GoogleApi.Dataproc.V1.Model.BasicAutoscalingAlgorithm do
   ## Attributes
 
   *   `cooldownPeriod` (*type:* `String.t`, *default:* `nil`) - Optional. Duration between scaling events. A scaling period starts after the update operation from the previous event has completed.Bounds: 2m, 1d. Default: 2m.
-  *   `yarnConfig` (*type:* `GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig.t`, *default:* `nil`) - Required. YARN autoscaling configuration.
+  *   `sparkStandaloneConfig` (*type:* `GoogleApi.Dataproc.V1.Model.SparkStandaloneAutoscalingConfig.t`, *default:* `nil`) - Optional. Spark Standalone autoscaling configuration
+  *   `yarnConfig` (*type:* `GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig.t`, *default:* `nil`) - Optional. YARN autoscaling configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cooldownPeriod => String.t() | nil,
+          :sparkStandaloneConfig =>
+            GoogleApi.Dataproc.V1.Model.SparkStandaloneAutoscalingConfig.t() | nil,
           :yarnConfig => GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig.t() | nil
         }
 
   field(:cooldownPeriod)
+  field(:sparkStandaloneConfig, as: GoogleApi.Dataproc.V1.Model.SparkStandaloneAutoscalingConfig)
   field(:yarnConfig, as: GoogleApi.Dataproc.V1.Model.BasicYarnAutoscalingConfig)
 end
 
