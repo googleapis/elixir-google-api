@@ -183,6 +183,7 @@ defmodule GoogleApi.Content.V21.Api.Accountstatuses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:destinations` (*type:* `list(String.t)`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of account statuses to return in the response, used for paging.
+      *   `:name` (*type:* `String.t`) - If set, only the accounts with the given name (case sensitive) will be returned.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -211,6 +212,7 @@ defmodule GoogleApi.Content.V21.Api.Accountstatuses do
       :upload_protocol => :query,
       :destinations => :query,
       :maxResults => :query,
+      :name => :query,
       :pageToken => :query
     }
 

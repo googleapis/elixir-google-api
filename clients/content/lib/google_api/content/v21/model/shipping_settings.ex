@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.ShippingSettings do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses.
   *   `postalCodeGroups` (*type:* `list(GoogleApi.Content.V21.Model.PostalCodeGroup.t)`, *default:* `nil`) - A list of postal code groups that can be referred to in `services`. Optional.
   *   `services` (*type:* `list(GoogleApi.Content.V21.Model.Service.t)`, *default:* `nil`) - The target account's list of services. Optional.
+  *   `warehouses` (*type:* `list(GoogleApi.Content.V21.Model.Warehouse.t)`, *default:* `nil`) - Optional. A list of warehouses which can be referred to in `services`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Content.V21.Model.ShippingSettings do
   @type t :: %__MODULE__{
           :accountId => String.t() | nil,
           :postalCodeGroups => list(GoogleApi.Content.V21.Model.PostalCodeGroup.t()) | nil,
-          :services => list(GoogleApi.Content.V21.Model.Service.t()) | nil
+          :services => list(GoogleApi.Content.V21.Model.Service.t()) | nil,
+          :warehouses => list(GoogleApi.Content.V21.Model.Warehouse.t()) | nil
         }
 
   field(:accountId)
   field(:postalCodeGroups, as: GoogleApi.Content.V21.Model.PostalCodeGroup, type: :list)
   field(:services, as: GoogleApi.Content.V21.Model.Service, type: :list)
+  field(:warehouses, as: GoogleApi.Content.V21.Model.Warehouse, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ShippingSettings do

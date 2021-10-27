@@ -23,6 +23,7 @@ defmodule GoogleApi.Content.V2.Model.AccountBusinessInformation do
 
   *   `address` (*type:* `GoogleApi.Content.V2.Model.AccountAddress.t`, *default:* `nil`) - The address of the business.
   *   `customerService` (*type:* `GoogleApi.Content.V2.Model.AccountCustomerService.t`, *default:* `nil`) - The customer service information of the business.
+  *   `koreanBusinessRegistrationNumber` (*type:* `String.t`, *default:* `nil`) - The 10-digit [Korean business registration number](https://support.google.com/merchants/answer/9037766) separated with dashes in the format: XXX-XX-XXXXX. This field will only be updated if explicitly set.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the business.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Content.V2.Model.AccountBusinessInformation do
   @type t :: %__MODULE__{
           :address => GoogleApi.Content.V2.Model.AccountAddress.t() | nil,
           :customerService => GoogleApi.Content.V2.Model.AccountCustomerService.t() | nil,
+          :koreanBusinessRegistrationNumber => String.t() | nil,
           :phoneNumber => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V2.Model.AccountAddress)
   field(:customerService, as: GoogleApi.Content.V2.Model.AccountCustomerService)
+  field(:koreanBusinessRegistrationNumber)
   field(:phoneNumber)
 end
 

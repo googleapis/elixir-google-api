@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#returnpolicyListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnpolicyListResponse`".
   *   `resources` (*type:* `list(GoogleApi.Content.V21.Model.ReturnPolicy.t)`, *default:* `nil`) - 
   """
 

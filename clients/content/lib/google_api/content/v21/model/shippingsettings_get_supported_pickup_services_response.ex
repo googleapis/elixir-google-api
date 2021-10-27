@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.ShippingsettingsGetSupportedPickupServices
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedPickupServicesResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#shippingsettingsGetSupportedPickupServicesResponse`".
   *   `pickupServices` (*type:* `list(GoogleApi.Content.V21.Model.PickupServicesPickupService.t)`, *default:* `nil`) - A list of supported pickup services. May be empty.
   """
 

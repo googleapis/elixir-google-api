@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.BusinessDayConfig do
 
   ## Attributes
 
-  *   `businessDays` (*type:* `list(String.t)`, *default:* `nil`) - Regular business days. May not be empty.
+  *   `businessDays` (*type:* `list(String.t)`, *default:* `nil`) - Regular business days, such as '"monday"'. May not be empty.
   """
 
   use GoogleApi.Gax.ModelBase

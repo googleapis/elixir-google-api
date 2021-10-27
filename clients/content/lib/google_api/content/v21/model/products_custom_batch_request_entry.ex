@@ -22,11 +22,12 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
   ## Attributes
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
-  *   `feedId` (*type:* `String.t`, *default:* `nil`) - The Content API feed id.
+  *   `feedId` (*type:* `String.t`, *default:* `nil`) - The Content API Supplemental Feed ID. If present then product insertion or deletion applies to a supplemental feed instead of primary Content API feed.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`delete`" - "`get`" - "`insert`" 
-  *   `product` (*type:* `GoogleApi.Content.V21.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is `insert`.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is `get` or `delete`.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`delete`" - "`get`" - "`insert`" - "`update`" 
+  *   `product` (*type:* `GoogleApi.Content.V21.Model.Product.t`, *default:* `nil`) - The product to insert or update. Only required if the method is `insert` or `update`. If the `update` method is used with `updateMask` only to delete a field, then this isn't required. For example, setting `salePrice` on the `updateMask` and not providing a `product` will result in an existing sale price on the product specified by `productId` being deleted.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or mutate. Only defined if the method is `get`, `delete`, or `update`.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The comma-separated list of product attributes to be updated. Example: `"title,salePrice"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
           :merchantId => String.t() | nil,
           :method => String.t() | nil,
           :product => GoogleApi.Content.V21.Model.Product.t() | nil,
-          :productId => String.t() | nil
+          :productId => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:batchId)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
   field(:method)
   field(:product, as: GoogleApi.Content.V21.Model.Product)
   field(:productId)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do

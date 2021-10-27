@@ -23,6 +23,7 @@ defmodule GoogleApi.Content.V21.Model.AccountStatus do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which the status is reported.
   *   `accountLevelIssues` (*type:* `list(GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue.t)`, *default:* `nil`) - A list of account level issues.
+  *   `accountManagement` (*type:* `String.t`, *default:* `nil`) - How the account is managed. Acceptable values are: - "`manual`" - "`automatic`" 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountStatus`"
   *   `products` (*type:* `list(GoogleApi.Content.V21.Model.AccountStatusProducts.t)`, *default:* `nil`) - List of product-related data by channel, destination, and country. Data in this field may be delayed by up to 30 minutes.
   *   `websiteClaimed` (*type:* `boolean()`, *default:* `nil`) - Whether the account's website is claimed or not.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Content.V21.Model.AccountStatus do
           :accountId => String.t() | nil,
           :accountLevelIssues =>
             list(GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue.t()) | nil,
+          :accountManagement => String.t() | nil,
           :kind => String.t() | nil,
           :products => list(GoogleApi.Content.V21.Model.AccountStatusProducts.t()) | nil,
           :websiteClaimed => boolean() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.Content.V21.Model.AccountStatus do
     type: :list
   )
 
+  field(:accountManagement)
   field(:kind)
   field(:products, as: GoogleApi.Content.V21.Model.AccountStatusProducts, type: :list)
   field(:websiteClaimed)

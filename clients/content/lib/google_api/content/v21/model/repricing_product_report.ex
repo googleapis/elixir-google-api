@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingProductReport do
   ## Attributes
 
   *   `applicationCount` (*type:* `String.t`, *default:* `nil`) - Total count of Repricer applications. This value captures how many times the rule of this type was applied to this product during this reporting period.
-  *   `buyboxWinningProductStats` (*type:* `GoogleApi.Content.V21.Model.RepricingProductReportBuyboxWinningProductStats.t`, *default:* `nil`) - Stats specific to buybox winning rules for product report.
+  *   `buyboxWinningProductStats` (*type:* `GoogleApi.Content.V21.Model.RepricingProductReportBuyboxWinningProductStats.t`, *default:* `nil`) - Stats specific to buybox winning rules for product report (deprecated).
   *   `date` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Date of the stats in this report. The report starts and ends according to the merchant's timezone.
   *   `highWatermark` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Maximum displayed price after repriced during this reporting period.
   *   `inapplicabilityDetails` (*type:* `list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t)`, *default:* `nil`) - List of all reasons the rule did not apply to the product during the specified reporting period.

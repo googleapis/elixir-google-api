@@ -23,11 +23,12 @@ defmodule GoogleApi.Content.V2.Model.WarehouseBasedDeliveryTime do
 
   *   `carrier` (*type:* `String.t`, *default:* `nil`) - Required. Carrier, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved via the `listSupportedCarriers` method.
   *   `carrierService` (*type:* `String.t`, *default:* `nil`) - Required. Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved via the `listSupportedCarriers` method. The name of the service must be in the eddSupportedServices list.
-  *   `originAdministrativeArea` (*type:* `String.t`, *default:* `nil`) - Required. Shipping origin's state.
-  *   `originCity` (*type:* `String.t`, *default:* `nil`) - Required. Shipping origin's city.
-  *   `originCountry` (*type:* `String.t`, *default:* `nil`) - Required. Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml).
-  *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - Required. Shipping origin.
+  *   `originAdministrativeArea` (*type:* `String.t`, *default:* `nil`) - Shipping origin's state.
+  *   `originCity` (*type:* `String.t`, *default:* `nil`) - Shipping origin's city.
+  *   `originCountry` (*type:* `String.t`, *default:* `nil`) - Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml).
+  *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - Shipping origin.
   *   `originStreetAddress` (*type:* `String.t`, *default:* `nil`) - Shipping origin's street address
+  *   `warehouseName` (*type:* `String.t`, *default:* `nil`) - The name of the warehouse. Warehouse name need to be matched with name. If warehouseName is set, the below fields will be ignored. The warehouse info will be read from warehouse.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.Content.V2.Model.WarehouseBasedDeliveryTime do
           :originCity => String.t() | nil,
           :originCountry => String.t() | nil,
           :originPostalCode => String.t() | nil,
-          :originStreetAddress => String.t() | nil
+          :originStreetAddress => String.t() | nil,
+          :warehouseName => String.t() | nil
         }
 
   field(:carrier)
@@ -49,6 +51,7 @@ defmodule GoogleApi.Content.V2.Model.WarehouseBasedDeliveryTime do
   field(:originCountry)
   field(:originPostalCode)
   field(:originStreetAddress)
+  field(:warehouseName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.WarehouseBasedDeliveryTime do

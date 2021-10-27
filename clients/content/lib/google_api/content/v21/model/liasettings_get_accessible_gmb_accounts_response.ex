@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsGetAccessibleGmbAccountsRespons
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the Merchant Center account.
   *   `gmbAccounts` (*type:* `list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t)`, *default:* `nil`) - A list of GMB accounts which are available to the merchant.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsGetAccessibleGmbAccountsResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsGetAccessibleGmbAccountsResponse`".
   """
 
   use GoogleApi.Gax.ModelBase
