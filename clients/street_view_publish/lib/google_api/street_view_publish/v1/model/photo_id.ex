@@ -21,7 +21,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoId do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for a photo.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique identifier for a photo.
   """
 
   use GoogleApi.Gax.ModelBase

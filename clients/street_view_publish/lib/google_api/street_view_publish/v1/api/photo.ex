@@ -273,7 +273,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Required. A unique identifier for a photo.
+  *   `id` (*type:* `String.t`) - A unique identifier for a photo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
