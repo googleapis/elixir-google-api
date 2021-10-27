@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.PeeredDnsDomain do
 
   ## Attributes
 
-  *   `dnsSuffix` (*type:* `String.t`, *default:* `nil`) - The DNS domain name suffix e.g. `example.com.`.
+  *   `dnsSuffix` (*type:* `String.t`, *default:* `nil`) - The DNS domain name suffix e.g. `example.com.`. Cloud DNS requires that a DNS suffix ends with a trailing dot.
   *   `name` (*type:* `String.t`, *default:* `nil`) - User assigned name for this resource. Must be unique within the consumer network. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.
   """
 
