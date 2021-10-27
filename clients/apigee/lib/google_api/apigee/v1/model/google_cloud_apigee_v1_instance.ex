@@ -31,6 +31,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID of the instance. Values must match the regular expression `^a-z{0,30}[a-z\\d]$`.
   *   `peeringCidrRange` (*type:* `String.t`, *default:* `nil`) - Optional. Size of the CIDR block range that will be reserved by the instance. PAID organizations support `SLASH_16` to `SLASH_20` and defaults to `SLASH_16`. Evaluation organizations support only `SLASH_23`.
   *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. Port number of the exposed Apigee endpoint.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Version of the runtime system running in the instance. The runtime system is the set of components that serve the API Proxy traffic in your Environments.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the instance. Values other than `ACTIVE` means the resource is not ready to use.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :name => String.t() | nil,
           :peeringCidrRange => String.t() | nil,
           :port => String.t() | nil,
+          :runtimeVersion => String.t() | nil,
           :state => String.t() | nil
         }
 
@@ -60,6 +62,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   field(:name)
   field(:peeringCidrRange)
   field(:port)
+  field(:runtimeVersion)
   field(:state)
 end
 

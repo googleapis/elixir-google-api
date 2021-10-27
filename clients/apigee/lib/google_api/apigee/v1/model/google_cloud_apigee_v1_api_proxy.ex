@@ -21,21 +21,24 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxy do
 
   ## Attributes
 
-  *   `latestRevisionId` (*type:* `String.t`, *default:* `nil`) - The id of the most recently created revision for this api proxy.
-  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t`, *default:* `nil`) - Metadata describing the API proxy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the API proxy.
-  *   `revision` (*type:* `list(String.t)`, *default:* `nil`) - List of revisons defined for the API proxy.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - User labels applied to this API Proxy.
+  *   `latestRevisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the most recently created revision for this api proxy.
+  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t`, *default:* `nil`) - Output only. Metadata describing the API proxy.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the API proxy.
+  *   `revision` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of revisons defined for the API proxy.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :labels => map() | nil,
           :latestRevisionId => String.t() | nil,
           :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t() | nil,
           :name => String.t() | nil,
           :revision => list(String.t()) | nil
         }
 
+  field(:labels, type: :map)
   field(:latestRevisionId)
   field(:metaData, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata)
   field(:name)

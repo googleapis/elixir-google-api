@@ -21,7 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
 
   ## Attributes
 
+  *   `apiProxyType` (*type:* `String.t`, *default:* `nil`) - Optional. API Proxy type supported by the environment. The type can be set when creating the Environment and cannot be changed.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this environment as milliseconds since epoch.
+  *   `deploymentType` (*type:* `String.t`, *default:* `nil`) - Optional. Deployment type supported by the environment. The deployment type can be set when creating the environment and cannot be changed. When you enable archive deployment, you will be **prevented from performing** a [subset of actions](/apigee/docs/api-platform/local-development/overview#prevented-actions) within the environment, including: * Managing the deployment of API proxy or shared flow revisions * Creating, updating, or deleting resource files * Creating, updating, or deleting target servers
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the environment.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for this environment.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of this environment as milliseconds since epoch.
@@ -33,7 +35,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apiProxyType => String.t() | nil,
           :createdAt => String.t() | nil,
+          :deploymentType => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :lastModifiedAt => String.t() | nil,
@@ -42,7 +46,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
           :state => String.t() | nil
         }
 
+  field(:apiProxyType)
   field(:createdAt)
+  field(:deploymentType)
   field(:description)
   field(:displayName)
   field(:lastModifiedAt)

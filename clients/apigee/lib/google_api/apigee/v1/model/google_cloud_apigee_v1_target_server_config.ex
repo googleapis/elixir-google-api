@@ -21,6 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
 
   ## Attributes
 
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the target server is enabled. An empty/omitted value for this field should be interpreted as true.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Host name of the target server.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Target server revision name in the following format: `organizations/{org}/environments/{env}/targetservers/{targetserver}/revisions/{rev}`
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port number for the target server.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enabled => boolean() | nil,
           :host => String.t() | nil,
           :name => String.t() | nil,
           :port => integer() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
           :tlsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t() | nil
         }
 
+  field(:enabled)
   field(:host)
   field(:name)
   field(:port)

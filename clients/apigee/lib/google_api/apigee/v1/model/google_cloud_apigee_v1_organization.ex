@@ -30,11 +30,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was created in milliseconds since epoch.
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Apigee organization.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for the Apigee organization. Unused, but reserved for future use.
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of environments in the Apigee organization.
   *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization is scheduled for deletion.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was last modified in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
+  *   `portalDisabled` (*type:* `boolean()`, *default:* `nil`) - Configuration for the Portals settings.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Project ID associated with the Apigee organization.
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
   *   `runtimeDatabaseEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances. Update is not allowed after the organization is created. Required when [RuntimeType](#RuntimeType) is `CLOUD`. If not specified when [RuntimeType](#RuntimeType) is `TRIAL`, a Google-Managed encryption key will be used. For example: "projects/foo/locations/us/keyRings/bar/cryptoKeys/baz". **Note:** Not supported for Apigee hybrid.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :expiresAt => String.t() | nil,
           :lastModifiedAt => String.t() | nil,
           :name => String.t() | nil,
+          :portalDisabled => boolean() | nil,
           :projectId => String.t() | nil,
           :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t() | nil,
           :runtimeDatabaseEncryptionKeyName => String.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:expiresAt)
   field(:lastModifiedAt)
   field(:name)
+  field(:portalDisabled)
   field(:projectId)
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
   field(:runtimeDatabaseEncryptionKeyName)

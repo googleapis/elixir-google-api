@@ -21,12 +21,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   ## Attributes
 
+  *   `arcConfigLocation` (*type:* `String.t`, *default:* `nil`) - The location for the config blob of API Runtime Control, aka Envoy Adapter, for op-based authentication as a URI, e.g. a Cloud Storage URI. This is only used by Envoy-based gateways.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that the environment configuration was created.
   *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t)`, *default:* `nil`) - List of data collectors used by the deployments in the environment.
   *   `debugMask` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t`, *default:* `nil`) - Debug mask that applies to all deployments in the environment.
   *   `deployments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t)`, *default:* `nil`) - List of deployments in the environment.
   *   `featureFlags` (*type:* `map()`, *default:* `nil`) - Feature flags inherited from the organization and environment.
   *   `flowhooks` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t)`, *default:* `nil`) - List of flow hooks in the environment.
+  *   `gatewayConfigLocation` (*type:* `String.t`, *default:* `nil`) - The location for the gateway config blob as a URI, e.g. a Cloud Storage URI. This is only used by Envoy-based gateways.
   *   `keystores` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t)`, *default:* `nil`) - List of keystores in the environment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment configuration in the following format: `organizations/{org}/environments/{env}/configs/{config}`
   *   `provider` (*type:* `String.t`, *default:* `nil`) - Used by the Control plane to add context information to help detect the source of the document during diagnostics and debugging.
@@ -43,6 +45,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :arcConfigLocation => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :dataCollectors =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()) | nil,
@@ -52,6 +55,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :featureFlags => map() | nil,
           :flowhooks =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t()) | nil,
+          :gatewayConfigLocation => String.t() | nil,
           :keystores =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t()) | nil,
           :name => String.t() | nil,
@@ -70,6 +74,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :uid => String.t() | nil
         }
 
+  field(:arcConfigLocation)
   field(:createTime, as: DateTime)
 
   field(:dataCollectors,
@@ -86,6 +91,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   field(:featureFlags, type: :map)
   field(:flowhooks, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig, type: :list)
+  field(:gatewayConfigLocation)
   field(:keystores, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig, type: :list)
   field(:name)
   field(:provider)
