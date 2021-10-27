@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
   @moduledoc """
-  Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
+  Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
 
   ## Attributes
 

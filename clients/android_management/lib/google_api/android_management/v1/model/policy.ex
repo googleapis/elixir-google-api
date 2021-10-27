@@ -75,7 +75,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
   *   `usbMassStorageEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether USB storage is enabled. Deprecated.
   *   `ensureVerifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app verification is force-enabled.
-  *   `advancedSecurityOverrides` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t`, *default:* `nil`) - Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
+  *   `advancedSecurityOverrides` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t`, *default:* `nil`) - Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
   *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
   *   `policyEnforcementRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t)`, *default:* `nil`) - Rules that define the behavior when a particular policy can not be applied on device
   *   `vpnConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring VPN is disabled.
