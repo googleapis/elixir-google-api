@@ -21,16 +21,25 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
 
   ## Attributes
 
+  *   `outputConfig` (*type:* `GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t`, *default:* `nil`) - Original output config if present in the request.
+  *   `outputError` (*type:* `GoogleApi.Speech.V1.Model.Status.t`, *default:* `nil`) - If the transcript output fails this field contains the relevant error.
   *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
+  *   `totalBilledTime` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil
+          :outputConfig => GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t() | nil,
+          :outputError => GoogleApi.Speech.V1.Model.Status.t() | nil,
+          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
+          :totalBilledTime => String.t() | nil
         }
 
+  field(:outputConfig, as: GoogleApi.Speech.V1.Model.TranscriptOutputConfig)
+  field(:outputError, as: GoogleApi.Speech.V1.Model.Status)
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
+  field(:totalBilledTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do

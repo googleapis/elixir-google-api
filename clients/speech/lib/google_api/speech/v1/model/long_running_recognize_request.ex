@@ -23,17 +23,20 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeRequest do
 
   *   `audio` (*type:* `GoogleApi.Speech.V1.Model.RecognitionAudio.t`, *default:* `nil`) - Required. The audio data to be recognized.
   *   `config` (*type:* `GoogleApi.Speech.V1.Model.RecognitionConfig.t`, *default:* `nil`) - Required. Provides information to the recognizer that specifies how to process the request.
+  *   `outputConfig` (*type:* `GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t`, *default:* `nil`) - Optional. Specifies an optional destination for the recognition results.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :audio => GoogleApi.Speech.V1.Model.RecognitionAudio.t() | nil,
-          :config => GoogleApi.Speech.V1.Model.RecognitionConfig.t() | nil
+          :config => GoogleApi.Speech.V1.Model.RecognitionConfig.t() | nil,
+          :outputConfig => GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t() | nil
         }
 
   field(:audio, as: GoogleApi.Speech.V1.Model.RecognitionAudio)
   field(:config, as: GoogleApi.Speech.V1.Model.RecognitionConfig)
+  field(:outputConfig, as: GoogleApi.Speech.V1.Model.TranscriptOutputConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeRequest do

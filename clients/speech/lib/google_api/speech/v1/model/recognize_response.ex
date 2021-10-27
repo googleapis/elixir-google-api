@@ -22,15 +22,18 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   ## Attributes
 
   *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
+  *   `totalBilledTime` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil
+          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
+          :totalBilledTime => String.t() | nil
         }
 
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
+  field(:totalBilledTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognizeResponse do
