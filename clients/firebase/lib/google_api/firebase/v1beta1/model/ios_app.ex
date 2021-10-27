@@ -27,6 +27,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `IosApp`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the IosApp, in the format: projects/PROJECT_IDENTIFIER /iosApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.iosApps#IosApp.FIELDS.app_id)).
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `IosApp`.
+  *   `teamId` (*type:* `String.t`, *default:* `nil`) - The Apple Developer Team ID associated with the App in the App Store.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
           :bundleId => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
-          :projectId => String.t() | nil
+          :projectId => String.t() | nil,
+          :teamId => String.t() | nil
         }
 
   field(:appId)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
   field(:displayName)
   field(:name)
   field(:projectId)
+  field(:teamId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firebase.V1beta1.Model.IosApp do

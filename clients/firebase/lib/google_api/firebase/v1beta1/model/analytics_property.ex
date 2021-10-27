@@ -21,6 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty do
 
   ## Attributes
 
+  *   `analyticsAccountId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the [Google Analytics account](https://www.google.com/analytics/) for the Google Analytics property associated with the specified FirebaseProject.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the Google Analytics property associated with the specified `FirebaseProject`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The globally unique, Google-assigned identifier of the Google Analytics property associated with the specified `FirebaseProject`. If you called [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics) to link the `FirebaseProject` with a Google Analytics account, the value in this `id` field is the same as the ID of the property either specified or provisioned with that call to `AddGoogleAnalytics`.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :analyticsAccountId => String.t() | nil,
           :displayName => String.t() | nil,
           :id => String.t() | nil
         }
 
+  field(:analyticsAccountId)
   field(:displayName)
   field(:id)
 end
