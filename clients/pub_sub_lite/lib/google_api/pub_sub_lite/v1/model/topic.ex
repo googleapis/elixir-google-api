@@ -23,6 +23,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.Topic do
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the topic. Structured like: projects/{project_number}/locations/{location}/topics/{topic_id}
   *   `partitionConfig` (*type:* `GoogleApi.PubSubLite.V1.Model.PartitionConfig.t`, *default:* `nil`) - The settings for this topic's partitions.
+  *   `reservationConfig` (*type:* `GoogleApi.PubSubLite.V1.Model.ReservationConfig.t`, *default:* `nil`) - The settings for this topic's Reservation usage.
   *   `retentionConfig` (*type:* `GoogleApi.PubSubLite.V1.Model.RetentionConfig.t`, *default:* `nil`) - The settings for this topic's message retention.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.PubSubLite.V1.Model.Topic do
   @type t :: %__MODULE__{
           :name => String.t() | nil,
           :partitionConfig => GoogleApi.PubSubLite.V1.Model.PartitionConfig.t() | nil,
+          :reservationConfig => GoogleApi.PubSubLite.V1.Model.ReservationConfig.t() | nil,
           :retentionConfig => GoogleApi.PubSubLite.V1.Model.RetentionConfig.t() | nil
         }
 
   field(:name)
   field(:partitionConfig, as: GoogleApi.PubSubLite.V1.Model.PartitionConfig)
+  field(:reservationConfig, as: GoogleApi.PubSubLite.V1.Model.ReservationConfig)
   field(:retentionConfig, as: GoogleApi.PubSubLite.V1.Model.RetentionConfig)
 end
 
