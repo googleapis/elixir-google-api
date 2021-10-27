@@ -21,7 +21,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Error do
 
   ## Attributes
 
-  *   `context` (*type:* `String.t`, *default:* `nil`) - Human readable stack trace string.
+  *   `context` (*type:* `String.t`, *default:* `nil`) - Human-readable stack trace string.
   *   `payload` (*type:* `String.t`, *default:* `nil`) - Error message and data returned represented as a JSON string.
   *   `stackTrace` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace.t`, *default:* `nil`) - Stack trace with detailed information of where error was generated.
   """

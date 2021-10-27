@@ -21,7 +21,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace do
 
   ## Attributes
 
-  *   `elements` (*type:* `list(GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement.t)`, *default:* `nil`) - An array of Stack elements.
+  *   `elements` (*type:* `list(GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement.t)`, *default:* `nil`) - An array of stack elements.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Position do
   ## Attributes
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - The source code column position (of the line) the current instruction was generated from.
-  *   `length` (*type:* `String.t`, *default:* `nil`) - The length in bytes of text in this character group, e.g. digits of a number, string length, or AST (abstract syntax tree) node.
+  *   `length` (*type:* `String.t`, *default:* `nil`) - The number of bytes of source code making up this stack trace element.
   *   `line` (*type:* `String.t`, *default:* `nil`) - The source code line number the current instruction was generated from.
   """
 
