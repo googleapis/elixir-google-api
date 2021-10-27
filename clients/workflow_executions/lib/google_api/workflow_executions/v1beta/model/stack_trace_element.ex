@@ -21,7 +21,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement do
 
   ## Attributes
 
-  *   `position` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.Position.t`, *default:* `nil`) - The source position information of the stacktrace element.
+  *   `position` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.Position.t`, *default:* `nil`) - The source position information of the stack trace element.
   *   `routine` (*type:* `String.t`, *default:* `nil`) - The routine where the error occurred.
   *   `step` (*type:* `String.t`, *default:* `nil`) - The step the error occurred at.
   """
