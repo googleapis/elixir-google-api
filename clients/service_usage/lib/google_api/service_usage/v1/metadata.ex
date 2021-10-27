@@ -20,7 +20,7 @@ defmodule GoogleApi.ServiceUsage.V1 do
   API client metadata for GoogleApi.ServiceUsage.V1.
   """
 
-  @discovery_revision "20210731"
+  @discovery_revision "20211025"
 
   def discovery_revision(), do: @discovery_revision
 end
