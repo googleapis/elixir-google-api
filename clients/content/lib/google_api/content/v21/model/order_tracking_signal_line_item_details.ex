@@ -21,28 +21,43 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails do
 
   ## Attributes
 
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the product.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - The Global Trade Item Number.
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - Required. The ID for this line item.
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - The manufacturer part number.
+  *   `productDescription` (*type:* `String.t`, *default:* `nil`) - Plain text description of this product (deprecated: Please use product_title instead).
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The Content API REST ID of the product, in the form channel:contentLanguage:targetCountry:offerId.
+  *   `productTitle` (*type:* `String.t`, *default:* `nil`) - Plain text title of this product.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The quantity of the line item in the order.
+  *   `sku` (*type:* `String.t`, *default:* `nil`) - Merchant SKU for this item (deprecated).
+  *   `upc` (*type:* `String.t`, *default:* `nil`) - Universal product code for this item (deprecated: Please use GTIN instead).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :brand => String.t() | nil,
           :gtin => String.t() | nil,
           :lineItemId => String.t() | nil,
           :mpn => String.t() | nil,
+          :productDescription => String.t() | nil,
           :productId => String.t() | nil,
-          :quantity => String.t() | nil
+          :productTitle => String.t() | nil,
+          :quantity => String.t() | nil,
+          :sku => String.t() | nil,
+          :upc => String.t() | nil
         }
 
+  field(:brand)
   field(:gtin)
   field(:lineItemId)
   field(:mpn)
+  field(:productDescription)
   field(:productId)
+  field(:productTitle)
   field(:quantity)
+  field(:sku)
+  field(:upc)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails do

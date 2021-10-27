@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrderreportsListTransactionsResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListTransactionsResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#orderreportsListTransactionsResponse`".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of transactions.
   *   `transactions` (*type:* `list(GoogleApi.Content.V21.Model.OrderReportTransaction.t)`, *default:* `nil`) - The list of transactions.
   """

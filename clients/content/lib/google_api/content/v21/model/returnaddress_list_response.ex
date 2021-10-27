@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#returnaddressListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnaddressListResponse`".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of addresses.
   *   `resources` (*type:* `list(GoogleApi.Content.V21.Model.ReturnAddress.t)`, *default:* `nil`) - 
   """

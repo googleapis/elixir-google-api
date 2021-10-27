@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V21.Model.ReturnaddressCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#returnaddressCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnaddressCustomBatchResponse`".
   """
 
   use GoogleApi.Gax.ModelBase

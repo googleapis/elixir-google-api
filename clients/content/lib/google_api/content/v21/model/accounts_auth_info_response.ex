@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsAuthInfoResponse do
   ## Attributes
 
   *   `accountIdentifiers` (*type:* `list(GoogleApi.Content.V21.Model.AccountIdentifier.t)`, *default:* `nil`) - The account identifiers corresponding to the authenticated user. - For an individual account: only the merchant ID is defined - For an aggregator: only the aggregator ID is defined - For a subaccount of an MCA: both the merchant ID and the aggregator ID are defined. 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsAuthInfoResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountsAuthInfoResponse`".
   """
 
   use GoogleApi.Gax.ModelBase

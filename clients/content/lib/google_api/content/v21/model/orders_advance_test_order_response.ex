@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersAdvanceTestOrderResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersAdvanceTestOrderResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#ordersAdvanceTestOrderResponse`".
   """
 
   use GoogleApi.Gax.ModelBase

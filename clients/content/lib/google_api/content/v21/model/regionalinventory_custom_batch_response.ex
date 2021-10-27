@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#regionalinventoryCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#regionalinventoryCustomBatchResponse`".
   """
 
   use GoogleApi.Gax.ModelBase

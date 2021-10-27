@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#returnpolicyCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnpolicyCustomBatchResponse`".
   """
 
   use GoogleApi.Gax.ModelBase

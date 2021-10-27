@@ -21,22 +21,79 @@ defmodule GoogleApi.Content.V21.Model.Segments do
 
   ## Attributes
 
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the product.
+  *   `categoryL1` (*type:* `String.t`, *default:* `nil`) - [Product category (1st level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
+  *   `categoryL2` (*type:* `String.t`, *default:* `nil`) - [Product category (2nd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
+  *   `categoryL3` (*type:* `String.t`, *default:* `nil`) - [Product category (3rd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
+  *   `categoryL4` (*type:* `String.t`, *default:* `nil`) - [Product category (4th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
+  *   `categoryL5` (*type:* `String.t`, *default:* `nil`) - [Product category (5th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency in which price metrics are represented, e.g., if you select `ordered_item_sales_micros`, the returned value will be represented by this currency.
+  *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of products.
+  *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of products.
+  *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of products.
+  *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of products.
+  *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of products.
   *   `date` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Date in the merchant timezone to which metrics apply.
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided id of the product.
+  *   `productTypeL1` (*type:* `String.t`, *default:* `nil`) - [Product type (1st level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
+  *   `productTypeL2` (*type:* `String.t`, *default:* `nil`) - [Product type (2nd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
+  *   `productTypeL3` (*type:* `String.t`, *default:* `nil`) - [Product type (3rd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
+  *   `productTypeL4` (*type:* `String.t`, *default:* `nil`) - [Product type (4th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
+  *   `productTypeL5` (*type:* `String.t`, *default:* `nil`) - [Product type (5th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
   *   `program` (*type:* `String.t`, *default:* `nil`) - Program to which metrics apply, e.g., Free Product Listing.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the product.
+  *   `week` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - First day of the week (Monday) of the metrics date in the merchant timezone.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :brand => String.t() | nil,
+          :categoryL1 => String.t() | nil,
+          :categoryL2 => String.t() | nil,
+          :categoryL3 => String.t() | nil,
+          :categoryL4 => String.t() | nil,
+          :categoryL5 => String.t() | nil,
+          :currencyCode => String.t() | nil,
+          :customLabel0 => String.t() | nil,
+          :customLabel1 => String.t() | nil,
+          :customLabel2 => String.t() | nil,
+          :customLabel3 => String.t() | nil,
+          :customLabel4 => String.t() | nil,
           :date => GoogleApi.Content.V21.Model.Date.t() | nil,
           :offerId => String.t() | nil,
-          :program => String.t() | nil
+          :productTypeL1 => String.t() | nil,
+          :productTypeL2 => String.t() | nil,
+          :productTypeL3 => String.t() | nil,
+          :productTypeL4 => String.t() | nil,
+          :productTypeL5 => String.t() | nil,
+          :program => String.t() | nil,
+          :title => String.t() | nil,
+          :week => GoogleApi.Content.V21.Model.Date.t() | nil
         }
 
+  field(:brand)
+  field(:categoryL1)
+  field(:categoryL2)
+  field(:categoryL3)
+  field(:categoryL4)
+  field(:categoryL5)
+  field(:currencyCode)
+  field(:customLabel0)
+  field(:customLabel1)
+  field(:customLabel2)
+  field(:customLabel3)
+  field(:customLabel4)
   field(:date, as: GoogleApi.Content.V21.Model.Date)
   field(:offerId)
+  field(:productTypeL1)
+  field(:productTypeL2)
+  field(:productTypeL3)
+  field(:productTypeL4)
+  field(:productTypeL5)
   field(:program)
+  field(:title)
+  field(:week, as: GoogleApi.Content.V21.Model.Date)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.Segments do

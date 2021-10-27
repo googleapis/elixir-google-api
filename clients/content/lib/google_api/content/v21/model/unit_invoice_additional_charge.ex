@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.UnitInvoiceAdditionalCharge do
 
   ## Attributes
 
-  *   `additionalChargeAmount` (*type:* `GoogleApi.Content.V21.Model.Amount.t`, *default:* `nil`) - [required] Amount of the additional charge.
+  *   `additionalChargeAmount` (*type:* `GoogleApi.Content.V21.Model.Amount.t`, *default:* `nil`) - [required] Amount of the additional charge per unit. *Note:* Invoicing works on a per unit bases. The `additionalChargeAmount` is the amount charged per unit, and will be multiplied by the number of entries in `shipmentUnitID`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - [required] Type of the additional charge. Acceptable values are: - "`shipping`" 
   """
 

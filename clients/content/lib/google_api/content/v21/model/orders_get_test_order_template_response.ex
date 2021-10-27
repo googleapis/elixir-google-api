@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersGetTestOrderTemplateResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersGetTestOrderTemplateResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#ordersGetTestOrderTemplateResponse`".
   *   `template` (*type:* `GoogleApi.Content.V21.Model.TestOrder.t`, *default:* `nil`) - The requested test order template.
   """
 

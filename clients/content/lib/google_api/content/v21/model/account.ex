@@ -21,6 +21,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
 
   ## Attributes
 
+  *   `accountManagement` (*type:* `String.t`, *default:* `nil`) - Output only. How the account is managed. Acceptable values are: - "`manual`" - "`automatic`" 
   *   `adsLinks` (*type:* `list(GoogleApi.Content.V21.Model.AccountAdsLink.t)`, *default:* `nil`) - Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
   *   `automaticLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - Automatically created label IDs that are assigned to the account by CSS Center.
@@ -28,7 +29,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
   *   `cssId` (*type:* `String.t`, *default:* `nil`) - ID of CSS the account belongs to.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. Merchant Center account ID.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`".
   *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - Manually created label IDs that are assigned to the account by CSS.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the account.
   *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accountManagement => String.t() | nil,
           :adsLinks => list(GoogleApi.Content.V21.Model.AccountAdsLink.t()) | nil,
           :adultContent => boolean() | nil,
           :automaticLabelIds => list(String.t()) | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
             list(GoogleApi.Content.V21.Model.AccountYouTubeChannelLink.t()) | nil
         }
 
+  field(:accountManagement)
   field(:adsLinks, as: GoogleApi.Content.V21.Model.AccountAdsLink, type: :list)
   field(:adultContent)
   field(:automaticLabelIds, type: :list)

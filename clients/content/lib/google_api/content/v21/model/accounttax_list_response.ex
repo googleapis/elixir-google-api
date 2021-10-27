@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.AccounttaxListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#accounttaxListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accounttaxListResponse`".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of account tax settings.
   *   `resources` (*type:* `list(GoogleApi.Content.V21.Model.AccountTax.t)`, *default:* `nil`) - 
   """

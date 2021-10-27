@@ -26,9 +26,9 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalShippingInfo do
   *   `carrierServiceName` (*type:* `String.t`, *default:* `nil`) - The service type for fulfillment, e.g., GROUND, FIRST_CLASS, etc.
   *   `earliestDeliveryPromiseTime` (*type:* `GoogleApi.Content.V21.Model.DateTime.t`, *default:* `nil`) - The earliest delivery promised time. Include the year and timezone string, if available. This field is required, if one of the following fields is absent: tracking_id or carrier_name.
   *   `latestDeliveryPromiseTime` (*type:* `GoogleApi.Content.V21.Model.DateTime.t`, *default:* `nil`) - The latest delivery promised time. Include the year and timezone string, if available. This field is required, if one of the following fields is absent: tracking_id or carrier_name.
-  *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - The origin postal code, as a continuous string without spaces or dashes, e.g. "95016".
+  *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - The origin postal code, as a continuous string without spaces or dashes, e.g. "95016". This field will be anonymized in returned OrderTrackingSignal creation response.
   *   `originRegionCode` (*type:* `String.t`, *default:* `nil`) - The [CLDR territory code] (http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) for the shipping origin.
-  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Required. The shipment ID.
+  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Required. The shipment ID. This field will be hashed in returned OrderTrackingSignal creation response.
   *   `shippedTime` (*type:* `GoogleApi.Content.V21.Model.DateTime.t`, *default:* `nil`) - The time when the shipment was shipped. Include the year and timezone string, if available.
   *   `shippingStatus` (*type:* `String.t`, *default:* `nil`) - The status of the shipment.
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID of the shipment. This field is required if one of the following fields is absent: earliest_delivery_promise_time, latest_delivery_promise_time, and actual_delivery_time.
