@@ -22,8 +22,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConv
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this conversion event was created in the property.
+  *   `custom` (*type:* `boolean()`, *default:* `nil`) - Output only. If set to true, this conversion event refers to a custom event. If set to false, this conversion event refers to a default event in GA. Default events typically have special meaning in GA. Default events are usually created for you by the GA system, but in some cases can be created by property admins. Custom events count towards the maximum number of custom conversion events that may be created per property.
+  *   `deletable` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, this event can currently be deleted via DeleteConversionEvent.
   *   `eventName` (*type:* `String.t`, *default:* `nil`) - Immutable. The event name for this conversion event. Examples: 'click', 'purchase'
-  *   `isDeletable` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, this event can currently be deleted via DeleteConversionEvent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this conversion event. Format: properties/{property}/conversionEvents/{conversion_event}
   """
 
@@ -31,14 +32,16 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConv
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :custom => boolean() | nil,
+          :deletable => boolean() | nil,
           :eventName => String.t() | nil,
-          :isDeletable => boolean() | nil,
           :name => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
+  field(:custom)
+  field(:deletable)
   field(:eventName)
-  field(:isDeletable)
   field(:name)
 end
 

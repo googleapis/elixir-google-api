@@ -21,6 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
 
   ## Attributes
 
+  *   `account` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the parent account Format: accounts/{account_id} Example: "accounts/123"
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the entity was originally created.
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency type used in reports involving monetary values. Format: https://en.wikipedia.org/wiki/ISO_4217 Examples: "USD", "EUR", "JPY"
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If set, the time at which this property was trashed. If not set, then this property is not currently in the trash can.
@@ -29,6 +30,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   *   `industryCategory` (*type:* `String.t`, *default:* `nil`) - Industry associated with this property Example: AUTOMOTIVE, FOOD_AND_DRINK
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this property. Format: properties/{property_id} Example: "properties/1000"
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of this property's logical parent. Note: The Property-Moving UI can be used to change the parent. Format: accounts/{account} Example: "accounts/100"
+  *   `serviceLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The Google Analytics service level that applies to this property.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Required. Reporting Time Zone, used as the day boundary for reports, regardless of where the data originates. If the time zone honors DST, Analytics will automatically adjust for the changes. NOTE: Changing the time zone only affects data going forward, and is not applied retroactively. Format: https://www.iana.org/time-zones Example: "America/Los_Angeles"
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when entity payload fields were last updated.
   """
@@ -36,6 +38,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :account => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :currencyCode => String.t() | nil,
           :deleteTime => DateTime.t() | nil,
@@ -44,10 +47,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
           :industryCategory => String.t() | nil,
           :name => String.t() | nil,
           :parent => String.t() | nil,
+          :serviceLevel => String.t() | nil,
           :timeZone => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:account)
   field(:createTime, as: DateTime)
   field(:currencyCode)
   field(:deleteTime, as: DateTime)
@@ -56,6 +61,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   field(:industryCategory)
   field(:name)
   field(:parent)
+  field(:serviceLevel)
   field(:timeZone)
   field(:updateTime, as: DateTime)
 end

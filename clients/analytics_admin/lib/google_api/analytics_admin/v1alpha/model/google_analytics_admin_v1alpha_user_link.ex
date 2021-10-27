@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUser
 
   ## Attributes
 
-  *   `directRoles` (*type:* `list(String.t)`, *default:* `nil`) - Roles directly assigned to this user for this account or property. Valid values: predefinedRoles/read predefinedRoles/collaborate predefinedRoles/edit predefinedRoles/manage-users Excludes roles that are inherited from a higher-level entity, group, or organization admin role. A UserLink that is updated to have an empty list of direct_roles will be deleted.
+  *   `directRoles` (*type:* `list(String.t)`, *default:* `nil`) - Roles directly assigned to this user for this account or property. Valid values: predefinedRoles/viewer predefinedRoles/analyst predefinedRoles/editor predefinedRoles/admin predefinedRoles/no-cost-data predefinedRoles/no-revenue-data Excludes roles that are inherited from a higher-level entity, group, or organization admin role. A UserLink that is updated to have an empty list of direct_roles will be deleted.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Immutable. Email address of the user to link
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Example format: properties/1234/userLinks/5678
   """
