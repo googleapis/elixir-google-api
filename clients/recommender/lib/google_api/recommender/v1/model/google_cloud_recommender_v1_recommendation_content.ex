@@ -22,19 +22,23 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationC
   ## Attributes
 
   *   `operationGroups` (*type:* `list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1OperationGroup.t)`, *default:* `nil`) - Operations to one or more Google Cloud resources grouped in such a way that, all operations within one group are expected to be performed atomically and in an order.
+  *   `overview` (*type:* `map()`, *default:* `nil`) - Condensed overview information about the recommendation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :operationGroups =>
-            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1OperationGroup.t()) | nil
+            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1OperationGroup.t()) | nil,
+          :overview => map() | nil
         }
 
   field(:operationGroups,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1OperationGroup,
     type: :list
   )
+
+  field(:overview, type: :map)
 end
 
 defimpl Poison.Decoder,
