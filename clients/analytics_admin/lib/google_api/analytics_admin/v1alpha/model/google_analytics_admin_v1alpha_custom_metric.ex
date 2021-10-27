@@ -23,7 +23,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCust
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description for this custom dimension. Max length of 150 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name for this custom metric as shown in the Analytics UI. Max length of 82 characters, alphanumeric plus space and underscore starting with a letter. Legacy system-generated display names may contain square brackets, but updates to this field will never permit square brackets.
-  *   `measurementUnit` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type for the custom metric's value.
+  *   `measurementUnit` (*type:* `String.t`, *default:* `nil`) - Required. The type for the custom metric's value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name for this CustomMetric resource. Format: properties/{property}/customMetrics/{customMetric}
   *   `parameterName` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Tagging name for this custom metric. If this is an event-scoped metric, then this is the event parameter name. May only contain alphanumeric and underscore charactes, starting with a letter. Max length of 40 characters for event-scoped metrics.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The scope of this custom metric.

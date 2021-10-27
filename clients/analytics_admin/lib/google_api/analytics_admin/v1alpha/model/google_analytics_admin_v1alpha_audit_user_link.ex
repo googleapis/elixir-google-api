@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
 
   ## Attributes
 
-  *   `directRoles` (*type:* `list(String.t)`, *default:* `nil`) - Roles directly assigned to this user for this entity. Format: predefinedRoles/read Excludes roles that are inherited from an account (if this is for a property), group, or organization admin role.
-  *   `effectiveRoles` (*type:* `list(String.t)`, *default:* `nil`) - Union of all permissions a user has at this account or property (includes direct permissions, group-inherited permissions, etc.). Format: predefinedRoles/read
+  *   `directRoles` (*type:* `list(String.t)`, *default:* `nil`) - Roles directly assigned to this user for this entity. Format: predefinedRoles/viewer Excludes roles that are inherited from an account (if this is for a property), group, or organization admin role.
+  *   `effectiveRoles` (*type:* `list(String.t)`, *default:* `nil`) - Union of all permissions a user has at this account or property (includes direct permissions, group-inherited permissions, etc.). Format: predefinedRoles/viewer
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Email address of the linked user
   *   `name` (*type:* `String.t`, *default:* `nil`) - Example format: properties/1234/userLinks/5678
   """

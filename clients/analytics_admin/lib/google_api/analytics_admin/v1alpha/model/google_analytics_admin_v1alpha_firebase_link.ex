@@ -17,12 +17,11 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink do
   @moduledoc """
-  A link between an GA4 property and a Firebase project.
+  A link between a GA4 property and a Firebase project.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this FirebaseLink was originally created.
-  *   `maximumUserAccess` (*type:* `String.t`, *default:* `nil`) - Maximum user access to the GA4 property allowed to admins of the linked Firebase project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Example format: properties/1234/firebaseLinks/5678
   *   `project` (*type:* `String.t`, *default:* `nil`) - Immutable. Firebase project resource name. When creating a FirebaseLink, you may provide this resource name using either a project number or project ID. Once this resource has been created, returned FirebaseLinks will always have a project_name that contains a project number. Format: 'projects/{project number}' Example: 'projects/1234'
   """
@@ -31,13 +30,11 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFire
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
-          :maximumUserAccess => String.t() | nil,
           :name => String.t() | nil,
           :project => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
-  field(:maximumUserAccess)
   field(:name)
   field(:project)
 end
