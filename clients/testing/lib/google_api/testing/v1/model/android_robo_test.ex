@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   @moduledoc """
-  A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes. Next tag: 30
+  A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes.
 
   ## Attributes
 
