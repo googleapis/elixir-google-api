@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1CommonOperat
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - A related resource to this operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the operation.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - A message providing more details about the current state of processing.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the operation.
@@ -31,12 +32,14 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1CommonOperat
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :resource => String.t() | nil,
           :state => String.t() | nil,
           :stateMessage => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
+  field(:resource)
   field(:state)
   field(:stateMessage)
   field(:updateTime, as: DateTime)
