@@ -26,6 +26,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   *   `diarizationConfig` (*type:* `GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig.t`, *default:* `nil`) - Config to enable speaker diarization and set additional parameters to make diarization better suited for your application. Note: When this is enabled, we send all the words from the beginning of the audio for the top alternative in every consecutive STREAMING responses. This is done in order to improve our speaker tags as our models learn to identify the speakers in the conversation over time. For non-streaming requests, the diarization results will be provided only in the top alternative of the FINAL SpeechRecognitionResult.
   *   `enableAutomaticPunctuation` (*type:* `boolean()`, *default:* `nil`) - If 'true', adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default 'false' value does not add punctuation to result hypotheses.
   *   `enableSeparateRecognitionPerChannel` (*type:* `boolean()`, *default:* `nil`) - This needs to be set to `true` explicitly and `audio_channel_count` > 1 to get each channel recognized separately. The recognition result will contain a `channel_tag` field to state which channel that result belongs to. If this is not true, we will only recognize the first channel. The request is billed cumulatively for all channels recognized: `audio_channel_count` multiplied by the length of the audio.
+  *   `enableSpokenEmojis` (*type:* `boolean()`, *default:* `nil`) - The spoken emoji behavior for the call If not set, uses default behavior based on model of choice If 'true', adds spoken emoji formatting for the request. This will replace spoken emojis with the corresponding Unicode symbols in the final transcript. If 'false', spoken emojis are not replaced.
+  *   `enableSpokenPunctuation` (*type:* `boolean()`, *default:* `nil`) - The spoken punctuation behavior for the call If not set, uses default behavior based on model of choice e.g. command_and_search will enable spoken punctuation by default If 'true', replaces spoken punctuation with the corresponding symbols in the request. For example, "how are you question mark" becomes "how are you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation for support. If 'false', spoken punctuation is not replaced.
   *   `enableWordConfidence` (*type:* `boolean()`, *default:* `nil`) - If `true`, the top result includes a list of words and the confidence for those words. If `false`, no word-level confidence information is returned. The default is `false`.
   *   `enableWordTimeOffsets` (*type:* `boolean()`, *default:* `nil`) - If `true`, the top result includes a list of words and the start and end time offsets (timestamps) for those words. If `false`, no word-level time offset information is returned. The default is `false`.
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Encoding of audio data sent in all `RecognitionAudio` messages. This field is optional for `FLAC` and `WAV` audio files and required for all other audio formats. For details, see AudioEncoding.
@@ -47,6 +49,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
           :diarizationConfig => GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig.t() | nil,
           :enableAutomaticPunctuation => boolean() | nil,
           :enableSeparateRecognitionPerChannel => boolean() | nil,
+          :enableSpokenEmojis => boolean() | nil,
+          :enableSpokenPunctuation => boolean() | nil,
           :enableWordConfidence => boolean() | nil,
           :enableWordTimeOffsets => boolean() | nil,
           :encoding => String.t() | nil,
@@ -65,6 +69,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   field(:diarizationConfig, as: GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig)
   field(:enableAutomaticPunctuation)
   field(:enableSeparateRecognitionPerChannel)
+  field(:enableSpokenEmojis)
+  field(:enableSpokenPunctuation)
   field(:enableWordConfidence)
   field(:enableWordTimeOffsets)
   field(:encoding)
