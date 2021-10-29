@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
+  *   `advancedMachineFeatures` (*type:* `GoogleApi.Container.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Advanced features for the Compute Engine VM.
   *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) -  The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
@@ -51,6 +52,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
 
   @type t :: %__MODULE__{
           :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
+          :advancedMachineFeatures =>
+            GoogleApi.Container.V1.Model.AdvancedMachineFeatures.t() | nil,
           :bootDiskKmsKey => String.t() | nil,
           :diskSizeGb => integer() | nil,
           :diskType => String.t() | nil,
@@ -78,6 +81,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
         }
 
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
+  field(:advancedMachineFeatures, as: GoogleApi.Container.V1.Model.AdvancedMachineFeatures)
   field(:bootDiskKmsKey)
   field(:diskSizeGb)
   field(:diskType)
