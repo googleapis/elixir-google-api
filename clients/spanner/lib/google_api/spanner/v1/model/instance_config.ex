@@ -22,7 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of this instance configuration as it appears in UIs.
-  *   `leaderOptions` (*type:* `list(String.t)`, *default:* `nil`) - Allowed values of the “default_leader” schema option for databases in instances that use this instance configuration.
+  *   `leaderOptions` (*type:* `list(String.t)`, *default:* `nil`) - Allowed values of the "default_leader" schema option for databases in instances that use this instance configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the instance configuration. Values are of the form `projects//instanceConfigs/a-z*`.
   *   `replicas` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t)`, *default:* `nil`) - The geographic placement of nodes in this instance configuration and their replication properties.
   """
