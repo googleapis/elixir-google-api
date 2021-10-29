@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.WindowsApplication do
   @moduledoc """
-  Contains information about a Windows application that is retrieved from the Windows Registry. For more information about these fields, see Windows Installer Properties for the Uninstall Registry.
+  Contains information about a Windows application that is retrieved from the Windows Registry. For more information about these fields, see: https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
 
   ## Attributes
 
