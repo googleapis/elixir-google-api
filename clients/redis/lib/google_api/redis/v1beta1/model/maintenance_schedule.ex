@@ -23,7 +23,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule do
 
   *   `canReschedule` (*type:* `boolean()`, *default:* `nil`) - If the scheduled maintenance can be rescheduled, default is true.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end time of any upcoming scheduled maintenance for this instance.
-  *   `scheduleDeadlineTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time deadline any schedule start time cannot go beyond, including reschedule.
+  *   `scheduleDeadlineTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The deadline that the maintenance schedule start time can not go beyond, including reschedule.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start time of any upcoming scheduled maintenance for this instance.
   """
 

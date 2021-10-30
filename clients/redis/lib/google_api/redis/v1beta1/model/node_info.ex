@@ -21,8 +21,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.NodeInfo do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Node identifying string. e.g. 'node-0', 'node-1'
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Location of the node.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Node identifying string. e.g. 'node-0', 'node-1'
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. Location of the node.
   """
 
   use GoogleApi.Gax.ModelBase
