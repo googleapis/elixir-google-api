@@ -27,7 +27,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.ConnectionProfile do
   *   `error` (*type:* `GoogleApi.DataMigration.V1beta1.Model.Status.t`, *default:* `nil`) - Output only. The error details in case of state FAILED.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
   *   `mysql` (*type:* `GoogleApi.DataMigration.V1beta1.Model.MySqlConnectionProfile.t`, *default:* `nil`) - A MySQL database connection profile.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this connection profile resource in the form of projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
   *   `provider` (*type:* `String.t`, *default:* `nil`) - The database provider.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current connection profile state (e.g. DRAFT, READY, or FAILED).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".

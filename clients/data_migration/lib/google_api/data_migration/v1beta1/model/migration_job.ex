@@ -30,7 +30,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.MigrationJob do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If the migration job is completed, the time when it was completed.
   *   `error` (*type:* `GoogleApi.DataMigration.V1beta1.Model.Status.t`, *default:* `nil`) - Output only. The error details in case of state FAILED.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
   *   `phase` (*type:* `String.t`, *default:* `nil`) - Output only. The current migration job phase.
   *   `reverseSshConnectivity` (*type:* `GoogleApi.DataMigration.V1beta1.Model.ReverseSshConnectivity.t`, *default:* `nil`) - The details needed to communicate to the source over Reverse SSH tunnel connectivity.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the source connection profile.

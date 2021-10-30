@@ -538,7 +538,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataMigration.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of this connection profile resource in the form of projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`) - The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1204,7 +1204,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataMigration.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
