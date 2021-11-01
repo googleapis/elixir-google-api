@@ -159,7 +159,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The instance's project and location in the format projects/{project}/locations/{location}.
+  *   `parent` (*type:* `String.t`) - Required. The instance's project and location in the format projects/{project}/locations/{location}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -172,7 +172,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - The name of the instance to create.
+      *   `:instanceId` (*type:* `String.t`) - Required. The name of the instance to create.
       *   `:body` (*type:* `GoogleApi.DataFusion.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}
+  *   `name` (*type:* `String.t`) - Required. The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -303,7 +303,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`) - Required. The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -445,7 +445,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project and location for which to retrieve instance information in the format projects/{project}/locations/{location}. If the location is specified as '-' (wildcard), then all regions available to the project are queried, and the results are aggregated.
+  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve instance information in the format projects/{project}/locations/{location}. If the location is specified as '-' (wildcard), then all regions available to the project are queried, and the results are aggregated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -597,7 +597,7 @@ defmodule GoogleApi.DataFusion.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Data Fusion instance which need to be restarted in the form of projects/{project}/locations/{location}/instances/{instance}
+  *   `name` (*type:* `String.t`) - Required. Name of the Data Fusion instance which need to be restarted in the form of projects/{project}/locations/{location}/instances/{instance}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

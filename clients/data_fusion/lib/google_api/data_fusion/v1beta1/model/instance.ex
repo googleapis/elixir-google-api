@@ -28,6 +28,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `cryptoKeyConfig` (*type:* `GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig.t`, *default:* `nil`) - The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.
   *   `dataprocServiceAccount` (*type:* `String.t`, *default:* `nil`) - User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines. This allows users to have fine-grained access control on Dataproc's accesses to cloud resources.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
+  *   `disabledReason` (*type:* `list(String.t)`, *default:* `nil`) - Output only. If the instance state is DISABLED, the reason for disabling the instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
   *   `enableRbac` (*type:* `boolean()`, *default:* `nil`) - Option to enable granular role-based access control.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Logging.
@@ -60,6 +61,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :cryptoKeyConfig => GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig.t() | nil,
           :dataprocServiceAccount => String.t() | nil,
           :description => String.t() | nil,
+          :disabledReason => list(String.t()) | nil,
           :displayName => String.t() | nil,
           :enableRbac => boolean() | nil,
           :enableStackdriverLogging => boolean() | nil,
@@ -89,6 +91,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:cryptoKeyConfig, as: GoogleApi.DataFusion.V1beta1.Model.CryptoKeyConfig)
   field(:dataprocServiceAccount)
   field(:description)
+  field(:disabledReason, type: :list)
   field(:displayName)
   field(:enableRbac)
   field(:enableStackdriverLogging)
