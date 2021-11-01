@@ -23,6 +23,7 @@ defmodule GoogleApi.DataFusion.V1.Model.Version do
 
   *   `availableFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Represents a list of available feature names for a given version.
   *   `defaultVersion` (*type:* `boolean()`, *default:* `nil`) - Whether this is currently the default version for Cloud Data Fusion
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type represents the release availability of the version
   *   `versionNumber` (*type:* `String.t`, *default:* `nil`) - The version number of the Data Fusion instance, such as '6.0.1.0'.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.DataFusion.V1.Model.Version do
   @type t :: %__MODULE__{
           :availableFeatures => list(String.t()) | nil,
           :defaultVersion => boolean() | nil,
+          :type => String.t() | nil,
           :versionNumber => String.t() | nil
         }
 
   field(:availableFeatures, type: :list)
   field(:defaultVersion)
+  field(:type)
   field(:versionNumber)
 end
 
