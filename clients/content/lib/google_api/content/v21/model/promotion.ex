@@ -40,6 +40,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `minimumPurchaseAmount` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Minimum purchase amount for the promotion.
   *   `promotionDestinationIds` (*type:* `list(String.t)`, *default:* `nil`) - Destination ID for the promotion.
   *   `shippingServiceNames` (*type:* `list(String.t)`, *default:* `nil`) - Shipping service names for thse promotion.
+  *   `promotionEffectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - Required. TimePeriod representation of the promotion effective dates.
   *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates.
   *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - Required. String representation of the promotion effective dates.
   *   `itemIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item id exclusion for the promotion.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `orderLimit` (*type:* `integer()`, *default:* `nil`) - Order limit for the promotion.
   *   `brandExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand exclusion for the promotion.
   *   `productTypeExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type exclusion for the promotion.
+  *   `promotionDisplayTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - TimePeriod representation of the promotion display dates.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The REST promotion id to uniquely identify the promotion. Content API methods that operate on promotions take this as their promotionId parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The channel field will have a value of "online", "in_store", or "online_in_store".
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier.
   *   `limitQuantity` (*type:* `integer()`, *default:* `nil`) - Maximum purchase quantity for the promotion.
@@ -79,6 +81,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
           :minimumPurchaseAmount => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
           :promotionDestinationIds => list(String.t()) | nil,
           :shippingServiceNames => list(String.t()) | nil,
+          :promotionEffectiveTimePeriod => GoogleApi.Content.V21.Model.TimePeriod.t() | nil,
           :promotionDisplayDates => String.t() | nil,
           :promotionEffectiveDates => String.t() | nil,
           :itemIdExclusion => list(String.t()) | nil,
@@ -88,6 +91,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
           :orderLimit => integer() | nil,
           :brandExclusion => list(String.t()) | nil,
           :productTypeExclusion => list(String.t()) | nil,
+          :promotionDisplayTimePeriod => GoogleApi.Content.V21.Model.TimePeriod.t() | nil,
           :id => String.t() | nil,
           :contentLanguage => String.t() | nil,
           :limitQuantity => integer() | nil,
@@ -115,6 +119,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   field(:minimumPurchaseAmount, as: GoogleApi.Content.V21.Model.PriceAmount)
   field(:promotionDestinationIds, type: :list)
   field(:shippingServiceNames, type: :list)
+  field(:promotionEffectiveTimePeriod, as: GoogleApi.Content.V21.Model.TimePeriod)
   field(:promotionDisplayDates)
   field(:promotionEffectiveDates)
   field(:itemIdExclusion, type: :list)
@@ -124,6 +129,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   field(:orderLimit)
   field(:brandExclusion, type: :list)
   field(:productTypeExclusion, type: :list)
+  field(:promotionDisplayTimePeriod, as: GoogleApi.Content.V21.Model.TimePeriod)
   field(:id)
   field(:contentLanguage)
   field(:limitQuantity)
