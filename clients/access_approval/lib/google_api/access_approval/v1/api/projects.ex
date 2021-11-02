@@ -101,7 +101,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the AccessApprovalSettings to retrieve.
+  *   `name` (*type:* `String.t`) - The name of the AccessApprovalSettings to retrieve. Format: "{projects|folders|organizations}/{id}/accessApprovalSettings"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -393,7 +393,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the approval request to retrieve.
+  *   `name` (*type:* `String.t`) - The name of the approval request to retrieve. Format: "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
