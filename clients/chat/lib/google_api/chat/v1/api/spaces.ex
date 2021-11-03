@@ -218,7 +218,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the membership to be retrieved, in the form "spaces/*/members/*". Example: spaces/AAAAMpdlehY/members/105115627578887013105
+  *   `name` (*type:* `String.t`) - Required. Resource name of the membership to be retrieved, in the form "spaces/*/members/*". Example: spaces/AAAAAAAAAAAA/members/111111111111111111111
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -278,7 +278,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the space for which membership list is to be fetched, in the form "spaces/*". Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the space for which membership list is to be fetched, in the form "spaces/*". Example: spaces/AAAAAAAAAAAA
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
