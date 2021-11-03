@@ -152,7 +152,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   end
 
   @doc """
-  Updates the metadata of Photos, such as pose, place association, connections, etc. Changing the pixels of photos is not supported. Note that if BatchUpdatePhotos fails, either critical fields are missing or there is an authentication error. Even if BatchUpdatePhotos succeeds, individual photos in the batch may have failures. These failures are specified in each PhotoResponse.status in BatchUpdatePhotosResponse.results. See UpdatePhoto for specific failures that can occur per photo. Only the fields specified in updateMask field are used. If `updateMask` is not present, the update applies to all fields. The number of UpdatePhotoRequest messages in a BatchUpdatePhotosRequest must not exceed 20. *Note:* To update Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the request will fail.
+  Updates the metadata of Photos, such as pose, place association, connections, etc. Changing the pixels of photos is not supported. Note that if BatchUpdatePhotos fails, either critical fields are missing or there is an authentication error. Even if BatchUpdatePhotos succeeds, individual photos in the batch may have failures. These failures are specified in each PhotoResponse.status in BatchUpdatePhotosResponse.results. See UpdatePhoto for specific failures that can occur per photo. Only the fields specified in updateMask field are used. If `updateMask` is not present, the update applies to all fields. The number of UpdatePhotoRequest messages in a BatchUpdatePhotosRequest must not exceed 20. > Note: To update Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the request will fail.
 
   ## Parameters
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   end
 
   @doc """
-  Lists all the Photos that belong to the user. *Note:* Recently created photos that are still being indexed are not returned in the response.
+  Lists all the Photos that belong to the user. > Note: Recently created photos that are still being indexed are not returned in the response.
 
   ## Parameters
 
@@ -231,9 +231,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`. The filters supported at the moment are: `placeId`.
-      *   `:languageCode` (*type:* `String.t`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of photos to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photos returned in the response may be less than `pageSize` if the number of photos that belong to the user is less than `pageSize`.
-      *   `:pageToken` (*type:* `String.t`) - The nextPageToken value returned from a previous ListPhotos request, if any.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of photos to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photos returned in the response may be less than `pageSize` if the number of photos that belong to the user is less than `pageSize`.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The nextPageToken value returned from a previous ListPhotos request, if any.
       *   `:view` (*type:* `String.t`) - Required. Specifies if a download URL for the photos bytes should be returned in the Photos response.
   *   `opts` (*type:* `keyword()`) - Call options
 
