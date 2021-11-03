@@ -21,8 +21,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Place do
 
   ## Attributes
 
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output-only. The language_code that the name is localized with. This should be the language_code specified in the request, but may be a fallback.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output-only. The name of the place, localized to the language_code.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. The language_code that the name is localized with. This should be the language_code specified in the request, but may be a fallback.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the place, localized to the language_code.
   *   `placeId` (*type:* `String.t`, *default:* `nil`) - Place identifier, as described in https://developers.google.com/places/place-id.
   """
 
