@@ -29,6 +29,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `notificationConfig` (*type:* `GoogleApi.HealthCare.V1.Model.NotificationConfig.t`, *default:* `nil`) - If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, "action":"CreateResource".
   *   `streamConfigs` (*type:* `list(GoogleApi.HealthCare.V1.Model.StreamConfig.t)`, *default:* `nil`) - A list of streaming configs that configure the destinations of streaming export for every resource mutation in this FHIR store. Each store is allowed to have up to 10 streaming configs. After a new config is added, the next resource mutation is streamed to the new location in addition to the existing ones. When a location is removed from the list, the server stops streaming to that location. Before adding a new config, you must add the required [`bigquery.dataEditor`](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor) role to your project's **Cloud Healthcare Service Agent** [service account](https://cloud.google.com/iam/docs/service-accounts). Some lag (typically on the order of dozens of seconds) is expected before the results show up in the streaming destination.
+  *   `validationConfig` (*type:* `GoogleApi.HealthCare.V1.Model.ValidationConfig.t`, *default:* `nil`) - Configuration for how to validate incoming FHIR resources against configured profiles.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Immutable. The FHIR specification version that this FHIR store supports natively. This field is immutable after store creation. Requests are rejected if they contain FHIR resources of a different version. Version is required for every FHIR store.
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
           :name => String.t() | nil,
           :notificationConfig => GoogleApi.HealthCare.V1.Model.NotificationConfig.t() | nil,
           :streamConfigs => list(GoogleApi.HealthCare.V1.Model.StreamConfig.t()) | nil,
+          :validationConfig => GoogleApi.HealthCare.V1.Model.ValidationConfig.t() | nil,
           :version => String.t() | nil
         }
 
@@ -54,6 +56,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1.Model.NotificationConfig)
   field(:streamConfigs, as: GoogleApi.HealthCare.V1.Model.StreamConfig, type: :list)
+  field(:validationConfig, as: GoogleApi.HealthCare.V1.Model.ValidationConfig)
   field(:version)
 end
 
