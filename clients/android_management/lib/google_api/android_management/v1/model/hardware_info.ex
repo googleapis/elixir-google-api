@@ -27,6 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
   *   `cpuShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - CPU shutdown temperature thresholds in Celsius for each CPU on the device.
   *   `cpuThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - CPU throttling temperature thresholds in Celsius for each CPU on the device.
   *   `deviceBasebandVersion` (*type:* `String.t`, *default:* `nil`) - Baseband version. For example, MDM9625_104662.22.05.34p.
+  *   `enterpriseSpecificId` (*type:* `String.t`, *default:* `nil`) - Output only. ID that uniquely identifies a personally-owned device in a particular organization. On the same physical device when enrolled with the same organization, this ID persists across setups and even factory resets. This ID is available on personally-owned devices with a work profile on devices running Android 12 and above.
   *   `gpuShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - GPU shutdown temperature thresholds in Celsius for each GPU on the device.
   *   `gpuThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - GPU throttling temperature thresholds in Celsius for each GPU on the device.
   *   `hardware` (*type:* `String.t`, *default:* `nil`) - Name of the hardware. For example, Angler.
@@ -46,6 +47,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
           :cpuShutdownTemperatures => list(number()) | nil,
           :cpuThrottlingTemperatures => list(number()) | nil,
           :deviceBasebandVersion => String.t() | nil,
+          :enterpriseSpecificId => String.t() | nil,
           :gpuShutdownTemperatures => list(number()) | nil,
           :gpuThrottlingTemperatures => list(number()) | nil,
           :hardware => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
   field(:cpuShutdownTemperatures, type: :list)
   field(:cpuThrottlingTemperatures, type: :list)
   field(:deviceBasebandVersion)
+  field(:enterpriseSpecificId)
   field(:gpuShutdownTemperatures, type: :list)
   field(:gpuThrottlingTemperatures, type: :list)
   field(:hardware)
