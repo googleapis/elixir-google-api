@@ -32,6 +32,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation 
   *   `priority` (*type:* `String.t`, *default:* `nil`) - Recommendation's priority.
   *   `recommenderSubtype` (*type:* `String.t`, *default:* `nil`) - Contains an identifier for a subtype of recommendations produced for the same recommender. Subtype is a function of content and impact, meaning a new subtype might be added when significant changes to `content` or `primary_impact.category` are introduced. See the Recommenders section to see a list of subtypes for a given Recommender. Examples: For recommender = "google.iam.policy.Recommender", recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationStateInfo.t`, *default:* `nil`) - Information for state. Contains state and metadata.
+  *   `xorGroupId` (*type:* `String.t`, *default:* `nil`) - Corresponds to a mutually exclusive group ID within a recommender. A non-empty ID indicates that the recommendation belongs to a mutually exclusive group. This means that only one recommendation within the group is suggested to be applied.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -56,7 +57,8 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation 
           :recommenderSubtype => String.t() | nil,
           :stateInfo =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationStateInfo.t()
-            | nil
+            | nil,
+          :xorGroupId => String.t() | nil
         }
 
   field(:additionalImpact,
@@ -82,6 +84,8 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation 
   field(:stateInfo,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationStateInfo
   )
+
+  field(:xorGroupId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation do
