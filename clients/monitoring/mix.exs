@@ -18,7 +18,7 @@
 defmodule GoogleApi.Monitoring.Mixfile do
   use Mix.Project
 
-  @version "0.52.0"
+  @version "0.52.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Monitoring.Mixfile do
 
   defp description() do
     """
-    Cloud Monitoring API client library.
+    Cloud Monitoring API client library. Manages your Cloud Monitoring data and configurations.
     """
   end
 
