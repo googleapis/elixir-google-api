@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse do
   @moduledoc """
-  This message type encapsulates a response format for Js Optimized Scenario.
+  Encapsulates a response format for JavaScript Optimized Scenario.
 
   ## Attributes
 
-  *   `TimeUnit` (*type:* `list(String.t)`, *default:* `nil`) - This field contains a list of time unit values. Time unit refers to an epoch timestamp value.
-  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - This field contains metadata information about the query executed
-  *   `resultTruncated` (*type:* `boolean()`, *default:* `nil`) - This ia a boolean field to indicate if the results were truncated based on the limit parameter.
-  *   `stats` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode.t`, *default:* `nil`) - This field contains a stats results.
+  *   `TimeUnit` (*type:* `list(String.t)`, *default:* `nil`) - List of time unit values. Time unit refers to an epoch timestamp value.
+  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - Metadata information about the query executed.
+  *   `resultTruncated` (*type:* `boolean()`, *default:* `nil`) - Boolean flag that indicates whether the results were truncated based on the limit parameter.
+  *   `stats` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode.t`, *default:* `nil`) - `stats` results.
   """
 
   use GoogleApi.Gax.ModelBase
