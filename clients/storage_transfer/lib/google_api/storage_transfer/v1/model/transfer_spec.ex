@@ -29,6 +29,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' "last modification time" do not exclude objects in a data sink.
   *   `posixDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data sink.
   *   `posixDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data source.
+  *   `sinkAgentPoolName` (*type:* `String.t`, *default:* `nil`) - Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used.
+  *   `sourceAgentPoolName` (*type:* `String.t`, *default:* `nil`) - Specifies the agent pool name associated with the posix data source. When unspecified, the default name is used.
   *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - If the option delete_objects_unique_in_sink is `true` and time-based object conditions such as 'last modification time' are specified, the request fails with an INVALID_ARGUMENT error.
   """
 
@@ -44,6 +46,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
           :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t() | nil,
           :posixDataSink => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
           :posixDataSource => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
+          :sinkAgentPoolName => String.t() | nil,
+          :sourceAgentPoolName => String.t() | nil,
           :transferOptions => GoogleApi.StorageTransfer.V1.Model.TransferOptions.t() | nil
         }
 
@@ -55,6 +59,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   field(:objectConditions, as: GoogleApi.StorageTransfer.V1.Model.ObjectConditions)
   field(:posixDataSink, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)
   field(:posixDataSource, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)
+  field(:sinkAgentPoolName)
+  field(:sourceAgentPoolName)
   field(:transferOptions, as: GoogleApi.StorageTransfer.V1.Model.TransferOptions)
 end
 
