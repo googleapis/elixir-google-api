@@ -33,7 +33,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at the regional level so `location_id` here refers to a Google Cloud region; however, users may choose which zones Memcached nodes should be provisioned in within an instance. Refer to zones field for more details.
   *   `nodeConfig` (*type:* `GoogleApi.Memcache.V1beta2.Model.NodeConfig.t`, *default:* `nil`) - Required. Configuration for Memcached nodes.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. Number of nodes in the Memcached instance.
-  *   `parameters` (*type:* `GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t`, *default:* `nil`) - Optional: User defined parameters to apply to the memcached process on each node.
+  *   `parameters` (*type:* `GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t`, *default:* `nil`) - User defined parameters to apply to the memcached process on each node.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this Memcached instance.
   *   `updateAvailable` (*type:* `boolean()`, *default:* `nil`) - Output only. Returns true if there is an update waiting to be applied
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was updated.
