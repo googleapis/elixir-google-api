@@ -10862,12 +10862,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  This api is similar to GetStats except that the response is less verbose. In the current scheme, a query parameter _optimized instructs Edge Analytics to change the response but since this behavior is not possible with protocol buffer and since this parameter is predominantly used by Edge UI, we are introducing a separate api.
+  Similar to GetStats except that the response is less verbose.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/environments/{environment_id/optimizedStats/{dimensions}` Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/environments/{env}/optimizedStats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. Resource name for which the interactive query will be executed. Use the following format in your request: `organizations/{org}/environments/{env}/optimizedStats/{dimensions}` Dimensions let you view metrics in meaningful groupings, such as `apiproxy`, `target_host`. The value of `dimensions` should be a comma-separated list as shown below: `organizations/{org}/environments/{env}/optimizedStats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10880,21 +10880,21 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
-      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter can be used to specify the table name. If this parameter is skipped, then Edge Query will try to retrieve the data from fact tables which will be expensive.
-      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values.
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
-      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
-      *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query. Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
+      *   `:accuracy` (*type:* `String.t`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:aggTable` (*type:* `String.t`) - Table name used to query custom aggregate tables. If this parameter is skipped, then Apigee will try to retrieve the data from fact tables which will be expensive.
+      *   `:filter` (*type:* `String.t`) - Filter that enables you to drill-down on specific dimension values.
+      *   `:limit` (*type:* `String.t`) - Maximum number of result items to return. The default and maximum value that can be returned is 14400.
+      *   `:offset` (*type:* `String.t`) - Offset value. Use `offset` with `limit` to enable pagination of results. For example, to display results 11-20, set limit to `10` and offset to `10`.
+      *   `:realtime` (*type:* `boolean()`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:select` (*type:* `String.t`) - Required. Comma-separated list of metrics. For example: `sum(message_count),sum(error_count)`
+      *   `:sonar` (*type:* `boolean()`) - Routes the query to API Monitoring for the last hour.
+      *   `:sort` (*type:* `String.t`) - Flag that specifies whether the sort order should be ascending or descending. Valid values include `DESC` and `ASC`.
+      *   `:sortby` (*type:* `String.t`) - Comma-separated list of columns to sort the final result.
+      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query. Time range is specified in GMT as `start~end`. For example: `04/15/2017 00:00~05/15/2017 23:59`
+      *   `:timeUnit` (*type:* `String.t`) - Granularity of metrics returned. Valid values include: `second`, `minute`, `hour`, `day`, `week`, or `month`.
+      *   `:topk` (*type:* `String.t`) - Top number of results to return. For example, to return the top 5 results, set `topk=5`.
+      *   `:tsAscending` (*type:* `boolean()`) - Flag that specifies whether to list timestamps in ascending (`true`) or descending (`false`) order. Apigee recommends setting this value to `true` if you are using `sortby` with `sort=DESC`.
+      *   `:tzo` (*type:* `String.t`) - Timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -12316,12 +12316,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Retrieve metrics grouped by dimensions. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. The stats api does accept dimensions as path params. The dimensions are optional in which case the metrics are computed on the entire data for the given timerange.
+  Retrieve metrics grouped by dimensions. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. You can optionally pass dimensions as path parameters to the `stats` API. If dimensions are not specified, the metrics are computed on the entire set of data for the given time range.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}` Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. Resource name for which the interactive query will be executed. Use the following format in your request: `organizations/{org}/environments/{env}/stats/{dimensions}` Dimensions let you view metrics in meaningful groupings, such as `apiproxy` or `target_host`. The value of dimensions should be a comma-separated list, as shown below: `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12334,21 +12334,21 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore. This field is present to support UI calls which still use this parameter.
-      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter can be used to specify the table name. If this parameter is skipped, then Edge Query will try to retrieve the data from fact tables which will be expensive.
-      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
-      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
-      *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query. Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
+      *   `:accuracy` (*type:* `String.t`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:aggTable` (*type:* `String.t`) - Table name used to query custom aggregate tables. If this parameter is skipped, then Apigee will try to retrieve the data from fact tables which will be expensive.
+      *   `:filter` (*type:* `String.t`) - Filter that enables you to drill down on specific dimension values.
+      *   `:limit` (*type:* `String.t`) - Maximum number of result items to return. The default and maximum value that can be returned is 14400.
+      *   `:offset` (*type:* `String.t`) - Offset value. Use `offset` with `limit` to enable pagination of results. For example, to display results 11-20, set limit to `10` and offset to `10`.
+      *   `:realtime` (*type:* `boolean()`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:select` (*type:* `String.t`) - Comma-separated list of metrics. For example: `sum(message_count),sum(error_count)`
+      *   `:sonar` (*type:* `boolean()`) - Routes the query to API Monitoring for the last hour.
+      *   `:sort` (*type:* `String.t`) - Flag that specifies whether the sort order should be ascending or descending. Valid values include: `DESC` and `ASC`.
+      *   `:sortby` (*type:* `String.t`) - Comma-separated list of columns to sort the final result.
+      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query. Time range is specified in GMT as `start~end`. For example: `04/15/2017 00:00~05/15/2017 23:59`
+      *   `:timeUnit` (*type:* `String.t`) - Granularity of metrics returned. Valid values include: `second`, `minute`, `hour`, `day`, `week`, or` month`.
+      *   `:topk` (*type:* `String.t`) - Top number of results to return. For example, to return the top 5 results, set `topk=5`.
+      *   `:tsAscending` (*type:* `boolean()`) - Flag that specifies whether to list timestamps in ascending (`true`) or descending (`false`) order. Apigee recommends that you set this value to `true` if you are using `sortby` with `sort=DESC`.
+      *   `:tzo` (*type:* `String.t`) - Timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -13448,12 +13448,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Retrieve metrics grouped by dimensions in host level. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. The stats api does accept dimensions as path params. The dimensions are optional in which case the metrics are computed on the entire data for the given timerange.
+  Retrieve metrics grouped by dimensions in host level. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. You can optionally pass dimensions as path parameters to the `stats` API. If dimensions are not specified, the metrics are computed on the entire set of data for the given time range.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/hostStats/{dimensions}`. Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/hostStats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. Resource name for which the interactive query will be executed. Use the following format in your request: `organizations/{org}/hostStats/{dimensions}` Dimensions let you view metrics in meaningful groupings, such as `apiproxy`, `target_host`. The value of dimensions should be a comma-separated list as shown below `organizations/{org}/hostStats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13466,20 +13466,20 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
-      *   `:envgroupHostname` (*type:* `String.t`) - Required. The hostname for which the interactive query will be executed.
-      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values.
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
-      *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query. Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
+      *   `:accuracy` (*type:* `String.t`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:envgroupHostname` (*type:* `String.t`) - Required. Hostname for which the interactive query will be executed.
+      *   `:filter` (*type:* `String.t`) - Flag that enables drill-down on specific dimension values.
+      *   `:limit` (*type:* `String.t`) - Maximum number of result items to return. The default and maximum value that can be returned is 14400.
+      *   `:offset` (*type:* `String.t`) - Offset value. Use `offset` with `limit` to enable pagination of results. For example, to display results 11-20, set limit to `10` and offset to `10`.
+      *   `:realtime` (*type:* `boolean()`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:select` (*type:* `String.t`) - Comma-separated list of metrics. For example: `sum(message_count),sum(error_count)`
+      *   `:sort` (*type:* `String.t`) - Flag that specifies if the sort order should be ascending or descending. Valid values are `DESC` and `ASC`.
+      *   `:sortby` (*type:* `String.t`) - Comma-separated list of columns to sort the final result.
+      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query. Time range is specified in GMT as `start~end`. For example: `04/15/2017 00:00~05/15/2017 23:59`
+      *   `:timeUnit` (*type:* `String.t`) - Granularity of metrics returned. Valid values include: `second`, `minute`, `hour`, `day`, `week`, or `month`.
+      *   `:topk` (*type:* `String.t`) - Top number of results to return. For example, to return the top 5 results, set `topk=5`.
+      *   `:tsAscending` (*type:* `boolean()`) - Flag that specifies whether to list timestamps in ascending (`true`) or descending (`false`) order. Apigee recommends that you set this value to `true` if you are using `sortby` with `sort=DESC`.
+      *   `:tzo` (*type:* `String.t`) - Timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -15004,12 +15004,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  This api is similar to GetHostStats except that the response is less verbose.
+  Similar to GetHostStats except that the response is less verbose.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/optimizedHostStats/{dimensions}`. Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/optimizedHostStats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. Resource name for which the interactive query will be executed. Use the following format in your request: `organizations/{organization_id}/optimizedHostStats/{dimensions}` Dimensions let you view metrics in meaningful groupings, such as `apiproxy`, `target_host`. The value of dimensions should be a comma-separated list as shown below: `organizations/{org}/optimizedHostStats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -15022,20 +15022,20 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
-      *   `:envgroupHostname` (*type:* `String.t`) - Required. The hostname for which the interactive query will be executed.
-      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values.
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
-      *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query. Time range is specified as start~end. E.g 04/15/2017 00:00~05/15/2017 23:59.
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
+      *   `:accuracy` (*type:* `String.t`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:envgroupHostname` (*type:* `String.t`) - Required. Hostname for which the interactive query will be executed.
+      *   `:filter` (*type:* `String.t`) - Filter that enables you to drill-down on specific dimension values.
+      *   `:limit` (*type:* `String.t`) - Maximum number of result items to return. The default and maximum value that can be returned is 14400.
+      *   `:offset` (*type:* `String.t`) - Offset value. Use `offset` with `limit` to enable pagination of results. For example, to display results 11-20, set limit to `10` and offset to `10`.
+      *   `:realtime` (*type:* `boolean()`) - No longer used by Apigee. Supported for backwards compatibility.
+      *   `:select` (*type:* `String.t`) - Required. Comma-separated list of metrics. For example: `sum(message_count),sum(error_count)`
+      *   `:sort` (*type:* `String.t`) - Flag that specifies whether the sort order should be ascending or descending. Valid values include `DESC` and `ASC`.
+      *   `:sortby` (*type:* `String.t`) - Comma-separated list of columns used to sort the final result.
+      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query. Time range is specified in GMT as `start~end`. For example: `04/15/2017 00:00~05/15/2017 23:59`.
+      *   `:timeUnit` (*type:* `String.t`) - Granularity of metrics returned. Valid values include: `second`, `minute`, `hour`, `day`, `week`, or `month`.
+      *   `:topk` (*type:* `String.t`) - Top number of results to return. For example, to return the top 5 results, set `topk=5`.
+      *   `:tsAscending` (*type:* `boolean()`) - Flag that specifies whether to list timestamps in ascending (`true`) or descending (`false`) order. Apigee recommends that you set this value to `true` if you are using `sortby` with `sort=DESC`.
+      *   `:tzo` (*type:* `String.t`) - Timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
