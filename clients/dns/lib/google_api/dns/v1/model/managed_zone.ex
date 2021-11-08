@@ -21,6 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
 
   ## Attributes
 
+  *   `cloudLoggingConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneCloudLoggingConfig.t`, *default:* `nil`) - 
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The time that this resource was created on the server. This is in RFC3339 text format. Output only.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
   *   `dnsName` (*type:* `String.t`, *default:* `nil`) - The DNS name of this managed zone, for instance "example.com.".
@@ -42,6 +43,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudLoggingConfig => GoogleApi.DNS.V1.Model.ManagedZoneCloudLoggingConfig.t() | nil,
           :creationTime => String.t() | nil,
           :description => String.t() | nil,
           :dnsName => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
           :visibility => String.t() | nil
         }
 
+  field(:cloudLoggingConfig, as: GoogleApi.DNS.V1.Model.ManagedZoneCloudLoggingConfig)
   field(:creationTime)
   field(:description)
   field(:dnsName)
