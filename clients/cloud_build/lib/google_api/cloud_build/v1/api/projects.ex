@@ -2618,7 +2618,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the `WorkerPool` is not found, the request will succeed but no action will be taken on the server.
-      *   `:etag` (*type:* `String.t`) - Optional. If this is provided, it must match the server's etag on the workerpool for the request to be processed.
+      *   `:etag` (*type:* `String.t`) - Optional. If provided, it must match the server's etag on the workerpool for the request to be processed.
       *   `:validateOnly` (*type:* `boolean()`) - If set, validate the request and preview the response, but do not actually post it.
   *   `opts` (*type:* `keyword()`) - Call options
 
