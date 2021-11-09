@@ -89,6 +89,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `applications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t)`, *default:* `nil`) - Policy applied to apps.
   *   `statusBarDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the status bar is disabled. This disables notifications, quick settings, and other screen overlays that allow escape from full-screen mode. DEPRECATED. To disable the status bar on a kiosk device, use InstallType KIOSK or kioskCustomLauncherEnabled.
   *   `kioskCustomLauncherEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the kiosk custom launcher is enabled. This replaces the home screen with a launcher that locks down the device to the apps installed via the applications setting. Apps appear on a single page in alphabetical order. Use kioskCustomization to further configure the kiosk device behavior.
+  *   `preferentialNetworkService` (*type:* `String.t`, *default:* `nil`) - Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices.
   *   `passwordPolicies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t)`, *default:* `nil`) - Password requirement policies. Different policies can be set for work profile or fully managed devices by setting the password_scope field in the policy.
   *   `cellBroadcastsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring cell broadcast is disabled.
   *   `unmuteMicrophoneDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the microphone is muted and adjusting microphone volume is disabled.
@@ -192,6 +193,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :applications => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t()) | nil,
           :statusBarDisabled => boolean() | nil,
           :kioskCustomLauncherEnabled => boolean() | nil,
+          :preferentialNetworkService => String.t() | nil,
           :passwordPolicies =>
             list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()) | nil,
           :cellBroadcastsConfigDisabled => boolean() | nil,
@@ -307,6 +309,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:applications, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy, type: :list)
   field(:statusBarDisabled)
   field(:kioskCustomLauncherEnabled)
+  field(:preferentialNetworkService)
 
   field(:passwordPolicies,
     as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements,
