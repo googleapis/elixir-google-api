@@ -25,6 +25,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using "/"-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix.
   *   `databaseConfig` (*type:* `GoogleApi.Composer.V1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `encryptionConfig` (*type:* `GoogleApi.Composer.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption options for the Cloud Composer environment and its dependencies. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `environmentSize` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   *   `webServerConfig` (*type:* `GoogleApi.Composer.V1.Model.WebServerConfig.t`, *default:* `nil`) - Optional. The configuration settings for the Airflow web server App Engine instance.
   *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `workloadsConfig` (*type:* `GoogleApi.Composer.V1.Model.WorkloadsConfig.t`, *default:* `nil`) - Optional. The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web server and workers workloads. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,6 +43,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :dagGcsPrefix => String.t() | nil,
           :databaseConfig => GoogleApi.Composer.V1.Model.DatabaseConfig.t() | nil,
           :encryptionConfig => GoogleApi.Composer.V1.Model.EncryptionConfig.t() | nil,
+          :environmentSize => String.t() | nil,
           :gkeCluster => String.t() | nil,
           :nodeConfig => GoogleApi.Composer.V1.Model.NodeConfig.t() | nil,
           :nodeCount => integer() | nil,
@@ -49,13 +52,15 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :softwareConfig => GoogleApi.Composer.V1.Model.SoftwareConfig.t() | nil,
           :webServerConfig => GoogleApi.Composer.V1.Model.WebServerConfig.t() | nil,
           :webServerNetworkAccessControl =>
-            GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t() | nil
+            GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t() | nil,
+          :workloadsConfig => GoogleApi.Composer.V1.Model.WorkloadsConfig.t() | nil
         }
 
   field(:airflowUri)
   field(:dagGcsPrefix)
   field(:databaseConfig, as: GoogleApi.Composer.V1.Model.DatabaseConfig)
   field(:encryptionConfig, as: GoogleApi.Composer.V1.Model.EncryptionConfig)
+  field(:environmentSize)
   field(:gkeCluster)
   field(:nodeConfig, as: GoogleApi.Composer.V1.Model.NodeConfig)
   field(:nodeCount)
@@ -66,6 +71,8 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   field(:webServerNetworkAccessControl,
     as: GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl
   )
+
+  field(:workloadsConfig, as: GoogleApi.Composer.V1.Model.WorkloadsConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1.Model.EnvironmentConfig do
