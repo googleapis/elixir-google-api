@@ -21,6 +21,8 @@ defmodule GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig do
 
   ## Attributes
 
+  *   `cloudComposerNetworkIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for Cloud Composer Network in tenant project will be reserved. Needs to be disjoint from private_cluster_config.master_ipv4_cidr_block and cloud_sql_ipv4_cidr_block. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
+  *   `cloudComposerNetworkIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range reserved for the tenant project's Cloud Composer network. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for Cloud SQL. Needs to be disjoint from `web_server_ipv4_cidr_block`.
   *   `enablePrivateEnvironment` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, a Private IP Cloud Composer environment is created. If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be set to true for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `privateClusterConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for the private GKE cluster for a Private IP Cloud Composer environment.
@@ -31,6 +33,8 @@ defmodule GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudComposerNetworkIpv4CidrBlock => String.t() | nil,
+          :cloudComposerNetworkIpv4ReservedRange => String.t() | nil,
           :cloudSqlIpv4CidrBlock => String.t() | nil,
           :enablePrivateEnvironment => boolean() | nil,
           :privateClusterConfig => GoogleApi.Composer.V1.Model.PrivateClusterConfig.t() | nil,
@@ -38,6 +42,8 @@ defmodule GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig do
           :webServerIpv4ReservedRange => String.t() | nil
         }
 
+  field(:cloudComposerNetworkIpv4CidrBlock)
+  field(:cloudComposerNetworkIpv4ReservedRange)
   field(:cloudSqlIpv4CidrBlock)
   field(:enablePrivateEnvironment)
   field(:privateClusterConfig, as: GoogleApi.Composer.V1.Model.PrivateClusterConfig)
