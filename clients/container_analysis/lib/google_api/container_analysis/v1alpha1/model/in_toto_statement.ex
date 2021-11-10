@@ -21,25 +21,28 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoStatement do
 
   ## Attributes
 
-  *   `predicateType` (*type:* `String.t`, *default:* `nil`) - "https://in-toto.io/Provenance/v0.1" for InTotoProvenance.
-  *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t`, *default:* `nil`) - 
-  *   `subject` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Subject.t)`, *default:* `nil`) - 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Always "https://in-toto.io/Statement/v0.1".
+  *   `_type` (*type:* `String.t`, *default:* `nil`) - Always "https://in-toto.io/Statement/v0.1".
+  *   `predicateType` (*type:* `String.t`, *default:* `nil`) - "https://slsa.dev/provenance/v0.1" for SlsaProvenance.
+  *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t`, *default:* `nil`) - provenance is a predicate of type intotoprovenance
+  *   `slsaProvenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.SlsaProvenance.t`, *default:* `nil`) - slsa_provenance is a predicate of type slsaProvenance
+  *   `subject` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Subject.t)`, *default:* `nil`) - subject is the subjects of the intoto statement
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :_type => String.t() | nil,
           :predicateType => String.t() | nil,
           :provenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t() | nil,
-          :subject => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Subject.t()) | nil,
-          :type => String.t() | nil
+          :slsaProvenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.SlsaProvenance.t() | nil,
+          :subject => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Subject.t()) | nil
         }
 
+  field(:_type)
   field(:predicateType)
   field(:provenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance)
+  field(:slsaProvenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.SlsaProvenance)
   field(:subject, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Subject, type: :list)
-  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoStatement do
