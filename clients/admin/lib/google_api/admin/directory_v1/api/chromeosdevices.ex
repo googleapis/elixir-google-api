@@ -201,7 +201,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
       *   `:pageToken` (*type:* `String.t`) - The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
-      *   `:query` (*type:* `String.t`) - Search string in the format given at http://support.google.com/chromeos/a/bin/answer.py?answer=1698333
+      *   `:query` (*type:* `String.t`) - Search string in the format given at https://developers.google.com/admin-sdk/directory/v1/list-query-operators
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
