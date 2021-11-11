@@ -104,7 +104,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used.
       *   `:photoIds` (*type:* `list(String.t)`) - Required. IDs of the Photos. For HTTP GET requests, the URL query parameter should be `photoIds=&photoIds=&...`.
       *   `:view` (*type:* `String.t`) - Required. Specifies if a download URL for the photo bytes should be returned in the Photo response.
   *   `opts` (*type:* `keyword()`) - Call options
