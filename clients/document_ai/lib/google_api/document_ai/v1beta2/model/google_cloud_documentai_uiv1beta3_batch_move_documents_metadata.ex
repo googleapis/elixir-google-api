@@ -22,6 +22,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Batch
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `destDatasetType` (*type:* `String.t`, *default:* `nil`) - The destination dataset split type.
+  *   `individualBatchMoveStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus.t)`, *default:* `nil`) - The list of response details of each document.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +31,25 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Batch
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            | nil,
+          :destDatasetType => String.t() | nil,
+          :individualBatchMoveStatuses =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus.t()
+            )
             | nil
         }
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
+
+  field(:destDatasetType)
+
+  field(:individualBatchMoveStatuses,
+    as:
+      GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus,
+    type: :list
   )
 end
 
