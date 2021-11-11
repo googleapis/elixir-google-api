@@ -36,6 +36,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
       - The time cannot be more than a year in the future
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values.
   *   `kind` (*type:* `String.t`, *default:* `drive#permission`) - Identifies what kind of resource this is. Value: the fixed string "drive#permission".
+  *   `pendingOwner` (*type:* `boolean()`, *default:* `nil`) - Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that are not in a shared drive.
   *   `permissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t)`, *default:* `nil`) - Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items.
   *   `photoLink` (*type:* `String.t`, *default:* `nil`) - A link to the user's profile photo, if available.
   *   `role` (*type:* `String.t`, *default:* `nil`) - The role granted by this permission. While new values may be supported in the future, the following are currently allowed:  
@@ -65,6 +66,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
           :expirationTime => DateTime.t() | nil,
           :id => String.t() | nil,
           :kind => String.t() | nil,
+          :pendingOwner => boolean() | nil,
           :permissionDetails =>
             list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t()) | nil,
           :photoLink => String.t() | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   field(:expirationTime, as: DateTime)
   field(:id)
   field(:kind)
+  field(:pendingOwner)
   field(:permissionDetails, as: GoogleApi.Drive.V3.Model.PermissionPermissionDetails, type: :list)
   field(:photoLink)
   field(:role)

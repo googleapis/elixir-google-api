@@ -30,6 +30,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can trash children of this folder. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can list the children of this folder. This is always false when the item is not a folder.
   *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for items in shared drives.
+  *   `canAcceptOwnership` (*type:* `boolean()`, *default:* `nil`) - Whether the current user is the pending owner of the file. Not populated for shared drive files.
   *   `canModifyContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify restrictions on content of this file.
   *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder.
   *   `canTrash` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this file to trash.
@@ -70,6 +71,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canTrashChildren => boolean() | nil,
           :canListChildren => boolean() | nil,
           :canDeleteChildren => boolean() | nil,
+          :canAcceptOwnership => boolean() | nil,
           :canModifyContentRestriction => boolean() | nil,
           :canCopy => boolean() | nil,
           :canTrash => boolean() | nil,
@@ -107,6 +109,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canTrashChildren)
   field(:canListChildren)
   field(:canDeleteChildren)
+  field(:canAcceptOwnership)
   field(:canModifyContentRestriction)
   field(:canCopy)
   field(:canTrash)
