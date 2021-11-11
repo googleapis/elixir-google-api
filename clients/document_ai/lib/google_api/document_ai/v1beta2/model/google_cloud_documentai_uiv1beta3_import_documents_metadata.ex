@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Impor
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `individualImportStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus.t)`, *default:* `nil`) - The list of response details of each document.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +30,22 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Impor
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            | nil,
+          :individualImportStatuses =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus.t()
+            )
             | nil
         }
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
+
+  field(:individualImportStatuses,
+    as:
+      GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus,
+    type: :list
   )
 end
 
