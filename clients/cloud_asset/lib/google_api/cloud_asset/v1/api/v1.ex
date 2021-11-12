@@ -57,6 +57,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       *   `:"analysisQuery.options.outputResourceEdges"` (*type:* `boolean()`) - Optional. If true, the result will output the relevant parent/child relationships between resources. Default is false.
       *   `:"analysisQuery.resourceSelector.fullResourceName"` (*type:* `String.t`) - Required. The [full resource name] (https://cloud.google.com/asset-inventory/docs/resource-name-format) of a resource of [supported resource types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#analyzable_asset_types).
       *   `:executionTimeout` (*type:* `String.t`) - Optional. Amount of time executable has to complete. See JSON representation of [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json). If this field is set with a value less than the RPC deadline, and the execution of your query hasn't finished in the specified execution timeout, you will get a response with partial result. Otherwise, your query's execution will continue until the RPC deadline. If it's not finished until then, you will get a DEADLINE_EXCEEDED error. Default is empty.
+      *   `:savedAnalysisQuery` (*type:* `String.t`) - Optional. The name of a saved query, which must be in the format of: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id If both `analysis_query` and `saved_analysis_query` are provided, they will be merged together with the `saved_analysis_query` as base and the `analysis_query` as overrides. For more details of the merge behavior, please refer to the [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details) page. Note that you cannot override primitive fields with default value, such as 0 or empty string, etc., because we use proto3, which doesn't support field presence yet.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -99,7 +100,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       :"analysisQuery.options.outputGroupEdges" => :query,
       :"analysisQuery.options.outputResourceEdges" => :query,
       :"analysisQuery.resourceSelector.fullResourceName" => :query,
-      :executionTimeout => :query
+      :executionTimeout => :query,
+      :savedAnalysisQuery => :query
     }
 
     request =
