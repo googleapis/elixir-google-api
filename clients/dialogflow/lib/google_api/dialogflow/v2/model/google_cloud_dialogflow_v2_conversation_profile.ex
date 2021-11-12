@@ -26,12 +26,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human readable name for this profile. Max length 1024 bytes.
   *   `humanAgentAssistantConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfig.t`, *default:* `nil`) - Configuration for agent assistance to use with this profile.
   *   `humanAgentHandoffConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfig.t`, *default:* `nil`) - Configuration for connecting to a live agent. Currently, this feature is not general available, please contact Google to get access.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language which represents the conversationProfile. If unspecified, the default language code en-us applies. Users need to create a ConversationProfile for each language they want to support.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language code for the conversation profile. If not specified, the language is en-US. Language at ConversationProfile should be set for all non en-US languages. This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
   *   `loggingConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2LoggingConfig.t`, *default:* `nil`) - Configuration for logging conversation lifecycle events.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this conversation profile. Format: `projects//locations//conversationProfiles/`.
   *   `newMessageEventNotificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Configuration for publishing new message events. Event will be sent in format of ConversationEvent
   *   `notificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Configuration for publishing conversation lifecycle events.
+  *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the CX SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `sttConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig.t`, *default:* `nil`) - Settings for speech transcription.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of this conversational profile from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris. Defaults to America/New_York.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time of the conversation profile.
   """
 
@@ -55,8 +57,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil,
           :notificationConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil,
+          :securitySettings => String.t() | nil,
           :sttConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig.t() | nil,
+          :timeZone => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -87,7 +91,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig
   )
 
+  field(:securitySettings)
   field(:sttConfig, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig)
+  field(:timeZone)
   field(:updateTime, as: DateTime)
 end
 
