@@ -23,7 +23,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.ConfigureContactSettingsRequest do
 
   *   `contactNotices` (*type:* `list(String.t)`, *default:* `nil`) - The list of contact notices that the caller acknowledges. The notices needed here depend on the values specified in `contact_settings`.
   *   `contactSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.ContactSettings.t`, *default:* `nil`) - Fields of the `ContactSettings` to update.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The field mask describing which fields to update as a comma-separated list. For example, if only the registrant contact is being updated, the `update_mask` would be `"registrant_contact"`.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The field mask describing which fields to update as a comma-separated list. For example, if only the registrant contact is being updated, the `update_mask` is `"registrant_contact"`.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Validate the request without actually updating the contact settings.
   """
 

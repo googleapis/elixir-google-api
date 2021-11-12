@@ -22,7 +22,7 @@ defmodule GoogleApi.Domains.V1beta1.Model.ConfigureManagementSettingsRequest do
   ## Attributes
 
   *   `managementSettings` (*type:* `GoogleApi.Domains.V1beta1.Model.ManagementSettings.t`, *default:* `nil`) - Fields of the `ManagementSettings` to update.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The field mask describing which fields to update as a comma-separated list. For example, if only the transfer lock is being updated, the `update_mask` would be `"transfer_lock_state"`.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The field mask describing which fields to update as a comma-separated list. For example, if only the transfer lock is being updated, the `update_mask` is `"transfer_lock_state"`.
   """
 
   use GoogleApi.Gax.ModelBase
