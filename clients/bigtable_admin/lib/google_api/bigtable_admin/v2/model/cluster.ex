@@ -21,6 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
 
   ## Attributes
 
+  *   `clusterConfig` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ClusterConfig.t`, *default:* `nil`) - Configuration for this cluster.
   *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of storage used by this cluster to serve its parent instance's tables, unless explicitly overridden.
   *   `encryptionConfig` (*type:* `GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t`, *default:* `nil`) - Immutable. The encryption configuration for CMEK-protected clusters.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best performance, clients should be located as close as possible to this cluster. Currently only zones are supported, so values should be of the form `projects/{project}/locations/{zone}`.
@@ -32,6 +33,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusterConfig => GoogleApi.BigtableAdmin.V2.Model.ClusterConfig.t() | nil,
           :defaultStorageType => String.t() | nil,
           :encryptionConfig => GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t() | nil,
           :location => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
           :state => String.t() | nil
         }
 
+  field(:clusterConfig, as: GoogleApi.BigtableAdmin.V2.Model.ClusterConfig)
   field(:defaultStorageType)
   field(:encryptionConfig, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig)
   field(:location)
