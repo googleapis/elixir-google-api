@@ -23,7 +23,7 @@ defmodule GoogleApi.Domains.V1beta1.Model.ContactSettings do
 
   *   `adminContact` (*type:* `GoogleApi.Domains.V1beta1.Model.Contact.t`, *default:* `nil`) - Required. The administrative contact for the `Registration`.
   *   `privacy` (*type:* `String.t`, *default:* `nil`) - Required. Privacy setting for the contacts associated with the `Registration`.
-  *   `registrantContact` (*type:* `GoogleApi.Domains.V1beta1.Model.Contact.t`, *default:* `nil`) - Required. The registrant contact for the `Registration`. *Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.* *Warning: For new `Registration`s, the registrant will receive an email confirmation that they must complete within 15 days to avoid domain suspension.*
+  *   `registrantContact` (*type:* `GoogleApi.Domains.V1beta1.Model.Contact.t`, *default:* `nil`) - Required. The registrant contact for the `Registration`. *Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.* *Warning: For new `Registration`s, the registrant receives an email confirmation that they must complete within 15 days to avoid domain suspension.*
   *   `technicalContact` (*type:* `GoogleApi.Domains.V1beta1.Model.Contact.t`, *default:* `nil`) - Required. The technical contact for the `Registration`.
   """
 
