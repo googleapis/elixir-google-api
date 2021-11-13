@@ -25,7 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - This will include form information for dialogs such as form inputs, action parameters.
   *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the bot should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/chat/how-tos/auth-3p) for more information.
   *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of dialog event we have received.
-  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event was dispatched.
+  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event occurred.
   *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - Whether or not this event is related to dialogs request, submit or cancel. This will be set to true when we want a request/submit/cancel event.
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the event occurred.
