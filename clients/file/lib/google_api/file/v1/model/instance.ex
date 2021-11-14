@@ -25,12 +25,14 @@ defmodule GoogleApi.File.V1.Model.Instance do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the instance (2048 characters or less).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Server-specified ETag for the instance resource to prevent simultaneous updates from overwriting each other.
   *   `fileShares` (*type:* `list(GoogleApi.File.V1.Model.FileShareConfig.t)`, *default:* `nil`) - File system shares on the instance. For this version, only a single file share is supported.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - KMS key name used for data encryption.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`.
   *   `networks` (*type:* `list(GoogleApi.File.V1.Model.NetworkConfig.t)`, *default:* `nil`) - VPC networks to which the instance is connected. For this version, only a single network is supported.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The instance state.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the instance state, if available.
+  *   `suspensionReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. field indicates all the reasons the instance is in "SUSPENDED" state.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The service tier of the instance.
   """
 
@@ -41,12 +43,14 @@ defmodule GoogleApi.File.V1.Model.Instance do
           :description => String.t() | nil,
           :etag => String.t() | nil,
           :fileShares => list(GoogleApi.File.V1.Model.FileShareConfig.t()) | nil,
+          :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :networks => list(GoogleApi.File.V1.Model.NetworkConfig.t()) | nil,
           :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :statusMessage => String.t() | nil,
+          :suspensionReasons => list(String.t()) | nil,
           :tier => String.t() | nil
         }
 
@@ -54,12 +58,14 @@ defmodule GoogleApi.File.V1.Model.Instance do
   field(:description)
   field(:etag)
   field(:fileShares, as: GoogleApi.File.V1.Model.FileShareConfig, type: :list)
+  field(:kmsKeyName)
   field(:labels, type: :map)
   field(:name)
   field(:networks, as: GoogleApi.File.V1.Model.NetworkConfig, type: :list)
   field(:satisfiesPzs)
   field(:state)
   field(:statusMessage)
+  field(:suspensionReasons, type: :list)
   field(:tier)
 end
 
