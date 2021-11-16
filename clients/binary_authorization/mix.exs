@@ -18,7 +18,7 @@
 defmodule GoogleApi.BinaryAuthorization.Mixfile do
   use Mix.Project
 
-  @version "0.13.4"
+  @version "0.13.5"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.BinaryAuthorization.Mixfile do
 
   defp description() do
     """
-    Binary Authorization API client library. The management interface for Binary Authorization, a system providing policy control for images deployed to Kubernetes Engine clusters. 
+    Binary Authorization API client library. The management interface for Binary Authorization, a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run. 
     """
   end
 
