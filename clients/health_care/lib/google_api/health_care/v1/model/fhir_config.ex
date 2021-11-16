@@ -21,15 +21,18 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirConfig do
 
   ## Attributes
 
+  *   `defaultKeepExtensions` (*type:* `boolean()`, *default:* `nil`) - The behaviour for handling FHIR extensions that aren't otherwise specified for de-identification. If true, all extensions are preserved during de-identification by default. If false or unspecified, all extensions are removed during de-identification by default.
   *   `fieldMetadataList` (*type:* `list(GoogleApi.HealthCare.V1.Model.FieldMetadata.t)`, *default:* `nil`) - Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions will be processed according to `default_keep_extensions`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultKeepExtensions => boolean() | nil,
           :fieldMetadataList => list(GoogleApi.HealthCare.V1.Model.FieldMetadata.t()) | nil
         }
 
+  field(:defaultKeepExtensions)
   field(:fieldMetadataList, as: GoogleApi.HealthCare.V1.Model.FieldMetadata, type: :list)
 end
 
