@@ -30,6 +30,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
   *   `fixedSizeBucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t`, *default:* `nil`) - Fixed size bucketing
   *   `redactConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t`, *default:* `nil`) - Redact
   *   `replaceConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t`, *default:* `nil`) - Replace with a specified value.
+  *   `replaceDictionaryConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceDictionaryConfig.t`, *default:* `nil`) - Replace with a value randomly drawn (with replacement) from a dictionary.
   *   `replaceWithInfoTypeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t`, *default:* `nil`) - Replace with infotype
   *   `timePartConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t`, *default:* `nil`) - Time extraction
   """
@@ -51,6 +52,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t() | nil,
           :redactConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t() | nil,
           :replaceConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t() | nil,
+          :replaceDictionaryConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceDictionaryConfig.t() | nil,
           :replaceWithInfoTypeConfig =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t() | nil,
           :timePartConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t() | nil
@@ -77,6 +80,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
 
   field(:redactConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig)
   field(:replaceConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig)
+
+  field(:replaceDictionaryConfig,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceDictionaryConfig
+  )
 
   field(:replaceWithInfoTypeConfig,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig
