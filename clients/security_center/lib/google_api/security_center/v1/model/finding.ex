@@ -25,9 +25,13 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the event took place, or when an update to the finding occurred. For example, if the finding represents an open firewall it would capture the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding were to be resolved afterward, this time would reflect when the finding was resolved. Must not be set to a value greater than the current timestamp.
+  *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
   *   `indicator` (*type:* `GoogleApi.SecurityCenter.V1.Model.Indicator.t`, *default:* `nil`) - Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+  *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either unspecified, muted, unmuted or undefined).
+  *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc.
+  *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: "organizations/{organization_id}/sources/{source_id}"
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
@@ -45,9 +49,18 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :category => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :eventTime => DateTime.t() | nil,
+          :externalSystems =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t()
+            }
+            | nil,
           :externalUri => String.t() | nil,
           :findingClass => String.t() | nil,
           :indicator => GoogleApi.SecurityCenter.V1.Model.Indicator.t() | nil,
+          :mute => String.t() | nil,
+          :muteInitiator => String.t() | nil,
+          :muteUpdateTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :parent => String.t() | nil,
           :resourceName => String.t() | nil,
@@ -62,9 +75,18 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:category)
   field(:createTime, as: DateTime)
   field(:eventTime, as: DateTime)
+
+  field(:externalSystems,
+    as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem,
+    type: :map
+  )
+
   field(:externalUri)
   field(:findingClass)
   field(:indicator, as: GoogleApi.SecurityCenter.V1.Model.Indicator)
+  field(:mute)
+  field(:muteInitiator)
+  field(:muteUpdateTime, as: DateTime)
   field(:name)
   field(:parent)
   field(:resourceName)
