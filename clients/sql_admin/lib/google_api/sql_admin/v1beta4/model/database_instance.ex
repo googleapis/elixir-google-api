@@ -30,6 +30,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as primary in the replication setup.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example **2012-11-15T16:19:00.094Z**.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - The status indicating if instance satisfiesPzs. Reserved for future use.
+  *   `databaseInstalledVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The databaseInstalledVersion stores the current fully resolved database version running on the instance including minor version such as MYSQL_5_6_50
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#instance**.
   *   `gceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable.
@@ -40,7 +41,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance.
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name of the Cloud SQL instance used in connection strings.
   *   `onPremisesConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t`, *default:* `nil`) - Configuration specific to on-premises instances.
-  *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type. This can be one of the following: * **CLOUD_SQL_INSTANCE**: A Cloud SQL instance that is not replicating from a primary instance. * **ON_PREMISES_INSTANCE**: An instance running on the customer's premises. * **READ_REPLICA_INSTANCE**: A Cloud SQL instance configured as a read-replica.
+  *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details.
@@ -68,6 +69,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :masterInstanceName => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :satisfiesPzs => boolean() | nil,
+          :databaseInstalledVersion => String.t() | nil,
           :kind => String.t() | nil,
           :gceZone => String.t() | nil,
           :project => String.t() | nil,
@@ -109,6 +111,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:masterInstanceName)
   field(:createTime, as: DateTime)
   field(:satisfiesPzs)
+  field(:databaseInstalledVersion)
   field(:kind)
   field(:gceZone)
   field(:project)

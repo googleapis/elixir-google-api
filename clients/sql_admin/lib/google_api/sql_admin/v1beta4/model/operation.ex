@@ -32,7 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of the operation. Valid values are: * **CREATE** * **DELETE** * **UPDATE** * **RESTART** * **IMPORT** * **EXPORT** * **BACKUP_VOLUME** * **RESTORE_VOLUME** * **CREATE_USER** * **DELETE_USER** * **CREATE_DATABASE** * **DELETE_DATABASE**
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example **2012-11-15T16:19:00.094Z**.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation. Valid values are: * **PENDING** * **RUNNING** * **DONE** * **SQL_OPERATION_STATUS_UNSPECIFIED**
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the database instance related to this operation.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.

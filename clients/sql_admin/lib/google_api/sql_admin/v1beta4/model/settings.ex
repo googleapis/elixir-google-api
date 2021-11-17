@@ -38,6 +38,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#settings**.
   *   `locationPreference` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t`, *default:* `nil`) - The location preference settings. This allows the instance to be located as near as possible to either an App Engine app or Compute Engine zone for better performance. App Engine co-location was only applicable to First Generation instances.
   *   `maintenanceWindow` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t`, *default:* `nil`) - The maintenance window for this instance. This specifies when the instance can be restarted for maintenance purposes.
+  *   `passwordValidationPolicy` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy.t`, *default:* `nil`) - The local user password validation policy of the instance.
   *   `pricingPlan` (*type:* `String.t`, *default:* `nil`) - The pricing plan for this instance. This can be either **PER_USE** or **PACKAGE**. Only **PER_USE** is supported for Second Generation instances.
   *   `replicationType` (*type:* `String.t`, *default:* `nil`) - The type of replication this instance uses. This can be either **ASYNCHRONOUS** or **SYNCHRONOUS**. (Deprecated) This property was only applicable to First Generation instances.
   *   `settingsVersion` (*type:* `String.t`, *default:* `nil`) - The version of instance settings. This is a required field for update method to make sure concurrent updates are handled properly. During update, use the most recent settingsVersion value for this instance and do not try to update this value.
@@ -70,6 +71,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
           :kind => String.t() | nil,
           :locationPreference => GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t() | nil,
           :maintenanceWindow => GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t() | nil,
+          :passwordValidationPolicy =>
+            GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy.t() | nil,
           :pricingPlan => String.t() | nil,
           :replicationType => String.t() | nil,
           :settingsVersion => String.t() | nil,
@@ -103,6 +106,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   field(:kind)
   field(:locationPreference, as: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference)
   field(:maintenanceWindow, as: GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow)
+  field(:passwordValidationPolicy, as: GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy)
   field(:pricingPlan)
   field(:replicationType)
   field(:settingsVersion)
