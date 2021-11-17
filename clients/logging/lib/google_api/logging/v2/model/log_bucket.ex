@@ -21,6 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
 
   ## Attributes
 
+  *   `cmekSettings` (*type:* `GoogleApi.Logging.V2.Model.CmekSettings.t`, *default:* `nil`) - The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this bucket.
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - Output only. The bucket lifecycle state.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cmekSettings => GoogleApi.Logging.V2.Model.CmekSettings.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :lifecycleState => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:cmekSettings, as: GoogleApi.Logging.V2.Model.CmekSettings)
   field(:createTime, as: DateTime)
   field(:description)
   field(:lifecycleState)
