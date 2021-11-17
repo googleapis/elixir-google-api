@@ -31,6 +31,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `posixDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data source.
   *   `sinkAgentPoolName` (*type:* `String.t`, *default:* `nil`) - Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used.
   *   `sourceAgentPoolName` (*type:* `String.t`, *default:* `nil`) - Specifies the agent pool name associated with the posix data source. When unspecified, the default name is used.
+  *   `transferManifest` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferManifest.t`, *default:* `nil`) - A manifest file provides a list of objects to be transferred from the data source. This field points to the location of the manifest file. Otherwise, the entire source bucket is used. ObjectConditions still apply.
   *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - If the option delete_objects_unique_in_sink is `true` and time-based object conditions such as 'last modification time' are specified, the request fails with an INVALID_ARGUMENT error.
   """
 
@@ -48,6 +49,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
           :posixDataSource => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
           :sinkAgentPoolName => String.t() | nil,
           :sourceAgentPoolName => String.t() | nil,
+          :transferManifest => GoogleApi.StorageTransfer.V1.Model.TransferManifest.t() | nil,
           :transferOptions => GoogleApi.StorageTransfer.V1.Model.TransferOptions.t() | nil
         }
 
@@ -61,6 +63,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   field(:posixDataSource, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)
   field(:sinkAgentPoolName)
   field(:sourceAgentPoolName)
+  field(:transferManifest, as: GoogleApi.StorageTransfer.V1.Model.TransferManifest)
   field(:transferOptions, as: GoogleApi.StorageTransfer.V1.Model.TransferOptions)
 end
 
