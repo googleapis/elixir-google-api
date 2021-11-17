@@ -18,7 +18,7 @@
 defmodule GoogleApi.Logging.Mixfile do
   use Mix.Project
 
-  @version "0.40.1"
+  @version "0.41.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Logging.Mixfile do
 
   defp description() do
     """
-    Cloud Logging API client library.
+    Cloud Logging API client library. Writes log entries and manages your Cloud Logging configuration.
     """
   end
 
