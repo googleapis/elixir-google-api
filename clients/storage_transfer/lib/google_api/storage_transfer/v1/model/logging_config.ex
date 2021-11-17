@@ -22,15 +22,21 @@ defmodule GoogleApi.StorageTransfer.V1.Model.LoggingConfig do
   ## Attributes
 
   *   `enableOnpremGcsTransferLogs` (*type:* `boolean()`, *default:* `nil`) - Enables the Cloud Storage transfer logs for this transfer. This is only supported for transfer jobs with PosixFilesystem sources. The default is that logs are not generated for this transfer.
+  *   `logActionStates` (*type:* `list(String.t)`, *default:* `nil`) - States in which `log_actions` are logged. If empty, no logs are generated. This is not yet supported for transfers with PosixFilesystem data sources.
+  *   `logActions` (*type:* `list(String.t)`, *default:* `nil`) - Actions to be logged. If empty, no logs are generated. This is not yet supported for transfers with PosixFilesystem data sources.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableOnpremGcsTransferLogs => boolean() | nil
+          :enableOnpremGcsTransferLogs => boolean() | nil,
+          :logActionStates => list(String.t()) | nil,
+          :logActions => list(String.t()) | nil
         }
 
   field(:enableOnpremGcsTransferLogs)
+  field(:logActionStates, type: :list)
+  field(:logActions, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StorageTransfer.V1.Model.LoggingConfig do
