@@ -26,6 +26,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Output only. The details of a failure or a cancellation.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a job from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform job updates in order to avoid race conditions: An `etag` is returned in the response to `GetJob`, and systems are expected to put that etag in the request to `UpdateJob` to ensure that their change will be applied to the same version of the job.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Required. The user-specified id of the job.
+  *   `jobPosition` (*type:* `String.t`, *default:* `nil`) - Output only. It's only effect when the job is in QUEUED state. If it's positive, it indicates the job's position in the job scheduler. It's 0 when the job is already scheduled.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels.
   *   `predictionInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t`, *default:* `nil`) - Input parameters to create a prediction job.
   *   `predictionOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t`, *default:* `nil`) - The current prediction job result.
@@ -43,6 +44,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
           :errorMessage => String.t() | nil,
           :etag => String.t() | nil,
           :jobId => String.t() | nil,
+          :jobPosition => String.t() | nil,
           :labels => map() | nil,
           :predictionInput =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   field(:errorMessage)
   field(:etag)
   field(:jobId)
+  field(:jobPosition)
   field(:labels, type: :map)
   field(:predictionInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput)
 
