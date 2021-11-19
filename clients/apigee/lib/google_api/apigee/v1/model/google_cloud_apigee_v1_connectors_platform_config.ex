@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConnectorsPlatformConfig 
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether the Connectors Platform add-on is enabled.
-  *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the Connectors Platform add-on expires in in milliseconds since epoch. If unspecified, the add-on will never expire.
+  *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the Connectors Platform add-on expires in milliseconds since epoch. If unspecified, the add-on will never expire.
   """
 
   use GoogleApi.Gax.ModelBase
