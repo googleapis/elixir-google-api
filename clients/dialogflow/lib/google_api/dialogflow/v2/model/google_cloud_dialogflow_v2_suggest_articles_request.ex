@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesRe
 
   ## Attributes
 
+  *   `assistQueryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters.t`, *default:* `nil`) - Parameters for a human assist query.
   *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Max number of messages prior to and including latest_message to use as context when compiling the suggestion. By default 20 and at most 50.
   *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`.
   """
@@ -28,9 +29,15 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :assistQueryParams =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters.t() | nil,
           :contextSize => integer() | nil,
           :latestMessage => String.t() | nil
         }
+
+  field(:assistQueryParams,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters
+  )
 
   field(:contextSize)
   field(:latestMessage)

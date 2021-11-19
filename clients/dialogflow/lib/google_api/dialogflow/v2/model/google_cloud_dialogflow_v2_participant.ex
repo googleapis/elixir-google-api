@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant do
 
   ## Attributes
 
+  *   `documentsMetadataFilters` (*type:* `map()`, *default:* `nil`) - Optional. Key-value filters on the metadata of documents returned by article suggestion. If specified, article suggestion only returns suggested documents that match all filters in their Document.metadata. Multiple values for a metadata key should be concatenated by comma. For example, filters to match all documents that have 'US' or 'CA' in their market metadata values and 'agent' in their user metadata values will be ``` documents_metadata_filters { key: "market" value: "US,CA" } documents_metadata_filters { key: "user" value: "agent" } ```
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this participant. Format: `projects//locations//conversations//participants/`.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Immutable. The role this participant plays in the conversation. This field must be set during participant creation and is then immutable.
   *   `sipRecordingMediaLabel` (*type:* `String.t`, *default:* `nil`) - Optional. Label applied to streams representing this participant in SIPREC XML metadata and SDP. This is used to assign transcriptions from that media stream to this participant. This field can be updated.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Participant do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :documentsMetadataFilters => map() | nil,
           :name => String.t() | nil,
           :role => String.t() | nil,
           :sipRecordingMediaLabel => String.t() | nil
         }
 
+  field(:documentsMetadataFilters, type: :map)
   field(:name)
   field(:role)
   field(:sipRecordingMediaLabel)
