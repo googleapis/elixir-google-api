@@ -21,6 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
 
   ## Attributes
 
+  *   `cloudComposerConnectionSubnetwork` (*type:* `String.t`, *default:* `nil`) - Optional. When specified, the environment will use Private Service Connect instead of VPC peerings to connect to Cloud SQL in the Tenant Project, and the PSC endpoint in the Customer Project will use an IP address from this subnetwork.
   *   `cloudComposerNetworkIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for Cloud Composer Network in tenant project will be reserved. Needs to be disjoint from private_cluster_config.master_ipv4_cidr_block and cloud_sql_ipv4_cidr_block. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `cloudComposerNetworkIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range reserved for the tenant project's Cloud Composer network. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for Cloud SQL. Needs to be disjoint from web_server_ipv4_cidr_block
@@ -34,6 +35,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudComposerConnectionSubnetwork => String.t() | nil,
           :cloudComposerNetworkIpv4CidrBlock => String.t() | nil,
           :cloudComposerNetworkIpv4ReservedRange => String.t() | nil,
           :cloudSqlIpv4CidrBlock => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
           :webServerIpv4ReservedRange => String.t() | nil
         }
 
+  field(:cloudComposerConnectionSubnetwork)
   field(:cloudComposerNetworkIpv4CidrBlock)
   field(:cloudComposerNetworkIpv4ReservedRange)
   field(:cloudSqlIpv4CidrBlock)

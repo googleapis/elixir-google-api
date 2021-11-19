@@ -32,7 +32,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   *   `webServerConfig` (*type:* `GoogleApi.Composer.V1.Model.WebServerConfig.t`, *default:* `nil`) - Optional. The configuration settings for the Airflow web server App Engine instance.
-  *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied.
   *   `workloadsConfig` (*type:* `GoogleApi.Composer.V1.Model.WorkloadsConfig.t`, *default:* `nil`) - Optional. The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web server and workers workloads. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   """
 

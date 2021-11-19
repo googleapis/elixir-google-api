@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl do
   @moduledoc """
-  Network-level access control policy for the Airflow web server. Supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  Network-level access control policy for the Airflow web server.
 
   ## Attributes
 
