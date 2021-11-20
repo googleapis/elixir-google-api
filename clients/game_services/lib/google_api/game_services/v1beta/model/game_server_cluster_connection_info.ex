@@ -22,7 +22,6 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo do
   ## Attributes
 
   *   `gkeClusterReference` (*type:* `GoogleApi.GameServices.V1beta.Model.GkeClusterReference.t`, *default:* `nil`) - Reference to the GKE cluster where the game servers are installed.
-  *   `gkeHubClusterReference` (*type:* `GoogleApi.GameServices.V1beta.Model.GkeHubClusterReference.t`, *default:* `nil`) - Reference to a Kubernetes cluster registered through GKE Hub. See https://cloud.google.com/anthos/multicluster-management/ for more information about registering Kubernetes clusters.
   *   `namespace` (*type:* `String.t`, *default:* `nil`) - Namespace designated on the game server cluster where the Agones game server instances will be created. Existence of the namespace will be validated during creation.
   """
 
@@ -31,13 +30,10 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo do
   @type t :: %__MODULE__{
           :gkeClusterReference =>
             GoogleApi.GameServices.V1beta.Model.GkeClusterReference.t() | nil,
-          :gkeHubClusterReference =>
-            GoogleApi.GameServices.V1beta.Model.GkeHubClusterReference.t() | nil,
           :namespace => String.t() | nil
         }
 
   field(:gkeClusterReference, as: GoogleApi.GameServices.V1beta.Model.GkeClusterReference)
-  field(:gkeHubClusterReference, as: GoogleApi.GameServices.V1beta.Model.GkeHubClusterReference)
   field(:namespace)
 end
 

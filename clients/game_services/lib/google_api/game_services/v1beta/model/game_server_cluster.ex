@@ -21,7 +21,6 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerCluster do
 
   ## Attributes
 
-  *   `allocationPriority` (*type:* `String.t`, *default:* `nil`) - Optional. The allocation priority assigned to the game server cluster. Game server clusters receive new game server allocations based on the relative allocation priorites set for each cluster, if the realm is configured for multicluster allocation.
   *   `clusterState` (*type:* `GoogleApi.GameServices.V1beta.Model.KubernetesClusterState.t`, *default:* `nil`) - Output only. The state of the Kubernetes cluster, this will be available if 'view' is set to `FULL` in the relevant List/Get/Preview request.
   *   `connectionInfo` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t`, *default:* `nil`) - The game server cluster connection information. This information is used to manage game server clusters.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
@@ -35,7 +34,6 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerCluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocationPriority => String.t() | nil,
           :clusterState => GoogleApi.GameServices.V1beta.Model.KubernetesClusterState.t() | nil,
           :connectionInfo =>
             GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t() | nil,
@@ -47,7 +45,6 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerCluster do
           :updateTime => DateTime.t() | nil
         }
 
-  field(:allocationPriority)
   field(:clusterState, as: GoogleApi.GameServices.V1beta.Model.KubernetesClusterState)
   field(:connectionInfo, as: GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo)
   field(:createTime, as: DateTime)
