@@ -22,7 +22,6 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   ## Attributes
 
   *   `advertisedRoutes` (*type:* `list(GoogleApi.Compute.V1.Model.Route.t)`, *default:* `nil`) - Routes that were advertised to the remote BGP peer
-  *   `bfdStatus` (*type:* `GoogleApi.Compute.V1.Model.BfdStatus.t`, *default:* `nil`) - 
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the local BGP interface.
   *   `linkedVpnTunnel` (*type:* `String.t`, *default:* `nil`) - URL of the VPN tunnel that this BGP peer controls.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. Unique within the Routers resource.
@@ -39,7 +38,6 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
 
   @type t :: %__MODULE__{
           :advertisedRoutes => list(GoogleApi.Compute.V1.Model.Route.t()) | nil,
-          :bfdStatus => GoogleApi.Compute.V1.Model.BfdStatus.t() | nil,
           :ipAddress => String.t() | nil,
           :linkedVpnTunnel => String.t() | nil,
           :name => String.t() | nil,
@@ -53,7 +51,6 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
         }
 
   field(:advertisedRoutes, as: GoogleApi.Compute.V1.Model.Route, type: :list)
-  field(:bfdStatus, as: GoogleApi.Compute.V1.Model.BfdStatus)
   field(:ipAddress)
   field(:linkedVpnTunnel)
   field(:name)
