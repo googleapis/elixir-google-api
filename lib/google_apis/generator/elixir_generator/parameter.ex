@@ -112,7 +112,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   @spec from_json_schema(String.t(), JsonSchema.t(), ResourceContext.t()) :: t
   def from_json_schema(name, schema, context, path \\ "")
 
-  def from_json_schema("object" = name, schema, %ResourceContext{namespace: "GoogleApi.Storage.V1"} = context, _path) do
+  def from_json_schema(
+        name,
+        schema,
+        %ResourceContext{namespace: "GoogleApi.Storage.V1"} = context,
+        _path
+      )
+      when name in ["object", "destinationObject"] do
     %__MODULE__{
       name: name,
       variable_name: build_variable_name(name),
