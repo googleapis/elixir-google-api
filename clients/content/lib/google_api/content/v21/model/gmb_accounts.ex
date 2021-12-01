@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.GmbAccounts do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the Merchant Center account.
-  *   `gmbAccounts` (*type:* `list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t)`, *default:* `nil`) - A list of GMB accounts which are available to the merchant.
+  *   `gmbAccounts` (*type:* `list(GoogleApi.Content.V21.Model.GmbAccountsGmbAccount.t)`, *default:* `nil`) - A list of Business Profiles which are available to the merchant.
   """
 
   use GoogleApi.Gax.ModelBase

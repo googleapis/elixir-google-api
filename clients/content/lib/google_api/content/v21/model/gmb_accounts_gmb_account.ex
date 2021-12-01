@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V21.Model.GmbAccountsGmbAccount do
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email which identifies the GMB account.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email which identifies the Business Profile.
   *   `listingCount` (*type:* `String.t`, *default:* `nil`) - Number of listings under this account.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the GMB account.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the GMB account (User or Business).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Business Profile.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the Business Profile (User or Business).
   """
 
   use GoogleApi.Gax.ModelBase
