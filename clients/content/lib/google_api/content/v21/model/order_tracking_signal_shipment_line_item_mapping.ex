@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalShipmentLineItemMapping
   ## Attributes
 
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - Required. The line item ID.
-  *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The line item quantity in the shipment.
+  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The line item quantity in the shipment.
   *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Required. The shipment ID. This field will be hashed in returned OrderTrackingSignal creation response.
   """
 

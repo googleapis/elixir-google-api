@@ -155,13 +155,13 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   end
 
   @doc """
-  Retrieves the list of accessible Google My Business accounts.
+  Retrieves the list of accessible Business Profiles.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
-  *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
+  *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Business Profiles.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -354,14 +354,14 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   end
 
   @doc """
-  Requests access to a specified Google My Business account.
+  Requests access to a specified Business Profile.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
-  *   `account_id` (*type:* `String.t`) - The ID of the account for which GMB access is requested.
-  *   `gmb_email` (*type:* `String.t`) - The email of the Google My Business account.
+  *   `account_id` (*type:* `String.t`) - The ID of the account for which Business Profile access is requested.
+  *   `gmb_email` (*type:* `String.t`) - The email of the Business Profile.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -621,7 +621,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
-  *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
+  *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Business Profiles.
   *   `country` (*type:* `String.t`) - The country for which the POS data provider is selected.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

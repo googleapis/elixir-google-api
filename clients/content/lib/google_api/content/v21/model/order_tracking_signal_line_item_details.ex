@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails do
   *   `productDescription` (*type:* `String.t`, *default:* `nil`) - Plain text description of this product (deprecated: Please use product_title instead).
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The Content API REST ID of the product, in the form channel:contentLanguage:targetCountry:offerId.
   *   `productTitle` (*type:* `String.t`, *default:* `nil`) - Plain text title of this product.
-  *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The quantity of the line item in the order.
+  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the line item in the order.
   *   `sku` (*type:* `String.t`, *default:* `nil`) - Merchant SKU for this item (deprecated).
   *   `upc` (*type:* `String.t`, *default:* `nil`) - Universal product code for this item (deprecated: Please use GTIN instead).
   """
