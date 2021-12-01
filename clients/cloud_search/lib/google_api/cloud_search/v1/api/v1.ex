@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.V1 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Initializes the customer. **Note:** This API requires an admin account to execute.
+  Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
