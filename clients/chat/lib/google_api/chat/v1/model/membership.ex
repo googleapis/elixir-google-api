@@ -21,10 +21,10 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the membership a.k.a. the time at which the member joined the space, if applicable.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership a.k.a. the time at which the member joined the space, if applicable.
   *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A user in Google Chat.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the membership.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the membership. Required for `CreateMembership`. Read-only for other usage.
   """
 
   use GoogleApi.Gax.ModelBase

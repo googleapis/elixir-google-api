@@ -31,7 +31,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAAAAAAAA
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -97,7 +97,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAAAAAAAA
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,7 +163,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAAAAAAAA
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
