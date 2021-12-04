@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
   @moduledoc """
-  ## IAM policy analysis query message.
+  IAM policy analysis query message.
 
   ## Attributes
 
