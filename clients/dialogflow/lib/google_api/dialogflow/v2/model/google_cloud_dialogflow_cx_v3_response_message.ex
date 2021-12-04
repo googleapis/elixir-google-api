@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage
   *   `outputAudioText` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageOutputAudioText.t`, *default:* `nil`) - A text or ssml response that is preferentially used for TTS output audio synthesis, as described in the comment on the ResponseMessage message.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Returns a response containing a custom, platform-specific payload.
   *   `playAudio` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessagePlayAudio.t`, *default:* `nil`) - Signal that the client should play an audio clip hosted at a client-specific URI. Dialogflow uses this to construct mixed_audio. However, Dialogflow itself does not try to read or process the URI in any way.
+  *   `telephonyTransferCall` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageTelephonyTransferCall.t`, *default:* `nil`) - A signal that the client should transfer the phone call connected to this agent to a third-party endpoint.
   *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t`, *default:* `nil`) - Returns a text response.
   """
 
@@ -52,6 +53,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage
           :payload => map() | nil,
           :playAudio =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessagePlayAudio.t()
+            | nil,
+          :telephonyTransferCall =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageTelephonyTransferCall.t()
             | nil,
           :text =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText.t() | nil
@@ -81,6 +85,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage
 
   field(:playAudio,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessagePlayAudio
+  )
+
+  field(:telephonyTransferCall,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageTelephonyTransferCall
   )
 
   field(:text, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessageText)
