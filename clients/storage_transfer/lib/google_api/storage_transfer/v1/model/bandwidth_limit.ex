@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.BandwidthLimit do
   @moduledoc """
-  Specifies the BandwidthLimit to describe the non-negative bandwidth rate in mbps for the agent pool.
+  Specifies a bandwidth limit for an agent pool.
 
   ## Attributes
 
-  *   `limitMbps` (*type:* `String.t`, *default:* `nil`) - Specifies bandwidth rate in mbps distributed across all the agents in the pool.
+  *   `limitMbps` (*type:* `String.t`, *default:* `nil`) - Bandwidth rate in megabytes per second, distributed across all the agents in the pool.
   """
 
   use GoogleApi.Gax.ModelBase

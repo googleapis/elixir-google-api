@@ -23,7 +23,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AgentPool do
 
   *   `bandwidthLimit` (*type:* `GoogleApi.StorageTransfer.V1.Model.BandwidthLimit.t`, *default:* `nil`) - Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Specifies the client-specified AgentPool description.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Specifies a unique string that identifies the agent pool. Format: projects/{project_id}/agentPools/{agent_pool_id}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Specifies a unique string that identifies the agent pool. Format: `projects/{project_id}/agentPools/{agent_pool_id}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the state of the AgentPool.
   """
 

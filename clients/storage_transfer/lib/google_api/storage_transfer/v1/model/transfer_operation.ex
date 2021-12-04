@@ -26,7 +26,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   *   `errorBreakdowns` (*type:* `list(GoogleApi.StorageTransfer.V1.Model.ErrorSummary.t)`, *default:* `nil`) - Summarizes errors encountered with sample error log entries.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A globally unique ID assigned by the system.
   *   `notificationConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud Platform Project that owns the operation.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud project that owns the operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of this transfer execution.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the transfer operation.
   *   `transferJobName` (*type:* `String.t`, *default:* `nil`) - The name of the transfer job that triggers this transfer operation.
