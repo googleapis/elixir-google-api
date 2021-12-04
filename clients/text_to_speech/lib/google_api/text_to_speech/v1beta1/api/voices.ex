@@ -43,7 +43,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Api.Voices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get supported `"en-NZ"` voices; when specifying `"no"`, you will get supported `"no-\\*"` (Norwegian) and `"nb-\\*"` (Norwegian Bokmal) voices; specifying `"zh"` will also get supported `"cmn-\\*"` voices; specifying `"zh-hk"` will also get supported `"yue-hk"` voices.
+      *   `:languageCode` (*type:* `String.t`) - Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. For example, if you specify `"en-NZ"`, all `"en-NZ"` voices will be returned. If you specify `"no"`, both `"no-\\*"` (Norwegian) and `"nb-\\*"` (Norwegian Bokmal) voices will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
