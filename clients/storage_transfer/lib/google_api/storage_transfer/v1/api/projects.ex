@@ -31,7 +31,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the agent pool.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud project that owns the agent pool.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -44,7 +44,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:agentPoolId` (*type:* `String.t`) - Required. The id of the agent pool to create. The agent_pool_id must be non-empty, less than or equal to 128 characters, and satisfy the following regex: "^[a-z]([a-z0-9-._~]*[a-z0-9])?$". Also, agent pool names cannot start with the string "goog".
+      *   `:agentPoolId` (*type:* `String.t`) - Required. The ID of the agent pool to create. The `agent_pool_id` must meet the following requirements: * Length of 128 characters or less. * Not start with the string `goog`. * Start with a lowercase ASCII character, followed by: * Zero or more: lowercase Latin alphabet characters, numerals, hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`). * One or more numerals or lowercase ASCII characters. As expressed by the regular expression: `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
       *   `:body` (*type:* `GoogleApi.StorageTransfer.V1.Model.AgentPool.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -105,7 +105,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The agent pool name to delete.
+  *   `name` (*type:* `String.t`) - Required. The name of the agent pool to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -175,7 +175,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The agent pool to get.
+  *   `name` (*type:* `String.t`) - Required. The name of the agent pool to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -245,7 +245,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the job.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud project that owns the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -258,8 +258,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A list of optional query parameters specified as JSON text in the form of: `{"agentPoolNames":["agentpool1","agentpool2",...]}` Since `agentPoolNames` support multiple values, its values must be specified with array notation. `agentPoolNames` is an optional field. The list returns all agent pools for the project when the filter is not provided or empty.
-      *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
+      *   `:filter` (*type:* `String.t`) - An optional list of query parameters specified as JSON text in the form of: `{"agentPoolNames":["agentpool1","agentpool2",...]}` Since `agentPoolNames` support multiple values, its values must be specified with array notation. When the filter is either empty or not provided, the list returns all agent pools for the project.
+      *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is `256`.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -323,7 +323,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Specifies a unique string that identifies the agent pool. Format: projects/{project_id}/agentPools/{agent_pool_id}
+  *   `name` (*type:* `String.t`) - Required. Specifies a unique string that identifies the agent pool. Format: `projects/{project_id}/agentPools/{agent_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -336,7 +336,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The field mask of the fields in `agentPool` that are to be updated in this request. Fields in `agentPool` that can be updated are: display_name, bandwidth_limit,
+      *   `:updateMask` (*type:* `String.t`) - The [field mask] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) of the fields in `agentPool` to update in this request. The following `agentPool` fields can be updated: * display_name * bandwidth_limit
       *   `:body` (*type:* `GoogleApi.StorageTransfer.V1.Model.AgentPool.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.RunTransferJobRequest do
 
   ## Attributes
 
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the Google Cloud Platform Console project that owns the transfer job.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the Google Cloud project that owns the transfer job.
   """
 
   use GoogleApi.Gax.ModelBase
