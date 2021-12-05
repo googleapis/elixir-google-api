@@ -354,6 +354,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:autodetect_schema` (*type:* `boolean()`) - When true will autodetect schema, else will keep original schema
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Table.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -390,6 +391,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :autodetect_schema => :query,
       :body => :body
     }
 
@@ -541,6 +543,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:autodetect_schema` (*type:* `boolean()`) - When true will autodetect schema, else will keep original schema
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Table.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -577,6 +580,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :autodetect_schema => :query,
       :body => :body
     }
 
