@@ -21,10 +21,10 @@ defmodule GoogleApi.Compute.V1.Model.TestFailure do
 
   ## Attributes
 
-  *   `actualOutputUrl` (*type:* `String.t`, *default:* `nil`) - The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+  *   `actualOutputUrl` (*type:* `String.t`, *default:* `nil`) - The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
   *   `actualRedirectResponseCode` (*type:* `integer()`, *default:* `nil`) - Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
   *   `actualService` (*type:* `String.t`, *default:* `nil`) - BackendService or BackendBucket returned by load balancer.
-  *   `expectedOutputUrl` (*type:* `String.t`, *default:* `nil`) - The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+  *   `expectedOutputUrl` (*type:* `String.t`, *default:* `nil`) - The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
   *   `expectedRedirectResponseCode` (*type:* `integer()`, *default:* `nil`) - Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
   *   `expectedService` (*type:* `String.t`, *default:* `nil`) - Expected BackendService or BackendBucket resource the given URL should be mapped to.
   *   `headers` (*type:* `list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t)`, *default:* `nil`) - HTTP headers of the request.

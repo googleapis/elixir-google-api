@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.MetadataFilterLabelMatch do
   @moduledoc """
-  MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the loadbalancer.
+  MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the load balancer.
 
   ## Attributes
 

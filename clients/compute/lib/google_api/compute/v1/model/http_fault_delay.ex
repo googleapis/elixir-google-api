@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Compute.V1.Model.HttpFaultDelay do
   @moduledoc """
-  Specifies the delay introduced by Loadbalancer before forwarding the request to the backend service as part of fault injection.
+  Specifies the delay introduced by the load balancer before forwarding the request to the backend service as part of fault injection.
 
   ## Attributes
 
   *   `fixedDelay` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the value of the fixed delay interval.
-  *   `percentage` (*type:* `float()`, *default:* `nil`) - The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
+  *   `percentage` (*type:* `float()`, *default:* `nil`) - The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
   """
 
   use GoogleApi.Gax.ModelBase
