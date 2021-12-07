@@ -31,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   *   `network` (*type:* `String.t`, *default:* `nil`) - URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the VPN gateway resides.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `stackType` (*type:* `String.t`, *default:* `nil`) - The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
   *   `vpnInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t)`, *default:* `nil`) - The list of VPN interfaces associated with this VPN gateway.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
           :network => String.t() | nil,
           :region => String.t() | nil,
           :selfLink => String.t() | nil,
+          :stackType => String.t() | nil,
           :vpnInterfaces =>
             list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t()) | nil
         }
@@ -61,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   field(:network)
   field(:region)
   field(:selfLink)
+  field(:stackType)
   field(:vpnInterfaces, as: GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface, type: :list)
 end
 

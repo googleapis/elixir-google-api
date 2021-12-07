@@ -34,7 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Any valid publicly visible licenses.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
   *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - [Output Only] shielded vm initial state stored on disk
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name for zonal disk, and the URL for regional disk.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
   """
 

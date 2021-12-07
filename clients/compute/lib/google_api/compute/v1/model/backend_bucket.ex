@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied responses.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional textual description of the resource; provided by the client when the resource is created.
+  *   `edgeSecurityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the edge security policy associated with this backend bucket.
   *   `enableCdn` (*type:* `boolean()`, *default:* `nil`) - If true, enable Cloud CDN for this BackendBucket.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] Unique identifier for the resource; defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendBucket`) - Type of the resource.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
           :creationTimestamp => String.t() | nil,
           :customResponseHeaders => list(String.t()) | nil,
           :description => String.t() | nil,
+          :edgeSecurityPolicy => String.t() | nil,
           :enableCdn => boolean() | nil,
           :id => String.t() | nil,
           :kind => String.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   field(:creationTimestamp)
   field(:customResponseHeaders, type: :list)
   field(:description)
+  field(:edgeSecurityPolicy)
   field(:enableCdn)
   field(:id)
   field(:kind)

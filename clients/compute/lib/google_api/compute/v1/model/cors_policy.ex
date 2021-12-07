@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.Compute.V1.Model.CorsPolicy do
   @moduledoc """
-  The specification for allowing client side cross-origin requests. Please see W3C Recommendation for Cross Origin Resource Sharing
+  The specification for allowing client-side cross-origin requests. For more information about the W3C recommendation for cross-origin resource sharing (CORS), see Fetch API Living Standard.
 
   ## Attributes
 
-  *   `allowCredentials` (*type:* `boolean()`, *default:* `nil`) - In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
+  *   `allowCredentials` (*type:* `boolean()`, *default:* `nil`) - In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
   *   `allowHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Headers header.
   *   `allowMethods` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Methods header.
-  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
-  *   `allowOrigins` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
+  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+  *   `allowOrigins` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the setting specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
   *   `exposeHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Expose-Headers header.
-  *   `maxAge` (*type:* `integer()`, *default:* `nil`) - Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
+  *   `maxAge` (*type:* `integer()`, *default:* `nil`) - Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
   """
 
   use GoogleApi.Gax.ModelBase

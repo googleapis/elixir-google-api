@@ -22,9 +22,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   ## Attributes
 
   *   `drainNatIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
+  *   `enableDynamicPortAllocation` (*type:* `boolean()`, *default:* `nil`) - Enable Dynamic Port Allocation. If not specified, it is disabled by default. If set to true, - Dynamic Port Allocation will be enabled on this NAT config. - enableEndpointIndependentMapping cannot be set to true. - If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. If minPortsPerVm is not set, a minimum of 32 ports will be allocated to a VM from this NAT config. 
   *   `enableEndpointIndependentMapping` (*type:* `boolean()`, *default:* `nil`) - 
   *   `icmpIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
   *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.RouterNatLogConfig.t`, *default:* `nil`) - Configure logging on this NAT.
+  *   `maxPortsPerVm` (*type:* `integer()`, *default:* `nil`) - Maximum number of ports allocated to a VM from this NAT config when Dynamic Port Allocation is enabled. If Dynamic Port Allocation is not enabled, this field has no effect. If Dynamic Port Allocation is enabled, and this field is set, it must be set to a power of two greater than minPortsPerVm, or 64 if minPortsPerVm is not set. If Dynamic Port Allocation is enabled and this field is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
   *   `minPortsPerVm` (*type:* `integer()`, *default:* `nil`) - Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
   *   `natIpAllocateOption` (*type:* `String.t`, *default:* `nil`) - Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
@@ -42,9 +44,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
 
   @type t :: %__MODULE__{
           :drainNatIps => list(String.t()) | nil,
+          :enableDynamicPortAllocation => boolean() | nil,
           :enableEndpointIndependentMapping => boolean() | nil,
           :icmpIdleTimeoutSec => integer() | nil,
           :logConfig => GoogleApi.Compute.V1.Model.RouterNatLogConfig.t() | nil,
+          :maxPortsPerVm => integer() | nil,
           :minPortsPerVm => integer() | nil,
           :name => String.t() | nil,
           :natIpAllocateOption => String.t() | nil,
@@ -59,9 +63,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
         }
 
   field(:drainNatIps, type: :list)
+  field(:enableDynamicPortAllocation)
   field(:enableEndpointIndependentMapping)
   field(:icmpIdleTimeoutSec)
   field(:logConfig, as: GoogleApi.Compute.V1.Model.RouterNatLogConfig)
+  field(:maxPortsPerVm)
   field(:minPortsPerVm)
   field(:name)
   field(:natIpAllocateOption)

@@ -22,6 +22,8 @@ defmodule GoogleApi.Compute.V1.Model.CacheKeyPolicy do
   ## Attributes
 
   *   `includeHost` (*type:* `boolean()`, *default:* `nil`) - If true, requests to different hosts will be cached separately.
+  *   `includeHttpHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Allows HTTP request headers (by name) to be used in the cache key.
+  *   `includeNamedCookies` (*type:* `list(String.t)`, *default:* `nil`) - Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
   *   `includeProtocol` (*type:* `boolean()`, *default:* `nil`) - If true, http and https requests will be cached separately.
   *   `includeQueryString` (*type:* `boolean()`, *default:* `nil`) - If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
   *   `queryStringBlacklist` (*type:* `list(String.t)`, *default:* `nil`) - Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&' and '=' will be percent encoded and not treated as delimiters.
@@ -32,6 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.CacheKeyPolicy do
 
   @type t :: %__MODULE__{
           :includeHost => boolean() | nil,
+          :includeHttpHeaders => list(String.t()) | nil,
+          :includeNamedCookies => list(String.t()) | nil,
           :includeProtocol => boolean() | nil,
           :includeQueryString => boolean() | nil,
           :queryStringBlacklist => list(String.t()) | nil,
@@ -39,6 +43,8 @@ defmodule GoogleApi.Compute.V1.Model.CacheKeyPolicy do
         }
 
   field(:includeHost)
+  field(:includeHttpHeaders, type: :list)
+  field(:includeNamedCookies, type: :list)
   field(:includeProtocol)
   field(:includeQueryString)
   field(:queryStringBlacklist, type: :list)
