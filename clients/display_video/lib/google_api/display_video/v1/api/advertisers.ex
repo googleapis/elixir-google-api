@@ -3350,7 +3350,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests .
+  Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption
 
   ## Parameters
 
@@ -3898,7 +3898,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing line item. Returns the updated line item if successful.
+  Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption
 
   ## Parameters
 
@@ -3976,7 +3976,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Assigns a targeting option to a line item. Returns the assigned targeting option if successful.
+  Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption
 
   ## Parameters
 
@@ -4061,7 +4061,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes an assigned targeting option from a line item.
+  Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption
 
   ## Parameters
 
