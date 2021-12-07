@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.WorkerPool do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. Checksum computed by the server. May be sent on update and delete requests to ensure that the client has an up-to-date value before proceeding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the `WorkerPool`, with format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. The value of `{worker_pool}` is provided by `worker_pool_id` in `CreateWorkerPool` request and the value of `{location}` is determined by the endpoint accessed.
-  *   `privatePoolV1Config` (*type:* `GoogleApi.CloudBuild.V1.Model.PrivatePoolV1Config.t`, *default:* `nil`) - Private Pool using a v1 configuration.
+  *   `privatePoolV1Config` (*type:* `GoogleApi.CloudBuild.V1.Model.PrivatePoolV1Config.t`, *default:* `nil`) - Legacy Private Pool configuration.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. `WorkerPool` state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A unique identifier for the `WorkerPool`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the request to update the `WorkerPool` was received.
