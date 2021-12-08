@@ -25,13 +25,16 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   *   `complianceRegime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Compliance Regime associated with this workload.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Immutable. The Workload creation timestamp.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
+  *   `enableSovereignControls` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates the sovereignty status of the given workload. Currently meant to be used by Europe/Canada customers.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations.
+  *   `kajEnrollmentState` (*type:* `String.t`, *default:* `nil`) - Output only. Represents the KAJ enrollment state of the given workload.
   *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t`, *default:* `nil`) - Input only. Settings used to create a CMEK crypto key. When set a project with a KMS CMEK key is provisioned. This field is mandatory for a subset of Compliance Regimes.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
   *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
   *   `resourceSettings` (*type:* `list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceSettings.t)`, *default:* `nil`) - Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
   *   `resources` (*type:* `list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t)`, *default:* `nil`) - Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
+  *   `saaEnrollmentResponse` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t`, *default:* `nil`) - Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +44,9 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
           :complianceRegime => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :enableSovereignControls => boolean() | nil,
           :etag => String.t() | nil,
+          :kajEnrollmentState => String.t() | nil,
           :kmsSettings =>
             GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t()
             | nil,
@@ -57,6 +62,9 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
             list(
               GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t()
             )
+            | nil,
+          :saaEnrollmentResponse =>
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t()
             | nil
         }
 
@@ -64,7 +72,9 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   field(:complianceRegime)
   field(:createTime, as: DateTime)
   field(:displayName)
+  field(:enableSovereignControls)
   field(:etag)
+  field(:kajEnrollmentState)
 
   field(:kmsSettings,
     as: GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings
@@ -84,6 +94,11 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
     as:
       GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo,
     type: :list
+  )
+
+  field(:saaEnrollmentResponse,
+    as:
+      GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse
   )
 end
 
