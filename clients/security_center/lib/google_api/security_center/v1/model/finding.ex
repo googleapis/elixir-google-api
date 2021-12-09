@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
 
   ## Attributes
 
+  *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc.
   *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the finding. It's either "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or "projects/{project_number}/sources/{source_id}/findings/{finding_id}", depending on the closest CRM ancestor of the resource associated with the finding.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
@@ -29,6 +30,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
   *   `indicator` (*type:* `GoogleApi.SecurityCenter.V1.Model.Indicator.t`, *default:* `nil`) - Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+  *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either unspecified, muted, unmuted or undefined).
   *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc.
   *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
@@ -45,6 +47,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
           :canonicalName => String.t() | nil,
           :category => String.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -58,6 +61,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :externalUri => String.t() | nil,
           :findingClass => String.t() | nil,
           :indicator => GoogleApi.SecurityCenter.V1.Model.Indicator.t() | nil,
+          :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
           :mute => String.t() | nil,
           :muteInitiator => String.t() | nil,
           :muteUpdateTime => DateTime.t() | nil,
@@ -71,6 +75,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil
         }
 
+  field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
   field(:canonicalName)
   field(:category)
   field(:createTime, as: DateTime)
@@ -84,6 +89,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:externalUri)
   field(:findingClass)
   field(:indicator, as: GoogleApi.SecurityCenter.V1.Model.Indicator)
+  field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)
   field(:mute)
   field(:muteInitiator)
   field(:muteUpdateTime, as: DateTime)
