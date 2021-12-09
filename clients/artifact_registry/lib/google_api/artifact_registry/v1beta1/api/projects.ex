@@ -264,7 +264,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the repository will be created.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource where the repository will be created.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -342,7 +342,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the repository to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the repository to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -423,7 +423,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the repository to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the repository to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -587,7 +587,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose repositories will be listed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource whose repositories will be listed.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1094,7 +1094,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the package to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the package to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1179,7 +1179,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the package to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the package to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1264,7 +1264,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose packages will be listed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource whose packages will be listed.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
