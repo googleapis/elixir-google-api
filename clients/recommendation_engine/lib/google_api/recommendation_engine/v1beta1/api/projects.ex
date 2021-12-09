@@ -508,7 +508,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. A filter to apply on the list results.
+      *   `:filter` (*type:* `String.t`) - Optional. Use of this field is not supported by version v1beta1.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of results to return per page. If zero, the service will choose a reasonable default.
       *   `:pageToken` (*type:* `String.t`) - Optional. The previous ListCatalogItemsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
