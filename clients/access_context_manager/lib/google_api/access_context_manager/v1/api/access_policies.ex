@@ -26,7 +26,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create an `AccessPolicy`. Fails if this organization already has a `AccessPolicy`. The longrunning Operation will have a successful status once the `AccessPolicy` has propagated to long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a BadRequest proto.
+  Creates an access policy. This method fails if the organization already has an access policy. The long-running operation has a successful status after the access policy propagates to long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a BadRequest proto.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an AccessPolicy by resource name. The longrunning Operation will have a successful status once the AccessPolicy has been removed from long-lasting storage.
+  Deletes an access policy based on the resource name. The long-running operation has a successful status after the access policy is removed from long-lasting storage.
 
   ## Parameters
 
@@ -155,7 +155,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get an AccessPolicy by name.
+  Returns an access policy based on the name.
 
   ## Parameters
 
@@ -225,7 +225,79 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all AccessPolicies under a container.
+  Gets the IAM policy for the specified Access Context Manager access policy.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.GetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Lists all access policies in an organization.
 
   ## Parameters
 
@@ -290,7 +362,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an AccessPolicy. The longrunning Operation from this RPC will have a successful status once the changes to the AccessPolicy have propagated to long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a BadRequest proto.
+  Updates an access policy. The long-running operation from this RPC has a successful status after the changes to the access policy propagate to long-lasting storage.
 
   ## Parameters
 
@@ -364,7 +436,153 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create an Access Level. The longrunning operation from this RPC will have a successful status once the Access Level has propagated to long-lasting storage. Access Levels containing errors will result in an error response for the first error encountered.
+  Sets the IAM policy for the specified Access Context Manager access policy. This method replaces the existing IAM policy on the access policy. The IAM policy controls the set of users who can perform specific operations on the Access Context Manager access policy.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_set_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an AccessPolicy, AccessLevel, or ServicePerimeter. This method does not support other resources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Creates an access level. The long-running operation from this RPC has a successful status after the access level propagates to long-lasting storage. If access levels contain errors, an error response is returned for the first error encountered.
 
   ## Parameters
 
@@ -436,7 +654,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an Access Level by resource name. The longrunning operation from this RPC will have a successful status once the Access Level has been removed from long-lasting storage.
+  Deletes an access level based on the resource name. The long-running operation from this RPC has a successful status after the access level has been removed from long-lasting storage.
 
   ## Parameters
 
@@ -506,7 +724,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get an Access Level by resource name.
+  Gets an access level based on the resource name.
 
   ## Parameters
 
@@ -578,7 +796,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all Access Levels for an access policy.
+  Lists all access levels for an access policy.
 
   ## Parameters
 
@@ -656,7 +874,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an Access Level. The longrunning operation from this RPC will have a successful status once the changes to the Access Level have propagated to long-lasting storage. Access Levels containing errors will result in an error response for the first error encountered.
+  Updates an access level. The long-running operation from this RPC has a successful status after the changes to the access level propagate to long-lasting storage. If access levels contain errors, an error response is returned for the first error encountered.
 
   ## Parameters
 
@@ -730,7 +948,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Replace all existing Access Levels in an Access Policy with the Access Levels provided. This is done atomically. The longrunning operation from this RPC will have a successful status once all replacements have propagated to long-lasting storage. Replacements containing errors will result in an error response for the first error encountered. Replacement will be cancelled on error, existing Access Levels will not be affected. Operation.response field will contain ReplaceAccessLevelsResponse. Removing Access Levels contained in existing Service Perimeters will result in error.
+  Replaces all existing access levels in an access policy with the access levels provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. If the replacement contains errors, an error response is returned for the first error encountered. Upon error, the replacement is cancelled, and existing access levels are not affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing access levels contained in existing service perimeters result in an error.
 
   ## Parameters
 
@@ -802,7 +1020,81 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Commit the dry-run spec for all the Service Perimeters in an Access Policy. A commit operation on a Service Perimeter involves copying its `spec` field to that Service Perimeter's `status` field. Only Service Perimeters with `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The longrunning operation from this RPC will have a successful status once the dry-run specs for all the Service Perimeters have been committed. If a commit fails, it will cause the longrunning operation to return an error response and the entire commit operation will be cancelled. When successful, Operation.response field will contain CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will be cleared after a successful commit operation.
+  Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an AccessPolicy, AccessLevel, or ServicePerimeter. This method does not support other resources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_access_levels_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_access_levels_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Commits the dry-run specification for all the service perimeters in an access policy. A commit operation on a service perimeter involves copying its `spec` field to the `status` field of the service perimeter. Only service perimeters with `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The long-running operation from this RPC has a successful status after the dry-run specifications for all the service perimeters have been committed. If a commit fails, it causes the long-running operation to return an error response and the entire commit operation is cancelled. When successful, the Operation.response field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared after a successful commit operation.
 
   ## Parameters
 
@@ -874,7 +1166,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create a Service Perimeter. The longrunning operation from this RPC will have a successful status once the Service Perimeter has propagated to long-lasting storage. Service Perimeters containing errors will result in an error response for the first error encountered.
+  Creates a service perimeter. The long-running operation from this RPC has a successful status after the service perimeter propagates to long-lasting storage. If a service perimeter contains errors, an error response is returned for the first error encountered.
 
   ## Parameters
 
@@ -946,7 +1238,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete a Service Perimeter by resource name. The longrunning operation from this RPC will have a successful status once the Service Perimeter has been removed from long-lasting storage.
+  Deletes a service perimeter based on the resource name. The long-running operation from this RPC has a successful status after the service perimeter is removed from long-lasting storage.
 
   ## Parameters
 
@@ -1016,7 +1308,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get a Service Perimeter by resource name.
+  Gets a service perimeter based on the resource name.
 
   ## Parameters
 
@@ -1088,7 +1380,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all Service Perimeters for an access policy.
+  Lists all service perimeters for an access policy.
 
   ## Parameters
 
@@ -1164,7 +1456,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update a Service Perimeter. The longrunning operation from this RPC will have a successful status once the changes to the Service Perimeter have propagated to long-lasting storage. Service Perimeter containing errors will result in an error response for the first error encountered.
+  Updates a service perimeter. The long-running operation from this RPC has a successful status after the service perimeter propagates to long-lasting storage. If a service perimeter contains errors, an error response is returned for the first error encountered.
 
   ## Parameters
 
@@ -1238,7 +1530,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Replace all existing Service Perimeters in an Access Policy with the Service Perimeters provided. This is done atomically. The longrunning operation from this RPC will have a successful status once all replacements have propagated to long-lasting storage. Replacements containing errors will result in an error response for the first error encountered. Replacement will be cancelled on error, existing Service Perimeters will not be affected. Operation.response field will contain ReplaceServicePerimetersResponse.
+  Replace all existing service perimeters in an access policy with the service perimeters provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. Replacements containing errors result in an error response for the first error encountered. Upon an error, replacement are cancelled and existing service perimeters are not affected. The Operation.response field contains ReplaceServicePerimetersResponse.
 
   ## Parameters
 
@@ -1307,5 +1599,79 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an AccessPolicy, AccessLevel, or ServicePerimeter. This method does not support other resources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_service_perimeters_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_service_perimeters_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 end
