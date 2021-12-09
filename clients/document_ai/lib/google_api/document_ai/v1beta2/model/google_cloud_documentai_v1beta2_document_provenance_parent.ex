@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentProvenanceParent do
   @moduledoc """
-  Structure for referencing parent provenances. When an element replaces one of more other elements parent references identify the elements that are replaced.
+  The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations.
 
   ## Attributes
 
   *   `id` (*type:* `integer()`, *default:* `nil`) - The id of the parent provenance.
   *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) on parent revision.
-  *   `revision` (*type:* `integer()`, *default:* `nil`) - The index of the [Document.revisions] identifying the parent revision.
+  *   `revision` (*type:* `integer()`, *default:* `nil`) - The index of the index into current revision's parent_ids list.
   """
 
   use GoogleApi.Gax.ModelBase
