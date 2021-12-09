@@ -44,12 +44,12 @@ defmodule GoogleApis.DiscoveryTest do
   test "fetch default urls" do
     assert {:ok, {body, format}} =
              Discovery.fetch(
-               "https://www.googleapis.com/discovery/v1/apis/adexchangebuyer/v1.4/rest"
+               "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"
              )
 
     assert "default" == format
 
     assert {:ok, content} = Poison.decode(body)
-    assert "Ad Exchange Buyer" == content["canonicalName"]
+    assert "compute:v1" == content["id"]
   end
 end
