@@ -21,19 +21,22 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserLanguage do
 
   ## Attributes
 
-  *   `customLanguage` (*type:* `String.t`, *default:* `nil`) - Other language. User can provide own language name if there is no corresponding Google III language code. If this is set LanguageCode can't be set
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language Code. Should be used for storing Google III LanguageCode string representation for language. Illegal values cause SchemaException.
+  *   `customLanguage` (*type:* `String.t`, *default:* `nil`) - Other language. User can provide own language name if there is no corresponding ISO 639 language code. If this is set `languageCode` can't be set.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language Code. Should be used for storing ISO 639 LanguageCode string representation for language. See the [Language Codes](/admin-sdk/directory/v1/languages) page for the list of supported codes. Valid language codes outside the supported set will be accepted by the API but may lead to unexpected behavior. Illegal values cause SchemaException. If this is set `customLanguage` can't be set.
+  *   `preference` (*type:* `String.t`, *default:* `nil`) - Preference. Optional field, which if present, controls whether the specified `languageCode` is stored as the user's preferred language. If `customLanguage` is set, this can't be set. Allowed values are `preferred` and `not_preferred`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :customLanguage => String.t() | nil,
-          :languageCode => String.t() | nil
+          :languageCode => String.t() | nil,
+          :preference => String.t() | nil
         }
 
   field(:customLanguage)
   field(:languageCode)
+  field(:preference)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Admin.Directory_v1.Model.UserLanguage do
