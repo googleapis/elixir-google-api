@@ -50,6 +50,6 @@ defmodule GoogleApis.DiscoveryTest do
     assert "default" == format
 
     assert {:ok, content} = Poison.decode(body)
-    assert "Compute" == content["canonicalName"]
+    assert "compute:v1" == content["id"]
   end
 end
