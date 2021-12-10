@@ -18,7 +18,7 @@
 defmodule GoogleApi.APIGateway.Mixfile do
   use Mix.Project
 
-  @version "0.8.5"
+  @version "0.9.0"
 
   def project() do
     [
