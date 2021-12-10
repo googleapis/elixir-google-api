@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.PartialUpdateClusterRequest do
   ## Attributes
 
   *   `cluster` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Cluster.t`, *default:* `nil`) - Required. The Cluster which contains the partial updates to be applied, subject to the update_mask.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The subset of Cluster fields which should be replaced. Must be explicitly set.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The subset of Cluster fields which should be replaced.
   """
 
   use GoogleApi.Gax.ModelBase
