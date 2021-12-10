@@ -250,12 +250,12 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   *   `{:ok, %GoogleApi.OSLogin.V1alpha.Model.SshPublicKey{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec oslogin_users_ssh_public_key_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec oslogin_users_ssh_public_keys_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def oslogin_users_ssh_public_key_create(connection, parent, optional_params \\ [], opts \\ []) do
+  def oslogin_users_ssh_public_keys_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -274,7 +274,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/sshPublicKey", %{
+      |> Request.url("/v1alpha/{+parent}/sshPublicKeys", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
