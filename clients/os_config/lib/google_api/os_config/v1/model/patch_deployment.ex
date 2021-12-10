@@ -31,6 +31,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
   *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Optional. Patch configuration that is applied.
   *   `recurringSchedule` (*type:* `GoogleApi.OSConfig.V1.Model.RecurringSchedule.t`, *default:* `nil`) - Required. Schedule recurring executions.
   *   `rollout` (*type:* `GoogleApi.OSConfig.V1.Model.PatchRollout.t`, *default:* `nil`) - Optional. Rollout strategy of the patch job.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the patch deployment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the patch deployment was last updated. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
           :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t() | nil,
           :recurringSchedule => GoogleApi.OSConfig.V1.Model.RecurringSchedule.t() | nil,
           :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t() | nil,
+          :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -60,6 +62,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
   field(:patchConfig, as: GoogleApi.OSConfig.V1.Model.PatchConfig)
   field(:recurringSchedule, as: GoogleApi.OSConfig.V1.Model.RecurringSchedule)
   field(:rollout, as: GoogleApi.OSConfig.V1.Model.PatchRollout)
+  field(:state)
   field(:updateTime, as: DateTime)
 end
 
