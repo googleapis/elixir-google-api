@@ -2,7 +2,7 @@
 
 AdSense Management API client library.
 
-Accesses AdSense publishers' inventory and generates performance reports.
+The AdSense Management API allows publishers to access their inventory and run earnings and performance reports.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_sense, "~> 0.13"}]
+  [{:google_api_ad_sense, "~> 0.14"}]
 end
 ```
 
