@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
 
   *   `activationPolicy` (*type:* `String.t`, *default:* `nil`) - The activation policy specifies when the instance is activated; it is applicable only when the instance state is 'RUNNABLE'. Valid values: 'ALWAYS': The instance is on, and remains so even in the absence of connection requests. `NEVER`: The instance is off; it is not activated, even if a connection request arrives.
   *   `autoStorageIncrease` (*type:* `boolean()`, *default:* `nil`) - [default: ON] If you enable this setting, Cloud SQL checks your available storage every 30 seconds. If the available storage falls below a threshold size, Cloud SQL automatically adds additional storage capacity. If the available storage repeatedly falls below the threshold size, Cloud SQL continues to add storage until it reaches the maximum of 30 TB.
+  *   `cmekKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for the csql instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL default instance level collation.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The storage capacity available to the database, in GB. The minimum (and default) size is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of storage: `PD_SSD` (default) or `PD_HDD`.
@@ -43,6 +44,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   @type t :: %__MODULE__{
           :activationPolicy => String.t() | nil,
           :autoStorageIncrease => boolean() | nil,
+          :cmekKeyName => String.t() | nil,
           :collation => String.t() | nil,
           :dataDiskSizeGb => String.t() | nil,
           :dataDiskType => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
 
   field(:activationPolicy)
   field(:autoStorageIncrease)
+  field(:cmekKeyName)
   field(:collation)
   field(:dataDiskSizeGb)
   field(:dataDiskType)
