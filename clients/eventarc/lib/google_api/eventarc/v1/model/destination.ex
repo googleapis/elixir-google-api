@@ -21,7 +21,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
 
   ## Attributes
 
-  *   `cloudRun` (*type:* `GoogleApi.Eventarc.V1.Model.CloudRun.t`, *default:* `nil`) - Cloud Run fully-managed service that receives the events. The service should be running in the same project of the trigger.
+  *   `cloudRun` (*type:* `GoogleApi.Eventarc.V1.Model.CloudRun.t`, *default:* `nil`) - Cloud Run fully-managed resource that receives the events. The resource should be in the same project as the trigger.
   *   `gke` (*type:* `GoogleApi.Eventarc.V1.Model.GKE.t`, *default:* `nil`) - A GKE service capable of receiving events. The service should be running in the same project of the trigger.
   """
 
