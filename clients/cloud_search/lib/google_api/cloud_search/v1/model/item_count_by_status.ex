@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemCountByStatus do
   ## Attributes
 
   *   `count` (*type:* `String.t`, *default:* `nil`) - Number of items matching the status code.
+  *   `indexedItemsCount` (*type:* `String.t`, *default:* `nil`) - Number of items matching the status code for which billing is done. This excludes virtual container items from the total count. This count would not be applicable for items with ERROR or NEW_ITEM status code.
   *   `statusCode` (*type:* `String.t`, *default:* `nil`) - Status of the items.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemCountByStatus do
 
   @type t :: %__MODULE__{
           :count => String.t() | nil,
+          :indexedItemsCount => String.t() | nil,
           :statusCode => String.t() | nil
         }
 
   field(:count)
+  field(:indexedItemsCount)
   field(:statusCode)
 end
 
