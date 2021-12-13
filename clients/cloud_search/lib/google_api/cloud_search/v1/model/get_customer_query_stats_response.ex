@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.GetCustomerQueryStatsResponse do
   ## Attributes
 
   *   `stats` (*type:* `list(GoogleApi.CloudSearch.V1.Model.CustomerQueryStats.t)`, *default:* `nil`) - 
+  *   `totalQueryCount` (*type:* `String.t`, *default:* `nil`) - Total successful query count (status code 200) for the given date range.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stats => list(GoogleApi.CloudSearch.V1.Model.CustomerQueryStats.t()) | nil
+          :stats => list(GoogleApi.CloudSearch.V1.Model.CustomerQueryStats.t()) | nil,
+          :totalQueryCount => String.t() | nil
         }
 
   field(:stats, as: GoogleApi.CloudSearch.V1.Model.CustomerQueryStats, type: :list)
+  field(:totalQueryCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.GetCustomerQueryStatsResponse do

@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metadata do
   *   `objectType` (*type:* `String.t`, *default:* `nil`) - Object type of the search result.
   *   `owner` (*type:* `GoogleApi.CloudSearch.V1.Model.Person.t`, *default:* `nil`) - Owner (usually creator) of the document or object of the search result.
   *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.Source.t`, *default:* `nil`) - The named source for the result, such as Gmail.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - The thumbnail URL of the result.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last modified date for the object in the search result. If not set in the item, the value returned here is empty. When `updateTime` is used for calculating freshness and is not set, this value defaults to 2 years from the current time.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metadata do
           :objectType => String.t() | nil,
           :owner => GoogleApi.CloudSearch.V1.Model.Person.t() | nil,
           :source => GoogleApi.CloudSearch.V1.Model.Source.t() | nil,
+          :thumbnailUrl => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metadata do
   field(:objectType)
   field(:owner, as: GoogleApi.CloudSearch.V1.Model.Person)
   field(:source, as: GoogleApi.CloudSearch.V1.Model.Source)
+  field(:thumbnailUrl)
   field(:updateTime, as: DateTime)
 end
 
