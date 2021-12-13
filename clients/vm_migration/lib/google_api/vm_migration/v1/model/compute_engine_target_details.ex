@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
 
   ## Attributes
 
+  *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Additional licenses to assign to the VM.
   *   `appliedLicense` (*type:* `GoogleApi.VMMigration.V1.Model.AppliedLicense.t`, *default:* `nil`) - The OS license returned from the adaptation module report.
   *   `bootOption` (*type:* `String.t`, *default:* `nil`) - The VM Boot Option, as set in the source vm.
   *   `computeScheduling` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeScheduling.t`, *default:* `nil`) - Compute instance scheduling information (if empty default is used).
@@ -42,6 +43,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalLicenses => list(String.t()) | nil,
           :appliedLicense => GoogleApi.VMMigration.V1.Model.AppliedLicense.t() | nil,
           :bootOption => String.t() | nil,
           :computeScheduling => GoogleApi.VMMigration.V1.Model.ComputeScheduling.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
           :zone => String.t() | nil
         }
 
+  field(:additionalLicenses, type: :list)
   field(:appliedLicense, as: GoogleApi.VMMigration.V1.Model.AppliedLicense)
   field(:bootOption)
   field(:computeScheduling, as: GoogleApi.VMMigration.V1.Model.ComputeScheduling)
