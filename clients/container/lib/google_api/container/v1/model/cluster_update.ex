@@ -49,6 +49,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredPrivateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
+  *   `desiredServiceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   *   `desiredWorkloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for Workload Identity.
@@ -93,6 +94,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
+          :desiredServiceExternalIpsConfig =>
+            GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
           :desiredVerticalPodAutoscaling =>
             GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil,
@@ -142,6 +145,10 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredResourceUsageExportConfig,
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
+  )
+
+  field(:desiredServiceExternalIpsConfig,
+    as: GoogleApi.Container.V1.Model.ServiceExternalIPsConfig
   )
 
   field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
