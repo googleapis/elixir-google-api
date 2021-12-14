@@ -26,6 +26,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCust
   *   `measurementUnit` (*type:* `String.t`, *default:* `nil`) - Required. The type for the custom metric's value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name for this CustomMetric resource. Format: properties/{property}/customMetrics/{customMetric}
   *   `parameterName` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Tagging name for this custom metric. If this is an event-scoped metric, then this is the event parameter name. May only contain alphanumeric and underscore charactes, starting with a letter. Max length of 40 characters for event-scoped metrics.
+  *   `restrictedMetricType` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Types of restricted data that this metric may contain. Required for metrics with CURRENCY measurement unit. Must be empty for metrics with a non-CURRENCY measurement unit.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The scope of this custom metric.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCust
           :measurementUnit => String.t() | nil,
           :name => String.t() | nil,
           :parameterName => String.t() | nil,
+          :restrictedMetricType => list(String.t()) | nil,
           :scope => String.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCust
   field(:measurementUnit)
   field(:name)
   field(:parameterName)
+  field(:restrictedMetricType, type: :list)
   field(:scope)
 end
 
