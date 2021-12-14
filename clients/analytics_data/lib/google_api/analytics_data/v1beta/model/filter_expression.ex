@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.FilterExpression do
   ## Attributes
 
   *   `andGroup` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpressionList.t`, *default:* `nil`) - The FilterExpressions in and_group have an AND relationship.
-  *   `filter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.Filter.t`, *default:* `nil`) - A primitive filter. All fields in filter in same FilterExpression needs to be either all dimensions or metrics.
+  *   `filter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.Filter.t`, *default:* `nil`) - A primitive filter. In the same FilterExpression, all of the filter's field names need to be either all dimensions or all metrics.
   *   `notExpression` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The FilterExpression is NOT of not_expression.
   *   `orGroup` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpressionList.t`, *default:* `nil`) - The FilterExpressions in or_group have an OR relationship.
   """
