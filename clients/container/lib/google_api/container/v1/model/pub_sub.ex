@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.PubSub do
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enable notifications for Pub/Sub.
+  *   `filter` (*type:* `GoogleApi.Container.V1.Model.Filter.t`, *default:* `nil`) - Allows filtering to one or more specific event types. If no filter is specified, or if a filter is specified with no event types, all event types will be sent
   *   `topic` (*type:* `String.t`, *default:* `nil`) - The desired Pub/Sub topic to which notifications will be sent by GKE. Format is `projects/{project}/topics/{topic}`.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Container.V1.Model.PubSub do
 
   @type t :: %__MODULE__{
           :enabled => boolean() | nil,
+          :filter => GoogleApi.Container.V1.Model.Filter.t() | nil,
           :topic => String.t() | nil
         }
 
   field(:enabled)
+  field(:filter, as: GoogleApi.Container.V1.Model.Filter)
   field(:topic)
 end
 
