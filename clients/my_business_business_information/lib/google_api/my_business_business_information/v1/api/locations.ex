@@ -174,7 +174,7 @@ defmodule GoogleApi.MyBusinessBusinessInformation.V1.Api.Locations do
   end
 
   @doc """
-  Deletes a location. If this location cannot be deleted using the API and it is marked so in the `google.mybusiness.businessinformation.v1.LocationState`, use the [Google My Business](https://business.google.com/manage/) website.
+  Deletes a location. If this location cannot be deleted using the API and it is marked so in the `google.mybusiness.businessinformation.v1.LocationState`, use the [Google Business Profile](https://business.google.com/manage/) website.
 
   ## Parameters
 
