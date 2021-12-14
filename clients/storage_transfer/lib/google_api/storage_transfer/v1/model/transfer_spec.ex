@@ -25,6 +25,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `azureBlobStorageDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t`, *default:* `nil`) - An Azure Blob Storage data source.
   *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data sink.
   *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data source.
+  *   `gcsIntermediateDataLocation` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - Cloud Storage intermediate data location.
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' "last modification time" do not exclude objects in a data sink.
   *   `posixDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data sink.
@@ -43,6 +44,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
             GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t() | nil,
           :gcsDataSink => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
           :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
+          :gcsIntermediateDataLocation => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
           :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t() | nil,
           :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t() | nil,
           :posixDataSink => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   field(:azureBlobStorageDataSource, as: GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData)
   field(:gcsDataSink, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:gcsDataSource, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
+  field(:gcsIntermediateDataLocation, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:httpDataSource, as: GoogleApi.StorageTransfer.V1.Model.HttpData)
   field(:objectConditions, as: GoogleApi.StorageTransfer.V1.Model.ObjectConditions)
   field(:posixDataSink, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)

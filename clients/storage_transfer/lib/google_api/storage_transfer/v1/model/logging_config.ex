@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.LoggingConfig do
   @moduledoc """
-  Logging configuration.
+  Specifies the logging behavior for transfer operations. For cloud-to-cloud transfers, logs are sent to Cloud Logging. See [Read transfer logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for details. For transfers to or from a POSIX file system, logs are stored in the Cloud Storage bucket that is the source or sink of the transfer. See [Managing Transfer for on-premises jobs] (https://cloud.google.com/storage-transfer/docs/managing-on-prem-jobs#viewing-logs) for details.
 
   ## Attributes
 
-  *   `enableOnpremGcsTransferLogs` (*type:* `boolean()`, *default:* `nil`) - Enables the Cloud Storage transfer logs for this transfer. This is only supported for transfer jobs with PosixFilesystem sources. The default is that logs are not generated for this transfer.
-  *   `logActionStates` (*type:* `list(String.t)`, *default:* `nil`) - States in which `log_actions` are logged. If empty, no logs are generated. This is not yet supported for transfers with PosixFilesystem data sources.
-  *   `logActions` (*type:* `list(String.t)`, *default:* `nil`) - Actions to be logged. If empty, no logs are generated. This is not yet supported for transfers with PosixFilesystem data sources.
+  *   `enableOnpremGcsTransferLogs` (*type:* `boolean()`, *default:* `nil`) - For transfers with a PosixFilesystem source, this option enables the Cloud Storage transfer logs for this transfer.
+  *   `logActionStates` (*type:* `list(String.t)`, *default:* `nil`) - States in which `log_actions` are logged. If empty, no logs are generated. Not supported for transfers with PosixFilesystem data sources; use enable_onprem_gcs_transfer_logs instead.
+  *   `logActions` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the actions to be logged. If empty, no logs are generated. Not supported for transfers with PosixFilesystem data sources; use enable_onprem_gcs_transfer_logs instead.
   """
 
   use GoogleApi.Gax.ModelBase

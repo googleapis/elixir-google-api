@@ -23,6 +23,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
 
   *   `deleteObjectsFromSourceAfterTransfer` (*type:* `boolean()`, *default:* `nil`) - Whether objects should be deleted from the source after they are transferred to the sink. **Note:** This option and delete_objects_unique_in_sink are mutually exclusive.
   *   `deleteObjectsUniqueInSink` (*type:* `boolean()`, *default:* `nil`) - Whether objects that exist only in the sink should be deleted. **Note:** This option and delete_objects_from_source_after_transfer are mutually exclusive.
+  *   `metadataOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.MetadataOptions.t`, *default:* `nil`) - Represents the selected metadata options for a transfer job.
   *   `overwriteObjectsAlreadyExistingInSink` (*type:* `boolean()`, *default:* `nil`) - When to overwrite objects that already exist in the sink. The default is that only objects that are different from the source are ovewritten. If true, all objects in the sink whose name matches an object in the source are overwritten with the source object.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
   @type t :: %__MODULE__{
           :deleteObjectsFromSourceAfterTransfer => boolean() | nil,
           :deleteObjectsUniqueInSink => boolean() | nil,
+          :metadataOptions => GoogleApi.StorageTransfer.V1.Model.MetadataOptions.t() | nil,
           :overwriteObjectsAlreadyExistingInSink => boolean() | nil
         }
 
   field(:deleteObjectsFromSourceAfterTransfer)
   field(:deleteObjectsUniqueInSink)
+  field(:metadataOptions, as: GoogleApi.StorageTransfer.V1.Model.MetadataOptions)
   field(:overwriteObjectsAlreadyExistingInSink)
 end
 
