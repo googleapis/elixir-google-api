@@ -31,7 +31,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of data disk, in GB. The data disk size minimum is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of data disk: **PD_SSD** (default) or **PD_HDD**. Not used for First Generation instances.
   *   `databaseFlags` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t)`, *default:* `nil`) - The database flags passed to the instance at startup.
-  *   `databaseReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether replication is enabled or not.
+  *   `databaseReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether replication is enabled or not. WARNING: Changing this restarts the instance.
   *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny maintenance periods
   *   `insightsConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig.t`, *default:* `nil`) - Insights configuration, for now relevant only for Postgres.
   *   `ipConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled for Second Generation instances.
@@ -45,7 +45,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `sqlServerAuditConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig.t`, *default:* `nil`) - SQL Server specific audit configuration.
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
-  *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example **db-custom-1-3840**.
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example **db-custom-1-3840**. WARNING: Changing this restarts the instance.
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-provided labels, represented as a dictionary where each label is a single key value pair.
   """
 
