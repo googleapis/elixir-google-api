@@ -33,6 +33,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `latestAnalysis` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis.t`, *default:* `nil`) - Output only. The conversation's latest analysis, if one exists.
   *   `medium` (*type:* `String.t`, *default:* `nil`) - Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the conversation. Format: projects/{project}/locations/{location}/conversations/{conversation}
+  *   `obfuscatedUserId` (*type:* `String.t`, *default:* `nil`) - Obfuscated user ID which the customer sent to us.
   *   `runtimeAnnotations` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotation.t)`, *default:* `nil`) - Output only. The annotations that were generated during the customer and agent interaction.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the conversation started.
   *   `transcript` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationTranscript.t`, *default:* `nil`) - Output only. The conversation transcript.
@@ -67,6 +68,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             | nil,
           :medium => String.t() | nil,
           :name => String.t() | nil,
+          :obfuscatedUserId => String.t() | nil,
           :runtimeAnnotations =>
             list(
               GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotation.t()
@@ -112,6 +114,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   field(:medium)
   field(:name)
+  field(:obfuscatedUserId)
 
   field(:runtimeAnnotations,
     as:
