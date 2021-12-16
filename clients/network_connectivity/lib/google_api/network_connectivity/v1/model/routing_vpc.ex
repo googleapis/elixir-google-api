@@ -21,15 +21,18 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC do
 
   ## Attributes
 
+  *   `requiredForNewSiteToSiteDataTransferSpokes` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, indicates that this VPC network is currently associated with spokes that use the data transfer feature (spokes where the site_to_site_data_transfer field is set to true). If you create new spokes that use data transfer, they must be associated with this VPC network.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the VPC network.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :requiredForNewSiteToSiteDataTransferSpokes => boolean() | nil,
           :uri => String.t() | nil
         }
 
+  field(:requiredForNewSiteToSiteDataTransferSpokes)
   field(:uri)
 end
 
