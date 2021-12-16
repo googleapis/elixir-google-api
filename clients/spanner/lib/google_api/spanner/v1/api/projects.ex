@@ -1790,7 +1790,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Drops (aka deletes) a Cloud Spanner database. Completed backups for the database will be retained according to their `expire_time`.
+  Drops (aka deletes) a Cloud Spanner database. Completed backups for the database will be retained according to their `expire_time`. Note: Cloud Spanner might continue to accept requests for a few seconds after the database has been deleted.
 
   ## Parameters
 
