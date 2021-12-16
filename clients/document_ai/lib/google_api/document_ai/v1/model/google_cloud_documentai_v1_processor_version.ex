@@ -23,7 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersion 
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the processor version was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the processor version.
   """
 

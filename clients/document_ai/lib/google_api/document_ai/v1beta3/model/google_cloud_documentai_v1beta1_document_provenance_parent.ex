@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   ## Attributes
 
   *   `id` (*type:* `integer()`, *default:* `nil`) - The id of the parent provenance.
-  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) on parent revision.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
   *   `revision` (*type:* `integer()`, *default:* `nil`) - The index of the index into current revision's parent_ids list.
   """
 
