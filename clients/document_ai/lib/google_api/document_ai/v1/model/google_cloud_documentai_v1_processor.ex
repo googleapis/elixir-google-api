@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Processor do
   @moduledoc """
-  The first-class citizen for DAI. Each processor defines how to extract structural information from a document.
+  The first-class citizen for Document AI. Each processor defines how to extract structural information from a document.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Processor do
   *   `defaultProcessorVersion` (*type:* `String.t`, *default:* `nil`) - The default processor version.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The resource name of the processor. Format: projects/{project}/locations/{location}/processors/{processor}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}`
   *   `processEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The http endpoint that can be called to invoke processing.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., INVOICE_PARSING, W2_PARSING, etc.
