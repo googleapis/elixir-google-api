@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
+  *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - A list of publicly visible licenses. Reserved for Google's use.
   *   `onUpdateAction` (*type:* `String.t`, *default:* `nil`) - Specifies which action to take on instance update with this disk. Default is to use the existing disk.
   *   `provisionedIops` (*type:* `String.t`, *default:* `nil`) - Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
           :diskSizeGb => String.t() | nil,
           :diskType => String.t() | nil,
           :labels => map() | nil,
+          :licenses => list(String.t()) | nil,
           :onUpdateAction => String.t() | nil,
           :provisionedIops => String.t() | nil,
           :resourcePolicies => list(String.t()) | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   field(:diskSizeGb)
   field(:diskType)
   field(:labels, type: :map)
+  field(:licenses, type: :list)
   field(:onUpdateAction)
   field(:provisionedIops)
   field(:resourcePolicies, type: :list)
