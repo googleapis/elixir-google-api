@@ -21,15 +21,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeOpe
 
   ## Attributes
 
+  *   `knowledgeBase` (*type:* `String.t`, *default:* `nil`) - The name of the knowledge base interacted with during the operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The current state of this operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :knowledgeBase => String.t() | nil,
           :state => String.t() | nil
         }
 
+  field(:knowledgeBase)
   field(:state)
 end
 
