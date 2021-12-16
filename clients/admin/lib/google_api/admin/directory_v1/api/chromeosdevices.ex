@@ -198,7 +198,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:includeChildOrgunits` (*type:* `boolean()`) - Return devices from all child orgunits, as well as the specified org unit. If this is set to true 'orgUnitPath' must be provided.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
-      *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
+      *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit (minus the leading `/`) or its unique ID.
       *   `:pageToken` (*type:* `String.t`) - The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
       *   `:query` (*type:* `String.t`) - Search string in the format given at https://developers.google.com/admin-sdk/directory/v1/list-query-operators
