@@ -28,6 +28,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   *   `labels` (*type:* `map()`, *default:* `nil`) - See Creating and managing labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the Key in the format "projects/{project}/keys/{key}".
   *   `testingOptions` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions.t`, *default:* `nil`) - Options for user acceptance testing.
+  *   `wafSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings.t`, *default:* `nil`) - Settings for WAF
   *   `webSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WebKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by websites.
   """
 
@@ -46,6 +47,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
           :name => String.t() | nil,
           :testingOptions =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions.t()
+            | nil,
+          :wafSettings =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings.t()
             | nil,
           :webSettings =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WebKeySettings.t()
@@ -68,6 +72,10 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   field(:testingOptions,
     as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions
+  )
+
+  field(:wafSettings,
+    as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings
   )
 
   field(:webSettings,

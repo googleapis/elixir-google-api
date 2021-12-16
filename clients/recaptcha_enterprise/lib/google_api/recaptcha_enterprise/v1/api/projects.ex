@@ -709,7 +709,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the project to search related account group memberships from, in the format "projects/{project}".
+  *   `project` (*type:* `String.t`) - Required. The name of the project to search related account group memberships from, in the format "projects/{project}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -743,7 +743,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
           | {:error, any()}
   def recaptchaenterprise_projects_relatedaccountgroupmemberships_search(
         connection,
-        parent,
+        project,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -765,8 +765,8 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{+parent}/relatedaccountgroupmemberships:search", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+project}/relatedaccountgroupmemberships:search", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
