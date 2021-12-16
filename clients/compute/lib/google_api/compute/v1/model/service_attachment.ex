@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   *   `consumerRejectLists` (*type:* `list(String.t)`, *default:* `nil`) - Projects that are not allowed to connect to this service attachment. The project can be specified using its id or number.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `domainNames` (*type:* `list(String.t)`, *default:* `nil`) - If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
   *   `enableProxyProtocol` (*type:* `boolean()`, *default:* `nil`) - If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource type. The server generates this identifier.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
           :consumerRejectLists => list(String.t()) | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
+          :domainNames => list(String.t()) | nil,
           :enableProxyProtocol => boolean() | nil,
           :fingerprint => String.t() | nil,
           :id => String.t() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   field(:consumerRejectLists, type: :list)
   field(:creationTimestamp)
   field(:description)
+  field(:domainNames, type: :list)
   field(:enableProxyProtocol)
   field(:fingerprint)
   field(:id)

@@ -110,7 +110,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Creates a snapshot of this regional disk.
+  Creates a snapshot of a specified persistent disk. For regular snapshot creation, consider using snapshots.insert instead, as that method supports more features, such as creating snapshots in a project different from the source disk project.
 
   ## Parameters
 
