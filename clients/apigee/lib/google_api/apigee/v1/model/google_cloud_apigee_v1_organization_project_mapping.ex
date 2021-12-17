@@ -22,17 +22,20 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMappin
   ## Attributes
 
   *   `organization` (*type:* `String.t`, *default:* `nil`) - Name of the Apigee organization.
-  *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - List of GCP projects associated with the Apigee organization.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - GCP project associated with the Apigee organization
+  *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Use `project_id`. An Apigee Organization is mapped to a single project.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :organization => String.t() | nil,
+          :projectId => String.t() | nil,
           :projectIds => list(String.t()) | nil
         }
 
   field(:organization)
+  field(:projectId)
   field(:projectIds, type: :list)
 end
 
