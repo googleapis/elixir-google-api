@@ -22,6 +22,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AppsOutage do
   ## Attributes
 
   *   `dashboardUri` (*type:* `String.t`, *default:* `nil`) - Link to the outage event in Google Workspace Status Dashboard
+  *   `incidentTrackingId` (*type:* `String.t`, *default:* `nil`) - Incident tracking ID.
+  *   `mergeInfo` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.MergeInfo.t`, *default:* `nil`) - Indicates new alert details under which the outage is communicated. Only populated when Status is MERGED.
   *   `nextUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp by which the next update is expected to arrive.
   *   `products` (*type:* `list(String.t)`, *default:* `nil`) - List of products impacted by the outage.
   *   `resolutionTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when the outage is expected to be resolved, or has confirmed resolution. Provided only when known.
@@ -32,6 +34,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AppsOutage do
 
   @type t :: %__MODULE__{
           :dashboardUri => String.t() | nil,
+          :incidentTrackingId => String.t() | nil,
+          :mergeInfo => GoogleApi.AlertCenter.V1beta1.Model.MergeInfo.t() | nil,
           :nextUpdateTime => DateTime.t() | nil,
           :products => list(String.t()) | nil,
           :resolutionTime => DateTime.t() | nil,
@@ -39,6 +43,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AppsOutage do
         }
 
   field(:dashboardUri)
+  field(:incidentTrackingId)
+  field(:mergeInfo, as: GoogleApi.AlertCenter.V1beta1.Model.MergeInfo)
   field(:nextUpdateTime, as: DateTime)
   field(:products, type: :list)
   field(:resolutionTime, as: DateTime)
