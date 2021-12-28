@@ -30,7 +30,7 @@ defmodule GoogleApi.Gax.MixProject do
       {:mime, "~> 1.0"},
       {:poison, ">= 3.0.0 and < 5.0.0"},
       {:ex_doc, "~> 0.16", only: :dev},
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 
