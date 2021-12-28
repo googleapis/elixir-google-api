@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.PartialUpdateClusterMetadata do
   ## Attributes
 
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation failed or was completed successfully.
-  *   `originalRequest` (*type:* `GoogleApi.BigtableAdmin.V2.Model.PartialUpdateClusterRequest.t`, *default:* `nil`) - 
+  *   `originalRequest` (*type:* `GoogleApi.BigtableAdmin.V2.Model.PartialUpdateClusterRequest.t`, *default:* `nil`) - The original request for PartialUpdateCluster.
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the original request was received.
   """
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create an instance within a project.
+  Create an instance within a project. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.
 
   ## Parameters
 
@@ -1115,7 +1115,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Creates a cluster within an instance.
+  Creates a cluster within an instance. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.
 
   ## Parameters
 
@@ -1425,7 +1425,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Partially updates a cluster within a project. This method is the preferred way to update a Cluster. 
+  Partially updates a cluster within a project. This method is the preferred way to update a Cluster. To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the update_mask. To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set a serve_node count via the update_mask.
 
   ## Parameters
 
@@ -1445,7 +1445,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The subset of Cluster fields which should be replaced. Must be explicitly set.
+      *   `:updateMask` (*type:* `String.t`) - Required. The subset of Cluster fields which should be replaced.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Cluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1507,7 +1507,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Updates a cluster within an instance. UpdateCluster is deprecated. Please use PartialUpdateCluster instead.
+  Updates a cluster within an instance. Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster.
 
   ## Parameters
 

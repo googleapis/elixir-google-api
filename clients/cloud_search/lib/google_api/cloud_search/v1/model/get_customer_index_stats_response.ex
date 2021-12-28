@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.GetCustomerIndexStatsResponse do
 
   ## Attributes
 
+  *   `averageIndexedItemCount` (*type:* `String.t`, *default:* `nil`) - Average item count for the given date range for which billing is done.
   *   `stats` (*type:* `list(GoogleApi.CloudSearch.V1.Model.CustomerIndexStats.t)`, *default:* `nil`) - Summary of indexed item counts, one for each day in the requested range.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :averageIndexedItemCount => String.t() | nil,
           :stats => list(GoogleApi.CloudSearch.V1.Model.CustomerIndexStats.t()) | nil
         }
 
+  field(:averageIndexedItemCount)
   field(:stats, as: GoogleApi.CloudSearch.V1.Model.CustomerIndexStats, type: :list)
 end
 

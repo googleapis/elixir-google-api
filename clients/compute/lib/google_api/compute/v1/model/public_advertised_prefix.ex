@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
   *   `publicDelegatedPrefixs` (*type:* `list(GoogleApi.Compute.V1.Model.PublicAdvertisedPrefixPublicDelegatedPrefix.t)`, *default:* `nil`) - [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sharedSecret` (*type:* `String.t`, *default:* `nil`) - [Output Only] The shared secret to be used for reverse DNS verification.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the public advertised prefix.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed. 
   """
 
   use GoogleApi.Gax.ModelBase

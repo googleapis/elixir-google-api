@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.TimeWindow do
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the window ends. The end time should take place after the start time.
+  *   `maintenanceExclusionOptions` (*type:* `GoogleApi.Container.V1.Model.MaintenanceExclusionOptions.t`, *default:* `nil`) - MaintenanceExclusionOptions provides maintenance exclusion related options.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the window first starts.
   """
 
@@ -29,10 +30,15 @@ defmodule GoogleApi.Container.V1.Model.TimeWindow do
 
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
+          :maintenanceExclusionOptions =>
+            GoogleApi.Container.V1.Model.MaintenanceExclusionOptions.t() | nil,
           :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)
+
+  field(:maintenanceExclusionOptions, as: GoogleApi.Container.V1.Model.MaintenanceExclusionOptions)
+
   field(:startTime, as: DateTime)
 end
 

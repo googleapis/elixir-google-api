@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
 
   ## Attributes
 
+  *   `autoRenew` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoRenew => boolean() | nil,
           :category => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :type => String.t() | nil
         }
 
+  field(:autoRenew)
   field(:category)
   field(:creationTimestamp)
   field(:description)

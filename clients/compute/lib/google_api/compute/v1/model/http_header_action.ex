@@ -21,10 +21,10 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderAction do
 
   ## Attributes
 
-  *   `requestHeadersToAdd` (*type:* `list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t)`, *default:* `nil`) - Headers to add to a matching request prior to forwarding the request to the backendService.
-  *   `requestHeadersToRemove` (*type:* `list(String.t)`, *default:* `nil`) - A list of header names for headers that need to be removed from the request prior to forwarding the request to the backendService.
-  *   `responseHeadersToAdd` (*type:* `list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t)`, *default:* `nil`) - Headers to add the response prior to sending the response back to the client.
-  *   `responseHeadersToRemove` (*type:* `list(String.t)`, *default:* `nil`) - A list of header names for headers that need to be removed from the response prior to sending the response back to the client.
+  *   `requestHeadersToAdd` (*type:* `list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t)`, *default:* `nil`) - Headers to add to a matching request before forwarding the request to the backendService.
+  *   `requestHeadersToRemove` (*type:* `list(String.t)`, *default:* `nil`) - A list of header names for headers that need to be removed from the request before forwarding the request to the backendService.
+  *   `responseHeadersToAdd` (*type:* `list(GoogleApi.Compute.V1.Model.HttpHeaderOption.t)`, *default:* `nil`) - Headers to add the response before sending the response back to the client.
+  *   `responseHeadersToRemove` (*type:* `list(String.t)`, *default:* `nil`) - A list of header names for headers that need to be removed from the response before sending the response back to the client.
   """
 
   use GoogleApi.Gax.ModelBase

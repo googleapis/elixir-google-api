@@ -26,6 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   *   `userRewardedContentDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.UserRewardedContentAssignedTargetingOptionDetails.t`, *default:* `nil`) - User rewarded content details. This field will be populated when the targeting_type is `TARGETING_TYPE_USER_REWARDED_CONTENT`.
   *   `deviceMakeModelDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DeviceMakeModelAssignedTargetingOptionDetails.t`, *default:* `nil`) - Device make and model details. This field will be populated when the targeting_type is `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
   *   `environmentDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.EnvironmentAssignedTargetingOptionDetails.t`, *default:* `nil`) - Environment details. This field will be populated when the targeting_type is `TARGETING_TYPE_ENVIRONMENT`.
+  *   `audioContentTypeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AudioContentTypeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Audio content type details. This field will be populated when the targeting_type is 'TARGETING_TYPE_AUDIO_CONTENT_TYPE'.
   *   `languageDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.LanguageAssignedTargetingOptionDetails.t`, *default:* `nil`) - Language details. This field will be populated when the targeting_type is `TARGETING_TYPE_LANGUAGE`.
   *   `appCategoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AppCategoryAssignedTargetingOptionDetails.t`, *default:* `nil`) - App category details. This field will be populated when the targeting_type is `TARGETING_TYPE_APP_CATEGORY`.
   *   `contentOutstreamPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content outstream position details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
@@ -83,6 +84,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
             | nil,
           :environmentDetails =>
             GoogleApi.DisplayVideo.V1.Model.EnvironmentAssignedTargetingOptionDetails.t() | nil,
+          :audioContentTypeDetails =>
+            GoogleApi.DisplayVideo.V1.Model.AudioContentTypeAssignedTargetingOptionDetails.t()
+            | nil,
           :languageDetails =>
             GoogleApi.DisplayVideo.V1.Model.LanguageAssignedTargetingOptionDetails.t() | nil,
           :appCategoryDetails =>
@@ -193,6 +197,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
 
   field(:environmentDetails,
     as: GoogleApi.DisplayVideo.V1.Model.EnvironmentAssignedTargetingOptionDetails
+  )
+
+  field(:audioContentTypeDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.AudioContentTypeAssignedTargetingOptionDetails
   )
 
   field(:languageDetails,

@@ -1,0 +1,11 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/elixir-google-api.git",
+        "sha": "b477e6f52cf35c8f6d822c24bbea0c2ac3b8d209"
+      }
+    }
+  ]
+}

@@ -26,6 +26,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   *   `humanReview` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentRevisionHumanReview.t`, *default:* `nil`) - Human Review information of this revision.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Id of the revision. Unique within the context of the document.
   *   `parent` (*type:* `list(integer())`, *default:* `nil`) - The revisions that this revision is based on. This can include one or more parent (when documents are merged.) This field represents the index into the `revisions` field.
+  *   `parentIds` (*type:* `list(String.t)`, *default:* `nil`) - The revisions that this revision is based on. Must include all the ids that have anything to do with this revision - eg. there are `provenance.parent.revision` fields that index into this field.
   *   `processor` (*type:* `String.t`, *default:* `nil`) - If the annotation was made by processor identify the processor by its resource name.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
             | nil,
           :id => String.t() | nil,
           :parent => list(integer()) | nil,
+          :parentIds => list(String.t()) | nil,
           :processor => String.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
 
   field(:id)
   field(:parent, type: :list)
+  field(:parentIds, type: :list)
   field(:processor)
 end
 

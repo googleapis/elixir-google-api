@@ -23,17 +23,21 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipRole do
 
   *   `expiryDetail` (*type:* `GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t`, *default:* `nil`) - The expiry details of the `MembershipRole`. Expiry details are only supported for `MEMBER` `MembershipRoles`. May be set if `name` is `MEMBER`. Must not be set if `name` is any other value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `MembershipRole`. Must be one of `OWNER`, `MANAGER`, `MEMBER`.
+  *   `restrictionEvaluations` (*type:* `GoogleApi.CloudIdentity.V1.Model.RestrictionEvaluations.t`, *default:* `nil`) - Evaluations of restrictions applied to parent group on this membership.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :expiryDetail => GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :restrictionEvaluations =>
+            GoogleApi.CloudIdentity.V1.Model.RestrictionEvaluations.t() | nil
         }
 
   field(:expiryDetail, as: GoogleApi.CloudIdentity.V1.Model.ExpiryDetail)
   field(:name)
+  field(:restrictionEvaluations, as: GoogleApi.CloudIdentity.V1.Model.RestrictionEvaluations)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudIdentity.V1.Model.MembershipRole do

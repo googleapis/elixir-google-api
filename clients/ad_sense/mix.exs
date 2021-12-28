@@ -18,7 +18,7 @@
 defmodule GoogleApi.AdSense.Mixfile do
   use Mix.Project
 
-  @version "0.13.0"
+  @version "0.14.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.AdSense.Mixfile do
 
   defp description() do
     """
-    AdSense Management API client library. Accesses AdSense publishers' inventory and generates performance reports.
+    AdSense Management API client library. The AdSense Management API allows publishers to access their inventory and run earnings and performance reports.
     """
   end
 

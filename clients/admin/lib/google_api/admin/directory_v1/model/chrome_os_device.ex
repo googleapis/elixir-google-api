@@ -52,6 +52,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
   *   `diskVolumeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t)`, *default:* `nil`) - Reports of disk space and other info about mounted/connected volumes.
   *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the organizational unit. orgUnitPath is the human readable version of orgUnitId. While orgUnitPath may change by renaming an organizational unit within the path, orgUnitId is unchangeable for one organizational unit. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#update_chrome_device) using the API, and this will be supported in the future.
   *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - The asset identifier as noted by an administrator or specified during enrollment.
   *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
   *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
@@ -102,6 +103,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t()) | nil,
           :systemRamFreeReports =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t()) | nil,
+          :orgUnitId => String.t() | nil,
           :annotatedAssetId => String.t() | nil,
           :cpuStatusReports =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t()) | nil,
@@ -173,6 +175,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
     type: :list
   )
 
+  field(:orgUnitId)
   field(:annotatedAssetId)
 
   field(:cpuStatusReports,

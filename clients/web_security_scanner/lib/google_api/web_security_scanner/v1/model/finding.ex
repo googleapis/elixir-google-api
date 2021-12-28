@@ -38,6 +38,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   *   `vulnerableHeaders` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders.t`, *default:* `nil`) - Output only. An addon containing information about vulnerable or missing HTTP headers.
   *   `vulnerableParameters` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.VulnerableParameters.t`, *default:* `nil`) - Output only. An addon containing information about request parameters which were found to be vulnerable.
   *   `xss` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Xss.t`, *default:* `nil`) - Output only. An addon containing information reported for an XSS, if any.
+  *   `xxe` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Xxe.t`, *default:* `nil`) - Output only. An addon containing information reported for an XXE, if any.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -60,7 +61,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
           :vulnerableHeaders => GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders.t() | nil,
           :vulnerableParameters =>
             GoogleApi.WebSecurityScanner.V1.Model.VulnerableParameters.t() | nil,
-          :xss => GoogleApi.WebSecurityScanner.V1.Model.Xss.t() | nil
+          :xss => GoogleApi.WebSecurityScanner.V1.Model.Xss.t() | nil,
+          :xxe => GoogleApi.WebSecurityScanner.V1.Model.Xxe.t() | nil
         }
 
   field(:body)
@@ -80,6 +82,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   field(:vulnerableHeaders, as: GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders)
   field(:vulnerableParameters, as: GoogleApi.WebSecurityScanner.V1.Model.VulnerableParameters)
   field(:xss, as: GoogleApi.WebSecurityScanner.V1.Model.Xss)
+  field(:xxe, as: GoogleApi.WebSecurityScanner.V1.Model.Xxe)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WebSecurityScanner.V1.Model.Finding do

@@ -28,6 +28,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `enableL4ilbSubsetting` (*type:* `boolean()`, *default:* `nil`) - Whether L4ILB Subsetting is enabled for this cluster.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
+  *   `serviceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
   """
 
@@ -41,6 +42,8 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :enableL4ilbSubsetting => boolean() | nil,
           :network => String.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
+          :serviceExternalIpsConfig =>
+            GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
           :subnetwork => String.t() | nil
         }
 
@@ -51,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   field(:enableL4ilbSubsetting)
   field(:network)
   field(:privateIpv6GoogleAccess)
+  field(:serviceExternalIpsConfig, as: GoogleApi.Container.V1.Model.ServiceExternalIPsConfig)
   field(:subnetwork)
 end
 

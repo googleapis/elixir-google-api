@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
   *   `publicDelegatedSubPrefixs` (*type:* `list(GoogleApi.Compute.V1.Model.PublicDelegatedPrefixPublicDelegatedSubPrefix.t)`, *default:* `nil`) - The list of sub public delegated prefixes that exist for this public delegated prefix.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the public delegated prefix.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned. 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef do
   ## Attributes
 
   *   `apiproduct` (*type:* `String.t`, *default:* `nil`) - Name of the API product.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the API product.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the API product. Valid values are `approved` or `revoked`.
   """
 
   use GoogleApi.Gax.ModelBase
