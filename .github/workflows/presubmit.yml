@@ -11,11 +11,11 @@ jobs:
       matrix:
         include:
           - elixir: "1.7.4"
-            otp: "22.3.4.17"
-          - elixir: "1.10.4"
-            otp: "23.3.1"
-          - elixir: "1.11.4"
-            otp: "23.3.1"
+            otp: "22.3.4.24"
+          - elixir: "1.12.3"
+            otp: "23.3.4.10"
+          - elixir: "1.13.1"
+            otp: "24.1.7"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
