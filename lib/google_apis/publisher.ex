@@ -37,14 +37,19 @@ defmodule GoogleApis.Publisher do
 
   def should_publish?(directory) do
     mix_exs = Path.join(directory, "mix.exs")
-    {{:module, mod, _, _}, _} = Code.eval_file(mix_exs)
-    project_info = apply(mod, :project, [])
+    if File.exists?(mix_exs) do
+      {{:module, mod, _, _}, _} = Code.eval_file(mix_exs)
+      project_info = apply(mod, :project, [])
 
-    app = Keyword.fetch!(project_info, :app)
-    version = Keyword.fetch!(project_info, :version)
+      app = Keyword.fetch!(project_info, :app)
+      version = Keyword.fetch!(project_info, :version)
 
-    Logger.info("Checking app: #{app} version: #{version}")
-    !version_exists?(app, version)
+      Logger.info("Checking app: #{app} version: #{version}")
+      !version_exists?(app, version)
+    else
+      Logger.info("Path #{mix_exs} does not exist")
+      false
+    end
   end
 
   def version_exists?(app, version) do
