@@ -195,8 +195,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           "sourceBucket" => URI.encode(source_bucket, &URI.char_unreserved?/1),
           "sourceObject" => URI.encode(source_object, &URI.char_unreserved?/1),
           "destinationBucket" => URI.encode(destination_bucket, &URI.char_unreserved?/1),
-          "destinationObject" =>
-            URI.encode(destination_object, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1021,8 +1020,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           "sourceBucket" => URI.encode(source_bucket, &URI.char_unreserved?/1),
           "sourceObject" => URI.encode(source_object, &URI.char_unreserved?/1),
           "destinationBucket" => URI.encode(destination_bucket, &URI.char_unreserved?/1),
-          "destinationObject" =>
-            URI.encode(destination_object, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
