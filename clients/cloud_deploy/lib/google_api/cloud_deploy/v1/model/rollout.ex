@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   *   `approveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` was approved.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` was created.
   *   `deployEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` finished deploying.
+  *   `deployFailureCause` (*type:* `String.t`, *default:* `nil`) - Output only. The reason this deploy failed. This will always be unspecified while the deploy in progress.
   *   `deployStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` started deploying.
   *   `deployingBuild` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to deploy the Rollout. Format is `projects/{project}/locations/{location}/builds/{build}`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `Rollout` for user purposes. Max length is 255 characters.
@@ -47,6 +48,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
           :approveTime => DateTime.t() | nil,
           :createTime => DateTime.t() | nil,
           :deployEndTime => DateTime.t() | nil,
+          :deployFailureCause => String.t() | nil,
           :deployStartTime => DateTime.t() | nil,
           :deployingBuild => String.t() | nil,
           :description => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   field(:approveTime, as: DateTime)
   field(:createTime, as: DateTime)
   field(:deployEndTime, as: DateTime)
+  field(:deployFailureCause)
   field(:deployStartTime, as: DateTime)
   field(:deployingBuild)
   field(:description)
