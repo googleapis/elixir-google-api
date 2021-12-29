@@ -22,9 +22,9 @@ defmodule GoogleApi.Chat.V1.Model.User do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name.
-  *   `domainId` (*type:* `String.t`, *default:* `nil`) - Obfuscated domain information.
+  *   `domainId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the user's Google Workspace domain.
   *   `isAnonymous` (*type:* `boolean()`, *default:* `nil`) - True when the user is deleted or the user's profile is not visible.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the format "users/*".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for a Google Chat user. Formatted as `users/AAAAAAAAAAA`. Represents a [person](https://developers.google.com/people/api/rest/v1/people#Person) in the People API.
   *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
 
