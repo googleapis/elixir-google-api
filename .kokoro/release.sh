@@ -21,5 +21,4 @@ export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/73713_elixir_hex_apikey)
 
 mix deps.get
 
-# Disabled for Dec 2021 release freeze
-# mix google_apis.publish
+mix google_apis.publish
