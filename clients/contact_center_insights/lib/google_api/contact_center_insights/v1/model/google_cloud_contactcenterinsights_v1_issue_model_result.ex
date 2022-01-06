@@ -21,7 +21,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
-  *   `issueModel` (*type:* `String.t`, *default:* `nil`) - Issue model that generates the result.
+  *   `issueModel` (*type:* `String.t`, *default:* `nil`) - Issue model that generates the result. Format: projects/{project}/locations/{location}/issueModels/{issue_model}
   *   `issues` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IssueAssignment.t)`, *default:* `nil`) - All the matched issues.
   """
 
