@@ -25,6 +25,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.ResponseMetaData do
   *   `dataLossFromOtherRow` (*type:* `boolean()`, *default:* `nil`) - If true, indicates some buckets of dimension combinations are rolled into "(other)" row. This can happen for high cardinality reports.
   *   `emptyReason` (*type:* `String.t`, *default:* `nil`) - If empty reason is specified, the report is empty for this reason.
   *   `schemaRestrictionResponse` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.SchemaRestrictionResponse.t`, *default:* `nil`) - Describes the schema restrictions actively enforced in creating this report. To learn more, see [Access and data-restriction management](https://support.google.com/analytics/answer/10851388).
+  *   `subjectToThresholding` (*type:* `boolean()`, *default:* `nil`) - If `subjectToThresholding` is true, this report is subject to thresholding and only returns data that meets the minimum aggregation thresholds. It is possible for a request to be subject to thresholding thresholding and no data is absent from the report, and this happens when all data is above the thresholds. To learn more, see [Data thresholds](https://support.google.com/analytics/answer/9383630) and [About Demographics and Interests](https://support.google.com/analytics/answer/2799357).
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The property's current timezone. Intended to be used to interpret time-based dimensions like `hour` and `minute`. Formatted as strings from the IANA Time Zone database (https://www.iana.org/time-zones); for example "America/New_York" or "Asia/Tokyo".
   """
 
@@ -36,6 +37,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.ResponseMetaData do
           :emptyReason => String.t() | nil,
           :schemaRestrictionResponse =>
             GoogleApi.AnalyticsData.V1beta.Model.SchemaRestrictionResponse.t() | nil,
+          :subjectToThresholding => boolean() | nil,
           :timeZone => String.t() | nil
         }
 
@@ -47,6 +49,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.ResponseMetaData do
     as: GoogleApi.AnalyticsData.V1beta.Model.SchemaRestrictionResponse
   )
 
+  field(:subjectToThresholding)
   field(:timeZone)
 end
 
