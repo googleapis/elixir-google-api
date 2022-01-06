@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DFAReporting.V33.Model.CustomFloodlightVariable do
   @moduledoc """
-  A custom floodlight variable.
+  A custom floodlight variable. This field may only be used when calling batchinsert; it is not supported by batchupdate.
 
   ## Attributes
 
