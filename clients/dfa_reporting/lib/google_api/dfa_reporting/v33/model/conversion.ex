@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Conversion do
   ## Attributes
 
   *   `childDirectedTreatment` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 13, under COPPA compliance.
-  *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CustomFloodlightVariable.t)`, *default:* `nil`) - Custom floodlight variables.
+  *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CustomFloodlightVariable.t)`, *default:* `nil`) - Custom floodlight variables. This field may only be used when calling batchinsert; it is not supported by batchupdate.
   *   `encryptedUserId` (*type:* `String.t`, *default:* `nil`) - The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], matchId, mobileDeviceId and gclid. This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid is a required field.
   *   `encryptedUserIdCandidates` (*type:* `list(String.t)`, *default:* `nil`) - A list of the alphanumeric encrypted user IDs. Any user ID with exposure prior to the conversion timestamp will be used in the inserted conversion. If no such user ID is found then the conversion will be rejected with INVALID_ARGUMENT error. When set, encryptionInfo should also be specified. This field may only be used when calling batchinsert; it is not supported by batchupdate. This field is mutually exclusive with encryptedUserId, matchId, mobileDeviceId and gclid. This or encryptedUserId or matchId or mobileDeviceId or gclid is a required field.
   *   `floodlightActivityId` (*type:* `String.t`, *default:* `nil`) - Floodlight Activity ID of this conversion. This is a required field.
