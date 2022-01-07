@@ -22,20 +22,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t`, *default:* `nil`) - A snapshot of an Account resource in change history.
-  *   `androidAppDataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t`, *default:* `nil`) - A snapshot of an AndroidAppDataStream resource in change history.
   *   `conversionEvent` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t`, *default:* `nil`) - A snapshot of a ConversionEvent resource in change history.
   *   `customDimension` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomDimension.t`, *default:* `nil`) - A snapshot of a CustomDimension resource in change history.
   *   `customMetric` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomMetric.t`, *default:* `nil`) - A snapshot of a CustomMetric resource in change history.
   *   `dataRetentionSettings` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataRetentionSettings.t`, *default:* `nil`) - A snapshot of a data retention settings resource in change history.
+  *   `dataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataStream.t`, *default:* `nil`) - A snapshot of a DataStream resource in change history.
   *   `displayVideo360AdvertiserLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink.t`, *default:* `nil`) - A snapshot of a DisplayVideo360AdvertiserLink resource in change history.
   *   `displayVideo360AdvertiserLinkProposal` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal.t`, *default:* `nil`) - A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in change history.
   *   `firebaseLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t`, *default:* `nil`) - A snapshot of a FirebaseLink resource in change history.
   *   `googleAdsLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t`, *default:* `nil`) - A snapshot of a GoogleAdsLink resource in change history.
   *   `googleSignalsSettings` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings.t`, *default:* `nil`) - A snapshot of a GoogleSignalsSettings resource in change history.
-  *   `iosAppDataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t`, *default:* `nil`) - A snapshot of an IosAppDataStream resource in change history.
   *   `measurementProtocolSecret` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret.t`, *default:* `nil`) - A snapshot of a MeasurementProtocolSecret resource in change history.
   *   `property` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t`, *default:* `nil`) - A snapshot of a Property resource in change history.
-  *   `webDataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream.t`, *default:* `nil`) - A snapshot of a WebDataStream resource in change history.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,9 +41,6 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   @type t :: %__MODULE__{
           :account =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t() | nil,
-          :androidAppDataStream =>
-            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream.t()
-            | nil,
           :conversionEvent =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t()
             | nil,
@@ -58,6 +53,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
           :dataRetentionSettings =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataRetentionSettings.t()
             | nil,
+          :dataStream =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataStream.t() | nil,
           :displayVideo360AdvertiserLink =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink.t()
             | nil,
@@ -73,24 +70,14 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
           :googleSignalsSettings =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings.t()
             | nil,
-          :iosAppDataStream =>
-            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream.t()
-            | nil,
           :measurementProtocolSecret =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret.t()
             | nil,
           :property =>
-            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t() | nil,
-          :webDataStream =>
-            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream.t()
-            | nil
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t() | nil
         }
 
   field(:account, as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount)
-
-  field(:androidAppDataStream,
-    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAndroidAppDataStream
-  )
 
   field(:conversionEvent,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent
@@ -106,6 +93,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
 
   field(:dataRetentionSettings,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataRetentionSettings
+  )
+
+  field(:dataStream,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataStream
   )
 
   field(:displayVideo360AdvertiserLink,
@@ -130,20 +121,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings
   )
 
-  field(:iosAppDataStream,
-    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosAppDataStream
-  )
-
   field(:measurementProtocolSecret,
     as:
       GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret
   )
 
   field(:property, as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty)
-
-  field(:webDataStream,
-    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebDataStream
-  )
 end
 
 defimpl Poison.Decoder,
