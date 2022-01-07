@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigRequest do
 
   ## Attributes
 
+  *   `checkServiceNetworkingUsePermission` (*type:* `boolean()`, *default:* `nil`) - Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not.
   *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is a project number, as in '12345' {network} is network name.
   *   `consumerProject` (*type:* `GoogleApi.ServiceNetworking.V1.Model.ConsumerProject.t`, *default:* `nil`) - NETWORK_NOT_IN_CONSUMERS_PROJECT, NETWORK_NOT_IN_CONSUMERS_HOST_PROJECT, and HOST_PROJECT_NOT_FOUND are done when consumer_project is provided.
   *   `rangeReservation` (*type:* `GoogleApi.ServiceNetworking.V1.Model.RangeReservation.t`, *default:* `nil`) - RANGES_EXHAUSTED, RANGES_EXHAUSTED, and RANGES_DELETED_LATER are done when range_reservation is provided.
@@ -30,12 +31,14 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :checkServiceNetworkingUsePermission => boolean() | nil,
           :consumerNetwork => String.t() | nil,
           :consumerProject => GoogleApi.ServiceNetworking.V1.Model.ConsumerProject.t() | nil,
           :rangeReservation => GoogleApi.ServiceNetworking.V1.Model.RangeReservation.t() | nil,
           :validateNetwork => boolean() | nil
         }
 
+  field(:checkServiceNetworkingUsePermission)
   field(:consumerNetwork)
   field(:consumerProject, as: GoogleApi.ServiceNetworking.V1.Model.ConsumerProject)
   field(:rangeReservation, as: GoogleApi.ServiceNetworking.V1.Model.RangeReservation)
