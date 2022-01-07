@@ -22,8 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswers
   ## Attributes
 
   *   `assistQueryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters.t`, *default:* `nil`) - Parameters for a human assist query.
-  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
-  *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`.
+  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
+  *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`.
   """
 
   use GoogleApi.Gax.ModelBase

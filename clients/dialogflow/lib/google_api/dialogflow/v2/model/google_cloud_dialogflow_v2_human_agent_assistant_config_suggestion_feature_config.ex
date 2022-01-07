@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   ## Attributes
 
   *   `conversationModelConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationModelConfig.t`, *default:* `nil`) - Configs of custom conversation model.
+  *   `conversationProcessConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig.t`, *default:* `nil`) - Configs for processing conversation.
   *   `enableEventBasedSuggestion` (*type:* `boolean()`, *default:* `nil`) - Automatically iterates all participants and tries to compile suggestions. Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
   *   `queryConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig.t`, *default:* `nil`) - Configs of query.
   *   `suggestionFeature` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionFeature.t`, *default:* `nil`) - The suggestion feature.
@@ -33,6 +34,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   @type t :: %__MODULE__{
           :conversationModelConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationModelConfig.t()
+            | nil,
+          :conversationProcessConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig.t()
             | nil,
           :enableEventBasedSuggestion => boolean() | nil,
           :queryConfig =>
@@ -48,6 +52,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   field(:conversationModelConfig,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationModelConfig
+  )
+
+  field(:conversationProcessConfig,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig
   )
 
   field(:enableEventBasedSuggestion)

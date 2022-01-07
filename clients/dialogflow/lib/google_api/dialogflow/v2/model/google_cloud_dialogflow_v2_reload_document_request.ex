@@ -22,15 +22,21 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ReloadDocumentReq
   ## Attributes
 
   *   `contentUri` (*type:* `String.t`, *default:* `nil`) - Optional. The path of gcs source file for reloading document content. For now, only gcs uri is supported. For documents stored in Google Cloud Storage, these URIs must have the form `gs:///`.
+  *   `importGcsCustomMetadata` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to import custom metadata from Google Cloud Storage. Only valid when the document source is Google Cloud Storage URI.
+  *   `smartMessagingPartialUpdate` (*type:* `boolean()`, *default:* `nil`) - Optional. When enabled, the reload request is to apply partial update to the smart messaging allowlist.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentUri => String.t() | nil
+          :contentUri => String.t() | nil,
+          :importGcsCustomMetadata => boolean() | nil,
+          :smartMessagingPartialUpdate => boolean() | nil
         }
 
   field(:contentUri)
+  field(:importGcsCustomMetadata)
+  field(:smartMessagingPartialUpdate)
 end
 
 defimpl Poison.Decoder,

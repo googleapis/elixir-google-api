@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3PageInfo do
   ## Attributes
 
   *   `currentPage` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse. The unique identifier of the current page. Format: `projects//locations//agents//flows//pages/`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse. The display name of the current page.
   *   `formInfo` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3PageInfoFormInfo.t`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse. Information about the form.
   """
 
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3PageInfo do
 
   @type t :: %__MODULE__{
           :currentPage => String.t() | nil,
+          :displayName => String.t() | nil,
           :formInfo =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3PageInfoFormInfo.t() | nil
         }
 
   field(:currentPage)
+  field(:displayName)
   field(:formInfo, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3PageInfoFormInfo)
 end
 

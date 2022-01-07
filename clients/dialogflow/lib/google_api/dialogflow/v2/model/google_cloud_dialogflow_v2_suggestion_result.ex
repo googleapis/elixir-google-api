@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionResult 
   *   `error` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Error status if the request failed.
   *   `suggestArticlesResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t`, *default:* `nil`) - SuggestArticlesResponse if request is for ARTICLE_SUGGESTION.
   *   `suggestFaqAnswersResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse.t`, *default:* `nil`) - SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
+  *   `suggestSmartRepliesResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestSmartRepliesResponse.t`, *default:* `nil`) - SuggestSmartRepliesResponse if request is for SMART_REPLY.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,6 +35,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionResult 
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t() | nil,
           :suggestFaqAnswersResponse =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse.t()
+            | nil,
+          :suggestSmartRepliesResponse =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestSmartRepliesResponse.t()
             | nil
         }
 
@@ -45,6 +49,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionResult 
 
   field(:suggestFaqAnswersResponse,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse
+  )
+
+  field(:suggestSmartRepliesResponse,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestSmartRepliesResponse
   )
 end
 

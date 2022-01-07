@@ -22,12 +22,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - Required. The message content.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the message was created.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the message was created in Contact Center AI.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The message language. This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
   *   `messageAnnotation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation.t`, *default:* `nil`) - Output only. The annotation for the message.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the message. Format: `projects//locations//conversations//messages/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the message. Format: `projects//locations//conversations//messages/`.
   *   `participant` (*type:* `String.t`, *default:* `nil`) - Output only. The participant that sends this message.
   *   `participantRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the participant.
+  *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the message was sent.
+  *   `sentimentAnalysis` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult.t`, *default:* `nil`) - Output only. The sentiment analysis result for the message.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +42,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation.t() | nil,
           :name => String.t() | nil,
           :participant => String.t() | nil,
-          :participantRole => String.t() | nil
+          :participantRole => String.t() | nil,
+          :sendTime => DateTime.t() | nil,
+          :sentimentAnalysis =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult.t() | nil
         }
 
   field(:content)
@@ -54,6 +59,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
   field(:name)
   field(:participant)
   field(:participantRole)
+  field(:sendTime, as: DateTime)
+
+  field(:sentimentAnalysis,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
