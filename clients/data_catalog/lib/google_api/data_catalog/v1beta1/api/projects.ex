@@ -1498,7 +1498,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists the tags on an Entry.
+  Lists tags assigned to an Entry. The columns in the response are lowercased.
 
   ## Parameters
 
@@ -1859,7 +1859,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists the tags on an Entry.
+  Lists tags assigned to an Entry. The columns in the response are lowercased.
 
   ## Parameters
 
