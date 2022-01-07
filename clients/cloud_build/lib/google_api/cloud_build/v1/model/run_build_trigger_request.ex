@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RunBuildTriggerRequest do
   ## Attributes
 
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the project.
-  *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Source to build against this trigger.
+  *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Source to build against this trigger. Branch and tag names cannot consist of regular expressions.
   *   `triggerId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the trigger.
   """
 

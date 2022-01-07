@@ -23,11 +23,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
 
   *   `approvalConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.ApprovalConfig.t`, *default:* `nil`) - Configuration for manual approval to start a build invocation of this BuildTrigger.
   *   `autodetect` (*type:* `boolean()`, *default:* `nil`) - Autodetect build configuration. The following precedence is used (case insensitive): 1. cloudbuild.yaml 2. cloudbuild.yml 3. cloudbuild.json 4. Dockerfile Currently only available for GitHub App Triggers.
+  *   `bitbucketServerTriggerConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.BitbucketServerTriggerConfig.t`, *default:* `nil`) - BitbucketServerTriggerConfig describes the configuration of a trigger that creates a build whenever a Bitbucket Server event is received.
   *   `build` (*type:* `GoogleApi.CloudBuild.V1.Model.Build.t`, *default:* `nil`) - Contents of the build template.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the trigger was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this trigger.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the trigger will never automatically execute a build.
-  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Optional. EventType allows the user to explicitly set the type of event to which this BuildTrigger should respond. This field is optional but will be validated against the rest of the configuration if it is set.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - EventType allows the user to explicitly set the type of event to which this BuildTrigger should respond. This field will be validated against the rest of the configuration if it is set.
   *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to the build configuration file (i.e. cloudbuild.yaml).
   *   `filter` (*type:* `String.t`, *default:* `nil`) - A Common Expression Language string.
   *   `gitFileSource` (*type:* `GoogleApi.CloudBuild.V1.Model.GitFileSource.t`, *default:* `nil`) - The file source describing the local or remote Build template.
@@ -51,6 +52,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   @type t :: %__MODULE__{
           :approvalConfig => GoogleApi.CloudBuild.V1.Model.ApprovalConfig.t() | nil,
           :autodetect => boolean() | nil,
+          :bitbucketServerTriggerConfig =>
+            GoogleApi.CloudBuild.V1.Model.BitbucketServerTriggerConfig.t() | nil,
           :build => GoogleApi.CloudBuild.V1.Model.Build.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
@@ -76,6 +79,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
 
   field(:approvalConfig, as: GoogleApi.CloudBuild.V1.Model.ApprovalConfig)
   field(:autodetect)
+
+  field(:bitbucketServerTriggerConfig,
+    as: GoogleApi.CloudBuild.V1.Model.BitbucketServerTriggerConfig
+  )
+
   field(:build, as: GoogleApi.CloudBuild.V1.Model.Build)
   field(:createTime, as: DateTime)
   field(:description)
