@@ -22,6 +22,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   ## Attributes
 
   *   `dnsKeysPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of DnsKeys per ManagedZone.
+  *   `itemsPerRoutingPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of items per routing policy.
   *   `kind` (*type:* `String.t`, *default:* `dns#quota`) - 
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
   *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
@@ -42,6 +43,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
 
   @type t :: %__MODULE__{
           :dnsKeysPerManagedZone => integer() | nil,
+          :itemsPerRoutingPolicy => integer() | nil,
           :kind => String.t() | nil,
           :managedZones => integer() | nil,
           :managedZonesPerNetwork => integer() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
         }
 
   field(:dnsKeysPerManagedZone)
+  field(:itemsPerRoutingPolicy)
   field(:kind)
   field(:managedZones)
   field(:managedZonesPerNetwork)
