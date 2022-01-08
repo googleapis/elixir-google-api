@@ -25,10 +25,7 @@ defmodule GoogleApi.TextToSpeech.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
-      "https://www.googleapis.com/auth/cloud-platform",
-
-      # View, manage and query your Dialogflow agents
-      "https://www.googleapis.com/auth/dialogflow"
+      "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_text_to_speech,
     base_url: "https://texttospeech.googleapis.com/"
