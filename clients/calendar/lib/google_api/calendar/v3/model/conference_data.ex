@@ -39,7 +39,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Additional notes (such as instructions from the domain administrator, legal notices) to display to the user. Can contain HTML. The maximum length is 2048 characters. Optional.
   *   `parameters` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceParameters.t`, *default:* `nil`) - Additional properties related to a conference. An example would be a solution-specific setting for enabling video streaming.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - The signature of the conference data.
-      Generated on server side. Must be preserved while copying the conference data between events, otherwise the conference data will not be copied.
+      Generated on server side.
       Unset for a conference with a failed create request.
       Optional for a conference with a pending create request.
   """
