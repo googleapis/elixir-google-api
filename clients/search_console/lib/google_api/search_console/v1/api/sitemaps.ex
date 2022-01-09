@@ -26,7 +26,7 @@ defmodule GoogleApi.SearchConsole.V1.Api.Sitemaps do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a sitemap from this site.
+  Deletes a sitemap from the Sitemaps report. Does not stop Google from crawling this sitemap or the URLs that were previously crawled in the deleted sitemap.
 
   ## Parameters
 
