@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   *   `networkPerformanceConfig` (*type:* `GoogleApi.Compute.V1.Model.NetworkPerformanceConfig.t`, *default:* `nil`) - Note that for MachineImage, this is not supported yet.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
   *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+  *   `resourceManagerTags` (*type:* `map()`, *default:* `nil`) - Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT & PATCH) when empty.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Specifies the scheduling options for the instances that are created from these properties.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
             GoogleApi.Compute.V1.Model.NetworkPerformanceConfig.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
           :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t() | nil,
+          :resourceManagerTags => map() | nil,
           :resourcePolicies => list(String.t()) | nil,
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t() | nil,
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()) | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   field(:networkPerformanceConfig, as: GoogleApi.Compute.V1.Model.NetworkPerformanceConfig)
   field(:privateIpv6GoogleAccess)
   field(:reservationAffinity, as: GoogleApi.Compute.V1.Model.ReservationAffinity)
+  field(:resourceManagerTags, type: :map)
   field(:resourcePolicies, type: :list)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
