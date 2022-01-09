@@ -29,6 +29,10 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   *   `recreating` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
   *   `refreshing` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
   *   `restarting` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+  *   `resuming` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+  *   `starting` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+  *   `stopping` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+  *   `suspending` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
   *   `verifying` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
   """
 
@@ -43,6 +47,10 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
           :recreating => integer() | nil,
           :refreshing => integer() | nil,
           :restarting => integer() | nil,
+          :resuming => integer() | nil,
+          :starting => integer() | nil,
+          :stopping => integer() | nil,
+          :suspending => integer() | nil,
           :verifying => integer() | nil
         }
 
@@ -54,6 +62,10 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   field(:recreating)
   field(:refreshing)
   field(:restarting)
+  field(:resuming)
+  field(:starting)
+  field(:stopping)
+  field(:suspending)
   field(:verifying)
 end
 

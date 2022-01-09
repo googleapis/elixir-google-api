@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
   ## Attributes
 
   *   `enableNestedVirtualization` (*type:* `boolean()`, *default:* `nil`) - Whether to enable nested virtualization or not (default is false).
+  *   `enableUefiNetworking` (*type:* `boolean()`, *default:* `nil`) - Whether to enable UEFI networking for instance creation.
   *   `threadsPerCore` (*type:* `integer()`, *default:* `nil`) - The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
 
   @type t :: %__MODULE__{
           :enableNestedVirtualization => boolean() | nil,
+          :enableUefiNetworking => boolean() | nil,
           :threadsPerCore => integer() | nil
         }
 
   field(:enableNestedVirtualization)
+  field(:enableUefiNetworking)
   field(:threadsPerCore)
 end
 
