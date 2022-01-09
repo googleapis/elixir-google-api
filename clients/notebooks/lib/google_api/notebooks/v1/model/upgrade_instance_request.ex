@@ -21,11 +21,16 @@ defmodule GoogleApi.Notebooks.V1.Model.UpgradeInstanceRequest do
 
   ## Attributes
 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The optional UpgradeType. Setting this field will search for additional compute images to upgrade this instance.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :type => String.t() | nil
+        }
+
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Notebooks.V1.Model.UpgradeInstanceRequest do
