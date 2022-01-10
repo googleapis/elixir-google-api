@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.GenerateRandomBytesRequest do
   ## Attributes
 
   *   `lengthBytes` (*type:* `integer()`, *default:* `nil`) - The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes.
-  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - The ProtectionLevel to use when generating the random data. Defaults to SOFTWARE.
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - The ProtectionLevel to use when generating the random data. Currently, only HSM protection level is supported.
   """
 
   use GoogleApi.Gax.ModelBase
