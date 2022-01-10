@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Eventarc.V1.Model.Transport do
   @moduledoc """
-  Represents the transport intermediaries created for the trigger in order to deliver events.
+  Represents the transport intermediaries created for the trigger to deliver events.
 
   ## Attributes
 
-  *   `pubsub` (*type:* `GoogleApi.Eventarc.V1.Model.Pubsub.t`, *default:* `nil`) - The Pub/Sub topic and subscription used by Eventarc as delivery intermediary.
+  *   `pubsub` (*type:* `GoogleApi.Eventarc.V1.Model.Pubsub.t`, *default:* `nil`) - The Pub/Sub topic and subscription used by Eventarc as a transport intermediary.
   """
 
   use GoogleApi.Gax.ModelBase
