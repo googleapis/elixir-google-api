@@ -98,7 +98,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.
+  Returns true if valid credentials exist for the given data source and requesting user.
 
   ## Parameters
 
@@ -172,7 +172,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+  Retrieves a supported data source and returns its settings.
 
   ## Parameters
 
@@ -242,7 +242,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Lists supported data sources and returns their settings, which can be used for UI rendering.
+  Lists supported data sources and returns their settings.
 
   ## Parameters
 
@@ -538,7 +538,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.
+  Returns true if valid credentials exist for the given data source and requesting user.
 
   ## Parameters
 
@@ -612,7 +612,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+  Retrieves a supported data source and returns its settings.
 
   ## Parameters
 
@@ -682,7 +682,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Lists supported data sources and returns their settings, which can be used for UI rendering.
+  Lists supported data sources and returns their settings.
 
   ## Parameters
 
@@ -1428,7 +1428,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about running and completed jobs.
+  Returns information about running and completed transfer runs.
 
   ## Parameters
 
@@ -1508,7 +1508,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns user facing log messages for the data transfer run.
+  Returns log messages for the transfer run.
 
   ## Parameters
 
@@ -2256,7 +2256,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about running and completed jobs.
+  Returns information about running and completed transfer runs.
 
   ## Parameters
 
@@ -2336,7 +2336,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns user facing log messages for the data transfer run.
+  Returns log messages for the transfer run.
 
   ## Parameters
 
