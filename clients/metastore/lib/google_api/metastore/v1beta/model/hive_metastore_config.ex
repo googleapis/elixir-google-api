@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.HiveMetastoreConfig do
 
   ## Attributes
 
-  *   `configOverrides` (*type:* `map()`, *default:* `nil`) - A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml). The mappings override system defaults (some keys cannot be overridden).
+  *   `configOverrides` (*type:* `map()`, *default:* `nil`) - A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml). The mappings override system defaults (some keys cannot be overridden). These overrides are also applied to auxiliary versions and can be further customized in the auxiliary version's AuxiliaryVersionConfig.
   *   `endpointProtocol` (*type:* `String.t`, *default:* `nil`) - The protocol to use for the metastore service endpoint. If unspecified, defaults to THRIFT.
   *   `kerberosConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.KerberosConfig.t`, *default:* `nil`) - Information used to configure the Hive metastore service as a service principal in a Kerberos realm. To disable Kerberos, use the UpdateService method and specify this field's path (hive_metastore_config.kerberos_config) in the request's update_mask while omitting this field from the request's service.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Immutable. The Hive metastore schema version.
