@@ -22,15 +22,18 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunction do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The function name in the script project.
+  *   `parameters` (*type:* `list(String.t)`, *default:* `nil`) - The ordered list of parameter names of the function in the script project.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :parameters => list(String.t()) | nil
         }
 
   field(:name)
+  field(:parameters, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunction do
