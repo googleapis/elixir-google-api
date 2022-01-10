@@ -451,7 +451,7 @@ defmodule GoogleApi.DataMigration.V1.Api.Projects do
   end
 
   @doc """
-  Retrieve a list of all connection profiles in a given project and location.
+  Retrieves a list of all connection profiles in a given project and location.
 
   ## Parameters
 
@@ -470,7 +470,7 @@ defmodule GoogleApi.DataMigration.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter expression that filters connection profiles listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either =, !=, >, or <. For example, list connection profiles created this year by specifying **createTime %gt; 2020-01-01T00:00:00.000000000Z**. You can also filter nested fields. For example, you could specify **mySql.username = %lt;my_username%gt;** to list all connection profiles configured to connect with a specific username.
-      *   `:orderBy` (*type:* `String.t`) - the order by fields for the result.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order results according to.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of connection profiles to return. The service may return fewer than this value. If unspecified, at most 50 connection profiles will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListConnectionProfiles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnectionProfiles` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
