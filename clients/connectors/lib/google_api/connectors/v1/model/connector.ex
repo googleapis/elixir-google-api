@@ -27,6 +27,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   *   `documentationUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to documentation page.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to external page.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connector. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector}
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   *   `webAssetsLocation` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud storage location of icons etc consumed by UI.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
           :documentationUri => String.t() | nil,
           :externalUri => String.t() | nil,
           :labels => map() | nil,
+          :launchStage => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :webAssetsLocation => String.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   field(:documentationUri)
   field(:externalUri)
   field(:labels, type: :map)
+  field(:launchStage)
   field(:name)
   field(:updateTime, as: DateTime)
   field(:webAssetsLocation)
