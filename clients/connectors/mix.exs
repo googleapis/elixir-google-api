@@ -18,7 +18,7 @@
 defmodule GoogleApi.Connectors.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Connectors.Mixfile do
 
   defp description() do
     """
-    Connectors API client library. 
+    Connectors API client library. Enables users to create and manage connections to Google Cloud services and third-party business applications using the Connectors interface.
     """
   end
 
