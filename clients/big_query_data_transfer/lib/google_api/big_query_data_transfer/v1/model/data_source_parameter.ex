@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   @moduledoc """
-  Represents a data source parameter with validation rules, so that parameters can be rendered in the UI. These parameters are given to us by supported data sources, and include all needed information for rendering and validation. Thus, whoever uses this api can decide to generate either generic ui, or custom data source specific forms.
+  A parameter used to define custom fields in a data source definition.
 
   ## Attributes
 

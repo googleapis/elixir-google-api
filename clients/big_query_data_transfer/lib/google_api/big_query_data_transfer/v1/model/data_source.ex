@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   @moduledoc """
-  Represents data source metadata. Metadata is sufficient to render UI and request proper OAuth tokens.
+  Defines the properties and custom parameters for a data source.
 
   ## Attributes
 
