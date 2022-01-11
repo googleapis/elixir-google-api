@@ -59,6 +59,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
   *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
   *   `kioskCustomization` (*type:* `GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t`, *default:* `nil`) - Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.
+  *   `microphoneAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices.
   *   `dataRoamingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether roaming data services are disabled.
   *   `encryptionPolicy` (*type:* `String.t`, *default:* `nil`) - Whether encryption is enabled
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the policy. This is a read-only field. The version is incremented each time the policy is updated.
@@ -85,6 +86,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `openNetworkConfiguration` (*type:* `map()`, *default:* `nil`) - Network configuration for the device. See configure networks for more information.
   *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.
   *   `appAutoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use autoUpdateMode instead.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
+  *   `cameraAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the camera and whether the user has access to the camera access toggle.
   *   `permissionGrants` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t)`, *default:* `nil`) - Explicit permission or group grants or denials for all apps. These values override the default_permission_policy.
   *   `applications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t)`, *default:* `nil`) - Policy applied to apps.
   *   `statusBarDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the status bar is disabled. This disables notifications, quick settings, and other screen overlays that allow escape from full-screen mode. DEPRECATED. To disable the status bar on a kiosk device, use InstallType KIOSK or kioskCustomLauncherEnabled.
@@ -159,6 +161,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :accountTypesWithManagementDisabled => list(String.t()) | nil,
           :kioskCustomization =>
             GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t() | nil,
+          :microphoneAccess => String.t() | nil,
           :dataRoamingDisabled => boolean() | nil,
           :encryptionPolicy => String.t() | nil,
           :version => String.t() | nil,
@@ -188,6 +191,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :openNetworkConfiguration => map() | nil,
           :systemUpdate => GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t() | nil,
           :appAutoUpdatePolicy => String.t() | nil,
+          :cameraAccess => String.t() | nil,
           :permissionGrants =>
             list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()) | nil,
           :applications => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t()) | nil,
@@ -270,6 +274,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:name)
   field(:accountTypesWithManagementDisabled, type: :list)
   field(:kioskCustomization, as: GoogleApi.AndroidManagement.V1.Model.KioskCustomization)
+  field(:microphoneAccess)
   field(:dataRoamingDisabled)
   field(:encryptionPolicy)
   field(:version)
@@ -305,6 +310,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:openNetworkConfiguration, type: :map)
   field(:systemUpdate, as: GoogleApi.AndroidManagement.V1.Model.SystemUpdate)
   field(:appAutoUpdatePolicy)
+  field(:cameraAccess)
   field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
   field(:applications, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy, type: :list)
   field(:statusBarDisabled)
