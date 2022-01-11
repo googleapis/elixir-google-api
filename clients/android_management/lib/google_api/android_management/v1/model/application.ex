@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
 
   *   `appTracks` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t)`, *default:* `nil`) - Application tracks visible to the enterprise.
   *   `managedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties available to be pre-configured for the app.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterpriseId}/applications/{package_name}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterprise}/applications/{package_name}.
   *   `permissions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t)`, *default:* `nil`) - The permissions required by the app.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the app. Localized.
   """
