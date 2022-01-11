@@ -21,6 +21,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Policy do
 
   ## Attributes
 
+  *   `alternate` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2AlternatePolicySpec.t`, *default:* `nil`) - Deprecated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: * `projects/{project_number}/policies/{constraint_name}` * `folders/{folder_id}/policies/{constraint_name}` * `organizations/{organization_id}/policies/{constraint_name}` For example, "projects/123/policies/compute.disableSerialPortAccess". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.
   *   `spec` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2PolicySpec.t`, *default:* `nil`) - Basic information about the Organization Policy.
   """
@@ -28,10 +29,13 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alternate =>
+            GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2AlternatePolicySpec.t() | nil,
           :name => String.t() | nil,
           :spec => GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2PolicySpec.t() | nil
         }
 
+  field(:alternate, as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2AlternatePolicySpec)
   field(:name)
   field(:spec, as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2PolicySpec)
 end
