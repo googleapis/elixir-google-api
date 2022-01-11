@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
   @moduledoc """
-  Configuration to control the number of findings returned. Cannot be set if de-identification is requested.
+  Configuration to control the number of findings returned for inspection. This is not used for de-identification or data profiling.
 
   ## Attributes
 
