@@ -21,7 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Subject do
 
   ## Attributes
 
-  *   `digest` (*type:* `map()`, *default:* `nil`) - "": "" Algorithms can be e.g. sha256, sha512 See https://github.com/in-toto/attestation/blob/main/spec/field_types.md#DigestSet
+  *   `digest` (*type:* `map()`, *default:* `nil`) - `"": ""` Algorithms can be e.g. sha256, sha512 See https://github.com/in-toto/attestation/blob/main/spec/field_types.md#DigestSet
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 

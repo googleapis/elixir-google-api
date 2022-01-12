@@ -21,8 +21,8 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.InTotoStatement do
 
   ## Attributes
 
-  *   `_type` (*type:* `String.t`, *default:* `nil`) - Always "https://in-toto.io/Statement/v0.1".
-  *   `predicateType` (*type:* `String.t`, *default:* `nil`) - "https://slsa.dev/provenance/v0.1" for SlsaProvenance.
+  *   `_type` (*type:* `String.t`, *default:* `nil`) - Always `https://in-toto.io/Statement/v0.1`.
+  *   `predicateType` (*type:* `String.t`, *default:* `nil`) - `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
   *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.InTotoProvenance.t`, *default:* `nil`) - 
   *   `slsaProvenance` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenance.t`, *default:* `nil`) - 
   *   `subject` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.Subject.t)`, *default:* `nil`) - 
