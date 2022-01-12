@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
   *   `accountManagement` (*type:* `String.t`, *default:* `nil`) - Output only. How the account is managed. Acceptable values are: - "`manual`" - "`automatic`" 
   *   `adsLinks` (*type:* `list(GoogleApi.Content.V21.Model.AccountAdsLink.t)`, *default:* `nil`) - Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
+  *   `automaticImprovements` (*type:* `GoogleApi.Content.V21.Model.AccountAutomaticImprovements.t`, *default:* `nil`) - The automatic improvements of the account can be used to automatically update items, improve images and shipping. Each section inside AutomaticImprovements is updated separately.
   *   `automaticLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - Automatically created label IDs that are assigned to the account by CSS Center.
   *   `businessInformation` (*type:* `GoogleApi.Content.V21.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
   *   `cssId` (*type:* `String.t`, *default:* `nil`) - ID of CSS the account belongs to.
@@ -44,6 +45,8 @@ defmodule GoogleApi.Content.V21.Model.Account do
           :accountManagement => String.t() | nil,
           :adsLinks => list(GoogleApi.Content.V21.Model.AccountAdsLink.t()) | nil,
           :adultContent => boolean() | nil,
+          :automaticImprovements =>
+            GoogleApi.Content.V21.Model.AccountAutomaticImprovements.t() | nil,
           :automaticLabelIds => list(String.t()) | nil,
           :businessInformation =>
             GoogleApi.Content.V21.Model.AccountBusinessInformation.t() | nil,
@@ -64,6 +67,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
   field(:accountManagement)
   field(:adsLinks, as: GoogleApi.Content.V21.Model.AccountAdsLink, type: :list)
   field(:adultContent)
+  field(:automaticImprovements, as: GoogleApi.Content.V21.Model.AccountAutomaticImprovements)
   field(:automaticLabelIds, type: :list)
   field(:businessInformation, as: GoogleApi.Content.V21.Model.AccountBusinessInformation)
   field(:cssId)
