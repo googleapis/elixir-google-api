@@ -21,22 +21,37 @@ defmodule GoogleApi.Content.V21.Model.PosStore do
 
   ## Attributes
 
+  *   `gcidCategory` (*type:* `list(String.t)`, *default:* `nil`) - The business type of the store.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#posStore`"
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The store phone number.
+  *   `placeId` (*type:* `String.t`, *default:* `nil`) - The Google Place Id of the store location.
   *   `storeAddress` (*type:* `String.t`, *default:* `nil`) - Required. The street address of the store.
   *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. A store identifier that is unique for the given merchant.
+  *   `storeName` (*type:* `String.t`, *default:* `nil`) - The merchant or store name.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - The website url for the store or merchant.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gcidCategory => list(String.t()) | nil,
           :kind => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :placeId => String.t() | nil,
           :storeAddress => String.t() | nil,
-          :storeCode => String.t() | nil
+          :storeCode => String.t() | nil,
+          :storeName => String.t() | nil,
+          :websiteUrl => String.t() | nil
         }
 
+  field(:gcidCategory, type: :list)
   field(:kind)
+  field(:phoneNumber)
+  field(:placeId)
   field(:storeAddress)
   field(:storeCode)
+  field(:storeName)
+  field(:websiteUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.PosStore do
