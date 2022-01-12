@@ -23,8 +23,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
 
   *   `analysisStatus` (*type:* `String.t`, *default:* `nil`) - The status of discovery for the resource.
   *   `analysisStatusError` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage output only and populated by the API.
+  *   `archiveTime` (*type:* `DateTime.t`, *default:* `nil`) - The time occurrences related to this discovery occurrence were archived.
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
   *   `cpe` (*type:* `String.t`, *default:* `nil`) - The CPE of the resource being scanned.
+  *   `lastScanTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this resource was scanned.
   *   `operation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t`, *default:* `nil`) - Output only. An operation that indicates the status of the current scan. This field is deprecated, do not use.
   """
 
@@ -33,15 +35,19 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
   @type t :: %__MODULE__{
           :analysisStatus => String.t() | nil,
           :analysisStatusError => GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t() | nil,
+          :archiveTime => DateTime.t() | nil,
           :continuousAnalysis => String.t() | nil,
           :cpe => String.t() | nil,
+          :lastScanTime => DateTime.t() | nil,
           :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t() | nil
         }
 
   field(:analysisStatus)
   field(:analysisStatusError, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Status)
+  field(:archiveTime, as: DateTime)
   field(:continuousAnalysis)
   field(:cpe)
+  field(:lastScanTime, as: DateTime)
   field(:operation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation)
 end
 
