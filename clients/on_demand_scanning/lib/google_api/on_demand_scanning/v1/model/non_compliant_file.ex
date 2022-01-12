@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.OnDemandScanning.V1.Model.NonCompliantFile do
   @moduledoc """
-  Details about files that caused a compliance check to fail.
+  Details about files that caused a compliance check to fail. display_command is a single command that can be used to display a list of non compliant files. When there is no such command, we can also iterate a list of non compliant file using 'path'.
 
   ## Attributes
 
   *   `displayCommand` (*type:* `String.t`, *default:* `nil`) - Command to display the non-compliant files.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - display_command is a single command that can be used to display a list of non compliant files. When there is no such command, we can also iterate a list of non compliant file using 'path'. Empty if `display_command` is set.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Empty if `display_command` is set.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Explains why a file is non compliant for a CIS check.
   """
 

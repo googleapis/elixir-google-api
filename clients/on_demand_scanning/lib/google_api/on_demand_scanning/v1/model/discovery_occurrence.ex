@@ -23,6 +23,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
 
   *   `analysisStatus` (*type:* `String.t`, *default:* `nil`) - The status of discovery for the resource.
   *   `analysisStatusError` (*type:* `GoogleApi.OnDemandScanning.V1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage is output only and populated by the API.
+  *   `archiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time occurrences related to this discovery occurrence were archived.
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
   *   `cpe` (*type:* `String.t`, *default:* `nil`) - The CPE of the resource being scanned.
   *   `lastScanTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this resource was scanned.
@@ -33,6 +34,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
   @type t :: %__MODULE__{
           :analysisStatus => String.t() | nil,
           :analysisStatusError => GoogleApi.OnDemandScanning.V1.Model.Status.t() | nil,
+          :archiveTime => DateTime.t() | nil,
           :continuousAnalysis => String.t() | nil,
           :cpe => String.t() | nil,
           :lastScanTime => DateTime.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
 
   field(:analysisStatus)
   field(:analysisStatusError, as: GoogleApi.OnDemandScanning.V1.Model.Status)
+  field(:archiveTime, as: DateTime)
   field(:continuousAnalysis)
   field(:cpe)
   field(:lastScanTime, as: DateTime)
