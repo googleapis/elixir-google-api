@@ -26,7 +26,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a batch of new contacts and return the PersonResponses for the newly created contacts. Limited to 10 parallel requests per user.
+  Create a batch of new contacts and return the PersonResponses for the newly Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Delete a batch of contacts. Any non-contact data will not be deleted. Limited to 10 parallel requests per user.
+  Delete a batch of contacts. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -144,7 +144,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Limited to 10 parallel requests per user.
+  Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -203,7 +203,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names
+  Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -266,7 +266,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Delete a contact person. Any non-contact data will not be deleted.
+  Delete a contact person. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -326,7 +326,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Delete a contact's photo.
+  Delete a contact's photo. Mutate requests for the same user should be done sequentially to avoid // lock contention.
 
   ## Parameters
 
@@ -728,7 +728,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `"failedPrecondition"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names
+  Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `"failedPrecondition"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -796,7 +796,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update a contact's photo.
+  Update a contact's photo. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
