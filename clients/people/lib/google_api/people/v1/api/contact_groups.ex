@@ -91,7 +91,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Create a new contact group owned by the authenticated user. Created contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.
+  Create a new contact group owned by the authenticated user. Created contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -150,7 +150,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Delete an existing contact group owned by the authenticated user by specifying a contact group resource name.
+  Delete an existing contact group owned by the authenticated user by specifying a contact group resource name. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
@@ -348,7 +348,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.
+  Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 

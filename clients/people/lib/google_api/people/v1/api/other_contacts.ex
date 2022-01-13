@@ -26,7 +26,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Copies an "Other contact" to a new contact in the user's "myContacts" group
+  Copies an "Other contact" to a new contact in the user's "myContacts" group Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
   ## Parameters
 
