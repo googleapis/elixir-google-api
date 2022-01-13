@@ -30,6 +30,7 @@ defmodule GoogleApi.Drive.V3.Model.Drive do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this shared drive which is also the ID of the top level folder of this shared drive.
   *   `kind` (*type:* `String.t`, *default:* `drive#drive`) - Identifies what kind of resource this is. Value: the fixed string "drive#drive".
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this shared drive.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true.
   *   `restrictions` (*type:* `GoogleApi.Drive.V3.Model.DriveRestrictions.t`, *default:* `nil`) - A set of restrictions that apply to this shared drive or items inside this shared drive.
   *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile.
   """
@@ -46,6 +47,7 @@ defmodule GoogleApi.Drive.V3.Model.Drive do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :orgUnitId => String.t() | nil,
           :restrictions => GoogleApi.Drive.V3.Model.DriveRestrictions.t() | nil,
           :themeId => String.t() | nil
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.Drive.V3.Model.Drive do
   field(:id)
   field(:kind)
   field(:name)
+  field(:orgUnitId)
   field(:restrictions, as: GoogleApi.Drive.V3.Model.DriveRestrictions)
   field(:themeId)
 end

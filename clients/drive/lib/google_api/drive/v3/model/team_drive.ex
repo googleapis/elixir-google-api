@@ -29,6 +29,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDrive do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this Team Drive which is also the ID of the top level folder of this Team Drive.
   *   `kind` (*type:* `String.t`, *default:* `drive#teamDrive`) - Identifies what kind of resource this is. Value: the fixed string "drive#teamDrive".
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this Team Drive.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true.
   *   `restrictions` (*type:* `GoogleApi.Drive.V3.Model.TeamDriveRestrictions.t`, *default:* `nil`) - A set of restrictions that apply to this Team Drive or items inside this Team Drive.
   *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible teamDriveThemes can be retrieved from a drive.about.get response. When not specified on a drive.teamdrives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDrive do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :orgUnitId => String.t() | nil,
           :restrictions => GoogleApi.Drive.V3.Model.TeamDriveRestrictions.t() | nil,
           :themeId => String.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDrive do
   field(:id)
   field(:kind)
   field(:name)
+  field(:orgUnitId)
   field(:restrictions, as: GoogleApi.Drive.V3.Model.TeamDriveRestrictions)
   field(:themeId)
 end
