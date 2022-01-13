@@ -22,7 +22,7 @@ defmodule GoogleApi.Logging.V2.Model.MonitoredResource do
   ## Attributes
 
   *   `labels` (*type:* `map()`, *default:* `nil`) - Required. Values for all of the labels listed in the associated monitored resource descriptor. For example, Compute Engine VM instances use the labels "project_id", "instance_id", and "zone".
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. Some descriptors include the service name in the type; for example, the type of a Datastream stream is datastream.googleapis.com/Stream.
   """
 
   use GoogleApi.Gax.ModelBase
