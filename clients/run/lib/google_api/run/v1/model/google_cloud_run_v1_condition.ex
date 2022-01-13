@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition do
   @moduledoc """
-  Condition defines a generic condition for a Resource
+  Condition defines a generic condition for a Resource.
 
   ## Attributes
 
