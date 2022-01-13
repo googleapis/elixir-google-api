@@ -26,7 +26,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetches processor types.
+  Fetches processor types. Note that we do not use ListProcessorTypes here because it is not paginated.
 
   ## Parameters
 
