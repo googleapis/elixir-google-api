@@ -27,9 +27,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
   *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, Edge ignores TLS certificate errors. Valid when configuring TLS for target servers and target endpoints, and when configuring virtual hosts that use 2-way TLS. When used with a target endpoint/target server, if the backend system uses SNI and returns a cert with a subject Distinguished Name (DN) that does not match the hostname, there is no way to ignore the error and the connection fails.
   *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID for the alias containing the private key and cert.
-  *   `keyStore` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID of the keystore. References not yet supported.
+  *   `keyStore` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID of the keystore.
   *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - The TLS versioins to be used.
-  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The resource ID of the truststore. References not yet supported.
+  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The resource ID of the truststore.
   """
 
   use GoogleApi.Gax.ModelBase
