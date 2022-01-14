@@ -21,8 +21,6 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment do
 
   ## Attributes
 
-  *   `allowedBillingModes` (*type:* `list(String.t)`, *default:* `nil`) - The allowed billing modes under this deployment.
-  *   `defaultBillingMode` (*type:* `String.t`, *default:* `nil`) - Default billing mode for the deployment and devices under it.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The deployment's display name.
   *   `frns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The FRNs copied from its direct parent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name.
@@ -32,16 +30,12 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedBillingModes => list(String.t()) | nil,
-          :defaultBillingMode => String.t() | nil,
           :displayName => String.t() | nil,
           :frns => list(String.t()) | nil,
           :name => String.t() | nil,
           :sasUserIds => list(String.t()) | nil
         }
 
-  field(:allowedBillingModes, type: :list)
-  field(:defaultBillingMode)
   field(:displayName)
   field(:frns, type: :list)
   field(:name)
