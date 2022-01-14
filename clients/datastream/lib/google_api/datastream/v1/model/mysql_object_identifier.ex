@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier do
 
   ## Attributes
 
-  *   `database` (*type:* `String.t`, *default:* `nil`) - The database name.
-  *   `table` (*type:* `String.t`, *default:* `nil`) - The table name.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Required. The database name.
+  *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The table name.
   """
 
   use GoogleApi.Gax.ModelBase

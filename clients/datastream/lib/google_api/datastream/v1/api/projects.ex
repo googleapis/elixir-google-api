@@ -26,12 +26,12 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  The FetchStaticIps API call exposes the static ips used by Datastream. Typically, a request returns children data objects under a parent data object that's optionally supplied in the request.
+  The FetchStaticIps API call exposes the static IP addresses used by Datastream.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastream.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name resource of the Response type. Must be in the format `projects/*/locations/*`.
+  *   `name` (*type:* `String.t`) - Required. The resource name for the location for which static IPs should be returned. Must be in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -247,6 +247,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       *   `:connectionProfileId` (*type:* `String.t`) - Required. The connection profile identifier.
       *   `:force` (*type:* `boolean()`) - Optional. Create the connection profile without validating it.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the connection profile, but don't create any resources. The default is false.
       *   `:body` (*type:* `GoogleApi.Datastream.V1.Model.ConnectionProfile.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -286,6 +287,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       :connectionProfileId => :query,
       :force => :query,
       :requestId => :query,
+      :validateOnly => :query,
       :body => :body
     }
 
@@ -304,7 +306,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Use this method to delete a connection profile..
+  Use this method to delete a connection profile.
 
   ## Parameters
 
@@ -376,7 +378,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Use this method to discover a connection profile. The discover API call exposes the data objects and metadata belonging to the profile. Typically, a request returns children data objects under a parent data object that's optionally supplied in the request.
+  Use this method to discover a connection profile. The discover API call exposes the data objects and metadata belonging to the profile. Typically, a request returns children data objects of a parent data object that's optionally supplied in the request.
 
   ## Parameters
 
@@ -618,9 +620,10 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - Optional. Execute the update without validating it.
+      *   `:force` (*type:* `boolean()`) - Optional. Update the connection profile without validating it.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:updateMask` (*type:* `String.t`) - Optional. Field mask is used to specify the fields to be overwritten in the ConnectionProfile resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask then all fields will be overwritten.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the connection profile, but don't update any resources. The default is false.
       *   `:body` (*type:* `GoogleApi.Datastream.V1.Model.ConnectionProfile.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -660,6 +663,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       :force => :query,
       :requestId => :query,
       :updateMask => :query,
+      :validateOnly => :query,
       :body => :body
     }
 
@@ -1266,7 +1270,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Use this method to create a route for a private connectivity in a project and location.
+  Use this method to create a route for a private connectivity configuration in a project and location.
 
   ## Parameters
 
@@ -1484,7 +1488,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Use this method to list routes created for a private connectivity in a project and location.
+  Use this method to list routes created for a private connectivity configuration in a project and location.
 
   ## Parameters
 
@@ -1583,7 +1587,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       *   `:force` (*type:* `boolean()`) - Optional. Create the stream without validating it.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:streamId` (*type:* `String.t`) - Required. The stream identifier.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the stream, but do not create any resources. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the stream, but don't create any resources. The default is false.
       *   `:body` (*type:* `GoogleApi.Datastream.V1.Model.Stream.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1880,7 +1884,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - Optional. Create the stream without validating it.
+      *   `:force` (*type:* `boolean()`) - Optional. Update the stream without validating it.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:updateMask` (*type:* `String.t`) - Optional. Field mask is used to specify the fields to be overwritten in the stream resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask then all fields will be overwritten.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the stream with the changes, without actually updating it. The default is false.
@@ -2160,7 +2164,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Starts backfill job for the specified stream object.
+  Use this method to start a backfill job for the specified stream object.
 
   ## Parameters
 
@@ -2234,7 +2238,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Stops the backfill job for the specified stream object.
+  Use this method to stop a backfill job for the specified stream object.
 
   ## Parameters
 
