@@ -31,7 +31,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   *   `displayMobileWebAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile web audience size in Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the first and third party audience.
   *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the first and third party audience. Assigned by the system.
-  *   `firstAndThirdPartyAudienceType` (*type:* `String.t`, *default:* `nil`) - Output only. Whether the audience is a first or third party audience.
+  *   `firstAndThirdPartyAudienceType` (*type:* `String.t`, *default:* `nil`) - Whether the audience is a first or third party audience.
   *   `gmailAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for Gmail network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
   *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - The duration in days that an entry remains in the audience after the qualifying event. Only applicable to first party audiences.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the first and third party audience.
