@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastream.V1.Model.OracleObjectIdentifier do
 
   ## Attributes
 
-  *   `schema` (*type:* `String.t`, *default:* `nil`) - The schema name.
-  *   `table` (*type:* `String.t`, *default:* `nil`) - The table name.
+  *   `schema` (*type:* `String.t`, *default:* `nil`) - Required. The schema name.
+  *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The table name.
   """
 
   use GoogleApi.Gax.ModelBase
