@@ -21,9 +21,9 @@ defmodule GoogleApi.FirebaseRules.V1.Model.File do
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Textual Content.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Required. Textual Content.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint (e.g. github sha) associated with the `File`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - File name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. File name.
   """
 
   use GoogleApi.Gax.ModelBase
