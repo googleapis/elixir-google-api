@@ -24,7 +24,7 @@ defmodule GoogleApi.FirebaseRules.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See, edit, configure, and delete your Google Cloud Platform data
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
       # View and administer all your Firebase data and settings

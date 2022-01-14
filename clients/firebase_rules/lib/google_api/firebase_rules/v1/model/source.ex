@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Source do
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.File.t)`, *default:* `nil`) - `File` set constituting the `Source` bundle.
+  *   `files` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.File.t)`, *default:* `nil`) - Required. `File` set constituting the `Source` bundle.
   """
 
   use GoogleApi.Gax.ModelBase
