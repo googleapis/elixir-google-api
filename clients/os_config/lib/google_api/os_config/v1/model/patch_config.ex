@@ -23,6 +23,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchConfig do
 
   *   `apt` (*type:* `GoogleApi.OSConfig.V1.Model.AptSettings.t`, *default:* `nil`) - Apt update settings. Use this setting to override the default `apt` patch rules.
   *   `goo` (*type:* `GoogleApi.OSConfig.V1.Model.GooSettings.t`, *default:* `nil`) - Goo update settings. Use this setting to override the default `goo` patch rules.
+  *   `migInstancesAllowed` (*type:* `boolean()`, *default:* `nil`) - Allows the patch job to run on Managed instance groups (MIGs).
   *   `postStep` (*type:* `GoogleApi.OSConfig.V1.Model.ExecStep.t`, *default:* `nil`) - The `ExecStep` to run after the patch update.
   *   `preStep` (*type:* `GoogleApi.OSConfig.V1.Model.ExecStep.t`, *default:* `nil`) - The `ExecStep` to run before the patch update.
   *   `rebootConfig` (*type:* `String.t`, *default:* `nil`) - Post-patch reboot settings.
@@ -36,6 +37,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchConfig do
   @type t :: %__MODULE__{
           :apt => GoogleApi.OSConfig.V1.Model.AptSettings.t() | nil,
           :goo => GoogleApi.OSConfig.V1.Model.GooSettings.t() | nil,
+          :migInstancesAllowed => boolean() | nil,
           :postStep => GoogleApi.OSConfig.V1.Model.ExecStep.t() | nil,
           :preStep => GoogleApi.OSConfig.V1.Model.ExecStep.t() | nil,
           :rebootConfig => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchConfig do
 
   field(:apt, as: GoogleApi.OSConfig.V1.Model.AptSettings)
   field(:goo, as: GoogleApi.OSConfig.V1.Model.GooSettings)
+  field(:migInstancesAllowed)
   field(:postStep, as: GoogleApi.OSConfig.V1.Model.ExecStep)
   field(:preStep, as: GoogleApi.OSConfig.V1.Model.ExecStep)
   field(:rebootConfig)
