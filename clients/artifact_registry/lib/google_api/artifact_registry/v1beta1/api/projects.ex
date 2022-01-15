@@ -601,7 +601,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of repositories to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of repositories to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1279,7 +1279,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of packages to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of packages to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1635,7 +1635,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are: * `version` An example of using a filter: * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --> Tags that are applied to the version `1.0` in package `pkg1`.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return. Maximum page size is 10,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2003,7 +2003,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:orderBy` (*type:* `String.t`) - Optional. Sorting field and order
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
       *   `:view` (*type:* `String.t`) - The view that should be returned in the response.
   *   `opts` (*type:* `keyword()`) - Call options

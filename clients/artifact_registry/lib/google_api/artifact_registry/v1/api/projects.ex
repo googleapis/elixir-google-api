@@ -26,6 +26,309 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Retrieves the Settings for the Project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the projectSettings resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_get_project_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_get_project_settings(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/projectSettings", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings{}])
+  end
+
+  @doc """
+  Updates the Settings for the Project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `projectSettings.name`. The name of the project's settings. Always of the form: projects/{project-id}/projectSettings In update request: never set In response: always set
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Field mask to support partial updates.
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_update_project_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_update_project_settings(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/projects/{projectsId}/projectSettings", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings{}])
+  end
+
+  @doc """
+  Creates a repository. The returned Operation will finish once the repository has been created. Its response will be the created Repository.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource where the repository will be created.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:repositoryId` (*type:* `String.t`) - The repository id to use for this repository.
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Repository.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :repositoryId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/repositories", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a repository and all of its contents. The returned Operation will finish once the repository has been deleted. It will not have any Operation metadata and will return a google.protobuf.Empty response.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the repository to delete.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_delete(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
   Gets a repository.
 
   ## Parameters
@@ -107,6 +410,89 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
+  Gets the IAM policy for a given resource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Policy{}])
+  end
+
+  @doc """
   Lists repositories.
 
   ## Parameters
@@ -126,7 +512,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of repositories to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of repositories to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -183,6 +569,617 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListRepositoriesResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a repository.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `repository.name`. The name of the repository, for example: "projects/p1/locations/us-central1/repositories/repo1".
+  *   `locations_id` (*type:* `String.t`) - Part of `repository.name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `repository.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Repository.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Repository{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Repository.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_patch(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Repository{}])
+  end
+
+  @doc """
+  Updates the IAM policy for a given resource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Tests if the caller has a list of permissions on a resource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Imports Apt artifacts. The returned Operation will complete once the resources are imported. Package, Version, and File resources are created based on the imported artifacts. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be imported.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.ImportAptArtifactsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_apt_artifacts_import(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_apt_artifacts_import(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/aptArtifacts:import",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Directly uploads an Apt artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_aptartifacts_upload(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/aptArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads an Apt artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactRequest.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_aptartifacts_upload_iodata(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/aptArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads an Apt artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload_simple(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactRequest.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_aptartifacts_upload_simple(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/aptArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:file, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}]
     )
   end
 
@@ -356,6 +1353,1882 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListDockerImagesResponse{}]
+    )
+  end
+
+  @doc """
+  Gets a file.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the file to retrieve.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `files_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1File{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_files_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1File.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_files_get(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        files_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/files/{filesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "filesId" => URI.encode(files_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1File{}]
+    )
+  end
+
+  @doc """
+  Lists files.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose files will be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are: * `name` * `owner` An example of using a filter: * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/*"` --> Files with an ID starting with "a/b/". * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --> Files owned by the version `1.0` in package `pkg1`.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of files to return.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ListFilesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_files_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ListFilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_files_list(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/files",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListFilesResponse{}])
+  end
+
+  @doc """
+  Imports GooGet artifacts. The returned Operation will complete once the resources are imported. Package, Version, and File resources are created based on the imported artifacts. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be imported.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.ImportGooGetArtifactsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_goo_get_artifacts_import(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_goo_get_artifacts_import(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/gooGetArtifacts:import",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Directly uploads a GooGet artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_googetartifacts_upload(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/googetArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads a GooGet artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactRequest.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_googetartifacts_upload_iodata(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/googetArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads a GooGet artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload_simple(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactRequest.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_googetartifacts_upload_simple(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/googetArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:file, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Deletes a package and all of its versions and tags. The returned operation will complete once the package has been deleted.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the package to delete.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_delete(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets a package.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the package to retrieve.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Package{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Package.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_get(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Package{}])
+  end
+
+  @doc """
+  Lists packages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource whose packages will be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of packages to return. Maximum page size is 1,000.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ListPackagesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ListPackagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_list(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListPackagesResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the tag will be created.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:tagId` (*type:* `String.t`) - The tag id to use for this repository.
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Tag.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Tag{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_tags_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_tags_create(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :tagId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/tags",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Tag{}])
+  end
+
+  @doc """
+  Deletes a tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the tag to delete.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_tags_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_tags_delete(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        tags_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/tags/{tagsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1),
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets a tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the tag to retrieve.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Tag{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_tags_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_tags_get(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        tags_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/tags/{tagsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1),
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Tag{}])
+  end
+
+  @doc """
+  Lists tags.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose tags will be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are: * `version` An example of using a filter: * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --> Tags that are applied to the version `1.0` in package `pkg1`.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return. Maximum page size is 10,000.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ListTagsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_tags_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ListTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_tags_list(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/tags",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListTagsResponse{}])
+  end
+
+  @doc """
+  Updates a tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The name of the tag, for example: "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/tags/tag1". If the package part contains slashes, the slashes are escaped. The tag part can only have characters in [a-zA-Z0-9\\-._~:@], anything else must be URL encoded.
+  *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Tag.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Tag{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_tags_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_tags_patch(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        tags_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/tags/{tagsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1),
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Tag{}])
+  end
+
+  @doc """
+  Deletes a version and all of its content. The returned operation will complete once the version has been deleted.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the version to delete.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - By default, a version that is tagged may not be deleted. If force=true, the version and any tags pointing to the version are deleted.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_versions_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_versions_delete(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        versions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :force => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/versions/{versionsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets a version
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the version to retrieve.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - The view that should be returned in the response.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Version{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_versions_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_versions_get(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        versions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :view => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/versions/{versionsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Version{}])
+  end
+
+  @doc """
+  Lists versions.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose versions will be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `packages_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sorting field and order
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return. Maximum page size is 1,000.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
+      *   `:view` (*type:* `String.t`) - The view that should be returned in the response.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.ListVersionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_packages_versions_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.ListVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_packages_versions_list(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        packages_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :view => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/packages/{packagesId}/versions",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1),
+          "packagesId" => URI.encode(packages_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.ListVersionsResponse{}]
+    )
+  end
+
+  @doc """
+  Imports Yum (RPM) artifacts. The returned Operation will complete once the resources are imported. Package, Version, and File resources are created based on the imported artifacts. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be imported.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.ImportYumArtifactsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_yum_artifacts_import(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_yum_artifacts_import(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/yumArtifacts:import",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Directly uploads a Yum artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_yumartifacts_upload(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/yumArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads a Yum artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactRequest.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_yumartifacts_upload_iodata(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/yumArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}]
+    )
+  end
+
+  @doc """
+  Directly uploads a Yum artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the imported artifact. Imported artifacts that conflict with existing resources are ignored.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource where the artifacts will be uploaded.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactRequest.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload_simple(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactRequest.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def artifactregistry_projects_locations_repositories_yumartifacts_upload_simple(
+        connection,
+        projects_id,
+        locations_id,
+        repositories_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/upload/v1/projects/{projectsId}/locations/{locationsId}/repositories/{repositoriesId}/yumArtifacts:create",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "repositoriesId" => URI.encode(repositories_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:file, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}]
     )
   end
 end
