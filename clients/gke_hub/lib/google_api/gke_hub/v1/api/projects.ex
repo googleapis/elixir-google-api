@@ -157,7 +157,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEHub.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent (project and location) where the Feature will be created. Specified in the format `projects/*/locations/*`.
+  *   `parent` (*type:* `String.t`) - Required. The parent (project and location) where the Feature will be created. Specified in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -171,7 +171,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:featureId` (*type:* `String.t`) - The ID of the feature to create.
-      *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+      *   `:requestId` (*type:* `String.t`) - A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:body` (*type:* `GoogleApi.GKEHub.V1.Model.Feature.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The Feature resource name in the format `projects/*/locations/*/features/*`.
+  *   `name` (*type:* `String.t`) - Required. The Feature resource name in the format `projects/*/locations/*/features/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -307,7 +307,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The Feature resource name in the format `projects/*/locations/*/features/*`
+  *   `name` (*type:* `String.t`) - Required. The Feature resource name in the format `projects/*/locations/*/features/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -444,7 +444,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEHub.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent (project and location) where the Features will be listed. Specified in the format `projects/*/locations/*`.
+  *   `parent` (*type:* `String.t`) - Required. The parent (project and location) where the Features will be listed. Specified in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -522,7 +522,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The Feature resource name in the format `projects/*/locations/*/features/*`.
+  *   `name` (*type:* `String.t`) - Required. The Feature resource name in the format `projects/*/locations/*/features/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -535,7 +535,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+      *   `:requestId` (*type:* `String.t`) - A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:updateMask` (*type:* `String.t`) - Mask of fields to update.
       *   `:body` (*type:* `GoogleApi.GKEHub.V1.Model.Feature.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
