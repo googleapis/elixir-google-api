@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudScheduler.V1.Model.Job do
   @moduledoc """
-  Configuration for a job. The maximum allowed size for a job is 100KB.
+  Configuration for a job. The maximum allowed size for a job is 1MB.
 
   ## Attributes
 
   *   `appEngineHttpTarget` (*type:* `GoogleApi.CloudScheduler.V1.Model.AppEngineHttpTarget.t`, *default:* `nil`) - App Engine HTTP target.
-  *   `attemptDeadline` (*type:* `String.t`, *default:* `nil`) - The deadline for job attempts. If the request handler does not respond by this deadline then the request is cancelled and the attempt is marked as a `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in execution logs. Cloud Scheduler will retry the job according to the RetryConfig. The allowed duration for this deadline is: * For HTTP targets, between 15 seconds and 30 minutes. * For App Engine HTTP targets, between 15 seconds and 24 hours.
+  *   `attemptDeadline` (*type:* `String.t`, *default:* `nil`) - The deadline for job attempts. If the request handler does not respond by this deadline then the request is cancelled and the attempt is marked as a `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in execution logs. Cloud Scheduler will retry the job according to the RetryConfig. The allowed duration for this deadline is: * For HTTP targets, between 15 seconds and 30 minutes. * For App Engine HTTP targets, between 15 seconds and 24 hours 15 seconds.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optionally caller-specified in CreateJob or UpdateJob. A human-readable description for the job. This string must not contain more than 500 characters.
   *   `httpTarget` (*type:* `GoogleApi.CloudScheduler.V1.Model.HttpTarget.t`, *default:* `nil`) - HTTP target.
   *   `lastAttemptTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the last job attempt started.
