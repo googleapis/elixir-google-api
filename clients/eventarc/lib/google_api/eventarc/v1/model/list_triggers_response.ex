@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Eventarc.V1.Model.ListTriggersResponse do
   @moduledoc """
-  The response message for the ListTriggers method.
+  The response message for the `ListTriggers` method.
 
   ## Attributes
 

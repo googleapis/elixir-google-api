@@ -899,7 +899,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:triggerId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the trigger.
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -978,7 +978,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, the request will succeed but no action will be taken on the server.
       *   `:etag` (*type:* `String.t`) - If provided, the trigger will only be deleted if the etag matches the current etag on the resource.
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1196,7 +1196,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - The sorting order of the resources returned. Value should be a comma separated list of fields. The default sorting oder is ascending. To specify descending order for a field, append a ` desc` suffix; for example: `name desc, trigger_id`.
+      *   `:orderBy` (*type:* `String.t`) - The sorting order of the resources returned. Value should be a comma-separated list of fields. The default sorting order is ascending. To specify descending order for a field, append a `desc` suffix; for example: `name desc, trigger_id`.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of triggers to return on each page. Note: The service may send fewer.
       *   `:pageToken` (*type:* `String.t`) - The page token; provide the value from the `next_page_token` field in a previous `ListTriggers` call to retrieve the subsequent page. When paginating, all other parameters provided to `ListTriggers` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1273,8 +1273,8 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, a new trigger will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - The fields to be updated; only fields explicitly provided will be updated. If no field mask is provided, all provided fields in the request will be updated. To update all fields, provide a field mask of "*".
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
+      *   `:updateMask` (*type:* `String.t`) - The fields to be updated; only fields explicitly provided are updated. If no field mask is provided, all provided fields in the request are updated. To update all fields, provide a field mask of "*".
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
