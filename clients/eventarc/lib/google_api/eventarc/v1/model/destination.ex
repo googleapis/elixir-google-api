@@ -21,6 +21,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
 
   ## Attributes
 
+  *   `cloudFunction` (*type:* `String.t`, *default:* `nil`) - The Cloud Function resource name. Only Cloud Functions V2 is supported. Format: projects/{project}/locations/{location}/functions/{function}
   *   `cloudRun` (*type:* `GoogleApi.Eventarc.V1.Model.CloudRun.t`, *default:* `nil`) - Cloud Run fully-managed resource that receives the events. The resource should be in the same project as the trigger.
   *   `gke` (*type:* `GoogleApi.Eventarc.V1.Model.GKE.t`, *default:* `nil`) - A GKE service capable of receiving events. The service should be running in the same project as the trigger.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudFunction => String.t() | nil,
           :cloudRun => GoogleApi.Eventarc.V1.Model.CloudRun.t() | nil,
           :gke => GoogleApi.Eventarc.V1.Model.GKE.t() | nil
         }
 
+  field(:cloudFunction)
   field(:cloudRun, as: GoogleApi.Eventarc.V1.Model.CloudRun)
   field(:gke, as: GoogleApi.Eventarc.V1.Model.GKE)
 end
