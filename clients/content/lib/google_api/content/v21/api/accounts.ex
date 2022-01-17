@@ -102,7 +102,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:overwrite` (*type:* `boolean()`) - Only available to selected merchants. When set to `True`, this flag removes any existing claim on the requested website by another account and replaces it with a claim from this account.
+      *   `:overwrite` (*type:* `boolean()`) - Only available to selected merchants, for example multi-client accounts (MCAs) and their sub-accounts. When set to `True`, this flag removes any existing claim on the requested website and replaces it with a claim from the account that makes the request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
