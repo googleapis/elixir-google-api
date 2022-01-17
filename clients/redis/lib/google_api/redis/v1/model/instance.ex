@@ -46,6 +46,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
   *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility
   *   `replicaCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0.
   *   `reservedIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28.
+  *   `secondaryIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. Additional ip ranges for node placement, beyond those specified in reserved_ip_range. At most 1 secondary IP range is supported. The mask value must not exceed /28. Not supported for BASIC tier. Updates can only add new ranges, once added ranges cannot be changed or deleted. Values in this list cannot overlap with the reserved_ip_range. Not supported during instance creation.
   *   `serverCaCerts` (*type:* `list(GoogleApi.Redis.V1.Model.TlsCertificate.t)`, *default:* `nil`) - Output only. List of server CA certificates for the instance.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this instance.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current status of this instance, if available.
@@ -81,6 +82,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
           :redisVersion => String.t() | nil,
           :replicaCount => integer() | nil,
           :reservedIpRange => String.t() | nil,
+          :secondaryIpRange => String.t() | nil,
           :serverCaCerts => list(GoogleApi.Redis.V1.Model.TlsCertificate.t()) | nil,
           :state => String.t() | nil,
           :statusMessage => String.t() | nil,
@@ -113,6 +115,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
   field(:redisVersion)
   field(:replicaCount)
   field(:reservedIpRange)
+  field(:secondaryIpRange)
   field(:serverCaCerts, as: GoogleApi.Redis.V1.Model.TlsCertificate, type: :list)
   field(:state)
   field(:statusMessage)
