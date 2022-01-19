@@ -26,7 +26,7 @@ defmodule GoogleApi.APIKeys.V2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Clones the existing key's restriction and display name to a new API key. The service account must have the `apikeys.keys.get` and `apikeys.keys.create` permissions in the project. NOTE: Key is a global resource; hence the only supported value for location is `global`.
+  DEPRECATED: API customers can call `GetKey` and then `CreateKey` methods to create a copy of an existing key. Retire `CloneKey` method to eliminate the unnessary method from API Keys API. Clones the existing key's restriction and display name to a new API key. The service account must have the `apikeys.keys.get` and `apikeys.keys.create` permissions in the project. NOTE: Key is a global resource; hence the only supported value for location is `global`.
 
   ## Parameters
 
@@ -382,9 +382,10 @@ defmodule GoogleApi.APIKeys.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only list keys that conform to the specified filter. The allowed filter strings are `state:ACTIVE` and `state:DELETED`. By default, ListKeys returns only active keys.
+      *   `:filter` (*type:* `String.t`) - Optional. Deprecated: Use `show_deleted` instead. Only list keys that conform to the specified filter. The allowed filter strings are `state:ACTIVE` and `state:DELETED`. By default, ListKeys returns only active keys.
       *   `:pageSize` (*type:* `integer()`) - Optional. Specifies the maximum number of results to be returned at a time.
       *   `:pageToken` (*type:* `String.t`) - Optional. Requests a specific page of results.
+      *   `:showDeleted` (*type:* `boolean()`) - Optional. Indicate that keys are marked as deleted within 30 days should also be returned. Normally only active keys are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -412,7 +413,8 @@ defmodule GoogleApi.APIKeys.V2.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :showDeleted => :query
     }
 
     request =
