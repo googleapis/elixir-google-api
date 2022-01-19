@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadata do
   @moduledoc """
-  Metadata for Datastore to Firestore migration operations. The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method. This is an intentional deviation from the LRO design pattern. This singleton resource can be accessed at: "projects/{project_id}/datastore-firestore-migration"
+  Metadata for Datastore to Firestore migration operations. The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method. This is an intentional deviation from the LRO design pattern. This singleton resource can be accessed at: "projects/{project_id}/operations/datastore-firestore-migration"
 
   ## Attributes
 
