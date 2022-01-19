@@ -22,7 +22,6 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   ## Attributes
 
   *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - The concurrency control mode to use for this database.
-  *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The earliest timestamp at which older versions of the data can be read from the database. See [version_retention_period] above; this field is populated with `now - version_retention_period`. This value is continuously updated, and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery. Note that you should not need to query this field: if you know the `version_retention_period` then you can query within that time.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The location of the database. Available databases are listed at https://cloud.google.com/firestore/docs/locations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Database. Format: `projects/{project}/databases/{database}`
@@ -33,7 +32,6 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
 
   @type t :: %__MODULE__{
           :concurrencyMode => String.t() | nil,
-          :earliestVersionTime => DateTime.t() | nil,
           :etag => String.t() | nil,
           :locationId => String.t() | nil,
           :name => String.t() | nil,
@@ -41,7 +39,6 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
         }
 
   field(:concurrencyMode)
-  field(:earliestVersionTime, as: DateTime)
   field(:etag)
   field(:locationId)
   field(:name)
