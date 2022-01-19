@@ -105,7 +105,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Accepts an App Attest CBOR attestation and verifies it with Apple using the developer's preconfigured team and bundle IDs. If valid, returns an attestation artifact that can later be exchanged for an AttestationTokenResponse using ExchangeAppAttestAssertion. For convenience and performance, this method's response object will also contain an App Check token encapsulated in an AttestationTokenResponse (if the verification is successful).
+  Accepts an App Attest CBOR attestation and verifies it with Apple using your preconfigured team and bundle IDs. If valid, returns an attestation artifact that can later be exchanged for an AttestationTokenResponse using ExchangeAppAttestAssertion. For convenience and performance, this method's response object will also contain an App Check token encapsulated in an AttestationTokenResponse (if the verification is successful).
 
   ## Parameters
 
@@ -737,7 +737,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets the AppAttestConfigs for the specified list of apps atomically.
+  Atomically gets the AppAttestConfigs for the specified list of apps.
 
   ## Parameters
 
@@ -1364,7 +1364,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets the DeviceCheckConfigs for the specified list of apps atomically. For security reasons, the `private_key` field is never populated in the response.
+  Atomically gets the DeviceCheckConfigs for the specified list of apps. For security reasons, the `private_key` field is never populated in the response.
 
   ## Parameters
 
@@ -1601,7 +1601,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets the RecaptchaConfigs for the specified list of apps atomically. For security reasons, the `site_secret` field is never populated in the response.
+  Atomically gets the RecaptchaConfigs for the specified list of apps. For security reasons, the `site_secret` field is never populated in the response.
 
   ## Parameters
 
@@ -1838,7 +1838,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets the RecaptchaEnterpriseConfigs for the specified list of apps atomically.
+  Atomically gets the RecaptchaEnterpriseConfigs for the specified list of apps.
 
   ## Parameters
 
@@ -2075,7 +2075,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets the SafetyNetConfigs for the specified list of apps atomically.
+  Atomically gets the SafetyNetConfigs for the specified list of apps.
 
   ## Parameters
 
@@ -2312,7 +2312,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   end
 
   @doc """
-  Updates the specified Service configurations atomically.
+  Atomically updates the specified Service configurations.
 
   ## Parameters
 
