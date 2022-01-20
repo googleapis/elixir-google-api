@@ -247,7 +247,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -687,7 +687,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -985,7 +985,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which transfer configs should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1813,7 +1813,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which transfer configs should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
