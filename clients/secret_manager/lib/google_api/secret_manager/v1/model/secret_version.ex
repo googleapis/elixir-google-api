@@ -21,6 +21,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
 
   ## Attributes
 
+  *   `clientSpecifiedPayloadChecksum` (*type:* `boolean()`, *default:* `nil`) - Output only. True if payload checksum specified in SecretPayload object has been received by SecretManagerService on SecretManagerService.AddSecretVersion.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the SecretVersion was created.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. Etag of the currently stored SecretVersion.
@@ -32,6 +33,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientSpecifiedPayloadChecksum => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :destroyTime => DateTime.t() | nil,
           :etag => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
           :state => String.t() | nil
         }
 
+  field(:clientSpecifiedPayloadChecksum)
   field(:createTime, as: DateTime)
   field(:destroyTime, as: DateTime)
   field(:etag)
