@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicyWrrPolicyItem do
   @moduledoc """
-
+  A routing block which contains the routing information for one WRR item.
 
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyWrrPolicyWrrPolicyItem`) - 
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for the above wrr_rrdata.
+  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 ip per item. .
   *   `weight` (*type:* `float()`, *default:* `nil`) - The weight corresponding to this subset of rrdata. When multiple WeightedRoundRobinPolicyItems are configured, the probability of returning an rrset is proportional to its weight relative to the sum of weights configured for all items. This weight should be non-negative.
   """
 

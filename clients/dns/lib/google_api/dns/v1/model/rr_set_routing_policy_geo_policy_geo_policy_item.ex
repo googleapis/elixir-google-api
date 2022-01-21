@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem do
   @moduledoc """
-
+  ResourceRecordSet data for one geo location.
 
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyGeoPolicyGeoPolicyItem`) - 
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geo-location granularity is a GCP region. This location string should correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-east1", etc.
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for the above geo_rrdata.
+  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 ip per item. .
   """
 
   use GoogleApi.Gax.ModelBase

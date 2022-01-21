@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicy do
   @moduledoc """
-
+  Configures a RRSetRoutingPolicy that routes in a weighted round robin fashion.
 
   ## Attributes
 
