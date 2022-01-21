@@ -21,6 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
 
   ## Attributes
 
+  *   `checkerType` (*type:* `String.t`, *default:* `nil`) - The type of checkers to use to execute the Uptime check.
   *   `contentMatchers` (*type:* `list(GoogleApi.Monitoring.V3.Model.ContentMatcher.t)`, *default:* `nil`) - The content that is expected to appear in the data returned by the target server against which the check is run. Currently, only the first entry in the content_matchers list is supported, and additional entries will be ignored. This field is optional and should only be specified if a content match is required as part of the/ Uptime check.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human-friendly name for the Uptime check configuration. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced. Required.
   *   `httpCheck` (*type:* `GoogleApi.Monitoring.V3.Model.HttpCheck.t`, *default:* `nil`) - Contains information needed to make an HTTP or HTTPS check.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :checkerType => String.t() | nil,
           :contentMatchers => list(GoogleApi.Monitoring.V3.Model.ContentMatcher.t()) | nil,
           :displayName => String.t() | nil,
           :httpCheck => GoogleApi.Monitoring.V3.Model.HttpCheck.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
           :timeout => String.t() | nil
         }
 
+  field(:checkerType)
   field(:contentMatchers, as: GoogleApi.Monitoring.V3.Model.ContentMatcher, type: :list)
   field(:displayName)
   field(:httpCheck, as: GoogleApi.Monitoring.V3.Model.HttpCheck)
