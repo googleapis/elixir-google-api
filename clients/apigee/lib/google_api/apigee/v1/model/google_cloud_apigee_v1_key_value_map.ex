@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyValueMap do
   @moduledoc """
-  A collection of key, value string pairs
+  Collection of key/value string pairs.
 
   ## Attributes
 
-  *   `encrypted` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true` entry values will be encrypted.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The id of the key value map.
+  *   `encrypted` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies whether entry values will be encrypted. Enable to encrypt entry values.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. ID of the key value map.
   """
 
   use GoogleApi.Gax.ModelBase

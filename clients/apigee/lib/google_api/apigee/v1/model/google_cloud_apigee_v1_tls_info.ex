@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   @moduledoc """
-  TLS configuration information for VirtualHosts and TargetServers.
+  TLS configuration information for virtual hosts and TargetServers.
 
   ## Attributes
 
