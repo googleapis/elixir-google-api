@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
+  *   `questionId` (*type:* `String.t`, *default:* `nil`) - The Crowd Compute question ID.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Used only when Operation.done is false.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - A message providing more details about the current state of processing. For example, the error message if the operation is failed.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the operation.
@@ -35,6 +36,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t()
             | nil,
           :createTime => DateTime.t() | nil,
+          :questionId => String.t() | nil,
           :state => String.t() | nil,
           :stateMessage => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -45,6 +47,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
   )
 
   field(:createTime, as: DateTime)
+  field(:questionId)
   field(:state)
   field(:stateMessage)
   field(:updateTime, as: DateTime)
