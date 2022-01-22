@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AdjustDeveloperBalanceReq
 
   ## Attributes
 
-  *   `adjustment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - * A positive value of `adjustment` means that that the API provider wishes to adjust the balance for an over-charged developer i.e. the balance of the developer will increase. * A negative value of `adjustment` means that that the API provider wishes to adjust the balance for an under-charged developer i.e. the balance of the developer will decrease.
+  *   `adjustment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - * A positive value of `adjustment` means that that the API provider wants to adjust the balance for an under-charged developer i.e. the balance of the developer will decrease. * A negative value of `adjustment` means that that the API provider wants to adjust the balance for an over-charged developer i.e. the balance of the developer will increase.
   """
 
   use GoogleApi.Gax.ModelBase

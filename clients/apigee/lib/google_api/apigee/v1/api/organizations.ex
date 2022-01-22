@@ -2595,12 +2595,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a key value map in an api proxy.
+  Creates a key value map in an API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map. Must be of the form `organizations/{organization}/apis/{api}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to create the key value map. Use the following structure in your request: `organizations/{org}/apis/{api}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2669,12 +2669,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Delete a key value map in an api proxy.
+  Deletes a key value map from an API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the key value map. Use the following structure in your request: `organizations/{org}/apis/{api}/keyvaluemaps/{keyvaluemap}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7868,7 +7868,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).
+  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get). **Note**: Both `PUT` and `POST` methods are supported for updating an existing environment.
 
   ## Parameters
 
@@ -8020,7 +8020,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).
+  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get). **Note**: Both `PUT` and `POST` methods are supported for updating an existing environment.
 
   ## Parameters
 
@@ -10795,7 +10795,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map. Must be of the form `organizations/{organization}/environments/{environment}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to create the key value map. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10864,12 +10864,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Delete a key value map in an environment.
+  Deletes a key value map from an environment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the key value map. Use the following structure in your request: `organizations/{org}/environments/{env}/keyvaluemaps/{keyvaluemap}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14809,7 +14809,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the organization in which to create the key value map file. Must be of the form `organizations/{organization}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which to create the key value map file. Use the following structure in your request: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14878,12 +14878,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Delete a key value map in an organization.
+  Deletes a key value map from an organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the key value map. Use the following structure in your request: `organizations/{org}/keyvaluemaps/{keyvaluemap}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

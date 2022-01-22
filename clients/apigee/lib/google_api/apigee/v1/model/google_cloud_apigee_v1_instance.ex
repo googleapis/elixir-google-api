@@ -26,6 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   *   `diskEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for the instance.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Internal hostname or IP address of the Apigee endpoint used by clients to connect to the service.
+  *   `ipRange` (*type:* `String.t`, *default:* `nil`) - Optional. IP range represents the customer-provided CIDR block of length 22 that will be used for the Apigee instance creation. This optional range, if provided, should be freely available as part of larger named range the customer has allocated to the Service Networking peering. If this is not provided, Apigee will automatically request for any available /22 CIDR block from Service Networking. The customer should use this CIDR block for configuring their firewall needs to allow traffic from Apigee. Input format: "a.b.c.d/22", Output format: a.b.c.d/22, e.f.g.h/28"
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was last modified in milliseconds since epoch.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Compute Engine location where the instance resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID of the instance. Values must match the regular expression `^a-z{0,30}[a-z\\d]$`.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :diskEncryptionKeyName => String.t() | nil,
           :displayName => String.t() | nil,
           :host => String.t() | nil,
+          :ipRange => String.t() | nil,
           :lastModifiedAt => String.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   field(:diskEncryptionKeyName)
   field(:displayName)
   field(:host)
+  field(:ipRange)
   field(:lastModifiedAt)
   field(:location)
   field(:name)
