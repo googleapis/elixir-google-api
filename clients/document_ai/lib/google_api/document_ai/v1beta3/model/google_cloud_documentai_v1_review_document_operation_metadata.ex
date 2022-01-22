@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1ReviewDocume
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `questionId` (*type:* `String.t`, *default:* `nil`) - The Crowd Compute question ID.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,12 +30,15 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1ReviewDocume
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t()
-            | nil
+            | nil,
+          :questionId => String.t() | nil
         }
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1CommonOperationMetadata
   )
+
+  field(:questionId)
 end
 
 defimpl Poison.Decoder,
