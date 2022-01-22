@@ -18,7 +18,7 @@
 defmodule GoogleApi.Dialogflow.Mixfile do
   use Mix.Project
 
-  @version "0.73.0"
+  @version "0.74.0"
 
   def project() do
     [

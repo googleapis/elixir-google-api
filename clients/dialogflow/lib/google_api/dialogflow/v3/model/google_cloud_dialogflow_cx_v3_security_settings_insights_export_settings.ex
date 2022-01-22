@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings do
   @moduledoc """
-  Settings for exporting conversations to [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+  Settings for exporting conversations to [Insights](https://cloud.google.com/contact-center/insights/docs).
 
   ## Attributes
 
