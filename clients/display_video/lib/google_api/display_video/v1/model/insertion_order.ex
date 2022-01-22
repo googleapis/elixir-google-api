@@ -35,6 +35,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V1.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the insertion order.
   *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the insertion order. If absent or empty in CreateInsertionOrder method, the newly created insertion order will inherit partner costs from the partner settings.
   *   `performanceGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t`, *default:* `nil`) - Required. Performance goal of the insertion order.
+  *   `reservationType` (*type:* `String.t`, *default:* `nil`) - Output only. The reservation type of the insertion order.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the insertion order was last updated. Assigned by the system.
   """
 
@@ -55,6 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
           :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t() | nil,
           :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()) | nil,
           :performanceGoal => GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t() | nil,
+          :reservationType => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   field(:pacing, as: GoogleApi.DisplayVideo.V1.Model.Pacing)
   field(:partnerCosts, as: GoogleApi.DisplayVideo.V1.Model.PartnerCost, type: :list)
   field(:performanceGoal, as: GoogleApi.DisplayVideo.V1.Model.PerformanceGoal)
+  field(:reservationType)
   field(:updateTime, as: DateTime)
 end
 
