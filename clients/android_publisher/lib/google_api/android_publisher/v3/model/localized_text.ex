@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.LocalizedText do
   @moduledoc """
-  Release notes specification, i.e. language and text.
+  Localized text in given language.
 
   ## Attributes
 
