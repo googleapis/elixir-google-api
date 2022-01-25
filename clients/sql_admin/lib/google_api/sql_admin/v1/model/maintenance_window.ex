@@ -23,8 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.MaintenanceWindow do
 
   *   `day` (*type:* `integer()`, *default:* `nil`) - day of week (1-7), starting on Monday.
   *   `hour` (*type:* `integer()`, *default:* `nil`) - hour of day - 0 to 23.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#maintenanceWindow**.
-  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing setting: **canary** (Earlier) or **stable** (Later). [Learn more](https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#maintenanceWindow`.
+  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing setting: `canary` (Earlier) or `stable` (Later). [Learn more](https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen).
   """
 
   use GoogleApi.Gax.ModelBase

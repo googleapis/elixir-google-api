@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1.Model.ExportContextCsvExportOptions do
   @moduledoc """
-  Options for exporting data as CSV. **MySQL** and **PostgreSQL** instances only.
+  Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only.
 
   ## Attributes
 

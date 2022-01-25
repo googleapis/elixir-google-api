@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.InstancesListServerCasResponse do
 
   *   `activeVersion` (*type:* `String.t`, *default:* `nil`) - 
   *   `certs` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.SslCert.t)`, *default:* `nil`) - List of server CA certificates for the instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#instancesListServerCas**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#instancesListServerCas`.
   """
 
   use GoogleApi.Gax.ModelBase

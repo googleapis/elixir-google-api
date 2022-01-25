@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlExternalSyncSettingError do
   ## Attributes
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional information about the error encountered.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Can be **sql#externalSyncSettingError** or **sql#externalSyncSettingWarning**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Can be `sql#externalSyncSettingError` or `sql#externalSyncSettingWarning`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Identifies the specific error that occurred.
   """
 
