@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupContext do
   ## Attributes
 
   *   `backupId` (*type:* `String.t`, *default:* `nil`) - The identifier of the backup.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#backupContext**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#backupContext`.
   """
 
   use GoogleApi.Gax.ModelBase

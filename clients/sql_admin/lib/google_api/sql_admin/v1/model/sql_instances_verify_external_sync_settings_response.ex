@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlInstancesVerifyExternalSyncSettingsResp
   ## Attributes
 
   *   `errors` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.SqlExternalSyncSettingError.t)`, *default:* `nil`) - List of migration violations.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#migrationSettingErrorList**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#migrationSettingErrorList`.
   *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.SqlExternalSyncSettingError.t)`, *default:* `nil`) - List of migration warnings.
   """
 

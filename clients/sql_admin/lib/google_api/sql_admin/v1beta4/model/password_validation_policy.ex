@@ -24,7 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy do
   *   `complexity` (*type:* `String.t`, *default:* `nil`) - The complexity of the password.
   *   `disallowUsernameSubstring` (*type:* `boolean()`, *default:* `nil`) - Disallow username as a part of the password.
   *   `minLength` (*type:* `integer()`, *default:* `nil`) - Minimum number of characters allowed.
-  *   `passwordChangeInterval` (*type:* `String.t`, *default:* `nil`) - Minimum interval after which the password can be changed.
+  *   `passwordChangeInterval` (*type:* `String.t`, *default:* `nil`) - Minimum interval after which the password can be changed. This flag is only supported for PostgresSQL.
   *   `reuseInterval` (*type:* `integer()`, *default:* `nil`) - Number of previous passwords that cannot be reused.
   """
 

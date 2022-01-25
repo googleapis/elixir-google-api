@@ -24,11 +24,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   *   `backupRetentionSettings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings.t`, *default:* `nil`) - Backup retention settings.
   *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - (MySQL only) Whether binary log is enabled. If backup configuration is disabled, binarylog must be disabled as well.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this configuration is enabled.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#backupConfiguration**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#backupConfiguration`.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backup
   *   `pointInTimeRecoveryEnabled` (*type:* `boolean()`, *default:* `nil`) - (Postgres only) Whether point in time recovery is enabled.
   *   `replicationLogArchivingEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24 hour format - **HH:MM**.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24 hour format - `HH:MM`.
   *   `transactionLogRetentionDays` (*type:* `integer()`, *default:* `nil`) - The number of days of transaction logs we retain for point in time restore, from 1-7.
   """
 

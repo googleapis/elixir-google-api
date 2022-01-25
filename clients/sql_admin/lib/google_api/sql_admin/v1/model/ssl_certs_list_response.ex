@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SslCertsListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.SslCert.t)`, *default:* `nil`) - List of client certificates for the instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#sslCertsList**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#sslCertsList`.
   """
 
   use GoogleApi.Gax.ModelBase

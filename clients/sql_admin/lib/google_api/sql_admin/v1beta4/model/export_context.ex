@@ -21,13 +21,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
 
   ## Attributes
 
-  *   `csvExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions.t`, *default:* `nil`) - Options for exporting data as CSV. **MySQL** and **PostgreSQL** instances only.
-  *   `databases` (*type:* `list(String.t)`, *default:* `nil`) - Databases to be exported. **MySQL instances:** If **fileType** is **SQL** and no database is specified, all databases are exported, except for the **mysql** system database. If **fileType** is **CSV**, you can specify one database, either by using this property or by using the **csvExportOptions.selectQuery** property, which takes precedence over this property. **PostgreSQL instances:** You must specify one database to be exported. If **fileType** is **CSV**, this database must match the one specified in the **csvExportOptions.selectQuery** property. **SQL Server instances:** You must specify one database to be exported, and the **fileType** must be **BAK**.
+  *   `csvExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions.t`, *default:* `nil`) - Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only.
+  *   `databases` (*type:* `list(String.t)`, *default:* `nil`) - Databases to be exported. `MySQL instances:` If `fileType` is `SQL` and no database is specified, all databases are exported, except for the `mysql` system database. If `fileType` is `CSV`, you can specify one database, either by using this property or by using the `csvExportOptions.selectQuery` property, which takes precedence over this property. `PostgreSQL instances:` You must specify one database to be exported. If `fileType` is `CSV`, this database must match the one specified in the `csvExportOptions.selectQuery` property. `SQL Server instances:` You must specify one database to be exported, and the `fileType` must be `BAK`.
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always **sql#exportContext**.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#exportContext`.
   *   `offload` (*type:* `boolean()`, *default:* `nil`) - Option for export offload.
   *   `sqlExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions.t`, *default:* `nil`) - Options for exporting data as SQL statements.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form **gs://bucketName/fileName**. If the file already exists, the request succeeds, but the operation fails. If **fileType** is **SQL** and the filename ends with .gz, the contents are compressed.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form `gs://bucketName/fileName`. If the file already exists, the request succeeds, but the operation fails. If `fileType` is `SQL` and the filename ends with .gz, the contents are compressed.
   """
 
   use GoogleApi.Gax.ModelBase
