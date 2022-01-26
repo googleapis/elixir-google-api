@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.CVSS do
   @moduledoc """
-  Common Vulnerability Scoring System. This is the storage level proto that is intended to store similar data as the CVSS proto in google3/third_party/grafeas/proto/v1/cvss.proto
+  Common Vulnerability Scoring System.
 
   ## Attributes
 
