@@ -360,7 +360,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression written in the Cloud filter language. If non-empty, then only cases whose fields match the filter are returned. If empty, then no messages are filtered out. Filter strings can use the following fields: - status (Accepted values: OPEN or CLOSED) - severity (Accepted values: S0, S1, S2, S3, or S4) - creator.email with the operators equals (=) and AND. Additionally, a global restriction (with no operator) can be used to search across displayName, description, and comments (e.g. "my search").
-      *   `:orderBy` (*type:* `String.t`) - A comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc`
       *   `:pageSize` (*type:* `integer()`) - The maximum number of cases fetched with each request. Defaults to 10.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -395,7 +394,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
-      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
