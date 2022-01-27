@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkSqlBatch do
   @moduledoc """
-  A configuration for running Apache Spark SQL (http://spark.apache.org/sql/) queries as a batch workload.
+  A configuration for running Apache Spark SQL (https://spark.apache.org/sql/) queries as a batch workload.
 
   ## Attributes
 
