@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
 
   ## Attributes
 
+  *   `checkServiceNetworkingUsePermission` (*type:* `boolean()`, *default:* `nil`) - Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not.
   *   `consumer` (*type:* `String.t`, *default:* `nil`) - Required. A resource that represents the service consumer, such as `projects/123456`. The project number can be different from the value in the consumer network parameter. For example, the network might be part of a Shared VPC network. In those cases, Service Networking validates that this resource belongs to that Shared VPC.
   *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the service consumer's VPC network. The network must have an existing private connection that was provisioned through the connections.create method. The name must be in the following format: `projects/{project}/global/networks/{network}`, where {project} is a project number, such as `12345`. {network} is the name of a VPC network in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the subnet.
@@ -39,6 +40,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :checkServiceNetworkingUsePermission => boolean() | nil,
           :consumer => String.t() | nil,
           :consumerNetwork => String.t() | nil,
           :description => String.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :subnetworkUsers => list(String.t()) | nil
         }
 
+  field(:checkServiceNetworkingUsePermission)
   field(:consumer)
   field(:consumerNetwork)
   field(:description)
