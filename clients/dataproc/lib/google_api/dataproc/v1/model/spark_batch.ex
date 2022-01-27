@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkBatch do
   @moduledoc """
-  A configuration for running an Apache Spark (http://spark.apache.org/) batch workload.
+  A configuration for running an Apache Spark (https://spark.apache.org/) batch workload.
 
   ## Attributes
 

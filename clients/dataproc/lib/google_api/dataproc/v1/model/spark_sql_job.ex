@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkSqlJob do
   @moduledoc """
-  A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries.
+  A Dataproc job for running Apache Spark SQL (https://spark.apache.org/sql/) queries.
 
   ## Attributes
 
