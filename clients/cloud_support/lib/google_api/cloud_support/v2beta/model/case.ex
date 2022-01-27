@@ -28,7 +28,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The short summary of the issue reported in this case.
   *   `escalated` (*type:* `boolean()`, *default:* `nil`) - Whether the case is currently escalated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the case.
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of this case.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - The priority of this case. If this is set, do not set severity.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of this case. Deprecated. Use priority instead.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current status of the support case.
   *   `subscriberEmailAddresses` (*type:* `list(String.t)`, *default:* `nil`) - The email addresses to receive updates on this case.
   *   `testCase` (*type:* `boolean()`, *default:* `nil`) - Whether this case was created for internal API testing and should not be acted on by the support team.
@@ -46,6 +47,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
           :displayName => String.t() | nil,
           :escalated => boolean() | nil,
           :name => String.t() | nil,
+          :priority => String.t() | nil,
           :severity => String.t() | nil,
           :state => String.t() | nil,
           :subscriberEmailAddresses => list(String.t()) | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
   field(:displayName)
   field(:escalated)
   field(:name)
+  field(:priority)
   field(:severity)
   field(:state)
   field(:subscriberEmailAddresses, type: :list)
