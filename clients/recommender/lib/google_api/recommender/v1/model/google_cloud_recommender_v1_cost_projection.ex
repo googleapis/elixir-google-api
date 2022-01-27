@@ -21,7 +21,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection 
 
   ## Attributes
 
-  *   `cost` (*type:* `GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units.
+  *   `cost` (*type:* `GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units. A user's permissions may affect whether the cost is computed using list prices or custom contract prices.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration for which this cost applies.
   """
 
