@@ -220,7 +220,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users)
-      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
+      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Max allowed value is 200.
       *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
