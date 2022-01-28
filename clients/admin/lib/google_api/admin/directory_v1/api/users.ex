@@ -227,7 +227,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
       *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.
-      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
+      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
       *   `:event` (*type:* `String.t`) - Event on which subscription is intended (if subscribing)
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Property to use for sorting results.
