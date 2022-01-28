@@ -22,8 +22,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   ## Attributes
 
   *   `activeDisplayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network in the past month. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only returned in GET request.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - The app_id matches with the type of the mobile_device_ids being uploaded. Only applicable to audience_type `CUSTOMER_MATCH_DEVICE_ID`
   *   `audienceSource` (*type:* `String.t`, *default:* `nil`) - Output only. The source of the audience.
   *   `audienceType` (*type:* `String.t`, *default:* `nil`) - The type of the audience.
+  *   `contactInfoList` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t`, *default:* `nil`) - Input only. A list of contact information to define the initial audience members. Only applicable to audience_type `CUSTOMER_MATCH_CONTACT_INFO`
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-provided description of the audience. Only applicable to first party audiences.
   *   `displayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only returned in GET request.
   *   `displayDesktopAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated desktop audience size in Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
@@ -33,7 +35,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the first and third party audience. Assigned by the system.
   *   `firstAndThirdPartyAudienceType` (*type:* `String.t`, *default:* `nil`) - Whether the audience is a first or third party audience.
   *   `gmailAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for Gmail network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
-  *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - The duration in days that an entry remains in the audience after the qualifying event. If the audience has no expiration, the value of this field should be set 10000. Otherwise, the set value must be greater than 0 and less than or equal to 540. Only applicable to first party audiences. This field is required for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`
+  *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - The duration in days that an entry remains in the audience after the qualifying event. If the audience has no expiration, the value of this field should be set 10000. Otherwise, the set value must be greater than 0 and less than or equal to 540. Only applicable to first party audiences. This field is required if one of the following audience_type is used: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`
+  *   `mobileDeviceIdList` (*type:* `GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t`, *default:* `nil`) - Input only. A list of mobile device IDs to define the initial audience members. Only applicable to audience_type `CUSTOMER_MATCH_DEVICE_ID`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the first and third party audience.
   *   `youtubeAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for YouTube network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
   """
@@ -42,8 +45,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
 
   @type t :: %__MODULE__{
           :activeDisplayAudienceSize => String.t() | nil,
+          :appId => String.t() | nil,
           :audienceSource => String.t() | nil,
           :audienceType => String.t() | nil,
+          :contactInfoList => GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t() | nil,
           :description => String.t() | nil,
           :displayAudienceSize => String.t() | nil,
           :displayDesktopAudienceSize => String.t() | nil,
@@ -54,13 +59,16 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
           :firstAndThirdPartyAudienceType => String.t() | nil,
           :gmailAudienceSize => String.t() | nil,
           :membershipDurationDays => String.t() | nil,
+          :mobileDeviceIdList => GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t() | nil,
           :name => String.t() | nil,
           :youtubeAudienceSize => String.t() | nil
         }
 
   field(:activeDisplayAudienceSize)
+  field(:appId)
   field(:audienceSource)
   field(:audienceType)
+  field(:contactInfoList, as: GoogleApi.DisplayVideo.V1.Model.ContactInfoList)
   field(:description)
   field(:displayAudienceSize)
   field(:displayDesktopAudienceSize)
@@ -71,6 +79,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   field(:firstAndThirdPartyAudienceType)
   field(:gmailAudienceSize)
   field(:membershipDurationDays)
+  field(:mobileDeviceIdList, as: GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList)
   field(:name)
   field(:youtubeAudienceSize)
 end
