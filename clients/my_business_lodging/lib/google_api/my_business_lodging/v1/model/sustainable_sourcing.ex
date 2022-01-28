@@ -35,7 +35,7 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.SustainableSourcing do
   *   `responsiblySourcesSeafoodException` (*type:* `String.t`, *default:* `nil`) - Responsibly sources seafood exception.
   *   `veganMeals` (*type:* `boolean()`, *default:* `nil`) - Vegan meals. The property provides vegan menu options for guests. Vegan food does not contain animal products or byproducts.
   *   `veganMealsException` (*type:* `String.t`, *default:* `nil`) - Vegan meals exception.
-  *   `vegetarianMeals` (*type:* `boolean()`, *default:* `nil`) - Vegetarian meals. The property provides vegetarian menu options for guests. Vegetarian food does not contain animal products.
+  *   `vegetarianMeals` (*type:* `boolean()`, *default:* `nil`) - Vegetarian meals. The property provides vegetarian menu options for guests. Vegetarian food does not contain meat, poultry, fish, or seafood.
   *   `vegetarianMealsException` (*type:* `String.t`, *default:* `nil`) - Vegetarian meals exception.
   """
 
