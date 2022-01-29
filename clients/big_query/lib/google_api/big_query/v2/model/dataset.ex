@@ -39,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/locations.
   *   `satisfiesPZS` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
+  *   `tags` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetTags.t)`, *default:* `nil`) - [Optional]The tags associated with this dataset. Tag keys are globally unique.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -62,7 +63,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :lastModifiedTime => String.t() | nil,
           :location => String.t() | nil,
           :satisfiesPZS => boolean() | nil,
-          :selfLink => String.t() | nil
+          :selfLink => String.t() | nil,
+          :tags => list(GoogleApi.BigQuery.V2.Model.DatasetTags.t()) | nil
         }
 
   field(:access, as: GoogleApi.BigQuery.V2.Model.DatasetAccess, type: :list)
@@ -83,6 +85,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:location)
   field(:satisfiesPZS)
   field(:selfLink)
+  field(:tags, as: GoogleApi.BigQuery.V2.Model.DatasetTags, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Dataset do
