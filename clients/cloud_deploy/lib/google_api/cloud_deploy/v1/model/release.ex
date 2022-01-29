@@ -37,7 +37,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
   *   `skaffoldVersion` (*type:* `String.t`, *default:* `nil`) - The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Google Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used.
   *   `targetArtifacts` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.TargetArtifact.t}`, *default:* `nil`) - Output only. Map from target ID to the target artifacts created during the render operation.
   *   `targetRenders` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.TargetRender.t}`, *default:* `nil`) - Output only. Map from target ID to details of the render operation for that target.
-  *   `targetSnapshots` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Target.t)`, *default:* `nil`) - Output only. Snapshot of the parent pipeline's targets taken at release creation time.
+  *   `targetSnapshots` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Target.t)`, *default:* `nil`) - Output only. Snapshot of the targets taken at release creation time.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `Release`.
   """
 

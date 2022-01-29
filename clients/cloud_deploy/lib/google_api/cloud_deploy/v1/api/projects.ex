@@ -2021,7 +2021,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/ deliveryPipelines/{deliveryPipeline}/targets/a-z{0,62}.
+  *   `name` (*type:* `String.t`) - Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/targets/a-z{0,62}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
