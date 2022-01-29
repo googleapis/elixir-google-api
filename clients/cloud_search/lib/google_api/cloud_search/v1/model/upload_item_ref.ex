@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.UploadItemRef do
   @moduledoc """
-  Represents an upload session reference. This reference is created via upload method. UploadItemRef may be used upto 30 days since creation. Updating of item content may refer to this uploaded content via contentDataRef.
+  Represents an upload session reference. This reference is created via upload method. This reference is valid for 30 days after its creation. Updating of item content may refer to this uploaded content via contentDataRef.
 
   ## Attributes
 
