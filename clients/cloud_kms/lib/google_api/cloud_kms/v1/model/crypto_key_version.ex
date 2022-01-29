@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion was created.
   *   `destroyEventTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was destroyed. Only present if state is DESTROYED.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED.
-  *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level.
+  *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was generated.
   *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED.
   *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported.
