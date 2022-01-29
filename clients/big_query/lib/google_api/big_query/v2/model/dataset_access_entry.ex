@@ -22,19 +22,18 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccessEntry do
   ## Attributes
 
   *   `dataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Required] The dataset this entry applies to.
-  *   `target_types` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes.t)`, *default:* `nil`) - 
+  *   `target_types` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
-          :target_types =>
-            list(GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes.t()) | nil
+          :target_types => list(String.t()) | nil
         }
 
   field(:dataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
-  field(:target_types, as: GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes, type: :list)
+  field(:target_types, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DatasetAccessEntry do
