@@ -17,19 +17,22 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions do
   @moduledoc """
-  ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level.
+  ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
 
   ## Attributes
 
+  *   `ekmConnectionKeyPath` (*type:* `String.t`, *default:* `nil`) - The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of external_key_uri when using an EkmConnection.
   *   `externalKeyUri` (*type:* `String.t`, *default:* `nil`) - The URI for an external resource that this CryptoKeyVersion represents.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ekmConnectionKeyPath => String.t() | nil,
           :externalKeyUri => String.t() | nil
         }
 
+  field(:ekmConnectionKeyPath)
   field(:externalKeyUri)
 end
 
