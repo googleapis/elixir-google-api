@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC do
   @moduledoc """
-  RoutingVPC contains information about the VPC network that is associated with a hub's spokes.
+  RoutingVPC contains information about the VPC networks that are associated with a hub's spokes.
 
   ## Attributes
 
-  *   `requiredForNewSiteToSiteDataTransferSpokes` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, indicates that this VPC network is currently associated with spokes that use the data transfer feature (spokes where the site_to_site_data_transfer field is set to true). If you create new spokes that use data transfer, they must be associated with this VPC network.
+  *   `requiredForNewSiteToSiteDataTransferSpokes` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, indicates that this VPC network is currently associated with spokes that use the data transfer feature (spokes where the site_to_site_data_transfer field is set to true). If you create new spokes that use data transfer, they must be associated with this VPC network. At most, one VPC network will have this field set to true.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the VPC network.
   """
 

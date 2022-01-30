@@ -22,7 +22,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
   ## Attributes
 
   *   `instances` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance.t)`, *default:* `nil`) - The list of router appliance instances.
-  *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. This field is set to false by default, but you must set it to true. Note that data transfer is available only in supported locations.
+  *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
   """
 
   use GoogleApi.Gax.ModelBase
