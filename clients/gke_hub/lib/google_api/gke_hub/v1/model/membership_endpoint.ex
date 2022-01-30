@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
 
   ## Attributes
 
+  *   `edgeCluster` (*type:* `GoogleApi.GKEHub.V1.Model.EdgeCluster.t`, *default:* `nil`) - Optional. Specific information for a Google Edge cluster.
   *   `gkeCluster` (*type:* `GoogleApi.GKEHub.V1.Model.GkeCluster.t`, *default:* `nil`) - Optional. Specific information for a GKE-on-GCP cluster.
   *   `kubernetesMetadata` (*type:* `GoogleApi.GKEHub.V1.Model.KubernetesMetadata.t`, *default:* `nil`) - Output only. Useful Kubernetes-specific metadata.
   *   `kubernetesResource` (*type:* `GoogleApi.GKEHub.V1.Model.KubernetesResource.t`, *default:* `nil`) - Optional. The in-cluster Kubernetes Resources that should be applied for a correctly registered cluster, in the steady state. These resources: * Ensure that the cluster is exclusively registered to one and only one Hub Membership. * Propagate Workload Pool Information available in the Membership Authority field. * Ensure proper initial configuration of default Hub Features.
@@ -31,6 +32,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :edgeCluster => GoogleApi.GKEHub.V1.Model.EdgeCluster.t() | nil,
           :gkeCluster => GoogleApi.GKEHub.V1.Model.GkeCluster.t() | nil,
           :kubernetesMetadata => GoogleApi.GKEHub.V1.Model.KubernetesMetadata.t() | nil,
           :kubernetesResource => GoogleApi.GKEHub.V1.Model.KubernetesResource.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
           :onPremCluster => GoogleApi.GKEHub.V1.Model.OnPremCluster.t() | nil
         }
 
+  field(:edgeCluster, as: GoogleApi.GKEHub.V1.Model.EdgeCluster)
   field(:gkeCluster, as: GoogleApi.GKEHub.V1.Model.GkeCluster)
   field(:kubernetesMetadata, as: GoogleApi.GKEHub.V1.Model.KubernetesMetadata)
   field(:kubernetesResource, as: GoogleApi.GKEHub.V1.Model.KubernetesResource)
