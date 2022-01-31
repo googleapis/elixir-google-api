@@ -22,7 +22,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
   ## Attributes
 
   *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig.t`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for this runtime.
-  *   `containerImages` (*type:* `list(GoogleApi.Notebooks.V1.Model.ContainerImage.t)`, *default:* `nil`) - Optional. Use a list of container images to start the notebook instance.
+  *   `containerImages` (*type:* `list(GoogleApi.Notebooks.V1.Model.ContainerImage.t)`, *default:* `nil`) - Optional. Use a list of container images to use as Kernels in the notebook instance.
   *   `dataDisk` (*type:* `GoogleApi.Notebooks.V1.Model.LocalDisk.t`, *default:* `nil`) - Required. Data disk option configuration settings.
   *   `encryptionConfig` (*type:* `GoogleApi.Notebooks.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. Encryption settings for virtual machine data disk.
   *   `guestAttributes` (*type:* `map()`, *default:* `nil`) - Output only. The Compute Engine guest attributes. (see [Project and instance guest attributes](https://cloud.google.com/compute/docs/storing-retrieving-metadata#guest_attributes)).
