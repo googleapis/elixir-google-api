@@ -22,7 +22,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   ## Attributes
 
   *   `productType` (*type:* `list(String.t)`, *default:* `nil`) - The type or category of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#producttype.
-  *   `includedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of included destinations.
+  *   `includedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of included destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#color.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - The item group id of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#itemgroupid.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#size.
@@ -39,7 +39,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `productLine` (*type:* `String.t`, *default:* `nil`) - The name of the group of products related to the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productline.
   *   `sizeType` (*type:* `list(String.t)`, *default:* `nil`) - The size type of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#sizetype.
   *   `productDetail` (*type:* `list(GoogleApi.Manufacturers.V1.Model.ProductDetail.t)`, *default:* `nil`) - The details of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productdetail.
-  *   `targetClientId` (*type:* `String.t`, *default:* `nil`) - The target client id. Should only be used in the accounts of the data partners.
+  *   `targetClientId` (*type:* `String.t`, *default:* `nil`) - The target client id. Should only be used in the accounts of the data partners. For more information, see https://support.google.com/manufacturers/answer/10857344
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#material.
   *   `brand` (*type:* `String.t`, *default:* `nil`) - The brand name of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#brand.
   *   `flavor` (*type:* `String.t`, *default:* `nil`) - The flavor of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#flavor.
@@ -57,7 +57,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
   *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The disclosure date of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#disclosure.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#title.
-  *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations.
+  *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   """
 
   use GoogleApi.Gax.ModelBase
