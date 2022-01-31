@@ -24,6 +24,7 @@ defmodule GoogleApi.Spanner.V1.Model.Type do
   *   `arrayElementType` (*type:* `GoogleApi.Spanner.V1.Model.Type.t`, *default:* `nil`) - If code == ARRAY, then `array_element_type` is the type of the array elements.
   *   `code` (*type:* `String.t`, *default:* `nil`) - Required. The TypeCode for this type.
   *   `structType` (*type:* `GoogleApi.Spanner.V1.Model.StructType.t`, *default:* `nil`) - If code == STRUCT, then `struct_type` provides type information for the struct's fields.
+  *   `typeAnnotation` (*type:* `String.t`, *default:* `nil`) - The TypeAnnotationCode that disambiguates SQL type that Spanner will use to represent values of this type during query processing. This is necessary for some type codes because a single TypeCode can be mapped to different SQL types depending on the SQL dialect. type_annotation typically is not needed to process the content of a value (it doesn't affect serialization) and clients can ignore it on the read path.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Spanner.V1.Model.Type do
   @type t :: %__MODULE__{
           :arrayElementType => GoogleApi.Spanner.V1.Model.Type.t() | nil,
           :code => String.t() | nil,
-          :structType => GoogleApi.Spanner.V1.Model.StructType.t() | nil
+          :structType => GoogleApi.Spanner.V1.Model.StructType.t() | nil,
+          :typeAnnotation => String.t() | nil
         }
 
   field(:arrayElementType, as: GoogleApi.Spanner.V1.Model.Type)
   field(:code)
   field(:structType, as: GoogleApi.Spanner.V1.Model.StructType)
+  field(:typeAnnotation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Type do
