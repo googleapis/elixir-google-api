@@ -22,6 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If exists, the time at which the database creation started.
+  *   `databaseDialect` (*type:* `String.t`, *default:* `nil`) - Output only. The dialect of the Cloud Spanner Database.
   *   `defaultLeader` (*type:* `String.t`, *default:* `nil`) - Output only. The read-write region which contains the database's leader replicas. This is the same as the value of default_leader database option set using DatabaseAdmin.CreateDatabase or DatabaseAdmin.UpdateDatabaseDdl. If not explicitly set, this is empty.
   *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest timestamp at which older versions of the data can be read. This value is continuously updated by Cloud Spanner and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
   *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Output only. For databases that are using customer managed encryption, this field contains the encryption configuration for the database. For databases that are using Google default or other types of encryption, this field is empty.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :databaseDialect => String.t() | nil,
           :defaultLeader => String.t() | nil,
           :earliestVersionTime => DateTime.t() | nil,
           :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
         }
 
   field(:createTime, as: DateTime)
+  field(:databaseDialect)
   field(:defaultLeader)
   field(:earliestVersionTime, as: DateTime)
   field(:encryptionConfig, as: GoogleApi.Spanner.V1.Model.EncryptionConfig)
