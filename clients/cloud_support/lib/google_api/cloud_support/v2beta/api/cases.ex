@@ -414,7 +414,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Update the specified case. Only a subset of fields (display_name, description, time_zone, subscriber_email_addresses, related_resources, severity, primary_contact, and labels) can be updated.
+  Update the specified case. Only a subset of fields (display_name, description, time_zone, subscriber_email_addresses, related_resources, severity, priority, primary_contact, and labels) can be updated.
 
   ## Parameters
 
