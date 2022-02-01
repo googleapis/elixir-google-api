@@ -21,7 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AutoscalingTargets do
 
   ## Attributes
 
-  *   `cpuUtilizationPercent` (*type:* `integer()`, *default:* `nil`) - The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization).
+  *   `cpuUtilizationPercent` (*type:* `integer()`, *default:* `nil`) - The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80.
   """
 
   use GoogleApi.Gax.ModelBase
