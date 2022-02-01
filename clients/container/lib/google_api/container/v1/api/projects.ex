@@ -183,7 +183,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to complete IP rotation. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to complete IP rotation. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -479,7 +479,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster id) to get keys for. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster name) to get keys for. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -695,7 +695,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set legacy abac. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to set legacy abac. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -911,7 +911,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set maintenance policy. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to set maintenance policy. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1127,7 +1127,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set networking policy. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to set networking policy. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1199,7 +1199,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set labels. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to set labels. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1271,7 +1271,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to start IP rotation. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster name) of the cluster to start IP rotation. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1487,7 +1487,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent (project, location, cluster id) where the node pool will be created. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `parent` (*type:* `String.t`) - The parent (project, location, cluster name) where the node pool will be created. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1715,7 +1715,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent (project, location, cluster id) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `parent` (*type:* `String.t`) - The parent (project, location, cluster name) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2151,7 +2151,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster id) to get the discovery document for. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster name) to get the discovery document for. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4245,7 +4245,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent (project, location, cluster id) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`.
+      *   `:parent` (*type:* `String.t`) - The parent (project, location, cluster name) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
