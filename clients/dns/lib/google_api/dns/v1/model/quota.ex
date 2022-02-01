@@ -28,6 +28,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
   *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
   *   `networksPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per policy.
+  *   `peeringZonesPerTargetNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of consumer peering zones per target network owned by this producer project
   *   `policies` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of policies per project.
   *   `resourceRecordsPerRrset` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecords per ResourceRecordSet.
   *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
@@ -49,6 +50,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
           :managedZonesPerNetwork => integer() | nil,
           :networksPerManagedZone => integer() | nil,
           :networksPerPolicy => integer() | nil,
+          :peeringZonesPerTargetNetwork => integer() | nil,
           :policies => integer() | nil,
           :resourceRecordsPerRrset => integer() | nil,
           :rrsetAdditionsPerChange => integer() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   field(:managedZonesPerNetwork)
   field(:networksPerManagedZone)
   field(:networksPerPolicy)
+  field(:peeringZonesPerTargetNetwork)
   field(:policies)
   field(:resourceRecordsPerRrset)
   field(:rrsetAdditionsPerChange)
