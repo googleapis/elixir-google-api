@@ -31,6 +31,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional description of this course work. If set, the description must be a valid UTF-8 string containing no more than 30,000 characters.
   *   `dueDate` (*type:* `GoogleApi.Classroom.V1.Model.Date.t`, *default:* `nil`) - Optional date, in UTC, that submissions for this course work are due. This must be specified if `due_time` is specified.
   *   `dueTime` (*type:* `GoogleApi.Classroom.V1.Model.TimeOfDay.t`, *default:* `nil`) - Optional time of day, in UTC, that submissions for this course work are due. This must be specified if `due_date` is specified.
+  *   `gradeCategory` (*type:* `GoogleApi.Classroom.V1.Model.GradeCategory.t`, *default:* `nil`) - The category that this coursework's grade contributes to. Present only when a category has been chosen for the coursework. May be used in calculating the overall grade. Read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned identifier of this course work, unique per course. Read-only.
   *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the coursework. This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`. If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students specified in this field are assigned the coursework.
   *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials. CourseWork must have no more than 20 material items.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
           :description => String.t() | nil,
           :dueDate => GoogleApi.Classroom.V1.Model.Date.t() | nil,
           :dueTime => GoogleApi.Classroom.V1.Model.TimeOfDay.t() | nil,
+          :gradeCategory => GoogleApi.Classroom.V1.Model.GradeCategory.t() | nil,
           :id => String.t() | nil,
           :individualStudentsOptions =>
             GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   field(:description)
   field(:dueDate, as: GoogleApi.Classroom.V1.Model.Date)
   field(:dueTime, as: GoogleApi.Classroom.V1.Model.TimeOfDay)
+  field(:gradeCategory, as: GoogleApi.Classroom.V1.Model.GradeCategory)
   field(:id)
   field(:individualStudentsOptions, as: GoogleApi.Classroom.V1.Model.IndividualStudentsOptions)
   field(:materials, as: GoogleApi.Classroom.V1.Model.Material, type: :list)
