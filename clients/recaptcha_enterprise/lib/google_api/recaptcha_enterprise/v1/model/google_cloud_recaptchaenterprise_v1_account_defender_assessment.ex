@@ -22,18 +22,15 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Labels for this request.
-  *   `recommendedAction` (*type:* `String.t`, *default:* `nil`) - Recommended action after this request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => list(String.t()) | nil,
-          :recommendedAction => String.t() | nil
+          :labels => list(String.t()) | nil
         }
 
   field(:labels, type: :list)
-  field(:recommendedAction)
 end
 
 defimpl Poison.Decoder,
