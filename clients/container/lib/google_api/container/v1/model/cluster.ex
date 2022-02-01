@@ -78,7 +78,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
   *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
-  *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Configuration of Confidential Nodes
+  *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Configuration of Confidential Nodes. All the nodes in the cluster will be Confidential VM once enabled.
   *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   """
 

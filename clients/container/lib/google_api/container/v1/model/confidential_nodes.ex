@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.ConfidentialNodes do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether Confidential Nodes feature is enabled for all nodes in this cluster.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether Confidential Nodes feature is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
