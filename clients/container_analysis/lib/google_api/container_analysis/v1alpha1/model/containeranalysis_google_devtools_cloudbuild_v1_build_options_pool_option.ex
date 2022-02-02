@@ -22,24 +22,15 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevt
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The `WorkerPool` resource to execute the build on. You must have `cloudbuild.workerpools.use` on the project hosting the WorkerPool. Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
-  *   `workerConfig` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOptionWorkerConfig.t`, *default:* `nil`) - Configuration per workload.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t() | nil,
-          :workerConfig =>
-            GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOptionWorkerConfig.t()
-            | nil
+          :name => String.t() | nil
         }
 
   field(:name)
-
-  field(:workerConfig,
-    as:
-      GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOptionWorkerConfig
-  )
 end
 
 defimpl Poison.Decoder,
