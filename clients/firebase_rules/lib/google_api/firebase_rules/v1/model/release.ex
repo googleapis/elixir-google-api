@@ -22,8 +22,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Release do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the release was created.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Format: `projects/{project_id}/releases/{release_id}`
-  *   `rulesetName` (*type:* `String.t`, *default:* `nil`) - Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be created.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Format: `projects/{project_id}/releases/{release_id}`
+  *   `rulesetName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be created.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the release was updated.
   """
 
