@@ -286,7 +286,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   end
 
   @doc """
-  Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error wil be returned.
+  Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error will be returned.
 
   ## Parameters
 

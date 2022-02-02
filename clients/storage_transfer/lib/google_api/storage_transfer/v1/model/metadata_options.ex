@@ -21,24 +21,36 @@ defmodule GoogleApi.StorageTransfer.V1.Model.MetadataOptions do
 
   ## Attributes
 
+  *   `acl` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's ACLs should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as ACL_DESTINATION_BUCKET_DEFAULT.
   *   `gid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's GID attribute should be handled by the transfer. If unspecified, the default behavior is the same as GID_SKIP when the source is a POSIX file system.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's Cloud KMS customer-managed encryption key (CMEK) is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as KMS_KEY_DESTINATION_BUCKET_DEFAULT.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's mode attribute should be handled by the transfer. If unspecified, the default behavior is the same as MODE_SKIP when the source is a POSIX file system.
+  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Specifies the storage class to set on objects being transferred to Google Cloud Storage buckets. If unspecified, the default behavior is the same as STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT.
   *   `symlink` (*type:* `String.t`, *default:* `nil`) - Specifies how symlinks should be handled by the transfer. If unspecified, the default behavior is the same as SYMLINK_SKIP when the source is a POSIX file system.
+  *   `temporaryHold` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's temporary hold status should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TEMPORARY_HOLD_PRESERVE.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's UID attribute should be handled by the transfer. If unspecified, the default behavior is the same as UID_SKIP when the source is a POSIX file system.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acl => String.t() | nil,
           :gid => String.t() | nil,
+          :kmsKey => String.t() | nil,
           :mode => String.t() | nil,
+          :storageClass => String.t() | nil,
           :symlink => String.t() | nil,
+          :temporaryHold => String.t() | nil,
           :uid => String.t() | nil
         }
 
+  field(:acl)
   field(:gid)
+  field(:kmsKey)
   field(:mode)
+  field(:storageClass)
   field(:symlink)
+  field(:temporaryHold)
   field(:uid)
 end
 
