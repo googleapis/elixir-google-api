@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ListPrintersResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
-  *   `printers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Printer.t)`, *default:* `nil`) - List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was given in the request, then all printers will be returned.
+  *   `printers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Printer.t)`, *default:* `nil`) - List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was not given in the request, then all printers will be returned.
   """
 
   use GoogleApi.Gax.ModelBase
