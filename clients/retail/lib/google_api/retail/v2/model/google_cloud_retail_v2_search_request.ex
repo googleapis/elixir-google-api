@@ -32,6 +32,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `pageCategories` (*type:* `list(String.t)`, *default:* `nil`) - The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: "pageCategories" : ["Sales > 2017 Black Friday Deals"].
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token SearchResponse.next_page_token, received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned.
+  *   `personalizationSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec.t`, *default:* `nil`) - The specification for personalization.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Raw search query.
   *   `queryExpansionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t`, *default:* `nil`) - The query expansion specification that specifies the conditions under which query expansion will occur. See more details at this [user guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
   *   `searchMode` (*type:* `String.t`, *default:* `nil`) - The search mode of the search request. If not specified, a single search request triggers both product search and faceted search.
@@ -57,6 +58,9 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
           :pageCategories => list(String.t()) | nil,
           :pageSize => integer() | nil,
           :pageToken => String.t() | nil,
+          :personalizationSpec =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec.t()
+            | nil,
           :query => String.t() | nil,
           :queryExpansionSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t() | nil,
@@ -85,6 +89,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   field(:pageCategories, type: :list)
   field(:pageSize)
   field(:pageToken)
+
+  field(:personalizationSpec,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec
+  )
+
   field(:query)
 
   field(:queryExpansionSpec,
