@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSession do
   ## Attributes
 
   *   `count` (*type:* `integer()`, *default:* `nil`) - Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The first transaction creation timestamp, recorded by UAP.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. A conditional statement which is evaluated against the request message to determine if it should be traced. Syntax matches that of on API Proxy bundle flow Condition.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique ID for this DebugSession.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. The time in seconds after which this DebugSession should end. This value will override the value in query param, if both are provided.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSession do
 
   @type t :: %__MODULE__{
           :count => integer() | nil,
+          :createTime => DateTime.t() | nil,
           :filter => String.t() | nil,
           :name => String.t() | nil,
           :timeout => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSession do
         }
 
   field(:count)
+  field(:createTime, as: DateTime)
   field(:filter)
   field(:name)
   field(:timeout)
