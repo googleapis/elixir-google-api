@@ -29,13 +29,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   *   `egressBackends` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Outbound domains/hosts needs to be allowlisted.
   *   `envoyImageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
-  *   `inactive` (*type:* `boolean()`, *default:* `nil`) - Optional. Inactive indicates the connection is active to use or not.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `lockConfig` (*type:* `GoogleApi.Connectors.V1.Model.LockConfig.t`, *default:* `nil`) - Optional. Configuration that indicates whether or not the Connection can be edited.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection}
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Service account needed for runtime plane to access GCP resources.
   *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors"
   *   `status` (*type:* `GoogleApi.Connectors.V1.Model.ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
+  *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
 
@@ -50,13 +50,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
           :egressBackends => list(String.t()) | nil,
           :envoyImageLocation => String.t() | nil,
           :imageLocation => String.t() | nil,
-          :inactive => boolean() | nil,
           :labels => map() | nil,
           :lockConfig => GoogleApi.Connectors.V1.Model.LockConfig.t() | nil,
           :name => String.t() | nil,
           :serviceAccount => String.t() | nil,
           :serviceDirectory => String.t() | nil,
           :status => GoogleApi.Connectors.V1.Model.ConnectionStatus.t() | nil,
+          :suspended => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -68,13 +68,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   field(:egressBackends, type: :list)
   field(:envoyImageLocation)
   field(:imageLocation)
-  field(:inactive)
   field(:labels, type: :map)
   field(:lockConfig, as: GoogleApi.Connectors.V1.Model.LockConfig)
   field(:name)
   field(:serviceAccount)
   field(:serviceDirectory)
   field(:status, as: GoogleApi.Connectors.V1.Model.ConnectionStatus)
+  field(:suspended)
   field(:updateTime, as: DateTime)
 end
 
