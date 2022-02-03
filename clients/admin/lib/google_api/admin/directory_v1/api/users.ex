@@ -235,7 +235,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:projection` (*type:* `String.t`) - What subset of fields to fetch for this user.
       *   `:query` (*type:* `String.t`) - Query string for searching user fields. For more information on constructing user queries, see [Search for Users](/admin-sdk/directory/v1/guides/search-users).
       *   `:showDeleted` (*type:* `String.t`) - If set to `true`, retrieves the list of deleted users. (Default: `false`)
-      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order.
+      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order, ignoring case.
       *   `:viewType` (*type:* `String.t`) - Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
   *   `opts` (*type:* `keyword()`) - Call options
 
