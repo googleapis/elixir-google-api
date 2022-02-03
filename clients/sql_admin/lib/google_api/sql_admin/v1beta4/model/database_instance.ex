@@ -26,6 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
   *   `suspensionReason` (*type:* `list(String.t)`, *default:* `nil`) - If the instance state is SUSPENDED, the reason for the suspension.
+  *   `maintenanceVersion` (*type:* `String.t`, *default:* `nil`) - The current software version on the instance.
   *   `serviceAccountEmailAddress` (*type:* `String.t`, *default:* `nil`) - The service account email address assigned to the instance. \\This property is read-only.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as primary in the replication setup.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
@@ -41,6 +42,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance.
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name of the Cloud SQL instance used in connection strings.
   *   `onPremisesConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t`, *default:* `nil`) - Configuration specific to on-premises instances.
+  *   `availableMaintenanceVersions` (*type:* `list(String.t)`, *default:* `nil`) - List all maintenance versions applicable on the instance
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
@@ -65,6 +67,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :databaseVersion => String.t() | nil,
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil,
           :suspensionReason => list(String.t()) | nil,
+          :maintenanceVersion => String.t() | nil,
           :serviceAccountEmailAddress => String.t() | nil,
           :masterInstanceName => String.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -83,6 +86,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :connectionName => String.t() | nil,
           :onPremisesConfiguration =>
             GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t() | nil,
+          :availableMaintenanceVersions => list(String.t()) | nil,
           :instanceType => String.t() | nil,
           :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()) | nil,
           :replicaNames => list(String.t()) | nil,
@@ -107,6 +111,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:databaseVersion)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
   field(:suspensionReason, type: :list)
+  field(:maintenanceVersion)
   field(:serviceAccountEmailAddress)
   field(:masterInstanceName)
   field(:createTime, as: DateTime)
@@ -122,6 +127,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:diskEncryptionStatus, as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus)
   field(:connectionName)
   field(:onPremisesConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration)
+  field(:availableMaintenanceVersions, type: :list)
   field(:instanceType)
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping, type: :list)
   field(:replicaNames, type: :list)
