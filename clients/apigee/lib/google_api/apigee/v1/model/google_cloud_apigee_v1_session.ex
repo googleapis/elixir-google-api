@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The debug session ID.
-  *   `timestampMs` (*type:* `String.t`, *default:* `nil`) - The first transaction creation timestamp in millisecond, recoreded by UAP.
+  *   `timestampMs` (*type:* `String.t`, *default:* `nil`) - The first transaction creation timestamp in millisecond, recorded by UAP.
   """
 
   use GoogleApi.Gax.ModelBase
