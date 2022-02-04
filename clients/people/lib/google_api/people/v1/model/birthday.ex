@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.People.V1.Model.Birthday do
   @moduledoc """
-  A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to.
+  A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to. Clients should always set the `date` field when mutating birthdays.
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The date of the birthday.
+  *   `date` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The structured date of the birthday.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the birthday.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - A free-form string representing the user's birthday.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Prefer to use the `date` field if set. A free-form string representing the user's birthday. This value is not validated.
   """
 
   use GoogleApi.Gax.ModelBase
