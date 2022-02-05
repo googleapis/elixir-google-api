@@ -22,7 +22,6 @@ defmodule GoogleApi.GameServices.V1.Model.AuditConfig do
   ## Attributes
 
   *   `auditLogConfigs` (*type:* `list(GoogleApi.GameServices.V1.Model.AuditLogConfig.t)`, *default:* `nil`) - The configuration for logging of each type of permission.
-  *   `exemptedMembers` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `service` (*type:* `String.t`, *default:* `nil`) - Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.GameServices.V1.Model.AuditConfig do
 
   @type t :: %__MODULE__{
           :auditLogConfigs => list(GoogleApi.GameServices.V1.Model.AuditLogConfig.t()) | nil,
-          :exemptedMembers => list(String.t()) | nil,
           :service => String.t() | nil
         }
 
   field(:auditLogConfigs, as: GoogleApi.GameServices.V1.Model.AuditLogConfig, type: :list)
-  field(:exemptedMembers, type: :list)
   field(:service)
 end
 
