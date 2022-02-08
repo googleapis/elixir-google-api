@@ -1732,7 +1732,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The requested page size. The actual page size may be fixed to a min or max value.
+      *   `:pageSize` (*type:* `integer()`) - The requested page size. This is a hint and the actual page size in the response may be different.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
   *   `opts` (*type:* `keyword()`) - Call options
 
