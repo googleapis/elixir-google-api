@@ -937,7 +937,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload(
+  @spec artifactregistry_projects_locations_repositories_apt_artifacts_upload(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -949,7 +949,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_aptartifacts_upload(
+  def artifactregistry_projects_locations_repositories_apt_artifacts_upload(
         connection,
         projects_id,
         locations_id,
@@ -1024,7 +1024,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload_iodata(
+  @spec artifactregistry_projects_locations_repositories_apt_artifacts_upload_iodata(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -1039,7 +1039,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_aptartifacts_upload_iodata(
+  def artifactregistry_projects_locations_repositories_apt_artifacts_upload_iodata(
         connection,
         projects_id,
         locations_id,
@@ -1119,7 +1119,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadAptArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_aptartifacts_upload_simple(
+  @spec artifactregistry_projects_locations_repositories_apt_artifacts_upload_simple(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -1134,7 +1134,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_aptartifacts_upload_simple(
+  def artifactregistry_projects_locations_repositories_apt_artifacts_upload_simple(
         connection,
         projects_id,
         locations_id,
@@ -1643,7 +1643,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload(
+  @spec artifactregistry_projects_locations_repositories_googet_artifacts_upload(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -1655,7 +1655,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_googetartifacts_upload(
+  def artifactregistry_projects_locations_repositories_googet_artifacts_upload(
         connection,
         projects_id,
         locations_id,
@@ -1730,7 +1730,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload_iodata(
+  @spec artifactregistry_projects_locations_repositories_googet_artifacts_upload_iodata(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -1745,7 +1745,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_googetartifacts_upload_iodata(
+  def artifactregistry_projects_locations_repositories_googet_artifacts_upload_iodata(
         connection,
         projects_id,
         locations_id,
@@ -1825,7 +1825,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadGooGetArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_googetartifacts_upload_simple(
+  @spec artifactregistry_projects_locations_repositories_googet_artifacts_upload_simple(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -1840,7 +1840,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_googetartifacts_upload_simple(
+  def artifactregistry_projects_locations_repositories_googet_artifacts_upload_simple(
         connection,
         projects_id,
         locations_id,
@@ -2986,7 +2986,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload(
+  @spec artifactregistry_projects_locations_repositories_yum_artifacts_upload(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -2998,7 +2998,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_yumartifacts_upload(
+  def artifactregistry_projects_locations_repositories_yum_artifacts_upload(
         connection,
         projects_id,
         locations_id,
@@ -3073,7 +3073,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload_iodata(
+  @spec artifactregistry_projects_locations_repositories_yum_artifacts_upload_iodata(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -3088,7 +3088,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_yumartifacts_upload_iodata(
+  def artifactregistry_projects_locations_repositories_yum_artifacts_upload_iodata(
         connection,
         projects_id,
         locations_id,
@@ -3168,7 +3168,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   *   `{:ok, %GoogleApi.ArtifactRegistry.V1.Model.UploadYumArtifactMediaResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec artifactregistry_projects_locations_repositories_yumartifacts_upload_simple(
+  @spec artifactregistry_projects_locations_repositories_yum_artifacts_upload_simple(
           Tesla.Env.client(),
           String.t(),
           String.t(),
@@ -3183,7 +3183,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def artifactregistry_projects_locations_repositories_yumartifacts_upload_simple(
+  def artifactregistry_projects_locations_repositories_yum_artifacts_upload_simple(
         connection,
         projects_id,
         locations_id,
