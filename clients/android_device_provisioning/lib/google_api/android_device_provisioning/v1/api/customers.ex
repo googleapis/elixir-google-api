@@ -44,7 +44,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
-      *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return.
+      *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return. This field has custom validations in ListCustomersRequestValidator
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -95,7 +95,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer that manages the configuration. An API resource name in the format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer that manages the configuration. An API resource name in the format `customers/[CUSTOMER_ID]`. This field has custom validation in CreateConfigurationRequestValidator
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
