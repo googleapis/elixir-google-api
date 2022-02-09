@@ -21,7 +21,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MergeInfo do
 
   ## Attributes
 
-  *   `newAlertId` (*type:* `String.t`, *default:* `nil`) - New alert ID. Reference the [google.apps.alertcenter.Alert] with this ID for the current state.
+  *   `newAlertId` (*type:* `String.t`, *default:* `nil`) - Optional. New alert ID. Reference the [google.apps.alertcenter.Alert] with this ID for the current state.
   *   `newIncidentTrackingId` (*type:* `String.t`, *default:* `nil`) - The new tracking ID from the parent incident.
   """
 
