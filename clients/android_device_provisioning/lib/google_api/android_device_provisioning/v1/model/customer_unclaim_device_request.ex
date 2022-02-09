@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequ
 
   ## Attributes
 
-  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to unclaim.
+  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to unclaim. There are custom validations in UnclaimDeviceRequestValidator.
   """
 
   use GoogleApi.Gax.ModelBase

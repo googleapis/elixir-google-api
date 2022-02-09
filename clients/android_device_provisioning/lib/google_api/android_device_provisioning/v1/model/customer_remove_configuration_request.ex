@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerRemoveConfigurati
 
   ## Attributes
 
-  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to remove the configuration from.
+  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to remove the configuration from. There are custom validations in RemoveConfigurationRequestValidator
   """
 
   use GoogleApi.Gax.ModelBase
