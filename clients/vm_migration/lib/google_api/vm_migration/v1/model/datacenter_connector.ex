@@ -21,6 +21,9 @@ defmodule GoogleApi.VMMigration.V1.Model.DatacenterConnector do
 
   ## Attributes
 
+  *   `applianceInfrastructureVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Appliance OVA version. This is the OVA which is manually installed by the user and contains the infrastructure for the automatically updatable components on the appliance.
+  *   `applianceSoftwareVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Appliance last installed update bundle version. This is the version of the automatically updatable components on the appliance.
+  *   `availableVersions` (*type:* `GoogleApi.VMMigration.V1.Model.AvailableUpdates.t`, *default:* `nil`) - Output only. The available versions for updating this appliance.
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Output only. The communication channel between the datacenter connector and GCP.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the connector was created (as an API call, not when it was actually installed).
   *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details on the state of the Datacenter Connector in case of an error.
@@ -30,12 +33,16 @@ defmodule GoogleApi.VMMigration.V1.Model.DatacenterConnector do
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the DatacenterConnector, as determined by the health checks.
   *   `stateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the state was last set.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time the connector was updated with an API call.
+  *   `upgradeStatus` (*type:* `GoogleApi.VMMigration.V1.Model.UpgradeStatus.t`, *default:* `nil`) - Output only. The status of the current / last upgradeAppliance operation.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version running in the DatacenterConnector. This is supplied by the OVA connector during the registration process and can not be modified.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :applianceInfrastructureVersion => String.t() | nil,
+          :applianceSoftwareVersion => String.t() | nil,
+          :availableVersions => GoogleApi.VMMigration.V1.Model.AvailableUpdates.t() | nil,
           :bucket => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :error => GoogleApi.VMMigration.V1.Model.Status.t() | nil,
@@ -45,9 +52,13 @@ defmodule GoogleApi.VMMigration.V1.Model.DatacenterConnector do
           :state => String.t() | nil,
           :stateTime => DateTime.t() | nil,
           :updateTime => DateTime.t() | nil,
+          :upgradeStatus => GoogleApi.VMMigration.V1.Model.UpgradeStatus.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:applianceInfrastructureVersion)
+  field(:applianceSoftwareVersion)
+  field(:availableVersions, as: GoogleApi.VMMigration.V1.Model.AvailableUpdates)
   field(:bucket)
   field(:createTime, as: DateTime)
   field(:error, as: GoogleApi.VMMigration.V1.Model.Status)
@@ -57,6 +68,7 @@ defmodule GoogleApi.VMMigration.V1.Model.DatacenterConnector do
   field(:state)
   field(:stateTime, as: DateTime)
   field(:updateTime, as: DateTime)
+  field(:upgradeStatus, as: GoogleApi.VMMigration.V1.Model.UpgradeStatus)
   field(:version)
 end
 

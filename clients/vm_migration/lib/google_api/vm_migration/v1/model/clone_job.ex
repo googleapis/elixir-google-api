@@ -24,7 +24,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
   *   `computeEngineTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails.t`, *default:* `nil`) - Output only. Details of the target VM in Compute Engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the clone job was created (as an API call, not when it was actually created in the target).
   *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details for the errors that led to the Clone Job's state.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the clone.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the clone.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the clone job.
   *   `stateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the state was last updated.
   """

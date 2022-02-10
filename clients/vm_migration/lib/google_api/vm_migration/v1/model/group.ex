@@ -24,7 +24,7 @@ defmodule GoogleApi.VMMigration.V1.Model.Group do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create time timestamp.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of the group.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name is a user defined name for this group which can be updated.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The Group name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The Group name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time timestamp.
   """
 

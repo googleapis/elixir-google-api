@@ -22,7 +22,7 @@ defmodule GoogleApi.VMMigration.V1.Model.FetchInventoryResponse do
   ## Attributes
 
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the source was last queried (if the result is from the cache).
-  *   `vmwareVms` (*type:* `GoogleApi.VMMigration.V1.Model.VmwareVmsDetails.t`, *default:* `nil`) - Output only. The description of the VMs in a Source of type Vmware.
+  *   `vmwareVms` (*type:* `GoogleApi.VMMigration.V1.Model.VmwareVmsDetails.t`, *default:* `nil`) - The description of the VMs in a Source of type Vmware.
   """
 
   use GoogleApi.Gax.ModelBase
