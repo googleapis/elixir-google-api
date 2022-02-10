@@ -21,16 +21,16 @@ defmodule GoogleApi.Composer.V1beta1.Model.StoreEnvironmentStateResponse do
 
   ## Attributes
 
-  *   `snapshotLocation` (*type:* `String.t`, *default:* `nil`) - The fully-resolved Cloud Storage location of the created snapshot, e.g.: "gs://my-bucket/snapshots/project_id/location/environment_uuid/timestamp". This field is populated only if the snapshot creation was successful.
+  *   `snapshotPath` (*type:* `String.t`, *default:* `nil`) - The fully-resolved Cloud Storage path of the created snapshot, e.g.: "gs://my-bucket/snapshots/project_location_environment_timestamp". This field is populated only if the snapshot creation was successful.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snapshotLocation => String.t() | nil
+          :snapshotPath => String.t() | nil
         }
 
-  field(:snapshotLocation)
+  field(:snapshotPath)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.StoreEnvironmentStateResponse do
