@@ -26,7 +26,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new budget. See Quotas and limits for more information on the limits of the number of budgets you can create.
+  Creates a new budget. See [Quotas and limits](https://cloud.google.com/billing/quotas) for more information on the limits of the number of budgets you can create.
 
   ## Parameters
 
