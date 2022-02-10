@@ -28,7 +28,7 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareVmDetails do
   *   `datacenterId` (*type:* `String.t`, *default:* `nil`) - The id of the vCenter's datacenter this VM is contained in.
   *   `diskCount` (*type:* `integer()`, *default:* `nil`) - The number of disks the VM has.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the VM. Note that this is not necessarily unique.
-  *   `guestDescription` (*type:* `String.t`, *default:* `nil`) - The VM's OS. See for example https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for types of strings this might hold.
+  *   `guestDescription` (*type:* `String.t`, *default:* `nil`) - The VM's OS. See for example https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for types of strings this might hold.
   *   `memoryMb` (*type:* `integer()`, *default:* `nil`) - The size of the memory of the VM in MB.
   *   `powerState` (*type:* `String.t`, *default:* `nil`) - The power state of the VM at the moment list was taken.
   *   `uuid` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the VM in vCenter.
