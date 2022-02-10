@@ -24,6 +24,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
   *   `securityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
+  *   `sustainabilityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SustainabilityProjection.t`, *default:* `nil`) - Use with CategoryType.SUSTAINABILITY
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,6 +36,9 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
             | nil,
           :securityProjection =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t()
+            | nil,
+          :sustainabilityProjection =>
+            GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SustainabilityProjection.t()
             | nil
         }
 
@@ -46,6 +50,10 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
 
   field(:securityProjection,
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection
+  )
+
+  field(:sustainabilityProjection,
+    as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SustainabilityProjection
   )
 end
 
