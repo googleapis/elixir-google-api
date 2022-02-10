@@ -27,6 +27,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use node_pools.instance_group_urls.
   *   `currentMasterVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] The current software version of the master endpoint.
   *   `enableTpu` (*type:* `boolean()`, *default:* `nil`) - Enable the ability to use Cloud TPUs in this cluster.
+  *   `identityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - Configuration for Identity Service component.
   *   `nodeIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
   *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
   *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
@@ -92,6 +93,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :instanceGroupUrls => list(String.t()) | nil,
           :currentMasterVersion => String.t() | nil,
           :enableTpu => boolean() | nil,
+          :identityServiceConfig => GoogleApi.Container.V1.Model.IdentityServiceConfig.t() | nil,
           :nodeIpv4CidrSize => integer() | nil,
           :legacyAbac => GoogleApi.Container.V1.Model.LegacyAbac.t() | nil,
           :shieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
@@ -156,6 +158,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:instanceGroupUrls, type: :list)
   field(:currentMasterVersion)
   field(:enableTpu)
+  field(:identityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)
   field(:nodeIpv4CidrSize)
   field(:legacyAbac, as: GoogleApi.Container.V1.Model.LegacyAbac)
   field(:shieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
