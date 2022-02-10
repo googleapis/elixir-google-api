@@ -34,6 +34,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Optional. The severity of the log entry. The default value is LogSeverity.DEFAULT.
   *   `sourceLocation` (*type:* `GoogleApi.Logging.V2.Model.LogEntrySourceLocation.t`, *default:* `nil`) - Optional. Source code location information associated with the log entry, if any.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - Optional. The span ID within the trace associated with the log entry.For Trace spans, this is the same format that the Trace API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such as 000000000000004a.
+  *   `split` (*type:* `GoogleApi.Logging.V2.Model.LogSplit.t`, *default:* `nil`) - Optional. Information indicating this LogEntry is part of a sequence of multiple log entries split from a single LogEntry.
   *   `textPayload` (*type:* `String.t`, *default:* `nil`) - The log entry payload, represented as a Unicode string (UTF-8).
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time the event described by the log entry occurred. This time is used to compute the log entry's age and to enforce the logs retention period. If this field is omitted in a new log entry, then Logging assigns it the current time. Timestamps have nanosecond accuracy, but trailing zeros in the fractional seconds might be omitted when the timestamp is displayed.Incoming log entries must have timestamps that don't exceed the logs retention period (https://cloud.google.com/logging/quotas#logs_retention_periods) in the past, and that don't exceed 24 hours in the future. Log entries outside those time boundaries aren't ingested by Logging.
   *   `trace` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the trace associated with the log entry, if any. If it contains a relative resource name, the name is assumed to be relative to //tracing.googleapis.com. Example: projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824
@@ -56,6 +57,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
           :severity => String.t() | nil,
           :sourceLocation => GoogleApi.Logging.V2.Model.LogEntrySourceLocation.t() | nil,
           :spanId => String.t() | nil,
+          :split => GoogleApi.Logging.V2.Model.LogSplit.t() | nil,
           :textPayload => String.t() | nil,
           :timestamp => DateTime.t() | nil,
           :trace => String.t() | nil,
@@ -75,6 +77,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   field(:severity)
   field(:sourceLocation, as: GoogleApi.Logging.V2.Model.LogEntrySourceLocation)
   field(:spanId)
+  field(:split, as: GoogleApi.Logging.V2.Model.LogSplit)
   field(:textPayload)
   field(:timestamp, as: DateTime)
   field(:trace)
