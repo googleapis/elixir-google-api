@@ -34,7 +34,8 @@ defmodule GoogleApis.Generator do
   def rollback_if_not_significant(api_configs) do
     if !Enum.any?(api_configs, &(ChangeAnalyzer.has_changes_of_significance?(&1, :documentation))) do
       Logger.info("Found only discovery_revision and/or formatting changes. Not significant enough for a PR.")
-      System.cmd("git", ["reset", "--hard"])
+      directories = api_configs |> Enum.map(&(GoogleApis.ApiConfig.library_directory(&1))) |> IO.inspect()
+      System.cmd("git", ["restore" | directories])
     end
   end
 
