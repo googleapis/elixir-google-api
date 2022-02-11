@@ -1,0 +1,29 @@
+name: Daily-Generate-Updates
+on:
+  schedule:
+    - cron: '02 13 * * *'
+
+jobs:
+  generate-updates:
+    if: ${{ github.repository == 'googleapis/elixir-google-api' }}
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+      APPROVAL_GITHUB_TOKEN: ${{secrets.YOSHI_APPROVER_TOKEN}}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0"
+      - name: Install Elixir
+        uses: erlef/setup-elixir@v1
+        with:
+          otp-version: "23.3.4.10"
+          elixir-version: "1.12.3"
+      - name: Install tools
+        run: "gem install --no-document toys"
+      - name: execute
+        run: |
+          toys generate-updates -v --fork --all
