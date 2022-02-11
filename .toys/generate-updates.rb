@@ -61,6 +61,7 @@ end
 
 def setup_builds
   exec ["mix", "deps.get"]
+  exec ["mix", "compile"]
 end
 
 def list_apis
