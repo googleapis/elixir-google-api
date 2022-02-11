@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudChannel.V1 do
   API client metadata for GoogleApi.CloudChannel.V1.
   """
 
-  @discovery_revision "20220129"
+  @discovery_revision "20220209"
 
   def discovery_revision(), do: @discovery_revision
 end
