@@ -22,6 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec do
   ## Attributes
 
   *   `conditionBoostSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t)`, *default:* `nil`) - Condition boost specifications. If a product matches multiple conditions in the specifictions, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 10.
+  *   `skipBoostSpecValidation` (*type:* `boolean()`, *default:* `nil`) - Whether to skip boostspec validation. If this field is set to true, invalid BoostSpec.condition_boost_specs will be ignored and valid BoostSpec.condition_boost_specs will still be applied.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,13 +32,16 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec do
             list(
               GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t()
             )
-            | nil
+            | nil,
+          :skipBoostSpecValidation => boolean() | nil
         }
 
   field(:conditionBoostSpecs,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec,
     type: :list
   )
+
+  field(:skipBoostSpecValidation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec do
