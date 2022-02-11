@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""This script is used to synthesize generated parts of this library."""
+expand :clean, paths: :gitignore
 
-import synthtool.log as log
-
-log.debug("Synthtool disabled for elixir")
+if ENV["RUBY_COMMON_TOOLS"]
+  common_tools_dir = File.expand_path ENV["RUBY_COMMON_TOOLS"]
+  load File.join(common_tools_dir, "toys", "yoshi")
+else
+  load_git remote: "https://github.com/googleapis/ruby-common-tools.git",
+           path: "toys/yoshi",
+           update: true
+end
