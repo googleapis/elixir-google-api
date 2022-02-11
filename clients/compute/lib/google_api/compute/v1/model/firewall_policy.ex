@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
   *   `kind` (*type:* `String.t`, *default:* `compute#firewallPolicy`) - [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - [Output Only] The parent of the firewall policy.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `ruleTupleCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
           :kind => String.t() | nil,
           :name => String.t() | nil,
           :parent => String.t() | nil,
+          :region => String.t() | nil,
           :ruleTupleCount => integer() | nil,
           :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
           :selfLink => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
   field(:kind)
   field(:name)
   field(:parent)
+  field(:region)
   field(:ruleTupleCount)
   field(:rules, as: GoogleApi.Compute.V1.Model.FirewallPolicyRule, type: :list)
   field(:selfLink)

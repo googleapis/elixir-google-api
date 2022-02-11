@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
   *   `destIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
   *   `layer4Configs` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t)`, *default:* `nil`) - Pairs of IP protocols and ports that the rule should match.
   *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+  *   `srcSecureTags` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t)`, *default:* `nil`) - List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +33,8 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
           :destIpRanges => list(String.t()) | nil,
           :layer4Configs =>
             list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t()) | nil,
-          :srcIpRanges => list(String.t()) | nil
+          :srcIpRanges => list(String.t()) | nil,
+          :srcSecureTags => list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t()) | nil
         }
 
   field(:destIpRanges, type: :list)
@@ -43,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
   )
 
   field(:srcIpRanges, type: :list)
+  field(:srcSecureTags, as: GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
