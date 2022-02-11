@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ExecutionConfig do
 
   ## Attributes
 
-  *   `artifactStorage` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage location where execution outputs should be stored. This can either be a bucket ("gs://my-bucket") or a path within a bucket ("gs://my-bucket/my-dir"). If unspecified, a default bucket located in the same region will be used.
+  *   `artifactStorage` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage location in which to store execution outputs. This can either be a bucket ("gs://my-bucket") or a path within a bucket ("gs://my-bucket/my-dir"). If unspecified, a default bucket located in the same region will be used.
   *   `defaultPool` (*type:* `GoogleApi.CloudDeploy.V1.Model.DefaultPool.t`, *default:* `nil`) - Optional. Use default Cloud Build pool.
   *   `privatePool` (*type:* `GoogleApi.CloudDeploy.V1.Model.PrivatePool.t`, *default:* `nil`) - Optional. Use private Cloud Build pool.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Google service account to use for execution. If unspecified, the project execution service account (-compute@developer.gserviceaccount.com) will be used.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Google service account to use for execution. If unspecified, the project execution service account (-compute@developer.gserviceaccount.com) is used.
   *   `usages` (*type:* `list(String.t)`, *default:* `nil`) - Required. Usages when this configuration should be applied.
   *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the `WorkerPool`, with the format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. If this optional field is unspecified, the default Cloud Build pool will be used.
   """
