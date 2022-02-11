@@ -25,6 +25,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance.
   *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - If spell correction applies, the corrected query. Otherwise, empty.
   *   `facets` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
+  *   `invalidConditionBoostSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t)`, *default:* `nil`) - The invalid SearchRequest.BoostSpec.condition_boost_specs that are not applied during serving.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `queryExpansionInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search will be performed, and only redirect_uri and attribution_token will be set in the response.
@@ -40,6 +41,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
           :correctedQuery => String.t() | nil,
           :facets =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t()) | nil,
+          :invalidConditionBoostSpecs =>
+            list(
+              GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t()
+            )
+            | nil,
           :nextPageToken => String.t() | nil,
           :queryExpansionInfo =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t()
@@ -56,6 +62,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   field(:correctedQuery)
 
   field(:facets, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet, type: :list)
+
+  field(:invalidConditionBoostSpecs,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec,
+    type: :list
+  )
 
   field(:nextPageToken)
 
