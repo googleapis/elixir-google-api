@@ -67,7 +67,7 @@ end
 def list_apis
   return requested unless all
   api_list = JSON.parse File.read "#{context_directory}/config/apis.json"
-  api_list.map { |entry| entry["name"] }.uniq.compact.shuffle
+  api_list.map { |entry| entry["publish"] == false ? nil : entry["name"] }.uniq.compact.shuffle
 end
 
 def handle_package api_name, index, total
@@ -82,7 +82,7 @@ def handle_package api_name, index, total
                                       remote: git_remote,
                                       branch_name: branch_name,
                                       commit_message: commit_message,
-                                      labels: ["do not merge"],
+                                      labels: ["automerge"],
                                       auto_approve: approval_message,
                                       approval_token: approval_token do
     generate_package api_name
