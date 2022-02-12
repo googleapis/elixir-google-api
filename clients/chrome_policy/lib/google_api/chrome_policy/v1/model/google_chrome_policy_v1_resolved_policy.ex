@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolvedPolicy do
 
   ## Attributes
 
+  *   `addedSourceKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey.t`, *default:* `nil`) - Output only. The added source key establishes at which level an entity was explicitly added for management. This is useful for certain type of policies that are only applied if they are explicitly added for management. For example: apps and networks. An entity can only be deleted from management in an Organizational Unit that it was explicitly added to. If this is not present it means that the policy is managed without the need to explicitly add an entity, for example: standard user or device policies.
   *   `sourceKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey.t`, *default:* `nil`) - Output only. The source resource from which this policy value is obtained. May be the same as `targetKey` if the policy is directly modified on the target, otherwise it would be another resource from which the policy gets its value (if applicable). If not present, the source is the default value for the customer.
   *   `targetKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey.t`, *default:* `nil`) - Output only. The target resource for which the resolved policy value applies.
   *   `value` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyValue.t`, *default:* `nil`) - Output only. The resolved value of the policy.
@@ -29,6 +30,8 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolvedPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :addedSourceKey =>
+            GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey.t() | nil,
           :sourceKey =>
             GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey.t() | nil,
           :targetKey =>
@@ -36,6 +39,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolvedPolicy do
           :value => GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyValue.t() | nil
         }
 
+  field(:addedSourceKey, as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey)
   field(:sourceKey, as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey)
   field(:targetKey, as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey)
   field(:value, as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyValue)
