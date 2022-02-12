@@ -21,7 +21,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.SubjectAltNames do
 
   ## Attributes
 
-  *   `customSans` (*type:* `list(GoogleApi.PrivateCA.V1.Model.X509Extension.t)`, *default:* `nil`) - Contains additional subject alternative name values.
+  *   `customSans` (*type:* `list(GoogleApi.PrivateCA.V1.Model.X509Extension.t)`, *default:* `nil`) - Contains additional subject alternative name values. For each custom_san, the `value` field must contain an ASN.1 encoded UTF8String.
   *   `dnsNames` (*type:* `list(String.t)`, *default:* `nil`) - Contains only valid, fully-qualified host names.
   *   `emailAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Contains only valid RFC 2822 E-mail addresses.
   *   `ipAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Contains only valid 32-bit IPv4 addresses or RFC 4291 IPv6 addresses.
