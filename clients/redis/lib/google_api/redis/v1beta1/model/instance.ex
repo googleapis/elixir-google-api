@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   @moduledoc """
-  A Google Cloud Redis instance.
+  A Memorystore for Redis instance.
 
   ## Attributes
 
