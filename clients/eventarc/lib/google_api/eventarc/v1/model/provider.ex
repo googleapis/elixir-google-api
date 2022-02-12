@@ -23,7 +23,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Provider do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Human friendly name for the Provider. For example "Cloud Storage".
   *   `eventTypes` (*type:* `list(GoogleApi.Eventarc.V1.Model.EventType.t)`, *default:* `nil`) - Output only. Event types for this provider.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. In `projects/{project}/locations/{location}/providers/{provider-id}` format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. In `projects/{project}/locations/{location}/providers/{provider_id}` format.
   """
 
   use GoogleApi.Gax.ModelBase

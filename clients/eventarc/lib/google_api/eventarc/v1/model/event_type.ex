@@ -24,7 +24,7 @@ defmodule GoogleApi.Eventarc.V1.Model.EventType do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Human friendly description of what the event type is about. For example "Bucket created in Cloud Storage".
   *   `eventSchemaUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI for the event schema. For example "https://github.com/googleapis/google-cloudevents/blob/master/proto/google/events/cloud/storage/v1/events.proto"
   *   `filteringAttributes` (*type:* `list(GoogleApi.Eventarc.V1.Model.FilteringAttribute.t)`, *default:* `nil`) - Output only. Filtering attributes for the event type.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the event type (for example, "google.cloud.storage.object.v1.finalized"). In the form of {provider-id}.{resource}.{version}.{verb}. Types MUST be versioned and event schemas are guaranteed to remain backward compatible within one version. Note that event type versions and API versions do not need to match.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the event type (for example, "google.cloud.storage.object.v1.finalized"). In the form of {provider-specific-prefix}.{resource}.{version}.{verb}. Types MUST be versioned and event schemas are guaranteed to remain backward compatible within one version. Note that event type versions and API versions do not need to match.
   """
 
   use GoogleApi.Gax.ModelBase
