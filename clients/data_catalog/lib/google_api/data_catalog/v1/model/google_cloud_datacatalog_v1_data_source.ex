@@ -23,17 +23,27 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource do
 
   *   `resource` (*type:* `String.t`, *default:* `nil`) - Full name of a resource as defined by the service. For example: `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
   *   `service` (*type:* `String.t`, *default:* `nil`) - Service that physically stores the data.
+  *   `sourceEntry` (*type:* `String.t`, *default:* `nil`) - Output only. Data Catalog entry name, if applicable.
+  *   `storageProperties` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1StorageProperties.t`, *default:* `nil`) - Detailed properties of the underlying storage.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :resource => String.t() | nil,
-          :service => String.t() | nil
+          :service => String.t() | nil,
+          :sourceEntry => String.t() | nil,
+          :storageProperties =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1StorageProperties.t() | nil
         }
 
   field(:resource)
   field(:service)
+  field(:sourceEntry)
+
+  field(:storageProperties,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1StorageProperties
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource do

@@ -29,6 +29,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
   *   `databaseTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec.t`, *default:* `nil`) - Specification that applies to a table resource. Valid only for entries with the `TABLE` type.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Entry description that can consist of several sentences or paragraphs that describe entry contents. The description must not contain Unicode non-characters as well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). The maximum size is 2000 bytes when encoded in UTF-8. Default value is an empty string.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of an entry. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum size is 200 bytes when encoded in UTF-8. Default value is an empty string.
+  *   `filesetSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec.t`, *default:* `nil`) - Specification that applies to a fileset resource. Valid only for entries with the `FILESET` type.
   *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Fully qualified name (FQN) of the resource. Set automatically for entries representing resources from synced systems. Settable only during creation and read-only afterwards. Can be used for search and lookup of the entries. FQNs take two forms: * For non-regionalized resources: `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` * For regionalized resources: `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` Example for a DPMS table: `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
   *   `gcsFilesetSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1GcsFilesetSpec.t`, *default:* `nil`) - Specification that applies to a Cloud Storage fileset. Valid only for entries with the `FILESET` type.
   *   `integratedSystem` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
@@ -64,6 +65,8 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :filesetSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec.t() | nil,
           :fullyQualifiedName => String.t() | nil,
           :gcsFilesetSpec =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1GcsFilesetSpec.t() | nil,
@@ -109,6 +112,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
 
   field(:description)
   field(:displayName)
+  field(:filesetSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec)
   field(:fullyQualifiedName)
 
   field(:gcsFilesetSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1GcsFilesetSpec)
