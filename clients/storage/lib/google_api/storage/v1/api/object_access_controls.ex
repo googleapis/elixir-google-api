@@ -41,6 +41,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -75,6 +76,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -113,6 +115,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -151,6 +154,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -188,6 +192,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -225,6 +230,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -262,6 +268,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -298,6 +305,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -335,6 +343,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -374,6 +383,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -413,6 +423,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -452,6 +463,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
