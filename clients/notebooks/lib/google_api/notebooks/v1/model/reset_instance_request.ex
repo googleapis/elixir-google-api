@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Notebooks.V1.Model.ResetInstanceRequest do
   @moduledoc """
-  Request for reseting a notebook instance
+  Request for resetting a notebook instance
 
   ## Attributes
 
