@@ -40,6 +40,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -74,6 +75,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :destinationPredefinedAcl => :query,
       :ifGenerationMatch => :query,
@@ -116,6 +118,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:destinationKmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
@@ -168,6 +171,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :destinationKmsKeyName => :query,
       :destinationPredefinedAcl => :query,
@@ -221,6 +225,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, permanently deletes a specific revision of this object (as opposed to the latest version, the default).
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -246,6 +251,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :ifGenerationMatch => :query,
@@ -286,6 +292,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -320,6 +327,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :ifGenerationMatch => :query,
@@ -361,6 +369,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -397,6 +406,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -432,6 +442,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:contentEncoding` (*type:* `String.t`) - If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType=media to indicate the encoding of the content being uploaded.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -465,6 +476,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :contentEncoding => :query,
       :ifGenerationMatch => :query,
@@ -511,6 +523,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:contentEncoding` (*type:* `String.t`) - If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType=media to indicate the encoding of the content being uploaded.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -559,6 +572,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :contentEncoding => :query,
       :ifGenerationMatch => :query,
@@ -605,6 +619,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:contentEncoding` (*type:* `String.t`) - If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType=media to indicate the encoding of the content being uploaded.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -646,6 +661,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :contentEncoding => :query,
       :ifGenerationMatch => :query,
@@ -693,6 +709,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:contentEncoding` (*type:* `String.t`) - If set, sets the contentEncoding property of the final object to this value. Setting this parameter is equivalent to setting the contentEncoding metadata property. This can be useful when uploading an object with uploadType=media to indicate the encoding of the content being uploaded.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -741,6 +758,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :contentEncoding => :query,
       :ifGenerationMatch => :query,
@@ -786,6 +804,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:delimiter` (*type:* `String.t`) - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
       *   `:endOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
@@ -818,6 +837,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :delimiter => :query,
       :endOffset => :query,
@@ -861,6 +881,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -892,6 +913,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :ifGenerationMatch => :query,
@@ -937,6 +959,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:destinationKmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
@@ -991,6 +1014,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :destinationKmsKeyName => :query,
       :destinationPredefinedAcl => :query,
@@ -1046,6 +1070,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -1083,6 +1108,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -1121,6 +1147,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
@@ -1159,6 +1186,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :provisionalUserProject => :query,
@@ -1196,6 +1224,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -1227,6 +1256,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :generation => :query,
       :ifGenerationMatch => :query,
@@ -1269,6 +1299,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:delimiter` (*type:* `String.t`) - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
       *   `:endOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
@@ -1302,6 +1333,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :uploadType => :query,
       :userIp => :query,
       :delimiter => :query,
       :endOffset => :query,
