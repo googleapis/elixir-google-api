@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Notebooks.V1.Model.ResetRuntimeRequest do
   @moduledoc """
-  Request for reseting a Managed Notebook Runtime.
+  Request for resetting a Managed Notebook Runtime.
 
   ## Attributes
 

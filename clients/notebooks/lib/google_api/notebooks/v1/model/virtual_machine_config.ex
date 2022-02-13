@@ -32,6 +32,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. The Compute Engine metadata entries to add to virtual machine. (see [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork. If neither `network` nor `subnet` is specified, the "default" network of the project is used, if it exists. A full URL or partial URI. Examples: * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default` * `projects/[project_id]/regions/global/default` Runtimes are managed resources inside Google Infrastructure. Runtimes support the following network configurations: * Google Managed Network (Network & subnet are empty) * Consumer Project VPC (network & subnet are required). Requires configuring Private Service Access. * Shared VPC (network & subnet are required). Requires configuring Private Service Access.
   *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+  *   `reservedIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. Reserved IP Range name is used for VPC Peering. The subnetwork allocation will use the range *name* if it's assigned. Example: managed-notebooks-range-c PEERING_RANGE_NAME_3=managed-notebooks-range-c gcloud compute addresses create $PEERING_RANGE_NAME_3 \\ --global \\ --prefix-length=24 \\ --description="Google Cloud Managed Notebooks Range 24 c" \\ --network=$NETWORK \\ --addresses=192.168.0.0 \\ --purpose=VPC_PEERING Field value will be: `managed-notebooks-range-c`
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded VM Instance configuration settings.
   *   `subnet` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network. A full URL or partial URI are valid. Examples: * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0` * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
@@ -52,6 +53,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
           :metadata => map() | nil,
           :network => String.t() | nil,
           :nicType => String.t() | nil,
+          :reservedIpRange => String.t() | nil,
           :shieldedInstanceConfig =>
             GoogleApi.Notebooks.V1.Model.RuntimeShieldedInstanceConfig.t() | nil,
           :subnet => String.t() | nil,
@@ -70,6 +72,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
   field(:metadata, type: :map)
   field(:network)
   field(:nicType)
+  field(:reservedIpRange)
   field(:shieldedInstanceConfig, as: GoogleApi.Notebooks.V1.Model.RuntimeShieldedInstanceConfig)
   field(:subnet)
   field(:tags, type: :list)

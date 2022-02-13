@@ -21,6 +21,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Event do
 
   ## Attributes
 
+  *   `details` (*type:* `map()`, *default:* `nil`) - Optional. Event details. This field is used to pass event information.
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Event report time.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Event type.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Notebooks.V1.Model.Event do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :details => map() | nil,
           :reportTime => DateTime.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:details, type: :map)
   field(:reportTime, as: DateTime)
   field(:type)
 end

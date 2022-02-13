@@ -35,6 +35,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata to apply to this instance.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded VM configuration. [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
   *   `diskEncryption` (*type:* `String.t`, *default:* `nil`) - Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+  *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of entity that sent original CreateInstance request.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this instance.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the VPC that this instance is in. Format: `projects/{project_id}/global/networks/{network_id}`
@@ -75,6 +76,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
           :shieldedInstanceConfig =>
             GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig.t() | nil,
           :diskEncryption => String.t() | nil,
+          :creator => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
           :network => String.t() | nil,
@@ -111,6 +113,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
   field(:metadata, type: :map)
   field(:shieldedInstanceConfig, as: GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig)
   field(:diskEncryption)
+  field(:creator)
   field(:name)
   field(:state)
   field(:network)
