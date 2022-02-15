@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OmidAssignedTargetingOptionDetails do
 
   ## Attributes
 
-  *   `omid` (*type:* `String.t`, *default:* `nil`) - Output only. The type of Open Measurement enabled inventory.
+  *   `omid` (*type:* `String.t`, *default:* `nil`) - The type of Open Measurement enabled inventory. Output only in v1. Required in v2.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_OMID`.
   """
 
