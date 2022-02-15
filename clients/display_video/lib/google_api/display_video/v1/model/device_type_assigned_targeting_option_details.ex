@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DeviceTypeAssignedTargetingOptionDetai
 
   ## Attributes
 
-  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the device type.
+  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The display name of the device type. Output only in v1. Required in v2.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the device type.
   """
 
