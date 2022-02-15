@@ -21,22 +21,31 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CreativeRequirements do
 
   ## Attributes
 
+  *   `creativeFormat` (*type:* `String.t`, *default:* `nil`) - Output only. The format of the creative, only applicable for programmatic guaranteed and preferred deals.
   *   `creativePreApprovalPolicy` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the creative pre-approval policy.
   *   `creativeSafeFrameCompatibility` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies whether the creative is safeFrame compatible.
+  *   `maxAdDurationMs` (*type:* `String.t`, *default:* `nil`) - Output only. The max duration of the video creative in milliseconds. only applicable for deals with video creatives.
   *   `programmaticCreativeSource` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the creative source for programmatic deals. PUBLISHER means creative is provided by seller and ADVERTISER means creative is provided by the buyer.
+  *   `skippableAdType` (*type:* `String.t`, *default:* `nil`) - Output only. Skippable video ads allow viewers to skip ads after 5 seconds. Only applicable for deals with video creatives.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :creativeFormat => String.t() | nil,
           :creativePreApprovalPolicy => String.t() | nil,
           :creativeSafeFrameCompatibility => String.t() | nil,
-          :programmaticCreativeSource => String.t() | nil
+          :maxAdDurationMs => String.t() | nil,
+          :programmaticCreativeSource => String.t() | nil,
+          :skippableAdType => String.t() | nil
         }
 
+  field(:creativeFormat)
   field(:creativePreApprovalPolicy)
   field(:creativeSafeFrameCompatibility)
+  field(:maxAdDurationMs)
   field(:programmaticCreativeSource)
+  field(:skippableAdType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CreativeRequirements do
