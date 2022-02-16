@@ -28,7 +28,6 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
   *   `gatewayAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  *   `internalIpv6Prefix` (*type:* `String.t`, *default:* `nil`) - [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this is for general VM to VM communication, not to be confused with the ipv6_cidr_range field.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
   *   `ipv6AccessType` (*type:* `String.t`, *default:* `nil`) - The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
   *   `ipv6CidrRange` (*type:* `String.t`, *default:* `nil`) - [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
@@ -57,7 +56,6 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
           :fingerprint => String.t() | nil,
           :gatewayAddress => String.t() | nil,
           :id => String.t() | nil,
-          :internalIpv6Prefix => String.t() | nil,
           :ipCidrRange => String.t() | nil,
           :ipv6AccessType => String.t() | nil,
           :ipv6CidrRange => String.t() | nil,
@@ -84,7 +82,6 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   field(:fingerprint)
   field(:gatewayAddress)
   field(:id)
-  field(:internalIpv6Prefix)
   field(:ipCidrRange)
   field(:ipv6AccessType)
   field(:ipv6CidrRange)

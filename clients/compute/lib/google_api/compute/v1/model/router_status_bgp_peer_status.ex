@@ -29,7 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   *   `numLearnedRoutes` (*type:* `integer()`, *default:* `nil`) - Number of routes learned from the remote BGP Peer.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the remote BGP interface.
   *   `routerApplianceInstance` (*type:* `String.t`, *default:* `nil`) - [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the BGP session. For a list of possible values for this field, see BGP session states.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - BGP state as specified in RFC1771.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the BGP peer: {UP, DOWN}
   *   `uptime` (*type:* `String.t`, *default:* `nil`) - Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
   *   `uptimeSeconds` (*type:* `String.t`, *default:* `nil`) - Time this session has been up, in seconds. Format: 145
