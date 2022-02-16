@@ -24,7 +24,6 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `advancedMachineFeatures` (*type:* `GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Controls for advanced machine-related behavior features.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
   *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
-  *   `params` (*type:* `GoogleApi.Compute.V1.Model.InstanceParams.t`, *default:* `nil`) - Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
   *   `lastSuspendedTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Last suspended timestamp in RFC3339 text format.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
@@ -72,7 +71,6 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
             GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t() | nil,
           :machineType => String.t() | nil,
           :tags => GoogleApi.Compute.V1.Model.Tags.t() | nil,
-          :params => GoogleApi.Compute.V1.Model.InstanceParams.t() | nil,
           :lastSuspendedTimestamp => String.t() | nil,
           :statusMessage => String.t() | nil,
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()) | nil,
@@ -120,7 +118,6 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:advancedMachineFeatures, as: GoogleApi.Compute.V1.Model.AdvancedMachineFeatures)
   field(:machineType)
   field(:tags, as: GoogleApi.Compute.V1.Model.Tags)
-  field(:params, as: GoogleApi.Compute.V1.Model.InstanceParams)
   field(:lastSuspendedTimestamp)
   field(:statusMessage)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)

@@ -24,7 +24,6 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
   *   `accessConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.AccessConfig.t)`, *default:* `nil`) - An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
   *   `aliasIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.AliasIpRange.t)`, *default:* `nil`) - An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
-  *   `internalIpv6PrefixLength` (*type:* `integer()`, *default:* `nil`) - The prefix length of the primary internal IPv6 range.
   *   `ipv6AccessConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.AccessConfig.t)`, *default:* `nil`) - An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
   *   `ipv6AccessType` (*type:* `String.t`, *default:* `nil`) - [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
   *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - An IPv6 internal network address for this network interface.
@@ -44,7 +43,6 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
           :accessConfigs => list(GoogleApi.Compute.V1.Model.AccessConfig.t()) | nil,
           :aliasIpRanges => list(GoogleApi.Compute.V1.Model.AliasIpRange.t()) | nil,
           :fingerprint => String.t() | nil,
-          :internalIpv6PrefixLength => integer() | nil,
           :ipv6AccessConfigs => list(GoogleApi.Compute.V1.Model.AccessConfig.t()) | nil,
           :ipv6AccessType => String.t() | nil,
           :ipv6Address => String.t() | nil,
@@ -61,7 +59,6 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
   field(:accessConfigs, as: GoogleApi.Compute.V1.Model.AccessConfig, type: :list)
   field(:aliasIpRanges, as: GoogleApi.Compute.V1.Model.AliasIpRange, type: :list)
   field(:fingerprint)
-  field(:internalIpv6PrefixLength)
   field(:ipv6AccessConfigs, as: GoogleApi.Compute.V1.Model.AccessConfig, type: :list)
   field(:ipv6AccessType)
   field(:ipv6Address)

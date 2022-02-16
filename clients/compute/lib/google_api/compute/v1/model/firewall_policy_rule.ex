@@ -31,7 +31,6 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   *   `priority` (*type:* `integer()`, *default:* `nil`) - An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
   *   `ruleTupleCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Calculation of the complexity of a single firewall policy rule.
   *   `targetResources` (*type:* `list(String.t)`, *default:* `nil`) - A list of network resource URLs to which this rule applies. This field allows you to control which network's VMs get this rule. If this field is left blank, all VMs within the organization will receive the rule.
-  *   `targetSecureTags` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t)`, *default:* `nil`) - A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
   *   `targetServiceAccounts` (*type:* `list(String.t)`, *default:* `nil`) - A list of service accounts indicating the sets of instances that are applied with this rule.
   """
 
@@ -48,8 +47,6 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
           :priority => integer() | nil,
           :ruleTupleCount => integer() | nil,
           :targetResources => list(String.t()) | nil,
-          :targetSecureTags =>
-            list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t()) | nil,
           :targetServiceAccounts => list(String.t()) | nil
         }
 
@@ -63,9 +60,6 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   field(:priority)
   field(:ruleTupleCount)
   field(:targetResources, type: :list)
-
-  field(:targetSecureTags, as: GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag, type: :list)
-
   field(:targetServiceAccounts, type: :list)
 end
 
