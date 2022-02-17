@@ -24,6 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
   *   `cvssv3` (*type:* `GoogleApi.SecurityCenter.V1.Model.Cvssv3.t`, *default:* `nil`) - Describe Common Vulnerability Scoring System specified at https://www.first.org/cvss/v3.1/specification-document
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the vulnerability. e.g. CVE-2021-34527
   *   `references` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Reference.t)`, *default:* `nil`) - Additional information about the CVE. e.g. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527
+  *   `upstreamFixAvailable` (*type:* `boolean()`, *default:* `nil`) - Whether upstream fix is available for the CVE.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
   @type t :: %__MODULE__{
           :cvssv3 => GoogleApi.SecurityCenter.V1.Model.Cvssv3.t() | nil,
           :id => String.t() | nil,
-          :references => list(GoogleApi.SecurityCenter.V1.Model.Reference.t()) | nil
+          :references => list(GoogleApi.SecurityCenter.V1.Model.Reference.t()) | nil,
+          :upstreamFixAvailable => boolean() | nil
         }
 
   field(:cvssv3, as: GoogleApi.SecurityCenter.V1.Model.Cvssv3)
   field(:id)
   field(:references, as: GoogleApi.SecurityCenter.V1.Model.Reference, type: :list)
+  field(:upstreamFixAvailable)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Cve do
