@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Documentation do
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller. This text can be templatized by using variables (https://cloud.google.com/monitoring/alerts/doc-variables).
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The format of the content field. Presently, only the value "text/markdown" is supported. See Markdown (https://en.wikipedia.org/wiki/Markdown) for more information.
   """
 
