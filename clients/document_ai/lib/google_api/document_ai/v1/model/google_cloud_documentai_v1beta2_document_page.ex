@@ -31,6 +31,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
   *   `paragraphs` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageParagraph.t)`, *default:* `nil`) - A list of visually detected text paragraphs on the page. A collection of lines that a human would perceive as a paragraph.
   *   `provenance` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentProvenance.t`, *default:* `nil`) - The history of this page.
+  *   `symbols` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageSymbol.t)`, *default:* `nil`) - A list of visually detected symbols on the page.
   *   `tables` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageTable.t)`, *default:* `nil`) - A list of visually detected tables on the page.
   *   `tokens` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageToken.t)`, *default:* `nil`) - A list of visually detected tokens on the page.
   *   `transforms` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageMatrix.t)`, *default:* `nil`) - Transformation matrices that were applied to the original document image to produce Page.image.
@@ -71,6 +72,9 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
             | nil,
           :provenance =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentProvenance.t() | nil,
+          :symbols =>
+            list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageSymbol.t())
+            | nil,
           :tables =>
             list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageTable.t())
             | nil,
@@ -123,6 +127,11 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
 
   field(:provenance,
     as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentProvenance
+  )
+
+  field(:symbols,
+    as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageSymbol,
+    type: :list
   )
 
   field(:tables,
