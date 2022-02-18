@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MemInfo do
   ## Attributes
 
   *   `currentLimitBytes` (*type:* `String.t`, *default:* `nil`) - Instantenous memory limit in bytes.
+  *   `currentOoms` (*type:* `String.t`, *default:* `nil`) - Number of Out of Memory (OOM) events recorded since the previous measurement.
   *   `currentRssBytes` (*type:* `String.t`, *default:* `nil`) - Instantenous memory (RSS) size in bytes.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the measurement.
   *   `totalGbMs` (*type:* `String.t`, *default:* `nil`) - Total memory (RSS) usage since start up in GB * ms.
@@ -31,12 +32,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MemInfo do
 
   @type t :: %__MODULE__{
           :currentLimitBytes => String.t() | nil,
+          :currentOoms => String.t() | nil,
           :currentRssBytes => String.t() | nil,
           :timestamp => DateTime.t() | nil,
           :totalGbMs => String.t() | nil
         }
 
   field(:currentLimitBytes)
+  field(:currentOoms)
   field(:currentRssBytes)
   field(:timestamp, as: DateTime)
   field(:totalGbMs)
