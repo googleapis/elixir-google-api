@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Contains the content of the text span so that users do not have to look it up in the text_segments.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Contains the content of the text span so that users do not have to look it up in the text_segments. It is always populated for formFields.
   *   `textSegments` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchorTextSegment.t)`, *default:* `nil`) - The text segments from the Document.text.
   """
 
