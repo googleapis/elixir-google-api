@@ -1081,7 +1081,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Gets a single metric descriptor. This method does not require a Workspace.
+  Gets a single metric descriptor.
 
   ## Parameters
 
@@ -1156,7 +1156,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists metric descriptors that match a filter. This method does not require a Workspace.
+  Lists metric descriptors that match a filter.
 
   ## Parameters
 
@@ -1234,7 +1234,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Gets a single monitored resource descriptor. This method does not require a Workspace.
+  Gets a single monitored resource descriptor.
 
   ## Parameters
 
@@ -1314,7 +1314,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
+  Lists monitored resource descriptors that match a filter.
 
   ## Parameters
 
@@ -2322,7 +2322,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists time series that match a filter. This method does not require a Workspace.
+  Lists time series that match a filter.
 
   ## Parameters
 
@@ -2417,7 +2417,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Queries time series using Monitoring Query Language. This method does not require a Workspace.
+  Queries time series using Monitoring Query Language.
 
   ## Parameters
 

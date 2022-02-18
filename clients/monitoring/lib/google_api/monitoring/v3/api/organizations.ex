@@ -26,7 +26,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists time series that match a filter. This method does not require a Workspace.
+  Lists time series that match a filter.
 
   ## Parameters
 
