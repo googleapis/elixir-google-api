@@ -344,7 +344,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:capacityCommitmentId` (*type:* `String.t`) - The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split or merged.
+      *   `:capacityCommitmentId` (*type:* `String.t`) - The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dashes. The first and last character cannot be a dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split or merged.
       *   `:enforceSingleAdminProjectPerOrg` (*type:* `boolean()`) - If true, fail the request if another project in the organization has a capacity commitment.
       *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -703,7 +703,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123`
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123` For the commitment id, it must only contain lower case alphanumeric characters or dashes.It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -866,7 +866,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:reservationId` (*type:* `String.t`) - The reservation ID. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters.
+      *   `:reservationId` (*type:* `String.t`) - The reservation ID. It must only contain lower case alphanumeric characters or dashes.It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
       *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Reservation.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1143,7 +1143,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`.
+  *   `name` (*type:* `String.t`) - The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. For the reservation id, it must only contain lower case alphanumeric characters or dashes.It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1230,7 +1230,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:assignmentId` (*type:* `String.t`) - The optional assignment ID. Assignment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters.
+      *   `:assignmentId` (*type:* `String.t`) - The optional assignment ID. Assignment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dashes. Max length is 64 characters.
       *   `:body` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Assignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
