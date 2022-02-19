@@ -25,7 +25,7 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
   *   `enableHealthMonitoring` (*type:* `boolean()`, *default:* `nil`) - Verifies core internal services are running. Default: True
   *   `idleShutdown` (*type:* `boolean()`, *default:* `nil`) - Runtime will automatically shutdown after idle_shutdown_time. Default: True
   *   `idleShutdownTimeout` (*type:* `integer()`, *default:* `nil`) - Time in minutes to wait before shutting down runtime. Default: 180 minutes
-  *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Install Nvidia Driver automatically.
+  *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Install Nvidia Driver automatically. Default: True
   *   `kernels` (*type:* `list(GoogleApi.Notebooks.V1.Model.ContainerImage.t)`, *default:* `nil`) - Optional. Use a list of container images to use as Kernels in the notebook instance.
   *   `notebookUpgradeSchedule` (*type:* `String.t`, *default:* `nil`) - Cron expression in UTC timezone, used to schedule instance auto upgrade. Please follow the [cron format](https://en.wikipedia.org/wiki/Cron).
   *   `postStartupScript` (*type:* `String.t`, *default:* `nil`) - Path to a Bash script that automatically runs after a notebook instance fully boots up. The path must be a URL or Cloud Storage path (`gs://path-to-file/file-name`).

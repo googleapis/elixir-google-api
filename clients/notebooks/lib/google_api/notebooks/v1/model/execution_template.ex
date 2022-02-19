@@ -34,6 +34,7 @@ defmodule GoogleApi.Notebooks.V1.Model.ExecutionTemplate do
   *   `paramsYamlFile` (*type:* `String.t`, *default:* `nil`) - Parameters to be overridden in the notebook during execution. Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on how to specifying parameters in the input notebook and pass them here in an YAML file. Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Scale tier of the hardware used for notebook execution. DEPRECATED Will be discontinued. As right now only CUSTOM is supported.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The email address of a service account to use when running the execution. You must have the `iam.serviceAccounts.actAs` permission for the specified service account.
+  *   `tensorboard` (*type:* `String.t`, *default:* `nil`) - The name of a Vertex AI [Tensorboard] resource to which this execution will upload Tensorboard logs. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
   *   `vertexAiParameters` (*type:* `GoogleApi.Notebooks.V1.Model.VertexAIParameters.t`, *default:* `nil`) - Parameters used in Vertex AI JobType executions.
   """
 
@@ -53,6 +54,7 @@ defmodule GoogleApi.Notebooks.V1.Model.ExecutionTemplate do
           :paramsYamlFile => String.t() | nil,
           :scaleTier => String.t() | nil,
           :serviceAccount => String.t() | nil,
+          :tensorboard => String.t() | nil,
           :vertexAiParameters => GoogleApi.Notebooks.V1.Model.VertexAIParameters.t() | nil
         }
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.Notebooks.V1.Model.ExecutionTemplate do
   field(:paramsYamlFile)
   field(:scaleTier)
   field(:serviceAccount)
+  field(:tensorboard)
   field(:vertexAiParameters, as: GoogleApi.Notebooks.V1.Model.VertexAIParameters)
 end
 
