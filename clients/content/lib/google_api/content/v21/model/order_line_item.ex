@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItem do
   *   `cancellations` (*type:* `list(GoogleApi.Content.V21.Model.OrderCancellation.t)`, *default:* `nil`) - Cancellations of the line item.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the line item.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Total price for the line item. For example, if two items for $10 are purchased, the total price will be $20.
-  *   `product` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data as seen by customer from the time of the order placement. Note that certain attributes values (e.g. title or gtin) might be reformatted and no longer match values submitted via product feed.
+  *   `product` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data as seen by customer from the time of the order placement. Note that certain attributes values (for example, title or gtin) might be reformatted and no longer match values submitted through product feed.
   *   `quantityCanceled` (*type:* `integer()`, *default:* `nil`) - Number of items canceled.
   *   `quantityDelivered` (*type:* `integer()`, *default:* `nil`) - Number of items delivered.
   *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Number of items ordered.

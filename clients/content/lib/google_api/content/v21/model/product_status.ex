@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.ProductStatus do
   @moduledoc """
-  The status of a product, i.e., information about a product computed asynchronously.
+  The status of a product, that is, information about a product computed asynchronously.
 
   ## Attributes
 

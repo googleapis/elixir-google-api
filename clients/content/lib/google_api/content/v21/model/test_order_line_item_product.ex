@@ -31,7 +31,7 @@ defmodule GoogleApi.Content.V21.Model.TestOrderLineItemProduct do
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item. Optional.
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. An identifier of the item.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Required. The price for the product. Tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory // code of the target country of the product.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code of the target country of the product.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the product.
   *   `variantAttributes` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductVariantAttribute.t)`, *default:* `nil`) - Variant attributes for the item. Optional.
   """

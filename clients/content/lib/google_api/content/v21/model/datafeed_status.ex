@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
   @moduledoc """
-  The status of a datafeed, i.e., the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished.
+  The status of a datafeed, that is, the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished.
 
   ## Attributes
 

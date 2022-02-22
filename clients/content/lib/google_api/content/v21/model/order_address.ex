@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V21.Model.OrderAddress do
 
   ## Attributes
 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (for example, "US").
   *   `fullAddress` (*type:* `list(String.t)`, *default:* `nil`) - Strings representing the lines of the printed label for mailing the order, for example: John Smith 1600 Amphitheatre Parkway Mountain View, CA, 94043 United States 
   *   `isPostOfficeBox` (*type:* `boolean()`, *default:* `nil`) - Whether the address is a post office box.
-  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal Code or ZIP (e.g. "94043").
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal Code or ZIP (for example, "94043").
   *   `recipientName` (*type:* `String.t`, *default:* `nil`) - Name of the recipient.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
   *   `streetAddress` (*type:* `list(String.t)`, *default:* `nil`) - Street-level part of the address.

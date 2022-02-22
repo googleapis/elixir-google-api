@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.AccountTaxTaxRule do
   @moduledoc """
-  Tax calculation rule to apply in a state or province (USA only).
+  Tax calculation rule to apply in a state or province (US only).
 
   ## Attributes
 

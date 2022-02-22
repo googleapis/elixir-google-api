@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedFetchSchedule do
   *   `minuteOfHour` (*type:* `integer()`, *default:* `nil`) - The minute of the hour the feed file should be fetched (0-59). Read-only.
   *   `password` (*type:* `String.t`, *default:* `nil`) - An optional password for fetch_url.
   *   `paused` (*type:* `boolean()`, *default:* `nil`) - Whether the scheduled fetch is paused or not.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Time zone used for schedule. UTC by default. E.g., "America/Los_Angeles".
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Time zone used for schedule. UTC by default. For example, "America/Los_Angeles".
   *   `username` (*type:* `String.t`, *default:* `nil`) - An optional user name for fetch_url.
   *   `weekday` (*type:* `String.t`, *default:* `nil`) - The day of the week the feed file should be fetched. Acceptable values are: - "`monday`" - "`tuesday`" - "`wednesday`" - "`thursday`" - "`friday`" - "`saturday`" - "`sunday`" 
   """

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemIte
 
   ## Attributes
 
-  *   `amount` (*type:* `GoogleApi.Content.V21.Model.MonetaryAmount.t`, *default:* `nil`) - The total amount that is refunded. (e.g. refunding $5 each for 2 products should be done by setting quantity to 2 and amount to 10$) In case of multiple refunds, this should be the amount you currently want to refund to the customer.
-  *   `fullRefund` (*type:* `boolean()`, *default:* `nil`) - If true, the full item will be refunded. If this is true, amount should not be provided and will be ignored.
+  *   `amount` (*type:* `GoogleApi.Content.V21.Model.MonetaryAmount.t`, *default:* `nil`) - The total amount that is refunded. (for example, refunding $5 each for 2 products should be done by setting quantity to 2 and amount to 10$) In case of multiple refunds, this should be the amount you currently want to refund to the customer.
+  *   `fullRefund` (*type:* `boolean()`, *default:* `nil`) - If true, the full item will be refunded. If this is true, amount shouldn't be provided and will be ignored.
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item. Either lineItemId or productId is required.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. This is the REST ID used in the products service. Either lineItemId or productId is required.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The number of products that are refunded.

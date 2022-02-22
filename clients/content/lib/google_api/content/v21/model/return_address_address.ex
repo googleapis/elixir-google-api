@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V21.Model.ReturnAddressAddress do
 
   ## Attributes
 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
-  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (e.g. "94043").
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (for example, "US").
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (for example, "94043").
   *   `recipientName` (*type:* `String.t`, *default:* `nil`) - Name of the recipient to address returns to.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
   *   `streetAddress` (*type:* `list(String.t)`, *default:* `nil`) - Street-level part of the address. May be up to two lines, each line specified as an array element.

@@ -98,7 +98,7 @@ defmodule GoogleApi.Content.V21.Api.Pubsubnotificationsettings do
   end
 
   @doc """
-  Register a Merchant Center account for pubsub notifications. Note that cloud topic name should not be provided as part of the request.
+  Register a Merchant Center account for pubsub notifications. Note that cloud topic name shouldn't be provided as part of the request.
 
   ## Parameters
 

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.MonetaryAmount do
 
   ## Attributes
 
-  *   `priceAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The pre-tax or post-tax price depends on the location of the order. - For countries (e.g. US) where price attribute excludes tax, this field corresponds to the pre-tax value. - For coutries (e.g. France) where price attribute includes tax, this field corresponds to the post-tax value .
-  *   `taxAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Tax value, present only for countries where price attribute excludes tax (e.g. US). No tax is referenced as 0 value with the corresponding `currency`.
+  *   `priceAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The pre-tax or post-tax price depends on the location of the order. - For countries (for example, "US". where price attribute excludes tax, this field corresponds to the pre-tax value. - For coutries (for example, "France") where price attribute includes tax, this field corresponds to the post-tax value .
+  *   `taxAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Tax value, present only for countries where price attribute excludes tax (for example, "US". No tax is referenced as 0 value with the corresponding `currency`.
   """
 
   use GoogleApi.Gax.ModelBase
