@@ -33,14 +33,14 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `productHighlights` (*type:* `list(String.t)`, *default:* `nil`) - Bullet points describing the most relevant highlights of a product.
   *   `productLength` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The length of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
-  *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
+  *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (for example, polka dots).
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
   *   `productHeight` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The height of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
   *   `shippingHeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
   *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - The pick up option for the item. Acceptable values are: - "`buy`" - "`reserve`" - "`ship to store`" - "`not supported`" 
   *   `taxes` (*type:* `list(GoogleApi.Content.V21.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
-  *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., `{ "name": "size type", "value": "regular" }`). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Buy on Google (formerly known as Shopping Actions).
+  *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (for example, `{ "name": "size type", "value": "regular" }`). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Buy on Google (formerly known as Shopping Actions).
   *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
   *   `unitPricingMeasure` (*type:* `GoogleApi.Content.V21.Model.ProductUnitPricingMeasure.t`, *default:* `nil`) - The measure and dimension of an item.
   *   `adsLabels` (*type:* `list(String.t)`, *default:* `nil`) - Similar to ads_grouping, but only works on CPC.
@@ -71,7 +71,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `transitTimeLabel` (*type:* `String.t`, *default:* `nil`) - The transit time label of the product, used to group product in account-level transit time tables.
   *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The cut of the item. Recommended for apparel items.
   *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - URL for the mobile-optimized version of your item's landing page.
-  *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).
+  *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center).
   *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
   *   `taxCategory` (*type:* `String.t`, *default:* `nil`) - The tax category of the product, used to configure detailed tax nexus in account-level tax settings.
   *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see [Google product taxonomy](https://support.google.com/merchants/answer/1705911)). When querying products, this field will contain the user provided value. There is currently no way to get back the auto assigned google product categories through the API.
@@ -109,7 +109,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created. Acceptable values are: - "`api`" - "`crawl`" - "`feed`" 
+  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, that is, how the offer was created. Acceptable values are: - "`api`" - "`crawl`" - "`feed`" 
   """
 
   use GoogleApi.Gax.ModelBase

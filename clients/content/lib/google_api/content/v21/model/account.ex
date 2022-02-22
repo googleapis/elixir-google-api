@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.Account do
   @moduledoc """
-  Account data. After the creation of a new account it may take a few minutes before it is fully operational. The methods delete, insert, and update require the admin role.
+  Account data. After the creation of a new account it may take a few minutes before it's fully operational. The methods delete, insert, and update require the admin role.
 
   ## Attributes
 

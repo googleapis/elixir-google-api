@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.UnitInvoice do
 
   ## Attributes
 
-  *   `additionalCharges` (*type:* `list(GoogleApi.Content.V21.Model.UnitInvoiceAdditionalCharge.t)`, *default:* `nil`) - Additional charges for a unit, e.g. shipping costs.
+  *   `additionalCharges` (*type:* `list(GoogleApi.Content.V21.Model.UnitInvoiceAdditionalCharge.t)`, *default:* `nil`) - Additional charges for a unit, for example, shipping costs.
   *   `unitPrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - [required] Pre-tax or post-tax price of one unit depending on the locality of the order. *Note:* Invoicing works on a per unit basis. The `unitPrice` is the price of a single unit, and will be multiplied by the number of entries in `shipmentUnitId`.
   *   `unitPriceTaxes` (*type:* `list(GoogleApi.Content.V21.Model.UnitInvoiceTaxLine.t)`, *default:* `nil`) - Tax amounts to apply to the unit price.
   """

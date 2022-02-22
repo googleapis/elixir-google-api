@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.RateGroup do
   *   `carrierRates` (*type:* `list(GoogleApi.Content.V21.Model.CarrierRate.t)`, *default:* `nil`) - A list of carrier rates that can be referred to by `mainTable` or `singleValue`.
   *   `mainTable` (*type:* `GoogleApi.Content.V21.Model.Table.t`, *default:* `nil`) - A table defining the rate group, when `singleValue` is not expressive enough. Can only be set if `singleValue` is not set.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the rate group. Optional. If set has to be unique within shipping service.
-  *   `singleValue` (*type:* `GoogleApi.Content.V21.Model.Value.t`, *default:* `nil`) - The value of the rate group (e.g. flat rate $10). Can only be set if `mainTable` and `subtables` are not set.
+  *   `singleValue` (*type:* `GoogleApi.Content.V21.Model.Value.t`, *default:* `nil`) - The value of the rate group (for example, flat rate $10). Can only be set if `mainTable` and `subtables` are not set.
   *   `subtables` (*type:* `list(GoogleApi.Content.V21.Model.Table.t)`, *default:* `nil`) - A list of subtables referred to by `mainTable`. Can only be set if `mainTable` is set.
   """
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.LocationIdSet do
 
   ## Attributes
 
-  *   `locationIds` (*type:* `list(String.t)`, *default:* `nil`) - A non-empty list of location IDs. They must all be of the same location type (e.g., state).
+  *   `locationIds` (*type:* `list(String.t)`, *default:* `nil`) - A non-empty list of location IDs. They must all be of the same location type (for example, state).
   """
 
   use GoogleApi.Gax.ModelBase

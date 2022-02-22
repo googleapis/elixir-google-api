@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V21.Model.AccountAddress do
 
   ## Attributes
 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US"). All MCA sub-accounts inherit the country of their parent MCA by default, however the country can be updated for individual sub-accounts.
-  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (e.g. "94043").
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (for example, "US"). All MCA sub-accounts inherit the country of their parent MCA by default, however the country can be updated for individual sub-accounts.
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (for example, "94043").
   *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
   *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address.
   """

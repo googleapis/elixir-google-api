@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V21.Model.WarehouseBasedDeliveryTime do
 
   ## Attributes
 
-  *   `carrier` (*type:* `String.t`, *default:* `nil`) - Required. Carrier, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved via the `listSupportedCarriers` method.
-  *   `carrierService` (*type:* `String.t`, *default:* `nil`) - Required. Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved via the `listSupportedCarriers` method. The name of the service must be in the eddSupportedServices list.
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - Required. Carrier, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved through the `listSupportedCarriers` method.
+  *   `carrierService` (*type:* `String.t`, *default:* `nil`) - Required. Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved through the `listSupportedCarriers` method. The name of the service must be in the eddSupportedServices list.
   *   `originAdministrativeArea` (*type:* `String.t`, *default:* `nil`) - Shipping origin's state.
   *   `originCity` (*type:* `String.t`, *default:* `nil`) - Shipping origin's city.
-  *   `originCountry` (*type:* `String.t`, *default:* `nil`) - Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml).
+  *   `originCountry` (*type:* `String.t`, *default:* `nil`) - Shipping origin's country represented as a [CLDR territory code](https://github.com/unicode-org/cldr/blob/latest/common/main/en.xml).
   *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - Shipping origin.
   *   `originStreetAddress` (*type:* `String.t`, *default:* `nil`) - Shipping origin's street address.
   *   `warehouseName` (*type:* `String.t`, *default:* `nil`) - The name of the warehouse. Warehouse name need to be matched with name. If warehouseName is set, the below fields will be ignored. The warehouse info will be read from warehouse.

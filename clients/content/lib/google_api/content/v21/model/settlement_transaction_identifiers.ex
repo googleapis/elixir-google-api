@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers do
 
   ## Attributes
 
-  *   `adjustmentId` (*type:* `String.t`, *default:* `nil`) - The identifier of the adjustments, if it is available.
+  *   `adjustmentId` (*type:* `String.t`, *default:* `nil`) - The identifier of the adjustments, if it's available.
   *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - The merchant provided order ID.
   *   `orderItemId` (*type:* `String.t`, *default:* `nil`) - The identifier of the item.
   *   `settlementEntryId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the settlement transaction entry.

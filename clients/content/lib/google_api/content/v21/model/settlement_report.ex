@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementReport do
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - The start date on which all transactions are included in the report, in ISO 8601 format.
   *   `transferAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The money due to the merchant.
   *   `transferDate` (*type:* `String.t`, *default:* `nil`) - Date on which transfer for this payment was initiated by Google, in ISO 8601 format.
-  *   `transferIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of bank identifiers used for the transfer. e.g. Trace ID for Federal Automated Clearing House (ACH). This may also be known as the Wire ID.
+  *   `transferIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of bank identifiers used for the transfer. For example, Trace ID for Federal Automated Clearing House (ACH). This may also be known as the Wire ID.
   """
 
   use GoogleApi.Gax.ModelBase

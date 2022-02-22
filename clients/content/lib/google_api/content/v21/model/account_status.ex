@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.AccountStatus do
   @moduledoc """
-  The status of an account, i.e., information about its products, which is computed offline and not returned immediately at insertion time.
+  The status of an account, that is, information about its products, which is computed offline and not returned immediately at insertion time.
 
   ## Attributes
 

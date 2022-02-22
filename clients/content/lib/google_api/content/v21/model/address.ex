@@ -22,9 +22,9 @@ defmodule GoogleApi.Content.V21.Model.Address do
   ## Attributes
 
   *   `administrativeArea` (*type:* `String.t`, *default:* `nil`) - Required. Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
-  *   `city` (*type:* `String.t`, *default:* `nil`) - Required. City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
-  *   `country` (*type:* `String.t`, *default:* `nil`) - Required. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) (e.g. "US").
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Required. Postal code or ZIP (e.g. "94043").
+  *   `city` (*type:* `String.t`, *default:* `nil`) - Required. City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Required. [CLDR country code](https://github.com/unicode-org/cldr/blob/latest/common/main/en.xml) (for example, "US").
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Required. Postal code or ZIP (for example, "94043").
   *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address.
   """
 

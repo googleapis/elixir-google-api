@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.CarrierRate do
 
   ## Attributes
 
-  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - Carrier service, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved via the `getSupportedCarriers` method. Required.
-  *   `carrierService` (*type:* `String.t`, *default:* `nil`) - Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved via the `getSupportedCarriers` method. Required.
+  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - Carrier service, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved through the `getSupportedCarriers` method. Required.
+  *   `carrierService` (*type:* `String.t`, *default:* `nil`) - Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved through the `getSupportedCarriers` method. Required.
   *   `flatAdjustment` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Additive shipping rate modifier. Can be negative. For example `{ "value": "1", "currency" : "USD" }` adds $1 to the rate, `{ "value": "-3", "currency" : "USD" }` removes $3 from the rate. Optional.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the carrier rate. Must be unique per rate group. Required.
   *   `originPostalCode` (*type:* `String.t`, *default:* `nil`) - Shipping origin for this carrier rate. Required.
