@@ -350,7 +350,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of datasources to fetch in a request. The max value is 100. The default value is 10
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of datasources to fetch in a request. The max value is 1000. The default value is 1000.
       *   `:pageToken` (*type:* `String.t`) - Starting index of the results.
   *   `opts` (*type:* `keyword()`) - Call options
 

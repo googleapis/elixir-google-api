@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   ## Attributes
 
   *   `avatarInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.AvatarInfo.t`, *default:* `nil`) - 
+  *   `avatarUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `description` (*type:* `String.t`, *default:* `nil`) - 
   *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupId.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
@@ -33,6 +34,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
 
   @type t :: %__MODULE__{
           :avatarInfo => GoogleApi.CloudSearch.V1.Model.AvatarInfo.t() | nil,
+          :avatarUrl => String.t() | nil,
           :description => String.t() | nil,
           :groupId => GoogleApi.CloudSearch.V1.Model.GroupId.t() | nil,
           :name => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
         }
 
   field(:avatarInfo, as: GoogleApi.CloudSearch.V1.Model.AvatarInfo)
+  field(:avatarUrl)
   field(:description)
   field(:groupId, as: GoogleApi.CloudSearch.V1.Model.GroupId)
   field(:name)
