@@ -26,7 +26,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Re
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
-  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of project that the resource belongs to.
+  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The project id that the resource belongs to.
   """
 
   use GoogleApi.Gax.ModelBase

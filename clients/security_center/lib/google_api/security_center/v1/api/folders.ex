@@ -252,6 +252,394 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Folders do
   end
 
   @doc """
+  Creates a big query export.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `folders_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new big query export's parent. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:bigQueryExportId` (*type:* `String.t`) - Required. Unique identifier provided by the client within the parent scope. It must consist of lower case letters, numbers, and hyphen, with the first character a letter, the last a letter or a number, and a 63 character maximum.
+      *   `:body` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_folders_big_query_exports_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_folders_big_query_exports_create(
+        connection,
+        folders_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :bigQueryExportId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/folders/{foldersId}/bigQueryExports", %{
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}]
+    )
+  end
+
+  @doc """
+  Deletes an existing big query export.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. Name of the big query export to delete. Its format is organizations/{organization}/bigQueryExports/{export_id}, folders/{folder}/bigQueryExports/{export_id}, or projects/{project}/bigQueryExports/{export_id}
+  *   `big_query_exports_id` (*type:* `String.t`) - Part of `name`. See documentation of `foldersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_folders_big_query_exports_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_folders_big_query_exports_delete(
+        connection,
+        folders_id,
+        big_query_exports_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/folders/{foldersId}/bigQueryExports/{bigQueryExportsId}", %{
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
+        "bigQueryExportsId" =>
+          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.SecurityCenter.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets a big query export.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. Name of the big query export to retrieve. Its format is organizations/{organization}/bigQueryExports/{export_id}, folders/{folder}/bigQueryExports/{export_id}, or projects/{project}/bigQueryExports/{export_id}
+  *   `big_query_exports_id` (*type:* `String.t`) - Part of `name`. See documentation of `foldersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_folders_big_query_exports_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_folders_big_query_exports_get(
+        connection,
+        folders_id,
+        big_query_exports_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/folders/{foldersId}/bigQueryExports/{bigQueryExportsId}", %{
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
+        "bigQueryExportsId" =>
+          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}]
+    )
+  end
+
+  @doc """
+  Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports under that level are also returned e.g. if requesting BigQuery exports under a folder, then all BigQuery exports immediately under the folder plus the ones created under the projects within the folder are returned.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `folders_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns the collection of BigQuery exports. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 10 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListBigQueryExports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBigQueryExports` must match the call that provided the page token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.ListBigQueryExportsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_folders_big_query_exports_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.ListBigQueryExportsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_folders_big_query_exports_list(
+        connection,
+        folders_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/folders/{foldersId}/bigQueryExports", %{
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SecurityCenter.V1.Model.ListBigQueryExportsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a BigQuery export.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `folders_id` (*type:* `String.t`) - Part of `bigQueryExport.name`. The relative resource name of this export. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name. Example format: "organizations/{organization_id}/bigQueryExports/{export_id}" Example format: "folders/{folder_id}/bigQueryExports/{export_id}" Example format: "projects/{project_id}/bigQueryExports/{export_id}" This field is provided in responses, and is ignored when provided in create requests.
+  *   `big_query_exports_id` (*type:* `String.t`) - Part of `bigQueryExport.name`. See documentation of `foldersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If empty all mutable fields will be updated.
+      *   `:body` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_folders_big_query_exports_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_folders_big_query_exports_patch(
+        connection,
+        folders_id,
+        big_query_exports_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/folders/{foldersId}/bigQueryExports/{bigQueryExportsId}", %{
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
+        "bigQueryExportsId" =>
+          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1BigQueryExport{}]
+    )
+  end
+
+  @doc """
   Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either an organization, folder or project. The findings matched by the filter will be muted after the LRO is done.
 
   ## Parameters
