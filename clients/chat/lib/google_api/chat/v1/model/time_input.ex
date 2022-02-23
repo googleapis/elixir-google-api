@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.TimeInput do
   @moduledoc """
-  Input Parameter for Time Picker widget.
+  Time input values. Not supported by Chat apps.
 
   ## Attributes
 
-  *   `hours` (*type:* `integer()`, *default:* `nil`) - 
-  *   `minutes` (*type:* `integer()`, *default:* `nil`) - 
+  *   `hours` (*type:* `integer()`, *default:* `nil`) - The hour on a 24-hour clock.
+  *   `minutes` (*type:* `integer()`, *default:* `nil`) - The number of minutes past the hour. Valid values are 0 to 59.
   """
 
   use GoogleApi.Gax.ModelBase

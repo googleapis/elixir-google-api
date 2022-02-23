@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Suggestions do
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SuggestionItem.t)`, *default:* `nil`) - A list of suggestions items which will be used in are used in autocomplete.
+  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SuggestionItem.t)`, *default:* `nil`) - A list of suggestions used for autocomplete recommendations.
   """
 
   use GoogleApi.Gax.ModelBase

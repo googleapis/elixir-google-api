@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.ActionResponse do
 
   ## Attributes
 
-  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - This response is for Dialog related events and must be accompanied by ResponseType.Dialog
+  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - A response to an event related to a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs). Must be accompanied by `ResponseType.Dialog`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of bot response.
   *   `url` (*type:* `String.t`, *default:* `nil`) - URL for users to auth or config. (Only for REQUEST_CONFIG response types.)
   """

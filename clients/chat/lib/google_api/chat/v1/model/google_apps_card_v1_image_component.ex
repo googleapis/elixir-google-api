@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent do
   @moduledoc """
-
+  Represents an image.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList do
 
   ## Attributes
 
-  *   `buttons` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button.t)`, *default:* `nil`) - 
+  *   `buttons` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button.t)`, *default:* `nil`) - An array of buttons.
   """
 
   use GoogleApi.Gax.ModelBase

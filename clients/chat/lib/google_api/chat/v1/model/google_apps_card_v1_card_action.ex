@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardAction do
   ## Attributes
 
   *   `actionLabel` (*type:* `String.t`, *default:* `nil`) - The label that displays as the action menu item.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The onclick action for this action item.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The `onClick` action for this action item.
   """
 
   use GoogleApi.Gax.ModelBase

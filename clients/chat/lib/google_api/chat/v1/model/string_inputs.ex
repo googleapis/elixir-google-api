@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.StringInputs do
   @moduledoc """
-  Input parameter for regular widgets. For single-valued widgets, it will be a single value list; for multi-valued widgets, such as checkbox, all the values are presented.
+  Input parameter for regular widgets. For single-valued widgets, it is a single value list. For multi-valued widgets, such as checkbox, all the values are presented.
 
   ## Attributes
 
-  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - An array of strings entered by the user.
   """
 
   use GoogleApi.Gax.ModelBase

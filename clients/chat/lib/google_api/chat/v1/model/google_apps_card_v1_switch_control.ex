@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl do
   @moduledoc """
-
+  Either a toggle-style switch or a checkbox.
 
   ## Attributes
 
   *   `controlType` (*type:* `String.t`, *default:* `nil`) - The control type, either switch or checkbox.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the switch widget that's used in formInput.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the switch widget that's used in `formInput`.
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The action when the switch state is changed.
   *   `selected` (*type:* `boolean()`, *default:* `nil`) - If the switch is selected.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value is what is passed back in the callback.

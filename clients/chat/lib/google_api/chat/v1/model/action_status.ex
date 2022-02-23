@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.ActionStatus do
   @moduledoc """
-  ActionStatus represents status of a request from the bot developer's side. In specific, for each request a bot gets, the bot developer will set both fields below in relation to what the response status and message related to status should be.
+  Represents the status of a request.
 
   ## Attributes
 
   *   `statusCode` (*type:* `String.t`, *default:* `nil`) - The status code.
-  *   `userFacingMessage` (*type:* `String.t`, *default:* `nil`) - This message will be the corresponding string to the above status_code. If unset, an appropriate generic message based on the status_code will be shown to the user. If this field is set then the message will be surfaced to the user for both successes and errors.
+  *   `userFacingMessage` (*type:* `String.t`, *default:* `nil`) - The message to send users about the status of their request. If unset, a generic message based on the `status_code` is sent.
   """
 
   use GoogleApi.Gax.ModelBase

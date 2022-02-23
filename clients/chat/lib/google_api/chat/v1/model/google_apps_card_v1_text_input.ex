@@ -25,7 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextInput do
   *   `hintText` (*type:* `String.t`, *default:* `nil`) - The hint text.
   *   `initialSuggestions` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Suggestions.t`, *default:* `nil`) - The initial suggestions made before any user input.
   *   `label` (*type:* `String.t`, *default:* `nil`) - At least one of label and hintText must be specified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input which is used in formInput.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input which is used in `formInput`.
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The onChange action, for example, invoke a function.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The style of the text, for example, a single line or multiple lines.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The default value when there is no input from the user.

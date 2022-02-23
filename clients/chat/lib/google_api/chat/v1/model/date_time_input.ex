@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.DateTimeInput do
   @moduledoc """
-  Input Parameter for Date and Time Picker widget.
+  Date and time input values. Not supported by Chat apps.
 
   ## Attributes
 
-  *   `hasDate` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `hasTime` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `msSinceEpoch` (*type:* `String.t`, *default:* `nil`) - 
+  *   `hasDate` (*type:* `boolean()`, *default:* `nil`) - Whether the `datetime` input includes a calendar date.
+  *   `hasTime` (*type:* `boolean()`, *default:* `nil`) - Whether the `datetime` input includes a timestamp.
+  *   `msSinceEpoch` (*type:* `String.t`, *default:* `nil`) - Time since epoch time, in milliseconds.
   """
 
   use GoogleApi.Gax.ModelBase

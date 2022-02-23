@@ -23,7 +23,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button do
 
   *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text used for accessibility. Has no effect when an icon is set; use `icon.alt_text` instead.
   *   `color` (*type:* `GoogleApi.Chat.V1.Model.Color.t`, *default:* `nil`) - If set, the button is filled with a solid background.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the button is displayed in a disabled state and doesn't respond to user actions.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If `true`, the button is displayed in a disabled state and doesn't respond to user actions.
   *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - The icon image.
   *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The action to perform when the button is clicked.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text of the button.

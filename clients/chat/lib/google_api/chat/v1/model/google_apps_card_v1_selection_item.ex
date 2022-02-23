@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem do
   @moduledoc """
-  The item in the switch control. A radio button, at most one of the items is selected.
+  A selectable item in the switch control.
 
   ## Attributes
 

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker do
   @moduledoc """
-  The widget that lets users to specify a date and time.
+  The widget that lets users to specify a date and time. Not supported by Google Chat apps.
 
   ## Attributes
 
   *   `label` (*type:* `String.t`, *default:* `nil`) - The label for the field that displays to the user.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input that's used in formInput, and uniquely identifies this input.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input that's used in `formInput`, and uniquely identifies this input.
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - Triggered when the user clicks Save or Clear from the date/time picker dialog. This is only triggered if the value changed as a result of the Save/Clear operation.
   *   `timezoneOffsetDate` (*type:* `integer()`, *default:* `nil`) - The number representing the time zone offset from UTC, in minutes. If set, the `value_ms_epoch` is displayed in the specified time zone. If not set, it uses the user's time zone setting on the client side.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the date/time picker.
