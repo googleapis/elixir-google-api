@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionInput do
   @moduledoc """
-  A widget that creates a UI item (for example, a drop-down list) with options for users to select.
+  A widget that creates a UI item with options for users to select. For example, a dropdown menu.
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - An array of the selected items.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The label displayed ahead of the switch control.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input which is used in formInput.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input which is used in `formInput`.
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the selection.
   """
 
   use GoogleApi.Gax.ModelBase

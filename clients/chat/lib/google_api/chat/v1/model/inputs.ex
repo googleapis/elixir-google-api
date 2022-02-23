@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Chat.V1.Model.Inputs do
   @moduledoc """
-  The inputs with widgets.
+  Types of data inputs for widgets. Users enter data with these inputs.
 
   ## Attributes
 
-  *   `dateInput` (*type:* `GoogleApi.Chat.V1.Model.DateInput.t`, *default:* `nil`) - 
-  *   `dateTimeInput` (*type:* `GoogleApi.Chat.V1.Model.DateTimeInput.t`, *default:* `nil`) - 
-  *   `stringInputs` (*type:* `GoogleApi.Chat.V1.Model.StringInputs.t`, *default:* `nil`) - 
-  *   `timeInput` (*type:* `GoogleApi.Chat.V1.Model.TimeInput.t`, *default:* `nil`) - 
+  *   `dateInput` (*type:* `GoogleApi.Chat.V1.Model.DateInput.t`, *default:* `nil`) - Date input values. Not supported by Chat apps.
+  *   `dateTimeInput` (*type:* `GoogleApi.Chat.V1.Model.DateTimeInput.t`, *default:* `nil`) - Date and time input values. Not supported by Chat apps.
+  *   `stringInputs` (*type:* `GoogleApi.Chat.V1.Model.StringInputs.t`, *default:* `nil`) - Input parameter for regular widgets. For single-valued widgets, it is a single value list. For multi-valued widgets, such as checkbox, all the values are presented.
+  *   `timeInput` (*type:* `GoogleApi.Chat.V1.Model.TimeInput.t`, *default:* `nil`) - Time input values. Not supported by Chat apps.
   """
 
   use GoogleApi.Gax.ModelBase

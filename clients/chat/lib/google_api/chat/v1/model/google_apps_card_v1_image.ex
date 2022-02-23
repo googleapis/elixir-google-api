@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image do
   @moduledoc """
-  An image that is specified by a URL and can have an onClick action.
+  An image that is specified by a URL and can have an `onClick` action.
 
   ## Attributes
 
   *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image, used for accessibility.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - An image URL.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - 
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The action triggered by an `onClick` event.
   """
 
   use GoogleApi.Gax.ModelBase

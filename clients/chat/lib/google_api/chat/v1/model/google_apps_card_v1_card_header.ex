@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader do
   @moduledoc """
-
+  Represents a card header.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader do
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image's type.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the image in the card header.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the card header.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the card header. The title must be specified. The header has a fixed height: if both a title and subtitle are specified, each takes up one line. If only the title is specified, it takes up both lines.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the card header. The header has a fixed height: if both a title and subtitle are specified, each takes up one line. If only the title is specified, it takes up both lines.
   """
 
   use GoogleApi.Gax.ModelBase

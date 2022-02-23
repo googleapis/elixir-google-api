@@ -24,7 +24,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon do
   *   `altText` (*type:* `String.t`, *default:* `nil`) - The description of the icon, used for accessibility. The default value is provided if you don't specify one.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The crop style applied to the image. In some cases, applying a `CIRCLE` crop causes the image to be drawn larger than a standard icon.
-  *   `knownIcon` (*type:* `String.t`, *default:* `nil`) - The icon specified by the string name of a list of known icons
+  *   `knownIcon` (*type:* `String.t`, *default:* `nil`) - The icon specified by the string name of a list of known icons.
   """
 
   use GoogleApi.Gax.ModelBase

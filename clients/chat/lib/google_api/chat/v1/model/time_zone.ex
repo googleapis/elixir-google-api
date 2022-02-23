@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.TimeZone do
   @moduledoc """
-  The timezone id and offset. The id is the tz database time zones such as "America/Toronto". The user timezone offset, in milliseconds, from Coordinated Universal Time (UTC).
+  The timezone ID and offset from Coordinated Universal Time (UTC). Not supported by Chat apps.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - 
-  *   `offset` (*type:* `integer()`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The [IANA TZ](https://www.iana.org/time-zones) time zone database code, such as "America/Toronto".
+  *   `offset` (*type:* `integer()`, *default:* `nil`) - The user timezone offset, in milliseconds, from Coordinated Universal Time (UTC).
   """
 
   use GoogleApi.Gax.ModelBase

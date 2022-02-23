@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.DialogAction do
   @moduledoc """
-  Contains dialog if present as well as the ActionStatus for the request sent from user.
+  Contains a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs) and request status code.
 
   ## Attributes
 
-  *   `actionStatus` (*type:* `GoogleApi.Chat.V1.Model.ActionStatus.t`, *default:* `nil`) - Status for either invoke dialog or submit dialog requests. This will be used to display a status and message to user if needed. For example in case of an error or success.
-  *   `dialog` (*type:* `GoogleApi.Chat.V1.Model.Dialog.t`, *default:* `nil`) - Dialog for the request.
+  *   `actionStatus` (*type:* `GoogleApi.Chat.V1.Model.ActionStatus.t`, *default:* `nil`) - Status for a request to either invoke or submit a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs). Displays a status and message to users, if necessary. For example, in case of an error or success.
+  *   `dialog` (*type:* `GoogleApi.Chat.V1.Model.Dialog.t`, *default:* `nil`) - [Dialog](https://developers.google.com/chat/how-tos/bot-dialogs) for the request.
   """
 
   use GoogleApi.Gax.ModelBase

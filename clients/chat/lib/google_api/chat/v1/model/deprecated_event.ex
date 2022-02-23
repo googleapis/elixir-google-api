@@ -22,11 +22,11 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - The form action data associated with an interactive card that was clicked. Only populated for CARD_CLICKED events. See the [Interactive Cards guide](/chat/how-tos/cards-onclick) for more information.
-  *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - This will include form information for dialogs such as form inputs, action parameters.
+  *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/chat/how-tos/bot-dialogs), like data entered on a card.
   *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the bot should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/chat/how-tos/auth-3p) for more information.
-  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of dialog event we have received.
+  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/chat/how-tos/bot-dialogs) event received.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event occurred.
-  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - Whether or not this event is related to dialogs request, submit or cancel. This will be set to true when we want a request/submit/cancel event.
+  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - True when the event is related to [dialogs](https://developers.google.com/chat/how-tos/bot-dialogs).
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the event occurred.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The bot-defined key for the thread related to the event. See the thread_key field of the `spaces.message.create` request for more information.

@@ -23,7 +23,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Section do
 
   *   `collapsible` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this section is collapsible. If a section is collapsible, the description must be given.
   *   `header` (*type:* `String.t`, *default:* `nil`) - The header of the section. Formatted text is supported.
-  *   `uncollapsibleWidgetsCount` (*type:* `integer()`, *default:* `nil`) - The number of uncollapsible widgets. For example, when a section contains five widgets and the `numUncollapsibleWidget` is set to `2`, the first two widgets are always shown and the last three are collapsed as default. The `numUncollapsibleWidget` is taken into account only when collapsible is set to `true`.
+  *   `uncollapsibleWidgetsCount` (*type:* `integer()`, *default:* `nil`) - The number of uncollapsible widgets. For example, when a section contains five widgets and the `uncollapsibleWidgetsCount` is set to `2`, the first two widgets are always shown and the last three are collapsed as default. The `uncollapsibleWidgetsCount` is taken into account only when `collapsible` is `true`.
   *   `widgets` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widget.t)`, *default:* `nil`) - A section must contain at least 1 widget.
   """
 

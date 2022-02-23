@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.DateInput do
   @moduledoc """
-  Input Parameter for Date Picker widget.
+  Date input values. Not supported by Chat apps.
 
   ## Attributes
 
-  *   `msSinceEpoch` (*type:* `String.t`, *default:* `nil`) - 
+  *   `msSinceEpoch` (*type:* `String.t`, *default:* `nil`) - Time since epoch time, in milliseconds.
   """
 
   use GoogleApi.Gax.ModelBase

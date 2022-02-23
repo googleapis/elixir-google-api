@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink do
   @moduledoc """
-
+  Represents an `onClick` event that opens a hyperlink.
 
   ## Attributes
 
-  *   `onClose` (*type:* `String.t`, *default:* `nil`) - 
-  *   `openAs` (*type:* `String.t`, *default:* `nil`) - 
+  *   `onClose` (*type:* `String.t`, *default:* `nil`) - Whether the client forgets about a link after opening it, or observes it until the window closes. Not supported by Chat apps.
+  *   `openAs` (*type:* `String.t`, *default:* `nil`) - How to open a link. Not supported by Chat apps.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL to open.
   """
 

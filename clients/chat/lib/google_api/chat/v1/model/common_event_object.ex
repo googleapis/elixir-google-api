@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.Chat.V1.Model.CommonEventObject do
   @moduledoc """
-  Next available ID = 8
+  Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes data submitted by users interacting with cards, like data entered in [dialogs](https://developers.google.com/chat/how-tos/bot-dialogs).
 
   ## Attributes
 
-  *   `formInputs` (*type:* `%{optional(String.t) => GoogleApi.Chat.V1.Model.Inputs.t}`, *default:* `nil`) - The keys are the string IDs associated with the widget and the values are inputs with a widget in the card.
-  *   `hostApp` (*type:* `String.t`, *default:* `nil`) - The hostApp enum which indicates the app the add-on is invoked from
-  *   `invokedFunction` (*type:* `String.t`, *default:* `nil`) - Name of the invoked function associated with the widget. This field is currently only set for chat.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - Any additional parameters.
-  *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform enum which indicates the platform where the add-on is running.
-  *   `timeZone` (*type:* `GoogleApi.Chat.V1.Model.TimeZone.t`, *default:* `nil`) - 
-  *   `userLocale` (*type:* `String.t`, *default:* `nil`) - The full locale.displayName in the format of [ISO 639 language code]-[ISO 3166 country/region code] such as "en-US"
+  *   `formInputs` (*type:* `%{optional(String.t) => GoogleApi.Chat.V1.Model.Inputs.t}`, *default:* `nil`) - A map containing the current values of the widgets in a card. The map keys are the string IDs assigned to each widget, and the values represent inputs to the widget. Depending on the input data type, a different object represents each input: For single-value widgets, `StringInput`. For multi-value widgets, an array of `StringInput` objects. For a date-time picker, a `DateTimeInput`. For a date-only picker, a `DateInput`. For a time-only picker, a `TimeInput`. Corresponds with the data entered by a user on a card in a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs).
+  *   `hostApp` (*type:* `String.t`, *default:* `nil`) - The hostApp enum which indicates the app the add-on is invoked from. Always `CHAT` for Chat apps.
+  *   `invokedFunction` (*type:* `String.t`, *default:* `nil`) - Name of the invoked function associated with the widget. Only set for Chat apps.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - Custom [parameters](/chat/api/reference/rest/v1/cards#ActionParameter) passed to the invoked function. Both keys and values must be strings.
+  *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform enum which indicates the platform where the event originates (`WEB`, `IOS`, or `ANDROID`). Not supported by Chat apps.
+  *   `timeZone` (*type:* `GoogleApi.Chat.V1.Model.TimeZone.t`, *default:* `nil`) - The timezone ID and offset from Coordinated Universal Time (UTC).
+  *   `userLocale` (*type:* `String.t`, *default:* `nil`) - The full locale.displayName in the format of [ISO 639 language code]-[ISO 3166 country/region code] such as "en-US". Not supported by Chat apps.
   """
 
   use GoogleApi.Gax.ModelBase
