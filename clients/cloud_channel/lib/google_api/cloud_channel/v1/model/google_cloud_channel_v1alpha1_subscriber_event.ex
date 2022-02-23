@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1SubscriberEvent do
   @moduledoc """
-  Represents information which resellers will get as part of notification from Cloud Pub/Sub.
+  Represents information which resellers will get as part of notification from Pub/Sub.
 
   ## Attributes
 
-  *   `customerEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CustomerEvent.t`, *default:* `nil`) - Customer event send as part of Pub/Sub event to partners.
-  *   `entitlementEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent.t`, *default:* `nil`) - Entitlement event send as part of Pub/Sub event to partners.
+  *   `customerEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CustomerEvent.t`, *default:* `nil`) - Customer event sent as part of Pub/Sub event to partners.
+  *   `entitlementEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent.t`, *default:* `nil`) - Entitlement event sent as part of Pub/Sub event to partners.
   """
 
   use GoogleApi.Gax.ModelBase
