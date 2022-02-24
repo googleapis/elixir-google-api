@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeOpe
 
   ## Attributes
 
+  *   `exportOperationMetadata` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1ExportOperationMetadata.t`, *default:* `nil`) - Metadata for the Export Data Operation such as the destination of export.
   *   `knowledgeBase` (*type:* `String.t`, *default:* `nil`) - The name of the knowledge base interacted with during the operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The current state of this operation.
   """
@@ -28,9 +29,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeOpe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :exportOperationMetadata =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1ExportOperationMetadata.t()
+            | nil,
           :knowledgeBase => String.t() | nil,
           :state => String.t() | nil
         }
+
+  field(:exportOperationMetadata,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1ExportOperationMetadata
+  )
 
   field(:knowledgeBase)
   field(:state)
