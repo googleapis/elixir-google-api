@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1WipeD
   ## Attributes
 
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs.
+  *   `removeResetLock` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies if a user is able to factory reset a device after a Device Wipe. On iOS, this is called "Activation Lock", while on Android, this is known as "Factory Reset Protection". If true, this protection will be removed from the device, so that a user can successfully factory reset. If false, the setting is untouched on the device.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customer => String.t() | nil
+          :customer => String.t() | nil,
+          :removeResetLock => boolean() | nil
         }
 
   field(:customer)
+  field(:removeResetLock)
 end
 
 defimpl Poison.Decoder,
