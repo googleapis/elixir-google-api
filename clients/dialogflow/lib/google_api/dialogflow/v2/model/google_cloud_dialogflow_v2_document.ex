@@ -30,6 +30,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document do
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The MIME type of this document.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The document resource name. The name must be empty when creating a document. Format: `projects//locations//knowledgeBases//documents/`.
   *   `rawContent` (*type:* `String.t`, *default:* `nil`) - The raw content of the document. This field is only permitted for EXTRACTIVE_QA and FAQ knowledge types.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the document.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document do
           :metadata => map() | nil,
           :mimeType => String.t() | nil,
           :name => String.t() | nil,
-          :rawContent => String.t() | nil
+          :rawContent => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:contentUri)
@@ -60,6 +62,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document do
   field(:mimeType)
   field(:name)
   field(:rawContent)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Document do
