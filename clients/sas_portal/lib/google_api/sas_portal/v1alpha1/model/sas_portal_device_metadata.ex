@@ -25,6 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
   *   `commonChannelGroup` (*type:* `String.t`, *default:* `nil`) - CCG. A group of CBSDs in the same ICG requesting a common primary channel assignment. See CBRSA-TS-2001 V3.0.0 for more details.
   *   `interferenceCoordinationGroup` (*type:* `String.t`, *default:* `nil`) - ICG. A group of CBSDs that manage their own interference with the group. See CBRSA-TS-2001 V3.0.0 for more details.
   *   `nrqzValidated` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether a CPI has validated to have coordinated with the National Quiet Zone office.
+  *   `nrqzValidation` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation.t`, *default:* `nil`) - Output only. National Radio Quiet Zone validation info.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
           :antennaModel => String.t() | nil,
           :commonChannelGroup => String.t() | nil,
           :interferenceCoordinationGroup => String.t() | nil,
-          :nrqzValidated => boolean() | nil
+          :nrqzValidated => boolean() | nil,
+          :nrqzValidation => GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation.t() | nil
         }
 
   field(:antennaModel)
   field(:commonChannelGroup)
   field(:interferenceCoordinationGroup)
   field(:nrqzValidated)
+  field(:nrqzValidation, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
