@@ -43,6 +43,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. Specify the email address of the Service Account; otherwise, if no Service Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
+  *   `spot` (*type:* `boolean()`, *default:* `nil`) - Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster or node pool creation. Each tag within the list must comply with RFC1035.
   *   `taints` (*type:* `list(GoogleApi.Container.V1.Model.NodeTaint.t)`, *default:* `nil`) - List of kubernetes taints to be applied to each node. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The workload metadata configuration for this node.
@@ -75,6 +76,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :serviceAccount => String.t() | nil,
           :shieldedInstanceConfig =>
             GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :spot => boolean() | nil,
           :tags => list(String.t()) | nil,
           :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()) | nil,
           :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil
@@ -102,6 +104,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:sandboxConfig, as: GoogleApi.Container.V1.Model.SandboxConfig)
   field(:serviceAccount)
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
+  field(:spot)
   field(:tags, type: :list)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
   field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
