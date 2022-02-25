@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   @moduledoc """
-  Defines a job to be run by the Cloud Dataflow service. nextID: 26
+  Defines a job to be run by the Cloud Dataflow service.
 
   ## Attributes
 
