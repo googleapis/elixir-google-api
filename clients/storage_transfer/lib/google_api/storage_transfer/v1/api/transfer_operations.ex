@@ -168,7 +168,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Not used.
+  *   `name` (*type:* `String.t`) - Required. The name of the type being listed; must be `transferOperations`.
   *   `filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: `{"projectId":"my_project_id", "jobNames":["jobid1","jobid2",...], "operationNames":["opid1","opid2",...], "transferStatuses":["status1","status2",...]}` Since `jobNames`, `operationNames`, and `transferStatuses` support multiple values, they must be specified with array notation. `projectId` is required. `jobNames`, `operationNames`, and `transferStatuses` are optional. The valid values for `transferStatuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS, FAILED, and ABORTED.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
