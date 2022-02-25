@@ -23,17 +23,20 @@ defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
 
   *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported messages.
   *   `showConfidentialModeContent` (*type:* `boolean()`, *default:* `nil`) - To export confidential mode content, set to **true**.
+  *   `useNewExport` (*type:* `boolean()`, *default:* `nil`) - To use the new export system, set to **true**.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :exportFormat => String.t() | nil,
-          :showConfidentialModeContent => boolean() | nil
+          :showConfidentialModeContent => boolean() | nil,
+          :useNewExport => boolean() | nil
         }
 
   field(:exportFormat)
   field(:showConfidentialModeContent)
+  field(:useNewExport)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.MailExportOptions do
