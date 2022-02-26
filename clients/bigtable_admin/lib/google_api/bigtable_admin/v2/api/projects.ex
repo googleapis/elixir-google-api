@@ -2874,7 +2874,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.
       *   `:pageToken` (*type:* `String.t`) - The value of `next_page_token` returned by a previous call.
-      *   `:view` (*type:* `String.t`) - The view to be applied to the returned tables' fields. Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+      *   `:view` (*type:* `String.t`) - The view to be applied to the returned tables' fields. Only NAME_ONLY view (default), REPLICATION_VIEW and ENCRYPTION_VIEW are supported.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
