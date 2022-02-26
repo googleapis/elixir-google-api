@@ -161,7 +161,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -174,7 +174,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deploymentId` (*type:* `String.t`) - Required. The ID of the game server delpoyment resource to be created.
+      *   `:deploymentId` (*type:* `String.t`) - Required. The ID of the game server deployment resource to create.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -235,7 +235,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to delete, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server deployment to delete, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -305,7 +305,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server deployment, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -379,7 +379,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server deployment to retrieve, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -518,12 +518,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets details a single game server deployment rollout.
+  Gets details of a single game server deployment rollout.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server deployment rollout to retrieve, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -595,7 +595,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -608,10 +608,10 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server will pick an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerDeployments left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160)).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on the response's next_page_token to determine if there are more GameServerDeployments left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -675,7 +675,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -688,7 +688,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -749,7 +749,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -763,7 +763,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview. Defaults to the immediately after the proposed rollout completes.
-      *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Optional. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerDeploymentRollout.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -973,12 +973,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Patches a single game server deployment rollout. The method will not return an error if the update does not affect any existing realms. For example - if the default_game_server_config is changed but all existing realms use the override, that is valid. Similarly, if a non existing realm is explicitly called out in game_server_config_overrides field, that will also not result in an error.
+  Patches a single game server deployment rollout. The method will not return an error if the update does not affect any existing realms. For example, the following cases will not return an error: * The default_game_server_config is changed but all existing realms use the override. * A non-existing realm is explicitly called out in the game_server_config_overrides field.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -991,7 +991,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerDeploymentRollout.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1052,7 +1052,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1065,7 +1065,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:configId` (*type:* `String.t`) - Required. The ID of the game server config resource to be created.
+      *   `:configId` (*type:* `String.t`) - Required. The ID of the game server config resource to create.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1121,12 +1121,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Deletes a single game server config. The deletion will fail if the game server config is referenced in a game server deployment rollout.
+  Deletes a single game server config. The deletion fails if the game server config is referenced in a game server deployment rollout.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server config to delete, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to delete, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/configs/{configId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1196,7 +1196,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server config to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to retrieve, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/configs/{configId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1266,7 +1266,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/configs/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1279,9 +1279,9 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, server will pick an appropriate default. Server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerConfigs left to be queried.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160)).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerConfigs left to be queried.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1636,7 +1636,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1649,7 +1649,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:realmId` (*type:* `String.t`) - Required. The ID of the realm resource to be created.
+      *   `:realmId` (*type:* `String.t`) - Required. The ID of the realm resource to create.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.Realm.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1710,7 +1710,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the realm to delete, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to delete, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1780,7 +1780,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the realm to retrieve, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to retrieve, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1850,7 +1850,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1863,10 +1863,10 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, server will pick an appropriate default. Server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more realms left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160)).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on the response's next_page_token to determine if there are more realms left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1930,7 +1930,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
+  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`. For example, `projects/my-project/locations/global/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1943,7 +1943,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask to apply to the resource. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.Realm.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2004,7 +2004,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
+  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`. For example, `projects/my-project/locations/global/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2018,7 +2018,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview.
-      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask to apply to the resource. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.Realm.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2082,7 +2082,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/realms/{realm-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2095,7 +2095,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to be created.
+      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to create.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2156,7 +2156,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{locationId}/gameServerClusters/{gameServerClusterId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2226,7 +2226,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to retrieve, in the following form: `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to retrieve, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}/gameServerClusters/{gameServerClusterId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2239,7 +2239,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does not return the `cluster_state` field.
+      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is `GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED`, the same as `BASIC`, which does not return the `cluster_state` field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2298,7 +2298,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: "projects/{project}/locations/{location}/realms/{realm}".
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2311,11 +2311,11 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server will pick an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerClusters left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
-      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does not return the `cluster_state` field.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160)).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerClusters left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request, if any.
+      *   `:view` (*type:* `String.t`) - Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is `GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED`, the same as `BASIC`, which does not return the `cluster_state` field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2380,7 +2380,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}/gameServerClusters/{gameServerClusterId}`. For example, `projects/my-project/locations/global/realms/zanzibar/gameServerClusters/my-gke-cluster`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2393,7 +2393,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2454,7 +2454,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2467,9 +2467,9 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to be created.
+      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to create.
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview.
-      *   `:view` (*type:* `String.t`) - Optional. This field is deprecated, preview will always return KubernetesClusterState.
+      *   `:view` (*type:* `String.t`) - Optional. This field is deprecated. Preview will always return KubernetesClusterState.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2535,7 +2535,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{locationId}/gameServerClusters/{gameServerClusterId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2610,7 +2610,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}/gameServerClusters/{gameServerClusterId}`. For example, `projects/my-project/locations/global/realms/zanzibar/gameServerClusters/my-gke-cluster`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2624,7 +2624,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview.
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

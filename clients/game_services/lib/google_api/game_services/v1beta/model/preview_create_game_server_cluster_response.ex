@@ -21,7 +21,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.PreviewCreateGameServerClusterResp
 
   ## Attributes
 
-  *   `clusterState` (*type:* `GoogleApi.GameServices.V1beta.Model.KubernetesClusterState.t`, *default:* `nil`) - Output only. The state of the Kubernetes cluster in preview, this will be available if 'view' is set to `FULL` in the relevant List/Get/Preview request.
+  *   `clusterState` (*type:* `GoogleApi.GameServices.V1beta.Model.KubernetesClusterState.t`, *default:* `nil`) - Output only. The state of the Kubernetes cluster in preview. This will be available if view is set to FULL in the relevant list/get/preview request.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag of the game server cluster.
   *   `targetState` (*type:* `GoogleApi.GameServices.V1beta.Model.TargetState.t`, *default:* `nil`) - The target state.
   """
