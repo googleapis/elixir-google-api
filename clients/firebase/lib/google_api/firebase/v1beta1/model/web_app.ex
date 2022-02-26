@@ -21,6 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
 
   ## Attributes
 
+  *   `apiKeyId` (*type:* `String.t`, *default:* `nil`) - The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `appUrls` (*type:* `list(String.t)`, *default:* `nil`) - The URLs where the `WebApp` is hosted.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `WebApp`.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apiKeyId => String.t() | nil,
           :appId => String.t() | nil,
           :appUrls => list(String.t()) | nil,
           :displayName => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
           :webId => String.t() | nil
         }
 
+  field(:apiKeyId)
   field(:appId)
   field(:appUrls, type: :list)
   field(:displayName)

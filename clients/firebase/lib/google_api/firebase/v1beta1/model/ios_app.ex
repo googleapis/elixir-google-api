@@ -21,6 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
 
   ## Attributes
 
+  *   `apiKeyId` (*type:* `String.t`, *default:* `nil`) - The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `IosApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `appStoreId` (*type:* `String.t`, *default:* `nil`) - The automatically generated Apple ID assigned to the iOS app by Apple in the iOS App Store.
   *   `bundleId` (*type:* `String.t`, *default:* `nil`) - Immutable. The canonical bundle ID of the iOS app as it would appear in the iOS AppStore.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apiKeyId => String.t() | nil,
           :appId => String.t() | nil,
           :appStoreId => String.t() | nil,
           :bundleId => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
           :teamId => String.t() | nil
         }
 
+  field(:apiKeyId)
   field(:appId)
   field(:appStoreId)
   field(:bundleId)
