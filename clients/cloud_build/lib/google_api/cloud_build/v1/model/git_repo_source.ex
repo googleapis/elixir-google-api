@@ -21,6 +21,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
 
   ## Attributes
 
+  *   `bitbucketServerConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the bitbucket server config. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{id}`.
+  *   `githubEnterpriseConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the github enterprise config. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`. `projects/{project}/githubEnterpriseConfigs/{id}`.
   *   `ref` (*type:* `String.t`, *default:* `nil`) - The branch or tag to use. Must start with "refs/" (required).
   *   `repoType` (*type:* `String.t`, *default:* `nil`) - See RepoType below.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo (required).
@@ -29,11 +31,15 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bitbucketServerConfig => String.t() | nil,
+          :githubEnterpriseConfig => String.t() | nil,
           :ref => String.t() | nil,
           :repoType => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:bitbucketServerConfig)
+  field(:githubEnterpriseConfig)
   field(:ref)
   field(:repoType)
   field(:uri)
