@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GameServices.V1.Model.DeployedFleetStatus do
   @moduledoc """
-  DeployedFleetStatus has details about the Agones fleets such as how many are running, how many allocated, and so on.
+  DeployedFleetStatus has details about the Agones fleets, such as how many are running, how many are allocated, and so on.
 
   ## Attributes
 

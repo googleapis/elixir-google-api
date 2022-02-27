@@ -25,7 +25,7 @@ defmodule GoogleApi.GameServices.V1.Model.KubernetesClusterState do
   *   `agonesVersionTargeted` (*type:* `String.t`, *default:* `nil`) - Output only. The version of Agones that is targeted to be installed in the cluster.
   *   `installationState` (*type:* `String.t`, *default:* `nil`) - Output only. The state for the installed versions of Agones/Kubernetes.
   *   `kubernetesVersionInstalled` (*type:* `String.t`, *default:* `nil`) - Output only. The version of Kubernetes that is currently used in the registered Kubernetes cluster (as detected by the Cloud Game Servers service).
-  *   `provider` (*type:* `String.t`, *default:* `nil`) - Output only. The cloud provider type reported by the first node's providerID in the list of nodes on the Kubernetes endpoint. On Kubernetes platforms that support zero-node clusters (like GKE-on-GCP), the provider type will be empty.
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - Output only. The cloud provider type reported by the first node's `providerID` in the list of nodes on the Kubernetes endpoint. On Kubernetes platforms that support zero-node clusters (like GKE-on-GCP), the provider type will be empty.
   *   `versionInstalledErrorMessage` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed error message for the installed versions of Agones/Kubernetes.
   """
 
