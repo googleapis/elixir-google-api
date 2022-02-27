@@ -21,6 +21,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitFileSource do
 
   ## Attributes
 
+  *   `bitbucketServerConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the bitbucket server config. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{id}`.
+  *   `githubEnterpriseConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the github enterprise config. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`. `projects/{project}/githubEnterpriseConfigs/{id}`.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path of the file, with the repo root as the root of the path.
   *   `repoType` (*type:* `String.t`, *default:* `nil`) - See RepoType above.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The branch, tag, arbitrary ref, or SHA version of the repo to use when resolving the filename (optional). This field respects the same syntax/resolution as described here: https://git-scm.com/docs/gitrevisions If unspecified, the revision from which the trigger invocation originated is assumed to be the revision from which to read the specified path.
@@ -30,12 +32,16 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitFileSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bitbucketServerConfig => String.t() | nil,
+          :githubEnterpriseConfig => String.t() | nil,
           :path => String.t() | nil,
           :repoType => String.t() | nil,
           :revision => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:bitbucketServerConfig)
+  field(:githubEnterpriseConfig)
   field(:path)
   field(:repoType)
   field(:revision)
