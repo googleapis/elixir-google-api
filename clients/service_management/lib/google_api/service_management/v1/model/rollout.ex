@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the rollout. Readonly.
-  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be deleted. Please remove usage of this field.
+  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - The user who created the Rollout. Readonly.
   *   `deleteServiceStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t`, *default:* `nil`) - The strategy associated with a rollout to delete a `ManagedService`. Readonly.
   *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique identifier of this Rollout. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If not specified by client, the server will generate one. The generated id will have the form of , where "date" is the create date in ISO 8601 format. "revision number" is a monotonically increasing positive number that is reset every day for each service. An example of the generated rollout_id is '2016-02-16r1'
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the service associated with this Rollout.
