@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineImage do
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] The creation timestamp for this machine image in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `guestFlush` (*type:* `boolean()`, *default:* `nil`) - [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+  *   `guestFlush` (*type:* `boolean()`, *default:* `nil`) - [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] A unique identifier for this machine image. The server defines this identifier.
   *   `instanceProperties` (*type:* `GoogleApi.Compute.V1.Model.InstanceProperties.t`, *default:* `nil`) - [Output Only] Properties of source instance
   *   `kind` (*type:* `String.t`, *default:* `compute#machineImage`) - [Output Only] The resource type, which is always compute#machineImage for machine image.
