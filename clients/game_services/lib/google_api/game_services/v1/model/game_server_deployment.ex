@@ -22,10 +22,10 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerDeployment do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the game server delpoyment.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the game server deployment.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server deployment. Each label is a key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server deployment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server deployment, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
 
