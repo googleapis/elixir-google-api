@@ -23,6 +23,7 @@ defmodule GoogleApi.Content.V21.Model.AccountItemUpdates do
 
   *   `accountItemUpdatesSettings` (*type:* `GoogleApi.Content.V21.Model.AccountItemUpdatesSettings.t`, *default:* `nil`) - Determines which attributes of the items should be automatically updated. If this field is not present, then the settings will be deleted. If there are no settings for subaccount, they are inherited from aggregator.
   *   `effectiveAllowAvailabilityUpdates` (*type:* `boolean()`, *default:* `nil`) - Output only. The effective value of allow_availability_updates. If account_item_updates_settings is present, then this value is the same. Otherwise, it represents the inherited value of the parent account. Read-only.
+  *   `effectiveAllowConditionUpdates` (*type:* `boolean()`, *default:* `nil`) - Output only. The effective value of allow_condition_updates. If account_item_updates_settings is present, then this value is the same. Otherwise, it represents the inherited value of the parent account. Read-only.
   *   `effectiveAllowPriceUpdates` (*type:* `boolean()`, *default:* `nil`) - Output only. The effective value of allow_price_updates. If account_item_updates_settings is present, then this value is the same. Otherwise, it represents the inherited value of the parent account. Read-only.
   *   `effectiveAllowStrictAvailabilityUpdates` (*type:* `boolean()`, *default:* `nil`) - Output only. The effective value of allow_strict_availability_updates. If account_item_updates_settings is present, then this value is the same. Otherwise, it represents the inherited value of the parent account. Read-only.
   """
@@ -33,12 +34,14 @@ defmodule GoogleApi.Content.V21.Model.AccountItemUpdates do
           :accountItemUpdatesSettings =>
             GoogleApi.Content.V21.Model.AccountItemUpdatesSettings.t() | nil,
           :effectiveAllowAvailabilityUpdates => boolean() | nil,
+          :effectiveAllowConditionUpdates => boolean() | nil,
           :effectiveAllowPriceUpdates => boolean() | nil,
           :effectiveAllowStrictAvailabilityUpdates => boolean() | nil
         }
 
   field(:accountItemUpdatesSettings, as: GoogleApi.Content.V21.Model.AccountItemUpdatesSettings)
   field(:effectiveAllowAvailabilityUpdates)
+  field(:effectiveAllowConditionUpdates)
   field(:effectiveAllowPriceUpdates)
   field(:effectiveAllowStrictAvailabilityUpdates)
 end
