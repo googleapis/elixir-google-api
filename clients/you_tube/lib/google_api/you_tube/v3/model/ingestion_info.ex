@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   @moduledoc """
-  Describes information necessary for ingesting an RTMP or an HTTP stream.
+  Describes information necessary for ingesting an RTMP, HTTP, or SRT stream.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   *   `ingestionAddress` (*type:* `String.t`, *default:* `nil`) - The primary ingestion URL that you should use to stream video to YouTube. You must stream video to this URL. Depending on which application or tool you use to encode your video stream, you may need to enter the stream URL and stream name separately or you may need to concatenate them in the following format: *STREAM_URL/STREAM_NAME* 
   *   `rtmpsBackupIngestionAddress` (*type:* `String.t`, *default:* `nil`) - This ingestion url may be used instead of backupIngestionAddress in order to stream via RTMPS. Not applicable to non-RTMP streams.
   *   `rtmpsIngestionAddress` (*type:* `String.t`, *default:* `nil`) - This ingestion url may be used instead of ingestionAddress in order to stream via RTMPS. Not applicable to non-RTMP streams.
-  *   `streamName` (*type:* `String.t`, *default:* `nil`) - The HTTP or RTMP stream name that YouTube assigns to the video stream.
+  *   `streamName` (*type:* `String.t`, *default:* `nil`) - The stream name that YouTube assigns to the video stream.
   """
 
   use GoogleApi.Gax.ModelBase
