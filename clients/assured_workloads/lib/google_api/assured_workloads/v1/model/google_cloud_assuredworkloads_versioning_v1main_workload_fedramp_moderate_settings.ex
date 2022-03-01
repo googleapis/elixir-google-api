@@ -21,7 +21,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersion
 
   ## Attributes
 
-  *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadKMSSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+  *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadKMSSettings.t`, *default:* `nil`) - Input only. Immutable. Settings used to create a CMEK crypto key.
   """
 
   use GoogleApi.Gax.ModelBase
