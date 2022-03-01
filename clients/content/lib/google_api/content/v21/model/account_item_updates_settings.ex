@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V21.Model.AccountItemUpdatesSettings do
   ## Attributes
 
   *   `allowAvailabilityUpdates` (*type:* `boolean()`, *default:* `nil`) - If availability updates are enabled, any previous availability values get overwritten if Google finds an out-of-stock annotation on the offer's page. If additionally `allow_availability_updates` field is set to true, values get overwritten if Google finds an in-stock annotation on the offer’s page.
+  *   `allowConditionUpdates` (*type:* `boolean()`, *default:* `nil`) - If condition updates are enabled, Google always updates item condition with the condition detected from the details of your product.
   *   `allowPriceUpdates` (*type:* `boolean()`, *default:* `nil`) - If price updates are enabled, Google always updates the active price with the crawled information.
   *   `allowStrictAvailabilityUpdates` (*type:* `boolean()`, *default:* `nil`) - If allow_availability_updates is enabled, items are automatically updated in all your Shopping target countries. By default, availability updates will only be applied to items that are 'out of stock' on your website but 'in stock' on Shopping. Set this to true to also update items that are 'in stock' on your website, but 'out of stock' on Google Shopping. In order for this field to have an effect, you must also allow availability updates.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Content.V21.Model.AccountItemUpdatesSettings do
 
   @type t :: %__MODULE__{
           :allowAvailabilityUpdates => boolean() | nil,
+          :allowConditionUpdates => boolean() | nil,
           :allowPriceUpdates => boolean() | nil,
           :allowStrictAvailabilityUpdates => boolean() | nil
         }
 
   field(:allowAvailabilityUpdates)
+  field(:allowConditionUpdates)
   field(:allowPriceUpdates)
   field(:allowStrictAvailabilityUpdates)
 end
