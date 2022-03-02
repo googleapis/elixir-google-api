@@ -162,7 +162,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   end
 
   @doc """
-  Returns of a list of traces that match the specified filter conditions.
+  Returns a list of traces that match the specified filter conditions.
 
   ## Parameters
 

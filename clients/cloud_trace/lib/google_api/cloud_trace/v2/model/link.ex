@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.Link do
 
   ## Attributes
 
-  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the link. You have have up to 32 attributes per link.
-  *   `spanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] for a span within a trace.
-  *   `traceId` (*type:* `String.t`, *default:* `nil`) - The [TRACE_ID] for a trace within a project.
+  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the link. Up to 32 attributes can be specified per link.
+  *   `spanId` (*type:* `String.t`, *default:* `nil`) - The `[SPAN_ID]` for a span within a trace.
+  *   `traceId` (*type:* `String.t`, *default:* `nil`) - The `[TRACE_ID]` for a trace within a project.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The relationship of the current span relative to the linked span.
   """
 

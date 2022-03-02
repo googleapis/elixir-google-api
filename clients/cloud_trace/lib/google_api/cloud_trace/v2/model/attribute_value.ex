@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudTrace.V2.Model.AttributeValue do
   @moduledoc """
-  The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
+  The allowed types for `[VALUE]` in a `[KEY]:[VALUE]` attribute.
 
   ## Attributes
 
