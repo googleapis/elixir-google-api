@@ -18,7 +18,7 @@
 defmodule GoogleApi.ChromeManagement.Mixfile do
   use Mix.Project
 
-  @version "0.2.3"
+  @version "0.2.4"
 
   def project() do
     [
