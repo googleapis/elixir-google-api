@@ -25,6 +25,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
   *   `clusterAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-cluster admission rules. Cluster spec format: `location.clusterId`. There can be at most one admission rule per cluster spec. A `location` is either a compute zone (e.g. us-central1-a) or a region (e.g. us-central1). For `clusterId` syntax restrictions see https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
   *   `defaultAdmissionRule` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t`, *default:* `nil`) - Required. Default admission rule for a cluster without a per-cluster, per- kubernetes-service-account, or per-istio-service-identity admission rule.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to prevent updating the policy when another request has updated it since it was retrieved.
   *   `globalPolicyEvaluationMode` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not covered by the global policy will be subject to the project admission policy. This setting has no effect when specified inside a global admission policy.
   *   `istioServiceIdentityAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-istio-service-identity admission rules. Istio service identity spec format: `spiffe:///ns//sa/` or `/ns//sa/` e.g. `spiffe://example.com/ns/test-ns/sa/default`
   *   `kubernetesNamespaceAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format: `[a-z.-]+`, e.g. `some-namespace`
@@ -43,6 +44,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
             | nil,
           :defaultAdmissionRule => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t() | nil,
           :description => String.t() | nil,
+          :etag => String.t() | nil,
           :globalPolicyEvaluationMode => String.t() | nil,
           :istioServiceIdentityAdmissionRules =>
             %{optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()}
@@ -69,6 +71,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
 
   field(:defaultAdmissionRule, as: GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule)
   field(:description)
+  field(:etag)
   field(:globalPolicyEvaluationMode)
 
   field(:istioServiceIdentityAdmissionRules,

@@ -22,6 +22,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to prevent updating the attestor when another request has updated it since it was retrieved.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the attestor was last updated.
   *   `userOwnedGrafeasNote` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t`, *default:* `nil`) - This specifies how an attestation will be read, and how it will be used during policy enforcement.
@@ -31,6 +32,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
 
   @type t :: %__MODULE__{
           :description => String.t() | nil,
+          :etag => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :userOwnedGrafeasNote =>
@@ -38,6 +40,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
         }
 
   field(:description)
+  field(:etag)
   field(:name)
   field(:updateTime, as: DateTime)
   field(:userOwnedGrafeasNote, as: GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote)
