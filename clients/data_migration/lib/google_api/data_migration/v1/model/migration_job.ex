@@ -25,7 +25,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the destination connection profile.
   *   `destinationDatabase` (*type:* `GoogleApi.DataMigration.V1.Model.DatabaseType.t`, *default:* `nil`) - The database engine type and provider of the destination.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The migration job display name.
-  *   `dumpPath` (*type:* `String.t`, *default:* `nil`) - The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+  *   `dumpFlags` (*type:* `GoogleApi.DataMigration.V1.Model.DumpFlags.t`, *default:* `nil`) - The initial dump flags. This field and the "dump_path" field are mutually exclusive.
+  *   `dumpPath` (*type:* `String.t`, *default:* `nil`) - The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]). This field and the "dump_flags" field are mutually exclusive.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If the migration job is completed, the time when it was completed.
   *   `error` (*type:* `GoogleApi.DataMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. The error details in case of state FAILED.
@@ -49,6 +50,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
           :destination => String.t() | nil,
           :destinationDatabase => GoogleApi.DataMigration.V1.Model.DatabaseType.t() | nil,
           :displayName => String.t() | nil,
+          :dumpFlags => GoogleApi.DataMigration.V1.Model.DumpFlags.t() | nil,
           :dumpPath => String.t() | nil,
           :duration => String.t() | nil,
           :endTime => DateTime.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   field(:destination)
   field(:destinationDatabase, as: GoogleApi.DataMigration.V1.Model.DatabaseType)
   field(:displayName)
+  field(:dumpFlags, as: GoogleApi.DataMigration.V1.Model.DumpFlags)
   field(:dumpPath)
   field(:duration)
   field(:endTime, as: DateTime)
