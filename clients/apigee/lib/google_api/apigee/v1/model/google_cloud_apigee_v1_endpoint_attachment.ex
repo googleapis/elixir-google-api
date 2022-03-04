@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
   @moduledoc """
-  Apigee Endpoint Attachment.
+  Apigee endpoint attachment. For more information, see Southbound networking patterns.
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Host that can be used in either HTTP Target Endpoint directly, or as the host in Target Server.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Host that can be used in either the HTTP target endpoint directly or as the host in target server.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Location of the endpoint attachment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Endpoint Attachment in the following format: `organizations/{organization}/endpointAttachments/{endpoint_attachment}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
   *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Format: projects/*/regions/*/serviceAttachments/*
   """
 

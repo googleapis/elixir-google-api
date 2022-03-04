@@ -21,8 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEndpointAttachmentsRe
 
   ## Attributes
 
-  *   `endpointAttachments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment.t)`, *default:* `nil`) - Endpoint Attachments in the specified organization.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListEndpointAttachments request to retrieve the next page. If omitted, no subsequent pages exist.
+  *   `endpointAttachments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment.t)`, *default:* `nil`) - Endpoint attachments in the specified organization.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in an `ListEndpointAttachments` request to retrieve the next page. If omitted, no subsequent pages exist.
   """
 
   use GoogleApi.Gax.ModelBase
