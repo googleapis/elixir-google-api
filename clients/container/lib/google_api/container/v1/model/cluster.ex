@@ -48,6 +48,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint. The endpoint can be accessed from the internet at `https://username:password@endpoint/`. See the `masterAuth` property of this resource for username and password information.
   *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead.
   *   `networkConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkConfig.t`, *default:* `nil`) - Configuration for cluster networking.
+  *   `nodePoolAutoConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoConfig.t`, *default:* `nil`) - Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The configuration options for master authorized networks feature.
   *   `networkPolicy` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicy.t`, *default:* `nil`) - Configuration options for the NetworkPolicy feature.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this cluster. The name must be unique within this project and location (e.g. zone or region), and can be up to 40 characters with the following restrictions: * Lowercase letters, numbers, and hyphens only. * Must start with a letter. * Must end with a number or a letter.
@@ -116,6 +117,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :endpoint => String.t() | nil,
           :initialNodeCount => integer() | nil,
           :networkConfig => GoogleApi.Container.V1.Model.NetworkConfig.t() | nil,
+          :nodePoolAutoConfig => GoogleApi.Container.V1.Model.NodePoolAutoConfig.t() | nil,
           :masterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
           :networkPolicy => GoogleApi.Container.V1.Model.NetworkPolicy.t() | nil,
@@ -179,6 +181,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:endpoint)
   field(:initialNodeCount)
   field(:networkConfig, as: GoogleApi.Container.V1.Model.NetworkConfig)
+  field(:nodePoolAutoConfig, as: GoogleApi.Container.V1.Model.NodePoolAutoConfig)
 
   field(:masterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
