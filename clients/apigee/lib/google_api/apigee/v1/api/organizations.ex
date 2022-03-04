@@ -6457,12 +6457,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an EndpointAttachment. **Note:** Not supported for Apigee hybrid.
+  Creates an endpoint attachment. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The Organization this EndpointAttachment will be created in.
+  *   `parent` (*type:* `String.t`) - Required. Organization the endpoint attachment will be created in.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6475,7 +6475,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endpointAttachmentId` (*type:* `String.t`) - The ID to use for the endpoint attachment. ID must be a 1-20 characters string with lowercase letters and numbers and must start with a letter.
+      *   `:endpointAttachmentId` (*type:* `String.t`) - ID to use for the endpoint attachment. The ID can contain lowercase letters and numbers, must start with a letter, and must be 1-20 characters in length.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -6536,7 +6536,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Endpoint Attachment in the following format: `organizations/{organization}/endpointAttachments/{endpoint_attachment}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6601,12 +6601,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the specified EndpointAttachment.
+  Gets the endpoint attachment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Endpoint Attachment in the following format: `organizations/{organization}/endpointAttachments/{endpoint_attachment}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6673,12 +6673,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the EndpointAttachments in the specified Organization.
+  Lists the endpoint attachments in an organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the Organization for which to list Endpoint Attachments in the format: `organizations/{organization}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to list endpoint attachments. Use the following structure in your request: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6691,8 +6691,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of Endpoint Attachments to return. If unspecified, at most 25 attachments will be returned.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token, returned from a previous ListEndpointAttachments call, that you can use to retrieve the next page.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of endpoint attachments to return. If unspecified, at most 25 attachments will be returned.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token, returned from a previous `ListEndpointAttachments` call, that you can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
