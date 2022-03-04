@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership a.k.a. the time at which the member joined the space, if applicable.
-  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A user in Google Chat. Represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API. Format: `users/{person}`
+  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A user in Google Chat. Represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. Format: `users/{user}`
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the membership.
   """
