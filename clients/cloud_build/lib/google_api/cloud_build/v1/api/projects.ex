@@ -339,7 +339,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - The raw filter text to constrain the results.
       *   `:pageSize` (*type:* `integer()`) - Number of results to return in the list.
       *   `:pageToken` (*type:* `String.t`) - The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.
-      *   `:parent` (*type:* `String.t`) - The parent of the collection of `Builds`. Format: `projects/{project}/locations/location`
+      *   `:parent` (*type:* `String.t`) - The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1946,7 +1946,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent of the collection of `Builds`. Format: `projects/{project}/locations/location`
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
