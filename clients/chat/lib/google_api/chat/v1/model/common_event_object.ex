@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.CommonEventObject do
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Custom [parameters](/chat/api/reference/rest/v1/cards#ActionParameter) passed to the invoked function. Both keys and values must be strings.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform enum which indicates the platform where the event originates (`WEB`, `IOS`, or `ANDROID`). Not supported by Chat apps.
   *   `timeZone` (*type:* `GoogleApi.Chat.V1.Model.TimeZone.t`, *default:* `nil`) - The timezone ID and offset from Coordinated Universal Time (UTC).
-  *   `userLocale` (*type:* `String.t`, *default:* `nil`) - The full locale.displayName in the format of [ISO 639 language code]-[ISO 3166 country/region code] such as "en-US". Not supported by Chat apps.
+  *   `userLocale` (*type:* `String.t`, *default:* `nil`) - The full `locale.displayName` in the format of [ISO 639 language code]-[ISO 3166 country/region code] such as "en-US". Not supported by Chat apps.
   """
 
   use GoogleApi.Gax.ModelBase
