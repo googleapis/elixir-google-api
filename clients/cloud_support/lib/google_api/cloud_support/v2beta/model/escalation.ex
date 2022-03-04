@@ -21,27 +21,18 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Escalation do
 
   ## Attributes
 
-  *   `actor` (*type:* `GoogleApi.CloudSupport.V2beta.Model.Actor.t`, *default:* `nil`) - Output only. The user or Google Support agent initiated this escalation.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this escalation event was created.
   *   `justification` (*type:* `String.t`, *default:* `nil`) - Required. A free text description to accompany the `reason` field above. Provides additional context on why the case is being escalated.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the escalation event.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Required. The reason why the Case is being escalated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actor => GoogleApi.CloudSupport.V2beta.Model.Actor.t() | nil,
-          :createTime => DateTime.t() | nil,
           :justification => String.t() | nil,
-          :name => String.t() | nil,
           :reason => String.t() | nil
         }
 
-  field(:actor, as: GoogleApi.CloudSupport.V2beta.Model.Actor)
-  field(:createTime, as: DateTime)
   field(:justification)
-  field(:name)
   field(:reason)
 end
 

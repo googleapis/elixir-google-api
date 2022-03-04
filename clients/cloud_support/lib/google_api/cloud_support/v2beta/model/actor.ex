@@ -24,7 +24,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Actor do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the actor. If not provided, it is inferred from credentials supplied during case creation. When an email is provided, a display name must also be provided. This will be obfuscated if the user is a Google Support agent.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the actor. If not provided, it is inferred from credentials supplied during case creation. If the authenticated principal does not have an email address, one must be provided. When a name is provided, an email must also be provided. This will be obfuscated if the user is a Google Support agent.
   *   `googleSupport` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the actor is a Google support actor.
-  *   `principalId` (*type:* `String.t`, *default:* `nil`) - Output only. An ID representing the user that was authenticated when the corresponding action was taken. This will be an email address, if one is available, or some other unique ID. See https://cloud.google.com/docs/authentication for more information on types of authentication.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +31,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Actor do
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :email => String.t() | nil,
-          :googleSupport => boolean() | nil,
-          :principalId => String.t() | nil
+          :googleSupport => boolean() | nil
         }
 
   field(:displayName)
   field(:email)
   field(:googleSupport)
-  field(:principalId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSupport.V2beta.Model.Actor do
