@@ -350,7 +350,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:advertiserId` (*type:* `String.t`) - Required. The ID of the owner advertiser of the updated FirstAndThirdPartyAudience.
-      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update. Updates are only supported for the following fields: * `displayName` * `description` * `membershipDurationDays`
       *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
