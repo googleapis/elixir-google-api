@@ -28,6 +28,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
   *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
   *   `desiredMeshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
+  *   `desiredNodePoolAutoConfigNetworkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `desiredAuthenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - The desired authenticator groups config for the cluster.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
@@ -69,6 +70,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
           :desiredNodeVersion => String.t() | nil,
           :desiredMeshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
+          :desiredNodePoolAutoConfigNetworkTags =>
+            GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :desiredAuthenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
@@ -120,6 +123,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredPrivateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:desiredNodeVersion)
   field(:desiredMeshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
+  field(:desiredNodePoolAutoConfigNetworkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
 
   field(:desiredAuthenticatorGroupsConfig,
     as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig
