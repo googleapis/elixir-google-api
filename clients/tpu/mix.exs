@@ -18,7 +18,7 @@
 defmodule GoogleApi.TPU.Mixfile do
   use Mix.Project
 
-  @version "0.15.3"
+  @version "0.15.4"
 
   def project() do
     [
