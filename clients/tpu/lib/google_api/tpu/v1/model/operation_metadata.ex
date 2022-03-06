@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.TPU.V1.Model.OperationMetadata do
   @moduledoc """
-  Represents the metadata of the long-running operation.
+  Metadata describing an Operation
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
-  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have been cancelled successfully have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
-  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined resource path for the target of the operation.
-  *   `verb` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the verb executed by the operation.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version.
+  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Specifies if cancellation was requested for the operation.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
+  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Human-readable status of the operation, if any.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/connectivityTests/test-1
+  *   `verb` (*type:* `String.t`, *default:* `nil`) - Name of the verb executed by the operation.
   """
 
   use GoogleApi.Gax.ModelBase
