@@ -22,6 +22,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
   ## Attributes
 
   *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig.t`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for this runtime.
+  *   `bootImage` (*type:* `GoogleApi.Notebooks.V1.Model.BootImage.t`, *default:* `nil`) - Optional. Boot image metadata used for runtime upgradeability.
   *   `containerImages` (*type:* `list(GoogleApi.Notebooks.V1.Model.ContainerImage.t)`, *default:* `nil`) - Optional. Use a list of container images to use as Kernels in the notebook instance.
   *   `dataDisk` (*type:* `GoogleApi.Notebooks.V1.Model.LocalDisk.t`, *default:* `nil`) - Required. Data disk option configuration settings.
   *   `encryptionConfig` (*type:* `GoogleApi.Notebooks.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. Encryption settings for virtual machine data disk.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
 
   @type t :: %__MODULE__{
           :acceleratorConfig => GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig.t() | nil,
+          :bootImage => GoogleApi.Notebooks.V1.Model.BootImage.t() | nil,
           :containerImages => list(GoogleApi.Notebooks.V1.Model.ContainerImage.t()) | nil,
           :dataDisk => GoogleApi.Notebooks.V1.Model.LocalDisk.t() | nil,
           :encryptionConfig => GoogleApi.Notebooks.V1.Model.EncryptionConfig.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VirtualMachineConfig do
         }
 
   field(:acceleratorConfig, as: GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig)
+  field(:bootImage, as: GoogleApi.Notebooks.V1.Model.BootImage)
   field(:containerImages, as: GoogleApi.Notebooks.V1.Model.ContainerImage, type: :list)
   field(:dataDisk, as: GoogleApi.Notebooks.V1.Model.LocalDisk)
   field(:encryptionConfig, as: GoogleApi.Notebooks.V1.Model.EncryptionConfig)

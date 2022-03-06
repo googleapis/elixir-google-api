@@ -51,6 +51,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
   *   `vmImage` (*type:* `GoogleApi.Notebooks.V1.Model.VmImage.t`, *default:* `nil`) - Use a Compute Engine VM image to start the notebook instance.
   *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the data disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
+  *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to enable ip forwarding or not, default false/off. https://cloud.google.com/vpc/docs/using-routes#canipforward
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this instance. These can be later modified by the setLabels method.
   *   `noRemoveDataDisk` (*type:* `boolean()`, *default:* `nil`) - Input only. If true, the data disk will not be auto deleted when deleting the instance.
   *   `bootDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - Input only. The size of the boot disk in GB attached to this instance, up to a maximum of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not specified, this defaults to 100.
@@ -92,6 +93,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
           :vmImage => GoogleApi.Notebooks.V1.Model.VmImage.t() | nil,
           :nicType => String.t() | nil,
           :dataDiskType => String.t() | nil,
+          :canIpForward => boolean() | nil,
           :labels => map() | nil,
           :noRemoveDataDisk => boolean() | nil,
           :bootDiskSizeGb => String.t() | nil,
@@ -129,6 +131,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
   field(:vmImage, as: GoogleApi.Notebooks.V1.Model.VmImage)
   field(:nicType)
   field(:dataDiskType)
+  field(:canIpForward)
   field(:labels, type: :map)
   field(:noRemoveDataDisk)
   field(:bootDiskSizeGb)
