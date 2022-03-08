@@ -22,18 +22,24 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApproveDecision do
   ## Attributes
 
   *   `approveTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which approval was granted.
+  *   `autoApproved` (*type:* `boolean()`, *default:* `nil`) - True when the request has been auto-approved.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the approval expires.
+  *   `signatureInfo` (*type:* `GoogleApi.AccessApproval.V1.Model.SignatureInfo.t`, *default:* `nil`) - The signature for the ApprovalRequest and details on how it was signed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :approveTime => DateTime.t() | nil,
-          :expireTime => DateTime.t() | nil
+          :autoApproved => boolean() | nil,
+          :expireTime => DateTime.t() | nil,
+          :signatureInfo => GoogleApi.AccessApproval.V1.Model.SignatureInfo.t() | nil
         }
 
   field(:approveTime, as: DateTime)
+  field(:autoApproved)
   field(:expireTime, as: DateTime)
+  field(:signatureInfo, as: GoogleApi.AccessApproval.V1.Model.SignatureInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessApproval.V1.Model.ApproveDecision do
