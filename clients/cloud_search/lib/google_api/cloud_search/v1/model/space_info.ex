@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   *   `avatarUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `description` (*type:* `String.t`, *default:* `nil`) - 
   *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupId.t`, *default:* `nil`) - 
+  *   `isExternal` (*type:* `boolean()`, *default:* `nil`) - Whether this is an external space outside of user's organization
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `numMembers` (*type:* `integer()`, *default:* `nil`) - 
   *   `userMembershipState` (*type:* `String.t`, *default:* `nil`) - searching user's membership state in this space
@@ -37,6 +38,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
           :avatarUrl => String.t() | nil,
           :description => String.t() | nil,
           :groupId => GoogleApi.CloudSearch.V1.Model.GroupId.t() | nil,
+          :isExternal => boolean() | nil,
           :name => String.t() | nil,
           :numMembers => integer() | nil,
           :userMembershipState => String.t() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   field(:avatarUrl)
   field(:description)
   field(:groupId, as: GoogleApi.CloudSearch.V1.Model.GroupId)
+  field(:isExternal)
   field(:name)
   field(:numMembers)
   field(:userMembershipState)
