@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.Promotion do
   @moduledoc """
-   The Promotions feature is currently in alpha and is not yet publicly available via Content API for Shopping. This documentation is provided for reference only may be subject to change. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
+   The Promotions feature is currently in alpha and is not yet publicly available in Content API for Shopping. This documentation is provided for reference only may be subject to change. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
 
   ## Attributes
 
@@ -41,8 +41,8 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `promotionDestinationIds` (*type:* `list(String.t)`, *default:* `nil`) - Destination ID for the promotion.
   *   `shippingServiceNames` (*type:* `list(String.t)`, *default:* `nil`) - Shipping service names for thse promotion.
   *   `promotionEffectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - Required. TimePeriod representation of the promotion effective dates.
-  *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates.
-  *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - Required. String representation of the promotion effective dates.
+  *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates (deprecated: Use promotion_display_time_period instead).
+  *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion effective dates (deprecated: Use promotion_effective_time_period instead).
   *   `itemIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item id exclusion for the promotion.
   *   `brand` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand for the promotion.
   *   `minimumPurchaseQuantity` (*type:* `integer()`, *default:* `nil`) - Minimum purchase quantity for the promotion.
