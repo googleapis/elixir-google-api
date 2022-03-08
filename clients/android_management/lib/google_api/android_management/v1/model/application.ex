@@ -21,30 +21,81 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
 
   ## Attributes
 
+  *   `appPricing` (*type:* `String.t`, *default:* `nil`) - Whether this app is free, free with in-app purchases, or paid. If the pricing is unspecified, this means the app is not generally available anymore (even though it might still be available to people who own it).
   *   `appTracks` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t)`, *default:* `nil`) - Application tracks visible to the enterprise.
+  *   `appVersions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.AppVersion.t)`, *default:* `nil`) - Versions currently available for this app.
+  *   `author` (*type:* `String.t`, *default:* `nil`) - The name of the author of the apps (for example, the app developer).
+  *   `availableCountries` (*type:* `list(String.t)`, *default:* `nil`) - The countries which this app is available in as per ISO 3166-1 alpha-2.
+  *   `category` (*type:* `String.t`, *default:* `nil`) - The app category (e.g. RACING, SOCIAL, etc.)
+  *   `contentRating` (*type:* `String.t`, *default:* `nil`) - The content rating for this app.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The localized promotional description, if available.
+  *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available.
+  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Noteworthy features (if any) of this app.
+  *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full app description, if available.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the app. This image is suitable for use at up to 512px x 512px
   *   `managedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties available to be pre-configured for the app.
+  *   `minAndroidSdkVersion` (*type:* `integer()`, *default:* `nil`) - The minimum Android SDK necessary to run the app.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterprise}/applications/{package_name}.
   *   `permissions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t)`, *default:* `nil`) - The permissions required by the app.
+  *   `playStoreUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the app.
+  *   `recentChanges` (*type:* `String.t`, *default:* `nil`) - A localised description of the recent changes made to the app.
+  *   `screenshotUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of screenshot links representing the app.
+  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the app. This image is suitable for use at up to 128px x 128px.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the app. Localized.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The approximate time (within 7 days) the app was last published.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appPricing => String.t() | nil,
           :appTracks => list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t()) | nil,
+          :appVersions => list(GoogleApi.AndroidManagement.V1.Model.AppVersion.t()) | nil,
+          :author => String.t() | nil,
+          :availableCountries => list(String.t()) | nil,
+          :category => String.t() | nil,
+          :contentRating => String.t() | nil,
+          :description => String.t() | nil,
+          :distributionChannel => String.t() | nil,
+          :features => list(String.t()) | nil,
+          :fullDescription => String.t() | nil,
+          :iconUrl => String.t() | nil,
           :managedProperties =>
             list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()) | nil,
+          :minAndroidSdkVersion => integer() | nil,
           :name => String.t() | nil,
           :permissions =>
             list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t()) | nil,
-          :title => String.t() | nil
+          :playStoreUrl => String.t() | nil,
+          :recentChanges => String.t() | nil,
+          :screenshotUrls => list(String.t()) | nil,
+          :smallIconUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
+  field(:appPricing)
   field(:appTracks, as: GoogleApi.AndroidManagement.V1.Model.AppTrackInfo, type: :list)
+  field(:appVersions, as: GoogleApi.AndroidManagement.V1.Model.AppVersion, type: :list)
+  field(:author)
+  field(:availableCountries, type: :list)
+  field(:category)
+  field(:contentRating)
+  field(:description)
+  field(:distributionChannel)
+  field(:features, type: :list)
+  field(:fullDescription)
+  field(:iconUrl)
   field(:managedProperties, as: GoogleApi.AndroidManagement.V1.Model.ManagedProperty, type: :list)
+  field(:minAndroidSdkVersion)
   field(:name)
   field(:permissions, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPermission, type: :list)
+  field(:playStoreUrl)
+  field(:recentChanges)
+  field(:screenshotUrls, type: :list)
+  field(:smallIconUrl)
   field(:title)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Application do
