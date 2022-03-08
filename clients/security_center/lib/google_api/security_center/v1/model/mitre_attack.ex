@@ -24,7 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.MitreAttack do
   *   `additionalTactics` (*type:* `list(String.t)`, *default:* `nil`) - Additional MITRE ATT&CK tactics related to this finding, if any.
   *   `additionalTechniques` (*type:* `list(String.t)`, *default:* `nil`) - Additional MITRE ATT&CK techniques related to this finding, if any, along with any of their respective parent techniques.
   *   `primaryTactic` (*type:* `String.t`, *default:* `nil`) - The MITRE ATT&CK tactic most closely represented by this finding, if any.
-  *   `primaryTechniques` (*type:* `list(String.t)`, *default:* `nil`) - The MITRE ATT&CK technique most closely represented by this finding, if any. primary_techniques is a repeated field because there are multiple levels of MITRE ATT&CK techniques. If the technique most closely represented by this finding is a sub-technique (e.g. SCANNING_IP_BLOCKS), both the sub-technique and its parent technique(s) will be listed (e.g. SCANNING_IP_BLOCKS, ACTIVE_SCANNING).
+  *   `primaryTechniques` (*type:* `list(String.t)`, *default:* `nil`) - The MITRE ATT&CK technique most closely represented by this finding, if any. primary_techniques is a repeated field because there are multiple levels of MITRE ATT&CK techniques. If the technique most closely represented by this finding is a sub-technique (e.g. `SCANNING_IP_BLOCKS`), both the sub-technique and its parent technique(s) will be listed (e.g. `SCANNING_IP_BLOCKS`, `ACTIVE_SCANNING`).
   *   `version` (*type:* `String.t`, *default:* `nil`) - The MITRE ATT&CK version referenced by the above fields. E.g. "8".
   """
 
