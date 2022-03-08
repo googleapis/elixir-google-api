@@ -21,11 +21,14 @@ defmodule GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus do
 
   ## Attributes
 
-  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date by which `eligibility_status` will go from `WARNING` to `DISAPPROVED`. It will be present when `eligibility_status` is `WARNING`. Date will be provided in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format i.e. YYYY-MM-DD
+  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date by which `eligibility_status` will go from `WARNING` to `DISAPPROVED`. It will be present when `eligibility_status` is `WARNING`. Date will be provided in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DD
   *   `eligibilityStatus` (*type:* `String.t`, *default:* `nil`) - Eligibility status of the Shopping Ads program.
-  *   `ineligibilityReason` (*type:* `String.t`, *default:* `nil`) - Reason if a program in a given country is not eligible for review. Populated only if `review_eligibility_status` is `INELIGIBLE`.
+  *   `onboardingIssues` (*type:* `list(String.t)`, *default:* `nil`) - These issues must be fixed to become eligible for the review.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes for all the regions with the same `eligibilityStatus` and `reviewEligibility`.
   *   `reviewEligibilityStatus` (*type:* `String.t`, *default:* `nil`) - If a program in a given country is eligible for review. It will be present only if eligibility status is `DISAPPROVED`.
+  *   `reviewIneligibilityReason` (*type:* `String.t`, *default:* `nil`) - Review ineligibility reason if account is not eligible for review.
+  *   `reviewIneligibilityReasonDescription` (*type:* `String.t`, *default:* `nil`) - Reason if a program in a given country is not eligible for review. Populated only if `review_eligibility_status` is `INELIGIBLE`.
+  *   `reviewIneligibilityReasonDetails` (*type:* `GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusReviewIneligibilityReasonDetails.t`, *default:* `nil`) - This contains additional information specific to review ineligibility reasons. If review is ineligible because of `IN_COOLDOWN_PERIOD`, it will contain timestamp for cooldown period.
   *   `reviewIssues` (*type:* `list(String.t)`, *default:* `nil`) - These issues will be evaluated in review process. Fix all the issues before requesting the review.
   """
 
@@ -34,17 +37,29 @@ defmodule GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus do
   @type t :: %__MODULE__{
           :disapprovalDate => String.t() | nil,
           :eligibilityStatus => String.t() | nil,
-          :ineligibilityReason => String.t() | nil,
+          :onboardingIssues => list(String.t()) | nil,
           :regionCodes => list(String.t()) | nil,
           :reviewEligibilityStatus => String.t() | nil,
+          :reviewIneligibilityReason => String.t() | nil,
+          :reviewIneligibilityReasonDescription => String.t() | nil,
+          :reviewIneligibilityReasonDetails =>
+            GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusReviewIneligibilityReasonDetails.t()
+            | nil,
           :reviewIssues => list(String.t()) | nil
         }
 
   field(:disapprovalDate)
   field(:eligibilityStatus)
-  field(:ineligibilityReason)
+  field(:onboardingIssues, type: :list)
   field(:regionCodes, type: :list)
   field(:reviewEligibilityStatus)
+  field(:reviewIneligibilityReason)
+  field(:reviewIneligibilityReasonDescription)
+
+  field(:reviewIneligibilityReasonDetails,
+    as: GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusReviewIneligibilityReasonDetails
+  )
+
   field(:reviewIssues, type: :list)
 end
 

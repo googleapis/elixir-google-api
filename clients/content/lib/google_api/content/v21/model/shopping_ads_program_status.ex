@@ -21,24 +21,24 @@ defmodule GoogleApi.Content.V21.Model.ShoppingAdsProgramStatus do
 
   ## Attributes
 
+  *   `globalState` (*type:* `String.t`, *default:* `nil`) - State of the program, It is set to enabled if there are offers for at least one region.
   *   `regionStatuses` (*type:* `list(GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus.t)`, *default:* `nil`) - Status of the program in each region. Regions with the same status and review eligibility are grouped together in `regionCodes`.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - If program is successfully onboarded for at least one region.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :globalState => String.t() | nil,
           :regionStatuses =>
-            list(GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus.t()) | nil,
-          :state => String.t() | nil
+            list(GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus.t()) | nil
         }
+
+  field(:globalState)
 
   field(:regionStatuses,
     as: GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus,
     type: :list
   )
-
-  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ShoppingAdsProgramStatus do
