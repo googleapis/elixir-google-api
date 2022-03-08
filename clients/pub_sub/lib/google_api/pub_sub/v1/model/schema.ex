@@ -23,6 +23,8 @@ defmodule GoogleApi.PubSub.V1.Model.Schema do
 
   *   `definition` (*type:* `String.t`, *default:* `nil`) - The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
+  *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp that the revision was created.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The revision ID of the schema.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the schema definition.
   """
 
@@ -31,11 +33,15 @@ defmodule GoogleApi.PubSub.V1.Model.Schema do
   @type t :: %__MODULE__{
           :definition => String.t() | nil,
           :name => String.t() | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:definition)
   field(:name)
+  field(:revisionCreateTime, as: DateTime)
+  field(:revisionId)
   field(:type)
 end
 
