@@ -24,7 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalS
   *   `assignees` (*type:* `list(String.t)`, *default:* `nil`) - References primary/secondary etc assignees in the external system.
   *   `externalSystemUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The most recent time when the corresponding finding's ticket/tracker was updated in the external system.
   *   `externalUid` (*type:* `String.t`, *default:* `nil`) - Identifier that's used to track the given finding in the external system.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - External System Name e.g. jira, demisto, etc. e.g.: organizations/1234/sources/5678/findings/123456/externalSystems/jira folders/1234/sources/5678/findings/123456/externalSystems/jira projects/1234/sources/5678/findings/123456/externalSystems/jira
+  *   `name` (*type:* `String.t`, *default:* `nil`) - External System Name e.g. jira, demisto, etc. e.g.: `organizations/1234/sources/5678/findings/123456/externalSystems/jira` `folders/1234/sources/5678/findings/123456/externalSystems/jira` `projects/1234/sources/5678/findings/123456/externalSystems/jira`
   *   `status` (*type:* `String.t`, *default:* `nil`) - Most recent status of the corresponding finding's ticket/tracker in the external system.
   """
 

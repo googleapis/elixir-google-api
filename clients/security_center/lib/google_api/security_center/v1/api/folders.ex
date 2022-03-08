@@ -1671,7 +1671,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `externalSystem.name`. External System Name e.g. jira, demisto, etc. e.g.: organizations/1234/sources/5678/findings/123456/externalSystems/jira folders/1234/sources/5678/findings/123456/externalSystems/jira projects/1234/sources/5678/findings/123456/externalSystems/jira
+  *   `folders_id` (*type:* `String.t`) - Part of `externalSystem.name`. External System Name e.g. jira, demisto, etc. e.g.: `organizations/1234/sources/5678/findings/123456/externalSystems/jira` `folders/1234/sources/5678/findings/123456/externalSystems/jira` `projects/1234/sources/5678/findings/123456/externalSystems/jira`
   *   `sources_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `foldersId`.
   *   `findings_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `foldersId`.
   *   `external_systems_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `foldersId`.
