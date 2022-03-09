@@ -592,7 +592,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the attachment, in the form "spaces/*/messages/*/attachments/*".
+  *   `name` (*type:* `String.t`) - Required. Resource name of the attachment, in the form "spaces/*/messages/*/attachments/*".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
