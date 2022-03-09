@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The space's display name. For direct messages between humans, this field might be empty.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space, in the form "spaces/*". Example: spaces/AAAAAAAAAAAA
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the space, in the form "spaces/*". Example: spaces/AAAAAAAAAAAA
   *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the space is a DM between a bot and a single human.
   *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the messages are threaded in this space.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `single_user_bot_dm` instead. Output only. The type of a space.
