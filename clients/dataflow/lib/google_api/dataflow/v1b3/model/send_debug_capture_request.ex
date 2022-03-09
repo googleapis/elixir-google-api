@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
   @moduledoc """
-  Request to send encoded debug information.
+  Request to send encoded debug information. Next ID: 8
 
   ## Attributes
 
   *   `componentId` (*type:* `String.t`, *default:* `nil`) - The internal component id for which debug information is sent.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The encoded debug information.
+  *   `dataFormat` (*type:* `String.t`, *default:* `nil`) - Format for the data field above (id=5).
   *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `workerId` (*type:* `String.t`, *default:* `nil`) - The worker id, i.e., VM hostname.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
   @type t :: %__MODULE__{
           :componentId => String.t() | nil,
           :data => String.t() | nil,
+          :dataFormat => String.t() | nil,
           :location => String.t() | nil,
           :workerId => String.t() | nil
         }
 
   field(:componentId)
   field(:data)
+  field(:dataFormat)
   field(:location)
   field(:workerId)
 end
