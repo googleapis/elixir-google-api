@@ -17,15 +17,20 @@
 
 defmodule GoogleApi.MyBusinessVerifications.V1.Model.ComplyWithGuidelines do
   @moduledoc """
-  Indicates that the location fails to comply with our [guidelines](https://support.google.com/business/answer/3038177). To fix this issue, consult the [Help Center Article](https://support.google.com/business/answer/4569145).
+  Indicates that the location fails to comply with our [guidelines](https://support.google.com/business/answer/3038177).
 
   ## Attributes
 
+  *   `recommendationReason` (*type:* `String.t`, *default:* `nil`) - The reason why the location is being recommended to comply with guidelines.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :recommendationReason => String.t() | nil
+        }
+
+  field(:recommendationReason)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MyBusinessVerifications.V1.Model.ComplyWithGuidelines do
