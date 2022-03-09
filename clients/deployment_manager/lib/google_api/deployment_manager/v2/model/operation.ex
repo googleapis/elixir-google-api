@@ -30,7 +30,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   *   `httpErrorStatusCode` (*type:* `integer()`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the operation. This identifier is defined by the server.
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-  *   `kind` (*type:* `String.t`, *default:* `deploymentmanager#operation`) - [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+  *   `kind` (*type:* `String.t`, *default:* `compute#operation`) - [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the operation.
   *   `operationGroupId` (*type:* `String.t`, *default:* `nil`) - [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
