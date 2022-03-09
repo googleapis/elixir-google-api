@@ -1005,7 +1005,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose files will be listed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the repository whose files will be listed. For example: "projects/p1/locations/us-central1/repositories/repo1
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
