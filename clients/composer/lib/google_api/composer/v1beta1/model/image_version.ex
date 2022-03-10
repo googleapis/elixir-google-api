@@ -22,7 +22,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.ImageVersion do
   ## Attributes
 
   *   `creationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether it is impossible to create an environment with the image version.
-  *   `imageVersionId` (*type:* `String.t`, *default:* `nil`) - The string identifier of the ImageVersion, in the form: "composer-x.y.z-airflow-a.b(.c)"
+  *   `imageVersionId` (*type:* `String.t`, *default:* `nil`) - The string identifier of the ImageVersion, in the form: "composer-x.y.z-airflow-a.b.c"
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Whether this is the default ImageVersion used by Composer during environment creation if no input ImageVersion is specified.
   *   `releaseDate` (*type:* `GoogleApi.Composer.V1beta1.Model.Date.t`, *default:* `nil`) - The date of the version release.
   *   `supportedPythonVersions` (*type:* `list(String.t)`, *default:* `nil`) - supported python versions
