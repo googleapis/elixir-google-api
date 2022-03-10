@@ -21,8 +21,8 @@ defmodule GoogleApi.Gmail.V1.Model.ModifyThreadRequest do
 
   ## Attributes
 
-  *   `addLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to add to this thread.
-  *   `removeLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to remove from this thread.
+  *   `addLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to add to this thread. You can add up to 100 labels with each update.
+  *   `removeLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to remove from this thread. You can remove up to 100 labels with each update.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Gmail.V1.Model.ModifyMessageRequest do
 
   ## Attributes
 
-  *   `addLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to add to this message.
-  *   `removeLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list IDs of labels to remove from this message.
+  *   `addLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of labels to add to this message. You can add up to 100 labels with each update.
+  *   `removeLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list IDs of labels to remove from this message. You can remove up to 100 labels with each update.
   """
 
   use GoogleApi.Gax.ModelBase
