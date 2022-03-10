@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
   ## Attributes
 
   *   `abortCause` (*type:* `String.t`, *default:* `nil`) - The reason probing was aborted.
+  *   `destinationEgressLocation` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EdgeLocation.t`, *default:* `nil`) - The EdgeLocation from which a packet destined for/originating from the internet will egress/ingress the Google network. This will only be populated for a connectivity test which has an internet destination/source address. The absence of this field *must not* be used as an indication that the destination/source is part of the Google network.
   *   `endpointInfo` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - The source and destination endpoints derived from the test input and used for active probing.
   *   `error` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Status.t`, *default:* `nil`) - Details about an internal failure or the cancellation of active probing.
   *   `probingLatency` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t`, *default:* `nil`) - Latency as measured by active probing in one direction: from the source to the destination endpoint.
@@ -35,6 +36,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
 
   @type t :: %__MODULE__{
           :abortCause => String.t() | nil,
+          :destinationEgressLocation =>
+            GoogleApi.NetworkManagement.V1beta1.Model.EdgeLocation.t() | nil,
           :endpointInfo => GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t() | nil,
           :error => GoogleApi.NetworkManagement.V1beta1.Model.Status.t() | nil,
           :probingLatency =>
@@ -46,6 +49,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
         }
 
   field(:abortCause)
+  field(:destinationEgressLocation, as: GoogleApi.NetworkManagement.V1beta1.Model.EdgeLocation)
   field(:endpointInfo, as: GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo)
   field(:error, as: GoogleApi.NetworkManagement.V1beta1.Model.Status)
   field(:probingLatency, as: GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution)
