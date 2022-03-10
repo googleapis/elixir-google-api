@@ -21,7 +21,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1TestConfig
 
   ## Attributes
 
-  *   `flow` (*type:* `String.t`, *default:* `nil`) - Flow name. If not set, default start flow is assumed. Format: `projects//locations//agents//flows/`.
+  *   `flow` (*type:* `String.t`, *default:* `nil`) - Flow name to start the test case with. Format: `projects//locations//agents//flows/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If both are set, `page` takes precedence over `flow`. If neither is set, the test case will start with start page on the default start flow.
+  *   `page` (*type:* `String.t`, *default:* `nil`) - The page to start the test case with. Format: `projects//locations//agents//flows//pages/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If both are set, `page` takes precedence over `flow`. If neither is set, the test case will start with start page on the default start flow.
   *   `trackingParameters` (*type:* `list(String.t)`, *default:* `nil`) - Session parameters to be compared when calculating differences.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1TestConfig
 
   @type t :: %__MODULE__{
           :flow => String.t() | nil,
+          :page => String.t() | nil,
           :trackingParameters => list(String.t()) | nil
         }
 
   field(:flow)
+  field(:page)
   field(:trackingParameters, type: :list)
 end
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2RestoreAgentReque
   ## Attributes
 
   *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Zip compressed raw byte content for agent.
-  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing the agent to restore. Note: The URI must start with "gs://".
+  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing the agent to restore. Note: The URI must start with "gs://". Dialogflow performs a read operation for the Cloud Storage object on the caller's behalf, so your request authentication must have read permissions for the object. For more information, see [Dialogflow access control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
   """
 
   use GoogleApi.Gax.ModelBase
