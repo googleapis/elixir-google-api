@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ImportTestCases
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for test cases.
-  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to import test cases from. The format of this URI must be `gs:///`.
+  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to import test cases from. The format of this URI must be `gs:///`. Dialogflow performs a read operation for the Cloud Storage object on the caller's behalf, so your request authentication must have read permissions for the object. For more information, see [Dialogflow access control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
   """
 
   use GoogleApi.Gax.ModelBase
