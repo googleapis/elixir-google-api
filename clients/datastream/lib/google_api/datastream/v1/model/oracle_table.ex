@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleTable do
 
   ## Attributes
 
-  *   `oracleColumns` (*type:* `list(GoogleApi.Datastream.V1.Model.OracleColumn.t)`, *default:* `nil`) - Oracle columns in the schema. When unspecified as part of inclue/exclude lists, includes/excludes everything.
+  *   `oracleColumns` (*type:* `list(GoogleApi.Datastream.V1.Model.OracleColumn.t)`, *default:* `nil`) - Oracle columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
   *   `table` (*type:* `String.t`, *default:* `nil`) - Table name.
   """
 
