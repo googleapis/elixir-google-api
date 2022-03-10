@@ -5632,7 +5632,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer `threads.trash` instead.
+  Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead.
 
   ## Parameters
 
@@ -5902,7 +5902,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Moves the specified thread to the trash.
+  Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash.
 
   ## Parameters
 
@@ -5970,7 +5970,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Removes the specified thread from the trash.
+  Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash.
 
   ## Parameters
 
