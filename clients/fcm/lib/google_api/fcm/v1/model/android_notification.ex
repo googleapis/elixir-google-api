@@ -24,6 +24,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
   *   `body` (*type:* `String.t`, *default:* `nil`) - The notification's body text. If present, it will override google.firebase.fcm.v1.Notification.body.
   *   `bodyLocArgs` (*type:* `list(String.t)`, *default:* `nil`) - Variable string values to be used in place of the format specifiers in body_loc_key to use to localize the body text to the user's current localization. See [Formatting and Styling](https://goo.gl/MalYE3) for more information.
   *   `bodyLocKey` (*type:* `String.t`, *default:* `nil`) - The key to the body string in the app's string resources to use to localize the body text to the user's current localization. See [String Resources](https://goo.gl/NdFZGI) for more information.
+  *   `bypassProxyNotification` (*type:* `boolean()`, *default:* `nil`) - If set, display notifications delivered to the device will be handled by the app instead of the proxy.
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The [notification's channel id](https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels) (new in Android O). The app must create a channel with this channel ID before any notification with this channel ID is received. If you don't send this channel ID in the request, or if the channel ID provided has not yet been created by the app, FCM uses the channel ID specified in the app manifest.
   *   `clickAction` (*type:* `String.t`, *default:* `nil`) - The action associated with a user click on the notification. If specified, an activity with a matching intent filter is launched when a user clicks on the notification.
   *   `color` (*type:* `String.t`, *default:* `nil`) - The notification's icon color, expressed in #rrggbb format.
@@ -54,6 +55,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
           :body => String.t() | nil,
           :bodyLocArgs => list(String.t()) | nil,
           :bodyLocKey => String.t() | nil,
+          :bypassProxyNotification => boolean() | nil,
           :channelId => String.t() | nil,
           :clickAction => String.t() | nil,
           :color => String.t() | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
   field(:body)
   field(:bodyLocArgs, type: :list)
   field(:bodyLocKey)
+  field(:bypassProxyNotification)
   field(:channelId)
   field(:clickAction)
   field(:color)
