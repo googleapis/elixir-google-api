@@ -25,6 +25,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   *   `dicom` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content.
   *   `fhir` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content.
   *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures de-identification of image pixels wherever they are found in the source_dataset.
+  *   `operationMetadata` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t`, *default:* `nil`) - Details about the work the de-identify operation performed.
   *   `text` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the source_dataset.
   """
 
@@ -35,6 +36,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
           :dicom => GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t() | nil,
           :fhir => GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t() | nil,
           :image => GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t() | nil,
+          :operationMetadata =>
+            GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t() | nil,
           :text => GoogleApi.HealthCare.V1beta1.Model.TextConfig.t() | nil
         }
 
@@ -42,6 +45,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   field(:dicom, as: GoogleApi.HealthCare.V1beta1.Model.DicomConfig)
   field(:fhir, as: GoogleApi.HealthCare.V1beta1.Model.FhirConfig)
   field(:image, as: GoogleApi.HealthCare.V1beta1.Model.ImageConfig)
+  field(:operationMetadata, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata)
   field(:text, as: GoogleApi.HealthCare.V1beta1.Model.TextConfig)
 end
 
