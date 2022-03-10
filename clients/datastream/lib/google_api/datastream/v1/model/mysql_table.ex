@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlTable do
 
   ## Attributes
 
-  *   `mysqlColumns` (*type:* `list(GoogleApi.Datastream.V1.Model.MysqlColumn.t)`, *default:* `nil`) - MySQL columns in the database. When unspecified as part of include/exclude lists, includes/excludes everything.
+  *   `mysqlColumns` (*type:* `list(GoogleApi.Datastream.V1.Model.MysqlColumn.t)`, *default:* `nil`) - MySQL columns in the database. When unspecified as part of include/exclude objects, includes/excludes everything.
   *   `table` (*type:* `String.t`, *default:* `nil`) - Table name.
   """
 

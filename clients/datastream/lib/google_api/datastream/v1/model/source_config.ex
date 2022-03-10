@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
 
   ## Attributes
 
-  *   `mysqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSourceConfig.t`, *default:* `nil`) - MySQL data source configuration
-  *   `oracleSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSourceConfig.t`, *default:* `nil`) - Oracle data source configuration
+  *   `mysqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSourceConfig.t`, *default:* `nil`) - MySQL data source configuration.
+  *   `oracleSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSourceConfig.t`, *default:* `nil`) - Oracle data source configuration.
   *   `sourceConnectionProfile` (*type:* `String.t`, *default:* `nil`) - Required. Source connection profile resoource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
   """
 
