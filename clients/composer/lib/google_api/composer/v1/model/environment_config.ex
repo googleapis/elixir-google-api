@@ -23,7 +23,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
 
   *   `airflowUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)).
   *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using "/"-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix.
-  *   `databaseConfig` (*type:* `GoogleApi.Composer.V1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `databaseConfig` (*type:* `GoogleApi.Composer.V1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software.
   *   `encryptionConfig` (*type:* `GoogleApi.Composer.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption options for the Cloud Composer environment and its dependencies. Cannot be updated.
   *   `environmentSize` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
