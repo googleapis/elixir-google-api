@@ -21,6 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
 
   ## Attributes
 
+  *   `consumerAcceptList` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Customer accept list represents the list of projects (id/number) on customer side that can privately connect to the service attachment. It is an optional field which the customers can provide during the instance creation. By default, the customer project associated with the Apigee organization will be included to the list.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was created in milliseconds since epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the instance.
   *   `diskEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
@@ -33,12 +34,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   *   `peeringCidrRange` (*type:* `String.t`, *default:* `nil`) - Optional. Size of the CIDR block range that will be reserved by the instance. PAID organizations support `SLASH_16` to `SLASH_20` and defaults to `SLASH_16`. Evaluation organizations support only `SLASH_23`.
   *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. Port number of the exposed Apigee endpoint.
   *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Version of the runtime system running in the instance. The runtime system is the set of components that serve the API Proxy traffic in your Environments.
+  *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the service attachment created for the instance in the format: `projects/*/regions/*/serviceAttachments/*` Apigee customers can privately forward traffic to this service attachment using the PSC endpoints.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the instance. Values other than `ACTIVE` means the resource is not ready to use.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :consumerAcceptList => list(String.t()) | nil,
           :createdAt => String.t() | nil,
           :description => String.t() | nil,
           :diskEncryptionKeyName => String.t() | nil,
@@ -51,9 +54,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :peeringCidrRange => String.t() | nil,
           :port => String.t() | nil,
           :runtimeVersion => String.t() | nil,
+          :serviceAttachment => String.t() | nil,
           :state => String.t() | nil
         }
 
+  field(:consumerAcceptList, type: :list)
   field(:createdAt)
   field(:description)
   field(:diskEncryptionKeyName)
@@ -66,6 +71,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   field(:peeringCidrRange)
   field(:port)
   field(:runtimeVersion)
+  field(:serviceAttachment)
   field(:state)
 end
 
