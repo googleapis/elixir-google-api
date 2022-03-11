@@ -21,8 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
 
   ## Attributes
 
+  *   `classLevelGlobalExplanations` (*type:* `list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t)`, *default:* `nil`) - Global explanation contains the explanation of top features on the class level. Applies to classification models only.
   *   `dataSplitResult` (*type:* `GoogleApi.BigQuery.V2.Model.DataSplitResult.t`, *default:* `nil`) - Data split result of the training run. Only set when the input data is actually split.
   *   `evaluationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t`, *default:* `nil`) - The evaluation metrics over training/eval data that were computed at the end of training.
+  *   `modelLevelGlobalExplanation` (*type:* `GoogleApi.BigQuery.V2.Model.GlobalExplanation.t`, *default:* `nil`) - Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models.
   *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output of each iteration run, results.size() <= max_iterations.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this training run.
   *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Options that were used for this training run, includes user specified and default options that were used.
@@ -31,15 +33,24 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :classLevelGlobalExplanations =>
+            list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t()) | nil,
           :dataSplitResult => GoogleApi.BigQuery.V2.Model.DataSplitResult.t() | nil,
           :evaluationMetrics => GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t() | nil,
+          :modelLevelGlobalExplanation => GoogleApi.BigQuery.V2.Model.GlobalExplanation.t() | nil,
           :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()) | nil,
           :startTime => DateTime.t() | nil,
           :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t() | nil
         }
 
+  field(:classLevelGlobalExplanations,
+    as: GoogleApi.BigQuery.V2.Model.GlobalExplanation,
+    type: :list
+  )
+
   field(:dataSplitResult, as: GoogleApi.BigQuery.V2.Model.DataSplitResult)
   field(:evaluationMetrics, as: GoogleApi.BigQuery.V2.Model.EvaluationMetrics)
+  field(:modelLevelGlobalExplanation, as: GoogleApi.BigQuery.V2.Model.GlobalExplanation)
   field(:results, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
   field(:startTime, as: DateTime)
   field(:trainingOptions, as: GoogleApi.BigQuery.V2.Model.TrainingOptions)

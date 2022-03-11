@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DataSplitResult do
   ## Attributes
 
   *   `evaluationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Table reference of the evaluation data after split.
+  *   `testTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Table reference of the test data after split.
   *   `trainingTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Table reference of the training data after split.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.BigQuery.V2.Model.DataSplitResult do
 
   @type t :: %__MODULE__{
           :evaluationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :testTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :trainingTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil
         }
 
   field(:evaluationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:testTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:trainingTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
 end
 

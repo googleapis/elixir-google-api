@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   ## Attributes
 
+  *   `cloneDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.CloneDefinition.t`, *default:* `nil`) - [Output-only] Clone definition.
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was created, in milliseconds since the epoch.
   *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - [Output-only] The default collation of the table.
@@ -56,6 +57,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloneDefinition => GoogleApi.BigQuery.V2.Model.CloneDefinition.t() | nil,
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
           :creationTime => String.t() | nil,
           :defaultCollation => String.t() | nil,
@@ -90,6 +92,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :view => GoogleApi.BigQuery.V2.Model.ViewDefinition.t() | nil
         }
 
+  field(:cloneDefinition, as: GoogleApi.BigQuery.V2.Model.CloneDefinition)
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:creationTime)
   field(:defaultCollation)
