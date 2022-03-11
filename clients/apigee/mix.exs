@@ -18,7 +18,7 @@
 defmodule GoogleApi.Apigee.Mixfile do
   use Mix.Project
 
-  @version "0.42.2"
+  @version "0.43.0"
 
   def project() do
     [

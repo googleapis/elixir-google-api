@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
 
   ## Attributes
 
-  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - The SSL/TLS cipher suites to be used. Must be one of the cipher suite names listed in: http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites
+  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - The SSL/TLS cipher suites to be used. For programmable proxies, it must be one of the cipher suite names listed in: http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites. For configurable proxies, it must follow the configuration specified in: https://commondatastorage.googleapis.com/chromium-boringssl-docs/ssl.h.html#Cipher-suite-configuration. This setting has no effect for configurable proxies when negotiating TLS 1.3.
   *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables two-way TLS.
   *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t`, *default:* `nil`) - The TLS Common Name of the certificate.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
