@@ -33,11 +33,13 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
   *   `dartNormalizeType` (*type:* `String.t`, *default:* `nil`) - Type of normalization algorithm for boosted tree models using dart booster.
   *   `userColumn` (*type:* `String.t`, *default:* `nil`) - User column specified for matrix factorization models.
+  *   `integratedGradientsNumSteps` (*type:* `String.t`, *default:* `nil`) - Number of integral steps for the integrated gradients explain method.
   *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
   *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
   *   `hiddenUnits` (*type:* `list(String.t)`, *default:* `nil`) - Hidden units for dnn models.
   *   `numFactors` (*type:* `String.t`, *default:* `nil`) - Num factors specified for matrix factorization models.
   *   `numParallelTree` (*type:* `String.t`, *default:* `nil`) - Number of parallel trees constructed during each iteration for boosted tree models.
+  *   `calculatePValues` (*type:* `boolean()`, *default:* `nil`) - Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models.
   *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2.
   *   `colsampleBynode` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each node(split) for boosted tree models.
   *   `dataFrequency` (*type:* `String.t`, *default:* `nil`) - The data frequency of a time series.
@@ -49,6 +51,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
   *   `timeSeriesDataColumn` (*type:* `String.t`, *default:* `nil`) - Column to be designated as time series data for ARIMA model.
   *   `timeSeriesTimestampColumn` (*type:* `String.t`, *default:* `nil`) - Column to be designated as time series timestamp for ARIMA model.
+  *   `numTrials` (*type:* `String.t`, *default:* `nil`) - Number of trials to run this hyperparameter tuning job.
+  *   `hparamTuningObjectives` (*type:* `list(String.t)`, *default:* `nil`) - The target evaluation metrics to optimize the hyperparameters for.
   *   `kmeansInitializationColumn` (*type:* `String.t`, *default:* `nil`) - The column used to provide the initial centroids for kmeans algorithm when kmeans_initialization_method is CUSTOM.
   *   `minTreeChildWeight` (*type:* `String.t`, *default:* `nil`) - Minimum sum of instance weight needed in a child for boosted tree models.
   *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms.
@@ -58,6 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `treeMethod` (*type:* `String.t`, *default:* `nil`) - Tree construction algorithm for boosted tree models.
+  *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled shapley explain method.
   *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names. Suppose there is a struct A with field b. When false (default), the output feature name is A_b. When true, the output feature name is A.b.
   *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix factorization.
   *   `decomposeTimeSeries` (*type:* `boolean()`, *default:* `nil`) - If true, perform decompose time series and save the results.
@@ -66,12 +71,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
   *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The time series id column that was used during ARIMA model training.
+  *   `maxParallelTrials` (*type:* `String.t`, *default:* `nil`) - Maximum number of trials to run in parallel.
   *   `adjustStepChanges` (*type:* `boolean()`, *default:* `nil`) - If true, detect step changes and make data adjustment in the input time series.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - A specification of the non-seasonal part of the ARIMA model: the three components (p, d, q) are the AR order, the degree of differencing, and the MA order.
   *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
   *   `timeSeriesIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - The time series id columns that were used during ARIMA model training.
   *   `colsampleBylevel` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each level for boosted tree models.
+  *   `enableGlobalExplain` (*type:* `boolean()`, *default:* `nil`) - If true, enable global explanation during training.
   *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate strategy.
   *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative training algorithms.
@@ -93,11 +100,13 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :l2Regularization => float() | nil,
           :dartNormalizeType => String.t() | nil,
           :userColumn => String.t() | nil,
+          :integratedGradientsNumSteps => String.t() | nil,
           :lossType => String.t() | nil,
           :learnRate => float() | nil,
           :hiddenUnits => list(String.t()) | nil,
           :numFactors => String.t() | nil,
           :numParallelTree => String.t() | nil,
+          :calculatePValues => boolean() | nil,
           :dataSplitEvalFraction => float() | nil,
           :colsampleBynode => float() | nil,
           :dataFrequency => String.t() | nil,
@@ -109,6 +118,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :l1Regularization => float() | nil,
           :timeSeriesDataColumn => String.t() | nil,
           :timeSeriesTimestampColumn => String.t() | nil,
+          :numTrials => String.t() | nil,
+          :hparamTuningObjectives => list(String.t()) | nil,
           :kmeansInitializationColumn => String.t() | nil,
           :minTreeChildWeight => String.t() | nil,
           :minRelativeProgress => float() | nil,
@@ -118,6 +129,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :warmStart => boolean() | nil,
           :optimizationStrategy => String.t() | nil,
           :treeMethod => String.t() | nil,
+          :sampledShapleyNumPaths => String.t() | nil,
           :preserveInputStructs => boolean() | nil,
           :feedbackType => String.t() | nil,
           :decomposeTimeSeries => boolean() | nil,
@@ -126,12 +138,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :maxTreeDepth => String.t() | nil,
           :inputLabelColumns => list(String.t()) | nil,
           :timeSeriesIdColumn => String.t() | nil,
+          :maxParallelTrials => String.t() | nil,
           :adjustStepChanges => boolean() | nil,
           :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t() | nil,
           :numClusters => String.t() | nil,
           :batchSize => String.t() | nil,
           :timeSeriesIdColumns => list(String.t()) | nil,
           :colsampleBylevel => float() | nil,
+          :enableGlobalExplain => boolean() | nil,
           :kmeansInitializationMethod => String.t() | nil,
           :initialLearnRate => float() | nil,
           :maxIterations => String.t() | nil,
@@ -150,11 +164,13 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:l2Regularization)
   field(:dartNormalizeType)
   field(:userColumn)
+  field(:integratedGradientsNumSteps)
   field(:lossType)
   field(:learnRate)
   field(:hiddenUnits, type: :list)
   field(:numFactors)
   field(:numParallelTree)
+  field(:calculatePValues)
   field(:dataSplitEvalFraction)
   field(:colsampleBynode)
   field(:dataFrequency)
@@ -166,6 +182,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:l1Regularization)
   field(:timeSeriesDataColumn)
   field(:timeSeriesTimestampColumn)
+  field(:numTrials)
+  field(:hparamTuningObjectives, type: :list)
   field(:kmeansInitializationColumn)
   field(:minTreeChildWeight)
   field(:minRelativeProgress)
@@ -175,6 +193,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:warmStart)
   field(:optimizationStrategy)
   field(:treeMethod)
+  field(:sampledShapleyNumPaths)
   field(:preserveInputStructs)
   field(:feedbackType)
   field(:decomposeTimeSeries)
@@ -183,12 +202,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:maxTreeDepth)
   field(:inputLabelColumns, type: :list)
   field(:timeSeriesIdColumn)
+  field(:maxParallelTrials)
   field(:adjustStepChanges)
   field(:nonSeasonalOrder, as: GoogleApi.BigQuery.V2.Model.ArimaOrder)
   field(:numClusters)
   field(:batchSize)
   field(:timeSeriesIdColumns, type: :list)
   field(:colsampleBylevel)
+  field(:enableGlobalExplain)
   field(:kmeansInitializationMethod)
   field(:initialLearnRate)
   field(:maxIterations)
