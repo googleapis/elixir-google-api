@@ -21,11 +21,13 @@ defmodule GoogleApi.Run.V1.Model.ExecutionStatus do
 
   ## Attributes
 
+  *   `cancelledCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Cancelled. +optional
   *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
   *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of an execution's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
   *   `failedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Failed. +optional
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI where logs for this execution can be found in Cloud Console.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Optional. The 'generation' of the execution that was last processed by the controller.
+  *   `retriedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which have retried at least once. +optional
   *   `runningCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of actively running tasks. +optional
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
   *   `succeededCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Succeeded. +optional
@@ -34,21 +36,25 @@ defmodule GoogleApi.Run.V1.Model.ExecutionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cancelledCount => integer() | nil,
           :completionTime => DateTime.t() | nil,
           :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
           :failedCount => integer() | nil,
           :logUri => String.t() | nil,
           :observedGeneration => integer() | nil,
+          :retriedCount => integer() | nil,
           :runningCount => integer() | nil,
           :startTime => DateTime.t() | nil,
           :succeededCount => integer() | nil
         }
 
+  field(:cancelledCount)
   field(:completionTime, as: DateTime)
   field(:conditions, as: GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition, type: :list)
   field(:failedCount)
   field(:logUri)
   field(:observedGeneration)
+  field(:retriedCount)
   field(:runningCount)
   field(:startTime, as: DateTime)
   field(:succeededCount)
