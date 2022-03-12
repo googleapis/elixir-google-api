@@ -21,11 +21,16 @@ defmodule GoogleApi.Notebooks.V1.Model.StartRuntimeRequest do
 
   ## Attributes
 
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Idempotent request UUID.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :requestId => String.t() | nil
+        }
+
+  field(:requestId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Notebooks.V1.Model.StartRuntimeRequest do
