@@ -23,17 +23,20 @@ defmodule GoogleApi.Notebooks.V1.Model.SwitchRuntimeRequest do
 
   *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig.t`, *default:* `nil`) - accelerator config.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - machine type.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Idempotent request UUID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :acceleratorConfig => GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig.t() | nil,
-          :machineType => String.t() | nil
+          :machineType => String.t() | nil,
+          :requestId => String.t() | nil
         }
 
   field(:acceleratorConfig, as: GoogleApi.Notebooks.V1.Model.RuntimeAcceleratorConfig)
   field(:machineType)
+  field(:requestId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Notebooks.V1.Model.SwitchRuntimeRequest do
