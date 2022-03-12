@@ -21,8 +21,10 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
 
   ## Attributes
 
+  *   `appEngineIntegrationMode` (*type:* `String.t`, *default:* `nil`) - The App Engine integration mode to use for this database.
   *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - The concurrency control mode to use for this database.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `keyPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The key_prefix for this database. This key_prefix is used, in combination with the project id ("~") to construct the application id that is returned from the Cloud Datastore APIs in Google App Engine first generation runtimes. This value may be empty in which case the appid to use for URL-encoded keys is the project_id (eg: foo instead of v~foo).
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The location of the database. Available databases are listed at https://cloud.google.com/firestore/docs/locations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Database. Format: `projects/{project}/databases/{database}`
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.
@@ -31,15 +33,19 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appEngineIntegrationMode => String.t() | nil,
           :concurrencyMode => String.t() | nil,
           :etag => String.t() | nil,
+          :keyPrefix => String.t() | nil,
           :locationId => String.t() | nil,
           :name => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:appEngineIntegrationMode)
   field(:concurrencyMode)
   field(:etag)
+  field(:keyPrefix)
   field(:locationId)
   field(:name)
   field(:type)
