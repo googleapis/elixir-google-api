@@ -520,7 +520,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
-  *   `range` (*type:* `String.t`) - The A1 notation of a range to search for a logical table of data. Values are appended after the last row of the table.
+  *   `range` (*type:* `String.t`) - The [A1 notation](/sheets/api/guides/concepts#cell) of a range to search for a logical table of data. Values are appended after the last row of the table.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -600,7 +600,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   end
 
   @doc """
-  Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.
+  Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.
 
   ## Parameters
 
@@ -765,8 +765,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:dateTimeRenderOption` (*type:* `String.t`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.
-      *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
-      *   `:ranges` (*type:* `list(String.t)`) - The A1 notation or R1C1 notation of the range to retrieve values from.
+      *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `ranges=["A1:B2"],majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `ranges=["A1:B2"],majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
+      *   `:ranges` (*type:* `list(String.t)`) - The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the range to retrieve values from.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1045,7 +1045,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
-  *   `range` (*type:* `String.t`) - The A1 notation or R1C1 notation of the values to clear.
+  *   `range` (*type:* `String.t`) - The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the values to clear.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1121,7 +1121,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve data from.
-  *   `range` (*type:* `String.t`) - The A1 notation or R1C1 notation of the range to retrieve values from.
+  *   `range` (*type:* `String.t`) - The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the range to retrieve values from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1201,7 +1201,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
-  *   `range` (*type:* `String.t`) - The A1 notation of the values to update.
+  *   `range` (*type:* `String.t`) - The [A1 notation](/sheets/api/guides/concepts#cell) of the values to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
