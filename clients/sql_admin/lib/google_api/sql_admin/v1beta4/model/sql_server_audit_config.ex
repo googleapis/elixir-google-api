@@ -23,17 +23,23 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig do
 
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - The name of the destination bucket (e.g., gs://mybucket).
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always sql#sqlServerAuditConfig
+  *   `retentionInterval` (*type:* `String.t`, *default:* `nil`) - How long to keep generated audit files.
+  *   `uploadInterval` (*type:* `String.t`, *default:* `nil`) - How often to upload generated audit files.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :bucket => String.t() | nil,
-          :kind => String.t() | nil
+          :kind => String.t() | nil,
+          :retentionInterval => String.t() | nil,
+          :uploadInterval => String.t() | nil
         }
 
   field(:bucket)
   field(:kind)
+  field(:retentionInterval)
+  field(:uploadInterval)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SqlServerAuditConfig do
