@@ -22,6 +22,7 @@ defmodule GoogleApi.VersionHistory.V1.Model.Release do
   ## Attributes
 
   *   `fraction` (*type:* `float()`, *default:* `nil`) - Rollout fraction. This fraction indicates the fraction of people that should receive this version in this release. If the fraction is not specified in ReleaseManager, the API will assume fraction is 1.
+  *   `fractionGroup` (*type:* `String.t`, *default:* `nil`) - Rollout fraction group. Only fractions with the same fraction_group are statistically comparable: there may be non-fractional differences between different fraction groups.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Release name. Format is "{product}/platforms/{platform}/channels/{channel}/versions/{version}/releases/{release}"
   *   `serving` (*type:* `GoogleApi.VersionHistory.V1.Model.Interval.t`, *default:* `nil`) - Timestamp interval of when the release was live. If end_time is unspecified, the release is currently live.
   *   `version` (*type:* `String.t`, *default:* `nil`) - String containing just the version number. e.g. "84.0.4147.38"
@@ -31,12 +32,14 @@ defmodule GoogleApi.VersionHistory.V1.Model.Release do
 
   @type t :: %__MODULE__{
           :fraction => float() | nil,
+          :fractionGroup => String.t() | nil,
           :name => String.t() | nil,
           :serving => GoogleApi.VersionHistory.V1.Model.Interval.t() | nil,
           :version => String.t() | nil
         }
 
   field(:fraction)
+  field(:fractionGroup)
   field(:name)
   field(:serving, as: GoogleApi.VersionHistory.V1.Model.Interval)
   field(:version)
