@@ -2610,7 +2610,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Resource name of this secret. This secret may be a child of any type of stream. Format: properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+  *   `name` (*type:* `String.t`) - Output only. Resource name of this secret. This secret may be a child of any type of stream. Format: properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
