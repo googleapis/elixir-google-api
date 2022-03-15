@@ -17,16 +17,18 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   @moduledoc """
-  Next ID: 31
+  Next ID: 33
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor memberMilestoneChatEvent - the member that sent the message messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase
+  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor memberMilestoneChatEvent - the member that sent the message membershipGiftingEvent - the user that made the purchase giftMembershipReceivedEvent - the user that received the gift membership messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase
   *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
   *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is 'fanFundingEvent'.
+  *   `giftMembershipReceivedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatGiftMembershipReceivedDetails.t`, *default:* `nil`) - Details about the Gift Membership Received event, this is only set if the type is 'giftMembershipReceivedEvent'.
   *   `hasDisplayContent` (*type:* `boolean()`, *default:* `nil`) - Whether the message has display content that should be displayed to users.
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - 
   *   `memberMilestoneChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMemberMilestoneChatDetails.t`, *default:* `nil`) - Details about the Member Milestone Chat event, this is only set if the type is 'memberMilestoneChatEvent'.
+  *   `membershipGiftingDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMembershipGiftingDetails.t`, *default:* `nil`) - Details about the Membership Gifting event, this is only set if the type is 'membershipGiftingEvent'.
   *   `messageDeletedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t`, *default:* `nil`) - 
   *   `messageRetractedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t`, *default:* `nil`) - 
   *   `newSponsorDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatNewSponsorDetails.t`, *default:* `nil`) - Details about the New Member Announcement event, this is only set if the type is 'newSponsorEvent'. Please note that "member" is the new term for "sponsor".
@@ -45,10 +47,14 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
           :displayMessage => String.t() | nil,
           :fanFundingEventDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t() | nil,
+          :giftMembershipReceivedDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatGiftMembershipReceivedDetails.t() | nil,
           :hasDisplayContent => boolean() | nil,
           :liveChatId => String.t() | nil,
           :memberMilestoneChatDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatMemberMilestoneChatDetails.t() | nil,
+          :membershipGiftingDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatMembershipGiftingDetails.t() | nil,
           :messageDeletedDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t() | nil,
           :messageRetractedDetails =>
@@ -67,12 +73,19 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   field(:authorChannelId)
   field(:displayMessage)
   field(:fanFundingEventDetails, as: GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails)
+
+  field(:giftMembershipReceivedDetails,
+    as: GoogleApi.YouTube.V3.Model.LiveChatGiftMembershipReceivedDetails
+  )
+
   field(:hasDisplayContent)
   field(:liveChatId)
 
   field(:memberMilestoneChatDetails,
     as: GoogleApi.YouTube.V3.Model.LiveChatMemberMilestoneChatDetails
   )
+
+  field(:membershipGiftingDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMembershipGiftingDetails)
 
   field(:messageDeletedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails)
   field(:messageRetractedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails)
