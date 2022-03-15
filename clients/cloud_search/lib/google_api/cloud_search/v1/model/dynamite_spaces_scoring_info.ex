@@ -21,9 +21,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.DynamiteSpacesScoringInfo do
 
   ## Attributes
 
+  *   `affinityScore` (*type:* `float()`, *default:* `nil`) - 
+  *   `commonContactCountAffinityScore` (*type:* `float()`, *default:* `nil`) - 
+  *   `contactsIntersectionCount` (*type:* `float()`, *default:* `nil`) - 
   *   `finalScore` (*type:* `float()`, *default:* `nil`) - 
   *   `freshnessScore` (*type:* `float()`, *default:* `nil`) - 
+  *   `joinedSpacesAffinityScore` (*type:* `float()`, *default:* `nil`) - 
   *   `messageScore` (*type:* `float()`, *default:* `nil`) - 
+  *   `smallContactListAffinityScore` (*type:* `float()`, *default:* `nil`) - 
+  *   `smallUnjoinedSpacesAffinityScore` (*type:* `float()`, *default:* `nil`) - 
   *   `spaceAgeInDays` (*type:* `float()`, *default:* `nil`) - 
   *   `topicalityScore` (*type:* `float()`, *default:* `nil`) - 
   """
@@ -31,16 +37,28 @@ defmodule GoogleApi.CloudSearch.V1.Model.DynamiteSpacesScoringInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :affinityScore => float() | nil,
+          :commonContactCountAffinityScore => float() | nil,
+          :contactsIntersectionCount => float() | nil,
           :finalScore => float() | nil,
           :freshnessScore => float() | nil,
+          :joinedSpacesAffinityScore => float() | nil,
           :messageScore => float() | nil,
+          :smallContactListAffinityScore => float() | nil,
+          :smallUnjoinedSpacesAffinityScore => float() | nil,
           :spaceAgeInDays => float() | nil,
           :topicalityScore => float() | nil
         }
 
+  field(:affinityScore)
+  field(:commonContactCountAffinityScore)
+  field(:contactsIntersectionCount)
   field(:finalScore)
   field(:freshnessScore)
+  field(:joinedSpacesAffinityScore)
   field(:messageScore)
+  field(:smallContactListAffinityScore)
+  field(:smallUnjoinedSpacesAffinityScore)
   field(:spaceAgeInDays)
   field(:topicalityScore)
 end

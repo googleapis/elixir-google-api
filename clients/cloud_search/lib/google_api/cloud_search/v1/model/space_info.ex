@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   *   `avatarUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `description` (*type:* `String.t`, *default:* `nil`) - 
   *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupId.t`, *default:* `nil`) - 
-  *   `isExternal` (*type:* `boolean()`, *default:* `nil`) - Whether this is an external space outside of user's organization
+  *   `isExternal` (*type:* `boolean()`, *default:* `nil`) - Whether this is a space that enables guest access
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `numMembers` (*type:* `integer()`, *default:* `nil`) - 
   *   `userMembershipState` (*type:* `String.t`, *default:* `nil`) - searching user's membership state in this space
