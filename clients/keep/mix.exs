@@ -18,7 +18,7 @@
 defmodule GoogleApi.Keep.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Keep.Mixfile do
 
   defp description() do
     """
-    Google Keep API client library. This API is an enterprise-only API used to create and manage the Keep notes within your domain, including resolving issues identified by CASB software.
+    Google Keep API client library. The Google Keep API is used in an enterprise environment to manage Google Keep content and resolve issues identified by cloud security software.
     """
   end
 
