@@ -25,7 +25,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse do
   *   `updatedCells` (*type:* `integer()`, *default:* `nil`) - The number of cells updated.
   *   `updatedColumns` (*type:* `integer()`, *default:* `nil`) - The number of columns where at least one cell in the column was updated.
   *   `updatedData` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`, *default:* `nil`) - The values of the cells in the range matched by the dataFilter after all updates were applied. This is only included if the request's `includeValuesInResponse` field was `true`.
-  *   `updatedRange` (*type:* `String.t`, *default:* `nil`) - The range (in A1 notation) that updates were applied to.
+  *   `updatedRange` (*type:* `String.t`, *default:* `nil`) - The range (in [A1 notation](/sheets/api/guides/concepts#cell)) that updates were applied to.
   *   `updatedRows` (*type:* `integer()`, *default:* `nil`) - The number of rows where at least one cell in the row was updated.
   """
 

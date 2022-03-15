@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
 
   ## Attributes
 
-  *   `ranges` (*type:* `list(String.t)`, *default:* `nil`) - The ranges to clear, in A1 or R1C1 notation.
+  *   `ranges` (*type:* `list(String.t)`, *default:* `nil`) - The ranges to clear, in [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell).
   """
 
   use GoogleApi.Gax.ModelBase
