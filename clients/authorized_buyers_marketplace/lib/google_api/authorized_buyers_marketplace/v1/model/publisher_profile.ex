@@ -35,7 +35,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.PublisherProfile do
   *   `programmaticDealsContact` (*type:* `String.t`, *default:* `nil`) - Contact information for programmatic deals. This is free text entered by the publisher and may include information like names, phone numbers and email addresses.
   *   `publisherCode` (*type:* `String.t`, *default:* `nil`) - A unique identifying code for the seller. This value is the same for all of the seller's parent and child publisher profiles. Can be used to filter the response of the publisherProfiles.list method.
   *   `samplePageUrl` (*type:* `String.t`, *default:* `nil`) - URL to a sample content page.
-  *   `topHeadlines` (*type:* `list(String.t)`, *default:* `nil`) - Up to three key metrics and rankings. For example "#1 Mobile News Site for 20 Straight Months".
+  *   `topHeadlines` (*type:* `list(String.t)`, *default:* `nil`) - Up to three key metrics and rankings. For example, "#1 Mobile News Site for 20 Straight Months".
   """
 
   use GoogleApi.Gax.ModelBase

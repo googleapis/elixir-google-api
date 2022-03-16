@@ -21,7 +21,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DeliveryControl do
 
   ## Attributes
 
-  *   `companionDeliveryType` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies roadblocking in a master companion lineitem.
+  *   `companionDeliveryType` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies roadblocking in a main companion lineitem.
   *   `creativeRotationType` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies strategy to use for selecting a creative when multiple creatives of the same size are available.
   *   `deliveryRateType` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies how the impression delivery will be paced.
   *   `frequencyCap` (*type:* `list(GoogleApi.AuthorizedBuyersMarketplace.V1.Model.FrequencyCap.t)`, *default:* `nil`) - Output only. Specifies any frequency caps. Cannot be filtered within ListDealsRequest.

@@ -24,9 +24,9 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MarketplaceTargeting do
   *   `daypartTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DayPartTargeting.t`, *default:* `nil`) - Daypart targeting information.
   *   `geoTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Output only. Geo criteria IDs to be included/excluded.
   *   `inventorySizeTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.InventorySizeTargeting.t`, *default:* `nil`) - Output only. Inventory sizes to be included/excluded.
-  *   `placementTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.PlacementTargeting.t`, *default:* `nil`) - Output only. Placement targeting information, e.g., URL, mobile applications.
-  *   `technologyTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.TechnologyTargeting.t`, *default:* `nil`) - Output only. Technology targeting information, e.g., operating system, device category.
-  *   `userListTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Buyer user list targeting information. User lists can be uploaded via https://developers.google.com/authorized-buyers/rtb/bulk-uploader.
+  *   `placementTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.PlacementTargeting.t`, *default:* `nil`) - Output only. Placement targeting information, for example, URL, mobile applications.
+  *   `technologyTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.TechnologyTargeting.t`, *default:* `nil`) - Output only. Technology targeting information, for example, operating system, device category.
+  *   `userListTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Buyer user list targeting information. User lists can be uploaded using https://developers.google.com/authorized-buyers/rtb/bulk-uploader.
   *   `videoTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.VideoTargeting.t`, *default:* `nil`) - Output only. Video targeting information.
   """
 

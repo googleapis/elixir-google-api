@@ -2,7 +2,7 @@
 
 Authorized Buyers Marketplace API client library.
 
-The Authorized Buyers Marketplace API allows buyers programmatically discover inventory; propose, retrieve and negotiate deals with publishers.
+The Authorized Buyers Marketplace API lets buyers programmatically discover inventory; propose, retrieve and negotiate deals with publishers.
 
 ## Installation
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.UriTargeting do
   @moduledoc """
-  Represents a list of targeted and excluded URLs (e.g., google.com). For Private Auction Deals, URLs are either included or excluded. For Programmatic Guaranteed and Preferred Deals, this doesn't apply.
+  Represents a list of targeted and excluded URLs (for example, google.com). For Private Auction Deals, URLs are either included or excluded. For Programmatic Guaranteed and Preferred Deals, this doesn't apply.
 
   ## Attributes
 
