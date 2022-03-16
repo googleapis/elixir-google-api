@@ -25,6 +25,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   *   `appBundle` (*type:* `GoogleApi.Testing.V1.Model.AppBundle.t`, *default:* `nil`) - A multi-apk app bundle for the application under test.
   *   `appInitialActivity` (*type:* `String.t`, *default:* `nil`) - The initial activity that should be used to start the app.
   *   `appPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the application under test. The default value is determined by examining the application's manifest.
+  *   `maxDepth` (*type:* `integer()`, *default:* `nil`) - The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50.
+  *   `maxSteps` (*type:* `integer()`, *default:* `nil`) - The max number of steps Robo can execute. Default is no limit.
   *   `roboDirectives` (*type:* `list(GoogleApi.Testing.V1.Model.RoboDirective.t)`, *default:* `nil`) - A set of directives Robo should apply during the crawl. This allows users to customize the crawl. For example, the username and password for a test account can be provided.
   *   `roboMode` (*type:* `String.t`, *default:* `nil`) - The mode in which Robo should run. Most clients should allow the server to populate this field automatically.
   *   `roboScript` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - A JSON file with a sequence of actions Robo should perform as a prologue for the crawl.
@@ -38,6 +40,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
           :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t() | nil,
           :appInitialActivity => String.t() | nil,
           :appPackageId => String.t() | nil,
+          :maxDepth => integer() | nil,
+          :maxSteps => integer() | nil,
           :roboDirectives => list(GoogleApi.Testing.V1.Model.RoboDirective.t()) | nil,
           :roboMode => String.t() | nil,
           :roboScript => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
@@ -48,6 +52,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   field(:appBundle, as: GoogleApi.Testing.V1.Model.AppBundle)
   field(:appInitialActivity)
   field(:appPackageId)
+  field(:maxDepth)
+  field(:maxSteps)
   field(:roboDirectives, as: GoogleApi.Testing.V1.Model.RoboDirective, type: :list)
   field(:roboMode)
   field(:roboScript, as: GoogleApi.Testing.V1.Model.FileReference)
