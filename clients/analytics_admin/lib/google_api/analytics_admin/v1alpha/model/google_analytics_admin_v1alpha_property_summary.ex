@@ -22,18 +22,24 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for the property referred to in this property summary.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of this property's logical parent. Note: The Property-Moving UI can be used to change the parent. Format: accounts/{account}, properties/{property} Example: "accounts/100", "properties/200"
   *   `property` (*type:* `String.t`, *default:* `nil`) - Resource name of property referred to by this property summary Format: properties/{property_id} Example: "properties/1000"
+  *   `propertyType` (*type:* `String.t`, *default:* `nil`) - The property's property type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
-          :property => String.t() | nil
+          :parent => String.t() | nil,
+          :property => String.t() | nil,
+          :propertyType => String.t() | nil
         }
 
   field(:displayName)
+  field(:parent)
   field(:property)
+  field(:propertyType)
 end
 
 defimpl Poison.Decoder,
