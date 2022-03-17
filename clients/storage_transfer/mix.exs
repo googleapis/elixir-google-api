@@ -18,7 +18,7 @@
 defmodule GoogleApi.StorageTransfer.Mixfile do
   use Mix.Project
 
-  @version "0.35.2"
+  @version "0.35.3"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.StorageTransfer.Mixfile do
 
   defp description() do
     """
-    Storage Transfer API client library. Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets.
+    Storage Transfer API client library. Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
     """
   end
 

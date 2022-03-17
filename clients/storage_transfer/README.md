@@ -2,7 +2,7 @@
 
 Storage Transfer API client library.
 
-Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets.
+Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
 
 ## Installation
 
