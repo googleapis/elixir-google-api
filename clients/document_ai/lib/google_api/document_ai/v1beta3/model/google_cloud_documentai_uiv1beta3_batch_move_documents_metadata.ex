@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Batch
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `destDatasetType` (*type:* `String.t`, *default:* `nil`) - The destination dataset split type.
+  *   `destSplitType` (*type:* `String.t`, *default:* `nil`) - The destination dataset split type.
   *   `individualBatchMoveStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus.t)`, *default:* `nil`) - The list of response details of each document.
   """
 
@@ -33,6 +34,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Batch
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
             | nil,
           :destDatasetType => String.t() | nil,
+          :destSplitType => String.t() | nil,
           :individualBatchMoveStatuses =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus.t()
@@ -45,6 +47,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Batch
   )
 
   field(:destDatasetType)
+  field(:destSplitType)
 
   field(:individualBatchMoveStatuses,
     as:
