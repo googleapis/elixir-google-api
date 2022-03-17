@@ -22,7 +22,7 @@ defmodule GoogleApi.Speech.V1.Model.CreateCustomClassRequest do
   ## Attributes
 
   *   `customClass` (*type:* `GoogleApi.Speech.V1.Model.CustomClass.t`, *default:* `nil`) - Required. The custom class to create.
-  *   `customClassId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the custom class, which will become the final component of the custom class' resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
+  *   `customClassId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the custom class, which will become the final component of the custom class' resource name. This value should restrict to letters, numbers, and hyphens, with the first character a letter, the last a letter or a number, and be 4-63 characters.
   """
 
   use GoogleApi.Gax.ModelBase
