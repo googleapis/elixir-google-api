@@ -23,6 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachmen
 
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group attachment was created as milliseconds since epoch.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Required. ID of the attached environment.
+  *   `environmentGroupId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the environment group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the environment group attachment.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachmen
   @type t :: %__MODULE__{
           :createdAt => String.t() | nil,
           :environment => String.t() | nil,
+          :environmentGroupId => String.t() | nil,
           :name => String.t() | nil
         }
 
   field(:createdAt)
   field(:environment)
+  field(:environmentGroupId)
   field(:name)
 end
 
