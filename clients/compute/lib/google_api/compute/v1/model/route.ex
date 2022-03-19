@@ -37,6 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.Route do
   *   `nextHopPeering` (*type:* `String.t`, *default:* `nil`) - [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
   *   `nextHopVpnTunnel` (*type:* `String.t`, *default:* `nil`) - The URL to a VpnTunnel that should handle matching packets.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+  *   `routeStatus` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the route.
   *   `routeType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - A list of instance tags to which this route applies.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.Route do
           :nextHopPeering => String.t() | nil,
           :nextHopVpnTunnel => String.t() | nil,
           :priority => integer() | nil,
+          :routeStatus => String.t() | nil,
           :routeType => String.t() | nil,
           :selfLink => String.t() | nil,
           :tags => list(String.t()) | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Compute.V1.Model.Route do
   field(:nextHopPeering)
   field(:nextHopVpnTunnel)
   field(:priority)
+  field(:routeStatus)
   field(:routeType)
   field(:selfLink)
   field(:tags, type: :list)
