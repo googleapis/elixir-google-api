@@ -32,7 +32,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The instance state.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the instance state, if available.
-  *   `suspensionReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. field indicates all the reasons the instance is in "SUSPENDED" state.
+  *   `suspensionReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The service tier of the instance.
   """
 
