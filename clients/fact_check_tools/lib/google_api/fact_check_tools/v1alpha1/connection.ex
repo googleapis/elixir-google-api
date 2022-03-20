@@ -24,7 +24,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View your email address
+      # See your primary Google Account email address
       "https://www.googleapis.com/auth/userinfo.email"
     ],
     otp_app: :google_api_fact_check_tools,
