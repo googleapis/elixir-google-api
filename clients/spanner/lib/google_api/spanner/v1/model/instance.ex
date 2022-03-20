@@ -22,6 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
   ## Attributes
 
   *   `config` (*type:* `String.t`, *default:* `nil`) - Required. The name of the instance's configuration. Values are of the form `projects//instanceConfigs/`. See also InstanceConfig and ListInstanceConfigs.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the instance was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The descriptive name for this instance as it appears in UIs. Must be unique per project and between 4 and 30 characters in length.
   *   `endpointUris` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. This field is not populated.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Cloud Labels are a flexible and lightweight mechanism for organizing cloud resources into groups that reflect a customer's organizational needs and deployment strategies. Cloud Labels can be used to filter collections of resources. They can be used to control how resource metrics are aggregated. And they can be used as arguments to policy management rules (e.g. route, firewall, load balancing, etc.). * Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `a-z{0,62}`. * Label values must be between 0 and 63 characters long and must conform to the regular expression `[a-z0-9_-]{0,63}`. * No more than 64 labels can be associated with a given resource. See https://goo.gl/xmQnxf for more information on and examples of labels. If you plan to use labels in your own code, please note that additional characters may be allowed in the future. And so you are advised to use an internal label representation, such as JSON, which doesn't rely upon specific characters being disallowed. For example, representing labels as the string: name + "_" + value would prove problematic if we were to allow "_" in a future release.
@@ -29,22 +30,26 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes allocated to this instance. At most one of either node_count or processing_units should be present in the message. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
   *   `processingUnits` (*type:* `integer()`, *default:* `nil`) - The number of processing units allocated to this instance. At most one of processing_units or node_count should be present in the message. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current instance state. For CreateInstance, the state must be either omitted or set to `CREATING`. For UpdateInstance, the state must be either omitted or set to `READY`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the instance was most recently updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :config => String.t() | nil,
+          :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :endpointUris => list(String.t()) | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :nodeCount => integer() | nil,
           :processingUnits => integer() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:config)
+  field(:createTime, as: DateTime)
   field(:displayName)
   field(:endpointUris, type: :list)
   field(:labels, type: :map)
@@ -52,6 +57,7 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
   field(:nodeCount)
   field(:processingUnits)
   field(:state)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Instance do
