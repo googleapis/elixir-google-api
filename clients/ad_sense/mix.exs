@@ -18,7 +18,7 @@
 defmodule GoogleApi.AdSense.Mixfile do
   use Mix.Project
 
-  @version "0.14.4"
+  @version "0.14.5"
 
   def project() do
     [
