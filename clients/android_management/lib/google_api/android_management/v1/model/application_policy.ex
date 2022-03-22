@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   ## Attributes
 
   *   `accessibleTrackIds` (*type:* `list(String.t)`, *default:* `nil`) - List of the app’s track IDs that a device belonging to the enterprise can access. If the list contains multiple track IDs, devices receive the latest version among all accessible tracks. If the list contains no track IDs, devices only have access to the app’s production track. More details about each track are available in AppTrackInfo.
+  *   `alwaysOnVpnLockdownExemption` (*type:* `String.t`, *default:* `nil`) - Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN_LOCKDOWN_ENFORCED, the app is not allowed networking, and if set to VPN_LOCKDOWN_EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non_compliance_reason set to API_LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non_compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications[i].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy.
   *   `autoUpdateMode` (*type:* `String.t`, *default:* `nil`) - Controls the auto-update mode for the app.
   *   `connectedWorkAndPersonalApp` (*type:* `String.t`, *default:* `nil`) - Controls whether the app can communicate with itself across a device’s work and personal profiles, subject to user consent.
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. It does not override the permission_grants which applies to all apps.
@@ -41,6 +42,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
 
   @type t :: %__MODULE__{
           :accessibleTrackIds => list(String.t()) | nil,
+          :alwaysOnVpnLockdownExemption => String.t() | nil,
           :autoUpdateMode => String.t() | nil,
           :connectedWorkAndPersonalApp => String.t() | nil,
           :defaultPermissionPolicy => String.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
         }
 
   field(:accessibleTrackIds, type: :list)
+  field(:alwaysOnVpnLockdownExemption)
   field(:autoUpdateMode)
   field(:connectedWorkAndPersonalApp)
   field(:defaultPermissionPolicy)
