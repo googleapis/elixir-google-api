@@ -20,7 +20,7 @@ defmodule GoogleApi.Books.V1 do
   API client metadata for GoogleApi.Books.V1.
   """
 
-  @discovery_revision "20210305"
+  @discovery_revision "20220318"
 
   def discovery_revision(), do: @discovery_revision
 end
