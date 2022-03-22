@@ -21,6 +21,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations is an unstructured key-value map stored with a policy that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. A timestamp identifying the time this key was originally created.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. A timestamp when this key was deleted. If the resource is not deleted, this must be empty.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-readable display name of this key that you can modify. The maximum length is 63 characters.
@@ -35,6 +36,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:createTime, as: DateTime)
   field(:deleteTime, as: DateTime)
   field(:displayName)
