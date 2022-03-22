@@ -22,10 +22,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.DnsPeering do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Optional description of the dns zone.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Name of the dns.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. The dns name suffix of the zone.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the dns peering zone. Format: projects/{project}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
   *   `targetNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. Optional target network to which dns peering should happen.
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - Optional. Optional target project to which dns peering should happen.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Name of the zone.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,16 +33,16 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.DnsPeering do
   @type t :: %__MODULE__{
           :description => String.t() | nil,
           :domain => String.t() | nil,
+          :name => String.t() | nil,
           :targetNetwork => String.t() | nil,
-          :targetProject => String.t() | nil,
-          :zone => String.t() | nil
+          :targetProject => String.t() | nil
         }
 
   field(:description)
   field(:domain)
+  field(:name)
   field(:targetNetwork)
   field(:targetProject)
-  field(:zone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataFusion.V1beta1.Model.DnsPeering do

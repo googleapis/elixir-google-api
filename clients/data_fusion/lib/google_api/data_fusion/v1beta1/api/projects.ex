@@ -462,7 +462,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -978,25 +978,25 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.DataFusion.V1beta1.Model.AddDnsPeeringRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.DataFusion.V1beta1.Model.DnsPeering.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.DataFusion.V1beta1.Model.AddDnsPeeringResponse{}}` on success
+  *   `{:ok, %GoogleApi.DataFusion.V1beta1.Model.DnsPeering{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec datafusion_projects_locations_instances_dns_peerings_add(
+  @spec datafusion_projects_locations_instances_dns_peerings_create(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DataFusion.V1beta1.Model.AddDnsPeeringResponse.t()}
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.DnsPeering.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datafusion_projects_locations_instances_dns_peerings_add(
+  def datafusion_projects_locations_instances_dns_peerings_create(
         connection,
         parent,
         optional_params \\ [],
@@ -1020,7 +1020,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/{+parent}/dnsPeerings:add", %{
+      |> Request.url("/v1beta1/{+parent}/dnsPeerings", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1028,18 +1028,16 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.DataFusion.V1beta1.Model.AddDnsPeeringResponse{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.DataFusion.V1beta1.Model.DnsPeering{}])
   end
 
   @doc """
-  List DNS peering for a given resource.
+  Remove DNS peering on the given resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource on which dns peering will be listed.
+  *   `name` (*type:* `String.t`) - Required. The name of the DNS peering zone to delete. Format: projects/{project}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1052,8 +1050,78 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value to use if there are additional results to retrieve for this list request.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataFusion.V1beta1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datafusion_projects_locations_instances_dns_peerings_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def datafusion_projects_locations_instances_dns_peerings_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DataFusion.V1beta1.Model.Empty{}])
+  end
+
+  @doc """
+  List DNS peering for a given resource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of dns peerings. Format: projects/{project}/locations/{location}/instances/{instance}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of dns peerings to return. The service may return fewer than this value. If unspecified, at most 10 dns peerings will be returned. The maximum value is 50; values above 50 will be coerced to 50.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListDnsPeerings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDnsPeerings` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1096,7 +1164,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/{+parent}/dnsPeerings:list", %{
+      |> Request.url("/v1beta1/{+parent}/dnsPeerings", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1106,80 +1174,6 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.DataFusion.V1beta1.Model.ListDnsPeeringsResponse{}]
-    )
-  end
-
-  @doc """
-  Remove DNS peering on the given resource.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource on which DNS peering will be removed.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.DataFusion.V1beta1.Model.RemoveDnsPeeringRequest.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataFusion.V1beta1.Model.RemoveDnsPeeringResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datafusion_projects_locations_instances_dns_peerings_remove(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.DataFusion.V1beta1.Model.RemoveDnsPeeringResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def datafusion_projects_locations_instances_dns_peerings_remove(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1beta1/{+parent}/dnsPeerings:remove", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.DataFusion.V1beta1.Model.RemoveDnsPeeringResponse{}]
     )
   end
 
@@ -1202,7 +1196,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

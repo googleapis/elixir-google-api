@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DataFusion.V1beta1.Model.ListDnsPeeringsResponse do
   @moduledoc """
-  List dns peering response.
+  Response message for list DNS peerings.
 
   ## Attributes
 
-  *   `dnsPeerings` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.DnsPeering.t)`, *default:* `nil`) - List of dns peering configs.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `dnsPeerings` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.DnsPeering.t)`, *default:* `nil`) - List of dns peering.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   """
 
   use GoogleApi.Gax.ModelBase
