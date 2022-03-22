@@ -26,7 +26,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `parentName` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
-  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The project id that the resource belongs to.
+  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The project ID that the resource belongs to.
   *   `projectName` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The full resource type of the resource.
   """
