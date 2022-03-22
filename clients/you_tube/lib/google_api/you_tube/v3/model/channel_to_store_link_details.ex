@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
 
   ## Attributes
 
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - Google Merchant Center id of the store.
   *   `storeName` (*type:* `String.t`, *default:* `nil`) - Name of the store.
   *   `storeUrl` (*type:* `String.t`, *default:* `nil`) - Landing page of the store.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :merchantId => String.t() | nil,
           :storeName => String.t() | nil,
           :storeUrl => String.t() | nil
         }
 
+  field(:merchantId)
   field(:storeName)
   field(:storeUrl)
 end
