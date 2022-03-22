@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.NodeConfig do
   @moduledoc """
-  Parameters that describe the nodes in a cluster.
+  Parameters that describe the nodes in a cluster. *Note: *GKE Autopilot clusters do not recognize parameters in `NodeConfig`. Use AutoprovisioningNodePoolDefaults instead.
 
   ## Attributes
 
