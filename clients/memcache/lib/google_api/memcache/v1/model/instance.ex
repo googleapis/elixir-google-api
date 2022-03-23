@@ -27,6 +27,8 @@ defmodule GoogleApi.Memcache.V1.Model.Instance do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User provided name for the instance, which is only used for display purposes. Cannot be more than 80 characters.
   *   `instanceMessages` (*type:* `list(GoogleApi.Memcache.V1.Model.InstanceMessage.t)`, *default:* `nil`) - List of messages that describe the current state of the Memcached instance.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
+  *   `maintenancePolicy` (*type:* `GoogleApi.Memcache.V1.Model.GoogleCloudMemcacheV1MaintenancePolicy.t`, *default:* `nil`) - The maintenance policy for the instance. If not provided, the maintenance event will be performed based on Memorystore internal rollout schedule.
+  *   `maintenanceSchedule` (*type:* `GoogleApi.Memcache.V1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Published maintenance schedule.
   *   `memcacheFullVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The full version of memcached server running on this instance. System automatically determines the full memcached version for an instance based on the input MemcacheVersion. The full version format will be "memcached-1.5.16".
   *   `memcacheNodes` (*type:* `list(GoogleApi.Memcache.V1.Model.Node.t)`, *default:* `nil`) - Output only. List of Memcached nodes. Refer to Node message for more details.
   *   `memcacheVersion` (*type:* `String.t`, *default:* `nil`) - The major version of Memcached software. If not provided, latest supported version will be used. Currently the latest supported major version is `MEMCACHE_1_5`. The minor version will be automatically determined by our system based on the latest supported minor version.
@@ -48,6 +50,9 @@ defmodule GoogleApi.Memcache.V1.Model.Instance do
           :displayName => String.t() | nil,
           :instanceMessages => list(GoogleApi.Memcache.V1.Model.InstanceMessage.t()) | nil,
           :labels => map() | nil,
+          :maintenancePolicy =>
+            GoogleApi.Memcache.V1.Model.GoogleCloudMemcacheV1MaintenancePolicy.t() | nil,
+          :maintenanceSchedule => GoogleApi.Memcache.V1.Model.MaintenanceSchedule.t() | nil,
           :memcacheFullVersion => String.t() | nil,
           :memcacheNodes => list(GoogleApi.Memcache.V1.Model.Node.t()) | nil,
           :memcacheVersion => String.t() | nil,
@@ -66,6 +71,10 @@ defmodule GoogleApi.Memcache.V1.Model.Instance do
   field(:displayName)
   field(:instanceMessages, as: GoogleApi.Memcache.V1.Model.InstanceMessage, type: :list)
   field(:labels, type: :map)
+
+  field(:maintenancePolicy, as: GoogleApi.Memcache.V1.Model.GoogleCloudMemcacheV1MaintenancePolicy)
+
+  field(:maintenanceSchedule, as: GoogleApi.Memcache.V1.Model.MaintenanceSchedule)
   field(:memcacheFullVersion)
   field(:memcacheNodes, as: GoogleApi.Memcache.V1.Model.Node, type: :list)
   field(:memcacheVersion)
