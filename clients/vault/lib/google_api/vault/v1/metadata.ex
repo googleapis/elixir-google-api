@@ -20,7 +20,7 @@ defmodule GoogleApi.Vault.V1 do
   API client metadata for GoogleApi.Vault.V1.
   """
 
-  @discovery_revision "20220222"
+  @discovery_revision "20220316"
 
   def discovery_revision(), do: @discovery_revision
 end
