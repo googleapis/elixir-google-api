@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation do
   @moduledoc """
-  Information about National Radio Quiet Zone validation. The presence of the field indicates the device has been validated.
+  Information about National Radio Quiet Zone validation.
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation do
   *   `cpiId` (*type:* `String.t`, *default:* `nil`) - CPI who signed the validation.
   *   `latitude` (*type:* `float()`, *default:* `nil`) - Device latitude associated with the validation.
   *   `longitude` (*type:* `float()`, *default:* `nil`) - Device longitude associated with the validation.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the NRQZ validation info.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation do
           :caseId => String.t() | nil,
           :cpiId => String.t() | nil,
           :latitude => float() | nil,
-          :longitude => float() | nil
+          :longitude => float() | nil,
+          :state => String.t() | nil
         }
 
   field(:caseId)
   field(:cpiId)
   field(:latitude)
   field(:longitude)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation do

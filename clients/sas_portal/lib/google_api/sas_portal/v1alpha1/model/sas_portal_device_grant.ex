@@ -25,6 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The expiration time of the grant.
   *   `frequencyRange` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t`, *default:* `nil`) - The transmission frequency range.
   *   `grantId` (*type:* `String.t`, *default:* `nil`) - Grant Id.
+  *   `lastHeartbeatTransmitExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The transmit expiration time of the last heartbeat.
   *   `maxEirp` (*type:* `float()`, *default:* `nil`) - Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3).
   *   `moveList` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList.t)`, *default:* `nil`) - The DPA move lists on which this grant appears.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the grant.
@@ -38,6 +39,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant do
           :expireTime => DateTime.t() | nil,
           :frequencyRange => GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t() | nil,
           :grantId => String.t() | nil,
+          :lastHeartbeatTransmitExpireTime => DateTime.t() | nil,
           :maxEirp => float() | nil,
           :moveList => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList.t()) | nil,
           :state => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant do
   field(:expireTime, as: DateTime)
   field(:frequencyRange, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange)
   field(:grantId)
+  field(:lastHeartbeatTransmitExpireTime, as: DateTime)
   field(:maxEirp)
   field(:moveList, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList, type: :list)
   field(:state)
