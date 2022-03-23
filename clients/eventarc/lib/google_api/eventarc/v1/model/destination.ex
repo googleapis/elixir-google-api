@@ -24,6 +24,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
   *   `cloudFunction` (*type:* `String.t`, *default:* `nil`) - The Cloud Function resource name. Only Cloud Functions V2 is supported. Format: `projects/{project}/locations/{location}/functions/{function}`
   *   `cloudRun` (*type:* `GoogleApi.Eventarc.V1.Model.CloudRun.t`, *default:* `nil`) - Cloud Run fully-managed resource that receives the events. The resource should be in the same project as the trigger.
   *   `gke` (*type:* `GoogleApi.Eventarc.V1.Model.GKE.t`, *default:* `nil`) - A GKE service capable of receiving events. The service should be running in the same project as the trigger.
+  *   `workflow` (*type:* `String.t`, *default:* `nil`) - The resource name of the Workflow whose Executions are triggered by the events. The Workflow resource should be deployed in the same project as the trigger. Format: `projects/{project}/locations/{location}/workflows/{workflow}`
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
   @type t :: %__MODULE__{
           :cloudFunction => String.t() | nil,
           :cloudRun => GoogleApi.Eventarc.V1.Model.CloudRun.t() | nil,
-          :gke => GoogleApi.Eventarc.V1.Model.GKE.t() | nil
+          :gke => GoogleApi.Eventarc.V1.Model.GKE.t() | nil,
+          :workflow => String.t() | nil
         }
 
   field(:cloudFunction)
   field(:cloudRun, as: GoogleApi.Eventarc.V1.Model.CloudRun)
   field(:gke, as: GoogleApi.Eventarc.V1.Model.GKE)
+  field(:workflow)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Eventarc.V1.Model.Destination do
