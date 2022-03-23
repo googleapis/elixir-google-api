@@ -26,7 +26,7 @@ defmodule GoogleApi.Vault.V1.Model.Export do
   *   `exportOptions` (*type:* `GoogleApi.Vault.V1.Model.ExportOptions.t`, *default:* `nil`) - Additional export options.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The generated export ID.
   *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The export name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The export name. Don't use special characters (~!$'(),;@:/?) in the name, they can prevent you from downloading exports.
   *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The query parameters used to create the export.
   *   `requester` (*type:* `GoogleApi.Vault.V1.Model.UserInfo.t`, *default:* `nil`) - Output only. The requester of the export.
   *   `stats` (*type:* `GoogleApi.Vault.V1.Model.ExportStats.t`, *default:* `nil`) - Output only. Details about the export progress and size.
