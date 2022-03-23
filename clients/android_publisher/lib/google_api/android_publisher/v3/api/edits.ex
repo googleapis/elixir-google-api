@@ -3697,7 +3697,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Gets testers.
+  Gets testers. Note: Testers resource does not support email lists.
 
   ## Parameters
 
@@ -3778,7 +3778,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Patches testers.
+  Patches testers. Note: Testers resource does not support email lists.
 
   ## Parameters
 
@@ -3861,7 +3861,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Updates testers.
+  Updates testers. Note: Testers resource does not support email lists.
 
   ## Parameters
 
