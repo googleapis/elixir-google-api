@@ -20,7 +20,7 @@ defmodule GoogleApi.ChromePolicy.V1 do
   API client metadata for GoogleApi.ChromePolicy.V1.
   """
 
-  @discovery_revision "20220228"
+  @discovery_revision "20220321"
 
   def discovery_revision(), do: @discovery_revision
 end

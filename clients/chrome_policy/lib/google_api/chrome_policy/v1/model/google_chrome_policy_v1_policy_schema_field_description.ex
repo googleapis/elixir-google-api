@@ -27,6 +27,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldD
   *   `inputConstraint` (*type:* `String.t`, *default:* `nil`) - Output only. Any input constraints associated on the values for the field.
   *   `knownValueDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldKnownValueDescription.t)`, *default:* `nil`) - Output only. If the field has a set of known values, this field will provide a description for these values.
   *   `nestedFieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Provides the description of the fields nested in this field, if the field is a message type that defines multiple fields.
+  *   `requiredItems` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaRequiredItems.t)`, *default:* `nil`) - Output only. Provides a list of fields that are required to be set if this field has a certain value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,6 +50,11 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldD
             list(
               GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldDescription.t()
             )
+            | nil,
+          :requiredItems =>
+            list(
+              GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaRequiredItems.t()
+            )
             | nil
         }
 
@@ -70,6 +76,11 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldD
 
   field(:nestedFieldDescriptions,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldDescription,
+    type: :list
+  )
+
+  field(:requiredItems,
+    as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaRequiredItems,
     type: :list
   )
 end

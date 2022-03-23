@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_chrome_policy, "~> 0.3"}]
+  [{:google_api_chrome_policy, "~> 0.4"}]
 end
 ```
 
