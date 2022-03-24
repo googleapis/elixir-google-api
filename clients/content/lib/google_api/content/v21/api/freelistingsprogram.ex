@@ -86,7 +86,7 @@ defmodule GoogleApi.Content.V21.Api.Freelistingsprogram do
   end
 
   @doc """
-  Requests a review for Free Listings program in the provided region. Important: This method is only whitelisted for selected merchants.
+  Requests a review for free listings program in a specific region. Important: This method is only whitelisted for selected merchants.
 
   ## Parameters
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.FreeListingsProgramStatus do
 
   ## Attributes
 
-  *   `globalState` (*type:* `String.t`, *default:* `nil`) - State of the program, It is set to enabled if there are offers for at least one region.
+  *   `globalState` (*type:* `String.t`, *default:* `nil`) - State of the program. `ENABLED` if there are offers for at least one region.
   *   `regionStatuses` (*type:* `list(GoogleApi.Content.V21.Model.FreeListingsProgramStatusRegionStatus.t)`, *default:* `nil`) - Status of the program in each region. Regions with the same status and review eligibility are grouped together in `regionCodes`.
   """
 

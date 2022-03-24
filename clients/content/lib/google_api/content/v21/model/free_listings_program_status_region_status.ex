@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V21.Model.FreeListingsProgramStatusRegionStatus do
 
   ## Attributes
 
-  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date by which `eligibility_status` will go from `WARNING` to `DISAPPROVED`. It will be present when `eligibility_status` is `WARNING`. Date will be provided in ISO 8601 format: YYYY-MM-DD
+  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date your `eligibilityStatus` will become `DISAPPROVED`. Only visible when your `eligibilityStatus` is `WARNING`. In [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DD`.
   *   `eligibilityStatus` (*type:* `String.t`, *default:* `nil`) - Eligibility status of the standard free listing program.
-  *   `onboardingIssues` (*type:* `list(String.t)`, *default:* `nil`) - These issues must be fixed to become eligible for the review.
+  *   `onboardingIssues` (*type:* `list(String.t)`, *default:* `nil`) - Must be fixed to be eligible for review.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes for all the regions with the same `eligibilityStatus` and `reviewEligibility`.
-  *   `reviewEligibilityStatus` (*type:* `String.t`, *default:* `nil`) - If a program in a given country is eligible for review. It will be present only if eligibility status is `DISAPPROVED`.
+  *   `reviewEligibilityStatus` (*type:* `String.t`, *default:* `nil`) - If a program is eligible for review in a specific region. Only visible if `eligibilityStatus` is `DISAPPROVED`.
   *   `reviewIneligibilityReason` (*type:* `String.t`, *default:* `nil`) - Review ineligibility reason if account is not eligible for review.
-  *   `reviewIneligibilityReasonDescription` (*type:* `String.t`, *default:* `nil`) - Reason if a program in a given country is not eligible for review. Populated only if `review_eligibility_status` is `INELIGIBLE`.
-  *   `reviewIneligibilityReasonDetails` (*type:* `GoogleApi.Content.V21.Model.FreeListingsProgramStatusReviewIneligibilityReasonDetails.t`, *default:* `nil`) - This contains additional information specific to review ineligibility reasons. If review is ineligible because of `IN_COOLDOWN_PERIOD`, it will contain timestamp for cooldown period.
-  *   `reviewIssues` (*type:* `list(String.t)`, *default:* `nil`) - These issues will be evaluated in review process. Fix all the issues before requesting the review.
+  *   `reviewIneligibilityReasonDescription` (*type:* `String.t`, *default:* `nil`) - Reason a program in a specific region isn’t eligible for review. Only visible if `reviewEligibilityStatus` is `INELIGIBLE`.
+  *   `reviewIneligibilityReasonDetails` (*type:* `GoogleApi.Content.V21.Model.FreeListingsProgramStatusReviewIneligibilityReasonDetails.t`, *default:* `nil`) - Additional information for ineligibility. If `reviewIneligibilityReason` is `IN_COOLDOWN_PERIOD`, a timestamp for the end of the cooldown period is provided.
+  *   `reviewIssues` (*type:* `list(String.t)`, *default:* `nil`) - Issues evaluated in the review process. Fix all issues before requesting a review.
   """
 
   use GoogleApi.Gax.ModelBase
