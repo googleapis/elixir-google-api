@@ -24,7 +24,7 @@ defmodule GoogleApi.FirebaseML.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_firebase_ml,
