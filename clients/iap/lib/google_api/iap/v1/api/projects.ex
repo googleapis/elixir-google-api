@@ -618,4 +618,407 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.IdentityAwareProxyClient{}])
   end
+
+  @doc """
+  Creates a new TunnelDestGroup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id and location. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:tunnelDestGroupId` (*type:* `String.t`) - Required. The ID to use for the TunnelDestGroup, which will become the final component of the resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
+      *   `:body` (*type:* `GoogleApi.IAP.V1.Model.TunnelDestGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAP.V1.Model.TunnelDestGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iap_projects_iap_tunnel_locations_dest_groups_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAP.V1.Model.TunnelDestGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iap_projects_iap_tunnel_locations_dest_groups_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :tunnelDestGroupId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.TunnelDestGroup{}])
+  end
+
+  @doc """
+  Deletes a TunnelDestGroup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be deleted. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAP.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iap_projects_iap_tunnel_locations_dest_groups_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAP.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iap_projects_iap_tunnel_locations_dest_groups_delete(
+        connection,
+        projects_id,
+        locations_id,
+        dest_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Retrieves an existing TunnelDestGroup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be fetched. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAP.V1.Model.TunnelDestGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iap_projects_iap_tunnel_locations_dest_groups_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAP.V1.Model.TunnelDestGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iap_projects_iap_tunnel_locations_dest_groups_get(
+        connection,
+        projects_id,
+        locations_id,
+        dest_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.TunnelDestGroup{}])
+  end
+
+  @doc """
+  Lists the existing TunnelDestGroups. To group across all locations, use a `-` as the location ID. For example: /v1/projects/123/iap_tunnel/locations/-/destGroups
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id and location. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}. A `-` can be used for the location to group across all locations.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 100 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListTunnelDestGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTunnelDestGroups` must match the call that provided the page token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAP.V1.Model.ListTunnelDestGroupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iap_projects_iap_tunnel_locations_dest_groups_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAP.V1.Model.ListTunnelDestGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iap_projects_iap_tunnel_locations_dest_groups_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.ListTunnelDestGroupsResponse{}])
+  end
+
+  @doc """
+  Updates a TunnelDestGroup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project.
+  *   `locations_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
+  *   `dest_groups_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The field mask specifying which IAP settings should be updated. If omitted, then all of the settings are updated. See https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:body` (*type:* `GoogleApi.IAP.V1.Model.TunnelDestGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAP.V1.Model.TunnelDestGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iap_projects_iap_tunnel_locations_dest_groups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAP.V1.Model.TunnelDestGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iap_projects_iap_tunnel_locations_dest_groups_patch(
+        connection,
+        projects_id,
+        locations_id,
+        dest_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAP.V1.Model.TunnelDestGroup{}])
+  end
 end
