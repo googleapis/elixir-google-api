@@ -100,6 +100,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
+  *   `externalSellerId` (*type:* `String.t`, *default:* `nil`) - Used by a marketplace to externally identify a seller.
   *   `productDetails` (*type:* `list(GoogleApi.Content.V21.Model.ProductProductDetail.t)`, *default:* `nil`) - Technical specification or additional product details.
   *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - URL for the canonical version of your item's landing page.
   *   `productWeight` (*type:* `GoogleApi.Content.V21.Model.ProductWeight.t`, *default:* `nil`) - The weight of the product in the units provided. The value must be between 0 (exclusive) and 2000 (inclusive).
@@ -195,6 +196,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :contentLanguage => String.t() | nil,
           :availability => String.t() | nil,
           :availabilityDate => String.t() | nil,
+          :externalSellerId => String.t() | nil,
           :productDetails => list(GoogleApi.Content.V21.Model.ProductProductDetail.t()) | nil,
           :canonicalLink => String.t() | nil,
           :productWeight => GoogleApi.Content.V21.Model.ProductWeight.t() | nil,
@@ -286,6 +288,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:contentLanguage)
   field(:availability)
   field(:availabilityDate)
+  field(:externalSellerId)
   field(:productDetails, as: GoogleApi.Content.V21.Model.ProductProductDetail, type: :list)
   field(:canonicalLink)
   field(:productWeight, as: GoogleApi.Content.V21.Model.ProductWeight)
