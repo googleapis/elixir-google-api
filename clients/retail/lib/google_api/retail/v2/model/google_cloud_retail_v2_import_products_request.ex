@@ -25,7 +25,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ImportProductsRequest do
   *   `inputConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ProductInputConfig.t`, *default:* `nil`) - Required. The desired input location of the data.
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`.
   *   `reconciliationMode` (*type:* `String.t`, *default:* `nil`) - The mode of reconciliation between existing products and the products to be imported. Defaults to ReconciliationMode.INCREMENTAL.
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Unique identifier provided by client, within the ancestor dataset scope. Ensures idempotency and used for request deduplication. Server-generated if unspecified. Up to 128 characters long and must match the pattern: `[a-zA-Z0-9_]+`. This is returned as Operation.name in ImportMetadata. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Indicates which fields in the provided imported 'products' to update. If not set, will by default update all fields.
   """
 

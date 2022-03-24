@@ -24,7 +24,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaImportMetadata do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
   *   `failureCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that encountered errors while processing.
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Id of the request / operation. This is parroting back the requestId that was passed in the request.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field is never set.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that were processed successfully.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation last update time. If the operation is done, this is also the finish time.
   """
