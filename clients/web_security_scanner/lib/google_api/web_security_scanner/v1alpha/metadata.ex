@@ -20,7 +20,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha do
   API client metadata for GoogleApi.WebSecurityScanner.V1alpha.
   """
 
-  @discovery_revision "20211203"
+  @discovery_revision "20220319"
 
   def discovery_revision(), do: @discovery_revision
 end
