@@ -21,6 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ComplianceVersion do
 
   ## Attributes
 
+  *   `benchmarkDocument` (*type:* `String.t`, *default:* `nil`) - The name of the document that defines this benchmark, e.g. "CIS Container-Optimized OS".
   *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The CPE URI (https://cpe.mitre.org/specification/) this benchmark is applicable to.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the benchmark. This is set to the version of the OS-specific CIS document the benchmark is defined in.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ComplianceVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :benchmarkDocument => String.t() | nil,
           :cpeUri => String.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:benchmarkDocument)
   field(:cpeUri)
   field(:version)
 end
