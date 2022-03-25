@@ -42,13 +42,16 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   *   `exchangeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails.t`, *default:* `nil`) - Exchange details.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique identifier for this targeting option. The tuple {`targeting_type`, `targeting_option_id`} will be unique.
   *   `browserDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t`, *default:* `nil`) - Browser details.
+  *   `contentDurationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentDurationTargetingOptionDetails.t`, *default:* `nil`) - Content duration resource details.
   *   `digitalContentLabelDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDetails.t`, *default:* `nil`) - Digital content label details.
   *   `targetingType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of this targeting option.
   *   `carrierAndIspDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t`, *default:* `nil`) - Carrier and ISP details.
   *   `authorizedSellerStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t`, *default:* `nil`) - Authorized seller status resource details.
+  *   `contentGenreDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentGenreTargetingOptionDetails.t`, *default:* `nil`) - Content genre resource details.
   *   `nativeContentPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails.t`, *default:* `nil`) - Native content position details.
   *   `businessChainDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BusinessChainTargetingOptionDetails.t`, *default:* `nil`) - Business chain resource details.
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t`, *default:* `nil`) - On screen position details.
+  *   `contentStreamTypeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeTargetingOptionDetails.t`, *default:* `nil`) - Content stream type resource details.
   *   `sensitiveCategoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t`, *default:* `nil`) - Sensitive Category details.
   *   `genderDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.GenderTargetingOptionDetails.t`, *default:* `nil`) - Gender details.
   *   `categoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.CategoryTargetingOptionDetails.t`, *default:* `nil`) - Category resource details.
@@ -100,6 +103,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
           :targetingOptionId => String.t() | nil,
           :browserDetails =>
             GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails.t() | nil,
+          :contentDurationDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentDurationTargetingOptionDetails.t() | nil,
           :digitalContentLabelDetails =>
             GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDetails.t() | nil,
           :targetingType => String.t() | nil,
@@ -107,12 +112,16 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
             GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails.t() | nil,
           :authorizedSellerStatusDetails =>
             GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails.t() | nil,
+          :contentGenreDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentGenreTargetingOptionDetails.t() | nil,
           :nativeContentPositionDetails =>
             GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails.t() | nil,
           :businessChainDetails =>
             GoogleApi.DisplayVideo.V1.Model.BusinessChainTargetingOptionDetails.t() | nil,
           :onScreenPositionDetails =>
             GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails.t() | nil,
+          :contentStreamTypeDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeTargetingOptionDetails.t() | nil,
           :sensitiveCategoryDetails =>
             GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t() | nil,
           :genderDetails =>
@@ -179,6 +188,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   field(:targetingOptionId)
   field(:browserDetails, as: GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails)
 
+  field(:contentDurationDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentDurationTargetingOptionDetails
+  )
+
   field(:digitalContentLabelDetails,
     as: GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDetails
   )
@@ -193,6 +206,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
     as: GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails
   )
 
+  field(:contentGenreDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentGenreTargetingOptionDetails
+  )
+
   field(:nativeContentPositionDetails,
     as: GoogleApi.DisplayVideo.V1.Model.NativeContentPositionTargetingOptionDetails
   )
@@ -203,6 +220,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
 
   field(:onScreenPositionDetails,
     as: GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails
+  )
+
+  field(:contentStreamTypeDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeTargetingOptionDetails
   )
 
   field(:sensitiveCategoryDetails,
