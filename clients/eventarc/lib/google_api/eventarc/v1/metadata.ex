@@ -20,7 +20,7 @@ defmodule GoogleApi.Eventarc.V1 do
   API client metadata for GoogleApi.Eventarc.V1.
   """
 
-  @discovery_revision "20220311"
+  @discovery_revision "20220318"
 
   def discovery_revision(), do: @discovery_revision
 end
