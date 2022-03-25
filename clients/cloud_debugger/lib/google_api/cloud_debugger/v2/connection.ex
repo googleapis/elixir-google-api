@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudDebugger.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform",
 
       # Use Stackdriver Debugger
