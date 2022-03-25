@@ -45,6 +45,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
+      *   `:playerIdConsistencyToken` (*type:* `String.t`) - Consistency token of the player id. The call returns a 'not found' result when the token is present and invalid. Empty value is ignored. See also GlobalPlayerIdConsistencyTokenProto
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -70,7 +71,8 @@ defmodule GoogleApi.Games.V1.Api.Players do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :language => :query
+      :language => :query,
+      :playerIdConsistencyToken => :query
     }
 
     request =
