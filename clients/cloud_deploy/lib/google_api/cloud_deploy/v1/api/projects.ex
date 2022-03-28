@@ -540,7 +540,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter builds to be returned. See https://google.aip.dev/160 for more details.
+      *   `:filter` (*type:* `String.t`) - Filter pipelines to be returned. See https://google.aip.dev/160 for more details.
       *   `:orderBy` (*type:* `String.t`) - Field to sort by. See https://google.aip.dev/132#ordering for more details.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of pipelines to return. The service may return fewer than this value. If unspecified, at most 50 pipelines will be returned. The maximum value is 1000; values above 1000 will be set to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListDeliveryPipelines` call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters match the call that provided the page token.
@@ -994,7 +994,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter builds to be returned. See https://google.aip.dev/160 for more details.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter releases to be returned. See https://google.aip.dev/160 for more details.
       *   `:orderBy` (*type:* `String.t`) - Optional. Field to sort by. See https://google.aip.dev/132#ordering for more details.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of `Release` objects to return. The service may return fewer than this value. If unspecified, at most 50 `Release` objects will be returned. The maximum value is 1000; values above 1000 will be set to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListReleases` call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters match the call that provided the page token.
@@ -1292,7 +1292,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter builds to be returned. See https://google.aip.dev/160 for more details.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter rollouts to be returned. See https://google.aip.dev/160 for more details.
       *   `:orderBy` (*type:* `String.t`) - Optional. Field to sort by. See https://google.aip.dev/132#ordering for more details.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of `Rollout` objects to return. The service may return fewer than this value. If unspecified, at most 50 `Rollout` objects will be returned. The maximum value is 1000; values above 1000 will be set to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListRollouts` call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters match the call that provided the page token.
@@ -1956,7 +1956,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter builds to be returned. See https://google.aip.dev/160 for more details.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter targets to be returned. See https://google.aip.dev/160 for more details.
       *   `:orderBy` (*type:* `String.t`) - Optional. Field to sort by. See https://google.aip.dev/132#ordering for more details.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of `Target` objects to return. The service may return fewer than this value. If unspecified, at most 50 `Target` objects will be returned. The maximum value is 1000; values above 1000 will be set to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListTargets` call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters match the call that provided the page token.
