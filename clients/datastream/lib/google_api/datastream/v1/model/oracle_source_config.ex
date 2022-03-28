@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
 
   ## Attributes
 
+  *   `dropLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleDropLargeObjects.t`, *default:* `nil`) - Drop large object values.
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to include in the stream.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dropLargeObjects => GoogleApi.Datastream.V1.Model.OracleDropLargeObjects.t() | nil,
           :excludeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
           :includeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil
         }
 
+  field(:dropLargeObjects, as: GoogleApi.Datastream.V1.Model.OracleDropLargeObjects)
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
 end
