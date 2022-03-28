@@ -3046,6 +3046,80 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
   end
 
   @doc """
+  Gets an access token for the consumer service account that the customer attached to the runtime. Only accessible from the tenant instance.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Notebooks.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Notebooks.V1.Model.RefreshRuntimeTokenInternalRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Notebooks.V1.Model.RefreshRuntimeTokenInternalResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec notebooks_projects_locations_runtimes_refresh_runtime_token_internal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Notebooks.V1.Model.RefreshRuntimeTokenInternalResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def notebooks_projects_locations_runtimes_refresh_runtime_token_internal(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:refreshRuntimeTokenInternal", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Notebooks.V1.Model.RefreshRuntimeTokenInternalResponse{}]
+    )
+  end
+
+  @doc """
   Report and process a runtime event.
 
   ## Parameters
