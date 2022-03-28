@@ -24,6 +24,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyDicomStoreRequest do
   *   `config` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t`, *default:* `nil`) - Deidentify configuration.
   *   `destinationStore` (*type:* `String.t`, *default:* `nil`) - The name of the DICOM store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination DICOM store must not exist. * The caller must have the necessary permissions to create the destination DICOM store.
   *   `filterConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t`, *default:* `nil`) - Filter configuration.
+  *   `gcsConfigUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyDicomStoreRequest do
   @type t :: %__MODULE__{
           :config => GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t() | nil,
           :destinationStore => String.t() | nil,
-          :filterConfig => GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t() | nil
+          :filterConfig => GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t() | nil,
+          :gcsConfigUri => String.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig)
   field(:destinationStore)
   field(:filterConfig, as: GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig)
+  field(:gcsConfigUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.DeidentifyDicomStoreRequest do

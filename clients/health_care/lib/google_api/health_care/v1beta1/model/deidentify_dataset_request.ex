@@ -23,17 +23,20 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyDatasetRequest do
 
   *   `config` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t`, *default:* `nil`) - Deidentify configuration.
   *   `destinationDataset` (*type:* `String.t`, *default:* `nil`) - The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same location as the source dataset. De-identifying data across multiple locations is not supported.
+  *   `gcsConfigUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :config => GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t() | nil,
-          :destinationDataset => String.t() | nil
+          :destinationDataset => String.t() | nil,
+          :gcsConfigUri => String.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig)
   field(:destinationDataset)
+  field(:gcsConfigUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.DeidentifyDatasetRequest do
