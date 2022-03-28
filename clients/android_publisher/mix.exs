@@ -18,7 +18,7 @@
 defmodule GoogleApi.AndroidPublisher.Mixfile do
   use Mix.Project
 
-  @version "0.30.2"
+  @version "0.31.0"
 
   def project() do
     [
