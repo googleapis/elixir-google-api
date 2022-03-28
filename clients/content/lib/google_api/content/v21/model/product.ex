@@ -100,7 +100,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
-  *   `externalSellerId` (*type:* `String.t`, *default:* `nil`) - Used by a marketplace to externally identify a seller.
+  *   `externalSellerId` (*type:* `String.t`, *default:* `nil`) - Required for multi-seller accounts. Use this attribute if you're a marketplace uploading products for various sellers to your multi-seller account.
   *   `productDetails` (*type:* `list(GoogleApi.Content.V21.Model.ProductProductDetail.t)`, *default:* `nil`) - Technical specification or additional product details.
   *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - URL for the canonical version of your item's landing page.
   *   `productWeight` (*type:* `GoogleApi.Content.V21.Model.ProductWeight.t`, *default:* `nil`) - The weight of the product in the units provided. The value must be between 0 (exclusive) and 2000 (inclusive).

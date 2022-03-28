@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V21.Model.ShoppingAdsProgramStatusRegionStatus do
 
   ## Attributes
 
-  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date your `eligibilityStatus` will become `DISAPPROVED`. Only visible when your `eligibilityStatus` is `WARNING`. In [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DD`.
+  *   `disapprovalDate` (*type:* `String.t`, *default:* `nil`) - Date by which eligibilityStatus will go from `WARNING` to `DISAPPROVED`. Only visible when your eligibilityStatus is WARNING. In [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DD`.
   *   `eligibilityStatus` (*type:* `String.t`, *default:* `nil`) - Eligibility status of the Shopping Ads program.
-  *   `onboardingIssues` (*type:* `list(String.t)`, *default:* `nil`) - Must be fixed to be eligible for review.
+  *   `onboardingIssues` (*type:* `list(String.t)`, *default:* `nil`) - Issues that must be fixed to be eligible for review.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes for all the regions with the same `eligibilityStatus` and `reviewEligibility`.
   *   `reviewEligibilityStatus` (*type:* `String.t`, *default:* `nil`) - If a program is eligible for review in a specific region. Only visible if `eligibilityStatus` is `DISAPPROVED`.
   *   `reviewIneligibilityReason` (*type:* `String.t`, *default:* `nil`) - Review ineligibility reason if account is not eligible for review.
