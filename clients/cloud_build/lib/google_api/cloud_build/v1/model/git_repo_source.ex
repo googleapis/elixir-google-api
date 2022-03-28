@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
   *   `githubEnterpriseConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the github enterprise config. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`. `projects/{project}/githubEnterpriseConfigs/{id}`.
   *   `ref` (*type:* `String.t`, *default:* `nil`) - The branch or tag to use. Must start with "refs/" (required).
   *   `repoType` (*type:* `String.t`, *default:* `nil`) - See RepoType below.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo (required).
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo. Either uri or repository can be specified and is required.
   """
 
   use GoogleApi.Gax.ModelBase
