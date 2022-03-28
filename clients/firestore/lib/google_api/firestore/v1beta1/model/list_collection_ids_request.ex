@@ -23,17 +23,20 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsRequest do
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token. Must be a value from ListCollectionIdsResponse.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :pageSize => integer() | nil,
-          :pageToken => String.t() | nil
+          :pageToken => String.t() | nil,
+          :readTime => DateTime.t() | nil
         }
 
   field(:pageSize)
   field(:pageToken)
+  field(:readTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsRequest do
