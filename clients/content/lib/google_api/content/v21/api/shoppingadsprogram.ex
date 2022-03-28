@@ -86,7 +86,7 @@ defmodule GoogleApi.Content.V21.Api.Shoppingadsprogram do
   end
 
   @doc """
-  Requests a review for Shopping Ads program in a specific region.
+  Requests a review of Shopping ads in a specific region.
 
   ## Parameters
 
