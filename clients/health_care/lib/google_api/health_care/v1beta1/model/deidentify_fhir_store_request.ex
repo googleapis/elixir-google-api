@@ -23,6 +23,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyFhirStoreRequest do
 
   *   `config` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t`, *default:* `nil`) - Deidentify configuration.
   *   `destinationStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store.
+  *   `gcsConfigUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified.
   *   `resourceFilter` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirFilter.t`, *default:* `nil`) - A filter specifying the resources to include in the output. If not specified, all resources are included in the output.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyFhirStoreRequest do
   @type t :: %__MODULE__{
           :config => GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t() | nil,
           :destinationStore => String.t() | nil,
+          :gcsConfigUri => String.t() | nil,
           :resourceFilter => GoogleApi.HealthCare.V1beta1.Model.FhirFilter.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig)
   field(:destinationStore)
+  field(:gcsConfigUri)
   field(:resourceFilter, as: GoogleApi.HealthCare.V1beta1.Model.FhirFilter)
 end
 
