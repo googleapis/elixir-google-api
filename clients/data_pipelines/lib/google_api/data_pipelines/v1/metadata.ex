@@ -20,7 +20,7 @@ defmodule GoogleApi.DataPipelines.V1 do
   API client metadata for GoogleApi.DataPipelines.V1.
   """
 
-  @discovery_revision "20220103"
+  @discovery_revision "20220319"
 
   def discovery_revision(), do: @discovery_revision
 end
