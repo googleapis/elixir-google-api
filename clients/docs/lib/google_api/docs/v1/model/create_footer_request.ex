@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateFooterRequest do
   @moduledoc """
-  Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.
+  Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.
 
   ## Attributes
 

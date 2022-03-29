@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateHeaderRequest do
   @moduledoc """
-  Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.
+  Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.
 
   ## Attributes
 
