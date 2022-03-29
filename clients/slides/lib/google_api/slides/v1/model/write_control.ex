@@ -21,7 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.WriteControl do
 
   ## Attributes
 
-  *   `requiredRevisionId` (*type:* `String.t`, *default:* `nil`) - The revision ID of the presentation required for the write request. If specified and the `required_revision_id` doesn't exactly match the presentation's current `revision_id`, the request will not be processed and will return a 400 bad request error.
+  *   `requiredRevisionId` (*type:* `String.t`, *default:* `nil`) - The revision ID of the presentation required for the write request. If specified and the required revision ID doesn't match the presentation's current revision ID, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied.
   """
 
   use GoogleApi.Gax.ModelBase
