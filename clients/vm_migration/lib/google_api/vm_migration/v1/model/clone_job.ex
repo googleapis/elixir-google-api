@@ -23,6 +23,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
 
   *   `computeEngineTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails.t`, *default:* `nil`) - Output only. Details of the target VM in Compute Engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the clone job was created (as an API call, not when it was actually created in the target).
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the clone job was ended.
   *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details for the errors that led to the Clone Job's state.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the clone.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the clone job.
@@ -35,6 +36,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
           :computeEngineTargetDetails =>
             GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails.t() | nil,
           :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
           :error => GoogleApi.VMMigration.V1.Model.Status.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
   field(:computeEngineTargetDetails, as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails)
 
   field(:createTime, as: DateTime)
+  field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.VMMigration.V1.Model.Status)
   field(:name)
   field(:state)
