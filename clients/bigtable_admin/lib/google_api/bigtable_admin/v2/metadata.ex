@@ -20,7 +20,7 @@ defmodule GoogleApi.BigtableAdmin.V2 do
   API client metadata for GoogleApi.BigtableAdmin.V2.
   """
 
-  @discovery_revision "20220313"
+  @discovery_revision "20220329"
 
   def discovery_revision(), do: @discovery_revision
 end
