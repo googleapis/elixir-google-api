@@ -20,7 +20,7 @@ defmodule GoogleApi.HomeGraph.V1 do
   API client metadata for GoogleApi.HomeGraph.V1.
   """
 
-  @discovery_revision "20210416"
+  @discovery_revision "20220325"
 
   def discovery_revision(), do: @discovery_revision
 end
