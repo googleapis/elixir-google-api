@@ -18,7 +18,7 @@
 defmodule GoogleApi.SQLAdmin.Mixfile do
   use Mix.Project
 
-  @version "0.53.0"
+  @version "0.54.0"
 
   def project() do
     [
