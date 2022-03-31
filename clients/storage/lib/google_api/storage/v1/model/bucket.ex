@@ -25,7 +25,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `autoclass` (*type:* `GoogleApi.Storage.V1.Model.BucketAutoclass.t`, *default:* `nil`) - The bucket's Autoclass configuration.
   *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
   *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
-  *   `customPlacementConfig` (*type:* `GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t`, *default:* `nil`) - The bucket's custom placement configuration for Custom Dual Regions.
   *   `defaultEventBasedHold` (*type:* `boolean()`, *default:* `nil`) - The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed.
   *   `defaultObjectAcl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Default access controls to apply to new objects when no ACL is provided.
   *   `encryption` (*type:* `GoogleApi.Storage.V1.Model.BucketEncryption.t`, *default:* `nil`) - Encryption configuration for a bucket.
@@ -60,8 +59,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :autoclass => GoogleApi.Storage.V1.Model.BucketAutoclass.t() | nil,
           :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil,
           :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()) | nil,
-          :customPlacementConfig =>
-            GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t() | nil,
           :defaultEventBasedHold => boolean() | nil,
           :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
           :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t() | nil,
@@ -93,7 +90,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:autoclass, as: GoogleApi.Storage.V1.Model.BucketAutoclass)
   field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
   field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
-  field(:customPlacementConfig, as: GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig)
   field(:defaultEventBasedHold)
   field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
   field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
