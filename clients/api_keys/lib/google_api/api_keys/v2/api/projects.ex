@@ -385,7 +385,7 @@ defmodule GoogleApi.APIKeys.V2.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. Deprecated: Use `show_deleted` instead. Only list keys that conform to the specified filter. The allowed filter strings are `state:ACTIVE` and `state:DELETED`. By default, ListKeys returns only active keys.
       *   `:pageSize` (*type:* `integer()`) - Optional. Specifies the maximum number of results to be returned at a time.
       *   `:pageToken` (*type:* `String.t`) - Optional. Requests a specific page of results.
-      *   `:showDeleted` (*type:* `boolean()`) - Optional. Indicate that keys are marked as deleted within 30 days should also be returned. Normally only active keys are returned.
+      *   `:showDeleted` (*type:* `boolean()`) - Optional. Indicate that keys deleted in the past 30 days should also be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
