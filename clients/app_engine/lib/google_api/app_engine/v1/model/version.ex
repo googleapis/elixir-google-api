@@ -48,6 +48,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `endpointsApiService` (*type:* `GoogleApi.AppEngine.V1.Model.EndpointsApiService.t`, *default:* `nil`) - Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.
   *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
+  *   `appEngineApis` (*type:* `boolean()`, *default:* `nil`) - app_engine_apis allows second generation runtimes to access the App Engine APIs.
   *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view=FULL is set.
   *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
   *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref
@@ -92,6 +93,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
           :endpointsApiService => GoogleApi.AppEngine.V1.Model.EndpointsApiService.t() | nil,
           :serviceAccount => String.t() | nil,
           :vpcAccessConnector => GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t() | nil,
+          :appEngineApis => boolean() | nil,
           :readinessCheck => GoogleApi.AppEngine.V1.Model.ReadinessCheck.t() | nil,
           :env => String.t() | nil,
           :runtimeApiVersion => String.t() | nil,
@@ -133,6 +135,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   field(:endpointsApiService, as: GoogleApi.AppEngine.V1.Model.EndpointsApiService)
   field(:serviceAccount)
   field(:vpcAccessConnector, as: GoogleApi.AppEngine.V1.Model.VpcAccessConnector)
+  field(:appEngineApis)
   field(:readinessCheck, as: GoogleApi.AppEngine.V1.Model.ReadinessCheck)
   field(:env)
   field(:runtimeApiVersion)
