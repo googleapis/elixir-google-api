@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.RestrictItem do
 
   ## Attributes
 
-  *   `driveFollowUpRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict.t`, *default:* `nil`) - LINT.ThenChange(//depot/google3/java/com/google/apps/search/quality/itemsuggest/utils/SubtypeRerankingUtils.java)
+  *   `driveFollowUpRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict.t`, *default:* `nil`) - 
   *   `driveLocationRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveLocationRestrict.t`, *default:* `nil`) - 
-  *   `driveMimeTypeRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t`, *default:* `nil`) - LINT.IfChange Drive Types.
+  *   `driveMimeTypeRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t`, *default:* `nil`) - Drive Types.
   *   `driveTimeSpanRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveTimeSpanRestrict.t`, *default:* `nil`) - 
   *   `searchOperator` (*type:* `String.t`, *default:* `nil`) - The search restrict (e.g. "after:2017-09-11 before:2017-09-12").
   """
