@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudTasks.Mixfile do
   use Mix.Project
 
-  @version "0.18.6"
+  @version "0.18.7"
 
   def project() do
     [
