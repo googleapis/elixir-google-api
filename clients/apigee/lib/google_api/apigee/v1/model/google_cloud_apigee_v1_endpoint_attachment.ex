@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Location of the endpoint attachment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
   *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Format: projects/*/regions/*/serviceAttachments/*
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the endpoint attachment. Values other than `ACTIVE` mean the resource is not ready to use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
           :host => String.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
-          :serviceAttachment => String.t() | nil
+          :serviceAttachment => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:host)
   field(:location)
   field(:name)
   field(:serviceAttachment)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
