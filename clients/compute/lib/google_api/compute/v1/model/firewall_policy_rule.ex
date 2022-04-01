@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   *   `kind` (*type:* `String.t`, *default:* `compute#firewallPolicyRule`) - [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
   *   `match` (*type:* `GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher.t`, *default:* `nil`) - A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+  *   `ruleName` (*type:* `String.t`, *default:* `nil`) - An optional name for the rule. This field is not a unique identifier and can be updated.
   *   `ruleTupleCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Calculation of the complexity of a single firewall policy rule.
   *   `targetResources` (*type:* `list(String.t)`, *default:* `nil`) - A list of network resource URLs to which this rule applies. This field allows you to control which network's VMs get this rule. If this field is left blank, all VMs within the organization will receive the rule.
   *   `targetSecureTags` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t)`, *default:* `nil`) - A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
           :kind => String.t() | nil,
           :match => GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher.t() | nil,
           :priority => integer() | nil,
+          :ruleName => String.t() | nil,
           :ruleTupleCount => integer() | nil,
           :targetResources => list(String.t()) | nil,
           :targetSecureTags =>
@@ -61,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   field(:kind)
   field(:match, as: GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher)
   field(:priority)
+  field(:ruleName)
   field(:ruleTupleCount)
   field(:targetResources, type: :list)
 

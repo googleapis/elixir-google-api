@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `subsetting` (*type:* `GoogleApi.Compute.V1.Model.Subsetting.t`, *default:* `nil`) - 
   *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
   *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
+  *   `localityLbPolicies` (*type:* `list(GoogleApi.Compute.V1.Model.BackendServiceLocalityLoadBalancingPolicyConfig.t)`, *default:* `nil`) - A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
   *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity).
@@ -70,6 +71,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :subsetting => GoogleApi.Compute.V1.Model.Subsetting.t() | nil,
           :timeoutSec => integer() | nil,
           :portName => String.t() | nil,
+          :localityLbPolicies =>
+            list(GoogleApi.Compute.V1.Model.BackendServiceLocalityLoadBalancingPolicyConfig.t())
+            | nil,
           :description => String.t() | nil,
           :kind => String.t() | nil,
           :sessionAffinity => String.t() | nil,
@@ -110,6 +114,12 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:subsetting, as: GoogleApi.Compute.V1.Model.Subsetting)
   field(:timeoutSec)
   field(:portName)
+
+  field(:localityLbPolicies,
+    as: GoogleApi.Compute.V1.Model.BackendServiceLocalityLoadBalancingPolicyConfig,
+    type: :list
+  )
+
   field(:description)
   field(:kind)
   field(:sessionAffinity)
