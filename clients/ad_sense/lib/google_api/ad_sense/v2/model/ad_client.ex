@@ -24,6 +24,7 @@ defmodule GoogleApi.AdSense.V2.Model.AdClient do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the ad client. Format: accounts/{account}/adclients/{adclient}
   *   `productCode` (*type:* `String.t`, *default:* `nil`) - Output only. Product code of the ad client. For example, "AFC" for AdSense for Content.
   *   `reportingDimensionId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique ID of the ad client as used in the `AD_CLIENT_ID` reporting dimension. Present only if the ad client supports reporting.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the ad client.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AdSense.V2.Model.AdClient do
   @type t :: %__MODULE__{
           :name => String.t() | nil,
           :productCode => String.t() | nil,
-          :reportingDimensionId => String.t() | nil
+          :reportingDimensionId => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:name)
   field(:productCode)
   field(:reportingDimensionId)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V2.Model.AdClient do
