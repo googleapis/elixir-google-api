@@ -20,7 +20,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta do
   API client metadata for GoogleApi.FirebaseDatabase.V1beta.
   """
 
-  @discovery_revision "20211207"
+  @discovery_revision "20220330"
 
   def discovery_revision(), do: @discovery_revision
 end
