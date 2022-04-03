@@ -32,7 +32,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentEntity do
   *   `provenance` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t`, *default:* `nil`) - Optional. The history of this annotation.
   *   `redacted` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the entity will be redacted for de-identification purposes.
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentTextAnchor.t`, *default:* `nil`) - Optional. Provenance of the entity. Text anchor indexing into the Document.text.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Entity type from a schema e.g. `Address`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Entity type from a schema e.g. `Address`.
   """
 
   use GoogleApi.Gax.ModelBase

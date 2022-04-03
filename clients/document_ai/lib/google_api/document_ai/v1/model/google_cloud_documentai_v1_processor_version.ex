@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersion 
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the processor version was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
+  *   `googleManaged` (*type:* `boolean()`, *default:* `nil`) - Denotes that this ProcessorVersion is managed by google.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for encryption.
   *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - The KMS key version with which data is encrypted.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
@@ -34,6 +35,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersion 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :googleManaged => boolean() | nil,
           :kmsKeyName => String.t() | nil,
           :kmsKeyVersionName => String.t() | nil,
           :name => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersion 
 
   field(:createTime, as: DateTime)
   field(:displayName)
+  field(:googleManaged)
   field(:kmsKeyName)
   field(:kmsKeyVersionName)
   field(:name)
