@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.MetadataOptions do
   @moduledoc """
-  Specifies the metadata options for running a transfer. These options only apply to transfers involving a POSIX filesystem and are ignored for other transfers.
+  Specifies the metadata options for running a transfer.
 
   ## Attributes
 
   *   `acl` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's ACLs should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as ACL_DESTINATION_BUCKET_DEFAULT.
-  *   `gid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's POSIX group ID (GID) attribute should be handled by the transfer. By default, GID is not preserved.
+  *   `gid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's POSIX group ID (GID) attribute should be handled by the transfer. By default, GID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's Cloud KMS customer-managed encryption key (CMEK) is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as KMS_KEY_DESTINATION_BUCKET_DEFAULT.
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's mode attribute should be handled by the transfer. By default, mode is not preserved.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's mode attribute should be handled by the transfer. By default, mode is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
   *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Specifies the storage class to set on objects being transferred to Google Cloud Storage buckets. If unspecified, the default behavior is the same as STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT.
-  *   `symlink` (*type:* `String.t`, *default:* `nil`) - Specifies how symlinks should be handled by the transfer. By default, symlinks are not preserved.
+  *   `symlink` (*type:* `String.t`, *default:* `nil`) - Specifies how symlinks should be handled by the transfer. By default, symlinks are not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
   *   `temporaryHold` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's temporary hold status should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TEMPORARY_HOLD_PRESERVE.
   *   `timeCreated` (*type:* `String.t`, *default:* `nil`) - Specifies how each object's `timeCreated` metadata is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TIME_CREATED_SKIP.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's POSIX user ID (UID) attribute should be handled by the transfer. By default, UID is not preserved.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Specifies how each file's POSIX user ID (UID) attribute should be handled by the transfer. By default, UID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
   """
 
   use GoogleApi.Gax.ModelBase
