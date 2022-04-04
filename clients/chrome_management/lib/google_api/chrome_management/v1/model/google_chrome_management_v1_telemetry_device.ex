@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   ## Attributes
 
+  *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically.
   *   `batteryInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo.t)`, *default:* `nil`) - Output only. Information on battery specs for the device.
   *   `batteryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport.t)`, *default:* `nil`) - Output only. Battery reports collected periodically.
   *   `cpuInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo.t)`, *default:* `nil`) - Output only. Information regarding CPU specs for the device.
@@ -43,6 +44,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audioStatusReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t()
+            )
+            | nil,
           :batteryInfo =>
             list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo.t())
             | nil,
@@ -91,6 +97,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
             )
             | nil
         }
+
+  field(:audioStatusReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport,
+    type: :list
+  )
 
   field(:batteryInfo,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo,
