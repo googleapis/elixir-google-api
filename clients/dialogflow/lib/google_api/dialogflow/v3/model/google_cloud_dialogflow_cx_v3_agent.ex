@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the agent, unique within the location.
   *   `enableSpellCorrection` (*type:* `boolean()`, *default:* `nil`) - Indicates if automatic spell correction is enabled in detect intent requests.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Indicates if stackdriver logging is enabled for the agent. Please use agent.advanced_settings instead.
+  *   `locked` (*type:* `boolean()`, *default:* `nil`) - Indiciates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the agent. Required for the Agents.UpdateAgent method. Agents.CreateAgent populates the name automatically. Format: `projects//locations//agents/`.
   *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `speechToTextSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SpeechToTextSettings.t`, *default:* `nil`) - Speech recognition related settings.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
           :displayName => String.t() | nil,
           :enableSpellCorrection => boolean() | nil,
           :enableStackdriverLogging => boolean() | nil,
+          :locked => boolean() | nil,
           :name => String.t() | nil,
           :securitySettings => String.t() | nil,
           :speechToTextSettings =>
@@ -66,6 +68,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   field(:displayName)
   field(:enableSpellCorrection)
   field(:enableStackdriverLogging)
+  field(:locked)
   field(:name)
   field(:securitySettings)
 
