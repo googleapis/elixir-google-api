@@ -27,6 +27,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the player.
   *   `experienceInfo` (*type:* `GoogleApi.Games.V1.Model.PlayerExperienceInfo.t`, *default:* `nil`) - An object to represent Play Game experience information for the player.
   *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
+  *   `gamePlayerId` (*type:* `String.t`, *default:* `nil`) - Per-application unique player identifier.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#player`
   *   `name` (*type:* `GoogleApi.Games.V1.Model.PlayerName.t`, *default:* `nil`) - A representation of the individual components of the name.
   *   `originalPlayerId` (*type:* `String.t`, *default:* `nil`) - The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
           :displayName => String.t() | nil,
           :experienceInfo => GoogleApi.Games.V1.Model.PlayerExperienceInfo.t() | nil,
           :friendStatus => String.t() | nil,
+          :gamePlayerId => String.t() | nil,
           :kind => String.t() | nil,
           :name => GoogleApi.Games.V1.Model.PlayerName.t() | nil,
           :originalPlayerId => String.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
   field(:displayName)
   field(:experienceInfo, as: GoogleApi.Games.V1.Model.PlayerExperienceInfo)
   field(:friendStatus)
+  field(:gamePlayerId)
   field(:kind)
   field(:name, as: GoogleApi.Games.V1.Model.PlayerName)
   field(:originalPlayerId)
