@@ -3271,7 +3271,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Creates a ServiceAccountKey, using a public key that you provide.
+  Uploads the public key portion of a key pair that you manage, and associates the public key with a ServiceAccount. After you upload the public key, you can use the private key from the key pair as a service account key.
 
   ## Parameters
 
