@@ -43,7 +43,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - If set, only deletes the bucket if its metageneration matches this value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - If set, only deletes the bucket if its metageneration does not match this value.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -66,7 +65,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :userIp => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -103,7 +101,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -130,7 +127,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -165,7 +161,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:optionsRequestedPolicyVersion` (*type:* `integer()`) - The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -190,7 +185,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :uploadType => :query,
       :userIp => :query,
       :optionsRequestedPolicyVersion => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -227,7 +221,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this bucket.
       *   `:predefinedDefaultObjectAcl` (*type:* `String.t`) - Apply a predefined set of default object access controls to this bucket.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Bucket.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -255,7 +248,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :predefinedAcl => :query,
       :predefinedDefaultObjectAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -293,7 +285,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to buckets whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -321,7 +312,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -355,7 +345,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -391,7 +380,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -431,7 +419,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this bucket.
       *   `:predefinedDefaultObjectAcl` (*type:* `String.t`) - Apply a predefined set of default object access controls to this bucket.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Bucket.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -461,7 +448,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :predefinedAcl => :query,
       :predefinedDefaultObjectAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -496,7 +482,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -521,7 +506,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -557,7 +541,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -593,7 +576,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -633,7 +615,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this bucket.
       *   `:predefinedDefaultObjectAcl` (*type:* `String.t`) - Apply a predefined set of default object access controls to this bucket.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Bucket.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -663,7 +644,6 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :predefinedAcl => :query,
       :predefinedDefaultObjectAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }

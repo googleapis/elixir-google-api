@@ -383,7 +383,6 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -412,7 +411,6 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
