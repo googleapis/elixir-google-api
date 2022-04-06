@@ -23,12 +23,13 @@ defmodule GoogleApi.Dataproc.V1.Model.Cluster do
 
   *   `clusterName` (*type:* `String.t`, *default:* `nil`) - Required. The cluster name. Cluster names within a project must be unique. Names of deleted clusters can be reused.
   *   `clusterUuid` (*type:* `String.t`, *default:* `nil`) - Output only. A cluster UUID (Unique Universal Identifier). Dataproc generates this value when it creates the cluster.
-  *   `config` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterConfig.t`, *default:* `nil`) - Optional. The cluster config for a cluster of Compute Engine Instances. Note that Dataproc may set default values, and values may change when clusters are updated.
+  *   `config` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterConfig.t`, *default:* `nil`) - Optional. The cluster config for a cluster of Compute Engine Instances. Note that Dataproc may set default values, and values may change when clusters are updated.Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster.
   *   `metrics` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterMetrics.t`, *default:* `nil`) - Output only. Contains cluster daemon metrics such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Cloud Platform project ID that the cluster belongs to.
   *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterStatus.t`, *default:* `nil`) - Output only. Cluster status.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t)`, *default:* `nil`) - Output only. The previous cluster status.
+  *   `virtualClusterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.VirtualClusterConfig.t`, *default:* `nil`) - Optional. The virtual cluster config, used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster). Note that Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtualClusterConfig must be specified.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.Dataproc.V1.Model.Cluster do
           :metrics => GoogleApi.Dataproc.V1.Model.ClusterMetrics.t() | nil,
           :projectId => String.t() | nil,
           :status => GoogleApi.Dataproc.V1.Model.ClusterStatus.t() | nil,
-          :statusHistory => list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t()) | nil
+          :statusHistory => list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t()) | nil,
+          :virtualClusterConfig => GoogleApi.Dataproc.V1.Model.VirtualClusterConfig.t() | nil
         }
 
   field(:clusterName)
@@ -52,6 +54,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Cluster do
   field(:projectId)
   field(:status, as: GoogleApi.Dataproc.V1.Model.ClusterStatus)
   field(:statusHistory, as: GoogleApi.Dataproc.V1.Model.ClusterStatus, type: :list)
+  field(:virtualClusterConfig, as: GoogleApi.Dataproc.V1.Model.VirtualClusterConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.Cluster do
