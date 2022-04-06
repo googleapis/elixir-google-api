@@ -18,7 +18,7 @@
 defmodule GoogleApi.SecurityCenter.Mixfile do
   use Mix.Project
 
-  @version "0.27.3"
+  @version "0.28.0"
 
   def project() do
     [
