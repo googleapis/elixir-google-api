@@ -21,19 +21,27 @@ defmodule GoogleApi.Dataproc.V1.Model.GkeClusterConfig do
 
   ## Attributes
 
-  *   `namespacedGkeDeploymentTarget` (*type:* `GoogleApi.Dataproc.V1.Model.NamespacedGkeDeploymentTarget.t`, *default:* `nil`) - Optional. A target for the deployment.
+  *   `gkeClusterTarget` (*type:* `String.t`, *default:* `nil`) - Optional. A target GKE cluster to deploy to. It must be in the same project and region as the Dataproc cluster (the GKE cluster can be zonal or regional). Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'
+  *   `namespacedGkeDeploymentTarget` (*type:* `GoogleApi.Dataproc.V1.Model.NamespacedGkeDeploymentTarget.t`, *default:* `nil`) - Optional. Deprecated. Use gkeClusterTarget. Used only for the deprecated beta. A target for the deployment.
+  *   `nodePoolTarget` (*type:* `list(GoogleApi.Dataproc.V1.Model.GkeNodePoolTarget.t)`, *default:* `nil`) - Optional. GKE NodePools where workloads will be scheduled. At least one node pool must be assigned the 'default' role. Each role can be given to only a single NodePoolTarget. All NodePools must have the same location settings. If a nodePoolTarget is not specified, Dataproc constructs a default nodePoolTarget.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gkeClusterTarget => String.t() | nil,
           :namespacedGkeDeploymentTarget =>
-            GoogleApi.Dataproc.V1.Model.NamespacedGkeDeploymentTarget.t() | nil
+            GoogleApi.Dataproc.V1.Model.NamespacedGkeDeploymentTarget.t() | nil,
+          :nodePoolTarget => list(GoogleApi.Dataproc.V1.Model.GkeNodePoolTarget.t()) | nil
         }
+
+  field(:gkeClusterTarget)
 
   field(:namespacedGkeDeploymentTarget,
     as: GoogleApi.Dataproc.V1.Model.NamespacedGkeDeploymentTarget
   )
+
+  field(:nodePoolTarget, as: GoogleApi.Dataproc.V1.Model.GkeNodePoolTarget, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.GkeClusterConfig do
