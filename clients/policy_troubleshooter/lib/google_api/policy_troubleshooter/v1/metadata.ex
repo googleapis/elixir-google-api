@@ -20,7 +20,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1 do
   API client metadata for GoogleApi.PolicyTroubleshooter.V1.
   """
 
-  @discovery_revision "20211008"
+  @discovery_revision "20220402"
 
   def discovery_revision(), do: @discovery_revision
 end
