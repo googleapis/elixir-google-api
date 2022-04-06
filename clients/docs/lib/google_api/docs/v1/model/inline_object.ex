@@ -22,7 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.InlineObject do
   ## Attributes
 
   *   `inlineObjectProperties` (*type:* `GoogleApi.Docs.V1.Model.InlineObjectProperties.t`, *default:* `nil`) - The properties of this inline object.
-  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The ID of this inline object.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The ID of this inline object. Can be used to update an object’s properties.
   *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
   *   `suggestedInlineObjectPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties.t}`, *default:* `nil`) - The suggested changes to the inline object properties, keyed by suggestion ID.
   *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested insertion.
