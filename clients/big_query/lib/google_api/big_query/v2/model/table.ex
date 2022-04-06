@@ -21,108 +21,132 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
 
   ## Attributes
 
-  *   `cloneDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.CloneDefinition.t`, *default:* `nil`) - [Output-only] Clone definition.
-  *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was created, in milliseconds since the epoch.
-  *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - [Output-only] The default collation of the table.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of this table.
-  *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - [Output-only] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change.
-  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables.
-  *   `externalDataConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration.t`, *default:* `nil`) - [Optional] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table.
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for this table.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output-only] An opaque ID uniquely identifying the table.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - [Output-only] The type of the resource.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
-  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was last modified, in milliseconds since the epoch.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output-only] The geographic location where the table resides. This value is inherited from the dataset.
-  *   `materializedView` (*type:* `GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.t`, *default:* `nil`) - [Optional] Materialized view definition.
-  *   `model` (*type:* `GoogleApi.BigQuery.V2.Model.ModelDefinition.t`, *default:* `nil`) - [Output-only, Beta] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run 'PREDICT' queries.
-  *   `numBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] The size of this table in bytes, excluding any data in the streaming buffer.
   *   `numLongTermBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of bytes in the table that are considered "long-term storage".
-  *   `numPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel.
-  *   `numRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer.
-  *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
   *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `false`) - [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
-  *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] Describes the schema of this table.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access this resource again.
+  *   `num_long_term_physical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
+  *   `num_partitions` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of this table.
   *   `snapshotDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t`, *default:* `nil`) - [Output-only] Snapshot definition.
-  *   `streamingBuffer` (*type:* `GoogleApi.BigQuery.V2.Model.Streamingbuffer.t`, *default:* `nil`) - [Output-only] Contains information regarding this table's streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer.
-  *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of this table.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - [Output-only] The type of the resource.
+  *   `cloneDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.CloneDefinition.t`, *default:* `nil`) - [Output-only] Clone definition.
+  *   `num_active_physical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
+  *   `numPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel.
+  *   `numBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] The size of this table in bytes, excluding any data in the streaming buffer.
+  *   `num_time_travel_physical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
+  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was last modified, in milliseconds since the epoch.
+  *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output-only] The geographic location where the table resides. This value is inherited from the dataset.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for this table.
+  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables.
   *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - Time-based partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE.
+  *   `model` (*type:* `GoogleApi.BigQuery.V2.Model.ModelDefinition.t`, *default:* `nil`) - [Output-only, Beta] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run 'PREDICT' queries.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was created, in milliseconds since the epoch.
   *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.ViewDefinition.t`, *default:* `nil`) - [Optional] The view definition.
+  *   `num_total_logical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Total number of logical bytes in the table or materialized view.
+  *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - [Output-only] The default collation of the table.
+  *   `num_active_logical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of logical bytes that are less than 90 days old.
+  *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of this table.
+  *   `externalDataConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration.t`, *default:* `nil`) - [Optional] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE.
+  *   `numRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output-only] An opaque ID uniquely identifying the table.
+  *   `num_total_physical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
+  *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
+  *   `materializedView` (*type:* `GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.t`, *default:* `nil`) - [Optional] Materialized view definition.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access this resource again.
+  *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
+  *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] Describes the schema of this table.
+  *   `num_long_term_logical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of logical bytes that are more than 90 days old.
+  *   `streamingBuffer` (*type:* `GoogleApi.BigQuery.V2.Model.Streamingbuffer.t`, *default:* `nil`) - [Output-only] Contains information regarding this table's streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloneDefinition => GoogleApi.BigQuery.V2.Model.CloneDefinition.t() | nil,
-          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
-          :creationTime => String.t() | nil,
-          :defaultCollation => String.t() | nil,
-          :description => String.t() | nil,
-          :encryptionConfiguration =>
-            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
           :etag => String.t() | nil,
+          :numLongTermBytes => String.t() | nil,
+          :requirePartitionFilter => boolean() | nil,
+          :num_long_term_physical_bytes => String.t() | nil,
+          :num_partitions => String.t() | nil,
+          :description => String.t() | nil,
+          :snapshotDefinition => GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t() | nil,
+          :kind => String.t() | nil,
+          :cloneDefinition => GoogleApi.BigQuery.V2.Model.CloneDefinition.t() | nil,
+          :num_active_physical_bytes => String.t() | nil,
+          :numPhysicalBytes => String.t() | nil,
+          :numBytes => String.t() | nil,
+          :num_time_travel_physical_bytes => String.t() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
+          :location => String.t() | nil,
+          :friendlyName => String.t() | nil,
           :expirationTime => String.t() | nil,
+          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
+          :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t() | nil,
+          :creationTime => String.t() | nil,
+          :view => GoogleApi.BigQuery.V2.Model.ViewDefinition.t() | nil,
+          :num_total_logical_bytes => String.t() | nil,
+          :defaultCollation => String.t() | nil,
+          :num_active_logical_bytes => String.t() | nil,
+          :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :externalDataConfiguration =>
             GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration.t() | nil,
-          :friendlyName => String.t() | nil,
-          :id => String.t() | nil,
-          :kind => String.t() | nil,
-          :labels => map() | nil,
-          :lastModifiedTime => String.t() | nil,
-          :location => String.t() | nil,
-          :materializedView => GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.t() | nil,
-          :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t() | nil,
-          :numBytes => String.t() | nil,
-          :numLongTermBytes => String.t() | nil,
-          :numPhysicalBytes => String.t() | nil,
-          :numRows => String.t() | nil,
-          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
-          :requirePartitionFilter => boolean() | nil,
-          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
-          :selfLink => String.t() | nil,
-          :snapshotDefinition => GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t() | nil,
-          :streamingBuffer => GoogleApi.BigQuery.V2.Model.Streamingbuffer.t() | nil,
-          :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
-          :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
           :type => String.t() | nil,
-          :view => GoogleApi.BigQuery.V2.Model.ViewDefinition.t() | nil
+          :numRows => String.t() | nil,
+          :id => String.t() | nil,
+          :num_total_physical_bytes => String.t() | nil,
+          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
+          :materializedView => GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.t() | nil,
+          :labels => map() | nil,
+          :selfLink => String.t() | nil,
+          :encryptionConfiguration =>
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
+          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
+          :num_long_term_logical_bytes => String.t() | nil,
+          :streamingBuffer => GoogleApi.BigQuery.V2.Model.Streamingbuffer.t() | nil
         }
 
-  field(:cloneDefinition, as: GoogleApi.BigQuery.V2.Model.CloneDefinition)
-  field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
-  field(:creationTime)
-  field(:defaultCollation)
-  field(:description)
-  field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
   field(:etag)
-  field(:expirationTime)
-  field(:externalDataConfiguration, as: GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration)
-  field(:friendlyName)
-  field(:id)
-  field(:kind)
-  field(:labels, type: :map)
-  field(:lastModifiedTime)
-  field(:location)
-  field(:materializedView, as: GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition)
-  field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
-  field(:numBytes)
   field(:numLongTermBytes)
-  field(:numPhysicalBytes)
-  field(:numRows)
-  field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
   field(:requirePartitionFilter)
-  field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
-  field(:selfLink)
+  field(:num_long_term_physical_bytes)
+  field(:num_partitions)
+  field(:description)
   field(:snapshotDefinition, as: GoogleApi.BigQuery.V2.Model.SnapshotDefinition)
-  field(:streamingBuffer, as: GoogleApi.BigQuery.V2.Model.Streamingbuffer)
-  field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:kind)
+  field(:cloneDefinition, as: GoogleApi.BigQuery.V2.Model.CloneDefinition)
+  field(:num_active_physical_bytes)
+  field(:numPhysicalBytes)
+  field(:numBytes)
+  field(:num_time_travel_physical_bytes)
+  field(:lastModifiedTime)
+  field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
+  field(:location)
+  field(:friendlyName)
+  field(:expirationTime)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)
-  field(:type)
+  field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
+  field(:creationTime)
   field(:view, as: GoogleApi.BigQuery.V2.Model.ViewDefinition)
+  field(:num_total_logical_bytes)
+  field(:defaultCollation)
+  field(:num_active_logical_bytes)
+  field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:externalDataConfiguration, as: GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration)
+  field(:type)
+  field(:numRows)
+  field(:id)
+  field(:num_total_physical_bytes)
+  field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
+  field(:materializedView, as: GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition)
+  field(:labels, type: :map)
+  field(:selfLink)
+  field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
+  field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
+  field(:num_long_term_logical_bytes)
+  field(:streamingBuffer, as: GoogleApi.BigQuery.V2.Model.Streamingbuffer)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Table do

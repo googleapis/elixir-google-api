@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.HparamTuningTrial do
   @moduledoc """
-  Training info of a trial in hyperparameter tuning.
+  Training info of a trial in [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models.
 
   ## Attributes
 

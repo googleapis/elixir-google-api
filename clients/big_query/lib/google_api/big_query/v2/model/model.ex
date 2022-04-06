@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
 
   *   `bestTrialId` (*type:* `String.t`, *default:* `nil`) - The best trial_id across all training runs.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was created, in millisecs since the epoch.
-  *   `defaultTrialId` (*type:* `String.t`, *default:* `nil`) - Output only. The default trial_id to use in TVFs when the trial_id is not passed in. For single-objective hyperparameter tuning, this is the best trial id. For multi-objective hyperparameter tuning, this is the smallest trial id among all Pareto optimal trials.
+  *   `defaultTrialId` (*type:* `String.t`, *default:* `nil`) - Output only. The default trial_id to use in TVFs when the trial_id is not passed in. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial ID. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest trial ID among all Pareto optimal trials.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of this model.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys). This shows the encryption configuration of the model data while stored in BigQuery storage. This field can be used with PatchModel to update encryption key for an already encrypted model.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
@@ -31,14 +31,14 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   *   `featureColumns` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - Output only. Input feature columns that were used to train this model.
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive name for this model.
   *   `hparamSearchSpaces` (*type:* `GoogleApi.BigQuery.V2.Model.HparamSearchSpaces.t`, *default:* `nil`) - Output only. All hyperparameter search spaces in this model.
-  *   `hparamTrials` (*type:* `list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t)`, *default:* `nil`) - Output only. Trials of a hyperparameter tuning model sorted by trial_id.
+  *   `hparamTrials` (*type:* `list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t)`, *default:* `nil`) - Output only. Trials of a [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) model sorted by trial_id.
   *   `labelColumns` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - Output only. Label columns that were used to train this model. The output of the model will have a "predicted_" prefix to these columns.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this model. You can use these to organize and group your models. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was last modified, in millisecs since the epoch.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The geographic location where the model resides. This value is inherited from the dataset.
   *   `modelReference` (*type:* `GoogleApi.BigQuery.V2.Model.ModelReference.t`, *default:* `nil`) - Required. Unique identifier for this model.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the model resource.
-  *   `optimalTrialIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. For single-objective hyperparameter tuning, it only contains the best trial. For multi-objective hyperparameter tuning, it contains all Pareto optimal trials sorted by trial_id.
+  *   `optimalTrialIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best trial. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto optimal trials sorted by trial_id.
   *   `trainingRuns` (*type:* `list(GoogleApi.BigQuery.V2.Model.TrainingRun.t)`, *default:* `nil`) - Output only. Information for all training runs in increasing order of start_time.
   """
 

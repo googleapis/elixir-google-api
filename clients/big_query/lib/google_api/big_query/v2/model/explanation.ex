@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Explanation do
   ## Attributes
 
   *   `attribution` (*type:* `float()`, *default:* `nil`) - Attribution of feature.
-  *   `featureName` (*type:* `String.t`, *default:* `nil`) - Full name of the feature. For non-numerical features, will be formatted like .. Overall size of feature name will always be truncated to first 120 characters.
+  *   `featureName` (*type:* `String.t`, *default:* `nil`) - The full feature name. For non-numerical features, will be formatted like `.`. Overall size of feature name will always be truncated to first 120 characters.
   """
 
   use GoogleApi.Gax.ModelBase
