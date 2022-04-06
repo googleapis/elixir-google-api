@@ -29,12 +29,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
+  *   `iamBindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t)`, *default:* `nil`) - Represents IAM bindings associated with the Finding.
   *   `indicator` (*type:* `GoogleApi.SecurityCenter.V1.Model.Indicator.t`, *default:* `nil`) - Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc. Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+  *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Next steps associate to the finding.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: "organizations/{organization_id}/sources/{source_id}"
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
@@ -60,12 +62,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
             | nil,
           :externalUri => String.t() | nil,
           :findingClass => String.t() | nil,
+          :iamBindings => list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t()) | nil,
           :indicator => GoogleApi.SecurityCenter.V1.Model.Indicator.t() | nil,
           :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
           :mute => String.t() | nil,
           :muteInitiator => String.t() | nil,
           :muteUpdateTime => DateTime.t() | nil,
           :name => String.t() | nil,
+          :nextSteps => String.t() | nil,
           :parent => String.t() | nil,
           :resourceName => String.t() | nil,
           :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
@@ -88,12 +92,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
 
   field(:externalUri)
   field(:findingClass)
+  field(:iamBindings, as: GoogleApi.SecurityCenter.V1.Model.IamBinding, type: :list)
   field(:indicator, as: GoogleApi.SecurityCenter.V1.Model.Indicator)
   field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)
   field(:mute)
   field(:muteInitiator)
   field(:muteUpdateTime, as: DateTime)
   field(:name)
+  field(:nextSteps)
   field(:parent)
   field(:resourceName)
   field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)
