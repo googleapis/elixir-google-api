@@ -21,6 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.DriveOptions do
 
   ## Attributes
 
+  *   `clientSideEncryptedOption` (*type:* `String.t`, *default:* `nil`) - Set whether the results include only content encrypted with [Google Workspace Client-side encryption](https://support.google.com/a?p=cse_ov) content, only unencrypted content, or both. Defaults to both. Currently supported for Drive.
   *   `includeSharedDrives` (*type:* `boolean()`, *default:* `nil`) - Set to **true** to include shared drives.
   *   `includeTeamDrives` (*type:* `boolean()`, *default:* `nil`) - Set to true to include Team Drive.
   *   `versionDate` (*type:* `DateTime.t`, *default:* `nil`) - Search the current version of the Drive file, but export the contents of the last version saved before 12:00 AM UTC on the specified date. Enter the date in UTC.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Vault.V1.Model.DriveOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientSideEncryptedOption => String.t() | nil,
           :includeSharedDrives => boolean() | nil,
           :includeTeamDrives => boolean() | nil,
           :versionDate => DateTime.t() | nil
         }
 
+  field(:clientSideEncryptedOption)
   field(:includeSharedDrives)
   field(:includeTeamDrives)
   field(:versionDate, as: DateTime)
