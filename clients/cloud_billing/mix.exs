@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudBilling.Mixfile do
   use Mix.Project
 
-  @version "0.23.5"
+  @version "0.23.6"
 
   def project() do
     [
