@@ -44,7 +44,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -79,7 +78,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -118,7 +116,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -157,7 +154,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -195,7 +191,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -233,7 +228,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -271,7 +265,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -308,7 +301,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -346,7 +338,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -386,7 +377,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -426,7 +416,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -466,7 +455,6 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }

@@ -42,7 +42,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -74,7 +73,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -110,7 +108,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -146,7 +143,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -181,7 +177,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -216,7 +211,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -253,7 +247,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - If present, only return default ACL listing if the bucket's current metageneration matches this value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - If present, only return default ACL listing if the bucket's current metageneration does not match the given value.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -289,7 +282,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :userIp => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -324,7 +316,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -361,7 +352,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -398,7 +388,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ObjectAccessControl.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -435,7 +424,6 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }

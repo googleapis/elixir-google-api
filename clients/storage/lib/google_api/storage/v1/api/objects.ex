@@ -46,7 +46,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ComposeRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -81,7 +80,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifGenerationMatch => :query,
       :ifMetagenerationMatch => :query,
       :kmsKeyName => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -131,7 +129,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifSourceMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current metageneration matches the given value.
       *   `:ifSourceMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:sourceGeneration` (*type:* `String.t`) - If present, selects a specific revision of the source object (as opposed to the latest version, the default).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Object.t`) - 
@@ -184,7 +181,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifSourceMetagenerationMatch => :query,
       :ifSourceMetagenerationNotMatch => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :sourceGeneration => :query,
       :userProject => :query,
       :body => :body
@@ -232,7 +228,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -258,7 +253,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifGenerationNotMatch => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -300,7 +294,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -335,7 +328,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -372,7 +364,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -409,7 +400,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -453,7 +443,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Object.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -487,7 +476,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :name => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -534,7 +522,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -583,7 +570,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :name => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -630,7 +616,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Object.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -672,7 +657,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :name => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -720,7 +704,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -769,7 +752,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :name => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -813,7 +795,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
@@ -846,7 +827,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :startOffset => :query,
       :userProject => :query,
       :versions => :query
@@ -890,7 +870,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request, for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Object.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -922,7 +901,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationNotMatch => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -973,7 +951,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifSourceMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current metageneration does not match the given value.
       *   `:maxBytesRewrittenPerCall` (*type:* `String.t`) - The maximum number of bytes that will be rewritten per rewrite request. Most callers shouldn't need to specify this parameter - it is primarily in place to support testing. If specified the value must be an integral multiple of 1 MiB (1048576). Also, this only applies to requests where the source and destination span locations and/or storage classes. Finally, this value must not change across rewrite calls else you'll get an error that the rewriteToken is invalid.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:rewriteToken` (*type:* `String.t`) - Include this field (from the previous rewrite response) on each rewrite request after the first one, until the rewrite response 'done' flag is true. Calls that provide a rewriteToken can omit all other request fields, but if included those fields must match the values provided in the first rewrite request.
       *   `:sourceGeneration` (*type:* `String.t`) - If present, selects a specific revision of the source object (as opposed to the latest version, the default).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -1028,7 +1005,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifSourceMetagenerationNotMatch => :query,
       :maxBytesRewrittenPerCall => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :rewriteToken => :query,
       :sourceGeneration => :query,
       :userProject => :query,
@@ -1073,7 +1049,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1111,7 +1086,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -1150,7 +1124,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:generation` (*type:* `String.t`) - If present, selects a specific revision of this object (as opposed to the latest version, the default).
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1189,7 +1162,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :uploadType => :query,
       :userIp => :query,
       :generation => :query,
-      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -1233,7 +1205,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Object.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1265,7 +1236,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationNotMatch => :query,
       :predefinedAcl => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -1308,7 +1278,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
@@ -1342,7 +1311,6 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
-      :provisionalUserProject => :query,
       :startOffset => :query,
       :userProject => :query,
       :versions => :query,
