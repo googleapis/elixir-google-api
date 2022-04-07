@@ -20,7 +20,7 @@ defmodule GoogleApi.FCMData.V1beta1 do
   API client metadata for GoogleApi.FCMData.V1beta1.
   """
 
-  @discovery_revision "20220228"
+  @discovery_revision "20220405"
 
   def discovery_revision(), do: @discovery_revision
 end
