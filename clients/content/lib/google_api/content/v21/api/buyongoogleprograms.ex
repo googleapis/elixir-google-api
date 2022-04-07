@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Reactivates the BoG program in your Merchant Center account. Moves the program to the active state when allowed, e.g. when paused. Important: This method is only whitelisted for selected merchants.
+  Reactivates the BoG program in your Merchant Center account. Moves the program to the active state when allowed, for example, when paused. This method is only available to selected merchants.
 
   ## Parameters
 
@@ -322,7 +322,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
   end
 
   @doc """
-  Pauses the BoG program in your Merchant Center account. Important: This method is only whitelisted for selected merchants.
+  Pauses the BoG program in your Merchant Center account. This method is only available to selected merchants.
 
   ## Parameters
 
@@ -394,7 +394,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
   end
 
   @doc """
-  Requests review and then activates the BoG program in your Merchant Center account for the first time. Moves the program to the REVIEW_PENDING state. Important: This method is only whitelisted for selected merchants.
+  Requests review and then activates the BoG program in your Merchant Center account for the first time. Moves the program to the REVIEW_PENDING state. This method is only available to selected merchants.
 
   ## Parameters
 
