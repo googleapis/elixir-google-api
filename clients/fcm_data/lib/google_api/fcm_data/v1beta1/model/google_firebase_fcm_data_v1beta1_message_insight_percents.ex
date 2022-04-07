@@ -21,7 +21,7 @@ defmodule GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1MessageIns
 
   ## Attributes
 
-  *   `priorityLowered` (*type:* `number()`, *default:* `nil`) - The percentage of accepted messages that had their priority lowered from high to normal due to [app standby buckets](https://firebase.google.com/docs/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+  *   `priorityLowered` (*type:* `number()`, *default:* `nil`) - The percentage of accepted messages that had their priority lowered from high to normal. See [documentation for setting message priority](https://firebase.google.com/docs/cloud-messaging/android/message-priority).
   """
 
   use GoogleApi.Gax.ModelBase
