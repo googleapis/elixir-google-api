@@ -29,7 +29,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `privateCopy` (*type:* `boolean()`, *default:* `false`) - If set to True, Event propagation is disabled. Note that it is not the same thing as Private event properties. Optional. Immutable. The default is False.
   *   `conferenceData` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceData.t`, *default:* `nil`) - The conference-related information, such as details of a Google Meet conference. To create new conference details use the createRequest field. To persist your changes, remember to set the conferenceDataVersion request parameter to 1 for all event modification requests.
   *   `hangoutLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to the Google Hangout associated with this event. Read-only.
-  *   `attachments` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttachment.t)`, *default:* `nil`) - File attachments for the event. Currently only Google Drive attachments are supported.
+  *   `attachments` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttachment.t)`, *default:* `nil`) - File attachments for the event.
       In order to modify attachments the supportsAttachments request parameter should be set to true.
       There can be at most 25 attachments per event,
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event. Can contain HTML. Optional.
