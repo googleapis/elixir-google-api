@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ManagedService do
   ## Attributes
 
   *   `producerProjectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that produces and owns this service.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the service. See the [overview](/service-management/overview) for naming requirements.
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the service. See the [overview](https://cloud.google.com/service-management/overview) for naming requirements.
   """
 
   use GoogleApi.Gax.ModelBase
