@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.CopyBackupMetadata do
   @moduledoc """
-  Metadata type for the google.longrunning.Operation returned by CopyBackup.
+  Metadata type for the operation returned by CopyBackup.
 
   ## Attributes
 
