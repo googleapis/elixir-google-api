@@ -26,7 +26,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
   *   `fileUrl` (*type:* `String.t`, *default:* `nil`) - URL link to the attachment.
       For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API.
       Required when adding an attachment.
-  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - URL link to the attachment's icon. Read-only.
+  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - URL link to the attachment's icon. This field can only be modified for custom third-party attachments.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Internet media type (MIME type) of the attachment.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Attachment title.
   """
