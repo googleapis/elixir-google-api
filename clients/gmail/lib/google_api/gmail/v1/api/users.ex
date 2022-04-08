@@ -4279,7 +4279,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Deletes a filter.
+  Immediately and permanently deletes the specified filter.
 
   ## Parameters
 
