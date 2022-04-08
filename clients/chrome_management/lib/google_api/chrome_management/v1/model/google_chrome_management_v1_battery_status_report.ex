@@ -25,7 +25,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatterySta
   *   `cycleCount` (*type:* `integer()`, *default:* `nil`) - Output only. Cycle count.
   *   `fullChargeCapacity` (*type:* `String.t`, *default:* `nil`) - Output only. Full charge capacity (mAmpere-hours).
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of when the sample was collected on device
-  *   `sample` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatterySampleReport.t)`, *default:* `nil`) - Output only. Sampling data for the battery.
+  *   `sample` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatterySampleReport.t)`, *default:* `nil`) - Output only. Sampling data for the battery sorted in a decreasing order of report_time.
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Battery serial number.
   """
 

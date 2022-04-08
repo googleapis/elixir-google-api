@@ -21,17 +21,17 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   ## Attributes
 
-  *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically.
+  *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically sorted in a decreasing order of report_time.
   *   `batteryInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo.t)`, *default:* `nil`) - Output only. Information on battery specs for the device.
   *   `batteryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport.t)`, *default:* `nil`) - Output only. Battery reports collected periodically.
   *   `cpuInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo.t)`, *default:* `nil`) - Output only. Information regarding CPU specs for the device.
-  *   `cpuStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuStatusReport.t)`, *default:* `nil`) - Output only. CPU status reports collected periodically.
+  *   `cpuStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuStatusReport.t)`, *default:* `nil`) - Output only. CPU status reports collected periodically sorted in a decreasing order of report_time.
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Output only. Google Workspace Customer whose enterprise enrolled the device.
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the Chrome OS Devices tab
   *   `graphicsInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsInfo.t`, *default:* `nil`) - Output only. Contains information regarding Graphic peripherals for the device.
   *   `graphicsStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsStatusReport.t)`, *default:* `nil`) - Output only. Graphics reports collected periodically.
   *   `memoryInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo.t`, *default:* `nil`) - Output only. Information regarding memory specs for the device.
-  *   `memoryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryStatusReport.t)`, *default:* `nil`) - Output only. Memory status reports collected periodically.
+  *   `memoryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryStatusReport.t)`, *default:* `nil`) - Output only. Memory status reports collected periodically sorted decreasing by report_time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the device.
   *   `networkStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport.t)`, *default:* `nil`) - Output only. Network specs collected periodically.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization unit ID of the device.
