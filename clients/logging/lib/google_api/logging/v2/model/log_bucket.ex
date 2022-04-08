@@ -24,6 +24,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   *   `cmekSettings` (*type:* `GoogleApi.Logging.V2.Model.CmekSettings.t`, *default:* `nil`) - The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this bucket.
+  *   `indexConfigs` (*type:* `list(GoogleApi.Logging.V2.Model.IndexConfig.t)`, *default:* `nil`) - A list of indexed fields and related configuration data.
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - Output only. The bucket lifecycle state.
   *   `locked` (*type:* `boolean()`, *default:* `nil`) - Whether the bucket is locked.The retention period on a locked bucket cannot be changed. Locked buckets may only be deleted if they are empty.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the bucket.For example:projects/my-project/locations/global/buckets/my-bucketFor a list of supported locations, see Supported Regions (https://cloud.google.com/logging/docs/region-support)For the location of global it is unspecified where log entries are actually stored.After a bucket has been created, the location cannot be changed.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
           :cmekSettings => GoogleApi.Logging.V2.Model.CmekSettings.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :indexConfigs => list(GoogleApi.Logging.V2.Model.IndexConfig.t()) | nil,
           :lifecycleState => String.t() | nil,
           :locked => boolean() | nil,
           :name => String.t() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   field(:cmekSettings, as: GoogleApi.Logging.V2.Model.CmekSettings)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:indexConfigs, as: GoogleApi.Logging.V2.Model.IndexConfig, type: :list)
   field(:lifecycleState)
   field(:locked)
   field(:name)
