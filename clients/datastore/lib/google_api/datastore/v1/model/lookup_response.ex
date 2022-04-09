@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
   *   `deferred` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - A list of keys that were not looked up due to resource constraints. The order of results in this field is undefined and has no relation to the order of the keys in the input.
   *   `found` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities found as `ResultType.FULL` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
   *   `missing` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities not found as `ResultType.KEY_ONLY` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which these entities were read or found missing.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
   @type t :: %__MODULE__{
           :deferred => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
           :found => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
-          :missing => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil
+          :missing => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
+          :readTime => DateTime.t() | nil
         }
 
   field(:deferred, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
   field(:found, as: GoogleApi.Datastore.V1.Model.EntityResult, type: :list)
   field(:missing, as: GoogleApi.Datastore.V1.Model.EntityResult, type: :list)
+  field(:readTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.LookupResponse do
