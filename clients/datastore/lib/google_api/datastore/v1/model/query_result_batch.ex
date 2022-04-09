@@ -25,6 +25,7 @@ defmodule GoogleApi.Datastore.V1.Model.QueryResultBatch do
   *   `entityResultType` (*type:* `String.t`, *default:* `nil`) - The result type for every entity in `entity_results`.
   *   `entityResults` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - The results for this batch.
   *   `moreResults` (*type:* `String.t`, *default:* `nil`) - The state of the query after the current batch.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Read timestamp this batch was returned from. This applies to the range of results from the query's `start_cursor` (or the beginning of the query if no cursor was given) to this batch's `end_cursor` (not the query's `end_cursor`). In a single transaction, subsequent query result batches for the same query can have a greater timestamp. Each batch's read timestamp is valid for all preceding batches. This value will not be set for eventually consistent queries in Cloud Datastore.
   *   `skippedCursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the last skipped result. Will be set when `skipped_results` != 0.
   *   `skippedResults` (*type:* `integer()`, *default:* `nil`) - The number of results skipped, typically because of an offset.
   *   `snapshotVersion` (*type:* `String.t`, *default:* `nil`) - The version number of the snapshot this batch was returned from. This applies to the range of results from the query's `start_cursor` (or the beginning of the query if no cursor was given) to this batch's `end_cursor` (not the query's `end_cursor`). In a single transaction, subsequent query result batches for the same query can have a greater snapshot version number. Each batch's snapshot version is valid for all preceding batches. The value will be zero for eventually consistent queries.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Datastore.V1.Model.QueryResultBatch do
           :entityResultType => String.t() | nil,
           :entityResults => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
           :moreResults => String.t() | nil,
+          :readTime => DateTime.t() | nil,
           :skippedCursor => String.t() | nil,
           :skippedResults => integer() | nil,
           :snapshotVersion => String.t() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.Datastore.V1.Model.QueryResultBatch do
   field(:entityResultType)
   field(:entityResults, as: GoogleApi.Datastore.V1.Model.EntityResult, type: :list)
   field(:moreResults)
+  field(:readTime, as: DateTime)
   field(:skippedCursor)
   field(:skippedResults)
   field(:snapshotVersion)

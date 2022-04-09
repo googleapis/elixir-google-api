@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastore.V1.Model.MutationResult do
 
   *   `conflictDetected` (*type:* `boolean()`, *default:* `nil`) - Whether a conflict was detected for this mutation. Always false when a conflict detection strategy field is not set in the mutation.
   *   `key` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The automatically allocated key. Set only when the mutation allocated a key.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The update time of the entity on the server after processing the mutation. If the mutation doesn't change anything on the server, then the timestamp will be the update timestamp of the current entity. This field will not be set after a 'delete'.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the entity on the server after processing the mutation. If the mutation doesn't change anything on the server, then the version will be the version of the current entity or, if no entity is present, a version that is strictly greater than the version of any previous entity and less than the version of any possible future entity.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Datastore.V1.Model.MutationResult do
   @type t :: %__MODULE__{
           :conflictDetected => boolean() | nil,
           :key => GoogleApi.Datastore.V1.Model.Key.t() | nil,
+          :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
 
   field(:conflictDetected)
   field(:key, as: GoogleApi.Datastore.V1.Model.Key)
+  field(:updateTime, as: DateTime)
   field(:version)
 end
 

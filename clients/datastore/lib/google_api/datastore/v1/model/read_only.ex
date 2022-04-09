@@ -21,11 +21,16 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOnly do
 
   ## Attributes
 
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads entities at the given time. This may not be older than 60 seconds.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :readTime => DateTime.t() | nil
+        }
+
+  field(:readTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.ReadOnly do

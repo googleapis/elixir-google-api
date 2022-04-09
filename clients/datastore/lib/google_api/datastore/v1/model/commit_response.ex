@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.CommitResponse do
 
   ## Attributes
 
+  *   `commitTime` (*type:* `DateTime.t`, *default:* `nil`) - The transaction commit timestamp. Not set for non-transactional commits.
   *   `indexUpdates` (*type:* `integer()`, *default:* `nil`) - The number of index entries updated during the commit, or zero if none were updated.
   *   `mutationResults` (*type:* `list(GoogleApi.Datastore.V1.Model.MutationResult.t)`, *default:* `nil`) - The result of performing the mutations. The i-th mutation result corresponds to the i-th mutation in the request.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Datastore.V1.Model.CommitResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commitTime => DateTime.t() | nil,
           :indexUpdates => integer() | nil,
           :mutationResults => list(GoogleApi.Datastore.V1.Model.MutationResult.t()) | nil
         }
 
+  field(:commitTime, as: DateTime)
   field(:indexUpdates)
   field(:mutationResults, as: GoogleApi.Datastore.V1.Model.MutationResult, type: :list)
 end

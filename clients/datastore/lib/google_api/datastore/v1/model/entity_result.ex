@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
 
   *   `cursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the result entity. Set only when the `EntityResult` is part of a `QueryResultBatch` message.
   *   `entity` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The resulting entity.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the entity was last changed. This field is set for `FULL` entity results. If this entity is missing, this field will not be set.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the entity, a strictly positive number that monotonically increases with changes to the entity. This field is set for `FULL` entity results. For missing entities in `LookupResponse`, this is the version of the snapshot that was used to look up the entity, and it is always set except for eventually consistent reads.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
   @type t :: %__MODULE__{
           :cursor => String.t() | nil,
           :entity => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
 
   field(:cursor)
   field(:entity, as: GoogleApi.Datastore.V1.Model.Entity)
+  field(:updateTime, as: DateTime)
   field(:version)
 end
 

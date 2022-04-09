@@ -25,6 +25,7 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
   *   `delete` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The key of the entity to delete. The entity may or may not already exist. Must have a complete key path and must not be reserved/read-only.
   *   `insert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to insert. The entity must not already exist. The entity key's final path element may be incomplete.
   *   `update` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to update. The entity must already exist. Must have a complete key path.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The update time of the entity that this mutation is being applied to. If this does not match the current update time on the server, the mutation conflicts.
   *   `upsert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to upsert. The entity may or may not already exist. The entity key's final path element may be incomplete.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
           :delete => GoogleApi.Datastore.V1.Model.Key.t() | nil,
           :insert => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
           :update => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
+          :updateTime => DateTime.t() | nil,
           :upsert => GoogleApi.Datastore.V1.Model.Entity.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
   field(:delete, as: GoogleApi.Datastore.V1.Model.Key)
   field(:insert, as: GoogleApi.Datastore.V1.Model.Entity)
   field(:update, as: GoogleApi.Datastore.V1.Model.Entity)
+  field(:updateTime, as: DateTime)
   field(:upsert, as: GoogleApi.Datastore.V1.Model.Entity)
 end
 
