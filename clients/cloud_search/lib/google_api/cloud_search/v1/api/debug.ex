@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Checks whether an item is accessible by specified principal. **Note:** This API requires an admin account to execute.
+  Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
