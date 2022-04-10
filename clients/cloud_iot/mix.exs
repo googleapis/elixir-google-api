@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudIot.Mixfile do
   use Mix.Project
 
-  @version "0.27.3"
+  @version "0.27.4"
 
   def project() do
     [
