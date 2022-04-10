@@ -29,7 +29,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   *   `maintenanceSchedules` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule.t}`, *default:* `nil`) - The MaintenanceSchedule contains the scheduling information of published maintenance schedule with same key as software_versions.
   *   `maintenanceSettings` (*type:* `GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t`, *default:* `nil`) - Optional. The MaintenanceSettings associated with instance.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name of the resource. It uses the form: `projects/{project_id|project_number}/locations/{location_id}/instances/{instance_id}` Note: Either project_id or project_number can be used, but keep it consistent with other APIs (e.g. RescheduleUpdate)
-  *   `notificationParameters` (*type:* `map()`, *default:* `nil`) - Optional. notification_parameters are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose.
+  *   `notificationParameters` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter.t}`, *default:* `nil`) - Optional. notification_parameter are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose.
   *   `producerMetadata` (*type:* `map()`, *default:* `nil`) - Output only. Custom string attributes used primarily to expose producer-specific information in monitoring dashboards. See go/get-instance-metadata.
   *   `provisionedResources` (*type:* `list(GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource.t)`, *default:* `nil`) - Output only. The list of data plane resources provisioned for this instance, e.g. compute VMs. See go/get-instance-metadata.
   *   `slmInstanceTemplate` (*type:* `String.t`, *default:* `nil`) - Link to the SLM instance template. Only populated when updating SLM instances via SSA's Actuation service adaptor. Service producers with custom control plane (e.g. Cloud SQL) doesn't need to populate this field. Instead they should use software_versions.
@@ -58,7 +58,12 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
             GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t()
             | nil,
           :name => String.t() | nil,
-          :notificationParameters => map() | nil,
+          :notificationParameters =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter.t()
+            }
+            | nil,
           :producerMetadata => map() | nil,
           :provisionedResources =>
             list(
@@ -93,7 +98,13 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   )
 
   field(:name)
-  field(:notificationParameters, type: :map)
+
+  field(:notificationParameters,
+    as:
+      GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter,
+    type: :map
+  )
+
   field(:producerMetadata, type: :map)
 
   field(:provisionedResources,
