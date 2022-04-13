@@ -21,9 +21,9 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceImageRequest do
 
   ## Attributes
 
-  *   `imageObjectId` (*type:* `String.t`, *default:* `nil`) - The ID of the existing image that will be replaced.
+  *   `imageObjectId` (*type:* `String.t`, *default:* `nil`) - The ID of the existing image that will be replaced. The ID can be retrieved from the response of a get request.
   *   `imageReplaceMethod` (*type:* `String.t`, *default:* `nil`) - The replacement method.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field.
   """
 
   use GoogleApi.Gax.ModelBase
