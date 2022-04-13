@@ -22,7 +22,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to prevent updating the attestor when another request has updated it since it was retrieved.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. A checksum, returned by the server, that can be sent on update requests to ensure the attestor has an up-to-date value before attempting to update it. See https://google.aip.dev/154.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the attestor was last updated.
   *   `userOwnedGrafeasNote` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t`, *default:* `nil`) - This specifies how an attestation will be read, and how it will be used during policy enforcement.
