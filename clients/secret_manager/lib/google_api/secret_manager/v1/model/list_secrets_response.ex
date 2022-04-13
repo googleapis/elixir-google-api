@@ -23,7 +23,7 @@ defmodule GoogleApi.SecretManager.V1.Model.ListSecretsResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in ListSecretsRequest.page_token to retrieve the next page.
   *   `secrets` (*type:* `list(GoogleApi.SecretManager.V1.Model.Secret.t)`, *default:* `nil`) - The list of Secrets sorted in reverse by create_time (newest first).
-  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of Secrets.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of Secrets but 0 when the ListSecretsRequest.filter field is set.
   """
 
   use GoogleApi.Gax.ModelBase
