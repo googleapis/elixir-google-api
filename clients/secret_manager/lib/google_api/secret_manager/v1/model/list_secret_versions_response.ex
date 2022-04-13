@@ -22,7 +22,7 @@ defmodule GoogleApi.SecretManager.V1.Model.ListSecretVersionsResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in ListSecretVersionsRequest.page_token to retrieve the next page.
-  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of SecretVersions.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of SecretVersions but 0 when the ListSecretsRequest.filter field is set.
   *   `versions` (*type:* `list(GoogleApi.SecretManager.V1.Model.SecretVersion.t)`, *default:* `nil`) - The list of SecretVersions sorted in reverse by create_time (newest first).
   """
 
