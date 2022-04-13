@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AppVersion do
 
   ## Attributes
 
-  *   `production` (*type:* `boolean()`, *default:* `nil`) - True if this version is a production track.
-  *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Track ids that the app version is published in. This doesn't include the production track (see production instead).
+  *   `production` (*type:* `boolean()`, *default:* `nil`) - If the value is True, it indicates that this version is a production track.
+  *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Track identifiers that the app version is published in. This does not include the production track (see production instead).
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - Unique increasing identifier for the app version.
   *   `versionString` (*type:* `String.t`, *default:* `nil`) - The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be "1.4").
   """
