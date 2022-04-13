@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
 
   *   `autoInstallPolicy` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t`, *default:* `nil`) - The auto-install policy for the product.
   *   `autoUpdateMode` (*type:* `String.t`, *default:* `nil`) - The auto-update mode for the product.
+  *   `enterpriseAuthenticationAppLinkConfigs` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAuthenticationAppLinkConfig.t)`, *default:* `nil`) - An authentication URL configuration for the authenticator app of an identity provider. This helps to launch the identity provider's authenticator app during the authentication happening in a private app using Android WebView. Authenticator app should already be the [default handler](https://developer.android.com/training/app-links/verify-site-associations) for the authentication url on the device.
   *   `managedConfiguration` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t`, *default:* `nil`) - The managed configuration for the product.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. For example, "app:com.google.android.gm".
   *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get.
@@ -34,6 +35,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
   @type t :: %__MODULE__{
           :autoInstallPolicy => GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t() | nil,
           :autoUpdateMode => String.t() | nil,
+          :enterpriseAuthenticationAppLinkConfigs =>
+            list(GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAuthenticationAppLinkConfig.t())
+            | nil,
           :managedConfiguration =>
             GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t() | nil,
           :productId => String.t() | nil,
@@ -43,6 +47,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
 
   field(:autoInstallPolicy, as: GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy)
   field(:autoUpdateMode)
+
+  field(:enterpriseAuthenticationAppLinkConfigs,
+    as: GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAuthenticationAppLinkConfig,
+    type: :list
+  )
+
   field(:managedConfiguration, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration)
   field(:productId)
   field(:trackIds, type: :list)
