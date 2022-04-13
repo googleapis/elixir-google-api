@@ -1272,7 +1272,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Remove a Bitbucket Server repository from an given BitbucketServerConfig’s connected repositories. This API is experimental.
+  Remove a Bitbucket Server repository from a given BitbucketServerConfig's connected repositories. This API is experimental.
 
   ## Parameters
 
