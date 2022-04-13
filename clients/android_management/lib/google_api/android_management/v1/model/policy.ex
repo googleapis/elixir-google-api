@@ -39,6 +39,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `statusReportingSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings.t`, *default:* `nil`) - Status reporting settings
   *   `tetheringConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring tethering and portable hotspots is disabled.
   *   `outgoingBeamDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether using NFC to beam data from apps is disabled.
+  *   `usageLog` (*type:* `GoogleApi.AndroidManagement.V1.Model.UsageLog.t`, *default:* `nil`) - Configuration of device activity logging.
   *   `permittedInputMethods` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - If present, only the input methods provided by packages in this list are permitted. If this field is present, but the list is empty, then only system input methods are permitted.
   *   `outgoingCallsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether outgoing calls are disabled.
   *   `persistentPreferredActivities` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t)`, *default:* `nil`) - Default intent handler activities.
@@ -135,6 +136,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
             GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings.t() | nil,
           :tetheringConfigDisabled => boolean() | nil,
           :outgoingBeamDisabled => boolean() | nil,
+          :usageLog => GoogleApi.AndroidManagement.V1.Model.UsageLog.t() | nil,
           :permittedInputMethods =>
             GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil,
           :outgoingCallsDisabled => boolean() | nil,
@@ -244,6 +246,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
 
   field(:tetheringConfigDisabled)
   field(:outgoingBeamDisabled)
+  field(:usageLog, as: GoogleApi.AndroidManagement.V1.Model.UsageLog)
   field(:permittedInputMethods, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
   field(:outgoingCallsDisabled)
 

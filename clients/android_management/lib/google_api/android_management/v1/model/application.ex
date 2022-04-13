@@ -32,7 +32,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
   *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available.
   *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Noteworthy features (if any) of this app.
   *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full app description, if available.
-  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the app. This image is suitable for use at up to 512px x 512px
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 512 x 512.
   *   `managedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties available to be pre-configured for the app.
   *   `minAndroidSdkVersion` (*type:* `integer()`, *default:* `nil`) - The minimum Android SDK necessary to run the app.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterprise}/applications/{package_name}.
@@ -40,7 +40,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
   *   `playStoreUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the app.
   *   `recentChanges` (*type:* `String.t`, *default:* `nil`) - A localised description of the recent changes made to the app.
   *   `screenshotUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of screenshot links representing the app.
-  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the app. This image is suitable for use at up to 128px x 128px.
+  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 128 x 128.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the app. Localized.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The approximate time (within 7 days) the app was last published.
   """

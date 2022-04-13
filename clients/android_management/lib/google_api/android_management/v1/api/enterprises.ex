@@ -43,10 +43,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:agreementAccepted` (*type:* `boolean()`) - Whether the enterprise admin has seen and agreed to the managed Google Play Agreement (https://www.android.com/enterprise/terms/). Always set this to true when creating an EMM-managed enterprise. Do not create the enterprise until the admin has viewed and accepted the agreement.
-      *   `:enterpriseToken` (*type:* `String.t`) - The enterprise token appended to the callback URL. Only set this when creating a customer-managed enterprise.
+      *   `:agreementAccepted` (*type:* `boolean()`) - Whether the enterprise admin has seen and agreed to the managed Google Play Agreement (https://www.android.com/enterprise/terms/). Do not set this field for any customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises). Set this to field to true for all EMM-managed enterprises (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises).
+      *   `:enterpriseToken` (*type:* `String.t`) - The enterprise token appended to the callback URL. Set this when creating a customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises) and not when creating a deprecated EMM-managed enterprise (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises).
       *   `:projectId` (*type:* `String.t`) - The ID of the Google Cloud Platform project which will own the enterprise.
-      *   `:signupUrlName` (*type:* `String.t`) - The name of the SignupUrl used to sign up for the enterprise. Only set this when creating a customer-managed enterprise.
+      *   `:signupUrlName` (*type:* `String.t`) - The name of the SignupUrl used to sign up for the enterprise. Set this when creating a customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises) and not when creating a deprecated EMM-managed enterprise (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises).
       *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Enterprise.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
