@@ -21,7 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateInstanceRequest do
 
   ## Attributes
 
-  *   `clusters` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.Cluster.t}`, *default:* `nil`) - Required. The clusters to be created within the instance, mapped by desired cluster ID, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly` must be left blank. Currently, at most four clusters can be specified.
+  *   `clusters` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.Cluster.t}`, *default:* `nil`) - Required. The clusters to be created within the instance, mapped by desired cluster ID, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly` must be left blank.
   *   `instance` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Instance.t`, *default:* `nil`) - Required. The instance to create. Fields marked `OutputOnly` must be left blank.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to be used when referring to the new instance within its project, e.g., just `myinstance` rather than `projects/myproject/instances/myinstance`.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The unique name of the project in which to create the new instance. Values are of the form `projects/{project}`.

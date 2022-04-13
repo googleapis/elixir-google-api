@@ -18,7 +18,7 @@
 defmodule GoogleApi.BigtableAdmin.Mixfile do
   use Mix.Project
 
-  @version "0.20.4"
+  @version "0.21.0"
 
   def project() do
     [
