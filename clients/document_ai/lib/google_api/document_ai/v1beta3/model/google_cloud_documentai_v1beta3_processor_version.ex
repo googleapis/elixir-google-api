@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the processor version was created.
+  *   `deprecationInfo` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionDeprecationInfo.t`, *default:* `nil`) - If set, information about the eventual deprecation of this version.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
   *   `googleManaged` (*type:* `boolean()`, *default:* `nil`) - Denotes that this ProcessorVersion is managed by google.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for encryption.
@@ -34,6 +35,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :deprecationInfo =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionDeprecationInfo.t()
+            | nil,
           :displayName => String.t() | nil,
           :googleManaged => boolean() | nil,
           :kmsKeyName => String.t() | nil,
@@ -43,6 +47,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
         }
 
   field(:createTime, as: DateTime)
+
+  field(:deprecationInfo,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionDeprecationInfo
+  )
+
   field(:displayName)
   field(:googleManaged)
   field(:kmsKeyName)
