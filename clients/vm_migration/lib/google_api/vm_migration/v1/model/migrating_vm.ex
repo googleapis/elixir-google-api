@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
 
   ## Attributes
 
+  *   `awsSourceVmDetails` (*type:* `GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails.t`, *default:* `nil`) - Output only. Details of the VM from an AWS source.
   *   `computeEngineTargetDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults.t`, *default:* `nil`) - Details of the target VM in Compute Engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the migrating VM was created (this refers to this resource and not to the time it was installed in the source).
   *   `currentSyncInfo` (*type:* `GoogleApi.VMMigration.V1.Model.ReplicationCycle.t`, *default:* `nil`) - Output only. The percentage progress of the current running replication cycle.
@@ -43,6 +44,7 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :awsSourceVmDetails => GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails.t() | nil,
           :computeEngineTargetDefaults =>
             GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -62,6 +64,8 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
           :stateTime => DateTime.t() | nil,
           :updateTime => DateTime.t() | nil
         }
+
+  field(:awsSourceVmDetails, as: GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails)
 
   field(:computeEngineTargetDefaults,
     as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults
