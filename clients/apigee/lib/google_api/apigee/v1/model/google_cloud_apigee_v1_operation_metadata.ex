@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
   *   `progress` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress.t`, *default:* `nil`) - Progress of the operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetResourceName` (*type:* `String.t`, *default:* `nil`) - Name of the resource for which the operation is operating on.
+  *   `warnings` (*type:* `list(String.t)`, *default:* `nil`) - Warnings encountered while executing the operation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
           :progress =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress.t() | nil,
           :state => String.t() | nil,
-          :targetResourceName => String.t() | nil
+          :targetResourceName => String.t() | nil,
+          :warnings => list(String.t()) | nil
         }
 
   field(:operationType)
   field(:progress, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadataProgress)
   field(:state)
   field(:targetResourceName)
+  field(:warnings, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
