@@ -26,12 +26,15 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   *   `gvnic` (*type:* `GoogleApi.Container.V1.Model.VirtualNIC.t`, *default:* `nil`) - Enable or disable gvnic on the node pool.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
   *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
+  *   `labels` (*type:* `GoogleApi.Container.V1.Model.NodeLabels.t`, *default:* `nil`) - The desired node labels to be applied to all nodes in the node pool. If this field is not present, the labels will not be changed. Otherwise, the existing node labels will be *replaced* with the provided labels.
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the node pool's nodes should be located. Changing the locations for a node pool will result in nodes being either created or removed from the node pool, depending on whether locations are being added or removed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool) of the node pool to update. Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`.
   *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field.
   *   `nodeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
+  *   `tags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags to be applied to all nodes in the node pool. If this field is not present, the tags will not be changed. Otherwise, the existing network tags will be *replaced* with the provided tags.
+  *   `taints` (*type:* `GoogleApi.Container.V1.Model.NodeTaints.t`, *default:* `nil`) - The desired node taints to be applied to all nodes in the node pool. If this field is not present, the taints will not be changed. Otherwise, the existing node taints will be *replaced* with the provided taints.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The desired workload metadata config for the node pool.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
@@ -45,12 +48,15 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :gvnic => GoogleApi.Container.V1.Model.VirtualNIC.t() | nil,
           :imageType => String.t() | nil,
           :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
+          :labels => GoogleApi.Container.V1.Model.NodeLabels.t() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
           :locations => list(String.t()) | nil,
           :name => String.t() | nil,
           :nodePoolId => String.t() | nil,
           :nodeVersion => String.t() | nil,
           :projectId => String.t() | nil,
+          :tags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
+          :taints => GoogleApi.Container.V1.Model.NodeTaints.t() | nil,
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
           :workloadMetadataConfig =>
             GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil,
@@ -62,12 +68,15 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   field(:gvnic, as: GoogleApi.Container.V1.Model.VirtualNIC)
   field(:imageType)
   field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
+  field(:labels, as: GoogleApi.Container.V1.Model.NodeLabels)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:locations, type: :list)
   field(:name)
   field(:nodePoolId)
   field(:nodeVersion)
   field(:projectId)
+  field(:tags, as: GoogleApi.Container.V1.Model.NetworkTags)
+  field(:taints, as: GoogleApi.Container.V1.Model.NodeTaints)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
   field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
   field(:zone)
