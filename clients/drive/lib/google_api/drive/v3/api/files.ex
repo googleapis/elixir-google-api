@@ -1091,7 +1091,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Subscribes to changes to a file. While you can establish a channel forchanges to a file on a shared drive, a change to a shared drive file won't create a notification.
+  Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification.
 
   ## Parameters
 
