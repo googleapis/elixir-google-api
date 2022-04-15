@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListSharedFlowsResponse do
   @moduledoc """
-
+  To change this message, in the same CL add a change log in go/changing-api-proto-breaks-ui
 
   ## Attributes
 
