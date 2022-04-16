@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
 
   ## Attributes
 
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Always present. The tag used to identify which fulfillment is being called.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Always present. The value of the Fulfillment.tag field will be populated in this field by Dialogflow when the associated webhook is called. The tag is typically used by the webhook service to identify which fulfillment is being called, but it could be used for other purposes.
   """
 
   use GoogleApi.Gax.ModelBase
