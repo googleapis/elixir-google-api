@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the page, unique within the agent.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the page, unique within the flow.
   *   `entryFulfillment` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Fulfillment.t`, *default:* `nil`) - The fulfillment to call when the session is entering the page.
   *   `eventHandlers` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t)`, *default:* `nil`) - Handlers associated with the page to handle events such as webhook errors, no match or no input.
   *   `form` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Form.t`, *default:* `nil`) - The form associated with the page, used for collecting parameters relevant to the page.

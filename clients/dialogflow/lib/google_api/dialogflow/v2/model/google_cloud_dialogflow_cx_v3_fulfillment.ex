@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Fulfillment do
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user.
   *   `returnPartialResponses` (*type:* `boolean()`, *default:* `nil`) - Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
   *   `setParameterActions` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3FulfillmentSetParameterAction.t)`, *default:* `nil`) - Set parameter values before executing the webhook.
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - The tag used by the webhook to identify which fulfillment is being called. This field is required if `webhook` is specified.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The value of this field will be populated in the WebhookRequest `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is called. The tag is typically used by the webhook service to identify which fulfillment is being called, but it could be used for other purposes. This field is required if `webhook` is specified.
   *   `webhook` (*type:* `String.t`, *default:* `nil`) - The webhook to call. Format: `projects//locations//agents//webhooks/`.
   """
 
