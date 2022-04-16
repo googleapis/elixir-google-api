@@ -22,8 +22,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Grant do
   ## Attributes
 
   *   `appLevelPermissions` (*type:* `list(String.t)`, *default:* `nil`) - The permissions granted to the user for this app.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for this grant, following the pattern "developers/{developer}/users/{email}/grants/{package_name}".
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. The package name of the app.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for this grant, following the pattern "developers/{developer}/users/{email}/grants/{package_name}". If this grant is for a draft app, the app ID will be used in this resource name instead of the package name.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. The package name of the app. This will be empty for draft apps.
   """
 
   use GoogleApi.Gax.ModelBase

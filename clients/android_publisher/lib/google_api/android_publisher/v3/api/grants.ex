@@ -150,7 +150,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Grants do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for this grant, following the pattern "developers/{developer}/users/{email}/grants/{package_name}".
+  *   `name` (*type:* `String.t`) - Required. Resource name for this grant, following the pattern "developers/{developer}/users/{email}/grants/{package_name}". If this grant is for a draft app, the app ID will be used in this resource name instead of the package name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
