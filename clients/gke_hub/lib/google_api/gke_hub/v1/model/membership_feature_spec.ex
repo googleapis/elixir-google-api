@@ -22,15 +22,18 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   ## Attributes
 
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t`, *default:* `nil`) - Config Management-specific spec.
+  *   `mesh` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t`, *default:* `nil`) - Anthos Service Mesh-specific spec
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configmanagement => GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t() | nil
+          :configmanagement => GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t() | nil,
+          :mesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t() | nil
         }
 
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec)
+  field(:mesh, as: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
