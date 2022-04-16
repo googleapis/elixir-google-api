@@ -20,7 +20,7 @@ defmodule GoogleApi.DeploymentManager.V2 do
   API client metadata for GoogleApi.DeploymentManager.V2.
   """
 
-  @discovery_revision "20220303"
+  @discovery_revision "20220407"
 
   def discovery_revision(), do: @discovery_revision
 end
