@@ -229,7 +229,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
+  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.
 
   ## Parameters
 
@@ -1227,7 +1227,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
+  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.
 
   ## Parameters
 
@@ -2697,7 +2697,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job from a template.
+  Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API.
 
   ## Parameters
 
@@ -3075,7 +3075,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job from a template.
+  Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API.
 
   ## Parameters
 

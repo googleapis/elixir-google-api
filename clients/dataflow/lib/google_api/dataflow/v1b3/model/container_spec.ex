@@ -23,6 +23,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ContainerSpec do
 
   *   `defaultEnvironment` (*type:* `GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t`, *default:* `nil`) - Default runtime environment for the job.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Name of the docker container image. E.g., gcr.io/project/some-image
+  *   `imageRepositoryCertPath` (*type:* `String.t`, *default:* `nil`) - Cloud Storage path to self-signed certificate of private registry.
+  *   `imageRepositoryPasswordSecretId` (*type:* `String.t`, *default:* `nil`) - Secret Manager secret id for password to authenticate to private registry.
+  *   `imageRepositoryUsernameSecretId` (*type:* `String.t`, *default:* `nil`) - Secret Manager secret id for username to authenticate to private registry.
   *   `metadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t`, *default:* `nil`) - Metadata describing a template including description and validation rules.
   *   `sdkInfo` (*type:* `GoogleApi.Dataflow.V1b3.Model.SDKInfo.t`, *default:* `nil`) - Required. SDK info of the Flex Template.
   """
@@ -33,12 +36,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ContainerSpec do
           :defaultEnvironment =>
             GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t() | nil,
           :image => String.t() | nil,
+          :imageRepositoryCertPath => String.t() | nil,
+          :imageRepositoryPasswordSecretId => String.t() | nil,
+          :imageRepositoryUsernameSecretId => String.t() | nil,
           :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t() | nil,
           :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t() | nil
         }
 
   field(:defaultEnvironment, as: GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment)
   field(:image)
+  field(:imageRepositoryCertPath)
+  field(:imageRepositoryPasswordSecretId)
+  field(:imageRepositoryUsernameSecretId)
   field(:metadata, as: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata)
   field(:sdkInfo, as: GoogleApi.Dataflow.V1b3.Model.SDKInfo)
 end

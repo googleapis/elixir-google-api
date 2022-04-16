@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   @moduledoc """
-  Defines a job to be run by the Cloud Dataflow service.
+  Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.
 
   ## Attributes
 
