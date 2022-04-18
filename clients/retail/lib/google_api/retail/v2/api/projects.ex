@@ -1003,7 +1003,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the Product is not found, a new Product will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - Indicates which fields in the provided Product to update. The immutable and output only fields are NOT supported. If not set, all supported fields (the fields that are neither immutable nor output only) are updated. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned.
+      *   `:updateMask` (*type:* `String.t`) - Indicates which fields in the provided Product to update. The immutable and output only fields are NOT supported. If not set, all supported fields (the fields that are neither immutable nor output only) are updated. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned. The attribute key can be updated by setting the mask path as "attributes.${key_name}". If a key name is present in the mask but not in the patching product from the request, this key will be deleted after the update.
       *   `:body` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1501,7 +1501,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Retail.V2.Connection.t`) - Connection to server
-  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: {name=projects/*/locations/global/catalogs/default_catalog/placements/*} or {name=projects/*/locations/global/catalogs/default_catalog/servingConfigs/*} The ID of the Recommendations AI placement. Before you can request predictions from your model, you must create at least one placement for it. For more information, see [Managing placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements). The full list of available placements can be seen at https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: {name=projects/*/locations/global/catalogs/default_catalog/servingConfigs/*} or {name=projects/*/locations/global/catalogs/default_catalog/placements/*}. We recommend using the `servingConfigs` resource. `placements` is a legacy resource. The ID of the Recommendations AI serving config or placement. Before you can request predictions from your model, you must create at least one serving config or placement for it. For more information, see [Managing serving configurations]. (https://cloud.google.com/retail/docs/manage-configs). The full list of available serving configs can be seen at https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1575,7 +1575,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Retail.V2.Connection.t`) - Connection to server
-  *   `placement` (*type:* `String.t`) - Required. The resource name of the search engine placement, such as `projects/*/locations/global/catalogs/default_catalog/placements/default_search` or `projects/*/locations/global/catalogs/default_catalog/servingConfigs/default_serving_config` This field is used to identify the serving configuration name and the set of models that will be used to make the search.
+  *   `placement` (*type:* `String.t`) - Required. The resource name of the Retail Search serving config, such as `projects/*/locations/global/catalogs/default_catalog/servingConfigs/default_serving_config` or the name of the legacy placement resource, such as `projects/*/locations/global/catalogs/default_catalog/placements/default_search`. This field is used to identify the serving configuration name and the set of models that will be used to make the search.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1649,7 +1649,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Retail.V2.Connection.t`) - Connection to server
-  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: {name=projects/*/locations/global/catalogs/default_catalog/placements/*} or {name=projects/*/locations/global/catalogs/default_catalog/servingConfigs/*} The ID of the Recommendations AI placement. Before you can request predictions from your model, you must create at least one placement for it. For more information, see [Managing placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements). The full list of available placements can be seen at https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: {name=projects/*/locations/global/catalogs/default_catalog/servingConfigs/*} or {name=projects/*/locations/global/catalogs/default_catalog/placements/*}. We recommend using the `servingConfigs` resource. `placements` is a legacy resource. The ID of the Recommendations AI serving config or placement. Before you can request predictions from your model, you must create at least one serving config or placement for it. For more information, see [Managing serving configurations]. (https://cloud.google.com/retail/docs/manage-configs). The full list of available serving configs can be seen at https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1723,7 +1723,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Retail.V2.Connection.t`) - Connection to server
-  *   `placement` (*type:* `String.t`) - Required. The resource name of the search engine placement, such as `projects/*/locations/global/catalogs/default_catalog/placements/default_search` or `projects/*/locations/global/catalogs/default_catalog/servingConfigs/default_serving_config` This field is used to identify the serving configuration name and the set of models that will be used to make the search.
+  *   `placement` (*type:* `String.t`) - Required. The resource name of the Retail Search serving config, such as `projects/*/locations/global/catalogs/default_catalog/servingConfigs/default_serving_config` or the name of the legacy placement resource, such as `projects/*/locations/global/catalogs/default_catalog/placements/default_search`. This field is used to identify the serving configuration name and the set of models that will be used to make the search.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
