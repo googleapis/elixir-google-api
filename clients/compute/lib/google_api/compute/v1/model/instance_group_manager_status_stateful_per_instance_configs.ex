@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStatefulPerInstan
 
   ## Attributes
 
-  *   `allEffective` (*type:* `boolean()`, *default:* `nil`) - A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+  *   `allEffective` (*type:* `boolean()`, *default:* `nil`) - A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
   """
 
   use GoogleApi.Gax.ModelBase
