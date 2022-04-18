@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagerPatchInstanceConf
 
   ## Attributes
 
-  *   `perInstanceConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t)`, *default:* `nil`) - The list of per-instance configs to insert or patch on this managed instance group.
+  *   `perInstanceConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t)`, *default:* `nil`) - The list of per-instance configurations to insert or patch on this managed instance group.
   """
 
   use GoogleApi.Gax.ModelBase
