@@ -22,6 +22,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
   ## Attributes
 
   *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether the principal has the specified permission for the specified resource, based on evaluating all of the applicable IAM policies.
+  *   `errors` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - The general errors contained in the troubleshooting response.
   *   `explainedPolicies` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy.t)`, *default:* `nil`) - List of IAM policies that were evaluated to check the principal's permissions, with annotations to indicate how each policy contributed to the final result. The list of policies can include the policy for the resource itself. It can also include policies that are inherited from higher levels of the resource hierarchy, including the organization, the folder, and the project. To learn more about the resource hierarchy, see https://cloud.google.com/iam/help/resource-hierarchy.
   """
 
@@ -29,6 +30,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
 
   @type t :: %__MODULE__{
           :access => String.t() | nil,
+          :errors => list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleRpcStatus.t()) | nil,
           :explainedPolicies =>
             list(
               GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy.t()
@@ -37,6 +39,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
         }
 
   field(:access)
+  field(:errors, as: GoogleApi.PolicyTroubleshooter.V1.Model.GoogleRpcStatus, type: :list)
 
   field(:explainedPolicies,
     as: GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy,
