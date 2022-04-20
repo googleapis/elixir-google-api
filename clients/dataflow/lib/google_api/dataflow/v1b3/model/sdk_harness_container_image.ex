@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage do
   @moduledoc """
-  Defines a SDK harness container for executing Dataflow pipelines.
+  Defines an SDK harness container for executing Dataflow pipelines.
 
   ## Attributes
 
-  *   `capabilities` (*type:* `list(String.t)`, *default:* `nil`) - The set of capabilities enumerated in the above Environment proto. See also https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+  *   `capabilities` (*type:* `list(String.t)`, *default:* `nil`) - The set of capabilities enumerated in the above Environment proto. See also [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - A docker container image that resides in Google Container Registry.
   *   `environmentId` (*type:* `String.t`, *default:* `nil`) - Environment ID for the Beam runner API proto Environment that corresponds to the current SDK Harness.
   *   `useSingleCorePerContainer` (*type:* `boolean()`, *default:* `nil`) - If true, recommends the Dataflow service to use only one core per SDK container instance with this image. If false (or unset) recommends using more than one core per SDK container instance with this image for efficiency. Note that Dataflow service may choose to override this property if needed.
