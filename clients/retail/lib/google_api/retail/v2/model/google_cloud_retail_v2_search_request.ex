@@ -27,6 +27,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `dynamicFacetSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestDynamicFacetSpec.t`, *default:* `nil`) - Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic to enable dynamic facets. Do not set this field. The specification for dynamically generated facets. Notice that only textual facets can be dynamically generated.
   *   `facetSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpec.t)`, *default:* `nil`) - Facet specifications for faceted search. If empty, no facets are returned. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter syntax consists of an expression language for constructing a predicate from one or more fields of the products being filtered. Filter expression is case-sensitive. See more details at this [user guide](https://cloud.google.com/retail/docs/filter-and-order#filter). If this field is unrecognizable, an INVALID_ARGUMENT is returned.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters, and cannot be empty. Values can be empty, and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details.
   *   `offset` (*type:* `integer()`, *default:* `nil`) - A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned.
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - The order in which products are returned. Products can be ordered by a field in an Product object. Leave it unset if ordered by relevance. OrderBy expression is case-sensitive. See more details at this [user guide](https://cloud.google.com/retail/docs/filter-and-order#order). If this field is unrecognizable, an INVALID_ARGUMENT is returned.
   *   `pageCategories` (*type:* `list(String.t)`, *default:* `nil`) - The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: "pageCategories" : ["Sales > 2017 Black Friday Deals"].
@@ -53,6 +54,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
           :facetSpecs =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpec.t()) | nil,
           :filter => String.t() | nil,
+          :labels => map() | nil,
           :offset => integer() | nil,
           :orderBy => String.t() | nil,
           :pageCategories => list(String.t()) | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   )
 
   field(:filter)
+  field(:labels, type: :map)
   field(:offset)
   field(:orderBy)
   field(:pageCategories, type: :list)
