@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   *   `avatarUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `description` (*type:* `String.t`, *default:* `nil`) - 
   *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupId.t`, *default:* `nil`) - 
+  *   `inviterEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the user that invited the calling user to the room, if available. This field will only be populated for direct invites, it will be empty if the user was indirectly invited to the group.
   *   `isExternal` (*type:* `boolean()`, *default:* `nil`) - Whether this is a space that enables guest access
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `numMembers` (*type:* `integer()`, *default:* `nil`) - 
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
           :avatarUrl => String.t() | nil,
           :description => String.t() | nil,
           :groupId => GoogleApi.CloudSearch.V1.Model.GroupId.t() | nil,
+          :inviterEmail => String.t() | nil,
           :isExternal => boolean() | nil,
           :name => String.t() | nil,
           :numMembers => integer() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpaceInfo do
   field(:avatarUrl)
   field(:description)
   field(:groupId, as: GoogleApi.CloudSearch.V1.Model.GroupId)
+  field(:inviterEmail)
   field(:isExternal)
   field(:name)
   field(:numMembers)
