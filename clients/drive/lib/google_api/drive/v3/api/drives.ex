@@ -93,6 +93,8 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:allowItemDeletion` (*type:* `boolean()`) - Whether any items inside the shared drive should also be deleted. This option is only supported when useDomainAdminAccess is also set to true.
+      *   `:useDomainAdminAccess` (*type:* `boolean()`) - Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -110,7 +112,9 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :allowItemDeletion => :query,
+      :useDomainAdminAccess => :query
     }
 
     request =
