@@ -23,10 +23,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [
-      # See your primary Google Account email address
-      "https://www.googleapis.com/auth/userinfo.email"
-    ],
+    scopes: [],
     otp_app: :google_api_sas_portal,
     base_url: "https://sasportal.googleapis.com/"
 end
