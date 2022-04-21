@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSense.V2.Model.ContentAdsSettings do
 
   ## Attributes
 
-  *   `size` (*type:* `String.t`, *default:* `nil`) - Size of the ad unit. e.g. "728x90", "1x3" (for responsive ad units).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the ad unit.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Required. Size of the ad unit. e.g. "728x90", "1x3" (for responsive ad units).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the ad unit.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AdSense.V2.Model.CustomChannel do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the custom channel.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the custom channel.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the custom channel. Format: accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
   *   `reportingDimensionId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique ID of the custom channel as used in the `CUSTOM_CHANNEL_ID` reporting dimension.
   """
