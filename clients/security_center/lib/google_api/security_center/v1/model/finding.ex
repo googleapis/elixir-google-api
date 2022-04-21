@@ -24,7 +24,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc.
   *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the finding. It's either "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or "projects/{project_number}/sources/{source_id}/findings/{finding_id}", depending on the closest CRM ancestor of the resource associated with the finding.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
+  *   `connections` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Connection.t)`, *default:* `nil`) - Contains information about the IP connection associated with the finding.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
   *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
@@ -52,7 +54,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
           :canonicalName => String.t() | nil,
           :category => String.t() | nil,
+          :connections => list(GoogleApi.SecurityCenter.V1.Model.Connection.t()) | nil,
           :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
           :eventTime => DateTime.t() | nil,
           :externalSystems =>
             %{
@@ -82,7 +86,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
   field(:canonicalName)
   field(:category)
+  field(:connections, as: GoogleApi.SecurityCenter.V1.Model.Connection, type: :list)
   field(:createTime, as: DateTime)
+  field(:description)
   field(:eventTime, as: DateTime)
 
   field(:externalSystems,
