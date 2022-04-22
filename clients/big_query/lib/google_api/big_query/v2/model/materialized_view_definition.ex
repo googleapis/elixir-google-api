@@ -23,6 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
 
   *   `enableRefresh` (*type:* `boolean()`, *default:* `nil`) - [Optional] [TrustedTester] Enable automatic refresh of the materialized view when the base table is updated. The default value is "true".
   *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch.
+  *   `maxStaleness` (*type:* `String.t`, *default:* `nil`) - [Optional] Max staleness of data that could be returned when materizlized view is queried (formatted as Google SQL Interval type).
   *   `query` (*type:* `String.t`, *default:* `nil`) - [Required] A query whose result is persisted.
   *   `refreshIntervalMs` (*type:* `String.t`, *default:* `nil`) - [Optional] [TrustedTester] The maximum frequency at which this materialized view will be refreshed. The default value is "1800000" (30 minutes).
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   @type t :: %__MODULE__{
           :enableRefresh => boolean() | nil,
           :lastRefreshTime => String.t() | nil,
+          :maxStaleness => String.t() | nil,
           :query => String.t() | nil,
           :refreshIntervalMs => String.t() | nil
         }
 
   field(:enableRefresh)
   field(:lastRefreshTime)
+  field(:maxStaleness)
   field(:query)
   field(:refreshIntervalMs)
 end

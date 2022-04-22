@@ -30,6 +30,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   *   `importedLibraries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If language = "JAVASCRIPT", this field stores the path of the imported JAVASCRIPT libraries.
   *   `language` (*type:* `String.t`, *default:* `nil`) - Optional. Defaults to "SQL".
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this routine was last modified, in milliseconds since the epoch.
+  *   `remoteFunctionOptions` (*type:* `GoogleApi.BigQuery.V2.Model.RemoteFunctionOptions.t`, *default:* `nil`) - Optional. Remote function specific options.
   *   `returnTableType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlTableType.t`, *default:* `nil`) - Optional. Can be set only if routine_type = "TABLE_VALUED_FUNCTION". If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time.
   *   `returnType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Optional if language = "SQL"; required otherwise. Cannot be set if routine_type = "TABLE_VALUED_FUNCTION". If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: "FLOAT64"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64.
   *   `routineReference` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - Required. Reference describing the ID of this routine.
@@ -49,6 +50,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
           :importedLibraries => list(String.t()) | nil,
           :language => String.t() | nil,
           :lastModifiedTime => String.t() | nil,
+          :remoteFunctionOptions => GoogleApi.BigQuery.V2.Model.RemoteFunctionOptions.t() | nil,
           :returnTableType => GoogleApi.BigQuery.V2.Model.StandardSqlTableType.t() | nil,
           :returnType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
           :routineReference => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   field(:importedLibraries, type: :list)
   field(:language)
   field(:lastModifiedTime)
+  field(:remoteFunctionOptions, as: GoogleApi.BigQuery.V2.Model.RemoteFunctionOptions)
   field(:returnTableType, as: GoogleApi.BigQuery.V2.Model.StandardSqlTableType)
   field(:returnType, as: GoogleApi.BigQuery.V2.Model.StandardSqlDataType)
   field(:routineReference, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
