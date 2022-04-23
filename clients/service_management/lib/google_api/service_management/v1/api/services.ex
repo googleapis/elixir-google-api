@@ -1381,7 +1381,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. Use `filter` to return subset of rollouts. The following filters are supported: -- To limit the results to only those in status 'SUCCESS', use filter='status=SUCCESS' -- To limit the results to those in status 'CANCELLED' or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+      *   `:filter` (*type:* `String.t`) - Required. Use `filter` to return subset of rollouts. The following filters are supported: -- By status. For example, `filter='status=SUCCESS'` -- By strategy. For example, `filter='strategy=TrafficPercentStrategy'`
       *   `:pageSize` (*type:* `integer()`) - The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
       *   `:pageToken` (*type:* `String.t`) - The token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options
