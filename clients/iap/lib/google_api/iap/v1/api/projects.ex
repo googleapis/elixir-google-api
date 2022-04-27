@@ -625,7 +625,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id and location. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -639,7 +639,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:tunnelDestGroupId` (*type:* `String.t`) - Required. The ID to use for the TunnelDestGroup, which will become the final component of the resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
+      *   `:tunnelDestGroupId` (*type:* `String.t`) - Required. The ID to use for the TunnelDestGroup, which becomes the final component of the resource name. This value must be 4-63 characters, and valid characters are `a-z-`.
       *   `:body` (*type:* `GoogleApi.IAP.V1.Model.TunnelDestGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -703,7 +703,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be deleted. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to delete. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -784,7 +784,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be fetched. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be fetched. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -860,12 +860,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   end
 
   @doc """
-  Lists the existing TunnelDestGroups. To group across all locations, use a `-` as the location ID. For example: /v1/projects/123/iap_tunnel/locations/-/destGroups
+  Lists the existing TunnelDestGroups. To group across all locations, use a `-` as the location ID. For example: `/v1/projects/123/iap_tunnel/locations/-/destGroups`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id and location. In the following format: projects/{project_number/id}/iap_tunnel/locations/{location}. A `-` can be used for the location to group across all locations.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`. A `-` can be used for the location to group across all locations.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -879,7 +879,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 100 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 100 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListTunnelDestGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTunnelDestGroups` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -958,7 +958,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The field mask specifying which IAP settings should be updated. If omitted, then all of the settings are updated. See https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - A field mask that specifies which IAP settings to update. If omitted, then all of the settings are updated. See https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.IAP.V1.Model.TunnelDestGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

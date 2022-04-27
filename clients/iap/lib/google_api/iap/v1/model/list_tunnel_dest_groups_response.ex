@@ -21,7 +21,7 @@ defmodule GoogleApi.IAP.V1.Model.ListTunnelDestGroupsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be send as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that you can send as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `tunnelDestGroups` (*type:* `list(GoogleApi.IAP.V1.Model.TunnelDestGroup.t)`, *default:* `nil`) - TunnelDestGroup existing in the project.
   """
 
