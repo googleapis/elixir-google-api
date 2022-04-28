@@ -23,7 +23,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
 
   *   `appliedControls` (*type:* `list(String.t)`, *default:* `nil`) - The fully qualified resource name of applied [controls](https://cloud.google.com/retail/docs/serving-control-rules).
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance.
-  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - If spell correction applies, the corrected query. Otherwise, empty.
+  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results will be based on corrected_query, otherwise the original query will be used for search.
   *   `facets` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
   *   `invalidConditionBoostSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t)`, *default:* `nil`) - The invalid SearchRequest.BoostSpec.condition_boost_specs that are not applied during serving.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
