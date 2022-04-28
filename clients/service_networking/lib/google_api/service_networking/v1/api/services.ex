@@ -1050,6 +1050,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeUsedIpRanges` (*type:* `boolean()`) - Optional. When true, include the used IP ranges as part of the GetConsumerConfig output. This includes routes created inside the service networking network, consumer network, peers of the consumer network, and reserved ranges inside the service networking network. By default, this is false
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1084,7 +1085,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :includeUsedIpRanges => :query
     }
 
     request =
