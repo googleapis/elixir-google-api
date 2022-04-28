@@ -281,12 +281,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:groupId` (*type:* `list(String.t)`) - Optional. List all ErrorGroupStats with these IDs.
       *   `:order` (*type:* `String.t`) - Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response. Default is 20.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A next_page_token provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
       *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
       *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
       *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
       *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
-      *   `:timedCountDuration` (*type:* `String.t`) - Optional. The preferred duration for a single returned `TimedCount`. If not set, no timed counts are returned.
+      *   `:timedCountDuration` (*type:* `String.t`) - Optional. The preferred duration for a single returned TimedCount. If not set, no timed counts are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -357,7 +357,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as `projects/{projectID}/groups/{group_name}`. Call [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list) to return a list of groups belonging to this project. Example: `projects/my-project-123/groups/my-group`
+  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as `projects/{projectID}/groups/{group_name}`. Call groupStats.list to return a list of groups belonging to this project. Example: `projects/my-project-123/groups/my-group`
   *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
