@@ -23,7 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.Shard do
 
   *   `numShards` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of shards.
   *   `shardIndex` (*type:* `integer()`, *default:* `nil`) - Output only. The index of the shard among all the shards.
-  *   `testTargetsForShard` (*type:* `GoogleApi.Testing.V1.Model.TestTargetsForShard.t`, *default:* `nil`) - Output only. Test targets for each shard.
+  *   `testTargetsForShard` (*type:* `GoogleApi.Testing.V1.Model.TestTargetsForShard.t`, *default:* `nil`) - Output only. Test targets for each shard. Only set for manual sharding.
   """
 
   use GoogleApi.Gax.ModelBase
