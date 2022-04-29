@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
 
   ## Attributes
 
+  *   `audioExportSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings.t`, *default:* `nil`) - Controls audio export settings for post-conversation analytics when ingesting audio to conversations via Participants.AnalyzeContent or Participants.StreamingAnalyzeContent. If retention_strategy is set to REMOVE_AFTER_CONVERSATION or audio_export_settings.gcs_bucket is empty, audio export is disabled. If audio export is enabled, audio is recorded and saved to audio_export_settings.gcs_bucket, subject to retention policy of audio_export_settings.gcs_bucket. This setting won't effect audio input for implicit sessions via Sessions.DetectIntent or Sessions.StreamingDetectIntent.
   *   `deidentifyTemplate` (*type:* `String.t`, *default:* `nil`) - [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this template to define de-identification configuration for the content. The `DLP De-identify Templates Reader` role is needed on the Dialogflow service identity service account (has the form `service-PROJECT_NUMBER@gcp-sa-dialogflow.iam.gserviceaccount.com`) for your agent's project. If empty, Dialogflow replaces sensitive info with `[redacted]` text. The template name will have one of the following formats: `projects//locations//deidentifyTemplates/` OR `organizations//locations//deidentifyTemplates/` Note: `deidentify_template` must be located in the same region as the `SecuritySettings`.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the security settings, unique within the location.
   *   `insightsExportSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings.t`, *default:* `nil`) - Controls conversation exporting settings to Insights after conversation is completed. If retention_strategy is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter what you configure here.
@@ -35,6 +36,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audioExportSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings.t()
+            | nil,
           :deidentifyTemplate => String.t() | nil,
           :displayName => String.t() | nil,
           :insightsExportSettings =>
@@ -47,6 +51,10 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
           :redactionStrategy => String.t() | nil,
           :retentionWindowDays => integer() | nil
         }
+
+  field(:audioExportSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings
+  )
 
   field(:deidentifyTemplate)
   field(:displayName)
