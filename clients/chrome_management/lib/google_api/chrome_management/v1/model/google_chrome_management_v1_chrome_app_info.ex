@@ -23,9 +23,9 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
 
   *   `googleOwned` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is built and maintained by Google. Version-specific field that will only be set when the requested app version is found.
   *   `isCwsHosted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is in a published state in the Chrome Web Store.
-  *   `isKioskOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app is only for Kiosk mode on Chrome OS devices
+  *   `isKioskOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app is only for Kiosk mode on ChromeOS devices
   *   `isTheme` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is a theme.
-  *   `kioskEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this app is enabled for Kiosk mode on Chrome OS devices
+  *   `kioskEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices
   *   `minUserCount` (*type:* `integer()`, *default:* `nil`) - Output only. The minimum number of users using this app.
   *   `permissions` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppPermission.t)`, *default:* `nil`) - Output only. Every custom permission requested by the app. Version-specific field that will only be set when the requested app version is found.
   *   `siteAccess` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppSiteAccess.t)`, *default:* `nil`) - Output only. Every permission giving access to domains or broad host patterns. ( e.g. www.google.com). This includes the matches from content scripts as well as hosts in the permissions node of the manifest. Version-specific field that will only be set when the requested app version is found.

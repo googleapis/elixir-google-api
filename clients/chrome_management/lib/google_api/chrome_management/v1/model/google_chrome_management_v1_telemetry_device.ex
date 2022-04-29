@@ -27,7 +27,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   *   `cpuInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo.t)`, *default:* `nil`) - Output only. Information regarding CPU specs for the device.
   *   `cpuStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuStatusReport.t)`, *default:* `nil`) - Output only. CPU status reports collected periodically sorted in a decreasing order of report_time.
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Output only. Google Workspace Customer whose enterprise enrolled the device.
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the Chrome OS Devices tab
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab
   *   `graphicsInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsInfo.t`, *default:* `nil`) - Output only. Contains information regarding Graphic peripherals for the device.
   *   `graphicsStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsStatusReport.t)`, *default:* `nil`) - Output only. Graphics reports collected periodically.
   *   `memoryInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo.t`, *default:* `nil`) - Output only. Information regarding memory specs for the device.
@@ -36,7 +36,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   *   `networkStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport.t)`, *default:* `nil`) - Output only. Network specs collected periodically.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization unit ID of the device.
   *   `osUpdateStatus` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1OsUpdateStatus.t)`, *default:* `nil`) - Output only. Contains relevant information regarding ChromeOS update status.
-  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the Chrome OS Devices tab.
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the ChromeOS Devices tab.
   *   `storageInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageInfo.t`, *default:* `nil`) - Output only. Information of storage specs for the device.
   *   `storageStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageStatusReport.t)`, *default:* `nil`) - Output only. Storage reports collected periodically.
   """
