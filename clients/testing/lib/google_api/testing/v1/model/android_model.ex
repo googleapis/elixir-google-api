@@ -35,7 +35,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   *   `supportedAbis` (*type:* `list(String.t)`, *default:* `nil`) - The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list. Elements are optionally prefixed by "version_id:" (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version.
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of Android versions this device supports.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Examples: "default", "preview", "deprecated".
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image (photo) of the device. e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image (photo) of the device.
   """
 
   use GoogleApi.Gax.ModelBase
