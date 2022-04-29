@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Batch
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `individualBatchDeleteStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t)`, *default:* `nil`) - The list of response details of each document.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +30,22 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Batch
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            | nil,
+          :individualBatchDeleteStatuses =>
+            list(
+              GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t()
+            )
             | nil
         }
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
+
+  field(:individualBatchDeleteStatuses,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus,
+    type: :list
   )
 end
 
