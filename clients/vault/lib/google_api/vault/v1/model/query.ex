@@ -33,6 +33,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   *   `orgUnitInfo` (*type:* `GoogleApi.Vault.V1.Model.OrgUnitInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **ORG_UNIT**.
   *   `searchMethod` (*type:* `String.t`, *default:* `nil`) - The search method to use.
   *   `sharedDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.SharedDriveInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **SHARED_DRIVE**.
+  *   `sitesUrlInfo` (*type:* `GoogleApi.Vault.V1.Model.SitesUrlInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **SITES_URL**.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.
   *   `teamDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.TeamDriveInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **TEAM_DRIVE**.
   *   `terms` (*type:* `String.t`, *default:* `nil`) - Service-specific [search operators](https://support.google.com/vault/answer/2474474) to filter search results.
@@ -55,6 +56,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
           :orgUnitInfo => GoogleApi.Vault.V1.Model.OrgUnitInfo.t() | nil,
           :searchMethod => String.t() | nil,
           :sharedDriveInfo => GoogleApi.Vault.V1.Model.SharedDriveInfo.t() | nil,
+          :sitesUrlInfo => GoogleApi.Vault.V1.Model.SitesUrlInfo.t() | nil,
           :startTime => DateTime.t() | nil,
           :teamDriveInfo => GoogleApi.Vault.V1.Model.TeamDriveInfo.t() | nil,
           :terms => String.t() | nil,
@@ -74,6 +76,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   field(:orgUnitInfo, as: GoogleApi.Vault.V1.Model.OrgUnitInfo)
   field(:searchMethod)
   field(:sharedDriveInfo, as: GoogleApi.Vault.V1.Model.SharedDriveInfo)
+  field(:sitesUrlInfo, as: GoogleApi.Vault.V1.Model.SitesUrlInfo)
   field(:startTime, as: DateTime)
   field(:teamDriveInfo, as: GoogleApi.Vault.V1.Model.TeamDriveInfo)
   field(:terms)
