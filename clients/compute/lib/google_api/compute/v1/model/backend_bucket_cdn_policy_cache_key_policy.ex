@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucketCdnPolicyCacheKeyPolicy do
   ## Attributes
 
   *   `includeHttpHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Allows HTTP request headers (by name) to be used in the cache key.
-  *   `queryStringWhitelist` (*type:* `list(String.t)`, *default:* `nil`) - Names of query string parameters to include in cache keys. All other parameters will be excluded. '&' and '=' will be percent encoded and not treated as delimiters.
+  *   `queryStringWhitelist` (*type:* `list(String.t)`, *default:* `nil`) - Names of query string parameters to include in cache keys. Default parameters are always included. '&' and '=' will be percent encoded and not treated as delimiters.
   """
 
   use GoogleApi.Gax.ModelBase
