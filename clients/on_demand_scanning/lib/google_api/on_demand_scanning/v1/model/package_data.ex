@@ -22,11 +22,12 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   ## Attributes
 
   *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format] (https://cpe.mitre.org/specification/) in which the vulnerability may manifest. Examples include distro or storage location for vulnerable jar.
+  *   `fileLocation` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t)`, *default:* `nil`) - The path to the jar file / go binary file.
+  *   `hashDigest` (*type:* `String.t`, *default:* `nil`) - HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages.
   *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability This field is deprecated and the information is in cpe_uri
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS This field is deprecated and the information is in cpe_uri
   *   `package` (*type:* `String.t`, *default:* `nil`) - The package being analysed for vulnerabilities
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package: os, maven, go, etc.
-  *   `pathToFile` (*type:* `list(String.t)`, *default:* `nil`) - The path to the jar file / go binary file. The same jar file can be in multiple locations - all of them will be listed.
   *   `unused` (*type:* `String.t`, *default:* `nil`) - 
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the package being analysed
   """
@@ -35,21 +36,23 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
 
   @type t :: %__MODULE__{
           :cpeUri => String.t() | nil,
+          :fileLocation => list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t()) | nil,
+          :hashDigest => String.t() | nil,
           :os => String.t() | nil,
           :osVersion => String.t() | nil,
           :package => String.t() | nil,
           :packageType => String.t() | nil,
-          :pathToFile => list(String.t()) | nil,
           :unused => String.t() | nil,
           :version => String.t() | nil
         }
 
   field(:cpeUri)
+  field(:fileLocation, as: GoogleApi.OnDemandScanning.V1.Model.FileLocation, type: :list)
+  field(:hashDigest)
   field(:os)
   field(:osVersion)
   field(:package)
   field(:packageType)
-  field(:pathToFile, type: :list)
   field(:unused)
   field(:version)
 end
