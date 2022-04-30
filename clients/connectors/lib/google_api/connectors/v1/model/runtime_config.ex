@@ -28,7 +28,7 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeConfig do
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Output only. location_id of the runtime location. E.g. "us-west1".
   *   `runtimeEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The endpoint of the connectors runtime ingress.
   *   `schemaGcsBucket` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage bucket that stores connector's schema reports.
-  *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors"
+  *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the location.
   """
 
