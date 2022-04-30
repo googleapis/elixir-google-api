@@ -23,6 +23,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
 
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t`, *default:* `nil`) - Appdevexperience specific state.
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t`, *default:* `nil`) - Config Management-specific state.
+  *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState.t`, *default:* `nil`) - Identity Service-specific state.
   *   `servicemesh` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState.t`, *default:* `nil`) - Service Mesh-specific state.
   *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.FeatureState.t`, *default:* `nil`) - The high-level state of this Feature for a single membership.
   """
@@ -33,12 +34,14 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t() | nil,
           :configmanagement =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t() | nil,
+          :identityservice => GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState.t() | nil,
           :servicemesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState.t() | nil,
           :state => GoogleApi.GKEHub.V1.Model.FeatureState.t() | nil
         }
 
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState)
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState)
+  field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState)
   field(:servicemesh, as: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState)
   field(:state, as: GoogleApi.GKEHub.V1.Model.FeatureState)
 end

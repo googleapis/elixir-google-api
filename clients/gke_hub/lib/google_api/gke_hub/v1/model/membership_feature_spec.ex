@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   ## Attributes
 
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t`, *default:* `nil`) - Config Management-specific spec.
+  *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec.t`, *default:* `nil`) - Identity Service-specific spec.
   *   `mesh` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t`, *default:* `nil`) - Anthos Service Mesh-specific spec
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
 
   @type t :: %__MODULE__{
           :configmanagement => GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t() | nil,
+          :identityservice => GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec.t() | nil,
           :mesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t() | nil
         }
 
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec)
+  field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec)
   field(:mesh, as: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec)
 end
 
