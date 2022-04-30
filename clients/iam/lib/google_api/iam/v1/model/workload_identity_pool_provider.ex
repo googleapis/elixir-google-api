@@ -29,6 +29,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A display name for the provider. Cannot exceed 32 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the provider.
   *   `oidc` (*type:* `GoogleApi.IAM.V1.Model.Oidc.t`, *default:* `nil`) - An OpenId Connect 1.0 identity provider.
+  *   `saml` (*type:* `GoogleApi.IAM.V1.Model.Saml.t`, *default:* `nil`) - An SAML 2.0 identity provider.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the provider.
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :oidc => GoogleApi.IAM.V1.Model.Oidc.t() | nil,
+          :saml => GoogleApi.IAM.V1.Model.Saml.t() | nil,
           :state => String.t() | nil
         }
 
@@ -54,6 +56,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
   field(:displayName)
   field(:name)
   field(:oidc, as: GoogleApi.IAM.V1.Model.Oidc)
+  field(:saml, as: GoogleApi.IAM.V1.Model.Saml)
   field(:state)
 end
 
