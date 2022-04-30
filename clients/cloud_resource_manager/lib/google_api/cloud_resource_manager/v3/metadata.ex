@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudResourceManager.V3 do
   API client metadata for GoogleApi.CloudResourceManager.V3.
   """
 
-  @discovery_revision "20220403"
+  @discovery_revision "20220424"
 
   def discovery_revision(), do: @discovery_revision
 end
