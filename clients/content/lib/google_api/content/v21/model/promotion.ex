@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Content.V21.Model.Promotion do
   @moduledoc """
-   The Promotions feature is currently in alpha and is not yet publicly available in Content API for Shopping. This documentation is provided for reference only may be subject to change. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
+   The Promotions feature is publicly available for the US and CA locale (en language only) in Content API for Shopping. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
 
   ## Attributes
 
-  *   `longTitle` (*type:* `String.t`, *default:* `nil`) - Long title for the promotion.
+  *   `longTitle` (*type:* `String.t`, *default:* `nil`) - Required. Long title for the promotion.
   *   `genericRedemptionCode` (*type:* `String.t`, *default:* `nil`) - Generic redemption code for the promotion. To be used with the above field.
   *   `moneyOffAmount` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - The money off amount offered in the promotion.
   *   `freeGiftItemId` (*type:* `String.t`, *default:* `nil`) - Free gift item id for the promotion.
