@@ -24,6 +24,9 @@ defmodule GoogleApi.Content.V21.Model.Metrics do
   *   `aos` (*type:* `float()`, *default:* `nil`) - Average order size - the average number of items in an order. **This metric cannot be segmented by product dimensions.**
   *   `aovMicros` (*type:* `float()`, *default:* `nil`) - Average order value - the average value (total price of items) of all placed orders. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by product dimensions.**
   *   `clicks` (*type:* `String.t`, *default:* `nil`) - Number of clicks.
+  *   `conversionRate` (*type:* `float()`, *default:* `nil`) - Number of conversions divided by the number of clicks, reported on the impression date. The metric is currently available only for the FREE_PRODUCT_LISTING program.
+  *   `conversionValueMicros` (*type:* `String.t`, *default:* `nil`) - Value of conversions in micros attributed to the product, reported on the conversion date. The metric is currently available only for the FREE_PRODUCT_LISTING program. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.
+  *   `conversions` (*type:* `float()`, *default:* `nil`) - Number of conversions attributed to the product, reported on the conversion date. Depending on the attribution model, a conversion might be distributed across multiple clicks, where each click gets its own credit assigned. This metric is a sum of all such credits. The metric is currently available only for the FREE_PRODUCT_LISTING program.
   *   `ctr` (*type:* `float()`, *default:* `nil`) - Click-through rate - the number of clicks merchant's products receive (clicks) divided by the number of times the products are shown (impressions).
   *   `daysToShip` (*type:* `float()`, *default:* `nil`) - Average number of days between an order being placed and the order being fully shipped, reported on the last shipment date. **This metric cannot be segmented by product dimensions.**
   *   `impressions` (*type:* `String.t`, *default:* `nil`) - Number of times merchant's products are shown.
@@ -49,6 +52,9 @@ defmodule GoogleApi.Content.V21.Model.Metrics do
           :aos => float() | nil,
           :aovMicros => float() | nil,
           :clicks => String.t() | nil,
+          :conversionRate => float() | nil,
+          :conversionValueMicros => String.t() | nil,
+          :conversions => float() | nil,
           :ctr => float() | nil,
           :daysToShip => float() | nil,
           :impressions => String.t() | nil,
@@ -71,6 +77,9 @@ defmodule GoogleApi.Content.V21.Model.Metrics do
   field(:aos)
   field(:aovMicros)
   field(:clicks)
+  field(:conversionRate)
+  field(:conversionValueMicros)
+  field(:conversions)
   field(:ctr)
   field(:daysToShip)
   field(:impressions)
