@@ -20,7 +20,7 @@ defmodule GoogleApi.SASPortal.V1alpha1 do
   API client metadata for GoogleApi.SASPortal.V1alpha1.
   """
 
-  @discovery_revision "20220419"
+  @discovery_revision "20220425"
 
   def discovery_revision(), do: @discovery_revision
 end
