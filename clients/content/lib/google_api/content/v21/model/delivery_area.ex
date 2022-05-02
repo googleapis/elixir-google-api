@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Content.V21.Model.DeliveryArea do
   @moduledoc """
-  A delivery area for the product. Only one of administrativeAreaCode or postalCodeRange must be set.
+  A delivery area for the product. Only one of `countryCode` or `postalCodeRange` must be set.
 
   ## Attributes
 
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Required. The country that the product can be delivered to. Submit an [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as US or CH.
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Required. The country that the product can be delivered to. Submit a [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as `US` or `CH`.
   *   `postalCodeRange` (*type:* `GoogleApi.Content.V21.Model.DeliveryAreaPostalCodeRange.t`, *default:* `nil`) - A postal code, postal code range or postal code prefix that defines this area. Limited to US and AUS.
-  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, NY, NSW, 03).
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, `"NY"`, `"NSW"`, `"03"`).
   """
 
   use GoogleApi.Gax.ModelBase

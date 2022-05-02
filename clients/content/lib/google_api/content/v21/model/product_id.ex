@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.ProductId do
 
   ## Attributes
 
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.
   """
 
   use GoogleApi.Gax.ModelBase

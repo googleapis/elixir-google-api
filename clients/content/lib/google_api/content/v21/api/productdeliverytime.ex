@@ -99,7 +99,7 @@ defmodule GoogleApi.Content.V21.Api.Productdeliverytime do
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - Required. The Google merchant ID of the account that contains the product. This account cannot be a multi-client account.
-  *   `product_id` (*type:* `String.t`) - Required. The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.
+  *   `product_id` (*type:* `String.t`) - Required. The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,13 +163,13 @@ defmodule GoogleApi.Content.V21.Api.Productdeliverytime do
   end
 
   @doc """
-  Gets productDeliveryTime by productId
+  Gets `productDeliveryTime` by `productId`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - Required. The Google merchant ID of the account that contains the product. This account cannot be a multi-client account.
-  *   `product_id` (*type:* `String.t`) - Required. The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.
+  *   `product_id` (*type:* `String.t`) - Required. The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
