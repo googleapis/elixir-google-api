@@ -22,7 +22,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   ## Attributes
 
   *   `categories` (*type:* `GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t`, *default:* `nil`) - [Optional] The categories attached to this field, used for field-level access control.
-  *   `collationSpec` (*type:* `String.t`, *default:* `nil`) - Optional. Collation specification of the field. It only can be set on string type field.
+  *   `collation` (*type:* `String.t`, *default:* `nil`) - Optional. Collation specification of the field. It only can be set on string type field.
+  *   `defaultValueExpression` (*type:* `String.t`, *default:* `nil`) - Optional. A SQL expression to specify the default value for this field. It can only be set for top level fields (columns). You can use struct or array expression to specify default value for the entire struct or array. The valid SQL expressions are: - Literals for all data types, including STRUCT and ARRAY. - Following functions: - CURRENT_TIMESTAMP - CURRENT_TIME - CURRENT_DATE - CURRENT_DATETIME - GENERATE_UUID - RAND - SESSION_USER - ST_GEOGPOINT - Struct or array composed with the above allowed functions, for example, [CURRENT_DATE(), DATE '2020-01-01']
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] The field description. The maximum length is 1,024 characters.
   *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)`, *default:* `nil`) - [Optional] Describes the nested schema fields if the type property is set to RECORD.
   *   `maxLength` (*type:* `String.t`, *default:* `nil`) - [Optional] Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = "STRING", then max_length represents the maximum UTF-8 length of strings in this field. If type = "BYTES", then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ "STRING" and ≠ "BYTES".
@@ -38,7 +39,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
 
   @type t :: %__MODULE__{
           :categories => GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t() | nil,
-          :collationSpec => String.t() | nil,
+          :collation => String.t() | nil,
+          :defaultValueExpression => String.t() | nil,
           :description => String.t() | nil,
           :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil,
           :maxLength => String.t() | nil,
@@ -51,7 +53,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
         }
 
   field(:categories, as: GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories)
-  field(:collationSpec)
+  field(:collation)
+  field(:defaultValueExpression)
   field(:description)
   field(:fields, as: GoogleApi.BigQuery.V2.Model.TableFieldSchema, type: :list)
   field(:maxLength)
