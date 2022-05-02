@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Content.V21.Model.ProductDeliveryTime do
   @moduledoc """
-  The estimated days to deliver for this product. These methods are intended for authorized partners working with a merchant. Merchants should use the [product API](https://developers.google.com/shopping-content/reference/rest/v2.1/products#productshipping) instead. To obtain authorization from a merchant refer to
+  The estimated days to deliver a product after an order is placed. Only authorized shipping signals partners working with a merchant can use this resource. Merchants should use the [`products`](https://developers.google.com/shopping-content/reference/rest/v2.1/products#productshipping) resource instead.
 
   ## Attributes
 
-  *   `areaDeliveryTimes` (*type:* `list(GoogleApi.Content.V21.Model.ProductDeliveryTimeAreaDeliveryTime.t)`, *default:* `nil`) - Required. A set of associations between DeliveryAreas and DeliveryTimes. The total number of areaDeliveryTimes can be at most 100.
-  *   `productId` (*type:* `GoogleApi.Content.V21.Model.ProductId.t`, *default:* `nil`) - Required. The id of the product.
+  *   `areaDeliveryTimes` (*type:* `list(GoogleApi.Content.V21.Model.ProductDeliveryTimeAreaDeliveryTime.t)`, *default:* `nil`) - Required. A set of associations between `DeliveryArea` and `DeliveryTime` entries. The total number of `areaDeliveryTimes` can be at most 100.
+  *   `productId` (*type:* `GoogleApi.Content.V21.Model.ProductId.t`, *default:* `nil`) - Required. The `id` of the product.
   """
 
   use GoogleApi.Gax.ModelBase

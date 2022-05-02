@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Content.V21.Model.ProductDeliveryTimeAreaDeliveryTime do
   @moduledoc """
-  A pairing of DeliveryArea associated with a DeliveryTime for this product.
+  A pairing of `DeliveryArea` associated with a `DeliveryTime` for this product.
 
   ## Attributes
 
-  *   `deliveryArea` (*type:* `GoogleApi.Content.V21.Model.DeliveryArea.t`, *default:* `nil`) - Required. The delivery area associated with deliveryTime for this product.
-  *   `deliveryTime` (*type:* `GoogleApi.Content.V21.Model.ProductDeliveryTimeAreaDeliveryTimeDeliveryTime.t`, *default:* `nil`) - Required. The delivery time associated with deliveryArea for this product.
+  *   `deliveryArea` (*type:* `GoogleApi.Content.V21.Model.DeliveryArea.t`, *default:* `nil`) - Required. The delivery area associated with `deliveryTime` for this product.
+  *   `deliveryTime` (*type:* `GoogleApi.Content.V21.Model.ProductDeliveryTimeAreaDeliveryTimeDeliveryTime.t`, *default:* `nil`) - Required. The delivery time associated with `deliveryArea` for this product.
   """
 
   use GoogleApi.Gax.ModelBase
