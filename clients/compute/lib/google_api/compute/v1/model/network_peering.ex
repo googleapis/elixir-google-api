@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
   *   `peerMtu` (*type:* `integer()`, *default:* `nil`) - Maximum Transmission Unit in bytes.
+  *   `stackType` (*type:* `String.t`, *default:* `nil`) - Which IP version(s) of traffic and routes are allowed to be imported or exported between peer networks. The default value is IPV4_ONLY.
   *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
   *   `stateDetails` (*type:* `String.t`, *default:* `nil`) - [Output Only] Details about the current state of the peering.
   """
@@ -46,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :peerMtu => integer() | nil,
+          :stackType => String.t() | nil,
           :state => String.t() | nil,
           :stateDetails => String.t() | nil
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
   field(:name)
   field(:network)
   field(:peerMtu)
+  field(:stackType)
   field(:state)
   field(:stateDetails)
 end

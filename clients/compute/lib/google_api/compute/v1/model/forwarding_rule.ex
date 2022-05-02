@@ -40,6 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. For Private Service Connect forwarding rules that forward traffic to Google APIs, the forwarding rule name must be a 1-20 characters string with lowercase letters and numbers and must start with a letter.
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+  *   `noAutomateDnsZone` (*type:* `boolean()`, *default:* `nil`) - This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
   *   `portRange` (*type:* `String.t`, *default:* `nil`) - This field can be used only if: - Load balancing scheme is one of EXTERNAL, INTERNAL_SELF_MANAGED or INTERNAL_MANAGED - IPProtocol is one of TCP, UDP, or SCTP. Packets addressed to ports in the specified range will be forwarded to target or backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint ports. Some types of forwarding target have constraints on the acceptable ports. For more information, see [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#port_specifications). @pattern: \\\\d+(?:-\\\\d+)?
   *   `ports` (*type:* `list(String.t)`, *default:* `nil`) - The ports field is only supported when the forwarding rule references a backend_service directly. Only packets addressed to the [specified list of ports]((https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#port_specifications)) are forwarded to backends. You can only use one of ports and port_range, or allPorts. The three are mutually exclusive. You can specify a list of up to five ports, which can be non-contiguous. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint ports. @pattern: \\\\d+(?:-\\\\d+)?
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The PSC connection id of the PSC Forwarding Rule.
@@ -75,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :networkTier => String.t() | nil,
+          :noAutomateDnsZone => boolean() | nil,
           :portRange => String.t() | nil,
           :ports => list(String.t()) | nil,
           :pscConnectionId => String.t() | nil,
@@ -108,6 +110,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:name)
   field(:network)
   field(:networkTier)
+  field(:noAutomateDnsZone)
   field(:portRange)
   field(:ports, type: :list)
   field(:pscConnectionId)

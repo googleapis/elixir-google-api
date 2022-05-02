@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   *   `drainNatIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
   *   `enableDynamicPortAllocation` (*type:* `boolean()`, *default:* `nil`) - Enable Dynamic Port Allocation. If not specified, it is disabled by default. If set to true, - Dynamic Port Allocation will be enabled on this NAT config. - enableEndpointIndependentMapping cannot be set to true. - If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. If minPortsPerVm is not set, a minimum of 32 ports will be allocated to a VM from this NAT config. 
   *   `enableEndpointIndependentMapping` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `endpointTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
   *   `icmpIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
   *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.RouterNatLogConfig.t`, *default:* `nil`) - Configure logging on this NAT.
   *   `maxPortsPerVm` (*type:* `integer()`, *default:* `nil`) - Maximum number of ports allocated to a VM from this NAT config when Dynamic Port Allocation is enabled. If Dynamic Port Allocation is not enabled, this field has no effect. If Dynamic Port Allocation is enabled, and this field is set, it must be set to a power of two greater than minPortsPerVm, or 64 if minPortsPerVm is not set. If Dynamic Port Allocation is enabled and this field is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
           :drainNatIps => list(String.t()) | nil,
           :enableDynamicPortAllocation => boolean() | nil,
           :enableEndpointIndependentMapping => boolean() | nil,
+          :endpointTypes => list(String.t()) | nil,
           :icmpIdleTimeoutSec => integer() | nil,
           :logConfig => GoogleApi.Compute.V1.Model.RouterNatLogConfig.t() | nil,
           :maxPortsPerVm => integer() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   field(:drainNatIps, type: :list)
   field(:enableDynamicPortAllocation)
   field(:enableEndpointIndependentMapping)
+  field(:endpointTypes, type: :list)
   field(:icmpIdleTimeoutSec)
   field(:logConfig, as: GoogleApi.Compute.V1.Model.RouterNatLogConfig)
   field(:maxPortsPerVm)
