@@ -28,12 +28,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   *   `obfuscatedExternalAccountId` (*type:* `String.t`, *default:* `nil`) - An obfuscated version of the id that is uniquely associated with the user's account in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedaccountid when the purchase was made.
   *   `obfuscatedExternalProfileId` (*type:* `String.t`, *default:* `nil`) - An obfuscated version of the id that is uniquely associated with the user's profile in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedprofileid when the purchase was made.
   *   `orderId` (*type:* `String.t`, *default:* `nil`) - The order id associated with the purchase of the inapp product.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The inapp product SKU.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The inapp product SKU. May not be present.
   *   `purchaseState` (*type:* `integer()`, *default:* `nil`) - The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending
   *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970).
-  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token generated to identify this purchase.
+  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token generated to identify this purchase. May not be present.
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
-  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity associated with the purchase of the inapp product.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted.
   """
 
