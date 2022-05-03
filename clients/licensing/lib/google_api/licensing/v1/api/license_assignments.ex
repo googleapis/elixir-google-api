@@ -264,7 +264,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
-  *   `customer_id` (*type:* `String.t`) - Customer's `customerId`. A previous version of this API accepted the primary domain name as a value for this field. If the customer is suspended, the server returns an error.
+  *   `customer_id` (*type:* `String.t`) - The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -343,7 +343,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `customer_id` (*type:* `String.t`) - Customer's `customerId`. A previous version of this API accepted the primary domain name as a value for this field. If the customer is suspended, the server returns an error.
+  *   `customer_id` (*type:* `String.t`) - The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
