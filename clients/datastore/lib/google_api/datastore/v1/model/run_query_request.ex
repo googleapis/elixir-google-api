@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryRequest do
 
   ## Attributes
 
-  *   `gqlQuery` (*type:* `GoogleApi.Datastore.V1.Model.GqlQuery.t`, *default:* `nil`) - The GQL query to run.
+  *   `gqlQuery` (*type:* `GoogleApi.Datastore.V1.Model.GqlQuery.t`, *default:* `nil`) - The GQL query to run. This query must be a non-aggregation query.
   *   `partitionId` (*type:* `GoogleApi.Datastore.V1.Model.PartitionId.t`, *default:* `nil`) - Entities are partitioned into subsets, identified by a partition ID. Queries are scoped to a single partition. This partition ID is normalized with the standard default context partition ID.
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.Query.t`, *default:* `nil`) - The query to run.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this query.
