@@ -22,15 +22,19 @@ defmodule GoogleApi.Container.V1.Model.MonitoringConfig do
   ## Attributes
 
   *   `componentConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringComponentConfig.t`, *default:* `nil`) - Monitoring components configuration
+  *   `managedPrometheusConfig` (*type:* `GoogleApi.Container.V1.Model.ManagedPrometheusConfig.t`, *default:* `nil`) - Enable Google Cloud Managed Service for Prometheus in the cluster.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :componentConfig => GoogleApi.Container.V1.Model.MonitoringComponentConfig.t() | nil
+          :componentConfig => GoogleApi.Container.V1.Model.MonitoringComponentConfig.t() | nil,
+          :managedPrometheusConfig =>
+            GoogleApi.Container.V1.Model.ManagedPrometheusConfig.t() | nil
         }
 
   field(:componentConfig, as: GoogleApi.Container.V1.Model.MonitoringComponentConfig)
+  field(:managedPrometheusConfig, as: GoogleApi.Container.V1.Model.ManagedPrometheusConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MonitoringConfig do

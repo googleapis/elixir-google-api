@@ -24,7 +24,7 @@ defmodule GoogleApi.Container.V1.Model.SetMaintenancePolicyRequest do
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. The name of the cluster to update.
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Required. The maintenance policy to be set for the cluster. An empty field clears the existing maintenance policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster name) of the cluster to set maintenance policy. Specified in the format `projects/*/locations/*/clusters/*`.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840).
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
   """
 
