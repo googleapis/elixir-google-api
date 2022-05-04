@@ -25,6 +25,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.PackageIssue do
   *   `affectedPackage` (*type:* `String.t`, *default:* `nil`) - Required. The package this vulnerability was found in.
   *   `affectedVersion` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.Version.t`, *default:* `nil`) - Required. The version of the package that is installed on the resource affected by this vulnerability.
   *   `effectiveSeverity` (*type:* `String.t`, *default:* `nil`) - Output only. The distro or language system assigned severity for this vulnerability when that is available and note provider assigned severity when it is not available.
+  *   `fileLocation` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.GrafeasV1FileLocation.t)`, *default:* `nil`) - The location at which this package was found.
   *   `fixAvailable` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether a fix is available for this package.
   *   `fixedCpeUri` (*type:* `String.t`, *default:* `nil`) - The [CPE URI](https://cpe.mitre.org/specification/) this vulnerability was fixed in. It is possible for this to be different from the affected_cpe_uri.
   *   `fixedPackage` (*type:* `String.t`, *default:* `nil`) - The package this vulnerability was fixed in. It is possible for this to be different from the affected_package.
@@ -39,6 +40,8 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.PackageIssue do
           :affectedPackage => String.t() | nil,
           :affectedVersion => GoogleApi.ContainerAnalysis.V1.Model.Version.t() | nil,
           :effectiveSeverity => String.t() | nil,
+          :fileLocation =>
+            list(GoogleApi.ContainerAnalysis.V1.Model.GrafeasV1FileLocation.t()) | nil,
           :fixAvailable => boolean() | nil,
           :fixedCpeUri => String.t() | nil,
           :fixedPackage => String.t() | nil,
@@ -50,6 +53,9 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.PackageIssue do
   field(:affectedPackage)
   field(:affectedVersion, as: GoogleApi.ContainerAnalysis.V1.Model.Version)
   field(:effectiveSeverity)
+
+  field(:fileLocation, as: GoogleApi.ContainerAnalysis.V1.Model.GrafeasV1FileLocation, type: :list)
+
   field(:fixAvailable)
   field(:fixedCpeUri)
   field(:fixedPackage)
