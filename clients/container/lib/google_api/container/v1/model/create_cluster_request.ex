@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.CreateClusterRequest do
 
   *   `cluster` (*type:* `GoogleApi.Container.V1.Model.Cluster.t`, *default:* `nil`) - Required. A [cluster resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.locations.clusters)
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent (project and location) where the cluster will be created. Specified in the format `projects/*/locations/*`.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
   """
 
