@@ -31,10 +31,10 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
   *   `organizer` (*type:* `boolean()`, *default:* `nil`) - Whether the attendee is the organizer of the event. Read-only. The default is False.
   *   `resource` (*type:* `boolean()`, *default:* `false`) - Whether the attendee is a resource. Can only be set when the attendee is added to the event for the first time. Subsequent modifications are ignored. Optional. The default is False.
   *   `responseStatus` (*type:* `String.t`, *default:* `nil`) - The attendee's response status. Possible values are:  
-      - "needsAction" - The attendee has not responded to the invitation. 
+      - "needsAction" - The attendee has not responded to the invitation (recommended for new events). 
       - "declined" - The attendee has declined the invitation. 
       - "tentative" - The attendee has tentatively accepted the invitation. 
-      - "accepted" - The attendee has accepted the invitation.
+      - "accepted" - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the "Add invitations to my calendar" setting set to "When I respond to invitation in email" won't see an event on their calendar unless they choose to change their invitation response in the event invitation email.
   *   `self` (*type:* `boolean()`, *default:* `false`) - Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 
