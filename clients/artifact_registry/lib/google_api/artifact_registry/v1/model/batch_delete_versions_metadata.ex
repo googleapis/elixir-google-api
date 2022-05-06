@@ -21,16 +21,16 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.BatchDeleteVersionsMetadata do
 
   ## Attributes
 
-  *   `failedVersions` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Version.t)`, *default:* `nil`) - The versions the operation failed to delete.
+  *   `failedVersions` (*type:* `list(String.t)`, *default:* `nil`) - The versions the operation failed to delete.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failedVersions => list(GoogleApi.ArtifactRegistry.V1.Model.Version.t()) | nil
+          :failedVersions => list(String.t()) | nil
         }
 
-  field(:failedVersions, as: GoogleApi.ArtifactRegistry.V1.Model.Version, type: :list)
+  field(:failedVersions, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ArtifactRegistry.V1.Model.BatchDeleteVersionsMetadata do
