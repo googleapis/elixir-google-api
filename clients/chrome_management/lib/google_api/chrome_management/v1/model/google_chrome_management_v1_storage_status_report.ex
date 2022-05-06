@@ -21,7 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageSta
 
   ## Attributes
 
-  *   `disk` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DiskInfo.t)`, *default:* `nil`) - Output only. Reports on disk
+  *   `disk` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DiskInfo.t)`, *default:* `nil`) - Output only. Reports on disk.
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of when the sample was collected on device
   """
 
