@@ -26,11 +26,13 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   *   `cycleEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. For example: "2019-08-31T17:28:54.564Z"
   *   `endUserEntitled` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the subscription is entitled to the end user.
   *   `freeTrialEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. End of the free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified.
+  *   `lineItems` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem.t)`, *default:* `nil`) - Required. The line items of the subscription.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Response only. Resource name of the subscription. It will have the format of "partners/{partner_id}/subscriptions/{subscription_id}"
   *   `partnerUserToken` (*type:* `String.t`, *default:* `nil`) - Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum.
   *   `processingState` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle).
-  *   `products` (*type:* `list(String.t)`, *default:* `nil`) - Required. Required. Resource name that identifies the purchased products. The format will be 'partners/{partner_id}/products/{product_id}'.
-  *   `promotions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be 'partners/{partner_id}/promotions/{promotion_id}'.
+  *   `products` (*type:* `list(String.t)`, *default:* `nil`) - Required. Deprecated: consider using `line_items` as the input. Required. Resource name that identifies the purchased products. The format will be 'partners/{partner_id}/products/{product_id}'.
+  *   `promotionSpecs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec.t)`, *default:* `nil`) - Optional. Subscription-level promotions. Only free trial is supported on this level. It determines the first renewal time of the subscription to be the end of the free trial period. Specify the promotion resource name only when used as input.
+  *   `promotions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deprecated: consider using the top-level `promotion_specs` as the input. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be 'partners/{partner_id}/promotions/{promotion_id}'.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty.
   *   `renewalTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: "2019-08-31T17:28:54.564Z"
   *   `serviceLocation` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Location.t`, *default:* `nil`) - Required. The location that the service is provided as indicated by the partner.
@@ -49,10 +51,20 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
           :cycleEndTime => DateTime.t() | nil,
           :endUserEntitled => boolean() | nil,
           :freeTrialEndTime => DateTime.t() | nil,
+          :lineItems =>
+            list(
+              GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem.t()
+            )
+            | nil,
           :name => String.t() | nil,
           :partnerUserToken => String.t() | nil,
           :processingState => String.t() | nil,
           :products => list(String.t()) | nil,
+          :promotionSpecs =>
+            list(
+              GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec.t()
+            )
+            | nil,
           :promotions => list(String.t()) | nil,
           :redirectUri => String.t() | nil,
           :renewalTime => DateTime.t() | nil,
@@ -75,10 +87,24 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   field(:cycleEndTime, as: DateTime)
   field(:endUserEntitled)
   field(:freeTrialEndTime, as: DateTime)
+
+  field(:lineItems,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem,
+    type: :list
+  )
+
   field(:name)
   field(:partnerUserToken)
   field(:processingState)
   field(:products, type: :list)
+
+  field(:promotionSpecs,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec,
+    type: :list
+  )
+
   field(:promotions, type: :list)
   field(:redirectUri)
   field(:renewalTime, as: DateTime)
