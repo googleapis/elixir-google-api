@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
 
   *   `exec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t`, *default:* `nil`) - (Optional) One and only one of the following should be specified. Exec specifies the action to take. A field inlined from the Handler message.
   *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+  *   `grpc` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.GRPCAction.t`, *default:* `nil`) - (Optional) GRPCAction specifies an action involving a GRPC port. A field inlined from the Handler message.
   *   `httpGet` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t`, *default:* `nil`) - (Optional) HTTPGet specifies the http request to perform. A field inlined from the Handler message.
   *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) Number of seconds after the container has started before liveness probes are initiated. Defaults to 0 seconds. Minimum value is 0. Max value for liveness probe is 3600. Max value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Max value for liveness probe is 3600. Max value for startup probe is 240. Must be greater or equal than timeout_seconds.
@@ -36,6 +37,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
   @type t :: %__MODULE__{
           :exec => GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t() | nil,
           :failureThreshold => integer() | nil,
+          :grpc => GoogleApi.CloudRun.V1alpha1.Model.GRPCAction.t() | nil,
           :httpGet => GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t() | nil,
           :initialDelaySeconds => integer() | nil,
           :periodSeconds => integer() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
 
   field(:exec, as: GoogleApi.CloudRun.V1alpha1.Model.ExecAction)
   field(:failureThreshold)
+  field(:grpc, as: GoogleApi.CloudRun.V1alpha1.Model.GRPCAction)
   field(:httpGet, as: GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction)
   field(:initialDelaySeconds)
   field(:periodSeconds)
