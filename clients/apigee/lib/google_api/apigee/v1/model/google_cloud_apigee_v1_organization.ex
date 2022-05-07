@@ -23,6 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
 
   *   `addonsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig.t`, *default:* `nil`) - Addon configurations of the Apigee organization.
   *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Required. DEPRECATED: This field will be deprecated once Apigee supports DRZ. Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).
+  *   `apigeeProjectId` (*type:* `String.t`, *default:* `nil`) - Output only. Apigee Project ID associated with the organization. Use this project to allowlist Apigee in the Service Attachment when using private service connect with Apigee.
   *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Compute Engine network used for Service Networking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType](#RuntimeType) is set to `CLOUD`. The value must be set before the creation of a runtime instance and can be updated only when there are no runtime instances. For example: `default`. Apigee also supports shared VPC (that is, the host network project is not the same as the one that is peering with Apigee). See [Shared VPC overview](https://cloud.google.com/vpc/docs/shared-vpc). To use a shared VPC network, use the following format: `projects/{host-project-id}/{region}/networks/{network-name}`. For example: `projects/my-sharedvpc-host/global/networks/mynetwork` **Note:** Not supported for Apigee hybrid.
   *   `billingType` (*type:* `String.t`, *default:* `nil`) - Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).
@@ -50,6 +51,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   @type t :: %__MODULE__{
           :addonsConfig => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig.t() | nil,
           :analyticsRegion => String.t() | nil,
+          :apigeeProjectId => String.t() | nil,
           :attributes => list(String.t()) | nil,
           :authorizedNetwork => String.t() | nil,
           :billingType => String.t() | nil,
@@ -74,6 +76,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
 
   field(:addonsConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig)
   field(:analyticsRegion)
+  field(:apigeeProjectId)
   field(:attributes, type: :list)
   field(:authorizedNetwork)
   field(:billingType)
