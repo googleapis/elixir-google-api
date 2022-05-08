@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.ServerTlsPolicy do
 
   ## Attributes
 
-  *   `allowOpen` (*type:* `boolean()`, *default:* `nil`) -  Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if `allow_open` and `mtls_policy` are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility.
+  *   `allowOpen` (*type:* `boolean()`, *default:* `nil`) -  Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if `allow_open` and `mtls_policy` are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility. Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Free-text description of the resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Set of label tags associated with the resource.
