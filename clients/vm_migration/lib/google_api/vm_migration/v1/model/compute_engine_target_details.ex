@@ -26,6 +26,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
   *   `bootOption` (*type:* `String.t`, *default:* `nil`) - The VM Boot Option, as set in the source vm.
   *   `computeScheduling` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeScheduling.t`, *default:* `nil`) - Compute instance scheduling information (if empty default is used).
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - The disk type to use in the VM.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname to assign to the VM.
   *   `labels` (*type:* `map()`, *default:* `nil`) - A map of labels to associate with the VM.
   *   `licenseType` (*type:* `String.t`, *default:* `nil`) - The license type to use in OS adaptation.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to create the VM with.
@@ -48,6 +49,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
           :bootOption => String.t() | nil,
           :computeScheduling => GoogleApi.VMMigration.V1.Model.ComputeScheduling.t() | nil,
           :diskType => String.t() | nil,
+          :hostname => String.t() | nil,
           :labels => map() | nil,
           :licenseType => String.t() | nil,
           :machineType => String.t() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
   field(:bootOption)
   field(:computeScheduling, as: GoogleApi.VMMigration.V1.Model.ComputeScheduling)
   field(:diskType)
+  field(:hostname)
   field(:labels, type: :map)
   field(:licenseType)
   field(:machineType)
