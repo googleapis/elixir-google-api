@@ -37,6 +37,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyle do
   *   `keepWithNext` (*type:* `boolean()`, *default:* `nil`) - Whether at least a part of this paragraph should be laid out on the same page or column as the next paragraph if possible. If unset, the value is inherited from the parent.
   *   `lineSpacing` (*type:* `number()`, *default:* `nil`) - The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
   *   `namedStyleType` (*type:* `String.t`, *default:* `nil`) - The named style type of the paragraph. Since updating the named style type affects other properties within ParagraphStyle, the named style type is applied before the other properties are updated.
+  *   `pageBreakBefore` (*type:* `boolean()`, *default:* `nil`) - Whether the current paragraph should always start at the beginning of a page. If unset, the value is inherited from the parent.
   *   `shading` (*type:* `GoogleApi.Docs.V1.Model.Shading.t`, *default:* `nil`) - The shading of the paragraph. If unset, the value is inherited from the parent.
   *   `spaceAbove` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space above the paragraph. If unset, the value is inherited from the parent.
   *   `spaceBelow` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space below the paragraph. If unset, the value is inherited from the parent.
@@ -63,6 +64,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyle do
           :keepWithNext => boolean() | nil,
           :lineSpacing => number() | nil,
           :namedStyleType => String.t() | nil,
+          :pageBreakBefore => boolean() | nil,
           :shading => GoogleApi.Docs.V1.Model.Shading.t() | nil,
           :spaceAbove => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
           :spaceBelow => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
@@ -86,6 +88,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyle do
   field(:keepWithNext)
   field(:lineSpacing)
   field(:namedStyleType)
+  field(:pageBreakBefore)
   field(:shading, as: GoogleApi.Docs.V1.Model.Shading)
   field(:spaceAbove, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:spaceBelow, as: GoogleApi.Docs.V1.Model.Dimension)

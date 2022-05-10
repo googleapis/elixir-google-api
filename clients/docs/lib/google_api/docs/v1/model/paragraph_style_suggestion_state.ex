@@ -37,6 +37,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
   *   `keepWithNextSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to keep_with_next.
   *   `lineSpacingSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to line_spacing.
   *   `namedStyleTypeSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to named_style_type.
+  *   `pageBreakBeforeSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to page_break_before.
   *   `shadingSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ShadingSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in shading have been changed in this suggestion.
   *   `spaceAboveSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to space_above.
   *   `spaceBelowSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to space_below.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
           :keepWithNextSuggested => boolean() | nil,
           :lineSpacingSuggested => boolean() | nil,
           :namedStyleTypeSuggested => boolean() | nil,
+          :pageBreakBeforeSuggested => boolean() | nil,
           :shadingSuggestionState => GoogleApi.Docs.V1.Model.ShadingSuggestionState.t() | nil,
           :spaceAboveSuggested => boolean() | nil,
           :spaceBelowSuggested => boolean() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
   field(:keepWithNextSuggested)
   field(:lineSpacingSuggested)
   field(:namedStyleTypeSuggested)
+  field(:pageBreakBeforeSuggested)
   field(:shadingSuggestionState, as: GoogleApi.Docs.V1.Model.ShadingSuggestionState)
   field(:spaceAboveSuggested)
   field(:spaceBelowSuggested)
