@@ -22,7 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PredictResponsePrediction
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the recommended product
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Additional product metadata / annotations. Possible values: * `product`: JSON representation of the product. Will be set if `returnProduct` is set to true in `PredictRequest.params`. * `score`: Prediction score in double value. Will be set if `returnScore` is set to true in `PredictRequest.params`.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Additional product metadata / annotations. Possible values: * `product`: JSON representation of the product. Is set if `returnProduct` is set to true in `PredictRequest.params`. * `score`: Prediction score in double value. Is set if `returnScore` is set to true in `PredictRequest.params`.
   """
 
   use GoogleApi.Gax.ModelBase
