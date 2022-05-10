@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.DataprocMetricConfig do
   @moduledoc """
-  Contains dataproc metric config.
+  Dataproc metric config.
 
   ## Attributes
 
-  *   `metrics` (*type:* `list(GoogleApi.Dataproc.V1.Model.Metric.t)`, *default:* `nil`) - Required. Metrics to be enabled.
+  *   `metrics` (*type:* `list(GoogleApi.Dataproc.V1.Model.Metric.t)`, *default:* `nil`) - Required. Metrics to enable.
   """
 
   use GoogleApi.Gax.ModelBase
