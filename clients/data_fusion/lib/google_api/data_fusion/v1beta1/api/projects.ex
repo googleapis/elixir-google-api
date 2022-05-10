@@ -104,7 +104,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in [AIP-160](https://google.aip.dev/160).
+      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
       *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet revealed.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service selects a default.
       *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
@@ -449,7 +449,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -747,7 +747,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -819,7 +819,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -960,7 +960,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   end
 
   @doc """
-  Add DNS peering on the given resource.
+  Creates DNS peering on the given resource.
 
   ## Parameters
 
@@ -978,6 +978,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dnsPeeringId` (*type:* `String.t`) - Required. The name of the peering to create.
       *   `:body` (*type:* `GoogleApi.DataFusion.V1beta1.Model.DnsPeering.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1014,6 +1015,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :dnsPeeringId => :query,
       :body => :body
     }
 
@@ -1032,7 +1034,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   end
 
   @doc """
-  Remove DNS peering on the given resource.
+  Deletes DNS peering on the given resource.
 
   ## Parameters
 
@@ -1102,7 +1104,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   end
 
   @doc """
-  List DNS peering for a given resource.
+  Lists DNS peerings for a given resource.
 
   ## Parameters
 
@@ -1120,7 +1122,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of dns peerings to return. The service may return fewer than this value. If unspecified, at most 10 dns peerings will be returned. The maximum value is 50; values above 50 will be coerced to 50.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of dns peerings to return. The service may return fewer than this value. If unspecified, at most 50 dns peerings will be returned. The maximum value is 200; values above 200 will be coerced to 200.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListDnsPeerings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDnsPeerings` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1183,7 +1185,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1333,7 +1335,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1405,7 +1407,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataFusion.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
