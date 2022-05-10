@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaAddLocalInventoriesResponse do
   @moduledoc """
-  Response of the AddLocalInventories API. Currently empty because there is no meaningful response populated from the AddLocalInventories method.
+  Response of the ProductService.AddLocalInventories API. Currently empty because there is no meaningful response populated from the ProductService.AddLocalInventories method.
 
   ## Attributes
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportProductsRespons
   ## Attributes
 
   *   `errorSamples` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while processing the request.
-  *   `errorsConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig.t`, *default:* `nil`) - Echoes the destination for the complete errors in the request if set.
+  *   `errorsConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig.t`, *default:* `nil`) - This field is never set.
   """
 
   use GoogleApi.Gax.ModelBase

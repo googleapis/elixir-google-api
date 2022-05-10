@@ -23,12 +23,12 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
 
   *   `appliedControls` (*type:* `list(String.t)`, *default:* `nil`) - The fully qualified resource name of applied [controls](https://cloud.google.com/retail/docs/serving-control-rules).
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance.
-  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results will be based on corrected_query, otherwise the original query will be used for search.
+  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results are based on corrected_query. Otherwise the original query will be used for search.
   *   `facets` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
   *   `invalidConditionBoostSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t)`, *default:* `nil`) - The invalid SearchRequest.BoostSpec.condition_boost_specs that are not applied during serving.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `queryExpansionInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
-  *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search will be performed, and only redirect_uri and attribution_token will be set in the response.
+  *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched items. The order represents the ranking.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
   """

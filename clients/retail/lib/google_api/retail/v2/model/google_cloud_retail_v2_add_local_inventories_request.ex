@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2AddLocalInventoriesRequest do
   @moduledoc """
-  Request message for AddLocalInventories method.
+  Request message for ProductService.AddLocalInventories method.
 
   ## Attributes
 

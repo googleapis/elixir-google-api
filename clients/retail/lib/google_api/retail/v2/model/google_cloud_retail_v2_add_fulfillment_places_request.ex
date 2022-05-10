@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2AddFulfillmentPlacesRequest do
   @moduledoc """
-  Request message for AddFulfillmentPlaces method.
+  Request message for ProductService.AddFulfillmentPlaces method.
 
   ## Attributes
 
