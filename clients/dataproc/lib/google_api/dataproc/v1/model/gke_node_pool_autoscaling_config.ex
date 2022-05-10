@@ -21,8 +21,8 @@ defmodule GoogleApi.Dataproc.V1.Model.GkeNodePoolAutoscalingConfig do
 
   ## Attributes
 
-  *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - The maximum number of nodes in the NodePool. Must be >= min_node_count. Note: Quota must be sufficient to scale up the cluster.
-  *   `minNodeCount` (*type:* `integer()`, *default:* `nil`) - The minimum number of nodes in the NodePool. Must be >= 0 and <= max_node_count.
+  *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - The maximum number of nodes in the node pool. Must be >= min_node_count, and must be > 0. Note: Quota must be sufficient to scale up the cluster.
+  *   `minNodeCount` (*type:* `integer()`, *default:* `nil`) - The minimum number of nodes in the node pool. Must be >= 0 and <= max_node_count.
   """
 
   use GoogleApi.Gax.ModelBase

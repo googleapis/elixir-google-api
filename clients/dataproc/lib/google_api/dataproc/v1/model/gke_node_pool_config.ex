@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GkeNodePoolConfig do
   @moduledoc """
-  The configuration of a GKE NodePool used by a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+  The configuration of a GKE node pool used by a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
 
   ## Attributes
 
-  *   `autoscaling` (*type:* `GoogleApi.Dataproc.V1.Model.GkeNodePoolAutoscalingConfig.t`, *default:* `nil`) - Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled only when a valid configuration is present.
+  *   `autoscaling` (*type:* `GoogleApi.Dataproc.V1.Model.GkeNodePoolAutoscalingConfig.t`, *default:* `nil`) - Optional. The autoscaler configuration for this node pool. The autoscaler is enabled only when a valid configuration is present.
   *   `config` (*type:* `GoogleApi.Dataproc.V1.Model.GkeNodeConfig.t`, *default:* `nil`) - Optional. The node pool configuration.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of Compute Engine zones (https://cloud.google.com/compute/docs/zones#available) where NodePool's nodes will be located.Note: Currently, only one zone may be specified.If a location is not specified during NodePool creation, Dataproc will choose a location.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of Compute Engine zones (https://cloud.google.com/compute/docs/zones#available) where node pool nodes associated with a Dataproc on GKE virtual cluster will be located.Note: All node pools associated with a virtual cluster must be located in the same region as the virtual cluster, and they must be located in the same zone within that region.If a location is not specified during node pool creation, Dataproc on GKE will choose the zone.
   """
 
   use GoogleApi.Gax.ModelBase

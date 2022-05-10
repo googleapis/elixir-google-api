@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.Metric do
   @moduledoc """
-  Metric source to enable along with any optional metrics for this source that override the dataproc defaults
+  The metric source to enable, with any optional metrics, to override Dataproc default metrics.
 
   ## Attributes
 
-  *   `metricOverrides` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Optional Metrics to override the dataproc default metrics configured for the metric source
-  *   `metricSource` (*type:* `String.t`, *default:* `nil`) - Required. MetricSource that should be enabled
+  *   `metricOverrides` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Optional Metrics to override the Dataproc default metrics configured for the metric source.
+  *   `metricSource` (*type:* `String.t`, *default:* `nil`) - Required. MetricSource to enable.
   """
 
   use GoogleApi.Gax.ModelBase

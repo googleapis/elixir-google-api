@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GkeNodePoolAcceleratorConfig do
   @moduledoc """
-  A GkeNodeConfigAcceleratorConfig represents a Hardware Accelerator request for a NodePool.
+  A GkeNodeConfigAcceleratorConfig represents a Hardware Accelerator request for a node pool.
 
   ## Attributes
 

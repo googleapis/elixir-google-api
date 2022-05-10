@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GkeNodePoolTarget do
   @moduledoc """
-  GKE NodePools that Dataproc workloads run on.
+  GKE node pools that Dataproc workloads run on.
 
   ## Attributes
 
-  *   `nodePool` (*type:* `String.t`, *default:* `nil`) - Required. The target GKE NodePool. Format: 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
-  *   `nodePoolConfig` (*type:* `GoogleApi.Dataproc.V1.Model.GkeNodePoolConfig.t`, *default:* `nil`) - Input only. The configuration for the GKE NodePool.If specified, Dataproc attempts to create a NodePool with the specified shape. If one with the same name already exists, it is verified against all specified fields. If a field differs, the virtual cluster creation will fail.If omitted, any NodePool with the specified name is used. If a NodePool with the specified name does not exist, Dataproc create a NodePool with default values.This is an input only field. It will not be returned by the API.
-  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - Required. The types of role for a GKE NodePool
+  *   `nodePool` (*type:* `String.t`, *default:* `nil`) - Required. The target GKE node pool. Format: 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
+  *   `nodePoolConfig` (*type:* `GoogleApi.Dataproc.V1.Model.GkeNodePoolConfig.t`, *default:* `nil`) - Input only. The configuration for the GKE node pool.If specified, Dataproc attempts to create a node pool with the specified shape. If one with the same name already exists, it is verified against all specified fields. If a field differs, the virtual cluster creation will fail.If omitted, any node pool with the specified name is used. If a node pool with the specified name does not exist, Dataproc create a node pool with default values.This is an input only field. It will not be returned by the API.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - Required. The roles associated with the GKE node pool.
   """
 
   use GoogleApi.Gax.ModelBase

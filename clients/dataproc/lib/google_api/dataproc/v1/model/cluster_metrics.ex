@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterMetrics do
   ## Attributes
 
   *   `hdfsMetrics` (*type:* `map()`, *default:* `nil`) - The HDFS metrics.
-  *   `yarnMetrics` (*type:* `map()`, *default:* `nil`) - The YARN metrics.
+  *   `yarnMetrics` (*type:* `map()`, *default:* `nil`) - YARN metrics.
   """
 
   use GoogleApi.Gax.ModelBase

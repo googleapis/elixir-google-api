@@ -29,7 +29,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Cluster do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Cloud Platform project ID that the cluster belongs to.
   *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterStatus.t`, *default:* `nil`) - Output only. Cluster status.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.ClusterStatus.t)`, *default:* `nil`) - Output only. The previous cluster status.
-  *   `virtualClusterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.VirtualClusterConfig.t`, *default:* `nil`) - Optional. The virtual cluster config, used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster). Note that Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtualClusterConfig must be specified.
+  *   `virtualClusterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.VirtualClusterConfig.t`, *default:* `nil`) - Optional. The virtual cluster config is used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke). Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtual_cluster_config must be specified.
   """
 
   use GoogleApi.Gax.ModelBase
