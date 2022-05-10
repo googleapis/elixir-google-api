@@ -22,15 +22,18 @@ defmodule GoogleApi.Container.V1.Model.BinaryAuthorization do
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Binary Authorization.
+  *   `evaluationMode` (*type:* `String.t`, *default:* `nil`) - Mode of operation for binauthz policy evaluation. Currently the only options are equivalent to enable/disable. If unspecified, defaults to DISABLED.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean() | nil
+          :enabled => boolean() | nil,
+          :evaluationMode => String.t() | nil
         }
 
   field(:enabled)
+  field(:evaluationMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.BinaryAuthorization do
