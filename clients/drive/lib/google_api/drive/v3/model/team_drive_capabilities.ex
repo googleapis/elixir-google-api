@@ -38,6 +38,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canDeleteChildren or canTrashChildren instead.
   *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename files or folders in this Team Drive.
   *   `canRenameTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this Team Drive.
+  *   `canResetTeamDriveRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can reset the Team Drive restrictions to defaults.
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can share files or folders in this Team Drive.
   *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can trash children from folders in this Team Drive.
   """
@@ -62,6 +63,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
           :canRemoveChildren => boolean() | nil,
           :canRename => boolean() | nil,
           :canRenameTeamDrive => boolean() | nil,
+          :canResetTeamDriveRestrictions => boolean() | nil,
           :canShare => boolean() | nil,
           :canTrashChildren => boolean() | nil
         }
@@ -83,6 +85,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   field(:canRemoveChildren)
   field(:canRename)
   field(:canRenameTeamDrive)
+  field(:canResetTeamDriveRestrictions)
   field(:canShare)
   field(:canTrashChildren)
 end

@@ -37,6 +37,7 @@ defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
   *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of files in this shared drive.
   *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename files or folders in this shared drive.
   *   `canRenameDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this shared drive.
+  *   `canResetDriveRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can reset the shared drive restrictions to defaults.
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can share files or folders in this shared drive.
   *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can trash children from folders in this shared drive.
   """
@@ -60,6 +61,7 @@ defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
           :canReadRevisions => boolean() | nil,
           :canRename => boolean() | nil,
           :canRenameDrive => boolean() | nil,
+          :canResetDriveRestrictions => boolean() | nil,
           :canShare => boolean() | nil,
           :canTrashChildren => boolean() | nil
         }
@@ -80,6 +82,7 @@ defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
   field(:canReadRevisions)
   field(:canRename)
   field(:canRenameDrive)
+  field(:canResetDriveRestrictions)
   field(:canShare)
   field(:canTrashChildren)
 end
