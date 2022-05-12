@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
   @moduledoc """
-  Proto representation of a custom emoji. May be used in both APIs and in Spanner, but certain fields should be restricted to one or the other. See the per-field documentation for details. NEXT_TAG: 11
+  Proto representation of a custom emoji. May be used in both APIs and in Spanner, but certain fields should be restricted to one or the other. See the per-field documentation for details. NEXT_TAG: 13
 
   ## Attributes
 
   *   `blobId` (*type:* `String.t`, *default:* `nil`) - ID for the underlying image data in Blobstore. This field should *only* be present in Spanner or within the server, but should not be exposed in public APIs.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - Content type of the file used to upload the emoji. Used for takeout. Written to Spanner when the emoji is created.
   *   `createTimeMicros` (*type:* `String.t`, *default:* `nil`) - Time when the Emoji was created, in microseconds. This field may be present in Spanner, within the server, or in public APIs.
   *   `creatorUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - This field should *never* be persisted to Spanner.
+  *   `ephemeralUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A short-lived URL clients can use for directly accessing a custom emoji image. This field is intended for API consumption, and should *never* be persisted to Spanner.
   *   `ownerCustomerId` (*type:* `GoogleApi.CloudSearch.V1.Model.CustomerId.t`, *default:* `nil`) - This field should *never* be persisted to Spanner.
   *   `readToken` (*type:* `String.t`, *default:* `nil`) - Opaque token that clients use to construct the URL for accessing the custom emoji’s image data. This field is intended for API consumption, and should *never* be persisted to Spanner.
   *   `shortcode` (*type:* `String.t`, *default:* `nil`) - User-provided, human-readable ID for the custom emoji. Users are expected to observe this field in the UI instead of the UUID. This shortcode should be unique within an organization, but has no global uniqueness guarantees, unlike the UUID. This field should *never* be persisted to Spanner.
@@ -36,8 +38,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
 
   @type t :: %__MODULE__{
           :blobId => String.t() | nil,
+          :contentType => String.t() | nil,
           :createTimeMicros => String.t() | nil,
           :creatorUserId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
+          :ephemeralUrl => String.t() | nil,
           :ownerCustomerId => GoogleApi.CloudSearch.V1.Model.CustomerId.t() | nil,
           :readToken => String.t() | nil,
           :shortcode => String.t() | nil,
@@ -47,8 +51,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
         }
 
   field(:blobId)
+  field(:contentType)
   field(:createTimeMicros)
   field(:creatorUserId, as: GoogleApi.CloudSearch.V1.Model.UserId)
+  field(:ephemeralUrl)
   field(:ownerCustomerId, as: GoogleApi.CloudSearch.V1.Model.CustomerId)
   field(:readToken)
   field(:shortcode)

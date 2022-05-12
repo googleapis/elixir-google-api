@@ -27,14 +27,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.DynamiteSpacesScoringInfo do
   *   `finalScore` (*type:* `float()`, *default:* `nil`) - 
   *   `freshnessScore` (*type:* `float()`, *default:* `nil`) - 
   *   `joinedSpacesAffinityScore` (*type:* `float()`, *default:* `nil`) - 
-  *   `lastMessagePostedTimestampMicros` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lastMessagePostedTimestampSecs` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lastReadTimestampSecs` (*type:* `String.t`, *default:* `nil`) - 
   *   `memberMetadataCount` (*type:* `float()`, *default:* `nil`) - 
   *   `messageScore` (*type:* `float()`, *default:* `nil`) - 
   *   `numAucContacts` (*type:* `String.t`, *default:* `nil`) - 
   *   `smallContactListAffinityScore` (*type:* `float()`, *default:* `nil`) - 
   *   `smallUnjoinedSpacesAffinityScore` (*type:* `float()`, *default:* `nil`) - 
   *   `spaceAgeInDays` (*type:* `float()`, *default:* `nil`) - 
-  *   `spaceCreationTimestampMicros` (*type:* `String.t`, *default:* `nil`) - 
+  *   `spaceCreationTimestampSecs` (*type:* `String.t`, *default:* `nil`) - 
   *   `topicalityScore` (*type:* `float()`, *default:* `nil`) - 
   """
 
@@ -47,14 +48,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.DynamiteSpacesScoringInfo do
           :finalScore => float() | nil,
           :freshnessScore => float() | nil,
           :joinedSpacesAffinityScore => float() | nil,
-          :lastMessagePostedTimestampMicros => String.t() | nil,
+          :lastMessagePostedTimestampSecs => String.t() | nil,
+          :lastReadTimestampSecs => String.t() | nil,
           :memberMetadataCount => float() | nil,
           :messageScore => float() | nil,
           :numAucContacts => String.t() | nil,
           :smallContactListAffinityScore => float() | nil,
           :smallUnjoinedSpacesAffinityScore => float() | nil,
           :spaceAgeInDays => float() | nil,
-          :spaceCreationTimestampMicros => String.t() | nil,
+          :spaceCreationTimestampSecs => String.t() | nil,
           :topicalityScore => float() | nil
         }
 
@@ -64,14 +66,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.DynamiteSpacesScoringInfo do
   field(:finalScore)
   field(:freshnessScore)
   field(:joinedSpacesAffinityScore)
-  field(:lastMessagePostedTimestampMicros)
+  field(:lastMessagePostedTimestampSecs)
+  field(:lastReadTimestampSecs)
   field(:memberMetadataCount)
   field(:messageScore)
   field(:numAucContacts)
   field(:smallContactListAffinityScore)
   field(:smallUnjoinedSpacesAffinityScore)
   field(:spaceAgeInDays)
-  field(:spaceCreationTimestampMicros)
+  field(:spaceCreationTimestampSecs)
   field(:topicalityScore)
 end
 
