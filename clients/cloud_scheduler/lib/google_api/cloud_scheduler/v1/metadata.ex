@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudScheduler.V1 do
   API client metadata for GoogleApi.CloudScheduler.V1.
   """
 
-  @discovery_revision "20220408"
+  @discovery_revision "20220503"
 
   def discovery_revision(), do: @discovery_revision
 end
