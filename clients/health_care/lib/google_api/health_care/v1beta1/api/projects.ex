@@ -9902,7 +9902,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:profile` (*type:* `String.t`) - A profile that this resource should be validated against.
+      *   `:profile` (*type:* `String.t`) - The canonical URL of a profile that this resource should be validated against. For example, to validate a Patient resource against the US Core Patient profile this parameter would be `http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient`. A StructureDefinition with this canonical URL must exist in the FHIR store.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.HttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
