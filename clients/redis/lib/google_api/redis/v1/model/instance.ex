@@ -33,6 +33,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone from the specified region for the instance. For standard tier, additional nodes will be added across multiple zones for protection against zonal failures. If specified, at least one node will be provisioned in this zone.
   *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Optional. The maintenance policy for the instance. If not provided, maintenance events can be performed at any time.
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Date and time of upcoming maintenance events which have been scheduled.
+  *   `maintenanceVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The self service update maintenance version. The version is date based such as "20210712_00_00".
   *   `memorySizeGb` (*type:* `integer()`, *default:* `nil`) - Required. Redis memory size in GiB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details.
   *   `nodes` (*type:* `list(GoogleApi.Redis.V1.Model.NodeInfo.t)`, *default:* `nil`) - Output only. Info per node.
@@ -69,6 +70,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
           :locationId => String.t() | nil,
           :maintenancePolicy => GoogleApi.Redis.V1.Model.MaintenancePolicy.t() | nil,
           :maintenanceSchedule => GoogleApi.Redis.V1.Model.MaintenanceSchedule.t() | nil,
+          :maintenanceVersion => String.t() | nil,
           :memorySizeGb => integer() | nil,
           :name => String.t() | nil,
           :nodes => list(GoogleApi.Redis.V1.Model.NodeInfo.t()) | nil,
@@ -102,6 +104,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
   field(:locationId)
   field(:maintenancePolicy, as: GoogleApi.Redis.V1.Model.MaintenancePolicy)
   field(:maintenanceSchedule, as: GoogleApi.Redis.V1.Model.MaintenanceSchedule)
+  field(:maintenanceVersion)
   field(:memorySizeGb)
   field(:name)
   field(:nodes, as: GoogleApi.Redis.V1.Model.NodeInfo, type: :list)
