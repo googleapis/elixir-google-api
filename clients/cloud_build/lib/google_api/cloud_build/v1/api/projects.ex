@@ -480,7 +480,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gheConfigId` (*type:* `String.t`) - Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig’s resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character
+      *   `:gheConfigId` (*type:* `String.t`) - Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character
       *   `:projectId` (*type:* `String.t`) - ID of the project.
       *   `:body` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEnterpriseConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2038,7 +2038,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gheConfigId` (*type:* `String.t`) - Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig’s resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character
+      *   `:gheConfigId` (*type:* `String.t`) - Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character
       *   `:projectId` (*type:* `String.t`) - ID of the project.
       *   `:body` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEnterpriseConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
