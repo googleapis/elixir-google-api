@@ -21,19 +21,34 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.PackageOccurrence do
 
   ## Attributes
 
-  *   `location` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.Location.t)`, *default:* `nil`) - Required. All of the places within the filesystem versions of this package have been found.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the installed package.
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. The CPU architecture for which packages in this distribution channel were built. Architecture will be blank for language packages.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - Output only. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package. The cpe_uri will be blank for language packages.
+  *   `license` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.License.t`, *default:* `nil`) - Licenses that have been declared by the authors of the package.
+  *   `location` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.Location.t)`, *default:* `nil`) - All of the places within the filesystem versions of this package have been found.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The name of the installed package.
+  *   `packageType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of package; whether native or non native (e.g., ruby gems, node.js packages, etc.).
+  *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.Version.t`, *default:* `nil`) - Output only. The version of the package.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
+          :cpeUri => String.t() | nil,
+          :license => GoogleApi.ContainerAnalysis.V1.Model.License.t() | nil,
           :location => list(GoogleApi.ContainerAnalysis.V1.Model.Location.t()) | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :packageType => String.t() | nil,
+          :version => GoogleApi.ContainerAnalysis.V1.Model.Version.t() | nil
         }
 
+  field(:architecture)
+  field(:cpeUri)
+  field(:license, as: GoogleApi.ContainerAnalysis.V1.Model.License)
   field(:location, as: GoogleApi.ContainerAnalysis.V1.Model.Location, type: :list)
   field(:name)
+  field(:packageType)
+  field(:version, as: GoogleApi.ContainerAnalysis.V1.Model.Version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1.Model.PackageOccurrence do
