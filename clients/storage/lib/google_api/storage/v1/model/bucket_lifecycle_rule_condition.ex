@@ -28,7 +28,9 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
   *   `daysSinceNoncurrentTime` (*type:* `integer()`, *default:* `nil`) - Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent.
   *   `isLive` (*type:* `boolean()`, *default:* `nil`) - Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects.
   *   `matchesPattern` (*type:* `String.t`, *default:* `nil`) - A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the "Early Access" launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released.
+  *   `matchesPrefix` (*type:* `list(String.t)`, *default:* `nil`) - List of object name prefixes. This condition will be satisfied when at least one of the prefixes exactly matches the beginning of the object name.
   *   `matchesStorageClass` (*type:* `list(String.t)`, *default:* `nil`) - Objects having any of the storage classes specified by this condition will be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY.
+  *   `matchesSuffix` (*type:* `list(String.t)`, *default:* `nil`) - List of object name suffixes. This condition will be satisfied when at least one of the suffixes exactly matches the end of the object name.
   *   `noncurrentTimeBefore` (*type:* `Date.t`, *default:* `nil`) - A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects.
   *   `numNewerVersions` (*type:* `integer()`, *default:* `nil`) - Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.
   """
@@ -43,7 +45,9 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
           :daysSinceNoncurrentTime => integer() | nil,
           :isLive => boolean() | nil,
           :matchesPattern => String.t() | nil,
+          :matchesPrefix => list(String.t()) | nil,
           :matchesStorageClass => list(String.t()) | nil,
+          :matchesSuffix => list(String.t()) | nil,
           :noncurrentTimeBefore => Date.t() | nil,
           :numNewerVersions => integer() | nil
         }
@@ -55,7 +59,9 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
   field(:daysSinceNoncurrentTime)
   field(:isLive)
   field(:matchesPattern)
+  field(:matchesPrefix, type: :list)
   field(:matchesStorageClass, type: :list)
+  field(:matchesSuffix, type: :list)
   field(:noncurrentTimeBefore, as: Date)
   field(:numNewerVersions)
 end
