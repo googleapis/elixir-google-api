@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.License do
   @moduledoc """
-  License information: https://spdx.github.io/spdx-spec/3-package-information/#315-declared-license
+  License information.
 
   ## Attributes
 
   *   `comments` (*type:* `String.t`, *default:* `nil`) - Comments
-  *   `expression` (*type:* `String.t`, *default:* `nil`) - Expression: https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/
+  *   `expression` (*type:* `String.t`, *default:* `nil`) - Often a single license can be used to represent the licensing terms. Sometimes it is necessary to include a choice of one or more licenses or some combination of license identifiers. Examples: "LGPL-2.1-only OR MIT", "LGPL-2.1-only AND MIT", "GPL-2.0-or-later WITH Bison-exception-2.2".
   """
 
   use GoogleApi.Gax.ModelBase

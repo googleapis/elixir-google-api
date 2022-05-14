@@ -27,6 +27,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
   *   `deployment` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DeploymentDetails.t`, *default:* `nil`) - Describes the deployment of an artifact on a runtime.
   *   `derivedImage` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails.t`, *default:* `nil`) - Describes how this resource derives from the basis in the associated note.
   *   `discovered` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetails.t`, *default:* `nil`) - Describes when a resource was discovered.
+  *   `envelope` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Envelope.t`, *default:* `nil`) - https://github.com/secure-systems-lab/dsse
   *   `installation` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails.t`, *default:* `nil`) - Describes the installation of a package on the linked resource.
   *   `intoto` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoDetails.t`, *default:* `nil`) - Describes a specific in-toto link.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which of the occurrence details are specified. This field can be used as a filter in list requests.
@@ -55,6 +56,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
             GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails.t() | nil,
           :discovered =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetails.t() | nil,
+          :envelope => GoogleApi.ContainerAnalysis.V1beta1.Model.Envelope.t() | nil,
           :installation =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails.t() | nil,
           :intoto =>
@@ -83,6 +85,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Occurrence do
 
   field(:derivedImage, as: GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1ImageDetails)
   field(:discovered, as: GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1DiscoveryDetails)
+  field(:envelope, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Envelope)
   field(:installation, as: GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1PackageDetails)
   field(:intoto, as: GoogleApi.ContainerAnalysis.V1beta1.Model.GrafeasV1beta1IntotoDetails)
   field(:kind)

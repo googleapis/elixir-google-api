@@ -17,23 +17,50 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Package do
   @moduledoc """
-  This represents a particular package that is distributed over various channels. E.g., glibc (aka libc6) is distributed by many, at various versions.
+  Package represents a particular package version.
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The CPU architecture for which packages in this distribution channel were built. Architecture will be blank for language packages.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package. The cpe_uri will be blank for language packages.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this package.
+  *   `digest` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.Digest.t)`, *default:* `nil`) - Hash value, typically a file digest, that allows unique identification a specific package.
   *   `distribution` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution.t)`, *default:* `nil`) - The various channels by which a package is distributed.
+  *   `license` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.License.t`, *default:* `nil`) - Licenses that have been declared by the authors of the package.
+  *   `maintainer` (*type:* `String.t`, *default:* `nil`) - A freeform text denoting the maintainer of this package.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The name of the package.
+  *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package; whether native or non native (e.g., ruby gems, node.js packages, etc.).
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The homepage for this package.
+  *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t`, *default:* `nil`) - The version of the package.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
+          :cpeUri => String.t() | nil,
+          :description => String.t() | nil,
+          :digest => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Digest.t()) | nil,
           :distribution => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution.t()) | nil,
-          :name => String.t() | nil
+          :license => GoogleApi.ContainerAnalysis.V1beta1.Model.License.t() | nil,
+          :maintainer => String.t() | nil,
+          :name => String.t() | nil,
+          :packageType => String.t() | nil,
+          :url => String.t() | nil,
+          :version => GoogleApi.ContainerAnalysis.V1beta1.Model.Version.t() | nil
         }
 
+  field(:architecture)
+  field(:cpeUri)
+  field(:description)
+  field(:digest, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Digest, type: :list)
   field(:distribution, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Distribution, type: :list)
+  field(:license, as: GoogleApi.ContainerAnalysis.V1beta1.Model.License)
+  field(:maintainer)
   field(:name)
+  field(:packageType)
+  field(:url)
+  field(:version, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1beta1.Model.Package do

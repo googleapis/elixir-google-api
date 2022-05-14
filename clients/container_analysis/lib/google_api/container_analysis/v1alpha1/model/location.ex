@@ -21,9 +21,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Location do
 
   ## Attributes
 
-  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - Deprecated. The cpe_uri in [cpe format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path from which we gathered that this package/version is installed.
-  *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The version installed at this location.
+  *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - Deprecated. The version installed at this location.
   """
 
   use GoogleApi.Gax.ModelBase

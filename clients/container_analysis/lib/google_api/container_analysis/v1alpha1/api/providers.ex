@@ -255,7 +255,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -489,7 +489,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -565,7 +565,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
