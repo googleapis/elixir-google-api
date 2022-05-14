@@ -28,6 +28,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `environmentSize` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
   *   `maintenanceWindow` (*type:* `GoogleApi.Composer.V1.Model.MaintenanceWindow.t`, *default:* `nil`) - Optional. The maintenance window is the period when Cloud Composer components may undergo maintenance. It is defined so that maintenance is not executed during peak hours or critical time periods. The system will not be under maintenance for every occurrence of this window, but when maintenance is planned, it will be scheduled during the window. The maintenance window period must encompass at least 12 hours per week. This may be split into multiple chunks, each with a size of at least 4 hours. If this value is omitted, the default value for maintenance window will be applied. The default value is Saturday and Sunday 00-06 GMT.
+  *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Composer.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - Optional. The configuration options for GKE cluster master authorized networks. By default master authorized networks feature is: - in case of private environment: enabled with no external networks allowlisted. - in case of public environment: disabled.
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
@@ -47,6 +48,8 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :environmentSize => String.t() | nil,
           :gkeCluster => String.t() | nil,
           :maintenanceWindow => GoogleApi.Composer.V1.Model.MaintenanceWindow.t() | nil,
+          :masterAuthorizedNetworksConfig =>
+            GoogleApi.Composer.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
           :nodeConfig => GoogleApi.Composer.V1.Model.NodeConfig.t() | nil,
           :nodeCount => integer() | nil,
           :privateEnvironmentConfig =>
@@ -65,6 +68,11 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   field(:environmentSize)
   field(:gkeCluster)
   field(:maintenanceWindow, as: GoogleApi.Composer.V1.Model.MaintenanceWindow)
+
+  field(:masterAuthorizedNetworksConfig,
+    as: GoogleApi.Composer.V1.Model.MasterAuthorizedNetworksConfig
+  )
+
   field(:nodeConfig, as: GoogleApi.Composer.V1.Model.NodeConfig)
   field(:nodeCount)
   field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig)
