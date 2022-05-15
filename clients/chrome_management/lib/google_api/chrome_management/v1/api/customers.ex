@@ -677,7 +677,7 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter. Supported filter fields: - org_unit_id - serial_number - device_id 
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. Default value is 100. Maximum value is 200.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. Default value is 100. Maximum value is 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list.
       *   `:readMask` (*type:* `String.t`) - Required. Read mask to specify which fields to return.
   *   `opts` (*type:* `keyword()`) - Call options
