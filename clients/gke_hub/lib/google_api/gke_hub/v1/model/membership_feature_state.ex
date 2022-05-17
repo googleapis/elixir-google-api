@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
 
   ## Attributes
 
+  *   `anthosvm` (*type:* `GoogleApi.GKEHub.V1.Model.AnthosVMMembershipState.t`, *default:* `nil`) - AnthosVM state.
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t`, *default:* `nil`) - Appdevexperience specific state.
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t`, *default:* `nil`) - Config Management-specific state.
   *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState.t`, *default:* `nil`) - Identity Service-specific state.
@@ -31,6 +32,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :anthosvm => GoogleApi.GKEHub.V1.Model.AnthosVMMembershipState.t() | nil,
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t() | nil,
           :configmanagement =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
           :state => GoogleApi.GKEHub.V1.Model.FeatureState.t() | nil
         }
 
+  field(:anthosvm, as: GoogleApi.GKEHub.V1.Model.AnthosVMMembershipState)
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState)
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState)
   field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState)
