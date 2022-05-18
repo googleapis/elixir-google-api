@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document payload, the [content] and [mime_type] fields must be set.
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in ProcessResponse's document.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
   *   `rawDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t`, *default:* `nil`) - A raw document content (bytes).
   *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
@@ -32,6 +33,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   @type t :: %__MODULE__{
           :document =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
+          :fieldMask => String.t() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
           :rawDocument =>
@@ -40,6 +42,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
+  field(:fieldMask)
 
   field(:inlineDocument,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document
