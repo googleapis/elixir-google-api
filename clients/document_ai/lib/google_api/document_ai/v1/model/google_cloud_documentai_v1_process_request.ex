@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
 
   ## Attributes
 
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in ProcessResponse's document.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t`, *default:* `nil`) - An inline document proto.
   *   `rawDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument.t`, *default:* `nil`) - A raw document content (bytes).
   *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
@@ -29,6 +30,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :fieldMask => String.t() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t() | nil,
           :rawDocument =>
@@ -36,6 +38,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
           :skipHumanReview => boolean() | nil
         }
 
+  field(:fieldMask)
   field(:inlineDocument, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document)
   field(:rawDocument, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument)
   field(:skipHumanReview)
