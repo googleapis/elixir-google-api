@@ -832,7 +832,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   end
 
   @doc """
-  Bulk import of multiple Products. Request processing may be synchronous. No partial updating is supported. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated.
+  Bulk import of multiple Products. Request processing may be synchronous. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated.
 
   ## Parameters
 
