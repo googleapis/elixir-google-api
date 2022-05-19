@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.CVSS do
   @moduledoc """
-  Common Vulnerability Scoring System.
+  Common Vulnerability Scoring System. This message is compatible with CVSS v2 and v3. For CVSS v2 details, see https://www.first.org/cvss/v2/guide CVSS v2 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator For CVSS v3 details, see https://www.first.org/cvss/specification-document CVSS v3 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator
 
   ## Attributes
 
-  *   `attackComplexity` (*type:* `String.t`, *default:* `nil`) - 
-  *   `attackVector` (*type:* `String.t`, *default:* `nil`) - Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments.
-  *   `authentication` (*type:* `String.t`, *default:* `nil`) - 
-  *   `availabilityImpact` (*type:* `String.t`, *default:* `nil`) - 
+  *   `attackComplexity` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3, CVSS v2
+  *   `attackVector` (*type:* `String.t`, *default:* `nil`) - Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments. Defined in CVSS v3, CVSS v2
+  *   `authentication` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v2
+  *   `availabilityImpact` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3, CVSS v2
   *   `baseScore` (*type:* `number()`, *default:* `nil`) - The base score is a function of the base metric scores.
-  *   `confidentialityImpact` (*type:* `String.t`, *default:* `nil`) - 
+  *   `confidentialityImpact` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3, CVSS v2
   *   `exploitabilityScore` (*type:* `number()`, *default:* `nil`) - 
   *   `impactScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `integrityImpact` (*type:* `String.t`, *default:* `nil`) - 
-  *   `privilegesRequired` (*type:* `String.t`, *default:* `nil`) - 
-  *   `scope` (*type:* `String.t`, *default:* `nil`) - 
-  *   `userInteraction` (*type:* `String.t`, *default:* `nil`) - 
+  *   `integrityImpact` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3, CVSS v2
+  *   `privilegesRequired` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3
+  *   `userInteraction` (*type:* `String.t`, *default:* `nil`) - Defined in CVSS v3
   """
 
   use GoogleApi.Gax.ModelBase
