@@ -21,9 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy do
 
   ## Attributes
 
-  *   `availabilityDomainCount` (*type:* `integer()`, *default:* `nil`) - The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+  *   `availabilityDomainCount` (*type:* `integer()`, *default:* `nil`) - The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
   *   `collocation` (*type:* `String.t`, *default:* `nil`) - Specifies network collocation
-  *   `vmCount` (*type:* `integer()`, *default:* `nil`) - Number of vms in this placement group
+  *   `vmCount` (*type:* `integer()`, *default:* `nil`) - Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
   """
 
   use GoogleApi.Gax.ModelBase

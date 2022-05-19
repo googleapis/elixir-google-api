@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   ## Attributes
 
   *   `authorizationPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy. Refer to the AuthorizationPolicy resource for additional details. authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED. Note: This field currently has no impact.
+  *   `certificateMap` (*type:* `String.t`, *default:* `nil`) - URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpsProxy. An up-to-date fingerprint must be provided in order to patch the TargetHttpsProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpsProxy.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
 
   @type t :: %__MODULE__{
           :authorizationPolicy => String.t() | nil,
+          :certificateMap => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :fingerprint => String.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
         }
 
   field(:authorizationPolicy)
+  field(:certificateMap)
   field(:creationTimestamp)
   field(:description)
   field(:fingerprint)
