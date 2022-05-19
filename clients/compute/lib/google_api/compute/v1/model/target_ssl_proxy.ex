@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxy do
 
   ## Attributes
 
+  *   `certificateMap` (*type:* `String.t`, *default:* `nil`) - URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :certificateMap => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :id => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxy do
           :sslPolicy => String.t() | nil
         }
 
+  field(:certificateMap)
   field(:creationTimestamp)
   field(:description)
   field(:id)
