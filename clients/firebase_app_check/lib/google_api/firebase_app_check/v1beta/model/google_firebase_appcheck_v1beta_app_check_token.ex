@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaAp
 
   ## Attributes
 
-  *   `attestationToken` (*type:* `String.t`, *default:* `nil`) - This field has been renamed to `token`. An App Check token. App Check tokens are signed [JWTs](https://tools.ietf.org/html/rfc7519) containing claims that identify the attested app and Firebase project. This token is used to access Firebase services protected by App Check.
+  *   `attestationToken` (*type:* `String.t`, *default:* `nil`) - An App Check token. App Check tokens are signed [JWTs](https://tools.ietf.org/html/rfc7519) containing claims that identify the attested app and Firebase project. This token is used to access Firebase services protected by App Check.
   *   `token` (*type:* `String.t`, *default:* `nil`) - An App Check token. App Check tokens are signed [JWTs](https://tools.ietf.org/html/rfc7519) containing claims that identify the attested app and Firebase project. This token is used to access Firebase services protected by App Check.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - The duration from the time this token is minted until its expiration. This field is intended to ease client-side token management, since the client may have clock skew, but is still able to accurately measure a duration.
   """
