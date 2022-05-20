@@ -23,7 +23,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
 
   *   `appCheckToken` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaAppCheckToken.t`, *default:* `nil`) - Encapsulates an App Check token.
   *   `artifact` (*type:* `String.t`, *default:* `nil`) - An artifact that can be used in future calls to ExchangeAppAttestAssertion.
-  *   `attestationToken` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaAttestationTokenResponse.t`, *default:* `nil`) - This field has been renamed to `app_check_token`. Encapsulates an App Check token.
+  *   `attestationToken` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaAttestationTokenResponse.t`, *default:* `nil`) - Encapsulates an App Check token.
   """
 
   use GoogleApi.Gax.ModelBase
