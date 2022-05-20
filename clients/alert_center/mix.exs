@@ -18,7 +18,7 @@
 defmodule GoogleApi.AlertCenter.Mixfile do
   use Mix.Project
 
-  @version "0.21.1"
+  @version "0.22.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.AlertCenter.Mixfile do
 
   defp description() do
     """
-    Google Workspace Alert Center API client library. Manages alerts on issues affecting your domain.
+    Google Workspace Alert Center API client library. Manages alerts on issues affecting your domain. Note: The current version of this API (v1beta1) is available to all Google Workspace customers. 
     """
   end
 
