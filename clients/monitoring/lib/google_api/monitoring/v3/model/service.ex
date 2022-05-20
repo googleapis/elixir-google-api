@@ -23,9 +23,13 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
 
   *   `appEngine` (*type:* `GoogleApi.Monitoring.V3.Model.AppEngine.t`, *default:* `nil`) - Type used for App Engine services.
   *   `cloudEndpoints` (*type:* `GoogleApi.Monitoring.V3.Model.CloudEndpoints.t`, *default:* `nil`) - Type used for Cloud Endpoints services.
+  *   `cloudRun` (*type:* `GoogleApi.Monitoring.V3.Model.CloudRun.t`, *default:* `nil`) - Type used for Cloud Run services.
   *   `clusterIstio` (*type:* `GoogleApi.Monitoring.V3.Model.ClusterIstio.t`, *default:* `nil`) - Type used for Istio services that live in a Kubernetes cluster.
   *   `custom` (*type:* `GoogleApi.Monitoring.V3.Model.Custom.t`, *default:* `nil`) - Custom service type.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name used for UI elements listing this Service.
+  *   `gkeNamespace` (*type:* `GoogleApi.Monitoring.V3.Model.GkeNamespace.t`, *default:* `nil`) - Type used for GKE Namespaces.
+  *   `gkeService` (*type:* `GoogleApi.Monitoring.V3.Model.GkeService.t`, *default:* `nil`) - Type used for GKE Services (the Kubernetes concept of a service).
+  *   `gkeWorkload` (*type:* `GoogleApi.Monitoring.V3.Model.GkeWorkload.t`, *default:* `nil`) - Type used for GKE Workloads.
   *   `istioCanonicalService` (*type:* `GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t`, *default:* `nil`) - Type used for canonical services scoped to an Istio mesh. Metrics for Istio are documented here (https://istio.io/latest/docs/reference/config/metrics/)
   *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
@@ -38,9 +42,13 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   @type t :: %__MODULE__{
           :appEngine => GoogleApi.Monitoring.V3.Model.AppEngine.t() | nil,
           :cloudEndpoints => GoogleApi.Monitoring.V3.Model.CloudEndpoints.t() | nil,
+          :cloudRun => GoogleApi.Monitoring.V3.Model.CloudRun.t() | nil,
           :clusterIstio => GoogleApi.Monitoring.V3.Model.ClusterIstio.t() | nil,
           :custom => GoogleApi.Monitoring.V3.Model.Custom.t() | nil,
           :displayName => String.t() | nil,
+          :gkeNamespace => GoogleApi.Monitoring.V3.Model.GkeNamespace.t() | nil,
+          :gkeService => GoogleApi.Monitoring.V3.Model.GkeService.t() | nil,
+          :gkeWorkload => GoogleApi.Monitoring.V3.Model.GkeWorkload.t() | nil,
           :istioCanonicalService => GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t() | nil,
           :meshIstio => GoogleApi.Monitoring.V3.Model.MeshIstio.t() | nil,
           :name => String.t() | nil,
@@ -50,9 +58,13 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
 
   field(:appEngine, as: GoogleApi.Monitoring.V3.Model.AppEngine)
   field(:cloudEndpoints, as: GoogleApi.Monitoring.V3.Model.CloudEndpoints)
+  field(:cloudRun, as: GoogleApi.Monitoring.V3.Model.CloudRun)
   field(:clusterIstio, as: GoogleApi.Monitoring.V3.Model.ClusterIstio)
   field(:custom, as: GoogleApi.Monitoring.V3.Model.Custom)
   field(:displayName)
+  field(:gkeNamespace, as: GoogleApi.Monitoring.V3.Model.GkeNamespace)
+  field(:gkeService, as: GoogleApi.Monitoring.V3.Model.GkeService)
+  field(:gkeWorkload, as: GoogleApi.Monitoring.V3.Model.GkeWorkload)
   field(:istioCanonicalService, as: GoogleApi.Monitoring.V3.Model.IstioCanonicalService)
   field(:meshIstio, as: GoogleApi.Monitoring.V3.Model.MeshIstio)
   field(:name)

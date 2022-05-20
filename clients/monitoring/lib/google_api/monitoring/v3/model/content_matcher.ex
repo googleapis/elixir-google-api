@@ -22,6 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - String, regex or JSON content to match. Maximum 1024 bytes. An empty content string indicates no content matching is to be performed.
+  *   `jsonPathMatcher` (*type:* `GoogleApi.Monitoring.V3.Model.JsonPathMatcher.t`, *default:* `nil`) - Matcher information for MATCHES_JSON_PATH and NOT_MATCHES_JSON_PATH
   *   `matcher` (*type:* `String.t`, *default:* `nil`) - The type of content matcher that will be applied to the server output, compared to the content string when the check is run.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
 
   @type t :: %__MODULE__{
           :content => String.t() | nil,
+          :jsonPathMatcher => GoogleApi.Monitoring.V3.Model.JsonPathMatcher.t() | nil,
           :matcher => String.t() | nil
         }
 
   field(:content)
+  field(:jsonPathMatcher, as: GoogleApi.Monitoring.V3.Model.JsonPathMatcher)
   field(:matcher)
 end
 
