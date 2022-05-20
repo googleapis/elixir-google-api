@@ -2,7 +2,7 @@
 
 Google Workspace Alert Center API client library.
 
-Manages alerts on issues affecting your domain.
+Manages alerts on issues affecting your domain. Note: The current version of this API (v1beta1) is available to all Google Workspace customers. 
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_alert_center, "~> 0.21"}]
+  [{:google_api_alert_center, "~> 0.22"}]
 end
 ```
 
