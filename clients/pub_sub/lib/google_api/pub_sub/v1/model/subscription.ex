@@ -22,6 +22,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   ## Attributes
 
   *   `ackDeadlineSeconds` (*type:* `integer()`, *default:* `nil`) - The approximate amount of time (on a best-effort basis) Pub/Sub waits for the subscriber to acknowledge receipt before resending the message. In the interval after the message is delivered and before it is acknowledged, it is considered to be *outstanding*. During that time period, the message will not be redelivered (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using non-streaming pull or send the `ack_id` in a `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is 0, a default value of 10 seconds is used. For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message.
+  *   `bigqueryConfig` (*type:* `GoogleApi.PubSub.V1.Model.BigQueryConfig.t`, *default:* `nil`) - If delivery to BigQuery is used with this subscription, this field is used to configure it. At most one of `pushConfig` and `bigQueryConfig` can be set. If both are empty, then the subscriber will pull and ack messages using API methods.
   *   `deadLetterPolicy` (*type:* `GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for dead lettering messages in this subscription. If dead_letter_policy is not set, dead lettering is disabled. The Cloud Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription.
   *   `detached` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the subscription is detached from its topic. Detached subscriptions don't receive messages from their topic and don't retain any backlog. `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the subscription is a push subscription, pushes to the endpoint will not be made.
   *   `enableExactlyOnceDelivery` (*type:* `boolean()`, *default:* `nil`) - If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of `message_id` on this subscription: * The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgement deadline expires. * An acknowledged message will not be resent to a subscriber. Note that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery` is true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct `message_id` values.
@@ -43,6 +44,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
   @type t :: %__MODULE__{
           :ackDeadlineSeconds => integer() | nil,
+          :bigqueryConfig => GoogleApi.PubSub.V1.Model.BigQueryConfig.t() | nil,
           :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t() | nil,
           :detached => boolean() | nil,
           :enableExactlyOnceDelivery => boolean() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
         }
 
   field(:ackDeadlineSeconds)
+  field(:bigqueryConfig, as: GoogleApi.PubSub.V1.Model.BigQueryConfig)
   field(:deadLetterPolicy, as: GoogleApi.PubSub.V1.Model.DeadLetterPolicy)
   field(:detached)
   field(:enableExactlyOnceDelivery)
