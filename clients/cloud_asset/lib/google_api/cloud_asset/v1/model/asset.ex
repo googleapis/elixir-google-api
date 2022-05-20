@@ -29,6 +29,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1` See [Resource names](https://cloud.google.com/apis/design/resource_names#full_resource_name) for more information.
   *   `orgPolicy` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t)`, *default:* `nil`) - A representation of an [organization policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy). There can be more than one organization policy with different constraints set on a given resource.
   *   `osInventory` (*type:* `GoogleApi.CloudAsset.V1.Model.Inventory.t`, *default:* `nil`) - A representation of runtime OS Inventory information. See [this topic](https://cloud.google.com/compute/docs/instances/os-inventory-management) for more information.
+  *   `relatedAsset` (*type:* `GoogleApi.CloudAsset.V1.Model.RelatedAsset.t`, *default:* `nil`) - One related asset of the current asset.
+  *   `relatedAssets` (*type:* `GoogleApi.CloudAsset.V1.Model.RelatedAssets.t`, *default:* `nil`) - DEPRECATED. This field only presents for the purpose of backward-compatibility. The server will never generate responses with this field. The related assets of the asset of one relationship type. One asset only represents one type of relationship.
   *   `resource` (*type:* `GoogleApi.CloudAsset.V1.Model.Resource.t`, *default:* `nil`) - A representation of the resource.
   *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - Please also refer to the [service perimeter user guide](https://cloud.google.com/vpc-service-controls/docs/overview).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when create/update/delete operation is performed.
@@ -50,6 +52,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
           :orgPolicy =>
             list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t()) | nil,
           :osInventory => GoogleApi.CloudAsset.V1.Model.Inventory.t() | nil,
+          :relatedAsset => GoogleApi.CloudAsset.V1.Model.RelatedAsset.t() | nil,
+          :relatedAssets => GoogleApi.CloudAsset.V1.Model.RelatedAssets.t() | nil,
           :resource => GoogleApi.CloudAsset.V1.Model.Resource.t() | nil,
           :servicePerimeter =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t()
@@ -71,6 +75,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   field(:name)
   field(:orgPolicy, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy, type: :list)
   field(:osInventory, as: GoogleApi.CloudAsset.V1.Model.Inventory)
+  field(:relatedAsset, as: GoogleApi.CloudAsset.V1.Model.RelatedAsset)
+  field(:relatedAssets, as: GoogleApi.CloudAsset.V1.Model.RelatedAssets)
   field(:resource, as: GoogleApi.CloudAsset.V1.Model.Resource)
 
   field(:servicePerimeter,
