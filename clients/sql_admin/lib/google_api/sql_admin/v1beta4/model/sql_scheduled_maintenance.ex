@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance do
   @moduledoc """
-  Any scheduled maintenancce for this instance.
+  Any scheduled maintenance for this instance.
 
   ## Attributes
 
