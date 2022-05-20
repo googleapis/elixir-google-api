@@ -21,11 +21,11 @@ defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The checker's human-readable name. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The checker's human-readable name. The display name should be unique within a Cloud Monitoring Metrics Scope in order to make it easier to identify; however, uniqueness is not enforced.
   *   `gcpZone` (*type:* `String.t`, *default:* `nil`) - The GCP zone the Uptime check should egress from. Only respected for internal Uptime checks, where internal_network is specified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique resource name for this InternalChecker. The format is: projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID] [PROJECT_ID_OR_NUMBER] is the Stackdriver Workspace project for the Uptime check config associated with the internal checker.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique resource name for this InternalChecker. The format is: projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID] [PROJECT_ID_OR_NUMBER] is the Cloud Monitoring Metrics Scope project for the Uptime check config associated with the internal checker.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The GCP VPC network (https://cloud.google.com/vpc/docs/vpc) where the internal resource lives (ex: "default").
-  *   `peerProjectId` (*type:* `String.t`, *default:* `nil`) - The GCP project ID where the internal checker lives. Not necessary the same as the Workspace project.
+  *   `peerProjectId` (*type:* `String.t`, *default:* `nil`) - The GCP project ID where the internal checker lives. Not necessary the same as the Metrics Scope project.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current operational state of the internal checker.
   """
 
