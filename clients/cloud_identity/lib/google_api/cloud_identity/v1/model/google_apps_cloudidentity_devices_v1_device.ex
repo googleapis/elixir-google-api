@@ -29,6 +29,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `buildNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Build number of the device.
   *   `compromisedState` (*type:* `String.t`, *default:* `nil`) - Output only. Represents whether the Device is compromised.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Company-Owned device was imported. This field is empty for BYOD devices.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the device.
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of device.
   *   `enabledDeveloperOptions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether developer options is enabled on device.
   *   `enabledUsbDebugging` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether USB debugging is enabled on device.
@@ -64,6 +65,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
           :buildNumber => String.t() | nil,
           :compromisedState => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :deviceId => String.t() | nil,
           :deviceType => String.t() | nil,
           :enabledDeveloperOptions => boolean() | nil,
           :enabledUsbDebugging => boolean() | nil,
@@ -97,6 +99,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   field(:buildNumber)
   field(:compromisedState)
   field(:createTime, as: DateTime)
+  field(:deviceId)
   field(:deviceType)
   field(:enabledDeveloperOptions)
   field(:enabledUsbDebugging)
