@@ -409,7 +409,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -662,7 +662,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -745,7 +745,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -986,7 +986,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1151,7 +1151,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1234,7 +1234,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1665,7 +1665,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1932,7 +1932,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -2019,7 +2019,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -3455,7 +3455,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -3631,7 +3631,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -3718,7 +3718,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
