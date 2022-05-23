@@ -23,7 +23,7 @@ defmodule GoogleApi.Notebooks.V1.Model.VmImage do
 
   *   `imageFamily` (*type:* `String.t`, *default:* `nil`) - Use this VM image family to find the image; the newest image in this family will be used.
   *   `imageName` (*type:* `String.t`, *default:* `nil`) - Use VM image name to find the image.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Google Cloud project that this VM image belongs to. Format: `projects/{project_id}`
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Google Cloud project that this VM image belongs to. Format: `{project_id}`
   """
 
   use GoogleApi.Gax.ModelBase
