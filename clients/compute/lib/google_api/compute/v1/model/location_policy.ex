@@ -22,16 +22,19 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicy do
   ## Attributes
 
   *   `locations` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t}`, *default:* `nil`) - Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+  *   `targetShape` (*type:* `String.t`, *default:* `nil`) - Strategy for distributing VMs across zones in a region.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :locations =>
-            %{optional(String.t()) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t()} | nil
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.LocationPolicyLocation.t()} | nil,
+          :targetShape => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.Compute.V1.Model.LocationPolicyLocation, type: :map)
+  field(:targetShape)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.LocationPolicy do
