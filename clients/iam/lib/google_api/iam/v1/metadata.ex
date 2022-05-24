@@ -20,7 +20,7 @@ defmodule GoogleApi.IAM.V1 do
   API client metadata for GoogleApi.IAM.V1.
   """
 
-  @discovery_revision "20220428"
+  @discovery_revision "20220511"
 
   def discovery_revision(), do: @discovery_revision
 end
