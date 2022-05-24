@@ -22,6 +22,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
   ## Attributes
 
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `enableIpMasqAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
   *   `ipAllocationPolicy` (*type:* `GoogleApi.Composer.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which to deploy the VMs used to run the Apache Airflow software, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}". This `location` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.machineType` are specified, `nodeConfig.machineType` must belong to this `location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If only one field (`location` or `nodeConfig.machineType`) is specified, the location information from the specified field will be propagated to the unspecified field. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [machine type](/compute/docs/machine-types) used for cluster instances, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The `machineType` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.location` are specified, this `machineType` must belong to the `nodeConfig.location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If exactly one of this field and `nodeConfig.location` is specified, the location information from the specified field will be propagated to the unspecified field. The `machineTypeId` must not be a [shared-core machine type](/compute/docs/machine-types#sharedcore). If this field is unspecified, the `machineTypeId` defaults to "n1-standard-1". This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
 
   @type t :: %__MODULE__{
           :diskSizeGb => integer() | nil,
+          :enableIpMasqAgent => boolean() | nil,
           :ipAllocationPolicy => GoogleApi.Composer.V1.Model.IPAllocationPolicy.t() | nil,
           :location => String.t() | nil,
           :machineType => String.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
         }
 
   field(:diskSizeGb)
+  field(:enableIpMasqAgent)
   field(:ipAllocationPolicy, as: GoogleApi.Composer.V1.Model.IPAllocationPolicy)
   field(:location)
   field(:machineType)
