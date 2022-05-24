@@ -24,7 +24,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `answer` (*type:* `String.t`, *default:* `nil`) - The piece of text from the `source` knowledge base document.
   *   `confidenceScore` (*type:* `number()`, *default:* `nil`) - The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Map that contains metadata about the FAQ answer and the document that it originates from.
-  *   `queryRecord` (*type:* `String.t`, *default:* `nil`) - Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}.
+  *   `queryRecord` (*type:* `String.t`, *default:* `nil`) - The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}
   *   `question` (*type:* `String.t`, *default:* `nil`) - The corresponding FAQ question.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The knowledge document that this answer was extracted from. Format: projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}.
   """
