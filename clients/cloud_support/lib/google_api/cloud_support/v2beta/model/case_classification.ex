@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.CaseClassification do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the classification.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a classification. Must be specified for case creation.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a classification. Must be specified for case creation. To retrieve valid classification IDs for case creation, use `caseClassifications.search`.
   """
 
   use GoogleApi.Gax.ModelBase
