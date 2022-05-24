@@ -23,7 +23,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   *   `confidenceScore` (*type:* `float()`, *default:* `nil`) - The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Map that contains metadata about the Smart Compose suggestion and the document from which it originates.
-  *   `queryRecord` (*type:* `String.t`, *default:* `nil`) - Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}
+  *   `queryRecord` (*type:* `String.t`, *default:* `nil`) - The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}
   *   `suggestion` (*type:* `String.t`, *default:* `nil`) - The content of the suggestion.
   """
 
