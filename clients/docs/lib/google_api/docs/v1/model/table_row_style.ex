@@ -22,15 +22,21 @@ defmodule GoogleApi.Docs.V1.Model.TableRowStyle do
   ## Attributes
 
   *   `minRowHeight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The minimum height of the row. The row will be rendered in the Docs editor at a height equal to or greater than this value in order to show all the content in the row's cells.
+  *   `preventOverflow` (*type:* `boolean()`, *default:* `nil`) - Whether the row cannot overflow across page or column boundaries.
+  *   `tableHeader` (*type:* `boolean()`, *default:* `nil`) - Whether the row is a table header.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minRowHeight => GoogleApi.Docs.V1.Model.Dimension.t() | nil
+          :minRowHeight => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
+          :preventOverflow => boolean() | nil,
+          :tableHeader => boolean() | nil
         }
 
   field(:minRowHeight, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:preventOverflow)
+  field(:tableHeader)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.TableRowStyle do

@@ -21,118 +21,121 @@ defmodule GoogleApi.Docs.V1.Model.Request do
 
   ## Attributes
 
-  *   `createFooter` (*type:* `GoogleApi.Docs.V1.Model.CreateFooterRequest.t`, *default:* `nil`) - Creates a footer.
-  *   `createFootnote` (*type:* `GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t`, *default:* `nil`) - Creates a footnote.
-  *   `createHeader` (*type:* `GoogleApi.Docs.V1.Model.CreateHeaderRequest.t`, *default:* `nil`) - Creates a header.
-  *   `createNamedRange` (*type:* `GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t`, *default:* `nil`) - Creates a named range.
-  *   `createParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
-  *   `deleteContentRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t`, *default:* `nil`) - Deletes content from the document.
-  *   `deleteFooter` (*type:* `GoogleApi.Docs.V1.Model.DeleteFooterRequest.t`, *default:* `nil`) - Deletes a footer from the document.
-  *   `deleteHeader` (*type:* `GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t`, *default:* `nil`) - Deletes a header from the document.
-  *   `deleteNamedRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t`, *default:* `nil`) - Deletes a named range.
   *   `deleteParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest.t`, *default:* `nil`) - Deletes bullets from paragraphs.
-  *   `deletePositionedObject` (*type:* `GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t`, *default:* `nil`) - Deletes a positioned object from the document.
   *   `deleteTableColumn` (*type:* `GoogleApi.Docs.V1.Model.DeleteTableColumnRequest.t`, *default:* `nil`) - Deletes a column from a table.
-  *   `deleteTableRow` (*type:* `GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
-  *   `insertInlineImage` (*type:* `GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t`, *default:* `nil`) - Inserts an inline image at the specified location.
-  *   `insertPageBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t`, *default:* `nil`) - Inserts a page break at the specified location.
-  *   `insertSectionBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t`, *default:* `nil`) - Inserts a section break at the specified location.
-  *   `insertTable` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRequest.t`, *default:* `nil`) - Inserts a table at the specified location.
-  *   `insertTableColumn` (*type:* `GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t`, *default:* `nil`) - Inserts an empty column into a table.
-  *   `insertTableRow` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRowRequest.t`, *default:* `nil`) - Inserts an empty row into a table.
-  *   `insertText` (*type:* `GoogleApi.Docs.V1.Model.InsertTextRequest.t`, *default:* `nil`) - Inserts text at the specified location.
-  *   `mergeTableCells` (*type:* `GoogleApi.Docs.V1.Model.MergeTableCellsRequest.t`, *default:* `nil`) - Merges cells in a table.
-  *   `replaceAllText` (*type:* `GoogleApi.Docs.V1.Model.ReplaceAllTextRequest.t`, *default:* `nil`) - Replaces all instances of the specified text.
-  *   `replaceImage` (*type:* `GoogleApi.Docs.V1.Model.ReplaceImageRequest.t`, *default:* `nil`) - Replaces an image in the document.
-  *   `replaceNamedRangeContent` (*type:* `GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest.t`, *default:* `nil`) - Replaces the content in a named range.
-  *   `unmergeTableCells` (*type:* `GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a table.
   *   `updateDocumentStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest.t`, *default:* `nil`) - Updates the style of the document.
-  *   `updateParagraphStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t`, *default:* `nil`) - Updates the paragraph style at the specified range.
   *   `updateSectionStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest.t`, *default:* `nil`) - Updates the section style of the specified range.
-  *   `updateTableCellStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t`, *default:* `nil`) - Updates the style of table cells.
+  *   `pinTableHeaderRows` (*type:* `GoogleApi.Docs.V1.Model.PinTableHeaderRowsRequest.t`, *default:* `nil`) - Updates the number of pinned header rows in a table.
+  *   `deleteFooter` (*type:* `GoogleApi.Docs.V1.Model.DeleteFooterRequest.t`, *default:* `nil`) - Deletes a footer from the document.
+  *   `insertInlineImage` (*type:* `GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t`, *default:* `nil`) - Inserts an inline image at the specified location.
+  *   `replaceImage` (*type:* `GoogleApi.Docs.V1.Model.ReplaceImageRequest.t`, *default:* `nil`) - Replaces an image in the document.
+  *   `createFooter` (*type:* `GoogleApi.Docs.V1.Model.CreateFooterRequest.t`, *default:* `nil`) - Creates a footer.
   *   `updateTableColumnProperties` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest.t`, *default:* `nil`) - Updates the properties of columns in a table.
+  *   `createHeader` (*type:* `GoogleApi.Docs.V1.Model.CreateHeaderRequest.t`, *default:* `nil`) - Creates a header.
+  *   `deleteTableRow` (*type:* `GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
   *   `updateTableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest.t`, *default:* `nil`) - Updates the row style in a table.
+  *   `insertTableRow` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRowRequest.t`, *default:* `nil`) - Inserts an empty row into a table.
   *   `updateTextStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTextStyleRequest.t`, *default:* `nil`) - Updates the text style at the specified range.
+  *   `updateTableCellStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t`, *default:* `nil`) - Updates the style of table cells.
+  *   `replaceNamedRangeContent` (*type:* `GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest.t`, *default:* `nil`) - Replaces the content in a named range.
+  *   `deleteHeader` (*type:* `GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t`, *default:* `nil`) - Deletes a header from the document.
+  *   `createNamedRange` (*type:* `GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t`, *default:* `nil`) - Creates a named range.
+  *   `replaceAllText` (*type:* `GoogleApi.Docs.V1.Model.ReplaceAllTextRequest.t`, *default:* `nil`) - Replaces all instances of the specified text.
+  *   `insertTableColumn` (*type:* `GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t`, *default:* `nil`) - Inserts an empty column into a table.
+  *   `deletePositionedObject` (*type:* `GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t`, *default:* `nil`) - Deletes a positioned object from the document.
+  *   `deleteNamedRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t`, *default:* `nil`) - Deletes a named range.
+  *   `createFootnote` (*type:* `GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t`, *default:* `nil`) - Creates a footnote.
+  *   `insertSectionBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t`, *default:* `nil`) - Inserts a section break at the specified location.
+  *   `insertText` (*type:* `GoogleApi.Docs.V1.Model.InsertTextRequest.t`, *default:* `nil`) - Inserts text at the specified location.
+  *   `insertPageBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t`, *default:* `nil`) - Inserts a page break at the specified location.
+  *   `createParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
+  *   `mergeTableCells` (*type:* `GoogleApi.Docs.V1.Model.MergeTableCellsRequest.t`, *default:* `nil`) - Merges cells in a table.
+  *   `unmergeTableCells` (*type:* `GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a table.
+  *   `deleteContentRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t`, *default:* `nil`) - Deletes content from the document.
+  *   `updateParagraphStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t`, *default:* `nil`) - Updates the paragraph style at the specified range.
+  *   `insertTable` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRequest.t`, *default:* `nil`) - Inserts a table at the specified location.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createFooter => GoogleApi.Docs.V1.Model.CreateFooterRequest.t() | nil,
-          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t() | nil,
-          :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderRequest.t() | nil,
-          :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t() | nil,
-          :createParagraphBullets =>
-            GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t() | nil,
-          :deleteContentRange => GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t() | nil,
-          :deleteFooter => GoogleApi.Docs.V1.Model.DeleteFooterRequest.t() | nil,
-          :deleteHeader => GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t() | nil,
-          :deleteNamedRange => GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t() | nil,
           :deleteParagraphBullets =>
             GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest.t() | nil,
-          :deletePositionedObject =>
-            GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t() | nil,
           :deleteTableColumn => GoogleApi.Docs.V1.Model.DeleteTableColumnRequest.t() | nil,
-          :deleteTableRow => GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t() | nil,
-          :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t() | nil,
-          :insertPageBreak => GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t() | nil,
-          :insertSectionBreak => GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t() | nil,
-          :insertTable => GoogleApi.Docs.V1.Model.InsertTableRequest.t() | nil,
-          :insertTableColumn => GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t() | nil,
-          :insertTableRow => GoogleApi.Docs.V1.Model.InsertTableRowRequest.t() | nil,
-          :insertText => GoogleApi.Docs.V1.Model.InsertTextRequest.t() | nil,
-          :mergeTableCells => GoogleApi.Docs.V1.Model.MergeTableCellsRequest.t() | nil,
-          :replaceAllText => GoogleApi.Docs.V1.Model.ReplaceAllTextRequest.t() | nil,
-          :replaceImage => GoogleApi.Docs.V1.Model.ReplaceImageRequest.t() | nil,
-          :replaceNamedRangeContent =>
-            GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest.t() | nil,
-          :unmergeTableCells => GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t() | nil,
           :updateDocumentStyle => GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest.t() | nil,
-          :updateParagraphStyle => GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t() | nil,
           :updateSectionStyle => GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest.t() | nil,
-          :updateTableCellStyle => GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t() | nil,
+          :pinTableHeaderRows => GoogleApi.Docs.V1.Model.PinTableHeaderRowsRequest.t() | nil,
+          :deleteFooter => GoogleApi.Docs.V1.Model.DeleteFooterRequest.t() | nil,
+          :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t() | nil,
+          :replaceImage => GoogleApi.Docs.V1.Model.ReplaceImageRequest.t() | nil,
+          :createFooter => GoogleApi.Docs.V1.Model.CreateFooterRequest.t() | nil,
           :updateTableColumnProperties =>
             GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest.t() | nil,
+          :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderRequest.t() | nil,
+          :deleteTableRow => GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t() | nil,
           :updateTableRowStyle => GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest.t() | nil,
-          :updateTextStyle => GoogleApi.Docs.V1.Model.UpdateTextStyleRequest.t() | nil
+          :insertTableRow => GoogleApi.Docs.V1.Model.InsertTableRowRequest.t() | nil,
+          :updateTextStyle => GoogleApi.Docs.V1.Model.UpdateTextStyleRequest.t() | nil,
+          :updateTableCellStyle => GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t() | nil,
+          :replaceNamedRangeContent =>
+            GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest.t() | nil,
+          :deleteHeader => GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t() | nil,
+          :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t() | nil,
+          :replaceAllText => GoogleApi.Docs.V1.Model.ReplaceAllTextRequest.t() | nil,
+          :insertTableColumn => GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t() | nil,
+          :deletePositionedObject =>
+            GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t() | nil,
+          :deleteNamedRange => GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t() | nil,
+          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t() | nil,
+          :insertSectionBreak => GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t() | nil,
+          :insertText => GoogleApi.Docs.V1.Model.InsertTextRequest.t() | nil,
+          :insertPageBreak => GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t() | nil,
+          :createParagraphBullets =>
+            GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t() | nil,
+          :mergeTableCells => GoogleApi.Docs.V1.Model.MergeTableCellsRequest.t() | nil,
+          :unmergeTableCells => GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t() | nil,
+          :deleteContentRange => GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t() | nil,
+          :updateParagraphStyle => GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t() | nil,
+          :insertTable => GoogleApi.Docs.V1.Model.InsertTableRequest.t() | nil
         }
 
-  field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterRequest)
-  field(:createFootnote, as: GoogleApi.Docs.V1.Model.CreateFootnoteRequest)
-  field(:createHeader, as: GoogleApi.Docs.V1.Model.CreateHeaderRequest)
-  field(:createNamedRange, as: GoogleApi.Docs.V1.Model.CreateNamedRangeRequest)
-  field(:createParagraphBullets, as: GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest)
-  field(:deleteContentRange, as: GoogleApi.Docs.V1.Model.DeleteContentRangeRequest)
-  field(:deleteFooter, as: GoogleApi.Docs.V1.Model.DeleteFooterRequest)
-  field(:deleteHeader, as: GoogleApi.Docs.V1.Model.DeleteHeaderRequest)
-  field(:deleteNamedRange, as: GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest)
   field(:deleteParagraphBullets, as: GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest)
-  field(:deletePositionedObject, as: GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest)
   field(:deleteTableColumn, as: GoogleApi.Docs.V1.Model.DeleteTableColumnRequest)
-  field(:deleteTableRow, as: GoogleApi.Docs.V1.Model.DeleteTableRowRequest)
-  field(:insertInlineImage, as: GoogleApi.Docs.V1.Model.InsertInlineImageRequest)
-  field(:insertPageBreak, as: GoogleApi.Docs.V1.Model.InsertPageBreakRequest)
-  field(:insertSectionBreak, as: GoogleApi.Docs.V1.Model.InsertSectionBreakRequest)
-  field(:insertTable, as: GoogleApi.Docs.V1.Model.InsertTableRequest)
-  field(:insertTableColumn, as: GoogleApi.Docs.V1.Model.InsertTableColumnRequest)
-  field(:insertTableRow, as: GoogleApi.Docs.V1.Model.InsertTableRowRequest)
-  field(:insertText, as: GoogleApi.Docs.V1.Model.InsertTextRequest)
-  field(:mergeTableCells, as: GoogleApi.Docs.V1.Model.MergeTableCellsRequest)
-  field(:replaceAllText, as: GoogleApi.Docs.V1.Model.ReplaceAllTextRequest)
-  field(:replaceImage, as: GoogleApi.Docs.V1.Model.ReplaceImageRequest)
-  field(:replaceNamedRangeContent, as: GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest)
-  field(:unmergeTableCells, as: GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest)
   field(:updateDocumentStyle, as: GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest)
-  field(:updateParagraphStyle, as: GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest)
   field(:updateSectionStyle, as: GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest)
-  field(:updateTableCellStyle, as: GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest)
+  field(:pinTableHeaderRows, as: GoogleApi.Docs.V1.Model.PinTableHeaderRowsRequest)
+  field(:deleteFooter, as: GoogleApi.Docs.V1.Model.DeleteFooterRequest)
+  field(:insertInlineImage, as: GoogleApi.Docs.V1.Model.InsertInlineImageRequest)
+  field(:replaceImage, as: GoogleApi.Docs.V1.Model.ReplaceImageRequest)
+  field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterRequest)
 
   field(:updateTableColumnProperties,
     as: GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest
   )
 
+  field(:createHeader, as: GoogleApi.Docs.V1.Model.CreateHeaderRequest)
+  field(:deleteTableRow, as: GoogleApi.Docs.V1.Model.DeleteTableRowRequest)
   field(:updateTableRowStyle, as: GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest)
+  field(:insertTableRow, as: GoogleApi.Docs.V1.Model.InsertTableRowRequest)
   field(:updateTextStyle, as: GoogleApi.Docs.V1.Model.UpdateTextStyleRequest)
+  field(:updateTableCellStyle, as: GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest)
+  field(:replaceNamedRangeContent, as: GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest)
+  field(:deleteHeader, as: GoogleApi.Docs.V1.Model.DeleteHeaderRequest)
+  field(:createNamedRange, as: GoogleApi.Docs.V1.Model.CreateNamedRangeRequest)
+  field(:replaceAllText, as: GoogleApi.Docs.V1.Model.ReplaceAllTextRequest)
+  field(:insertTableColumn, as: GoogleApi.Docs.V1.Model.InsertTableColumnRequest)
+  field(:deletePositionedObject, as: GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest)
+  field(:deleteNamedRange, as: GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest)
+  field(:createFootnote, as: GoogleApi.Docs.V1.Model.CreateFootnoteRequest)
+  field(:insertSectionBreak, as: GoogleApi.Docs.V1.Model.InsertSectionBreakRequest)
+  field(:insertText, as: GoogleApi.Docs.V1.Model.InsertTextRequest)
+  field(:insertPageBreak, as: GoogleApi.Docs.V1.Model.InsertPageBreakRequest)
+  field(:createParagraphBullets, as: GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest)
+  field(:mergeTableCells, as: GoogleApi.Docs.V1.Model.MergeTableCellsRequest)
+  field(:unmergeTableCells, as: GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest)
+  field(:deleteContentRange, as: GoogleApi.Docs.V1.Model.DeleteContentRangeRequest)
+  field(:updateParagraphStyle, as: GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest)
+  field(:insertTable, as: GoogleApi.Docs.V1.Model.InsertTableRequest)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.Request do
