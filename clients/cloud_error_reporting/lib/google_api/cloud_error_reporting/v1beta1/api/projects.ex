@@ -263,7 +263,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and `{projectNumber}` can be found in the [Google Cloud Console](https://support.google.com/cloud/answer/6158840). Examples: `projects/my-project-123`, `projects/5551234`.
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and `{projectNumber}` can be found in the [Google Cloud console](https://support.google.com/cloud/answer/6158840). Examples: `projects/my-project-123`, `projects/5551234`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
