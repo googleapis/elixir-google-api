@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1 do
   API client metadata for GoogleApi.CloudErrorReporting.V1beta1.
   """
 
-  @discovery_revision "20220420"
+  @discovery_revision "20220511"
 
   def discovery_revision(), do: @discovery_revision
 end
