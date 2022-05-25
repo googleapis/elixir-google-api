@@ -1329,7 +1329,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new notification config's parent. Its format is "organizations/[organization_id]".
+  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new notification config's parent. Its format is "organizations/[organization_id]" or "projects/[project_id]".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1559,7 +1559,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the organization to list notification configs. Its format is "organizations/[organization_id]".
+  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the organization to list notification configs. Its format is "organizations/[organization_id]" or "projects/[project_id]".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

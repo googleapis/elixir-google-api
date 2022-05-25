@@ -24,10 +24,13 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc.
   *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the finding. It's either "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or "projects/{project_number}/sources/{source_id}/findings/{finding_id}", depending on the closest CRM ancestor of the resource associated with the finding.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
+  *   `compliances` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Compliance.t)`, *default:* `nil`) - Contains compliance information for security standards associated to the finding.
   *   `connections` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Connection.t)`, *default:* `nil`) - Contains information about the IP connection associated with the finding.
+  *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { “security”: {contact: {email: “person1@company.com”} contact: {email: “person2@company.com”} }
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
+  *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltrations associated with the Finding.
   *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
@@ -40,6 +43,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
   *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Next steps associate to the finding.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: "organizations/{organization_id}/sources/{source_id}"
+  *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding. This field is managed by the source that writes the finding.
@@ -54,10 +58,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
           :canonicalName => String.t() | nil,
           :category => String.t() | nil,
+          :compliances => list(GoogleApi.SecurityCenter.V1.Model.Compliance.t()) | nil,
           :connections => list(GoogleApi.SecurityCenter.V1.Model.Connection.t()) | nil,
+          :contacts =>
+            %{optional(String.t()) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t()} | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :eventTime => DateTime.t() | nil,
+          :exfiltration => GoogleApi.SecurityCenter.V1.Model.Exfiltration.t() | nil,
           :externalSystems =>
             %{
               optional(String.t()) =>
@@ -75,6 +83,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :name => String.t() | nil,
           :nextSteps => String.t() | nil,
           :parent => String.t() | nil,
+          :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
           :resourceName => String.t() | nil,
           :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
           :severity => String.t() | nil,
@@ -86,10 +95,13 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
   field(:canonicalName)
   field(:category)
+  field(:compliances, as: GoogleApi.SecurityCenter.V1.Model.Compliance, type: :list)
   field(:connections, as: GoogleApi.SecurityCenter.V1.Model.Connection, type: :list)
+  field(:contacts, as: GoogleApi.SecurityCenter.V1.Model.ContactDetails, type: :map)
   field(:createTime, as: DateTime)
   field(:description)
   field(:eventTime, as: DateTime)
+  field(:exfiltration, as: GoogleApi.SecurityCenter.V1.Model.Exfiltration)
 
   field(:externalSystems,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem,
@@ -107,6 +119,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:name)
   field(:nextSteps)
   field(:parent)
+  field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
   field(:resourceName)
   field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)
   field(:severity)
