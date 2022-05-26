@@ -22,15 +22,22 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   ## Attributes
 
   *   `dnsKeysPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of DnsKeys per ManagedZone.
+  *   `gkeClustersPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters to which a privately scoped zone can be attached.
+  *   `gkeClustersPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters per policy.
+  *   `gkeClustersPerResponsePolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters per response policy.
   *   `itemsPerRoutingPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of items per routing policy.
   *   `kind` (*type:* `String.t`, *default:* `dns#quota`) - 
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
+  *   `managedZonesPerGkeCluster` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a GKE cluster.
   *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
   *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
   *   `networksPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per policy.
+  *   `networksPerResponsePolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per response policy.
   *   `peeringZonesPerTargetNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of consumer peering zones per target network owned by this producer project
   *   `policies` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of policies per project.
   *   `resourceRecordsPerRrset` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecords per ResourceRecordSet.
+  *   `responsePolicies` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of response policies per project.
+  *   `responsePolicyRulesPerResponsePolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of rules per response policy.
   *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
   *   `rrsetDeletionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
   *   `rrsetsPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets per zone in the project.
@@ -44,15 +51,22 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
 
   @type t :: %__MODULE__{
           :dnsKeysPerManagedZone => integer() | nil,
+          :gkeClustersPerManagedZone => integer() | nil,
+          :gkeClustersPerPolicy => integer() | nil,
+          :gkeClustersPerResponsePolicy => integer() | nil,
           :itemsPerRoutingPolicy => integer() | nil,
           :kind => String.t() | nil,
           :managedZones => integer() | nil,
+          :managedZonesPerGkeCluster => integer() | nil,
           :managedZonesPerNetwork => integer() | nil,
           :networksPerManagedZone => integer() | nil,
           :networksPerPolicy => integer() | nil,
+          :networksPerResponsePolicy => integer() | nil,
           :peeringZonesPerTargetNetwork => integer() | nil,
           :policies => integer() | nil,
           :resourceRecordsPerRrset => integer() | nil,
+          :responsePolicies => integer() | nil,
+          :responsePolicyRulesPerResponsePolicy => integer() | nil,
           :rrsetAdditionsPerChange => integer() | nil,
           :rrsetDeletionsPerChange => integer() | nil,
           :rrsetsPerManagedZone => integer() | nil,
@@ -63,15 +77,22 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
         }
 
   field(:dnsKeysPerManagedZone)
+  field(:gkeClustersPerManagedZone)
+  field(:gkeClustersPerPolicy)
+  field(:gkeClustersPerResponsePolicy)
   field(:itemsPerRoutingPolicy)
   field(:kind)
   field(:managedZones)
+  field(:managedZonesPerGkeCluster)
   field(:managedZonesPerNetwork)
   field(:networksPerManagedZone)
   field(:networksPerPolicy)
+  field(:networksPerResponsePolicy)
   field(:peeringZonesPerTargetNetwork)
   field(:policies)
   field(:resourceRecordsPerRrset)
+  field(:responsePolicies)
+  field(:responsePolicyRulesPerResponsePolicy)
   field(:rrsetAdditionsPerChange)
   field(:rrsetDeletionsPerChange)
   field(:rrsetsPerManagedZone)
