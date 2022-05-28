@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.CloudEndpoints do
 
   ## Attributes
 
-  *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Endpoints service underlying this service. Corresponds to the service resource label in the api monitored resource: https://cloud.google.com/monitoring/api/resources#tag_api
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Endpoints service underlying this service. Corresponds to the service resource label in the api monitored resource (https://cloud.google.com/monitoring/api/resources#tag_api).
   """
 
   use GoogleApi.Gax.ModelBase

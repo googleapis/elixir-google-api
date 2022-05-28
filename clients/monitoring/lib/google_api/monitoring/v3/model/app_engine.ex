@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AppEngine do
 
   ## Attributes
 
-  *   `moduleId` (*type:* `String.t`, *default:* `nil`) - The ID of the App Engine module underlying this service. Corresponds to the module_id resource label in the gae_app monitored resource: https://cloud.google.com/monitoring/api/resources#tag_gae_app
+  *   `moduleId` (*type:* `String.t`, *default:* `nil`) - The ID of the App Engine module underlying this service. Corresponds to the module_id resource label in the gae_app monitored resource (https://cloud.google.com/monitoring/api/resources#tag_gae_app).
   """
 
   use GoogleApi.Gax.ModelBase

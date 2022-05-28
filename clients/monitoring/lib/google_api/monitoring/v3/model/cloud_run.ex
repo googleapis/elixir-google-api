@@ -21,8 +21,8 @@ defmodule GoogleApi.Monitoring.V3.Model.CloudRun do
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The location the service is run. Corresponds to the location resource label in the cloud_run_revision monitored resource: https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Run service. Corresponds to the service_name resource label in the cloud_run_revision monitored resource: https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The location the service is run. Corresponds to the location resource label in the cloud_run_revision monitored resource (https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Run service. Corresponds to the service_name resource label in the cloud_run_revision monitored resource (https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
   """
 
   use GoogleApi.Gax.ModelBase
