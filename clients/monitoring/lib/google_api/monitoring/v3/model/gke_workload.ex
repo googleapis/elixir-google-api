@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.GkeWorkload do
   @moduledoc """
-  A GKE Workload (Deployment, StatefulSet, etc). The field names correspond to the metadata labels on monitored resources that fall under a workload (e.g. k8s_container, k8s_pod).
+  A GKE Workload (Deployment, StatefulSet, etc). The field names correspond to the metadata labels on monitored resources that fall under a workload (for example, k8s_container or k8s_pod).
 
   ## Attributes
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.Monitoring.V3.Model.GkeWorkload do
   *   `namespaceName` (*type:* `String.t`, *default:* `nil`) - The name of the parent namespace.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. The project this resource lives in. For legacy services migrated from the Custom type, this may be a distinct project from the one parenting the service itself.
   *   `topLevelControllerName` (*type:* `String.t`, *default:* `nil`) - The name of this workload.
-  *   `topLevelControllerType` (*type:* `String.t`, *default:* `nil`) - The type of this workload (e.g. "Deployment" or "DaemonSet")
+  *   `topLevelControllerType` (*type:* `String.t`, *default:* `nil`) - The type of this workload (for example, "Deployment" or "DaemonSet")
   """
 
   use GoogleApi.Gax.ModelBase
