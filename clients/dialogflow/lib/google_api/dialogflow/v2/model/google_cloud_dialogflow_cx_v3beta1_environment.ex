@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Environmen
   *   `testCasesConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentTestCasesConfig.t`, *default:* `nil`) - The test cases config for continuous tests of this environment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time of this environment.
   *   `versionConfigs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig.t)`, *default:* `nil`) - Required. A list of configurations for flow versions. You should include version configs for all flows that are reachable from `Start Flow` in the agent. Otherwise, an error will be returned.
+  *   `webhookConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig.t`, *default:* `nil`) - The webhook configuration for this environment.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,6 +44,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Environmen
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig.t()
             )
+            | nil,
+          :webhookConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig.t()
             | nil
         }
 
@@ -59,6 +63,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Environmen
   field(:versionConfigs,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig,
     type: :list
+  )
+
+  field(:webhookConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig
   )
 end
 
