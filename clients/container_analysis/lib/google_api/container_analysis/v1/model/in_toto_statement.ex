@@ -25,6 +25,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.InTotoStatement do
   *   `predicateType` (*type:* `String.t`, *default:* `nil`) - `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
   *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.InTotoProvenance.t`, *default:* `nil`) - 
   *   `slsaProvenance` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenance.t`, *default:* `nil`) - 
+  *   `slsaProvenanceZeroTwo` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenanceZeroTwo.t`, *default:* `nil`) - 
   *   `subject` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.Subject.t)`, *default:* `nil`) - 
   """
 
@@ -35,6 +36,8 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.InTotoStatement do
           :predicateType => String.t() | nil,
           :provenance => GoogleApi.ContainerAnalysis.V1.Model.InTotoProvenance.t() | nil,
           :slsaProvenance => GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenance.t() | nil,
+          :slsaProvenanceZeroTwo =>
+            GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenanceZeroTwo.t() | nil,
           :subject => list(GoogleApi.ContainerAnalysis.V1.Model.Subject.t()) | nil
         }
 
@@ -42,6 +45,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.InTotoStatement do
   field(:predicateType)
   field(:provenance, as: GoogleApi.ContainerAnalysis.V1.Model.InTotoProvenance)
   field(:slsaProvenance, as: GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenance)
+  field(:slsaProvenanceZeroTwo, as: GoogleApi.ContainerAnalysis.V1.Model.SlsaProvenanceZeroTwo)
   field(:subject, as: GoogleApi.ContainerAnalysis.V1.Model.Subject, type: :list)
 end
 
