@@ -23,7 +23,6 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
 
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - Optional. Optional custom container image for the job runtime environment. If not specified, a default container image will be used.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, which are used to configure workload execution.
-  *   `sessionAuthenticationConfig` (*type:* `GoogleApi.Dataproc.V1.Model.AuthenticationConfig.t`, *default:* `nil`) - Optional. Authentication configuration for the session execution.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Optional. Version of the batch runtime.
   """
 
@@ -32,14 +31,11 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
   @type t :: %__MODULE__{
           :containerImage => String.t() | nil,
           :properties => map() | nil,
-          :sessionAuthenticationConfig =>
-            GoogleApi.Dataproc.V1.Model.AuthenticationConfig.t() | nil,
           :version => String.t() | nil
         }
 
   field(:containerImage)
   field(:properties, type: :map)
-  field(:sessionAuthenticationConfig, as: GoogleApi.Dataproc.V1.Model.AuthenticationConfig)
   field(:version)
 end
 
