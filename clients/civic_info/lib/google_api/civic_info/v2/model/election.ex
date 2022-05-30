@@ -25,6 +25,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.Election do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this election.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A displayable name for the election.
   *   `ocdDivisionId` (*type:* `String.t`, *default:* `nil`) - The political division of the election. Represented as an OCD Division ID. Voters within these political jurisdictions are covered by this election. This is typically a state such as ocd-division/country:us/state:ca or for the midterms or general election the entire US (i.e. ocd-division/country:us).
+  *   `shapeLookupBehavior` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.CivicInfo.V2.Model.Election do
           :electionDay => String.t() | nil,
           :id => String.t() | nil,
           :name => String.t() | nil,
-          :ocdDivisionId => String.t() | nil
+          :ocdDivisionId => String.t() | nil,
+          :shapeLookupBehavior => String.t() | nil
         }
 
   field(:electionDay)
   field(:id)
   field(:name)
   field(:ocdDivisionId)
+  field(:shapeLookupBehavior)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.Election do
