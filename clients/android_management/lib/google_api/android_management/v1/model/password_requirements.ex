@@ -34,6 +34,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   *   `passwordQuality` (*type:* `String.t`, *default:* `nil`) - The required password quality.
   *   `passwordScope` (*type:* `String.t`, *default:* `nil`) - The scope that the password requirement applies to.
   *   `requirePasswordUnlock` (*type:* `String.t`, *default:* `nil`) - The length of time after a device or work profile is unlocked using a strong form of authentication (password, PIN, pattern) that it can be unlocked using any other authentication method (e.g. fingerprint, trust agents, face). After the specified time period elapses, only strong forms of authentication can be used to unlock the device or work profile.
+  *   `unifiedLockSettings` (*type:* `String.t`, *default:* `nil`) - Controls whether a unified lock is allowed for the device and the work profile, on devices running Android 9 and above with a work profile. This can be set only if password_scope is set to SCOPE_PROFILE, the policy will be rejected otherwise. If user has not set a separate work lock and this field is set to REQUIRE_SEPARATE_WORK_LOCK, a NonComplianceDetail is reported with nonComplianceReason set to USER_ACTION.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
           :passwordMinimumUpperCase => integer() | nil,
           :passwordQuality => String.t() | nil,
           :passwordScope => String.t() | nil,
-          :requirePasswordUnlock => String.t() | nil
+          :requirePasswordUnlock => String.t() | nil,
+          :unifiedLockSettings => String.t() | nil
         }
 
   field(:maximumFailedPasswordsForWipe)
@@ -67,6 +69,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   field(:passwordQuality)
   field(:passwordScope)
   field(:requirePasswordUnlock)
+  field(:unifiedLockSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
