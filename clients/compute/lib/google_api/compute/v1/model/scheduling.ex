@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
   *   `minNodeCpus` (*type:* `integer()`, *default:* `nil`) - The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
   *   `nodeAffinities` (*type:* `list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t)`, *default:* `nil`) - A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
-  *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+  *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
   *   `provisioningModel` (*type:* `String.t`, *default:* `nil`) - Specifies the provisioning model of the instance.
   """
