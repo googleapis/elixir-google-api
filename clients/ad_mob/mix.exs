@@ -18,7 +18,7 @@
 defmodule GoogleApi.AdMob.Mixfile do
   use Mix.Project
 
-  @version "0.9.3"
+  @version "0.9.4"
 
   def project() do
     [
