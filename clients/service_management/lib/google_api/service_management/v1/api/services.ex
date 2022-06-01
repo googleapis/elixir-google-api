@@ -443,7 +443,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:consumerId` (*type:* `String.t`) - Include services consumed by the specified consumer. The Google Service Management implementation accepts the following forms: - project:
-      *   `:pageSize` (*type:* `integer()`) - The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
+      *   `:pageSize` (*type:* `integer()`) - The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 500.
       *   `:pageToken` (*type:* `String.t`) - Token identifying which result to start with; returned by a previous list call.
       *   `:producerProjectId` (*type:* `String.t`) - Include services produced by the specified project.
   *   `opts` (*type:* `keyword()`) - Call options
