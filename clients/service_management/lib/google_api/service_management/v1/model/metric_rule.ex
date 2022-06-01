@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.MetricRule do
 
   ## Attributes
 
+  *   `dynamicMetricCosts` (*type:* `map()`, *default:* `nil`) - Metrics to update when the selected methods are called. The key of the map is the metric name, the value is the DynamicCostType to specify how to calculate the cost from the request. The cost amount will be increased for the metric against which the quota limits are defined. It is only implemented in CloudESF(go/cloudesf)
   *   `metricCosts` (*type:* `map()`, *default:* `nil`) - Metrics to update when the selected methods are called, and the associated cost applied to each metric. The key of the map is the metric name, and the values are the amount increased for the metric against which the quota limits are defined. The value must not be negative.
   *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Refer to selector for syntax details.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.ServiceManagement.V1.Model.MetricRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dynamicMetricCosts => map() | nil,
           :metricCosts => map() | nil,
           :selector => String.t() | nil
         }
 
+  field(:dynamicMetricCosts, type: :map)
   field(:metricCosts, type: :map)
   field(:selector)
 end
