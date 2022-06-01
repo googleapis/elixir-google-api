@@ -1501,7 +1501,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Retail.V2.Connection.t`) - Connection to server
-  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: {name=projects/*/locations/global/catalogs/default_catalog/placements/*} The ID of the Recommendations AI placement. Before you can request predictions from your model, you must create at least one placement for it. For more information, see [Managing placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements). The full list of available placements can be seen at https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+  *   `placement` (*type:* `String.t`) - Required. Full resource name of the format: `{name=projects/*/locations/global/catalogs/default_catalog/placements/*}` The ID of the Recommendations AI placement. Before you can request predictions from your model, you must create at least one placement for it. For more information, see [Managing placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements). The full list of available placements can be seen at https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
