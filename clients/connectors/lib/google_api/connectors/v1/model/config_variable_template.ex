@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the parameter.
+  *   `enumOptions` (*type:* `list(GoogleApi.Connectors.V1.Model.EnumOption.t)`, *default:* `nil`) - Enum options. To be populated if `ValueType` is `ENUM`
   *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Flag represents that this `ConfigVariable` must be provided for a connection.
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Role grant configuration for the config variable.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   @type t :: %__MODULE__{
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :enumOptions => list(GoogleApi.Connectors.V1.Model.EnumOption.t()) | nil,
           :key => String.t() | nil,
           :required => boolean() | nil,
           :roleGrant => GoogleApi.Connectors.V1.Model.RoleGrant.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
 
   field(:description)
   field(:displayName)
+  field(:enumOptions, as: GoogleApi.Connectors.V1.Model.EnumOption, type: :list)
   field(:key)
   field(:required)
   field(:roleGrant, as: GoogleApi.Connectors.V1.Model.RoleGrant)
