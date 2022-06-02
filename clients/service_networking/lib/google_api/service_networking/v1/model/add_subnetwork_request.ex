@@ -22,6 +22,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   ## Attributes
 
   *   `checkServiceNetworkingUsePermission` (*type:* `boolean()`, *default:* `nil`) - Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not.
+  *   `computeIdempotencyWindow` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies a custom time bucket for Arcus subnetwork request idempotency. If two equivalent concurrent requests are made, Arcus will know to ignore the request if it has already been completed or is in progress. Only requests with matching compute_idempotency_window have guaranteed idempotency. Changing this time window between requests results in undefined behavior. Zero (or empty) value with custom_compute_idempotency_window=true specifies no idempotency (i.e. no request ID is provided to Arcus). Maximum value of 14 days (enforced by Arcus limit). For more information on how to use, see: go/revisit-sn-idempotency-window
   *   `consumer` (*type:* `String.t`, *default:* `nil`) - Required. A resource that represents the service consumer, such as `projects/123456`. The project number can be different from the value in the consumer network parameter. For example, the network might be part of a Shared VPC network. In those cases, Service Networking validates that this resource belongs to that Shared VPC.
   *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the service consumer's VPC network. The network must have an existing private connection that was provisioned through the connections.create method. The name must be in the following format: `projects/{project}/global/networks/{network}`, where {project} is a project number, such as `12345`. {network} is the name of a VPC network in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the subnet.
@@ -34,13 +35,15 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   *   `requestedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of one or more allocated IP address ranges associated with this private service access connection. If no range names are provided all ranges associated with this connection will be considered. If a CIDR range with the specified IP prefix length is not available within these ranges, the call fails.
   *   `secondaryIpRangeSpecs` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t)`, *default:* `nil`) - Optional. A list of secondary IP ranges to be created within the new subnetwork.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
-  *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `compute.networkUser` role on the subnet.
+  *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `roles/servicenetworking.subnetworkAdmin` role on the subnet.
+  *   `useCustomComputeIdempotencyWindow` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies if Service Networking should use a custom time bucket for Arcus idempotency. If false, Service Networking uses a 300 second (5 minute) Arcus idempotency window. If true, Service Networking uses a custom idempotency window provided by the user in field compute_idempotency_window. For more information on how to use, see: go/revisit-sn-idempotency-window
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :checkServiceNetworkingUsePermission => boolean() | nil,
+          :computeIdempotencyWindow => String.t() | nil,
           :consumer => String.t() | nil,
           :consumerNetwork => String.t() | nil,
           :description => String.t() | nil,
@@ -54,10 +57,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :secondaryIpRangeSpecs =>
             list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()) | nil,
           :subnetwork => String.t() | nil,
-          :subnetworkUsers => list(String.t()) | nil
+          :subnetworkUsers => list(String.t()) | nil,
+          :useCustomComputeIdempotencyWindow => boolean() | nil
         }
 
   field(:checkServiceNetworkingUsePermission)
+  field(:computeIdempotencyWindow)
   field(:consumer)
   field(:consumerNetwork)
   field(:description)
@@ -76,6 +81,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
 
   field(:subnetwork)
   field(:subnetworkUsers, type: :list)
+  field(:useCustomComputeIdempotencyWindow)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
