@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
   @moduledoc """
-  Proto representation of a custom emoji. May be used in both APIs and in Spanner, but certain fields should be restricted to one or the other. See the per-field documentation for details. NEXT_TAG: 13
+  Proto representation of a custom emoji. May be used in both APIs and in Spanner, but certain fields should be restricted to one or the other. See the per-field documentation for details. NEXT_TAG: 14
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Content type of the file used to upload the emoji. Used for takeout. Written to Spanner when the emoji is created.
   *   `createTimeMicros` (*type:* `String.t`, *default:* `nil`) - Time when the Emoji was created, in microseconds. This field may be present in Spanner, within the server, or in public APIs.
   *   `creatorUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - This field should *never* be persisted to Spanner.
+  *   `deleteTimeMicros` (*type:* `String.t`, *default:* `nil`) - Time when the emoji was deleted, in microseconds. This field may be present in Spanner, within the server, or in public APIs. Only present if the emoji has been deleted.
   *   `ephemeralUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A short-lived URL clients can use for directly accessing a custom emoji image. This field is intended for API consumption, and should *never* be persisted to Spanner.
   *   `ownerCustomerId` (*type:* `GoogleApi.CloudSearch.V1.Model.CustomerId.t`, *default:* `nil`) - This field should *never* be persisted to Spanner.
   *   `readToken` (*type:* `String.t`, *default:* `nil`) - Opaque token that clients use to construct the URL for accessing the custom emoji’s image data. This field is intended for API consumption, and should *never* be persisted to Spanner.
@@ -41,6 +42,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
           :contentType => String.t() | nil,
           :createTimeMicros => String.t() | nil,
           :creatorUserId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
+          :deleteTimeMicros => String.t() | nil,
           :ephemeralUrl => String.t() | nil,
           :ownerCustomerId => GoogleApi.CloudSearch.V1.Model.CustomerId.t() | nil,
           :readToken => String.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomEmoji do
   field(:contentType)
   field(:createTimeMicros)
   field(:creatorUserId, as: GoogleApi.CloudSearch.V1.Model.UserId)
+  field(:deleteTimeMicros)
   field(:ephemeralUrl)
   field(:ownerCustomerId, as: GoogleApi.CloudSearch.V1.Model.CustomerId)
   field(:readToken)

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetResult do
 
   ## Attributes
 
-  *   `buckets` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetBucket.t)`, *default:* `nil`) - FacetBuckets for values in response containing at least a single result.
+  *   `buckets` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetBucket.t)`, *default:* `nil`) - FacetBuckets for values in response containing at least a single result with the corresponding filter.
   *   `objectType` (*type:* `String.t`, *default:* `nil`) - Object type for which facet results are returned. Can be empty.
   *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Name of the operator chosen for faceting. @see cloudsearch.SchemaPropertyOptions
   *   `sourceName` (*type:* `String.t`, *default:* `nil`) - Source name for which facet results are returned. Will not be empty.
