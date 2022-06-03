@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   ## Attributes
 
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
+  *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Confidential nodes config. All the nodes in the node pool will be Confidential VM once enabled.
   *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - GCFS config.
   *   `gvnic` (*type:* `GoogleApi.Container.V1.Model.VirtualNIC.t`, *default:* `nil`) - Enable or disable gvnic on the node pool.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   @type t :: %__MODULE__{
           :clusterId => String.t() | nil,
+          :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
           :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :gvnic => GoogleApi.Container.V1.Model.VirtualNIC.t() | nil,
           :imageType => String.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
         }
 
   field(:clusterId)
+  field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
   field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:gvnic, as: GoogleApi.Container.V1.Model.VirtualNIC)
   field(:imageType)

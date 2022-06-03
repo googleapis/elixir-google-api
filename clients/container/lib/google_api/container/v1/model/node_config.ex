@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Container.V1.Model.NodeConfig do
   @moduledoc """
-  Parameters that describe the nodes in a cluster. *Note: *GKE Autopilot clusters do not recognize parameters in `NodeConfig`. Use AutoprovisioningNodePoolDefaults instead.
+  Parameters that describe the nodes in a cluster. GKE Autopilot clusters do not recognize parameters in `NodeConfig`. Use AutoprovisioningNodePoolDefaults instead.
 
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
   *   `advancedMachineFeatures` (*type:* `GoogleApi.Container.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Advanced features for the Compute Engine VM.
   *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) -  The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+  *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Confidential nodes config. All the nodes in the node pool will be Confidential VM once enabled.
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
   *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - Google Container File System (image streaming) configs.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :advancedMachineFeatures =>
             GoogleApi.Container.V1.Model.AdvancedMachineFeatures.t() | nil,
           :bootDiskKmsKey => String.t() | nil,
+          :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
           :diskSizeGb => integer() | nil,
           :diskType => String.t() | nil,
           :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
@@ -85,6 +87,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
   field(:advancedMachineFeatures, as: GoogleApi.Container.V1.Model.AdvancedMachineFeatures)
   field(:bootDiskKmsKey)
+  field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
   field(:diskSizeGb)
   field(:diskType)
   field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
