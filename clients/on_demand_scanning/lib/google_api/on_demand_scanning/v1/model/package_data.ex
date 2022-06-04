@@ -28,6 +28,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS This field is deprecated and the information is in cpe_uri
   *   `package` (*type:* `String.t`, *default:* `nil`) - The package being analysed for vulnerabilities
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package: os, maven, go, etc.
+  *   `patchedCve` (*type:* `list(String.t)`, *default:* `nil`) - CVEs that this package is no longer vulnerable to go/drydock-dd-custom-binary-scanning
   *   `unused` (*type:* `String.t`, *default:* `nil`) - 
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the package being analysed
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
           :osVersion => String.t() | nil,
           :package => String.t() | nil,
           :packageType => String.t() | nil,
+          :patchedCve => list(String.t()) | nil,
           :unused => String.t() | nil,
           :version => String.t() | nil
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   field(:osVersion)
   field(:package)
   field(:packageType)
+  field(:patchedCve, type: :list)
   field(:unused)
   field(:version)
 end
