@@ -28,6 +28,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-supplied key-value pairs used to organize FHIR stores. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: \\p{Ll}\\p{Lo}{0,62} Label values are optional, must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} No more than 64 labels can be associated with a given store.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `notificationConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t`, *default:* `nil`) - If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, "action":"CreateResource".
+  *   `notificationConfigs` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.FhirNotificationConfig.t)`, *default:* `nil`) - Specifies where and whether to send notifications upon changes to a Fhir store.
   *   `searchConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SearchConfig.t`, *default:* `nil`) - Configuration for how FHIR resources can be searched.
   *   `streamConfigs` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t)`, *default:* `nil`) - A list of streaming configs that configure the destinations of streaming export for every resource mutation in this FHIR store. Each store is allowed to have up to 10 streaming configs. After a new config is added, the next resource mutation is streamed to the new location in addition to the existing ones. When a location is removed from the list, the server stops streaming to that location. Before adding a new config, you must add the required [`bigquery.dataEditor`](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor) role to your project's **Cloud Healthcare Service Agent** [service account](https://cloud.google.com/iam/docs/service-accounts). Some lag (typically on the order of dozens of seconds) is expected before the results show up in the streaming destination.
   *   `validationConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ValidationConfig.t`, *default:* `nil`) - Configuration for how to validate incoming FHIR resources against configured profiles.
@@ -44,6 +45,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
           :labels => map() | nil,
           :name => String.t() | nil,
           :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t() | nil,
+          :notificationConfigs =>
+            list(GoogleApi.HealthCare.V1beta1.Model.FhirNotificationConfig.t()) | nil,
           :searchConfig => GoogleApi.HealthCare.V1beta1.Model.SearchConfig.t() | nil,
           :streamConfigs => list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t()) | nil,
           :validationConfig => GoogleApi.HealthCare.V1beta1.Model.ValidationConfig.t() | nil,
@@ -57,6 +60,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
+
+  field(:notificationConfigs,
+    as: GoogleApi.HealthCare.V1beta1.Model.FhirNotificationConfig,
+    type: :list
+  )
+
   field(:searchConfig, as: GoogleApi.HealthCare.V1beta1.Model.SearchConfig)
   field(:streamConfigs, as: GoogleApi.HealthCare.V1beta1.Model.StreamConfig, type: :list)
   field(:validationConfig, as: GoogleApi.HealthCare.V1beta1.Model.ValidationConfig)
