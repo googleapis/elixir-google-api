@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
   @moduledoc """
-  This reservation type allows to pre allocate specific instance configuration. Next ID: 5
+  This reservation type allows to pre allocate specific instance configuration. Next ID: 6
 
   ## Attributes
 
