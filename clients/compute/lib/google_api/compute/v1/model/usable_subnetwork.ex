@@ -21,30 +21,48 @@ defmodule GoogleApi.Compute.V1.Model.UsableSubnetwork do
 
   ## Attributes
 
+  *   `externalIpv6Prefix` (*type:* `String.t`, *default:* `nil`) - [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+  *   `internalIpv6Prefix` (*type:* `String.t`, *default:* `nil`) - [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The range of internal addresses that are owned by this subnetwork.
+  *   `ipv6AccessType` (*type:* `String.t`, *default:* `nil`) - The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Network URL.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
   *   `secondaryIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange.t)`, *default:* `nil`) - Secondary IP ranges.
+  *   `stackType` (*type:* `String.t`, *default:* `nil`) - The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork URL.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :externalIpv6Prefix => String.t() | nil,
+          :internalIpv6Prefix => String.t() | nil,
           :ipCidrRange => String.t() | nil,
+          :ipv6AccessType => String.t() | nil,
           :network => String.t() | nil,
+          :purpose => String.t() | nil,
+          :role => String.t() | nil,
           :secondaryIpRanges =>
             list(GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange.t()) | nil,
+          :stackType => String.t() | nil,
           :subnetwork => String.t() | nil
         }
 
+  field(:externalIpv6Prefix)
+  field(:internalIpv6Prefix)
   field(:ipCidrRange)
+  field(:ipv6AccessType)
   field(:network)
+  field(:purpose)
+  field(:role)
 
   field(:secondaryIpRanges,
     as: GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange,
     type: :list
   )
 
+  field(:stackType)
   field(:subnetwork)
 end
 
