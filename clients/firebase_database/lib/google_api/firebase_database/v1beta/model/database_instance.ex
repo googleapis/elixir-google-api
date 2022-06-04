@@ -21,11 +21,11 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Model.DatabaseInstance do
 
   ## Attributes
 
-  *   `databaseUrl` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique hostname of the database.
+  *   `databaseUrl` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. The globally unique hostname of the database.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the project this instance belongs to. For example: `projects/{project-number}`.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The database's lifecycle state. Read-only.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The database's lifecycle state. Read-only.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.
   """
 
   use GoogleApi.Gax.ModelBase
