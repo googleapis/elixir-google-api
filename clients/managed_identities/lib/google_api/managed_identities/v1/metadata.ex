@@ -20,7 +20,7 @@ defmodule GoogleApi.ManagedIdentities.V1 do
   API client metadata for GoogleApi.ManagedIdentities.V1.
   """
 
-  @discovery_revision "20220331"
+  @discovery_revision "20220526"
 
   def discovery_revision(), do: @discovery_revision
 end
