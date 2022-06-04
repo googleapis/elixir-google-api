@@ -29,6 +29,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request started.
   *   `pendingTime` (*type:* `String.t`, *default:* `nil`) - Time this request spent in the pending request queue.
   *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version of the application that handled this request.
+  *   `spanId` (*type:* `String.t`, *default:* `nil`) - Stackdriver Trace span identifier for this request.
   *   `urlMapEntry` (*type:* `String.t`, *default:* `nil`) - File or class that handled the request.
   *   `taskName` (*type:* `String.t`, *default:* `nil`) - Task name of the request, in the case of an offline request.
   *   `moduleId` (*type:* `String.t`, *default:* `nil`) - Module of the application that handled this request.
@@ -67,6 +68,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
           :startTime => DateTime.t() | nil,
           :pendingTime => String.t() | nil,
           :versionId => String.t() | nil,
+          :spanId => String.t() | nil,
           :urlMapEntry => String.t() | nil,
           :taskName => String.t() | nil,
           :moduleId => String.t() | nil,
@@ -102,6 +104,7 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
   field(:startTime, as: DateTime)
   field(:pendingTime)
   field(:versionId)
+  field(:spanId)
   field(:urlMapEntry)
   field(:taskName)
   field(:moduleId)
