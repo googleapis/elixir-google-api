@@ -109,6 +109,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:selectedFields` (*type:* `String.t`) - List of fields to return (comma-separated). If unspecified, all fields are returned
+      *   `:view` (*type:* `String.t`) - Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -144,7 +145,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :selectedFields => :query
+      :selectedFields => :query,
+      :view => :query
     }
 
     request =
