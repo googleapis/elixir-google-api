@@ -1123,6 +1123,8 @@ defmodule GoogleApi.VMMigration.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:forceRefresh` (*type:* `boolean()`) - If this flag is set to true, the source will be queried instead of using cached results. Using this flag will make the call slower.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of VMs to return. The service may return fewer than this value. For AWS source: If unspecified, at most 500 VMs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000. For VMWare source: If unspecified, all VMs will be returned. There is no limit for maximum value.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `FetchInventory` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `FetchInventory` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1158,7 +1160,9 @@ defmodule GoogleApi.VMMigration.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :forceRefresh => :query
+      :forceRefresh => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
