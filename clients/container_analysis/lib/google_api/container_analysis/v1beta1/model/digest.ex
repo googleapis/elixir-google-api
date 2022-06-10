@@ -22,18 +22,18 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Digest do
   ## Attributes
 
   *   `algo` (*type:* `String.t`, *default:* `nil`) - `SHA1`, `SHA512` etc.
-  *   `digestValue` (*type:* `String.t`, *default:* `nil`) - Value of the digest encoded. For example: SHA512 - base64 encoding, SHA1 - hex encoding.
+  *   `digestBytes` (*type:* `String.t`, *default:* `nil`) - Value of the digest.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :algo => String.t() | nil,
-          :digestValue => String.t() | nil
+          :digestBytes => String.t() | nil
         }
 
   field(:algo)
-  field(:digestValue)
+  field(:digestBytes)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1beta1.Model.Digest do
