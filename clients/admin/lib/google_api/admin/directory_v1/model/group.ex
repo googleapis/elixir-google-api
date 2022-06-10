@@ -21,16 +21,16 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Group do
 
   ## Attributes
 
-  *   `adminCreated` (*type:* `boolean()`, *default:* `nil`) - Value is `true` if this group was created by an administrator rather than a user.
-  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - List of a group's alias email addresses.
+  *   `adminCreated` (*type:* `boolean()`, *default:* `nil`) - Read-only. Value is `true` if this group was created by an administrator rather than a user.
+  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Read-only. A list of a group's alias email addresses.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An extended description to help users determine the purpose of a group. For example, you can include information about who should join the group, the types of messages to send to the group, links to FAQs about the group, or related groups. Maximum length is `4,096` characters.
   *   `directMembersCount` (*type:* `String.t`, *default:* `nil`) - The number of users that are direct members of the group. If a group is a member (child) of this group (the parent), members of the child group are not counted in the `directMembersCount` property of the parent group.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The group's email address. If your account has multiple domains, select the appropriate domain for the email address. The `email` must be unique. This property is required when creating a group. Group email addresses are subject to the same character usage rules as usernames, see the [help center](https://support.google.com/a/answer/9193374) for details.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of a group. A group `id` can be used as a group request URI's `groupKey`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Read-only. The unique ID of a group. A group `id` can be used as a group request URI's `groupKey`.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#group`) - The type of the API resource. For Groups resources, the value is `admin#directory#group`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The group's display name.
-  *   `nonEditableAliases` (*type:* `list(String.t)`, *default:* `nil`) - List of the group's non-editable alias email addresses that are outside of the account's primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API's response for a group. If edited in a group's POST or PUT request, the edit is ignored by the API service.
+  *   `nonEditableAliases` (*type:* `list(String.t)`, *default:* `nil`) - Read-only. A list of the group's non-editable alias email addresses that are outside of the account's primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API's response for a group. If edited in a group's POST or PUT request, the edit is ignored by the API service.
   """
 
   use GoogleApi.Gax.ModelBase
