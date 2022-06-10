@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionsVersion do
 
   ## Attributes
 
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. A string representing version of the available regions being used for the specified resource.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
   """
 
   use GoogleApi.Gax.ModelBase

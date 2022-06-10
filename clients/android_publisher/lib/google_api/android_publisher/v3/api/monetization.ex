@@ -201,7 +201,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:productId` (*type:* `String.t`) - Required. The ID to use for the subscription. For the requirements on this format, see the documentation of the product_id field on the Subscription resource.
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -505,7 +505,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
       *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1005,7 +1005,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:offerId` (*type:* `String.t`) - Required. The ID to use for the offer. For the requirements on this format, see the documentation of the offer_id field on the SubscriptionOffer resource.
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionOffer.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1432,7 +1432,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
       *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionOffer.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
