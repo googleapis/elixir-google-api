@@ -23,6 +23,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables the installation of ConfigSync. If set to true, ConfigSync resources will be created and the other ConfigSync fields will be applied if exist. If set to false, all other ConfigSync fields will be ignored, ConfigSync resources will be deleted. If omitted, ConfigSync resources will be managed depends on the presence of git field.
   *   `git` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t`, *default:* `nil`) - Git repo configuration for the cluster.
+  *   `oci` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t`, *default:* `nil`) - OCI repo configuration for the cluster
   *   `preventDrift` (*type:* `boolean()`, *default:* `nil`) - Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - Specifies whether the Config Sync Repo is in “hierarchical” or “unstructured” mode.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
   @type t :: %__MODULE__{
           :enabled => boolean() | nil,
           :git => GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t() | nil,
+          :oci => GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t() | nil,
           :preventDrift => boolean() | nil,
           :sourceFormat => String.t() | nil
         }
 
   field(:enabled)
   field(:git, as: GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig)
+  field(:oci, as: GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig)
   field(:preventDrift)
   field(:sourceFormat)
 end
