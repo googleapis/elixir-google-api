@@ -25,6 +25,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables the installation of Policy Controller. If false, the rest of PolicyController fields take no effect.
   *   `exemptableNamespaces` (*type:* `list(String.t)`, *default:* `nil`) - The set of namespaces that are excluded from Policy Controller checks. Namespaces do not need to currently exist on the cluster.
   *   `logDeniesEnabled` (*type:* `boolean()`, *default:* `nil`) - Logs all denies and dry run failures.
+  *   `monitoring` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMonitoring.t`, *default:* `nil`) - Monitoring specifies the configuration of monitoring.
   *   `referentialRulesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.
   *   `templateLibraryInstalled` (*type:* `boolean()`, *default:* `nil`) - Installs the default template library along with Policy Controller.
   """
@@ -36,6 +37,8 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
           :enabled => boolean() | nil,
           :exemptableNamespaces => list(String.t()) | nil,
           :logDeniesEnabled => boolean() | nil,
+          :monitoring =>
+            GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMonitoring.t() | nil,
           :referentialRulesEnabled => boolean() | nil,
           :templateLibraryInstalled => boolean() | nil
         }
@@ -44,6 +47,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
   field(:enabled)
   field(:exemptableNamespaces, type: :list)
   field(:logDeniesEnabled)
+  field(:monitoring, as: GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMonitoring)
   field(:referentialRulesEnabled)
   field(:templateLibraryInstalled)
 end

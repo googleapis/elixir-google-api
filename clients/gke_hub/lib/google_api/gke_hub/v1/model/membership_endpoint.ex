@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
 
   ## Attributes
 
+  *   `applianceCluster` (*type:* `GoogleApi.GKEHub.V1.Model.ApplianceCluster.t`, *default:* `nil`) - Optional. Specific information for a GDC Edge Appliance cluster.
   *   `edgeCluster` (*type:* `GoogleApi.GKEHub.V1.Model.EdgeCluster.t`, *default:* `nil`) - Optional. Specific information for a Google Edge cluster.
   *   `gkeCluster` (*type:* `GoogleApi.GKEHub.V1.Model.GkeCluster.t`, *default:* `nil`) - Optional. Specific information for a GKE-on-GCP cluster.
   *   `kubernetesMetadata` (*type:* `GoogleApi.GKEHub.V1.Model.KubernetesMetadata.t`, *default:* `nil`) - Output only. Useful Kubernetes-specific metadata.
@@ -32,6 +33,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :applianceCluster => GoogleApi.GKEHub.V1.Model.ApplianceCluster.t() | nil,
           :edgeCluster => GoogleApi.GKEHub.V1.Model.EdgeCluster.t() | nil,
           :gkeCluster => GoogleApi.GKEHub.V1.Model.GkeCluster.t() | nil,
           :kubernetesMetadata => GoogleApi.GKEHub.V1.Model.KubernetesMetadata.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipEndpoint do
           :onPremCluster => GoogleApi.GKEHub.V1.Model.OnPremCluster.t() | nil
         }
 
+  field(:applianceCluster, as: GoogleApi.GKEHub.V1.Model.ApplianceCluster)
   field(:edgeCluster, as: GoogleApi.GKEHub.V1.Model.EdgeCluster)
   field(:gkeCluster, as: GoogleApi.GKEHub.V1.Model.GkeCluster)
   field(:kubernetesMetadata, as: GoogleApi.GKEHub.V1.Model.KubernetesMetadata)
