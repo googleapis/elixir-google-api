@@ -21,7 +21,6 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
 
   ## Attributes
 
-  *   `applied` (*type:* `boolean()`, *default:* `nil`) - Has the transformation already been applied to the current Document? Needed to disambiguate pre-processing transformations already applied vs transformations added at annotation time by HITL operators.
   *   `cols` (*type:* `integer()`, *default:* `nil`) - Number of columns in the matrix.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The matrix data.
   *   `rows` (*type:* `integer()`, *default:* `nil`) - Number of rows in the matrix.
@@ -31,14 +30,12 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applied => boolean() | nil,
           :cols => integer() | nil,
           :data => String.t() | nil,
           :rows => integer() | nil,
           :type => integer() | nil
         }
 
-  field(:applied)
   field(:cols)
   field(:data)
   field(:rows)
