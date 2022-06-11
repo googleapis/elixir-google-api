@@ -25,6 +25,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
   *   `authType` (*type:* `String.t`, *default:* `nil`) - The type of authentication configured.
   *   `oauth2ClientCredentials` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials.t`, *default:* `nil`) - Oauth2ClientCredentials.
   *   `oauth2JwtBearer` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2JwtBearer.t`, *default:* `nil`) - Oauth2JwtBearer.
+  *   `sshPublicKey` (*type:* `GoogleApi.Connectors.V1.Model.SshPublicKey.t`, *default:* `nil`) - SSH Public Key.
   *   `userPassword` (*type:* `GoogleApi.Connectors.V1.Model.UserPassword.t`, *default:* `nil`) - UserPassword.
   """
 
@@ -36,6 +37,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
           :oauth2ClientCredentials =>
             GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials.t() | nil,
           :oauth2JwtBearer => GoogleApi.Connectors.V1.Model.Oauth2JwtBearer.t() | nil,
+          :sshPublicKey => GoogleApi.Connectors.V1.Model.SshPublicKey.t() | nil,
           :userPassword => GoogleApi.Connectors.V1.Model.UserPassword.t() | nil
         }
 
@@ -43,6 +45,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
   field(:authType)
   field(:oauth2ClientCredentials, as: GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials)
   field(:oauth2JwtBearer, as: GoogleApi.Connectors.V1.Model.Oauth2JwtBearer)
+  field(:sshPublicKey, as: GoogleApi.Connectors.V1.Model.SshPublicKey)
   field(:userPassword, as: GoogleApi.Connectors.V1.Model.UserPassword)
 end
 

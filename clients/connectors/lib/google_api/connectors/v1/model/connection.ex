@@ -26,7 +26,6 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Required. Connector version on which the connection is created. The format is: projects/*/locations/global/providers/*/connectors/*/versions/*
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
-  *   `egressBackends` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Outbound domains/hosts needs to be allowlisted.
   *   `envoyImageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
@@ -47,7 +46,6 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
           :connectorVersion => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
-          :egressBackends => list(String.t()) | nil,
           :envoyImageLocation => String.t() | nil,
           :imageLocation => String.t() | nil,
           :labels => map() | nil,
@@ -65,7 +63,6 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   field(:connectorVersion)
   field(:createTime, as: DateTime)
   field(:description)
-  field(:egressBackends, type: :list)
   field(:envoyImageLocation)
   field(:imageLocation)
   field(:labels, type: :map)
