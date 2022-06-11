@@ -23,6 +23,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite do
 
   *   `dynamicLinks` (*type:* `boolean()`, *default:* `nil`) - The request will be forwarded to Firebase Dynamic Links.
   *   `function` (*type:* `String.t`, *default:* `nil`) - The function to proxy requests to. Must match the exported function name exactly.
+  *   `functionRegion` (*type:* `String.t`, *default:* `nil`) - Optional. Specify a Cloud region for rewritten Functions invocations. If not provided, defaults to us-central1.
   *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied [glob](https://firebase.google.com/docs/hosting/full-config#glob_pattern_matching) to match against the request URL path.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The URL path to rewrite the request to.
   *   `regex` (*type:* `String.t`, *default:* `nil`) - The user-supplied RE2 regular expression to match against the request URL path.
@@ -34,6 +35,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite do
   @type t :: %__MODULE__{
           :dynamicLinks => boolean() | nil,
           :function => String.t() | nil,
+          :functionRegion => String.t() | nil,
           :glob => String.t() | nil,
           :path => String.t() | nil,
           :regex => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite do
 
   field(:dynamicLinks)
   field(:function)
+  field(:functionRegion)
   field(:glob)
   field(:path)
   field(:regex)
