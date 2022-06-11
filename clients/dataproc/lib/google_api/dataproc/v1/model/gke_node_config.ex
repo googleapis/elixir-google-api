@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GkeNodeConfig do
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.GkeNodePoolAcceleratorConfig.t)`, *default:* `nil`) - Optional. A list of hardware accelerators (https://cloud.google.com/compute/docs/gpus) to attach to each node.
+  *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. The Customer Managed Encryption Key (CMEK) (https://cloud.google.com/compute/docs/disks/customer-managed-encryption) used to encrypt the boot disk attached to each node in the node pool. Specify the key using the following format: projects/KEY_PROJECT_ID /locations/LOCATION/keyRings/RING_NAME/cryptoKeys/KEY_NAME.
   *   `localSsdCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of local SSD disks to attach to the node, which is limited by the maximum number of disks allowable per zone (see Adding Local SSDs (https://cloud.google.com/compute/docs/disks/local-ssd)).
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The name of a Compute Engine machine type (https://cloud.google.com/compute/docs/machine-types).
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Minimum CPU platform (https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) to be used by this instance. The instance may be scheduled on the specified or a newer CPU platform. Specify the friendly names of CPU platforms, such as "Intel Haswell"` or Intel Sandy Bridge".
@@ -34,6 +35,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GkeNodeConfig do
   @type t :: %__MODULE__{
           :accelerators =>
             list(GoogleApi.Dataproc.V1.Model.GkeNodePoolAcceleratorConfig.t()) | nil,
+          :bootDiskKmsKey => String.t() | nil,
           :localSsdCount => integer() | nil,
           :machineType => String.t() | nil,
           :minCpuPlatform => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GkeNodeConfig do
         }
 
   field(:accelerators, as: GoogleApi.Dataproc.V1.Model.GkeNodePoolAcceleratorConfig, type: :list)
+  field(:bootDiskKmsKey)
   field(:localSsdCount)
   field(:machineType)
   field(:minCpuPlatform)
