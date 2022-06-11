@@ -21,7 +21,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSp
 
   ## Attributes
 
-  *   `dataplexTable` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataplexTableSpec.t`, *default:* `nil`) - Fields specific to a Dataplex table and present only in the Dataplex table entries.
+  *   `dataplexTable` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataplexTableSpec.t`, *default:* `nil`) - Output only. Fields specific to a Dataplex table and present only in the Dataplex table entries.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this table.
   """
 

@@ -21,8 +21,8 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
 
   ## Attributes
 
-  *   `bigqueryDateShardedSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryDateShardedSpec.t`, *default:* `nil`) - Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
-  *   `bigqueryTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryTableSpec.t`, *default:* `nil`) - Specification that applies to a BigQuery table. Valid only for entries with the `TABLE` type.
+  *   `bigqueryDateShardedSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryDateShardedSpec.t`, *default:* `nil`) - Output only. Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
+  *   `bigqueryTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryTableSpec.t`, *default:* `nil`) - Output only. Specification that applies to a BigQuery table. Valid only for entries with the `TABLE` type.
   *   `businessContext` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BusinessContext.t`, *default:* `nil`) - Business Context of the entry. Not supported for BigQuery datasets
   *   `dataSource` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource.t`, *default:* `nil`) - Output only. Physical location of the entry.
   *   `dataSourceConnectionSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSourceConnectionSpec.t`, *default:* `nil`) - Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type.
