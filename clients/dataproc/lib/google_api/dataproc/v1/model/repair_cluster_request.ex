@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RepairClusterRequest do
   ## Attributes
 
   *   `clusterUuid` (*type:* `String.t`, *default:* `nil`) - Optional. Specifying the cluster_uuid means the RPC will fail (with error NOT_FOUND) if a cluster with the specified UUID does not exist.
+  *   `nodePools` (*type:* `list(GoogleApi.Dataproc.V1.Model.NodePool.t)`, *default:* `nil`) - Optional. Node pools and corresponding repair action to be taken. All node pools should be unique in this request. i.e. Multiple entries for the same node pool id are not allowed.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Optional. A unique ID used to identify the request. If the server receives two RepairClusterRequests with the same ID, the second request is ignored, and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Dataproc.V1.Model.RepairClusterRequest do
 
   @type t :: %__MODULE__{
           :clusterUuid => String.t() | nil,
+          :nodePools => list(GoogleApi.Dataproc.V1.Model.NodePool.t()) | nil,
           :requestId => String.t() | nil
         }
 
   field(:clusterUuid)
+  field(:nodePools, as: GoogleApi.Dataproc.V1.Model.NodePool, type: :list)
   field(:requestId)
 end
 
