@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3SetDefa
 
   ## Attributes
 
-  *   `defaultProcessorVersion` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of child ProcessorVersion to use as default.
+  *   `defaultProcessorVersion` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of child ProcessorVersion to use as default. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
   """
 
   use GoogleApi.Gax.ModelBase
