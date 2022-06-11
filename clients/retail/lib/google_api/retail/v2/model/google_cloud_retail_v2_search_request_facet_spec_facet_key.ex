@@ -21,6 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
 
   ## Attributes
 
+  *   `caseInsensitive` (*type:* `boolean()`, *default:* `nil`) - Whether to make facet keys case insensitive when getting faceting values with prefixes or contains.
   *   `contains` (*type:* `list(String.t)`, *default:* `nil`) - Only get facet values that contains the given strings. For example, suppose "categories" has three values "Women > Shoe", "Women > Dress" and "Men > Shoe". If set "contains" to "Shoe", the "categories" facet will give only "Women > Shoe" and "Men > Shoe". Only supported on textual fields. Maximum is 10.
   *   `intervals` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval.t)`, *default:* `nil`) - Set only if values should be bucketized into intervals. Must be set for facets with numerical values. Must not be set for facet with text values. Maximum number of intervals is 30.
   *   `key` (*type:* `String.t`, *default:* `nil`) - Required. Supported textual and numerical facet keys in Product object, over which the facet values are computed. Facet key is case-sensitive. Allowed facet keys when FacetKey.query is not specified: * textual_field = * "brands" * "categories" * "genders" * "ageGroups" * "availability" * "colorFamilies" * "colors" * "sizes" * "materials" * "patterns" * "conditions" * "attributes.key" * "pickupInStore" * "shipToStore" * "sameDayDelivery" * "nextDayDelivery" * "customFulfillment1" * "customFulfillment2" * "customFulfillment3" * "customFulfillment4" * "customFulfillment5" * "inventory(place_id,attributes.key)" * numerical_field = * "price" * "discount" * "rating" * "ratingCount" * "attributes.key" * "inventory(place_id,price)" * "inventory(place_id,original_price)" * "inventory(place_id,attributes.key)"
@@ -33,6 +34,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :caseInsensitive => boolean() | nil,
           :contains => list(String.t()) | nil,
           :intervals => list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval.t()) | nil,
           :key => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
           :restrictedValues => list(String.t()) | nil
         }
 
+  field(:caseInsensitive)
   field(:contains, type: :list)
   field(:intervals, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval, type: :list)
   field(:key)
