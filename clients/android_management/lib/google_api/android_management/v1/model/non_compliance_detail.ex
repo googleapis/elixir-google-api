@@ -27,6 +27,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
   *   `nonComplianceReason` (*type:* `String.t`, *default:* `nil`) - The reason the device is not in compliance with the setting.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name indicating which app is out of compliance, if applicable.
   *   `settingName` (*type:* `String.t`, *default:* `nil`) - The name of the policy setting. This is the JSON field name of a top-level Policy field.
+  *   `specificNonComplianceContext` (*type:* `GoogleApi.AndroidManagement.V1.Model.SpecificNonComplianceContext.t`, *default:* `nil`) - Additional context for specific_non_compliance_reason.
+  *   `specificNonComplianceReason` (*type:* `String.t`, *default:* `nil`) - The policy-specific reason the device is not in compliance with the setting.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +39,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
           :installationFailureReason => String.t() | nil,
           :nonComplianceReason => String.t() | nil,
           :packageName => String.t() | nil,
-          :settingName => String.t() | nil
+          :settingName => String.t() | nil,
+          :specificNonComplianceContext =>
+            GoogleApi.AndroidManagement.V1.Model.SpecificNonComplianceContext.t() | nil,
+          :specificNonComplianceReason => String.t() | nil
         }
 
   field(:currentValue)
@@ -46,6 +51,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
   field(:nonComplianceReason)
   field(:packageName)
   field(:settingName)
+
+  field(:specificNonComplianceContext,
+    as: GoogleApi.AndroidManagement.V1.Model.SpecificNonComplianceContext
+  )
+
+  field(:specificNonComplianceReason)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
