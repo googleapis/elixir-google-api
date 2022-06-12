@@ -2815,12 +2815,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a org, env or apis scoped key value map.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2889,12 +2889,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from an org, environment or apis scoped key value map.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2966,7 +2966,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3038,7 +3038,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3052,7 +3052,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of key value entries to return. If unspecified, at most 100 entries will be returned.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token, a key value entry returned from a previous call that can use to retrieve the next page.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token. If provides, must be a valid key value entry returned from a previous call that can be used to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7815,7 +7815,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an environment from an organization.
+  Deletes an environment from an organization. **Note**: You must delete all key value maps and key value entries before you can delete an environment.
 
   ## Parameters
 
@@ -11598,12 +11598,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a org, env or apis scoped key value map.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11672,12 +11672,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from an org, environment or apis scoped key value map.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11749,7 +11749,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11821,7 +11821,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11835,7 +11835,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of key value entries to return. If unspecified, at most 100 entries will be returned.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token, a key value entry returned from a previous call that can use to retrieve the next page.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token. If provides, must be a valid key value entry returned from a previous call that can be used to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -15980,12 +15980,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a org, env or apis scoped key value map.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to create the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -16054,12 +16054,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from an org, environment or apis scoped key value map.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to delete the key value map entry. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -16131,7 +16131,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
+  *   `name` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to fetch the key value map entry/value. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}/entries/{entry}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}/entries/{entry}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}/entries/{entry}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -16203,7 +16203,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use one of the following formats in your request: `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `parent` (*type:* `String.t`) - Required. Scope as indicated by the URI in which to list key value maps. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -16217,7 +16217,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of key value entries to return. If unspecified, at most 100 entries will be returned.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token, a key value entry returned from a previous call that can use to retrieve the next page.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token. If provides, must be a valid key value entry returned from a previous call that can be used to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

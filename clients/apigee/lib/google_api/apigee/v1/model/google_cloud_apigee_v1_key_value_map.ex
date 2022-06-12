@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyValueMap do
 
   ## Attributes
 
-  *   `encrypted` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies whether entry values will be encrypted. Enable to encrypt entry values.
+  *   `encrypted` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies whether entry values will be encrypted. You must set this value to `true`. Apigee X and hybrid do not support unencrytped key value maps.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. ID of the key value map.
   """
 
