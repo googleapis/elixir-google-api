@@ -22,7 +22,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleAction do
   ## Attributes
 
   *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Target storage class. Required iff the type of the action is SetStorageClass.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the action. Currently, only Delete and SetStorageClass are supported.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the action. Currently, only Delete, SetStorageClass, and AbortIncompleteMultipartUpload are supported.
   """
 
   use GoogleApi.Gax.ModelBase
