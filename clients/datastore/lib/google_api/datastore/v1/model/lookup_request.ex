@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
 
   ## Attributes
 
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
   *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. Keys of entities to look up.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this lookup request.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseId => String.t() | nil,
           :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
           :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
         }
 
+  field(:databaseId)
   field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
   field(:readOptions, as: GoogleApi.Datastore.V1.Model.ReadOptions)
 end

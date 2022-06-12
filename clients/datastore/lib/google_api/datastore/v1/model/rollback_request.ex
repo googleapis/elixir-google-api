@@ -21,15 +21,18 @@ defmodule GoogleApi.Datastore.V1.Model.RollbackRequest do
 
   ## Attributes
 
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Required. The transaction identifier, returned by a call to Datastore.BeginTransaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseId => String.t() | nil,
           :transaction => String.t() | nil
         }
 
+  field(:databaseId)
   field(:transaction)
 end
 

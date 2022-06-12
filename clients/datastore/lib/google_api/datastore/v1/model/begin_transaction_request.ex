@@ -21,15 +21,18 @@ defmodule GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
 
   ## Attributes
 
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
   *   `transactionOptions` (*type:* `GoogleApi.Datastore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Options for a new transaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseId => String.t() | nil,
           :transactionOptions => GoogleApi.Datastore.V1.Model.TransactionOptions.t() | nil
         }
 
+  field(:databaseId)
   field(:transactionOptions, as: GoogleApi.Datastore.V1.Model.TransactionOptions)
 end
 

@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.CommitRequest do
 
   ## Attributes
 
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The type of commit to perform. Defaults to `TRANSACTIONAL`.
   *   `mutations` (*type:* `list(GoogleApi.Datastore.V1.Model.Mutation.t)`, *default:* `nil`) - The mutations to perform. When mode is `TRANSACTIONAL`, mutations affecting a single entity are applied in order. The following sequences of mutations affecting a single entity are not permitted in a single `Commit` request: - `insert` followed by `insert` - `update` followed by `insert` - `upsert` followed by `insert` - `delete` followed by `update` When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single entity.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction associated with the commit. A transaction identifier is returned by a call to Datastore.BeginTransaction.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Datastore.V1.Model.CommitRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseId => String.t() | nil,
           :mode => String.t() | nil,
           :mutations => list(GoogleApi.Datastore.V1.Model.Mutation.t()) | nil,
           :transaction => String.t() | nil
         }
 
+  field(:databaseId)
   field(:mode)
   field(:mutations, as: GoogleApi.Datastore.V1.Model.Mutation, type: :list)
   field(:transaction)
