@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Jobs.V4.Model.NamespacedDebugInput do
   @moduledoc """
-  Next ID: 15
+  Next ID: 16
 
   ## Attributes
 
@@ -35,6 +35,7 @@ defmodule GoogleApi.Jobs.V4.Model.NamespacedDebugInput do
   *   `disableOrganicSelection` (*type:* `boolean()`, *default:* `nil`) - If true, disable organic experiment selection (at all diversion points). Organic selection means experiment selection process based on traffic allocation and diversion condition evaluation. This does not disable selection of forced experiments. This is useful in cases when it is not known whether experiment selection behavior is responsible for a error or breakage. Disabling organic selection may help to isolate the cause of a given problem.
   *   `forcedFlags` (*type:* `map()`, *default:* `nil`) - Flags to force in a particular experiment state. Map from flag name to flag value.
   *   `forcedRollouts` (*type:* `map()`, *default:* `nil`) - Rollouts to force in a particular experiment state. Map from rollout name to rollout value.
+  *   `testingMode` (*type:* `String.t`, *default:* `nil`) - If set to ALL_OFF, organic selection will be disabled; if set to ALL_ON, organic selection will be disabled, and only select launch experiments will receive traffic. See go/mendel-aoao-runtime-design.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.Jobs.V4.Model.NamespacedDebugInput do
           :disableManualEnrollmentSelection => boolean() | nil,
           :disableOrganicSelection => boolean() | nil,
           :forcedFlags => map() | nil,
-          :forcedRollouts => map() | nil
+          :forcedRollouts => map() | nil,
+          :testingMode => String.t() | nil
         }
 
   field(:absolutelyForcedExpNames, type: :list)
@@ -70,6 +72,7 @@ defmodule GoogleApi.Jobs.V4.Model.NamespacedDebugInput do
   field(:disableOrganicSelection)
   field(:forcedFlags, type: :map)
   field(:forcedRollouts, type: :map)
+  field(:testingMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Jobs.V4.Model.NamespacedDebugInput do
