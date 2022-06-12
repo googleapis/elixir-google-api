@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Exfiltration do
   @moduledoc """
-  Exfiltration represents a data exfiltration attempt of one or more source(s) to one or more target(s). Source(s) represent the source of data that is exfiltrated, and Target(s) represents the destination the data was copied to.
+  Exfiltration represents a data exfiltration attempt of one or more sources to one or more targets. Sources represent the source of data that is exfiltrated, and Targets represents the destination the data was copied to.
 
   ## Attributes
 
-  *   `sources` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple sources, then the data is considered “joined” between them. For instance, BigQuery can join multiple tables, and each table would be considered a source.
-  *   `targets` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple targets, each target would get a complete copy of the “joined” source data.
+  *   `sources` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple sources, then the data is considered "joined" between them. For instance, BigQuery can join multiple tables, and each table would be considered a source.
+  *   `targets` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple targets, each target would get a complete copy of the "joined" source data.
   """
 
   use GoogleApi.Gax.ModelBase

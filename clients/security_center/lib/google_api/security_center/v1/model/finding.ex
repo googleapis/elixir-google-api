@@ -30,7 +30,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
-  *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltrations associated with the Finding.
+  *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltration associated with the Finding.
   *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.

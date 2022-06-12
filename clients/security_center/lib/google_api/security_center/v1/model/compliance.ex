@@ -21,9 +21,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Compliance do
 
   ## Attributes
 
-  *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - e.g. A.12.4.1
-  *   `standard` (*type:* `String.t`, *default:* `nil`) - e.g. "cis", "pci", "owasp", etc.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - e.g. 1.1
+  *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - Policies within the standard/benchmark e.g. A.12.4.1
+  *   `standard` (*type:* `String.t`, *default:* `nil`) - Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp", etc.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the standard/benchmark e.g. 1.1
   """
 
   use GoogleApi.Gax.ModelBase

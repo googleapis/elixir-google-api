@@ -25,7 +25,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.File do
   *   `hashedSize` (*type:* `String.t`, *default:* `nil`) - The length in bytes of the file prefix that was hashed. If hashed_size == size, any hashes reported represent the entire file.
   *   `partiallyHashed` (*type:* `boolean()`, *default:* `nil`) - True when the hash covers only a prefix of the file.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Absolute path of the file as a JSON encoded string.
-  *   `sha256` (*type:* `String.t`, *default:* `nil`) - SHA256 hash of the first hashed_size bytes of the file encoded as a hex string. If hashed_size == size, hash_sha256 represents the SHA256 hash of the entire file.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - SHA256 hash of the first hashed_size bytes of the file encoded as a hex string. If hashed_size == size, sha256 represents the SHA256 hash of the entire file.
   *   `size` (*type:* `String.t`, *default:* `nil`) - Size of the file in bytes.
   """
 

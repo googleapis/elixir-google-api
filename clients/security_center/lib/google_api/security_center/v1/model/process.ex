@@ -22,14 +22,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Process do
   ## Attributes
 
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Process arguments as JSON encoded strings.
-  *   `argumentsTruncated` (*type:* `boolean()`, *default:* `nil`) - True if arguments is incomplete.
+  *   `argumentsTruncated` (*type:* `boolean()`, *default:* `nil`) - True if `args` is incomplete.
   *   `binary` (*type:* `GoogleApi.SecurityCenter.V1.Model.File.t`, *default:* `nil`) - File information for the process executable.
   *   `envVariables` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Process environment variables.
-  *   `envVariablesTruncated` (*type:* `boolean()`, *default:* `nil`) - True if env_variables is incomplete.
+  *   `envVariablesTruncated` (*type:* `boolean()`, *default:* `nil`) - True if `env_variables` is incomplete.
   *   `libraries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.File.t)`, *default:* `nil`) - File information for libraries loaded by the process.
   *   `parentPid` (*type:* `String.t`, *default:* `nil`) - The parent process id.
   *   `pid` (*type:* `String.t`, *default:* `nil`) - The process id.
-  *   `script` (*type:* `GoogleApi.SecurityCenter.V1.Model.File.t`, *default:* `nil`) - When the process represents the invocation of a script, binary provides information about the interpreter while script provides information about the script file provided to the interpreter.
+  *   `script` (*type:* `GoogleApi.SecurityCenter.V1.Model.File.t`, *default:* `nil`) - When the process represents the invocation of a script, `binary` provides information about the interpreter while `script` provides information about the script file provided to the interpreter.
   """
 
   use GoogleApi.Gax.ModelBase
