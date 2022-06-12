@@ -22,7 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ExfilResource do
   ## Attributes
 
   *   `components` (*type:* `list(String.t)`, *default:* `nil`) - Subcomponents of the asset that is exfiltrated - these could be URIs used during exfiltration, table names, databases, filenames, etc. For example, multiple tables may be exfiltrated from the same CloudSQL instance, or multiple files from the same Cloud Storage bucket.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource’s URI (https://google.aip.dev/122#full-resource-names)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource's URI (https://google.aip.dev/122#full-resource-names)
   """
 
   use GoogleApi.Gax.ModelBase
