@@ -603,6 +603,7 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:readMask` (*type:* `String.t`) - Required. Read mask to specify which fields to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -637,7 +638,8 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :readMask => :query
     }
 
     request =
