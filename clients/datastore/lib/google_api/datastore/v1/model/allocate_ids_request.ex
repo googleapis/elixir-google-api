@@ -21,15 +21,18 @@ defmodule GoogleApi.Datastore.V1.Model.AllocateIdsRequest do
 
   ## Attributes
 
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
   *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. A list of keys with incomplete key paths for which to allocate IDs. No key may be reserved/read-only.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseId => String.t() | nil,
           :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil
         }
 
+  field(:databaseId)
   field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
 end
 
