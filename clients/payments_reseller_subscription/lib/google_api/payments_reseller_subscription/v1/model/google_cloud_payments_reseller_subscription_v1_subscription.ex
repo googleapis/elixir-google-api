@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Subscription do
   @moduledoc """
-  A Subscription resource managed by 3P Partners.
+  LINT.IfChange A Subscription resource managed by 3P Partners.
 
   ## Attributes
 
