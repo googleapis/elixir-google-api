@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy do
   @moduledoc """
-  Describes policy settings that need to be applied to a newly created tenant project.
+  Describes policy settings that can be applied to a newly created tenant project.
 
   ## Attributes
 
-  *   `policyBindings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t)`, *default:* `nil`) - Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`.
+  *   `policyBindings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t)`, *default:* `nil`) - Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account.
   """
 
   use GoogleApi.Gax.ModelBase

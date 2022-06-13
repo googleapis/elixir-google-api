@@ -26,7 +26,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels that are applied to this project.
   *   `serviceAccountConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig.t`, *default:* `nil`) - Configuration for the IAM service account on the tenant project.
   *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Google Cloud API names of services that are activated on this project during provisioning. If any of these services can't be activated, the request fails. For example: 'compute.googleapis.com','cloudfunctions.googleapis.com'
-  *   `tenantProjectPolicy` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy.t`, *default:* `nil`) - Describes ownership and policies for the new tenant project. Required.
+  *   `tenantProjectPolicy` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy.t`, *default:* `nil`) - Describes ownership and policies for the new tenant project.
   """
 
   use GoogleApi.Gax.ModelBase
