@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t`, *default:* `nil`) - A snapshot of an Account resource in change history.
+  *   `attributionSettings` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAttributionSettings.t`, *default:* `nil`) - A snapshot of AttributionSettings resource in change history.
   *   `conversionEvent` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t`, *default:* `nil`) - A snapshot of a ConversionEvent resource in change history.
   *   `customDimension` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomDimension.t`, *default:* `nil`) - A snapshot of a CustomDimension resource in change history.
   *   `customMetric` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCustomMetric.t`, *default:* `nil`) - A snapshot of a CustomMetric resource in change history.
@@ -41,6 +42,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   @type t :: %__MODULE__{
           :account =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t() | nil,
+          :attributionSettings =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAttributionSettings.t()
+            | nil,
           :conversionEvent =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent.t()
             | nil,
@@ -78,6 +82,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
         }
 
   field(:account, as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount)
+
+  field(:attributionSettings,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAttributionSettings
+  )
 
   field(:conversionEvent,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEvent
