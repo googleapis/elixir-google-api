@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UploadItemRef do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the content reference. The maximum length is 2048 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the content reference. The maximum length is 2048 characters.
   """
 
   use GoogleApi.Gax.ModelBase

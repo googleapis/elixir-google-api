@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions do
   @moduledoc """
-  Options for integer properties.
+  The options for integer properties.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplicationQueryStats do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which query stats were calculated. Stats calculated on the next day close to midnight are returned.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - The date for which query stats were calculated. Stats calculated on the next day close to midnight are returned.
   *   `queryCountByStatus` (*type:* `list(GoogleApi.CloudSearch.V1.Model.QueryCountByStatus.t)`, *default:* `nil`) - 
   """
 

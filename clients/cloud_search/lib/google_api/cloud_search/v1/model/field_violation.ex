@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.FieldViolation do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the error.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the error.
   *   `field` (*type:* `String.t`, *default:* `nil`) - Path of field with violation.
   """
 

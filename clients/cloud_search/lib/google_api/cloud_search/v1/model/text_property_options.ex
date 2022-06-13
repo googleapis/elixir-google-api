@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.TextPropertyOptions do
   @moduledoc """
-  Options for text properties.
+  The options for text properties.
 
   ## Attributes
 

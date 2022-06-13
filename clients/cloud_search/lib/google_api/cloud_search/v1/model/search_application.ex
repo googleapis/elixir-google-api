@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
   *   `defaultSortOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.SortOptions.t`, *default:* `nil`) - The default options for sorting the search results
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the Search Application. The maximum length is 300 characters.
   *   `enableAuditLog` (*type:* `boolean()`, *default:* `nil`) - Indicates whether audit logging is on/off for requests made for the search application in query APIs.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Search Application. Format: searchapplications/{application_id}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Search Application. Format: searchapplications/{application_id}.
   *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. IDs of the Long Running Operations (LROs) currently running for this schema. Output only field.
   *   `queryInterpretationConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretationConfig.t`, *default:* `nil`) - The default options for query interpretation
   *   `returnResultThumbnailUrls` (*type:* `boolean()`, *default:* `nil`) - With each result we should return the URI for its thumbnail (when applicable)

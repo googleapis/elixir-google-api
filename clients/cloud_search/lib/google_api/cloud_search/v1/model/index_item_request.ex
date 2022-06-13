@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.IndexItemRequest do
 
   ## Attributes
 
-  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
+  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `indexItemOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.IndexItemOptions.t`, *default:* `nil`) - 
-  *   `item` (*type:* `GoogleApi.CloudSearch.V1.Model.Item.t`, *default:* `nil`) - Name of the item. Format: datasources/{source_id}/items/{item_id}
+  *   `item` (*type:* `GoogleApi.CloudSearch.V1.Model.Item.t`, *default:* `nil`) - The name of the item. Format: datasources/{source_id}/items/{item_id}
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Required. The RequestMode for this request.
   """
 

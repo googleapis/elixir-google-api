@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.ObjectPropertyOptions do
   @moduledoc """
-  Options for object properties.
+  The options for object properties.
 
   ## Attributes
 

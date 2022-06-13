@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SortOptions do
 
   ## Attributes
 
-  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Name of the operator corresponding to the field to sort on. The corresponding property must be marked as sortable.
+  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - The name of the operator corresponding to the field to sort on. The corresponding property must be marked as sortable.
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - Ascending is the default sort order
   """
 

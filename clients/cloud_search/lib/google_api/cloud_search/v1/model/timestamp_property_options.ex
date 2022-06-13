@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.TimestampPropertyOptions do
   @moduledoc """
-  Options for timestamp properties.
+  The options for timestamp properties.
 
   ## Attributes
 

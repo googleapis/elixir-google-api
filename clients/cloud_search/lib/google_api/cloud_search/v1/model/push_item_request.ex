@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PushItemRequest do
 
   ## Attributes
 
-  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
+  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `item` (*type:* `GoogleApi.CloudSearch.V1.Model.PushItem.t`, *default:* `nil`) - Item to push onto the queue.
   """

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplicationUserStats do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - The date for which session stats were calculated. Stats calculated on the next day close to midnight are returned.
   *   `oneDayActiveUsersCount` (*type:* `String.t`, *default:* `nil`) - The count of unique active users in the past one day
   *   `sevenDaysActiveUsersCount` (*type:* `String.t`, *default:* `nil`) - The count of unique active users in the past seven days
   *   `thirtyDaysActiveUsersCount` (*type:* `String.t`, *default:* `nil`) - The count of unique active users in the past thirty days

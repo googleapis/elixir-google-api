@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectDefinition do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the object, which then defines its type. Item indexing requests should set the objectType field equal to this value. For example, if *name* is *Document*, then indexing requests for items of type Document should set objectType equal to *Document*. Each object definition must be uniquely named within a schema. The name must start with a letter and can only contain letters (A-Z, a-z) or numbers (0-9). The maximum length is 256 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name for the object, which then defines its type. Item indexing requests should set the objectType field equal to this value. For example, if *name* is *Document*, then indexing requests for items of type Document should set objectType equal to *Document*. Each object definition must be uniquely named within a schema. The name must start with a letter and can only contain letters (A-Z, a-z) or numbers (0-9). The maximum length is 256 characters.
   *   `options` (*type:* `GoogleApi.CloudSearch.V1.Model.ObjectOptions.t`, *default:* `nil`) - The optional object-specific options.
   *   `propertyDefinitions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t)`, *default:* `nil`) - The property definitions for the object. The maximum number of elements is 1000.
   """

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DoublePropertyOptions do
   @moduledoc """
-  Options for double properties.
+  The options for double properties.
 
   ## Attributes
 

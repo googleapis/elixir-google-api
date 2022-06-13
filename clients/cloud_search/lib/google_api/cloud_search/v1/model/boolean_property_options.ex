@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.BooleanPropertyOptions do
   @moduledoc """
-  Options for boolean properties.
+  The options for boolean properties.
 
   ## Attributes
 

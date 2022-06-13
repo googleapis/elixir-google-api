@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectOptions do
 
   ## Attributes
 
-  *   `displayOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t`, *default:* `nil`) - Options that determine how the object is displayed in the Cloud Search results page.
+  *   `displayOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t`, *default:* `nil`) - The options that determine how the object is displayed in the Cloud Search results page.
   *   `freshnessOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t`, *default:* `nil`) - The freshness options for an object.
   """
 

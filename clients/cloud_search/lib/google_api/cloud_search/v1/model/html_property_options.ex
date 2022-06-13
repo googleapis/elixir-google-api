@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.HtmlPropertyOptions do
   @moduledoc """
-  Options for html properties.
+  The options for html properties.
 
   ## Attributes
 
