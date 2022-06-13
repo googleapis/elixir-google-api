@@ -208,7 +208,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource. Format: datasources/{source_id}.
+  *   `name` (*type:* `String.t`) - The name of the datasource. Format: datasources/{source_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -275,7 +275,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource resource. Format: datasources/{source_id}.
+  *   `name` (*type:* `String.t`) - The name of the datasource resource. Format: datasources/{source_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -400,7 +400,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.
+  *   `name` (*type:* `String.t`) - The name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -602,7 +602,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the search application. Format: searchapplications/{application_id}.
+  *   `name` (*type:* `String.t`) - The name of the search application. Format: searchapplications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -811,7 +811,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Search Application. Format: searchapplications/{application_id}.
+  *   `name` (*type:* `String.t`) - The name of the Search Application. Format: searchapplications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

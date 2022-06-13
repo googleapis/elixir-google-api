@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DatePropertyOptions do
   @moduledoc """
-  Options for date properties.
+  The options for date properties.
 
   ## Attributes
 

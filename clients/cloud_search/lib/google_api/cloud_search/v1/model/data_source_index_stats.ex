@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSourceIndexStats do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which index stats were calculated. If the date of request is not the current date then stats calculated on the next day are returned. Stats are calculated close to mid night in this case. If date of request is current date, then real time stats are returned.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - The date for which index stats were calculated. If the date of request is not the current date then stats calculated on the next day are returned. Stats are calculated close to mid night in this case. If date of request is current date, then real time stats are returned.
   *   `itemCountByStatus` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ItemCountByStatus.t)`, *default:* `nil`) - Number of items aggregrated by status code.
   """
 

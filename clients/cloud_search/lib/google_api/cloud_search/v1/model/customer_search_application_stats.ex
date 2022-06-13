@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomerSearchApplicationStats do
   ## Attributes
 
   *   `count` (*type:* `String.t`, *default:* `nil`) - The count of search applications for the date.
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which search application stats were calculated.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - The date for which search application stats were calculated.
   """
 
   use GoogleApi.Gax.ModelBase

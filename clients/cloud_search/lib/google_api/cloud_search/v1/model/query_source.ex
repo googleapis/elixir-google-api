@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.QuerySource do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the data source.
   *   `operators` (*type:* `list(GoogleApi.CloudSearch.V1.Model.QueryOperator.t)`, *default:* `nil`) - List of all operators applicable for this source.
   *   `shortName` (*type:* `String.t`, *default:* `nil`) - A short name or alias for the source. This value can be used with the 'source' operator.
-  *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.Source.t`, *default:* `nil`) - Name of the source
+  *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.Source.t`, *default:* `nil`) - The name of the source
   """
 
   use GoogleApi.Gax.ModelBase

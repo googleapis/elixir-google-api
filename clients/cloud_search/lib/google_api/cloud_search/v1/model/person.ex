@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Person do
   ## Attributes
 
   *   `emailAddresses` (*type:* `list(GoogleApi.CloudSearch.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the person to provide information about. See People.get from Google People API.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the person to provide information about. See [`People.get`](https://developers.google.com/people/api/rest/v1/people/get) from the Google People API.
   *   `obfuscatedId` (*type:* `String.t`, *default:* `nil`) - Obfuscated ID of a person.
   *   `personNames` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Name.t)`, *default:* `nil`) - The person's name
   *   `photos` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Photo.t)`, *default:* `nil`) - A person's read-only photo. A picture shown next to the person's name to help others recognize the person in search results.

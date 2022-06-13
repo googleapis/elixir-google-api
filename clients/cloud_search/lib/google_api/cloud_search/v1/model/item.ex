@@ -23,9 +23,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.Item do
 
   *   `acl` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemAcl.t`, *default:* `nil`) - Access control list for this item.
   *   `content` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemContent.t`, *default:* `nil`) - Item content to be indexed and made text searchable.
-  *   `itemType` (*type:* `String.t`, *default:* `nil`) - Type for this item.
-  *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemMetadata.t`, *default:* `nil`) - Metadata information.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Item. Format: datasources/{source_id}/items/{item_id} This is a required field. The maximum length is 1536 characters.
+  *   `itemType` (*type:* `String.t`, *default:* `nil`) - The type for this item.
+  *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemMetadata.t`, *default:* `nil`) - The metadata information.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Item. Format: datasources/{source_id}/items/{item_id} This is a required field. The maximum length is 1536 characters.
   *   `payload` (*type:* `String.t`, *default:* `nil`) - Additional state connector can store for this item. The maximum length is 10000 bytes.
   *   `queue` (*type:* `String.t`, *default:* `nil`) - Queue this item belongs to. The maximum length is 100 characters.
   *   `status` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemStatus.t`, *default:* `nil`) - Status of the item. Output only field.

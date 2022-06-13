@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomerIndexStats do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which statistics were calculated.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - The date for which statistics were calculated.
   *   `itemCountByStatus` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ItemCountByStatus.t)`, *default:* `nil`) - Number of items aggregrated by status code.
   """
 

@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.RepositoryError do
 
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Message that describes the error. The maximum allowable length of the message is 8192 characters.
   *   `httpStatusCode` (*type:* `integer()`, *default:* `nil`) - Error codes. Matches the definition of HTTP status codes.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of error.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of error.
   """
 
   use GoogleApi.Gax.ModelBase

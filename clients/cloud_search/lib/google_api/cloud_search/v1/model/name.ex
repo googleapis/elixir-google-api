@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Name do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The read-only display name formatted according to the locale specified by the viewer's account or the Accept-Language HTTP header.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The read-only display name formatted according to the locale specified by the viewer's account or the `Accept-Language` HTTP header.
   """
 
   use GoogleApi.Gax.ModelBase
