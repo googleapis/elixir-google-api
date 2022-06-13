@@ -639,7 +639,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:tunnelDestGroupId` (*type:* `String.t`) - Required. The ID to use for the TunnelDestGroup, which becomes the final component of the resource name. This value must be 4-63 characters, and valid characters are `a-z-`.
+      *   `:tunnelDestGroupId` (*type:* `String.t`) - Required. The ID to use for the TunnelDestGroup, which becomes the final component of the resource name. This value must be 4-63 characters, and valid characters are `[a-z]-`.
       *   `:body` (*type:* `GoogleApi.IAP.V1.Model.TunnelDestGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -943,7 +943,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project.
+  *   `projects_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project and contain only lower case letters (a-z) and dashes (-).
   *   `locations_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
   *   `dest_groups_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
