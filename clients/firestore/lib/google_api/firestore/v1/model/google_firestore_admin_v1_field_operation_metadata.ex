@@ -28,6 +28,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1FieldOperationMetad
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the operation.
+  *   `ttlConfigDelta` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1TtlConfigDelta.t`, *default:* `nil`) - Describes the deltas of TTL configuration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,9 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1FieldOperationMetad
           :progressDocuments =>
             GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
           :startTime => DateTime.t() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :ttlConfigDelta =>
+            GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1TtlConfigDelta.t() | nil
         }
 
   field(:endTime, as: DateTime)
@@ -56,6 +59,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1FieldOperationMetad
   field(:progressDocuments, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:ttlConfigDelta, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1TtlConfigDelta)
 end
 
 defimpl Poison.Decoder,
