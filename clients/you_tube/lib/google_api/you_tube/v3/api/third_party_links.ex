@@ -192,11 +192,11 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.YouTube.V3.Model.ThirdPartyLink{}}` on success
+  *   `{:ok, %GoogleApi.YouTube.V3.Model.ThirdPartyLinkListResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec youtube_third_party_links_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.ThirdPartyLink.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.ThirdPartyLinkListResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -228,7 +228,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.ThirdPartyLink{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.ThirdPartyLinkListResponse{}])
   end
 
   @doc """
