@@ -1100,8 +1100,8 @@
     "name": "Retail"
   },
   {
-    "version": "v1",
-    "url": "https://run.googleapis.com/$discovery/rest?version=v1",
+    "version": "v2",
+    "url": "https://run.googleapis.com/$discovery/rest?version=v2",
     "name": "Run"
   },
   {
