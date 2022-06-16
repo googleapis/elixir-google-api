@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.CellFormat do
 
   ## Attributes
 
-  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the cell.
+  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the cell. Deprecated: Use background_color_style.
   *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the cell. If background_color is also set, this field takes precedence.
   *   `borders` (*type:* `GoogleApi.Sheets.V4.Model.Borders.t`, *default:* `nil`) - The borders of the cell.
   *   `horizontalAlignment` (*type:* `String.t`, *default:* `nil`) - The horizontal alignment of the value in the cell.

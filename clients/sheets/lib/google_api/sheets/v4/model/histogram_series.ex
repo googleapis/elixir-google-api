@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
 
   ## Attributes
 
-  *   `barColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the column representing this series in each bucket. This field is optional.
+  *   `barColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the column representing this series in each bucket. This field is optional. Deprecated: Use bar_color_style.
   *   `barColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the column representing this series in each bucket. This field is optional. If bar_color is also set, this field takes precedence.
   *   `data` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for this histogram series.
   """

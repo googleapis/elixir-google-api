@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used.
+  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. Deprecated: Use color_style.
   *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. If color is also set, this field takes precedence.
   *   `dataLabel` (*type:* `GoogleApi.Sheets.V4.Model.DataLabel.t`, *default:* `nil`) - Information about the data labels for this series.
   *   `lineStyle` (*type:* `GoogleApi.Sheets.V4.Model.LineStyle.t`, *default:* `nil`) - The line style of this series. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA or LINE.

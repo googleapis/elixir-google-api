@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder do
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the border.
+  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the border. Deprecated: Use color_style.
   *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the border. If color is also set, this field takes precedence.
   """
 

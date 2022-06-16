@@ -22,11 +22,11 @@ defmodule GoogleApi.Sheets.V4.Model.OrgChartSpec do
   ## Attributes
 
   *   `labels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the labels for all the nodes in the chart. Labels must be unique.
-  *   `nodeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the org chart nodes.
+  *   `nodeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the org chart nodes. Deprecated: Use node_color_style.
   *   `nodeColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the org chart nodes. If node_color is also set, this field takes precedence.
   *   `nodeSize` (*type:* `String.t`, *default:* `nil`) - The size of the org chart nodes.
   *   `parentLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the label of the parent for the corresponding node. A blank value indicates that the node has no parent and is a top-level node. This field is optional.
-  *   `selectedNodeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the selected org chart nodes.
+  *   `selectedNodeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the selected org chart nodes. Deprecated: Use selected_node_color_style.
   *   `selectedNodeColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the selected org chart nodes. If selected_node_color is also set, this field takes precedence.
   *   `tooltips` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the tooltip for the corresponding node. A blank value results in no tooltip being displayed for the node. This field is optional.
   """

@@ -24,7 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   *   `bold` (*type:* `boolean()`, *default:* `nil`) - True if the text is bold.
   *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - The font family.
   *   `fontSize` (*type:* `integer()`, *default:* `nil`) - The size of the font.
-  *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color of the text.
+  *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color of the text. Deprecated: Use foreground_color_style.
   *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color of the text. If foreground_color is also set, this field takes precedence.
   *   `italic` (*type:* `boolean()`, *default:* `nil`) - True if the text is italicized.
   *   `link` (*type:* `GoogleApi.Sheets.V4.Model.Link.t`, *default:* `nil`) - The link destination of the text, if any. Setting the link field in a TextFormatRun will clear the cell's existing links or a cell-level link set in the same request. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults.

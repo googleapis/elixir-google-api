@@ -21,13 +21,13 @@ defmodule GoogleApi.Sheets.V4.Model.BandingProperties do
 
   ## Attributes
 
-  *   `firstBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The first color that is alternating. (Required)
+  *   `firstBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The first color that is alternating. (Required) Deprecated: Use first_band_color_style.
   *   `firstBandColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The first color that is alternating. (Required) If first_band_color is also set, this field takes precedence.
-  *   `footerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column.
+  *   `footerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column. Deprecated: Use footer_color_style.
   *   `footerColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column. If footer_color is also set, this field takes precedence.
-  *   `headerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would.
+  *   `headerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would. Deprecated: Use header_color_style.
   *   `headerColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would. If header_color is also set, this field takes precedence.
-  *   `secondBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The second color that is alternating. (Required)
+  *   `secondBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The second color that is alternating. (Required) Deprecated: Use second_band_color_style.
   *   `secondBandColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The second color that is alternating. (Required) If second_band_color is also set, this field takes precedence.
   """
 
