@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   ## Attributes
 
   *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text that describes the chart. This is often used for accessibility.
-  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the entire chart. Not applicable to Org charts.
+  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the entire chart. Not applicable to Org charts. Deprecated: Use background_color_style.
   *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the entire chart. Not applicable to Org charts. If background_color is also set, this field takes precedence.
   *   `basicChart` (*type:* `GoogleApi.Sheets.V4.Model.BasicChartSpec.t`, *default:* `nil`) - A basic chart specification, can be one of many kinds of charts. See BasicChartType for the list of all charts this supports.
   *   `bubbleChart` (*type:* `GoogleApi.Sheets.V4.Model.BubbleChartSpec.t`, *default:* `nil`) - A bubble chart specification.

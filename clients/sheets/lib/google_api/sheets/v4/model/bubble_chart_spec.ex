@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
 
   ## Attributes
 
-  *   `bubbleBorderColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The bubble border color.
+  *   `bubbleBorderColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The bubble border color. Deprecated: Use bubble_border_color_style.
   *   `bubbleBorderColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The bubble border color. If bubble_border_color is also set, this field takes precedence.
   *   `bubbleLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble labels. These do not need to be unique.
   *   `bubbleMaxRadiusSize` (*type:* `integer()`, *default:* `nil`) - The max radius size of the bubbles, in pixels. If specified, the field must be a positive value.

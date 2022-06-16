@@ -28,7 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.SheetProperties do
   *   `rightToLeft` (*type:* `boolean()`, *default:* `nil`) - True if the sheet is an RTL sheet instead of an LTR sheet.
   *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the sheet. Must be non-negative. This field cannot be changed once set.
   *   `sheetType` (*type:* `String.t`, *default:* `nil`) - The type of sheet. Defaults to GRID. This field cannot be changed once set.
-  *   `tabColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the tab in the UI.
+  *   `tabColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the tab in the UI. Deprecated: Use tab_color_style.
   *   `tabColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the tab in the UI. If tab_color is also set, this field takes precedence.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the sheet.
   """
