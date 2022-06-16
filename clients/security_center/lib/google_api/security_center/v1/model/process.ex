@@ -27,6 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Process do
   *   `envVariables` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Process environment variables.
   *   `envVariablesTruncated` (*type:* `boolean()`, *default:* `nil`) - True if `env_variables` is incomplete.
   *   `libraries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.File.t)`, *default:* `nil`) - File information for libraries loaded by the process.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The process name visible in utilities like top and ps; it can be accessed via /proc/[pid]/comm and changed with prctl(PR_SET_NAME).
   *   `parentPid` (*type:* `String.t`, *default:* `nil`) - The parent process id.
   *   `pid` (*type:* `String.t`, *default:* `nil`) - The process id.
   *   `script` (*type:* `GoogleApi.SecurityCenter.V1.Model.File.t`, *default:* `nil`) - When the process represents the invocation of a script, `binary` provides information about the interpreter while `script` provides information about the script file provided to the interpreter.
@@ -41,6 +42,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Process do
           :envVariables => list(GoogleApi.SecurityCenter.V1.Model.EnvironmentVariable.t()) | nil,
           :envVariablesTruncated => boolean() | nil,
           :libraries => list(GoogleApi.SecurityCenter.V1.Model.File.t()) | nil,
+          :name => String.t() | nil,
           :parentPid => String.t() | nil,
           :pid => String.t() | nil,
           :script => GoogleApi.SecurityCenter.V1.Model.File.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Process do
   field(:envVariables, as: GoogleApi.SecurityCenter.V1.Model.EnvironmentVariable, type: :list)
   field(:envVariablesTruncated)
   field(:libraries, as: GoogleApi.SecurityCenter.V1.Model.File, type: :list)
+  field(:name)
   field(:parentPid)
   field(:pid)
   field(:script, as: GoogleApi.SecurityCenter.V1.Model.File)
