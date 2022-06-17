@@ -21,6 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
 
   ## Attributes
 
+  *   `complexDataTypeReferenceParsing` (*type:* `String.t`, *default:* `nil`) - Enable parsing of references within complex FHIR data types such as Extensions. If this value is set to ENABLED, then features like referential integrity and Bundle reference rewriting apply to all references. If this flag has not been specified the behavior of the FHIR store will not change, references in complex data types will not be parsed. New stores will have this value set to ENABLED after a notification period. Warning: turning on this flag causes processing existing resources to fail if they contain references to non-existent resources.
   *   `defaultSearchHandlingStrict` (*type:* `boolean()`, *default:* `nil`) - If true, overrides the default search behavior for this FHIR store to `handling=strict` which returns an error for unrecognized search parameters. If false, uses the FHIR specification default `handling=lenient` which ignores unrecognized search parameters. The handling can always be changed from the default on an individual API call by setting the HTTP header `Prefer: handling=strict` or `Prefer: handling=lenient`.
   *   `disableReferentialIntegrity` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether to disable referential integrity in this FHIR store. This field is immutable after FHIR store creation. The default value is false, meaning that the API enforces referential integrity and fails the requests that result in inconsistent state in the FHIR store. When this field is set to true, the API skips referential integrity checks. Consequently, operations that rely on references, such as GetPatientEverything, do not return all the results if broken references exist.
   *   `disableResourceVersioning` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether to disable resource versioning for this FHIR store. This field can not be changed after the creation of FHIR store. If set to false, which is the default behavior, all write operations cause historical versions to be recorded automatically. The historical versions can be fetched through the history APIs, but cannot be updated. If set to true, no historical versions are kept. The server sends errors for attempts to read the historical versions.
@@ -36,6 +37,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :complexDataTypeReferenceParsing => String.t() | nil,
           :defaultSearchHandlingStrict => boolean() | nil,
           :disableReferentialIntegrity => boolean() | nil,
           :disableResourceVersioning => boolean() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirStore do
           :version => String.t() | nil
         }
 
+  field(:complexDataTypeReferenceParsing)
   field(:defaultSearchHandlingStrict)
   field(:disableReferentialIntegrity)
   field(:disableResourceVersioning)

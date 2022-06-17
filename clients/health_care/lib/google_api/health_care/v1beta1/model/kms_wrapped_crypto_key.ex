@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.KmsWrappedCryptoKey do
 
   ## Attributes
 
-  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the KMS CryptoKey to use for unwrapping.
+  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the KMS CryptoKey to use for unwrapping. For example, `projects/{project_id}/locations/{location_id}/keyRings/{keyring}/cryptoKeys/{key}`.
   *   `wrappedKey` (*type:* `String.t`, *default:* `nil`) - Required. The wrapped data crypto key.
   """
 

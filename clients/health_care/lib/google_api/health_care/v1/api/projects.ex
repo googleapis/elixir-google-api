@@ -9792,7 +9792,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Resource name of the HL7v2 store, of the form `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
@@ -10506,7 +10506,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `message.name`. Resource name of the Message, of the form `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
+  *   `projects_id` (*type:* `String.t`) - Part of `message.name`. Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
   *   `locations_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
