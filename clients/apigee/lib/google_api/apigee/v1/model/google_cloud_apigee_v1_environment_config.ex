@@ -28,6 +28,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   *   `deployments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t)`, *default:* `nil`) - List of deployments in the environment.
   *   `featureFlags` (*type:* `map()`, *default:* `nil`) - Feature flags inherited from the organization and environment.
   *   `flowhooks` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t)`, *default:* `nil`) - List of flow hooks in the environment.
+  *   `forwardProxyUri` (*type:* `String.t`, *default:* `nil`) - The forward proxy's url to be used by the runtime. When set, runtime will send requests to the target via the given forward proxy. This is only used by programmable gateways.
   *   `gatewayConfigLocation` (*type:* `String.t`, *default:* `nil`) - The location for the gateway config blob as a URI, e.g. a Cloud Storage URI. This is only used by Envoy-based gateways.
   *   `keystores` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t)`, *default:* `nil`) - List of keystores in the environment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment configuration in the following format: `organizations/{org}/environments/{env}/configs/{config}`
@@ -55,6 +56,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :featureFlags => map() | nil,
           :flowhooks =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t()) | nil,
+          :forwardProxyUri => String.t() | nil,
           :gatewayConfigLocation => String.t() | nil,
           :keystores =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t()) | nil,
@@ -91,6 +93,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   field(:featureFlags, type: :map)
   field(:flowhooks, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig, type: :list)
+  field(:forwardProxyUri)
   field(:gatewayConfigLocation)
   field(:keystores, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig, type: :list)
   field(:name)
