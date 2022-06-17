@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
   *   `natIpPortRanges` (*type:* `list(String.t)`, *default:* `nil`) - A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
   *   `numTotalDrainNatPorts` (*type:* `integer()`, *default:* `nil`) - Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
   *   `numTotalNatPorts` (*type:* `integer()`, *default:* `nil`) - Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
+  *   `ruleMappings` (*type:* `list(GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.t)`, *default:* `nil`) - Information about mappings provided by rules in this NAT.
   *   `sourceAliasIpRange` (*type:* `String.t`, *default:* `nil`) - Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
   *   `sourceVirtualIp` (*type:* `String.t`, *default:* `nil`) - Primary IP of the VM for this NIC.
   """
@@ -36,6 +37,11 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
           :natIpPortRanges => list(String.t()) | nil,
           :numTotalDrainNatPorts => integer() | nil,
           :numTotalNatPorts => integer() | nil,
+          :ruleMappings =>
+            list(
+              GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.t()
+            )
+            | nil,
           :sourceAliasIpRange => String.t() | nil,
           :sourceVirtualIp => String.t() | nil
         }
@@ -44,6 +50,12 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
   field(:natIpPortRanges, type: :list)
   field(:numTotalDrainNatPorts)
   field(:numTotalNatPorts)
+
+  field(:ruleMappings,
+    as: GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings,
+    type: :list
+  )
+
   field(:sourceAliasIpRange)
   field(:sourceVirtualIp)
 end

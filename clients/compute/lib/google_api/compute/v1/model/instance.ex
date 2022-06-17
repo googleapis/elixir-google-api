@@ -38,6 +38,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `sourceMachineImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Source machine image encryption key when creating an instance from a machine image.
   *   `kind` (*type:* `String.t`, *default:* `compute#instance`) - [Output Only] Type of the resource. Always compute#instance for instances.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
+  *   `keyRevocationActionType` (*type:* `String.t`, *default:* `nil`) - KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `displayDevice` (*type:* `GoogleApi.Compute.V1.Model.DisplayDevice.t`, *default:* `nil`) - Enables display device for the instance.
   *   `startRestricted` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
@@ -89,6 +90,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
             GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
           :kind => String.t() | nil,
           :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :keyRevocationActionType => String.t() | nil,
           :name => String.t() | nil,
           :displayDevice => GoogleApi.Compute.V1.Model.DisplayDevice.t() | nil,
           :startRestricted => boolean() | nil,
@@ -134,6 +136,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:sourceMachineImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:kind)
   field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)
+  field(:keyRevocationActionType)
   field(:name)
   field(:displayDevice, as: GoogleApi.Compute.V1.Model.DisplayDevice)
   field(:startRestricted)

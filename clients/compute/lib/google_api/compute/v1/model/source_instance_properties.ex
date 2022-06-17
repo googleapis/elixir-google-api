@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.SourceInstanceProperties do
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional text description for the instances that are created from this machine image.
   *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.SavedAttachedDisk.t)`, *default:* `nil`) - An array of disks that are associated with the instances that are created from this machine image.
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of guest accelerator cards' type and count to use for instances created from this machine image.
+  *   `keyRevocationActionType` (*type:* `String.t`, *default:* `nil`) - KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to instances that are created from this machine image.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for instances that are created from this machine image.
   *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs to assign to instances that are created from this machine image. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.SourceInstanceProperties do
           :description => String.t() | nil,
           :disks => list(GoogleApi.Compute.V1.Model.SavedAttachedDisk.t()) | nil,
           :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
+          :keyRevocationActionType => String.t() | nil,
           :labels => map() | nil,
           :machineType => String.t() | nil,
           :metadata => GoogleApi.Compute.V1.Model.Metadata.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.SourceInstanceProperties do
   field(:description)
   field(:disks, as: GoogleApi.Compute.V1.Model.SavedAttachedDisk, type: :list)
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
+  field(:keyRevocationActionType)
   field(:labels, type: :map)
   field(:machineType)
   field(:metadata, as: GoogleApi.Compute.V1.Model.Metadata)
