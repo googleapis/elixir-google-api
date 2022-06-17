@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ReviewDocumentReq
 
   ## Attributes
 
+  *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchema.t`, *default:* `nil`) - The document schema of the human review task.
   *   `enableSchemaValidation` (*type:* `boolean()`, *default:* `nil`) - Whether the validation should be performed on the ad-hoc review request.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t`, *default:* `nil`) - An inline document proto.
   *   `priority` (*type:* `String.t`, *default:* `nil`) - The priority of the human review task.
@@ -29,12 +30,15 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ReviewDocumentReq
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :documentSchema =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchema.t() | nil,
           :enableSchemaValidation => boolean() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t() | nil,
           :priority => String.t() | nil
         }
 
+  field(:documentSchema, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchema)
   field(:enableSchemaValidation)
   field(:inlineDocument, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document)
   field(:priority)

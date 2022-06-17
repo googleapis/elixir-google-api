@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document that needs human review.
+  *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t`, *default:* `nil`) - The document schema of the human review task.
   *   `enableSchemaValidation` (*type:* `boolean()`, *default:* `nil`) - Whether the validation should be performed on the ad-hoc review request.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
   *   `priority` (*type:* `String.t`, *default:* `nil`) - The priority of the human review task.
@@ -32,6 +33,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
   @type t :: %__MODULE__{
           :document =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
+          :documentSchema =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t()
+            | nil,
           :enableSchemaValidation => boolean() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
@@ -39,6 +43,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
+
+  field(:documentSchema,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema
+  )
+
   field(:enableSchemaValidation)
 
   field(:inlineDocument,
