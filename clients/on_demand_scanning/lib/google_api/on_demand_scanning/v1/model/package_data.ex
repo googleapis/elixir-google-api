@@ -22,6 +22,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   ## Attributes
 
   *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format] (https://cpe.mitre.org/specification/) in which the vulnerability may manifest. Examples include distro or storage location for vulnerable jar.
+  *   `dependencyChain` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t)`, *default:* `nil`) - The dependency chain between this package and the user's artifact. List in order from the customer's package under review first, to the current package last. Inclusive of the original package and the current package.
   *   `fileLocation` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t)`, *default:* `nil`) - The path to the jar file / go binary file.
   *   `hashDigest` (*type:* `String.t`, *default:* `nil`) - HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages.
   *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability This field is deprecated and the information is in cpe_uri
@@ -37,6 +38,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
 
   @type t :: %__MODULE__{
           :cpeUri => String.t() | nil,
+          :dependencyChain =>
+            list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t()) | nil,
           :fileLocation => list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t()) | nil,
           :hashDigest => String.t() | nil,
           :os => String.t() | nil,
@@ -49,6 +52,12 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
         }
 
   field(:cpeUri)
+
+  field(:dependencyChain,
+    as: GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency,
+    type: :list
+  )
+
   field(:fileLocation, as: GoogleApi.OnDemandScanning.V1.Model.FileLocation, type: :list)
   field(:hashDigest)
   field(:os)
