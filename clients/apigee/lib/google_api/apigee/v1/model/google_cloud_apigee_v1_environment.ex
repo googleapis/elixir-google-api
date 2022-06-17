@@ -26,6 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   *   `deploymentType` (*type:* `String.t`, *default:* `nil`) - Optional. Deployment type supported by the environment. The deployment type can be set when creating the environment and cannot be changed. When you enable archive deployment, you will be **prevented from performing** a [subset of actions](/apigee/docs/api-platform/local-development/overview#prevented-actions) within the environment, including: * Managing the deployment of API proxy or shared flow revisions * Creating, updating, or deleting resource files * Creating, updating, or deleting target servers
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the environment.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for this environment.
+  *   `forwardProxyUri` (*type:* `String.t`, *default:* `nil`) - Optional. Url of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that scheme must be one of "http" or "https", and port must be supplied.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of this environment as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the environment. Values must match the regular expression `^[.\\\\p{Alnum}-_]{1,255}$`
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Optional. Key-value pairs that may be used for customizing the environment.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
           :deploymentType => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :forwardProxyUri => String.t() | nil,
           :lastModifiedAt => String.t() | nil,
           :name => String.t() | nil,
           :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   field(:deploymentType)
   field(:description)
   field(:displayName)
+  field(:forwardProxyUri)
   field(:lastModifiedAt)
   field(:name)
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
