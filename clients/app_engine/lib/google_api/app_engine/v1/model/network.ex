@@ -22,6 +22,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Network do
   ## Attributes
 
   *   `forwardedPorts` (*type:* `list(String.t)`, *default:* `nil`) - List of ports, or port pairs, to forward from the virtual machine to the application container. Only applicable in the App Engine flexible environment.
+  *   `instanceIpMode` (*type:* `String.t`, *default:* `nil`) - The IP mode for instances. Only applicable in the App Engine flexible environment.
   *   `instanceTag` (*type:* `String.t`, *default:* `nil`) - Tag to apply to the instance during creation. Only applicable in the App Engine flexible environment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Google Compute Engine network where the virtual machines are created. Specify the short name, not the resource path.Defaults to default.
   *   `sessionAffinity` (*type:* `boolean()`, *default:* `nil`) - Enable session affinity. Only applicable in the App Engine flexible environment.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Network do
 
   @type t :: %__MODULE__{
           :forwardedPorts => list(String.t()) | nil,
+          :instanceIpMode => String.t() | nil,
           :instanceTag => String.t() | nil,
           :name => String.t() | nil,
           :sessionAffinity => boolean() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Network do
         }
 
   field(:forwardedPorts, type: :list)
+  field(:instanceIpMode)
   field(:instanceTag)
   field(:name)
   field(:sessionAffinity)
