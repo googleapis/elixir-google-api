@@ -21,16 +21,22 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta3ReviewDocume
 
   ## Attributes
 
-  *   `gcsDestination` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage uri for the human reviewed document.
+  *   `gcsDestination` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage uri for the human reviewed document if the review is succeeded.
+  *   `rejectionReason` (*type:* `String.t`, *default:* `nil`) - The reason why the review is rejected by reviewer.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the review operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsDestination => String.t() | nil
+          :gcsDestination => String.t() | nil,
+          :rejectionReason => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:gcsDestination)
+  field(:rejectionReason)
+  field(:state)
 end
 
 defimpl Poison.Decoder,
