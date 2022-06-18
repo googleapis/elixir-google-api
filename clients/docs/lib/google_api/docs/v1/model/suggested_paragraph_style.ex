@@ -21,7 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedParagraphStyle do
 
   ## Attributes
 
-  *   `paragraphStyle` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyle.t`, *default:* `nil`) - A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_suggestion_state to see which fields have changed and their new values.
+  *   `paragraphStyle` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyle.t`, *default:* `nil`) - A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_style_suggestion_state to see which fields have changed and their new values.
   *   `paragraphStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion.
   """
 
