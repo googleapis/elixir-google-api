@@ -23,6 +23,7 @@ defmodule GoogleApi.GKEHub.V1.Model.OnPremCluster do
 
   *   `adminCluster` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether the cluster is an admin cluster.
   *   `clusterMissing` (*type:* `boolean()`, *default:* `nil`) - Output only. If cluster_missing is set then it denotes that API(gkeonprem.googleapis.com) resource for this GKE On-Prem cluster no longer exists.
+  *   `clusterType` (*type:* `String.t`, *default:* `nil`) - Immutable. The on prem cluster's type.
   *   `resourceLink` (*type:* `String.t`, *default:* `nil`) - Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example: //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.GKEHub.V1.Model.OnPremCluster do
   @type t :: %__MODULE__{
           :adminCluster => boolean() | nil,
           :clusterMissing => boolean() | nil,
+          :clusterType => String.t() | nil,
           :resourceLink => String.t() | nil
         }
 
   field(:adminCluster)
   field(:clusterMissing)
+  field(:clusterType)
   field(:resourceLink)
 end
 
