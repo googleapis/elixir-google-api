@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
 
   ## Attributes
 
-  *   `assignedTo` (*type:* `String.t`, *default:* `nil`) - The unique ID of the user this role is assigned to.
+  *   `assignedTo` (*type:* `String.t`, *default:* `nil`) - The unique ID of the entity this role is assigned to—either the `user_id` of a user or the `uniqueId` of a service account, as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignment`) - The type of the API resource. This is always `admin#directory#roleAssignment`.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - If the role is restricted to an organization unit, this contains the ID for the organization unit the exercise of this role is restricted to.
