@@ -637,7 +637,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response. The expression is in the form of field:value. For example, 'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per their JSON representation, such as 'settings.userLabels.auto_start:true'. Multiple filter queries are space-separated. For example. 'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of instances to return. The service may return fewer than this value. The maximum value is 1000; values above 1000 are coerced to 1000.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of instances to return. The service may return fewer than this value. If unspecified, at most 500 instances are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
   *   `opts` (*type:* `keyword()`) - Call options
 
