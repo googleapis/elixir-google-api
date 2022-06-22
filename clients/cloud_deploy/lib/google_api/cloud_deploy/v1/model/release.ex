@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
 
   ## Attributes
 
+  *   `abandoned` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this is an abandoned release.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
   *   `buildArtifacts` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.BuildArtifact.t)`, *default:* `nil`) - List of artifacts to pass through to Skaffold command.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Release` was created.
@@ -44,6 +45,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :abandoned => boolean() | nil,
           :annotations => map() | nil,
           :buildArtifacts => list(GoogleApi.CloudDeploy.V1.Model.BuildArtifact.t()) | nil,
           :createTime => DateTime.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
           :uid => String.t() | nil
         }
 
+  field(:abandoned)
   field(:annotations, type: :map)
   field(:buildArtifacts, as: GoogleApi.CloudDeploy.V1.Model.BuildArtifact, type: :list)
   field(:createTime, as: DateTime)

@@ -29,6 +29,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `DeliveryPipeline`. Format is projects/{project}/ locations/{location}/deliveryPipelines/a-z{0,62}.
   *   `serialPipeline` (*type:* `GoogleApi.CloudDeploy.V1.Model.SerialPipeline.t`, *default:* `nil`) - SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
+  *   `suspended` (*type:* `boolean()`, *default:* `nil`) - When suspended, no new releases or rollouts can be created, but in-progress ones will complete.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `DeliveryPipeline`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Most recent time at which the pipeline was updated.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline do
           :labels => map() | nil,
           :name => String.t() | nil,
           :serialPipeline => GoogleApi.CloudDeploy.V1.Model.SerialPipeline.t() | nil,
+          :suspended => boolean() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline do
   field(:labels, type: :map)
   field(:name)
   field(:serialPipeline, as: GoogleApi.CloudDeploy.V1.Model.SerialPipeline)
+  field(:suspended)
   field(:uid)
   field(:updateTime, as: DateTime)
 end
