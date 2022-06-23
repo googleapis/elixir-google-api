@@ -24,6 +24,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # Read, create, update, and delete your SAS Portal data.
+      "https://www.googleapis.com/auth/sasportal",
+
       # See your primary Google Account email address
       "https://www.googleapis.com/auth/userinfo.email"
     ],
