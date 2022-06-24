@@ -40,6 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for this table.
   *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables.
   *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - Time-based partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
+  *   `maxStaleness` (*type:* `String.t`, *default:* `nil`) - [Optional] Max staleness of data that could be returned when table or materialized view is queried (formatted as Google SQL Interval type).
   *   `model` (*type:* `GoogleApi.BigQuery.V2.Model.ModelDefinition.t`, *default:* `nil`) - [Output-only, Beta] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run 'PREDICT' queries.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this table was created, in milliseconds since the epoch.
   *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.ViewDefinition.t`, *default:* `nil`) - [Optional] The view definition.
@@ -84,6 +85,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :friendlyName => String.t() | nil,
           :expirationTime => String.t() | nil,
           :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
+          :maxStaleness => String.t() | nil,
           :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t() | nil,
           :creationTime => String.t() | nil,
           :view => GoogleApi.BigQuery.V2.Model.ViewDefinition.t() | nil,
@@ -127,6 +129,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:friendlyName)
   field(:expirationTime)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)
+  field(:maxStaleness)
   field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
   field(:creationTime)
   field(:view, as: GoogleApi.BigQuery.V2.Model.ViewDefinition)
