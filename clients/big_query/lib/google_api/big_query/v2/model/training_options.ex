@@ -22,14 +22,17 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   ## Attributes
 
   *   `cleanSpikesAndDips` (*type:* `boolean()`, *default:* `nil`) - If true, clean spikes and dips in the input time series.
+  *   `minTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - Set fast trend ARIMA_PLUS model minimum training length. Use in pair with time_series_length_fraction.
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
   *   `horizon` (*type:* `String.t`, *default:* `nil`) - The number of periods ahead that need to be forecasted.
+  *   `trendSmoothingWindowSize` (*type:* `String.t`, *default:* `nil`) - The smoothing window size for the trend component of the time series.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
   *   `boosterType` (*type:* `String.t`, *default:* `nil`) - Booster type for boosted tree models.
   *   `includeDrift` (*type:* `boolean()`, *default:* `nil`) - Include drift when fitting an ARIMA model.
   *   `autoArima` (*type:* `boolean()`, *default:* `nil`) - Whether to enable auto ARIMA or not.
   *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
   *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the training data. Only applicable for classification models.
+  *   `maxTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - Get truncated length by last n points in time series. Use separately from time_series_length_fraction and min_time_series_length.
   *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
   *   `dartNormalizeType` (*type:* `String.t`, *default:* `nil`) - Type of normalization algorithm for boosted tree models using dart booster.
   *   `userColumn` (*type:* `String.t`, *default:* `nil`) - User column specified for matrix factorization models.
@@ -59,6 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `minSplitLoss` (*type:* `float()`, *default:* `nil`) - Minimum split loss for boosted tree models.
   *   `holidayRegion` (*type:* `String.t`, *default:* `nil`) - The geographical region based on which the holidays are considered in time series modeling. If a valid value is specified, then holiday effects modeling is enabled.
+  *   `timeSeriesLengthFraction` (*type:* `float()`, *default:* `nil`) - Get truncated length by fraction in time series.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `treeMethod` (*type:* `String.t`, *default:* `nil`) - Tree construction algorithm for boosted tree models.
@@ -89,14 +93,17 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   @type t :: %__MODULE__{
           :cleanSpikesAndDips => boolean() | nil,
+          :minTimeSeriesLength => String.t() | nil,
           :subsample => float() | nil,
           :horizon => String.t() | nil,
+          :trendSmoothingWindowSize => String.t() | nil,
           :modelUri => String.t() | nil,
           :boosterType => String.t() | nil,
           :includeDrift => boolean() | nil,
           :autoArima => boolean() | nil,
           :learnRateStrategy => String.t() | nil,
           :labelClassWeights => map() | nil,
+          :maxTimeSeriesLength => String.t() | nil,
           :l2Regularization => float() | nil,
           :dartNormalizeType => String.t() | nil,
           :userColumn => String.t() | nil,
@@ -126,6 +133,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :dataSplitMethod => String.t() | nil,
           :minSplitLoss => float() | nil,
           :holidayRegion => String.t() | nil,
+          :timeSeriesLengthFraction => float() | nil,
           :warmStart => boolean() | nil,
           :optimizationStrategy => String.t() | nil,
           :treeMethod => String.t() | nil,
@@ -153,14 +161,17 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
         }
 
   field(:cleanSpikesAndDips)
+  field(:minTimeSeriesLength)
   field(:subsample)
   field(:horizon)
+  field(:trendSmoothingWindowSize)
   field(:modelUri)
   field(:boosterType)
   field(:includeDrift)
   field(:autoArima)
   field(:learnRateStrategy)
   field(:labelClassWeights, type: :map)
+  field(:maxTimeSeriesLength)
   field(:l2Regularization)
   field(:dartNormalizeType)
   field(:userColumn)
@@ -190,6 +201,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:dataSplitMethod)
   field(:minSplitLoss)
   field(:holidayRegion)
+  field(:timeSeriesLengthFraction)
   field(:warmStart)
   field(:optimizationStrategy)
   field(:treeMethod)
