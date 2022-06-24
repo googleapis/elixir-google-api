@@ -30,6 +30,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   *   `rotation` (*type:* `GoogleApi.SecretManager.V1.Model.Rotation.t`, *default:* `nil`) - Optional. Rotation policy attached to the Secret. May be excluded if there is no rotation policy.
   *   `topics` (*type:* `list(GoogleApi.SecretManager.V1.Model.Topic.t)`, *default:* `nil`) - Optional. A list of up to 10 Pub/Sub topics to which messages are published when control plane operations are called on the secret or its versions.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. The TTL for the Secret.
+  *   `versionAliases` (*type:* `map()`, *default:* `nil`) - Optional. Mapping from version alias to version name. A version alias is a string with a maximum length of 63 characters and can contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore ('_') characters. An alias string must start with a letter and cannot be the string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a given secret. Version-Alias pairs will be viewable via GetSecret and modifiable via UpdateSecret. At launch Access by Allias will only be supported on GetSecretVersion and AccessSecretVersion.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
           :replication => GoogleApi.SecretManager.V1.Model.Replication.t() | nil,
           :rotation => GoogleApi.SecretManager.V1.Model.Rotation.t() | nil,
           :topics => list(GoogleApi.SecretManager.V1.Model.Topic.t()) | nil,
-          :ttl => String.t() | nil
+          :ttl => String.t() | nil,
+          :versionAliases => map() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -55,6 +57,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   field(:rotation, as: GoogleApi.SecretManager.V1.Model.Rotation)
   field(:topics, as: GoogleApi.SecretManager.V1.Model.Topic, type: :list)
   field(:ttl)
+  field(:versionAliases, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecretManager.V1.Model.Secret do
