@@ -25,12 +25,12 @@ defmodule GoogleApi.Sheets.V4.Model.CellFormat do
   *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the cell. If background_color is also set, this field takes precedence.
   *   `borders` (*type:* `GoogleApi.Sheets.V4.Model.Borders.t`, *default:* `nil`) - The borders of the cell.
   *   `horizontalAlignment` (*type:* `String.t`, *default:* `nil`) - The horizontal alignment of the value in the cell.
-  *   `hyperlinkDisplayType` (*type:* `String.t`, *default:* `nil`) - How a hyperlink, if it exists, should be displayed in the cell.
+  *   `hyperlinkDisplayType` (*type:* `String.t`, *default:* `nil`) - If one exists, how a hyperlink should be displayed in the cell.
   *   `numberFormat` (*type:* `GoogleApi.Sheets.V4.Model.NumberFormat.t`, *default:* `nil`) - A format describing how number values should be represented to the user.
   *   `padding` (*type:* `GoogleApi.Sheets.V4.Model.Padding.t`, *default:* `nil`) - The padding of the cell.
   *   `textDirection` (*type:* `String.t`, *default:* `nil`) - The direction of the text in the cell.
-  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell's existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link.
-  *   `textRotation` (*type:* `GoogleApi.Sheets.V4.Model.TextRotation.t`, *default:* `nil`) - The rotation applied to text in a cell
+  *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here clears the cell's existing links. Setting the link field in a TextFormatRun takes precedence over the cell-level link.
+  *   `textRotation` (*type:* `GoogleApi.Sheets.V4.Model.TextRotation.t`, *default:* `nil`) - The rotation applied to text in the cell.
   *   `verticalAlignment` (*type:* `String.t`, *default:* `nil`) - The vertical alignment of the value in the cell.
   *   `wrapStrategy` (*type:* `String.t`, *default:* `nil`) - The wrap strategy for the value in the cell.
   """
