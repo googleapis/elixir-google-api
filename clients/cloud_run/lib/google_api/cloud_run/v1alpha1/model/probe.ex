@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
 
   ## Attributes
 
-  *   `exec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t`, *default:* `nil`) - (Optional) One and only one of the following should be specified. Exec specifies the action to take. A field inlined from the Handler message.
+  *   `exec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t`, *default:* `nil`) - (Optional) Not supported by Cloud Run One and only one of the following should be specified. Exec specifies the action to take. A field inlined from the Handler message.
   *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
   *   `grpc` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.GRPCAction.t`, *default:* `nil`) - (Optional) GRPCAction specifies an action involving a GRPC port. A field inlined from the Handler message.
   *   `httpGet` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t`, *default:* `nil`) - (Optional) HTTPGet specifies the http request to perform. A field inlined from the Handler message.
-  *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) Number of seconds after the container has started before liveness probes are initiated. Defaults to 0 seconds. Minimum value is 0. Max value for liveness probe is 3600. Max value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
-  *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Max value for liveness probe is 3600. Max value for startup probe is 240. Must be greater or equal than timeout_seconds.
-  *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup Probes.
+  *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+  *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
+  *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set.
   *   `tcpSocket` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t`, *default:* `nil`) - (Optional) TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported A field inlined from the Handler message.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - (Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   """
