@@ -3013,7 +3013,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Runs a `BuildTrigger` at a particular source revision.
+  Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path. The POST request that does not include the location endpoint in the path can only be used when running global triggers.
 
   ## Parameters
 
@@ -3965,7 +3965,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Runs a `BuildTrigger` at a particular source revision.
+  Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path. The POST request that does not include the location endpoint in the path can only be used when running global triggers.
 
   ## Parameters
 
