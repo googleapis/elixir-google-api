@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Person do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the person to provide information about. See [`People.get`](https://developers.google.com/people/api/rest/v1/people/get) from the Google People API.
   *   `obfuscatedId` (*type:* `String.t`, *default:* `nil`) - Obfuscated ID of a person.
   *   `personNames` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Name.t)`, *default:* `nil`) - The person's name
+  *   `phoneNumbers` (*type:* `list(GoogleApi.CloudSearch.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers
   *   `photos` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Photo.t)`, *default:* `nil`) - A person's read-only photo. A picture shown next to the person's name to help others recognize the person in search results.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Person do
           :name => String.t() | nil,
           :obfuscatedId => String.t() | nil,
           :personNames => list(GoogleApi.CloudSearch.V1.Model.Name.t()) | nil,
+          :phoneNumbers => list(GoogleApi.CloudSearch.V1.Model.PhoneNumber.t()) | nil,
           :photos => list(GoogleApi.CloudSearch.V1.Model.Photo.t()) | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Person do
   field(:name)
   field(:obfuscatedId)
   field(:personNames, as: GoogleApi.CloudSearch.V1.Model.Name, type: :list)
+  field(:phoneNumbers, as: GoogleApi.CloudSearch.V1.Model.PhoneNumber, type: :list)
   field(:photos, as: GoogleApi.CloudSearch.V1.Model.Photo, type: :list)
 end
 
