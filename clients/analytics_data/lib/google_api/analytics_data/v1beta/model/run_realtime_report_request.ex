@@ -21,11 +21,11 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunRealtimeReportRequest do
 
   ## Attributes
 
-  *   `dimensionFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of dimensions. Dimensions must be requested to be used in this filter. Metrics cannot be used in this filter.
+  *   `dimensionFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of dimensions. Metrics cannot be used in this filter.
   *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Dimension.t)`, *default:* `nil`) - The dimensions requested and displayed.
   *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API can also return fewer rows than the requested `limit`, if there aren't as many dimension values as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can't get more than 300 rows, even if you set `limit` to a higher value.
   *   `metricAggregations` (*type:* `list(String.t)`, *default:* `nil`) - Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to "RESERVED_(MetricAggregation)".
-  *   `metricFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Metrics must be requested to be used in this filter. Dimensions cannot be used in this filter.
+  *   `metricFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Dimensions cannot be used in this filter.
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Metric.t)`, *default:* `nil`) - The metrics requested and displayed.
   *   `minuteRanges` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.MinuteRange.t)`, *default:* `nil`) - The minute ranges of event data to read. If unspecified, one minute range for the last 30 minutes will be used. If multiple minute ranges are requested, each response row will contain a zero based minute range index. If two minute ranges overlap, the event data for the overlapping minutes is included in the response rows for both minute ranges.
   *   `orderBys` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.OrderBy.t)`, *default:* `nil`) - Specifies how rows are ordered in the response.
