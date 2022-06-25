@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Filter do
   ## Attributes
 
   *   `betweenFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.BetweenFilter.t`, *default:* `nil`) - A filter for two values.
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The dimension name or metric name. Must be a name defined in dimensions or metrics.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The dimension name or metric name. In most methods, dimensions & metrics can be used for the first time in this field. However in a RunPivotReportRequest, this field must be additionally specified by name in the RunPivotReportRequest's dimensions or metrics.
   *   `inListFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.InListFilter.t`, *default:* `nil`) - A filter for in list values.
   *   `numericFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.NumericFilter.t`, *default:* `nil`) - A filter for numeric or date values.
   *   `stringFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.StringFilter.t`, *default:* `nil`) - Strings related filter.
