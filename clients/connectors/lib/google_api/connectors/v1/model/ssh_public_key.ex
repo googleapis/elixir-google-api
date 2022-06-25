@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Connectors.V1.Model.SshPublicKey do
   @moduledoc """
-
+  Parameters to support Ssh public key Authentication.
 
   ## Attributes
 
