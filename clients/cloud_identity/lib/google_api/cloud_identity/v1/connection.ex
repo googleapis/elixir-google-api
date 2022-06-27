@@ -24,6 +24,9 @@ defmodule GoogleApi.CloudIdentity.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # Private Service: https://www.googleapis.com/auth/cloud-identity
+      "https://www.googleapis.com/auth/cloud-identity",
+
       # Private Service: https://www.googleapis.com/auth/cloud-identity.devices
       "https://www.googleapis.com/auth/cloud-identity.devices",
 
