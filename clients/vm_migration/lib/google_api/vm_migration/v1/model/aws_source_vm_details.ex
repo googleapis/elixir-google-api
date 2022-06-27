@@ -21,15 +21,18 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails do
 
   ## Attributes
 
+  *   `committedStorageBytes` (*type:* `String.t`, *default:* `nil`) - The total size of the disks being migrated in bytes.
   *   `firmware` (*type:* `String.t`, *default:* `nil`) - The firmware type of the source VM.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :committedStorageBytes => String.t() | nil,
           :firmware => String.t() | nil
         }
 
+  field(:committedStorageBytes)
   field(:firmware)
 end
 
