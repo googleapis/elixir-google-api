@@ -20,7 +20,7 @@ defmodule GoogleApi.Dialogflow.V3 do
   API client metadata for GoogleApi.Dialogflow.V3.
   """
 
-  @discovery_revision "20220607"
+  @discovery_revision "20220616"
 
   def discovery_revision(), do: @discovery_revision
 end
