@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookRequest do
   @moduledoc """
-  The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases.
+  The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases. You may see undocumented fields in an actual request. These fields are used internally by Dialogflow and should be ignored.
 
   ## Attributes
 

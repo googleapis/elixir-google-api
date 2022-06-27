@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput do
   @moduledoc """
-  Represents the natural language text to be processed.
+  ============================================================================ Auxiliary proto messages. Represents the natural language text to be processed.
 
   ## Attributes
 

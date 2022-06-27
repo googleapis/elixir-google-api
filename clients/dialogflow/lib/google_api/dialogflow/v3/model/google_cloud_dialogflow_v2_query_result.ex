@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2QueryResult do
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action name from the matched intent.
   *   `allRequiredParamsPresent` (*type:* `boolean()`, *default:* `nil`) - This field is set to: - `false` if the matched intent has required parameters and not all of the required parameter values have been collected. - `true` if all required parameter values have been collected, or if the matched intent doesn't contain any required parameters.
-  *   `cancelsSlotFilling` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the conversational query triggers a cancellation for slot filling.
+  *   `cancelsSlotFilling` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the conversational query triggers a cancellation for slot filling. For more information, see the [cancel slot filling documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).
   *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - Free-form diagnostic information for the associated detect intent request. The fields of this data can change without notice, so you should not write code that depends on its structure. The data may contain: - webhook call latency - webhook errors
   *   `fulfillmentMessages` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - The collection of rich messages to present to the user.
   *   `fulfillmentText` (*type:* `String.t`, *default:* `nil`) - The text to be pronounced to the user or shown on the screen. Note: This is a legacy field, `fulfillment_messages` should be preferred.
