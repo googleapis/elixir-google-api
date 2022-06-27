@@ -1,6 +1,6 @@
 # GoogleApi.Blogger
 
-Blogger API v3 client library.
+Blogger API client library.
 
 The Blogger API provides access to posts, comments and pages of a Blogger blog.
 
