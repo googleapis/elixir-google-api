@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   @moduledoc """
-  The `Registration` resource facilitates managing and configuring domain name registrations. There are several ways to create a new `Registration` resource: To create a new `Registration` resource, find a suitable domain name by calling the `SearchDomains` method with a query to see available domain name options. After choosing a name, call `RetrieveRegisterParameters` to ensure availability and obtain information like pricing, which is needed to build a call to `RegisterDomain`. Another way to create a new `Registration` is to transfer an existing domain from another registrar. First, go to the current registrar to unlock the domain for transfer and retrieve the domain's transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to `TransferDomain`.
+  The `Registration` resource facilitates managing and configuring domain name registrations. There are several ways to create a new `Registration` resource: To create a new `Registration` resource, find a suitable domain name by calling the `SearchDomains` method with a query to see available domain name options. After choosing a name, call `RetrieveRegisterParameters` to ensure availability and obtain information like pricing, which is needed to build a call to `RegisterDomain`. Another way to create a new `Registration` is to transfer an existing domain from another registrar. First, go to the current registrar to unlock the domain for transfer and retrieve the domain's transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to `TransferDomain`. Finally, you can create a new `Registration` by importing an existing domain managed with [Google Domains](https://domains.google/). First, call `RetrieveImportableDomains` to list domains to which the calling user has sufficient access. Then call `ImportDomain` on any domain names you want to use with Cloud Domains.
 
   ## Attributes
 
@@ -31,8 +31,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   *   `managementSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.ManagementSettings.t`, *default:* `nil`) - Settings for management of the `Registration`, including renewal, billing, and transfer. You cannot update these with the `UpdateRegistration` method. To update these settings, use the `ConfigureManagementSettings` method.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `Registration` resource, in the format `projects/*/locations/*/registrations/`.
   *   `pendingContactSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.ContactSettings.t`, *default:* `nil`) - Output only. Pending contact settings for the `Registration`. Updates to the `contact_settings` field that change its `registrant_contact` or `privacy` fields require email confirmation by the `registrant_contact` before taking effect. This field is set only if there are pending updates to the `contact_settings` that have not been confirmed. To confirm the changes, the `registrant_contact` must follow the instructions in the email they receive.
+  *   `registerFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the domain registration failed. Only set for domains in REGISTRATION_FAILED state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the `Registration`
   *   `supportedPrivacy` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Set of options for the `contact_settings.privacy` field that this `Registration` supports.
+  *   `transferFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the domain transfer failed. Only set for domains in TRANSFER_FAILED state.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,8 +50,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
           :managementSettings => GoogleApi.Domains.V1alpha2.Model.ManagementSettings.t() | nil,
           :name => String.t() | nil,
           :pendingContactSettings => GoogleApi.Domains.V1alpha2.Model.ContactSettings.t() | nil,
+          :registerFailureReason => String.t() | nil,
           :state => String.t() | nil,
-          :supportedPrivacy => list(String.t()) | nil
+          :supportedPrivacy => list(String.t()) | nil,
+          :transferFailureReason => String.t() | nil
         }
 
   field(:contactSettings, as: GoogleApi.Domains.V1alpha2.Model.ContactSettings)
@@ -62,8 +66,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   field(:managementSettings, as: GoogleApi.Domains.V1alpha2.Model.ManagementSettings)
   field(:name)
   field(:pendingContactSettings, as: GoogleApi.Domains.V1alpha2.Model.ContactSettings)
+  field(:registerFailureReason)
   field(:state)
   field(:supportedPrivacy, type: :list)
+  field(:transferFailureReason)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Domains.V1alpha2.Model.Registration do

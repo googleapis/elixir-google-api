@@ -22,6 +22,7 @@ defmodule GoogleApi.Domains.V1.Model.TransferParameters do
   ## Attributes
 
   *   `currentRegistrar` (*type:* `String.t`, *default:* `nil`) - The registrar that currently manages the domain.
+  *   `currentRegistrarUri` (*type:* `String.t`, *default:* `nil`) - The URL of registrar that currently manages the domain.
   *   `domainName` (*type:* `String.t`, *default:* `nil`) - The domain name. Unicode domain names are expressed in Punycode format.
   *   `nameServers` (*type:* `list(String.t)`, *default:* `nil`) - The name servers that currently store the configuration of the domain.
   *   `supportedPrivacy` (*type:* `list(String.t)`, *default:* `nil`) - Contact privacy options that the domain supports.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Domains.V1.Model.TransferParameters do
 
   @type t :: %__MODULE__{
           :currentRegistrar => String.t() | nil,
+          :currentRegistrarUri => String.t() | nil,
           :domainName => String.t() | nil,
           :nameServers => list(String.t()) | nil,
           :supportedPrivacy => list(String.t()) | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Domains.V1.Model.TransferParameters do
         }
 
   field(:currentRegistrar)
+  field(:currentRegistrarUri)
   field(:domainName)
   field(:nameServers, type: :list)
   field(:supportedPrivacy, type: :list)
