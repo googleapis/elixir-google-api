@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.UserPasswordValidationPolicy do
 
   *   `allowedFailedAttempts` (*type:* `integer()`, *default:* `nil`) - Number of failed login attempts allowed before user get locked.
   *   `enableFailedAttemptsCheck` (*type:* `boolean()`, *default:* `nil`) - If true, failed login attempts check will be enabled.
+  *   `enablePasswordVerification` (*type:* `boolean()`, *default:* `nil`) - If true, the user must specify the current password before changing the password. This flag is supported only for MySQL.
   *   `passwordExpirationDuration` (*type:* `String.t`, *default:* `nil`) - Expiration duration after password is updated.
   *   `status` (*type:* `GoogleApi.SQLAdmin.V1.Model.PasswordStatus.t`, *default:* `nil`) - Output only. Read-only password status.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.SQLAdmin.V1.Model.UserPasswordValidationPolicy do
   @type t :: %__MODULE__{
           :allowedFailedAttempts => integer() | nil,
           :enableFailedAttemptsCheck => boolean() | nil,
+          :enablePasswordVerification => boolean() | nil,
           :passwordExpirationDuration => String.t() | nil,
           :status => GoogleApi.SQLAdmin.V1.Model.PasswordStatus.t() | nil
         }
 
   field(:allowedFailedAttempts)
   field(:enableFailedAttemptsCheck)
+  field(:enablePasswordVerification)
   field(:passwordExpirationDuration)
   field(:status, as: GoogleApi.SQLAdmin.V1.Model.PasswordStatus)
 end
