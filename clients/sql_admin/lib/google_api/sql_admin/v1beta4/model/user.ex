@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
 
   ## Attributes
 
+  *   `dualPasswordType` (*type:* `String.t`, *default:* `nil`) - Dual password status for the user.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Optional. The host from which the user can connect. For `insert` operations, host defaults to an empty string. For `update` operations, host is specified as part of the request URL. The host name cannot be updated after insertion. For a MySQL instance, it's required; for a PostgreSQL or SQL Server instance, it's optional.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID. Can be omitted for *update* because it is already specified on the URL.
@@ -36,6 +37,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dualPasswordType => String.t() | nil,
           :etag => String.t() | nil,
           :host => String.t() | nil,
           :instance => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
           :type => String.t() | nil
         }
 
+  field(:dualPasswordType)
   field(:etag)
   field(:host)
   field(:instance)
