@@ -23,6 +23,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
 
   *   `accuracyMeters` (*type:* `number()`, *default:* `nil`) - The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations.
   *   `altitude` (*type:* `float()`, *default:* `nil`) - Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity.
+  *   `gpsRecordTimestampUnixEpoch` (*type:* `DateTime.t`, *default:* `nil`) - Time of the GPS record since UTC epoch.
   *   `heading` (*type:* `float()`, *default:* `nil`) - The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity.
   *   `latLngPair` (*type:* `GoogleApi.StreetViewPublish.V1.Model.LatLng.t`, *default:* `nil`) - Latitude and longitude pair of the pose, as explained here: https://cloud.google.com/datastore/docs/reference/rest/Shared.Types/LatLng When creating a Photo, if the latitude and longitude pair are not provided, the geolocation from the exif header is used. A latitude and longitude pair not provided in the photo or exif header causes the photo process to fail.
   *   `level` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Level.t`, *default:* `nil`) - Level (the floor in a building) used to configure vertical navigation.
@@ -35,6 +36,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
   @type t :: %__MODULE__{
           :accuracyMeters => number() | nil,
           :altitude => float() | nil,
+          :gpsRecordTimestampUnixEpoch => DateTime.t() | nil,
           :heading => float() | nil,
           :latLngPair => GoogleApi.StreetViewPublish.V1.Model.LatLng.t() | nil,
           :level => GoogleApi.StreetViewPublish.V1.Model.Level.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
 
   field(:accuracyMeters)
   field(:altitude)
+  field(:gpsRecordTimestampUnixEpoch, as: DateTime)
   field(:heading)
   field(:latLngPair, as: GoogleApi.StreetViewPublish.V1.Model.LatLng)
   field(:level, as: GoogleApi.StreetViewPublish.V1.Model.Level)
