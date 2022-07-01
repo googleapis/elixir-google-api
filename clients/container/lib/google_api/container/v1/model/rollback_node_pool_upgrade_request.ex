@@ -25,6 +25,7 @@ defmodule GoogleApi.Container.V1.Model.RollbackNodePoolUpgradeRequest do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool id) of the node poll to rollback upgrade. Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`.
   *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to rollback. This field has been deprecated and replaced by the name field.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field.
+  *   `respectPdb` (*type:* `boolean()`, *default:* `nil`) - Option for rollback to ignore the PodDisruptionBudget. Default value is false.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.RollbackNodePoolUpgradeRequest do
           :name => String.t() | nil,
           :nodePoolId => String.t() | nil,
           :projectId => String.t() | nil,
+          :respectPdb => boolean() | nil,
           :zone => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Container.V1.Model.RollbackNodePoolUpgradeRequest do
   field(:name)
   field(:nodePoolId)
   field(:projectId)
+  field(:respectPdb)
   field(:zone)
 end
 

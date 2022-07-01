@@ -23,8 +23,11 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
 
   *   `autoprovisioned` (*type:* `boolean()`, *default:* `nil`) - Can this node pool be deleted automatically.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Is autoscaling enabled for this node pool.
+  *   `locationPolicy` (*type:* `String.t`, *default:* `nil`) - Location policy used when scaling up a nodepool.
   *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster.
   *   `minNodeCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count.
+  *   `totalMaxNodeCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
+  *   `totalMinNodeCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +35,20 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   @type t :: %__MODULE__{
           :autoprovisioned => boolean() | nil,
           :enabled => boolean() | nil,
+          :locationPolicy => String.t() | nil,
           :maxNodeCount => integer() | nil,
-          :minNodeCount => integer() | nil
+          :minNodeCount => integer() | nil,
+          :totalMaxNodeCount => integer() | nil,
+          :totalMinNodeCount => integer() | nil
         }
 
   field(:autoprovisioned)
   field(:enabled)
+  field(:locationPolicy)
   field(:maxNodeCount)
   field(:minNodeCount)
+  field(:totalMaxNodeCount)
+  field(:totalMinNodeCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodePoolAutoscaling do
