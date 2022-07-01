@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig do
   ## Attributes
 
   *   `advancedApiOpsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AdvancedApiOpsConfig.t`, *default:* `nil`) - Configuration for the Advanced API Ops add-on.
+  *   `apiSecurityConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiSecurityConfig.t`, *default:* `nil`) - Configuration for the API Security add-on.
   *   `connectorsPlatformConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConnectorsPlatformConfig.t`, *default:* `nil`) - Configuration for the Connectors Platform add-on.
   *   `integrationConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IntegrationConfig.t`, *default:* `nil`) - Configuration for the Integration add-on.
   *   `monetizationConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1MonetizationConfig.t`, *default:* `nil`) - Configuration for the Monetization add-on.
@@ -32,6 +33,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig do
   @type t :: %__MODULE__{
           :advancedApiOpsConfig =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AdvancedApiOpsConfig.t() | nil,
+          :apiSecurityConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiSecurityConfig.t() | nil,
           :connectorsPlatformConfig =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConnectorsPlatformConfig.t() | nil,
           :integrationConfig =>
@@ -43,6 +46,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig do
   field(:advancedApiOpsConfig,
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AdvancedApiOpsConfig
   )
+
+  field(:apiSecurityConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiSecurityConfig)
 
   field(:connectorsPlatformConfig,
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConnectorsPlatformConfig
