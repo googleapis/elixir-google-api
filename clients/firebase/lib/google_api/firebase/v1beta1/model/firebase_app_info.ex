@@ -26,6 +26,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App, in the format: projects/PROJECT_ID /iosApps/APP_ID or projects/PROJECT_ID/androidApps/APP_ID or projects/ PROJECT_ID/webApps/APP_ID
   *   `namespace` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The platform-specific identifier of the App. *Note:* For most use cases, use `appId`, which is the canonical, globally unique identifier for referencing an App. This string is derived from a native identifier for each platform: `packageName` for an `AndroidApp`, `bundleId` for an `IosApp`, and `webId` for a `WebApp`. Its contents should be treated as opaque, as the native identifier format may change as platforms evolve. This string is only unique within a `FirebaseProject` and its associated Apps.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform of the Firebase App.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the App.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :namespace => String.t() | nil,
-          :platform => String.t() | nil
+          :platform => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:appId)
@@ -43,6 +45,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
   field(:name)
   field(:namespace)
   field(:platform)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
