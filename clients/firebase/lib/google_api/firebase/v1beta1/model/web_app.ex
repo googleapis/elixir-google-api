@@ -27,6 +27,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `WebApp`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the WebApp, in the format: projects/PROJECT_IDENTIFIER /webApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.webApps#WebApp.FIELDS.app_id)).
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `WebApp`.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the App.
   *   `webId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. A unique, Firebase-assigned identifier for the `WebApp`. This identifier is only used to populate the `namespace` value for the `WebApp`. For most use cases, use `appId` to identify or reference the App. The `webId` value is only unique within a `FirebaseProject` and its associated Apps.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :projectId => String.t() | nil,
+          :state => String.t() | nil,
           :webId => String.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
   field(:displayName)
   field(:name)
   field(:projectId)
+  field(:state)
   field(:webId)
 end
 
