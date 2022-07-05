@@ -22,6 +22,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo
   ## Attributes
 
   *   `availableRamBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Amount of available RAM in bytes.
+  *   `totalMemoryEncryption` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TotalMemoryEncryptionInfo.t`, *default:* `nil`) - Output only. Total memory encryption info for the device.
   *   `totalRamBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total RAM in bytes.
   """
 
@@ -29,10 +30,18 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo
 
   @type t :: %__MODULE__{
           :availableRamBytes => String.t() | nil,
+          :totalMemoryEncryption =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TotalMemoryEncryptionInfo.t()
+            | nil,
           :totalRamBytes => String.t() | nil
         }
 
   field(:availableRamBytes)
+
+  field(:totalMemoryEncryption,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TotalMemoryEncryptionInfo
+  )
+
   field(:totalRamBytes)
 end
 
