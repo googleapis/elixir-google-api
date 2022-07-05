@@ -21,28 +21,55 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkSta
 
   ## Attributes
 
+  *   `connectionState` (*type:* `String.t`, *default:* `nil`) - Output only. Current connection state of the network.
+  *   `connectionType` (*type:* `String.t`, *default:* `nil`) - Output only. Network connection type.
+  *   `encryptionOn` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the wifi encryption key is turned off.
   *   `gatewayIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. Gateway IP address.
+  *   `guid` (*type:* `String.t`, *default:* `nil`) - Output only. Network connection guid.
   *   `lanIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. LAN IP address.
+  *   `receivingBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Receiving bit rate measured in megabytes per second.
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the network state was reported.
   *   `sampleFrequency` (*type:* `String.t`, *default:* `nil`) - Output only. Frequency the report is sampled.
   *   `signalStrengthDbm` (*type:* `integer()`, *default:* `nil`) - Output only. Signal strength for wireless networks measured in decibels.
+  *   `transmissionBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Transmission bit rate measured in megabytes per second.
+  *   `transmissionPowerDbm` (*type:* `integer()`, *default:* `nil`) - Output only. Transmission power measured in decibels.
+  *   `wifiLinkQuality` (*type:* `String.t`, *default:* `nil`) - Output only. Wifi link quality. Value ranges from [0, 70]. 0 indicates no signal and 70 indicates a strong signal.
+  *   `wifiPowerManagementEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Wifi power management enabled
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectionState => String.t() | nil,
+          :connectionType => String.t() | nil,
+          :encryptionOn => boolean() | nil,
           :gatewayIpAddress => String.t() | nil,
+          :guid => String.t() | nil,
           :lanIpAddress => String.t() | nil,
+          :receivingBitRateMbps => String.t() | nil,
           :reportTime => DateTime.t() | nil,
           :sampleFrequency => String.t() | nil,
-          :signalStrengthDbm => integer() | nil
+          :signalStrengthDbm => integer() | nil,
+          :transmissionBitRateMbps => String.t() | nil,
+          :transmissionPowerDbm => integer() | nil,
+          :wifiLinkQuality => String.t() | nil,
+          :wifiPowerManagementEnabled => boolean() | nil
         }
 
+  field(:connectionState)
+  field(:connectionType)
+  field(:encryptionOn)
   field(:gatewayIpAddress)
+  field(:guid)
   field(:lanIpAddress)
+  field(:receivingBitRateMbps)
   field(:reportTime, as: DateTime)
   field(:sampleFrequency)
   field(:signalStrengthDbm)
+  field(:transmissionBitRateMbps)
+  field(:transmissionPowerDbm)
+  field(:wifiLinkQuality)
+  field(:wifiPowerManagementEnabled)
 end
 
 defimpl Poison.Decoder,

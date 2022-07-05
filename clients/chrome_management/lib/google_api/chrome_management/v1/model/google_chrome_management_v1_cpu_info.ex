@@ -22,6 +22,8 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo do
   ## Attributes
 
   *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. The CPU architecture.
+  *   `keylockerConfigured` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` = disabled. Only reported if keylockerSupported = `TRUE`.
+  *   `keylockerSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether keylocker is supported.
   *   `maxClockSpeed` (*type:* `integer()`, *default:* `nil`) - Output only. The max CPU clock speed in kHz.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
   """
@@ -30,11 +32,15 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo do
 
   @type t :: %__MODULE__{
           :architecture => String.t() | nil,
+          :keylockerConfigured => boolean() | nil,
+          :keylockerSupported => boolean() | nil,
           :maxClockSpeed => integer() | nil,
           :model => String.t() | nil
         }
 
   field(:architecture)
+  field(:keylockerConfigured)
+  field(:keylockerSupported)
   field(:maxClockSpeed)
   field(:model)
 end

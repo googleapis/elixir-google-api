@@ -33,12 +33,15 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   *   `memoryInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo.t`, *default:* `nil`) - Output only. Information regarding memory specs for the device.
   *   `memoryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryStatusReport.t)`, *default:* `nil`) - Output only. Memory status reports collected periodically sorted decreasing by report_time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the device.
+  *   `networkDiagnosticsReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport.t)`, *default:* `nil`) - Output only. Network diagnostics collected periodically.
+  *   `networkInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkInfo.t`, *default:* `nil`) - Output only. Network devices information.
   *   `networkStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport.t)`, *default:* `nil`) - Output only. Network specs collected periodically.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization unit ID of the device.
   *   `osUpdateStatus` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1OsUpdateStatus.t)`, *default:* `nil`) - Output only. Contains relevant information regarding ChromeOS update status.
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the ChromeOS Devices tab.
   *   `storageInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageInfo.t`, *default:* `nil`) - Output only. Information of storage specs for the device.
   *   `storageStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageStatusReport.t)`, *default:* `nil`) - Output only. Storage reports collected periodically.
+  *   `thunderboltInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ThunderboltInfo.t)`, *default:* `nil`) - Output only. Information on Thunderbolt bus.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -79,6 +82,13 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
             )
             | nil,
           :name => String.t() | nil,
+          :networkDiagnosticsReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport.t()
+            )
+            | nil,
+          :networkInfo =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkInfo.t() | nil,
           :networkStatusReport =>
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport.t()
@@ -95,6 +105,9 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageStatusReport.t()
             )
+            | nil,
+          :thunderboltInfo =>
+            list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ThunderboltInfo.t())
             | nil
         }
 
@@ -144,6 +157,13 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   field(:name)
 
+  field(:networkDiagnosticsReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport,
+    type: :list
+  )
+
+  field(:networkInfo, as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkInfo)
+
   field(:networkStatusReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport,
     type: :list
@@ -161,6 +181,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   field(:storageStatusReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageStatusReport,
+    type: :list
+  )
+
+  field(:thunderboltInfo,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ThunderboltInfo,
     type: :list
   )
 end
