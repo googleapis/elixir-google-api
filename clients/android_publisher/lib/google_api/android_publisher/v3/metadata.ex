@@ -20,7 +20,7 @@ defmodule GoogleApi.AndroidPublisher.V3 do
   API client metadata for GoogleApi.AndroidPublisher.V3.
   """
 
-  @discovery_revision "20220609"
+  @discovery_revision "20220704"
 
   def discovery_revision(), do: @discovery_revision
 end

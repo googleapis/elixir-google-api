@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType do
 
   *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.
   *   `gracePeriodDuration` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Acceptable values are P0D (zero days), P3D (3 days), P7D (7 days), P14D (14 days), and P30D (30 days). If not specified, a default value will be used based on the recurring period duration.
-  *   `legacyCompatible` (*type:* `boolean()`, *default:* `nil`) - Whether the renewing base plan is compatible with legacy version of the Play Billing Library (prior to version 3) or not. Only one renewing base plan can be marked as legacy compatible for a given subscription.
+  *   `legacyCompatible` (*type:* `boolean()`, *default:* `nil`) - Whether the renewing base plan is backward compatible. The backward compatible base plan is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one renewing base plan can be marked as legacy compatible for a given subscription.
   *   `prorationMode` (*type:* `String.t`, *default:* `nil`) - The proration mode for the base plan determines what happens when a user switches to this plan from another base plan. If unspecified, defaults to CHARGE_ON_NEXT_BILLING_DATE.
   *   `resubscribeState` (*type:* `String.t`, *default:* `nil`) - Whether users should be able to resubscribe to this base plan in Google Play surfaces. Defaults to RESUBSCRIBE_STATE_ACTIVE if not specified.
   """
