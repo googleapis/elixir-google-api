@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterOperationMetadata do
 
   ## Attributes
 
+  *   `childOperationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Child operation ids
   *   `clusterName` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the cluster for the operation.
   *   `clusterUuid` (*type:* `String.t`, *default:* `nil`) - Output only. Cluster UUID for the operation.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Short description of operation.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterOperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :childOperationIds => list(String.t()) | nil,
           :clusterName => String.t() | nil,
           :clusterUuid => String.t() | nil,
           :description => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterOperationMetadata do
           :warnings => list(String.t()) | nil
         }
 
+  field(:childOperationIds, type: :list)
   field(:clusterName)
   field(:clusterUuid)
   field(:description)
