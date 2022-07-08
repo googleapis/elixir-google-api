@@ -23,6 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.Cuepoint do
 
   *   `cueType` (*type:* `String.t`, *default:* `nil`) - 
   *   `durationSecs` (*type:* `integer()`, *default:* `nil`) - The duration of this cuepoint.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for cuepoint resource.
   *   `insertionOffsetTimeMs` (*type:* `String.t`, *default:* `nil`) - The time when the cuepoint should be inserted by offset to the broadcast actual start time.
   *   `walltimeMs` (*type:* `String.t`, *default:* `nil`) - The wall clock time at which the cuepoint should be inserted. Only one of insertion_offset_time_ms and walltime_ms may be set at a time.
@@ -33,6 +34,7 @@ defmodule GoogleApi.YouTube.V3.Model.Cuepoint do
   @type t :: %__MODULE__{
           :cueType => String.t() | nil,
           :durationSecs => integer() | nil,
+          :etag => String.t() | nil,
           :id => String.t() | nil,
           :insertionOffsetTimeMs => String.t() | nil,
           :walltimeMs => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.YouTube.V3.Model.Cuepoint do
 
   field(:cueType)
   field(:durationSecs)
+  field(:etag)
   field(:id)
   field(:insertionOffsetTimeMs)
   field(:walltimeMs)
