@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.VpcPeeringConfig do
 
   ## Attributes
 
-  *   `subnet` (*type:* `String.t`, *default:* `nil`) - Required. A free subnet for peering. (CIDR of /29) TODO(b/172995841) add validators.
+  *   `subnet` (*type:* `String.t`, *default:* `nil`) - Required. A free subnet for peering. (CIDR of /29)
   *   `vpc` (*type:* `String.t`, *default:* `nil`) - Required. Fully qualified name of the VPC that Datastream will peer to. Format: `projects/{project}/global/{networks}/{name}`
   """
 
