@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors do
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - [Output Only] The error type identifier for this error.
+  *   `errorDetails` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrorsErrorDetails.t)`, *default:* `nil`) - [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
   *   `location` (*type:* `String.t`, *default:* `nil`) - [Output Only] Indicates the field in the request that caused the error. This property is optional.
   *   `message` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable error message.
   """
@@ -30,11 +31,22 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrors do
 
   @type t :: %__MODULE__{
           :code => String.t() | nil,
+          :errorDetails =>
+            list(
+              GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrorsErrorDetails.t()
+            )
+            | nil,
           :location => String.t() | nil,
           :message => String.t() | nil
         }
 
   field(:code)
+
+  field(:errorDetails,
+    as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrorsErrorDetails,
+    type: :list
+  )
+
   field(:location)
   field(:message)
 end

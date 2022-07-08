@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
   *   `autoCreated` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
   *   `chainName` (*type:* `String.t`, *default:* `nil`) - Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :autoCreated => boolean() | nil,
           :chainName => String.t() | nil,
           :creationTimestamp => String.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :storageLocations => list(String.t()) | nil
         }
 
+  field(:architecture)
   field(:autoCreated)
   field(:chainName)
   field(:creationTimestamp)

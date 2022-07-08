@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the disk. Valid values are ARM64 or X86_64.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
   *   `replicaZones` (*type:* `list(String.t)`, *default:* `nil`) - URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :locationHint => String.t() | nil,
           :replicaZones => list(String.t()) | nil,
           :satisfiesPzs => boolean() | nil,
@@ -101,6 +103,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :users => list(String.t()) | nil
         }
 
+  field(:architecture)
   field(:locationHint)
   field(:replicaZones, type: :list)
   field(:satisfiesPzs)
