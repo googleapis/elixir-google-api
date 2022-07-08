@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties do
   *   `credential` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t`, *default:* `nil`) - Input only. Cloud SQL credential.
   *   `database` (*type:* `String.t`, *default:* `nil`) - Database name.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Cloud SQL instance ID in the form `project:location:instance`.
+  *   `serviceAccountId` (*type:* `String.t`, *default:* `nil`) - Output only. The account ID of the service used for the purpose of this connection. When the connection is used in the context of an operation in BigQuery, this service account will serve as identity being used for connecting to the CloudSQL instance specified in this connection.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the Cloud SQL database.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties do
           :credential => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t() | nil,
           :database => String.t() | nil,
           :instanceId => String.t() | nil,
+          :serviceAccountId => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:credential, as: GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential)
   field(:database)
   field(:instanceId)
+  field(:serviceAccountId)
   field(:type)
 end
 
