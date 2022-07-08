@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SavedDisk do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - [Output Only] The architecture of the attached disk.
   *   `kind` (*type:* `String.t`, *default:* `compute#savedDisk`) - [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - Specifies a URL of the disk attached to the source instance.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] Size of the individual disk snapshot used by this machine image.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Compute.V1.Model.SavedDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :kind => String.t() | nil,
           :sourceDisk => String.t() | nil,
           :storageBytes => String.t() | nil,
           :storageBytesStatus => String.t() | nil
         }
 
+  field(:architecture)
   field(:kind)
   field(:sourceDisk)
   field(:storageBytes)

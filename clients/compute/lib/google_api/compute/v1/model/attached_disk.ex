@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - [Output Only] The architecture of the attached disk. Valid values are ARM64 or X86_64.
   *   `autoDelete` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
   *   `boot` (*type:* `boolean()`, *default:* `nil`) - Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
   *   `deviceName` (*type:* `String.t`, *default:* `nil`) - Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :autoDelete => boolean() | nil,
           :boot => boolean() | nil,
           :deviceName => String.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
           :type => String.t() | nil
         }
 
+  field(:architecture)
   field(:autoDelete)
   field(:boot)
   field(:deviceName)

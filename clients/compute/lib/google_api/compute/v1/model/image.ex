@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the image. Valid values are ARM64 or X86_64.
   *   `archiveSizeBytes` (*type:* `String.t`, *default:* `nil`) - Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - The deprecation status associated with this image.
@@ -57,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :archiveSizeBytes => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
@@ -92,6 +94,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
           :storageLocations => list(String.t()) | nil
         }
 
+  field(:architecture)
   field(:archiveSizeBytes)
   field(:creationTimestamp)
   field(:deprecated, as: GoogleApi.Compute.V1.Model.DeprecationStatus)

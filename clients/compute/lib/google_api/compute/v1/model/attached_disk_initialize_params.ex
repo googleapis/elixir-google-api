@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the attached disk. Valid values are arm64 or x86_64.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description. Provide this property when creating the disk.
   *   `diskName` (*type:* `String.t`, *default:* `nil`) - Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :description => String.t() | nil,
           :diskName => String.t() | nil,
           :diskSizeGb => String.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
             GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil
         }
 
+  field(:architecture)
   field(:description)
   field(:diskName)
   field(:diskSizeGb)
