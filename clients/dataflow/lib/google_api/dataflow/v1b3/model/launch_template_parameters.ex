@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
   ## Attributes
 
   *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t`, *default:* `nil`) - The runtime environment for the job.
-  *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job.
+  *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
   *   `parameters` (*type:* `map()`, *default:* `nil`) - The runtime parameters to pass to the job.
   *   `transformNameMapping` (*type:* `map()`, *default:* `nil`) - Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.
   *   `update` (*type:* `boolean()`, *default:* `nil`) - If set, replace the existing pipeline with the name specified by jobName with this pipeline, preserving state.
