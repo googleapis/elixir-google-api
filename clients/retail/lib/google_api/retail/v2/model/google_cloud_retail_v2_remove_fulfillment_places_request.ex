@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RemoveFulfillmentPlacesRequest do
   @moduledoc """
-  Request message for RemoveFulfillmentPlaces method.
+  Request message for ProductService.RemoveFulfillmentPlaces method.
 
   ## Attributes
 

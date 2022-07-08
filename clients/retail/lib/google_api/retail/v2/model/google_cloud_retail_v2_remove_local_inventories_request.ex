@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RemoveLocalInventoriesRequest do
   @moduledoc """
-  Request message for RemoveLocalInventories method.
+  Request message for ProductService.RemoveLocalInventories method.
 
   ## Attributes
 
