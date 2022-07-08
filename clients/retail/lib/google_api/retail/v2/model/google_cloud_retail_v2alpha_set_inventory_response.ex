@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaSetInventoryResponse do
   @moduledoc """
-  Response of the SetInventoryRequest. Currently empty because there is no meaningful response populated from the SetInventory method.
+  Response of the SetInventoryRequest. Currently empty because there is no meaningful response populated from the ProductService.SetInventory method.
 
   ## Attributes
 
