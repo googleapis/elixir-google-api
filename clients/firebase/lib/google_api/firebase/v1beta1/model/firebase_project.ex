@@ -23,9 +23,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Project, in the format: projects/PROJECT_IDENTIFIER PROJECT_IDENTIFIER: the Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project.
-  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services.
-  *   `resources` (*type:* `GoogleApi.Firebase.V1beta1.Model.DefaultResources.t`, *default:* `nil`) - The default Firebase resources associated with the Project.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services.
+  *   `resources` (*type:* `GoogleApi.Firebase.V1beta1.Model.DefaultResources.t`, *default:* `nil`) - Output only. The default Firebase resources associated with the Project.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the Project. Updates to the state must be performed via com.google.cloudresourcemanager.v1.Projects.DeleteProject and com.google.cloudresourcemanager.v1.Projects.UndeleteProject
   """
 
