@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Federation do
 
   ## Attributes
 
-  *   `backendMetastores` (*type:* `%{optional(String.t) => GoogleApi.Metastore.V1beta.Model.BackendMetastore.t}`, *default:* `nil`) - A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key is an integer that represents the order in which BackendMetastores should be evaluated to resolve database names at query time. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.
+  *   `backendMetastores` (*type:* `%{optional(String.t) => GoogleApi.Metastore.V1beta.Model.BackendMetastore.t}`, *default:* `nil`) - A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metastore federation was created.
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The federation endpoint.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels for the metastore federation.
