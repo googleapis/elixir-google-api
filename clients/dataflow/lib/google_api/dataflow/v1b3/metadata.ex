@@ -20,7 +20,7 @@ defmodule GoogleApi.Dataflow.V1b3 do
   API client metadata for GoogleApi.Dataflow.V1b3.
   """
 
-  @discovery_revision "20220513"
+  @discovery_revision "20220629"
 
   def discovery_revision(), do: @discovery_revision
 end
