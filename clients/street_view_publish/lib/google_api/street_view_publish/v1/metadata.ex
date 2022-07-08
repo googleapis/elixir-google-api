@@ -20,7 +20,7 @@ defmodule GoogleApi.StreetViewPublish.V1 do
   API client metadata for GoogleApi.StreetViewPublish.V1.
   """
 
-  @discovery_revision "20220628"
+  @discovery_revision "20220706"
 
   def discovery_revision(), do: @discovery_revision
 end

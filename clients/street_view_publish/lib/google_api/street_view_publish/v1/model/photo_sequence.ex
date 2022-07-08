@@ -23,6 +23,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoSequence do
 
   *   `captureTimeOverride` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Absolute time when the photo sequence starts to be captured. If the photo sequence is a video, this is the start time of the video. If this field is populated in input, it overrides the capture time in the video or XDM file.
   *   `distanceMeters` (*type:* `float()`, *default:* `nil`) - Output only. The computed distance of the photo sequence in meters.
+  *   `failureDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails.t`, *default:* `nil`) - Output only. If this sequence has `failure_reason` set, this may contain additional details about the failure.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - Output only. If this sequence has processing_state = FAILED, this will contain the reason why it failed. If the processing_state is any other value, this field will be unset.
   *   `filename` (*type:* `String.t`, *default:* `nil`) - Output only. The filename of the upload. Does not include the directory path. Only available if the sequence was uploaded on a platform that provides the filename.
   *   `gpsSource` (*type:* `String.t`, *default:* `nil`) - Input only. If both raw_gps_timeline and the Camera Motion Metadata Track (CAMM) contain GPS measurements, indicate which takes precedence.
@@ -42,6 +43,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoSequence do
   @type t :: %__MODULE__{
           :captureTimeOverride => DateTime.t() | nil,
           :distanceMeters => float() | nil,
+          :failureDetails =>
+            GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails.t() | nil,
           :failureReason => String.t() | nil,
           :filename => String.t() | nil,
           :gpsSource => String.t() | nil,
@@ -58,6 +61,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoSequence do
 
   field(:captureTimeOverride, as: DateTime)
   field(:distanceMeters)
+  field(:failureDetails, as: GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails)
   field(:failureReason)
   field(:filename)
   field(:gpsSource)
