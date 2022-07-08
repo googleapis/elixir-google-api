@@ -21,6 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
 
   ## Attributes
 
+  *   `apiKeyId` (*type:* `String.t`, *default:* `nil`) - The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set to an empty value in update requests. If left unset on create requests, an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Firebase App.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App, in the format: projects/PROJECT_ID /iosApps/APP_ID or projects/PROJECT_ID/androidApps/APP_ID or projects/ PROJECT_ID/webApps/APP_ID
@@ -32,6 +33,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apiKeyId => String.t() | nil,
           :appId => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
           :state => String.t() | nil
         }
 
+  field(:apiKeyId)
   field(:appId)
   field(:displayName)
   field(:name)
