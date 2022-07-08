@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.ListEkmConnectionsResponse do
   @moduledoc """
-  Response message for KeyManagementService.ListEkmConnections.
+  Response message for EkmService.ListEkmConnections.
 
   ## Attributes
 
