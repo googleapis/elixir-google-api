@@ -52,7 +52,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the object in RFC 3339 format.
   *   `timeDeleted` (*type:* `DateTime.t`, *default:* `nil`) - The deletion time of the object in RFC 3339 format. Will be returned if and only if this version of the object has been deleted.
   *   `timeStorageClassUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the object metadata in RFC 3339 format.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the object metadata in RFC 3339 format. Set initially to object creation time and then updated whenever any metadata of the object changes. This includes changes made by a requester, such as modifying custom metadata, as well as changes made by Cloud Storage on behalf of a requester, such as changing the storage class based on an Object Lifecycle Configuration.
   """
 
   use GoogleApi.Gax.ModelBase
