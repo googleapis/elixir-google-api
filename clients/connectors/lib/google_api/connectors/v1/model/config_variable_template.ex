@@ -21,6 +21,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
 
   ## Attributes
 
+  *   `authorizationCodeLink` (*type:* `GoogleApi.Connectors.V1.Model.AuthorizationCodeLink.t`, *default:* `nil`) - Authorization code link options. To be populated if `ValueType` is `AUTHORIZATION_CODE`
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the parameter.
   *   `enumOptions` (*type:* `list(GoogleApi.Connectors.V1.Model.EnumOption.t)`, *default:* `nil`) - Enum options. To be populated if `ValueType` is `ENUM`
@@ -34,6 +35,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :authorizationCodeLink => GoogleApi.Connectors.V1.Model.AuthorizationCodeLink.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :enumOptions => list(GoogleApi.Connectors.V1.Model.EnumOption.t()) | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
           :valueType => String.t() | nil
         }
 
+  field(:authorizationCodeLink, as: GoogleApi.Connectors.V1.Model.AuthorizationCodeLink)
   field(:description)
   field(:displayName)
   field(:enumOptions, as: GoogleApi.Connectors.V1.Model.EnumOption, type: :list)
