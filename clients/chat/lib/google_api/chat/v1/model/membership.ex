@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.Membership do
   @moduledoc """
-  Represents a membership relation in Google Chat.
+  Represents a membership relation in Google Chat, such as whether a user or Chat app is invited to, part of, or absent from a space.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership a.k.a. the time at which the member joined the space, if applicable.
-  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A user in Google Chat. Represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. Format: `users/{user}`
-  *   `name` (*type:* `String.t`, *default:* `nil`) - 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership, such as when a member joined or was invited to join a space.
+  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A Google Chat user or app. Format: `users/{user}` or `users/app` When `users/{user}`, represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. When `users/app`, represents a Chat app creating membership for itself.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership. Format: spaces/{space}/members/{member}
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the membership.
   """
 

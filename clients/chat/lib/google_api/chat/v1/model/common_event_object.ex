@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.CommonEventObject do
   @moduledoc """
-  Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes data submitted by users interacting with cards, like data entered in [dialogs](https://developers.google.com/chat/how-tos/bot-dialogs).
+  Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes data submitted by users interacting with cards, like data entered in [dialogs](https://developers.google.com/chat/how-tos/dialogs).
 
   ## Attributes
 
-  *   `formInputs` (*type:* `%{optional(String.t) => GoogleApi.Chat.V1.Model.Inputs.t}`, *default:* `nil`) - A map containing the current values of the widgets in a card. The map keys are the string IDs assigned to each widget, and the values represent inputs to the widget. Depending on the input data type, a different object represents each input: For single-value widgets, `StringInput`. For multi-value widgets, an array of `StringInput` objects. For a date-time picker, a `DateTimeInput`. For a date-only picker, a `DateInput`. For a time-only picker, a `TimeInput`. Corresponds with the data entered by a user on a card in a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs).
+  *   `formInputs` (*type:* `%{optional(String.t) => GoogleApi.Chat.V1.Model.Inputs.t}`, *default:* `nil`) - A map containing the current values of the widgets in a card. The map keys are the string IDs assigned to each widget, and the values represent inputs to the widget. Depending on the input data type, a different object represents each input: For single-value widgets, `StringInput`. For multi-value widgets, an array of `StringInput` objects. For a date-time picker, a `DateTimeInput`. For a date-only picker, a `DateInput`. For a time-only picker, a `TimeInput`. Corresponds with the data entered by a user on a card in a [dialog](https://developers.google.com/chat/how-tos/dialogs).
   *   `hostApp` (*type:* `String.t`, *default:* `nil`) - The hostApp enum which indicates the app the add-on is invoked from. Always `CHAT` for Chat apps.
   *   `invokedFunction` (*type:* `String.t`, *default:* `nil`) - Name of the invoked function associated with the widget. Only set for Chat apps.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Custom [parameters](/chat/api/reference/rest/v1/cards#ActionParameter) passed to the invoked function. Both keys and values must be strings.

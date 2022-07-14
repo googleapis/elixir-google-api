@@ -2,7 +2,7 @@
 
 Google Chat API client library.
 
-Enables apps to fetch information and perform actions in Google Chat. Authentication using a service account is a prerequisite for using the Google Chat REST API.
+Enables apps to fetch information and perform actions in Google Chat. Authentication is a prerequisite for using the Google Chat REST API.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_chat, "~> 0.31"}]
+  [{:google_api_chat, "~> 0.32"}]
 end
 ```
 

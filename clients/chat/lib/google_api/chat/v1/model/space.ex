@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Chat.V1.Model.Space do
   @moduledoc """
-  A space in Google Chat. Spaces are conversations between two or more users or 1:1 messages between a user and a Chat bot.
+  A space in Google Chat. Spaces are conversations between two or more users or 1:1 messages between a user and a Chat app.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The space's display name. For direct messages between humans, this field might be empty.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the space, in the form "spaces/*". Example: spaces/AAAAAAAAAAAA
-  *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the space is a DM between a bot and a single human.
-  *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the messages are threaded in this space.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `single_user_bot_dm` instead. Output only. The type of a space.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space. Format: spaces/{space}
+  *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the space is a DM between a Chat app and a single human.
+  *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether messages are threaded in this space.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated: Use `single_user_bot_dm` or `space_type` (developer preview) instead. The type of a space.
   """
 
   use GoogleApi.Gax.ModelBase
