@@ -42,6 +42,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `description` (*type:* `String.t`, *default:* `nil`) - A short description of the file.
   *   `kind` (*type:* `String.t`, *default:* `drive#file`) - Identifies what kind of resource this is. Value: the fixed string "drive#file".
   *   `iconLink` (*type:* `String.t`, *default:* `nil`) - A static, unauthenticated link to the file's icon.
+  *   `labelInfo` (*type:* `GoogleApi.Drive.V3.Model.FileLabelInfo.t`, *default:* `nil`) - An overview of the labels on the file.
   *   `viewedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been viewed by this user.
   *   `contentHints` (*type:* `GoogleApi.Drive.V3.Model.FileContentHints.t`, *default:* `nil`) - Additional information about the content of the file. These fields are never populated in responses.
   *   `webContentLink` (*type:* `String.t`, *default:* `nil`) - A link for downloading the content of the file in a browser. This is only available for files with binary content in Google Drive.
@@ -111,6 +112,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :description => String.t() | nil,
           :kind => String.t() | nil,
           :iconLink => String.t() | nil,
+          :labelInfo => GoogleApi.Drive.V3.Model.FileLabelInfo.t() | nil,
           :viewedByMe => boolean() | nil,
           :contentHints => GoogleApi.Drive.V3.Model.FileContentHints.t() | nil,
           :webContentLink => String.t() | nil,
@@ -172,6 +174,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   field(:description)
   field(:kind)
   field(:iconLink)
+  field(:labelInfo, as: GoogleApi.Drive.V3.Model.FileLabelInfo)
   field(:viewedByMe)
   field(:contentHints, as: GoogleApi.Drive.V3.Model.FileContentHints)
   field(:webContentLink)
