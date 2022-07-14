@@ -20,7 +20,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1 do
   API client metadata for GoogleApi.RecaptchaEnterprise.V1.
   """
 
-  @discovery_revision "20220129"
+  @discovery_revision "20220708"
 
   def discovery_revision(), do: @discovery_revision
 end
