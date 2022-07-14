@@ -27,11 +27,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkSta
   *   `gatewayIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. Gateway IP address.
   *   `guid` (*type:* `String.t`, *default:* `nil`) - Output only. Network connection guid.
   *   `lanIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. LAN IP address.
-  *   `receivingBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Receiving bit rate measured in megabytes per second.
+  *   `receivingBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Receiving bit rate measured in Megabits per second.
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the network state was reported.
   *   `sampleFrequency` (*type:* `String.t`, *default:* `nil`) - Output only. Frequency the report is sampled.
   *   `signalStrengthDbm` (*type:* `integer()`, *default:* `nil`) - Output only. Signal strength for wireless networks measured in decibels.
-  *   `transmissionBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Transmission bit rate measured in megabytes per second.
+  *   `transmissionBitRateMbps` (*type:* `String.t`, *default:* `nil`) - Output only. Transmission bit rate measured in Megabits per second.
   *   `transmissionPowerDbm` (*type:* `integer()`, *default:* `nil`) - Output only. Transmission power measured in decibels.
   *   `wifiLinkQuality` (*type:* `String.t`, *default:* `nil`) - Output only. Wifi link quality. Value ranges from [0, 70]. 0 indicates no signal and 70 indicates a strong signal.
   *   `wifiPowerManagementEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Wifi power management enabled
