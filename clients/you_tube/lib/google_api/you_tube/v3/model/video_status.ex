@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   @moduledoc """
-  Basic details about a video category, such as its localized title. Next Id: 17
+  Basic details about a video category, such as its localized title. Next Id: 18
 
   ## Attributes
 
