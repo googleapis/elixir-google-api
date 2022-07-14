@@ -27,9 +27,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.UsageLogEvent do
   *   `certAuthorityInstalledEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent.t`, *default:* `nil`) - A new root certificate was installed into the system's trusted credential storage. Part of SECURITY_LOGS.
   *   `certAuthorityRemovedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertAuthorityRemovedEvent.t`, *default:* `nil`) - A root certificate was removed from the system's trusted credential storage. Part of SECURITY_LOGS.
   *   `certValidationFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent.t`, *default:* `nil`) - An X.509v3 certificate failed to validate, currently this validation is performed on the Wi-FI access point and failure may be due to a mismatch upon server certificate validation. However it may in the future include other validation events of an X.509v3 certificate. Part of SECURITY_LOGS.
-  *   `connectEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.ConnectEvent.t`, *default:* `nil`) - A TCP connect event was initiated through the standard network stack. Part of NETWORK_LOGS.
+  *   `connectEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.ConnectEvent.t`, *default:* `nil`) - A TCP connect event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS.
   *   `cryptoSelfTestCompletedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent.t`, *default:* `nil`) - Validates whether Android’s built-in cryptographic library (BoringSSL) is valid. Should always succeed on device boot, if it fails, the device should be considered untrusted. Part of SECURITY_LOGS.
-  *   `dnsEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.DnsEvent.t`, *default:* `nil`) - A DNS lookup event was initiated through the standard network stack. Part of NETWORK_LOGS.
+  *   `dnsEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.DnsEvent.t`, *default:* `nil`) - A DNS lookup event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique id of the event.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Device timestamp when the event was logged.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - The particular usage log event type that was reported on the device. Use this to determine which event field to access.
@@ -50,7 +50,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.UsageLogEvent do
   *   `osShutdownEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent.t`, *default:* `nil`) - Device was shutdown. Part of SECURITY_LOGS.
   *   `osStartupEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsStartupEvent.t`, *default:* `nil`) - Device was started. Part of SECURITY_LOGS.
   *   `remoteLockEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.RemoteLockEvent.t`, *default:* `nil`) - The device or profile has been remotely locked via the LOCK command. Part of SECURITY_LOGS.
-  *   `wipeFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t`, *default:* `nil`) - The work profile or company-owned device failed to wipe when when requested. This could be user initiated or admin initiated e.g. delete was received. Part of SECURITY_LOGS.
+  *   `wipeFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t`, *default:* `nil`) - The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Part of SECURITY_LOGS.
   """
 
   use GoogleApi.Gax.ModelBase
