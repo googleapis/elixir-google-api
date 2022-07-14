@@ -18,7 +18,7 @@
 defmodule GoogleApi.Classroom.Mixfile do
   use Mix.Project
 
-  @version "0.19.4"
+  @version "0.19.5"
 
   def project() do
     [
