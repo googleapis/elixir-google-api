@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
 
   ## Attributes
 
+  *   `cloudsqlConfigs` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.CloudSQLConfig.t)`, *default:* `nil`) - Represents one or multiple Cloud SQL configurations.
   *   `consumerExportCustomRoutes` (*type:* `boolean()`, *default:* `nil`) - Export custom routes flag value for peering from consumer to producer.
   *   `consumerExportSubnetRoutesWithPublicIp` (*type:* `boolean()`, *default:* `nil`) - Export subnet routes with public ip flag value for peering from consumer to producer.
   *   `consumerImportCustomRoutes` (*type:* `boolean()`, *default:* `nil`) - Import custom routes flag value for peering from consumer to producer.
@@ -38,6 +39,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudsqlConfigs => list(GoogleApi.ServiceNetworking.V1.Model.CloudSQLConfig.t()) | nil,
           :consumerExportCustomRoutes => boolean() | nil,
           :consumerExportSubnetRoutesWithPublicIp => boolean() | nil,
           :consumerImportCustomRoutes => boolean() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
           :vpcScReferenceArchitectureEnabled => boolean() | nil
         }
 
+  field(:cloudsqlConfigs, as: GoogleApi.ServiceNetworking.V1.Model.CloudSQLConfig, type: :list)
   field(:consumerExportCustomRoutes)
   field(:consumerExportSubnetRoutesWithPublicIp)
   field(:consumerImportCustomRoutes)
