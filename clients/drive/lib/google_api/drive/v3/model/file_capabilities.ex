@@ -40,6 +40,8 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the sharing settings for this file.
   *   `canAddFolderFromAnotherDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add a folder from another drive (different shared drive or My Drive) to this folder. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canChangeCopyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the copyRequiresWriterPermission restriction of this file.
+  *   `canReadLabels` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the labels on this file.
+  *   `canModifyLabels` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the labels on this file.
   *   `canMoveItemWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this item within this drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added and the parent that is being removed.
   *   `canReadDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the shared drive to which this file belongs. Only populated for items in shared drives.
   *   `canRemoveMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files.
@@ -81,6 +83,8 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canShare => boolean() | nil,
           :canAddFolderFromAnotherDrive => boolean() | nil,
           :canChangeCopyRequiresWriterPermission => boolean() | nil,
+          :canReadLabels => boolean() | nil,
+          :canModifyLabels => boolean() | nil,
           :canMoveItemWithinDrive => boolean() | nil,
           :canReadDrive => boolean() | nil,
           :canRemoveMyDriveParent => boolean() | nil,
@@ -119,6 +123,8 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canShare)
   field(:canAddFolderFromAnotherDrive)
   field(:canChangeCopyRequiresWriterPermission)
+  field(:canReadLabels)
+  field(:canModifyLabels)
   field(:canMoveItemWithinDrive)
   field(:canReadDrive)
   field(:canRemoveMyDriveParent)
