@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
   ## Attributes
 
   *   `appEngineHttpTarget` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget.t`, *default:* `nil`) - App Engine HTTP target. An App Engine queue is a queue that has an AppEngineHttpTarget.
+  *   `httpTarget` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.HttpTarget.t`, *default:* `nil`) - An http_target is used to override the target values for HTTP tasks.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Caller-specified and required in CreateQueue, after which it becomes output only. The queue name. The queue name must have the following format: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the queue's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or hyphens (-). The maximum length is 100 characters.
   *   `pullTarget` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.PullTarget.t`, *default:* `nil`) - Pull target. A pull queue is a queue that has a PullTarget.
   *   `purgeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time this queue was purged. All tasks that were created before this time were purged. A queue can be purged using PurgeQueue, the [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue). Purge time will be truncated to the nearest microsecond. Purge time will be unset if the queue has never been purged.
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
   @type t :: %__MODULE__{
           :appEngineHttpTarget =>
             GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget.t() | nil,
+          :httpTarget => GoogleApi.CloudTasks.V2beta2.Model.HttpTarget.t() | nil,
           :name => String.t() | nil,
           :pullTarget => GoogleApi.CloudTasks.V2beta2.Model.PullTarget.t() | nil,
           :purgeTime => DateTime.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
         }
 
   field(:appEngineHttpTarget, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget)
+  field(:httpTarget, as: GoogleApi.CloudTasks.V2beta2.Model.HttpTarget)
   field(:name)
   field(:pullTarget, as: GoogleApi.CloudTasks.V2beta2.Model.PullTarget)
   field(:purgeTime, as: DateTime)
