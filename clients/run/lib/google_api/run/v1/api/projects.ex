@@ -113,7 +113,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in [AIP-160](https://google.aip.dev/160).
+      *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service selects a default.
       *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -414,7 +414,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -492,7 +492,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -582,7 +582,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -664,7 +664,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -752,7 +752,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -835,7 +835,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -918,7 +918,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1001,7 +1001,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1090,7 +1090,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1171,7 +1171,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1259,7 +1259,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1337,7 +1337,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1425,7 +1425,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1503,7 +1503,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1589,7 +1589,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1667,7 +1667,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1750,7 +1750,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1838,7 +1838,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1920,7 +1920,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2003,7 +2003,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

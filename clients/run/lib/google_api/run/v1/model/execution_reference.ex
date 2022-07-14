@@ -21,6 +21,7 @@ defmodule GoogleApi.Run.V1.Model.ExecutionReference do
 
   ## Attributes
 
+  *   `completionTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Completion timestamp of the execution.
   *   `creationTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Creation timestamp of the execution.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the execution.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Run.V1.Model.ExecutionReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :completionTimestamp => DateTime.t() | nil,
           :creationTimestamp => DateTime.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:completionTimestamp, as: DateTime)
   field(:creationTimestamp, as: DateTime)
   field(:name)
 end

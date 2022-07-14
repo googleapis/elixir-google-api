@@ -22,7 +22,6 @@ defmodule GoogleApi.Run.V1.Model.JobStatus do
   ## Attributes
 
   *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - The latest available observations of a job's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
-  *   `containerStatuses` (*type:* `list(GoogleApi.Run.V1.Model.ContainerStatus.t)`, *default:* `nil`) - Status information for each of the specified containers. The status includes the resolved digest for specified images, which occurs during creation of the job.
   *   `executionCount` (*type:* `integer()`, *default:* `nil`) - Number of executions created for this job.
   *   `latestCreatedExecution` (*type:* `GoogleApi.Run.V1.Model.ExecutionReference.t`, *default:* `nil`) - A pointer to the most recently created execution for this job. This is set regardless of the eventual state of the execution.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - The 'generation' of the job that was last processed by the controller.
@@ -32,14 +31,12 @@ defmodule GoogleApi.Run.V1.Model.JobStatus do
 
   @type t :: %__MODULE__{
           :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
-          :containerStatuses => list(GoogleApi.Run.V1.Model.ContainerStatus.t()) | nil,
           :executionCount => integer() | nil,
           :latestCreatedExecution => GoogleApi.Run.V1.Model.ExecutionReference.t() | nil,
           :observedGeneration => integer() | nil
         }
 
   field(:conditions, as: GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition, type: :list)
-  field(:containerStatuses, as: GoogleApi.Run.V1.Model.ContainerStatus, type: :list)
   field(:executionCount)
   field(:latestCreatedExecution, as: GoogleApi.Run.V1.Model.ExecutionReference)
   field(:observedGeneration)
