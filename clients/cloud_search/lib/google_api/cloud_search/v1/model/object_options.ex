@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectOptions do
 
   *   `displayOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t`, *default:* `nil`) - The options that determine how the object is displayed in the Cloud Search results page.
   *   `freshnessOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t`, *default:* `nil`) - The freshness options for an object.
+  *   `suggestionFilteringOperators` (*type:* `list(String.t)`, *default:* `nil`) - Operators that can be used to filter suggestions. For Suggest API, only operators mentioned here will be honored in the FilterOptions. Only TEXT and ENUM operators are supported. NOTE: "objecttype", "type" and "mimetype" are already supported. This property is to configure schema specific operators. Even though this is an array, only one operator can be specified. This is an array for future extensibility. Operators mapping to multiple properties within the same object are not supported. If the operator spans across different object types, this option has to be set once for each object definition.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :displayOptions => GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions.t() | nil,
-          :freshnessOptions => GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t() | nil
+          :freshnessOptions => GoogleApi.CloudSearch.V1.Model.FreshnessOptions.t() | nil,
+          :suggestionFilteringOperators => list(String.t()) | nil
         }
 
   field(:displayOptions, as: GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions)
   field(:freshnessOptions, as: GoogleApi.CloudSearch.V1.Model.FreshnessOptions)
+  field(:suggestionFilteringOperators, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.ObjectOptions do
