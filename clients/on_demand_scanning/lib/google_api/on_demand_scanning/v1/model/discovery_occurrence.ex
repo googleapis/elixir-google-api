@@ -21,6 +21,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
 
   ## Attributes
 
+  *   `analysisCompleted` (*type:* `GoogleApi.OnDemandScanning.V1.Model.AnalysisCompleted.t`, *default:* `nil`) - 
+  *   `analysisError` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.Status.t)`, *default:* `nil`) - Indicates any errors encountered during analysis of a resource. There could be 0 or more of these errors.
   *   `analysisStatus` (*type:* `String.t`, *default:* `nil`) - The status of discovery for the resource.
   *   `analysisStatusError` (*type:* `GoogleApi.OnDemandScanning.V1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage is output only and populated by the API.
   *   `archiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time occurrences related to this discovery occurrence were archived.
@@ -32,6 +34,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :analysisCompleted => GoogleApi.OnDemandScanning.V1.Model.AnalysisCompleted.t() | nil,
+          :analysisError => list(GoogleApi.OnDemandScanning.V1.Model.Status.t()) | nil,
           :analysisStatus => String.t() | nil,
           :analysisStatusError => GoogleApi.OnDemandScanning.V1.Model.Status.t() | nil,
           :archiveTime => DateTime.t() | nil,
@@ -40,6 +44,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
           :lastScanTime => DateTime.t() | nil
         }
 
+  field(:analysisCompleted, as: GoogleApi.OnDemandScanning.V1.Model.AnalysisCompleted)
+  field(:analysisError, as: GoogleApi.OnDemandScanning.V1.Model.Status, type: :list)
   field(:analysisStatus)
   field(:analysisStatusError, as: GoogleApi.OnDemandScanning.V1.Model.Status)
   field(:archiveTime, as: DateTime)
