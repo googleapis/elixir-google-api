@@ -23,7 +23,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
 
   *   `consumerId` (*type:* `String.t`, *default:* `nil`) - Identity of the consumer who is using the service. This field should be filled in for the operations initiated by a consumer, but not for service-initiated operations that are not related to a specific consumer. - This can be in one of the following formats: - project:PROJECT_ID, - project`_`number:PROJECT_NUMBER, - projects/PROJECT_ID or PROJECT_NUMBER, - folders/FOLDER_NUMBER, - organizations/ORGANIZATION_NUMBER, - api`_`key:API_KEY.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the operation. Required when the operation is used in ServiceController.Report, but optional when the operation is used in ServiceController.Check.
-  *   `extensions` (*type:* `list(map())`, *default:* `nil`) - Unimplemented.
   *   `importance` (*type:* `String.t`, *default:* `nil`) - DO NOT USE. This is an experimental field.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels describing the operation. Only the following labels are allowed: - Labels describing monitored resources as defined in the service configuration. - Default labels of metric values. When specified, labels defined in the metric value override these default. - The following labels defined by Google Cloud Platform: - `cloud.googleapis.com/location` describing the location where the operation happened, - `servicecontrol.googleapis.com/user_agent` describing the user agent of the API request, - `servicecontrol.googleapis.com/service_agent` describing the service used to handle the API request (e.g. ESP), - `servicecontrol.googleapis.com/platform` describing the platform where the API is served, such as App Engine, Compute Engine, or Kubernetes Engine.
   *   `logEntries` (*type:* `list(GoogleApi.ServiceControl.V1.Model.LogEntry.t)`, *default:* `nil`) - Represents information to be logged.
@@ -42,7 +41,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   @type t :: %__MODULE__{
           :consumerId => String.t() | nil,
           :endTime => DateTime.t() | nil,
-          :extensions => list(map()) | nil,
           :importance => String.t() | nil,
           :labels => map() | nil,
           :logEntries => list(GoogleApi.ServiceControl.V1.Model.LogEntry.t()) | nil,
@@ -58,7 +56,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
 
   field(:consumerId)
   field(:endTime, as: DateTime)
-  field(:extensions, type: :list)
   field(:importance)
   field(:labels, type: :map)
   field(:logEntries, as: GoogleApi.ServiceControl.V1.Model.LogEntry, type: :list)

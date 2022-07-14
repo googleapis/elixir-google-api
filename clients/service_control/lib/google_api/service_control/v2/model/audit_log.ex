@@ -26,6 +26,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuditLog do
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Other service-specific data about the request, response, and other information associated with the current audited event.
   *   `methodName` (*type:* `String.t`, *default:* `nil`) - The name of the service method or operation. For API calls, this should be the name of the API method. For example, "google.cloud.bigquery.v2.TableService.InsertTable" "google.logging.v2.ConfigServiceV2.CreateSink"
   *   `numResponseItems` (*type:* `String.t`, *default:* `nil`) - The number of items returned from a List or Query API method, if applicable.
+  *   `policyViolationInfo` (*type:* `GoogleApi.ServiceControl.V2.Model.PolicyViolationInfo.t`, *default:* `nil`) - Indicates the policy violations for this request. If the request is denied by the policy, violation information will be logged here.
   *   `request` (*type:* `map()`, *default:* `nil`) - The operation request. This may not include all request parameters, such as those that are too large, privacy-sensitive, or duplicated elsewhere in the log record. It should never include user-generated data, such as file contents. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property.
   *   `requestMetadata` (*type:* `GoogleApi.ServiceControl.V2.Model.RequestMetadata.t`, *default:* `nil`) - Metadata about the operation.
   *   `resourceLocation` (*type:* `GoogleApi.ServiceControl.V2.Model.ResourceLocation.t`, *default:* `nil`) - The resource location information.
@@ -46,6 +47,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuditLog do
           :metadata => map() | nil,
           :methodName => String.t() | nil,
           :numResponseItems => String.t() | nil,
+          :policyViolationInfo => GoogleApi.ServiceControl.V2.Model.PolicyViolationInfo.t() | nil,
           :request => map() | nil,
           :requestMetadata => GoogleApi.ServiceControl.V2.Model.RequestMetadata.t() | nil,
           :resourceLocation => GoogleApi.ServiceControl.V2.Model.ResourceLocation.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuditLog do
   field(:metadata, type: :map)
   field(:methodName)
   field(:numResponseItems)
+  field(:policyViolationInfo, as: GoogleApi.ServiceControl.V2.Model.PolicyViolationInfo)
   field(:request, type: :map)
   field(:requestMetadata, as: GoogleApi.ServiceControl.V2.Model.RequestMetadata)
   field(:resourceLocation, as: GoogleApi.ServiceControl.V2.Model.ResourceLocation)
