@@ -45,7 +45,7 @@ defmodule GoogleApi.Chat.V1.Api.Dms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Google Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -111,7 +111,7 @@ defmodule GoogleApi.Chat.V1.Api.Dms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Google Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -177,7 +177,7 @@ defmodule GoogleApi.Chat.V1.Api.Dms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Google Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

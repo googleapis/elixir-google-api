@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.ActionResponse do
   @moduledoc """
-  Parameters that a bot can use to configure how it's response is posted.
+  Parameters that a Chat app can use to configure how it's response is posted.
 
   ## Attributes
 
-  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - A response to an event related to a [dialog](https://developers.google.com/chat/how-tos/bot-dialogs). Must be accompanied by `ResponseType.Dialog`.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of bot response.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - URL for users to auth or config. (Only for REQUEST_CONFIG response types.)
+  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - Input only. A response to an event related to a [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be accompanied by `ResponseType.Dialog`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Input only. The type of Chat app response.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Input only. URL for users to auth or config. (Only for REQUEST_CONFIG response types.)
   """
 
   use GoogleApi.Gax.ModelBase

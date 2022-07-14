@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.Dialog do
 
   ## Attributes
 
-  *   `body` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t`, *default:* `nil`) - Body of the dialog, which is rendered in a modal. Google Chat apps do not support the following card entities: `DateTimePicker`, `OnChangeAction`.
+  *   `body` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t`, *default:* `nil`) - Input only. Body of the dialog, which is rendered in a modal. Google Chat apps do not support the following card entities: `DateTimePicker`, `OnChangeAction`.
   """
 
   use GoogleApi.Gax.ModelBase

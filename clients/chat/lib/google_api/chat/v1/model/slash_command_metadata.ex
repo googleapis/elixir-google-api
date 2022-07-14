@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.SlashCommandMetadata do
 
   ## Attributes
 
-  *   `bot` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The bot whose command was invoked.
+  *   `bot` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The Chat app whose command was invoked.
   *   `commandId` (*type:* `String.t`, *default:* `nil`) - The command id of the invoked slash command.
   *   `commandName` (*type:* `String.t`, *default:* `nil`) - The name of the invoked slash command.
   *   `triggersDialog` (*type:* `boolean()`, *default:* `nil`) - Indicating whether the slash command is for a dialog.

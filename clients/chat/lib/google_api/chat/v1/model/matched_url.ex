@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.MatchedUrl do
   @moduledoc """
-  A matched url in a Chat message. Chat bots can unfurl matched URLs. For more information, refer to [Unfurl links](/chat/how-tos/link-unfurling).
+  A matched url in a Chat message. Chat apps can preview matched URLs. For more information, refer to [Preview links](https://developers.google.com/chat/how-tos/preview-links).
 
   ## Attributes
 
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The url that was matched.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The url that was matched.
   """
 
   use GoogleApi.Gax.ModelBase

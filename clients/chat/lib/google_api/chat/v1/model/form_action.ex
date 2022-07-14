@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.FormAction do
 
   ## Attributes
 
-  *   `actionMethodName` (*type:* `String.t`, *default:* `nil`) - The method name is used to identify which part of the form triggered the form submission. This information is echoed back to the bot as part of the card click event. The same method name can be used for several elements that trigger a common behavior if desired.
+  *   `actionMethodName` (*type:* `String.t`, *default:* `nil`) - The method name is used to identify which part of the form triggered the form submission. This information is echoed back to the Chat app as part of the card click event. The same method name can be used for several elements that trigger a common behavior if desired.
   *   `parameters` (*type:* `list(GoogleApi.Chat.V1.Model.ActionParameter.t)`, *default:* `nil`) - List of action parameters.
   """
 

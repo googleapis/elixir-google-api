@@ -24,11 +24,11 @@ defmodule GoogleApi.Chat.V1.Model.Attachment do
   *   `attachmentDataRef` (*type:* `GoogleApi.Chat.V1.Model.AttachmentDataRef.t`, *default:* `nil`) - A reference to the attachment data. This is used with the media API to download the attachment data.
   *   `contentName` (*type:* `String.t`, *default:* `nil`) - The original file name for the content, not the full path.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - The content type (MIME type) of the file.
-  *   `downloadUri` (*type:* `String.t`, *default:* `nil`) - Output only. The download URL which should be used to allow a human user to download the attachment. Bots should not use this URL to download attachment content.
+  *   `downloadUri` (*type:* `String.t`, *default:* `nil`) - Output only. The download URL which should be used to allow a human user to download the attachment. Chat apps should not use this URL to download attachment content.
   *   `driveDataRef` (*type:* `GoogleApi.Chat.V1.Model.DriveDataRef.t`, *default:* `nil`) - A reference to the drive attachment. This is used with the Drive API.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the attachment, in the form "spaces/*/messages/*/attachments/*".
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the attachment.
-  *   `thumbnailUri` (*type:* `String.t`, *default:* `nil`) - Output only. The thumbnail URL which should be used to preview the attachment to a human user. Bots should not use this URL to download attachment content.
+  *   `thumbnailUri` (*type:* `String.t`, *default:* `nil`) - Output only. The thumbnail URL which should be used to preview the attachment to a human user. Chat apps should not use this URL to download attachment content.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,6 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink do
 
   ## Attributes
 
+  *   `appUri` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1AppUri.t`, *default:* `nil`) - Represents the platform specific uri/intent to open on each client. For example: A companion_url will open in a companion window on the web. An iOS URL and android intent will open in the corresponding hosting apps. If these platform specific URLs can't be handled correctly, i.e. if the companion isn't supported on web and the hosting apps aren't available on the mobile platforms then the `uri` will open in a new browser window on all the platforms.
   *   `onClose` (*type:* `String.t`, *default:* `nil`) - Whether the client forgets about a link after opening it, or observes it until the window closes. Not supported by Chat apps.
   *   `openAs` (*type:* `String.t`, *default:* `nil`) - How to open a link. Not supported by Chat apps.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL to open.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appUri => GoogleApi.Chat.V1.Model.GoogleAppsCardV1AppUri.t() | nil,
           :onClose => String.t() | nil,
           :openAs => String.t() | nil,
           :url => String.t() | nil
         }
 
+  field(:appUri, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1AppUri)
   field(:onClose)
   field(:openAs)
   field(:url)
