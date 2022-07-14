@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
 
   *   `assignee` (*type:* `String.t`, *default:* `nil`) - The resource which will use the reservation. E.g. `projects/myproject`, `folders/123`, or `organizations/456`.
   *   `jobType` (*type:* `String.t`, *default:* `nil`) - Which type of jobs will use the reservation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`. For the assignment id, it must only contain lower case alphanumeric characters or dashes and the max length is 64 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`. The assignment_id must only contain lower case alphanumeric characters or dashes and the max length is 64 characters.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the assignment.
   """
 
