@@ -21,6 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
 
   ## Attributes
 
+  *   `categories` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory.t)`, *default:* `nil`) - The category of the infoType.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the infotype. Translated when language is provided in the request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable form of the infoType name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Internal name of the infoType.
@@ -30,12 +31,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :categories =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory.t()) | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :supportedBy => list(String.t()) | nil
         }
 
+  field(:categories, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory, type: :list)
   field(:description)
   field(:displayName)
   field(:name)
