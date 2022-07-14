@@ -24,6 +24,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   *   `accountDefenderAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment.t`, *default:* `nil`) - Assessment returned by Account Defender when a hashed_account_id is provided.
   *   `event` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t`, *default:* `nil`) - The event being assessed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the Assessment in the format "projects/{project}/assessments/{assessment}".
+  *   `privatePasswordLeakVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t`, *default:* `nil`) - The private password leak verification field contains the parameters used to check for leaks privately without sharing user credentials.
   *   `riskAnalysis` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RiskAnalysis.t`, *default:* `nil`) - Output only. The risk analysis result for the event being assessed.
   *   `tokenProperties` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TokenProperties.t`, *default:* `nil`) - Output only. Properties of the provided event token.
   """
@@ -37,6 +38,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
           :event =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t() | nil,
           :name => String.t() | nil,
+          :privatePasswordLeakVerification =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t()
+            | nil,
           :riskAnalysis =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RiskAnalysis.t()
             | nil,
@@ -52,6 +56,11 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   field(:event, as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event)
   field(:name)
+
+  field(:privatePasswordLeakVerification,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification
+  )
 
   field(:riskAnalysis,
     as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RiskAnalysis
