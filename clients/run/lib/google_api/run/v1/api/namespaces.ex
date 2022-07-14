@@ -265,7 +265,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -334,7 +334,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -420,7 +420,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -498,7 +498,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -577,7 +577,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to delete. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -660,7 +660,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to retrieve. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -737,7 +737,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the executions should be listed. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the executions should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -811,7 +811,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace in which the job should be created. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace in which the job should be created. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -873,7 +873,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to delete. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -953,7 +953,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to retrieve. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1021,7 +1021,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the jobs should be listed. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the jobs should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1095,7 +1095,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the service being replaced. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the service being replaced. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1171,7 +1171,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to run. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to run. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1241,7 +1241,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1326,7 +1326,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1403,7 +1403,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1477,7 +1477,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1554,7 +1554,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1628,7 +1628,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1692,7 +1692,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1777,7 +1777,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1854,7 +1854,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1928,7 +1928,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2009,7 +2009,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the task to retrieve. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the task to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `tasks_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2077,7 +2077,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the tasks should be listed. Replace {namespace_id} with the project ID or number.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the tasks should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
