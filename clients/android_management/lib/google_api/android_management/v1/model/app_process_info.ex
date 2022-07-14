@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AppProcessInfo do
   ## Attributes
 
   *   `apkSha256Hash` (*type:* `String.t`, *default:* `nil`) - SHA-256 hash of the base APK, in hexadecimal format.
-  *   `packageNames` (*type:* `list(String.t)`, *default:* `nil`) - Package names of all packages that are associated with the particular user id. In most cases, this will be a single package name, the package that has been assigned that user id. If multiple application share a uid then all packages sharing uid will be included.
+  *   `packageNames` (*type:* `list(String.t)`, *default:* `nil`) - Package names of all packages that are associated with the particular user ID. In most cases, this will be a single package name, the package that has been assigned that user ID. If multiple application share a UID then all packages sharing UID will be included.
   *   `pid` (*type:* `integer()`, *default:* `nil`) - Process ID.
   *   `processName` (*type:* `String.t`, *default:* `nil`) - Process name.
   *   `seinfo` (*type:* `String.t`, *default:* `nil`) - SELinux policy info.

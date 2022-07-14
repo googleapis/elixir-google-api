@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent do
   @moduledoc """
-  The work profile or company-owned device failed to wipe when when requested. This could be user initiated or admin initiated e.g. delete was received. Intentionally empty.
+  The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Intentionally empty.
 
   ## Attributes
 
