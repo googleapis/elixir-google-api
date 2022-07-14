@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.BiReservation do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the singleton BI reservation. Reservation names have the form `projects/{project_id}/locations/{location_id}/biReservation`.
+  *   `preferredTables` (*type:* `list(GoogleApi.BigQueryReservation.V1.Model.TableReference.t)`, *default:* `nil`) - Preferred tables to use BI capacity for.
   *   `size` (*type:* `String.t`, *default:* `nil`) - Size of a reservation, in bytes.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a reservation.
   """
@@ -30,11 +31,14 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.BiReservation do
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
+          :preferredTables =>
+            list(GoogleApi.BigQueryReservation.V1.Model.TableReference.t()) | nil,
           :size => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:name)
+  field(:preferredTables, as: GoogleApi.BigQueryReservation.V1.Model.TableReference, type: :list)
   field(:size)
   field(:updateTime, as: DateTime)
 end
