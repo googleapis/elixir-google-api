@@ -23,6 +23,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema do
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - Required. Name of the column. Must be a UTF-8 string without dots (.). The maximum size is 64 bytes.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the column. Default value is an empty string. The description must be a UTF-8 string with the maximum size of 2000 bytes.
+  *   `lookerColumnSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec.t`, *default:* `nil`) - Looker specific column info of this column.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`.
   *   `subcolumns` (*type:* `list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema.t)`, *default:* `nil`) - Optional. Schema of sub-columns. A column can have zero or more sub-columns.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the column. Must be a UTF-8 string with the maximum size of 128 bytes.
@@ -33,6 +34,9 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema do
   @type t :: %__MODULE__{
           :column => String.t() | nil,
           :description => String.t() | nil,
+          :lookerColumnSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec.t()
+            | nil,
           :mode => String.t() | nil,
           :subcolumns =>
             list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema.t()) | nil,
@@ -41,6 +45,11 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema do
 
   field(:column)
   field(:description)
+
+  field(:lookerColumnSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec
+  )
+
   field(:mode)
 
   field(:subcolumns,
