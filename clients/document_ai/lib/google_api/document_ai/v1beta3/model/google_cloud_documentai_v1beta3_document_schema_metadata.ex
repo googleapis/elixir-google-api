@@ -23,17 +23,20 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   *   `documentAllowMultipleLabels` (*type:* `boolean()`, *default:* `nil`) - If true, on a given page, there can be multiple `document` annotations covering it.
   *   `documentSplitter` (*type:* `boolean()`, *default:* `nil`) - If true, a `document` entity type can be applied to subdocument ( splitting). Otherwise, it can only be applied to the entire document (classification).
+  *   `prefixedNamingOnProperties` (*type:* `boolean()`, *default:* `nil`) - If set, all the nested entities must be prefixed with the parents.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :documentAllowMultipleLabels => boolean() | nil,
-          :documentSplitter => boolean() | nil
+          :documentSplitter => boolean() | nil,
+          :prefixedNamingOnProperties => boolean() | nil
         }
 
   field(:documentAllowMultipleLabels)
   field(:documentSplitter)
+  field(:prefixedNamingOnProperties)
 end
 
 defimpl Poison.Decoder,

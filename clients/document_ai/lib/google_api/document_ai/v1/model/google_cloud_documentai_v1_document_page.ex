@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPage do
   ## Attributes
 
   *   `blocks` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageBlock.t)`, *default:* `nil`) - A list of visually detected text blocks on the page. A block has a set of lines (collected into paragraphs) that have a common line-spacing and orientation.
+  *   `detectedBarcodes` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedBarcode.t)`, *default:* `nil`) - A list of detected barcodes.
   *   `detectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages together with confidence.
   *   `dimension` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDimension.t`, *default:* `nil`) - Physical dimension of the page.
   *   `formFields` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageFormField.t)`, *default:* `nil`) - A list of visually detected form fields on the page.
@@ -43,6 +44,11 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPage do
   @type t :: %__MODULE__{
           :blocks =>
             list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageBlock.t()) | nil,
+          :detectedBarcodes =>
+            list(
+              GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedBarcode.t()
+            )
+            | nil,
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedLanguage.t()
@@ -84,6 +90,11 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPage do
 
   field(:blocks,
     as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageBlock,
+    type: :list
+  )
+
+  field(:detectedBarcodes,
+    as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedBarcode,
     type: :list
   )
 
