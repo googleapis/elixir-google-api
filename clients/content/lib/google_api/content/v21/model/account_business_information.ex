@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.AccountBusinessInformation do
 
   ## Attributes
 
-  *   `address` (*type:* `GoogleApi.Content.V21.Model.AccountAddress.t`, *default:* `nil`) - The address of the business.
+  *   `address` (*type:* `GoogleApi.Content.V21.Model.AccountAddress.t`, *default:* `nil`) - The address of the business. Use `\\n` to add a second address line.
   *   `customerService` (*type:* `GoogleApi.Content.V21.Model.AccountCustomerService.t`, *default:* `nil`) - The customer service information of the business.
   *   `koreanBusinessRegistrationNumber` (*type:* `String.t`, *default:* `nil`) - The 10-digit [Korean business registration number](https://support.google.com/merchants/answer/9037766) separated with dashes in the format: XXX-XX-XXXXX. This field will only be updated if explicitly set.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the business. This can only be updated if a verified phone number is not already set. To replace a verified phone number use the `Accounts.requestphoneverification` and `Accounts.verifyphonenumber`.

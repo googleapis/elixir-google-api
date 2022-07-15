@@ -20,7 +20,7 @@ defmodule GoogleApi.Content.V21 do
   API client metadata for GoogleApi.Content.V21.
   """
 
-  @discovery_revision "20220428"
+  @discovery_revision "20220706"
 
   def discovery_revision(), do: @discovery_revision
 end

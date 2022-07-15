@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.Address do
   *   `city` (*type:* `String.t`, *default:* `nil`) - Required. City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
   *   `country` (*type:* `String.t`, *default:* `nil`) - Required. [CLDR country code](https://github.com/unicode-org/cldr/blob/latest/common/main/en.xml) (for example, "US").
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Required. Postal code or ZIP (for example, "94043").
-  *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address.
+  *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address. Use `\\n` to add a second line.
   """
 
   use GoogleApi.Gax.ModelBase

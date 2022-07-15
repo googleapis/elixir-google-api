@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.TestOrderAddress do
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal Code or ZIP (for example, "94043").
   *   `recipientName` (*type:* `String.t`, *default:* `nil`) - Name of the recipient.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
-  *   `streetAddress` (*type:* `list(String.t)`, *default:* `nil`) - Street-level part of the address.
+  *   `streetAddress` (*type:* `list(String.t)`, *default:* `nil`) - Street-level part of the address. Use `\\n` to add a second line.
   """
 
   use GoogleApi.Gax.ModelBase

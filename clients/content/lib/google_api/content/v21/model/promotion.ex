@@ -17,46 +17,46 @@
 
 defmodule GoogleApi.Content.V21.Model.Promotion do
   @moduledoc """
-   The Promotions feature is publicly available for the US and CA locale (en language only) in Content API for Shopping. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
+  Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)
 
   ## Attributes
 
   *   `longTitle` (*type:* `String.t`, *default:* `nil`) - Required. Long title for the promotion.
-  *   `genericRedemptionCode` (*type:* `String.t`, *default:* `nil`) - Generic redemption code for the promotion. To be used with the above field.
+  *   `genericRedemptionCode` (*type:* `String.t`, *default:* `nil`) - Generic redemption code for the promotion. To be used with the `offerType` field.
   *   `moneyOffAmount` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - The money off amount offered in the promotion.
-  *   `freeGiftItemId` (*type:* `String.t`, *default:* `nil`) - Free gift item id for the promotion.
-  *   `itemGroupIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group id exclusion for the promotion.
+  *   `freeGiftItemId` (*type:* `String.t`, *default:* `nil`) - Free gift item ID for the promotion.
+  *   `itemGroupIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group ID exclusion for the promotion.
   *   `offerType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the promotion.
   *   `productType` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type for the promotion.
-  *   `itemGroupId` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group id for the promotion.
+  *   `itemGroupId` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group ID for the promotion.
   *   `productApplicability` (*type:* `String.t`, *default:* `nil`) - Required. Applicability of the promotion to either all products or only specific products.
   *   `freeGiftValue` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Free gift value for the promotion.
-  *   `promotionId` (*type:* `String.t`, *default:* `nil`) - Required. The user provided promotion id to uniquely identify the promotion.
+  *   `promotionId` (*type:* `String.t`, *default:* `nil`) - Required. The user provided promotion ID to uniquely identify the promotion.
   *   `freeGiftDescription` (*type:* `String.t`, *default:* `nil`) - Free gift description for the promotion.
   *   `percentOff` (*type:* `integer()`, *default:* `nil`) - The percentage discount offered in the promotion.
-  *   `moneyBudget` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Promotion cost cap of the promotion.
+  *   `moneyBudget` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Cost cap for the promotion.
   *   `couponValueType` (*type:* `String.t`, *default:* `nil`) - Required. Coupon value type for the promotion.
-  *   `itemId` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item id for the promotion.
+  *   `itemId` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item ID for the promotion.
   *   `minimumPurchaseAmount` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Minimum purchase amount for the promotion.
   *   `promotionDestinationIds` (*type:* `list(String.t)`, *default:* `nil`) - Destination ID for the promotion.
-  *   `shippingServiceNames` (*type:* `list(String.t)`, *default:* `nil`) - Shipping service names for thse promotion.
-  *   `promotionEffectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - Required. TimePeriod representation of the promotion effective dates.
-  *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates (deprecated: Use promotion_display_time_period instead).
-  *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion effective dates (deprecated: Use promotion_effective_time_period instead).
-  *   `itemIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item id exclusion for the promotion.
+  *   `shippingServiceNames` (*type:* `list(String.t)`, *default:* `nil`) - Shipping service names for the promotion.
+  *   `promotionEffectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - Required. `TimePeriod` representation of the promotion's effective dates.
+  *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates. Deprecated. Use `promotion_display_time_period` instead.
+  *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion effective dates. Deprecated. Use `promotion_effective_time_period` instead.
+  *   `itemIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item ID exclusion for the promotion.
   *   `brand` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand for the promotion.
   *   `minimumPurchaseQuantity` (*type:* `integer()`, *default:* `nil`) - Minimum purchase quantity for the promotion.
   *   `limitValue` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Maximum purchase value for the promotion.
   *   `orderLimit` (*type:* `integer()`, *default:* `nil`) - Order limit for the promotion.
   *   `brandExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand exclusion for the promotion.
   *   `productTypeExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type exclusion for the promotion.
-  *   `promotionDisplayTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - TimePeriod representation of the promotion display dates.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The REST promotion id to uniquely identify the promotion. Content API methods that operate on promotions take this as their promotionId parameter. The REST ID for a promotion is of the form [channel]:contentLanguage:targetCountry:promotionId The channel field will have a value of "online", "in_store", or "online_in_store".
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier. Currently only en value is supported.
+  *   `promotionDisplayTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - `TimePeriod` representation of the promotion's display dates.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `"online"`, `"in_store"`, or `"online_in_store"`.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries, and `de` content language is available for `DE` target country.
   *   `limitQuantity` (*type:* `integer()`, *default:* `nil`) - Maximum purchase quantity for the promotion.
   *   `getThisQuantityDiscounted` (*type:* `integer()`, *default:* `nil`) - The number of items discounted in the promotion.
   *   `redemptionChannel` (*type:* `list(String.t)`, *default:* `nil`) - Required. Redemption channel for the promotion. At least one channel is required.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The target country used as part of the unique identifier. Currently only US and CA are supported.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The target country used as part of the unique identifier. Can be `AU`, `CA`, `DE`, `FR`, `GB`, `IN` or `US`.
   """
 
   use GoogleApi.Gax.ModelBase
