@@ -42,6 +42,8 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this snapshot.
   *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
   *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
+  *   `sourceSnapshotSchedulePolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the resource policy which created this scheduled snapshot.
+  *   `sourceSnapshotSchedulePolicyId` (*type:* `String.t`, *default:* `nil`) - [Output Only] ID of the resource policy which created this scheduled snapshot.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
   *   `storageBytesStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
@@ -72,6 +74,8 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :sourceDisk => String.t() | nil,
           :sourceDiskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
           :sourceDiskId => String.t() | nil,
+          :sourceSnapshotSchedulePolicy => String.t() | nil,
+          :sourceSnapshotSchedulePolicyId => String.t() | nil,
           :status => String.t() | nil,
           :storageBytes => String.t() | nil,
           :storageBytesStatus => String.t() | nil,
@@ -99,6 +103,8 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   field(:sourceDisk)
   field(:sourceDiskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:sourceDiskId)
+  field(:sourceSnapshotSchedulePolicy)
+  field(:sourceSnapshotSchedulePolicyId)
   field(:status)
   field(:storageBytes)
   field(:storageBytesStatus)

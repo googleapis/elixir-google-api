@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
   *   `maxRate` (*type:* `integer()`, *default:* `nil`) - Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
   *   `maxRatePerEndpoint` (*type:* `number()`, *default:* `nil`) - Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
   *   `maxRatePerInstance` (*type:* `number()`, *default:* `nil`) - Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
-  *   `maxUtilization` (*type:* `number()`, *default:* `nil`) - Optional parameter to define a target capacity for the UTILIZATIONbalancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
+  *   `maxUtilization` (*type:* `number()`, *default:* `nil`) - Optional parameter to define a target capacity for the UTILIZATION balancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
   """
 
   use GoogleApi.Gax.ModelBase
