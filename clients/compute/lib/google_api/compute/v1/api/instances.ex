@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates multiple instances. Count specifies the number of instances to create.
+  Creates multiple instances. Count specifies the number of instances to create. For more information, see About bulk creation of VMs.
 
   ## Parameters
 

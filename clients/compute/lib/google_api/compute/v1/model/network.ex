@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this field when you create the resource.
   *   `enableUlaInternalIpv6` (*type:* `boolean()`, *default:* `nil`) - Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+  *   `firewallPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the firewall policy the network is associated with.
   *   `gatewayIPv4` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routing out of the network, selected by GCP.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `internalIpv6Range` (*type:* `String.t`, *default:* `nil`) - When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
@@ -48,6 +49,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :enableUlaInternalIpv6 => boolean() | nil,
+          :firewallPolicy => String.t() | nil,
           :gatewayIPv4 => String.t() | nil,
           :id => String.t() | nil,
           :internalIpv6Range => String.t() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   field(:creationTimestamp)
   field(:description)
   field(:enableUlaInternalIpv6)
+  field(:firewallPolicy)
   field(:gatewayIPv4)
   field(:id)
   field(:internalIpv6Range)

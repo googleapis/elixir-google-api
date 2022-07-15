@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicyLocation do
   ## Attributes
 
   *   `constraints` (*type:* `GoogleApi.Compute.V1.Model.LocationPolicyLocationConstraints.t`, *default:* `nil`) - Constraints that the caller requires on the result distribution in this zone.
-  *   `preference` (*type:* `String.t`, *default:* `nil`) - Preference for a given location.
+  *   `preference` (*type:* `String.t`, *default:* `nil`) - Preference for a given location. Set to either ALLOW or DENY.
   """
 
   use GoogleApi.Gax.ModelBase
