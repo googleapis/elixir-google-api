@@ -37,26 +37,30 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   """
   @spec generate_client(ApiConfig.t()) :: any()
   def generate_client(api_config) do
-    token = Token.build(api_config)
-    if updated_discovery_revision?(token) do
-      token
-      |> load_models
-      |> set_model_filenames
-      |> update_model_properties
-      |> create_directories
-      |> write_model_files
-      |> load_global_optional_params
-      |> load_apis
-      |> set_api_filenames
-      |> write_api_files
-      |> write_connection
-      |> write_metadata
-      |> write_mix_exs
-      |> write_readme
-      |> write_license
-      |> write_gitignore
-      |> write_config_exs
-      |> write_test_helper_exs
+    case Token.build(api_config) do
+      nil ->
+        IO.puts("Unable to read spec file #{ApiConfig.google_spec_file(api_config)}")
+      token ->
+        if updated_discovery_revision?(token) do
+          token
+          |> load_models
+          |> set_model_filenames
+          |> update_model_properties
+          |> create_directories
+          |> write_model_files
+          |> load_global_optional_params
+          |> load_apis
+          |> set_api_filenames
+          |> write_api_files
+          |> write_connection
+          |> write_metadata
+          |> write_mix_exs
+          |> write_readme
+          |> write_license
+          |> write_gitignore
+          |> write_config_exs
+          |> write_test_helper_exs
+        end
     end
     :ok
   end

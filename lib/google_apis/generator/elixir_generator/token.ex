@@ -73,33 +73,33 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
         String.downcase(ApiConfig.module_version(api_config))
       ])
 
-    rest_description =
-      api_config
-      |> ApiConfig.google_spec_file()
-      |> File.read!()
-      |> Poison.decode!(as: %RestDescription{})
+    case api_config |> ApiConfig.google_spec_file() |> File.read() do
+      {:ok, content} ->
+        rest_description = Poison.decode!(content, as: %RestDescription{})
+        {base_url, base_path} = determine_base_paths(rest_description)
 
-    {base_url, base_path} = determine_base_paths(rest_description)
+        resource_context =
+          ResourceContext.empty()
+          |> ResourceContext.with_namespace(namespace)
+          |> ResourceContext.with_base_path(base_path)
 
-    resource_context =
-      ResourceContext.empty()
-      |> ResourceContext.with_namespace(namespace)
-      |> ResourceContext.with_base_path(base_path)
+        data_wrapped = has_data_wrapper_feature?(rest_description)
 
-    data_wrapped = has_data_wrapper_feature?(rest_description)
-
-    %__MODULE__{
-      filename: filename,
-      library_name: library_name,
-      namespace: namespace,
-      root_namespace: root_namespace,
-      root_dir: root_dir,
-      base_dir: base_dir,
-      base_url: base_url,
-      rest_description: rest_description,
-      resource_context: resource_context,
-      data_wrapped: data_wrapped
-    }
+        %__MODULE__{
+          filename: filename,
+          library_name: library_name,
+          namespace: namespace,
+          root_namespace: root_namespace,
+          root_dir: root_dir,
+          base_dir: base_dir,
+          base_url: base_url,
+          rest_description: rest_description,
+          resource_context: resource_context,
+          data_wrapped: data_wrapped
+        }
+      _ ->
+        nil
+    end
   end
 
   defp determine_base_paths(rest_description) do
