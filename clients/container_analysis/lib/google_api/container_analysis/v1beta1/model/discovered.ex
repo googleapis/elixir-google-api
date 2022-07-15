@@ -21,6 +21,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
 
   ## Attributes
 
+  *   `analysisCompleted` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.AnalysisCompleted.t`, *default:* `nil`) - 
+  *   `analysisError` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t)`, *default:* `nil`) - Indicates any errors encountered during analysis of a resource. There could be 0 or more of these errors.
   *   `analysisStatus` (*type:* `String.t`, *default:* `nil`) - The status of discovery for the resource.
   *   `analysisStatusError` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage is output only and populated by the API.
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
@@ -30,12 +32,17 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :analysisCompleted =>
+            GoogleApi.ContainerAnalysis.V1beta1.Model.AnalysisCompleted.t() | nil,
+          :analysisError => list(GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t()) | nil,
           :analysisStatus => String.t() | nil,
           :analysisStatusError => GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t() | nil,
           :continuousAnalysis => String.t() | nil,
           :lastAnalysisTime => DateTime.t() | nil
         }
 
+  field(:analysisCompleted, as: GoogleApi.ContainerAnalysis.V1beta1.Model.AnalysisCompleted)
+  field(:analysisError, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Status, type: :list)
   field(:analysisStatus)
   field(:analysisStatusError, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Status)
   field(:continuousAnalysis)
