@@ -39,7 +39,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Placement do
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID of this placement. This field is a required field on insertion.
   *   `placementGroupId` (*type:* `String.t`, *default:* `nil`) - ID of this placement's group, if applicable.
   *   `vpaidAdapterChoice` (*type:* `String.t`, *default:* `nil`) - VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement. *Note:* Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement.This is a required field and must be less than or equal to 256 characters long.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement.This is a required field and must be less than or equal to 512 characters long.
   *   `campaignIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the campaign. This is a read-only, auto-generated field.
   *   `videoSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.VideoSettings.t`, *default:* `nil`) - A collection of settings which affect video creatives served through this placement. Applicable to placements with IN_STREAM_VIDEO compatibility.
   *   `placementGroupIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the placement group. This is a read-only, auto-generated field.

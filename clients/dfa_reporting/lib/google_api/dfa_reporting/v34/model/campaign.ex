@@ -44,7 +44,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Campaign do
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this campaign. This is a read-only, auto-generated field.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaign".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this campaign. This is a read-only field.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this campaign. This is a required field and must be less than 512 characters long and unique among campaigns of the same advertiser.
   *   `nielsenOcrEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Nielsen reports are enabled for this campaign.
   *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this campaign. This is a read-only field that can be left blank.
