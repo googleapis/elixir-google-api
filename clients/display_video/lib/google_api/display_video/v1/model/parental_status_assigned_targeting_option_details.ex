@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ParentalStatusAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned parental status targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARTGETING_TYPE_PARENTAL_STATUS`.
+  Details for assigned parental status targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_PARENTAL_STATUS`.
 
   ## Attributes
 
-  *   `parentalStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The parental status of the audience.
+  *   `parentalStatus` (*type:* `String.t`, *default:* `nil`) - The parental status of the audience. Output only in v1. Required in v2.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_PARENTAL_STATUS`.
   """
 

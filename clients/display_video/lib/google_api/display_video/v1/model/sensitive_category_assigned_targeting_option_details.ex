@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOpti
   ## Attributes
 
   *   `excludedTargetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the sensitive category to be EXCLUDED.
-  *   `sensitiveCategory` (*type:* `String.t`, *default:* `nil`) - An enum for the DV360 Sensitive category content classifier. Output only in v1. Required in v2.
+  *   `sensitiveCategory` (*type:* `String.t`, *default:* `nil`) - Output only. An enum for the DV360 Sensitive category content classifier.
   """
 
   use GoogleApi.Gax.ModelBase

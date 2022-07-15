@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContactInfoList do
 
   ## Attributes
 
-  *   `contactInfos` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ContactInfo.t)`, *default:* `nil`) - A list of ContactInfo objects defining Customer Match audience members.
+  *   `contactInfos` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ContactInfo.t)`, *default:* `nil`) - A list of ContactInfo objects defining Customer Match audience members. The size of members after splitting the contact_infos mustn't be greater than 500,000.
   """
 
   use GoogleApi.Gax.ModelBase
