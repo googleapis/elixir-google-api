@@ -23,6 +23,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the insertion order belongs to.
   *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t`, *default:* `nil`) - The bidding strategy of the insertion order. By default, fixed_bid is set.
+  *   `billableOutcome` (*type:* `String.t`, *default:* `nil`) - Immutable. The billable outcome of the insertion order.
   *   `budget` (*type:* `GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t`, *default:* `nil`) - Required. The budget allocation settings of the insertion order.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the campaign that the insertion order belongs to.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the insertion order. Must be UTF-8 encoded with a maximum size of 240 bytes.
@@ -44,6 +45,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   @type t :: %__MODULE__{
           :advertiserId => String.t() | nil,
           :bidStrategy => GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t() | nil,
+          :billableOutcome => String.t() | nil,
           :budget => GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t() | nil,
           :campaignId => String.t() | nil,
           :displayName => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
 
   field(:advertiserId)
   field(:bidStrategy, as: GoogleApi.DisplayVideo.V1.Model.BiddingStrategy)
+  field(:billableOutcome)
   field(:budget, as: GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget)
   field(:campaignId)
   field(:displayName)

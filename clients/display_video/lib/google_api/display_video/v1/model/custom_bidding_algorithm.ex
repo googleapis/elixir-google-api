@@ -27,6 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
   *   `customBiddingAlgorithmType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of custom bidding algorithm.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the custom bidding algorithm. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Controls whether or not the custom bidding algorithm can be used as a bidding strategy. Accepted values are: * `ENTITY_STATUS_ACTIVE` * `ENTITY_STATUS_ARCHIVED`
+  *   `modelReadiness` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CustomBiddingModelReadinessState.t)`, *default:* `nil`) - Output only. The state of custom bidding model readiness for each advertiser who has access. This field may only include the state of the queried advertiser if the algorithm [`owner`](/display-video/api/reference/rest/v1/customBiddingAlgorithms#CustomBiddingAlgorithm.FIELDS.oneof_owner) is a partner and is being retrieved using an advertiser [`accessor`](/display-video/api/reference/rest/v1/customBiddingAlgorithms/list#body.QUERY_PARAMETERS.oneof_accessor).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the custom bidding algorithm.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique ID of the partner that owns the custom bidding algorithm.
   *   `sharedAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the advertisers who have access to this algorithm. If advertiser_id is set, this field will only consist of that value. This field will not be set if the algorithm [`owner`](/display-video/api/reference/rest/v1/customBiddingAlgorithms#CustomBiddingAlgorithm.FIELDS.oneof_owner) is a partner and is being retrieved using an advertiser [`accessor`](/display-video/api/reference/rest/v1/customBiddingAlgorithms/list#body.QUERY_PARAMETERS.oneof_accessor).
@@ -41,6 +42,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
           :customBiddingAlgorithmType => String.t() | nil,
           :displayName => String.t() | nil,
           :entityStatus => String.t() | nil,
+          :modelReadiness =>
+            list(GoogleApi.DisplayVideo.V1.Model.CustomBiddingModelReadinessState.t()) | nil,
           :name => String.t() | nil,
           :partnerId => String.t() | nil,
           :sharedAdvertiserIds => list(String.t()) | nil
@@ -52,6 +55,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingAlgorithm do
   field(:customBiddingAlgorithmType)
   field(:displayName)
   field(:entityStatus)
+
+  field(:modelReadiness,
+    as: GoogleApi.DisplayVideo.V1.Model.CustomBiddingModelReadinessState,
+    type: :list
+  )
+
   field(:name)
   field(:partnerId)
   field(:sharedAdvertiserIds, type: :list)

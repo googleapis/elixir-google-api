@@ -49,16 +49,19 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   *   `exchangeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ExchangeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Exchange details. This field will be populated when the targeting_type is `TARGETING_TYPE_EXCHANGE`.
   *   `browserDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BrowserAssignedTargetingOptionDetails.t`, *default:* `nil`) - Browser details. This field will be populated when the targeting_type is `TARGETING_TYPE_BROWSER`.
   *   `appDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AppAssignedTargetingOptionDetails.t`, *default:* `nil`) - App details. This field will be populated when the targeting_type is `TARGETING_TYPE_APP`.
+  *   `contentDurationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentDurationAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content duration details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_DURATION`.
   *   `targetingType` (*type:* `String.t`, *default:* `nil`) - Output only. Identifies the type of this assigned targeting option.
   *   `negativeKeywordListDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.NegativeKeywordListAssignedTargetingOptionDetails.t`, *default:* `nil`) - Keyword details. This field will be populated when the targeting_type is `TARGETING_TYPE_NEGATIVE_KEYWORD_LIST`. A maximum of 4 negative keyword lists can be assigned to a resource.
   *   `carrierAndIspDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.CarrierAndIspAssignedTargetingOptionDetails.t`, *default:* `nil`) - Carrier and ISP details. This field will be populated when the targeting_type is `TARGETING_TYPE_CARRIER_AND_ISP`.
   *   `authorizedSellerStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetingOptionDetails.t`, *default:* `nil`) - Authorized seller status details. This field will be populated when the targeting_type is `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`. You can only target one authorized seller status option per resource. If a resource doesn't have an authorized seller status option, all authorized sellers indicated as DIRECT or RESELLER in the ads.txt file are targeted by default.
+  *   `contentGenreDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentGenreAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content genre details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_GENRE`.
   *   `digitalContentLabelExclusionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelAssignedTargetingOptionDetails.t`, *default:* `nil`) - Digital content label details. This field will be populated when the targeting_type is `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION`. Digital content labels are targeting exclusions. Advertiser level digital content label exclusions, if set, are always applied in serving (even though they aren't visible in resource settings). Resource settings can exclude content labels in addition to advertiser exclusions, but can't override them. A line item won't serve if all the digital content labels are excluded.
   *   `nativeContentPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.NativeContentPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Native content position details. This field will be populated when the targeting_type is `TARGETING_TYPE_NATIVE_CONTENT_POSITION`.
   *   `sensitiveCategoryExclusionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOptionDetails.t`, *default:* `nil`) - Sensitive category details. This field will be populated when the targeting_type is `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`. Sensitive categories are targeting exclusions. Advertiser level sensitive category exclusions, if set, are always applied in serving (even though they aren't visible in resource settings). Resource settings can exclude sensitive categories in addition to advertiser exclusions, but can't override them.
   *   `businessChainDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.BusinessChainAssignedTargetingOptionDetails.t`, *default:* `nil`) - Business chain details. This field will be populated when the targeting_type is `TARGETING_TYPE_BUSINESS_CHAIN`.
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - On screen position details. This field will be populated when the targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
   *   `audienceGroupDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDetails.t`, *default:* `nil`) - Audience targeting details. This field will be populated when the targeting_type is `TARGETING_TYPE_AUDIENCE_GROUP`. You can only target one audience group option per resource.
+  *   `contentStreamTypeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content duration details. This field will be populated when the TargetingType is `TARGETING_TYPE_CONTENT_STREAM_TYPE`.
   *   `dayAndTimeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.DayAndTimeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Day and time details. This field will be populated when the targeting_type is `TARGETING_TYPE_DAY_AND_TIME`.
   *   `inventorySourceDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceAssignedTargetingOptionDetails.t`, *default:* `nil`) - Inventory source details. This field will be populated when the targeting_type is `TARGETING_TYPE_INVENTORY_SOURCE`.
   *   `genderDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.GenderAssignedTargetingOptionDetails.t`, *default:* `nil`) - Gender details. This field will be populated when the targeting_type is `TARGETING_TYPE_GENDER`.
@@ -136,6 +139,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
             GoogleApi.DisplayVideo.V1.Model.BrowserAssignedTargetingOptionDetails.t() | nil,
           :appDetails =>
             GoogleApi.DisplayVideo.V1.Model.AppAssignedTargetingOptionDetails.t() | nil,
+          :contentDurationDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentDurationAssignedTargetingOptionDetails.t()
+            | nil,
           :targetingType => String.t() | nil,
           :negativeKeywordListDetails =>
             GoogleApi.DisplayVideo.V1.Model.NegativeKeywordListAssignedTargetingOptionDetails.t()
@@ -145,6 +151,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
           :authorizedSellerStatusDetails =>
             GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetingOptionDetails.t()
             | nil,
+          :contentGenreDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentGenreAssignedTargetingOptionDetails.t() | nil,
           :digitalContentLabelExclusionDetails =>
             GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelAssignedTargetingOptionDetails.t()
             | nil,
@@ -161,6 +169,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
             | nil,
           :audienceGroupDetails =>
             GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDetails.t() | nil,
+          :contentStreamTypeDetails =>
+            GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeAssignedTargetingOptionDetails.t()
+            | nil,
           :dayAndTimeDetails =>
             GoogleApi.DisplayVideo.V1.Model.DayAndTimeAssignedTargetingOptionDetails.t() | nil,
           :inventorySourceDetails =>
@@ -275,6 +286,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   field(:browserDetails, as: GoogleApi.DisplayVideo.V1.Model.BrowserAssignedTargetingOptionDetails)
 
   field(:appDetails, as: GoogleApi.DisplayVideo.V1.Model.AppAssignedTargetingOptionDetails)
+
+  field(:contentDurationDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentDurationAssignedTargetingOptionDetails
+  )
+
   field(:targetingType)
 
   field(:negativeKeywordListDetails,
@@ -287,6 +303,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
 
   field(:authorizedSellerStatusDetails,
     as: GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetingOptionDetails
+  )
+
+  field(:contentGenreDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentGenreAssignedTargetingOptionDetails
   )
 
   field(:digitalContentLabelExclusionDetails,
@@ -311,6 +331,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
 
   field(:audienceGroupDetails,
     as: GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDetails
+  )
+
+  field(:contentStreamTypeDetails,
+    as: GoogleApi.DisplayVideo.V1.Model.ContentStreamTypeAssignedTargetingOptionDetails
   )
 
   field(:dayAndTimeDetails,
