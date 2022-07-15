@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.AccountAddress do
   *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (for example, neighborhoods or suburbs).
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (for example, "94043").
   *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
-  *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address.
+  *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address. Use `\\n` to add a second line.
   """
 
   use GoogleApi.Gax.ModelBase

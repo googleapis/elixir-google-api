@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V21.Model.AccountUser do
   *   `orderManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is an order manager.
   *   `paymentsAnalyst` (*type:* `boolean()`, *default:* `nil`) - Whether user can access payment statements.
   *   `paymentsManager` (*type:* `boolean()`, *default:* `nil`) - Whether user can manage payment settings.
+  *   `reportingManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is a reporting manager.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Content.V21.Model.AccountUser do
           :emailAddress => String.t() | nil,
           :orderManager => boolean() | nil,
           :paymentsAnalyst => boolean() | nil,
-          :paymentsManager => boolean() | nil
+          :paymentsManager => boolean() | nil,
+          :reportingManager => boolean() | nil
         }
 
   field(:admin)
@@ -43,6 +45,7 @@ defmodule GoogleApi.Content.V21.Model.AccountUser do
   field(:orderManager)
   field(:paymentsAnalyst)
   field(:paymentsManager)
+  field(:reportingManager)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.AccountUser do

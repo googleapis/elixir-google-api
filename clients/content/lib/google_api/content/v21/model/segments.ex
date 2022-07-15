@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.Segments do
   @moduledoc """
-  Dimensions according to which metrics are segmented in the response. Values of product dimensions, e.g., offer id, reflect the state of a product at the time of the corresponding event, e.g., impression or order. Segment fields cannot be selected in queries without also selecting at least one metric field. Values are only set for dimensions requested explicitly in the request's search query.
+  Dimensions according to which metrics are segmented in the response. Values of product dimensions, such as `offer_id`, reflect the state of a product at the time of the corresponding event, for example, impression or order. Segment fields cannot be selected in queries without also selecting at least one metric field. Values are only set for dimensions requested explicitly in the request's search query.
 
   ## Attributes
 
@@ -27,12 +27,13 @@ defmodule GoogleApi.Content.V21.Model.Segments do
   *   `categoryL3` (*type:* `String.t`, *default:* `nil`) - [Product category (3rd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
   *   `categoryL4` (*type:* `String.t`, *default:* `nil`) - [Product category (4th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
   *   `categoryL5` (*type:* `String.t`, *default:* `nil`) - [Product category (5th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in Google's product taxonomy.
-  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency in which price metrics are represented, e.g., if you select `ordered_item_sales_micros`, the returned value will be represented by this currency.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency in which price metrics are represented, for example, if you select `ordered_item_sales_micros`, the returned value will be represented by this currency.
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of products.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of products.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of products.
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of products.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of products.
+  *   `customerCountryCode` (*type:* `String.t`, *default:* `nil`) - Code of the country where the customer is located at the time of the event. Represented in the ISO 3166 format. If the customer country cannot be determined, a special 'ZZ' code is returned.
   *   `date` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Date in the merchant timezone to which metrics apply.
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided id of the product.
   *   `productTypeL1` (*type:* `String.t`, *default:* `nil`) - [Product type (1st level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
@@ -40,7 +41,7 @@ defmodule GoogleApi.Content.V21.Model.Segments do
   *   `productTypeL3` (*type:* `String.t`, *default:* `nil`) - [Product type (3rd level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
   *   `productTypeL4` (*type:* `String.t`, *default:* `nil`) - [Product type (4th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
   *   `productTypeL5` (*type:* `String.t`, *default:* `nil`) - [Product type (5th level)](https://developers.google.com/shopping-content/guides/reports/segmentation#category_and_product_type) in merchant's own product taxonomy.
-  *   `program` (*type:* `String.t`, *default:* `nil`) - Program to which metrics apply, e.g., Free Product Listing.
+  *   `program` (*type:* `String.t`, *default:* `nil`) - Program to which metrics apply, for example, Free Product Listing.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the product.
   *   `week` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - First day of the week (Monday) of the metrics date in the merchant timezone.
   """
@@ -60,6 +61,7 @@ defmodule GoogleApi.Content.V21.Model.Segments do
           :customLabel2 => String.t() | nil,
           :customLabel3 => String.t() | nil,
           :customLabel4 => String.t() | nil,
+          :customerCountryCode => String.t() | nil,
           :date => GoogleApi.Content.V21.Model.Date.t() | nil,
           :offerId => String.t() | nil,
           :productTypeL1 => String.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Content.V21.Model.Segments do
   field(:customLabel2)
   field(:customLabel3)
   field(:customLabel4)
+  field(:customerCountryCode)
   field(:date, as: GoogleApi.Content.V21.Model.Date)
   field(:offerId)
   field(:productTypeL1)

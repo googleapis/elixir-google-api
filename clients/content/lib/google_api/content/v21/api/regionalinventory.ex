@@ -87,7 +87,7 @@ defmodule GoogleApi.Content.V21.Api.Regionalinventory do
   end
 
   @doc """
-  Update the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.
+  Updates the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.
 
   ## Parameters
 
