@@ -48,7 +48,7 @@ defmodule GoogleApi.Eventarc.Mixfile do
 
   defp description() do
     """
-    Eventarc API client library. 
+    Eventarc API client library. Build event-driven applications on Google Cloud Platform.
     """
   end
 

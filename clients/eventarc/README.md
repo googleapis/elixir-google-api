@@ -2,7 +2,7 @@
 
 Eventarc API client library.
 
-
+Build event-driven applications on Google Cloud Platform.
 
 ## Installation
 

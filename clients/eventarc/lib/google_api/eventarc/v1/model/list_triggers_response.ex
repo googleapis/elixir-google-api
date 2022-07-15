@@ -21,7 +21,7 @@ defmodule GoogleApi.Eventarc.V1.Model.ListTriggersResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A page token that can be sent to ListTriggers to request the next page. If this is empty, then there are no more pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A page token that can be sent to `ListTriggers` to request the next page. If this is empty, then there are no more pages.
   *   `triggers` (*type:* `list(GoogleApi.Eventarc.V1.Model.Trigger.t)`, *default:* `nil`) - The requested triggers, up to the number specified in `page_size`.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources, if any.
   """

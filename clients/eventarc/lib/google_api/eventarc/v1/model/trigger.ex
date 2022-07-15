@@ -21,6 +21,8 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
 
   ## Attributes
 
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the channel associated with the trigger in `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from Eventarc SaaS partners.
+  *   `conditions` (*type:* `%{optional(String.t) => GoogleApi.Eventarc.V1.Model.StateCondition.t}`, *default:* `nil`) - Output only. The reason(s) why a trigger is in FAILED state.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `destination` (*type:* `GoogleApi.Eventarc.V1.Model.Destination.t`, *default:* `nil`) - Required. Destination specifies where the events should be sent to.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding.
@@ -36,6 +38,9 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :channel => String.t() | nil,
+          :conditions =>
+            %{optional(String.t()) => GoogleApi.Eventarc.V1.Model.StateCondition.t()} | nil,
           :createTime => DateTime.t() | nil,
           :destination => GoogleApi.Eventarc.V1.Model.Destination.t() | nil,
           :etag => String.t() | nil,
@@ -48,6 +53,8 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:channel)
+  field(:conditions, as: GoogleApi.Eventarc.V1.Model.StateCondition, type: :map)
   field(:createTime, as: DateTime)
   field(:destination, as: GoogleApi.Eventarc.V1.Model.Destination)
   field(:etag)
