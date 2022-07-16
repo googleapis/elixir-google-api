@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.GoogleCloudNetworksecurityV1GrpcEnd
 
   ## Attributes
 
-  *   `targetUri` (*type:* `String.t`, *default:* `nil`) - Required. The target URI of the gRPC endpoint. Only UDS path is supported, and should start with “unix:”.
+  *   `targetUri` (*type:* `String.t`, *default:* `nil`) - Required. The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".
   """
 
   use GoogleApi.Gax.ModelBase
