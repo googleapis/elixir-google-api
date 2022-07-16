@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkSecurity.V1.Model.HttpHeaderMatch do
   @moduledoc """
-  Specification of HTTP header match atrributes.
+  Specification of HTTP header match attributes.
 
   ## Attributes
 
