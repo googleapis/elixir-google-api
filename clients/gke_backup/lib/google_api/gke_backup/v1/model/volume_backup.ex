@@ -26,7 +26,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.VolumeBackup do
   *   `diskSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The minimum size of the disk to which this VolumeBackup can be restored.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume backup updates in order to avoid race conditions.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The format used for the volume backup.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the VolumeBackup resource. Format: projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the VolumeBackup resource. Format: `projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*`.
   *   `sourcePvc` (*type:* `GoogleApi.GKEBackup.V1.Model.NamespacedName.t`, *default:* `nil`) - Output only. A reference to the source Kubernetes PVC from which this VolumeBackup was created.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this VolumeBackup.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable message explaining why the VolumeBackup is in its current state.

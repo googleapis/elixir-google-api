@@ -24,13 +24,13 @@ defmodule GoogleApi.GKEBackup.V1.Model.VolumeRestore do
   *   `completeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the associated underlying volume restoration completed.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this VolumeRestore resource was created.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume restore updates in order to avoid race conditions.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of the VolumeRestore resource. Format: projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/*.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of the VolumeRestore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/*`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this VolumeRestore.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable message explaining why the VolumeRestore is in its current state.
   *   `targetPvc` (*type:* `GoogleApi.GKEBackup.V1.Model.NamespacedName.t`, *default:* `nil`) - Output only. The reference to the target Kubernetes PVC to be restored.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this VolumeRestore resource was last updated.
-  *   `volumeBackup` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the VolumeBackup from which the volume will be restored. Format: projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*.
+  *   `volumeBackup` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the VolumeBackup from which the volume will be restored. Format: `projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*`.
   *   `volumeHandle` (*type:* `String.t`, *default:* `nil`) - Output only. A storage system-specific opaque handler to the underlying volume created for the target PVC from the volume backup.
   *   `volumeType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of volume provisioned
   """

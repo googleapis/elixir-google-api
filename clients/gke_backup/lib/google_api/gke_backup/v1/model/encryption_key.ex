@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.EncryptionKey do
 
   ## Attributes
 
-  *   `gcpKmsEncryptionKey` (*type:* `String.t`, *default:* `nil`) - Google Cloud KMS encryption key. Format: projects/*/locations/*/keyRings/*/cryptoKeys/*
+  *   `gcpKmsEncryptionKey` (*type:* `String.t`, *default:* `nil`) - Google Cloud KMS encryption key. Format: `projects/*/locations/*/keyRings/*/cryptoKeys/*`
   """
 
   use GoogleApi.Gax.ModelBase

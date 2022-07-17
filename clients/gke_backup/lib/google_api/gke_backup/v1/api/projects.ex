@@ -227,7 +227,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location within which to create the BackupPlan. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The location within which to create the BackupPlan. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -303,7 +303,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Fully qualified BackupPlan name. Format: projects/*/locations/*/backupPlans/*
+  *   `name` (*type:* `String.t`) - Required. Fully qualified BackupPlan name. Format: `projects/*/locations/*/backupPlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -377,7 +377,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Fully qualified BackupPlan name. Format: projects/*/locations/*/backupPlans/*
+  *   `name` (*type:* `String.t`) - Required. Fully qualified BackupPlan name. Format: `projects/*/locations/*/backupPlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -519,7 +519,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location that contains the BackupPlans to list. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The location that contains the BackupPlans to list. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -597,7 +597,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The full name of the BackupPlan resource. Format: projects/*/locations/*/backupPlans/*
+  *   `name` (*type:* `String.t`) - Output only. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -819,7 +819,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BackupPlan within which to create the Backup. Format: projects/*/locations/*/backupPlans/*
+  *   `parent` (*type:* `String.t`) - Required. The BackupPlan within which to create the Backup. Format: `projects/*/locations/*/backupPlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -895,7 +895,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Backup resource. Format: projects/*/locations/*/backupPlans/*/backups/*
+  *   `name` (*type:* `String.t`) - Required. Name of the Backup resource. Format: `projects/*/locations/*/backupPlans/*/backups/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -971,7 +971,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Full name of the Backup resource. Format: projects/*/locations/*/backupPlans/*/backups/*
+  *   `name` (*type:* `String.t`) - Required. Full name of the Backup resource. Format: `projects/*/locations/*/backupPlans/*/backups/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1113,7 +1113,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BackupPlan that contains the Backups to list. Format: projects/*/locations/*/backupPlans/*
+  *   `parent` (*type:* `String.t`) - Required. The BackupPlan that contains the Backups to list. Format: `projects/*/locations/*/backupPlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1191,7 +1191,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The fully qualified name of the Backup. projects/*/locations/*/backupPlans/*/backups/*
+  *   `name` (*type:* `String.t`) - Output only. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1413,7 +1413,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Full name of the VolumeBackup resource. Format: projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*
+  *   `name` (*type:* `String.t`) - Required. Full name of the VolumeBackup resource. Format: `projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1555,7 +1555,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The Backup that contains the VolumeBackups to list. Format: projects/*/locations/*/backupPlans/*/backups/*
+  *   `parent` (*type:* `String.t`) - Required. The Backup that contains the VolumeBackups to list. Format: `projects/*/locations/*/backupPlans/*/backups/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2003,7 +2003,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location within which to create the RestorePlan. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The location within which to create the RestorePlan. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2079,7 +2079,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Fully qualified RestorePlan name. Format: projects/*/locations/*/restorePlans/*
+  *   `name` (*type:* `String.t`) - Required. Fully qualified RestorePlan name. Format: `projects/*/locations/*/restorePlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2155,7 +2155,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Fully qualified RestorePlan name. Format: projects/*/locations/*/restorePlans/*
+  *   `name` (*type:* `String.t`) - Required. Fully qualified RestorePlan name. Format: `projects/*/locations/*/restorePlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2297,7 +2297,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location that contains the RestorePlans to list. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The location that contains the RestorePlans to list. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2375,7 +2375,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The full name of the RestorePlan resource. Format: projects/*/locations/*/restorePlans/*.
+  *   `name` (*type:* `String.t`) - Output only. The full name of the RestorePlan resource. Format: `projects/*/locations/*/restorePlans/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2597,7 +2597,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The RestorePlan within which to create the Restore. Format: projects/*/locations/*/restorePlans/*
+  *   `parent` (*type:* `String.t`) - Required. The RestorePlan within which to create the Restore. Format: `projects/*/locations/*/restorePlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2673,7 +2673,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Full name of the Restore Format: projects/*/locations/*/restorePlans/*/restores/*
+  *   `name` (*type:* `String.t`) - Required. Full name of the Restore Format: `projects/*/locations/*/restorePlans/*/restores/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2749,7 +2749,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the restore resource. Format: projects/*/locations/*/restorePlans/*/restores/*
+  *   `name` (*type:* `String.t`) - Required. Name of the restore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2891,7 +2891,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The RestorePlan that contains the Restores to list. Format: projects/*/locations/*/restorePlans/*
+  *   `parent` (*type:* `String.t`) - Required. The RestorePlan that contains the Restores to list. Format: `projects/*/locations/*/restorePlans/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2969,7 +2969,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The full name of the Restore resource. Format: projects/*/locations/*/restorePlans/*/restores/*
+  *   `name` (*type:* `String.t`) - Output only. The full name of the Restore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3191,7 +3191,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Full name of the VolumeRestore resource. Format: projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/*
+  *   `name` (*type:* `String.t`) - Required. Full name of the VolumeRestore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3333,7 +3333,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The Restore that contains the VolumeRestores to list. Format: projects/*/locations/*/restorePlans/*/restores/*
+  *   `parent` (*type:* `String.t`) - Required. The Restore that contains the VolumeRestores to list. Format: `projects/*/locations/*/restorePlans/*/restores/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
