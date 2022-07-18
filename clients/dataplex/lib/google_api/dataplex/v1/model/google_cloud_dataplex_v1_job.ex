@@ -23,8 +23,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the job ended.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the job, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/ tasks/{task_id}/jobs/{job_id}.
-  *   `retryCount` (*type:* `integer()`, *default:* `nil`) - Output only. . The number of times the job has been retried (excluding the initial attempt).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the job, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id}.
+  *   `retryCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of times the job has been retried (excluding the initial attempt).
   *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. The underlying service running a job.
   *   `serviceJob` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource name for the job run under a particular service.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the job was started.

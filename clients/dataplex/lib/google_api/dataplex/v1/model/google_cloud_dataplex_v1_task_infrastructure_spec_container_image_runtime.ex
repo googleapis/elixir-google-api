@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskInfrastructureSpe
 
   ## Attributes
 
+  *   `image` (*type:* `String.t`, *default:* `nil`) - Optional. Container image to use.
   *   `javaJars` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of Java JARS to add to the classpath. Valid input includes Cloud Storage URIs to Jar binaries. For example, gs://bucket-name/my/path/to/file.jar
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. Override to common configuration of open source components installed on the Dataproc cluster. The properties to set on daemon config files. Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. For more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
   *   `pythonPackages` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of python packages to be installed. Valid formats include Cloud Storage URI to a PIP installable library. For example, gs://bucket-name/my/path/to/lib.tar.gz
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskInfrastructureSpe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :image => String.t() | nil,
           :javaJars => list(String.t()) | nil,
           :properties => map() | nil,
           :pythonPackages => list(String.t()) | nil
         }
 
+  field(:image)
   field(:javaJars, type: :list)
   field(:properties, type: :map)
   field(:pythonPackages, type: :list)
