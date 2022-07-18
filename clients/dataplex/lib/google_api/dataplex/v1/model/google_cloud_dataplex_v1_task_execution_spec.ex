@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionSpec do
   ## Attributes
 
   *   `args` (*type:* `map()`, *default:* `nil`) - Optional. The arguments to pass to the task. The args can use placeholders of the format ${placeholder} as part of key/value string. These will be interpolated before passing the args to the driver. Currently supported placeholders: - ${task_id} - ${job_time} To pass positional args, set the key as TASK_ARGS. The value should be a comma-separated string of all the positional arguments. To use a delimiter other than comma, refer to https://cloud.google.com/sdk/gcloud/reference/topic/escaping. In case of other keys being present in the args, then TASK_ARGS will be passed as the last argument.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud KMS key to use for encryption, of the form: projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}.
   *   `maxJobExecutionLifetime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum duration after which the job execution is expired.
   *   `project` (*type:* `String.t`, *default:* `nil`) - Optional. The project in which jobs are run. By default, the project containing the Lake is used. If a project is provided, the executionspec.service_account must belong to this same project.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Required. Service account to use to execute a task. If not provided, the default Compute service account for the project is used.
@@ -31,12 +32,14 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionSpec do
 
   @type t :: %__MODULE__{
           :args => map() | nil,
+          :kmsKey => String.t() | nil,
           :maxJobExecutionLifetime => String.t() | nil,
           :project => String.t() | nil,
           :serviceAccount => String.t() | nil
         }
 
   field(:args, type: :map)
+  field(:kmsKey)
   field(:maxJobExecutionLifetime)
   field(:project)
   field(:serviceAccount)
