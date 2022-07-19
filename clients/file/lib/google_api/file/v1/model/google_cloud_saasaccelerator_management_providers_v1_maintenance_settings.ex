@@ -23,7 +23,7 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
 
   *   `exclude` (*type:* `boolean()`, *default:* `nil`) - Optional. Exclude instance from maintenance. When true, rollout service will not attempt maintenance on the instance. Rollout service will include the instance in reported rollout progress as not attempted.
   *   `isRollback` (*type:* `boolean()`, *default:* `nil`) - Optional. If the update call is triggered from rollback, set the value as true.
-  *   `maintenancePolicies` (*type:* `%{optional(String.t) => GoogleApi.File.V1.Model.MaintenancePolicy.t}`, *default:* `nil`) - Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the embedded policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug. If only the name is needed (like in the deprecated Instance.maintenance_policy_names field) then only populate MaintenancePolicy.name.
+  *   `maintenancePolicies` (*type:* `%{optional(String.t) => GoogleApi.File.V1.Model.MaintenancePolicy.t}`, *default:* `nil`) - Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the embedded policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug. If only the name is needed, then only populate MaintenancePolicy.name.
   """
 
   use GoogleApi.Gax.ModelBase
