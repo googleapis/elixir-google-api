@@ -174,7 +174,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new hub in the specified project.
+  Creates a new Network Connectivity Center hub in the specified project.
 
   ## Parameters
 
@@ -252,7 +252,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Deletes the specified hub.
+  Deletes a Network Connectivity Center hub.
 
   ## Parameters
 
@@ -326,7 +326,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Gets details about the specified hub.
+  Gets details about a Network Connectivity Center hub.
 
   ## Parameters
 
@@ -468,7 +468,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Lists hubs in a given project.
+  Lists the Network Connectivity Center hubs associated with a given project.
 
   ## Parameters
 
@@ -548,7 +548,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Updates the description and/or labels of the specified hub.
+  Updates the description and/or labels of a Network Connectivity Center hub.
 
   ## Parameters
 
@@ -1287,7 +1287,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Creates a spoke in the specified project and location.
+  Creates a Network Connectivity Center spoke.
 
   ## Parameters
 
@@ -1365,7 +1365,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Deletes the specified spoke.
+  Deletes a Network Connectivity Center spoke.
 
   ## Parameters
 
@@ -1439,7 +1439,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Gets details about the specified spoke.
+  Gets details about a Network Connectivity Center spoke.
 
   ## Parameters
 
@@ -1581,7 +1581,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Lists the spokes in the specified project and location.
+  Lists the Network Connectivity Center spokes in a specified project and location.
 
   ## Parameters
 
@@ -1661,7 +1661,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Updates the parameters of the specified spoke.
+  Updates the parameters of a Network Connectivity Center spoke.
 
   ## Parameters
 

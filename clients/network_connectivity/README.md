@@ -2,7 +2,7 @@
 
 Network Connectivity API client library.
 
-The Network Connectivity API provides access to Network Connectivity Center.
+This API enables connectivity with and between Google Cloud resources.
 
 ## Installation
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC do
   @moduledoc """
-  RoutingVPC contains information about the VPC networks that are associated with a hub's spokes.
+  RoutingVPC contains information about the VPC networks associated with the spokes of a Network Connectivity Center hub.
 
   ## Attributes
 
