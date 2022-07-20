@@ -21,6 +21,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
 
   ## Attributes
 
+  *   `allowedDomainsSettings` (*type:* `GoogleApi.IAP.V1.Model.AllowedDomainsSettings.t`, *default:* `nil`) - Settings to configure and enable allowed domains.
   *   `corsSettings` (*type:* `GoogleApi.IAP.V1.Model.CorsSettings.t`, *default:* `nil`) - Configuration to allow cross-origin requests via IAP.
   *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - GCIP claims and endpoint configurations for 3p identity providers.
   *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Settings to configure IAP's OAuth behavior.
@@ -31,6 +32,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowedDomainsSettings => GoogleApi.IAP.V1.Model.AllowedDomainsSettings.t() | nil,
           :corsSettings => GoogleApi.IAP.V1.Model.CorsSettings.t() | nil,
           :gcipSettings => GoogleApi.IAP.V1.Model.GcipSettings.t() | nil,
           :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
           :reauthSettings => GoogleApi.IAP.V1.Model.ReauthSettings.t() | nil
         }
 
+  field(:allowedDomainsSettings, as: GoogleApi.IAP.V1.Model.AllowedDomainsSettings)
   field(:corsSettings, as: GoogleApi.IAP.V1.Model.CorsSettings)
   field(:gcipSettings, as: GoogleApi.IAP.V1.Model.GcipSettings)
   field(:oauthSettings, as: GoogleApi.IAP.V1.Model.OAuthSettings)
