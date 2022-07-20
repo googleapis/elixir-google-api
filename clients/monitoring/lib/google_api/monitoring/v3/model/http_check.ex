@@ -21,6 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
 
   ## Attributes
 
+  *   `acceptedResponseStatusCodes` (*type:* `list(GoogleApi.Monitoring.V3.Model.ResponseStatusCode.t)`, *default:* `nil`) - If present, the check will only pass if the HTTP response status code is in this set of status codes. If empty, the HTTP status code will only pass if the HTTP status code is 200-299.
   *   `authInfo` (*type:* `GoogleApi.Monitoring.V3.Model.BasicAuthentication.t`, *default:* `nil`) - The authentication information. Optional when creating an HTTP check; defaults to empty.
   *   `body` (*type:* `String.t`, *default:* `nil`) - The request body associated with the HTTP POST request. If content_type is URL_ENCODED, the body passed in must be URL-encoded. Users can provide a Content-Length header via the headers field or the API will do so. If the request_method is GET and body is not empty, the API will return an error. The maximum byte size is 1 megabyte.Note: If client libraries aren't used (which performs the conversion automatically) base64 encode your body data since the field is of bytes type.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - The content type header to use for the check. The following configurations result in errors: 1. Content type is specified in both the headers field and the content_type field. 2. Request method is GET and content_type is not TYPE_UNSPECIFIED 3. Request method is POST and content_type is TYPE_UNSPECIFIED. 4. Request method is POST and a "Content-Type" header is provided via headers field. The content_type field should be used instead.
@@ -36,6 +37,8 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acceptedResponseStatusCodes =>
+            list(GoogleApi.Monitoring.V3.Model.ResponseStatusCode.t()) | nil,
           :authInfo => GoogleApi.Monitoring.V3.Model.BasicAuthentication.t() | nil,
           :body => String.t() | nil,
           :contentType => String.t() | nil,
@@ -47,6 +50,11 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
           :useSsl => boolean() | nil,
           :validateSsl => boolean() | nil
         }
+
+  field(:acceptedResponseStatusCodes,
+    as: GoogleApi.Monitoring.V3.Model.ResponseStatusCode,
+    type: :list
+  )
 
   field(:authInfo, as: GoogleApi.Monitoring.V3.Model.BasicAuthentication)
   field(:body)
