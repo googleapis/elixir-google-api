@@ -18,7 +18,7 @@
 defmodule GoogleApi.BeyondCorp.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.BeyondCorp.Mixfile do
 
   defp description() do
     """
-    BeyondCorp API client library.
+    BeyondCorp API client library. Beyondcorp Enterprise provides identity and context aware access controls for enterprise resources and enables zero-trust access. Using the Beyondcorp Enterprise APIs, enterprises can set up multi-cloud and on-prem connectivity solutions.
     """
   end
 
