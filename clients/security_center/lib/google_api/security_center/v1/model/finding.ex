@@ -26,7 +26,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
   *   `compliances` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Compliance.t)`, *default:* `nil`) - Contains compliance information for security standards associated to the finding.
   *   `connections` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Connection.t)`, *default:* `nil`) - Contains information about the IP connection associated with the finding.
-  *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { "security":[ { "contact":{ "email":"person1@company.com" } }, { "contact":{ "email":“person2@company.com” } } ] }
+  *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { "security": { "contacts": [ { "email": "person1@company.com" }, { "email": "person2@company.com" } ] }
+  *   `containers` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Container.t)`, *default:* `nil`) - Containers associated with the finding. containers provides information for both Kubernetes and non-Kubernetes containers.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
@@ -36,6 +37,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
   *   `iamBindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t)`, *default:* `nil`) - Represents IAM bindings associated with the Finding.
   *   `indicator` (*type:* `GoogleApi.SecurityCenter.V1.Model.Indicator.t`, *default:* `nil`) - Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+  *   `kubernetes` (*type:* `GoogleApi.SecurityCenter.V1.Model.Kubernetes.t`, *default:* `nil`) - Kubernetes resources associated with the finding.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc. Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
@@ -62,6 +64,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :connections => list(GoogleApi.SecurityCenter.V1.Model.Connection.t()) | nil,
           :contacts =>
             %{optional(String.t()) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t()} | nil,
+          :containers => list(GoogleApi.SecurityCenter.V1.Model.Container.t()) | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :eventTime => DateTime.t() | nil,
@@ -76,6 +79,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :findingClass => String.t() | nil,
           :iamBindings => list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t()) | nil,
           :indicator => GoogleApi.SecurityCenter.V1.Model.Indicator.t() | nil,
+          :kubernetes => GoogleApi.SecurityCenter.V1.Model.Kubernetes.t() | nil,
           :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
           :mute => String.t() | nil,
           :muteInitiator => String.t() | nil,
@@ -98,6 +102,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:compliances, as: GoogleApi.SecurityCenter.V1.Model.Compliance, type: :list)
   field(:connections, as: GoogleApi.SecurityCenter.V1.Model.Connection, type: :list)
   field(:contacts, as: GoogleApi.SecurityCenter.V1.Model.ContactDetails, type: :map)
+  field(:containers, as: GoogleApi.SecurityCenter.V1.Model.Container, type: :list)
   field(:createTime, as: DateTime)
   field(:description)
   field(:eventTime, as: DateTime)
@@ -112,6 +117,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:findingClass)
   field(:iamBindings, as: GoogleApi.SecurityCenter.V1.Model.IamBinding, type: :list)
   field(:indicator, as: GoogleApi.SecurityCenter.V1.Model.Indicator)
+  field(:kubernetes, as: GoogleApi.SecurityCenter.V1.Model.Kubernetes)
   field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)
   field(:mute)
   field(:muteInitiator)
