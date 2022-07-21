@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.IndexItemOptions do
 
   ## Attributes
 
-  *   `allowUnknownGsuitePrincipals` (*type:* `boolean()`, *default:* `nil`) - Specifies if the index request should allow gsuite principals that do not exist or are deleted in the index request.
+  *   `allowUnknownGsuitePrincipals` (*type:* `boolean()`, *default:* `nil`) - Specifies if the index request should allow Google Workspace principals that do not exist or are deleted.
   """
 
   use GoogleApi.Gax.ModelBase
