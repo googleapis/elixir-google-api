@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails do
   @moduledoc """
-  Details related to ProcessingFailureReason#NOT_OUTDOORS.
+  Details related to ProcessingFailureReason#NOT_OUTDOORS. If there are multiple indoor frames found, the first frame is recorded here.
 
   ## Attributes
 
