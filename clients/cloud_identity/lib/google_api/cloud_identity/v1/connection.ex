@@ -42,6 +42,12 @@ defmodule GoogleApi.CloudIdentity.V1.Connection do
       # See any Cloud Identity Groups that you can access, including group members and their emails
       "https://www.googleapis.com/auth/cloud-identity.groups.readonly",
 
+      # See, send, or cancel any Cloud Identity UserInvitations to join your organization to users
+      "https://www.googleapis.com/auth/cloud-identity.userinvitations",
+
+      # See, send, or cancel any Cloud Identity UserInvitations to join your organization to users
+      "https://www.googleapis.com/auth/cloud-identity.userinvitations.readonly",
+
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
