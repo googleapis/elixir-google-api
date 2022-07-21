@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.GSuitePrincipal do
 
   ## Attributes
 
-  *   `gsuiteDomain` (*type:* `boolean()`, *default:* `nil`) - This principal represents all users of the G Suite domain of the customer.
-  *   `gsuiteGroupEmail` (*type:* `String.t`, *default:* `nil`) - This principal references a G Suite group account
-  *   `gsuiteUserEmail` (*type:* `String.t`, *default:* `nil`) - This principal references a G Suite user account
+  *   `gsuiteDomain` (*type:* `boolean()`, *default:* `nil`) - This principal represents all users of the Google Workspace domain of the customer.
+  *   `gsuiteGroupEmail` (*type:* `String.t`, *default:* `nil`) - This principal references a Google Workspace group name.
+  *   `gsuiteUserEmail` (*type:* `String.t`, *default:* `nil`) - This principal references a Google Workspace user account.
   """
 
   use GoogleApi.Gax.ModelBase
