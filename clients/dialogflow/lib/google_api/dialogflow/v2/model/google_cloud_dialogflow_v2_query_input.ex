@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput do
 
   *   `audioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig.t`, *default:* `nil`) - Instructs the speech recognizer how to process the speech audio.
   *   `event` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t`, *default:* `nil`) - The event to be processed.
-  *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t`, *default:* `nil`) - The natural language text to be processed.
+  *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t`, *default:* `nil`) - The natural language text to be processed. Text length must not exceed 256 character for virtual agent interactions.
   """
 
   use GoogleApi.Gax.ModelBase
