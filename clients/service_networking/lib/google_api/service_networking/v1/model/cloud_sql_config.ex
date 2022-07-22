@@ -22,8 +22,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.CloudSQLConfig do
   ## Attributes
 
   *   `service` (*type:* `String.t`, *default:* `nil`) - Peering service used for peering with the Cloud SQL project.
-  *   `umbrellaNetwork` (*type:* `String.t`, *default:* `nil`) - The name of network in Cloud SQL umbrella project.
-  *   `umbrellaProject` (*type:* `String.t`, *default:* `nil`) - The project number of Cloud SQL umbrella project.
+  *   `umbrellaNetwork` (*type:* `String.t`, *default:* `nil`) - The name of the umbrella network in the Cloud SQL umbrella project.
+  *   `umbrellaProject` (*type:* `String.t`, *default:* `nil`) - The project number of the Cloud SQL umbrella project.
   """
 
   use GoogleApi.Gax.ModelBase
