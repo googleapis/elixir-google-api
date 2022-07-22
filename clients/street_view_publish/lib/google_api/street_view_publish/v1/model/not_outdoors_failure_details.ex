@@ -21,16 +21,16 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails do
 
   ## Attributes
 
-  *   `time` (*type:* `String.t`, *default:* `nil`) - Relative time (from the start of the video stream) when an indoor frame was found.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Relative time (from the start of the video stream) when an indoor frame was found.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :time => String.t() | nil
+          :startTime => String.t() | nil
         }
 
-  field(:time)
+  field(:startTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails do

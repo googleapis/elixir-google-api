@@ -22,18 +22,18 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.GpsDataGapFailureDetails do
   ## Attributes
 
   *   `gapDuration` (*type:* `String.t`, *default:* `nil`) - The duration of the gap in GPS data that was found.
-  *   `gapTime` (*type:* `String.t`, *default:* `nil`) - Relative time (from the start of the video stream) when the gap started.
+  *   `gapStartTime` (*type:* `String.t`, *default:* `nil`) - Relative time (from the start of the video stream) when the gap started.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :gapDuration => String.t() | nil,
-          :gapTime => String.t() | nil
+          :gapStartTime => String.t() | nil
         }
 
   field(:gapDuration)
-  field(:gapTime)
+  field(:gapStartTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.StreetViewPublish.V1.Model.GpsDataGapFailureDetails do
