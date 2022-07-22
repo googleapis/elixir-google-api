@@ -48,7 +48,7 @@ defmodule GoogleApi.VMMigration.Mixfile do
 
   defp description() do
     """
-    VM Migration API client library. Use the Migrate for Compute Engine API to programmatically migrate workloads. 
+    VM Migration API client library. Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.VMMigration.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/vm_migration",
-        "Homepage" => "https://cloud.google.com/migrate/compute-engine"
+        "Homepage" => "https://cloud.google.com/migrate/virtual-machines"
       }
     ]
   end
