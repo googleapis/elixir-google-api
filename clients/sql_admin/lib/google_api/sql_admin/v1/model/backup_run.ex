@@ -35,7 +35,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.BackupRun do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this run.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this run; can be either "AUTOMATED" or "ON_DEMAND". This field defaults to "ON_DEMAND" and is ignored, when specified for insert requests.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this run; can be either "AUTOMATED" or "ON_DEMAND" or "FINAL". This field defaults to "ON_DEMAND" and is ignored, when specified for insert requests.
   *   `windowStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the backup window during which this the backup was attempted in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   """
 

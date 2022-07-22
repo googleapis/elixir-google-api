@@ -49,7 +49,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details.
   *   `secondaryGceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone.
   *   `settings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Settings.t`, *default:* `nil`) - The user settings.
-  *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation.
+  *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation. You must set root passwords before you can connect to PostgreSQL instances.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `backendType` (*type:* `String.t`, *default:* `nil`) - The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type.
   *   `scheduledMaintenance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t`, *default:* `nil`) - The start time of any upcoming scheduled maintenance for this instance.
