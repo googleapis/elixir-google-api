@@ -2,7 +2,7 @@
 
 VM Migration API client library.
 
-Use the Migrate for Compute Engine API to programmatically migrate workloads. 
+Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
 
 ## Installation
 
@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/migrate/compute-engine](https://cloud.google.com/migrate/compute-engine).
+Product documentation is available at [https://cloud.google.com/migrate/virtual-machines](https://cloud.google.com/migrate/virtual-machines).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_vm_migration](https://hexdocs.pm/google_api_vm_migration).
