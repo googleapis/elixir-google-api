@@ -26,6 +26,7 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeConfig do
   *   `controlPlaneSubscription` (*type:* `String.t`, *default:* `nil`) - Output only. Pub/Sub subscription for control plane to receive message. E.g. projects/{project-id}/subscriptions/{topic-id}
   *   `controlPlaneTopic` (*type:* `String.t`, *default:* `nil`) - Output only. Pub/Sub topic for control plne to send message. communication. E.g. projects/{project-id}/topics/{topic-id}
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Output only. location_id of the runtime location. E.g. "us-west1".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the runtimeConfig resource. Format: projects/{project}/locations/{location}/runtimeConfig
   *   `runtimeEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The endpoint of the connectors runtime ingress.
   *   `schemaGcsBucket` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage bucket that stores connector's schema reports.
   *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeConfig do
           :controlPlaneSubscription => String.t() | nil,
           :controlPlaneTopic => String.t() | nil,
           :locationId => String.t() | nil,
+          :name => String.t() | nil,
           :runtimeEndpoint => String.t() | nil,
           :schemaGcsBucket => String.t() | nil,
           :serviceDirectory => String.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeConfig do
   field(:controlPlaneSubscription)
   field(:controlPlaneTopic)
   field(:locationId)
+  field(:name)
   field(:runtimeEndpoint)
   field(:schemaGcsBucket)
   field(:serviceDirectory)
