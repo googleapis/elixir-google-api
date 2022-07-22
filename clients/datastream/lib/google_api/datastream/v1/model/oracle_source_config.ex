@@ -24,6 +24,8 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
   *   `dropLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.DropLargeObjects.t`, *default:* `nil`) - Drop large object values.
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to include in the stream.
+  *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+  *   `streamLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.StreamLargeObjects.t`, *default:* `nil`) - Stream large object values.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,16 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
   @type t :: %__MODULE__{
           :dropLargeObjects => GoogleApi.Datastream.V1.Model.DropLargeObjects.t() | nil,
           :excludeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
-          :includeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil
+          :includeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
+          :maxConcurrentCdcTasks => integer() | nil,
+          :streamLargeObjects => GoogleApi.Datastream.V1.Model.StreamLargeObjects.t() | nil
         }
 
   field(:dropLargeObjects, as: GoogleApi.Datastream.V1.Model.DropLargeObjects)
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
+  field(:maxConcurrentCdcTasks)
+  field(:streamLargeObjects, as: GoogleApi.Datastream.V1.Model.StreamLargeObjects)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.OracleSourceConfig do
