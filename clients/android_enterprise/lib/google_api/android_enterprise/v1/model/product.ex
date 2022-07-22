@@ -21,6 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
 
   ## Attributes
 
+  *   `appRestrictionsSchema` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema.t`, *default:* `nil`) - The app restriction schema
   *   `appTracks` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.TrackInfo.t)`, *default:* `nil`) - The tracks visible to the enterprise.
   *   `appVersion` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t)`, *default:* `nil`) - App versions currently available for this product.
   *   `authorName` (*type:* `String.t`, *default:* `nil`) - The name of the author of the product (for example, the app developer).
@@ -50,6 +51,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appRestrictionsSchema =>
+            GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema.t() | nil,
           :appTracks => list(GoogleApi.AndroidEnterprise.V1.Model.TrackInfo.t()) | nil,
           :appVersion => list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t()) | nil,
           :authorName => String.t() | nil,
@@ -77,6 +80,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
           :workDetailsUrl => String.t() | nil
         }
 
+  field(:appRestrictionsSchema, as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema)
   field(:appTracks, as: GoogleApi.AndroidEnterprise.V1.Model.TrackInfo, type: :list)
   field(:appVersion, as: GoogleApi.AndroidEnterprise.V1.Model.AppVersion, type: :list)
   field(:authorName)
