@@ -23,17 +23,20 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlSourceConfig do
 
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL objects to retrieve from the source.
+  *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :excludeObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
-          :includeObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil
+          :includeObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
+          :maxConcurrentCdcTasks => integer() | nil
         }
 
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
+  field(:maxConcurrentCdcTasks)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.MysqlSourceConfig do
