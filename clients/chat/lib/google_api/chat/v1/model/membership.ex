@@ -24,6 +24,7 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership, such as when a member joined or was invited to join a space.
   *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A Google Chat user or app. Format: `users/{user}` or `users/app` When `users/{user}`, represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. When `users/app`, represents a Chat app creating membership for itself.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership. Format: spaces/{space}/members/{member}
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Output only. User's role within a Chat space, which determines their permitted actions in the space.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the membership.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
           :createTime => DateTime.t() | nil,
           :member => GoogleApi.Chat.V1.Model.User.t() | nil,
           :name => String.t() | nil,
+          :role => String.t() | nil,
           :state => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
   field(:member, as: GoogleApi.Chat.V1.Model.User)
   field(:name)
+  field(:role)
   field(:state)
 end
 

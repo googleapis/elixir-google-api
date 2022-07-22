@@ -22,11 +22,11 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card do
   ## Attributes
 
   *   `cardActions` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardAction.t)`, *default:* `nil`) - The card's actions. Actions are added to the card's generated toolbar menu. For example, the following JSON constructs a card action menu with Settings and Send Feedback options: ``` "card_actions": [ { "actionLabel": "Settings", "onClick": { "action": { "functionName": "goToView", "parameters": [ { "key": "viewType", "value": "SETTING" } ], "loadIndicator": "LoadIndicator.SPINNER" } } }, { "actionLabel": "Send Feedback", "onClick": { "openLink": { "url": "https://example.com/feedback" } } } ] ```
-  *   `displayStyle` (*type:* `String.t`, *default:* `nil`) - The display style for `peekCardHeader`.
+  *   `displayStyle` (*type:* `String.t`, *default:* `nil`) - The `peekCardHeader` display style for. Not supported by Google Chat apps.
   *   `fixedFooter` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardFixedFooter.t`, *default:* `nil`) - The fixed footer shown at the bottom of this card.
   *   `header` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader.t`, *default:* `nil`) - The header of the card. A header usually contains a title and an image.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the card. Used as a card identifier in card navigation.
-  *   `peekCardHeader` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader.t`, *default:* `nil`) - When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards.
+  *   `peekCardHeader` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader.t`, *default:* `nil`) - When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards. Not supported by Google Chat apps.
   *   `sections` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Section.t)`, *default:* `nil`) - Sections are separated by a line divider.
   """
 
