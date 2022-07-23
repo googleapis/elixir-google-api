@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.RegionTargetHttpsProxiesSetSslCertificatesR
 
   ## Attributes
 
-  *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - New set of SslCertificate resources to associate with this TargetHttpsProxy resource. Currently exactly one SslCertificate resource must be specified.
+  *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
   """
 
   use GoogleApi.Gax.ModelBase
