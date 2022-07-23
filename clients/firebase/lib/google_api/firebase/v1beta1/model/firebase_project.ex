@@ -21,7 +21,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Set of user-defined annotations for the FirebaseProject as per [AIP-128](https://google.aip.dev/128#annotations). These annotations are intended solely for developers and client-side tools Firebase services will not mutate this annotation set.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Project.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Project, in the format: projects/PROJECT_IDENTIFIER PROJECT_IDENTIFIER: the Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services.
@@ -32,7 +34,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :displayName => String.t() | nil,
+          :etag => String.t() | nil,
           :name => String.t() | nil,
           :projectId => String.t() | nil,
           :projectNumber => String.t() | nil,
@@ -40,7 +44,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
           :state => String.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:displayName)
+  field(:etag)
   field(:name)
   field(:projectId)
   field(:projectNumber)
