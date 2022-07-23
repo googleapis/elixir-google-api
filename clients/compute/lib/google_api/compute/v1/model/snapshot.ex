@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   *   `architecture` (*type:* `String.t`, *default:* `nil`) - [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
   *   `autoCreated` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
   *   `chainName` (*type:* `String.t`, *default:* `nil`) - Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+  *   `creationSizeBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] Size in bytes of the snapshot at creation time.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - [Output Only] Size of the source disk, specified in GB.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `snapshotEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+  *   `snapshotType` (*type:* `String.t`, *default:* `nil`) - Indicates the type of the snapshot.
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this snapshot.
   *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
   *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
@@ -56,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :architecture => String.t() | nil,
           :autoCreated => boolean() | nil,
           :chainName => String.t() | nil,
+          :creationSizeBytes => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :diskSizeGb => String.t() | nil,
@@ -71,6 +74,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
           :snapshotEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :snapshotType => String.t() | nil,
           :sourceDisk => String.t() | nil,
           :sourceDiskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
           :sourceDiskId => String.t() | nil,
@@ -85,6 +89,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   field(:architecture)
   field(:autoCreated)
   field(:chainName)
+  field(:creationSizeBytes)
   field(:creationTimestamp)
   field(:description)
   field(:diskSizeGb)
@@ -100,6 +105,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   field(:satisfiesPzs)
   field(:selfLink)
   field(:snapshotEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:snapshotType)
   field(:sourceDisk)
   field(:sourceDiskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:sourceDiskId)
