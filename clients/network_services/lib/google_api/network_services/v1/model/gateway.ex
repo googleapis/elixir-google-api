@@ -25,11 +25,11 @@ defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the Gateway resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Gateway resource. It matches pattern `projects/*/locations/*/gateways/`.
-  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Required. One or more ports that the Gateway must receive traffic on. The proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports specified below.
+  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Required. One or more port numbers (1-65535), on which the Gateway will receive traffic. The proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 and support multiple ports.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single coniguration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL of this resource
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of the customer managed gateway.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of the customer managed gateway. This field is required. If unspecified, an error is returned.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
 

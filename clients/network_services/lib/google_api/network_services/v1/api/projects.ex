@@ -2579,7 +2579,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of HttpRoutes to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListHttpRoutesResponse` Indicates that this is a continuation of a prior `ListRouters` call, and that the system should return the next page of data.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListHttpRoutesResponse` Indicates that this is a continuation of a prior `ListHttpRoutes` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4321,7 +4321,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of TcpRoutes to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTcpRoutesResponse` Indicates that this is a continuation of a prior `ListRouters` call, and that the system should return the next page of data.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTcpRoutesResponse` Indicates that this is a continuation of a prior `ListTcpRoutes` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4685,7 +4685,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of TlsRoutes to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTlsRoutesResponse` Indicates that this is a continuation of a prior `ListRouters` call, and that the system should return the next page of data.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTlsRoutesResponse` Indicates that this is a continuation of a prior `ListTlsRoutes` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
