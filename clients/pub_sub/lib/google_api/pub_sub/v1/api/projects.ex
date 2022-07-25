@@ -2013,7 +2013,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many concurrent pull requests pending for the given subscription.
+  Pulls messages from the server.
 
   ## Parameters
 
