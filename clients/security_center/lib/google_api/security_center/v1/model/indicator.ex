@@ -24,6 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Indicator do
   *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - List of domains associated to the Finding.
   *   `ipAddresses` (*type:* `list(String.t)`, *default:* `nil`) - List of ip addresses associated to the Finding.
   *   `signatures` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ProcessSignature.t)`, *default:* `nil`) - The list of matched signatures indicating that the given process is present in the environment.
+  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The list of URIs associated to the Findings
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Indicator do
   @type t :: %__MODULE__{
           :domains => list(String.t()) | nil,
           :ipAddresses => list(String.t()) | nil,
-          :signatures => list(GoogleApi.SecurityCenter.V1.Model.ProcessSignature.t()) | nil
+          :signatures => list(GoogleApi.SecurityCenter.V1.Model.ProcessSignature.t()) | nil,
+          :uris => list(String.t()) | nil
         }
 
   field(:domains, type: :list)
   field(:ipAddresses, type: :list)
   field(:signatures, as: GoogleApi.SecurityCenter.V1.Model.ProcessSignature, type: :list)
+  field(:uris, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Indicator do
