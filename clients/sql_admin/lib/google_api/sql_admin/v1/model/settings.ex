@@ -32,6 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First Generation instances.
   *   `databaseFlags` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.DatabaseFlags.t)`, *default:* `nil`) - The database flags passed to the instance at startup.
   *   `databaseReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether replication is enabled or not. WARNING: Changing this restarts the instance.
+  *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration to protect against accidental instance deletion.
   *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny maintenance periods
   *   `insightsConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.InsightsConfig.t`, *default:* `nil`) - Insights configuration, for now relevant only for Postgres.
   *   `ipConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.IpConfiguration.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled for Second Generation instances.
@@ -64,6 +65,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
           :dataDiskType => String.t() | nil,
           :databaseFlags => list(GoogleApi.SQLAdmin.V1.Model.DatabaseFlags.t()) | nil,
           :databaseReplicationEnabled => boolean() | nil,
+          :deletionProtectionEnabled => boolean() | nil,
           :denyMaintenancePeriods =>
             list(GoogleApi.SQLAdmin.V1.Model.DenyMaintenancePeriod.t()) | nil,
           :insightsConfig => GoogleApi.SQLAdmin.V1.Model.InsightsConfig.t() | nil,
@@ -94,6 +96,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   field(:dataDiskType)
   field(:databaseFlags, as: GoogleApi.SQLAdmin.V1.Model.DatabaseFlags, type: :list)
   field(:databaseReplicationEnabled)
+  field(:deletionProtectionEnabled)
 
   field(:denyMaintenancePeriods,
     as: GoogleApi.SQLAdmin.V1.Model.DenyMaintenancePeriod,
