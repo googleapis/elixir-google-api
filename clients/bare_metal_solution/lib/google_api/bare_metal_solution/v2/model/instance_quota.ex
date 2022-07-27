@@ -22,7 +22,8 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.InstanceQuota do
   ## Attributes
 
   *   `availableMachineCount` (*type:* `integer()`, *default:* `nil`) - Number of machines than can be created for the given location and instance_type.
-  *   `instanceType` (*type:* `String.t`, *default:* `nil`) - Instance type.
+  *   `gcpService` (*type:* `String.t`, *default:* `nil`) - The gcp service of the provisioning quota.
+  *   `instanceType` (*type:* `String.t`, *default:* `nil`) - Instance type. Deprecated: use gcp_service.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location where the quota applies.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the instance quota.
   """
@@ -31,12 +32,14 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.InstanceQuota do
 
   @type t :: %__MODULE__{
           :availableMachineCount => integer() | nil,
+          :gcpService => String.t() | nil,
           :instanceType => String.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil
         }
 
   field(:availableMachineCount)
+  field(:gcpService)
   field(:instanceType)
   field(:location)
   field(:name)

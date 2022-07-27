@@ -30,6 +30,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this `Volume`. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. Format: `projects/{project}/locations/{location}/volumes/{volume}`
   *   `originallyRequestedSizeGib` (*type:* `String.t`, *default:* `nil`) - Originally requested size, in GiB.
   *   `pod` (*type:* `String.t`, *default:* `nil`) - Immutable. Pod name.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - Output only. Storage protocol for the Volume.
   *   `remainingSpaceGib` (*type:* `String.t`, *default:* `nil`) - The space remaining in the storage volume for new LUNs, in GiB, excluding space reserved for snapshots.
   *   `requestedSizeGib` (*type:* `String.t`, *default:* `nil`) - The requested size of this storage volume, in GiB.
   *   `snapshotAutoDeleteBehavior` (*type:* `String.t`, *default:* `nil`) - The behavior to use when snapshot reserved space is full.
@@ -52,6 +53,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
           :name => String.t() | nil,
           :originallyRequestedSizeGib => String.t() | nil,
           :pod => String.t() | nil,
+          :protocol => String.t() | nil,
           :remainingSpaceGib => String.t() | nil,
           :requestedSizeGib => String.t() | nil,
           :snapshotAutoDeleteBehavior => String.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
   field(:name)
   field(:originallyRequestedSizeGib)
   field(:pod)
+  field(:protocol)
   field(:remainingSpaceGib)
   field(:requestedSizeGib)
   field(:snapshotAutoDeleteBehavior)
