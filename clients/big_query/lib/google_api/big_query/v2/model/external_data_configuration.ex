@@ -33,6 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   *   `ignoreUnknownValues` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored.
   *   `maxBadRecords` (*type:* `integer()`, *default:* `nil`) - [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
   *   `parquetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ParquetOptions.t`, *default:* `nil`) - Additional properties to set if sourceFormat is set to Parquet.
+  *   `referenceFileSchemaUri` (*type:* `String.t`, *default:* `nil`) - [Optional] Provide a referencing file with the expected table schema. Enabled for the format: AVRO, PARQUET, ORC.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - [Required] The data format. For CSV files, specify "CSV". For Google sheets, specify "GOOGLE_SHEETS". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro files, specify "AVRO". For Google Cloud Datastore backups, specify "DATASTORE_BACKUP". [Beta] For Google Cloud Bigtable, specify "BIGTABLE".
   *   `sourceUris` (*type:* `list(String.t)`, *default:* `nil`) - [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
@@ -54,6 +55,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :ignoreUnknownValues => boolean() | nil,
           :maxBadRecords => integer() | nil,
           :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t() | nil,
+          :referenceFileSchemaUri => String.t() | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :sourceFormat => String.t() | nil,
           :sourceUris => list(String.t()) | nil
@@ -71,6 +73,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
   field(:parquetOptions, as: GoogleApi.BigQuery.V2.Model.ParquetOptions)
+  field(:referenceFileSchemaUri)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:sourceFormat)
   field(:sourceUris, type: :list)

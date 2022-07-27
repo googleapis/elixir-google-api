@@ -42,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `projectionFields` (*type:* `list(String.t)`, *default:* `nil`) - If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
   *   `quote` (*type:* `String.t`, *default:* `"`) - [Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.
   *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
+  *   `referenceFileSchemaUri` (*type:* `String.t`, *default:* `nil`) - User provided referencing file with the expected reader schema, Available for the format: AVRO, PARQUET, ORC.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] The schema for the destination table. The schema can be omitted if the destination table already exists, or if you're loading data from Google Cloud Datastore.
   *   `schemaInline` (*type:* `String.t`, *default:* `nil`) - [Deprecated] The inline schema. For CSV schemas, specify as "Field1:Type1[,Field2:Type2]*". For example, "foo:STRING, bar:INTEGER, baz:FLOAT".
   *   `schemaInlineFormat` (*type:* `String.t`, *default:* `nil`) - [Deprecated] The format of the schemaInline property.
@@ -81,6 +82,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :projectionFields => list(String.t()) | nil,
           :quote => String.t() | nil,
           :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
+          :referenceFileSchemaUri => String.t() | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :schemaInline => String.t() | nil,
           :schemaInlineFormat => String.t() | nil,
@@ -118,6 +120,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:projectionFields, type: :list)
   field(:quote)
   field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
+  field(:referenceFileSchemaUri)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:schemaInline)
   field(:schemaInlineFormat)
