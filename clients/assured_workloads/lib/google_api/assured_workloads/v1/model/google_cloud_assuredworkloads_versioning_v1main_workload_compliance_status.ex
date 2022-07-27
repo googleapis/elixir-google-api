@@ -21,8 +21,8 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersion
 
   ## Attributes
 
-  *   `acknowledgedViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of acknowledged violations in the Workload.
-  *   `activeViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of active Violations in the Workload.
+  *   `acknowledgedViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of active Violations which are acknowledged in the Workload.
+  *   `activeViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of active Violations which haven't been acknowledged.
   """
 
   use GoogleApi.Gax.ModelBase
