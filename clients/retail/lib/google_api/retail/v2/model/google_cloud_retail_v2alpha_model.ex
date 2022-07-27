@@ -30,6 +30,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
   *   `optimizationObjective` (*type:* `String.t`, *default:* `nil`) - Optional. The optimization objective e.g. `cvr`. Currently supported values: `ctr`, `cvr`, `revenue-per-order`. If not specified, we choose default based on model type. Default depends on type of recommendation: `recommended-for-you` => `ctr` `others-you-may-like` => `ctr` `frequently-bought-together` => `revenue_per_order`
   *   `pageOptimizationConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfig.t`, *default:* `nil`) - Optional. The page optimization config.
   *   `periodicTuningState` (*type:* `String.t`, *default:* `nil`) - Optional. The state of periodic tuning. The period we use is 3 months - to do a one-off tune earlier use the TuneModel method. Default value is PERIODIC_TUNING_ENABLED.
+  *   `servingConfigLists` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelServingConfigList.t)`, *default:* `nil`) - Output only. The list of valid serving configs associated with the PageOptimizationConfig.
   *   `servingState` (*type:* `String.t`, *default:* `nil`) - Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
   *   `trainingState` (*type:* `String.t`, *default:* `nil`) - Optional. The training state that the model is in (e.g. TRAINING or PAUSED). Since part of the cost of running the service is frequency of training - this can be used to determine when to train model in order to control cost. If not specified: the default value for CreateModel method is TRAINING. the default value for UpdateModel method is to keep the state the same as before.
   *   `tuningOperation` (*type:* `String.t`, *default:* `nil`) - Output only. The tune operation associated with the model. Can be used to determine if there is an ongoing tune for this recommendation. Empty field implies no tune is goig on.
@@ -51,6 +52,9 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfig.t()
             | nil,
           :periodicTuningState => String.t() | nil,
+          :servingConfigLists =>
+            list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelServingConfigList.t())
+            | nil,
           :servingState => String.t() | nil,
           :trainingState => String.t() | nil,
           :tuningOperation => String.t() | nil,
@@ -71,6 +75,12 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
   )
 
   field(:periodicTuningState)
+
+  field(:servingConfigLists,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelServingConfigList,
+    type: :list
+  )
+
   field(:servingState)
   field(:trainingState)
   field(:tuningOperation)

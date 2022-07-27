@@ -23,6 +23,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportProductsRespons
 
   *   `errorSamples` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while processing the request.
   *   `errorsConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig.t`, *default:* `nil`) - This field is never set.
+  *   `outputResult` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaOutputResult.t`, *default:* `nil`) - Output result indicating where the data were exported to.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +31,13 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportProductsRespons
   @type t :: %__MODULE__{
           :errorSamples => list(GoogleApi.Retail.V2.Model.GoogleRpcStatus.t()) | nil,
           :errorsConfig =>
-            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig.t() | nil
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig.t() | nil,
+          :outputResult => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaOutputResult.t() | nil
         }
 
   field(:errorSamples, as: GoogleApi.Retail.V2.Model.GoogleRpcStatus, type: :list)
   field(:errorsConfig, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportErrorsConfig)
+  field(:outputResult, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaOutputResult)
 end
 
 defimpl Poison.Decoder,
