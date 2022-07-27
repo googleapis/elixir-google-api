@@ -28,6 +28,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Flag represents that this `ConfigVariable` must be provided for a connection.
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Role grant configuration for the config variable.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the config variable.
   *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression in RE2 syntax used for validating the `value` of a `ConfigVariable`.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - Type of the parameter: string, int, bool etc. consider custom type for the benefit for the validation.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
           :key => String.t() | nil,
           :required => boolean() | nil,
           :roleGrant => GoogleApi.Connectors.V1.Model.RoleGrant.t() | nil,
+          :state => String.t() | nil,
           :validationRegex => String.t() | nil,
           :valueType => String.t() | nil
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   field(:key)
   field(:required)
   field(:roleGrant, as: GoogleApi.Connectors.V1.Model.RoleGrant)
+  field(:state)
   field(:validationRegex)
   field(:valueType)
 end
