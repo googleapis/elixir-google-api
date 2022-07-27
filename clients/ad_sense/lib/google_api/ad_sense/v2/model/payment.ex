@@ -23,7 +23,7 @@ defmodule GoogleApi.AdSense.V2.Model.Payment do
 
   *   `amount` (*type:* `String.t`, *default:* `nil`) - Output only. The amount of unpaid or paid earnings, as a formatted string, including the currency. E.g. "¥1,235 JPY", "$1,234.57", "£87.65".
   *   `date` (*type:* `GoogleApi.AdSense.V2.Model.Date.t`, *default:* `nil`) - Output only. For paid earnings, the date that the payment was credited. For unpaid earnings, this field is empty. Payment dates are always returned in the billing timezone (America/Los_Angeles).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the payment. Format: - accounts/{account}/payments/unpaid for unpaid (current) AdSense earnings. - accounts/{account}/payments/youtube-unpaid for unpaid (current) YouTube earnings. - accounts/{account}/payments/yyyy-MM-dd for paid AdSense earnings. - accounts/{account}/payments/youtube-yyyy-MM-dd for paid YouTube earnings. 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the payment. Format: - accounts/{account}/payments/unpaid for unpaid (current) AdSense earnings. - accounts/{account}/payments/youtube-unpaid for unpaid (current) YouTube earnings. - accounts/{account}/payments/yyyy-MM-dd for paid AdSense earnings. - accounts/{account}/payments/youtube-yyyy-MM-dd for paid YouTube earnings.
   """
 
   use GoogleApi.Gax.ModelBase

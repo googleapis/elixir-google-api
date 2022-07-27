@@ -21,7 +21,7 @@ defmodule GoogleApi.AdSense.V2.Model.SavedReport do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the report. Format: accounts/{account}/reports/{report}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the report. Format: accounts/{account}/reports/{report}
   *   `title` (*type:* `String.t`, *default:* `nil`) - Report title as specified by publisher.
   """
 

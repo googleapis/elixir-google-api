@@ -21,7 +21,7 @@ defmodule GoogleApi.AdSense.V2.Model.UrlChannel do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the URL channel. Format: accounts/{account}/adclients/{adclient}/urlchannels/{urlchannel}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the URL channel. Format: accounts/{account}/adclients/{adclient}/urlchannels/{urlchannel}
   *   `reportingDimensionId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique ID of the custom channel as used in the `URL_CHANNEL_ID` reporting dimension.
   *   `uriPattern` (*type:* `String.t`, *default:* `nil`) - URI pattern of the channel. Does not include "http://" or "https://". Example: www.example.com/home
   """
