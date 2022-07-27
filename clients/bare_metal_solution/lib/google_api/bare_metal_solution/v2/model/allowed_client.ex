@@ -26,6 +26,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.AllowedClient do
   *   `allowedClientsCidr` (*type:* `String.t`, *default:* `nil`) - The subnet of IP addresses permitted to access the share.
   *   `mountPermissions` (*type:* `String.t`, *default:* `nil`) - Mount permissions.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The network the access point sits on.
+  *   `nfsPath` (*type:* `String.t`, *default:* `nil`) - Output only. The path to access NFS, in format shareIP:/InstanceID InstanceID is the generated ID instead of customer provided name. example like "10.0.0.0:/g123456789-nfs001"
   *   `noRootSquash` (*type:* `boolean()`, *default:* `nil`) - Disable root squashing, which is a feature of NFS. Root squash is a special mapping of the remote superuser (root) identity when using identity authentication.
   *   `shareIp` (*type:* `String.t`, *default:* `nil`) - The IP address of the share on this network.
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.AllowedClient do
           :allowedClientsCidr => String.t() | nil,
           :mountPermissions => String.t() | nil,
           :network => String.t() | nil,
+          :nfsPath => String.t() | nil,
           :noRootSquash => boolean() | nil,
           :shareIp => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.AllowedClient do
   field(:allowedClientsCidr)
   field(:mountPermissions)
   field(:network)
+  field(:nfsPath)
   field(:noRootSquash)
   field(:shareIp)
 end
