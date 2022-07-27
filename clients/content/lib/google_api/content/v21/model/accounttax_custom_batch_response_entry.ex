@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.AccounttaxCustomBatchResponseEntry do
 
   *   `accountTax` (*type:* `GoogleApi.Content.V21.Model.AccountTax.t`, *default:* `nil`) - The retrieved or updated account tax settings.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
-  *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
+  *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accounttaxCustomBatchResponseEntry`"
   """
 
