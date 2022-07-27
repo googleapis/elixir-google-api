@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedsCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
   *   `datafeed` (*type:* `GoogleApi.Content.V21.Model.Datafeed.t`, *default:* `nil`) - The requested data feed. Defined if and only if the request was successful.
-  *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
+  *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.
   """
 
   use GoogleApi.Gax.ModelBase
