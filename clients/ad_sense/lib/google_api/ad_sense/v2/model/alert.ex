@@ -22,7 +22,7 @@ defmodule GoogleApi.AdSense.V2.Model.Alert do
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - Output only. The localized alert message. This may contain HTML markup, such as phrase elements or links.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the alert. Format: accounts/{account}/alerts/{alert}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the alert. Format: accounts/{account}/alerts/{alert}
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Output only. Severity of this alert.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Type of alert. This identifies the broad type of this alert, and provides a stable machine-readable identifier that will not be translated. For example, "payment-hold".
   """

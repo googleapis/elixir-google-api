@@ -23,7 +23,7 @@ defmodule GoogleApi.AdSense.V2.Model.AdUnit do
 
   *   `contentAdsSettings` (*type:* `GoogleApi.AdSense.V2.Model.ContentAdsSettings.t`, *default:* `nil`) - Required. Settings specific to content ads (AFC).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the ad unit, as provided when the ad unit was created.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the ad unit. Format: accounts/{account}/adclients/{adclient}/adunits/{adunit}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the ad unit. Format: accounts/{account}/adclients/{adclient}/adunits/{adunit}
   *   `reportingDimensionId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique ID of the ad unit as used in the `AD_UNIT_ID` reporting dimension.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the ad unit.
   """

@@ -23,7 +23,7 @@ defmodule GoogleApi.AdSense.V2.Model.Account do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the account.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name of this account.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the account. Format: accounts/pub-[0-9]+
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the account. Format: accounts/pub-[0-9]+
   *   `pendingTasks` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Outstanding tasks that need to be completed as part of the sign-up process for a new account. e.g. "billing-profile-creation", "phone-pin-verification".
   *   `premium` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this account is premium.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the account.
