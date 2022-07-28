@@ -85,7 +85,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       - "outOfOffice" - An out-of-office event. 
       - "focusTime" - A focus-time event.
   *   `iCalUID` (*type:* `String.t`, *default:* `nil`) - Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.
-      Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
+      Note that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method.
   """
 
   use GoogleApi.Gax.ModelBase

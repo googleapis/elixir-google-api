@@ -83,7 +83,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   end
 
   @doc """
-  Returns an event.
+  Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter.
 
   ## Parameters
 
@@ -366,7 +366,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
-      *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
+      *   `:iCalUID` (*type:* `String.t`) - Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
       *   `:orderBy` (*type:* `String.t`) - The order of the events returned in the result. Optional. The default is an unspecified, stable order.
@@ -747,7 +747,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
-      *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
+      *   `:iCalUID` (*type:* `String.t`) - Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
       *   `:orderBy` (*type:* `String.t`) - The order of the events returned in the result. Optional. The default is an unspecified, stable order.
