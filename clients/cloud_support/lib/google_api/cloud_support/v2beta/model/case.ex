@@ -29,7 +29,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
   *   `escalated` (*type:* `boolean()`, *default:* `nil`) - Whether the case is currently escalated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the case.
   *   `priority` (*type:* `String.t`, *default:* `nil`) - The priority of this case. If this is set, do not set severity.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the project associated with the case.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of this case. Deprecated. Use priority instead.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current status of the support case.
   *   `subscriberEmailAddresses` (*type:* `list(String.t)`, *default:* `nil`) - The email addresses to receive updates on this case.
@@ -49,7 +48,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
           :escalated => boolean() | nil,
           :name => String.t() | nil,
           :priority => String.t() | nil,
-          :projectId => String.t() | nil,
           :severity => String.t() | nil,
           :state => String.t() | nil,
           :subscriberEmailAddresses => list(String.t()) | nil,
@@ -66,7 +64,6 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Case do
   field(:escalated)
   field(:name)
   field(:priority)
-  field(:projectId)
   field(:severity)
   field(:state)
   field(:subscriberEmailAddresses, type: :list)
