@@ -177,7 +177,7 @@ defmodule GoogleApi.MyBusinessAccountManagement.V1.Api.Accounts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. A filter constraining the accounts to return. The response includes only entries that match the filter. If `filter` is empty, then no constraints are applied and all accounts (paginated) are retrieved for the requested account. For example, a request with the filter `type=USER_GROUP` will only return user groups. The `type` field is the only supported filter.
-      *   `:pageSize` (*type:* `integer()`) - Optional. How many accounts to fetch per page. The minimum supported page_size is 2. The default and maximum is 20.
+      *   `:pageSize` (*type:* `integer()`) - Optional. How many accounts to fetch per page. The default and maximum is 20.
       *   `:pageToken` (*type:* `String.t`) - Optional. If specified, the next page of accounts is retrieved. The `pageToken` is returned when a call to `accounts.list` returns more results than can fit into the requested page size.
       *   `:parentAccount` (*type:* `String.t`) - Optional. The resource name of the account for which the list of directly accessible accounts is to be retrieved. This only makes sense for Organizations and User Groups. If empty, will return `ListAccounts` for the authenticated user. `accounts/{account_id}`.
   *   `opts` (*type:* `keyword()`) - Call options
