@@ -27,6 +27,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidApp do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the AndroidApp, in the format: projects/ PROJECT_IDENTIFIER/androidApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id)).
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. The canonical package name of the Android app as would appear in the Google Play Developer Console.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `AndroidApp`.
+  *   `sha1Hashes` (*type:* `list(String.t)`, *default:* `nil`) - The SHA1 certificate hashes for the AndroidApp.
+  *   `sha256Hashes` (*type:* `list(String.t)`, *default:* `nil`) - The SHA256 certificate hashes for the AndroidApp.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the App.
   """
 
@@ -39,6 +41,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidApp do
           :name => String.t() | nil,
           :packageName => String.t() | nil,
           :projectId => String.t() | nil,
+          :sha1Hashes => list(String.t()) | nil,
+          :sha256Hashes => list(String.t()) | nil,
           :state => String.t() | nil
         }
 
@@ -48,6 +52,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidApp do
   field(:name)
   field(:packageName)
   field(:projectId)
+  field(:sha1Hashes, type: :list)
+  field(:sha256Hashes, type: :list)
   field(:state)
 end
 
