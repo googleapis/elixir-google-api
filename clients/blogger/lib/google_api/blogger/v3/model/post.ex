@@ -38,6 +38,7 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the post. Only set for admin-level requests.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the Post.
   *   `titleLink` (*type:* `String.t`, *default:* `nil`) - The title link URL, similar to atom's related link.
+  *   `trashed` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Post was last trashed.
   *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Post was last updated.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where this Post is displayed.
   """
@@ -62,6 +63,7 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
           :status => String.t() | nil,
           :title => String.t() | nil,
           :titleLink => String.t() | nil,
+          :trashed => String.t() | nil,
           :updated => String.t() | nil,
           :url => String.t() | nil
         }
@@ -83,6 +85,7 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
   field(:status)
   field(:title)
   field(:titleLink)
+  field(:trashed)
   field(:updated)
   field(:url)
 end
