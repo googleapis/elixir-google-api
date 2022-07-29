@@ -26,6 +26,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all Chat app mentions stripped out.
   *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User uploaded attachment.
   *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message.
+  *   `cardsV2` (*type:* `list(GoogleApi.Chat.V1.Model.CardWithId.t)`, *default:* `nil`) - Richly formatted and interactive cards that display UI elements and editable widgets, such as: - Formatted text - Buttons - Clickable images - Checkboxes - Radio buttons - Input widgets. Cards are usually displayed below the text-body of a Chat message, but can situationally appear other places, such as [dialogs](https://developers.google.com/chat/how-tos/dialogs). The `cardId` is a unique identifier among cards in the same message and for identifying user input values. Currently supported widgets include: - `TextParagraph` - `DecoratedText` - `Image` - `ButtonList`
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Google Chat server.
   *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications).
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was last edited by a user. If the message has never been edited, this field is empty.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :argumentText => String.t() | nil,
           :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()) | nil,
           :cards => list(GoogleApi.Chat.V1.Model.Card.t()) | nil,
+          :cardsV2 => list(GoogleApi.Chat.V1.Model.CardWithId.t()) | nil,
           :createTime => DateTime.t() | nil,
           :fallbackText => String.t() | nil,
           :lastUpdateTime => DateTime.t() | nil,
@@ -63,6 +65,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:argumentText)
   field(:attachment, as: GoogleApi.Chat.V1.Model.Attachment, type: :list)
   field(:cards, as: GoogleApi.Chat.V1.Model.Card, type: :list)
+  field(:cardsV2, as: GoogleApi.Chat.V1.Model.CardWithId, type: :list)
   field(:createTime, as: DateTime)
   field(:fallbackText)
   field(:lastUpdateTime, as: DateTime)
