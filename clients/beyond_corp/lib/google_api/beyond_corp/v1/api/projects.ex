@@ -1401,7 +1401,7 @@ defmodule GoogleApi.BeyondCorp.V1.Api.Projects do
   end
 
   @doc """
-  Get instance config for a given AppConnector. An internal method called by a AppConnector to get its container config.
+  Gets instance configuration for a given AppConnector. An internal method called by a AppConnector to get its container config.
 
   ## Parameters
 

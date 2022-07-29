@@ -23,6 +23,7 @@ defmodule GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpAppconnectionsV1App
 
   *   `appGateway` (*type:* `String.t`, *default:* `nil`) - Required. AppGateway name in following format: `projects/{project_id}/locations/{location_id}/appgateways/{gateway_id}`
   *   `ingressPort` (*type:* `integer()`, *default:* `nil`) - Output only. Ingress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.
+  *   `l7psc` (*type:* `String.t`, *default:* `nil`) - Output only. L7 private service connection for this resource.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of hosting used by the gateway.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URI for this resource.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpAppconnectionsV1App
   @type t :: %__MODULE__{
           :appGateway => String.t() | nil,
           :ingressPort => integer() | nil,
+          :l7psc => String.t() | nil,
           :type => String.t() | nil,
           :uri => String.t() | nil
         }
 
   field(:appGateway)
   field(:ingressPort)
+  field(:l7psc)
   field(:type)
   field(:uri)
 end
