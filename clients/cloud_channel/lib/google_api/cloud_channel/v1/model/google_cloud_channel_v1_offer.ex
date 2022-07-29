@@ -22,7 +22,6 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer do
   ## Attributes
 
   *   `constraints` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Constraints.t`, *default:* `nil`) - Constraints on transacting the Offer.
-  *   `dealCode` (*type:* `String.t`, *default:* `nil`) - The deal code of the offer to get a special promotion or discount.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. End of the Offer validity time.
   *   `marketingInfo` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1MarketingInfo.t`, *default:* `nil`) - Marketing information for the Offer.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource Name of the Offer. Format: accounts/{account_id}/offers/{offer_id}
@@ -38,7 +37,6 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer do
   @type t :: %__MODULE__{
           :constraints =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Constraints.t() | nil,
-          :dealCode => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :marketingInfo =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1MarketingInfo.t() | nil,
@@ -54,7 +52,6 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer do
         }
 
   field(:constraints, as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Constraints)
-  field(:dealCode)
   field(:endTime, as: DateTime)
   field(:marketingInfo, as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1MarketingInfo)
   field(:name)
