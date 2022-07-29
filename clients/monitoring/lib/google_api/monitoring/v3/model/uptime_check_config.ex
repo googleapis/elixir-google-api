@@ -34,6 +34,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   *   `selectedRegions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions from which the check will be run. Some regions contain one location, and others contain more than one. If this field is specified, enough regions must be provided to include a minimum of 3 locations. Not specifying this field will result in Uptime checks running from all available regions.
   *   `tcpCheck` (*type:* `GoogleApi.Monitoring.V3.Model.TcpCheck.t`, *default:* `nil`) - Contains information needed to make a TCP check.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - The maximum amount of time to wait for the request to complete (must be between 1 and 60 seconds). Required.
+  *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-supplied key/value data to be used for organizing and identifying the UptimeCheckConfig objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
           :resourceGroup => GoogleApi.Monitoring.V3.Model.ResourceGroup.t() | nil,
           :selectedRegions => list(String.t()) | nil,
           :tcpCheck => GoogleApi.Monitoring.V3.Model.TcpCheck.t() | nil,
-          :timeout => String.t() | nil
+          :timeout => String.t() | nil,
+          :userLabels => map() | nil
         }
 
   field(:checkerType)
@@ -67,6 +69,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   field(:selectedRegions, type: :list)
   field(:tcpCheck, as: GoogleApi.Monitoring.V3.Model.TcpCheck)
   field(:timeout)
+  field(:userLabels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
