@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
   @moduledoc """
-  Apigee endpoint attachment. For more information, see Southbound networking patterns.
+  Apigee endpoint attachment. For more information, see [Southbound networking patterns] (https://cloud.google.com/apigee/docs/api-platform/architecture/southbound-networking-patterns-endpoints).
 
   ## Attributes
 
