@@ -21,6 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem do
 
   ## Attributes
 
+  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - For A and AAAA types only. Endpoints to return in the query result only if they are healthy. These can be specified along with rrdata within this item.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyGeoPolicyGeoPolicyItem`) - 
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geo-location granularity is a GCP region. This location string should correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-east1", etc.
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
@@ -30,12 +31,15 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :healthCheckedTargets =>
+            GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t() | nil,
           :kind => String.t() | nil,
           :location => String.t() | nil,
           :rrdatas => list(String.t()) | nil,
           :signatureRrdatas => list(String.t()) | nil
         }
 
+  field(:healthCheckedTargets, as: GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets)
   field(:kind)
   field(:location)
   field(:rrdatas, type: :list)
