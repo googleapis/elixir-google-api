@@ -21,6 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicyWrrPolicyItem do
 
   ## Attributes
 
+  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - endpoints that need to be health checked before making the routing decision. The unhealthy endpoints will be omitted from the result. If all endpoints within a buckete are unhealthy, we'll choose a different bucket (sampled w.r.t. its weight) for responding. Note that if DNSSEC is enabled for this zone, only one of rrdata or health_checked_targets can be set.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyWrrPolicyWrrPolicyItem`) - 
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 ip per item. .
@@ -30,12 +31,15 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicyWrrPolicyItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :healthCheckedTargets =>
+            GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t() | nil,
           :kind => String.t() | nil,
           :rrdatas => list(String.t()) | nil,
           :signatureRrdatas => list(String.t()) | nil,
           :weight => float() | nil
         }
 
+  field(:healthCheckedTargets, as: GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets)
   field(:kind)
   field(:rrdatas, type: :list)
   field(:signatureRrdatas, type: :list)

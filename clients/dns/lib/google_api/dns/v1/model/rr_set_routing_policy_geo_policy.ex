@@ -21,6 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy do
 
   ## Attributes
 
+  *   `enableFencing` (*type:* `boolean()`, *default:* `nil`) - Without fencing, if health check fails for all configured items in the current geo bucket, we'll failover to the next nearest geo bucket. With fencing, if health check is enabled, as long as some targets in the current geo bucket are healthy, we'll return only the healthy targets. However, if they're all unhealthy, we won't failover to the next nearest bucket, we'll simply return all the items in the current bucket even though they're unhealthy.
   *   `items` (*type:* `list(GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem.t)`, *default:* `nil`) - The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyGeoPolicy`) - 
   """
@@ -28,11 +29,13 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enableFencing => boolean() | nil,
           :items =>
             list(GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem.t()) | nil,
           :kind => String.t() | nil
         }
 
+  field(:enableFencing)
   field(:items, as: GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem, type: :list)
   field(:kind)
 end
