@@ -39,7 +39,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.Creative do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the creative. Follows the pattern `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the account ID of the buyer who owns the creative, and `{creative}` is the buyer-specific creative ID that references this creative in the bid response.
   *   `native` (*type:* `GoogleApi.RealTimeBidding.V1.Model.NativeContent.t`, *default:* `nil`) - A native creative.
   *   `restrictedCategories` (*type:* `list(String.t)`, *default:* `nil`) - All restricted categories for the ads that may be shown from this creative.
-  *   `version` (*type:* `integer()`, *default:* `nil`) - Output only. The version of this creative. Version for a new creative is 1 and it increments during subsequent creative updates.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Output only. The version of the creative. Version for a new creative is 1 and it increments during subsequent creative updates.
   *   `video` (*type:* `GoogleApi.RealTimeBidding.V1.Model.VideoContent.t`, *default:* `nil`) - A video creative.
   """
 
