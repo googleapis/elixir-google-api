@@ -29,6 +29,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
   *   `prefixes` (*type:* `list(String.t)`, *default:* `nil`) - Only get facet values that start with the given string prefix. For example, suppose "categories" has three values "Women > Shoe", "Women > Dress" and "Men > Shoe". If set "prefixes" to "Women", the "categories" facet will give only "Women > Shoe" and "Women > Dress". Only supported on textual fields. Maximum is 10.
   *   `query` (*type:* `String.t`, *default:* `nil`) - The query that is used to compute facet for the given facet key. When provided, it will override the default behavior of facet computation. The query syntax is the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Notice that there is no limitation on FacetKey.key when query is specified. In the response, SearchResponse.Facet.values.value will be always "1" and SearchResponse.Facet.values.count will be the number of results that match the query. For example, you can set a customized facet for "shipToStore", where FacetKey.key is "customizedShipToStore", and FacetKey.query is "availability: ANY(\\"IN_STOCK\\") AND shipToStore: ANY(\\"123\\")". Then the facet will count the products that are both in stock and ship to store "123".
   *   `restrictedValues` (*type:* `list(String.t)`, *default:* `nil`) - Only get facet for the given restricted values. For example, when using "pickupInStore" as key and set restricted values to ["store123", "store456"], only facets for "store123" and "store456" are returned. Only supported on predefined textual fields, custom textual attributes and fulfillments. Maximum is 20. Must be set for the fulfillment facet keys: * pickupInStore * shipToStore * sameDayDelivery * nextDayDelivery * customFulfillment1 * customFulfillment2 * customFulfillment3 * customFulfillment4 * customFulfillment5
+  *   `returnMinMax` (*type:* `boolean()`, *default:* `nil`) - Returns the min and max value for each numerical facet intervals. Ignored for textual facets.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
           :orderBy => String.t() | nil,
           :prefixes => list(String.t()) | nil,
           :query => String.t() | nil,
-          :restrictedValues => list(String.t()) | nil
+          :restrictedValues => list(String.t()) | nil,
+          :returnMinMax => boolean() | nil
         }
 
   field(:caseInsensitive)
@@ -52,6 +54,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpecFac
   field(:prefixes, type: :list)
   field(:query)
   field(:restrictedValues, type: :list)
+  field(:returnMinMax)
 end
 
 defimpl Poison.Decoder,

@@ -23,6 +23,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacetFacetV
 
   *   `count` (*type:* `String.t`, *default:* `nil`) - Number of items that have this facet value.
   *   `interval` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval.t`, *default:* `nil`) - Interval value for a facet, such as [10, 20) for facet "price".
+  *   `maxValue` (*type:* `float()`, *default:* `nil`) - The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
+  *   `minValue` (*type:* `float()`, *default:* `nil`) - The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Text value of a facet, such as "Black" for facet "colorFamilies".
   """
 
@@ -31,11 +33,15 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacetFacetV
   @type t :: %__MODULE__{
           :count => String.t() | nil,
           :interval => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval.t() | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil,
           :value => String.t() | nil
         }
 
   field(:count)
   field(:interval, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Interval)
+  field(:maxValue)
+  field(:minValue)
   field(:value)
 end
 

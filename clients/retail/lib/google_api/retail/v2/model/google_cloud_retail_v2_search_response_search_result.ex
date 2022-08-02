@@ -24,6 +24,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResul
   *   `id` (*type:* `String.t`, *default:* `nil`) - Product.id of the searched Product.
   *   `matchingVariantCount` (*type:* `integer()`, *default:* `nil`) - The count of matched variant Products.
   *   `matchingVariantFields` (*type:* `map()`, *default:* `nil`) - If a variant Product matches the search query, this map indicates which Product fields are matched. The key is the Product.name, the value is a field mask of the matched Product fields. If matched attributes cannot be determined, this map will be empty. For example, a key "sku1" with field mask "products.color_info" indicates there is a match between "sku1" ColorInfo and the query.
+  *   `personalLabels` (*type:* `list(String.t)`, *default:* `nil`) - Specifies previous events related to this product for this user based on UserEvent with same SearchRequest.visitor_id or UserInfo.user_id. This is set only when SearchRequest.PersonalizationSpec.mode is SearchRequest.PersonalizationSpec.Mode.AUTO. Possible values: * `purchased`: Indicates that this product has been purchased before.
   *   `product` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product.t`, *default:* `nil`) - The product data snippet in the search response. Only Product.name is guaranteed to be populated. Product.variants contains the product variants that match the search query. If there are multiple product variants matching the query, top 5 most relevant product variants are returned and ordered by relevancy. If relevancy can be deternmined, use matching_variant_fields to look up matched product variants fields. If relevancy cannot be determined, e.g. when searching "shoe" all products in a shoe product can be a match, 5 product variants are returned but order is meaningless.
   *   `variantRollupValues` (*type:* `map()`, *default:* `nil`) - The rollup matching variant Product attributes. The key is one of the SearchRequest.variant_rollup_keys. The values are the merged and de-duplicated Product attributes. Notice that the rollup values are respect filter. For example, when filtering by "colorFamilies:ANY(\\"red\\")" and rollup "colorFamilies", only "red" is returned. For textual and numerical attributes, the rollup values is a list of string or double values with type google.protobuf.ListValue. For example, if there are two variants with colors "red" and "blue", the rollup values are { key: "colorFamilies" value { list_value { values { string_value: "red" } values { string_value: "blue" } } } } For FulfillmentInfo, the rollup values is a double value with type google.protobuf.Value. For example, `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there are 10 variants in this product are available in the store "store1".
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResul
           :id => String.t() | nil,
           :matchingVariantCount => integer() | nil,
           :matchingVariantFields => map() | nil,
+          :personalLabels => list(String.t()) | nil,
           :product => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product.t() | nil,
           :variantRollupValues => map() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResul
   field(:id)
   field(:matchingVariantCount)
   field(:matchingVariantFields, type: :map)
+  field(:personalLabels, type: :list)
   field(:product, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product)
   field(:variantRollupValues, type: :map)
 end
