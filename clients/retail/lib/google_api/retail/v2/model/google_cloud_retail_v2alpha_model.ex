@@ -23,7 +23,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the Recommendation Model was created at.
   *   `dataState` (*type:* `String.t`, *default:* `nil`) - Output only. The state of data requirements for this model: DATA_OK and DATA_ERROR. Recommendation model cannot be trained if the data is in DATA_ERROR state. Recommendation model can have DATA_ERROR state even if serving state is ACTIVE: models were trained successfully before, but cannot be refreshed because model no longer has sufficient data for training.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Pantheon Dashboard. UTF-8 encoded string with limit of 1024 characters.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024 characters.
   *   `filteringOption` (*type:* `String.t`, *default:* `nil`) - Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by attributes is enabled for the model.
   *   `lastTuneTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the latest successful tune finished.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified resource name of the model. Format: projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id} catalog_id has char limit of 50. recommendation_model_id has char limit of 40.
