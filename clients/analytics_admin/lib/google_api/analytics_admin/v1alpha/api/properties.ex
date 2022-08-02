@@ -1055,7 +1055,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single Audience.
+  Lookup for a single Audience. Audiences created before 2020 may not be supported.
 
   ## Parameters
 
@@ -1123,7 +1123,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lists Audiences on a property.
+  Lists Audiences on a property. Audiences created before 2020 may not be supported.
 
   ## Parameters
 
