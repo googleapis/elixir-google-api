@@ -161,7 +161,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagValues do
   end
 
   @doc """
-  Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not have permission to view it, this method will return `PERMISSION_DENIED`.
+  Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist or the user does not have permission to view it.
 
   ## Parameters
 
