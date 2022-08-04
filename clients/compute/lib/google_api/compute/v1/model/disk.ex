@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the disk. Valid values are ARM64 or X86_64.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
   *   `replicaZones` (*type:* `list(String.t)`, *default:* `nil`) - URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
+  *   `params` (*type:* `GoogleApi.Compute.V1.Model.DiskParams.t`, *default:* `nil`) - Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -66,6 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :architecture => String.t() | nil,
           :locationHint => String.t() | nil,
           :replicaZones => list(String.t()) | nil,
+          :params => GoogleApi.Compute.V1.Model.DiskParams.t() | nil,
           :satisfiesPzs => boolean() | nil,
           :zone => String.t() | nil,
           :description => String.t() | nil,
@@ -106,6 +108,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   field(:architecture)
   field(:locationHint)
   field(:replicaZones, type: :list)
+  field(:params, as: GoogleApi.Compute.V1.Model.DiskParams)
   field(:satisfiesPzs)
   field(:zone)
   field(:description)
