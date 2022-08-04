@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse do
   @moduledoc """
-  Secret key used in legacy reCAPTCHA only. Should be used when integrating with a 3rd party which is still using legacy reCAPTCHA.
+  Secret key is used only in legacy reCAPTCHA. It must be used in a 3rd party integration with legacy reCAPTCHA.
 
   ## Attributes
 

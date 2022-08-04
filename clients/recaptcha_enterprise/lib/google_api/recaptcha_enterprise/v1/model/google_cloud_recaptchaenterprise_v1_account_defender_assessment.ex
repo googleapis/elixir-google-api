@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment do
   @moduledoc """
-  Account Defender risk assessment.
+  Account defender risk assessment.
 
   ## Attributes
 

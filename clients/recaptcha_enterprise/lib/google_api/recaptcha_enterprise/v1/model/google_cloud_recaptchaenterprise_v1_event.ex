@@ -22,7 +22,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `expectedAction` (*type:* `String.t`, *default:* `nil`) - Optional. The expected action for this type of event. This should be the same action provided at token generation time on client-side platforms already integrated with recaptcha enterprise.
-  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Optional unique stable hashed user identifier for the request. The identifier should ideally be hashed using sha256 with stable secret.
+  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique stable hashed user identifier for the request. The identifier must be hashed using hmac-sha256 with stable secret.
   *   `siteKey` (*type:* `String.t`, *default:* `nil`) - Optional. The site key that was used to invoke reCAPTCHA on your site and generate the token.
   *   `token` (*type:* `String.t`, *default:* `nil`) - Optional. The user response token provided by the reCAPTCHA client-side integration on your site.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - Optional. The user agent present in the request from the user's device related to this event.

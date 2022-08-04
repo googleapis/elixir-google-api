@@ -22,7 +22,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `annotation` (*type:* `String.t`, *default:* `nil`) - Optional. The annotation that will be assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent.
-  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Optional unique stable hashed user identifier to apply to the assessment. This is an alternative to setting the hashed_account_id in CreateAssessment, for example when the account identifier is not yet known in the initial request. It is recommended that the identifier is hashed using hmac-sha256 with stable secret.
+  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique stable hashed user identifier to apply to the assessment. This is an alternative to setting the hashed_account_id in CreateAssessment, for example when the account identifier is not yet known in the initial request. It is recommended that the identifier is hashed using hmac-sha256 with stable secret.
   *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Optional reasons for the annotation that will be assigned to the Event.
   """
 
