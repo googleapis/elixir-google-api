@@ -26,6 +26,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable form of the infoType name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Internal name of the infoType.
   *   `supportedBy` (*type:* `list(String.t)`, *default:* `nil`) - Which parts of the API supports this InfoType.
+  *   `versions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VersionDescription.t)`, *default:* `nil`) - A list of available versions for the infotype.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
-          :supportedBy => list(String.t()) | nil
+          :supportedBy => list(String.t()) | nil,
+          :versions => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VersionDescription.t()) | nil
         }
 
   field(:categories, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory, type: :list)
@@ -44,6 +46,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   field(:displayName)
   field(:name)
   field(:supportedBy, type: :list)
+  field(:versions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VersionDescription, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do

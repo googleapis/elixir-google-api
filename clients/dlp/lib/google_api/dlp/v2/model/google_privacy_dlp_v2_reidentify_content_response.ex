@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentResponse do
   @moduledoc """
-  Results of re-identifying a item.
+  Results of re-identifying an item.
 
   ## Attributes
 

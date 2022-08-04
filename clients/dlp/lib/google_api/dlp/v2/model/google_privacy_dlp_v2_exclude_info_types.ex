@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes do
   @moduledoc """
-  List of exclude infoTypes.
+  List of excluded infoTypes.
 
   ## Attributes
 

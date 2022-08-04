@@ -21,13 +21,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container do
 
   ## Attributes
 
-  *   `fullPath` (*type:* `String.t`, *default:* `nil`) - A string representation of the full container name. Examples: - BigQuery: 'Project:DataSetId.TableId' - Google Cloud Storage: 'gs://Bucket/folders/filename.txt'
+  *   `fullPath` (*type:* `String.t`, *default:* `nil`) - A string representation of the full container name. Examples: - BigQuery: 'Project:DataSetId.TableId' - Cloud Storage: 'gs://Bucket/folders/filename.txt'
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project where the finding was found. Can be different from the project that owns the finding.
-  *   `relativePath` (*type:* `String.t`, *default:* `nil`) - The rest of the path after the root. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the relative path is `table_id` - Google Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is `folder/filename.txt`
-  *   `rootPath` (*type:* `String.t`, *default:* `nil`) - The root of the container. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the root is `dataset_id` - For Google Cloud Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Container type, for example BigQuery or Google Cloud Storage.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Findings container modification timestamp, if applicable. For Google Cloud Storage contains last file modification timestamp. For BigQuery table contains last_modified_time property. For Datastore - not populated.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Findings container version, if available ("generation" for Google Cloud Storage).
+  *   `relativePath` (*type:* `String.t`, *default:* `nil`) - The rest of the path after the root. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the relative path is `table_id` - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is `folder/filename.txt`
+  *   `rootPath` (*type:* `String.t`, *default:* `nil`) - The root of the container. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the root is `dataset_id` - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Container type, for example BigQuery or Cloud Storage.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Findings container modification timestamp, if applicable. For Cloud Storage, this field contains the last file modification timestamp. For a BigQuery table, this field contains the last_modified_time property. For Datastore, this field isn't populated.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Findings container version, if available ("generation" for Cloud Storage).
   """
 
   use GoogleApi.Gax.ModelBase
