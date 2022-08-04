@@ -26,7 +26,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+  Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
@@ -261,8 +261,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -397,7 +397,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
@@ -627,8 +627,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -762,7 +762,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+  Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
@@ -997,8 +997,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1151,9 +1151,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The resource name of the trigger that created job. - 'end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - 'end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \\"2017-12-12T00:00:00+00:00\\" The length of this field should be no more than 500 characters.
+      *   `:filter` (*type:* `String.t`) - Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The name of the trigger that created the job. - 'end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - 'end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \\"2017-12-12T00:00:00+00:00\\" The length of this field should be no more than 500 characters.
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to time the job was created. - `end_time`: corresponds to time the job ended. - `name`: corresponds to job's name. - `state`: corresponds to `state`
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to the time the job was created. - `end_time`: corresponds to the time the job ended. - `name`: corresponds to the job's name. - `state`: corresponds to `state`
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
       *   `:type` (*type:* `String.t`) - The type of job. Defaults to `DlpJobType.INSPECT`
@@ -1217,7 +1217,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
@@ -1452,8 +1452,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1819,7 +1819,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect triggers: - `status` - HEALTHY|PAUSED|CANCELLED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by quotation marks. Nanoseconds are ignored. - 'error_count' - Number of errors that have occurred while running. * The operator must be `=` or `!=` for status and inspected_storage. Examples: * inspected_storage = cloud_storage AND status = HEALTHY * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY) * last_run_time > \\"2017-12-12T00:00:00+00:00\\" The length of this field should be no more than 500 characters.
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger's name. - `display_name`: corresponds to JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the JobTrigger was created. - `update_time`: corresponds to the time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to the JobTrigger's name. - `display_name`: corresponds to the JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
       *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by a server.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls.
       *   `:type` (*type:* `String.t`) - The type of jobs. Will use `DlpJobType.INSPECT` if not set.
@@ -2190,8 +2190,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2555,8 +2555,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by the server. If zero server returns a page of max size 100.
       *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 

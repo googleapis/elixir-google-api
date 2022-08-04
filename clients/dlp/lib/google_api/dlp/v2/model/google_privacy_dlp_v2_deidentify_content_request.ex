@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest do
   @moduledoc """
-  Request to de-identify a list of items.
+  Request to de-identify a ContentItem.
 
   ## Attributes
 

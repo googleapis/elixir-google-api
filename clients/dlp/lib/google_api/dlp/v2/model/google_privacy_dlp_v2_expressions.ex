@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions do
   @moduledoc """
-  An expression, consisting or an operator and conditions.
+  An expression, consisting of an operator and conditions.
 
   ## Attributes
 

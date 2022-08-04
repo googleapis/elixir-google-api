@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig do
   @moduledoc """
-  Configuration for a custom dictionary created from a data source of any size up to the maximum size defined in the [limits](https://cloud.google.com/dlp/limits) page. The artifacts of dictionary creation are stored in the specified Google Cloud Storage location. Consider using `CustomInfoType.Dictionary` for smaller dictionaries that satisfy the size requirements.
+  Configuration for a custom dictionary created from a data source of any size up to the maximum size defined in the [limits](https://cloud.google.com/dlp/limits) page. The artifacts of dictionary creation are stored in the specified Cloud Storage location. Consider using `CustomInfoType.Dictionary` for smaller dictionaries that satisfy the size requirements.
 
   ## Attributes
 
   *   `bigQueryField` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryField.t`, *default:* `nil`) - Field in a BigQuery table where each cell represents a dictionary phrase.
   *   `cloudStorageFileSet` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet.t`, *default:* `nil`) - Set of files containing newline-delimited lists of dictionary phrases.
-  *   `outputPath` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t`, *default:* `nil`) - Location to store dictionary artifacts in Google Cloud Storage. These files will only be accessible by project owners and the DLP API. If any of these artifacts are modified, the dictionary is considered invalid and can no longer be used.
+  *   `outputPath` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath.t`, *default:* `nil`) - Location to store dictionary artifacts in Cloud Storage. These files will only be accessible by project owners and the DLP API. If any of these artifacts are modified, the dictionary is considered invalid and can no longer be used.
   """
 
   use GoogleApi.Gax.ModelBase

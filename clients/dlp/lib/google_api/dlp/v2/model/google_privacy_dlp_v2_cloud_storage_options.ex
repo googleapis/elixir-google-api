@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions do
   @moduledoc """
-  Options defining a file or a set of files within a Google Cloud Storage bucket.
+  Options defining a file or a set of files within a Cloud Storage bucket.
 
   ## Attributes
 
