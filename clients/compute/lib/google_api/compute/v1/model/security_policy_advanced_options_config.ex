@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do
 
   ## Attributes
 
+  *   `jsonCustomConfig` (*type:* `GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.t`, *default:* `nil`) - Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
   *   `jsonParsing` (*type:* `String.t`, *default:* `nil`) - 
   *   `logLevel` (*type:* `String.t`, *default:* `nil`) - 
   """
@@ -28,9 +29,16 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :jsonCustomConfig =>
+            GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.t()
+            | nil,
           :jsonParsing => String.t() | nil,
           :logLevel => String.t() | nil
         }
+
+  field(:jsonCustomConfig,
+    as: GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+  )
 
   field(:jsonParsing)
   field(:logLevel)

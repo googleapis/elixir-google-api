@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - A list of publicly visible licenses. Reserved for Google's use.
   *   `onUpdateAction` (*type:* `String.t`, *default:* `nil`) - Specifies which action to take on instance update with this disk. Default is to use the existing disk.
   *   `provisionedIops` (*type:* `String.t`, *default:* `nil`) - Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
+  *   `resourceManagerTags` (*type:* `map()`, *default:* `nil`) - Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT & PATCH) when empty.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
   *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
   *   `sourceImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
           :licenses => list(String.t()) | nil,
           :onUpdateAction => String.t() | nil,
           :provisionedIops => String.t() | nil,
+          :resourceManagerTags => map() | nil,
           :resourcePolicies => list(String.t()) | nil,
           :sourceImage => String.t() | nil,
           :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   field(:licenses, type: :list)
   field(:onUpdateAction)
   field(:provisionedIops)
+  field(:resourceManagerTags, type: :map)
   field(:resourcePolicies, type: :list)
   field(:sourceImage)
   field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
