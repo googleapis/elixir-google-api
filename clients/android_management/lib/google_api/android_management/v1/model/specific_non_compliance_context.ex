@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SpecificNonComplianceContext do
 
   ## Attributes
 
-  *   `oncWifiContext` (*type:* `GoogleApi.AndroidManagement.V1.Model.OncWifiContext.t`, *default:* `nil`) - Additional context for non-compliance related to Wi-Fi configuration. See ONC_WIFI_INVALID_VALUE.
+  *   `oncWifiContext` (*type:* `GoogleApi.AndroidManagement.V1.Model.OncWifiContext.t`, *default:* `nil`) - Additional context for non-compliance related to Wi-Fi configuration. See ONC_WIFI_INVALID_VALUE and ONC_WIFI_API_LEVEL
   *   `passwordPoliciesContext` (*type:* `GoogleApi.AndroidManagement.V1.Model.PasswordPoliciesContext.t`, *default:* `nil`) - Additional context for non-compliance related to password policies. See PASSWORD_POLICIES_PASSWORD_EXPIRED and PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT.
   """
 
