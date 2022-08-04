@@ -30,6 +30,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
   *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
   *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
+  *   `osUpdateStatus` (*type:* `GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus.t`, *default:* `nil`) - The status of the OS updates for the device.
   *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - List of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
   *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `tpmVersionInfo` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t`, *default:* `nil`) - Trusted Platform Module (TPM) (Read-only)
   *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - List of active time ranges (Read-only).
   *   `cpuInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t)`, *default:* `nil`) - Information regarding CPU specs in the device.
+  *   `firstEnrollmentTime` (*type:* `String.t`, *default:* `nil`) - Date and time for the first time the device was enrolled.
   *   `bootMode` (*type:* `String.t`, *default:* `nil`) - The boot mode for the device. The possible values are: * `Verified`: The device is running a valid version of the Chrome OS. * `Dev`: The devices's developer hardware switch is enabled. When booted, the device has a command line shell. For an example of a developer switch, see the [Chromebook developer information](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook#TOC-Developer-switch).
   *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on the ethernet network interface.
   *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
@@ -75,6 +77,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :osVersion => String.t() | nil,
           :orgUnitPath => String.t() | nil,
           :firmwareVersion => String.t() | nil,
+          :osUpdateStatus => GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus.t() | nil,
           :screenshotFiles =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
           :annotatedUser => String.t() | nil,
@@ -96,6 +99,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :activeTimeRanges =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t()) | nil,
           :cpuInfo => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t()) | nil,
+          :firstEnrollmentTime => String.t() | nil,
           :bootMode => String.t() | nil,
           :ethernetMacAddress => String.t() | nil,
           :lastEnrollmentTime => DateTime.t() | nil,
@@ -129,6 +133,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:osVersion)
   field(:orgUnitPath)
   field(:firmwareVersion)
+  field(:osUpdateStatus, as: GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus)
 
   field(:screenshotFiles,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles,
@@ -161,6 +166,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   )
 
   field(:cpuInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo, type: :list)
+  field(:firstEnrollmentTime)
   field(:bootMode)
   field(:ethernetMacAddress)
   field(:lastEnrollmentTime, as: DateTime)
