@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.IAP.V1.Model.AllowedDomainsSettings do
   @moduledoc """
-  Configuration for IAP allowed domains. Allows the customers to restrict access to the app by only allowing requests from the listed trusted domains.
+  Configuration for IAP allowed domains. Lets you to restrict access to an app and allow access to only the domains that you list.
 
   ## Attributes
 
