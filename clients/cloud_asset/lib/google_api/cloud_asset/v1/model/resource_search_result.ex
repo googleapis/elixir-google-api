@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   @moduledoc """
-  A result of Resource Search, containing information of a cloud resource. Next ID: 28
+  A result of Resource Search, containing information of a cloud resource. Next ID: 29
 
   ## Attributes
 
