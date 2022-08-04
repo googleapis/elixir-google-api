@@ -21,7 +21,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - The unique stable hashed user identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous CreateAssessment or AnnotateAssessment call.
+  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - The unique stable hashed user identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name for this membership in the format `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
   """
 

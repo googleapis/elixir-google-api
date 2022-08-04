@@ -704,12 +704,12 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   end
 
   @doc """
-  Returns the secret key related to the specified public key. You should use the legacy secret key only if you are integrating with a 3rd party using the legacy reCAPTCHA instead of reCAPTCHA Enterprise.
+  Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `key` (*type:* `String.t`) - Required. The public key name linked to the requested secret key , in the format "projects/{project}/keys/{key}".
+  *   `key` (*type:* `String.t`) - Required. The public key name linked to the requested secret key in the format "projects/{project}/keys/{key}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -786,7 +786,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Required. The name of the project to search related account group memberships from, in the format "projects/{project}".
+  *   `project` (*type:* `String.t`) - Required. The name of the project to search related account group memberships from. Specify the project name in the following format: "projects/{project}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -878,7 +878,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 50 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListRelatedAccountGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRelatedAccountGroups` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -941,7 +941,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   end
 
   @doc """
-  Get the memberships in a group of related accounts.
+  Get memberships in a group of related accounts.
 
   ## Parameters
 
@@ -959,7 +959,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of accounts to return. The service may return fewer than this value. If unspecified, at most 50 accounts will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of accounts to return. The service might return fewer than this value. If unspecified, at most 50 accounts are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListRelatedAccountGroupMemberships` call. When paginating, all other parameters provided to `ListRelatedAccountGroupMemberships` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
