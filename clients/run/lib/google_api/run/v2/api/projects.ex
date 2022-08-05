@@ -1459,7 +1459,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{projectnumber}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{projectnumber}/locations/{location} Only lowercase, digits, and hyphens; must begin with letter, and may not end with hyphen; must contain fewer than 50 characters.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
