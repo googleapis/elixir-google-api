@@ -20,7 +20,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1 do
   API client metadata for GoogleApi.ArtifactRegistry.V1beta1.
   """
 
-  @discovery_revision "20220623"
+  @discovery_revision "20220803"
 
   def discovery_revision(), do: @discovery_revision
 end
