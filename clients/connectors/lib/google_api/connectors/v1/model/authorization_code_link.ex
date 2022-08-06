@@ -21,6 +21,8 @@ defmodule GoogleApi.Connectors.V1.Model.AuthorizationCodeLink do
 
   ## Attributes
 
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - The client ID assigned to the GCP Connectors OAuth app for the connector data source.
+  *   `enablePkce` (*type:* `boolean()`, *default:* `nil`) - Whether to enable PKCE for the auth code flow.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes for which the user will authorize GCP Connectors on the connector data source.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The base URI the user must click to trigger the authorization code login flow.
   """
@@ -28,10 +30,14 @@ defmodule GoogleApi.Connectors.V1.Model.AuthorizationCodeLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientId => String.t() | nil,
+          :enablePkce => boolean() | nil,
           :scopes => list(String.t()) | nil,
           :uri => String.t() | nil
         }
 
+  field(:clientId)
+  field(:enablePkce)
   field(:scopes, type: :list)
   field(:uri)
 end
