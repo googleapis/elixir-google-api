@@ -2873,7 +2873,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The database whose roles should be listed. Values are of the form `projects//instances//databases//databaseRoles`.
+  *   `parent` (*type:* `String.t`) - Required. The database whose roles should be listed. Values are of the form `projects//instances//databases/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
