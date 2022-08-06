@@ -22,6 +22,7 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
   ## Attributes
 
   *   `customGpuDriverPath` (*type:* `String.t`, *default:* `nil`) - Specify a custom Cloud Storage path where the GPU driver is stored. If not specified, we'll automatically choose from official GPU drivers.
+  *   `disableTerminal` (*type:* `boolean()`, *default:* `nil`) - Bool indicating whether JupyterLab terminal will be available or not. Default: False
   *   `enableHealthMonitoring` (*type:* `boolean()`, *default:* `nil`) - Verifies core internal services are running. Default: True
   *   `idleShutdown` (*type:* `boolean()`, *default:* `nil`) - Runtime will automatically shutdown after idle_shutdown_time. Default: True
   *   `idleShutdownTimeout` (*type:* `integer()`, *default:* `nil`) - Time in minutes to wait before shutting down runtime. Default: 180 minutes
@@ -37,6 +38,7 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
 
   @type t :: %__MODULE__{
           :customGpuDriverPath => String.t() | nil,
+          :disableTerminal => boolean() | nil,
           :enableHealthMonitoring => boolean() | nil,
           :idleShutdown => boolean() | nil,
           :idleShutdownTimeout => integer() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
         }
 
   field(:customGpuDriverPath)
+  field(:disableTerminal)
   field(:enableHealthMonitoring)
   field(:idleShutdown)
   field(:idleShutdownTimeout)
