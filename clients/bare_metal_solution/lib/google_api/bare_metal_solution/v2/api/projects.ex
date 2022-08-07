@@ -1961,7 +1961,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to update. The only currently supported fields are: `snapshot_auto_delete_behavior` `snapshot_schedule_policy_name` 'labels' 'snapshot_enabled' 'snapshot_reservation_detail.reserved_space_percent'
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to update. The only currently supported fields are: 'labels'
       *   `:body` (*type:* `GoogleApi.BareMetalSolution.V2.Model.Volume.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
