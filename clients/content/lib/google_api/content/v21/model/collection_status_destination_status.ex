@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatusDestinationStatus do
   ## Attributes
 
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status for the specified destination.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status for the specified destination in the collections target country.
   """
 
   use GoogleApi.Gax.ModelBase

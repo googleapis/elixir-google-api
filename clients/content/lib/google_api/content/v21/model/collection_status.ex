@@ -22,10 +22,10 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatus do
   ## Attributes
 
   *   `collectionLevelIssuses` (*type:* `list(GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue.t)`, *default:* `nil`) - A list of all issues associated with the collection.
-  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
+  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
   *   `destinationStatuses` (*type:* `list(GoogleApi.Content.V21.Model.CollectionStatusDestinationStatus.t)`, *default:* `nil`) - The intended destinations for the collection.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the collection for which status is reported.
-  *   `lastUpdateDate` (*type:* `String.t`, *default:* `nil`) - Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
+  *   `lastUpdateDate` (*type:* `String.t`, *default:* `nil`) - Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
   """
 
   use GoogleApi.Gax.ModelBase
