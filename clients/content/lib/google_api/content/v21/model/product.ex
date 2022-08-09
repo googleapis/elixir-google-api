@@ -49,6 +49,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
   *   `subscriptionCost` (*type:* `GoogleApi.Content.V21.Model.ProductSubscriptionCost.t`, *default:* `nil`) - Number of periods (months or years) and amount of payment per period for an item with an associated subscription contract.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Feed label for the item. Either `targetCountry` or `feedLabel` is required.
   *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
   *   `linkTemplate` (*type:* `String.t`, *default:* `nil`) - URL template for merchant hosted local storefront.
   *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
@@ -146,6 +147,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :description => String.t() | nil,
           :subscriptionCost => GoogleApi.Content.V21.Model.ProductSubscriptionCost.t() | nil,
           :gtin => String.t() | nil,
+          :feedLabel => String.t() | nil,
           :displayAdsId => String.t() | nil,
           :linkTemplate => String.t() | nil,
           :displayAdsLink => String.t() | nil,
@@ -239,6 +241,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:description)
   field(:subscriptionCost, as: GoogleApi.Content.V21.Model.ProductSubscriptionCost)
   field(:gtin)
+  field(:feedLabel)
   field(:displayAdsId)
   field(:linkTemplate)
   field(:displayAdsLink)
