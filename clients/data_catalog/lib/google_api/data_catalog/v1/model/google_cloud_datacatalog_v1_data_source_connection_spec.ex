@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSourceConnectionSpec do
   @moduledoc """
-  Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type.
+  Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type. Only one of internal specs can be set at the time, and cannot be changed later.
 
   ## Attributes
 
-  *   `bigqueryConnectionSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryConnectionSpec.t`, *default:* `nil`) - Fields specific to BigQuery connections.
+  *   `bigqueryConnectionSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryConnectionSpec.t`, *default:* `nil`) - Output only. Fields specific to BigQuery connections.
   """
 
   use GoogleApi.Gax.ModelBase
