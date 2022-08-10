@@ -20,7 +20,7 @@ defmodule GoogleApi.ToolResults.V1beta3 do
   API client metadata for GoogleApi.ToolResults.V1beta3.
   """
 
-  @discovery_revision "20210308"
+  @discovery_revision "20220808"
 
   def discovery_revision(), do: @discovery_revision
 end
