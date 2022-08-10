@@ -26,6 +26,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#color.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - The item group id of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#itemgroupid.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#size.
+  *   `grocery` (*type:* `GoogleApi.Manufacturers.V1.Model.Grocery.t`, *default:* `nil`) - Grocery Attributes. For more information, see go/mfc-nutrition-attributes.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The pattern of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#pattern.
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - The Manufacturer Part Number (MPN) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#mpn.
   *   `gender` (*type:* `String.t`, *default:* `nil`) - The target gender of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#gender.
@@ -57,6 +58,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
   *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The disclosure date of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#disclosure.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#title.
+  *   `nutrition` (*type:* `GoogleApi.Manufacturers.V1.Model.Nutrition.t`, *default:* `nil`) - Nutrition Attributes. For more information, see go/mfc-nutrition-attributes.
   *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   """
 
@@ -68,6 +70,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :color => String.t() | nil,
           :itemGroupId => String.t() | nil,
           :size => String.t() | nil,
+          :grocery => GoogleApi.Manufacturers.V1.Model.Grocery.t() | nil,
           :pattern => String.t() | nil,
           :mpn => String.t() | nil,
           :gender => String.t() | nil,
@@ -100,6 +103,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :count => GoogleApi.Manufacturers.V1.Model.Count.t() | nil,
           :disclosureDate => String.t() | nil,
           :title => String.t() | nil,
+          :nutrition => GoogleApi.Manufacturers.V1.Model.Nutrition.t() | nil,
           :excludedDestination => list(String.t()) | nil
         }
 
@@ -108,6 +112,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:color)
   field(:itemGroupId)
   field(:size)
+  field(:grocery, as: GoogleApi.Manufacturers.V1.Model.Grocery)
   field(:pattern)
   field(:mpn)
   field(:gender)
@@ -139,6 +144,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:count, as: GoogleApi.Manufacturers.V1.Model.Count)
   field(:disclosureDate)
   field(:title)
+  field(:nutrition, as: GoogleApi.Manufacturers.V1.Model.Nutrition)
   field(:excludedDestination, type: :list)
 end
 
