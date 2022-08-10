@@ -29,7 +29,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
   *   `notices` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaNoticeDescription.t)`, *default:* `nil`) - Output only. Special notice messages related to setting certain values in certain fields in the schema.
   *   `policyApiLifeycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Output only. Current life cycle information.
   *   `policyDescription` (*type:* `String.t`, *default:* `nil`) - Output only. Description about the policy schema for user consumption.
-  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies or BatchModifyOrgUnitPolicies
+  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies BatchModifyGroupPolicies or BatchDeleteGroupPolicies.
   *   `supportUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI to related support article for this schema.
   *   `validTargetResources` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Information about applicable target resources for the policy.
   """
