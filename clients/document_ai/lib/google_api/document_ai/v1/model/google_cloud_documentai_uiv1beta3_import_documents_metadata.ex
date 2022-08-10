@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocu
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `individualImportStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus.t)`, *default:* `nil`) - The list of response details of each document.
+  *   `totalDocumentCount` (*type:* `integer()`, *default:* `nil`) - Total number of the documents that are qualified for importing.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocu
             list(
               GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus.t()
             )
-            | nil
+            | nil,
+          :totalDocumentCount => integer() | nil
         }
 
   field(:commonMetadata,
@@ -47,6 +49,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocu
       GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus,
     type: :list
   )
+
+  field(:totalDocumentCount)
 end
 
 defimpl Poison.Decoder,

@@ -25,7 +25,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta3BatchProcess
   *   `humanReviewStatus` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta3HumanReviewStatus.t`, *default:* `nil`) - The status of human review on the processed document.
   *   `inputGcsSource` (*type:* `String.t`, *default:* `nil`) - The source of the document, same as the [input_gcs_source] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process.
   *   `outputGcsDestination` (*type:* `String.t`, *default:* `nil`) - The output_gcs_destination (in the request as `output_gcs_destination`) of the processed document if it was successful, otherwise empty.
-  *   `status` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The error encountered while attempting to process the document. Empty if there are no errors.
+  *   `status` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status processing the document.
   """
 
   use GoogleApi.Gax.ModelBase
