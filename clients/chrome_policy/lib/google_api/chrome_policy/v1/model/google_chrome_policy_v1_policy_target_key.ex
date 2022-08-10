@@ -22,7 +22,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicyTargetKey do
   ## Attributes
 
   *   `additionalTargetKeys` (*type:* `map()`, *default:* `nil`) - Map containing the additional target key name and value pairs used to further identify the target of the policy.
-  *   `targetResource` (*type:* `String.t`, *default:* `nil`) - The target resource on which this policy is applied. The following resources are supported: * Organizational Unit ("orgunits/{orgunit_id}")
+  *   `targetResource` (*type:* `String.t`, *default:* `nil`) - The target resource on which this policy is applied. The following resources are supported: * Organizational Unit ("orgunits/{orgunit_id}") * Group ("groups/{group_id}")
   """
 
   use GoogleApi.Gax.ModelBase
