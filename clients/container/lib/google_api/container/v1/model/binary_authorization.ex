@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.BinaryAuthorization do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Binary Authorization.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - This field is deprecated. Leave this unset and instead configure BinaryAuthorization using evaluation_mode. If evaluation_mode is set to anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored.
   *   `evaluationMode` (*type:* `String.t`, *default:* `nil`) - Mode of operation for binauthz policy evaluation. Currently the only options are equivalent to enable/disable. If unspecified, defaults to DISABLED.
   """
 

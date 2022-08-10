@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfigDefaults do
 
   ## Attributes
 
-  *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - GCFS (Google Container File System, a.k.a. Riptide) options.
+  *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - GCFS (Google Container File System, also known as Riptide) options.
   """
 
   use GoogleApi.Gax.ModelBase
