@@ -29,6 +29,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { "security": { "contacts": [ { "email": "person1@company.com" }, { "email": "person2@company.com" } ] }
   *   `containers` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Container.t)`, *default:* `nil`) - Containers associated with the finding. containers provides information for both Kubernetes and non-Kubernetes containers.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
+  *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.Database.t`, *default:* `nil`) - Database associated with the finding.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
   *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltration associated with the Finding.
@@ -66,6 +67,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
             %{optional(String.t()) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t()} | nil,
           :containers => list(GoogleApi.SecurityCenter.V1.Model.Container.t()) | nil,
           :createTime => DateTime.t() | nil,
+          :database => GoogleApi.SecurityCenter.V1.Model.Database.t() | nil,
           :description => String.t() | nil,
           :eventTime => DateTime.t() | nil,
           :exfiltration => GoogleApi.SecurityCenter.V1.Model.Exfiltration.t() | nil,
@@ -104,6 +106,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:contacts, as: GoogleApi.SecurityCenter.V1.Model.ContactDetails, type: :map)
   field(:containers, as: GoogleApi.SecurityCenter.V1.Model.Container, type: :list)
   field(:createTime, as: DateTime)
+  field(:database, as: GoogleApi.SecurityCenter.V1.Model.Database)
   field(:description)
   field(:eventTime, as: DateTime)
   field(:exfiltration, as: GoogleApi.SecurityCenter.V1.Model.Exfiltration)
