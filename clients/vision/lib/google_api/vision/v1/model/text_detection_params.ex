@@ -21,15 +21,18 @@ defmodule GoogleApi.Vision.V1.Model.TextDetectionParams do
 
   ## Attributes
 
+  *   `advancedOcrOptions` (*type:* `list(String.t)`, *default:* `nil`) - A list of advanced OCR options to fine-tune OCR behavior.
   *   `enableTextDetectionConfidenceScore` (*type:* `boolean()`, *default:* `nil`) - By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedOcrOptions => list(String.t()) | nil,
           :enableTextDetectionConfidenceScore => boolean() | nil
         }
 
+  field(:advancedOcrOptions, type: :list)
   field(:enableTextDetectionConfidenceScore)
 end
 
