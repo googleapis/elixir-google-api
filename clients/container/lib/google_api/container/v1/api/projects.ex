@@ -1487,7 +1487,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name (project, location, cluster, node pool id) of the node pool to complete upgrade. Specified in the format 'projects/*/locations/*/clusters/*/nodePools/*'.
+  *   `name` (*type:* `String.t`) - The name (project, location, cluster, node pool id) of the node pool to complete upgrade. Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
