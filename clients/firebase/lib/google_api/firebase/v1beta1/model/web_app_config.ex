@@ -21,7 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
 
   ## Attributes
 
-  *   `apiKey` (*type:* `String.t`, *default:* `nil`) - The API key associated with the `WebApp`.
+  *   `apiKey` (*type:* `String.t`, *default:* `nil`) - The [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key associated with the `WebApp`. Note that this value is _not_ the [`apiKeyId`](../projects.webApps#WebApp.FIELDS.api_key_id) (the UID) of the API key associated with the `WebApp`.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`.
   *   `authDomain` (*type:* `String.t`, *default:* `nil`) - The domain Firebase Auth configures for OAuth redirects, in the format: PROJECT_ID.firebaseapp.com
   *   `databaseURL` (*type:* `String.t`, *default:* `nil`) - The default Firebase Realtime Database URL.
