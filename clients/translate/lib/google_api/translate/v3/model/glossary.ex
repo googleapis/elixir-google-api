@@ -21,6 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.Glossary do
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The display name of the glossary.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the glossary creation was finished.
   *   `entryCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of entries defined in the glossary.
   *   `inputConfig` (*type:* `GoogleApi.Translate.V3.Model.GlossaryInputConfig.t`, *default:* `nil`) - Required. Provides examples to build the glossary from. Total glossary must not exceed 10M Unicode codepoints.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Translate.V3.Model.Glossary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :entryCount => integer() | nil,
           :inputConfig => GoogleApi.Translate.V3.Model.GlossaryInputConfig.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Translate.V3.Model.Glossary do
           :submitTime => DateTime.t() | nil
         }
 
+  field(:displayName)
   field(:endTime, as: DateTime)
   field(:entryCount)
   field(:inputConfig, as: GoogleApi.Translate.V3.Model.GlossaryInputConfig)
