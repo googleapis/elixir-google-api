@@ -27,6 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available)./ For more information, see [Overview of the High Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-availability).
   *   `backupConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.BackupConfiguration.t`, *default:* `nil`) - The daily backup configuration for the instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The name of server Instance collation.
+  *   `connectorEnforcement` (*type:* `String.t`, *default:* `nil`) - Specifies if connections must use Cloud SQL connectors. Option values include the following: * `NOT_REQUIRED`: Cloud SQL instances can be connected without Cloud SQL Connectors. * `REQUIRED`: Only allow connections that use Cloud SQL Connectors. Note that using REQUIRED disables all existing authorized networks. If this field is not specified when creating a new instance, NOT_REQUIRED is used. If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance.
   *   `crashSafeReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether database flags for crash-safe replication are enabled. This property was only applicable to First Generation instances.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of data disk, in GB. The data disk size minimum is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First Generation instances.
@@ -60,6 +61,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
           :availabilityType => String.t() | nil,
           :backupConfiguration => GoogleApi.SQLAdmin.V1.Model.BackupConfiguration.t() | nil,
           :collation => String.t() | nil,
+          :connectorEnforcement => String.t() | nil,
           :crashSafeReplicationEnabled => boolean() | nil,
           :dataDiskSizeGb => String.t() | nil,
           :dataDiskType => String.t() | nil,
@@ -91,6 +93,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   field(:availabilityType)
   field(:backupConfiguration, as: GoogleApi.SQLAdmin.V1.Model.BackupConfiguration)
   field(:collation)
+  field(:connectorEnforcement)
   field(:crashSafeReplicationEnabled)
   field(:dataDiskSizeGb)
   field(:dataDiskType)
