@@ -25,7 +25,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Channel do
   *   `expiration` (*type:* `String.t`, *default:* `nil`) - Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional.
   *   `id` (*type:* `String.t`, *default:* `nil`) - A UUID or similar unique string that identifies this channel.
   *   `kind` (*type:* `String.t`, *default:* `api#channel`) - Identifies this as a notification channel used to watch for changes to a resource, which is `api#channel`.
-  *   `params` (*type:* `map()`, *default:* `nil`) - Additional parameters controlling delivery channel behavior. Optional.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Additional parameters controlling delivery channel behavior. Optional. For example, `params.ttl` specifies the time-to-live in seconds for the notification channel, where the default is 2 hours and the maximum TTL is 2 days.
   *   `payload` (*type:* `boolean()`, *default:* `nil`) - A Boolean value to indicate whether payload is wanted. Optional.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - A version-specific identifier for the watched resource.
