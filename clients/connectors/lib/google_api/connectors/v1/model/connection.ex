@@ -23,14 +23,16 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
 
   *   `authConfig` (*type:* `GoogleApi.Connectors.V1.Model.AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
   *   `configVariables` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
-  *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Required. Connector version on which the connection is created. The format is: projects/*/locations/global/providers/*/connectors/*/versions/*
+  *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Required. Connector version on which the connection is created. The format is: projects/*/locations/*/providers/*/connectors/*/versions/* Only global location is supported for ConnectorVersion resource.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
+  *   `destinationConfigs` (*type:* `list(GoogleApi.Connectors.V1.Model.DestinationConfig.t)`, *default:* `nil`) - Optional. Configuration of the Connector's destination. Only accepted for Connectors that accepts user defined destination(s).
   *   `envoyImageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `lockConfig` (*type:* `GoogleApi.Connectors.V1.Model.LockConfig.t`, *default:* `nil`) - Optional. Configuration that indicates whether or not the Connection can be edited.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection}
+  *   `nodeConfig` (*type:* `GoogleApi.Connectors.V1.Model.NodeConfig.t`, *default:* `nil`) - Optional. Configuration for the connection.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Service account needed for runtime plane to access GCP resources.
   *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors"
   *   `status` (*type:* `GoogleApi.Connectors.V1.Model.ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
@@ -46,11 +48,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
           :connectorVersion => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :destinationConfigs => list(GoogleApi.Connectors.V1.Model.DestinationConfig.t()) | nil,
           :envoyImageLocation => String.t() | nil,
           :imageLocation => String.t() | nil,
           :labels => map() | nil,
           :lockConfig => GoogleApi.Connectors.V1.Model.LockConfig.t() | nil,
           :name => String.t() | nil,
+          :nodeConfig => GoogleApi.Connectors.V1.Model.NodeConfig.t() | nil,
           :serviceAccount => String.t() | nil,
           :serviceDirectory => String.t() | nil,
           :status => GoogleApi.Connectors.V1.Model.ConnectionStatus.t() | nil,
@@ -63,11 +67,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   field(:connectorVersion)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:destinationConfigs, as: GoogleApi.Connectors.V1.Model.DestinationConfig, type: :list)
   field(:envoyImageLocation)
   field(:imageLocation)
   field(:labels, type: :map)
   field(:lockConfig, as: GoogleApi.Connectors.V1.Model.LockConfig)
   field(:name)
+  field(:nodeConfig, as: GoogleApi.Connectors.V1.Model.NodeConfig)
   field(:serviceAccount)
   field(:serviceDirectory)
   field(:status, as: GoogleApi.Connectors.V1.Model.ConnectionStatus)

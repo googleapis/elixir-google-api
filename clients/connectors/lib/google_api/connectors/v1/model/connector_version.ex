@@ -28,7 +28,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   *   `egressControlConfig` (*type:* `GoogleApi.Connectors.V1.Model.EgressControlConfig.t`, *default:* `nil`) - Output only. Configuration for Egress Control.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Version. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector}/versions/{version}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Version. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector}/versions/{version} Only global location is supported for Connector resource.
   *   `releaseVersion` (*type:* `String.t`, *default:* `nil`) - Output only. ReleaseVersion of the connector, for example: "1.0.1-alpha".
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Output only. Role grant configuration for this config variable. It will be DEPRECATED soon.
   *   `roleGrants` (*type:* `list(GoogleApi.Connectors.V1.Model.RoleGrant.t)`, *default:* `nil`) - Output only. Role grant configurations for this connector version.

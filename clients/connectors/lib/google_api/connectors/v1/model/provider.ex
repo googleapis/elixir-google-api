@@ -28,7 +28,7 @@ defmodule GoogleApi.Connectors.V1.Model.Provider do
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to external page.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Provider. Format: projects/{project}/locations/{location}/providers/{provider}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Provider. Format: projects/{project}/locations/{location}/providers/{provider} Only global location is supported for Provider resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   *   `webAssetsLocation` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud storage location of icons etc consumed by UI.
   """
