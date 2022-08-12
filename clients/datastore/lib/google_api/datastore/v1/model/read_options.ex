@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOptions do
 
   ## Attributes
 
-  *   `readConsistency` (*type:* `String.t`, *default:* `nil`) - The non-transactional read consistency to use. Cannot be set to `STRONG` for global queries.
+  *   `readConsistency` (*type:* `String.t`, *default:* `nil`) - The non-transactional read consistency to use.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads entities as they were at the given time. This may not be older than 270 seconds. This value is only supported for Cloud Firestore in Datastore mode.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction in which to read. A transaction identifier is returned by a call to Datastore.BeginTransaction.
   """

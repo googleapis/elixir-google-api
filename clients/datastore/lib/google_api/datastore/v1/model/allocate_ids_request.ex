@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.AllocateIdsRequest do
 
   ## Attributes
 
-  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
   *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. A list of keys with incomplete key paths for which to allocate IDs. No key may be reserved/read-only.
   """
 
