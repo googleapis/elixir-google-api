@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.GRPCAction do
   @moduledoc """
-  Not supported by Cloud Run GRPCAction describes an action involving a GRPC port.
+  GRPCAction describes an action involving a GRPC port.
 
   ## Attributes
 

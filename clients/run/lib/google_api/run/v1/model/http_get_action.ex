@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
   @moduledoc """
-  Not supported by Cloud Run HTTPGetAction describes an action based on HTTP Get requests.
+  HTTPGetAction describes an action based on HTTP Get requests.
 
   ## Attributes
 
