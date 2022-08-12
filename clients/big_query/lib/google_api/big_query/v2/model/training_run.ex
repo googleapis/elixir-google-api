@@ -28,6 +28,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output of each iteration run, results.size() <= max_iterations.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this training run.
   *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Options that were used for this training run, includes user specified and default options that were used.
+  *   `trainingStartTime` (*type:* `String.t`, *default:* `nil`) - The start time of this training run, in milliseconds since epoch.
   *   `vertexAiModelId` (*type:* `String.t`, *default:* `nil`) - The model id in Vertex AI Model Registry for this training run
   *   `vertexAiModelVersion` (*type:* `String.t`, *default:* `nil`) - The model version in Vertex AI Model Registry for this training run
   """
@@ -43,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
           :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()) | nil,
           :startTime => DateTime.t() | nil,
           :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t() | nil,
+          :trainingStartTime => String.t() | nil,
           :vertexAiModelId => String.t() | nil,
           :vertexAiModelVersion => String.t() | nil
         }
@@ -58,6 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   field(:results, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
   field(:startTime, as: DateTime)
   field(:trainingOptions, as: GoogleApi.BigQuery.V2.Model.TrainingOptions)
+  field(:trainingStartTime)
   field(:vertexAiModelId)
   field(:vertexAiModelVersion)
 end
