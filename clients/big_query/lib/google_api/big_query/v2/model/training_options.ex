@@ -39,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `integratedGradientsNumSteps` (*type:* `String.t`, *default:* `nil`) - Number of integral steps for the integrated gradients explain method.
   *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
   *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
+  *   `colorSpace` (*type:* `String.t`, *default:* `nil`) - Enums for color space, used for processing images in Object Table. See more details at https://www.tensorflow.org/io/tutorials/colorspace.
   *   `hiddenUnits` (*type:* `list(String.t)`, *default:* `nil`) - Hidden units for dnn models.
   *   `numFactors` (*type:* `String.t`, *default:* `nil`) - Num factors specified for matrix factorization models.
   *   `numParallelTree` (*type:* `String.t`, *default:* `nil`) - Number of parallel trees constructed during each iteration for boosted tree models.
@@ -66,7 +67,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `treeMethod` (*type:* `String.t`, *default:* `nil`) - Tree construction algorithm for boosted tree models.
-  *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled shapley explain method.
+  *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled Shapley explain method.
   *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names. Suppose there is a struct A with field b. When false (default), the output feature name is A_b. When true, the output feature name is A.b.
   *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix factorization.
   *   `decomposeTimeSeries` (*type:* `boolean()`, *default:* `nil`) - If true, perform decompose time series and save the results.
@@ -110,6 +111,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :integratedGradientsNumSteps => String.t() | nil,
           :lossType => String.t() | nil,
           :learnRate => float() | nil,
+          :colorSpace => String.t() | nil,
           :hiddenUnits => list(String.t()) | nil,
           :numFactors => String.t() | nil,
           :numParallelTree => String.t() | nil,
@@ -178,6 +180,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:integratedGradientsNumSteps)
   field(:lossType)
   field(:learnRate)
+  field(:colorSpace)
   field(:hiddenUnits, type: :list)
   field(:numFactors)
   field(:numParallelTree)
