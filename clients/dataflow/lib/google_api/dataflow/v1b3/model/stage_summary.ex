@@ -27,6 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSummary do
   *   `stageId` (*type:* `String.t`, *default:* `nil`) - ID of this stage
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of this stage.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of this stage.
+  *   `stragglerSummary` (*type:* `GoogleApi.Dataflow.V1b3.Model.StragglerSummary.t`, *default:* `nil`) - Straggler summary for this stage.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSummary do
           :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t() | nil,
           :stageId => String.t() | nil,
           :startTime => DateTime.t() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :stragglerSummary => GoogleApi.Dataflow.V1b3.Model.StragglerSummary.t() | nil
         }
 
   field(:endTime, as: DateTime)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSummary do
   field(:stageId)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:stragglerSummary, as: GoogleApi.Dataflow.V1b3.Model.StragglerSummary)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StageSummary do
