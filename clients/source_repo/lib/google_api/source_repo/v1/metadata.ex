@@ -20,7 +20,7 @@ defmodule GoogleApi.SourceRepo.V1 do
   API client metadata for GoogleApi.SourceRepo.V1.
   """
 
-  @discovery_revision "20220711"
+  @discovery_revision "20220810"
 
   def discovery_revision(), do: @discovery_revision
 end
