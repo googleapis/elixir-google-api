@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.TCPSocketAction do
   @moduledoc """
-  Not supported by Cloud Run TCPSocketAction describes an action based on opening a socket
+  TCPSocketAction describes an action based on opening a socket
 
   ## Attributes
 
