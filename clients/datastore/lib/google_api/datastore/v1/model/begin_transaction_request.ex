@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
 
   ## Attributes
 
-  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
   *   `transactionOptions` (*type:* `GoogleApi.Datastore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Options for a new transaction.
   """
 

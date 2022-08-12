@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.RollbackRequest do
 
   ## Attributes
 
-  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Required. The transaction identifier, returned by a call to Datastore.BeginTransaction.
   """
 
