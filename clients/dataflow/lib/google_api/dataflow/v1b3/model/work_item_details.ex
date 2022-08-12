@@ -27,6 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemDetails do
   *   `progress` (*type:* `GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t`, *default:* `nil`) - Progress of this work item.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of this work item attempt.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of this work item.
+  *   `stragglerInfo` (*type:* `GoogleApi.Dataflow.V1b3.Model.StragglerInfo.t`, *default:* `nil`) - Information about straggler detections for this work item.
   *   `taskId` (*type:* `String.t`, *default:* `nil`) - Name of this work item.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemDetails do
           :progress => GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :stragglerInfo => GoogleApi.Dataflow.V1b3.Model.StragglerInfo.t() | nil,
           :taskId => String.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemDetails do
   field(:progress, as: GoogleApi.Dataflow.V1b3.Model.ProgressTimeseries)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:stragglerInfo, as: GoogleApi.Dataflow.V1b3.Model.StragglerInfo)
   field(:taskId)
 end
 
