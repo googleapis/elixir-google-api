@@ -21,8 +21,8 @@ defmodule GoogleApi.CertificateManager.V1.Model.IpConfig do
 
   ## Attributes
 
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - An external IP address.
-  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Ports.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. An external IP address.
+  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Output only. Ports.
   """
 
   use GoogleApi.Gax.ModelBase
