@@ -21,8 +21,8 @@ defmodule GoogleApi.CertificateManager.V1.Model.ProvisioningIssue do
 
   ## Attributes
 
-  *   `details` (*type:* `String.t`, *default:* `nil`) - Human readable explanation about the issue. Provided to help address the configuration issues. Not guaranteed to be stable. For programmatic access use Reason enum.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - Reason for provisioning failures.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - Output only. Human readable explanation about the issue. Provided to help address the configuration issues. Not guaranteed to be stable. For programmatic access use Reason enum.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Output only. Reason for provisioning failures.
   """
 
   use GoogleApi.Gax.ModelBase

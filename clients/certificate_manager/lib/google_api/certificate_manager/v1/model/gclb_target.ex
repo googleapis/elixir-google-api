@@ -21,9 +21,9 @@ defmodule GoogleApi.CertificateManager.V1.Model.GclbTarget do
 
   ## Attributes
 
-  *   `ipConfigs` (*type:* `list(GoogleApi.CertificateManager.V1.Model.IpConfig.t)`, *default:* `nil`) - IP configurations for this Target Proxy where the Certificate Map is serving.
-  *   `targetHttpsProxy` (*type:* `String.t`, *default:* `nil`) - This field returns the resource name in the following format: `//compute.googleapis.com/projects/*/global/targetHttpsProxies/*`.
-  *   `targetSslProxy` (*type:* `String.t`, *default:* `nil`) - This field returns the resource name in the following format: `//compute.googleapis.com/projects/*/global/targetSslProxies/*`.
+  *   `ipConfigs` (*type:* `list(GoogleApi.CertificateManager.V1.Model.IpConfig.t)`, *default:* `nil`) - Output only. IP configurations for this Target Proxy where the Certificate Map is serving.
+  *   `targetHttpsProxy` (*type:* `String.t`, *default:* `nil`) - Output only. This field returns the resource name in the following format: `//compute.googleapis.com/projects/*/global/targetHttpsProxies/*`.
+  *   `targetSslProxy` (*type:* `String.t`, *default:* `nil`) - Output only. This field returns the resource name in the following format: `//compute.googleapis.com/projects/*/global/targetSslProxies/*`.
   """
 
   use GoogleApi.Gax.ModelBase
