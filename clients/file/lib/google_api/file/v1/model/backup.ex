@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.Backup do
   @moduledoc """
-  A Cloud Filestore backup.
+  A Filestore backup.
 
   ## Attributes
 
@@ -28,9 +28,9 @@ defmodule GoogleApi.File.V1.Model.Backup do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
-  *   `sourceFileShare` (*type:* `String.t`, *default:* `nil`) - Name of the file share in the source Cloud Filestore instance that the backup is created from.
-  *   `sourceInstance` (*type:* `String.t`, *default:* `nil`) - The resource name of the source Cloud Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
-  *   `sourceInstanceTier` (*type:* `String.t`, *default:* `nil`) - Output only. The service tier of the source Cloud Filestore instance that this backup is created from.
+  *   `sourceFileShare` (*type:* `String.t`, *default:* `nil`) - Name of the file share in the source Filestore instance that the backup is created from.
+  *   `sourceInstance` (*type:* `String.t`, *default:* `nil`) - The resource name of the source Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
+  *   `sourceInstanceTier` (*type:* `String.t`, *default:* `nil`) - Output only. The service tier of the source Filestore instance that this backup is created from.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The backup state.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
   """

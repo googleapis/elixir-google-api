@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.Instance do
   @moduledoc """
-  A Cloud Filestore instance.
+  A Filestore instance.
 
   ## Attributes
 

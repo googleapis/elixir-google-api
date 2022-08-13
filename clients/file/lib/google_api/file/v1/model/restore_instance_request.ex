@@ -21,7 +21,7 @@ defmodule GoogleApi.File.V1.Model.RestoreInstanceRequest do
 
   ## Attributes
 
-  *   `fileShare` (*type:* `String.t`, *default:* `nil`) - Required. Name of the file share in the Cloud Filestore instance that the backup is being restored to.
+  *   `fileShare` (*type:* `String.t`, *default:* `nil`) - Required. Name of the file share in the Filestore instance that the backup is being restored to.
   *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
   """
 

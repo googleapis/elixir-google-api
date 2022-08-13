@@ -159,7 +159,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The backup's project and location, in the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**.
+  *   `parent` (*type:* `String.t`) - Required. The backup's project and location, in the format `projects/{project_number}/locations/{location}`. In Filestore, backup locations map to GCP regions, for example **us-west1**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -358,7 +358,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve backup information, in the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**. To retrieve backup information for all locations, use "-" for the `{location}` value.
+  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve backup information, in the format `projects/{project_number}/locations/{location}`. In Filestore, backup locations map to GCP regions, for example **us-west1**. To retrieve backup information for all locations, use "-" for the `{location}` value.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -495,7 +495,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**.
+  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format `projects/{project_id}/locations/{location}`. In Filestore, locations map to GCP zones, for example **us-west1-b**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
