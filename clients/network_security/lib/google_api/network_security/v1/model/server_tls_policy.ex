@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkSecurity.V1.Model.ServerTlsPolicy do
   @moduledoc """
-  ServerTlsPolicy is a resource that specifies how a server should authenticate incoming requests. This resource itself does not affect configuration unless it is attached to a target https proxy or endpoint config selector resource.
+  ServerTlsPolicy is a resource that specifies how a server should authenticate incoming requests. This resource itself does not affect configuration unless it is attached to a target HTTPS proxy or endpoint config selector resource.
 
   ## Attributes
 
