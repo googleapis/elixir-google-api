@@ -22,8 +22,10 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Accelerators for this node.
+  *   `consumedResources` (*type:* `GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t`, *default:* `nil`) - Node resources that are reserved by all instances.
   *   `cpuOvercommitType` (*type:* `String.t`, *default:* `nil`) - CPU overcommit.
   *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.LocalDisk.t)`, *default:* `nil`) - Local disk configurations.
+  *   `instanceConsumptionData` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceConsumptionData.t)`, *default:* `nil`) - Instance data that shows consumed resources on the node.
   *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Instances scheduled on this node.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node.
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - The type of this node.
@@ -31,26 +33,38 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   *   `serverBinding` (*type:* `GoogleApi.Compute.V1.Model.ServerBinding.t`, *default:* `nil`) - Binding properties for the physical server.
   *   `serverId` (*type:* `String.t`, *default:* `nil`) - Server ID associated with this node.
   *   `status` (*type:* `String.t`, *default:* `nil`) - 
+  *   `totalResources` (*type:* `GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t`, *default:* `nil`) - Total amount of available resources on the node.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
+          :consumedResources => GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t() | nil,
           :cpuOvercommitType => String.t() | nil,
           :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()) | nil,
+          :instanceConsumptionData =>
+            list(GoogleApi.Compute.V1.Model.InstanceConsumptionData.t()) | nil,
           :instances => list(String.t()) | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
           :satisfiesPzs => boolean() | nil,
           :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t() | nil,
           :serverId => String.t() | nil,
-          :status => String.t() | nil
+          :status => String.t() | nil,
+          :totalResources => GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
+  field(:consumedResources, as: GoogleApi.Compute.V1.Model.InstanceConsumptionInfo)
   field(:cpuOvercommitType)
   field(:disks, as: GoogleApi.Compute.V1.Model.LocalDisk, type: :list)
+
+  field(:instanceConsumptionData,
+    as: GoogleApi.Compute.V1.Model.InstanceConsumptionData,
+    type: :list
+  )
+
   field(:instances, type: :list)
   field(:name)
   field(:nodeType)
@@ -58,6 +72,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   field(:serverBinding, as: GoogleApi.Compute.V1.Model.ServerBinding)
   field(:serverId)
   field(:status)
+  field(:totalResources, as: GoogleApi.Compute.V1.Model.InstanceConsumptionInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.NodeGroupNode do
