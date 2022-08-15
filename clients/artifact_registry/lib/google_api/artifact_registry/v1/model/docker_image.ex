@@ -26,6 +26,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.DockerImage do
   *   `mediaType` (*type:* `String.t`, *default:* `nil`) - Media type of this image, e.g. "application/vnd.docker.distribution.manifest.v2+json". This field is returned as the 'metadata.mediaType' field in the Version resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. registry_location, project_id, repository_name and image id forms a unique image name:`projects//locations//repository//dockerImages/`. For example, "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/ nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf", where "us-west4" is the registry_location, "test-project" is the project_id, "test-repo" is the repository_name and "nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf" is the image's digest.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags attached to this image.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the docker image was last updated.
   *   `uploadTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the image was uploaded.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. URL to access the image. Example: us-west4-docker.pkg.dev/test-project/test-repo/nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.DockerImage do
           :mediaType => String.t() | nil,
           :name => String.t() | nil,
           :tags => list(String.t()) | nil,
+          :updateTime => DateTime.t() | nil,
           :uploadTime => DateTime.t() | nil,
           :uri => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.DockerImage do
   field(:mediaType)
   field(:name)
   field(:tags, type: :list)
+  field(:updateTime, as: DateTime)
   field(:uploadTime, as: DateTime)
   field(:uri)
 end
