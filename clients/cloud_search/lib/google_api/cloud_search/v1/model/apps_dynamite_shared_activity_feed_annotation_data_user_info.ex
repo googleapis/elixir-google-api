@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedActivityFeedAnnotatio
 
   *   `updaterCountDisplayType` (*type:* `String.t`, *default:* `nil`) - Describes how updater_count_to_show should be used.
   *   `updaterCountToShow` (*type:* `integer()`, *default:* `nil`) - The number of updaters for clients to show, currently set to the total number of updaters minus the one set in updater_to_show.
-  *   `updaterToShow` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t`, *default:* `nil`) - The updater for clients to show.
+  *   `updaterToShow` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The updater for clients to show.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +31,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedActivityFeedAnnotatio
   @type t :: %__MODULE__{
           :updaterCountDisplayType => String.t() | nil,
           :updaterCountToShow => integer() | nil,
-          :updaterToShow => GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t() | nil
+          :updaterToShow => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
   field(:updaterCountDisplayType)
   field(:updaterCountToShow)
-  field(:updaterToShow, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId)
+  field(:updaterToShow, as: GoogleApi.CloudSearch.V1.Model.UserId)
 end
 
 defimpl Poison.Decoder,

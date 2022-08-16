@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.ResponseDebugInfo do
 
   ## Attributes
 
+  *   `enabledExperiments` (*type:* `list(integer())`, *default:* `nil`) - Experiments enabled in QAPI.
   *   `formattedDebugInfo` (*type:* `String.t`, *default:* `nil`) - General debug info formatted for display.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enabledExperiments => list(integer()) | nil,
           :formattedDebugInfo => String.t() | nil
         }
 
+  field(:enabledExperiments, type: :list)
   field(:formattedDebugInfo)
 end
 

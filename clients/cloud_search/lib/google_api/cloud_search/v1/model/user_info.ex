@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
   *   `updaterCountToShow` (*type:* `integer()`, *default:* `nil`) - The number of updaters for clients to show depending on UpdaterCountDisplayType.
   *   `updaterToShowEmail` (*type:* `String.t`, *default:* `nil`) - The email of the updater for clients to show used for Gmail items.
   *   `updaterToShowGaiaId` (*type:* `String.t`, *default:* `nil`) - The gaia id of the updater for clients to show used for Gmail items. If the updater is an external user, the email field below should be populated.
-  *   `updaterToShowUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t`, *default:* `nil`) - The updater for clients to show used for Dynamite Chat items.
+  *   `updaterToShowUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The updater for clients to show used for Dynamite Chat items.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,14 +35,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
           :updaterCountToShow => integer() | nil,
           :updaterToShowEmail => String.t() | nil,
           :updaterToShowGaiaId => String.t() | nil,
-          :updaterToShowUserId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t() | nil
+          :updaterToShowUserId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
   field(:updaterCountDisplayType)
   field(:updaterCountToShow)
   field(:updaterToShowEmail)
   field(:updaterToShowGaiaId)
-  field(:updaterToShowUserId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId)
+  field(:updaterToShowUserId, as: GoogleApi.CloudSearch.V1.Model.UserId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.UserInfo do

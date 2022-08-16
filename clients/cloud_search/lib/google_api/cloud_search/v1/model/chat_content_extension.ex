@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ChatContentExtension do
   ## Attributes
 
   *   `annotation` (*type:* `list(GoogleApi.CloudSearch.V1.Model.EventAnnotation.t)`, *default:* `nil`) - Annotations to decorate this event.
-  *   `dynamitePlaceholderMetadata` (*type:* `GoogleApi.CloudSearch.V1.Model.DynamitePlaceholderMetadata.t`, *default:* `nil`) - This metadata informs how the placeholder string will be localized dynamically in Hangouts. See go/localization-of-system-messages. This is only used as part of REGULAR_CHAT_MESSAGE events.
+  *   `dynamitePlaceholderMetadata` (*type:* `GoogleApi.CloudSearch.V1.Model.ChatConserverDynamitePlaceholderMetadata.t`, *default:* `nil`) - This metadata informs how the placeholder string will be localized dynamically in Hangouts. See go/localization-of-system-messages. This is only used as part of REGULAR_CHAT_MESSAGE events.
   *   `eventOtrStatus` (*type:* `String.t`, *default:* `nil`) - Is this event OnTR or OffTR? Since some events can be ON_THE_RECORD and have an expiration_timestamp (for example enterprise retention users) we need to store the otr status.
   *   `groupLinkSharingModificationEvent` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupLinkSharingModificationEvent.t`, *default:* `nil`) - Group-link sharing toggle event.
   *   `hangoutEvent` (*type:* `GoogleApi.CloudSearch.V1.Model.HangoutEvent.t`, *default:* `nil`) - Audio/video Hangout event.
@@ -38,7 +38,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ChatContentExtension do
   @type t :: %__MODULE__{
           :annotation => list(GoogleApi.CloudSearch.V1.Model.EventAnnotation.t()) | nil,
           :dynamitePlaceholderMetadata =>
-            GoogleApi.CloudSearch.V1.Model.DynamitePlaceholderMetadata.t() | nil,
+            GoogleApi.CloudSearch.V1.Model.ChatConserverDynamitePlaceholderMetadata.t() | nil,
           :eventOtrStatus => String.t() | nil,
           :groupLinkSharingModificationEvent =>
             GoogleApi.CloudSearch.V1.Model.GroupLinkSharingModificationEvent.t() | nil,
@@ -54,7 +54,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ChatContentExtension do
   field(:annotation, as: GoogleApi.CloudSearch.V1.Model.EventAnnotation, type: :list)
 
   field(:dynamitePlaceholderMetadata,
-    as: GoogleApi.CloudSearch.V1.Model.DynamitePlaceholderMetadata
+    as: GoogleApi.CloudSearch.V1.Model.ChatConserverDynamitePlaceholderMetadata
   )
 
   field(:eventOtrStatus)

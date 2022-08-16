@@ -21,16 +21,16 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOrganizationInfoCusto
 
   ## Attributes
 
-  *   `customerId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteCustomerId.t`, *default:* `nil`) - 
+  *   `customerId` (*type:* `GoogleApi.CloudSearch.V1.Model.CustomerId.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteCustomerId.t() | nil
+          :customerId => GoogleApi.CloudSearch.V1.Model.CustomerId.t() | nil
         }
 
-  field(:customerId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteCustomerId)
+  field(:customerId, as: GoogleApi.CloudSearch.V1.Model.CustomerId)
 end
 
 defimpl Poison.Decoder,

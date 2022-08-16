@@ -22,18 +22,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCardClickSuggestion d
   ## Attributes
 
   *   `actionId` (*type:* `String.t`, *default:* `nil`) - Identify the button/action that created the suggestion. A simple example would be a card button within the stream, or the id which can identify a specific suggestion.
-  *   `suggestionMessageId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId.t`, *default:* `nil`) - The message_id for the message that was posted by the app/bot.
+  *   `suggestionMessageId` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageId.t`, *default:* `nil`) - The message_id for the message that was posted by the app/bot.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :actionId => String.t() | nil,
-          :suggestionMessageId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId.t() | nil
+          :suggestionMessageId => GoogleApi.CloudSearch.V1.Model.MessageId.t() | nil
         }
 
   field(:actionId)
-  field(:suggestionMessageId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId)
+  field(:suggestionMessageId, as: GoogleApi.CloudSearch.V1.Model.MessageId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCardClickSuggestion do

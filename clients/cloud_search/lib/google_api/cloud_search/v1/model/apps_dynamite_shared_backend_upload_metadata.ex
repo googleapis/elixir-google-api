@@ -26,10 +26,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedBackendUploadMetadata
   *   `contentSize` (*type:* `String.t`, *default:* `nil`) - Scotty reported content size by default. http://google3/uploader/agent/scotty_agent.proto?l=101&rcl=140889785
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Type is from Scotty's best_guess by default: http://google3/uploader/agent/scotty_agent.proto?l=51&rcl=140889785
   *   `dlpScanOutcome` (*type:* `String.t`, *default:* `nil`) - The results of the Data Loss Prevention (DLP) scan of the attachment. DEPRECATED: use dlp_scan_summary instead.
-  *   `dlpScanSummary` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteBackendDlpScanSummary.t`, *default:* `nil`) - Summary of a Data Loss Prevention (DLP) scan of the attachment. Attachments are evaluated in the backend when they are uploaded.
-  *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteGroupId.t`, *default:* `nil`) - GroupId to which this attachment is uploaded.
+  *   `dlpScanSummary` (*type:* `GoogleApi.CloudSearch.V1.Model.DlpScanSummary.t`, *default:* `nil`) - Summary of a Data Loss Prevention (DLP) scan of the attachment. Attachments are evaluated in the backend when they are uploaded.
+  *   `groupId` (*type:* `GoogleApi.CloudSearch.V1.Model.GroupId.t`, *default:* `nil`) - GroupId to which this attachment is uploaded.
   *   `originalDimension` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension.t`, *default:* `nil`) - Original dimension of the content. Only set for image attachments.
-  *   `quoteReplyMessageId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId.t`, *default:* `nil`) - The message id of a quote reply referencing this attachment. When present, this attachment has been quoted in a reply message. Normally, the attachment is fetched through the message id in the blob_path, but in the case of a quote reply, the blob_path would contain the quoted message id. Thus this message id field is needed to fetch the quote reply message instead. This field is conditionally populated at read time for quotes and never persisted in storage. See go/message-quoting-attachments for more context.
+  *   `quoteReplyMessageId` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageId.t`, *default:* `nil`) - The message id of a quote reply referencing this attachment. When present, this attachment has been quoted in a reply message. Normally, the attachment is fetched through the message id in the blob_path, but in the case of a quote reply, the blob_path would contain the quoted message id. Thus this message id field is needed to fetch the quote reply message instead. This field is conditionally populated at read time for quotes and never persisted in storage. See go/message-quoting-attachments for more context.
   *   `sha256` (*type:* `String.t`, *default:* `nil`) - The SHA256 hash of the attachment bytes.
   *   `uploadIp` (*type:* `String.t`, *default:* `nil`) - User IP address at upload time. Ex. "123.1.2.3". Used by Ares abuse scanning.
   *   `uploadTimestampUsec` (*type:* `String.t`, *default:* `nil`) - Timestamp of when user finished uploading the content.
@@ -46,12 +46,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedBackendUploadMetadata
           :contentSize => String.t() | nil,
           :contentType => String.t() | nil,
           :dlpScanOutcome => String.t() | nil,
-          :dlpScanSummary =>
-            GoogleApi.CloudSearch.V1.Model.AppsDynamiteBackendDlpScanSummary.t() | nil,
-          :groupId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteGroupId.t() | nil,
+          :dlpScanSummary => GoogleApi.CloudSearch.V1.Model.DlpScanSummary.t() | nil,
+          :groupId => GoogleApi.CloudSearch.V1.Model.GroupId.t() | nil,
           :originalDimension =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension.t() | nil,
-          :quoteReplyMessageId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId.t() | nil,
+          :quoteReplyMessageId => GoogleApi.CloudSearch.V1.Model.MessageId.t() | nil,
           :sha256 => String.t() | nil,
           :uploadIp => String.t() | nil,
           :uploadTimestampUsec => String.t() | nil,
@@ -65,10 +64,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedBackendUploadMetadata
   field(:contentSize)
   field(:contentType)
   field(:dlpScanOutcome)
-  field(:dlpScanSummary, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteBackendDlpScanSummary)
-  field(:groupId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteGroupId)
+  field(:dlpScanSummary, as: GoogleApi.CloudSearch.V1.Model.DlpScanSummary)
+  field(:groupId, as: GoogleApi.CloudSearch.V1.Model.GroupId)
   field(:originalDimension, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension)
-  field(:quoteReplyMessageId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteMessageId)
+  field(:quoteReplyMessageId, as: GoogleApi.CloudSearch.V1.Model.MessageId)
   field(:sha256)
   field(:uploadIp)
   field(:uploadTimestampUsec)
