@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedTasksAnnotationDataTa
 
   ## Attributes
 
-  *   `assignee` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t`, *default:* `nil`) - Obfuscated user ID of new assignee. Not set if the task doesn't have an assignee.
+  *   `assignee` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - Obfuscated user ID of new assignee. Not set if the task doesn't have an assignee.
   *   `completed` (*type:* `boolean()`, *default:* `nil`) - Whether the task is marked as completed.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the task is marked as deleted.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the task. If Task original description's length is greater than 1024, then Task BE sends the truncated description to Dynamite Integration Server.
@@ -33,7 +33,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedTasksAnnotationDataTa
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignee => GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t() | nil,
+          :assignee => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
           :completed => boolean() | nil,
           :deleted => boolean() | nil,
           :description => String.t() | nil,
@@ -42,7 +42,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedTasksAnnotationDataTa
           :title => String.t() | nil
         }
 
-  field(:assignee, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId)
+  field(:assignee, as: GoogleApi.CloudSearch.V1.Model.UserId)
   field(:completed)
   field(:deleted)
   field(:description)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.EditMetadata do
   @moduledoc """
-  An edit was made in Dynamite.
+  A message edit in Dynamite inserts a Babel-only item containing this field.
 
   ## Attributes
 

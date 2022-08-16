@@ -21,19 +21,19 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOriginAppSuggestion d
 
   ## Attributes
 
-  *   `appId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteAppId.t`, *default:* `nil`) - 
+  *   `appId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppId.t`, *default:* `nil`) - 
   *   `cardClickSuggestion` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCardClickSuggestion.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appId => GoogleApi.CloudSearch.V1.Model.AppsDynamiteAppId.t() | nil,
+          :appId => GoogleApi.CloudSearch.V1.Model.AppId.t() | nil,
           :cardClickSuggestion =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCardClickSuggestion.t() | nil
         }
 
-  field(:appId, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteAppId)
+  field(:appId, as: GoogleApi.CloudSearch.V1.Model.AppId)
 
   field(:cardClickSuggestion,
     as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCardClickSuggestion

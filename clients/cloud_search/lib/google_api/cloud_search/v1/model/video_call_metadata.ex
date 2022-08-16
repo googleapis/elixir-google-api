@@ -17,20 +17,26 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.VideoCallMetadata do
   @moduledoc """
-  A Meet initiated in Dynamite and its URL.
+
 
   ## Attributes
 
-  *   `meetingUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `meetingSpace` (*type:* `GoogleApi.CloudSearch.V1.Model.MeetingSpace.t`, *default:* `nil`) - Thor meeting space.
+  *   `shouldNotRender` (*type:* `boolean()`, *default:* `nil`) - If this field is set to true, server should still contact external backends to get metadata for search but clients should not render this chip.
+  *   `wasCreatedInCurrentGroup` (*type:* `boolean()`, *default:* `nil`) - Whether this meeting space was created via Dynamite in this Dynamite group.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meetingUrl => String.t() | nil
+          :meetingSpace => GoogleApi.CloudSearch.V1.Model.MeetingSpace.t() | nil,
+          :shouldNotRender => boolean() | nil,
+          :wasCreatedInCurrentGroup => boolean() | nil
         }
 
-  field(:meetingUrl)
+  field(:meetingSpace, as: GoogleApi.CloudSearch.V1.Model.MeetingSpace)
+  field(:shouldNotRender)
+  field(:wasCreatedInCurrentGroup)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.VideoCallMetadata do

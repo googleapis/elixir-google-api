@@ -17,23 +17,40 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.Attachment do
   @moduledoc """
-  An Attachment represents a linked entity associated with a piece of social content. This may be a 1st-party or 3rd-party entity. In the Papyrus context, an Attachment is part of a Cent, and sits alongside the main content of the cent, which is represented as a sequence of Segments. Right now an Attachment is just a wrapper around an Embed, but we provide the extra layer of abstraction since, as Embeds move to separate storage in Briefcase, we may want to add additional fields that are not part of the Embed proper, but that (for example) relate to the usage of the linked content within the particular post/cent.
+  Attachments that follow the message text.
 
   ## Attributes
 
-  *   `embedItem` (*type:* `GoogleApi.CloudSearch.V1.Model.EmbedClientItem.t`, *default:* `nil`) - An embed represents an external entity. See go/es-embeds.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An id to uniquely identify an attachment when several attachments are in a collection.
+  *   `addOnData` (*type:* `GoogleApi.CloudSearch.V1.Model.GoogleChatV1ContextualAddOnMarkup.t`, *default:* `nil`) - Revised version of Gmail AddOn attachment approved by API design review.
+  *   `appId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The userId for the bot/app that created this data, to be used for attribution of attachments when the attachment was not created by the message sender.
+  *   `attachmentId` (*type:* `String.t`, *default:* `nil`) - To identify an attachment within repeated in a message
+  *   `cardAddOnData` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCard.t`, *default:* `nil`) - Card AddOn attachment with the possibility for specifying editable widgets.
+  *   `deprecatedAddOnData` (*type:* `GoogleApi.CloudSearch.V1.Model.ContextualAddOnMarkup.t`, *default:* `nil`) - Deprecated version of Gmail AddOn attachment.
+  *   `slackData` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteV1ApiCompatV1Attachment.t`, *default:* `nil`) - Slack attachment.
+  *   `slackDataImageUrlHeight` (*type:* `integer()`, *default:* `nil`) - The height of image url as fetched by fife. This field is asynchronously filled.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embedItem => GoogleApi.CloudSearch.V1.Model.EmbedClientItem.t() | nil,
-          :id => String.t() | nil
+          :addOnData =>
+            GoogleApi.CloudSearch.V1.Model.GoogleChatV1ContextualAddOnMarkup.t() | nil,
+          :appId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
+          :attachmentId => String.t() | nil,
+          :cardAddOnData => GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCard.t() | nil,
+          :deprecatedAddOnData => GoogleApi.CloudSearch.V1.Model.ContextualAddOnMarkup.t() | nil,
+          :slackData =>
+            GoogleApi.CloudSearch.V1.Model.AppsDynamiteV1ApiCompatV1Attachment.t() | nil,
+          :slackDataImageUrlHeight => integer() | nil
         }
 
-  field(:embedItem, as: GoogleApi.CloudSearch.V1.Model.EmbedClientItem)
-  field(:id)
+  field(:addOnData, as: GoogleApi.CloudSearch.V1.Model.GoogleChatV1ContextualAddOnMarkup)
+  field(:appId, as: GoogleApi.CloudSearch.V1.Model.UserId)
+  field(:attachmentId)
+  field(:cardAddOnData, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedCard)
+  field(:deprecatedAddOnData, as: GoogleApi.CloudSearch.V1.Model.ContextualAddOnMarkup)
+  field(:slackData, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteV1ApiCompatV1Attachment)
+  field(:slackDataImageUrlHeight)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.Attachment do

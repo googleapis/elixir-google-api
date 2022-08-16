@@ -21,16 +21,16 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedTasksAnnotationDataAs
 
   ## Attributes
 
-  *   `oldAssignee` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t`, *default:* `nil`) - Obfuscated user ID of previous assignee. Not set if the task was originally not assigned.
+  *   `oldAssignee` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - Obfuscated user ID of previous assignee. Not set if the task was originally not assigned.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :oldAssignee => GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t() | nil
+          :oldAssignee => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
-  field(:oldAssignee, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId)
+  field(:oldAssignee, as: GoogleApi.CloudSearch.V1.Model.UserId)
 end
 
 defimpl Poison.Decoder,

@@ -21,16 +21,28 @@ defmodule GoogleApi.CloudSearch.V1.Model.EmailAddress do
 
   ## Attributes
 
+  *   `customType` (*type:* `String.t`, *default:* `nil`) - If the value of type is custom, this property contains the custom type string.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address.
+  *   `emailUrl` (*type:* `String.t`, *default:* `nil`) - The URL to send email.
+  *   `primary` (*type:* `boolean()`, *default:* `nil`) - Indicates if this is the user's primary email. Only one entry can be marked as primary.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the email account. Acceptable values are: "custom", "home", "other", "work".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddress => String.t() | nil
+          :customType => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :emailUrl => String.t() | nil,
+          :primary => boolean() | nil,
+          :type => String.t() | nil
         }
 
+  field(:customType)
   field(:emailAddress)
+  field(:emailUrl)
+  field(:primary)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.EmailAddress do

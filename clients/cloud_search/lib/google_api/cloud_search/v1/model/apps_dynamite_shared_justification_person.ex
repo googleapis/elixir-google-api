@@ -22,18 +22,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedJustificationPerson d
   ## Attributes
 
   *   `isRecipient` (*type:* `boolean()`, *default:* `nil`) - Whether the person is the recipient of the suggestions.
-  *   `user` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t`, *default:* `nil`) - Obfuscated user ID.
+  *   `user` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - Obfuscated user ID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :isRecipient => boolean() | nil,
-          :user => GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId.t() | nil
+          :user => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
   field(:isRecipient)
-  field(:user, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteUserId)
+  field(:user, as: GoogleApi.CloudSearch.V1.Model.UserId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedJustificationPerson do

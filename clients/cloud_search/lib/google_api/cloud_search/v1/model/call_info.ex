@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   *   `availableReactions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ReactionInfo.t)`, *default:* `nil`) - Output only. The set of reactions that clients are allowed to send and can expect to receive. Note that a device in the conference should have the MAY_SEND_REACTIONS privilege to be able to send reactions.
   *   `broadcastSessionInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo.t`, *default:* `nil`) - Information about active broadcast session in the ongoing conference.
   *   `calendarEventId` (*type:* `String.t`, *default:* `nil`) - Output only. The calendar event ID of a Google Calendar event that the meeting space is associated with. If the meeting space is not associated with an event in Google Calendar, this field is empty. For recurring events, it refers to the recurring instance associated with the current call, as determined by the server.
+  *   `chatConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.ChatConfig.t`, *default:* `nil`) - Configuration for the chat for this conference.
   *   `coActivity` (*type:* `GoogleApi.CloudSearch.V1.Model.CoActivity.t`, *default:* `nil`) - The current co-activity session, or unset if there is none in progress. A co-activity session can be initiated by devices in JOINED state . Initiator of the co-activity is expected to populate this field to start the session. Once clients detect that the co-activity has finished, any JOINED device can clear this field to end the co-activity session. In the case of switching activities, the initiator of the new activity merely needs to override this with the new co-activity data, and all connected clients are expected to handle the transition gracefully.
   *   `collaboration` (*type:* `GoogleApi.CloudSearch.V1.Model.Collaboration.t`, *default:* `nil`) - The current collaboration session, or unset if no collaboration is in progress.
   *   `cseInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.CseInfo.t`, *default:* `nil`) - CSE information for the ongoing conference.
@@ -54,6 +55,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
           :availableReactions => list(GoogleApi.CloudSearch.V1.Model.ReactionInfo.t()) | nil,
           :broadcastSessionInfo => GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo.t() | nil,
           :calendarEventId => String.t() | nil,
+          :chatConfig => GoogleApi.CloudSearch.V1.Model.ChatConfig.t() | nil,
           :coActivity => GoogleApi.CloudSearch.V1.Model.CoActivity.t() | nil,
           :collaboration => GoogleApi.CloudSearch.V1.Model.Collaboration.t() | nil,
           :cseInfo => GoogleApi.CloudSearch.V1.Model.CseInfo.t() | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   field(:availableReactions, as: GoogleApi.CloudSearch.V1.Model.ReactionInfo, type: :list)
   field(:broadcastSessionInfo, as: GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo)
   field(:calendarEventId)
+  field(:chatConfig, as: GoogleApi.CloudSearch.V1.Model.ChatConfig)
   field(:coActivity, as: GoogleApi.CloudSearch.V1.Model.CoActivity)
   field(:collaboration, as: GoogleApi.CloudSearch.V1.Model.Collaboration)
   field(:cseInfo, as: GoogleApi.CloudSearch.V1.Model.CseInfo)

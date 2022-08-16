@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DeleteMetadata do
   @moduledoc """
-  A message was deleted in Dynamite.
+  A message delete in Dynamite inserts a Babel-only item containing this field. This is only inserted for messages before the source-of-truth flip. See go/hsc-message-deletions for more details.
 
   ## Attributes
 
