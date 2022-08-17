@@ -2714,7 +2714,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
   *   `advertiser_id` (*type:* `String.t`) - The ID of the advertiser this insertion order belongs to.
-  *   `insertion_order_id` (*type:* `String.t`) - The ID of the insertion order we need to delete.
+  *   `insertion_order_id` (*type:* `String.t`) - The ID of the insertion order to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3606,7 +3606,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
   *   `advertiser_id` (*type:* `String.t`) - The ID of the advertiser this line item belongs to.
-  *   `line_item_id` (*type:* `String.t`) - The ID of the line item we need to fetch.
+  *   `line_item_id` (*type:* `String.t`) - The ID of the line item to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6378,7 +6378,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
   *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the advertiser.
-  *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of this assigned targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
+  *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of this assigned targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL`
   *   `assigned_targeting_option_id` (*type:* `String.t`) - Required. An identifier unique to the targeting type in this advertiser that identifies the assigned targeting option being requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -6462,7 +6462,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
   *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the advertiser.
-  *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of assigned targeting options to list. Supported targeting types: * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
+  *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of assigned targeting options to list. Supported targeting types: * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
