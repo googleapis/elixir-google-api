@@ -21,15 +21,18 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AccountDetails do
 
   ## Attributes
 
+  *   `accountRiskVerdict` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict.t`, *default:* `nil`) - Details about the account risk for the user in the scope. This feature is available only to selected developers.
   *   `appLicensingVerdict` (*type:* `String.t`, *default:* `nil`) - Required. Details about the licensing status of the user for the app in the scope.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accountRiskVerdict => GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict.t() | nil,
           :appLicensingVerdict => String.t() | nil
         }
 
+  field(:accountRiskVerdict, as: GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict)
   field(:appLicensingVerdict)
 end
 
