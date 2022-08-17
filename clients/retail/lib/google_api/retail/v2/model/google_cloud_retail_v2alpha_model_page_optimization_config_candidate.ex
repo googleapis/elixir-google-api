@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizatio
 
   ## Attributes
 
-  *   `servingConfigId` (*type:* `String.t`, *default:* `nil`) - This has to be a valid ServingConfig identifier. e.g. for a ServingConfig with full name: `projects/*/locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config` this would be 'my_candidate_config'
+  *   `servingConfigId` (*type:* `String.t`, *default:* `nil`) - This has to be a valid ServingConfig identifier. For example, for a ServingConfig with full name: `projects/*/locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`, this would be `my_candidate_config`.
   """
 
   use GoogleApi.Gax.ModelBase
