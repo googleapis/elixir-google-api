@@ -21,7 +21,7 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.GenerateVerificationTokenRe
 
   ## Attributes
 
-  *   `location` (*type:* `GoogleApi.MyBusinessVerifications.V1.Model.Location.t`, *default:* `nil`) - Required. The target location.
+  *   `location` (*type:* `GoogleApi.MyBusinessVerifications.V1.Model.Location.t`, *default:* `nil`) - Required. The target location. Note: The location information should exactly match the target Location, otherwise the generated verification token won't be able to verify the target Location.
   """
 
   use GoogleApi.Gax.ModelBase
