@@ -28,7 +28,6 @@ defmodule GoogleApi.TagManager.V2.Model.Zone do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Zone as computed at storage time. This value is recomputed whenever the zone is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Zone display name.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this zone in the container.
-  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - Additional parameters.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Zone's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `typeRestriction` (*type:* `GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.t`, *default:* `nil`) - This Zone's type restrictions.
@@ -46,7 +45,6 @@ defmodule GoogleApi.TagManager.V2.Model.Zone do
           :fingerprint => String.t() | nil,
           :name => String.t() | nil,
           :notes => String.t() | nil,
-          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
           :path => String.t() | nil,
           :tagManagerUrl => String.t() | nil,
           :typeRestriction => GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.t() | nil,
@@ -61,7 +59,6 @@ defmodule GoogleApi.TagManager.V2.Model.Zone do
   field(:fingerprint)
   field(:name)
   field(:notes)
-  field(:parameter, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)
   field(:path)
   field(:tagManagerUrl)
   field(:typeRestriction, as: GoogleApi.TagManager.V2.Model.ZoneTypeRestriction)
