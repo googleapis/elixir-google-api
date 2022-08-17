@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
   @moduledoc """
-  Resource representing a policy schema. Next ID: 12
+  Resource representing a policy schema. Next ID: 13
 
   ## Attributes
 
@@ -27,7 +27,8 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
   *   `fieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Detailed description of each field that is part of the schema.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Format: name=customers/{customer}/policySchemas/{schema_namespace}
   *   `notices` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaNoticeDescription.t)`, *default:* `nil`) - Output only. Special notice messages related to setting certain values in certain fields in the schema.
-  *   `policyApiLifeycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Output only. Current life cycle information.
+  *   `policyApiLifecycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Output only. Current lifecycle information.
+  *   `policyApiLifeycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Deprecated field because of typo.
   *   `policyDescription` (*type:* `String.t`, *default:* `nil`) - Output only. Description about the policy schema for user consumption.
   *   `schemaName` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies BatchModifyGroupPolicies or BatchDeleteGroupPolicies.
   *   `supportUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI to related support article for this schema.
@@ -52,6 +53,9 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
             list(
               GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaNoticeDescription.t()
             )
+            | nil,
+          :policyApiLifecycle =>
+            GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t()
             | nil,
           :policyApiLifeycle =>
             GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t()
@@ -81,6 +85,10 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
   field(:notices,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaNoticeDescription,
     type: :list
+  )
+
+  field(:policyApiLifecycle,
+    as: GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle
   )
 
   field(:policyApiLifeycle,
