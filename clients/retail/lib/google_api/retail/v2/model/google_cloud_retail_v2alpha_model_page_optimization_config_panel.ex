@@ -22,7 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizatio
   ## Attributes
 
   *   `candidates` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate.t)`, *default:* `nil`) - Required. The candidates to consider on the panel. Limit = 10.
-  *   `defaultCandidate` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate.t`, *default:* `nil`) - Required. The default candidate (in case the model fails at serving time, we can fall back to the default).
+  *   `defaultCandidate` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate.t`, *default:* `nil`) - Required. The default candidate. If the model fails at serving time, we fall back to the default.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The name to display for the panel.
   """
 
