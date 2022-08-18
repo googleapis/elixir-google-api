@@ -24,7 +24,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.WhiteboardInfo do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The Cosmo Id of the whiteboard document (Jam).
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the whiteboard document.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The uri for whiteboard document.
-  *   `whiteboardUri` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed. Please use "uri" instead.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +31,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.WhiteboardInfo do
   @type t :: %__MODULE__{
           :id => String.t() | nil,
           :title => String.t() | nil,
-          :uri => String.t() | nil,
-          :whiteboardUri => String.t() | nil
+          :uri => String.t() | nil
         }
 
   field(:id)
   field(:title)
   field(:uri)
-  field(:whiteboardUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.WhiteboardInfo do
