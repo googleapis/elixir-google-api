@@ -22,7 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ImportCompletionDataReque
   ## Attributes
 
   *   `inputConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompletionDataInputConfig.t`, *default:* `nil`) - Required. The desired input location of the data.
-  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
   """
 
   use GoogleApi.Gax.ModelBase
