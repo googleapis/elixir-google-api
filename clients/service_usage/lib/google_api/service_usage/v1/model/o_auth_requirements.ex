@@ -21,15 +21,18 @@ defmodule GoogleApi.ServiceUsage.V1.Model.OAuthRequirements do
 
   ## Attributes
 
+  *   `allowAnyScope` (*type:* `boolean()`, *default:* `nil`) - UNIMPLEMENTED: If enabled, ESF will allow OAuth credentials with any scope, more details in http://go/esf-oauth-any-scope. WARNING: Enabling this option will bring security risks. Customers enabling this feature accidentally may have the risk of losing authentication enforcement. Please reach out to api-auth@ and esf-team@ for approval and allowlisting before you enable this option. 
   *   `canonicalScopes` (*type:* `String.t`, *default:* `nil`) - The list of publicly documented OAuth scopes that are allowed access. An OAuth token containing any of these scopes will be accepted. Example: canonical_scopes: https://www.googleapis.com/auth/calendar, https://www.googleapis.com/auth/calendar.read
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowAnyScope => boolean() | nil,
           :canonicalScopes => String.t() | nil
         }
 
+  field(:allowAnyScope)
   field(:canonicalScopes)
 end
 
