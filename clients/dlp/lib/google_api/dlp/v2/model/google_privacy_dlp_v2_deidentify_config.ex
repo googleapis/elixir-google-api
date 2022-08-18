@@ -21,6 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
 
   ## Attributes
 
+  *   `imageTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformations.t`, *default:* `nil`) - Treat the dataset as an image and redact.
   *   `infoTypeTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t`, *default:* `nil`) - Treat the dataset as free-form text and apply the same free text transformation everywhere.
   *   `recordTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t`, *default:* `nil`) - Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.
   *   `transformationErrorHandling` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t`, *default:* `nil`) - Mode for handling transformation errors. If left unspecified, the default mode is `TransformationErrorHandling.ThrowError`.
@@ -29,6 +30,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :imageTransformations =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformations.t() | nil,
           :infoTypeTransformations =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t() | nil,
           :recordTransformations =>
@@ -36,6 +39,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
           :transformationErrorHandling =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t() | nil
         }
+
+  field(:imageTransformations, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformations)
 
   field(:infoTypeTransformations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations
