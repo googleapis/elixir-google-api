@@ -258,7 +258,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account
+  *   `customer_id` (*type:* `String.t`) - Immutable. ID of the Google Workspace account
   *   `org_unit_path` (*type:* `String.t`) - Full path of the target organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
