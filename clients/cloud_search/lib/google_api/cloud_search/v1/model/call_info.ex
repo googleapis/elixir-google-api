@@ -40,7 +40,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   *   `recordingSessionInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.RecordingSessionInfo.t`, *default:* `nil`) - Information about active recording session in the ongoing conference.
   *   `settings` (*type:* `GoogleApi.CloudSearch.V1.Model.CallSettings.t`, *default:* `nil`) - Settings of the ongoing conference.
   *   `streamingSessions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.StreamingSessionInfo.t)`, *default:* `nil`) - Output only. Info about streaming sessions (recording or broadcast) for this conference. This should contain all active sessions. Currently, it's guaranteed to have at most one recording and at most one broadcast (at most two sessions in total). For each application type (recording or broadcast), latest inactive session is included if there's no active one.
-  *   `supportedCaptionLanguages` (*type:* `list(String.t)`, *default:* `nil`) - Supported caption languages in BCP 47 language code format, e.g.'en-US'.
   *   `transcriptionSessionInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.TranscriptionSessionInfo.t`, *default:* `nil`) - Information about active transcription session in the ongoing conference.
   *   `viewerCount` (*type:* `integer()`, *default:* `nil`) - The number of devices viewing the conference - MeetingDevices that are in VIEWER role and JOINED state in the conference.
   *   `youTubeBroadcastSessionInfos` (*type:* `list(GoogleApi.CloudSearch.V1.Model.YouTubeBroadcastSessionInfo.t)`, *default:* `nil`) - Information about active YouTube broadcast sessions in the ongoing conference.
@@ -69,7 +68,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
           :settings => GoogleApi.CloudSearch.V1.Model.CallSettings.t() | nil,
           :streamingSessions =>
             list(GoogleApi.CloudSearch.V1.Model.StreamingSessionInfo.t()) | nil,
-          :supportedCaptionLanguages => list(String.t()) | nil,
           :transcriptionSessionInfo =>
             GoogleApi.CloudSearch.V1.Model.TranscriptionSessionInfo.t() | nil,
           :viewerCount => integer() | nil,
@@ -96,7 +94,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   field(:recordingSessionInfo, as: GoogleApi.CloudSearch.V1.Model.RecordingSessionInfo)
   field(:settings, as: GoogleApi.CloudSearch.V1.Model.CallSettings)
   field(:streamingSessions, as: GoogleApi.CloudSearch.V1.Model.StreamingSessionInfo, type: :list)
-  field(:supportedCaptionLanguages, type: :list)
   field(:transcriptionSessionInfo, as: GoogleApi.CloudSearch.V1.Model.TranscriptionSessionInfo)
   field(:viewerCount)
 
