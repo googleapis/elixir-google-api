@@ -21,6 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
 
   ## Attributes
 
+  *   `connectionState` (*type:* `String.t`, *default:* `nil`) - Output only. State of the endpoint attachment connection to the service attachment.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Host that can be used in either the HTTP target endpoint directly or as the host in target server.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Location of the endpoint attachment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
@@ -31,6 +32,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectionState => String.t() | nil,
           :host => String.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment do
           :state => String.t() | nil
         }
 
+  field(:connectionState)
   field(:host)
   field(:location)
   field(:name)

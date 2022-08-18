@@ -34,6 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   *   `operationGroup` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t`, *default:* `nil`) - Configuration used to group Apigee proxies or remote services with resources, method types, and quotas. The resource refers to the resource URI (excluding the base path). With this grouping, the API product creator is able to fine-tune and give precise control over which REST methods have access to specific resources and how many calls can be made (using the `quota` setting). **Note:** The `api_resources` setting cannot be specified for both the API product and operation group; otherwise the call will fail.
   *   `proxies` (*type:* `list(String.t)`, *default:* `nil`) - Comma-separated list of API proxy names to which this API product is bound. By specifying API proxies, you can associate resources in the API product with specific API proxies, preventing developers from accessing those resources through other API proxies. Apigee rejects requests to API proxies that are not listed. **Note:** The API proxy names must already exist in the specified environment as they will be validated upon creation.
   *   `quota` (*type:* `String.t`, *default:* `nil`) - Number of request messages permitted per app by this API product for the specified `quotaInterval` and `quotaTimeUnit`. For example, a `quota` of 50, for a `quotaInterval` of 12 and a `quotaTimeUnit` of hours means 50 requests are allowed every 12 hours.
+  *   `quotaCounterScope` (*type:* `String.t`, *default:* `nil`) - Scope of the quota decides how the quota counter gets applied and evaluate for quota violation. If the Scope is set as PROXY, then all the operations defined for the APIproduct that are associated with the same proxy will share the same quota counter set at the APIproduct level, making it a global counter at a proxy level. If the Scope is set as OPERATION, then each operations get the counter set at the API product dedicated, making it a local counter. Note that, the QuotaCounterScope applies only when an operation does not have dedicated quota set for itself.
   *   `quotaInterval` (*type:* `String.t`, *default:* `nil`) - Time interval over which the number of request messages is calculated.
   *   `quotaTimeUnit` (*type:* `String.t`, *default:* `nil`) - Time unit defined for the `quotaInterval`. Valid values include `minute`, `hour`, `day`, or `month`.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Comma-separated list of OAuth scopes that are validated at runtime. Apigee validates that the scopes in any access token presented match the scopes defined in the OAuth policy associated with the API product.
@@ -57,6 +58,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t() | nil,
           :proxies => list(String.t()) | nil,
           :quota => String.t() | nil,
+          :quotaCounterScope => String.t() | nil,
           :quotaInterval => String.t() | nil,
           :quotaTimeUnit => String.t() | nil,
           :scopes => list(String.t()) | nil
@@ -79,6 +81,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   field(:operationGroup, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup)
   field(:proxies, type: :list)
   field(:quota)
+  field(:quotaCounterScope)
   field(:quotaInterval)
   field(:quotaTimeUnit)
   field(:scopes, type: :list)
