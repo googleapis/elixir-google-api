@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaImportMetadata do
   @moduledoc """
-  Metadata related to the progress of the Import operation. This is returned by the google.longrunning.Operation.metadata field.
+  Metadata related to the progress of the Import operation. This will be returned by the google.longrunning.Operation.metadata field.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
   *   `failureCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that encountered errors while processing.
-  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field is never set.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that were processed successfully.
   *   `transformedUserEventsMetadata` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaTransformedUserEventsMetadata.t`, *default:* `nil`) - Metadata related to transform user events.
