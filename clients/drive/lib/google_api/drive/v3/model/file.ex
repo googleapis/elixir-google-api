@@ -57,6 +57,8 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request.
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
   *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
+  *   `sha1Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA1 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.
+  *   `sha256Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA256 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.
   *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
   *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
   *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.
@@ -126,6 +128,8 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :thumbnailLink => String.t() | nil,
           :originalFilename => String.t() | nil,
           :explicitlyTrashed => boolean() | nil,
+          :sha1Checksum => String.t() | nil,
+          :sha256Checksum => String.t() | nil,
           :exportLinks => map() | nil,
           :modifiedByMeTime => DateTime.t() | nil,
           :quotaBytesUsed => String.t() | nil,
@@ -188,6 +192,8 @@ defmodule GoogleApi.Drive.V3.Model.File do
   field(:thumbnailLink)
   field(:originalFilename)
   field(:explicitlyTrashed)
+  field(:sha1Checksum)
+  field(:sha256Checksum)
   field(:exportLinks, type: :map)
   field(:modifiedByMeTime, as: DateTime)
   field(:quotaBytesUsed)
