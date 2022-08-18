@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `individualBatchDeleteStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t)`, *default:* `nil`) - The list of response details of each document.
+  *   `totalDocumentCount` (*type:* `integer()`, *default:* `nil`) - Total number of documents deleting from dataset.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
             list(
               GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t()
             )
-            | nil
+            | nil,
+          :totalDocumentCount => integer() | nil
         }
 
   field(:commonMetadata,
@@ -47,6 +49,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
       GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus,
     type: :list
   )
+
+  field(:totalDocumentCount)
 end
 
 defimpl Poison.Decoder,

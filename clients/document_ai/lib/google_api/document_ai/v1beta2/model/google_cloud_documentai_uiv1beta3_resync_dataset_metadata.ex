@@ -22,6 +22,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Resyn
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `datasetResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus.t)`, *default:* `nil`) - The list of dataset resync statuses. Not checked when `dataset_documents` is specified in ResyncRequest.
+  *   `individualDocumentResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus.t)`, *default:* `nil`) - The list of document resync statuses. The same document could have multiple `individual_document_resync_statuses` if it has multiple inconsistencies.
   *   `newlyAddedDocuments` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument.t)`, *default:* `nil`) - Returns the newly added document Cloud Storage prefix if the documents are founded in Cloud Storage while not in Document Service storage.
   """
 
@@ -30,6 +32,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Resyn
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            | nil,
+          :datasetResyncStatuses =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus.t()
+            )
+            | nil,
+          :individualDocumentResyncStatuses =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus.t()
+            )
             | nil,
           :newlyAddedDocuments =>
             list(
@@ -40,6 +52,18 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Resyn
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
+
+  field(:datasetResyncStatuses,
+    as:
+      GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus,
+    type: :list
+  )
+
+  field(:individualDocumentResyncStatuses,
+    as:
+      GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus,
+    type: :list
   )
 
   field(:newlyAddedDocuments,
