@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
   @moduledoc """
-  Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/) configuration for API handlers.
+  Cloud Endpoints (https://cloud.google.com/endpoints/) configuration for API handlers.
 
   ## Attributes
 
