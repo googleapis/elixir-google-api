@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelServingConfigList do
   @moduledoc """
-  Represents an ordered combination of valid serving configs, which / may be used for PAGE_OPTIMIZATION recommendations.
+  Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations.
 
   ## Attributes
 
-  *   `servingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of valid serving configs that may be used for PAGE_OPTIMIZATION.
+  *   `servingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of valid serving configs that may be used for `PAGE_OPTIMIZATION`.
   """
 
   use GoogleApi.Gax.ModelBase
