@@ -26,6 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   *   `autoscalingAlgorithm` (*type:* `String.t`, *default:* `nil`) - The algorithm to use for autoscaling
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Worker disk size, in gigabytes.
   *   `dumpHeapOnOom` (*type:* `boolean()`, *default:* `nil`) - If true, when processing time is spent almost entirely on garbage collection (GC), saves a heap dump before ending the thread or process. If false, ends the thread or process without saving a heap dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an out of memory error during processing. The location of the heap file is either echoed back to the user, or the user is given the opportunity to download the heap file.
+  *   `enableLauncherVmSerialPortLogging` (*type:* `boolean()`, *default:* `nil`) - If true serial port logging will be enabled for the launcher VM.
   *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Streaming Engine for the job.
   *   `flexrsGoal` (*type:* `String.t`, *default:* `nil`) - Set FlexRS goal for the job. https://cloud.google.com/dataflow/docs/guides/flexrs
   *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
           :autoscalingAlgorithm => String.t() | nil,
           :diskSizeGb => integer() | nil,
           :dumpHeapOnOom => boolean() | nil,
+          :enableLauncherVmSerialPortLogging => boolean() | nil,
           :enableStreamingEngine => boolean() | nil,
           :flexrsGoal => String.t() | nil,
           :ipConfiguration => String.t() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   field(:autoscalingAlgorithm)
   field(:diskSizeGb)
   field(:dumpHeapOnOom)
+  field(:enableLauncherVmSerialPortLogging)
   field(:enableStreamingEngine)
   field(:flexrsGoal)
   field(:ipConfiguration)
