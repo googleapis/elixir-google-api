@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.AbortInfo do
   ## Attributes
 
   *   `cause` (*type:* `String.t`, *default:* `nil`) - Causes that the analysis is aborted.
+  *   `projectsMissingPermission` (*type:* `list(String.t)`, *default:* `nil`) - List of project IDs that the user has specified in the request but does not have permission to access network configs. Analysis is aborted in this case with the PERMISSION_DENIED cause.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - URI of the resource that caused the abort.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.NetworkManagement.V1.Model.AbortInfo do
 
   @type t :: %__MODULE__{
           :cause => String.t() | nil,
+          :projectsMissingPermission => list(String.t()) | nil,
           :resourceUri => String.t() | nil
         }
 
   field(:cause)
+  field(:projectsMissingPermission, type: :list)
   field(:resourceUri)
 end
 

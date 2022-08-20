@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
 
   ## Attributes
 
+  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud function](https://cloud.google.com/functions).
   *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
   *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
@@ -34,6 +35,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudFunction => GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint.t() | nil,
           :cloudSqlInstance => String.t() | nil,
           :gkeMasterCluster => String.t() | nil,
           :instance => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
           :projectId => String.t() | nil
         }
 
+  field(:cloudFunction, as: GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint)
   field(:cloudSqlInstance)
   field(:gkeMasterCluster)
   field(:instance)

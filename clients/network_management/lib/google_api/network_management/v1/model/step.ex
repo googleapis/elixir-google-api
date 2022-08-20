@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1.Model.AbortInfo.t`, *default:* `nil`) - Display information of the final state "abort" and reason.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
+  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionInfo.t`, *default:* `nil`) - Display information of a Cloud function.
   *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display information of a Cloud SQL instance.
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display information of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
@@ -38,6 +39,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that contains the configuration this step is validating.
   *   `route` (*type:* `GoogleApi.NetworkManagement.V1.Model.RouteInfo.t`, *default:* `nil`) - Display information of a Compute Engine route.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Each step is in one of the pre-defined states.
+  *   `vpcConnector` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpcConnectorInfo.t`, *default:* `nil`) - Display information of a VPC connector.
   *   `vpnGateway` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN gateway.
   *   `vpnTunnel` (*type:* `GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN tunnel.
   """
@@ -47,6 +49,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   @type t :: %__MODULE__{
           :abort => GoogleApi.NetworkManagement.V1.Model.AbortInfo.t() | nil,
           :causesDrop => boolean() | nil,
+          :cloudFunction => GoogleApi.NetworkManagement.V1.Model.CloudFunctionInfo.t() | nil,
           :cloudSqlInstance =>
             GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t() | nil,
           :deliver => GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t() | nil,
@@ -63,12 +66,14 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
           :projectId => String.t() | nil,
           :route => GoogleApi.NetworkManagement.V1.Model.RouteInfo.t() | nil,
           :state => String.t() | nil,
+          :vpcConnector => GoogleApi.NetworkManagement.V1.Model.VpcConnectorInfo.t() | nil,
           :vpnGateway => GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo.t() | nil,
           :vpnTunnel => GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo.t() | nil
         }
 
   field(:abort, as: GoogleApi.NetworkManagement.V1.Model.AbortInfo)
   field(:causesDrop)
+  field(:cloudFunction, as: GoogleApi.NetworkManagement.V1.Model.CloudFunctionInfo)
   field(:cloudSqlInstance, as: GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo)
   field(:deliver, as: GoogleApi.NetworkManagement.V1.Model.DeliverInfo)
   field(:description)
@@ -84,6 +89,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   field(:projectId)
   field(:route, as: GoogleApi.NetworkManagement.V1.Model.RouteInfo)
   field(:state)
+  field(:vpcConnector, as: GoogleApi.NetworkManagement.V1.Model.VpcConnectorInfo)
   field(:vpnGateway, as: GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo)
   field(:vpnTunnel, as: GoogleApi.NetworkManagement.V1.Model.VpnTunnelInfo)
 end

@@ -22,7 +22,6 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   ## Attributes
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t`, *default:* `nil`) - Display information of the final state "abort" and reason.
-  *   `appEngineVersion` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo.t`, *default:* `nil`) - Display information of an App Engine service version.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
   *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo.t`, *default:* `nil`) - Display information of a Cloud function.
   *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display information of a Cloud SQL instance.
@@ -49,8 +48,6 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
 
   @type t :: %__MODULE__{
           :abort => GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t() | nil,
-          :appEngineVersion =>
-            GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo.t() | nil,
           :causesDrop => boolean() | nil,
           :cloudFunction => GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo.t() | nil,
           :cloudSqlInstance =>
@@ -76,7 +73,6 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
         }
 
   field(:abort, as: GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo)
-  field(:appEngineVersion, as: GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo)
   field(:causesDrop)
   field(:cloudFunction, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo)
   field(:cloudSqlInstance, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo)
