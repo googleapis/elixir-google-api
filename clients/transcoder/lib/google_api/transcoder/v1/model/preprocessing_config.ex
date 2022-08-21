@@ -25,6 +25,7 @@ defmodule GoogleApi.Transcoder.V1.Model.PreprocessingConfig do
   *   `color` (*type:* `GoogleApi.Transcoder.V1.Model.Color.t`, *default:* `nil`) - Color preprocessing configuration.
   *   `crop` (*type:* `GoogleApi.Transcoder.V1.Model.Crop.t`, *default:* `nil`) - Specify the video cropping configuration.
   *   `deblock` (*type:* `GoogleApi.Transcoder.V1.Model.Deblock.t`, *default:* `nil`) - Deblock preprocessing configuration.
+  *   `deinterlace` (*type:* `GoogleApi.Transcoder.V1.Model.Deinterlace.t`, *default:* `nil`) - Specify the video deinterlace configuration.
   *   `denoise` (*type:* `GoogleApi.Transcoder.V1.Model.Denoise.t`, *default:* `nil`) - Denoise preprocessing configuration.
   *   `pad` (*type:* `GoogleApi.Transcoder.V1.Model.Pad.t`, *default:* `nil`) - Specify the video pad filter configuration.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.Transcoder.V1.Model.PreprocessingConfig do
           :color => GoogleApi.Transcoder.V1.Model.Color.t() | nil,
           :crop => GoogleApi.Transcoder.V1.Model.Crop.t() | nil,
           :deblock => GoogleApi.Transcoder.V1.Model.Deblock.t() | nil,
+          :deinterlace => GoogleApi.Transcoder.V1.Model.Deinterlace.t() | nil,
           :denoise => GoogleApi.Transcoder.V1.Model.Denoise.t() | nil,
           :pad => GoogleApi.Transcoder.V1.Model.Pad.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.Transcoder.V1.Model.PreprocessingConfig do
   field(:color, as: GoogleApi.Transcoder.V1.Model.Color)
   field(:crop, as: GoogleApi.Transcoder.V1.Model.Crop)
   field(:deblock, as: GoogleApi.Transcoder.V1.Model.Deblock)
+  field(:deinterlace, as: GoogleApi.Transcoder.V1.Model.Deinterlace)
   field(:denoise, as: GoogleApi.Transcoder.V1.Model.Denoise)
   field(:pad, as: GoogleApi.Transcoder.V1.Model.Pad)
 end
