@@ -20,7 +20,7 @@ defmodule GoogleApi.Dataplex.V1 do
   API client metadata for GoogleApi.Dataplex.V1.
   """
 
-  @discovery_revision "20220723"
+  @discovery_revision "20220818"
 
   def discovery_revision(), do: @discovery_revision
 end
