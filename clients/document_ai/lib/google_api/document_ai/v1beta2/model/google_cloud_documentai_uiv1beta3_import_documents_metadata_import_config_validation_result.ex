@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult do
   @moduledoc """
-  The validation status of each import config. Status is ok if the configuration is valid and the specified documents are valid for importing. Otherwise status will be set as errors.
+  The validation status of each import config. Status is set to errors if there is no documents to import in the import_config, or OK if the operation will try to proceed at least one document.
 
   ## Attributes
 

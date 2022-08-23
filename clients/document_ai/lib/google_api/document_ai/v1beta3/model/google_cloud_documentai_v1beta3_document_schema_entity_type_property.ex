@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. Follows the same guidelines as the EntityType name.
   *   `occurrenceType` (*type:* `String.t`, *default:* `nil`) - Occurrence type limits the number of instances an entity type appears in the document.
+  *   `propertyMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3PropertyMetadata.t`, *default:* `nil`) - Any additional metadata about the property can be added here.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - A reference to the value type of the property. This type is subject to the same conventions as the `Entity.base_types` field.
   """
 
@@ -31,11 +32,19 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   @type t :: %__MODULE__{
           :name => String.t() | nil,
           :occurrenceType => String.t() | nil,
+          :propertyMetadata =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3PropertyMetadata.t()
+            | nil,
           :valueType => String.t() | nil
         }
 
   field(:name)
   field(:occurrenceType)
+
+  field(:propertyMetadata,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3PropertyMetadata
+  )
+
   field(:valueType)
 end
 
