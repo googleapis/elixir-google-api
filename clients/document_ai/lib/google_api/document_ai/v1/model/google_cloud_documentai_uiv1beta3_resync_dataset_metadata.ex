@@ -24,7 +24,6 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncData
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `datasetResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus.t)`, *default:* `nil`) - The list of dataset resync statuses. Not checked when `dataset_documents` is specified in ResyncRequest.
   *   `individualDocumentResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus.t)`, *default:* `nil`) - The list of document resync statuses. The same document could have multiple `individual_document_resync_statuses` if it has multiple inconsistencies.
-  *   `newlyAddedDocuments` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument.t)`, *default:* `nil`) - Returns the newly added document Cloud Storage prefix if the documents are founded in Cloud Storage while not in Document Service storage.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,11 +41,6 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncData
             list(
               GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus.t()
             )
-            | nil,
-          :newlyAddedDocuments =>
-            list(
-              GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument.t()
-            )
             | nil
         }
 
@@ -63,12 +57,6 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncData
   field(:individualDocumentResyncStatuses,
     as:
       GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus,
-    type: :list
-  )
-
-  field(:newlyAddedDocuments,
-    as:
-      GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument,
     type: :list
   )
 end

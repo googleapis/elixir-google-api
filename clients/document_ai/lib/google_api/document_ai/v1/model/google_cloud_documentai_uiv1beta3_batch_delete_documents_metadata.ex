@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `errorDocumentCount` (*type:* `integer()`, *default:* `nil`) - Total number of documents that failed to be deleted in storage.
   *   `individualBatchDeleteStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t)`, *default:* `nil`) - The list of response details of each document.
   *   `totalDocumentCount` (*type:* `integer()`, *default:* `nil`) - Total number of documents deleting from dataset.
   """
@@ -32,6 +33,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
           :commonMetadata =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
             | nil,
+          :errorDocumentCount => integer() | nil,
           :individualBatchDeleteStatuses =>
             list(
               GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus.t()
@@ -43,6 +45,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchDelet
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
   )
+
+  field(:errorDocumentCount)
 
   field(:individualBatchDeleteStatuses,
     as:
