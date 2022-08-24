@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaRejoinUserEventsMetadata do
   @moduledoc """
-  Metadata for RejoinUserEvents method.
+  Metadata for `RejoinUserEvents` method.
 
   ## Attributes
 
