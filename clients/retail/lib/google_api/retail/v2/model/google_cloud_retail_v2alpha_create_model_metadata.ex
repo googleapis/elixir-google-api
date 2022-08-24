@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaCreateModelMetadata 
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - The resource name of the model that this create applies to. Format: projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The resource name of the model that this create applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
   """
 
   use GoogleApi.Gax.ModelBase

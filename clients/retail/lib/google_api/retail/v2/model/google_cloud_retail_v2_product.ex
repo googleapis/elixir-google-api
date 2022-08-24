@@ -38,7 +38,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product do
   *   `retrievableFields` (*type:* `String.t`, *default:* `nil`) - Indicates which fields in the Products are returned in SearchResponse. Supported fields for all types: * audience * availability * brands * color_info * conditions * gtin * materials * name * patterns * price_info * rating * sizes * title * uri Supported fields only for Type.PRIMARY and Type.COLLECTION: * categories * description * images Supported fields only for Type.VARIANT: * Only the first image in images To mark attributes as retrievable, include paths of the form "attributes.key" where "key" is the key of a custom attribute, as specified in attributes. For Type.PRIMARY and Type.COLLECTION, the following fields are always returned in SearchResponse by default: * name For Type.VARIANT, the following fields are always returned in by default: * name * color_info The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is returned. Note: Returning more fields in SearchResponse can increase response payload size and serving latency.
   *   `colorInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ColorInfo.t`, *default:* `nil`) - The color of the product. Corresponding properties: Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of the product. Default to Catalog.product_level_config.ingestion_product_type if unset.
-  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). For example, if a shoes product belongs to both ["Shoes & Accessories" -> "Shoes"] and ["Sports & Fitness" -> "Athletic Clothing" -> "Shoes"], it could be represented as: "categories": [ "Shoes & Accessories > Shoes", "Sports & Fitness > Athletic Clothing > Shoes" ] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property [Product.category] (https://schema.org/category). [mc_google_product_category]: https://support.google.com/merchants/answer/6324436
+  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, replace it with other character(s). For example, if a shoes product belongs to both ["Shoes & Accessories" -> "Shoes"] and ["Sports & Fitness" -> "Athletic Clothing" -> "Shoes"], it could be represented as: "categories": [ "Shoes & Accessories > Shoes", "Sports & Fitness > Athletic Clothing > Shoes" ] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property [Product.category] (https://schema.org/category). [mc_google_product_category]: https://support.google.com/merchants/answer/6324436
   *   `promotions` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Promotion.t)`, *default:* `nil`) - The promotions applied to the product. A maximum of 10 values are allowed per Product. Only Promotion.promotion_id will be used, other fields will be ignored if set.
   *   `availableQuantity` (*type:* `integer()`, *default:* `nil`) - The available quantity of the item.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when this product becomes unavailable for SearchService.Search. If it is set, the Product is not available for SearchService.Search after expire_time. However, the product can still be retrieved by ProductService.GetProduct and ProductService.ListProducts. expire_time must be later than available_time and publish_time, otherwise an INVALID_ARGUMENT error is thrown. Corresponding properties: Google Merchant Center property [expiration_date](https://support.google.com/merchants/answer/6324499).
@@ -54,6 +54,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product do
   *   `audience` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Audience.t`, *default:* `nil`) - The target group associated with a given audience (e.g. male, veterans, car owners, musicians, etc.) of the product.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. Product title. This field must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [title](https://support.google.com/merchants/answer/6324415). Schema.org property [Product.name](https://schema.org/name).
   *   `priceInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PriceInfo.t`, *default:* `nil`) - Product price and cost information. Corresponding properties: Google Merchant Center property [price](https://support.google.com/merchants/answer/6324371).
+  *   `localInventories` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2LocalInventory.t)`, *default:* `nil`) - Output only. A list of local inventories specific to different places. This is only available for users who have Retail Search enabled, and it can be managed by AddLocalInventories and RemoveLocalInventories APIs.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -97,7 +98,9 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product do
           :availability => String.t() | nil,
           :audience => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Audience.t() | nil,
           :title => String.t() | nil,
-          :priceInfo => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PriceInfo.t() | nil
+          :priceInfo => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PriceInfo.t() | nil,
+          :localInventories =>
+            list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2LocalInventory.t()) | nil
         }
 
   field(:attributes, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CustomAttribute, type: :map)
@@ -138,6 +141,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product do
   field(:audience, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Audience)
   field(:title)
   field(:priceInfo, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PriceInfo)
+
+  field(:localInventories,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2LocalInventory,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Product do

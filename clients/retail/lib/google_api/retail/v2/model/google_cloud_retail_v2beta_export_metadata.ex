@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaExportMetadata do
   @moduledoc """
-  Metadata related to the progress of the Export operation. This will be returned by the google.longrunning.Operation.metadata field.
+  Metadata related to the progress of the Export operation. This is returned by the google.longrunning.Operation.metadata field.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RejoinUserEventsRequest d
 
   ## Attributes
 
-  *   `userEventRejoinScope` (*type:* `String.t`, *default:* `nil`) - The type of the user event rejoin to define the scope and range of the user events to be rejoined with the latest product catalog. Defaults to USER_EVENT_REJOIN_SCOPE_UNSPECIFIED if this field is not set, or set to an invalid integer value.
+  *   `userEventRejoinScope` (*type:* `String.t`, *default:* `nil`) - The type of the user event rejoin to define the scope and range of the user events to be rejoined with the latest product catalog. Defaults to `USER_EVENT_REJOIN_SCOPE_UNSPECIFIED` if this field is not set, or set to an invalid integer value.
   """
 
   use GoogleApi.Gax.ModelBase

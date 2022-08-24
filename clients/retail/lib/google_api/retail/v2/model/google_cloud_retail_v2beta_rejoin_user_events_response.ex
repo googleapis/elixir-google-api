@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2betaRejoinUserEventsResponse do
   @moduledoc """
-  Response message for RejoinUserEvents method.
+  Response message for `RejoinUserEvents` method.
 
   ## Attributes
 
