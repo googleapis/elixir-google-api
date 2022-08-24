@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.EnvFromSource do
   @moduledoc """
-  Not supported by Cloud Run EnvFromSource represents the source of a set of ConfigMaps
+  Not supported by Cloud Run. EnvFromSource represents the source of a set of ConfigMaps
 
   ## Attributes
 
-  *   `configMapRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapEnvSource.t`, *default:* `nil`) - (Optional) The ConfigMap to select from
-  *   `prefix` (*type:* `String.t`, *default:* `nil`) - (Optional) An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  *   `secretRef` (*type:* `GoogleApi.Run.V1.Model.SecretEnvSource.t`, *default:* `nil`) - (Optional) The Secret to select from
+  *   `configMapRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapEnvSource.t`, *default:* `nil`) - The ConfigMap to select from
+  *   `prefix` (*type:* `String.t`, *default:* `nil`) - An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  *   `secretRef` (*type:* `GoogleApi.Run.V1.Model.SecretEnvSource.t`, *default:* `nil`) - The Secret to select from
   """
 
   use GoogleApi.Gax.ModelBase

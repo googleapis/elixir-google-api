@@ -21,10 +21,10 @@ defmodule GoogleApi.Run.V1.Model.VolumeMount do
 
   ## Attributes
 
-  *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Path within the container at which the volume should be mounted. Must not contain ':'.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the volume. There must be a corresponding Volume with the same name.
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - (Optional) Only true is accepted. Defaults to true.
-  *   `subPath` (*type:* `String.t`, *default:* `nil`) - (Optional) Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+  *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Required. Path within the container at which the volume should be mounted. Must not contain ':'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the volume. There must be a corresponding Volume with the same name.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Only true is accepted for Secret Volumes. Defaults to true for Secrets Volumes.
+  *   `subPath` (*type:* `String.t`, *default:* `nil`) - Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   """
 
   use GoogleApi.Gax.ModelBase

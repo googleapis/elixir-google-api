@@ -21,8 +21,8 @@ defmodule GoogleApi.Run.V1.Model.EnvVarSource do
 
   ## Attributes
 
-  *   `configMapKeyRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapKeySelector.t`, *default:* `nil`) - (Optional) Not supported by Cloud Run Selects a key of a ConfigMap.
-  *   `secretKeyRef` (*type:* `GoogleApi.Run.V1.Model.SecretKeySelector.t`, *default:* `nil`) - (Optional) Selects a key (version) of a secret in Secret Manager.
+  *   `configMapKeyRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapKeySelector.t`, *default:* `nil`) - Not supported by Cloud Run. Selects a key of a ConfigMap.
+  *   `secretKeyRef` (*type:* `GoogleApi.Run.V1.Model.SecretKeySelector.t`, *default:* `nil`) - Selects a key (version) of a secret in Secret Manager.
   """
 
   use GoogleApi.Gax.ModelBase

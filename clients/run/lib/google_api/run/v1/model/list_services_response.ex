@@ -21,11 +21,11 @@ defmodule GoogleApi.Run.V1.Model.ListServicesResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call; returns "serving.knative.dev/v1".
   *   `items` (*type:* `list(GoogleApi.Run.V1.Model.Service.t)`, *default:* `nil`) - List of Services.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "ServiceList".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource; returns "ServiceList".
   *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this Service list.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - For calls against the global endpoint, returns the list of Cloud locations that could not be reached. For regional calls, this field is not used.
   """
 
   use GoogleApi.Gax.ModelBase

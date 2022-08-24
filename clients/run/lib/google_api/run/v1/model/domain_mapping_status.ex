@@ -25,7 +25,7 @@ defmodule GoogleApi.Run.V1.Model.DomainMappingStatus do
   *   `mappedRouteName` (*type:* `String.t`, *default:* `nil`) - The name of the route that the mapping currently points to.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
   *   `resourceRecords` (*type:* `list(GoogleApi.Run.V1.Model.ResourceRecord.t)`, *default:* `nil`) - The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Run fully managed: not supported Cloud Run on GKE: supported Holds the URL that will serve the traffic of the DomainMapping.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Optional. Not supported by Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase

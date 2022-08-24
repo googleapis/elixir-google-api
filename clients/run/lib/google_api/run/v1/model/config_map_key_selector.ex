@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Run.V1.Model.ConfigMapKeySelector do
   @moduledoc """
-  Not supported by Cloud Run Selects a key from a ConfigMap.
+  Not supported by Cloud Run. Selects a key from a ConfigMap.
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The key to select.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. The key to select.
   *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined directly into the message. Use the "name" field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The ConfigMap to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional) Specify whether the ConfigMap or its key must be defined
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The ConfigMap to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Specify whether the ConfigMap or its key must be defined
   """
 
   use GoogleApi.Gax.ModelBase

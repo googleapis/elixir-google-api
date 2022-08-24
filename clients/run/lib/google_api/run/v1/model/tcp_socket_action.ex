@@ -21,8 +21,8 @@ defmodule GoogleApi.Run.V1.Model.TCPSocketAction do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional) Optional: Host name to connect to, defaults to the pod IP.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Not supported by Cloud Run.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number to access on the container. Number must be in the range 1 to 65535.
   """
 
   use GoogleApi.Gax.ModelBase
