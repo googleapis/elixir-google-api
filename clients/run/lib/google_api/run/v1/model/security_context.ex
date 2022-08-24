@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Run.V1.Model.SecurityContext do
   @moduledoc """
-  Not supported by Cloud Run SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence.
+  Not supported by Cloud Run. SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence.
 
   ## Attributes
 
-  *   `runAsUser` (*type:* `integer()`, *default:* `nil`) - (Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+  *   `runAsUser` (*type:* `integer()`, *default:* `nil`) - The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   """
 
   use GoogleApi.Gax.ModelBase

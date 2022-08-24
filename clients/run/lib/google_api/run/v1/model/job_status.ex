@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V1.Model.JobStatus do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - The latest available observations of a job's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - The latest available observations of a job's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/job/
   *   `executionCount` (*type:* `integer()`, *default:* `nil`) - Number of executions created for this job.
   *   `latestCreatedExecution` (*type:* `GoogleApi.Run.V1.Model.ExecutionReference.t`, *default:* `nil`) - A pointer to the most recently created execution for this job. This is set regardless of the eventual state of the execution.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - The 'generation' of the job that was last processed by the controller.

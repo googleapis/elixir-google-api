@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V1.Model.TaskTemplateSpec do
 
   ## Attributes
 
-  *   `spec` (*type:* `GoogleApi.Run.V1.Model.TaskSpec.t`, *default:* `nil`) - Optional. Specification of the desired behavior of the task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status +optional
+  *   `spec` (*type:* `GoogleApi.Run.V1.Model.TaskSpec.t`, *default:* `nil`) - Optional. Specification of the desired behavior of the task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.Run.V1.Model.ExecutionStatus do
   @moduledoc """
-  ExecutionStatus represents the current state of a Execution.
+  ExecutionStatus represents the current state of an Execution.
 
   ## Attributes
 
-  *   `cancelledCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Cancelled. +optional
-  *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
-  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of an execution's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
-  *   `failedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Failed. +optional
+  *   `cancelledCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Cancelled.
+  *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents the time that the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
+  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of an execution's current state.
+  *   `failedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Failed.
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI where logs for this execution can be found in Cloud Console.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Optional. The 'generation' of the execution that was last processed by the controller.
-  *   `retriedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which have retried at least once. +optional
-  *   `runningCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of actively running tasks. +optional
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
-  *   `succeededCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Succeeded. +optional
+  *   `retriedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which have retried at least once.
+  *   `runningCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of actively running tasks.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents the time that the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
+  *   `succeededCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Succeeded.
   """
 
   use GoogleApi.Gax.ModelBase

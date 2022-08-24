@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.Run.V1.Model.TaskStatus do
   @moduledoc """
-  TaskStatus represents the status of a task of a job execution.
+  TaskStatus represents the status of a task.
 
   ## Attributes
 
-  *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the task was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
-  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of a task's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
+  *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the task was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
+  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of a task's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/job/
   *   `index` (*type:* `integer()`, *default:* `nil`) - Required. Index of the task, unique per execution, and beginning at 0.
-  *   `lastAttemptResult` (*type:* `GoogleApi.Run.V1.Model.TaskAttemptResult.t`, *default:* `nil`) - Optional. Result of the last attempt of this task. +optional
+  *   `lastAttemptResult` (*type:* `GoogleApi.Run.V1.Model.TaskAttemptResult.t`, *default:* `nil`) - Optional. Result of the last attempt of this task.
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI where logs for this task can be found in Cloud Console.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Optional. The 'generation' of the execution that was last processed by the controller.
-  *   `retried` (*type:* `integer()`, *default:* `nil`) - Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit. +optional
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Optional. The 'generation' of the task that was last processed by the controller.
+  *   `retried` (*type:* `integer()`, *default:* `nil`) - Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
   """
 
   use GoogleApi.Gax.ModelBase

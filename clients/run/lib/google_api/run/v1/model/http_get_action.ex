@@ -21,10 +21,10 @@ defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional) Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  *   `httpHeaders` (*type:* `list(GoogleApi.Run.V1.Model.HTTPHeader.t)`, *default:* `nil`) - (Optional) Custom headers to set in the request. HTTP allows repeated headers.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - (Optional) Path to access on the HTTP server.
-  *   `scheme` (*type:* `String.t`, *default:* `nil`) - (Optional) Scheme to use for connecting to the host. Defaults to HTTP.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Not supported by Cloud Run.
+  *   `httpHeaders` (*type:* `list(GoogleApi.Run.V1.Model.HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server.
+  *   `scheme` (*type:* `String.t`, *default:* `nil`) - Not supported by Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase

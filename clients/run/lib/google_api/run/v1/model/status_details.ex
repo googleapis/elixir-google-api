@@ -21,12 +21,12 @@ defmodule GoogleApi.Run.V1.Model.StatusDetails do
 
   ## Attributes
 
-  *   `causes` (*type:* `list(GoogleApi.Run.V1.Model.StatusCause.t)`, *default:* `nil`) - The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes. +optional
-  *   `group` (*type:* `String.t`, *default:* `nil`) - The group attribute of the resource associated with the status StatusReason. +optional
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described). +optional
-  *   `retryAfterSeconds` (*type:* `integer()`, *default:* `nil`) - If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action. +optional
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/user-guide/identifiers#uids +optional
+  *   `causes` (*type:* `list(GoogleApi.Run.V1.Model.StatusCause.t)`, *default:* `nil`) - The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
+  *   `group` (*type:* `String.t`, *default:* `nil`) - The group attribute of the resource associated with the status StatusReason.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).
+  *   `retryAfterSeconds` (*type:* `integer()`, *default:* `nil`) - If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/user-guide/identifiers#uids
   """
 
   use GoogleApi.Gax.ModelBase

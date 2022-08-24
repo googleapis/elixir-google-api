@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.Revision do
   @moduledoc """
-  Revision is an immutable snapshot of code and configuration. A revision references a container image. Revisions are created by updates to a Configuration. See also: https://github.com/knative/serving/blob/main/docs/spec/overview.md#revision
+  Revision is an immutable snapshot of code and configuration. A revision references a container image. Revisions are created by updates to a Configuration. See also: https://github.com/knative/specs/blob/main/specs/serving/overview.md#revision
 
   ## Attributes
 

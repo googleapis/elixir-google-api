@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Run.V1.Model.Execution do
   @moduledoc """
-  Execution represents the configuration of a single execution. A execution an immutable resource that references a container image which is run to completion.
+  Execution represents the configuration of a single execution. An execution is an immutable resource that references a container image which is run to completion.
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources +optional
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional
-  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Optional. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional
-  *   `spec` (*type:* `GoogleApi.Run.V1.Model.ExecutionSpec.t`, *default:* `nil`) - Optional. Specification of the desired behavior of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional
-  *   `status` (*type:* `GoogleApi.Run.V1.Model.ExecutionStatus.t`, *default:* `nil`) - Output only. Current status of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Optional. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+  *   `spec` (*type:* `GoogleApi.Run.V1.Model.ExecutionSpec.t`, *default:* `nil`) - Optional. Specification of the desired behavior of an execution. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+  *   `status` (*type:* `GoogleApi.Run.V1.Model.ExecutionStatus.t`, *default:* `nil`) - Output only. Current status of an execution. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
   """
 
   use GoogleApi.Gax.ModelBase

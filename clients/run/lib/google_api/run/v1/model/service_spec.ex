@@ -21,8 +21,8 @@ defmodule GoogleApi.Run.V1.Model.ServiceSpec do
 
   ## Attributes
 
-  *   `template` (*type:* `GoogleApi.Run.V1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
-  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations.
+  *   `template` (*type:* `GoogleApi.Run.V1.Model.RevisionTemplate.t`, *default:* `nil`) - Holds the latest specification for the Revision to be stamped out.
+  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Specifies how to distribute traffic over a collection of Knative Revisions and Configurations to the Service's main URL.
   """
 
   use GoogleApi.Gax.ModelBase
