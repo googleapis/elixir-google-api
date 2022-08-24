@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.LocalizedMessage do
 
   ## Attributes
 
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale used following the specification defined at https://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
   *   `message` (*type:* `String.t`, *default:* `nil`) - The localized error message in the above locale.
   """
 
