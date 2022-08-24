@@ -34,7 +34,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   *   `numTriggers` (*type:* `String.t`, *default:* `nil`) - Number of triggers in the container version.
   *   `numVariables` (*type:* `String.t`, *default:* `nil`) - Number of variables in the container version.
   *   `numZones` (*type:* `String.t`, *default:* `nil`) - Number of zones in the container version.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container Versions's API relative path.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container Version's API relative path.
   """
 
   use GoogleApi.Gax.ModelBase
