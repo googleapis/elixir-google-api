@@ -4453,7 +4453,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4661,7 +4661,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

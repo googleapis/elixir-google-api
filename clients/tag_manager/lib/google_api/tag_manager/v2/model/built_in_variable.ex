@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.TagManager.V2.Model.BuiltInVariable do
   @moduledoc """
-  Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing propeties of the gtm data layer, monitoring clicks, or accessing elements of a page URL.
+  Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing properties of the gtm data layer, monitoring clicks, or accessing elements of a page URL.
 
   ## Attributes
 
