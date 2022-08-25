@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudTasks.V2 do
   API client metadata for GoogleApi.CloudTasks.V2.
   """
 
-  @discovery_revision "20220804"
+  @discovery_revision "20220825"
 
   def discovery_revision(), do: @discovery_revision
 end
