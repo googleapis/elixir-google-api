@@ -21,21 +21,27 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VlanAttachment do
 
   ## Attributes
 
+  *   `pairingKey` (*type:* `String.t`, *default:* `nil`) - Input only. Pairing key.
   *   `peerIp` (*type:* `String.t`, *default:* `nil`) - The peer IP of the attachment.
   *   `peerVlanId` (*type:* `String.t`, *default:* `nil`) - The peer vlan ID of the attachment.
+  *   `qosPolicy` (*type:* `GoogleApi.BareMetalSolution.V2.Model.QosPolicy.t`, *default:* `nil`) - The QOS policy applied to this VLAN attachment. This value should be preferred to using qos at vrf level.
   *   `routerIp` (*type:* `String.t`, *default:* `nil`) - The router IP of the attachment.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :pairingKey => String.t() | nil,
           :peerIp => String.t() | nil,
           :peerVlanId => String.t() | nil,
+          :qosPolicy => GoogleApi.BareMetalSolution.V2.Model.QosPolicy.t() | nil,
           :routerIp => String.t() | nil
         }
 
+  field(:pairingKey)
   field(:peerIp)
   field(:peerVlanId)
+  field(:qosPolicy, as: GoogleApi.BareMetalSolution.V2.Model.QosPolicy)
   field(:routerIp)
 end
 
