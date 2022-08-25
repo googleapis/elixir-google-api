@@ -28,7 +28,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.AllowedClient do
   *   `network` (*type:* `String.t`, *default:* `nil`) - The network the access point sits on.
   *   `nfsPath` (*type:* `String.t`, *default:* `nil`) - Output only. The path to access NFS, in format shareIP:/InstanceID InstanceID is the generated ID instead of customer provided name. example like "10.0.0.0:/g123456789-nfs001"
   *   `noRootSquash` (*type:* `boolean()`, *default:* `nil`) - Disable root squashing, which is a feature of NFS. Root squash is a special mapping of the remote superuser (root) identity when using identity authentication.
-  *   `shareIp` (*type:* `String.t`, *default:* `nil`) - The IP address of the share on this network.
+  *   `shareIp` (*type:* `String.t`, *default:* `nil`) - Output only. The IP address of the share on this network. Assigned automatically during provisioning based on the network's services_cidr.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VRF do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the VRF.
-  *   `qosPolicy` (*type:* `GoogleApi.BareMetalSolution.V2.Model.QosPolicy.t`, *default:* `nil`) - The QOS policy applied to this VRF.
+  *   `qosPolicy` (*type:* `GoogleApi.BareMetalSolution.V2.Model.QosPolicy.t`, *default:* `nil`) - The QOS policy applied to this VRF. The value is only meaningful when all the vlan attachments have the same QoS. This field should not be used for new integrations, use vlan attachment level qos instead. The field is left for backward-compatibility.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The possible state of VRF.
   *   `vlanAttachments` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.VlanAttachment.t)`, *default:* `nil`) - The list of VLAN attachments for the VRF.
   """
