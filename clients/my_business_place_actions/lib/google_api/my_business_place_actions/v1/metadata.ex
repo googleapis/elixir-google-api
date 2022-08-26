@@ -20,7 +20,7 @@ defmodule GoogleApi.MyBusinessPlaceActions.V1 do
   API client metadata for GoogleApi.MyBusinessPlaceActions.V1.
   """
 
-  @discovery_revision "20220813"
+  @discovery_revision "20220824"
 
   def discovery_revision(), do: @discovery_revision
 end
