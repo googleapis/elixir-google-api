@@ -2729,6 +2729,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by uptime checks to be included in the response.For more details, see Filtering syntax (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is <=0, the server will decide the number of results to be returned.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2766,6 +2767,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
