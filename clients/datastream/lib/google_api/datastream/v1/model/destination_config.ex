@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.DestinationConfig do
 
   ## Attributes
 
+  *   `bigqueryDestinationConfig` (*type:* `GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig.t`, *default:* `nil`) - BigQuery destination configuration.
   *   `destinationConnectionProfile` (*type:* `String.t`, *default:* `nil`) - Required. Destination connection profile resource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
   *   `gcsDestinationConfig` (*type:* `GoogleApi.Datastream.V1.Model.GcsDestinationConfig.t`, *default:* `nil`) - A configuration for how data should be loaded to Cloud Storage.
   """
@@ -28,10 +29,13 @@ defmodule GoogleApi.Datastream.V1.Model.DestinationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bigqueryDestinationConfig =>
+            GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig.t() | nil,
           :destinationConnectionProfile => String.t() | nil,
           :gcsDestinationConfig => GoogleApi.Datastream.V1.Model.GcsDestinationConfig.t() | nil
         }
 
+  field(:bigqueryDestinationConfig, as: GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig)
   field(:destinationConnectionProfile)
   field(:gcsDestinationConfig, as: GoogleApi.Datastream.V1.Model.GcsDestinationConfig)
 end
