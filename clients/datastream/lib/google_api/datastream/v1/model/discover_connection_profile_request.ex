@@ -27,6 +27,7 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
   *   `hierarchyDepth` (*type:* `integer()`, *default:* `nil`) - The number of hierarchy levels below the current level to be retrieved.
   *   `mysqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL RDBMS to enrich with child data objects and metadata.
   *   `oracleRdbms` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle RDBMS to enrich with child data objects and metadata.
+  *   `postgresqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL RDBMS to enrich with child data objects and metadata.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
           :fullHierarchy => boolean() | nil,
           :hierarchyDepth => integer() | nil,
           :mysqlRdbms => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
-          :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil
+          :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
+          :postgresqlRdbms => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil
         }
 
   field(:connectionProfile, as: GoogleApi.Datastream.V1.Model.ConnectionProfile)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
   field(:hierarchyDepth)
   field(:mysqlRdbms, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleRdbms, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
+  field(:postgresqlRdbms, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do

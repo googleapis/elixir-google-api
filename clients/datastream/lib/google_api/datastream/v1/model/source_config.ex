@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
 
   *   `mysqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSourceConfig.t`, *default:* `nil`) - MySQL data source configuration.
   *   `oracleSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSourceConfig.t`, *default:* `nil`) - Oracle data source configuration.
+  *   `postgresqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig.t`, *default:* `nil`) - PostgreSQL data source configuration.
   *   `sourceConnectionProfile` (*type:* `String.t`, *default:* `nil`) - Required. Source connection profile resoource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
   """
 
@@ -31,11 +32,14 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
   @type t :: %__MODULE__{
           :mysqlSourceConfig => GoogleApi.Datastream.V1.Model.MysqlSourceConfig.t() | nil,
           :oracleSourceConfig => GoogleApi.Datastream.V1.Model.OracleSourceConfig.t() | nil,
+          :postgresqlSourceConfig =>
+            GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig.t() | nil,
           :sourceConnectionProfile => String.t() | nil
         }
 
   field(:mysqlSourceConfig, as: GoogleApi.Datastream.V1.Model.MysqlSourceConfig)
   field(:oracleSourceConfig, as: GoogleApi.Datastream.V1.Model.OracleSourceConfig)
+  field(:postgresqlSourceConfig, as: GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig)
   field(:sourceConnectionProfile)
 end
 

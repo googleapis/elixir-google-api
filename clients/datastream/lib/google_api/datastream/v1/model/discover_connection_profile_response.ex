@@ -23,17 +23,20 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileResponse do
 
   *   `mysqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - Enriched MySQL RDBMS object.
   *   `oracleRdbms` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Enriched Oracle RDBMS object.
+  *   `postgresqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - Enriched PostgreSQL RDBMS object.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :mysqlRdbms => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
-          :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil
+          :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
+          :postgresqlRdbms => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil
         }
 
   field(:mysqlRdbms, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleRdbms, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
+  field(:postgresqlRdbms, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileResponse do

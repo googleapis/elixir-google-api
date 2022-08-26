@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
 
   ## Attributes
 
+  *   `bigqueryProfile` (*type:* `GoogleApi.Datastream.V1.Model.BigQueryProfile.t`, *default:* `nil`) - BigQuery Connection Profile configuration.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create time of the resource.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name.
   *   `forwardSshConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.ForwardSshTunnelConnectivity.t`, *default:* `nil`) - Forward SSH tunnel connectivity.
@@ -29,6 +30,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   *   `mysqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.MysqlProfile.t`, *default:* `nil`) - MySQL ConnectionProfile configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource's name.
   *   `oracleProfile` (*type:* `GoogleApi.Datastream.V1.Model.OracleProfile.t`, *default:* `nil`) - Oracle ConnectionProfile configuration.
+  *   `postgresqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlProfile.t`, *default:* `nil`) - PostgreSQL Connection Profile configuration.
   *   `privateConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.PrivateConnectivity.t`, *default:* `nil`) - Private connectivity.
   *   `staticServiceIpConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.StaticServiceIpConnectivity.t`, *default:* `nil`) - Static Service IP connectivity.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time of the resource.
@@ -37,6 +39,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bigqueryProfile => GoogleApi.Datastream.V1.Model.BigQueryProfile.t() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :forwardSshConnectivity =>
@@ -46,12 +49,14 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
           :mysqlProfile => GoogleApi.Datastream.V1.Model.MysqlProfile.t() | nil,
           :name => String.t() | nil,
           :oracleProfile => GoogleApi.Datastream.V1.Model.OracleProfile.t() | nil,
+          :postgresqlProfile => GoogleApi.Datastream.V1.Model.PostgresqlProfile.t() | nil,
           :privateConnectivity => GoogleApi.Datastream.V1.Model.PrivateConnectivity.t() | nil,
           :staticServiceIpConnectivity =>
             GoogleApi.Datastream.V1.Model.StaticServiceIpConnectivity.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:bigqueryProfile, as: GoogleApi.Datastream.V1.Model.BigQueryProfile)
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:forwardSshConnectivity, as: GoogleApi.Datastream.V1.Model.ForwardSshTunnelConnectivity)
@@ -60,6 +65,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   field(:mysqlProfile, as: GoogleApi.Datastream.V1.Model.MysqlProfile)
   field(:name)
   field(:oracleProfile, as: GoogleApi.Datastream.V1.Model.OracleProfile)
+  field(:postgresqlProfile, as: GoogleApi.Datastream.V1.Model.PostgresqlProfile)
   field(:privateConnectivity, as: GoogleApi.Datastream.V1.Model.PrivateConnectivity)
 
   field(:staticServiceIpConnectivity,
