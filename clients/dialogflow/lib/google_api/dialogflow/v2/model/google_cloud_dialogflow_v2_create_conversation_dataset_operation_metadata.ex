@@ -21,11 +21,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2CreateConversatio
 
   ## Attributes
 
+  *   `conversationDataset` (*type:* `String.t`, *default:* `nil`) - The resource name of the conversation dataset that will be created. Format: `projects//locations//conversationDatasets/`
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :conversationDataset => String.t() | nil
+        }
+
+  field(:conversationDataset)
 end
 
 defimpl Poison.Decoder,
