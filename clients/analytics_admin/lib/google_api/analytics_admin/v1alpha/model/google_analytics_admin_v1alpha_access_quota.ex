@@ -24,7 +24,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcce
   *   `concurrentRequests` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties can use up to 50 concurrent requests.
   *   `serverErrorsPerProjectPerHour` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties and cloud project pairs can have up to 50 server errors per hour.
   *   `tokensPerDay` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties can use 250,000 tokens per day. Most requests consume fewer than 10 tokens.
-  *   `tokensPerHour` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from both the hourly and daily quotas.
+  *   `tokensPerHour` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.
+  *   `tokensPerProjectPerHour` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t`, *default:* `nil`) - Properties can use up to 25% of their tokens per project per hour. This amounts to Analytics 360 Properties can use 12,500 tokens per project per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,6 +41,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcce
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t()
             | nil,
           :tokensPerHour =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t()
+            | nil,
+          :tokensPerProjectPerHour =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus.t()
             | nil
         }
@@ -57,6 +61,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcce
   )
 
   field(:tokensPerHour,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus
+  )
+
+  field(:tokensPerProjectPerHour,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessQuotaStatus
   )
 end
