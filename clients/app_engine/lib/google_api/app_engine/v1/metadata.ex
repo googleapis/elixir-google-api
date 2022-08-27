@@ -20,7 +20,7 @@ defmodule GoogleApi.AppEngine.V1 do
   API client metadata for GoogleApi.AppEngine.V1.
   """
 
-  @discovery_revision "20220813"
+  @discovery_revision "20220818"
 
   def discovery_revision(), do: @discovery_revision
 end
