@@ -24,7 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Indicator do
   *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - List of domains associated to the Finding.
   *   `ipAddresses` (*type:* `list(String.t)`, *default:* `nil`) - List of ip addresses associated to the Finding.
   *   `signatures` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ProcessSignature.t)`, *default:* `nil`) - The list of matched signatures indicating that the given process is present in the environment.
-  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The list of URIs associated to the Findings
+  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The list of URIs associated to the Findings.
   """
 
   use GoogleApi.Gax.ModelBase
