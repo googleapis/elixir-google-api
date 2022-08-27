@@ -21,6 +21,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
 
   ## Attributes
 
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - The ID associated with the request. This is a unique ID specific only to the given request.
   *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
   *   `totalBilledTime` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :requestId => String.t() | nil,
           :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
           :totalBilledTime => String.t() | nil
         }
 
+  field(:requestId)
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
   field(:totalBilledTime)
 end
