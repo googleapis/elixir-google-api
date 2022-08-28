@@ -21,6 +21,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
 
   ## Attributes
 
+  *   `alloydb` (*type:* `GoogleApi.DataMigration.V1.Model.AlloyDbConnectionProfile.t`, *default:* `nil`) - An AlloyDB cluster connection profile.
   *   `cloudsql` (*type:* `GoogleApi.DataMigration.V1.Model.CloudSqlConnectionProfile.t`, *default:* `nil`) - A CloudSQL database connection profile.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The connection profile display name.
@@ -37,6 +38,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alloydb => GoogleApi.DataMigration.V1.Model.AlloyDbConnectionProfile.t() | nil,
           :cloudsql => GoogleApi.DataMigration.V1.Model.CloudSqlConnectionProfile.t() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:alloydb, as: GoogleApi.DataMigration.V1.Model.AlloyDbConnectionProfile)
   field(:cloudsql, as: GoogleApi.DataMigration.V1.Model.CloudSqlConnectionProfile)
   field(:createTime, as: DateTime)
   field(:displayName)
