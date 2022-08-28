@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
 
   *   `cloudSqlId` (*type:* `String.t`, *default:* `nil`) - If the source is a Cloud SQL database, use this field to provide the Cloud SQL instance ID of the source.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The IP or hostname of the source PostgreSQL database.
+  *   `networkArchitecture` (*type:* `String.t`, *default:* `nil`) - Output only. If the source is a Cloud SQL database, this field indicates the network architecture it's associated with.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password for the user that Database Migration Service will be using to connect to the database. This field is not returned on request, and the value is encrypted when stored in Database Migration Service.
   *   `passwordSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates If this connection profile password is stored.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The network port of the source PostgreSQL database.
@@ -35,6 +36,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
   @type t :: %__MODULE__{
           :cloudSqlId => String.t() | nil,
           :host => String.t() | nil,
+          :networkArchitecture => String.t() | nil,
           :password => String.t() | nil,
           :passwordSet => boolean() | nil,
           :port => integer() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
 
   field(:cloudSqlId)
   field(:host)
+  field(:networkArchitecture)
   field(:password)
   field(:passwordSet)
   field(:port)
