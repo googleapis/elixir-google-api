@@ -21,15 +21,18 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict do
 
   ## Attributes
 
+  *   `risk` (*type:* `String.t`, *default:* `nil`) - Required. Indicates the account risk level of the current user session.
   *   `riskLevel` (*type:* `String.t`, *default:* `nil`) - Required. Indicates the account risk level of the current user session.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :risk => String.t() | nil,
           :riskLevel => String.t() | nil
         }
 
+  field(:risk)
   field(:riskLevel)
 end
 
