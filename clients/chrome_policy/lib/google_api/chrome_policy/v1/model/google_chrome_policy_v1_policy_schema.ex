@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
   @moduledoc """
-  Resource representing a policy schema. Next ID: 13
+  Resource representing a policy schema. Next ID: 14
 
   ## Attributes
 
   *   `accessRestrictions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Specific access restrictions related to this policy.
   *   `additionalTargetKeyNames` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1AdditionalTargetKeyName.t)`, *default:* `nil`) - Output only. Additional key names that will be used to identify the target of the policy value. When specifying a `policyTargetKey`, each of the additional keys specified here will have to be included in the `additionalTargetKeys` map.
+  *   `categoryTitle` (*type:* `String.t`, *default:* `nil`) - Output only. Title of the category in which a setting belongs.
   *   `definition` (*type:* `GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto.t`, *default:* `nil`) - Schema definition using proto descriptor.
   *   `fieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Detailed description of each field that is part of the schema.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Format: name=customers/{customer}/policySchemas/{schema_namespace}
@@ -42,6 +43,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
           :additionalTargetKeyNames =>
             list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1AdditionalTargetKeyName.t())
             | nil,
+          :categoryTitle => String.t() | nil,
           :definition => GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto.t() | nil,
           :fieldDescriptions =>
             list(
@@ -73,6 +75,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema do
     type: :list
   )
 
+  field(:categoryTitle)
   field(:definition, as: GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto)
 
   field(:fieldDescriptions,
