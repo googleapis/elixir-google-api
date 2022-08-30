@@ -25,7 +25,8 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota do
   *   `potentiallyThresholdedRequestsPerHour` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Analytics Properties can send up to 120 requests with potentially thresholded dimensions per hour. In a batch request, each report request is individually counted for this quota if the request contains potentially thresholded dimensions.
   *   `serverErrorsPerProjectPerHour` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Standard Analytics Properties and cloud project pairs can have up to 10 server errors per hour; Analytics 360 Properties and cloud project pairs can have up to 50 server errors per hour.
   *   `tokensPerDay` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Standard Analytics Properties can use up to 25,000 tokens per day; Analytics 360 Properties can use 250,000 tokens per day. Most requests consume fewer than 10 tokens.
-  *   `tokensPerHour` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from both the hourly and daily quotas.
+  *   `tokensPerHour` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.
+  *   `tokensPerProjectPerHour` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t`, *default:* `nil`) - Analytics Properties can use up to 25% of their tokens per project per hour. This amounts to standard Analytics Properties can use up to 1,250 tokens per project per hour, and Analytics 360 Properties can use 12,500 tokens per project per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota do
           :serverErrorsPerProjectPerHour =>
             GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t() | nil,
           :tokensPerDay => GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t() | nil,
-          :tokensPerHour => GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t() | nil
+          :tokensPerHour => GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t() | nil,
+          :tokensPerProjectPerHour => GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus.t() | nil
         }
 
   field(:concurrentRequests, as: GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus)
@@ -49,6 +51,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota do
   field(:serverErrorsPerProjectPerHour, as: GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus)
   field(:tokensPerDay, as: GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus)
   field(:tokensPerHour, as: GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus)
+  field(:tokensPerProjectPerHour, as: GoogleApi.AnalyticsData.V1beta.Model.QuotaStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota do
