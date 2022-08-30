@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V1.Model.EnvVarSource do
 
   ## Attributes
 
-  *   `configMapKeyRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapKeySelector.t`, *default:* `nil`) - Not supported by Cloud Run. Selects a key of a ConfigMap.
+  *   `configMapKeyRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapKeySelector.t`, *default:* `nil`) - Not supported by Cloud Run. Not supported in Cloud Run.
   *   `secretKeyRef` (*type:* `GoogleApi.Run.V1.Model.SecretKeySelector.t`, *default:* `nil`) - Selects a key (version) of a secret in Secret Manager.
   """
 
