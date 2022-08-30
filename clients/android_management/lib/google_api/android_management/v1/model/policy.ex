@@ -71,7 +71,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the keyguard is disabled.
   *   `autoDateAndTimeZone` (*type:* `String.t`, *default:* `nil`) - Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
   *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled. Also mutes the device.
-  *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled.
+  *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled. This is supported only on company-owned devices.
   *   `bluetoothContactSharingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth contact sharing is disabled.
   *   `factoryResetDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether factory resetting from settings is disabled.
   *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
