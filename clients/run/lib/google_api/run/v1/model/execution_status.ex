@@ -23,7 +23,7 @@ defmodule GoogleApi.Run.V1.Model.ExecutionStatus do
 
   *   `cancelledCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Cancelled.
   *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Represents the time that the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional
-  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. The latest available observations of an execution's current state.
+  *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Optional. Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. Execution-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `Started`: `True` when the execution has started to execute. * `Completed`: `True` when the execution has succeeded. `False` when the execution has failed.
   *   `failedCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of tasks which reached phase Failed.
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI where logs for this execution can be found in Cloud Console.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Optional. The 'generation' of the execution that was last processed by the controller.

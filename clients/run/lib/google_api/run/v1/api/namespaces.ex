@@ -672,7 +672,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Optional. Cloud Run currently ignores this parameter.
       *   `:kind` (*type:* `String.t`) - Optional. Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see http://kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2172,7 +2172,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:continue` (*type:* `String.t`) - Optional. Optional encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Optional. Not supported by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Optional. Not supported by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn. For example, to list all tasks of execution "foo" in succeeded state: `run.googleapis.com/execution=foo,run.googleapis.com/runningState=Succeeded`. Supported states are: * `Pending`: Initial state of all tasks. The task has not yet started but eventually will. * `Running`: Container instances for this task are running or will be running shortly. * `Succeeded`: No more container instances to run for the task, and the last attempt succeeded. * `Failed`: No more container instances to run for the task, and the last attempt failed. This task has run out of retry attempts. * `Cancelled`: Task was running but got stopped because its parent execution has been aborted. * `Abandoned`: The task has not yet started and never will because its parent execution has been aborted.
       *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - Optional. Not supported by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Optional. Not supported by Cloud Run.
