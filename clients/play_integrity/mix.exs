@@ -18,7 +18,7 @@
 defmodule GoogleApi.PlayIntegrity.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project() do
     [
