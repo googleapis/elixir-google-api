@@ -33,6 +33,7 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
   *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Optional. Job is a SparkR job.
   *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Optional. Job is a SparkSql job.
   *   `stepId` (*type:* `String.t`, *default:* `nil`) - Required. The step id. The id must be unique among all jobs within the template.The step id is used as prefix for job id, as job goog-dataproc-workflow-step-id label, and in prerequisiteStepIds field from other steps.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters.
+  *   `trinoJob` (*type:* `GoogleApi.Dataproc.V1.Model.TrinoJob.t`, *default:* `nil`) - Optional. Job is a Trino job.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
           :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t() | nil,
           :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t() | nil,
           :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t() | nil,
-          :stepId => String.t() | nil
+          :stepId => String.t() | nil,
+          :trinoJob => GoogleApi.Dataproc.V1.Model.TrinoJob.t() | nil
         }
 
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)
@@ -64,6 +66,7 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
   field(:sparkRJob, as: GoogleApi.Dataproc.V1.Model.SparkRJob)
   field(:sparkSqlJob, as: GoogleApi.Dataproc.V1.Model.SparkSqlJob)
   field(:stepId)
+  field(:trinoJob, as: GoogleApi.Dataproc.V1.Model.TrinoJob)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.OrderedJob do
