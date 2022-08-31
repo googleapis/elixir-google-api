@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfilePubSubCondition do
   @moduledoc """
-  A condition for determining whether a PubSub should be triggered.
+  A condition for determining whether a Pub/Sub should be triggered.
 
   ## Attributes
 

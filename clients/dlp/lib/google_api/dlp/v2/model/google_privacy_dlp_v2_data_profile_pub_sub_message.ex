@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfilePubSubMessage do
   @moduledoc """
-  Pub/Sub topic message for a DataProfileAction.PubSubNotification event. To receive a message of protocol buffer schema type, convert the message data to an object of this proto class. https://cloud.google.com/pubsub/docs/samples/pubsub-subscribe-proto-messages
+  Pub/Sub topic message for a DataProfileAction.PubSubNotification event. To receive a message of protocol buffer schema type, convert the message data to an object of this proto class.
 
   ## Attributes
 
