@@ -58,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `failoverPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t`, *default:* `nil`) - Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
   *   `connectionTrackingPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceConnectionTrackingPolicy.t`, *default:* `nil`) - Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for Network Load Balancing and Internal TCP/UDP Load Balancing.
   *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - 
+  *   `compressionMode` (*type:* `String.t`, *default:* `nil`) - Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
   *   `serviceBindings` (*type:* `list(String.t)`, *default:* `nil`) - URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
   """
 
@@ -105,6 +106,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :connectionTrackingPolicy =>
             GoogleApi.Compute.V1.Model.BackendServiceConnectionTrackingPolicy.t() | nil,
           :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t() | nil,
+          :compressionMode => String.t() | nil,
           :serviceBindings => list(String.t()) | nil
         }
 
@@ -154,6 +156,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   )
 
   field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
+  field(:compressionMode)
   field(:serviceBindings, type: :list)
 end
 

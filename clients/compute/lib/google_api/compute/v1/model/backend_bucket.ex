@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
 
   *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket name.
   *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendBucket.
+  *   `compressionMode` (*type:* `String.t`, *default:* `nil`) - Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied responses.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional textual description of the resource; provided by the client when the resource is created.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   @type t :: %__MODULE__{
           :bucketName => String.t() | nil,
           :cdnPolicy => GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy.t() | nil,
+          :compressionMode => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :customResponseHeaders => list(String.t()) | nil,
           :description => String.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
 
   field(:bucketName)
   field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy)
+  field(:compressionMode)
   field(:creationTimestamp)
   field(:customResponseHeaders, type: :list)
   field(:description)
