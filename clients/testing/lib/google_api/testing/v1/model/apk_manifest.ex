@@ -28,6 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g. "com.example.foo".
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
   *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - Permissions declared to be used by the application
+  *   `versionCode` (*type:* `String.t`, *default:* `nil`) - Version number used internally by the app.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - Version number shown to users.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +41,9 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
           :minSdkVersion => integer() | nil,
           :packageName => String.t() | nil,
           :targetSdkVersion => integer() | nil,
-          :usesPermission => list(String.t()) | nil
+          :usesPermission => list(String.t()) | nil,
+          :versionCode => String.t() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:applicationLabel)
@@ -49,6 +53,8 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   field(:packageName)
   field(:targetSdkVersion)
   field(:usesPermission, type: :list)
+  field(:versionCode)
+  field(:versionName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.ApkManifest do
