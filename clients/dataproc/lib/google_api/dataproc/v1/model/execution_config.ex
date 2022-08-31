@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ExecutionConfig do
 
   ## Attributes
 
-  *   `idleTtl` (*type:* `String.t`, *default:* `nil`) - Optional. The duration to keep the underlying cluster alive while idling Passing this threshold will cause the cluster to be terminated. Minimum value is 30 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).
+  *   `idleTtl` (*type:* `String.t`, *default:* `nil`) - Optional. The duration to keep the session alive while it's idling. Passing this threshold will cause the session to be terminated. Minimum value is 30 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud KMS key to use for encryption.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Tags used for network traffic control.
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - Optional. Network URI to connect workload to.

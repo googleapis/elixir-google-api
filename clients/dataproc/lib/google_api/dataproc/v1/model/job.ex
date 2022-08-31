@@ -39,6 +39,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Optional. Job is a SparkSql job.
   *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the type_job and yarn_applications fields.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.JobStatus.t)`, *default:* `nil`) - Output only. The previous job status.
+  *   `trinoJob` (*type:* `GoogleApi.Dataproc.V1.Model.TrinoJob.t`, *default:* `nil`) - Optional. Job is a Trino job.
   *   `yarnApplications` (*type:* `list(GoogleApi.Dataproc.V1.Model.YarnApplication.t)`, *default:* `nil`) - Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
   """
 
@@ -63,6 +64,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
           :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t() | nil,
           :status => GoogleApi.Dataproc.V1.Model.JobStatus.t() | nil,
           :statusHistory => list(GoogleApi.Dataproc.V1.Model.JobStatus.t()) | nil,
+          :trinoJob => GoogleApi.Dataproc.V1.Model.TrinoJob.t() | nil,
           :yarnApplications => list(GoogleApi.Dataproc.V1.Model.YarnApplication.t()) | nil
         }
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   field(:sparkSqlJob, as: GoogleApi.Dataproc.V1.Model.SparkSqlJob)
   field(:status, as: GoogleApi.Dataproc.V1.Model.JobStatus)
   field(:statusHistory, as: GoogleApi.Dataproc.V1.Model.JobStatus, type: :list)
+  field(:trinoJob, as: GoogleApi.Dataproc.V1.Model.TrinoJob)
   field(:yarnApplications, as: GoogleApi.Dataproc.V1.Model.YarnApplication, type: :list)
 end
 
