@@ -21,8 +21,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ServiceAccountDelegationInfo do
 
   ## Attributes
 
-  *   `principalEmail` (*type:* `String.t`, *default:* `nil`) - The email address of a Google account. .
-  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - A string representing the principal_subject associated with the identity. As compared to `principal_email`, supports principals that aren't associated with email addresses, such as third party principals. For most identities, the format will be `principal://iam.googleapis.com/{identity pool name}/subject/{subject)` except for some GKE identities (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy format `serviceAccount:{identity pool name}[{subject}]`
+  *   `principalEmail` (*type:* `String.t`, *default:* `nil`) - The email address of a Google account.
+  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - A string representing the principal_subject associated with the identity. As compared to `principal_email`, supports principals that aren't associated with email addresses, such as third party principals. For most identities, the format will be `principal://iam.googleapis.com/{identity pool name}/subjects/{subject}` except for some GKE identities (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy format `serviceAccount:{identity pool name}[{subject}]`
   """
 
   use GoogleApi.Gax.ModelBase
