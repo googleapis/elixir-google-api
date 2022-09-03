@@ -1425,7 +1425,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The resource's parent. In Cloud Run, it may be one of the following: * `namespaces/{project_id_or_number}` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1503,7 +1503,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1589,7 +1589,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1750,7 +1750,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `namespaces/{project_id_or_number}` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1764,11 +1764,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Not supported, and ignored by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not supported, and ignored by Cloud Run.
       *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - Optional. The maximum number of records that should be returned.
+      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
       *   `:resourceVersion` (*type:* `String.t`) - Not supported, and ignored by Cloud Run.
       *   `:watch` (*type:* `boolean()`) - Not supported, and ignored by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1838,7 +1838,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
