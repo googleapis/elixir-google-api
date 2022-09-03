@@ -369,7 +369,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Projects to return in the response. The server may return fewer than this at its discretion. If no value is specified (or too large a value is specified), the server will impose its own limit. This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListFirebaseProjects` indicating where in the set of Projects to resume listing.
-      *   `:showDeleted` (*type:* `boolean()`) - Optional. Controls whether Projects in the DELETING state should be returned. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Optional. Controls whether Projects in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Projects will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -433,7 +433,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update. If this list is empty, then no state will be updated. Note that the fields `name`, `projectId`, and `projectNumber` are all immutable.
+      *   `:updateMask` (*type:* `String.t`) - Specifies which fields of the FirebaseProject to update. Note that the following fields are immutable: `name`, `project_id`, and `project_number`. To update `state`, use any of the following Google Cloud endpoints: [`projects.delete`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/delete) or [`projects.undelete`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/undelete)
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -562,7 +562,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - A query string compatible with Google's [AIP-160](https://google.aip.dev/160) standard. Use any of the following fields in a query: * [`app_id`](../projects.apps#FirebaseAppInfo.FIELDS.app_id) * [`namespace`](../projects.apps#FirebaseAppInfo.FIELDS.namespace) * [`platform`](../projects.apps#FirebaseAppInfo.FIELDS.platform) We also support the following "virtual" fields (fields which are not actually part of the returned resource object, but can be queried as if they are pre-populated with specific values): * `sha1_hash` or `sha1_hashes`: This field is considered to be a repeated `string` field, populated with the list of all SHA-1 certificate fingerprints registered with the app. This list is empty if the app is not an Android app. * `sha256_hash` or `sha256_hashes`: This field is considered to be a repeated `string` field, populated with the list of all SHA-256 certificate fingerprints registered with the app. This list is empty if the app is not an Android app. * `app_store_id`: This field is considered to be a singular `string` field, populated with the Apple App Store ID registered with the app. This field is empty if the app is not an iOS app. * `team_id`: This field is considered to be a singular `string` field, populated with the Apple team ID registered with the app. This field is empty if the app is not an iOS app.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response. The server may return fewer than this value at its discretion. If no value is specified (or too large a value is specified), then the server will impose its own limit. This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `SearchFirebaseApps` indicating where in the set of Apps to resume listing.
-      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned. If not specified, only `ACTIVE` Apps will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -828,7 +828,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response. The server may return fewer than this at its discretion. If no value is specified (or too large a value is specified), then the server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAndroidApps` indicating where in the set of Apps to resume listing.
-      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -894,7 +894,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update. Note that the fields `name`, `app_id`, `project_id`, `package_name`, and `state` are all immutable.
+      *   `:updateMask` (*type:* `String.t`) - Specifies which fields of the AndroidApp to update. Note that the following fields are immutable: `name`, `app_id`, `project_id`, and `package_name`. To update `state`, use any of the following endpoints: RemoveAndroidApp or UndeleteAndroidApp.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.AndroidApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -940,7 +940,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Removes the specified AndroidApp from the project.
+  Removes the specified AndroidApp from the FirebaseProject.
 
   ## Parameters
 
@@ -1007,7 +1007,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Restores the specified AndroidApp to the project.
+  Restores the specified AndroidApp to the FirebaseProject.
 
   ## Parameters
 
@@ -1643,7 +1643,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response. The server may return fewer than this at its discretion. If no value is specified (or too large a value is specified), the server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListIosApps` indicating where in the set of Apps to resume listing.
-      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1707,7 +1707,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update. Note that the fields `name`, `appId`, `projectId`, `bundleId`, and `state` are all immutable
+      *   `:updateMask` (*type:* `String.t`) - Specifies which fields of the IosApp to update. Note that the following fields are immutable: `name`, `app_id`, `project_id`, and `bundle_id`. To update `state`, use any of the following endpoints: RemoveIosApp or UndeleteIosApp.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.IosApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1753,7 +1753,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Removes the specified IosApp from the project.
+  Removes the specified IosApp from the FirebaseProject.
 
   ## Parameters
 
@@ -1815,7 +1815,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Restores the specified IosApp to the project.
+  Restores the specified IosApp to the FirebaseProject.
 
   ## Parameters
 
@@ -2084,7 +2084,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response. The server may return fewer than this value at its discretion. If no value is specified (or too large a value is specified), then the server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListWebApps` indicating where in the set of Apps to resume listing.
-      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2148,7 +2148,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update. Note that the fields `name`, `appId`, `projectId` and `state` are all immutable
+      *   `:updateMask` (*type:* `String.t`) - Specifies which fields of the WebApp to update. Note that the following fields are immutable: `name`, `app_id`, and `project_id`. To update `state`, use any of the following endpoints: RemoveWebApp or UndeleteWebApp.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.WebApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2194,7 +2194,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Removes the specified WebApp from the project.
+  Removes the specified WebApp from the FirebaseProject.
 
   ## Parameters
 
@@ -2256,7 +2256,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Restores the specified WebApp to the project.
+  Restores the specified WebApp to the FirebaseProject.
 
   ## Parameters
 

@@ -23,7 +23,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveAndroidAppRequest do
 
   *   `allowMissing` (*type:* `boolean()`, *default:* `nil`) - If set to true, and the App is not found, the request will succeed but no action will be taken on the server.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Checksum provided in the AndroidApp entity, which if provided ensures the client has an up-to-date value before proceeding.
-  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, only validate the request and do not delete the app.
+  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, the request is only validated. The App will _not_ be removed.
   """
 
   use GoogleApi.Gax.ModelBase

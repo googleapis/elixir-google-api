@@ -28,7 +28,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services.
   *   `resources` (*type:* `GoogleApi.Firebase.V1beta1.Model.DefaultResources.t`, *default:* `nil`) - Output only. The default Firebase resources associated with the Project.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the Project. Updates to the state must be performed via com.google.cloudresourcemanager.v1.Projects.DeleteProject and com.google.cloudresourcemanager.v1.Projects.UndeleteProject
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the Project.
   """
 
   use GoogleApi.Gax.ModelBase
