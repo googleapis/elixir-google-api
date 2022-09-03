@@ -22,7 +22,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.UndeleteIosAppRequest do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Checksum provided in the IosApp entity, which if provided ensures the client has an up-to-date value before proceeding.
-  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, only validate the request and do not undelete the app.
+  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, the request is only validated. The App will _not_ be undeleted.
   """
 
   use GoogleApi.Gax.ModelBase
