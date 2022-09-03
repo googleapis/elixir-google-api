@@ -24,8 +24,8 @@ defmodule GoogleApi.NetworkServices.V1.Model.ServiceBinding do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the ServiceBinding resource.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the ServiceBinding resource. It matches pattern `projects/*/locations/global/serviceBindings/service_binding_name>`.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - Required. The full service directory service name of the format /projects/*/locations/*/namespaces/*/services/*
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the ServiceBinding resource. It matches pattern `projects/*/locations/global/serviceBindings/service_binding_name`.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Required. The full Service Directory Service name of the format projects/*/locations/*/namespaces/*/services/*
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
 
