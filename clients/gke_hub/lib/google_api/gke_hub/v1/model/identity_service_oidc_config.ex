@@ -25,6 +25,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig do
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - ID for OIDC client application.
   *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Input only. Unencrypted OIDC client secret will be passed to the GKE Hub CLH.
   *   `deployCloudConsoleProxy` (*type:* `boolean()`, *default:* `nil`) - Flag to denote if reverse proxy is used to connect to auth provider. This flag should be set to true when provider is not reachable by Google Cloud Console.
+  *   `enableAccessToken` (*type:* `boolean()`, *default:* `nil`) - Enable access token.
   *   `encryptedClientSecret` (*type:* `String.t`, *default:* `nil`) - Output only. Encrypted OIDC Client secret
   *   `extraParams` (*type:* `String.t`, *default:* `nil`) - Comma-separated list of key-value pairs.
   *   `groupPrefix` (*type:* `String.t`, *default:* `nil`) - Prefix to prepend to group name.
@@ -43,6 +44,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig do
           :clientId => String.t() | nil,
           :clientSecret => String.t() | nil,
           :deployCloudConsoleProxy => boolean() | nil,
+          :enableAccessToken => boolean() | nil,
           :encryptedClientSecret => String.t() | nil,
           :extraParams => String.t() | nil,
           :groupPrefix => String.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig do
   field(:clientId)
   field(:clientSecret)
   field(:deployCloudConsoleProxy)
+  field(:enableAccessToken)
   field(:encryptedClientSecret)
   field(:extraParams)
   field(:groupPrefix)

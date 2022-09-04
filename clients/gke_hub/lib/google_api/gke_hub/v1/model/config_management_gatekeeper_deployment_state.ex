@@ -23,17 +23,20 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementGatekeeperDeploymentState do
 
   *   `gatekeeperAudit` (*type:* `String.t`, *default:* `nil`) - Status of gatekeeper-audit deployment.
   *   `gatekeeperControllerManagerState` (*type:* `String.t`, *default:* `nil`) - Status of gatekeeper-controller-manager pod.
+  *   `gatekeeperMutation` (*type:* `String.t`, *default:* `nil`) - Status of the pod serving the mutation webhook.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :gatekeeperAudit => String.t() | nil,
-          :gatekeeperControllerManagerState => String.t() | nil
+          :gatekeeperControllerManagerState => String.t() | nil,
+          :gatekeeperMutation => String.t() | nil
         }
 
   field(:gatekeeperAudit)
   field(:gatekeeperControllerManagerState)
+  field(:gatekeeperMutation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.ConfigManagementGatekeeperDeploymentState do
