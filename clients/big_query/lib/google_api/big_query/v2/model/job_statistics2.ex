@@ -44,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t)`, *default:* `nil`) - [Output-only] Job resource usage breakdown by reservation.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Output-only] The schema of the results. Present only for successful dry run of non-legacy SQL queries.
   *   `searchStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SearchStatistics.t`, *default:* `nil`) - [Output-only] Search query specific statistics.
+  *   `sparkStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SparkStatistics.t`, *default:* `nil`) - [Output-only] Statistics of a Spark procedure job.
   *   `statementType` (*type:* `String.t`, *default:* `nil`) - The type of query statement, if valid. Possible values (new values might be added in the future): "SELECT": SELECT query. "INSERT": INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "UPDATE": UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "DELETE": DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "MERGE": MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "ALTER_TABLE": ALTER TABLE query. "ALTER_VIEW": ALTER VIEW query. "ASSERT": ASSERT condition AS 'description'. "CREATE_FUNCTION": CREATE FUNCTION query. "CREATE_MODEL": CREATE [OR REPLACE] MODEL ... AS SELECT ... . "CREATE_PROCEDURE": CREATE PROCEDURE query. "CREATE_TABLE": CREATE [OR REPLACE] TABLE without AS SELECT. "CREATE_TABLE_AS_SELECT": CREATE [OR REPLACE] TABLE ... AS SELECT ... . "CREATE_VIEW": CREATE [OR REPLACE] VIEW ... AS SELECT ... . "DROP_FUNCTION" : DROP FUNCTION query. "DROP_PROCEDURE": DROP PROCEDURE query. "DROP_TABLE": DROP TABLE query. "DROP_VIEW": DROP VIEW query.
   *   `timeline` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t)`, *default:* `nil`) - [Output-only] [Beta] Describes a timeline of job execution.
   *   `totalBytesBilled` (*type:* `String.t`, *default:* `nil`) - [Output-only] Total bytes billed for the job.
@@ -82,6 +83,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
             list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t()) | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :searchStatistics => GoogleApi.BigQuery.V2.Model.SearchStatistics.t() | nil,
+          :sparkStatistics => GoogleApi.BigQuery.V2.Model.SparkStatistics.t() | nil,
           :statementType => String.t() | nil,
           :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()) | nil,
           :totalBytesBilled => String.t() | nil,
@@ -120,6 +122,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
 
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:searchStatistics, as: GoogleApi.BigQuery.V2.Model.SearchStatistics)
+  field(:sparkStatistics, as: GoogleApi.BigQuery.V2.Model.SparkStatistics)
   field(:statementType)
   field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
   field(:totalBytesBilled)
