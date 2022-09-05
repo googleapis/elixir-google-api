@@ -21,7 +21,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.RollbackApiDeploymentRequest do
 
   ## Attributes
 
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Required. The revision ID to roll back to. It must be a revision of the same deployment. Example: c7cfa2a8
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Required. The revision ID to roll back to. It must be a revision of the same deployment. Example: `c7cfa2a8`
   """
 
   use GoogleApi.Gax.ModelBase

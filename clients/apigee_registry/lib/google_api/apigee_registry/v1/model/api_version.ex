@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiVersion do
   @moduledoc """
-  An ApiVersion describes a particular version of an API. ApiVersions are what consumers actually use.
+  Describes a particular version of an API. ApiVersions are what consumers actually use.
 
   ## Attributes
 
@@ -25,9 +25,9 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiVersion do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-meaningful name.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "apigeeregistry.googleapis.com/" and cannot be changed.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - A user-definable description of the lifecycle phase of this API version. Format: free-form, but we expect single words that describe API maturity, e.g. "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION", "DEPRECATED", "RETIRED".
+  *   `state` (*type:* `String.t`, *default:* `nil`) - A user-definable description of the lifecycle phase of this API version. Format: free-form, but we expect single words that describe API maturity, e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION", "DEPRECATED", "RETIRED".
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update timestamp.
   """
 

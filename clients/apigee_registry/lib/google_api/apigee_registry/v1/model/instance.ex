@@ -23,7 +23,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Instance do
 
   *   `config` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.Config.t`, *default:* `nil`) - Required. Config of the Instance.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Format: `projects/*/locations/*/instance`. Currently only locations/global is supported.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Format: `projects/*/locations/*/instance`. Currently only `locations/global` is supported.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the Instance.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Extra information of Instance.State if the state is `FAILED`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update timestamp.

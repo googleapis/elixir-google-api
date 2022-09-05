@@ -164,12 +164,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateApi creates a specified API.
+  Creates a specified API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of APIs. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of APIs. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -182,7 +182,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:apiId` (*type:* `String.t`) - Required. The ID to use for the api, which will become the final component of the api's resource name. This value should be 4-63 characters, and valid characters are /a-z-/. Following AIP-162, IDs must not have the form of a UUID.
+      *   `:apiId` (*type:* `String.t`) - Required. The ID to use for the API, which will become the final component of the API's resource name. This value should be 4-63 characters, and valid characters are /a-z-/. Following AIP-162, IDs must not have the form of a UUID.
       *   `:body` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.Api.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -238,12 +238,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApi removes a specified API and all of the resources that it owns.
+  Removes a specified API and all of the resources that it owns.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the API to delete. Format: projects/*/locations/*/apis/*
+  *   `name` (*type:* `String.t`) - Required. The name of the API to delete. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -310,12 +310,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetApi returns a specified API.
+  Returns a specified API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the API to retrieve. Format: projects/*/locations/*/apis/*
+  *   `name` (*type:* `String.t`) - Required. The name of the API to retrieve. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -452,12 +452,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApis returns matching APIs.
+  Returns matching APIs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of APIs. Format: projects/*/locations/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of APIs. Format: `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -471,6 +471,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of APIs to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListApis` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApis` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -509,6 +510,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -528,7 +530,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  UpdateApi can be used to modify a specified API.
+  Used to modify a specified API.
 
   ## Parameters
 
@@ -546,8 +548,8 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the api is not found, a new api will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If a "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
+      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the API is not found, a new API will be created. In this situation, `update_mask` is ignored.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If an asterisk "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
       *   `:body` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.Api.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -750,12 +752,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateArtifact creates a specified artifact.
+  Creates a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -824,12 +826,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteArtifact removes a specified artifact.
+  Removes a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -894,12 +896,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifact returns a specified artifact.
+  Returns a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -964,12 +966,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1106,12 +1108,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListArtifacts returns matching artifacts.
+  Returns matching artifacts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1125,6 +1127,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1163,6 +1166,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1184,7 +1188,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ReplaceArtifact can be used to replace a specified artifact.
+  Used to replace a specified artifact.
 
   ## Parameters
 
@@ -1402,12 +1406,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateApiDeployment creates a specified deployment.
+  Creates a specified deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of deployments. Format: projects/*/locations/*/apis/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of deployments. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1476,12 +1480,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApiDeployment removes a specified deployment, all revisions, and all child resources (e.g. artifacts).
+  Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the deployment to delete. Format: projects/*/locations/*/apis/*/deployments/*
+  *   `name` (*type:* `String.t`) - Required. The name of the deployment to delete. Format: `projects/*/locations/*/apis/*/deployments/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1548,12 +1552,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApiDeploymentRevision deletes a revision of a deployment.
+  Deletes a revision of a deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the deployment revision to be deleted, with a revision ID explicitly included. Example: projects/sample/locations/global/apis/petstore/deployments/prod@c7cfa2a8
+  *   `name` (*type:* `String.t`) - Required. The name of the deployment revision to be deleted, with a revision ID explicitly included. Example: `projects/sample/locations/global/apis/petstore/deployments/prod@c7cfa2a8`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1618,12 +1622,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetApiDeployment returns a specified deployment.
+  Returns a specified deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the deployment to retrieve. Format: projects/*/locations/*/apis/*/deployments/*
+  *   `name` (*type:* `String.t`) - Required. The name of the deployment to retrieve. Format: `projects/*/locations/*/apis/*/deployments/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1760,12 +1764,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApiDeployments returns matching deployments.
+  Returns matching deployments.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of deployments. Format: projects/*/locations/*/apis/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of deployments. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1779,6 +1783,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of deployments to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListApiDeployments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiDeployments` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1817,6 +1822,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1838,7 +1844,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApiDeploymentRevisions lists all revisions of a deployment. Revisions are returned in descending order of revision creation time.
+  Lists all revisions of a deployment. Revisions are returned in descending order of revision creation time.
 
   ## Parameters
 
@@ -1914,7 +1920,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  UpdateApiDeployment can be used to modify a specified deployment.
+  Used to modify a specified deployment.
 
   ## Parameters
 
@@ -1933,7 +1939,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the deployment is not found, a new deployment will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If a "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If an asterisk "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
       *   `:body` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.ApiDeployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1990,7 +1996,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  RollbackApiDeployment sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.
+  Sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.
 
   ## Parameters
 
@@ -2134,7 +2140,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  TagApiDeploymentRevision adds a tag to a specified revision of a deployment.
+  Adds a tag to a specified revision of a deployment.
 
   ## Parameters
 
@@ -2280,12 +2286,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateArtifact creates a specified artifact.
+  Creates a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2354,12 +2360,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteArtifact removes a specified artifact.
+  Removes a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2424,12 +2430,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifact returns a specified artifact.
+  Returns a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2494,12 +2500,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2564,12 +2570,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListArtifacts returns matching artifacts.
+  Returns matching artifacts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2583,6 +2589,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2621,6 +2628,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -2642,7 +2650,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ReplaceArtifact can be used to replace a specified artifact.
+  Used to replace a specified artifact.
 
   ## Parameters
 
@@ -2714,12 +2722,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateApiVersion creates a specified version.
+  Creates a specified version.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of versions. Format: projects/*/locations/*/apis/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of versions. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2788,12 +2796,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApiVersion removes a specified version and all of the resources that it owns.
+  Removes a specified version and all of the resources that it owns.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the version to delete. Format: projects/*/locations/*/apis/*/versions/*
+  *   `name` (*type:* `String.t`) - Required. The name of the version to delete. Format: `projects/*/locations/*/apis/*/versions/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2860,12 +2868,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetApiVersion returns a specified version.
+  Returns a specified version.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the version to retrieve. Format: projects/*/locations/*/apis/*/versions/*
+  *   `name` (*type:* `String.t`) - Required. The name of the version to retrieve. Format: `projects/*/locations/*/apis/*/versions/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3002,12 +3010,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApiVersions returns matching versions.
+  Returns matching versions.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of versions. Format: projects/*/locations/*/apis/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of versions. Format: `projects/*/locations/*/apis/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3021,6 +3029,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListApiVersions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiVersions` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3059,6 +3068,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -3080,7 +3090,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  UpdateApiVersion can be used to modify a specified version.
+  Used to modify a specified version.
 
   ## Parameters
 
@@ -3099,7 +3109,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the version is not found, a new version will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If a "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If an asterisk "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
       *   `:body` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.ApiVersion.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3302,12 +3312,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateArtifact creates a specified artifact.
+  Creates a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3376,12 +3386,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteArtifact removes a specified artifact.
+  Removes a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3446,12 +3456,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifact returns a specified artifact.
+  Returns a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3516,12 +3526,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3658,12 +3668,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListArtifacts returns matching artifacts.
+  Returns matching artifacts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3677,6 +3687,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3715,6 +3726,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -3736,7 +3748,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ReplaceArtifact can be used to replace a specified artifact.
+  Used to replace a specified artifact.
 
   ## Parameters
 
@@ -3954,12 +3966,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateApiSpec creates a specified spec.
+  Creates a specified spec.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of specs. Format: projects/*/locations/*/apis/*/versions/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of specs. Format: `projects/*/locations/*/apis/*/versions/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4028,12 +4040,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g. artifacts).
+  Removes a specified spec, all revisions, and all child resources (e.g., artifacts).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the spec to delete. Format: projects/*/locations/*/apis/*/versions/*/specs/*
+  *   `name` (*type:* `String.t`) - Required. The name of the spec to delete. Format: `projects/*/locations/*/apis/*/versions/*/specs/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4100,12 +4112,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteApiSpecRevision deletes a revision of a spec.
+  Deletes a revision of a spec.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the spec revision to be deleted, with a revision ID explicitly included. Example: projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml@c7cfa2a8
+  *   `name` (*type:* `String.t`) - Required. The name of the spec revision to be deleted, with a revision ID explicitly included. Example: `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml@c7cfa2a8`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4170,12 +4182,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetApiSpec returns a specified spec.
+  Returns a specified spec.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the spec to retrieve. Format: projects/*/locations/*/apis/*/versions/*/specs/*
+  *   `name` (*type:* `String.t`) - Required. The name of the spec to retrieve. Format: `projects/*/locations/*/apis/*/versions/*/specs/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4240,12 +4252,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetApiSpecContents returns the contents of a specified spec. If specs are stored with GZip compression, the default behavior is to return the spec uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified spec. If specs are stored with GZip compression, the default behavior is to return the spec uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the spec whose contents should be retrieved. Format: projects/*/locations/*/apis/*/versions/*/specs/*
+  *   `name` (*type:* `String.t`) - Required. The name of the spec whose contents should be retrieved. Format: `projects/*/locations/*/apis/*/versions/*/specs/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4382,12 +4394,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApiSpecs returns matching specs.
+  Returns matching specs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of specs. Format: projects/*/locations/*/apis/*/versions/*
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of specs. Format: `projects/*/locations/*/apis/*/versions/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4401,6 +4413,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of specs to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListApiSpecs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiSpecs` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4439,6 +4452,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -4460,7 +4474,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListApiSpecRevisions lists all revisions of a spec. Revisions are returned in descending order of revision creation time.
+  Lists all revisions of a spec. Revisions are returned in descending order of revision creation time.
 
   ## Parameters
 
@@ -4536,7 +4550,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  UpdateApiSpec can be used to modify a specified spec.
+  Used to modify a specified spec.
 
   ## Parameters
 
@@ -4555,7 +4569,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the spec is not found, a new spec will be created. In this situation, `update_mask` is ignored.
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If a "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If omitted, all fields are updated that are set in the request message (fields set to default values are ignored). If an asterisk "*" is specified, all fields are updated, including fields that are unspecified/default in the request.
       *   `:body` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.ApiSpec.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4612,7 +4626,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  RollbackApiSpec sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.
+  Sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.
 
   ## Parameters
 
@@ -4756,7 +4770,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  TagApiSpecRevision adds a tag to a specified revision of a spec.
+  Adds a tag to a specified revision of a spec.
 
   ## Parameters
 
@@ -4902,12 +4916,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateArtifact creates a specified artifact.
+  Creates a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4976,12 +4990,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteArtifact removes a specified artifact.
+  Removes a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5046,12 +5060,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifact returns a specified artifact.
+  Returns a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5116,12 +5130,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5258,12 +5272,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListArtifacts returns matching artifacts.
+  Returns matching artifacts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5277,6 +5291,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -5315,6 +5330,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -5336,7 +5352,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ReplaceArtifact can be used to replace a specified artifact.
+  Used to replace a specified artifact.
 
   ## Parameters
 
@@ -5554,12 +5570,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  CreateArtifact creates a specified artifact.
+  Creates a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5628,12 +5644,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  DeleteArtifact removes a specified artifact.
+  Removes a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to delete. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5698,12 +5714,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifact returns a specified artifact.
+  Returns a specified artifact.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5768,12 +5784,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
+  Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: {parent}/artifacts/*
+  *   `name` (*type:* `String.t`) - Required. The name of the artifact whose contents should be retrieved. Format: `{parent}/artifacts/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5910,12 +5926,12 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ListArtifacts returns matching artifacts.
+  Returns matching artifacts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ApigeeRegistry.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: {parent}
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of artifacts. Format: `{parent}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5929,6 +5945,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields, e.g. "foo,bar" Fields can be sorted in descending order using the "desc" identifier, e.g. "foo desc,bar"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -5967,6 +5984,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -5988,7 +6006,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Api.Projects do
   end
 
   @doc """
-  ReplaceArtifact can be used to replace a specified artifact.
+  Used to replace a specified artifact.
 
   ## Parameters
 

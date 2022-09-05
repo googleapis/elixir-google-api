@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiDeployment do
   @moduledoc """
-  An ApiDeployment describes a service running at particular address that provides a particular version of an API. ApiDeployments have revisions which correspond to different configurations of a single deployment in time. Revision identifiers should be updated whenever the served API spec or endpoint address changes.
+  Describes a service running at particular address that provides a particular version of an API. ApiDeployments have revisions which correspond to different configurations of a single deployment in time. Revision identifiers should be updated whenever the served API spec or endpoint address changes.
 
   ## Attributes
 
   *   `accessGuidance` (*type:* `String.t`, *default:* `nil`) - Text briefly describing how to access the endpoint. Changes to this value will not affect the revision.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations attach non-identifying metadata to resources. Annotation keys and values are less restricted than those of labels, but should be generally used for small values of broad interest. Larger, topic- specific metadata should be stored in Artifacts.
-  *   `apiSpecRevision` (*type:* `String.t`, *default:* `nil`) - The full resource name (including revision id) of the spec of the API being served by the deployment. Changes to this value will update the revision. Format: apis/{api}/deployments/{deployment}
+  *   `apiSpecRevision` (*type:* `String.t`, *default:* `nil`) - The full resource name (including revision ID) of the spec of the API being served by the deployment. Changes to this value will update the revision. Format: `apis/{api}/deployments/{deployment}`
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp; when the deployment resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-meaningful name.
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - The address where the deployment is serving. Changes to this value will update the revision.
-  *   `externalChannelUri` (*type:* `String.t`, *default:* `nil`) - The address of the external channel of the API (e.g. the Developer Portal). Changes to this value will not affect the revision.
+  *   `externalChannelUri` (*type:* `String.t`, *default:* `nil`) - The address of the external channel of the API (e.g., the Developer Portal). Changes to this value will not affect the revision.
   *   `intendedAudience` (*type:* `String.t`, *default:* `nil`) - Text briefly identifying the intended audience of the API. Changes to this value will not affect the revision.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "apigeeregistry.googleapis.com/" and cannot be changed.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Revision creation timestamp; when the represented revision was created.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The revision ID of the deployment. A new revision is committed whenever the deployment contents are changed. The format is an 8-character hexadecimal string.
