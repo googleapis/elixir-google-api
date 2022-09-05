@@ -22,7 +22,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AppIntegrity do
   ## Attributes
 
   *   `appRecognitionVerdict` (*type:* `String.t`, *default:* `nil`) - Required. Details about the app recognition verdict
-  *   `certificateSha256Digest` (*type:* `list(String.t)`, *default:* `nil`) - Hex fingerprint of the application signing certificate. e.g. “ABCE1F....” Set iff app_recognition_verdict != UNEVALUATED.
+  *   `certificateSha256Digest` (*type:* `list(String.t)`, *default:* `nil`) - The SHA256 hash of the requesting app's signing certificates (base64 web-safe encoded). Set iff app_recognition_verdict != UNEVALUATED.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the application under attestation. Set iff app_recognition_verdict != UNEVALUATED.
   *   `versionCode` (*type:* `String.t`, *default:* `nil`) - Version code of the application. Set iff app_recognition_verdict != UNEVALUATED.
   """
