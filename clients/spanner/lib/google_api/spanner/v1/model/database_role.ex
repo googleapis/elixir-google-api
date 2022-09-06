@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.DatabaseRole do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database role. Values are of the form `projects//instances//databases//databaseRoles/ `, where `` is as specified in the `CREATE ROLE` DDL statement.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database role. Values are of the form `projects//instances//databases//databaseRoles/` where `` is as specified in the `CREATE ROLE` DDL statement.
   """
 
   use GoogleApi.Gax.ModelBase
