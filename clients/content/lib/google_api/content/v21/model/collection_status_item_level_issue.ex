@@ -21,6 +21,7 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue do
 
   ## Attributes
 
+  *   `applicableCountries` (*type:* `list(String.t)`, *default:* `nil`) - Country codes (ISO 3166-1 alpha-2) where issue applies to the offer.
   *   `attributeName` (*type:* `String.t`, *default:* `nil`) - The attribute's name, if the issue is caused by a single attribute.
   *   `code` (*type:* `String.t`, *default:* `nil`) - The error code of the issue.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A short issue description in English.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :applicableCountries => list(String.t()) | nil,
           :attributeName => String.t() | nil,
           :code => String.t() | nil,
           :description => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue do
           :servability => String.t() | nil
         }
 
+  field(:applicableCountries, type: :list)
   field(:attributeName)
   field(:code)
   field(:description)

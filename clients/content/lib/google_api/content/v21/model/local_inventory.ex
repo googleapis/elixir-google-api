@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
   ## Attributes
 
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the product. For accepted attribute values, see the local product inventory feed specification.
+  *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. Can also be used to submit any attribute of the feed specification in its generic form, for example, `{ "name": "size type", "value": "regular" }`.
   *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - In-store product location.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#localInventory`"
   *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the local product inventory feed specification.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
 
   @type t :: %__MODULE__{
           :availability => String.t() | nil,
+          :customAttributes => list(GoogleApi.Content.V21.Model.CustomAttribute.t()) | nil,
           :instoreProductLocation => String.t() | nil,
           :kind => String.t() | nil,
           :pickupMethod => String.t() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
         }
 
   field(:availability)
+  field(:customAttributes, as: GoogleApi.Content.V21.Model.CustomAttribute, type: :list)
   field(:instoreProductLocation)
   field(:kind)
   field(:pickupMethod)

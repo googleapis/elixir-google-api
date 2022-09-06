@@ -21,18 +21,27 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatusDestinationStatus do
 
   ## Attributes
 
+  *   `approvedCountries` (*type:* `list(String.t)`, *default:* `nil`) - Country codes (ISO 3166-1 alpha-2) where the collection is approved.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
+  *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - Country codes (ISO 3166-1 alpha-2) where the collection is disapproved.
+  *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - Country codes (ISO 3166-1 alpha-2) where the collection is pending approval.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status for the specified destination in the collections target country.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :approvedCountries => list(String.t()) | nil,
           :destination => String.t() | nil,
+          :disapprovedCountries => list(String.t()) | nil,
+          :pendingCountries => list(String.t()) | nil,
           :status => String.t() | nil
         }
 
+  field(:approvedCountries, type: :list)
   field(:destination)
+  field(:disapprovedCountries, type: :list)
+  field(:pendingCountries, type: :list)
   field(:status)
 end
 
