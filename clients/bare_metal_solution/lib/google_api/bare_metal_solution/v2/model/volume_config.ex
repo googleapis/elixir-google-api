@@ -27,6 +27,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VolumeConfig do
   *   `machineIds` (*type:* `list(String.t)`, *default:* `nil`) - Machine ids connected to this volume. Set only when protocol is PROTOCOL_FC.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the volume config.
   *   `nfsExports` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.NfsExport.t)`, *default:* `nil`) - NFS exports. Set only when protocol is PROTOCOL_NFS.
+  *   `performanceTier` (*type:* `String.t`, *default:* `nil`) - Performance tier of the Volume. Default is SHARED.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - Volume protocol.
   *   `sizeGb` (*type:* `integer()`, *default:* `nil`) - The requested size of this volume, in GB.
   *   `snapshotsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether snapshots should be enabled.
@@ -43,6 +44,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VolumeConfig do
           :machineIds => list(String.t()) | nil,
           :name => String.t() | nil,
           :nfsExports => list(GoogleApi.BareMetalSolution.V2.Model.NfsExport.t()) | nil,
+          :performanceTier => String.t() | nil,
           :protocol => String.t() | nil,
           :sizeGb => integer() | nil,
           :snapshotsEnabled => boolean() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VolumeConfig do
   field(:machineIds, type: :list)
   field(:name)
   field(:nfsExports, as: GoogleApi.BareMetalSolution.V2.Model.NfsExport, type: :list)
+  field(:performanceTier)
   field(:protocol)
   field(:sizeGb)
   field(:snapshotsEnabled)

@@ -21,6 +21,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VlanAttachment do
 
   ## Attributes
 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Immutable. The identifier of the attachment within vrf.
   *   `pairingKey` (*type:* `String.t`, *default:* `nil`) - Input only. Pairing key.
   *   `peerIp` (*type:* `String.t`, *default:* `nil`) - The peer IP of the attachment.
   *   `peerVlanId` (*type:* `String.t`, *default:* `nil`) - The peer vlan ID of the attachment.
@@ -31,6 +32,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VlanAttachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :id => String.t() | nil,
           :pairingKey => String.t() | nil,
           :peerIp => String.t() | nil,
           :peerVlanId => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.VlanAttachment do
           :routerIp => String.t() | nil
         }
 
+  field(:id)
   field(:pairingKey)
   field(:peerIp)
   field(:peerVlanId)

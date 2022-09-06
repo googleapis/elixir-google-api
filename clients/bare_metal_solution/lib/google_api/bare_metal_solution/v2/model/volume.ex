@@ -29,7 +29,9 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs.
   *   `maxSizeGib` (*type:* `String.t`, *default:* `nil`) - Maximum size volume can be expanded to in case of evergency, in GiB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this `Volume`. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. Format: `projects/{project}/locations/{location}/volumes/{volume}`
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - Input only. User-specified notes for new Volume. Used to provision Volumes that require manual intervention.
   *   `originallyRequestedSizeGib` (*type:* `String.t`, *default:* `nil`) - Originally requested size, in GiB.
+  *   `performanceTier` (*type:* `String.t`, *default:* `nil`) - Immutable. Performance tier of the Volume. Default is SHARED.
   *   `pod` (*type:* `String.t`, *default:* `nil`) - Immutable. Pod name.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - Output only. Storage protocol for the Volume.
   *   `remainingSpaceGib` (*type:* `String.t`, *default:* `nil`) - The space remaining in the storage volume for new LUNs, in GiB, excluding space reserved for snapshots.
@@ -53,7 +55,9 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
           :labels => map() | nil,
           :maxSizeGib => String.t() | nil,
           :name => String.t() | nil,
+          :notes => String.t() | nil,
           :originallyRequestedSizeGib => String.t() | nil,
+          :performanceTier => String.t() | nil,
           :pod => String.t() | nil,
           :protocol => String.t() | nil,
           :remainingSpaceGib => String.t() | nil,
@@ -75,7 +79,9 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Volume do
   field(:labels, type: :map)
   field(:maxSizeGib)
   field(:name)
+  field(:notes)
   field(:originallyRequestedSizeGib)
+  field(:performanceTier)
   field(:pod)
   field(:protocol)
   field(:remainingSpaceGib)
