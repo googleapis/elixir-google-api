@@ -34,7 +34,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
-  *   `desiredNodePoolLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - The desired node pool logging configuration defaults for the cluster.
   *   `desiredPrivateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
@@ -81,8 +80,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t() | nil,
           :desiredBinaryAuthorization =>
             GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
-          :desiredNodePoolLoggingConfig =>
-            GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil,
           :desiredPrivateIpv6GoogleAccess => String.t() | nil,
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :desiredResourceUsageExportConfig =>
@@ -140,7 +137,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
-  field(:desiredNodePoolLoggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
   field(:desiredPrivateIpv6GoogleAccess)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
 
