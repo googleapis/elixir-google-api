@@ -962,6 +962,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -999,7 +1000,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :ackBundleInstallationWarning => :query
+      :ackBundleInstallationWarning => :query,
+      :deviceTierConfigId => :query
     }
 
     request =
@@ -1041,6 +1043,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1084,7 +1087,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :ackBundleInstallationWarning => :query
+      :ackBundleInstallationWarning => :query,
+      :deviceTierConfigId => :query
     }
 
     request =
@@ -1130,6 +1134,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1165,7 +1170,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :ackBundleInstallationWarning => :query
+      :ackBundleInstallationWarning => :query,
+      :deviceTierConfigId => :query
     }
 
     request =
@@ -1211,6 +1217,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1254,7 +1261,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :ackBundleInstallationWarning => :query
+      :ackBundleInstallationWarning => :query,
+      :deviceTierConfigId => :query
     }
 
     request =
