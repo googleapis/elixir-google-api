@@ -1580,7 +1580,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service.name`. Immutable. The relative resource name of the metastore service, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `service.name`. Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `locations_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
