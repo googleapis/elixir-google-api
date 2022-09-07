@@ -154,12 +154,12 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   end
 
   @doc """
-  Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferQueues Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8). Creates and buffers a new task without the need to explicitly define a Task message. The queue must be an http queue (i.e., must have HTTP target). This method is used for a simplified application of Cloud Tasks queues in buffer and rate limitting HTTP requests.
+  Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTasks Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The queue name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
+  *   `queue` (*type:* `String.t`) - Required. The parent queue name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -172,12 +172,12 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.BufferQueueRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.BufferTaskRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.BufferQueueResponse{}}` on success
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.BufferTaskResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_buffer(
@@ -186,13 +186,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.BufferQueueResponse.t()}
+          {:ok, GoogleApi.CloudTasks.V2beta2.Model.BufferTaskResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def cloudtasks_projects_locations_queues_buffer(
         connection,
-        name,
+        queue,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -214,17 +214,15 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2beta2/{+name}:buffer", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      |> Request.url("/v2beta2/{+queue}:buffer", %{
+        "queue" => URI.encode(queue, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.CloudTasks.V2beta2.Model.BufferQueueResponse{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudTasks.V2beta2.Model.BufferTaskResponse{}])
   end
 
   @doc """
