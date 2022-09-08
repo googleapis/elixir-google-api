@@ -760,7 +760,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. This method supports patch semantics.
+  Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. This method supports patch semantics.
 
   ## Parameters
 

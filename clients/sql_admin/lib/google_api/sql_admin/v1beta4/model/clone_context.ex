@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
 
   *   `allocatedIpRange` (*type:* `String.t`, *default:* `nil`) - The name of the allocated ip range for the private ip CloudSQL instance. For example: "google-managed-services-default". If set, the cloned instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. Reserved for future use.
   *   `binLogCoordinates` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t`, *default:* `nil`) - Binary log coordinates, if specified, identify the position up to which the source instance is cloned. If not specified, the source instance is cloned up to the most recent binary log coordinates.
+  *   `databaseNames` (*type:* `list(String.t)`, *default:* `nil`) - (SQL Server only) Clone only the specified databases from the source instance. Clone all databases if empty.
   *   `destinationInstanceName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance to be created as a clone.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#cloneContext`.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
@@ -34,6 +35,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   @type t :: %__MODULE__{
           :allocatedIpRange => String.t() | nil,
           :binLogCoordinates => GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t() | nil,
+          :databaseNames => list(String.t()) | nil,
           :destinationInstanceName => String.t() | nil,
           :kind => String.t() | nil,
           :pitrTimestampMs => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
 
   field(:allocatedIpRange)
   field(:binLogCoordinates, as: GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates)
+  field(:databaseNames, type: :list)
   field(:destinationInstanceName)
   field(:kind)
   field(:pitrTimestampMs)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available)./ For more information, see [Overview of the High Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-availability).
   *   `backupConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t`, *default:* `nil`) - The daily backup configuration for the instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The name of server Instance collation.
-  *   `connectorEnforcement` (*type:* `String.t`, *default:* `nil`) - Specifies if connections must use Cloud SQL connectors. Option values include the following: * `NOT_REQUIRED`: Cloud SQL instances can be connected without Cloud SQL Connectors. * `REQUIRED`: Only allow connections that use Cloud SQL Connectors. Note that using REQUIRED disables all existing authorized networks. If this field is not specified when creating a new instance, NOT_REQUIRED is used. If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance.
+  *   `connectorEnforcement` (*type:* `String.t`, *default:* `nil`) - Specifies if connections must use Cloud SQL connectors. Option values include the following: `NOT_REQUIRED` (Cloud SQL instances can be connected without Cloud SQL Connectors) and `REQUIRED` (Only allow connections that use Cloud SQL Connectors) Note that using REQUIRED disables all existing authorized networks. If this field is not specified when creating a new instance, NOT_REQUIRED is used. If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance.
   *   `crashSafeReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether database flags for crash-safe replication are enabled. This property was only applicable to First Generation instances.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of data disk, in GB. The data disk size minimum is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First Generation instances.
@@ -48,6 +48,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example `db-custom-1-3840`. WARNING: Changing this restarts the instance.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Server timezone, relevant only for Cloud SQL for SQL Server.
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-provided labels, represented as a dictionary where each label is a single key value pair.
   """
 
@@ -85,6 +86,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
           :storageAutoResize => boolean() | nil,
           :storageAutoResizeLimit => String.t() | nil,
           :tier => String.t() | nil,
+          :timeZone => String.t() | nil,
           :userLabels => map() | nil
         }
 
@@ -120,6 +122,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   field(:storageAutoResize)
   field(:storageAutoResizeLimit)
   field(:tier)
+  field(:timeZone)
   field(:userLabels, type: :map)
 end
 
