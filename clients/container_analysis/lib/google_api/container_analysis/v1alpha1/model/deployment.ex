@@ -25,7 +25,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment do
   *   `config` (*type:* `String.t`, *default:* `nil`) - Configuration used to create this deployment.
   *   `deployTime` (*type:* `DateTime.t`, *default:* `nil`) - Beginning of the lifetime of this deployment.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - Platform hosting this deployment.
-  *   `resourceUri` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Resource URI for the artifact being deployed taken from the deployable field with the same name.
+  *   `resourceUri` (*type:* `list(String.t)`, *default:* `nil`) - Resource URI for the artifact being deployed taken from the deployable field with the same name.
   *   `undeployTime` (*type:* `DateTime.t`, *default:* `nil`) - End of the lifetime of this deployment.
   *   `userEmail` (*type:* `String.t`, *default:* `nil`) - Identity of the user that triggered this deployment.
   """
