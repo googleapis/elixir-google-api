@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   *   `bgpPeers` (*type:* `list(GoogleApi.Compute.V1.Model.RouterBgpPeer.t)`, *default:* `nil`) - BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `encryptedInterconnectRouter` (*type:* `boolean()`, *default:* `nil`) - Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly. 
+  *   `encryptedInterconnectRouter` (*type:* `boolean()`, *default:* `nil`) - Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `interfaces` (*type:* `list(GoogleApi.Compute.V1.Model.RouterInterface.t)`, *default:* `nil`) - Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
   *   `kind` (*type:* `String.t`, *default:* `compute#router`) - [Output Only] Type of resource. Always compute#router for routers.
