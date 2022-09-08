@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedMessageInfo do
   @moduledoc """
-  Information that references a Dynamite chat message.
+  Information that references a Dynamite chat message. This is only used for Activity Feed messages.
 
   ## Attributes
 
   *   `messageId` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageId.t`, *default:* `nil`) - Id of the source chat message. This is kept here because the top-level message ID to refers the AF message ID.
+  *   `messageType` (*type:* `String.t`, *default:* `nil`) - The type of the source chat message.
   *   `topicReadTimeUsec` (*type:* `String.t`, *default:* `nil`) - Timestamp of when the topic containing the message has been read by the user. This is populated if the message references an inline reply, in which case the space may be marked as read but the topic still has unread messages.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedMessageInfo do
 
   @type t :: %__MODULE__{
           :messageId => GoogleApi.CloudSearch.V1.Model.MessageId.t() | nil,
+          :messageType => String.t() | nil,
           :topicReadTimeUsec => String.t() | nil
         }
 
   field(:messageId, as: GoogleApi.CloudSearch.V1.Model.MessageId)
+  field(:messageType)
   field(:topicReadTimeUsec)
 end
 

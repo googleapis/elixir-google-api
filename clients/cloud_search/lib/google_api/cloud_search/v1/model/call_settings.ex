@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
   *   `audioLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the audio lock is currently on or off.
   *   `chatLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the chat lock is currently on or off.
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for this conference.
-  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current call is moderated. go/meet-multimod-dd
+  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current call is moderated.
   *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the present lock is currently on or off.
   *   `projectDinoEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether project Dino is currently on or off. WARNING: This is currently an experimental field. It should not be used without getting an explicit review and approval from the Meet team.
   *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reactions lock is currently on or off.

@@ -59,6 +59,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Message do
   *   `editableBy` (*type:* `String.t`, *default:* `nil`) - Indicates who can edit the message. This field is set on the read path (e.g. ListTopics) but doesn’t have any effect on the write path (e.g. CreateMessageRequest).
   *   `deleteTime` (*type:* `String.t`, *default:* `nil`) - Time when the Message was deleted in microseconds. This field is set to nonzero value only for Messages deleted globally.
   *   `contentReportSummary` (*type:* `GoogleApi.CloudSearch.V1.Model.ContentReportSummary.t`, *default:* `nil`) - 
+  *   `isContentPurged` (*type:* `boolean()`, *default:* `nil`) - Whether the message is content purged. Content purged messages contain only data required for tombstone (see go/chat-infinite-tombstone). This field is only used by Vault to display tombstone and should only be set to true if the message is a tombstone.
   *   `props` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageProps.t`, *default:* `nil`) - Contains additional (currently Hangouts Classic only) properties applicable to this message.
   *   `annotations` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Annotation.t)`, *default:* `nil`) - Annotations parsed and extracted from the text body.
   """
@@ -109,6 +110,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Message do
           :editableBy => String.t() | nil,
           :deleteTime => String.t() | nil,
           :contentReportSummary => GoogleApi.CloudSearch.V1.Model.ContentReportSummary.t() | nil,
+          :isContentPurged => boolean() | nil,
           :props => GoogleApi.CloudSearch.V1.Model.MessageProps.t() | nil,
           :annotations => list(GoogleApi.CloudSearch.V1.Model.Annotation.t()) | nil
         }
@@ -162,6 +164,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Message do
   field(:editableBy)
   field(:deleteTime)
   field(:contentReportSummary, as: GoogleApi.CloudSearch.V1.Model.ContentReportSummary)
+  field(:isContentPurged)
   field(:props, as: GoogleApi.CloudSearch.V1.Model.MessageProps)
   field(:annotations, as: GoogleApi.CloudSearch.V1.Model.Annotation, type: :list)
 end

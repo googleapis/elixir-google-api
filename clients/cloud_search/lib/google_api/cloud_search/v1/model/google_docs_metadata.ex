@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.GoogleDocsMetadata do
   @moduledoc """
-  The corpus specific metadata for office-type documents, from Google Docs and other sources. This message is passed to the scorer and beyond. Next tag: 7
+  The corpus specific metadata for office-type documents, from Google Docs and other sources. This message is passed to the scorer and beyond. Next tag: 9
 
   ## Attributes
 
@@ -25,6 +25,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.GoogleDocsMetadata do
   *   `documentType` (*type:* `String.t`, *default:* `nil`) - The conceptual type (presentation, document, etc.) of this document.
   *   `fileExtension` (*type:* `String.t`, *default:* `nil`) - The file extension of the document. NOTE: As of October 2018 this field is not backfilled for old documents.
   *   `lastContentModifiedTimestamp` (*type:* `String.t`, *default:* `nil`) - The last time this document was modified, in seconds since epoch. Only counts content modifications.
+  *   `numSubscribers` (*type:* `integer()`, *default:* `nil`) - Contains number of subscribers for the document.
+  *   `numViewers` (*type:* `integer()`, *default:* `nil`) - Size of untruncated viewers list.
   *   `resultInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.GoogleDocsResultInfo.t`, *default:* `nil`) - Additional per-result information, akin to Gmail's SingleThreadResponse. Note: GWS no longer seems to use this field, but there's still one reference to it for Scribe, so we can't remove it.
   *   `typeInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.TypeInfo.t`, *default:* `nil`) - Contains additional information about the document depending on its type.
   """
@@ -36,6 +38,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.GoogleDocsMetadata do
           :documentType => String.t() | nil,
           :fileExtension => String.t() | nil,
           :lastContentModifiedTimestamp => String.t() | nil,
+          :numSubscribers => integer() | nil,
+          :numViewers => integer() | nil,
           :resultInfo => GoogleApi.CloudSearch.V1.Model.GoogleDocsResultInfo.t() | nil,
           :typeInfo => GoogleApi.CloudSearch.V1.Model.TypeInfo.t() | nil
         }
@@ -44,6 +48,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.GoogleDocsMetadata do
   field(:documentType)
   field(:fileExtension)
   field(:lastContentModifiedTimestamp)
+  field(:numSubscribers)
+  field(:numViewers)
   field(:resultInfo, as: GoogleApi.CloudSearch.V1.Model.GoogleDocsResultInfo)
   field(:typeInfo, as: GoogleApi.CloudSearch.V1.Model.TypeInfo)
 end
