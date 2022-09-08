@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `rosterGaiaKey` (*type:* `String.t`, *default:* `nil`) - Roster gaia key, usually an email address. Set in looking up rosters response.
   *   `rosterState` (*type:* `String.t`, *default:* `nil`) - Roster deletion state - considered active unless set to deleted
+  *   `segmentedMembershipCounts` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedSegmentedMembershipCounts.t`, *default:* `nil`) - Roster membership count. May contain counts based on member type and membership state.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
           :membershipCount => integer() | nil,
           :name => String.t() | nil,
           :rosterGaiaKey => String.t() | nil,
-          :rosterState => String.t() | nil
+          :rosterState => String.t() | nil,
+          :segmentedMembershipCounts =>
+            GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedSegmentedMembershipCounts.t() | nil
         }
 
   field(:avatarUrl)
@@ -46,6 +49,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
   field(:name)
   field(:rosterGaiaKey)
   field(:rosterState)
+
+  field(:segmentedMembershipCounts,
+    as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedSegmentedMembershipCounts
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.Roster do

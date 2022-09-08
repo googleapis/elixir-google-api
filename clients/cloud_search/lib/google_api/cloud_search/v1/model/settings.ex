@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Settings do
   *   `cohostArtifactSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether meeting artifacts will be shared with co-hosts.
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for the meeting space.
   *   `defaultAsViewer` (*type:* `boolean()`, *default:* `nil`) - Whether the default role is viewer or not.
-  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the meeting space is moderated. go/meet-multimod-dd
+  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the meeting space is moderated.
   *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - The present lock of the meeting space that lets owner control whether the participants can present their screen. True if the present lock feature is enabled for the meeting space.
   *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - The reactions lock of the meeting space that lets owner control whether the participants can send reactions. True if the reactions lock feature is enabled for the meeting space.
   """

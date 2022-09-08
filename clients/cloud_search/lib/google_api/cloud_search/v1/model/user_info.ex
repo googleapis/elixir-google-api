@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
   @moduledoc """
-  Contains info regarding the updater of an Activity Feed item. Next Id: 6
+  Contains info regarding the updater of an Activity Feed item. Next Id: 7
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
   *   `updaterCountToShow` (*type:* `integer()`, *default:* `nil`) - The number of updaters for clients to show depending on UpdaterCountDisplayType.
   *   `updaterToShowEmail` (*type:* `String.t`, *default:* `nil`) - The email of the updater for clients to show used for Gmail items.
   *   `updaterToShowGaiaId` (*type:* `String.t`, *default:* `nil`) - The gaia id of the updater for clients to show used for Gmail items. If the updater is an external user, the email field below should be populated.
+  *   `updaterToShowName` (*type:* `String.t`, *default:* `nil`) - The display name of the updater for clients to show used for Gmail items. This (along with the updater fields above) will be populated in the thread pipeline (http://shortn/_rPS0GCp94Y) when converting Activity Feed message attributes into client-renderable Activity Feed items.
   *   `updaterToShowUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The updater for clients to show used for Dynamite Chat items.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
           :updaterCountToShow => integer() | nil,
           :updaterToShowEmail => String.t() | nil,
           :updaterToShowGaiaId => String.t() | nil,
+          :updaterToShowName => String.t() | nil,
           :updaterToShowUserId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
   field(:updaterCountToShow)
   field(:updaterToShowEmail)
   field(:updaterToShowGaiaId)
+  field(:updaterToShowName)
   field(:updaterToShowUserId, as: GoogleApi.CloudSearch.V1.Model.UserId)
 end
 
