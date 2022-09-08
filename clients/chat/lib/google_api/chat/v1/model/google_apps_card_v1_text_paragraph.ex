@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextParagraph do
   @moduledoc """
-  A paragraph of text that supports formatting. See [Text formatting](workspace/add-ons/concepts/widgets#text_formatting) for details.
+  A paragraph of text that supports formatting. See [Text formatting](https://developers.google.com/workspace/add-ons/concepts/widgets#text_formatting) for details.
 
   ## Attributes
 
