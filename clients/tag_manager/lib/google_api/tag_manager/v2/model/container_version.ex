@@ -33,7 +33,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Container Version as computed at storage time. This value is recomputed whenever the container version is modified.
   *   `folder` (*type:* `list(GoogleApi.TagManager.V2.Model.Folder.t)`, *default:* `nil`) - The folders in the container that this version was taken from.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Container version display name. @mutable tagmanager.accounts.containers.versions.update
-  *   `path` (*type:* `String.t`, *default:* `nil`) - GTM ContainerVersions's API relative path.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container Version's API relative path.
   *   `tag` (*type:* `list(GoogleApi.TagManager.V2.Model.Tag.t)`, *default:* `nil`) - The tags in the container that this version was taken from.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `trigger` (*type:* `list(GoogleApi.TagManager.V2.Model.Trigger.t)`, *default:* `nil`) - The triggers in the container that this version was taken from.
