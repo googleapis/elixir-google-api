@@ -21,19 +21,16 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.BufferTaskRequest do
 
   ## Attributes
 
-  *   `body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t`, *default:* `nil`) - Body of the HTTP request. The body can take any generic value. The value will be written to the HttpRequest of the [Task].
-  *   `taskId` (*type:* `String.t`, *default:* `nil`) - Optional. The user-specified ID for the task.
+  *   `body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t`, *default:* `nil`) - Optional. Body of the HTTP request. The body can take any generic value. The value will be written to the HttpRequest of the [Task].
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t() | nil,
-          :taskId => String.t() | nil
+          :body => GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t() | nil
         }
 
   field(:body, as: GoogleApi.CloudTasks.V2beta2.Model.HttpBody)
-  field(:taskId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.BufferTaskRequest do
