@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
   @moduledoc """
-  An insight along with the information used to derive the insight. The insight may have associated recomendations as well.
+  An insight along with the information used to derive the insight. The insight may have associated recommendations as well.
 
   ## Attributes
 
