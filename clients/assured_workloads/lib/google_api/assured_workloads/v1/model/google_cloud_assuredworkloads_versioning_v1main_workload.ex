@@ -21,10 +21,11 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersion
 
   ## Attributes
 
-  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Input only. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
   *   `cjisSettings` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadCJISSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for CJIS.
   *   `complianceRegime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Compliance Regime associated with this workload.
   *   `complianceStatus` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadComplianceStatus.t`, *default:* `nil`) - Output only. Count of active Violations in the Workload.
+  *   `compliantButDisallowedServices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment."
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Immutable. The Workload creation timestamp.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
   *   `enableSovereignControls` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates the sovereignty status of the given workload. Currently meant to be used by Europe/Canada customers.
@@ -53,6 +54,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersion
           :complianceStatus =>
             GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadComplianceStatus.t()
             | nil,
+          :compliantButDisallowedServices => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :enableSovereignControls => boolean() | nil,
@@ -102,6 +104,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersion
       GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsVersioningV1mainWorkloadComplianceStatus
   )
 
+  field(:compliantButDisallowedServices, type: :list)
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:enableSovereignControls)
