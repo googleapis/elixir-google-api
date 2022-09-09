@@ -20,7 +20,7 @@ defmodule GoogleApi.Recommender.V1 do
   API client metadata for GoogleApi.Recommender.V1.
   """
 
-  @discovery_revision "20220626"
+  @discovery_revision "20220905"
 
   def discovery_revision(), do: @discovery_revision
 end
