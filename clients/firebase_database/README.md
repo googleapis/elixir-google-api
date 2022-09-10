@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseDatabase
 
-Firebase Realtime Database Management API client library.
+Firebase Realtime Database API client library.
 
 The Firebase Realtime Database Management API enables programmatic provisioning and management of Realtime Database instances.
 

@@ -48,7 +48,7 @@ defmodule GoogleApi.FirebaseDatabase.Mixfile do
 
   defp description() do
     """
-    Firebase Realtime Database Management API client library. The Firebase Realtime Database Management API enables programmatic provisioning and management of Realtime Database instances.
+    Firebase Realtime Database API client library. The Firebase Realtime Database Management API enables programmatic provisioning and management of Realtime Database instances.
     """
   end
 
