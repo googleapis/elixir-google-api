@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo do
   @moduledoc """
-  CPU specs for a CPU.
+  CPU specifications for the device * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A
 
   ## Attributes
 
-  *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. The CPU architecture.
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. Architecture type for the CPU. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A
   *   `keylockerConfigured` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` = disabled. Only reported if keylockerSupported = `TRUE`.
   *   `keylockerSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether keylocker is supported.
   *   `maxClockSpeed` (*type:* `integer()`, *default:* `nil`) - Output only. The max CPU clock speed in kHz.
