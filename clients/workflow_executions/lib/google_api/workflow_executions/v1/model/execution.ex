@@ -29,6 +29,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
   *   `result` (*type:* `String.t`, *default:* `nil`) - Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the beginning of execution.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the execution.
+  *   `status` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.Status.t`, *default:* `nil`) - Output only. Status tracks the current steps and progress data of this execution. > **Preview:** This field is covered by the > [Pre-GA Offerings Terms](https://cloud.google.com/terms/service-terms) of > the Google Cloud Terms of Service. Pre-GA features might have limited > support, and changes to pre-GA features might not be compatible with > other pre-GA versions. For more information, see the > [launch stage descriptions](https://cloud.google.com/products#product-launch-stages). > This field is usable only if your project has access. See the > [access request page](https://docs.google.com/forms/d/e/1FAIpQLSdgwrSV8Y4xZv_tvI6X2JEGX1-ty9yizv3_EAOVHWVKXvDLEA/viewform).
   *   `workflowRevisionId` (*type:* `String.t`, *default:* `nil`) - Output only. Revision of the workflow this execution is using.
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
           :result => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :status => GoogleApi.WorkflowExecutions.V1.Model.Status.t() | nil,
           :workflowRevisionId => String.t() | nil
         }
 
@@ -54,6 +56,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
   field(:result)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:status, as: GoogleApi.WorkflowExecutions.V1.Model.Status)
   field(:workflowRevisionId)
 end
 
