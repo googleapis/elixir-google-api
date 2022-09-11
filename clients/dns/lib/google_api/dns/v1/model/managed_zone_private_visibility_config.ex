@@ -21,6 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig do
 
   ## Attributes
 
+  *   `gkeClusters` (*type:* `list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigGKECluster.t)`, *default:* `nil`) - The list of Google Kubernetes Engine clusters that can see this zone.
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZonePrivateVisibilityConfig`) - 
   *   `networks` (*type:* `list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork.t)`, *default:* `nil`) - The list of VPC networks that can see this zone.
   """
@@ -28,10 +29,17 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gkeClusters =>
+            list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigGKECluster.t()) | nil,
           :kind => String.t() | nil,
           :networks =>
             list(GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork.t()) | nil
         }
+
+  field(:gkeClusters,
+    as: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigGKECluster,
+    type: :list
+  )
 
   field(:kind)
 
