@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
   *   `indexId` (*type:* `String.t`, *default:* `nil`) - Output only. The resource ID of the index.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Required. The entity kind to which this index applies.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Project ID.
-  *   `properties` (*type:* `list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t)`, *default:* `nil`) - Required. An ordered sequence of property names and their index attributes.
+  *   `properties` (*type:* `list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t)`, *default:* `nil`) - Required. An ordered sequence of property names and their index attributes. Requires: * A maximum of 100 properties.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the index.
   """
 
