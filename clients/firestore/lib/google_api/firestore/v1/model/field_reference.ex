@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Firestore.V1.Model.FieldReference do
   @moduledoc """
-  A reference to a field, such as `max(messages.time) as max_time`.
+  A reference to a field in a document, ex: `stats.operations`.
 
   ## Attributes
 
-  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - The relative path of the document being referenced. Requires: * Conform to document field name limitations.
   """
 
   use GoogleApi.Gax.ModelBase

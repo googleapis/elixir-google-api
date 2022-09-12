@@ -20,7 +20,7 @@ defmodule GoogleApi.Firestore.V1 do
   API client metadata for GoogleApi.Firestore.V1.
   """
 
-  @discovery_revision "20220730"
+  @discovery_revision "20220831"
 
   def discovery_revision(), do: @discovery_revision
 end
