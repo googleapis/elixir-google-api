@@ -31,6 +31,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/targets/a-z{0,62}.
   *   `requireApproval` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the `Target` requires approval.
+  *   `run` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunLocation.t`, *default:* `nil`) - Information specifying a Cloud Run deployment target.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Output only. Resource id of the `Target`.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `Target`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Most recent time at which the `Target` was updated.
@@ -49,6 +50,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
           :labels => map() | nil,
           :name => String.t() | nil,
           :requireApproval => boolean() | nil,
+          :run => GoogleApi.CloudDeploy.V1.Model.CloudRunLocation.t() | nil,
           :targetId => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -64,6 +66,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
   field(:labels, type: :map)
   field(:name)
   field(:requireApproval)
+  field(:run, as: GoogleApi.CloudDeploy.V1.Model.CloudRunLocation)
   field(:targetId)
   field(:uid)
   field(:updateTime, as: DateTime)
