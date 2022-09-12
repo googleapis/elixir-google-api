@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TargetRender do
   ## Attributes
 
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - Output only. Reason this render failed. This will always be unspecified while the render in progress.
+  *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the render failure, if available.
   *   `renderingBuild` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to render the manifest for this target. Format is `projects/{project}/locations/{location}/builds/{build}`.
   *   `renderingState` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the render operation for this Target.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TargetRender do
 
   @type t :: %__MODULE__{
           :failureCause => String.t() | nil,
+          :failureMessage => String.t() | nil,
           :renderingBuild => String.t() | nil,
           :renderingState => String.t() | nil
         }
 
   field(:failureCause)
+  field(:failureMessage)
   field(:renderingBuild)
   field(:renderingState)
 end
