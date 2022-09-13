@@ -1026,12 +1026,13 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   end
 
   @doc """
-  Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTasks Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+  Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. To create the task with a custom ID, use the following format and set TASK_ID to your desired ID: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the task with an automatically generated ID, use the following format: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent queue name. For example: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
+  *   `task_id` (*type:* `String.t`) - Optional. Task ID for the task being created. If not provided, a random task ID is assigned to the task.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1055,6 +1056,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   @spec cloudtasks_projects_locations_queues_tasks_buffer(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1065,6 +1067,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   def cloudtasks_projects_locations_queues_tasks_buffer(
         connection,
         parent,
+        task_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1086,8 +1089,9 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2beta2/{+parent}/tasks:buffer", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      |> Request.url("/v2beta2/{+parent}/tasks/{taskId}:buffer", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "taskId" => URI.encode(task_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
