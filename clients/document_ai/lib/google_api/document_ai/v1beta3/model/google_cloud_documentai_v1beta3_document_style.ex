@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   *   `backgroundColor` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t`, *default:* `nil`) - Text background color.
   *   `color` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t`, *default:* `nil`) - Text color.
+  *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - Font family such as "Arial", "Times New Roman". https://www.w3schools.com/cssref/pr_font_font-family.asp
   *   `fontSize` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentStyleFontSize.t`, *default:* `nil`) - Font size.
   *   `fontWeight` (*type:* `String.t`, *default:* `nil`) - Font weight. Possible values are normal, bold, bolder, and lighter. https://www.w3schools.com/cssref/pr_font_weight.asp
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentTextAnchor.t`, *default:* `nil`) - Text anchor indexing into the Document.text.
@@ -35,6 +36,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   @type t :: %__MODULE__{
           :backgroundColor => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t() | nil,
           :color => GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t() | nil,
+          :fontFamily => String.t() | nil,
           :fontSize =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentStyleFontSize.t()
             | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   field(:backgroundColor, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor)
   field(:color, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor)
+  field(:fontFamily)
 
   field(:fontSize,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentStyleFontSize
