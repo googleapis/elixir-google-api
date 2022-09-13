@@ -34,6 +34,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. In case of conflict in label keys, the applied set may differ depending on the Kubernetes version -- it's best to assume the behavior is undefined and conflicts should be avoided. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
   *   `localSsdCount` (*type:* `integer()`, *default:* `nil`) - The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information.
+  *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - Logging configuration.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The name of a Google Compute Engine [machine type](https://cloud.google.com/compute/docs/machine-types) If unspecified, the default machine type is `e2-medium`.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - The metadata key/value pairs assigned to instances in the cluster. Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in length. These are reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project or be one of the reserved keys: - "cluster-location" - "cluster-name" - "cluster-uid" - "configure-sh" - "containerd-configure-sh" - "enable-os-login" - "gci-ensure-gke-docker" - "gci-metrics-enabled" - "gci-update-strategy" - "instance-template" - "kube-env" - "startup-script" - "user-data" - "disable-address-manager" - "windows-startup-script-ps1" - "common-psm1" - "k8s-node-setup-psm1" - "install-ssh-psm1" - "user-profile-psm1" Values are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on them is that each value's size must be less than or equal to 32 KB. The total size of all keys and values must be less than 512 KB.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as `minCpuPlatform: "Intel Haswell"` or `minCpuPlatform: "Intel Sandy Bridge"`. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
@@ -67,6 +68,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :labels => map() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
           :localSsdCount => integer() | nil,
+          :loggingConfig => GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil,
           :machineType => String.t() | nil,
           :metadata => map() | nil,
           :minCpuPlatform => String.t() | nil,
@@ -97,6 +99,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:labels, type: :map)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:localSsdCount)
+  field(:loggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
   field(:machineType)
   field(:metadata, type: :map)
   field(:minCpuPlatform)
