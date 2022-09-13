@@ -20,7 +20,7 @@ defmodule GoogleApi.VersionHistory.V1 do
   API client metadata for GoogleApi.VersionHistory.V1.
   """
 
-  @discovery_revision "20220314"
+  @discovery_revision "20220912"
 
   def discovery_revision(), do: @discovery_revision
 end

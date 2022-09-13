@@ -1,6 +1,6 @@
 # GoogleApi.VersionHistory
 
-Version History API client library.
+versionhistory.googleapis.com API client library.
 
 Version History API - Prod
 

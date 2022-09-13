@@ -18,7 +18,7 @@
 defmodule GoogleApi.VersionHistory.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.VersionHistory.Mixfile do
 
   defp description() do
     """
-    Version History API client library. Version History API - Prod
+    versionhistory.googleapis.com API client library. Version History API - Prod
     """
   end
 
