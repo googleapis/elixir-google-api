@@ -21,120 +21,123 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
 
   ## Attributes
 
-  *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc.
-  *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the finding. It's either "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or "projects/{project_number}/sources/{source_id}/findings/{finding_id}", depending on the closest CRM ancestor of the resource associated with the finding.
-  *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
-  *   `compliances` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Compliance.t)`, *default:* `nil`) - Contains compliance information for security standards associated to the finding.
-  *   `connections` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Connection.t)`, *default:* `nil`) - Contains information about the IP connection associated with the finding.
-  *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { "security": { "contacts": [ { "email": "person1@company.com" }, { "email": "person2@company.com" } ] } }
-  *   `containers` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Container.t)`, *default:* `nil`) - Containers associated with the finding. containers provides information for both Kubernetes and non-Kubernetes containers.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
-  *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.Database.t`, *default:* `nil`) - Database associated with the finding.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
-  *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltration associated with the Finding.
   *   `externalSystems` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t}`, *default:* `nil`) - Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields.
-  *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
+  *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc. Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
+  *   `kubernetes` (*type:* `GoogleApi.SecurityCenter.V1.Model.Kubernetes.t`, *default:* `nil`) - Kubernetes resources associated with the finding.
+  *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
+  *   `sourceProperties` (*type:* `map()`, *default:* `nil`) - Source specific properties. These properties are managed by the source that writes the finding. The key names in the source_properties map must be between 1 and 255 characters, and must start with a letter and contain alphanumeric characters or underscores only.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
+  *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability specific fields like cve, cvss scores etc. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
+  *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
+  *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Next steps associate to the finding.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
+  *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the finding.
+  *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the finding. It's either "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or "projects/{project_number}/sources/{source_id}/findings/{finding_id}", depending on the closest CRM ancestor of the resource associated with the finding.
+  *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
+  *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc.
+  *   `compliances` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Compliance.t)`, *default:* `nil`) - Contains compliance information for security standards associated to the finding.
+  *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `iamBindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t)`, *default:* `nil`) - Represents IAM bindings associated with the Finding.
   *   `indicator` (*type:* `GoogleApi.SecurityCenter.V1.Model.Indicator.t`, *default:* `nil`) - Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
-  *   `kubernetes` (*type:* `GoogleApi.SecurityCenter.V1.Model.Kubernetes.t`, *default:* `nil`) - Kubernetes resources associated with the finding.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
-  *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
-  *   `muteInitiator` (*type:* `String.t`, *default:* `nil`) - First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc. Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
-  *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
-  *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Next steps associate to the finding.
+  *   `contacts` (*type:* `%{optional(String.t) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t}`, *default:* `nil`) - Output only. Map containing the point of contacts for the given finding. The key represents the type of contact, while the value contains a list of all the contacts that pertain. Please refer to: https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories { "security": { "contacts": [ { "email": "person1@company.com" }, { "email": "person2@company.com" } ] } }
+  *   `connections` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Connection.t)`, *default:* `nil`) - Contains information about the IP connection associated with the finding.
+  *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.Exfiltration.t`, *default:* `nil`) - Represents exfiltration associated with the Finding.
+  *   `containers` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Container.t)`, *default:* `nil`) - Containers associated with the finding. containers provides information for both Kubernetes and non-Kubernetes containers.
+  *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only. The human readable display name of the finding source such as "Event Threat Detection" or "Security Health Analytics"
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: "organizations/{organization_id}/sources/{source_id}"
-  *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
+  *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: "XSS_FLASH_INJECTION"
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
-  *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
+  *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.Database.t`, *default:* `nil`) - Database associated with the finding.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding. This field is managed by the source that writes the finding.
-  *   `sourceProperties` (*type:* `map()`, *default:* `nil`) - Source specific properties. These properties are managed by the source that writes the finding. The key names in the source_properties map must be between 1 and 255 characters, and must start with a letter and contain alphanumeric characters or underscores only.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the finding.
-  *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability specific fields like cve, cvss scores etc. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
-          :canonicalName => String.t() | nil,
-          :category => String.t() | nil,
-          :compliances => list(GoogleApi.SecurityCenter.V1.Model.Compliance.t()) | nil,
-          :connections => list(GoogleApi.SecurityCenter.V1.Model.Connection.t()) | nil,
-          :contacts =>
-            %{optional(String.t()) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t()} | nil,
-          :containers => list(GoogleApi.SecurityCenter.V1.Model.Container.t()) | nil,
-          :createTime => DateTime.t() | nil,
-          :database => GoogleApi.SecurityCenter.V1.Model.Database.t() | nil,
-          :description => String.t() | nil,
           :eventTime => DateTime.t() | nil,
-          :exfiltration => GoogleApi.SecurityCenter.V1.Model.Exfiltration.t() | nil,
           :externalSystems =>
             %{
               optional(String.t()) =>
                 GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem.t()
             }
             | nil,
-          :externalUri => String.t() | nil,
+          :muteInitiator => String.t() | nil,
+          :kubernetes => GoogleApi.SecurityCenter.V1.Model.Kubernetes.t() | nil,
+          :mute => String.t() | nil,
+          :sourceProperties => map() | nil,
+          :createTime => DateTime.t() | nil,
+          :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil,
+          :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
+          :description => String.t() | nil,
+          :nextSteps => String.t() | nil,
           :findingClass => String.t() | nil,
+          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :canonicalName => String.t() | nil,
+          :muteUpdateTime => DateTime.t() | nil,
+          :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
+          :compliances => list(GoogleApi.SecurityCenter.V1.Model.Compliance.t()) | nil,
+          :externalUri => String.t() | nil,
           :iamBindings => list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t()) | nil,
           :indicator => GoogleApi.SecurityCenter.V1.Model.Indicator.t() | nil,
-          :kubernetes => GoogleApi.SecurityCenter.V1.Model.Kubernetes.t() | nil,
           :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
-          :mute => String.t() | nil,
-          :muteInitiator => String.t() | nil,
-          :muteUpdateTime => DateTime.t() | nil,
-          :name => String.t() | nil,
-          :nextSteps => String.t() | nil,
+          :contacts =>
+            %{optional(String.t()) => GoogleApi.SecurityCenter.V1.Model.ContactDetails.t()} | nil,
+          :connections => list(GoogleApi.SecurityCenter.V1.Model.Connection.t()) | nil,
+          :exfiltration => GoogleApi.SecurityCenter.V1.Model.Exfiltration.t() | nil,
+          :containers => list(GoogleApi.SecurityCenter.V1.Model.Container.t()) | nil,
+          :parentDisplayName => String.t() | nil,
           :parent => String.t() | nil,
-          :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
+          :category => String.t() | nil,
           :resourceName => String.t() | nil,
-          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
-          :severity => String.t() | nil,
-          :sourceProperties => map() | nil,
-          :state => String.t() | nil,
-          :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil
+          :database => GoogleApi.SecurityCenter.V1.Model.Database.t() | nil,
+          :severity => String.t() | nil
         }
 
-  field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
-  field(:canonicalName)
-  field(:category)
-  field(:compliances, as: GoogleApi.SecurityCenter.V1.Model.Compliance, type: :list)
-  field(:connections, as: GoogleApi.SecurityCenter.V1.Model.Connection, type: :list)
-  field(:contacts, as: GoogleApi.SecurityCenter.V1.Model.ContactDetails, type: :map)
-  field(:containers, as: GoogleApi.SecurityCenter.V1.Model.Container, type: :list)
-  field(:createTime, as: DateTime)
-  field(:database, as: GoogleApi.SecurityCenter.V1.Model.Database)
-  field(:description)
   field(:eventTime, as: DateTime)
-  field(:exfiltration, as: GoogleApi.SecurityCenter.V1.Model.Exfiltration)
 
   field(:externalSystems,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalSystem,
     type: :map
   )
 
-  field(:externalUri)
+  field(:muteInitiator)
+  field(:kubernetes, as: GoogleApi.SecurityCenter.V1.Model.Kubernetes)
+  field(:mute)
+  field(:sourceProperties, type: :map)
+  field(:createTime, as: DateTime)
+  field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
+  field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
+  field(:description)
+  field(:nextSteps)
   field(:findingClass)
+  field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)
+  field(:name)
+  field(:state)
+  field(:canonicalName)
+  field(:muteUpdateTime, as: DateTime)
+  field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
+  field(:compliances, as: GoogleApi.SecurityCenter.V1.Model.Compliance, type: :list)
+  field(:externalUri)
   field(:iamBindings, as: GoogleApi.SecurityCenter.V1.Model.IamBinding, type: :list)
   field(:indicator, as: GoogleApi.SecurityCenter.V1.Model.Indicator)
-  field(:kubernetes, as: GoogleApi.SecurityCenter.V1.Model.Kubernetes)
   field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)
-  field(:mute)
-  field(:muteInitiator)
-  field(:muteUpdateTime, as: DateTime)
-  field(:name)
-  field(:nextSteps)
+  field(:contacts, as: GoogleApi.SecurityCenter.V1.Model.ContactDetails, type: :map)
+  field(:connections, as: GoogleApi.SecurityCenter.V1.Model.Connection, type: :list)
+  field(:exfiltration, as: GoogleApi.SecurityCenter.V1.Model.Exfiltration)
+  field(:containers, as: GoogleApi.SecurityCenter.V1.Model.Container, type: :list)
+  field(:parentDisplayName)
   field(:parent)
-  field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
+  field(:category)
   field(:resourceName)
-  field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)
+  field(:database, as: GoogleApi.SecurityCenter.V1.Model.Database)
   field(:severity)
-  field(:sourceProperties, type: :map)
-  field(:state)
-  field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Finding do
