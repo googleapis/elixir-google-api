@@ -28,6 +28,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint do
   *   `methodTypes` (*type:* `list(String.t)`, *default:* `nil`) - All the operations being applied for this constraint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the constraint. This is unique within the organization. Format of the name should be * `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example : "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
   *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - Immutable. The Resource Instance type on which this policy applies to. Format will be of the form : "/" Example: * `compute.googleapis.com/Instance`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time this custom constraint was updated. This represents the last time that the `CreateCustomConstraint` or `UpdateCustomConstraint` RPC was called
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint do
           :displayName => String.t() | nil,
           :methodTypes => list(String.t()) | nil,
           :name => String.t() | nil,
-          :resourceTypes => list(String.t()) | nil
+          :resourceTypes => list(String.t()) | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:actionType)
@@ -49,6 +51,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint do
   field(:methodTypes, type: :list)
   field(:name)
   field(:resourceTypes, type: :list)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint do
