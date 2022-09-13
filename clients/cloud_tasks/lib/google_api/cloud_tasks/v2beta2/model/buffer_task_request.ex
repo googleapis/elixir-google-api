@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.BufferTaskRequest do
 
   ## Attributes
 
-  *   `body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t`, *default:* `nil`) - Optional. Body of the HTTP request. The body can take any generic value. The value will be written to the HttpRequest of the [Task].
+  *   `body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.HttpBody.t`, *default:* `nil`) - Optional. Body of the HTTP request. The body can take any generic value. The value is written to the HttpRequest of the [Task].
   """
 
   use GoogleApi.Gax.ModelBase
