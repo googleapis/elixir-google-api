@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyValueEntry do
   @moduledoc """
-  Key value map pair where the value represents the data associated with the corresponding key.
+  Key value map pair where the value represents the data associated with the corresponding key. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Attributes
 

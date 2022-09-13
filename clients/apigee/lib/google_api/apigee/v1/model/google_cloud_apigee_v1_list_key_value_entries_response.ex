@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListKeyValueEntriesResponse do
   @moduledoc """
-  The request structure for listing Key value map keys and its corrresponding values.
+  The request structure for listing key value map keys and its corresponding values.
 
   ## Attributes
 
