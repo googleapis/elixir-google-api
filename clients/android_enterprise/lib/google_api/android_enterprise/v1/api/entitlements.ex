@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Removes an entitlement to an app for a user.
+  Removes an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
@@ -103,7 +103,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
   end
 
   @doc """
-  Retrieves details of an entitlement.
+  Retrieves details of an entitlement. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
@@ -184,7 +184,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
   end
 
   @doc """
-  Lists all entitlements for the specified user. Only the ID is set.
+  Lists all entitlements for the specified user. Only the ID is set. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
@@ -263,7 +263,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
   end
 
   @doc """
-  Adds or updates an entitlement to an app for a user.
+  Adds or updates an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves details of an enterprise's group license for a product.
+  Retrieves details of an enterprise's group license for a product. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
@@ -104,7 +104,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   end
 
   @doc """
-  Retrieves IDs of all products for which the enterprise has a group license.
+  Retrieves IDs of all products for which the enterprise has a group license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
