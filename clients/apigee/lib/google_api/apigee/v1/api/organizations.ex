@@ -2815,7 +2815,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -2889,7 +2889,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -2961,7 +2961,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Get the Key value entry value for org, env or apis scoped Key value map.
+  Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -3033,7 +3033,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists key value entries for key values maps scoped to an organization, environment, or API proxy.
+  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -11672,7 +11672,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -11746,7 +11746,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -11818,7 +11818,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Get the Key value entry value for org, env or apis scoped Key value map.
+  Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -11890,7 +11890,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists key value entries for key values maps scoped to an organization, environment, or API proxy.
+  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -16955,7 +16955,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates key value entries in a key value map scoped to an organization, environment, or API proxy.
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -17029,7 +17029,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Note:** After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior.
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -17101,7 +17101,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Get the Key value entry value for org, env or apis scoped Key value map.
+  Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
@@ -17173,7 +17173,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists key value entries for key values maps scoped to an organization, environment, or API proxy.
+  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.
 
   ## Parameters
 
