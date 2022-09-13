@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListTransferableSk
 
   ## Attributes
 
-  *   `authToken` (*type:* `String.t`, *default:* `nil`) - The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details.
+  *   `authToken` (*type:* `String.t`, *default:* `nil`) - Optional. The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details.
   *   `cloudIdentityId` (*type:* `String.t`, *default:* `nil`) - Customer's Cloud Identity ID
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - A reseller is required to create a customer and use the resource name of the created customer here. Customer_name uses the format: accounts/{account_id}/customers/{customer_id}
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US". Optional.
