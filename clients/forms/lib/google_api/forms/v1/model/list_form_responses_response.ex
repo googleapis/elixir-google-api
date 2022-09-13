@@ -22,7 +22,7 @@ defmodule GoogleApi.Forms.V1.Model.ListFormResponsesResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If set, there are more responses. To get the next page of responses, provide this as `page_token` in a future request.
-  *   `responses` (*type:* `list(GoogleApi.Forms.V1.Model.FormResponse.t)`, *default:* `nil`) - The returned responses.
+  *   `responses` (*type:* `list(GoogleApi.Forms.V1.Model.FormResponse.t)`, *default:* `nil`) - The returned form responses. Note: The `formId` field is not returned in the `FormResponse` object for list requests.
   """
 
   use GoogleApi.Gax.ModelBase
