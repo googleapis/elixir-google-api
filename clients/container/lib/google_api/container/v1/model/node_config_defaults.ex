@@ -22,15 +22,18 @@ defmodule GoogleApi.Container.V1.Model.NodeConfigDefaults do
   ## Attributes
 
   *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - GCFS (Google Container File System, also known as Riptide) options.
+  *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - Logging configuration for node pools.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil
+          :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
+          :loggingConfig => GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil
         }
 
   field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
+  field(:loggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfigDefaults do
