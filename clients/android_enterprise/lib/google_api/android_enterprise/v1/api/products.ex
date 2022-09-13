@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-   Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. 
+   Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. 
 
   ## Parameters
 
@@ -101,7 +101,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day.
+  Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. 
 
   ## Parameters
 
@@ -419,7 +419,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Finds approved products that match a query, or all approved products if there is no query.
+  Finds approved products that match a query, or all approved products if there is no query. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. 
 
   ## Parameters
 
@@ -496,7 +496,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Unapproves the specified product (and the relevant app permissions, if any)
+  Unapproves the specified product (and the relevant app permissions, if any) **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 

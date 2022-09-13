@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the IDs of the users who have been granted entitlements under the license.
+  Retrieves the IDs of the users who have been granted entitlements under the license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 

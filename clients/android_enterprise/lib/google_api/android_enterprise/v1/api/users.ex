@@ -249,7 +249,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Retrieves the set of products a user is entitled to access.
+  Retrieves the set of products a user is entitled to access. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
@@ -537,7 +537,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.
+  Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
 
   ## Parameters
 
