@@ -22,6 +22,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Response only. Resource name of the subscription. It will have the format of "partners/{partner_id}/products/{product_id}"
+  *   `priceConfigs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig.t)`, *default:* `nil`) - Output only. Price configs for the product in the available regions.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. 2-letter ISO region code where the product is available in. Ex. "US" Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1
   *   `subscriptionBillingCycleDuration` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t`, *default:* `nil`) - Output only. Specifies the length of the billing cycle of the subscription.
   *   `titles` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleTypeLocalizedText.t)`, *default:* `nil`) - Output only. Localized human readable name of the product.
@@ -31,6 +32,11 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
+          :priceConfigs =>
+            list(
+              GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig.t()
+            )
+            | nil,
           :regionCodes => list(String.t()) | nil,
           :subscriptionBillingCycleDuration =>
             GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t()
@@ -41,6 +47,13 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
         }
 
   field(:name)
+
+  field(:priceConfigs,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig,
+    type: :list
+  )
+
   field(:regionCodes, type: :list)
 
   field(:subscriptionBillingCycleDuration,
