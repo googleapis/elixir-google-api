@@ -26,7 +26,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#color.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - The item group id of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#itemgroupid.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#size.
-  *   `grocery` (*type:* `GoogleApi.Manufacturers.V1.Model.Grocery.t`, *default:* `nil`) - Grocery Attributes. For more information, see go/mfc-nutrition-attributes.
+  *   `grocery` (*type:* `GoogleApi.Manufacturers.V1.Model.Grocery.t`, *default:* `nil`) - Grocery Attributes. See more at https://support.google.com/manufacturers/answer/12098458#grocery.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The pattern of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#pattern.
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - The Manufacturer Part Number (MPN) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#mpn.
   *   `gender` (*type:* `String.t`, *default:* `nil`) - The target gender of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#gender.
@@ -58,7 +58,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
   *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The disclosure date of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#disclosure.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#title.
-  *   `nutrition` (*type:* `GoogleApi.Manufacturers.V1.Model.Nutrition.t`, *default:* `nil`) - Nutrition Attributes. For more information, see go/mfc-nutrition-attributes.
+  *   `nutrition` (*type:* `GoogleApi.Manufacturers.V1.Model.Nutrition.t`, *default:* `nil`) - Nutrition Attributes. See more at https://support.google.com/manufacturers/answer/12098458#food-servings.
   *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   """
 
