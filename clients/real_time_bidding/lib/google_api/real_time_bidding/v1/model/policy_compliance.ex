@@ -21,8 +21,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance do
 
   ## Attributes
 
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Serving status for the given transaction type (e.g., open auction, deals) or region (e.g., China, Russia). Can be used to filter the response of the creatives.list method.
-  *   `topics` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry.t)`, *default:* `nil`) - Topics related to the policy compliance for this transaction type (e.g., open auction, deals) or region (e.g., China, Russia). Topics may be present only if status is DISAPPROVED.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Serving status for the given transaction type (for example, open auction, deals) or region (for example, China, Russia). Can be used to filter the response of the creatives.list method.
+  *   `topics` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry.t)`, *default:* `nil`) - Topics related to the policy compliance for this transaction type (for example, open auction, deals) or region (for example, China, Russia). Topics may be present only if status is DISAPPROVED.
   """
 
   use GoogleApi.Gax.ModelBase

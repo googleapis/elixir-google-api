@@ -21,7 +21,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.Buyer do
 
   ## Attributes
 
-  *   `activeCreativeCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of creatives that this buyer submitted via the API or bid with in the last 30 days. This is counted against the maximum number of active creatives.
+  *   `activeCreativeCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of creatives that this buyer submitted through the API or bid with in the last 30 days. This is counted against the maximum number of active creatives.
   *   `bidder` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the bidder resource that is responsible for receiving bidding traffic for this account. The bidder name must follow the pattern `bidders/{bidderAccountId}`, where `{bidderAccountId}` is the account ID of the bidder receiving traffic for this buyer.
   *   `billingIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A list of billing IDs associated with this account. These IDs appear on: 1. A bid request, to signal which buyers are eligible to bid on a given opportunity, and which pretargeting configurations were matched for each eligible buyer. 2. The bid response, to attribute a winning impression to a specific account for billing, reporting, policy and publisher block enforcement.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The diplay name associated with this buyer account, as visible to sellers.
