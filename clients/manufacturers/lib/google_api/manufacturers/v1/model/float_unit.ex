@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.FloatUnit do
   @moduledoc """
-  Combination of float amout and unit.
+  Combination of float amount and unit.
 
   ## Attributes
 
