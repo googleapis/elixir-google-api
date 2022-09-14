@@ -21,7 +21,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DomainCallEvidence do
 
   ## Attributes
 
-  *   `topHttpCallDomains` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.DomainCalls.t)`, *default:* `nil`) - Breakdown of the most frequent domains called via HTTP by the creative.
+  *   `topHttpCallDomains` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.DomainCalls.t)`, *default:* `nil`) - Breakdown of the most frequent domains called through HTTP by the creative.
   *   `totalHttpCallCount` (*type:* `integer()`, *default:* `nil`) - The total number of HTTP calls made by the creative, including but not limited to the number of calls in the top_http_call_domains.
   """
 

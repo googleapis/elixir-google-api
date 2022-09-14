@@ -23,7 +23,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.DestinationNotWorkingEvidence do
 
   *   `dnsError` (*type:* `String.t`, *default:* `nil`) - DNS lookup errors.
   *   `expandedUrl` (*type:* `String.t`, *default:* `nil`) - The full non-working URL.
-  *   `httpError` (*type:* `integer()`, *default:* `nil`) - HTTP error code (e.g. 404 or 5xx)
+  *   `httpError` (*type:* `integer()`, *default:* `nil`) - HTTP error code (for example, 404 or 5xx)
   *   `invalidPage` (*type:* `String.t`, *default:* `nil`) - Page was crawled successfully, but was detected as either a page with no content or an error page.
   *   `lastCheckTime` (*type:* `DateTime.t`, *default:* `nil`) - Approximate time when the ad destination was last checked.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - Platform of the non-working URL.

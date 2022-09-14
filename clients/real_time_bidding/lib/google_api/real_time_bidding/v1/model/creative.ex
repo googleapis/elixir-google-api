@@ -25,7 +25,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.Creative do
   *   `adChoicesDestinationUrl` (*type:* `String.t`, *default:* `nil`) - The link to AdChoices destination page. This is only supported for native ads.
   *   `advertiserName` (*type:* `String.t`, *default:* `nil`) - The name of the company being advertised in the creative. Can be used to filter the response of the creatives.list method.
   *   `agencyId` (*type:* `String.t`, *default:* `nil`) - The agency ID for this creative.
-  *   `apiUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the creative via API.
+  *   `apiUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the creative through the API.
   *   `creativeFormat` (*type:* `String.t`, *default:* `nil`) - Output only. The format of this creative. Can be used to filter the response of the creatives.list method.
   *   `creativeId` (*type:* `String.t`, *default:* `nil`) - Buyer-specific creative ID that references this creative in bid responses. This field is Ignored in update operations. Can be used to filter the response of the creatives.list method. The maximum length of the creative ID is 128 bytes.
   *   `creativeServingDecision` (*type:* `GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision.t`, *default:* `nil`) - Output only. Top level status and detected attributes of a creative (for example domain, language, advertiser, product category, etc.) that affect whether (status) and where (context) a creative will be allowed to serve.
