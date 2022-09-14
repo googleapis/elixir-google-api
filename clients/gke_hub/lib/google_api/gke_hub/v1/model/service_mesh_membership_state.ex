@@ -22,16 +22,20 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState do
   ## Attributes
 
   *   `controlPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t`, *default:* `nil`) - Output only. Status of control plane management
+  *   `dataPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement.t`, *default:* `nil`) - Output only. Status of data plane management.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :controlPlaneManagement =>
-            GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t() | nil
+            GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t() | nil,
+          :dataPlaneManagement =>
+            GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement.t() | nil
         }
 
   field(:controlPlaneManagement, as: GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement)
+  field(:dataPlaneManagement, as: GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState do

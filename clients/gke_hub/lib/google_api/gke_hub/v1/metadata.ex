@@ -20,7 +20,7 @@ defmodule GoogleApi.GKEHub.V1 do
   API client metadata for GoogleApi.GKEHub.V1.
   """
 
-  @discovery_revision "20220828"
+  @discovery_revision "20220912"
 
   def discovery_revision(), do: @discovery_revision
 end

@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
 
   ## Attributes
 
+  *   `allowVerticalScale` (*type:* `boolean()`, *default:* `nil`) - Set to true to allow the vertical scaling. Defaults to false which disallows vertical scaling.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables the installation of ConfigSync. If set to true, ConfigSync resources will be created and the other ConfigSync fields will be applied if exist. If set to false, all other ConfigSync fields will be ignored, ConfigSync resources will be deleted. If omitted, ConfigSync resources will be managed depends on the presence of git field.
   *   `git` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t`, *default:* `nil`) - Git repo configuration for the cluster.
   *   `oci` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t`, *default:* `nil`) - OCI repo configuration for the cluster
@@ -31,6 +32,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowVerticalScale => boolean() | nil,
           :enabled => boolean() | nil,
           :git => GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t() | nil,
           :oci => GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
           :sourceFormat => String.t() | nil
         }
 
+  field(:allowVerticalScale)
   field(:enabled)
   field(:git, as: GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig)
   field(:oci, as: GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig)
