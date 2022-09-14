@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Header do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - 
-  *   `value` (*type:* `String.t`, *default:* `nil`) - 
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key of the header.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the header.
   """
 
   use GoogleApi.Gax.ModelBase
