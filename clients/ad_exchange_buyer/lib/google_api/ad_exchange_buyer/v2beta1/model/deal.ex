@@ -22,13 +22,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
   ## Attributes
 
   *   `availableEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Proposed flight end time of the deal. This will generally be stored in a granularity of a second. A value is not required for Private Auction deals or Preferred Deals.
-  *   `availableStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Proposed flight start time of the deal. This will generally be stored in the granularity of one second since deal serving starts at seconds boundary. Any time specified with more granularity (e.g., in milliseconds) will be truncated towards the start of time in seconds.
+  *   `availableStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Proposed flight start time of the deal. This will generally be stored in the granularity of one second since deal serving starts at seconds boundary. Any time specified with more granularity (for example, in milliseconds) will be truncated towards the start of time in seconds.
   *   `buyerPrivateData` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t`, *default:* `nil`) - Buyer private data (hidden from seller).
   *   `createProductId` (*type:* `String.t`, *default:* `nil`) - The product ID from which this deal was created. Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error.
   *   `createProductRevision` (*type:* `String.t`, *default:* `nil`) - Optional. Revision number of the product that the deal was created from. If present on create, and the server `product_revision` has advanced since the passed-in `create_product_revision`, an `ABORTED` error will be returned. Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time of the deal creation.
   *   `creativePreApprovalPolicy` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the creative pre-approval policy.
-  *   `creativeRestrictions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t`, *default:* `nil`) - Output only. Restricitions about the creatives associated with the deal (i.e., size) This is available for Programmatic Guaranteed/Preferred Deals in Ad Manager.
+  *   `creativeRestrictions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t`, *default:* `nil`) - Output only. Restricitions about the creatives associated with the deal (for example, size) This is available for Programmatic Guaranteed/Preferred Deals in Ad Manager.
   *   `creativeSafeFrameCompatibility` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies whether the creative is safeFrame compatible.
   *   `dealId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique deal ID for the deal (server-assigned).
   *   `dealServingMetadata` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata.t`, *default:* `nil`) - Output only. Metadata about the serving status of this deal.

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue do
   @moduledoc """
-  A metric value, with an expected value and a variance; represents a count that may be either exact or estimated (i.e. when sampled).
+  A metric value, with an expected value and a variance; represents a count that may be either exact or estimated (for example, when sampled).
 
   ## Attributes
 
   *   `value` (*type:* `String.t`, *default:* `nil`) - The expected value of the metric.
-  *   `variance` (*type:* `String.t`, *default:* `nil`) - The variance (i.e. square of the standard deviation) of the metric value. If value is exact, variance is 0. Can be used to calculate margin of error as a percentage of value, using the following formula, where Z is the standard constant that depends on the desired size of the confidence interval (e.g. for 90% confidence interval, use Z = 1.645): marginOfError = 100 * Z * sqrt(variance) / value
+  *   `variance` (*type:* `String.t`, *default:* `nil`) - The variance (for example, square of the standard deviation) of the metric value. If value is exact, variance is 0. Can be used to calculate margin of error as a percentage of value, using the following formula, where Z is the standard constant that depends on the preferred size of the confidence interval (for example, for 90% confidence interval, use Z = 1.645): marginOfError = 100 * Z * sqrt(variance) / value
   """
 
   use GoogleApi.Gax.ModelBase
