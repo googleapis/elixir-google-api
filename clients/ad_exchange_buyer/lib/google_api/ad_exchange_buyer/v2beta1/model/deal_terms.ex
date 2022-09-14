@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms do
   @moduledoc """
-  The deal terms specify the details of a Product/deal. They specify things like price per buyer, the type of pricing model (e.g., fixed price, auction) and expected impressions from the publisher.
+  The deal terms specify the details of a Product/deal. They specify things like price per buyer, the type of pricing model (for example, fixed price, auction) and expected impressions from the publisher.
 
   ## Attributes
 

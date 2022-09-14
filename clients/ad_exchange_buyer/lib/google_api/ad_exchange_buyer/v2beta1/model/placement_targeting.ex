@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting do
   @moduledoc """
-  Represents targeting about where the ads can appear, e.g., certain sites or mobile applications. Different placement targeting types will be logically OR'ed.
+  Represents targeting about where the ads can appear, for example, certain sites or mobile applications. Different placement targeting types will be logically OR'ed.
 
   ## Attributes
 

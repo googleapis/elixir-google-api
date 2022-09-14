@@ -17,24 +17,24 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
   @moduledoc """
-  A set of filters that is applied to a request for data. Within a filter set, an AND operation is performed across the filters represented by each field. An OR operation is performed across the filters represented by the multiple values of a repeated field, e.g., "format=VIDEO AND deal_id=12 AND (seller_network_id=34 OR seller_network_id=56)".
+  A set of filters that is applied to a request for data. Within a filter set, an AND operation is performed across the filters represented by each field. An OR operation is performed across the filters represented by the multiple values of a repeated field, for example, "format=VIDEO AND deal_id=12 AND (seller_network_id=34 OR seller_network_id=56)".
 
   ## Attributes
 
   *   `absoluteDateRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t`, *default:* `nil`) - An absolute date range, defined by a start date and an end date. Interpreted relative to Pacific time zone.
   *   `breakdownDimensions` (*type:* `list(String.t)`, *default:* `nil`) - The set of dimensions along which to break down the response; may be empty. If multiple dimensions are requested, the breakdown is along the Cartesian product of the requested dimensions.
-  *   `creativeId` (*type:* `String.t`, *default:* `nil`) - The ID of the creative on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*` pattern.
-  *   `dealId` (*type:* `String.t`, *default:* `nil`) - The ID of the deal on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*` pattern.
+  *   `creativeId` (*type:* `String.t`, *default:* `nil`) - The ID of the creative on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, for example, one whose name matches the `bidders/*/accounts/*/filterSets/*` pattern.
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - The ID of the deal on which to filter; optional. This field may be set only for a filter set that accesses account-level troubleshooting data, for example, one whose name matches the `bidders/*/accounts/*/filterSets/*` pattern.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - The environment on which to filter; optional.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Creative format bidded on or allowed to bid on, can be empty.
   *   `formats` (*type:* `list(String.t)`, *default:* `nil`) - Creative formats bidded on or allowed to bid on, can be empty. Although this field is a list, it can only be populated with a single item. A HTTP 400 bad request error will be returned in the response if you specify multiple items.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the filter set. Filter set names must be unique globally and match one of the patterns: - `bidders/*/filterSets/*` (for accessing bidder-level troubleshooting data) - `bidders/*/accounts/*/filterSets/*` (for accessing account-level troubleshooting data) This field is required in create operations.
-  *   `platforms` (*type:* `list(String.t)`, *default:* `nil`) - The list of platforms on which to filter; may be empty. The filters represented by multiple platforms are ORed together (i.e., if non-empty, results must match any one of the platforms).
+  *   `platforms` (*type:* `list(String.t)`, *default:* `nil`) - The list of platforms on which to filter; may be empty. The filters represented by multiple platforms are ORed together (for example, if non-empty, results must match any one of the platforms).
   *   `publisherIdentifiers` (*type:* `list(String.t)`, *default:* `nil`) - For Open Bidding partners only. The list of publisher identifiers on which to filter; may be empty. The filters represented by multiple publisher identifiers are ORed together.
   *   `realtimeTimeRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange.t`, *default:* `nil`) - An open-ended realtime time range, defined by the aggregation start timestamp.
   *   `relativeDateRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange.t`, *default:* `nil`) - A relative date range, defined by an offset from today and a duration. Interpreted relative to Pacific time zone.
-  *   `sellerNetworkIds` (*type:* `list(integer())`, *default:* `nil`) - For Authorized Buyers only. The list of IDs of the seller (publisher) networks on which to filter; may be empty. The filters represented by multiple seller network IDs are ORed together (i.e., if non-empty, results must match any one of the publisher networks). See [seller-network-ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-network-ids) file for the set of existing seller network IDs.
-  *   `timeSeriesGranularity` (*type:* `String.t`, *default:* `nil`) - The granularity of time intervals if a time series breakdown is desired; optional.
+  *   `sellerNetworkIds` (*type:* `list(integer())`, *default:* `nil`) - For Authorized Buyers only. The list of IDs of the seller (publisher) networks on which to filter; may be empty. The filters represented by multiple seller network IDs are ORed together (for example, if non-empty, results must match any one of the publisher networks). See [seller-network-ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-network-ids) file for the set of existing seller network IDs.
+  *   `timeSeriesGranularity` (*type:* `String.t`, *default:* `nil`) - The granularity of time intervals if a time series breakdown is preferred; optional.
   """
 
   use GoogleApi.Gax.ModelBase
