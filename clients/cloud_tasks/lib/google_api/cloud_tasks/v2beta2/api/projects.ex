@@ -1031,7 +1031,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent queue name. For example: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
+  *   `queue` (*type:* `String.t`) - Required. The parent queue name. For example: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
   *   `task_id` (*type:* `String.t`) - Optional. Task ID for the task being created. If not provided, a random task ID is assigned to the task.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1066,7 +1066,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
           | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_buffer(
         connection,
-        parent,
+        queue,
         task_id,
         optional_params \\ [],
         opts \\ []
@@ -1089,8 +1089,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2beta2/{+parent}/tasks/{taskId}:buffer", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+      |> Request.url("/v2beta2/{+queue}/tasks/{taskId}:buffer", %{
+        "queue" => URI.encode(queue, &URI.char_unreserved?/1),
         "taskId" => URI.encode(task_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
