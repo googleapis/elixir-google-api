@@ -21,7 +21,6 @@ defmodule GoogleApi.Translate.V3.Model.TranslateDocumentRequest do
 
   ## Attributes
 
-  *   `customizedAttribution` (*type:* `String.t`, *default:* `nil`) - Optional. This flag is to support user customized attribution. If not provided, the default is `Machine Translated by Google`. Customized attribution should follow rules in https://cloud.google.com/translate/attribution#attribution_and_logos
   *   `documentInputConfig` (*type:* `GoogleApi.Translate.V3.Model.DocumentInputConfig.t`, *default:* `nil`) - Required. Input configurations.
   *   `documentOutputConfig` (*type:* `GoogleApi.Translate.V3.Model.DocumentOutputConfig.t`, *default:* `nil`) - Optional. Output configurations. Defines if the output file should be stored within Cloud Storage as well as the desired output format. If not provided the translated file will only be returned through a byte-stream and its output mime type will be the same as the input file's mime type.
   *   `glossaryConfig` (*type:* `GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t`, *default:* `nil`) - Optional. Glossary to be applied. The glossary must be within the same region (have the same location-id) as the model, otherwise an INVALID_ARGUMENT (400) error is returned.
@@ -34,7 +33,6 @@ defmodule GoogleApi.Translate.V3.Model.TranslateDocumentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customizedAttribution => String.t() | nil,
           :documentInputConfig => GoogleApi.Translate.V3.Model.DocumentInputConfig.t() | nil,
           :documentOutputConfig => GoogleApi.Translate.V3.Model.DocumentOutputConfig.t() | nil,
           :glossaryConfig => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t() | nil,
@@ -44,7 +42,6 @@ defmodule GoogleApi.Translate.V3.Model.TranslateDocumentRequest do
           :targetLanguageCode => String.t() | nil
         }
 
-  field(:customizedAttribution)
   field(:documentInputConfig, as: GoogleApi.Translate.V3.Model.DocumentInputConfig)
   field(:documentOutputConfig, as: GoogleApi.Translate.V3.Model.DocumentOutputConfig)
   field(:glossaryConfig, as: GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig)
