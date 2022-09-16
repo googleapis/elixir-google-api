@@ -44,16 +44,17 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_media_upload(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse.t()}
+          {:ok,
+           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -86,7 +87,10 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}]
+        [
+          struct:
+            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}
+        ]
     )
   end
 
@@ -98,7 +102,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
   *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
   *   `customer` (*type:* `String.t`) - Required. The customer for which the file upload will apply.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
-  *   `metadata` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileRequest.t`) - object metadata
+  *   `metadata` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileRequest.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -116,19 +120,20 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_media_upload_iodata(
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileRequest.t(),
+          GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileRequest.t(),
           iodata,
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse.t()}
+          {:ok,
+           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -171,7 +176,10 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}]
+        [
+          struct:
+            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}
+        ]
     )
   end
 
@@ -183,7 +191,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
   *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
   *   `customer` (*type:* `String.t`) - Required. The customer for which the file upload will apply.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
-  *   `metadata` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileRequest.t`) - object metadata
+  *   `metadata` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileRequest.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -201,19 +209,20 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_media_upload_simple(
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileRequest.t(),
+          GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileRequest.t(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse.t()}
+          {:ok,
+           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -256,7 +265,10 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Media do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UploadPolicyFileResponse{}]
+        [
+          struct:
+            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse{}
+        ]
     )
   end
 end
