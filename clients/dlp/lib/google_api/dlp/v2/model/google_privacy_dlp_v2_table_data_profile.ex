@@ -40,7 +40,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name to the project data profile for this table.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
-  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Number of rows in the table when the profile was generated.
+  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Number of rows in the table when the profile was generated. This will not be populated for BigLake tables.
   *   `scannedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns profiled in the table.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this table.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
