@@ -24,8 +24,8 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.SustainabilityCertifications do
   *   `breeamCertification` (*type:* `String.t`, *default:* `nil`) - BREEAM certification.
   *   `breeamCertificationException` (*type:* `String.t`, *default:* `nil`) - BREEAM certification exception.
   *   `ecoCertifications` (*type:* `list(GoogleApi.MyBusinessLodging.V1.Model.EcoCertification.t)`, *default:* `nil`) - The eco certificates awarded to the hotel.
-  *   `leedCertification` (*type:* `String.t`, *default:* `nil`) - LEED certification.
-  *   `leedCertificationException` (*type:* `String.t`, *default:* `nil`) - LEED certification exception.
+  *   `leedCertification` (*type:* `String.t`, *default:* `nil`) - LEED certification. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.
+  *   `leedCertificationException` (*type:* `String.t`, *default:* `nil`) - LEED certification exception. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.
   """
 
   use GoogleApi.Gax.ModelBase
