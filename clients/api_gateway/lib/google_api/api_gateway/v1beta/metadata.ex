@@ -20,7 +20,7 @@ defmodule GoogleApi.APIGateway.V1beta do
   API client metadata for GoogleApi.APIGateway.V1beta.
   """
 
-  @discovery_revision "20220811"
+  @discovery_revision "20220908"
 
   def discovery_revision(), do: @discovery_revision
 end
