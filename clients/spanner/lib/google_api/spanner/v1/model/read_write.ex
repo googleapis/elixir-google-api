@@ -21,11 +21,16 @@ defmodule GoogleApi.Spanner.V1.Model.ReadWrite do
 
   ## Attributes
 
+  *   `readLockMode` (*type:* `String.t`, *default:* `nil`) - Read lock mode for the transaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :readLockMode => String.t() | nil
+        }
+
+  field(:readLockMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ReadWrite do
