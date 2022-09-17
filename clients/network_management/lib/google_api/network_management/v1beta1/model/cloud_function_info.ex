@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo do
   @moduledoc """
-  For display only. Metadata associated with a Cloud function.
+  For display only. Metadata associated with a Cloud Function.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Cloud function.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Location in which the Cloud function is deployed.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud function.
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Latest successfully deployed version id of the Cloud function.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Cloud Function.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Location in which the Cloud Function is deployed.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud Function.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Latest successfully deployed version id of the Cloud Function.
   """
 
   use GoogleApi.Gax.ModelBase

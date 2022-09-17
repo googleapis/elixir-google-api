@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
 
   ## Attributes
 
-  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud function](https://cloud.google.com/functions).
+  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud Function](https://cloud.google.com/functions).
   *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
   *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
