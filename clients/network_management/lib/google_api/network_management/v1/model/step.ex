@@ -23,7 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1.Model.AbortInfo.t`, *default:* `nil`) - Display information of the final state "abort" and reason.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
-  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionInfo.t`, *default:* `nil`) - Display information of a Cloud function.
+  *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudFunctionInfo.t`, *default:* `nil`) - Display information of a Cloud Function.
   *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display information of a Cloud SQL instance.
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display information of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.NetworkManagement.V1.Model.CloudFunctionEndpoint do
   @moduledoc """
-  Wrapper for cloud function attributes.
+  Wrapper for Cloud Function attributes.
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - A [Cloud function](https://cloud.google.com/functions) name.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - A [Cloud Function](https://cloud.google.com/functions) name.
   """
 
   use GoogleApi.Gax.ModelBase
