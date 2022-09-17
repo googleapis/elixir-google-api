@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   *   `completionRatio` (*type:* `float()`, *default:* `nil`) - [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
   *   `copy` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics5.t`, *default:* `nil`) - [Output-only] Statistics for a copy job.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.
+  *   `dataMaskingStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t`, *default:* `nil`) - [Output-only] Statistics for data masking. Present only for query and extract jobs.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state.
   *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics4.t`, *default:* `nil`) - [Output-only] Statistics for an extract job.
   *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics3.t`, *default:* `nil`) - [Output-only] Statistics for a load job.
@@ -48,6 +49,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :completionRatio => float() | nil,
           :copy => GoogleApi.BigQuery.V2.Model.JobStatistics5.t() | nil,
           :creationTime => String.t() | nil,
+          :dataMaskingStatistics => GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t() | nil,
           :endTime => String.t() | nil,
           :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t() | nil,
           :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:completionRatio)
   field(:copy, as: GoogleApi.BigQuery.V2.Model.JobStatistics5)
   field(:creationTime)
+  field(:dataMaskingStatistics, as: GoogleApi.BigQuery.V2.Model.DataMaskingStatistics)
   field(:endTime)
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobStatistics4)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobStatistics3)
