@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.Metadata do
   @moduledoc """
-  Metadata surfaces information associated with a `Rollout` to the user.
+  Metadata includes information associated with a `Rollout`.
 
   ## Attributes
 

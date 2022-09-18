@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Stage do
   ## Attributes
 
   *   `profiles` (*type:* `list(String.t)`, *default:* `nil`) - Skaffold profiles to use when rendering the manifest for this stage's `Target`.
+  *   `strategy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Strategy.t`, *default:* `nil`) - Optional. The strategy to use for a `Rollout` to this stage.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Stage do
 
   @type t :: %__MODULE__{
           :profiles => list(String.t()) | nil,
+          :strategy => GoogleApi.CloudDeploy.V1.Model.Strategy.t() | nil,
           :targetId => String.t() | nil
         }
 
   field(:profiles, type: :list)
+  field(:strategy, as: GoogleApi.CloudDeploy.V1.Model.Strategy)
   field(:targetId)
 end
 
