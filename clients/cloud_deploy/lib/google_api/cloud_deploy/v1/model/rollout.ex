@@ -36,6 +36,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
   *   `metadata` (*type:* `GoogleApi.CloudDeploy.V1.Model.Metadata.t`, *default:* `nil`) - Output only. Metadata contains information about the rollout.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Rollout`. Format is projects/{project}/ locations/{location}/deliveryPipelines/{deliveryPipeline}/ releases/{release}/rollouts/a-z{0,62}.
+  *   `phases` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Phase.t)`, *default:* `nil`) - Output only. The phases that represent the workflows of this `Rollout`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the `Rollout`.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of Target to which this `Rollout` is deploying.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `Rollout`.
@@ -59,6 +60,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
           :labels => map() | nil,
           :metadata => GoogleApi.CloudDeploy.V1.Model.Metadata.t() | nil,
           :name => String.t() | nil,
+          :phases => list(GoogleApi.CloudDeploy.V1.Model.Phase.t()) | nil,
           :state => String.t() | nil,
           :targetId => String.t() | nil,
           :uid => String.t() | nil
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   field(:labels, type: :map)
   field(:metadata, as: GoogleApi.CloudDeploy.V1.Model.Metadata)
   field(:name)
+  field(:phases, as: GoogleApi.CloudDeploy.V1.Model.Phase, type: :list)
   field(:state)
   field(:targetId)
   field(:uid)
