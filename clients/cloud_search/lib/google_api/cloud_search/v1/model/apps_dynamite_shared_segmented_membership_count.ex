@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedSegmentedMembershipCount do
   @moduledoc """
-  Contains info on membership count for member types: HUMAN_USER, BOT_USER & ROSTER_MEMBER different states: INVITED, JOINED
+  Contains info on membership count for member types: HUMAN_USER, APP_USER & ROSTER_MEMBER different states: INVITED, JOINED
 
   ## Attributes
 
