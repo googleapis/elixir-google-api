@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedActivityFeedAnnotationData do
   @moduledoc """
-  Next Id: 6
+  Next Id: 7
 
   ## Attributes
 
+  *   `activityFeedMessageCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of when the Activity Feed message that contains this annotation was created. This is roughly when the activity happened, such as when a reaction happened, but will have at least some small delay, since the Activity Feed message is created asynchronously after. This timestamp should only be used for display when the activity create time is not available in the Chat UI, like the time of a reaction.
   *   `activityFeedMessageId` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageId.t`, *default:* `nil`) - Unique id of the Activity Feed message used by clients to implement click-to-source. This is the same messageId as the top-level id field for the Activity Feed item.
   *   `chatItem` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedChatItem.t`, *default:* `nil`) - 
   *   `sharedUserInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.UserInfo.t`, *default:* `nil`) - Only populated on read path and should not be persisted in storage.
@@ -30,6 +31,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedActivityFeedAnnotatio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :activityFeedMessageCreateTime => DateTime.t() | nil,
           :activityFeedMessageId => GoogleApi.CloudSearch.V1.Model.MessageId.t() | nil,
           :chatItem => GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedChatItem.t() | nil,
           :sharedUserInfo => GoogleApi.CloudSearch.V1.Model.UserInfo.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedActivityFeedAnnotatio
             | nil
         }
 
+  field(:activityFeedMessageCreateTime, as: DateTime)
   field(:activityFeedMessageId, as: GoogleApi.CloudSearch.V1.Model.MessageId)
   field(:chatItem, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedChatItem)
   field(:sharedUserInfo, as: GoogleApi.CloudSearch.V1.Model.UserInfo)
