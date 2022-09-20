@@ -24,7 +24,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Optional. Confidence of detected Schema entity. Range [0, 1].
   *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. Canonical id. This will be a unique value in the entity list for this document.
   *   `mentionId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated. Use `id` field instead.
-  *   `mentionText` (*type:* `String.t`, *default:* `nil`) - Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty.
+  *   `mentionText` (*type:* `String.t`, *default:* `nil`) - Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
   *   `normalizedValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentEntityNormalizedValue.t`, *default:* `nil`) - Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types.
   *   `pageAnchor` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageAnchor.t`, *default:* `nil`) - Optional. Represents the provenance of this entity wrt. the location on the page where it was found.
   *   `properties` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentEntity.t)`, *default:* `nil`) - Optional. Entities can be nested to form a hierarchical data structure representing the content in the document.
