@@ -24,7 +24,6 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
   *   `displayData` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.DisplayData.t)`, *default:* `nil`) - Pipeline level display data.
   *   `executionPipelineStage` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t)`, *default:* `nil`) - Description of each stage of execution of the pipeline.
   *   `originalPipelineTransform` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t)`, *default:* `nil`) - Description of each transform in the pipeline and collections between them.
-  *   `stepNamesHash` (*type:* `String.t`, *default:* `nil`) - A hash value of the submitted pipeline portable graph step names if exists.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,8 +33,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
           :executionPipelineStage =>
             list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary.t()) | nil,
           :originalPipelineTransform =>
-            list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t()) | nil,
-          :stepNamesHash => String.t() | nil
+            list(GoogleApi.Dataflow.V1b3.Model.TransformSummary.t()) | nil
         }
 
   field(:displayData, as: GoogleApi.Dataflow.V1b3.Model.DisplayData, type: :list)
@@ -49,8 +47,6 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
     as: GoogleApi.Dataflow.V1b3.Model.TransformSummary,
     type: :list
   )
-
-  field(:stepNamesHash)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
