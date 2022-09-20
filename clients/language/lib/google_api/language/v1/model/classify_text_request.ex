@@ -21,15 +21,19 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextRequest do
 
   ## Attributes
 
+  *   `classificationModelOptions` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptions.t`, *default:* `nil`) - Model options to use for classification. Defaults to v1 options if not specified.
   *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Required. Input document.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :classificationModelOptions =>
+            GoogleApi.Language.V1.Model.ClassificationModelOptions.t() | nil,
           :document => GoogleApi.Language.V1.Model.Document.t() | nil
         }
 
+  field(:classificationModelOptions, as: GoogleApi.Language.V1.Model.ClassificationModelOptions)
   field(:document, as: GoogleApi.Language.V1.Model.Document)
 end
 

@@ -21,6 +21,7 @@ defmodule GoogleApi.Language.V1.Model.Features do
 
   ## Attributes
 
+  *   `classificationModelOptions` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptions.t`, *default:* `nil`) - The model options to use for classification. Defaults to v1 options if not specified. Only used if `classify_text` is set to true.
   *   `classifyText` (*type:* `boolean()`, *default:* `nil`) - Classify the full document into categories.
   *   `extractDocumentSentiment` (*type:* `boolean()`, *default:* `nil`) - Extract document-level sentiment.
   *   `extractEntities` (*type:* `boolean()`, *default:* `nil`) - Extract entities.
@@ -31,6 +32,8 @@ defmodule GoogleApi.Language.V1.Model.Features do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :classificationModelOptions =>
+            GoogleApi.Language.V1.Model.ClassificationModelOptions.t() | nil,
           :classifyText => boolean() | nil,
           :extractDocumentSentiment => boolean() | nil,
           :extractEntities => boolean() | nil,
@@ -38,6 +41,7 @@ defmodule GoogleApi.Language.V1.Model.Features do
           :extractSyntax => boolean() | nil
         }
 
+  field(:classificationModelOptions, as: GoogleApi.Language.V1.Model.ClassificationModelOptions)
   field(:classifyText)
   field(:extractDocumentSentiment)
   field(:extractEntities)
