@@ -23,7 +23,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action name provided at token generation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp corresponding to the generation of the token.
-  *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname of the page on which the token was generated.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname of the page on which the token was generated (Web keys only).
   *   `invalidReason` (*type:* `String.t`, *default:* `nil`) - Reason associated with the response when valid = false.
   *   `valid` (*type:* `boolean()`, *default:* `nil`) - Whether the provided user response token is valid. When valid = false, the reason could be specified in invalid_reason or it could also be due to a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey used to generate the token was different than the one specified in the assessment).
   """
