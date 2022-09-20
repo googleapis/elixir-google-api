@@ -22,7 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.Feature do
   ## Attributes
 
   *   `maxResults` (*type:* `integer()`, *default:* `nil`) - Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest". `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support "builtin/weekly" for the bleeding edge release updated weekly.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The feature type.
   """
 
