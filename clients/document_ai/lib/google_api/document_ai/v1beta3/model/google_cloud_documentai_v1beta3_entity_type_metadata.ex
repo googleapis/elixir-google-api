@@ -24,7 +24,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityT
   *   `humanReviewLabelingMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewLabelingMetadata.t`, *default:* `nil`) - Human review labeling config on the property.
   *   `humanReviewMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewValidationMetadata.t`, *default:* `nil`) - Human review config on the entity type.
   *   `inactive` (*type:* `boolean()`, *default:* `nil`) - Whether the entity type should be considered as "inactive".
-  *   `prefixedNamingOnProperties` (*type:* `boolean()`, *default:* `nil`) - If set, the properties of this entity type must be prefixed with the parents.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,8 +35,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityT
           :humanReviewMetadata =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewValidationMetadata.t()
             | nil,
-          :inactive => boolean() | nil,
-          :prefixedNamingOnProperties => boolean() | nil
+          :inactive => boolean() | nil
         }
 
   field(:humanReviewLabelingMetadata,
@@ -50,7 +48,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityT
   )
 
   field(:inactive)
-  field(:prefixedNamingOnProperties)
 end
 
 defimpl Poison.Decoder,
