@@ -23,17 +23,20 @@ defmodule GoogleApi.DFAReporting.V4.Model.EventFilter do
 
   *   `dimensionFilter` (*type:* `GoogleApi.DFAReporting.V4.Model.PathReportDimensionValue.t`, *default:* `nil`) - The dimension filter contained within this EventFilter.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#eventFilter.
+  *   `uvarFilter` (*type:* `GoogleApi.DFAReporting.V4.Model.UvarFilter.t`, *default:* `nil`) - Filter on a custom variable.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dimensionFilter => GoogleApi.DFAReporting.V4.Model.PathReportDimensionValue.t() | nil,
-          :kind => String.t() | nil
+          :kind => String.t() | nil,
+          :uvarFilter => GoogleApi.DFAReporting.V4.Model.UvarFilter.t() | nil
         }
 
   field(:dimensionFilter, as: GoogleApi.DFAReporting.V4.Model.PathReportDimensionValue)
   field(:kind)
+  field(:uvarFilter, as: GoogleApi.DFAReporting.V4.Model.UvarFilter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V4.Model.EventFilter do
