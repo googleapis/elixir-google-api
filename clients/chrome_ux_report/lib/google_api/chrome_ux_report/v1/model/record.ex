@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Record do
 
   ## Attributes
 
+  *   `collectionPeriod` (*type:* `GoogleApi.ChromeUXReport.V1.Model.CollectionPeriod.t`, *default:* `nil`) - The collection period indicates when the data reflected in this record was collected.
   *   `key` (*type:* `GoogleApi.ChromeUXReport.V1.Model.Key.t`, *default:* `nil`) - Key defines all of the unique querying parameters needed to look up a user experience record.
   *   `metrics` (*type:* `%{optional(String.t) => GoogleApi.ChromeUXReport.V1.Model.Metric.t}`, *default:* `nil`) - Metrics is the map of user experience data available for the record defined in the key field. Metrics are keyed on the metric name. Allowed key values: ["first_contentful_paint", "first_input_delay", "largest_contentful_paint", "cumulative_layout_shift"]
   """
@@ -28,11 +29,13 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Record do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :collectionPeriod => GoogleApi.ChromeUXReport.V1.Model.CollectionPeriod.t() | nil,
           :key => GoogleApi.ChromeUXReport.V1.Model.Key.t() | nil,
           :metrics =>
             %{optional(String.t()) => GoogleApi.ChromeUXReport.V1.Model.Metric.t()} | nil
         }
 
+  field(:collectionPeriod, as: GoogleApi.ChromeUXReport.V1.Model.CollectionPeriod)
   field(:key, as: GoogleApi.ChromeUXReport.V1.Model.Key)
   field(:metrics, as: GoogleApi.ChromeUXReport.V1.Model.Metric, type: :map)
 end
