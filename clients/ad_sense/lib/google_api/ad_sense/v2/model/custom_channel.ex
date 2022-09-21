@@ -21,6 +21,7 @@ defmodule GoogleApi.AdSense.V2.Model.CustomChannel do
 
   ## Attributes
 
+  *   `active` (*type:* `boolean()`, *default:* `nil`) - Whether the custom channel is active and collecting data. See https://support.google.com/adsense/answer/10077192.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the custom channel.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the custom channel. Format: accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
   *   `reportingDimensionId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique ID of the custom channel as used in the `CUSTOM_CHANNEL_ID` reporting dimension.
@@ -29,11 +30,13 @@ defmodule GoogleApi.AdSense.V2.Model.CustomChannel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :active => boolean() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :reportingDimensionId => String.t() | nil
         }
 
+  field(:active)
   field(:displayName)
   field(:name)
   field(:reportingDimensionId)
