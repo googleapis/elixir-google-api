@@ -20,7 +20,7 @@ defmodule GoogleApi.OnDemandScanning.V1 do
   API client metadata for GoogleApi.OnDemandScanning.V1.
   """
 
-  @discovery_revision "20220711"
+  @discovery_revision "20220917"
 
   def discovery_revision(), do: @discovery_revision
 end
