@@ -18,7 +18,7 @@
 defmodule GoogleApi.ChromeUXReport.Mixfile do
   use Mix.Project
 
-  @version "0.3.2"
+  @version "0.4.0"
 
   def project() do
     [
