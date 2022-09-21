@@ -22,7 +22,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.ReconciliationOperationMetadata do
   ## Attributes
 
   *   `deleteResource` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED. Use exclusive_action instead.
-  *   `exclusiveAction` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exclusiveAction` (*type:* `String.t`, *default:* `nil`) - Excluisive action returned by the CLH.
   """
 
   use GoogleApi.Gax.ModelBase
