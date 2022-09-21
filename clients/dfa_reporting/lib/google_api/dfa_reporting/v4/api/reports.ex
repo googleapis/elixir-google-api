@@ -301,7 +301,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Dimension do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#dimension.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The dimension name, e.g. dfa:advertiser
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The dimension name, e.g. advertiser
   """
 
   use GoogleApi.Gax.ModelBase
