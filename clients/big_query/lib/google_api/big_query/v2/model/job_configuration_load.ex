@@ -46,6 +46,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `schemaInline` (*type:* `String.t`, *default:* `nil`) - [Deprecated] The inline schema. For CSV schemas, specify as "Field1:Type1[,Field2:Type2]*". For example, "foo:STRING, bar:INTEGER, baz:FLOAT".
   *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
   *   `allowQuotedNewlines` (*type:* `boolean()`, *default:* `nil`) - Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false.
+  *   `createSession` (*type:* `boolean()`, *default:* `nil`) - If true, creates a new session, where session id will be a server generated random id. If false, runs query with an existing session_id passed in ConnectionProperty, otherwise runs the load job in non-session mode.
   *   `destinationTableProperties` (*type:* `GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t`, *default:* `nil`) - [Beta] [Optional] Properties with which to create the destination table if it is new.
   *   `allowJaggedRows` (*type:* `boolean()`, *default:* `nil`) - [Optional] Accept rows that are missing trailing optional columns. The missing values are treated as nulls. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. Only applicable to CSV, ignored for other formats.
   *   `quote` (*type:* `String.t`, *default:* `"`) - [Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.
@@ -85,6 +86,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :schemaInline => String.t() | nil,
           :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
           :allowQuotedNewlines => boolean() | nil,
+          :createSession => boolean() | nil,
           :destinationTableProperties =>
             GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t() | nil,
           :allowJaggedRows => boolean() | nil,
@@ -126,6 +128,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:schemaInline)
   field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
   field(:allowQuotedNewlines)
+  field(:createSession)
   field(:destinationTableProperties, as: GoogleApi.BigQuery.V2.Model.DestinationTableProperties)
   field(:allowJaggedRows)
   field(:quote)
