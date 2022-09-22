@@ -21,16 +21,16 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
 
   ## Attributes
 
-  *   `classLevelGlobalExplanations` (*type:* `list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t)`, *default:* `nil`) - Global explanation contains the explanation of top features on the class level. Applies to classification models only.
-  *   `dataSplitResult` (*type:* `GoogleApi.BigQuery.V2.Model.DataSplitResult.t`, *default:* `nil`) - Data split result of the training run. Only set when the input data is actually split.
-  *   `evaluationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t`, *default:* `nil`) - The evaluation metrics over training/eval data that were computed at the end of training.
-  *   `modelLevelGlobalExplanation` (*type:* `GoogleApi.BigQuery.V2.Model.GlobalExplanation.t`, *default:* `nil`) - Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models.
-  *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output of each iteration run, results.size() <= max_iterations.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this training run.
-  *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Options that were used for this training run, includes user specified and default options that were used.
-  *   `trainingStartTime` (*type:* `String.t`, *default:* `nil`) - The start time of this training run, in milliseconds since epoch.
+  *   `classLevelGlobalExplanations` (*type:* `list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t)`, *default:* `nil`) - Output only. Global explanation contains the explanation of top features on the class level. Applies to classification models only.
+  *   `dataSplitResult` (*type:* `GoogleApi.BigQuery.V2.Model.DataSplitResult.t`, *default:* `nil`) - Output only. Data split result of the training run. Only set when the input data is actually split.
+  *   `evaluationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t`, *default:* `nil`) - Output only. The evaluation metrics over training/eval data that were computed at the end of training.
+  *   `modelLevelGlobalExplanation` (*type:* `GoogleApi.BigQuery.V2.Model.GlobalExplanation.t`, *default:* `nil`) - Output only. Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models.
+  *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output only. Output of each iteration run, results.size() <= max_iterations.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start time of this training run.
+  *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Output only. Options that were used for this training run, includes user specified and default options that were used.
+  *   `trainingStartTime` (*type:* `String.t`, *default:* `nil`) - Output only. The start time of this training run, in milliseconds since epoch.
   *   `vertexAiModelId` (*type:* `String.t`, *default:* `nil`) - The model id in Vertex AI Model Registry for this training run
-  *   `vertexAiModelVersion` (*type:* `String.t`, *default:* `nil`) - The model version in Vertex AI Model Registry for this training run
+  *   `vertexAiModelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The model version in Vertex AI Model Registry for this training run
   """
 
   use GoogleApi.Gax.ModelBase

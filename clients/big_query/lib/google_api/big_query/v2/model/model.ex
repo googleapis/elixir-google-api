@@ -39,7 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   *   `modelReference` (*type:* `GoogleApi.BigQuery.V2.Model.ModelReference.t`, *default:* `nil`) - Required. Unique identifier for this model.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the model resource.
   *   `optimalTrialIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best trial. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto optimal trials sorted by trial_id.
-  *   `trainingRuns` (*type:* `list(GoogleApi.BigQuery.V2.Model.TrainingRun.t)`, *default:* `nil`) - Output only. Information for all training runs in increasing order of start_time.
+  *   `trainingRuns` (*type:* `list(GoogleApi.BigQuery.V2.Model.TrainingRun.t)`, *default:* `nil`) - Information for all training runs in increasing order of start_time.
   """
 
   use GoogleApi.Gax.ModelBase
