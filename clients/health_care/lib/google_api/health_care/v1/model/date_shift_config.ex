@@ -22,15 +22,18 @@ defmodule GoogleApi.HealthCare.V1.Model.DateShiftConfig do
   ## Attributes
 
   *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the shift to be computed based on this key and the patient ID. A default key is generated for each de-identification operation and is used when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set if `kms_wrapped` is set.
+  *   `kmsWrapped` (*type:* `GoogleApi.HealthCare.V1.Model.KmsWrappedCryptoKey.t`, *default:* `nil`) - KMS wrapped key. Must not be set if `crypto_key` is set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKey => String.t() | nil
+          :cryptoKey => String.t() | nil,
+          :kmsWrapped => GoogleApi.HealthCare.V1.Model.KmsWrappedCryptoKey.t() | nil
         }
 
   field(:cryptoKey)
+  field(:kmsWrapped, as: GoogleApi.HealthCare.V1.Model.KmsWrappedCryptoKey)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1.Model.DateShiftConfig do
