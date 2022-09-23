@@ -25,9 +25,11 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Container do
   *   `command` (*type:* `list(String.t)`, *default:* `nil`) - Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
   *   `env` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2EnvVar.t)`, *default:* `nil`) - List of environment variables to set in the container.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Required. URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images
+  *   `livenessProbe` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe.t`, *default:* `nil`) - Not Supported By Cloud Run. Periodic probe of container liveness. Container will be restarted if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the container specified as a DNS_LABEL.
   *   `ports` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2ContainerPort.t)`, *default:* `nil`) - List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible. If omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on.
   *   `resources` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2ResourceRequirements.t`, *default:* `nil`) - Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
+  *   `startupProbe` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe.t`, *default:* `nil`) - Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not be added to service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
   *   `volumeMounts` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2VolumeMount.t)`, *default:* `nil`) - Volume to mount into the container's filesystem.
   *   `workingDir` (*type:* `String.t`, *default:* `nil`) - Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.
   """
@@ -39,9 +41,11 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Container do
           :command => list(String.t()) | nil,
           :env => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2EnvVar.t()) | nil,
           :image => String.t() | nil,
+          :livenessProbe => GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe.t() | nil,
           :name => String.t() | nil,
           :ports => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2ContainerPort.t()) | nil,
           :resources => GoogleApi.Run.V2.Model.GoogleCloudRunV2ResourceRequirements.t() | nil,
+          :startupProbe => GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe.t() | nil,
           :volumeMounts => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2VolumeMount.t()) | nil,
           :workingDir => String.t() | nil
         }
@@ -50,9 +54,11 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Container do
   field(:command, type: :list)
   field(:env, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2EnvVar, type: :list)
   field(:image)
+  field(:livenessProbe, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe)
   field(:name)
   field(:ports, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ContainerPort, type: :list)
   field(:resources, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ResourceRequirements)
+  field(:startupProbe, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe)
   field(:volumeMounts, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2VolumeMount, type: :list)
   field(:workingDir)
 end
