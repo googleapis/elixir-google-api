@@ -23,7 +23,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.CertificateMap do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a Certificate Map.
   *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a certificate map.
-  *   `gclbTargets` (*type:* `list(GoogleApi.CertificateManager.V1.Model.GclbTarget.t)`, *default:* `nil`) - Output only. A list of GCLB targets which use this Certificate Map.
+  *   `gclbTargets` (*type:* `list(GoogleApi.CertificateManager.V1.Model.GclbTarget.t)`, *default:* `nil`) - Output only. A list of GCLB targets which use this Certificate Map. A Target Proxy is only present on this list if it's attached to a Forwarding Rule.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a Certificate Map.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the Certificate Map. Certificate Map names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update timestamp of a Certificate Map.
