@@ -25,6 +25,7 @@ defmodule GoogleApi.DNS.V1.Model.ResponsePolicy do
   *   `gkeClusters` (*type:* `list(GoogleApi.DNS.V1.Model.ResponsePolicyGKECluster.t)`, *default:* `nil`) - The list of Google Kubernetes Engine clusters to which this response policy is applied.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the resource; defined by the server (output only).
   *   `kind` (*type:* `String.t`, *default:* `dns#responsePolicy`) - 
+  *   `labels` (*type:* `map()`, *default:* `nil`) - User labels.
   *   `networks` (*type:* `list(GoogleApi.DNS.V1.Model.ResponsePolicyNetwork.t)`, *default:* `nil`) - List of network names specifying networks to which this policy is applied.
   *   `responsePolicyName` (*type:* `String.t`, *default:* `nil`) - User assigned name for this Response Policy.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.DNS.V1.Model.ResponsePolicy do
           :gkeClusters => list(GoogleApi.DNS.V1.Model.ResponsePolicyGKECluster.t()) | nil,
           :id => String.t() | nil,
           :kind => String.t() | nil,
+          :labels => map() | nil,
           :networks => list(GoogleApi.DNS.V1.Model.ResponsePolicyNetwork.t()) | nil,
           :responsePolicyName => String.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.DNS.V1.Model.ResponsePolicy do
   field(:gkeClusters, as: GoogleApi.DNS.V1.Model.ResponsePolicyGKECluster, type: :list)
   field(:id)
   field(:kind)
+  field(:labels, type: :map)
   field(:networks, as: GoogleApi.DNS.V1.Model.ResponsePolicyNetwork, type: :list)
   field(:responsePolicyName)
 end
