@@ -28,7 +28,7 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1IntrospectTokenResponse do
   *   `iss` (*type:* `String.t`, *default:* `nil`) - The issuer of the provided token.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - A list of scopes associated with the provided token.
   *   `sub` (*type:* `String.t`, *default:* `nil`) - The unique user ID associated with the provided token. For Google Accounts, this value is based on the Google Account's user ID. For federated identities, this value is based on the identity pool ID and the value of the mapped `google.subject` attribute.
-  *   `username` (*type:* `String.t`, *default:* `nil`) - The human-readable identifier for the token principal subject. For example, if the provided token is associated with a workload identity pool, this field contains a value in the following format: `principal://iam.googleapis.com/projects//locations/global/workloadIdentityPools//subject/`
+  *   `username` (*type:* `String.t`, *default:* `nil`) - The human-readable identifier for the token principal subject. For example, if the provided token is associated with a workload identity pool, this field contains a value in the following format: `principal://iam.googleapis.com/projects//locations/global/workloadIdentityPools//subject/`. If the provided token is associated with a workforce pool, this field contains a value in the following format: `principal://iam.googleapis.com/locations/global/workforcePools//subject/`.
   """
 
   use GoogleApi.Gax.ModelBase
