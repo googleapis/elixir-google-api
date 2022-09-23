@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
   *   `params` (*type:* `GoogleApi.Compute.V1.Model.InstanceParams.t`, *default:* `nil`) - Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
   *   `lastSuspendedTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Last suspended timestamp in RFC3339 text format.
+  *   `resourceStatus` (*type:* `GoogleApi.Compute.V1.Model.ResourceStatus.t`, *default:* `nil`) - [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of the type and count of accelerator cards attached to the instance.
@@ -75,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :tags => GoogleApi.Compute.V1.Model.Tags.t() | nil,
           :params => GoogleApi.Compute.V1.Model.InstanceParams.t() | nil,
           :lastSuspendedTimestamp => String.t() | nil,
+          :resourceStatus => GoogleApi.Compute.V1.Model.ResourceStatus.t() | nil,
           :statusMessage => String.t() | nil,
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()) | nil,
           :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
@@ -124,6 +126,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:tags, as: GoogleApi.Compute.V1.Model.Tags)
   field(:params, as: GoogleApi.Compute.V1.Model.InstanceParams)
   field(:lastSuspendedTimestamp)
+  field(:resourceStatus, as: GoogleApi.Compute.V1.Model.ResourceStatus)
   field(:statusMessage)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

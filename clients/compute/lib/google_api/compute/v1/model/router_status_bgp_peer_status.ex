@@ -25,12 +25,14 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   *   `bfdStatus` (*type:* `GoogleApi.Compute.V1.Model.BfdStatus.t`, *default:* `nil`) - 
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the local BGP interface.
   *   `linkedVpnTunnel` (*type:* `String.t`, *default:* `nil`) - URL of the VPN tunnel that this BGP peer controls.
+  *   `md5AuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Informs whether MD5 authentication is enabled on this BGP peer.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. Unique within the Routers resource.
   *   `numLearnedRoutes` (*type:* `integer()`, *default:* `nil`) - Number of routes learned from the remote BGP Peer.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the remote BGP interface.
   *   `routerApplianceInstance` (*type:* `String.t`, *default:* `nil`) - [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the BGP session. For a list of possible values for this field, see BGP session states.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the BGP peer: {UP, DOWN}
+  *   `statusReason` (*type:* `String.t`, *default:* `nil`) - Indicates why particular status was returned.
   *   `uptime` (*type:* `String.t`, *default:* `nil`) - Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
   *   `uptimeSeconds` (*type:* `String.t`, *default:* `nil`) - Time this session has been up, in seconds. Format: 145
   """
@@ -42,12 +44,14 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
           :bfdStatus => GoogleApi.Compute.V1.Model.BfdStatus.t() | nil,
           :ipAddress => String.t() | nil,
           :linkedVpnTunnel => String.t() | nil,
+          :md5AuthEnabled => boolean() | nil,
           :name => String.t() | nil,
           :numLearnedRoutes => integer() | nil,
           :peerIpAddress => String.t() | nil,
           :routerApplianceInstance => String.t() | nil,
           :state => String.t() | nil,
           :status => String.t() | nil,
+          :statusReason => String.t() | nil,
           :uptime => String.t() | nil,
           :uptimeSeconds => String.t() | nil
         }
@@ -56,12 +60,14 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   field(:bfdStatus, as: GoogleApi.Compute.V1.Model.BfdStatus)
   field(:ipAddress)
   field(:linkedVpnTunnel)
+  field(:md5AuthEnabled)
   field(:name)
   field(:numLearnedRoutes)
   field(:peerIpAddress)
   field(:routerApplianceInstance)
   field(:state)
   field(:status)
+  field(:statusReason)
   field(:uptime)
   field(:uptimeSeconds)
 end
