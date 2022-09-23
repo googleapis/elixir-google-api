@@ -20,7 +20,7 @@ defmodule GoogleApi.CertificateManager.V1 do
   API client metadata for GoogleApi.CertificateManager.V1.
   """
 
-  @discovery_revision "20220804"
+  @discovery_revision "20220914"
 
   def discovery_revision(), do: @discovery_revision
 end
