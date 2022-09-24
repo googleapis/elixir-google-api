@@ -33,6 +33,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   *   `filter` (*type:* `String.t`, *default:* `nil`) - A Common Expression Language string.
   *   `gitFileSource` (*type:* `GoogleApi.CloudBuild.V1.Model.GitFileSource.t`, *default:* `nil`) - The file source describing the local or remote Build template.
   *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. Mutually exclusive with `trigger_template`.
+  *   `gitlabEnterpriseEventsConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.GitLabEventsConfig.t`, *default:* `nil`) - GitLabEnterpriseEventsConfig describes the configuration of a trigger that creates a build whenever a GitLab Enterprise event is received.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the trigger.
   *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with support for "**". If ignored_files and changed files are both empty, then they are not used to determine whether or not to trigger a build. If ignored_files is not empty, then we ignore any files that match any of the ignored_file globs. If the change has no files that are outside of the ignored_files globs, then we do not trigger a build.
   *   `includeBuildLogs` (*type:* `String.t`, *default:* `nil`) - If set to INCLUDE_BUILD_LOGS_WITH_STATUS, log url will be shown on GitHub page when build status is final. Setting this field to INCLUDE_BUILD_LOGS_WITH_STATUS for non GitHub triggers results in INVALID_ARGUMENT error.
@@ -64,6 +65,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
           :filter => String.t() | nil,
           :gitFileSource => GoogleApi.CloudBuild.V1.Model.GitFileSource.t() | nil,
           :github => GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t() | nil,
+          :gitlabEnterpriseEventsConfig =>
+            GoogleApi.CloudBuild.V1.Model.GitLabEventsConfig.t() | nil,
           :id => String.t() | nil,
           :ignoredFiles => list(String.t()) | nil,
           :includeBuildLogs => String.t() | nil,
@@ -95,6 +98,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   field(:filter)
   field(:gitFileSource, as: GoogleApi.CloudBuild.V1.Model.GitFileSource)
   field(:github, as: GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig)
+  field(:gitlabEnterpriseEventsConfig, as: GoogleApi.CloudBuild.V1.Model.GitLabEventsConfig)
   field(:id)
   field(:ignoredFiles, type: :list)
   field(:includeBuildLogs)
