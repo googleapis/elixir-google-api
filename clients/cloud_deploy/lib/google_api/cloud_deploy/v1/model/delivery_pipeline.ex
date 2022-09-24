@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy.
   *   `condition` (*type:* `GoogleApi.CloudDeploy.V1.Model.PipelineCondition.t`, *default:* `nil`) - Output only. Information around the state of the Delivery Pipeline.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the pipeline was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `DeliveryPipeline`. Max length is 255 characters.

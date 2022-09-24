@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeployJobRun do
   *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to deploy. Format is projects/{project}/locations/{location}/builds/{build}.
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the deploy failed. This will always be unspecified while the deploy is in progress or if it succeeded.
   *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the deploy failure, if available.
+  *   `metadata` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata.t`, *default:* `nil`) - Output only. Metadata containing information about the deploy job run.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeployJobRun do
   @type t :: %__MODULE__{
           :build => String.t() | nil,
           :failureCause => String.t() | nil,
-          :failureMessage => String.t() | nil
+          :failureMessage => String.t() | nil,
+          :metadata => GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata.t() | nil
         }
 
   field(:build)
   field(:failureCause)
   field(:failureMessage)
+  field(:metadata, as: GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.DeployJobRun do
