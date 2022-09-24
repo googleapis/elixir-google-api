@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Task do
   *   `executionStatus` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionStatus.t`, *default:* `nil`) - Output only. Status of the latest task executions.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the task.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the task, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/ tasks/{task_id}.
+  *   `notebook` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskNotebookTaskConfig.t`, *default:* `nil`) - Config related to running scheduled Notebooks.
   *   `spark` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskSparkTaskConfig.t`, *default:* `nil`) - Config related to running custom Spark tasks.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the task.
   *   `triggerSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskTriggerSpec.t`, *default:* `nil`) - Required. Spec related to how often and when a task should be triggered.
@@ -47,6 +48,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Task do
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionStatus.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :notebook =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskNotebookTaskConfig.t() | nil,
           :spark =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskSparkTaskConfig.t() | nil,
           :state => String.t() | nil,
@@ -65,6 +68,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Task do
 
   field(:labels, type: :map)
   field(:name)
+  field(:notebook, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskNotebookTaskConfig)
   field(:spark, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskSparkTaskConfig)
   field(:state)
   field(:triggerSpec, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskTriggerSpec)
