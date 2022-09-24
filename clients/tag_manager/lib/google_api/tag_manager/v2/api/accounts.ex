@@ -150,7 +150,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}
+  *   `path` (*type:* `String.t`) - GTM Account's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -402,7 +402,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}.
+  *   `parent` (*type:* `String.t`) - GTM Account's API relative path. Example: accounts/{account_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5939,7 +5939,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}
+  *   `parent` (*type:* `String.t`) - GTM Account's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
