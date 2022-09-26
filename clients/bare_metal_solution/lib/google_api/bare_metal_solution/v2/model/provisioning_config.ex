@@ -22,11 +22,12 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
   ## Attributes
 
   *   `cloudConsoleUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI to Cloud Console UI view of this provisioning config.
+  *   `customId` (*type:* `String.t`, *default:* `nil`) - Optional. The user-defined identifier of the provisioning config.
   *   `email` (*type:* `String.t`, *default:* `nil`) - Email provided to send a confirmation with provisioning config to. Deprecated in favour of email field in request messages.
   *   `handoverServiceAccount` (*type:* `String.t`, *default:* `nil`) - A service account to enable customers to access instance credentials upon handover.
   *   `instances` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.InstanceConfig.t)`, *default:* `nil`) - Instances to be created.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. Location name of this ProvisioningConfig. It is optional only for Intake UI transition period.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the provisioning config.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated name of the provisioning config. This follows the UUID format.
   *   `networks` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.NetworkConfig.t)`, *default:* `nil`) - Networks to be created.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of ProvisioningConfig.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Optional status messages associated with the FAILED state.
@@ -40,6 +41,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
 
   @type t :: %__MODULE__{
           :cloudConsoleUri => String.t() | nil,
+          :customId => String.t() | nil,
           :email => String.t() | nil,
           :handoverServiceAccount => String.t() | nil,
           :instances => list(GoogleApi.BareMetalSolution.V2.Model.InstanceConfig.t()) | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
         }
 
   field(:cloudConsoleUri)
+  field(:customId)
   field(:email)
   field(:handoverServiceAccount)
   field(:instances, as: GoogleApi.BareMetalSolution.V2.Model.InstanceConfig, type: :list)
