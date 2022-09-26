@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan do
 
   ## Attributes
 
-  *   `allowExtendAfterTime` (*type:* `DateTime.t`, *default:* `nil`) - After this time, the subscription is allowed for a new top-up purchase. Not present if the subscription is already extended by a top-up purchase.
+  *   `allowExtendAfterTime` (*type:* `DateTime.t`, *default:* `nil`) - If present, this is the time after which top up purchases are allowed for the prepaid plan. Will not be present for expired prepaid plans.
   """
 
   use GoogleApi.Gax.ModelBase
