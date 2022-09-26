@@ -29,12 +29,13 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
   *   `imageWidth` (*type:* `String.t`, *default:* `nil`) - Dimensions of the image: width. This field is string to match with page render service response. Deprecated. Use int_image_height instead.
   *   `intImageHeight` (*type:* `integer()`, *default:* `nil`) - Dimensions of the image: height.
   *   `intImageWidth` (*type:* `integer()`, *default:* `nil`) - Dimensions of the image: width.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Mime type of the content (Currently mapped from Page Render Service ItemType) Note that this is not necessarily the mime type of the http resource. For example a text/html from youtube or vimeo may actually be classified as a video type. Then we shall mark it as video/* since we don't know exactly what type of video it is. NEXT TAG : 16
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Mime type of the content (Currently mapped from Page Render Service ItemType) Note that this is not necessarily the mime type of the http resource. For example a text/html from youtube or vimeo may actually be classified as a video type. Then we shall mark it as video/* since we don't know exactly what type of video it is.
   *   `redirectUrl` (*type:* `GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t`, *default:* `nil`) - The stable redirect URL pointing to frontend server.
   *   `shouldNotRender` (*type:* `boolean()`, *default:* `nil`) - If the UrlMetadata is missing data for rendering a chip. Deprecated. Use Annotation.ChipRenderType instead.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - Snippet/small description of the weblink.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Weblink.
   *   `url` (*type:* `GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t`, *default:* `nil`) - The original URL.
+  *   `urlSource` (*type:* `String.t`, *default:* `nil`) - NEXT TAG : 17
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
           :shouldNotRender => boolean() | nil,
           :snippet => String.t() | nil,
           :title => String.t() | nil,
-          :url => GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t() | nil
+          :url => GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t() | nil,
+          :urlSource => String.t() | nil
         }
 
   field(:domain)
@@ -70,6 +72,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
   field(:snippet)
   field(:title)
   field(:url, as: GoogleApi.CloudSearch.V1.Model.SafeUrlProto)
+  field(:urlSource)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.UrlMetadata do

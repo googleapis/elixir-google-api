@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Settings do
   *   `accessLock` (*type:* `boolean()`, *default:* `nil`) - The access lock of the meeting space that lets owner control who can join the meeting. True if the access lock feature is enabled for the meeting space.
   *   `attendanceReportEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether attendance report is enabled for the meeting space.
   *   `chatLock` (*type:* `boolean()`, *default:* `nil`) - The chat lock of the meeting space that lets owner control whether the participants can send chat messages. True if the chat lock feature is enabled for the meeting space.
-  *   `cohostArtifactSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether meeting artifacts will be shared with co-hosts.
+  *   `cohostArtifactSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether meeting artifacts will be shared with cohosts.
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for the meeting space.
   *   `defaultAsViewer` (*type:* `boolean()`, *default:* `nil`) - Whether the default role is viewer or not.
   *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the meeting space is moderated.
