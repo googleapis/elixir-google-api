@@ -20,7 +20,7 @@ defmodule GoogleApi.ServiceControl.V2 do
   API client metadata for GoogleApi.ServiceControl.V2.
   """
 
-  @discovery_revision "20220624"
+  @discovery_revision "20220915"
 
   def discovery_revision(), do: @discovery_revision
 end
