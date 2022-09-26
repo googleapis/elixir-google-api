@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.BotInfo do
 
   ## Attributes
 
+  *   `appAllowlistStatus` (*type:* `String.t`, *default:* `nil`) - 
   *   `appId` (*type:* `GoogleApi.CloudSearch.V1.Model.AppId.t`, *default:* `nil`) - Identifier of the application associated with the bot.
   *   `botAvatarUrl` (*type:* `String.t`, *default:* `nil`) - URL for the avatar picture of the User in dynamite. This field should be populated if the request is FetchBotCategories/ListBotCatalogEntries
   *   `botName` (*type:* `String.t`, *default:* `nil`) - Non-unique, user-defined display name of the Bot. This field should be populated if the request is FetchBotCategories/ListBotCatalogEntries.
@@ -28,14 +29,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.BotInfo do
   *   `developerName` (*type:* `String.t`, *default:* `nil`) - Name of bot developer.
   *   `marketPlaceBannerUrl` (*type:* `String.t`, *default:* `nil`) - URL for the banner image in GSuite Market Place. The banner will be 220x140.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Indicates whether bot is enabled/disabled.
+  *   `supportHomeScreen` (*type:* `boolean()`, *default:* `nil`) - If the app supports a home screen.
   *   `supportUrls` (*type:* `GoogleApi.CloudSearch.V1.Model.SupportUrls.t`, *default:* `nil`) - Urls with additional information related to the bot. This field should always be set even if all the fields within it are empty, so that it is convenient for clients to work with this field in javascript.
   *   `supportedUses` (*type:* `list(String.t)`, *default:* `nil`) - The supported uses are limited according to the user that made the request. If the user does not have permission to use the bot, the list will be empty. This could occur for non whitelisted bots in the catalog.
-  *   `whitelistStatus` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appAllowlistStatus => String.t() | nil,
           :appId => GoogleApi.CloudSearch.V1.Model.AppId.t() | nil,
           :botAvatarUrl => String.t() | nil,
           :botName => String.t() | nil,
@@ -43,11 +45,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.BotInfo do
           :developerName => String.t() | nil,
           :marketPlaceBannerUrl => String.t() | nil,
           :status => String.t() | nil,
+          :supportHomeScreen => boolean() | nil,
           :supportUrls => GoogleApi.CloudSearch.V1.Model.SupportUrls.t() | nil,
-          :supportedUses => list(String.t()) | nil,
-          :whitelistStatus => String.t() | nil
+          :supportedUses => list(String.t()) | nil
         }
 
+  field(:appAllowlistStatus)
   field(:appId, as: GoogleApi.CloudSearch.V1.Model.AppId)
   field(:botAvatarUrl)
   field(:botName)
@@ -55,9 +58,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.BotInfo do
   field(:developerName)
   field(:marketPlaceBannerUrl)
   field(:status)
+  field(:supportHomeScreen)
   field(:supportUrls, as: GoogleApi.CloudSearch.V1.Model.SupportUrls)
   field(:supportedUses, type: :list)
-  field(:whitelistStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.BotInfo do

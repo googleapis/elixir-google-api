@@ -17,21 +17,23 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
   @moduledoc """
-  Contains info regarding the updater of an Activity Feed item. Next Id: 7
+  Contains info regarding the updater of an Activity Feed item. Next Id: 8
 
   ## Attributes
 
+  *   `driveNotificationAvatarUrl` (*type:* `String.t`, *default:* `nil`) - Avatar url of the user who triggered the Drive Notification email. This field will be populated if we can extract such information from the Drive Notification email. This should only be used to fetch user avatars when updater_to_show_email is not populated. This field is not set for non-Drive Notification items. This is not the actual sender of the email, as the sender is always comments-noreply@docs.google.com.
   *   `updaterCountDisplayType` (*type:* `String.t`, *default:* `nil`) - Describes how updater_count_to_show should be used.
   *   `updaterCountToShow` (*type:* `integer()`, *default:* `nil`) - The number of updaters for clients to show depending on UpdaterCountDisplayType.
-  *   `updaterToShowEmail` (*type:* `String.t`, *default:* `nil`) - The email of the updater for clients to show used for Gmail items.
+  *   `updaterToShowEmail` (*type:* `String.t`, *default:* `nil`) - The email of the updater for clients to show used for Gmail items. For Drive Notifications, this is the email of the user who triggered the Drive Notification email. This field will be populated if we can extract such information from the Drive Notification email. This is not the actual sender of the email, as the sender is always comments-noreply@docs.google.com.
   *   `updaterToShowGaiaId` (*type:* `String.t`, *default:* `nil`) - The gaia id of the updater for clients to show used for Gmail items. If the updater is an external user, the email field below should be populated.
-  *   `updaterToShowName` (*type:* `String.t`, *default:* `nil`) - The display name of the updater for clients to show used for Gmail items. This (along with the updater fields above) will be populated in the thread pipeline (http://shortn/_rPS0GCp94Y) when converting Activity Feed message attributes into client-renderable Activity Feed items.
+  *   `updaterToShowName` (*type:* `String.t`, *default:* `nil`) - The display name of the updater for clients to show used for Gmail items. For non-Drive Notification items, this field will always be populated. If the display name cannot be found for the user, the fallback string will be the email address. For Drive Notification items, this is the email of the user who triggered the Drive notification email. This field will be populated if we can extract such information from the Drive Notification email. This is not the actual sender of the email, as the sender is always comments-noreply@docs.google.com.
   *   `updaterToShowUserId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The updater for clients to show used for Dynamite Chat items.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :driveNotificationAvatarUrl => String.t() | nil,
           :updaterCountDisplayType => String.t() | nil,
           :updaterCountToShow => integer() | nil,
           :updaterToShowEmail => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UserInfo do
           :updaterToShowUserId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil
         }
 
+  field(:driveNotificationAvatarUrl)
   field(:updaterCountDisplayType)
   field(:updaterCountToShow)
   field(:updaterToShowEmail)
