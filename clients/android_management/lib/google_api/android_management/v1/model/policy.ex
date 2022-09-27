@@ -68,7 +68,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `funDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to have fun. Controls whether the Easter egg game in Settings is disabled.
   *   `deviceOwnerLockScreenInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The device owner information to be shown on the lock screen.
   *   `setWallpaperDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the wallpaper is disabled.
-  *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the keyguard is disabled.
+  *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, this disables the Lock Screen (https://source.android.com/docs/core/display/multi_display/lock-screen) for primary and/or secondary displays.
   *   `autoDateAndTimeZone` (*type:* `String.t`, *default:* `nil`) - Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
   *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled. Also mutes the device.
   *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled. This is supported only on company-owned devices.
