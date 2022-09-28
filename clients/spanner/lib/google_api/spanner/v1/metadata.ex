@@ -20,7 +20,7 @@ defmodule GoogleApi.Spanner.V1 do
   API client metadata for GoogleApi.Spanner.V1.
   """
 
-  @discovery_revision "20220914"
+  @discovery_revision "20220916"
 
   def discovery_revision(), do: @discovery_revision
 end

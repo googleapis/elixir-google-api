@@ -23,7 +23,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceConfigMetadata do
 
   *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation was cancelled.
   *   `instanceConfig` (*type:* `GoogleApi.Spanner.V1.Model.InstanceConfig.t`, *default:* `nil`) - The desired instance config after updating.
-  *   `progress` (*type:* `GoogleApi.Spanner.V1.Model.OperationProgress.t`, *default:* `nil`) - The progress of the UpdateInstanceConfig operation.
+  *   `progress` (*type:* `GoogleApi.Spanner.V1.Model.InstanceOperationProgress.t`, *default:* `nil`) - The progress of the UpdateInstanceConfig operation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +31,12 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceConfigMetadata do
   @type t :: %__MODULE__{
           :cancelTime => DateTime.t() | nil,
           :instanceConfig => GoogleApi.Spanner.V1.Model.InstanceConfig.t() | nil,
-          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t() | nil
+          :progress => GoogleApi.Spanner.V1.Model.InstanceOperationProgress.t() | nil
         }
 
   field(:cancelTime, as: DateTime)
   field(:instanceConfig, as: GoogleApi.Spanner.V1.Model.InstanceConfig)
-  field(:progress, as: GoogleApi.Spanner.V1.Model.OperationProgress)
+  field(:progress, as: GoogleApi.Spanner.V1.Model.InstanceOperationProgress)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.UpdateInstanceConfigMetadata do
