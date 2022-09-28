@@ -1145,7 +1145,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:viewId` (*type:* `String.t`) - Required. The id to use for this view.
+      *   `:viewId` (*type:* `String.t`) - Required. A client-assigned identifier such as "my-view". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods.
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogView.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
