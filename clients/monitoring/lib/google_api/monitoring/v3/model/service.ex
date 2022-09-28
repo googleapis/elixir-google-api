@@ -22,6 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   ## Attributes
 
   *   `appEngine` (*type:* `GoogleApi.Monitoring.V3.Model.AppEngine.t`, *default:* `nil`) - Type used for App Engine services.
+  *   `basicService` (*type:* `GoogleApi.Monitoring.V3.Model.BasicService.t`, *default:* `nil`) - Message that contains the service type and service labels of this service if it is a basic service. Documentation and examples here (https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
   *   `cloudEndpoints` (*type:* `GoogleApi.Monitoring.V3.Model.CloudEndpoints.t`, *default:* `nil`) - Type used for Cloud Endpoints services.
   *   `cloudRun` (*type:* `GoogleApi.Monitoring.V3.Model.CloudRun.t`, *default:* `nil`) - Type used for Cloud Run services.
   *   `clusterIstio` (*type:* `GoogleApi.Monitoring.V3.Model.ClusterIstio.t`, *default:* `nil`) - Type used for Istio services that live in a Kubernetes cluster.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
 
   @type t :: %__MODULE__{
           :appEngine => GoogleApi.Monitoring.V3.Model.AppEngine.t() | nil,
+          :basicService => GoogleApi.Monitoring.V3.Model.BasicService.t() | nil,
           :cloudEndpoints => GoogleApi.Monitoring.V3.Model.CloudEndpoints.t() | nil,
           :cloudRun => GoogleApi.Monitoring.V3.Model.CloudRun.t() | nil,
           :clusterIstio => GoogleApi.Monitoring.V3.Model.ClusterIstio.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
         }
 
   field(:appEngine, as: GoogleApi.Monitoring.V3.Model.AppEngine)
+  field(:basicService, as: GoogleApi.Monitoring.V3.Model.BasicService)
   field(:cloudEndpoints, as: GoogleApi.Monitoring.V3.Model.CloudEndpoints)
   field(:cloudRun, as: GoogleApi.Monitoring.V3.Model.CloudRun)
   field(:clusterIstio, as: GoogleApi.Monitoring.V3.Model.ClusterIstio)

@@ -26,7 +26,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new alerting policy.
+  Creates a new alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
 
   ## Parameters
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Deletes an alerting policy.
+  Deletes an alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
 
   ## Parameters
 
@@ -328,7 +328,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Updates an alerting policy. You can either replace the entire policy with a new one or replace only certain fields in the current alerting policy by specifying the fields to be updated via updateMask. Returns the updated alerting policy.
+  Updates an alerting policy. You can either replace the entire policy with a new one or replace only certain fields in the current alerting policy by specifying the fields to be updated via updateMask. Returns the updated alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
 
   ## Parameters
 
@@ -1552,7 +1552,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.
+  Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.
 
   ## Parameters
 
@@ -1624,7 +1624,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Deletes a notification channel.
+  Deletes a notification channel.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.
 
   ## Parameters
 
@@ -1939,7 +1939,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Updates a notification channel. Fields not specified in the field mask remain unchanged.
+  Updates a notification channel. Fields not specified in the field mask remain unchanged.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.
 
   ## Parameters
 
