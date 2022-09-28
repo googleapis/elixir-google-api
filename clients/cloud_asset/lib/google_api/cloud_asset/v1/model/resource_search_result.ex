@@ -28,7 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of this resource. Maximum length could be up to 1M bytes. This field is available only when the resource's Protobuf contains it. To search against the `description`: * Use a field query. Example: `description:"important instance"` * Use a free text query. Example: `"important instance"`
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of this resource. This field is available only when the resource's Protobuf contains it. To search against the `display_name`: * Use a field query. Example: `displayName:"My Instance"` * Use a free text query. Example: `"My Instance"`
   *   `folders` (*type:* `list(String.t)`, *default:* `nil`) - The folder(s) that this resource belongs to, in the form of folders/{FOLDER_NUMBER}. This field is available when the resource belongs to one or more folders. To search against `folders`: * Use a field query. Example: `folders:(123 OR 456)` * Use a free text query. Example: `123` * Specify the `scope` field as this folder in your search request.
-  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) name or [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) name. This field is available only when the resource's Protobuf contains it. To search against the `kms_key`: * Use a field query. Example: `kmsKey:key` * Use a free text query. Example: `key`
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - This field only presents for the purpose of backward-compatibility. Please use `kms_keys` field to retrieve KMS key information. This field will only be populated for the resource types included in this list for backward compatible purpose. To search against the `kms_key`: * Use a field query. Example: `kmsKey:key` * Use a free text query. Example: `key`
+  *   `kmsKeys` (*type:* `list(String.t)`, *default:* `nil`) - The Cloud KMS [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) names or [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) names. This field is available only when the resource's Protobuf contains it. To search against the `kms_keys`: * Use a field query. Example: `kmsKeys:key` * Use a free text query. Example: `key`
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this resource. See [Labelling and grouping GCP resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources) for more information. This field is available only when the resource's Protobuf contains it. To search against the `labels`: * Use a field query: - query on any label's key or value. Example: `labels:prod` - query by a given label. Example: `labels.env:prod` - query by a given label's existence. Example: `labels.env:*` * Use a free text query. Example: `prod`
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location can be `global`, regional like `us-east1`, or zonal like `us-west1-b`. This field is available only when the resource's Protobuf contains it. To search against the `location`: * Use a field query. Example: `location:us-west*` * Use a free text query. Example: `us-west*`
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of this resource. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`. See [Cloud Asset Inventory Resource Name Format](https://cloud.google.com/asset-inventory/docs/resource-name-format) for more information. To search against the `name`: * Use a field query. Example: `name:instance1` * Use a free text query. Example: `instance1`
@@ -57,6 +58,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
           :displayName => String.t() | nil,
           :folders => list(String.t()) | nil,
           :kmsKey => String.t() | nil,
+          :kmsKeys => list(String.t()) | nil,
           :labels => map() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   field(:displayName)
   field(:folders, type: :list)
   field(:kmsKey)
+  field(:kmsKeys, type: :list)
   field(:labels, type: :map)
   field(:location)
   field(:name)
