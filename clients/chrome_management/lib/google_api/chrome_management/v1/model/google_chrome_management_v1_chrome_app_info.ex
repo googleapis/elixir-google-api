@@ -23,6 +23,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
 
   *   `googleOwned` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is built and maintained by Google. Version-specific field that will only be set when the requested app version is found.
   *   `isCwsHosted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is in a published state in the Chrome Web Store.
+  *   `isExtensionPolicySupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether an app supports policy for extensions.
   *   `isKioskOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app is only for Kiosk mode on ChromeOS devices
   *   `isTheme` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the app or extension is a theme.
   *   `kioskEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices
@@ -37,6 +38,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
   @type t :: %__MODULE__{
           :googleOwned => boolean() | nil,
           :isCwsHosted => boolean() | nil,
+          :isExtensionPolicySupported => boolean() | nil,
           :isKioskOnly => boolean() | nil,
           :isTheme => boolean() | nil,
           :kioskEnabled => boolean() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
 
   field(:googleOwned)
   field(:isCwsHosted)
+  field(:isExtensionPolicySupported)
   field(:isKioskOnly)
   field(:isTheme)
   field(:kioskEnabled)
