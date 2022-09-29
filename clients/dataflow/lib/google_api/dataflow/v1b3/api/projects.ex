@@ -179,6 +179,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
       *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
+      *   `:name` (*type:* `String.t`) - Optional. The job name. Optional.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
@@ -209,6 +210,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :location => :query,
+      :name => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
@@ -473,6 +475,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
       *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
+      *   `:name` (*type:* `String.t`) - Optional. The job name. Optional.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
@@ -503,6 +506,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :location => :query,
+      :name => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
@@ -1572,6 +1576,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
+      *   `:name` (*type:* `String.t`) - Optional. The job name. Optional.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
@@ -1613,6 +1618,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :name => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
