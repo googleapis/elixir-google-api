@@ -23,6 +23,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
+  *   `reliabilityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ReliabilityProjection.t`, *default:* `nil`) - Use with CategoryType.RELIABILITY
   *   `securityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
   *   `sustainabilityProjection` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SustainabilityProjection.t`, *default:* `nil`) - Use with CategoryType.SUSTAINABILITY
   """
@@ -33,6 +34,9 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
           :category => String.t() | nil,
           :costProjection =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection.t()
+            | nil,
+          :reliabilityProjection =>
+            GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ReliabilityProjection.t()
             | nil,
           :securityProjection =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1SecurityProjection.t()
@@ -46,6 +50,10 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impac
 
   field(:costProjection,
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostProjection
+  )
+
+  field(:reliabilityProjection,
+    as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ReliabilityProjection
   )
 
   field(:securityProjection,
