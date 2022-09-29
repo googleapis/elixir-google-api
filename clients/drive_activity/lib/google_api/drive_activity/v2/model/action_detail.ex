@@ -21,6 +21,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.ActionDetail do
 
   ## Attributes
 
+  *   `appliedLabelChange` (*type:* `GoogleApi.DriveActivity.V2.Model.AppliedLabelChange.t`, *default:* `nil`) - Label was changed.
   *   `comment` (*type:* `GoogleApi.DriveActivity.V2.Model.Comment.t`, *default:* `nil`) - A change about comments was made.
   *   `create` (*type:* `GoogleApi.DriveActivity.V2.Model.Create.t`, *default:* `nil`) - An object was created.
   *   `delete` (*type:* `GoogleApi.DriveActivity.V2.Model.Delete.t`, *default:* `nil`) - An object was deleted.
@@ -37,6 +38,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.ActionDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appliedLabelChange => GoogleApi.DriveActivity.V2.Model.AppliedLabelChange.t() | nil,
           :comment => GoogleApi.DriveActivity.V2.Model.Comment.t() | nil,
           :create => GoogleApi.DriveActivity.V2.Model.Create.t() | nil,
           :delete => GoogleApi.DriveActivity.V2.Model.Delete.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.ActionDetail do
           :settingsChange => GoogleApi.DriveActivity.V2.Model.SettingsChange.t() | nil
         }
 
+  field(:appliedLabelChange, as: GoogleApi.DriveActivity.V2.Model.AppliedLabelChange)
   field(:comment, as: GoogleApi.DriveActivity.V2.Model.Comment)
   field(:create, as: GoogleApi.DriveActivity.V2.Model.Create)
   field(:delete, as: GoogleApi.DriveActivity.V2.Model.Delete)
