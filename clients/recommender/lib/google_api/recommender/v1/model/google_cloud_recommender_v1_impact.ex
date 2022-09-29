@@ -23,7 +23,9 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
+  *   `reliabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t`, *default:* `nil`) - Use with CategoryType.RELAIBILITY
   *   `securityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
+  *   `sustainabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection.t`, *default:* `nil`) - Use with CategoryType.SUSTAINABILITY
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,16 +34,29 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
           :category => String.t() | nil,
           :costProjection =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t() | nil,
+          :reliabilityProjection =>
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t() | nil,
           :securityProjection =>
-            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t() | nil
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t() | nil,
+          :sustainabilityProjection =>
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection.t()
+            | nil
         }
 
   field(:category)
 
   field(:costProjection, as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection)
 
+  field(:reliabilityProjection,
+    as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection
+  )
+
   field(:securityProjection,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection
+  )
+
+  field(:sustainabilityProjection,
+    as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection
   )
 end
 
