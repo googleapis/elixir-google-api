@@ -27,6 +27,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   *   `dimension` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageDimension.t`, *default:* `nil`) - Physical dimension of the page.
   *   `formFields` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageFormField.t)`, *default:* `nil`) - A list of visually detected form fields on the page.
   *   `image` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImage.t`, *default:* `nil`) - Rendered image for this page. This image is preprocessed to remove any skew, rotation, and distortions such that the annotation bounding boxes can be upright and axis-aligned.
+  *   `imageQualityScores` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores.t`, *default:* `nil`) - Image Quality Scores.
   *   `layout` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t`, *default:* `nil`) - Layout for the page.
   *   `lines` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageLine.t)`, *default:* `nil`) - A list of visually detected text lines on the page. A collection of tokens that a human would perceive as a line.
   *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
@@ -65,6 +66,9 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
             | nil,
           :image =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImage.t() | nil,
+          :imageQualityScores =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores.t()
+            | nil,
           :layout =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t() | nil,
           :lines =>
@@ -122,6 +126,11 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   )
 
   field(:image, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImage)
+
+  field(:imageQualityScores,
+    as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores
+  )
+
   field(:layout, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout)
 
   field(:lines,
