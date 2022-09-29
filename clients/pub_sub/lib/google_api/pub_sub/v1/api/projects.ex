@@ -673,7 +673,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the resource name rules. Format is `projects/{project}/snapshots/{snap}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the [resource name rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
