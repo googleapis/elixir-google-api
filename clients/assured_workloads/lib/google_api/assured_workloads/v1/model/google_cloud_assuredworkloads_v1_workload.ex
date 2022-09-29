@@ -32,6 +32,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t`, *default:* `nil`) - Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS CMEK key is provisioned. This field is deprecated as of Feb 28, 2022. In order to create a Keyring, callers should specify, ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
+  *   `partner` (*type:* `String.t`, *default:* `nil`) - Optional. Compliance Regime associated with this workload.
   *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
   *   `resourceSettings` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceSettings.t)`, *default:* `nil`) - Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
   *   `resources` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t)`, *default:* `nil`) - Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
@@ -54,6 +55,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
             | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :partner => String.t() | nil,
           :provisionedResourcesParent => String.t() | nil,
           :resourceSettings =>
             list(
@@ -85,6 +87,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   field(:labels, type: :map)
   field(:name)
+  field(:partner)
   field(:provisionedResourcesParent)
 
   field(:resourceSettings,
