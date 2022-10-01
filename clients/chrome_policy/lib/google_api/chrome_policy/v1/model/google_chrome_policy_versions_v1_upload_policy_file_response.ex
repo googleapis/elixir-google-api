@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UploadPolicyFileResponse do
   @moduledoc """
-  Response message for downloading an uploaded file. Next ID: 2
+  Response message for downloading an uploaded file.
 
   ## Attributes
 
