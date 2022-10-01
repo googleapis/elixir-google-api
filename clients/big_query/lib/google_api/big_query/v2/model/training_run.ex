@@ -29,8 +29,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start time of this training run.
   *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Output only. Options that were used for this training run, includes user specified and default options that were used.
   *   `trainingStartTime` (*type:* `String.t`, *default:* `nil`) - Output only. The start time of this training run, in milliseconds since epoch.
-  *   `vertexAiModelId` (*type:* `String.t`, *default:* `nil`) - The model id in Vertex AI Model Registry for this training run
-  *   `vertexAiModelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The model version in Vertex AI Model Registry for this training run
+  *   `vertexAiModelId` (*type:* `String.t`, *default:* `nil`) - The model id in the [Vertex AI Model Registry](https://cloud.google.com/vertex-ai/docs/model-registry/introduction) for this training run.
+  *   `vertexAiModelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The model version in the [Vertex AI Model Registry](https://cloud.google.com/vertex-ai/docs/model-registry/introduction) for this training run.
   """
 
   use GoogleApi.Gax.ModelBase
