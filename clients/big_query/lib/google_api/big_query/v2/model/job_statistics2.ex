@@ -21,115 +21,118 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
 
   ## Attributes
 
-  *   `biEngineStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t`, *default:* `nil`) - BI Engine specific Statistics. [Output only] BI Engine specific Statistics.
-  *   `billingTier` (*type:* `integer()`, *default:* `nil`) - [Output only] Billing tier for the job.
-  *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - [Output only] Whether the query result was fetched from the query cache.
-  *   `ddlAffectedRowAccessPolicyCount` (*type:* `String.t`, *default:* `nil`) - [Output only] [Preview] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
-  *   `ddlDestinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output only] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information.
-  *   `ddlOperationPerformed` (*type:* `String.t`, *default:* `nil`) - The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): "CREATE": The query created the DDL target. "SKIP": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. "REPLACE": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. "DROP": The query deleted the DDL target.
-  *   `ddlTargetDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Output only] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries.
-  *   `ddlTargetRoutine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - The DDL target routine. Present only for CREATE/DROP FUNCTION/PROCEDURE queries.
-  *   `ddlTargetRowAccessPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - [Output only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries.
-  *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
-  *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - [Output only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
-  *   `estimatedBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output only] The original estimate of bytes processed for the job.
+  *   `transferredBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Total bytes transferred for cross-cloud queries such as Cross Cloud Transfer and CREATE TABLE AS SELECT (CTAS).
   *   `mlStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.MlStatistics.t`, *default:* `nil`) - [Output only] Statistics of a BigQuery ML training job.
-  *   `modelTraining` (*type:* `GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t`, *default:* `nil`) - [Output only, Beta] Information about create model query job progress.
-  *   `modelTrainingCurrentIteration` (*type:* `integer()`, *default:* `nil`) - [Output only, Beta] Deprecated; do not use.
-  *   `modelTrainingExpectedTotalIteration` (*type:* `String.t`, *default:* `nil`) - [Output only, Beta] Deprecated; do not use.
-  *   `numDmlAffectedRows` (*type:* `String.t`, *default:* `nil`) - [Output only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE.
-  *   `queryPlan` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t)`, *default:* `nil`) - [Output only] Describes execution plan for the query.
-  *   `referencedRoutines` (*type:* `list(GoogleApi.BigQuery.V2.Model.RoutineReference.t)`, *default:* `nil`) - [Output only] Referenced routines (persistent user-defined functions and stored procedures) for the job.
-  *   `referencedTables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - [Output only] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list.
-  *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t)`, *default:* `nil`) - [Output only] Job resource usage breakdown by reservation.
-  *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Output only] The schema of the results. Present only for successful dry run of non-legacy SQL queries.
-  *   `searchStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SearchStatistics.t`, *default:* `nil`) - [Output only] Search query specific statistics.
-  *   `sparkStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SparkStatistics.t`, *default:* `nil`) - [Output only] Statistics of a Spark procedure job.
-  *   `statementType` (*type:* `String.t`, *default:* `nil`) - The type of query statement, if valid. Possible values (new values might be added in the future): "SELECT": SELECT query. "INSERT": INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "UPDATE": UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "DELETE": DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "MERGE": MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "ALTER_TABLE": ALTER TABLE query. "ALTER_VIEW": ALTER VIEW query. "ASSERT": ASSERT condition AS 'description'. "CREATE_FUNCTION": CREATE FUNCTION query. "CREATE_MODEL": CREATE [OR REPLACE] MODEL ... AS SELECT ... . "CREATE_PROCEDURE": CREATE PROCEDURE query. "CREATE_TABLE": CREATE [OR REPLACE] TABLE without AS SELECT. "CREATE_TABLE_AS_SELECT": CREATE [OR REPLACE] TABLE ... AS SELECT ... . "CREATE_VIEW": CREATE [OR REPLACE] VIEW ... AS SELECT ... . "DROP_FUNCTION" : DROP FUNCTION query. "DROP_PROCEDURE": DROP PROCEDURE query. "DROP_TABLE": DROP TABLE query. "DROP_VIEW": DROP VIEW query.
-  *   `timeline` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t)`, *default:* `nil`) - [Output only] [Beta] Describes a timeline of job execution.
-  *   `totalBytesBilled` (*type:* `String.t`, *default:* `nil`) - [Output only] Total bytes billed for the job.
-  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output only] Total bytes processed for the job.
+  *   `ddlTargetRowAccessPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - [Output only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries.
+  *   `ddlTargetDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Output only] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries.
   *   `totalBytesProcessedAccuracy` (*type:* `String.t`, *default:* `nil`) - [Output only] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estimate is upper bound of what the query would cost.
+  *   `modelTraining` (*type:* `GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t`, *default:* `nil`) - [Output only, Beta] Information about create model query job progress.
+  *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t)`, *default:* `nil`) - [Output only] Job resource usage breakdown by reservation.
+  *   `biEngineStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t`, *default:* `nil`) - BI Engine specific Statistics. [Output only] BI Engine specific Statistics.
+  *   `totalBytesBilled` (*type:* `String.t`, *default:* `nil`) - [Output only] Total bytes billed for the job.
+  *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
   *   `totalPartitionsProcessed` (*type:* `String.t`, *default:* `nil`) - [Output only] Total number of partitions processed from all partitioned tables referenced in the job.
+  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output only] Total bytes processed for the job.
+  *   `ddlAffectedRowAccessPolicyCount` (*type:* `String.t`, *default:* `nil`) - [Output only] [Preview] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
+  *   `billingTier` (*type:* `integer()`, *default:* `nil`) - [Output only] Billing tier for the job.
+  *   `referencedRoutines` (*type:* `list(GoogleApi.BigQuery.V2.Model.RoutineReference.t)`, *default:* `nil`) - [Output only] Referenced routines (persistent user-defined functions and stored procedures) for the job.
+  *   `sparkStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SparkStatistics.t`, *default:* `nil`) - [Output only] Statistics of a Spark procedure job.
+  *   `ddlOperationPerformed` (*type:* `String.t`, *default:* `nil`) - The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): "CREATE": The query created the DDL target. "SKIP": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. "REPLACE": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. "DROP": The query deleted the DDL target.
+  *   `numDmlAffectedRows` (*type:* `String.t`, *default:* `nil`) - [Output only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE.
+  *   `ddlDestinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output only] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information.
+  *   `searchStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.SearchStatistics.t`, *default:* `nil`) - [Output only] Search query specific statistics.
+  *   `estimatedBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output only] The original estimate of bytes processed for the job.
+  *   `queryPlan` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t)`, *default:* `nil`) - [Output only] Describes execution plan for the query.
   *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - [Output only] Slot-milliseconds for the job.
+  *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - [Output only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.
+  *   `timeline` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t)`, *default:* `nil`) - [Output only] [Beta] Describes a timeline of job execution.
+  *   `referencedTables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - [Output only] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list.
+  *   `modelTrainingExpectedTotalIteration` (*type:* `String.t`, *default:* `nil`) - [Output only, Beta] Deprecated; do not use.
+  *   `statementType` (*type:* `String.t`, *default:* `nil`) - The type of query statement, if valid. Possible values (new values might be added in the future): "SELECT": SELECT query. "INSERT": INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "UPDATE": UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "DELETE": DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "MERGE": MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. "ALTER_TABLE": ALTER TABLE query. "ALTER_VIEW": ALTER VIEW query. "ASSERT": ASSERT condition AS 'description'. "CREATE_FUNCTION": CREATE FUNCTION query. "CREATE_MODEL": CREATE [OR REPLACE] MODEL ... AS SELECT ... . "CREATE_PROCEDURE": CREATE PROCEDURE query. "CREATE_TABLE": CREATE [OR REPLACE] TABLE without AS SELECT. "CREATE_TABLE_AS_SELECT": CREATE [OR REPLACE] TABLE ... AS SELECT ... . "CREATE_VIEW": CREATE [OR REPLACE] VIEW ... AS SELECT ... . "DROP_FUNCTION" : DROP FUNCTION query. "DROP_PROCEDURE": DROP PROCEDURE query. "DROP_TABLE": DROP TABLE query. "DROP_VIEW": DROP VIEW query.
+  *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Output only] The schema of the results. Present only for successful dry run of non-legacy SQL queries.
+  *   `ddlTargetRoutine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - The DDL target routine. Present only for CREATE/DROP FUNCTION/PROCEDURE queries.
+  *   `modelTrainingCurrentIteration` (*type:* `integer()`, *default:* `nil`) - [Output only, Beta] Deprecated; do not use.
+  *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - [Output only] Whether the query result was fetched from the query cache.
   *   `undeclaredQueryParameters` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameter.t)`, *default:* `nil`) - Standard SQL only: list of undeclared query parameters detected during a dry run validation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :biEngineStatistics => GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t() | nil,
-          :billingTier => integer() | nil,
-          :cacheHit => boolean() | nil,
-          :ddlAffectedRowAccessPolicyCount => String.t() | nil,
-          :ddlDestinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
-          :ddlOperationPerformed => String.t() | nil,
-          :ddlTargetDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
-          :ddlTargetRoutine => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
+          :transferredBytes => String.t() | nil,
+          :mlStatistics => GoogleApi.BigQuery.V2.Model.MlStatistics.t() | nil,
           :ddlTargetRowAccessPolicy =>
             GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t() | nil,
-          :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
-          :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
-          :estimatedBytesProcessed => String.t() | nil,
-          :mlStatistics => GoogleApi.BigQuery.V2.Model.MlStatistics.t() | nil,
+          :ddlTargetDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
+          :totalBytesProcessedAccuracy => String.t() | nil,
           :modelTraining => GoogleApi.BigQuery.V2.Model.BigQueryModelTraining.t() | nil,
-          :modelTrainingCurrentIteration => integer() | nil,
-          :modelTrainingExpectedTotalIteration => String.t() | nil,
-          :numDmlAffectedRows => String.t() | nil,
-          :queryPlan => list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t()) | nil,
-          :referencedRoutines => list(GoogleApi.BigQuery.V2.Model.RoutineReference.t()) | nil,
-          :referencedTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()) | nil,
           :reservationUsage =>
             list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t()) | nil,
-          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
-          :searchStatistics => GoogleApi.BigQuery.V2.Model.SearchStatistics.t() | nil,
-          :sparkStatistics => GoogleApi.BigQuery.V2.Model.SparkStatistics.t() | nil,
-          :statementType => String.t() | nil,
-          :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()) | nil,
+          :biEngineStatistics => GoogleApi.BigQuery.V2.Model.BiEngineStatistics.t() | nil,
           :totalBytesBilled => String.t() | nil,
-          :totalBytesProcessed => String.t() | nil,
-          :totalBytesProcessedAccuracy => String.t() | nil,
+          :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :totalPartitionsProcessed => String.t() | nil,
+          :totalBytesProcessed => String.t() | nil,
+          :ddlAffectedRowAccessPolicyCount => String.t() | nil,
+          :billingTier => integer() | nil,
+          :referencedRoutines => list(GoogleApi.BigQuery.V2.Model.RoutineReference.t()) | nil,
+          :sparkStatistics => GoogleApi.BigQuery.V2.Model.SparkStatistics.t() | nil,
+          :ddlOperationPerformed => String.t() | nil,
+          :numDmlAffectedRows => String.t() | nil,
+          :ddlDestinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :searchStatistics => GoogleApi.BigQuery.V2.Model.SearchStatistics.t() | nil,
+          :estimatedBytesProcessed => String.t() | nil,
+          :queryPlan => list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t()) | nil,
           :totalSlotMs => String.t() | nil,
+          :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
+          :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()) | nil,
+          :referencedTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()) | nil,
+          :modelTrainingExpectedTotalIteration => String.t() | nil,
+          :statementType => String.t() | nil,
+          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
+          :ddlTargetRoutine => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
+          :modelTrainingCurrentIteration => integer() | nil,
+          :cacheHit => boolean() | nil,
           :undeclaredQueryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()) | nil
         }
 
-  field(:biEngineStatistics, as: GoogleApi.BigQuery.V2.Model.BiEngineStatistics)
-  field(:billingTier)
-  field(:cacheHit)
-  field(:ddlAffectedRowAccessPolicyCount)
-  field(:ddlDestinationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
-  field(:ddlOperationPerformed)
-  field(:ddlTargetDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
-  field(:ddlTargetRoutine, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
-  field(:ddlTargetRowAccessPolicy, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
-  field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
-  field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
-  field(:estimatedBytesProcessed)
+  field(:transferredBytes)
   field(:mlStatistics, as: GoogleApi.BigQuery.V2.Model.MlStatistics)
+  field(:ddlTargetRowAccessPolicy, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
+  field(:ddlTargetDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
+  field(:totalBytesProcessedAccuracy)
   field(:modelTraining, as: GoogleApi.BigQuery.V2.Model.BigQueryModelTraining)
-  field(:modelTrainingCurrentIteration)
-  field(:modelTrainingExpectedTotalIteration)
-  field(:numDmlAffectedRows)
-  field(:queryPlan, as: GoogleApi.BigQuery.V2.Model.ExplainQueryStage, type: :list)
-  field(:referencedRoutines, as: GoogleApi.BigQuery.V2.Model.RoutineReference, type: :list)
-  field(:referencedTables, as: GoogleApi.BigQuery.V2.Model.TableReference, type: :list)
 
   field(:reservationUsage,
     as: GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage,
     type: :list
   )
 
-  field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
-  field(:searchStatistics, as: GoogleApi.BigQuery.V2.Model.SearchStatistics)
-  field(:sparkStatistics, as: GoogleApi.BigQuery.V2.Model.SparkStatistics)
-  field(:statementType)
-  field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
+  field(:biEngineStatistics, as: GoogleApi.BigQuery.V2.Model.BiEngineStatistics)
   field(:totalBytesBilled)
-  field(:totalBytesProcessed)
-  field(:totalBytesProcessedAccuracy)
+  field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:totalPartitionsProcessed)
+  field(:totalBytesProcessed)
+  field(:ddlAffectedRowAccessPolicyCount)
+  field(:billingTier)
+  field(:referencedRoutines, as: GoogleApi.BigQuery.V2.Model.RoutineReference, type: :list)
+  field(:sparkStatistics, as: GoogleApi.BigQuery.V2.Model.SparkStatistics)
+  field(:ddlOperationPerformed)
+  field(:numDmlAffectedRows)
+  field(:ddlDestinationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:searchStatistics, as: GoogleApi.BigQuery.V2.Model.SearchStatistics)
+  field(:estimatedBytesProcessed)
+  field(:queryPlan, as: GoogleApi.BigQuery.V2.Model.ExplainQueryStage, type: :list)
   field(:totalSlotMs)
+  field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
+  field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
+  field(:referencedTables, as: GoogleApi.BigQuery.V2.Model.TableReference, type: :list)
+  field(:modelTrainingExpectedTotalIteration)
+  field(:statementType)
+  field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
+  field(:ddlTargetRoutine, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
+  field(:modelTrainingCurrentIteration)
+  field(:cacheHit)
   field(:undeclaredQueryParameters, as: GoogleApi.BigQuery.V2.Model.QueryParameter, type: :list)
 end
 
