@@ -395,6 +395,306 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
   end
 
   @doc """
+  Creates a certificate at a specified OU for a customer.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
+  *   `customer` (*type:* `String.t`) - Required. The customer for which the certificate will apply.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineCertificateRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineCertificateResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec chromepolicy_customers_policies_networks_define_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineCertificateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def chromepolicy_customers_policies_networks_define_certificate(
+        connection,
+        customer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+customer}/policies/networks:defineCertificate", %{
+        "customer" => URI.encode(customer, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineCertificateResponse{}]
+    )
+  end
+
+  @doc """
+  Define a new network.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
+  *   `customer` (*type:* `String.t`) - Required. The customer who will own this new network.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineNetworkRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineNetworkResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec chromepolicy_customers_policies_networks_define_network(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineNetworkResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def chromepolicy_customers_policies_networks_define_network(
+        connection,
+        customer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+customer}/policies/networks:defineNetwork", %{
+        "customer" => URI.encode(customer, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1DefineNetworkResponse{}]
+    )
+  end
+
+  @doc """
+  Remove an existing certificate by guid.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
+  *   `customer` (*type:* `String.t`) - Required. The customer whose certificate will be removed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveCertificateRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveCertificateResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec chromepolicy_customers_policies_networks_remove_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveCertificateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def chromepolicy_customers_policies_networks_remove_certificate(
+        connection,
+        customer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+customer}/policies/networks:removeCertificate", %{
+        "customer" => URI.encode(customer, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveCertificateResponse{}]
+    )
+  end
+
+  @doc """
+  Remove an existing network by guid.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ChromePolicy.V1.Connection.t`) - Connection to server
+  *   `customer` (*type:* `String.t`) - Required. The customer whose network will be removed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveNetworkRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveNetworkResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec chromepolicy_customers_policies_networks_remove_network(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveNetworkResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def chromepolicy_customers_policies_networks_remove_network(
+        connection,
+        customer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+customer}/policies/networks:removeNetwork", %{
+        "customer" => URI.encode(customer, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1RemoveNetworkResponse{}]
+    )
+  end
+
+  @doc """
   Modify multiple policy values that are applied to a specific org unit so that they now inherit the value from a parent (if applicable). All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.
 
   ## Parameters
@@ -561,7 +861,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchema{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_customers_policy_schemas_get(
@@ -570,7 +870,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema.t()}
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchema.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -606,7 +906,8 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1PolicySchema{}]
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchema{}]
     )
   end
 
@@ -630,13 +931,13 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The schema filter used to find a particular schema based on fields like its resource name, description and `additionalTargetKeyNames`.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of policy schemas to return.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of policy schemas to return, defaults to 100 and has a maximum of 1000.
       *   `:pageToken` (*type:* `String.t`) - The page token used to retrieve a specific page of the listing request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListPolicySchemasResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListPolicySchemasResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_customers_policy_schemas_list(
@@ -645,7 +946,8 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListPolicySchemasResponse.t()}
+          {:ok,
+           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListPolicySchemasResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -685,7 +987,10 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListPolicySchemasResponse{}]
+        [
+          struct:
+            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListPolicySchemasResponse{}
+        ]
     )
   end
 end
