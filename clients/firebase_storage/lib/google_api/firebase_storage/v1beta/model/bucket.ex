@@ -21,22 +21,16 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Model.Bucket do
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. Location of the storage bucket.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the bucket.
-  *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Represents whether a bucket is being moved to a new location, in which case reconciling is set to true.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => String.t() | nil,
-          :name => String.t() | nil,
-          :reconciling => boolean() | nil
+          :name => String.t() | nil
         }
 
-  field(:location)
   field(:name)
-  field(:reconciling)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.FirebaseStorage.V1beta.Model.Bucket do
