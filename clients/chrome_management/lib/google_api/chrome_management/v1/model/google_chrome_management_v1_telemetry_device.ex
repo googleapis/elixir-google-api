@@ -24,6 +24,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically sorted in a decreasing order of report_time.
   *   `batteryInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo.t)`, *default:* `nil`) - Output only. Information on battery specs for the device.
   *   `batteryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport.t)`, *default:* `nil`) - Output only. Battery reports collected periodically.
+  *   `bootPerformanceReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BootPerformanceReport.t)`, *default:* `nil`) - Output only. Boot performance reports of the device.
   *   `cpuInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuInfo.t)`, *default:* `nil`) - Output only. Information regarding CPU specs for the device.
   *   `cpuStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1CpuStatusReport.t)`, *default:* `nil`) - Output only. CPU status reports collected periodically sorted in a decreasing order of report_time.
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Output only. Google Workspace Customer whose enterprise enrolled the device.
@@ -58,6 +59,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
           :batteryStatusReport =>
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport.t()
+            )
+            | nil,
+          :bootPerformanceReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BootPerformanceReport.t()
             )
             | nil,
           :cpuInfo =>
@@ -123,6 +129,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   field(:batteryStatusReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport,
+    type: :list
+  )
+
+  field(:bootPerformanceReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BootPerformanceReport,
     type: :list
   )
 
