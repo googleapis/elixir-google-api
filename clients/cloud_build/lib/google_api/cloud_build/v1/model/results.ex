@@ -26,7 +26,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step indices.
   *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 4KB of data is stored.
   *   `images` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
+  *   `mavenArtifacts` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact.t)`, *default:* `nil`) - Maven artifacts uploaded to Artifact Registry at the end of the build.
   *   `numArtifacts` (*type:* `String.t`, *default:* `nil`) - Number of artifacts uploaded. Only populated when artifacts are uploaded.
+  *   `pythonPackages` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedPythonPackage.t)`, *default:* `nil`) - Python artifacts uploaded to Artifact Registry at the end of the build.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +39,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
           :buildStepImages => list(String.t()) | nil,
           :buildStepOutputs => list(String.t()) | nil,
           :images => list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t()) | nil,
-          :numArtifacts => String.t() | nil
+          :mavenArtifacts => list(GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact.t()) | nil,
+          :numArtifacts => String.t() | nil,
+          :pythonPackages => list(GoogleApi.CloudBuild.V1.Model.UploadedPythonPackage.t()) | nil
         }
 
   field(:artifactManifest)
@@ -45,7 +49,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   field(:buildStepImages, type: :list)
   field(:buildStepOutputs, type: :list)
   field(:images, as: GoogleApi.CloudBuild.V1.Model.BuiltImage, type: :list)
+  field(:mavenArtifacts, as: GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact, type: :list)
   field(:numArtifacts)
+  field(:pythonPackages, as: GoogleApi.CloudBuild.V1.Model.UploadedPythonPackage, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Results do

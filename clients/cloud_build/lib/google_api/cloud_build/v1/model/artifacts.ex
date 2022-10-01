@@ -22,18 +22,24 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
   ## Attributes
 
   *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account's credentials. The digests of the pushed images will be stored in the Build resource's results field. If any of the images fail to be pushed, the build is marked FAILURE.
+  *   `mavenArtifacts` (*type:* `list(GoogleApi.CloudBuild.V1.Model.MavenArtifact.t)`, *default:* `nil`) - A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.
   *   `objects` (*type:* `GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t`, *default:* `nil`) - A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account's credentials. The location and generation of the uploaded objects will be stored in the Build resource's results field. If any objects fail to be pushed, the build is marked FAILURE.
+  *   `pythonPackages` (*type:* `list(GoogleApi.CloudBuild.V1.Model.PythonPackage.t)`, *default:* `nil`) - A list of Python packages to be uploaded to Artifact Registry upon successful completion of all build steps. The build service account credentials will be used to perform the upload. If any objects fail to be pushed, the build is marked FAILURE.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :images => list(String.t()) | nil,
-          :objects => GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t() | nil
+          :mavenArtifacts => list(GoogleApi.CloudBuild.V1.Model.MavenArtifact.t()) | nil,
+          :objects => GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t() | nil,
+          :pythonPackages => list(GoogleApi.CloudBuild.V1.Model.PythonPackage.t()) | nil
         }
 
   field(:images, type: :list)
+  field(:mavenArtifacts, as: GoogleApi.CloudBuild.V1.Model.MavenArtifact, type: :list)
   field(:objects, as: GoogleApi.CloudBuild.V1.Model.ArtifactObjects)
+  field(:pythonPackages, as: GoogleApi.CloudBuild.V1.Model.PythonPackage, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.Artifacts do
