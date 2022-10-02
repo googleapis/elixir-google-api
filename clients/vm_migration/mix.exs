@@ -48,7 +48,7 @@ defmodule GoogleApi.VMMigration.Mixfile do
 
   defp description() do
     """
-    VM Migration API client library. Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
+    Migrate to Virtual Machines API client library. Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
     """
   end
 

@@ -1,6 +1,6 @@
 # GoogleApi.VMMigration
 
-VM Migration API client library.
+Migrate to Virtual Machines API client library.
 
 Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
 
