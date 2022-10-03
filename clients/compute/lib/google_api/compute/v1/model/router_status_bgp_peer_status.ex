@@ -23,12 +23,15 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
 
   *   `advertisedRoutes` (*type:* `list(GoogleApi.Compute.V1.Model.Route.t)`, *default:* `nil`) - Routes that were advertised to the remote BGP peer
   *   `bfdStatus` (*type:* `GoogleApi.Compute.V1.Model.BfdStatus.t`, *default:* `nil`) - 
+  *   `enableIpv6` (*type:* `boolean()`, *default:* `nil`) - Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the local BGP interface.
+  *   `ipv6NexthopAddress` (*type:* `String.t`, *default:* `nil`) - IPv6 address of the local BGP interface.
   *   `linkedVpnTunnel` (*type:* `String.t`, *default:* `nil`) - URL of the VPN tunnel that this BGP peer controls.
   *   `md5AuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Informs whether MD5 authentication is enabled on this BGP peer.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. Unique within the Routers resource.
   *   `numLearnedRoutes` (*type:* `integer()`, *default:* `nil`) - Number of routes learned from the remote BGP Peer.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the remote BGP interface.
+  *   `peerIpv6NexthopAddress` (*type:* `String.t`, *default:* `nil`) - IPv6 address of the remote BGP interface.
   *   `routerApplianceInstance` (*type:* `String.t`, *default:* `nil`) - [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the BGP session. For a list of possible values for this field, see BGP session states.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the BGP peer: {UP, DOWN}
@@ -42,12 +45,15 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   @type t :: %__MODULE__{
           :advertisedRoutes => list(GoogleApi.Compute.V1.Model.Route.t()) | nil,
           :bfdStatus => GoogleApi.Compute.V1.Model.BfdStatus.t() | nil,
+          :enableIpv6 => boolean() | nil,
           :ipAddress => String.t() | nil,
+          :ipv6NexthopAddress => String.t() | nil,
           :linkedVpnTunnel => String.t() | nil,
           :md5AuthEnabled => boolean() | nil,
           :name => String.t() | nil,
           :numLearnedRoutes => integer() | nil,
           :peerIpAddress => String.t() | nil,
+          :peerIpv6NexthopAddress => String.t() | nil,
           :routerApplianceInstance => String.t() | nil,
           :state => String.t() | nil,
           :status => String.t() | nil,
@@ -58,12 +64,15 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
 
   field(:advertisedRoutes, as: GoogleApi.Compute.V1.Model.Route, type: :list)
   field(:bfdStatus, as: GoogleApi.Compute.V1.Model.BfdStatus)
+  field(:enableIpv6)
   field(:ipAddress)
+  field(:ipv6NexthopAddress)
   field(:linkedVpnTunnel)
   field(:md5AuthEnabled)
   field(:name)
   field(:numLearnedRoutes)
   field(:peerIpAddress)
+  field(:peerIpv6NexthopAddress)
   field(:routerApplianceInstance)
   field(:state)
   field(:status)
