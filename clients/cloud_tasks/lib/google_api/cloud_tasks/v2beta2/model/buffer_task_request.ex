@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudTasks.V2beta2.Model.BufferTaskRequest do
   @moduledoc """
-  Request message for BufferTask.
+  LINT.IfChange Request message for BufferTask.
 
   ## Attributes
 
