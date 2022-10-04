@@ -21,4 +21,6 @@ export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/73713_elixir_hex_apikey)
 
 mix deps.get
 
-mix google_apis.publish
+# Disabled for Google Cloud Next release freeze.
+# TODO: Re-enable on Oct 14, 2022
+# mix google_apis.publish
