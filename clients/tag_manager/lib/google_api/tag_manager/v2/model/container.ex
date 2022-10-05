@@ -24,11 +24,13 @@ defmodule GoogleApi.TagManager.V2.Model.Container do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - The Container ID uniquely identifies the GTM Container.
   *   `domainName` (*type:* `list(String.t)`, *default:* `nil`) - List of domain names associated with the Container. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
+  *   `features` (*type:* `GoogleApi.TagManager.V2.Model.ContainerFeatures.t`, *default:* `nil`) - Read-only Container feature set.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Container as computed at storage time. This value is recomputed whenever the account is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Container display name. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Container Notes. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container's API relative path.
   *   `publicId` (*type:* `String.t`, *default:* `nil`) - Container Public ID.
+  *   `tagIds` (*type:* `list(String.t)`, *default:* `nil`) - All Tag IDs that refer to this Container.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `usageContext` (*type:* `list(String.t)`, *default:* `nil`) - List of Usage Contexts for the Container. Valid values include: web, android, or ios. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
   """
@@ -39,11 +41,13 @@ defmodule GoogleApi.TagManager.V2.Model.Container do
           :accountId => String.t() | nil,
           :containerId => String.t() | nil,
           :domainName => list(String.t()) | nil,
+          :features => GoogleApi.TagManager.V2.Model.ContainerFeatures.t() | nil,
           :fingerprint => String.t() | nil,
           :name => String.t() | nil,
           :notes => String.t() | nil,
           :path => String.t() | nil,
           :publicId => String.t() | nil,
+          :tagIds => list(String.t()) | nil,
           :tagManagerUrl => String.t() | nil,
           :usageContext => list(String.t()) | nil
         }
@@ -51,11 +55,13 @@ defmodule GoogleApi.TagManager.V2.Model.Container do
   field(:accountId)
   field(:containerId)
   field(:domainName, type: :list)
+  field(:features, as: GoogleApi.TagManager.V2.Model.ContainerFeatures)
   field(:fingerprint)
   field(:name)
   field(:notes)
   field(:path)
   field(:publicId)
+  field(:tagIds, type: :list)
   field(:tagManagerUrl)
   field(:usageContext, type: :list)
 end

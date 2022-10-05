@@ -22,6 +22,7 @@ defmodule GoogleApi.TagManager.V2.Model.Account do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The Account ID uniquely identifies the GTM Account.
+  *   `features` (*type:* `GoogleApi.TagManager.V2.Model.AccountFeatures.t`, *default:* `nil`) - Read-only Account feature set
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Account as computed at storage time. This value is recomputed whenever the account is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Account display name. @mutable tagmanager.accounts.create @mutable tagmanager.accounts.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Account's API relative path.
@@ -33,6 +34,7 @@ defmodule GoogleApi.TagManager.V2.Model.Account do
 
   @type t :: %__MODULE__{
           :accountId => String.t() | nil,
+          :features => GoogleApi.TagManager.V2.Model.AccountFeatures.t() | nil,
           :fingerprint => String.t() | nil,
           :name => String.t() | nil,
           :path => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.TagManager.V2.Model.Account do
         }
 
   field(:accountId)
+  field(:features, as: GoogleApi.TagManager.V2.Model.AccountFeatures)
   field(:fingerprint)
   field(:name)
   field(:path)
