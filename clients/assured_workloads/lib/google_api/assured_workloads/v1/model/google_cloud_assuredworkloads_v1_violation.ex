@@ -27,6 +27,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Viola
   *   `beginTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time of the event which triggered the Violation.
   *   `category` (*type:* `String.t`, *default:* `nil`) - Output only. Category under which this violation is mapped. e.g. Location, Service Usage, Access, Encryption, etc.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description for the Violation. e.g. OrgPolicy gcp.resourceLocations has non compliant value.
+  *   `exceptionAuditLogLink` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Audit Log link to find business justification provided for violation exception. Format: https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Name of the Violation. Format: organizations/{organization}/locations/{location}/workloads/{workload_id}/violations/{violations_id}
   *   `nonCompliantOrgPolicy` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Name of the OrgPolicy which was modified with non-compliant change and resulted this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}
   *   `orgPolicyConstraint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The org-policy-constraint that was incorrectly changed, which resulted in this violation.
@@ -45,6 +46,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Viola
           :beginTime => DateTime.t() | nil,
           :category => String.t() | nil,
           :description => String.t() | nil,
+          :exceptionAuditLogLink => String.t() | nil,
           :name => String.t() | nil,
           :nonCompliantOrgPolicy => String.t() | nil,
           :orgPolicyConstraint => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Viola
   field(:beginTime, as: DateTime)
   field(:category)
   field(:description)
+  field(:exceptionAuditLogLink)
   field(:name)
   field(:nonCompliantOrgPolicy)
   field(:orgPolicyConstraint)

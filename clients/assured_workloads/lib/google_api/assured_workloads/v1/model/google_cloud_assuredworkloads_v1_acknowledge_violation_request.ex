@@ -22,18 +22,15 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Ackno
   ## Attributes
 
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Required. Business justification explaining the need for violation acknowledgement
-  *   `nonCompliantOrgPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the OrgPolicy which was modified with non-compliant change and resulted in this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comment => String.t() | nil,
-          :nonCompliantOrgPolicy => String.t() | nil
+          :comment => String.t() | nil
         }
 
   field(:comment)
-  field(:nonCompliantOrgPolicy)
 end
 
 defimpl Poison.Decoder,
