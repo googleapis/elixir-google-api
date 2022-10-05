@@ -6844,7 +6844,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endpointAttachmentId` (*type:* `String.t`) - ID to use for the endpoint attachment. The ID can contain lowercase letters and numbers, must start with a letter, and must be 1-20 characters in length.
+      *   `:endpointAttachmentId` (*type:* `String.t`) - ID to use for the endpoint attachment. ID must start with a lowercase letter followed by up to 31 lowercase letters, numbers, or hyphens, and cannot end with a hyphen. The minimum length is 2.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
