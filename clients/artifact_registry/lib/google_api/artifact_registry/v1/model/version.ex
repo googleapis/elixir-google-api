@@ -23,7 +23,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Version do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the version was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the version, as specified in its metadata.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the only resource in use is DockerImage
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the resources could be: DockerImage MavenArtifact
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the version, for example: "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1". If the package or version ID parts contain slashes, the slashes are escaped.
   *   `relatedTags` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Tag.t)`, *default:* `nil`) - Output only. A list of related tags. Will contain up to 100 tags that reference this version.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the version was last updated.
