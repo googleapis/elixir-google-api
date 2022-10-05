@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudSearch.V1.Model.UpdateDataSourceRequest do
 
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.DataSource.t`, *default:* `nil`) - 
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Update mask to control which fields to update. If update_mask is non-empty then only the fields specified in the update_mask are updated. If you specify a field in the update_mask, but don't specify its value in the source that field will be cleared. If the update_mask is not present or empty or has the value * then all fields will be updated. Some example field paths: name, display_name
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :debugOptions => GoogleApi.CloudSearch.V1.Model.DebugOptions.t() | nil,
-          :source => GoogleApi.CloudSearch.V1.Model.DataSource.t() | nil
+          :source => GoogleApi.CloudSearch.V1.Model.DataSource.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:debugOptions, as: GoogleApi.CloudSearch.V1.Model.DebugOptions)
   field(:source, as: GoogleApi.CloudSearch.V1.Model.DataSource)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.UpdateDataSourceRequest do

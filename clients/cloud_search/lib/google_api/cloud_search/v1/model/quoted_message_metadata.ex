@@ -24,13 +24,16 @@ defmodule GoogleApi.CloudSearch.V1.Model.QuotedMessageMetadata do
   *   `annotations` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Snapshot of the annotations of the quoted message.
   *   `appProfile` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAppProfile.t`, *default:* `nil`) - Output only. Custom display profile info for apps. Will be empty for real users.
   *   `botAttachmentState` (*type:* `String.t`, *default:* `nil`) - Output only. The bot attachment state of the quoted message. Used by clients to display a bot attachment indicator in the UI.
+  *   `createTimeMicros` (*type:* `String.t`, *default:* `nil`) - Output only. Time when the quoted message was posted in microseconds.
   *   `creatorId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - Output only. ID of the User who posted the quoted message. This includes information to identify if the quoted message was posted by an App on behalf of a user.
+  *   `lastEditTimeMicros` (*type:* `String.t`, *default:* `nil`) - Output only. Time when the quoted message was last edited by a user at the time when quoting action happens. Time is in microseconds.
   *   `lastUpdateTimeWhenQuotedMicros` (*type:* `String.t`, *default:* `nil`) - The `last_update_time` of the original message when the client initiated the quote creation. This is derived from the request payload passed from clients. Used to fetch the quoted message contents at a specific time on the read path. This field is populated from storage directly.
   *   `messageId` (*type:* `GoogleApi.CloudSearch.V1.Model.MessageId.t`, *default:* `nil`) - MessageId of the original message that is being quoted. This is derived from the request payload passed from clients. This field is populated from storage directly.
   *   `messageState` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the quoted message. Used by clients to display tombstones for quotes that reference a deleted message.
   *   `retentionSettings` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedRetentionSettings.t`, *default:* `nil`) - Output only. The retention (OTR) settings of the quoted message.
   *   `textBody` (*type:* `String.t`, *default:* `nil`) - Output only. Snapshot of the text body of the quoted message.
-  *   `uploadMetadata` (*type:* `list(GoogleApi.CloudSearch.V1.Model.UploadMetadata.t)`, *default:* `nil`) - Output only. Upload metadata of the quoted message. NEXT TAG: 11
+  *   `updaterId` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - Output only. ID of the User who last updated (created/edited/deleted) the quoted message at the time when quoting action happens. This includes information to identify if the quoted message was posted by an App on behalf of a user.
+  *   `uploadMetadata` (*type:* `list(GoogleApi.CloudSearch.V1.Model.UploadMetadata.t)`, *default:* `nil`) - Output only. Upload metadata of the quoted message.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,20 +42,25 @@ defmodule GoogleApi.CloudSearch.V1.Model.QuotedMessageMetadata do
           :annotations => list(GoogleApi.CloudSearch.V1.Model.Annotation.t()) | nil,
           :appProfile => GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAppProfile.t() | nil,
           :botAttachmentState => String.t() | nil,
+          :createTimeMicros => String.t() | nil,
           :creatorId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
+          :lastEditTimeMicros => String.t() | nil,
           :lastUpdateTimeWhenQuotedMicros => String.t() | nil,
           :messageId => GoogleApi.CloudSearch.V1.Model.MessageId.t() | nil,
           :messageState => String.t() | nil,
           :retentionSettings =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedRetentionSettings.t() | nil,
           :textBody => String.t() | nil,
+          :updaterId => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
           :uploadMetadata => list(GoogleApi.CloudSearch.V1.Model.UploadMetadata.t()) | nil
         }
 
   field(:annotations, as: GoogleApi.CloudSearch.V1.Model.Annotation, type: :list)
   field(:appProfile, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAppProfile)
   field(:botAttachmentState)
+  field(:createTimeMicros)
   field(:creatorId, as: GoogleApi.CloudSearch.V1.Model.UserId)
+  field(:lastEditTimeMicros)
   field(:lastUpdateTimeWhenQuotedMicros)
   field(:messageId, as: GoogleApi.CloudSearch.V1.Model.MessageId)
   field(:messageState)
@@ -60,6 +68,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.QuotedMessageMetadata do
   field(:retentionSettings, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedRetentionSettings)
 
   field(:textBody)
+  field(:updaterId, as: GoogleApi.CloudSearch.V1.Model.UserId)
   field(:uploadMetadata, as: GoogleApi.CloudSearch.V1.Model.UploadMetadata, type: :list)
 end
 
