@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
 
   ## Attributes
 
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - The resource permission required for this request.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - The identifier of the parent of this resource instance. Must be in one of the following formats: - `projects/` - `folders/` - `organizations/`
   *   `resourceLocation` (*type:* `String.t`, *default:* `nil`) - The location of the resource. If not empty, the resource will be checked against location policy. The value must be a valid zone, region or multiregion. For example: "europe-west4" or "northamerica-northeast1-a"
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Name of the resource. This is used for auditing purposes.
@@ -29,11 +30,13 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :permission => String.t() | nil,
           :resourceContainer => String.t() | nil,
           :resourceLocation => String.t() | nil,
           :resourceName => String.t() | nil
         }
 
+  field(:permission)
   field(:resourceContainer)
   field(:resourceLocation)
   field(:resourceName)
