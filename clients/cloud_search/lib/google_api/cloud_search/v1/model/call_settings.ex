@@ -28,7 +28,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for this conference.
   *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current call is moderated.
   *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the present lock is currently on or off.
-  *   `projectDinoEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether project Dino is currently on or off. WARNING: This is currently an experimental field. It should not be used without getting an explicit review and approval from the Meet team.
   *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reactions lock is currently on or off.
   *   `videoLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the video lock is currently on or off.
   """
@@ -43,7 +42,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
           :cseEnabled => boolean() | nil,
           :moderationEnabled => boolean() | nil,
           :presentLock => boolean() | nil,
-          :projectDinoEnabled => boolean() | nil,
           :reactionsLock => boolean() | nil,
           :videoLock => boolean() | nil
         }
@@ -55,7 +53,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
   field(:cseEnabled)
   field(:moderationEnabled)
   field(:presentLock)
-  field(:projectDinoEnabled)
   field(:reactionsLock)
   field(:videoLock)
 end
