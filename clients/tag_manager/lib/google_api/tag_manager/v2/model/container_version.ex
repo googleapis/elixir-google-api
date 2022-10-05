@@ -32,6 +32,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Container version description. @mutable tagmanager.accounts.containers.versions.update
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Container Version as computed at storage time. This value is recomputed whenever the container version is modified.
   *   `folder` (*type:* `list(GoogleApi.TagManager.V2.Model.Folder.t)`, *default:* `nil`) - The folders in the container that this version was taken from.
+  *   `gtagConfig` (*type:* `list(GoogleApi.TagManager.V2.Model.GtagConfig.t)`, *default:* `nil`) - The Google tag configs in the container that this version was taken from.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Container version display name. @mutable tagmanager.accounts.containers.versions.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container Version's API relative path.
   *   `tag` (*type:* `list(GoogleApi.TagManager.V2.Model.Tag.t)`, *default:* `nil`) - The tags in the container that this version was taken from.
@@ -55,6 +56,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
           :description => String.t() | nil,
           :fingerprint => String.t() | nil,
           :folder => list(GoogleApi.TagManager.V2.Model.Folder.t()) | nil,
+          :gtagConfig => list(GoogleApi.TagManager.V2.Model.GtagConfig.t()) | nil,
           :name => String.t() | nil,
           :path => String.t() | nil,
           :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()) | nil,
@@ -75,6 +77,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   field(:description)
   field(:fingerprint)
   field(:folder, as: GoogleApi.TagManager.V2.Model.Folder, type: :list)
+  field(:gtagConfig, as: GoogleApi.TagManager.V2.Model.GtagConfig, type: :list)
   field(:name)
   field(:path)
   field(:tag, as: GoogleApi.TagManager.V2.Model.Tag, type: :list)
