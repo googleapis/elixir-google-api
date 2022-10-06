@@ -31,6 +31,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain to which this permission refers.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the user or group to which this permission refers.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  
+      - They cannot be set on shared drive items 
       - They can only be set on user and group permissions 
       - The time must be in the future 
       - The time cannot be more than a year in the future
