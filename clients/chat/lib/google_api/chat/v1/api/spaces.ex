@@ -86,7 +86,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Lists spaces the caller is a member of. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+  Lists spaces the caller is a member of. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). 
 
   ## Parameters
 
