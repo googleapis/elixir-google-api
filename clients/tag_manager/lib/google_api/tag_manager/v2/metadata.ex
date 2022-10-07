@@ -20,7 +20,7 @@ defmodule GoogleApi.TagManager.V2 do
   API client metadata for GoogleApi.TagManager.V2.
   """
 
-  @discovery_revision "20221003"
+  @discovery_revision "20221006"
 
   def discovery_revision(), do: @discovery_revision
 end

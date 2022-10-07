@@ -229,7 +229,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true (i.e. Google product owned to GTM permission). If this operation causes an update but this bit is false, the operation will fail.
+      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true. If this operation causes an update but this bit is false, the operation will fail.
       *   `:containerId` (*type:* `String.t`) - ID of container that will be merged into the current container.
       *   `:settingSource` (*type:* `String.t`) - Specify the source of config setting after combine
   *   `opts` (*type:* `keyword()`) - Call options
@@ -549,7 +549,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:destinationId` (*type:* `String.t`) - Measurement ID of destination linked to a GTM Container, e.g. AW-123456789. Example: accounts/containers:lookup?destination_id={destination_id}.
+      *   `:destinationId` (*type:* `String.t`) - Destination ID linked to a GTM Container, e.g. AW-123456789. Example: accounts/containers:lookup?destination_id={destination_id}.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -609,7 +609,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true (i.e. Google product owned to GTM permission). If this operation causes an update but this bit is false, the operation will fail.
+      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true. If this operation causes an update but this bit is false, the operation will fail.
       *   `:copySettings` (*type:* `boolean()`) - Whether or not to copy tag settings from this tag to the new tag.
       *   `:copyTermsOfService` (*type:* `boolean()`) - Must be set to true to accept all terms of service agreements copied from the current tag to the newly created tag. If this bit is false, the operation will fail.
       *   `:copyUsers` (*type:* `boolean()`) - Whether or not to copy users from this tag to the new tag.
@@ -673,7 +673,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Gets the snippet of a Container.
+  Gets the JavaScript snippet for a Container.
 
   ## Parameters
 
