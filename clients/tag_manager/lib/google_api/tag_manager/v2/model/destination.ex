@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.TagManager.V2.Model.Destination do
   @moduledoc """
-  Represents a Google Tag Destination
+  Represents a Google Tag Destination.
 
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `destinationId` (*type:* `String.t`, *default:* `nil`) - Measurement ID of destination linked to a GTM Container.
+  *   `destinationId` (*type:* `String.t`, *default:* `nil`) - Destination ID.
   *   `destinationLinkId` (*type:* `String.t`, *default:* `nil`) - The Destination link ID uniquely identifies the Destination.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the Google Tag Destination as computed at storage time. This value is recomputed whenever the destination is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Destination display name.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Destination's API relative path.
-  *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
+  *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI.
   """
 
   use GoogleApi.Gax.ModelBase
