@@ -22,23 +22,47 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
   ## Attributes
 
   *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account's credentials. The digests of the pushed images will be stored in the Build resource's results field. If any of the images fail to be pushed, the build is marked FAILURE.
+  *   `mavenArtifacts` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact.t)`, *default:* `nil`) - A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.
   *   `objects` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects.t`, *default:* `nil`) - A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account's credentials. The location and generation of the uploaded objects will be stored in the Build resource's results field. If any objects fail to be pushed, the build is marked FAILURE.
+  *   `pythonPackages` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage.t)`, *default:* `nil`) - A list of Python packages to be uploaded to Artifact Registry upon successful completion of all build steps. The build service account credentials will be used to perform the upload. If any objects fail to be pushed, the build is marked FAILURE.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :images => list(String.t()) | nil,
+          :mavenArtifacts =>
+            list(
+              GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact.t()
+            )
+            | nil,
           :objects =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects.t()
+            | nil,
+          :pythonPackages =>
+            list(
+              GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage.t()
+            )
             | nil
         }
 
   field(:images, type: :list)
 
+  field(:mavenArtifacts,
+    as:
+      GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact,
+    type: :list
+  )
+
   field(:objects,
     as:
       GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects
+  )
+
+  field(:pythonPackages,
+    as:
+      GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage,
+    type: :list
   )
 end
 
