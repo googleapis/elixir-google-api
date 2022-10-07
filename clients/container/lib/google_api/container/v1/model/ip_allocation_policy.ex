@@ -25,11 +25,13 @@ defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
   *   `clusterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP address range for the cluster pod IPs. If this field is set, then `cluster.cluster_ipv4_cidr` must be left blank. This field is only applicable when `use_ip_aliases` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range to use.
   *   `clusterSecondaryRangeName` (*type:* `String.t`, *default:* `nil`) - The name of the secondary range to be used for the cluster CIDR block. The secondary range will be used for pod IP addresses. This must be an existing secondary range associated with the cluster subnetwork. This field is only applicable with use_ip_aliases is true and create_subnetwork is false.
   *   `createSubnetwork` (*type:* `boolean()`, *default:* `nil`) - Whether a new subnetwork will be created automatically for the cluster. This field is only applicable when `use_ip_aliases` is true.
+  *   `ipv6AccessType` (*type:* `String.t`, *default:* `nil`) - The ipv6 access type (internal or external) when create_subnetwork is true
   *   `nodeIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - This field is deprecated, use node_ipv4_cidr_block.
   *   `nodeIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP address range of the instance IPs in this cluster. This is applicable only if `create_subnetwork` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range to use.
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - This field is deprecated, use services_ipv4_cidr_block.
   *   `servicesIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP address range of the services IPs in this cluster. If blank, a range will be automatically chosen with the default size. This field is only applicable when `use_ip_aliases` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range to use.
   *   `servicesSecondaryRangeName` (*type:* `String.t`, *default:* `nil`) - The name of the secondary range to be used as for the services CIDR block. The secondary range will be used for service ClusterIPs. This must be an existing secondary range associated with the cluster subnetwork. This field is only applicable with use_ip_aliases is true and create_subnetwork is false.
+  *   `stackType` (*type:* `String.t`, *default:* `nil`) - The IP stack type of the cluster
   *   `subnetworkName` (*type:* `String.t`, *default:* `nil`) - A custom subnetwork name to be used if `create_subnetwork` is true. If this field is empty, then an automatic name will be chosen for the new subnetwork.
   *   `tpuIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP address range of the Cloud TPUs in this cluster. If unspecified, a range will be automatically chosen with the default size. This field is only applicable when `use_ip_aliases` is true. If unspecified, the range will use the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range to use.
   *   `useIpAliases` (*type:* `boolean()`, *default:* `nil`) - Whether alias IPs will be used for pod IPs in the cluster. This is used in conjunction with use_routes. It cannot be true if use_routes is true. If both use_ip_aliases and use_routes are false, then the server picks the default IP allocation mode
@@ -43,11 +45,13 @@ defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
           :clusterIpv4CidrBlock => String.t() | nil,
           :clusterSecondaryRangeName => String.t() | nil,
           :createSubnetwork => boolean() | nil,
+          :ipv6AccessType => String.t() | nil,
           :nodeIpv4Cidr => String.t() | nil,
           :nodeIpv4CidrBlock => String.t() | nil,
           :servicesIpv4Cidr => String.t() | nil,
           :servicesIpv4CidrBlock => String.t() | nil,
           :servicesSecondaryRangeName => String.t() | nil,
+          :stackType => String.t() | nil,
           :subnetworkName => String.t() | nil,
           :tpuIpv4CidrBlock => String.t() | nil,
           :useIpAliases => boolean() | nil,
@@ -58,11 +62,13 @@ defmodule GoogleApi.Container.V1.Model.IPAllocationPolicy do
   field(:clusterIpv4CidrBlock)
   field(:clusterSecondaryRangeName)
   field(:createSubnetwork)
+  field(:ipv6AccessType)
   field(:nodeIpv4Cidr)
   field(:nodeIpv4CidrBlock)
   field(:servicesIpv4Cidr)
   field(:servicesIpv4CidrBlock)
   field(:servicesSecondaryRangeName)
+  field(:stackType)
   field(:subnetworkName)
   field(:tpuIpv4CidrBlock)
   field(:useIpAliases)
