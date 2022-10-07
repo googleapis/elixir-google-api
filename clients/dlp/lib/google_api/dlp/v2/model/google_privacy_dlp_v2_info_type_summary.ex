@@ -21,15 +21,18 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeSummary do
 
   ## Attributes
 
+  *   `estimatedPrevalence` (*type:* `integer()`, *default:* `nil`) - Not populated for predicted infotypes.
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The infoType.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :estimatedPrevalence => integer() | nil,
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
+  field(:estimatedPrevalence)
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
 end
 
