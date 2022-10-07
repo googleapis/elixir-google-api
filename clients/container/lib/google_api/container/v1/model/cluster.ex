@@ -80,6 +80,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
   *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
+  *   `costManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - Configuration for the fine-grained cost management feature.
   *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Configuration of Confidential Nodes. All the nodes in the cluster will be Confidential VM once enabled.
   *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   """
@@ -150,6 +151,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :servicesIpv4Cidr => String.t() | nil,
           :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t() | nil,
+          :costManagementConfig => GoogleApi.Container.V1.Model.CostManagementConfig.t() | nil,
           :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
           :verticalPodAutoscaling => GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil
         }
@@ -217,6 +219,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:servicesIpv4Cidr)
   field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
+  field(:costManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
   field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
   field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
 end

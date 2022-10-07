@@ -30,6 +30,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredMeshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
   *   `desiredNodePoolAutoConfigNetworkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `desiredAuthenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - The desired authenticator groups config for the cluster.
+  *   `desiredCostManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - The desired configuration for the fine-grained cost management feature.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
@@ -75,6 +76,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :desiredAuthenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
+          :desiredCostManagementConfig =>
+            GoogleApi.Container.V1.Model.CostManagementConfig.t() | nil,
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
           :desiredNodePoolId => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
@@ -132,6 +135,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig
   )
 
+  field(:desiredCostManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
   field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:desiredNodePoolId)
 
