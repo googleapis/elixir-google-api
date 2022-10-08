@@ -24,7 +24,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.InfoTypeTransformation do
   *   `characterMaskConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CharacterMaskConfig.t`, *default:* `nil`) - Config for character mask.
   *   `cryptoHashConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CryptoHashConfig.t`, *default:* `nil`) - Config for crypto hash.
   *   `dateShiftConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DateShiftConfig.t`, *default:* `nil`) - Config for date shift.
-  *   `infoTypes` (*type:* `list(String.t)`, *default:* `nil`) - InfoTypes to apply this transformation to. If this is not specified, this transformation becomes the default transformation, and is used for any info_type that is not specified in another transformation.
+  *   `infoTypes` (*type:* `list(String.t)`, *default:* `nil`) - `InfoTypes` to apply this transformation to. If this is not specified, this transformation becomes the default transformation, and is used for any `info_type` that is not specified in another transformation.
   *   `redactConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.RedactConfig.t`, *default:* `nil`) - Config for text redaction.
   *   `replaceWithInfoTypeConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ReplaceWithInfoTypeConfig.t`, *default:* `nil`) - Config for replace with InfoType.
   """
