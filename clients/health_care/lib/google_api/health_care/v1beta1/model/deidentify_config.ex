@@ -22,9 +22,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   ## Attributes
 
   *   `annotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig.t`, *default:* `nil`) - Configures how annotations, meaning that the location and infoType of sensitive information findings, are created during de-identification. If unspecified, no annotations are created.
-  *   `dicom` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content.
-  *   `fhir` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content.
-  *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures de-identification of image pixels wherever they are found in the source_dataset.
+  *   `dicom` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content. Deprecated. Use `dicom_tag_config` instead.
+  *   `fhir` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content. Deprecated. Use `fhir_field_config` instead.
+  *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures the de-identification of image pixels in the source_dataset. Deprecated. Use `dicom_tag_config.options.clean_image` instead.
   *   `operationMetadata` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t`, *default:* `nil`) - Details about the work the de-identify operation performed.
   *   `text` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the source_dataset.
   """

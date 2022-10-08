@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.TextConfig do
   @moduledoc """
-
+  Configures how to transform sensitive text `InfoTypes`.
 
   ## Attributes
 
-  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - The transformations to apply to the detected data.
+  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead.
   """
 
   use GoogleApi.Gax.ModelBase
