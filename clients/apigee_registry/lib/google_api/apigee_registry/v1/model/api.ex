@@ -28,8 +28,8 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Api do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-meaningful name.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
-  *   `recommendedDeployment` (*type:* `String.t`, *default:* `nil`) - The recommended deployment of the API. Format: `apis/{api}/deployments/{deployment}`
-  *   `recommendedVersion` (*type:* `String.t`, *default:* `nil`) - The recommended version of the API. Format: `apis/{api}/versions/{version}`
+  *   `recommendedDeployment` (*type:* `String.t`, *default:* `nil`) - The recommended deployment of the API. Format: `projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}`
+  *   `recommendedVersion` (*type:* `String.t`, *default:* `nil`) - The recommended version of the API. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update timestamp.
   """
 
