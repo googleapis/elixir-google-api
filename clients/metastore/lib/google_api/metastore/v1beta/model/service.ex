@@ -33,7 +33,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   *   `metadataManagementActivity` (*type:* `GoogleApi.Metastore.V1beta.Model.MetadataManagementActivity.t`, *default:* `nil`) - Output only. The metadata management activities of the metastore service.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:projects/{project_number}/global/networks/{network_id}.
-  *   `networkConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.NetworkConfig.t`, *default:* `nil`) - Immutable. The configuration specifying the network settings for the Dataproc Metastore service.
+  *   `networkConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.NetworkConfig.t`, *default:* `nil`) - The configuration specifying the network settings for the Dataproc Metastore service.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The TCP port at which the metastore service is reached. Default: 9083.
   *   `releaseChannel` (*type:* `String.t`, *default:* `nil`) - Immutable. The release channel of the service. If unspecified, defaults to STABLE.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the metastore service.

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Metastore.V1beta.Model.NetworkConfig do
   @moduledoc """
-  Network configuration for the Dataproc Metastore service.
+  Network configuration for the Dataproc Metastore service.Next available ID: 3
 
   ## Attributes
 

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Metastore.V1beta.Model.Consumer do
   @moduledoc """
-  Contains information of the customer's network configurations.
+  Contains information of the customer's network configurations.Next available ID: 4
 
   ## Attributes
 
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the endpoint used to access the metastore service.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint. It is accessible to hosts in the subnet and to all hosts in a subnet in the same region and same network. There must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:`projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Immutable. The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint. It is accessible to hosts in the subnet and to all hosts in a subnet in the same region and same network. There must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:`projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
   """
 
   use GoogleApi.Gax.ModelBase
