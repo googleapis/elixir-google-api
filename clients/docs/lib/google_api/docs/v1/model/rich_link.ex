@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Docs.V1.Model.RichLink do
   @moduledoc """
-  A link to a Google resource (e.g., a file in Drive, a YouTube video, a Calendar event, etc.).
+  A link to a Google resource (such as a file in Drive, a YouTube video, or a Calendar event).
 
   ## Attributes
 
   *   `richLinkId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of this link.
   *   `richLinkProperties` (*type:* `GoogleApi.Docs.V1.Model.RichLinkProperties.t`, *default:* `nil`) - Output only. The properties of this RichLink. This field is always present.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn't suggested for deletion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it's a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.
   *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this RichLink, keyed by suggestion ID.
   *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this RichLink.
   """

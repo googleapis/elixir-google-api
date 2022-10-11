@@ -22,7 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.PersonProperties do
   ## Attributes
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - Output only. The email address linked to this Person. This field is always present.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the person if it is displayed in the link text instead of the person's email address.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the person if it's displayed in the link text instead of the person's email address.
   """
 
   use GoogleApi.Gax.ModelBase

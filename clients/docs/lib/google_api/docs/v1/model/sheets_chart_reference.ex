@@ -21,7 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.SheetsChartReference do
 
   ## Attributes
 
-  *   `chartId` (*type:* `integer()`, *default:* `nil`) - The ID of the specific chart in the Google Sheets spreadsheet that is embedded.
+  *   `chartId` (*type:* `integer()`, *default:* `nil`) - The ID of the specific chart in the Google Sheets spreadsheet that's embedded.
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Sheets spreadsheet that contains the source chart.
   """
 

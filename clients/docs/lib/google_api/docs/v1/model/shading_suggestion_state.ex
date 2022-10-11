@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.ShadingSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base Shading have been changed in this suggested change. For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base Shading have been changed in this suggested change. For any field set to true, there's a new suggested value.
 
   ## Attributes
 

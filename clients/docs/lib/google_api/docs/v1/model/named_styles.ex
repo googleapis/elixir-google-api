@@ -21,7 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.NamedStyles do
 
   ## Attributes
 
-  *   `styles` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyle.t)`, *default:* `nil`) - The named styles. There is an entry for each of the possible named style types.
+  *   `styles` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyle.t)`, *default:* `nil`) - The named styles. There's an entry for each of the possible named style types.
   """
 
   use GoogleApi.Gax.ModelBase

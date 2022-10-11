@@ -27,7 +27,7 @@ defmodule GoogleApi.Docs.V1.Model.ImageProperties do
   *   `contrast` (*type:* `number()`, *default:* `nil`) - The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
   *   `cropProperties` (*type:* `GoogleApi.Docs.V1.Model.CropProperties.t`, *default:* `nil`) - The crop properties of the image.
   *   `sourceUri` (*type:* `String.t`, *default:* `nil`) - The source URI is the URI used to insert the image. The source URI can be empty.
-  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
+  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent.
   """
 
   use GoogleApi.Gax.ModelBase

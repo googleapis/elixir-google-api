@@ -23,7 +23,7 @@ defmodule GoogleApi.Docs.V1.Model.Bullet do
 
   *   `listId` (*type:* `String.t`, *default:* `nil`) - The ID of the list this paragraph belongs to.
   *   `nestingLevel` (*type:* `integer()`, *default:* `nil`) - The nesting level of this paragraph in the list.
-  *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The paragraph specific text style applied to this bullet.
+  *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The paragraph-specific text style applied to this bullet.
   """
 
   use GoogleApi.Gax.ModelBase

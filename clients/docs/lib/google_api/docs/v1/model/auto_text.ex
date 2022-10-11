@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Docs.V1.Model.AutoText do
   @moduledoc """
-  A ParagraphElement representing a spot in the text that is dynamically replaced with content that can change over time, like a page number.
+  A ParagraphElement representing a spot in the text that's dynamically replaced with content that can change over time, like a page number.
 
   ## Attributes
 
   *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. An AutoText may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. An AutoText may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.
   *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this AutoText, keyed by suggestion ID.
   *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this AutoText.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this auto text.

@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.Docs.V1.Model.Paragraph do
   @moduledoc """
-  A StructuralElement representing a paragraph. A paragraph is a range of content that is terminated with a newline character.
+  A StructuralElement representing a paragraph. A paragraph is a range of content that's terminated with a newline character.
 
   ## Attributes
 
   *   `bullet` (*type:* `GoogleApi.Docs.V1.Model.Bullet.t`, *default:* `nil`) - The bullet for this paragraph. If not present, the paragraph does not belong to a list.
-  *   `elements` (*type:* `list(GoogleApi.Docs.V1.Model.ParagraphElement.t)`, *default:* `nil`) - The content of the paragraph broken down into its component parts.
+  *   `elements` (*type:* `list(GoogleApi.Docs.V1.Model.ParagraphElement.t)`, *default:* `nil`) - The content of the paragraph, broken down into its component parts.
   *   `paragraphStyle` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyle.t`, *default:* `nil`) - The style of this paragraph.
   *   `positionedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the positioned objects tethered to this paragraph.
   *   `suggestedBulletChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedBullet.t}`, *default:* `nil`) - The suggested changes to this paragraph's bullet.
   *   `suggestedParagraphStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedParagraphStyle.t}`, *default:* `nil`) - The suggested paragraph style changes to this paragraph, keyed by suggestion ID.
-  *   `suggestedPositionedObjectIds` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.ObjectReferences.t}`, *default:* `nil`) - The IDs of the positioned objects that are suggested to be attached to this paragraph, keyed by suggestion ID.
+  *   `suggestedPositionedObjectIds` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.ObjectReferences.t}`, *default:* `nil`) - The IDs of the positioned objects suggested to be attached to this paragraph, keyed by suggestion ID.
   """
 
   use GoogleApi.Gax.ModelBase

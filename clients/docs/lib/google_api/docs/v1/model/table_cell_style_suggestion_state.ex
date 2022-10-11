@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.TableCellStyleSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.
 
   ## Attributes
 

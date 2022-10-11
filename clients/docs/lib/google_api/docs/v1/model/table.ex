@@ -21,10 +21,10 @@ defmodule GoogleApi.Docs.V1.Model.Table do
 
   ## Attributes
 
-  *   `columns` (*type:* `integer()`, *default:* `nil`) - Number of columns in the table. It is possible for a table to be non-rectangular, so some rows may have a different number of cells.
+  *   `columns` (*type:* `integer()`, *default:* `nil`) - Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells.
   *   `rows` (*type:* `integer()`, *default:* `nil`) - Number of rows in the table.
   *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A Table may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A Table may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.
   *   `tableRows` (*type:* `list(GoogleApi.Docs.V1.Model.TableRow.t)`, *default:* `nil`) - The contents and style of each row.
   *   `tableStyle` (*type:* `GoogleApi.Docs.V1.Model.TableStyle.t`, *default:* `nil`) - The style of the table.
   """
