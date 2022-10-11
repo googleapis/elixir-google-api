@@ -24,7 +24,7 @@ defmodule GoogleApi.Chat.V1.Model.User do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The user's display name.
   *   `domainId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the user's Google Workspace domain.
   *   `isAnonymous` (*type:* `boolean()`, *default:* `nil`) - Output only. When `true`, the user is deleted or their profile is not visible.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for a Google Chat user. Represents a [person](https://developers.google.com/people/api/rest/v1/people#Person) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. Formatted as: `users/{user}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for a Google Chat user. For human users, represents a person in the People API or a user in the Admin SDK Directory API. Format: `users/{user}`
   *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
 
