@@ -23,8 +23,8 @@ defmodule GoogleApi.Docs.V1.Model.Person do
 
   *   `personId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of this link.
   *   `personProperties` (*type:* `GoogleApi.Docs.V1.Model.PersonProperties.t`, *default:* `nil`) - Output only. The properties of this Person. This field is always present.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn't suggested for deletion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it's a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.
   *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this Person, keyed by suggestion ID.
   *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this Person.
   """

@@ -25,7 +25,7 @@ defmodule GoogleApi.Docs.V1.Model.TableCell do
   *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based end index of this cell, exclusive, in UTF-16 code units.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this cell, in UTF-16 code units.
   *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableCell may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableCell may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.
   *   `suggestedTableCellStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTableCellStyle.t}`, *default:* `nil`) - The suggested changes to the table cell style, keyed by suggestion ID.
   *   `tableCellStyle` (*type:* `GoogleApi.Docs.V1.Model.TableCellStyle.t`, *default:* `nil`) - The style of the cell.
   """

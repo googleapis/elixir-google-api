@@ -24,9 +24,9 @@ defmodule GoogleApi.Docs.V1.Model.TableRow do
   *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based end index of this row, exclusive, in UTF-16 code units.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this row, in UTF-16 code units.
   *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableRow may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableRow may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.
   *   `suggestedTableRowStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTableRowStyle.t}`, *default:* `nil`) - The suggested style changes to this row, keyed by suggestion ID.
-  *   `tableCells` (*type:* `list(GoogleApi.Docs.V1.Model.TableCell.t)`, *default:* `nil`) - The contents and style of each cell in this row. It is possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table.
+  *   `tableCells` (*type:* `list(GoogleApi.Docs.V1.Model.TableCell.t)`, *default:* `nil`) - The contents and style of each cell in this row. It's possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table.
   *   `tableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.TableRowStyle.t`, *default:* `nil`) - The style of the table row.
   """
 

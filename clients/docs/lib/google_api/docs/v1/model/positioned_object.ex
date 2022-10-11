@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.PositionedObject do
   @moduledoc """
-  An object that is tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.
+  An object that's tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.
 
   ## Attributes
 

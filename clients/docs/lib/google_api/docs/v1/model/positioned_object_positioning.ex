@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.PositionedObjectPositioning do
   @moduledoc """
-  The positioning of a PositionedObject. The positioned object is positioned relative to the beginning of the Paragraph it is tethered to.
+  The positioning of a PositionedObject. The positioned object is positioned relative to the beginning of the Paragraph it's tethered to.
 
   ## Attributes
 
   *   `layout` (*type:* `String.t`, *default:* `nil`) - The layout of this positioned object.
-  *   `leftOffset` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The offset of the left edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.
-  *   `topOffset` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The offset of the top edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.
+  *   `leftOffset` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The offset of the left edge of the positioned object relative to the beginning of the Paragraph it's tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.
+  *   `topOffset` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The offset of the top edge of the positioned object relative to the beginning of the Paragraph it's tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.
   """
 
   use GoogleApi.Gax.ModelBase

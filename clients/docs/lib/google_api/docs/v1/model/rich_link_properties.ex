@@ -21,7 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.RichLinkProperties do
 
   ## Attributes
 
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there is one (i.e., when it is a file in Drive).
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there's one (for example, when it's a file in Drive).
   *   `title` (*type:* `String.t`, *default:* `nil`) - Output only. The title of the RichLink as displayed in the link. This title matches the title of the linked resource at the time of the insertion or last update of the link. This field is always present.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI to the RichLink. This is always present.
   """

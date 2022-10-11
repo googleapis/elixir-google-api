@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.Body do
   @moduledoc """
-  The document body. The body typically contains the full document contents except for headers, footers and footnotes.
+  The document body. The body typically contains the full document contents except for headers, footers, and footnotes.
 
   ## Attributes
 

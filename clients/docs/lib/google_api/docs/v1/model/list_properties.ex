@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.ListProperties do
   @moduledoc """
-  The properties of a list which describe the look and feel of bullets belonging to paragraphs associated with a list.
+  The properties of a list that describe the look and feel of bullets belonging to paragraphs associated with a list.
 
   ## Attributes
 
-  *   `nestingLevels` (*type:* `list(GoogleApi.Docs.V1.Model.NestingLevel.t)`, *default:* `nil`) - Describes the properties of the bullets at the associated level. A list has at most nine levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first.
+  *   `nestingLevels` (*type:* `list(GoogleApi.Docs.V1.Model.NestingLevel.t)`, *default:* `nil`) - Describes the properties of the bullets at the associated level. A list has at most 9 levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first.
   """
 
   use GoogleApi.Gax.ModelBase

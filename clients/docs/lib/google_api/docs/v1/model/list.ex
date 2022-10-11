@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.List do
   @moduledoc """
-  A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that is part of a list has a reference to the list's ID in its bullet.
+  A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that's part of a list has a reference to the list's ID in its bullet.
 
   ## Attributes
 

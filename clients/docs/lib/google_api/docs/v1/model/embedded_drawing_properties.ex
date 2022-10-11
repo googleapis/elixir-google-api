@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.EmbeddedDrawingProperties do
   @moduledoc """
-  The properties of an embedded drawing.
+  The properties of an embedded drawing and used to differentiate the object type. An embedded drawing is one that's created and edited within a document. Note that extensive details are not supported.
 
   ## Attributes
 
