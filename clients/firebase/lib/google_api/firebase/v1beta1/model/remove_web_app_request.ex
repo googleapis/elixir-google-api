@@ -23,6 +23,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveWebAppRequest do
 
   *   `allowMissing` (*type:* `boolean()`, *default:* `nil`) - If set to true, and the App is not found, the request will succeed but no action will be taken on the server.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Checksum provided in the WebApp entity, which if provided ensures the client has an up-to-date value before proceeding.
+  *   `immediate` (*type:* `boolean()`, *default:* `nil`) - Determines whether to _immediately_ delete the App. If set to true, the App is immediately deleted from the Project and cannot be restored to the Project. If not set, defaults to false, which means that the App may be restored to the Project within 30 days using UndeleteWebApp
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, the request is only validated. The App will _not_ be removed.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveWebAppRequest do
   @type t :: %__MODULE__{
           :allowMissing => boolean() | nil,
           :etag => String.t() | nil,
+          :immediate => boolean() | nil,
           :validateOnly => boolean() | nil
         }
 
   field(:allowMissing)
   field(:etag)
+  field(:immediate)
   field(:validateOnly)
 end
 
