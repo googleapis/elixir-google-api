@@ -25,10 +25,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # See and/or control the devices that you selected
-      "https://www.googleapis.com/auth/sdm.service",
-
-      # See and control the Nest thermostats that you select
-      "https://www.googleapis.com/auth/sdm.thermostat.service"
+      "https://www.googleapis.com/auth/sdm.service"
     ],
     otp_app: :google_api_smart_device_management,
     base_url: "https://smartdevicemanagement.googleapis.com/"
