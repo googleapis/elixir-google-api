@@ -44,12 +44,12 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolveRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ResolveRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolveResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ResolveResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_customers_policies_resolve(
@@ -58,7 +58,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolveResponse.t()}
+          {:ok, GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ResolveResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -95,7 +95,8 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ResolveResponse{}]
+      opts ++
+        [struct: %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ResolveResponse{}]
     )
   end
 
@@ -118,7 +119,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1BatchDeleteGroupPoliciesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -190,7 +191,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1BatchModifyGroupPoliciesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -262,12 +263,12 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListGroupPriorityOrderingRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListGroupPriorityOrderingResponse{}}` on success
+  *   `{:ok, %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec chromepolicy_customers_policies_groups_list_group_priority_ordering(
@@ -277,7 +278,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
           keyword()
         ) ::
           {:ok,
-           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListGroupPriorityOrderingResponse.t()}
+           GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -317,7 +318,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       opts ++
         [
           struct:
-            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1ListGroupPriorityOrderingResponse{}
+            %GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse{}
         ]
     )
   end
@@ -341,7 +342,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1UpdateGroupPriorityOrderingRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -713,7 +714,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -785,7 +786,7 @@ defmodule GoogleApi.ChromePolicy.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
