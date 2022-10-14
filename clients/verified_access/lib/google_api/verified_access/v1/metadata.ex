@@ -20,7 +20,7 @@ defmodule GoogleApi.VerifiedAccess.V1 do
   API client metadata for GoogleApi.VerifiedAccess.V1.
   """
 
-  @discovery_revision "20220519"
+  @discovery_revision "20221004"
 
   def discovery_revision(), do: @discovery_revision
 end
