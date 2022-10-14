@@ -30,6 +30,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   *   `dataStream` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDataStream.t`, *default:* `nil`) - A snapshot of a DataStream resource in change history.
   *   `displayVideo360AdvertiserLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink.t`, *default:* `nil`) - A snapshot of a DisplayVideo360AdvertiserLink resource in change history.
   *   `displayVideo360AdvertiserLinkProposal` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal.t`, *default:* `nil`) - A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in change history.
+  *   `expandedDataSet` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaExpandedDataSet.t`, *default:* `nil`) - A snapshot of an ExpandedDataSet resource in change history.
   *   `firebaseLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t`, *default:* `nil`) - A snapshot of a FirebaseLink resource in change history.
   *   `googleAdsLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t`, *default:* `nil`) - A snapshot of a GoogleAdsLink resource in change history.
   *   `googleSignalsSettings` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings.t`, *default:* `nil`) - A snapshot of a GoogleSignalsSettings resource in change history.
@@ -65,6 +66,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
             | nil,
           :displayVideo360AdvertiserLinkProposal =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal.t()
+            | nil,
+          :expandedDataSet =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaExpandedDataSet.t()
             | nil,
           :firebaseLink =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t()
@@ -119,6 +123,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   field(:displayVideo360AdvertiserLinkProposal,
     as:
       GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal
+  )
+
+  field(:expandedDataSet,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaExpandedDataSet
   )
 
   field(:firebaseLink,
