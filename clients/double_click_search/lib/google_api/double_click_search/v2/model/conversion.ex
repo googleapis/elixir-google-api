@@ -43,6 +43,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the conversion, that is, either `ACTIVE` or `REMOVED`. Note: state DELETED is deprecated.
   *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).
   *   `storeId` (*type:* `String.t`, *default:* `nil`) - The ID of the local store for which the product was advertised. Applicable only when the channel is "`local`".
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Customer ID of a client account in the new Search Ads 360 experience.
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Sales channel for the product. Acceptable values are: - "`local`": a physical store - "`online`": an online store 
   *   `agencyId` (*type:* `String.t`, *default:* `nil`) - DS agency ID.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the conversion, that is, either `ACTION` or `TRANSACTION`. An `ACTION` conversion is an action by the user that has no monetarily quantifiable value, while a `TRANSACTION` conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (`ACTION`) versus ecommerce purchases (`TRANSACTION`).
@@ -82,6 +83,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
           :state => String.t() | nil,
           :segmentationName => String.t() | nil,
           :storeId => String.t() | nil,
+          :customerId => String.t() | nil,
           :channel => String.t() | nil,
           :agencyId => String.t() | nil,
           :type => String.t() | nil,
@@ -117,6 +119,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
   field(:state)
   field(:segmentationName)
   field(:storeId)
+  field(:customerId)
   field(:channel)
   field(:agencyId)
   field(:type)

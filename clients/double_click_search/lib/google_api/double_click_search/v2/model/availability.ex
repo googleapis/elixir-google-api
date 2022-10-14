@@ -24,6 +24,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - DS advertiser ID.
   *   `agencyId` (*type:* `String.t`, *default:* `nil`) - DS agency ID.
   *   `availabilityTimestamp` (*type:* `String.t`, *default:* `nil`) - The time by which all conversions have been uploaded, in epoch millis UTC.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Customer ID of a client account in the new Search Ads 360 experience.
   *   `segmentationId` (*type:* `String.t`, *default:* `nil`) - The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).
   *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).
   *   `segmentationType` (*type:* `String.t`, *default:* `nil`) - The segmentation type that this availability is for (its default value is `FLOODLIGHT`).
@@ -35,6 +36,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
           :advertiserId => String.t() | nil,
           :agencyId => String.t() | nil,
           :availabilityTimestamp => String.t() | nil,
+          :customerId => String.t() | nil,
           :segmentationId => String.t() | nil,
           :segmentationName => String.t() | nil,
           :segmentationType => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
   field(:advertiserId)
   field(:agencyId)
   field(:availabilityTimestamp)
+  field(:customerId)
   field(:segmentationId)
   field(:segmentationName)
   field(:segmentationType)
