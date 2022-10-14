@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.VerifiedAccess.V2.Model.Challenge do
   @moduledoc """
-  Result message for VerifiedAccess.CreateChallenge.
+  Result message for VerifiedAccess.GenerateChallenge.
 
   ## Attributes
 

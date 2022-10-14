@@ -21,25 +21,31 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
 
   ## Attributes
 
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Unique customer id that this device belongs to, as defined by the Google Admin SDK at https://developers.google.com/admin-sdk/directory/v1/guides/manage-customers
   *   `devicePermanentId` (*type:* `String.t`, *default:* `nil`) - Device permanent id is returned in this field (for the machine response only).
   *   `deviceSignal` (*type:* `String.t`, *default:* `nil`) - Device signal in json string representation.
   *   `keyTrustLevel` (*type:* `String.t`, *default:* `nil`) - Device attested key trust level.
   *   `signedPublicKeyAndChallenge` (*type:* `String.t`, *default:* `nil`) - Certificate Signing Request (in the SPKAC format, base64 encoded) is returned in this field. This field will be set only if device has included CSR in its challenge response. (the option to include CSR is now available for both user and machine responses)
+  *   `virtualDeviceId` (*type:* `String.t`, *default:* `nil`) - Virtual device id of the device. The definition of virtual device id is platform-specific.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customerId => String.t() | nil,
           :devicePermanentId => String.t() | nil,
           :deviceSignal => String.t() | nil,
           :keyTrustLevel => String.t() | nil,
-          :signedPublicKeyAndChallenge => String.t() | nil
+          :signedPublicKeyAndChallenge => String.t() | nil,
+          :virtualDeviceId => String.t() | nil
         }
 
+  field(:customerId)
   field(:devicePermanentId)
   field(:deviceSignal)
   field(:keyTrustLevel)
   field(:signedPublicKeyAndChallenge)
+  field(:virtualDeviceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
