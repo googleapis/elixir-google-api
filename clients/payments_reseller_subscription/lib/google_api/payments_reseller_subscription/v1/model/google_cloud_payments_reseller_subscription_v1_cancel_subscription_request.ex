@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `cancelImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the subscription will be cancelled immediately. Otherwise, the subscription will be cancelled at renewal_time, and therefore no prorated refund will be issued for the rest of the cycle.
+  *   `cancelImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, Google will cancel the subscription immediately, and issue a prorated refund for the remainder of the billing cycle. Otherwise, Google defers the cancelation at renewal_time, and therefore, will not issue a refund.
   *   `cancellationReason` (*type:* `String.t`, *default:* `nil`) - Specifies the reason for the cancellation.
   """
 
