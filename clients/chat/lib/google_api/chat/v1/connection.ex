@@ -23,7 +23,10 @@ defmodule GoogleApi.Chat.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # View, add, and remove members from conversations in Google Chat
+      "https://www.googleapis.com/auth/chat.memberships"
+    ],
     otp_app: :google_api_chat,
     base_url: "https://chat.googleapis.com/"
 end
