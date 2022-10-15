@@ -165,6 +165,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
       *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
@@ -193,6 +194,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :messageId => :query,
       :requestId => :query,
       :threadKey => :query,
       :body => :body
@@ -355,6 +357,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
       *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
@@ -383,6 +386,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :messageId => :query,
       :requestId => :query,
       :threadKey => :query,
       :body => :body
@@ -468,7 +472,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be retrieved, in the form "spaces/*/messages/*". Example: spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB
+  *   `name` (*type:* `String.t`) - Required. Resource name of the message to retrieve. Format: spaces/{space}/messages/{message} If the message begins with `client-`, then it has a custom name assigned by a Chat app that created it with the Chat REST API. That Chat app (but not others) can pass the custom name to get, update, or delete the message. To learn more, see [create and name a message] (https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -541,6 +545,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If `true` and the message is not found, a new message is created and `updateMask` is ignored. The specified message ID must be [client-assigned](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message) or the request fails.
       *   `:updateMask` (*type:* `String.t`) - Required. The field paths to update. Separate multiple values with commas. Currently supported field paths: - text - cards (Requires [service account authentication](/chat/api/guides/auth/service-accounts).) - cards_v2 
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -568,6 +573,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :updateMask => :query,
       :body => :body
     }
