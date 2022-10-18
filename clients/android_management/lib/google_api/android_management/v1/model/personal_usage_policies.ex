@@ -22,11 +22,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   ## Attributes
 
   *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
-  *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether camera is disabled.
+  *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, the camera is disabled on the personal profile.
   *   `maxDaysWithWorkOff` (*type:* `integer()`, *default:* `nil`) - Controls how long the work profile can stay off. The duration must be at least 3 days.
   *   `personalApplications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t)`, *default:* `nil`) - Policy applied to applications in the personal profile.
   *   `personalPlayStoreMode` (*type:* `String.t`, *default:* `nil`) - Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
-  *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether screen capture is disabled.
+  *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, screen capture is disabled for all users.
   """
 
   use GoogleApi.Gax.ModelBase
