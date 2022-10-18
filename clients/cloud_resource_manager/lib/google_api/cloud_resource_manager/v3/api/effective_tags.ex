@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.EffectiveTags do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Return a list of effective tags for the given cloud resource, as specified in `parent`.
+  Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.
 
   ## Parameters
 
