@@ -21,11 +21,31 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExposedRe
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable name of the resource that is exposed.
+  *   `methods` (*type:* `list(String.t)`, *default:* `nil`) - The ways in which this resource is exposed. Examples: Read, Write
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Exposed Resource Name e.g.: `organizations/123/attackExposureResults/456/exposedResources/789`
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource that is exposed. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The resource type of the exposed resource. See: https://cloud.google.com/asset-inventory/docs/supported-asset-types
+  *   `resourceValue` (*type:* `String.t`, *default:* `nil`) - How valuable this resource is.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
+          :methods => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :resource => String.t() | nil,
+          :resourceType => String.t() | nil,
+          :resourceValue => String.t() | nil
+        }
+
+  field(:displayName)
+  field(:methods, type: :list)
+  field(:name)
+  field(:resource)
+  field(:resourceType)
+  field(:resourceValue)
 end
 
 defimpl Poison.Decoder,

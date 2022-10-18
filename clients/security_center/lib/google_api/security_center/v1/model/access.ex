@@ -30,7 +30,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Access do
   *   `serviceAccountKeyName` (*type:* `String.t`, *default:* `nil`) - The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}" 
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - This is the API service that the service account made a call to, e.g. "iam.googleapis.com"
   *   `userAgentFamily` (*type:* `String.t`, *default:* `nil`) - What kind of user agent is associated, e.g. operating system shells, embedded or stand-alone applications, etc.
-  *   `username` (*type:* `String.t`, *default:* `nil`) - A string representing a username. This is likely not an IAM principal. For instance, this may be the system user name if the finding is VM-related, or this may be some type of application login user name, depending on the type of finding.
+  *   `userName` (*type:* `String.t`, *default:* `nil`) - A string representing a username. This is likely not an IAM principal. For instance, this may be the system user name if the finding is VM-related, or this may be some type of application login user name, depending on the type of finding.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +46,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Access do
           :serviceAccountKeyName => String.t() | nil,
           :serviceName => String.t() | nil,
           :userAgentFamily => String.t() | nil,
-          :username => String.t() | nil
+          :userName => String.t() | nil
         }
 
   field(:callerIp)
@@ -63,7 +63,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Access do
   field(:serviceAccountKeyName)
   field(:serviceName)
   field(:userAgentFamily)
-  field(:username)
+  field(:userName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Access do
