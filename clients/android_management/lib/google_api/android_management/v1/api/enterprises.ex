@@ -416,7 +416,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Deletes a device. This operation wipes the device.
+  Deletes a device. This operation wipes the device. Deleted devices do not show up in enterprises.devices.list calls and a 404 is returned from enterprises.devices.get.
 
   ## Parameters
 
@@ -490,7 +490,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Gets a device.
+  Gets a device. Deleted devices will respond with a 404 error.
 
   ## Parameters
 
@@ -632,7 +632,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Lists devices for a given enterprise.
+  Lists devices for a given enterprise. Deleted devices are not returned in the response.
 
   ## Parameters
 
