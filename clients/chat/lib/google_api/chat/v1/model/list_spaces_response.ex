@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token to retrieve the next page of results. It will be empty for the last page of results. Tokens expire in an hour. An error is thrown if an expired token is passed.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages.
   *   `spaces` (*type:* `list(GoogleApi.Chat.V1.Model.Space.t)`, *default:* `nil`) - List of spaces in the requested (or first) page.
   """
 
