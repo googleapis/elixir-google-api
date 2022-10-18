@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagBindings do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or organization).
+  Creates a TagBinding between a TagValue and a Google Cloud resource.
 
   ## Parameters
 
@@ -157,7 +157,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagBindings do
   end
 
   @doc """
-  Lists the TagBindings for the given cloud resource, as specified with `parent`. NOTE: The `parent` field is expected to be a full resource name: https://cloud.google.com/apis/design/resource_names#full_resource_name
+  Lists the TagBindings for the given Google Cloud resource, as specified with `parent`. NOTE: The `parent` field is expected to be a full resource name: https://cloud.google.com/apis/design/resource_names#full_resource_name
 
   ## Parameters
 
