@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
 
   ## Attributes
 
-  *   `concurrency` (*type:* `String.t`, *default:* `nil`) - Maximum number of queries that are allowed to run concurrently in this reservation. This is a soft limit due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency will be automatically set based on the reservation size.
+  *   `concurrency` (*type:* `String.t`, *default:* `nil`) - Job concurrency target which sets a soft upper bound on the number of jobs that can run concurrently in this reservation. This is a soft target due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency target will be automatically computed by the system. NOTE: this field is exposed as `target_job_concurrency` in the Information Schema, DDL and BQ CLI.
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the reservation.
   *   `ignoreIdleSlots` (*type:* `boolean()`, *default:* `nil`) - If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most.
   *   `multiRegionAuxiliary` (*type:* `boolean()`, *default:* `nil`) - Applicable only for reservations located within one of the BigQuery multi-regions (US or EU). If set to true, this reservation is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this reservation is placed in the organization's default region.
