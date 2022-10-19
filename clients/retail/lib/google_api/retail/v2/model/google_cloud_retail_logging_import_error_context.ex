@@ -17,20 +17,14 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailLoggingImportErrorContext do
   @moduledoc """
-  The error payload that is populated on LRO import APIs. Including: "google.cloud.retail.v2.ProductService.ImportProducts" "google.cloud.retail.v2.EventService.ImportUserEvents"
+  The error payload that is populated on LRO import APIs, including "google.cloud.retail.v2.ProductService.ImportProducts" and "google.cloud.retail.v2.EventService.ImportUserEvents".
 
   ## Attributes
 
   *   `catalogItem` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a catalog item.
   *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - Cloud Storage file path of the import source. Can be set for batch operation error.
-  *   `inventoryActivity` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing an inventory activity. http://cs/google3/google/cloud/retail/v2main/inventory_activity.proto
   *   `lineNumber` (*type:* `String.t`, *default:* `nil`) - Line number of the content in file. Should be empty for permission or batch operation error.
   *   `operationName` (*type:* `String.t`, *default:* `nil`) - The operation resource name of the LRO.
-  *   `order` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing an order. http://cs/google3/google/cloud/retail/v2main/order.proto
-  *   `place` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a place. http://cs/google3/google/cloud/retail/v2main/place.proto
-  *   `placeAsset` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a place asset. http://cs/google3/google/cloud/retail/v2main/place_asset.proto
-  *   `placeProductPrice` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a place product price. http://cs/google3/google/cloud/retail/v2main/place_product_price.proto
-  *   `placeProductSettings` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a place product settings. http://cs/google3/google/cloud/retail/v2main/place_product_settings.proto
   *   `product` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a product.
   *   `userEvent` (*type:* `String.t`, *default:* `nil`) - The detailed content which caused the error on importing a user event.
   """
@@ -40,28 +34,16 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailLoggingImportErrorContext d
   @type t :: %__MODULE__{
           :catalogItem => String.t() | nil,
           :gcsPath => String.t() | nil,
-          :inventoryActivity => String.t() | nil,
           :lineNumber => String.t() | nil,
           :operationName => String.t() | nil,
-          :order => String.t() | nil,
-          :place => String.t() | nil,
-          :placeAsset => String.t() | nil,
-          :placeProductPrice => String.t() | nil,
-          :placeProductSettings => String.t() | nil,
           :product => String.t() | nil,
           :userEvent => String.t() | nil
         }
 
   field(:catalogItem)
   field(:gcsPath)
-  field(:inventoryActivity)
   field(:lineNumber)
   field(:operationName)
-  field(:order)
-  field(:place)
-  field(:placeAsset)
-  field(:placeProductPrice)
-  field(:placeProductSettings)
   field(:product)
   field(:userEvent)
 end

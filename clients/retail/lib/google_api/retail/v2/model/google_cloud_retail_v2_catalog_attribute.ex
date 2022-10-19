@@ -22,6 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttribute do
   ## Attributes
 
   *   `dynamicFacetableOption` (*type:* `String.t`, *default:* `nil`) - If DYNAMIC_FACETABLE_ENABLED, attribute values are available for dynamic facet. Could only be DYNAMIC_FACETABLE_DISABLED if CatalogAttribute.indexable_option is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned. Must be specified, otherwise throws INVALID_FORMAT error.
+  *   `exactSearchableOption` (*type:* `String.t`, *default:* `nil`) - If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable. This property only applies to textual custom attributes and requires indexable set to enabled to enable exact-searchable.
   *   `inUse` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this attribute has been used by any products. `True` if at least one Product is using this attribute in Product.attributes. Otherwise, this field is `False`. CatalogAttribute can be pre-loaded by using CatalogService.AddCatalogAttribute, CatalogService.ImportCatalogAttributes, or CatalogService.UpdateAttributesConfig APIs. This field is `False` for pre-loaded CatalogAttributes. Only pre-loaded catalog attributes that are neither in use by products nor predefined can be deleted. Catalog attributes that are either in use by products or are predefined attributes cannot be deleted; however, their configuration properties will reset to default values upon removal request. After catalog changes, it takes about 10 minutes for this field to update.
   *   `indexableOption` (*type:* `String.t`, *default:* `nil`) - When AttributesConfig.attribute_config_level is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values are indexed so that it can be filtered, faceted, or boosted in SearchService.Search. Must be specified, otherwise throws INVALID_FORMAT error.
   *   `key` (*type:* `String.t`, *default:* `nil`) - Required. Attribute name. For example: `color`, `brands`, `attributes.custom_attribute`, such as `attributes.xyz`. To be indexable, the attribute name can contain only alpha-numeric characters and underscores. For example, an attribute named `attributes.abc_xyz` can be indexed, but an attribute named `attributes.abc-xyz` cannot be indexed.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttribute do
 
   @type t :: %__MODULE__{
           :dynamicFacetableOption => String.t() | nil,
+          :exactSearchableOption => String.t() | nil,
           :inUse => boolean() | nil,
           :indexableOption => String.t() | nil,
           :key => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttribute do
         }
 
   field(:dynamicFacetableOption)
+  field(:exactSearchableOption)
   field(:inUse)
   field(:indexableOption)
   field(:key)
