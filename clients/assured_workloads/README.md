@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com](https://cloud.google.com).
+Product documentation is available at [https://cloud.google.com/learnmoreurl](https://cloud.google.com/learnmoreurl).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_assured_workloads](https://hexdocs.pm/google_api_assured_workloads).
