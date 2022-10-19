@@ -21,7 +21,6 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageSignal do
 
   ## Attributes
 
-  *   `favoriteCount` (*type:* `String.t`, *default:* `nil`) - Favorite count in the source system.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The end timestamp of the duration of usage statistics.
   *   `usageWithinTimeRange` (*type:* `%{optional(String.t) => GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageStats.t}`, *default:* `nil`) - Output only. BigQuery usage statistics over each of the predefined time ranges. Supported time ranges are `{"24H", "7D", "30D"}`.
   """
@@ -29,7 +28,6 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageSignal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :favoriteCount => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :usageWithinTimeRange =>
             %{
@@ -39,7 +37,6 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageSignal do
             | nil
         }
 
-  field(:favoriteCount)
   field(:updateTime, as: DateTime)
 
   field(:usageWithinTimeRange,
