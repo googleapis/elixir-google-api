@@ -17,22 +17,30 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaOutputResult do
   @moduledoc """
-  Output result.
+  Output result that stores the information about where the exported data is stored.
 
   ## Attributes
 
-  *   `bigqueryResult` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaBigQueryOutputResult.t)`, *default:* `nil`) - Export result in BigQuery.
+  *   `bigqueryResult` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaBigQueryOutputResult.t)`, *default:* `nil`) - The BigQuery location where the result is stored.
+  *   `gcsResult` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaGcsOutputResult.t)`, *default:* `nil`) - The Google Cloud Storage location where the result is stored.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :bigqueryResult =>
-            list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaBigQueryOutputResult.t()) | nil
+            list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaBigQueryOutputResult.t()) | nil,
+          :gcsResult =>
+            list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaGcsOutputResult.t()) | nil
         }
 
   field(:bigqueryResult,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaBigQueryOutputResult,
+    type: :list
+  )
+
+  field(:gcsResult,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaGcsOutputResult,
     type: :list
   )
 end
