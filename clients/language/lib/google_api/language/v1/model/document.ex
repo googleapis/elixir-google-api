@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.Document do
   @moduledoc """
-  ################################################################ # Represents the input to API methods.
+  Represents the input to API methods.
 
   ## Attributes
 
