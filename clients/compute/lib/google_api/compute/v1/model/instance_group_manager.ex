@@ -32,6 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `instanceGroup` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Instance Group resource.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceGroupManager`) - [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
+  *   `listManagedInstancesResults` (*type:* `String.t`, *default:* `nil`) - Pagination behavior of the listManagedInstances API method for this managed instance group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
   *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - Named ports configured for the Instance Groups complementary to this Instance Group Manager.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the managed instance group resides (for regional resources).
@@ -61,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :instanceGroup => String.t() | nil,
           :instanceTemplate => String.t() | nil,
           :kind => String.t() | nil,
+          :listManagedInstancesResults => String.t() | nil,
           :name => String.t() | nil,
           :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil,
           :region => String.t() | nil,
@@ -89,6 +91,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:instanceGroup)
   field(:instanceTemplate)
   field(:kind)
+  field(:listManagedInstancesResults)
   field(:name)
   field(:namedPorts, as: GoogleApi.Compute.V1.Model.NamedPort, type: :list)
   field(:region)

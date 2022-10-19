@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrorsError
   *   `errorInfo` (*type:* `GoogleApi.Compute.V1.Model.ErrorInfo.t`, *default:* `nil`) - 
   *   `help` (*type:* `GoogleApi.Compute.V1.Model.Help.t`, *default:* `nil`) - 
   *   `localizedMessage` (*type:* `GoogleApi.Compute.V1.Model.LocalizedMessage.t`, *default:* `nil`) - 
+  *   `quotaInfo` (*type:* `GoogleApi.Compute.V1.Model.QuotaExceededInfo.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceLastAttemptErrorsErrorsError
   @type t :: %__MODULE__{
           :errorInfo => GoogleApi.Compute.V1.Model.ErrorInfo.t() | nil,
           :help => GoogleApi.Compute.V1.Model.Help.t() | nil,
-          :localizedMessage => GoogleApi.Compute.V1.Model.LocalizedMessage.t() | nil
+          :localizedMessage => GoogleApi.Compute.V1.Model.LocalizedMessage.t() | nil,
+          :quotaInfo => GoogleApi.Compute.V1.Model.QuotaExceededInfo.t() | nil
         }
 
   field(:errorInfo, as: GoogleApi.Compute.V1.Model.ErrorInfo)
   field(:help, as: GoogleApi.Compute.V1.Model.Help)
   field(:localizedMessage, as: GoogleApi.Compute.V1.Model.LocalizedMessage)
+  field(:quotaInfo, as: GoogleApi.Compute.V1.Model.QuotaExceededInfo)
 end
 
 defimpl Poison.Decoder,
