@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workload do
   @moduledoc """
-  An Workload object for managing highly regulated workloads of cloud customers.
+  A Workload object for managing highly regulated workloads of cloud customers.
 
   ## Attributes
 
