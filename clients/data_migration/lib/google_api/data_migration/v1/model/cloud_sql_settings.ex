@@ -36,7 +36,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example: `db-n1-standard-1` (MySQL instances) or `db-custom-1-3840` (PostgreSQL instances). For more information, see [Cloud SQL Instance Settings](https://cloud.google.com/sql/docs/mysql/instance-settings).
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for a Cloud SQL instance to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform zone where your Cloud SQL datdabse instance is located.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform zone where your Cloud SQL database instance is located.
   """
 
   use GoogleApi.Gax.ModelBase
