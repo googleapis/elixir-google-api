@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
 
   *   `instances` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance.t)`, *default:* `nil`) - The list of router appliance instances.
   *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
+  *   `vpcNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC network where these router appliance instances are located.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,7 +31,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
   @type t :: %__MODULE__{
           :instances =>
             list(GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance.t()) | nil,
-          :siteToSiteDataTransfer => boolean() | nil
+          :siteToSiteDataTransfer => boolean() | nil,
+          :vpcNetwork => String.t() | nil
         }
 
   field(:instances,
@@ -39,6 +41,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
   )
 
   field(:siteToSiteDataTransfer)
+  field(:vpcNetwork)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances do

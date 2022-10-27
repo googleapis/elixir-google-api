@@ -23,17 +23,20 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments d
 
   *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The URIs of linked interconnect attachment resources
+  *   `vpcNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC network where these VLAN attachments are located.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :siteToSiteDataTransfer => boolean() | nil,
-          :uris => list(String.t()) | nil
+          :uris => list(String.t()) | nil,
+          :vpcNetwork => String.t() | nil
         }
 
   field(:siteToSiteDataTransfer)
   field(:uris, type: :list)
+  field(:vpcNetwork)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments do
