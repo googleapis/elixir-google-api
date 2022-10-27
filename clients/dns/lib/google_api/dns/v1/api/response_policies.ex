@@ -308,7 +308,7 @@ defmodule GoogleApi.DNS.V1.Api.ResponsePolicies do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `response_policy` (*type:* `String.t`) - User assigned name of the Respones Policy addressed by this request.
+  *   `response_policy` (*type:* `String.t`) - User assigned name of the response policy addressed by this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
