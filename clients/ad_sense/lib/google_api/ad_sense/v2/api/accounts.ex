@@ -470,7 +470,7 @@ defmodule GoogleApi.AdSense.V2.Api.Accounts do
   end
 
   @doc """
-  Creates an ad unit. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product. Note that ad units can only be created for ad clients with an "AFC" product code. For more info see the [AdClient resource](https://developers.google.com/adsense/management/reference/rest/v2/accounts.adclients). For now, this method can only be used to create `DISPLAY` ad units. See: https://support.google.com/adsense/answer/9183566
+  Creates an ad unit. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product. Note that ad units can only be created for ad clients with an "AFC" product code. For more info see the [AdClient resource](/adsense/management/reference/rest/v2/accounts.adclients). For now, this method can only be used to create `DISPLAY` ad units. See: https://support.google.com/adsense/answer/9183566
 
   ## Parameters
 
@@ -1625,7 +1625,7 @@ defmodule GoogleApi.AdSense.V2.Api.Accounts do
       *   `:"endDate.day"` (*type:* `integer()`) - Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
       *   `:"endDate.month"` (*type:* `integer()`) - Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
       *   `:"endDate.year"` (*type:* `integer()`) - Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
-      *   `:filters` (*type:* `list(String.t)`) - Filters to be run on the report.
+      *   `:filters` (*type:* `list(String.t)`) - A list of [filters](/adsense/management/reporting/filtering) to apply to the report. All provided filters must match in order for the data to be included in the report.
       *   `:languageCode` (*type:* `String.t`) - The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
       *   `:limit` (*type:* `integer()`) - The maximum number of rows of report data to return. Reports producing more rows than the requested limit will be truncated. If unset, this defaults to 100,000 rows for `Reports.GenerateReport` and 1,000,000 rows for `Reports.GenerateCsvReport`, which are also the maximum values permitted here. Report truncation can be identified (for `Reports.GenerateReport` only) by comparing the number of rows returned to the value returned in `total_matched_rows`.
       *   `:metrics` (*type:* `list(String.t)`) - Required. Reporting metrics.
@@ -1715,7 +1715,7 @@ defmodule GoogleApi.AdSense.V2.Api.Accounts do
       *   `:"endDate.day"` (*type:* `integer()`) - Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
       *   `:"endDate.month"` (*type:* `integer()`) - Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
       *   `:"endDate.year"` (*type:* `integer()`) - Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
-      *   `:filters` (*type:* `list(String.t)`) - Filters to be run on the report.
+      *   `:filters` (*type:* `list(String.t)`) - A list of [filters](/adsense/management/reporting/filtering) to apply to the report. All provided filters must match in order for the data to be included in the report.
       *   `:languageCode` (*type:* `String.t`) - The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
       *   `:limit` (*type:* `integer()`) - The maximum number of rows of report data to return. Reports producing more rows than the requested limit will be truncated. If unset, this defaults to 100,000 rows for `Reports.GenerateReport` and 1,000,000 rows for `Reports.GenerateCsvReport`, which are also the maximum values permitted here. Report truncation can be identified (for `Reports.GenerateReport` only) by comparing the number of rows returned to the value returned in `total_matched_rows`.
       *   `:metrics` (*type:* `list(String.t)`) - Required. Reporting metrics.
