@@ -29,13 +29,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
   *   `imageWidth` (*type:* `String.t`, *default:* `nil`) - Dimensions of the image: width. This field is string to match with page render service response. Deprecated. Use int_image_height instead.
   *   `intImageHeight` (*type:* `integer()`, *default:* `nil`) - Dimensions of the image: height.
   *   `intImageWidth` (*type:* `integer()`, *default:* `nil`) - Dimensions of the image: width.
+  *   `linkType` (*type:* `String.t`, *default:* `nil`) - NEXT TAG : 18
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Mime type of the content (Currently mapped from Page Render Service ItemType) Note that this is not necessarily the mime type of the http resource. For example a text/html from youtube or vimeo may actually be classified as a video type. Then we shall mark it as video/* since we don't know exactly what type of video it is.
   *   `redirectUrl` (*type:* `GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t`, *default:* `nil`) - The stable redirect URL pointing to frontend server.
   *   `shouldNotRender` (*type:* `boolean()`, *default:* `nil`) - If the UrlMetadata is missing data for rendering a chip. Deprecated. Use Annotation.ChipRenderType instead.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - Snippet/small description of the weblink.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Weblink.
   *   `url` (*type:* `GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t`, *default:* `nil`) - The original URL.
-  *   `urlSource` (*type:* `String.t`, *default:* `nil`) - NEXT TAG : 17
+  *   `urlSource` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,6 +50,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
           :imageWidth => String.t() | nil,
           :intImageHeight => integer() | nil,
           :intImageWidth => integer() | nil,
+          :linkType => String.t() | nil,
           :mimeType => String.t() | nil,
           :redirectUrl => GoogleApi.CloudSearch.V1.Model.SafeUrlProto.t() | nil,
           :shouldNotRender => boolean() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UrlMetadata do
   field(:imageWidth)
   field(:intImageHeight)
   field(:intImageWidth)
+  field(:linkType)
   field(:mimeType)
   field(:redirectUrl, as: GoogleApi.CloudSearch.V1.Model.SafeUrlProto)
   field(:shouldNotRender)

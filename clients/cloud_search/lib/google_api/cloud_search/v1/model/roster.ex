@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
 
   *   `avatarUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `GoogleApi.CloudSearch.V1.Model.RosterId.t`, *default:* `nil`) - 
+  *   `isMembershipVisibleToCaller` (*type:* `boolean()`, *default:* `nil`) - Whether caller has visibility into members of the roster.
   *   `membershipCount` (*type:* `integer()`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `rosterGaiaKey` (*type:* `String.t`, *default:* `nil`) - Roster gaia key, usually an email address. Set in looking up rosters response.
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
   @type t :: %__MODULE__{
           :avatarUrl => String.t() | nil,
           :id => GoogleApi.CloudSearch.V1.Model.RosterId.t() | nil,
+          :isMembershipVisibleToCaller => boolean() | nil,
           :membershipCount => integer() | nil,
           :name => String.t() | nil,
           :rosterGaiaKey => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Roster do
 
   field(:avatarUrl)
   field(:id, as: GoogleApi.CloudSearch.V1.Model.RosterId)
+  field(:isMembershipVisibleToCaller)
   field(:membershipCount)
   field(:name)
   field(:rosterGaiaKey)

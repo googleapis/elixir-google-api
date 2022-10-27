@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.MembershipChangedMetadata do
   @moduledoc """
-  Annotation metadata to display system messages for membership changes.
+  Annotation metadata to display system messages for membership changes. Next Tag: 8
 
   ## Attributes
 
@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.MembershipChangedMetadata do
   *   `affectedMemberships` (*type:* `list(GoogleApi.CloudSearch.V1.Model.AffectedMembership.t)`, *default:* `nil`) - 
   *   `initiator` (*type:* `GoogleApi.CloudSearch.V1.Model.UserId.t`, *default:* `nil`) - The user whose action triggered this system message.
   *   `initiatorProfile` (*type:* `GoogleApi.CloudSearch.V1.Model.User.t`, *default:* `nil`) - Complete member profiles, when ListTopicsRequest FetchOptions.USER is set. Otherwise, only the id will be filled in.
+  *   `initiatorType` (*type:* `String.t`, *default:* `nil`) - The type of the user who initiated this membership change.
   *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.MembershipChangedMetadata do
             list(GoogleApi.CloudSearch.V1.Model.AffectedMembership.t()) | nil,
           :initiator => GoogleApi.CloudSearch.V1.Model.UserId.t() | nil,
           :initiatorProfile => GoogleApi.CloudSearch.V1.Model.User.t() | nil,
+          :initiatorType => String.t() | nil,
           :type => String.t() | nil
         }
 
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.MembershipChangedMetadata do
   field(:affectedMemberships, as: GoogleApi.CloudSearch.V1.Model.AffectedMembership, type: :list)
   field(:initiator, as: GoogleApi.CloudSearch.V1.Model.UserId)
   field(:initiatorProfile, as: GoogleApi.CloudSearch.V1.Model.User)
+  field(:initiatorType)
   field(:type)
 end
 

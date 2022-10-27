@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOnClick do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction.t`, *default:* `nil`) - If specified, an action is triggered by this onClick.
+  *   `hostAppAction` (*type:* `GoogleApi.CloudSearch.V1.Model.HostAppActionMarkup.t`, *default:* `nil`) - Triggers host app action on click directly without invoking form actions. This is currently not available to end-users and is used internal only.
   *   `openDynamicLinkAction` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction.t`, *default:* `nil`) - An add-on triggers this action when the action needs to open a link. This differs from the open_link above in that this needs to talk to server to get the link. Thus some preparation work is required for web client to do before the open link action response comes back.
   *   `openLink` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOpenLink.t`, *default:* `nil`) - If specified, this onClick triggers an open link action.
   """
@@ -30,12 +31,14 @@ defmodule GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOnClick do
 
   @type t :: %__MODULE__{
           :action => GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction.t() | nil,
+          :hostAppAction => GoogleApi.CloudSearch.V1.Model.HostAppActionMarkup.t() | nil,
           :openDynamicLinkAction =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction.t() | nil,
           :openLink => GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOpenLink.t() | nil
         }
 
   field(:action, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction)
+  field(:hostAppAction, as: GoogleApi.CloudSearch.V1.Model.HostAppActionMarkup)
   field(:openDynamicLinkAction, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedAction)
   field(:openLink, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedOpenLink)
 end
