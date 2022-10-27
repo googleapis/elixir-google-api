@@ -22,7 +22,6 @@ defmodule GoogleApi.Connectors.V1.Model.SshPublicKey do
   ## Attributes
 
   *   `certType` (*type:* `String.t`, *default:* `nil`) - Format of SSH Client cert.
-  *   `password` (*type:* `GoogleApi.Connectors.V1.Model.Secret.t`, *default:* `nil`) - This is an optional field used in case client has enabled multi-factor authentication
   *   `sshClientCert` (*type:* `GoogleApi.Connectors.V1.Model.Secret.t`, *default:* `nil`) - SSH Client Cert. It should contain both public and private key.
   *   `sshClientCertPass` (*type:* `GoogleApi.Connectors.V1.Model.Secret.t`, *default:* `nil`) - Password (passphrase) for ssh client certificate if it has one.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The user account used to authenticate.
@@ -32,14 +31,12 @@ defmodule GoogleApi.Connectors.V1.Model.SshPublicKey do
 
   @type t :: %__MODULE__{
           :certType => String.t() | nil,
-          :password => GoogleApi.Connectors.V1.Model.Secret.t() | nil,
           :sshClientCert => GoogleApi.Connectors.V1.Model.Secret.t() | nil,
           :sshClientCertPass => GoogleApi.Connectors.V1.Model.Secret.t() | nil,
           :username => String.t() | nil
         }
 
   field(:certType)
-  field(:password, as: GoogleApi.Connectors.V1.Model.Secret)
   field(:sshClientCert, as: GoogleApi.Connectors.V1.Model.Secret)
   field(:sshClientCertPass, as: GoogleApi.Connectors.V1.Model.Secret)
   field(:username)
