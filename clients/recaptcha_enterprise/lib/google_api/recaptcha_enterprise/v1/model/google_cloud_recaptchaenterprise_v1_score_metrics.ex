@@ -21,7 +21,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `actionMetrics` (*type:* `%{optional(String.t) => GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ScoreDistribution.t}`, *default:* `nil`) - Action-based metrics. The map key is the action name which specified by the site owners at time of the "execute" client-side call. Populated only for SCORE keys.
+  *   `actionMetrics` (*type:* `%{optional(String.t) => GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ScoreDistribution.t}`, *default:* `nil`) - Action-based metrics. The map key is the action name which specified by the site owners at time of the "execute" client-side call.
   *   `overallMetrics` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ScoreDistribution.t`, *default:* `nil`) - Aggregated score metrics for all traffic.
   """
 
