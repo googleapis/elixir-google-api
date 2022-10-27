@@ -22,7 +22,9 @@ defmodule GoogleApi.CloudFunctions.V2.Model.BuildConfig do
   ## Attributes
 
   *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build name of the latest successful deployment of the function.
-  *   `dockerRepository` (*type:* `String.t`, *default:* `nil`) - Optional. User managed repository created in Artifact Registry optionally with a customer managed encryption key. This is the repository to which the function docker image will be pushed after it is built by Cloud Build. If unspecified, GCF will create and use a repository named 'gcf-artifacts' for every deployed region. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`. Cross-project repositories are not supported. Cross-location repositories are not supported. Repository format must be 'DOCKER'.
+  *   `buildpackStack` (*type:* `String.t`, *default:* `nil`) - Specifies one of the Google provided buildpack stacks.
+  *   `dockerRegistry` (*type:* `String.t`, *default:* `nil`) - Optional. Docker Registry to use for this deployment. This configuration is only applicable to 1st Gen functions, 2nd Gen functions can only use Artifact Registry. If `docker_repository` field is specified, this field will be automatically set as `ARTIFACT_REGISTRY`. If unspecified, it currently defaults to `CONTAINER_REGISTRY`. This field may be overridden by the backend for eligible deployments.
+  *   `dockerRepository` (*type:* `String.t`, *default:* `nil`) - User managed repository created in Artifact Registry optionally with a customer managed encryption key. This is the repository to which the function docker image will be pushed after it is built by Cloud Build. If unspecified, GCF will create and use a repository named 'gcf-artifacts' for every deployed region. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`. Cross-project repositories are not supported. Cross-location repositories are not supported. Repository format must be 'DOCKER'.
   *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named "function". For Node.js this is name of a function exported by the module specified in `source_location`.
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - User-provided build-time environment variables for the function
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
@@ -35,6 +37,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.BuildConfig do
 
   @type t :: %__MODULE__{
           :build => String.t() | nil,
+          :buildpackStack => String.t() | nil,
+          :dockerRegistry => String.t() | nil,
           :dockerRepository => String.t() | nil,
           :entryPoint => String.t() | nil,
           :environmentVariables => map() | nil,
@@ -45,6 +49,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.BuildConfig do
         }
 
   field(:build)
+  field(:buildpackStack)
+  field(:dockerRegistry)
   field(:dockerRepository)
   field(:entryPoint)
   field(:environmentVariables, type: :map)

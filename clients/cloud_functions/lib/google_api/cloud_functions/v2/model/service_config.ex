@@ -30,6 +30,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
   *   `revision` (*type:* `String.t`, *default:* `nil`) - Output only. The name of service revision.
   *   `secretEnvironmentVariables` (*type:* `list(GoogleApi.CloudFunctions.V2.Model.SecretEnvVar.t)`, *default:* `nil`) - Secret environment variables configuration.
   *   `secretVolumes` (*type:* `list(GoogleApi.CloudFunctions.V2.Model.SecretVolume.t)`, *default:* `nil`) - Secret volumes configuration.
+  *   `securityLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Security level configure whether the function only accepts https. This configuration is only applicable to 1st Gen functions with Http trigger. By default https is optional for 1st Gen functions; 2nd Gen functions are https ONLY.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the service associated with a Function. The format of this field is `projects/{project}/locations/{region}/services/{service}`
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email of the service's service account. If empty, defaults to `{project_number}-compute@developer.gserviceaccount.com`.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - The function execution timeout. Execution is considered failed and can be terminated if the function is not completed at the end of the timeout period. Defaults to 60 seconds.
@@ -51,6 +52,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
           :secretEnvironmentVariables =>
             list(GoogleApi.CloudFunctions.V2.Model.SecretEnvVar.t()) | nil,
           :secretVolumes => list(GoogleApi.CloudFunctions.V2.Model.SecretVolume.t()) | nil,
+          :securityLevel => String.t() | nil,
           :service => String.t() | nil,
           :serviceAccountEmail => String.t() | nil,
           :timeoutSeconds => integer() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
   )
 
   field(:secretVolumes, as: GoogleApi.CloudFunctions.V2.Model.SecretVolume, type: :list)
+  field(:securityLevel)
   field(:service)
   field(:serviceAccountEmail)
   field(:timeoutSeconds)
