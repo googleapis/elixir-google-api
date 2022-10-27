@@ -21,25 +21,19 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPGetAction do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *   `httpHeaders` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server. Defaults to '/'.
-  *   `scheme` (*type:* `String.t`, *default:* `nil`) - Scheme to use for connecting to the host. Defaults to HTTP.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t() | nil,
           :httpHeaders => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader.t()) | nil,
-          :path => String.t() | nil,
-          :scheme => String.t() | nil
+          :path => String.t() | nil
         }
 
-  field(:host)
   field(:httpHeaders, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader, type: :list)
   field(:path)
-  field(:scheme)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPGetAction do

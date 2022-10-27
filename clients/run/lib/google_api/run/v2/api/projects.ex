@@ -31,7 +31,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this Job should be created. Format: projects/{projectnumber}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this Job should be created. Format: projects/{project}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -111,7 +111,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{projectnumber}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -195,7 +195,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{projectnumber}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -356,7 +356,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Format: projects/{projectnumber}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Format: projects/{project}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -522,7 +522,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{projectnumber}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1459,7 +1459,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{projectnumber}/locations/{location} Only lowercase, digits, and hyphens; must begin with letter, and may not end with hyphen; must contain fewer than 50 characters.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{project}/locations/{location} Only lowercase characters, digits, and hyphens.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1473,7 +1473,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceId` (*type:* `String.t`) - Required. The unique identifier for the Service. The name of the service becomes {parent}/services/{service_id}.
+      *   `:serviceId` (*type:* `String.t`) - Required. The unique identifier for the Service. It must begin with letter, and may not end with hyphen; must contain fewer than 50 characters. The name of the service becomes {parent}/services/{service_id}.
       *   `:validateOnly` (*type:* `boolean()`) - Indicates that the request should be validated and default values populated, without persisting the request or creating any resources.
       *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1539,7 +1539,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{projectnumber}/locations/{location}/services/{service}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1621,7 +1621,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{projectnumber}/locations/{location}/services/{service}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1782,7 +1782,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid GCP region, and may not be the "-" wildcard. Format: projects/{projectnumber}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid GCP region, and may not be the "-" wildcard. Format: projects/{project}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
