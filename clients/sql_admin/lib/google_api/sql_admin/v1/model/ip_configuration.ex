@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
 
   *   `allocatedIpRange` (*type:* `String.t`, *default:* `nil`) - The name of the allocated ip range for the private ip Cloud SQL instance. For example: "google-managed-services-default". If set, the instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?.`
   *   `authorizedNetworks` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.AclEntry.t)`, *default:* `nil`) - The list of external networks that are allowed to connect to the instance using the IP. In 'CIDR' notation, also known as 'slash' notation (for example: `157.197.200.0/24`).
+  *   `enablePrivatePathForGoogleCloudServices` (*type:* `boolean()`, *default:* `nil`) - Controls connectivity to private IP instances from Google services, such as BigQuery.
   *   `ipv4Enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the instance is assigned a public IP address or not.
   *   `privateNetwork` (*type:* `String.t`, *default:* `nil`) - The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `/projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set.
   *   `requireSsl` (*type:* `boolean()`, *default:* `nil`) - Whether SSL connections over IP are enforced or not.
@@ -33,6 +34,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
   @type t :: %__MODULE__{
           :allocatedIpRange => String.t() | nil,
           :authorizedNetworks => list(GoogleApi.SQLAdmin.V1.Model.AclEntry.t()) | nil,
+          :enablePrivatePathForGoogleCloudServices => boolean() | nil,
           :ipv4Enabled => boolean() | nil,
           :privateNetwork => String.t() | nil,
           :requireSsl => boolean() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
 
   field(:allocatedIpRange)
   field(:authorizedNetworks, as: GoogleApi.SQLAdmin.V1.Model.AclEntry, type: :list)
+  field(:enablePrivatePathForGoogleCloudServices)
   field(:ipv4Enabled)
   field(:privateNetwork)
   field(:requireSsl)
