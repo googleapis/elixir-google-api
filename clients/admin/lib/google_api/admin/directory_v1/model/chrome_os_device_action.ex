@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceAction do
   @moduledoc """
-  The data regarding an action to update the status of a Chrome OS device.
+  Data about an update to the status of a Chrome OS device.
 
   ## Attributes
 

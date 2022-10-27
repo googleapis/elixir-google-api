@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Domains do
   ## Attributes
 
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Creation time of the domain. Expressed in [Unix time](https://en.wikipedia.org/wiki/Epoch_time) format. (Read-only).
-  *   `domainAliases` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t)`, *default:* `nil`) - List of domain alias objects. (Read-only)
+  *   `domainAliases` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t)`, *default:* `nil`) - A list of domain alias objects. (Read-only)
   *   `domainName` (*type:* `String.t`, *default:* `nil`) - The domain name of the customer.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `isPrimary` (*type:* `boolean()`, *default:* `nil`) - Indicates if the domain is a primary domain (Read-only).

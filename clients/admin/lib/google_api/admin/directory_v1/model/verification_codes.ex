@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.VerificationCodes do
   @moduledoc """
-  JSON response template for List verification codes operation in Directory API.
+  JSON response template for list verification codes operation in Directory API.
 
   ## Attributes
 
