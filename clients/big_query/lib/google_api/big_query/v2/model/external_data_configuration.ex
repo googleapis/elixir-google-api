@@ -32,6 +32,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   *   `hivePartitioningOptions` (*type:* `GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t`, *default:* `nil`) - [Optional] Options to configure hive partitioning support.
   *   `ignoreUnknownValues` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored.
   *   `maxBadRecords` (*type:* `integer()`, *default:* `nil`) - [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
+  *   `metadataCacheMode` (*type:* `String.t`, *default:* `nil`) - [Optional] Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source.
+  *   `objectMetadata` (*type:* `String.t`, *default:* `nil`) - ObjectMetadata is used to create Object Tables. Object Tables contain a listing of objects (with their metadata) found at the source_uris. If ObjectMetadata is set, source_format should be omitted. Currently SIMPLE is the only supported Object Metadata type.
   *   `parquetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ParquetOptions.t`, *default:* `nil`) - Additional properties to set if sourceFormat is set to Parquet.
   *   `referenceFileSchemaUri` (*type:* `String.t`, *default:* `nil`) - [Optional] Provide a referencing file with the expected table schema. Enabled for the format: AVRO, PARQUET, ORC.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats.
@@ -54,6 +56,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
             GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t() | nil,
           :ignoreUnknownValues => boolean() | nil,
           :maxBadRecords => integer() | nil,
+          :metadataCacheMode => String.t() | nil,
+          :objectMetadata => String.t() | nil,
           :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t() | nil,
           :referenceFileSchemaUri => String.t() | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
@@ -72,6 +76,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:hivePartitioningOptions, as: GoogleApi.BigQuery.V2.Model.HivePartitioningOptions)
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
+  field(:metadataCacheMode)
+  field(:objectMetadata)
   field(:parquetOptions, as: GoogleApi.BigQuery.V2.Model.ParquetOptions)
   field(:referenceFileSchemaUri)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
