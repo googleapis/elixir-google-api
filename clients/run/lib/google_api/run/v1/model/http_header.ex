@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V1.Model.HTTPHeader do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The header field name
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The header field name
   *   `value` (*type:* `String.t`, *default:* `nil`) - The header field value
   """
 
