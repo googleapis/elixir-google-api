@@ -25,8 +25,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   *   `dependencyChain` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t)`, *default:* `nil`) - The dependency chain between this package and the user's artifact. List in order from the customer's package under review first, to the current package last. Inclusive of the original package and the current package.
   *   `fileLocation` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t)`, *default:* `nil`) - The path to the jar file / go binary file.
   *   `hashDigest` (*type:* `String.t`, *default:* `nil`) - HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages.
-  *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability This field is deprecated and the information is in cpe_uri
-  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS This field is deprecated and the information is in cpe_uri
+  *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability Used to generate the cpe_uri for OS packages
+  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS Used to generate the cpe_uri for OS packages
   *   `package` (*type:* `String.t`, *default:* `nil`) - The package being analysed for vulnerabilities
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package: os, maven, go, etc.
   *   `patchedCve` (*type:* `list(String.t)`, *default:* `nil`) - CVEs that this package is no longer vulnerable to go/drydock-dd-custom-binary-scanning
