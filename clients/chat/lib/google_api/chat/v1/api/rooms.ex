@@ -45,8 +45,9 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
+      *   `:messageReplyOption` (*type:* `String.t`) - Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -74,6 +75,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       :uploadType => :query,
       :upload_protocol => :query,
       :messageId => :query,
+      :messageReplyOption => :query,
       :requestId => :query,
       :threadKey => :query,
       :body => :body
@@ -113,8 +115,9 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
+      *   `:messageReplyOption` (*type:* `String.t`) - Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -142,6 +145,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       :uploadType => :query,
       :upload_protocol => :query,
       :messageId => :query,
+      :messageReplyOption => :query,
       :requestId => :query,
       :threadKey => :query,
       :body => :body
@@ -181,8 +185,9 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
+      *   `:messageReplyOption` (*type:* `String.t`) - Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread.
+      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -210,6 +215,7 @@ defmodule GoogleApi.Chat.V1.Api.Rooms do
       :uploadType => :query,
       :upload_protocol => :query,
       :messageId => :query,
+      :messageReplyOption => :query,
       :requestId => :query,
       :threadKey => :query,
       :body => :body

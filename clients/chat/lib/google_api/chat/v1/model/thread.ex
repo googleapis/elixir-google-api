@@ -21,16 +21,19 @@ defmodule GoogleApi.Chat.V1.Model.Thread do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the form "spaces/*/threads/*". Example: spaces/AAAAAAAAAAA/threads/TTTTTTTTTTT
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the thread. Example: spaces/{space}/threads/{thread}
+  *   `threadKey` (*type:* `String.t`, *default:* `nil`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread). For other requests, this is an output only field.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :threadKey => String.t() | nil
         }
 
   field(:name)
+  field(:threadKey)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Chat.V1.Model.Thread do
