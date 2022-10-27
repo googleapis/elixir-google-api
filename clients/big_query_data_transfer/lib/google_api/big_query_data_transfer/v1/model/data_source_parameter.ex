@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Parameter display name in the user interface.
   *   `fields` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `immutable` (*type:* `boolean()`, *default:* `nil`) - Cannot be changed after initial creation.
-  *   `maxValue` (*type:* `float()`, *default:* `nil`) - For integer and double values specifies maxminum allowed value.
+  *   `maxValue` (*type:* `float()`, *default:* `nil`) - For integer and double values specifies maximum allowed value.
   *   `minValue` (*type:* `float()`, *default:* `nil`) - For integer and double values specifies minimum allowed value.
   *   `paramId` (*type:* `String.t`, *default:* `nil`) - Parameter identifier.
   *   `recurse` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field has no effect.
