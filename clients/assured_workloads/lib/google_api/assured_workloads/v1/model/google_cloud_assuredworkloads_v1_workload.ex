@@ -23,6 +23,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
   *   `complianceRegime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Compliance Regime associated with this workload.
+  *   `complianceStatus` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus.t`, *default:* `nil`) - Output only. Count of active Violations in the Workload.
   *   `compliantButDisallowedServices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment."
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Immutable. The Workload creation timestamp.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
@@ -44,6 +45,9 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   @type t :: %__MODULE__{
           :billingAccount => String.t() | nil,
           :complianceRegime => String.t() | nil,
+          :complianceStatus =>
+            GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus.t()
+            | nil,
           :compliantButDisallowedServices => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
@@ -74,6 +78,11 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   field(:billingAccount)
   field(:complianceRegime)
+
+  field(:complianceStatus,
+    as: GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus
+  )
+
   field(:compliantButDisallowedServices, type: :list)
   field(:createTime, as: DateTime)
   field(:displayName)
