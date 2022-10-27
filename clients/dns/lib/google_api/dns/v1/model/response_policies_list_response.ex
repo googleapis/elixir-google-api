@@ -22,7 +22,7 @@ defmodule GoogleApi.DNS.V1.Model.ResponsePoliciesListResponse do
   ## Attributes
 
   *   `header` (*type:* `GoogleApi.DNS.V1.Model.ResponseHeader.t`, *default:* `nil`) - 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The presence of this field indicates that more results exist following your last page of results in pagination order. To fetch them, make another list request by using this value as your page token. This lets you view the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.
   *   `responsePolicies` (*type:* `list(GoogleApi.DNS.V1.Model.ResponsePolicy.t)`, *default:* `nil`) - The Response Policy resources.
   """
 
