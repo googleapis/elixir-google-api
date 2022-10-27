@@ -25,6 +25,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTable
   *   `detectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages together with confidence.
   *   `headerRows` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTableTableRow.t)`, *default:* `nil`) - Header rows of the table.
   *   `layout` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout.t`, *default:* `nil`) - Layout for Table.
+  *   `provenance` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t`, *default:* `nil`) - The history of this table.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +47,9 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTable
             )
             | nil,
           :layout =>
-            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout.t() | nil
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout.t() | nil,
+          :provenance =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t() | nil
         }
 
   field(:bodyRows,
@@ -65,6 +68,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTable
   )
 
   field(:layout, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout)
+  field(:provenance, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance)
 end
 
 defimpl Poison.Decoder,

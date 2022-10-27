@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentOutputCon
 
   ## Attributes
 
-  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in the output documents.
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in the output documents. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
   *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage uri (a directory) of the output.
   """
 
