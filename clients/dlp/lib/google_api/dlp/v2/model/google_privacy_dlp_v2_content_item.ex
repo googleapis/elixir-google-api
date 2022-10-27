@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem do
   @moduledoc """
-  Container structure for the content to inspect.
+
 
   ## Attributes
 

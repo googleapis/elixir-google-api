@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   ## Attributes
 
   *   `deidentify` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Deidentify.t`, *default:* `nil`) - Create a de-identified copy of the input data.
-  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification for project owners and editors on job's completion/failure.
+  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Sends an email when the job completes. The email goes to IAM project owners and technical [Essential Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
   *   `pubSub` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t`, *default:* `nil`) - Publish a notification to a Pub/Sub topic.
   *   `publishFindingsToCloudDataCatalog` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t`, *default:* `nil`) - Publish findings to Cloud Datahub.
   *   `publishSummaryToCscc` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t`, *default:* `nil`) - Publish summary to Cloud Security Command Center (Alpha).
