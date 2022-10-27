@@ -21,10 +21,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskNotebookTaskConfi
 
   ## Attributes
 
-  *   `archiveUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. GCS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip.
-  *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. GCS URIs of files to be placed in the working directory of each executor.
+  *   `archiveUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Cloud Storage URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip.
+  *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Cloud Storage URIs of files to be placed in the working directory of each executor.
   *   `infrastructureSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskInfrastructureSpec.t`, *default:* `nil`) - Optional. Infrastructure specification for the execution.
-  *   `notebook` (*type:* `String.t`, *default:* `nil`) - Required. Path to input notebook. This can be the GCS URI of the notebook file or the path to a Notebook Content. The execution args are accessible as environment variables (TASK_key=value).
+  *   `notebook` (*type:* `String.t`, *default:* `nil`) - Required. Path to input notebook. This can be the Cloud Storage URI of the notebook file or the path to a Notebook Content. The execution args are accessible as environment variables (TASK_key=value).
   """
 
   use GoogleApi.Gax.ModelBase

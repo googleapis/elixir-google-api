@@ -22,37 +22,37 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SessionEvent do
   ## Attributes
 
   *   `eventSucceeded` (*type:* `boolean()`, *default:* `nil`) - The status of the event.
+  *   `fastStartupEnabled` (*type:* `boolean()`, *default:* `nil`) - If the session is associated with an environment with fast startup enabled, and was created before being assigned to a user.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The log message.
   *   `query` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SessionEventQueryDetail.t`, *default:* `nil`) - The execution details of the query.
   *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the session.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the event.
   *   `unassignedDuration` (*type:* `String.t`, *default:* `nil`) - The idle duration of a warm pooled session before it is assigned to user.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - The information about the user that created the session. It will be the email address of the user.
-  *   `warmPoolEnabled` (*type:* `boolean()`, *default:* `nil`) - If the session is a warm pooled session.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :eventSucceeded => boolean() | nil,
+          :fastStartupEnabled => boolean() | nil,
           :message => String.t() | nil,
           :query =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SessionEventQueryDetail.t() | nil,
           :sessionId => String.t() | nil,
           :type => String.t() | nil,
           :unassignedDuration => String.t() | nil,
-          :userId => String.t() | nil,
-          :warmPoolEnabled => boolean() | nil
+          :userId => String.t() | nil
         }
 
   field(:eventSucceeded)
+  field(:fastStartupEnabled)
   field(:message)
   field(:query, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SessionEventQueryDetail)
   field(:sessionId)
   field(:type)
   field(:unassignedDuration)
   field(:userId)
-  field(:warmPoolEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SessionEvent do
