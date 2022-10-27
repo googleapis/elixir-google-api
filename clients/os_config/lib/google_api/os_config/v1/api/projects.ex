@@ -477,7 +477,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSConfig.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name in the form: projects/{project}/locations/{location}
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name in the form: projects/{project}/locations/{location}. Note: Specify the zone of your VMs as the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
