@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AdMob.V1.Model.GenerateMediationReportRequest do
   @moduledoc """
-  Request to generate an AdMob Mediation report.
+  Request to generate an AdMob mediation report.
 
   ## Attributes
 

@@ -277,7 +277,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   end
 
   @doc """
-  Generates an AdMob Mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.
+  Generates an AdMob mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.
 
   ## Parameters
 
