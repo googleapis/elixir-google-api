@@ -26,7 +26,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Source do
   *   `context` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1SourceContext.t`, *default:* `nil`) - If provided, the source code used for the build came from this location.
   *   `fileHashes` (*type:* `%{optional(String.t) => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileHashes.t}`, *default:* `nil`) - Hash(es) of the build source, which can be used to verify that the original source integrity was maintained in the build. The keys to this map are file paths used as build source and the values contain the hash values for those files. If the build source came in a single package such as a gzipped tarfile (.tar.gz), the FileHash will be for the single path to that file.
   *   `repoSource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RepoSource.t`, *default:* `nil`) - If provided, get source from this location in a Cloud Repo.
-  *   `storageSource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in in Google Cloud Storage.
+  *   `storageSource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
   """
 
   use GoogleApi.Gax.ModelBase
