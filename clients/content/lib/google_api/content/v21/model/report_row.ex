@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ReportRow do
   ## Attributes
 
   *   `metrics` (*type:* `GoogleApi.Content.V21.Model.Metrics.t`, *default:* `nil`) - Metrics requested by the merchant in the query. Metric values are only set for metrics requested explicitly in the query.
-  *   `productView` (*type:* `GoogleApi.Content.V21.Model.ProductView.t`, *default:* `nil`) - Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`. `product_view` field is available only to allowlisted users who can query the `ProductView` table.
+  *   `productView` (*type:* `GoogleApi.Content.V21.Model.ProductView.t`, *default:* `nil`) - Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access.
   *   `segments` (*type:* `GoogleApi.Content.V21.Model.Segments.t`, *default:* `nil`) - Segmentation dimensions requested by the merchant in the query. Dimension values are only set for dimensions requested explicitly in the query.
   """
 
