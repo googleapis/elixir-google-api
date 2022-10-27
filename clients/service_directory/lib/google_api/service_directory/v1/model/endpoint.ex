@@ -26,6 +26,7 @@ defmodule GoogleApi.ServiceDirectory.V1.Model.Endpoint do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the endpoint in the format `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The Google Compute Engine network (VPC) of the endpoint in the format `projects//locations/global/networks/*`. The project must be specified by project number (project id is rejected). Incorrectly formatted networks are rejected, we also check to make sure that you have the servicedirectory.networks.attach permission on the project specified.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Optional. Service Directory rejects values outside of `[0, 65535]`.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique identifier of the endpoint in the UUID4 format.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.ServiceDirectory.V1.Model.Endpoint do
           :annotations => map() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
-          :port => integer() | nil
+          :port => integer() | nil,
+          :uid => String.t() | nil
         }
 
   field(:address)
@@ -43,6 +45,7 @@ defmodule GoogleApi.ServiceDirectory.V1.Model.Endpoint do
   field(:name)
   field(:network)
   field(:port)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceDirectory.V1.Model.Endpoint do

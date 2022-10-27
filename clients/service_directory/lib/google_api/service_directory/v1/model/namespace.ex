@@ -23,17 +23,20 @@ defmodule GoogleApi.ServiceDirectory.V1.Model.Namespace do
 
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels associated with this namespace. No more than 64 user labels can be associated with a given resource. Label keys and values can be no longer than 63 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique identifier of the namespace in the UUID4 format.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :labels => map() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:labels, type: :map)
   field(:name)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceDirectory.V1.Model.Namespace do
