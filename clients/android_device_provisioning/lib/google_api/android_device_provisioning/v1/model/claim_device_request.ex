@@ -21,9 +21,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
 
   ## Attributes
 
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the customer for whom the device is being claimed.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - The ID of the customer for whom the device is being claimed.
   *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Required. The device identifier of the device to claim.
   *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Optional. The metadata to attach to the device.
+  *   `googleWorkspaceCustomerId` (*type:* `String.t`, *default:* `nil`) - The Google Workspace customer ID.
+  *   `preProvisioningToken` (*type:* `String.t`, *default:* `nil`) - Optional. Must and can only be set for Chrome OS devices.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
   """
 
@@ -35,12 +37,16 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
             GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
           :deviceMetadata =>
             GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil,
+          :googleWorkspaceCustomerId => String.t() | nil,
+          :preProvisioningToken => String.t() | nil,
           :sectionType => String.t() | nil
         }
 
   field(:customerId)
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)
   field(:deviceMetadata, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata)
+  field(:googleWorkspaceCustomerId)
+  field(:preProvisioningToken)
   field(:sectionType)
 end
 

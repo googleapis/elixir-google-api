@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Device do
   @moduledoc """
-  An Android device registered for zero-touch enrollment.
+  An Android or Chrome OS device registered for zero-touch enrollment.
 
   ## Attributes
 

@@ -545,7 +545,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Updates reseller metadata associated with the device.
+  Updates reseller metadata associated with the device. Android devices only.
 
   ## Parameters
 
@@ -769,7 +769,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
+  Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only.
 
   ## Parameters
 
