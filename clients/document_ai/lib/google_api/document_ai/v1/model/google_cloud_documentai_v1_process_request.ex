@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
 
   ## Attributes
 
-  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in ProcessResponse's document.
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in ProcessResponse's document. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t`, *default:* `nil`) - An inline document proto.
   *   `rawDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument.t`, *default:* `nil`) - A raw document content (bytes).
   *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
