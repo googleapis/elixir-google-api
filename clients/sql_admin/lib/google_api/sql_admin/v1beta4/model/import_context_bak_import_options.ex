@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions do
   ## Attributes
 
   *   `encryptionOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncryptionOptions.t`, *default:* `nil`) - 
+  *   `striped` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,12 +30,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions do
   @type t :: %__MODULE__{
           :encryptionOptions =>
             GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncryptionOptions.t()
-            | nil
+            | nil,
+          :striped => boolean() | nil
         }
 
   field(:encryptionOptions,
     as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncryptionOptions
   )
+
+  field(:striped)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions do

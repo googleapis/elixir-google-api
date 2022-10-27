@@ -99,7 +99,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
-  *   `name` (*type:* `String.t`) - User of the instance. If the database user has a host, this is specified as {username}@{host} else as {username}.
+  *   `name` (*type:* `String.t`) - User of the instance.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -112,6 +112,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:host` (*type:* `String.t`) - Host of a user of the instance.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -143,7 +144,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :host => :query
     }
 
     request =
