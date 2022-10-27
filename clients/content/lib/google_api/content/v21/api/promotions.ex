@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Api.Promotions do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead.
+  Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead. To [end or delete] (https://developers.google.com/shopping-content/guides/promotions#end_a_promotion) a promotion update the time period of the promotion to a time that has already passed.
 
   ## Parameters
 
