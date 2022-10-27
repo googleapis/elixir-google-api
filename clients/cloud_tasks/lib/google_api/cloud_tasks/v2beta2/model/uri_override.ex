@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.UriOverride do
   *   `port` (*type:* `String.t`, *default:* `nil`) - Port override. When specified, the port part of Uri will be replaced by the provided value. For instance, for a Uri http://www.google.com/foo and port=123 the overridden Uri becomes http://www.google.com:123/foo.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Uri Query. Will replace the query part of the task uri.
   *   `scheme` (*type:* `String.t`, *default:* `nil`) - Scheme override. When specified, the Uri scheme is replaced by the provided value.
+  *   `uriOverrideEnforceMode` (*type:* `String.t`, *default:* `nil`) - Uri Override Enforce Mode Determines the Target UriOverride mode.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.UriOverride do
           :path => String.t() | nil,
           :port => String.t() | nil,
           :query => String.t() | nil,
-          :scheme => String.t() | nil
+          :scheme => String.t() | nil,
+          :uriOverrideEnforceMode => String.t() | nil
         }
 
   field(:host)
@@ -43,6 +45,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.UriOverride do
   field(:port)
   field(:query)
   field(:scheme)
+  field(:uriOverrideEnforceMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.UriOverride do

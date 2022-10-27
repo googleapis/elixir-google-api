@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.HttpTarget do
   *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - The HTTP method to use for the request. When specified, it will override HttpRequest for the task. Note that if the value is set to HttpMethod the HttpRequest of the task will be ignored at execution time.
   *   `oauthToken` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.OAuthToken.t`, *default:* `nil`) - If specified, an [OAuth token](https://developers.google.com/identity/protocols/OAuth2) will be generated and attached as an `Authorization` header in the HTTP request. This type of authorization should generally only be used when calling Google APIs hosted on *.googleapis.com.
   *   `oidcToken` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.OidcToken.t`, *default:* `nil`) - If specified, an [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect) token will be generated and attached as an `Authorization` header in the HTTP request. This type of authorization can be used for many scenarios, including calling Cloud Run, or endpoints where you intend to validate the token yourself.
-  *   `uriOverride` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.UriOverride.t`, *default:* `nil`) - Uri override. When specified modifies the execution Uri for all the tasks in the queue.
+  *   `uriOverride` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.UriOverride.t`, *default:* `nil`) - Uri override. When specified, modifies the execution Uri for all the tasks in the queue.
   """
 
   use GoogleApi.Gax.ModelBase
