@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Metastore.V1beta.Model.Consumer do
   @moduledoc """
-  Contains information of the customer's network configurations.Next available ID: 4
+  Contains information of the customer's network configurations.
 
   ## Attributes
 

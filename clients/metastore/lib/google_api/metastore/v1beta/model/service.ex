@@ -38,6 +38,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   *   `releaseChannel` (*type:* `String.t`, *default:* `nil`) - Immutable. The release channel of the service. If unspecified, defaults to STABLE.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the metastore service.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state of the metastore service, if available.
+  *   `telemetryConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.TelemetryConfig.t`, *default:* `nil`) - The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier of the service.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique resource identifier of the metastore service.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metastore service was last updated.
@@ -64,6 +65,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
           :releaseChannel => String.t() | nil,
           :state => String.t() | nil,
           :stateMessage => String.t() | nil,
+          :telemetryConfig => GoogleApi.Metastore.V1beta.Model.TelemetryConfig.t() | nil,
           :tier => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -90,6 +92,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   field(:releaseChannel)
   field(:state)
   field(:stateMessage)
+  field(:telemetryConfig, as: GoogleApi.Metastore.V1beta.Model.TelemetryConfig)
   field(:tier)
   field(:uid)
   field(:updateTime, as: DateTime)
