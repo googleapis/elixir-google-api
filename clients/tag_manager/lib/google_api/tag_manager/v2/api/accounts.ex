@@ -673,7 +673,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Gets the JavaScript snippet for a Container.
+  Gets the tagging snippet for a Container.
 
   ## Parameters
 
@@ -695,7 +695,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
   ## Returns
 
-  *   `{:ok, %{}}` on success
+  *   `{:ok, %GoogleApi.TagManager.V2.Model.GetContainerSnippetResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec tagmanager_accounts_containers_snippet(
@@ -703,7 +703,11 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, String.t()} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.GetContainerSnippetResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def tagmanager_accounts_containers_snippet(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -730,7 +734,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.TagManager.V2.Model.GetContainerSnippetResponse{}]
+    )
   end
 
   @doc """
@@ -891,7 +897,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true (i.e. Google product owned to GTM permission). If this operation causes an update but this bit is false, the operation will fail.
+      *   `:allowUserPermissionFeatureUpdate` (*type:* `boolean()`) - Must be set to true to allow features.user_permissions to change from false to true. If this operation causes an update but this bit is false, the operation will fail.
       *   `:destinationId` (*type:* `String.t`) - Destination ID to be linked to the current container.
   *   `opts` (*type:* `keyword()`) - Call options
 
