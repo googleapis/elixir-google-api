@@ -40,6 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `maxTimeTravelHours` (*type:* `String.t`, *default:* `nil`) - [Optional] Number of hours for the max time travel for all tables in the dataset.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
+  *   `storageBillingModel` (*type:* `String.t`, *default:* `nil`) - [Optional] Storage billing model to be used for all tables in the dataset. Can be set to PHYSICAL. Default is LOGICAL.
   *   `tags` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetTags.t)`, *default:* `nil`) - [Optional]The tags associated with this dataset. Tag keys are globally unique.
   """
 
@@ -66,6 +67,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :maxTimeTravelHours => String.t() | nil,
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
+          :storageBillingModel => String.t() | nil,
           :tags => list(GoogleApi.BigQuery.V2.Model.DatasetTags.t()) | nil
         }
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:maxTimeTravelHours)
   field(:satisfiesPzs)
   field(:selfLink)
+  field(:storageBillingModel)
   field(:tags, as: GoogleApi.BigQuery.V2.Model.DatasetTags, type: :list)
 end
 
