@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule do
 
   ## Attributes
 
-  *   `blockAction` (*type:* `GoogleApi.AndroidManagement.V1.Model.BlockAction.t`, *default:* `nil`) - An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified.
+  *   `blockAction` (*type:* `GoogleApi.AndroidManagement.V1.Model.BlockAction.t`, *default:* `nil`) - An action to block access to apps and data on a company owned device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified.
   *   `settingName` (*type:* `String.t`, *default:* `nil`) - The top-level policy to enforce. For example, applications or passwordPolicies.
-  *   `wipeAction` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeAction.t`, *default:* `nil`) - An action to reset a fully managed device or delete a work profile. Note: blockAction must also be specified.
+  *   `wipeAction` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeAction.t`, *default:* `nil`) - An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified.
   """
 
   use GoogleApi.Gax.ModelBase

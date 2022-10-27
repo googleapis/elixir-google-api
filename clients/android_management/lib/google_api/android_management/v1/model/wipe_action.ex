@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.WipeAction do
   @moduledoc """
-  An action to reset a fully managed device or delete a work profile. Note: blockAction must also be specified.
+  An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified.
 
   ## Attributes
 
