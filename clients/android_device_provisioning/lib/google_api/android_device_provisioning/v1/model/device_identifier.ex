@@ -21,16 +21,20 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
 
   ## Attributes
 
+  *   `chromeOsAttestedDeviceId` (*type:* `String.t`, *default:* `nil`) - An identifier provided by OEMs, carried through the production and sales process. Only applicable to Chrome OS devices.
+  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of the device
   *   `imei` (*type:* `String.t`, *default:* `nil`) - The device’s IMEI number. Validated on input.
-  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
+  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [Android manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
   *   `meid` (*type:* `String.t`, *default:* `nil`) - The device’s MEID number.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Matches the device's built-in value returned from `android.os.Build.MODEL`. Allowed values are listed in [models](/zero-touch/resources/manufacturer-names#model-names).
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175?hl=en#identify_compatible).
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be unique across different device models.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chromeOsAttestedDeviceId => String.t() | nil,
+          :deviceType => String.t() | nil,
           :imei => String.t() | nil,
           :manufacturer => String.t() | nil,
           :meid => String.t() | nil,
@@ -38,6 +42,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
           :serialNumber => String.t() | nil
         }
 
+  field(:chromeOsAttestedDeviceId)
+  field(:deviceType)
   field(:imei)
   field(:manufacturer)
   field(:meid)

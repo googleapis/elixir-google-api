@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_android_device_provisioning, "~> 0.18"}]
+  [{:google_api_android_device_provisioning, "~> 0.19"}]
 end
 ```
 
