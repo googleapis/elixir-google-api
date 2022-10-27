@@ -17,25 +17,29 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.Settings do
   @moduledoc """
-  Settings of a meeting space that can be viewed and edited by users with permissions. These settings are always populated for output.
+  Settings of a meeting space that can be edited by users with corresponding manage privilege. These settings are always populated in responses.
 
   ## Attributes
 
-  *   `accessLock` (*type:* `boolean()`, *default:* `nil`) - The access lock of the meeting space that lets owner control who can join the meeting. True if the access lock feature is enabled for the meeting space.
+  *   `accessLock` (*type:* `boolean()`, *default:* `nil`) - The access lock of the meeting space that lets hosts control who can join the meeting.
+  *   `accessType` (*type:* `String.t`, *default:* `nil`) - The access type of the meeting space.
+  *   `allowJoiningBeforeHost` (*type:* `boolean()`, *default:* `nil`) - Whether users can join before host in the conferences of this meeting space.
   *   `attendanceReportEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether attendance report is enabled for the meeting space.
-  *   `chatLock` (*type:* `boolean()`, *default:* `nil`) - The chat lock of the meeting space that lets owner control whether the participants can send chat messages. True if the chat lock feature is enabled for the meeting space.
+  *   `chatLock` (*type:* `boolean()`, *default:* `nil`) - The chat lock of the meeting space that lets owner control whether the participants can send chat messages.
   *   `cohostArtifactSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether meeting artifacts will be shared with cohosts.
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for the meeting space.
   *   `defaultAsViewer` (*type:* `boolean()`, *default:* `nil`) - Whether the default role is viewer or not.
   *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the meeting space is moderated.
-  *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - The present lock of the meeting space that lets owner control whether the participants can present their screen. True if the present lock feature is enabled for the meeting space.
-  *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - The reactions lock of the meeting space that lets owner control whether the participants can send reactions. True if the reactions lock feature is enabled for the meeting space.
+  *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - The present lock of the meeting space that lets owner control whether the participants can present their screen.
+  *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - The reactions lock of the meeting space that lets owner control whether the participants can send reactions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accessLock => boolean() | nil,
+          :accessType => String.t() | nil,
+          :allowJoiningBeforeHost => boolean() | nil,
           :attendanceReportEnabled => boolean() | nil,
           :chatLock => boolean() | nil,
           :cohostArtifactSharingEnabled => boolean() | nil,
@@ -47,6 +51,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.Settings do
         }
 
   field(:accessLock)
+  field(:accessType)
+  field(:allowJoiningBeforeHost)
   field(:attendanceReportEnabled)
   field(:chatLock)
   field(:cohostArtifactSharingEnabled)

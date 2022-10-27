@@ -414,7 +414,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
-      *   `:updateMask` (*type:* `String.t`) - Update mask to control which fields to update. If update_mask is non-empty then only the fields specified in the update_mask are updated. If you specify a field in the update_mask, but don't specify its value in the source that field will be cleared. If the update_mask is not present or empty or has the value * then all fields will be updated. Some example field paths: name, display_name
+      *   `:updateMask` (*type:* `String.t`) - Only applies to [`settings.datasources.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/patch). Update mask to control which fields to update. Example field paths: `name`, `displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the source, that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.
       *   `:body` (*type:* `GoogleApi.CloudSearch.V1.Model.DataSource.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -823,7 +823,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Update mask to control which fields to update. If update_mask is non-empty then only the fields specified in the update_mask are updated. If you specify a field in the update_mask, but don't specify its value in the search_application then that field will be cleared. If the update_mask is not present or empty or has the value * then all fields will be updated. Some example field paths: search_application.name, search_application.display_name
+      *   `:updateMask` (*type:* `String.t`) - Only applies to [`settings.searchapplications.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/patch). Update mask to control which fields to update. Example field paths: `search_application.name`, `search_application.displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the `search_application`, then that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.
       *   `:body` (*type:* `GoogleApi.CloudSearch.V1.Model.SearchApplication.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -969,7 +969,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Update mask to control which fields to update. If update_mask is non-empty then only the fields specified in the update_mask are updated. If you specify a field in the update_mask, but don't specify its value in the search_application then that field will be cleared. If the update_mask is not present or empty or has the value * then all fields will be updated. Some example field paths: search_application.name, search_application.display_name
+      *   `:updateMask` (*type:* `String.t`) - Only applies to [`settings.searchapplications.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/patch). Update mask to control which fields to update. Example field paths: `search_application.name`, `search_application.displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the `search_application`, then that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.
       *   `:body` (*type:* `GoogleApi.CloudSearch.V1.Model.SearchApplication.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

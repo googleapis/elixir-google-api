@@ -22,11 +22,13 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
   ## Attributes
 
   *   `accessLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the access lock is currently on or off.
+  *   `accessType` (*type:* `String.t`, *default:* `nil`) - The current access type of the conference.
+  *   `allowJoiningBeforeHost` (*type:* `boolean()`, *default:* `nil`) - Whether users can join this conference before a host (Host or Cohost).
   *   `attendanceReportEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the attendance report is currently enabled or disabled.
   *   `audioLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the audio lock is currently on or off.
   *   `chatLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the chat lock is currently on or off.
   *   `cseEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Client-side Encryption is enabled for this conference.
-  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current call is moderated.
+  *   `moderationEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether moderation is currently on or off.
   *   `presentLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the present lock is currently on or off.
   *   `reactionsLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reactions lock is currently on or off.
   *   `videoLock` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the video lock is currently on or off.
@@ -36,6 +38,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
 
   @type t :: %__MODULE__{
           :accessLock => boolean() | nil,
+          :accessType => String.t() | nil,
+          :allowJoiningBeforeHost => boolean() | nil,
           :attendanceReportEnabled => boolean() | nil,
           :audioLock => boolean() | nil,
           :chatLock => boolean() | nil,
@@ -47,6 +51,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallSettings do
         }
 
   field(:accessLock)
+  field(:accessType)
+  field(:allowJoiningBeforeHost)
   field(:attendanceReportEnabled)
   field(:audioLock)
   field(:chatLock)

@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UpdateDataSourceRequest do
 
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.DataSource.t`, *default:* `nil`) - 
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Update mask to control which fields to update. If update_mask is non-empty then only the fields specified in the update_mask are updated. If you specify a field in the update_mask, but don't specify its value in the source that field will be cleared. If the update_mask is not present or empty or has the value * then all fields will be updated. Some example field paths: name, display_name
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Only applies to [`settings.datasources.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/patch). Update mask to control which fields to update. Example field paths: `name`, `displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the source, that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.
   """
 
   use GoogleApi.Gax.ModelBase
