@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevices do
 
   ## Attributes
 
-  *   `chromeosdevices` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t)`, *default:* `nil`) - List of Chrome OS Device objects.
+  *   `chromeosdevices` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t)`, *default:* `nil`) - A list of Chrome OS Device objects.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevices`) - Kind of resource this is.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access the next page of this result. To access the next page, use this token's value in the `pageToken` query string of this request.

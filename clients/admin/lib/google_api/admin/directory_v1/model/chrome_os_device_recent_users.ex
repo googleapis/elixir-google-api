@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers do
   @moduledoc """
-  List of recent device users, in descending order, by last login time.
+  A list of recent device users, in descending order, by last login time.
 
   ## Attributes
 

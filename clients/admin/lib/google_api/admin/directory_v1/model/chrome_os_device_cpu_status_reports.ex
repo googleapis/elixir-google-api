@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports do
 
   ## Attributes
 
-  *   `cpuTemperatureInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReportsCpuTemperatureInfo.t)`, *default:* `nil`) - List of CPU temperature samples.
+  *   `cpuTemperatureInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReportsCpuTemperatureInfo.t)`, *default:* `nil`) - A list of CPU temperature samples.
   *   `cpuUtilizationPercentageInfo` (*type:* `list(integer())`, *default:* `nil`) - 
   *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the report was received.
   """

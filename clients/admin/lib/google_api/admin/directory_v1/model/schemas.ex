@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Schemas do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#schemas`) - Kind of resource this is.
-  *   `schemas` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Schema.t)`, *default:* `nil`) - List of UserSchema objects.
+  *   `schemas` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Schema.t)`, *default:* `nil`) - A list of UserSchema objects.
   """
 
   use GoogleApi.Gax.ModelBase

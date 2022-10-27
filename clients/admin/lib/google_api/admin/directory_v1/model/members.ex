@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Members do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#members`) - Kind of resource this is.
-  *   `members` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Member.t)`, *default:* `nil`) - List of member objects.
+  *   `members` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Member.t)`, *default:* `nil`) - A list of member objects.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access next page of this result.
   """
 

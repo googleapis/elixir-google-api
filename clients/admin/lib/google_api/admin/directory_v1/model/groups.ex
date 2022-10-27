@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Groups do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `groups` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Group.t)`, *default:* `nil`) - List of group objects.
+  *   `groups` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Group.t)`, *default:* `nil`) - A list of group objects.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#groups`) - Kind of resource this is.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access next page of this result.
   """

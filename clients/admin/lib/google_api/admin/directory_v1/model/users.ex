@@ -25,7 +25,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Users do
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#users`) - Kind of resource this is.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access next page of this result.
   *   `trigger_event` (*type:* `String.t`, *default:* `nil`) - Event that triggered this response (only used in case of Push Response)
-  *   `users` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.User.t)`, *default:* `nil`) - List of user objects.
+  *   `users` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.User.t)`, *default:* `nil`) - A list of user objects.
   """
 
   use GoogleApi.Gax.ModelBase

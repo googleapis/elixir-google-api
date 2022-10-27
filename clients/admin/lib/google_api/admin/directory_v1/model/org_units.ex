@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnits do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#orgUnits`) - The type of the API resource. For Org Unit resources, the type is `admin#directory#orgUnits`.
-  *   `organizationUnits` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t)`, *default:* `nil`) - List of organizational unit objects.
+  *   `organizationUnits` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t)`, *default:* `nil`) - A list of organizational unit objects.
   """
 
   use GoogleApi.Gax.ModelBase

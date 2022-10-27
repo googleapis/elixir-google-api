@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Domains2 do
 
   ## Attributes
 
-  *   `domains` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Domains.t)`, *default:* `nil`) - List of domain objects.
+  *   `domains` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Domains.t)`, *default:* `nil`) - A list of domain objects.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#domains`) - Kind of resource this is.
   """

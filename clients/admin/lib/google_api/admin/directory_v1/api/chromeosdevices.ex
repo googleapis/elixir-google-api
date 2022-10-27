@@ -195,7 +195,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeChildOrgunits` (*type:* `boolean()`) - Return devices from all child orgunits, as well as the specified org unit. If this is set to true 'orgUnitPath' must be provided.
+      *   `:includeChildOrgunits` (*type:* `boolean()`) - Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
       *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit (minus the leading `/`) or its unique ID.

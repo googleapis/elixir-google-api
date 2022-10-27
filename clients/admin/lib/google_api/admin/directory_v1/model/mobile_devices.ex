@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevices do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#mobiledevices`) - Kind of resource this is.
-  *   `mobiledevices` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDevice.t)`, *default:* `nil`) - List of Mobile Device objects.
+  *   `mobiledevices` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDevice.t)`, *default:* `nil`) - A list of Mobile Device objects.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access next page of this result.
   """
 

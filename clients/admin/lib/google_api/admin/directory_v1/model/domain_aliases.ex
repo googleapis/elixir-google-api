@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DomainAliases do
 
   ## Attributes
 
-  *   `domainAliases` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t)`, *default:* `nil`) - List of domain alias objects.
+  *   `domainAliases` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t)`, *default:* `nil`) - A list of domain alias objects.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#domainAliases`) - Kind of resource this is.
   """
