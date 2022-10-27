@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
 
   ## Attributes
 
-  *   `artifactManifest` (*type:* `String.t`, *default:* `nil`) - Path to the artifact manifest. Only populated when artifacts are uploaded.
-  *   `artifactTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts.
+  *   `artifactManifest` (*type:* `String.t`, *default:* `nil`) - Path to the artifact manifest for non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.
+  *   `artifactTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts to Cloud Storage.
   *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step indices.
   *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 4KB of data is stored.
   *   `images` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
   *   `mavenArtifacts` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact.t)`, *default:* `nil`) - Maven artifacts uploaded to Artifact Registry at the end of the build.
-  *   `numArtifacts` (*type:* `String.t`, *default:* `nil`) - Number of artifacts uploaded. Only populated when artifacts are uploaded.
+  *   `numArtifacts` (*type:* `String.t`, *default:* `nil`) - Number of non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.
   *   `pythonPackages` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedPythonPackage.t)`, *default:* `nil`) - Python artifacts uploaded to Artifact Registry at the end of the build.
   """
 
