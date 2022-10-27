@@ -35,9 +35,10 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in the form `spaces/*/messages/*`. Example: `spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB`
   *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Output only. The user who created the message.
   *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommand.t`, *default:* `nil`) - Output only. Slash command information, if applicable.
-  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space the message belongs to.
+  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space the message belongs to. When accessed with [user authentication](https://developers.google.com/chat/api/guides/auth/users), only the name of the Space is populated.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message. The first link to an image, video, web page, or other preview-able item generates a preview chip.
-  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to.
+  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
+  *   `threadReply` (*type:* `boolean()`, *default:* `nil`) - Output only. When `true`, the message is a response in a reply thread. When `false`, the message is visible in the space's top-level conversation as either the first message of a thread or a message with no threaded replies. If the space doesn't support reply in threads, this field is always `false`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -59,7 +60,8 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :slashCommand => GoogleApi.Chat.V1.Model.SlashCommand.t() | nil,
           :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
           :text => String.t() | nil,
-          :thread => GoogleApi.Chat.V1.Model.Thread.t() | nil
+          :thread => GoogleApi.Chat.V1.Model.Thread.t() | nil,
+          :threadReply => boolean() | nil
         }
 
   field(:actionResponse, as: GoogleApi.Chat.V1.Model.ActionResponse)
@@ -79,6 +81,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:space, as: GoogleApi.Chat.V1.Model.Space)
   field(:text)
   field(:thread, as: GoogleApi.Chat.V1.Model.Thread)
+  field(:threadReply)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Chat.V1.Model.Message do
