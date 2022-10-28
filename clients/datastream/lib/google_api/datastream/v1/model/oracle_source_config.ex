@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to include in the stream.
   *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
-  *   `streamLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.StreamLargeObjects.t`, *default:* `nil`) - Stream large object values.
+  *   `streamLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.StreamLargeObjects.t`, *default:* `nil`) - Stream large object values. NOTE: This feature is currently experimental.
   """
 
   use GoogleApi.Gax.ModelBase
