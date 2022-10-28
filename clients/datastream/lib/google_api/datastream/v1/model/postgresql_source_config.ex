@@ -24,7 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig do
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL objects to include in the stream.
   *   `publication` (*type:* `String.t`, *default:* `nil`) - Required. The name of the publication that includes the set of all tables that are defined in the stream's include_objects.
-  *   `replicationSlot` (*type:* `String.t`, *default:* `nil`) - Required. The name of the logical replication slot that's configured with the pgoutput plugin.
+  *   `replicationSlot` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The name of the logical replication slot that's configured with the pgoutput plugin.
   """
 
   use GoogleApi.Gax.ModelBase
