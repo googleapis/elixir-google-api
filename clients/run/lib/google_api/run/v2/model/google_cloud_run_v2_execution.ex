@@ -41,7 +41,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Represents time when the execution started to run. It is not guaranteed to be set in happens-before order across separate operations.
   *   `succeededCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of tasks which reached phase Succeeded.
   *   `taskCount` (*type:* `integer()`, *default:* `nil`) - Output only. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
-  *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskTemplate.t`, *default:* `nil`) - Output only. Describes the task(s) that will be created when executing an execution.
+  *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskTemplate.t`, *default:* `nil`) - Output only. The template used to create tasks for this execution.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the Execution. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """

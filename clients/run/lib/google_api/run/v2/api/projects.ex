@@ -127,7 +127,6 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:etag` (*type:* `String.t`) - A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
-      *   `:force` (*type:* `boolean()`) - If set to true, the Job and its Executions will be deleted no matter whether any Executions are still running or not. If set to false or unset, the Job and its Executions can only be deleted if there are no running Executions. Any running Execution will fail the deletion.
       *   `:validateOnly` (*type:* `boolean()`) - Indicates that the request should be validated without actually deleting any resources.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -169,7 +168,6 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :etag => :query,
-      :force => :query,
       :validateOnly => :query
     }
 
