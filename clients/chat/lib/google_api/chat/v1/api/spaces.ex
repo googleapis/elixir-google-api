@@ -152,7 +152,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAAAAAAAA
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the space in which to create a message. Format: spaces/{space}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -168,7 +168,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
       *   `:messageReplyOption` (*type:* `String.t`) - Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
+      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread.thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -341,12 +341,12 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  [Developer Preview](https://developers.google.com/workspace/preview): Creates a message. Requires [authentication](https://developers.google.com/chat/api/guides/auth).
+  Creates a message. For example usage, see [Create a message](https://developers.google.com/chat/api/guides/crudl/messages#create_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` or `chat.messages.create` authorization scope.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAAAAAAAA
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the space in which to create a message. Format: spaces/{space}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -362,7 +362,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:messageId` (*type:* `String.t`) - Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
       *   `:messageReplyOption` (*type:* `String.t`) - Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message.
-      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
+      *   `:threadKey` (*type:* `String.t`) - Optional. Deprecated: Use thread.thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -411,7 +411,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Deletes a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). [Developer Preview](https://developers.google.com/workspace/preview): Deletes a message. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) and the `chat.messages` authorization scope.
+  Deletes a message. For example usage, see [Delete a message](https://developers.google.com/chat/api/guides/crudl/messages#delete_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` authorization scope.
 
   ## Parameters
 
@@ -471,7 +471,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Returns a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). [Developer Preview](https://developers.google.com/workspace/preview): Returns a message. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) and the `chat.messages` or `chat.messages.readonly` authorization scope. Messages from a blocked member or messages from a blocked space can also be fetched.
+  Returns a message. For example usage, see [Read a message](https://developers.google.com/chat/api/guides/crudl/messages#read_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [Service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` or `chat.messages.readonly` authorization scope. Note: Might return a message from a blocked member or space.
 
   ## Parameters
 
@@ -531,7 +531,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Updates a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+  Updates a message. For example usage, see [Update a message](https://developers.google.com/chat/api/guides/crudl/messages#update_a_message). Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
 
   ## Parameters
 
