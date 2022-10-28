@@ -27,6 +27,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Repository do
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS resource name of the customer managed encryption key that's used to encrypt the contents of the Repository. Has the form: `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`. This value may not be changed after the Repository has been created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. This field may contain up to 64 entries. Label keys and values may be no longer than 63 characters. Label keys must begin with a lowercase letter and may only contain lowercase letters, numeric characters, underscores, and dashes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repository, for example: "projects/p1/locations/us-central1/repositories/repo1".
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, the repository satisfies physical zone separation.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the repository was last updated.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Repository do
           :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :sizeBytes => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Repository do
   field(:kmsKeyName)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzs)
   field(:sizeBytes)
   field(:updateTime, as: DateTime)
 end
