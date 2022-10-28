@@ -22,7 +22,6 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AccountDetails do
   ## Attributes
 
   *   `accountActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountActivity.t`, *default:* `nil`) - Details about the account activity for the user in the scope.
-  *   `accountRiskVerdict` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict.t`, *default:* `nil`) - Details about the account risk for the user in the scope. This feature is available only to selected developers.
   *   `appLicensingVerdict` (*type:* `String.t`, *default:* `nil`) - Required. Details about the licensing status of the user for the app in the scope.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AccountDetails do
 
   @type t :: %__MODULE__{
           :accountActivity => GoogleApi.PlayIntegrity.V1.Model.AccountActivity.t() | nil,
-          :accountRiskVerdict => GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict.t() | nil,
           :appLicensingVerdict => String.t() | nil
         }
 
   field(:accountActivity, as: GoogleApi.PlayIntegrity.V1.Model.AccountActivity)
-  field(:accountRiskVerdict, as: GoogleApi.PlayIntegrity.V1.Model.AccountRiskVerdict)
   field(:appLicensingVerdict)
 end
 
