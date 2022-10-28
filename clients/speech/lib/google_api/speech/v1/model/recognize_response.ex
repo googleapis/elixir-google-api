@@ -23,6 +23,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
 
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - The ID associated with the request. This is a unique ID specific only to the given request.
   *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
+  *   `speechAdaptationInfo` (*type:* `GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t`, *default:* `nil`) - Provides information on adaptation behavior in response
   *   `totalBilledTime` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   @type t :: %__MODULE__{
           :requestId => String.t() | nil,
           :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
+          :speechAdaptationInfo => GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t() | nil,
           :totalBilledTime => String.t() | nil
         }
 
   field(:requestId)
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
+  field(:speechAdaptationInfo, as: GoogleApi.Speech.V1.Model.SpeechAdaptationInfo)
   field(:totalBilledTime)
 end
 
