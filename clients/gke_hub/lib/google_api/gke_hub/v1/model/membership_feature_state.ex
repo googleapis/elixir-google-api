@@ -24,6 +24,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
   *   `anthosvm` (*type:* `GoogleApi.GKEHub.V1.Model.AnthosVMMembershipState.t`, *default:* `nil`) - AnthosVM state.
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t`, *default:* `nil`) - Appdevexperience specific state.
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t`, *default:* `nil`) - Config Management-specific state.
+  *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipState.t`, *default:* `nil`) - Fleet observability membership state.
   *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState.t`, *default:* `nil`) - Identity Service-specific state.
   *   `servicemesh` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState.t`, *default:* `nil`) - Service Mesh-specific state.
   *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.FeatureState.t`, *default:* `nil`) - The high-level state of this Feature for a single membership.
@@ -36,6 +37,8 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t() | nil,
           :configmanagement =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState.t() | nil,
+          :fleetobservability =>
+            GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipState.t() | nil,
           :identityservice => GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState.t() | nil,
           :servicemesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState.t() | nil,
           :state => GoogleApi.GKEHub.V1.Model.FeatureState.t() | nil
@@ -44,6 +47,7 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureState do
   field(:anthosvm, as: GoogleApi.GKEHub.V1.Model.AnthosVMMembershipState)
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState)
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState)
+  field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipState)
   field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipState)
   field(:servicemesh, as: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState)
   field(:state, as: GoogleApi.GKEHub.V1.Model.FeatureState)
