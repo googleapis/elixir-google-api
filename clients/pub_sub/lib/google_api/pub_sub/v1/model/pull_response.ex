@@ -21,7 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.PullResponse do
 
   ## Attributes
 
-  *   `receivedMessages` (*type:* `list(GoogleApi.PubSub.V1.Model.ReceivedMessage.t)`, *default:* `nil`) - Received Pub/Sub messages. The list will be empty if there are no more messages available in the backlog. For JSON, the response can be entirely empty. The Pub/Sub system may return fewer than the `maxMessages` requested even if there are more messages available in the backlog.
+  *   `receivedMessages` (*type:* `list(GoogleApi.PubSub.V1.Model.ReceivedMessage.t)`, *default:* `nil`) - Received Pub/Sub messages. The list will be empty if there are no more messages available in the backlog, or if no messages could be returned before the request timeout. For JSON, the response can be entirely empty. The Pub/Sub system may return fewer than the `maxMessages` requested even if there are more messages available in the backlog.
   """
 
   use GoogleApi.Gax.ModelBase
