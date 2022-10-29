@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeInfo do
 
   ## Attributes
 
+  *   `approximateUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageMetrics.t`, *default:* `nil`) - Output only. Approximate workload resource usage calculated after workload finishes.
   *   `diagnosticOutputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the diagnostics tarball.
   *   `endpoints` (*type:* `map()`, *default:* `nil`) - Output only. Map of remote access endpoints (such as web interfaces and APIs) to their URIs.
   *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout and stderr of the workload.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :approximateUsage => GoogleApi.Dataproc.V1.Model.UsageMetrics.t() | nil,
           :diagnosticOutputUri => String.t() | nil,
           :endpoints => map() | nil,
           :outputUri => String.t() | nil
         }
 
+  field(:approximateUsage, as: GoogleApi.Dataproc.V1.Model.UsageMetrics)
   field(:diagnosticOutputUri)
   field(:endpoints, type: :map)
   field(:outputUri)
