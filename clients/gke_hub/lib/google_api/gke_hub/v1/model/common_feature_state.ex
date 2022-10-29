@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureState do
   ## Attributes
 
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t`, *default:* `nil`) - Appdevexperience specific state.
+  *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState.t`, *default:* `nil`) - FleetObservability feature state.
   *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.FeatureState.t`, *default:* `nil`) - Output only. The "running state" of the Feature in this Hub.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureState do
 
   @type t :: %__MODULE__{
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t() | nil,
+          :fleetobservability =>
+            GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState.t() | nil,
           :state => GoogleApi.GKEHub.V1.Model.FeatureState.t() | nil
         }
 
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState)
+  field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState)
   field(:state, as: GoogleApi.GKEHub.V1.Model.FeatureState)
 end
 

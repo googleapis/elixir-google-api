@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
   ## Attributes
 
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec.t`, *default:* `nil`) - Appdevexperience specific spec.
+  *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec.t`, *default:* `nil`) - FleetObservability feature spec.
   *   `multiclusteringress` (*type:* `GoogleApi.GKEHub.V1.Model.MultiClusterIngressFeatureSpec.t`, *default:* `nil`) - Multicluster Ingress-specific spec.
   """
 
@@ -29,11 +30,14 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
 
   @type t :: %__MODULE__{
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec.t() | nil,
+          :fleetobservability =>
+            GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec.t() | nil,
           :multiclusteringress =>
             GoogleApi.GKEHub.V1.Model.MultiClusterIngressFeatureSpec.t() | nil
         }
 
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec)
+  field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec)
   field(:multiclusteringress, as: GoogleApi.GKEHub.V1.Model.MultiClusterIngressFeatureSpec)
 end
 
