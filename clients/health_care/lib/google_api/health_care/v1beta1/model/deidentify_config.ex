@@ -23,7 +23,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
 
   *   `annotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig.t`, *default:* `nil`) - Configures how annotations, meaning that the location and infoType of sensitive information findings, are created during de-identification. If unspecified, no annotations are created.
   *   `dicom` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content. Deprecated. Use `dicom_tag_config` instead.
+  *   `dicomTagConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomTagConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content.
   *   `fhir` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content. Deprecated. Use `fhir_field_config` instead.
+  *   `fhirFieldConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirFieldConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content.
   *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures the de-identification of image pixels in the source_dataset. Deprecated. Use `dicom_tag_config.options.clean_image` instead.
   *   `operationMetadata` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t`, *default:* `nil`) - Details about the work the de-identify operation performed.
   *   `text` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the source_dataset.
@@ -34,7 +36,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   @type t :: %__MODULE__{
           :annotation => GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig.t() | nil,
           :dicom => GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t() | nil,
+          :dicomTagConfig => GoogleApi.HealthCare.V1beta1.Model.DicomTagConfig.t() | nil,
           :fhir => GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t() | nil,
+          :fhirFieldConfig => GoogleApi.HealthCare.V1beta1.Model.FhirFieldConfig.t() | nil,
           :image => GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t() | nil,
           :operationMetadata =>
             GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t() | nil,
@@ -43,7 +47,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
 
   field(:annotation, as: GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig)
   field(:dicom, as: GoogleApi.HealthCare.V1beta1.Model.DicomConfig)
+  field(:dicomTagConfig, as: GoogleApi.HealthCare.V1beta1.Model.DicomTagConfig)
   field(:fhir, as: GoogleApi.HealthCare.V1beta1.Model.FhirConfig)
+  field(:fhirFieldConfig, as: GoogleApi.HealthCare.V1beta1.Model.FhirFieldConfig)
   field(:image, as: GoogleApi.HealthCare.V1beta1.Model.ImageConfig)
   field(:operationMetadata, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata)
   field(:text, as: GoogleApi.HealthCare.V1beta1.Model.TextConfig)

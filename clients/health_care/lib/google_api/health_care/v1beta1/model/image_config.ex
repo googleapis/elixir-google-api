@@ -21,15 +21,21 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImageConfig do
 
   ## Attributes
 
+  *   `additionalInfoTypes` (*type:* `list(String.t)`, *default:* `nil`) - Additional InfoTypes to redact in the images in addition to those used by `text_redaction_mode`. Can only be used when `text_redaction_mode` is set to `REDACT_SENSITIVE_TEXT`, `REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS` or `TEXT_REDACTION_MODE_UNSPECIFIED`.
+  *   `excludeInfoTypes` (*type:* `list(String.t)`, *default:* `nil`) - InfoTypes to skip redacting, overriding those used by `text_redaction_mode`. Can only be used when `text_redaction_mode` is set to `REDACT_SENSITIVE_TEXT` or `REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS`.
   *   `textRedactionMode` (*type:* `String.t`, *default:* `nil`) - Determines how to redact text from image.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalInfoTypes => list(String.t()) | nil,
+          :excludeInfoTypes => list(String.t()) | nil,
           :textRedactionMode => String.t() | nil
         }
 
+  field(:additionalInfoTypes, type: :list)
+  field(:excludeInfoTypes, type: :list)
   field(:textRedactionMode)
 end
 
