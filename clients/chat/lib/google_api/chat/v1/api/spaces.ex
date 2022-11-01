@@ -277,7 +277,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Lists human memberships in a space for joined members. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+  Lists memberships in a space. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
 
   ## Parameters
 
