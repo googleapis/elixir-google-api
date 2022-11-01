@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem do
   @moduledoc """
-  Individual line item definition of a subscription. Next id: 8
+  Individual line item definition of a subscription. Next id: 9
 
   ## Attributes
 
