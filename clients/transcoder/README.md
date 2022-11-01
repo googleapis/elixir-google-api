@@ -2,7 +2,7 @@
 
 Transcoder API client library.
 
-This API converts video files into formats suitable for consumer distribution. 
+This API converts video files into formats suitable for consumer distribution. For more information, see the Transcoder API overview. 
 
 ## Installation
 

@@ -20,7 +20,7 @@ defmodule GoogleApi.Transcoder.V1 do
   API client metadata for GoogleApi.Transcoder.V1.
   """
 
-  @discovery_revision "20220811"
+  @discovery_revision "20221027"
 
   def discovery_revision(), do: @discovery_revision
 end
