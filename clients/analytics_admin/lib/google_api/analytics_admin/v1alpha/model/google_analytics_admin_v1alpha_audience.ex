@@ -26,7 +26,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the Audience.
   *   `eventTrigger` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudienceEventTrigger.t`, *default:* `nil`) - Optional. Specifies an event to log when a user joins the Audience. If not set, no event is logged when a user joins the Audience.
   *   `exclusionDurationMode` (*type:* `String.t`, *default:* `nil`) - Immutable. Specifies how long an exclusion lasts for users that meet the exclusion filter. It is applied to all EXCLUDE filter clauses and is ignored when there is no EXCLUDE filter clause in the Audience.
-  *   `filterClauses` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudienceFilterClause.t)`, *default:* `nil`) - Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed together.
+  *   `filterClauses` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudienceFilterClause.t)`, *default:* `nil`) - Required. Immutable. Unordered list. Filter clauses that define the Audience. All clauses will be AND’ed together.
   *   `membershipDurationDays` (*type:* `integer()`, *default:* `nil`) - Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this Audience resource. Format: properties/{propertyId}/audiences/{audienceId}
   """
