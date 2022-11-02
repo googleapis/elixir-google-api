@@ -415,7 +415,7 @@ defmodule GoogleApi.EssentialContacts.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.EssentialContacts.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The identifier for the contact. Format: {resource_type}/{resource_id}/contacts/{contact_id}
+  *   `name` (*type:* `String.t`) - Output only. The identifier for the contact. Format: {resource_type}/{resource_id}/contacts/{contact_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
