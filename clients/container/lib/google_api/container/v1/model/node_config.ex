@@ -42,6 +42,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - The set of Google API scopes to be made available on all of the node VMs under the "default" service account. The following scopes are recommended, but not required, and by default are not included: * `https://www.googleapis.com/auth/compute` is required for mounting persistent storage on your nodes. * `https://www.googleapis.com/auth/devstorage.read_only` is required for communicating with **gcr.io** (the [Google Container Registry](https://cloud.google.com/container-registry/)). If unspecified, no scopes are added, unless Cloud Logging or Cloud Monitoring are enabled, in which case their required scopes will be added.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Whether the nodes are created as preemptible VM instances. See: https://cloud.google.com/compute/docs/instances/preemptible for more information about preemptible VM instances.
   *   `reservationAffinity` (*type:* `GoogleApi.Container.V1.Model.ReservationAffinity.t`, *default:* `nil`) - The optional reservation affinity. Setting this field will apply the specified [Zonal Compute Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources) to this node pool.
+  *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the node pool to use to annotate any related Google Compute Engine resources.
   *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. Specify the email address of the Service Account; otherwise, if no Service Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
@@ -76,6 +77,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :oauthScopes => list(String.t()) | nil,
           :preemptible => boolean() | nil,
           :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t() | nil,
+          :resourceLabels => map() | nil,
           :sandboxConfig => GoogleApi.Container.V1.Model.SandboxConfig.t() | nil,
           :serviceAccount => String.t() | nil,
           :shieldedInstanceConfig =>
@@ -107,6 +109,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:oauthScopes, type: :list)
   field(:preemptible)
   field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
+  field(:resourceLabels, type: :map)
   field(:sandboxConfig, as: GoogleApi.Container.V1.Model.SandboxConfig)
   field(:serviceAccount)
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)

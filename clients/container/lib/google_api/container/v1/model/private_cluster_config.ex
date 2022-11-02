@@ -27,6 +27,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning internal IP addresses to the master or set of masters, as well as the ILB VIP. This range must not overlap with any other ranges in use within the cluster's network.
   *   `peeringName` (*type:* `String.t`, *default:* `nil`) - Output only. The peering name in the customer VPC used by this cluster.
   *   `privateEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The internal IP address of this cluster's master endpoint.
+  *   `privateEndpointSubnetwork` (*type:* `String.t`, *default:* `nil`) - Subnet to provision the master's private endpoint during cluster creation. Specified in projects/*/regions/*/subnetworks/* format.
   *   `publicEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of this cluster's master endpoint.
   """
 
@@ -40,6 +41,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
           :masterIpv4CidrBlock => String.t() | nil,
           :peeringName => String.t() | nil,
           :privateEndpoint => String.t() | nil,
+          :privateEndpointSubnetwork => String.t() | nil,
           :publicEndpoint => String.t() | nil
         }
 
@@ -53,6 +55,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   field(:masterIpv4CidrBlock)
   field(:peeringName)
   field(:privateEndpoint)
+  field(:privateEndpointSubnetwork)
   field(:publicEndpoint)
 end
 

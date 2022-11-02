@@ -26,6 +26,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `dnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
   *   `enableL4ilbSubsetting` (*type:* `boolean()`, *default:* `nil`) - Whether L4ILB Subsetting is enabled for this cluster.
+  *   `gatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - GatewayAPIConfig contains the desired config of Gateway API on this cluster.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
   *   `serviceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :dnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
           :enableIntraNodeVisibility => boolean() | nil,
           :enableL4ilbSubsetting => boolean() | nil,
+          :gatewayApiConfig => GoogleApi.Container.V1.Model.GatewayAPIConfig.t() | nil,
           :network => String.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
           :serviceExternalIpsConfig =>
@@ -52,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   field(:dnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
   field(:enableIntraNodeVisibility)
   field(:enableL4ilbSubsetting)
+  field(:gatewayApiConfig, as: GoogleApi.Container.V1.Model.GatewayAPIConfig)
   field(:network)
   field(:privateIpv6GoogleAccess)
   field(:serviceExternalIpsConfig, as: GoogleApi.Container.V1.Model.ServiceExternalIPsConfig)

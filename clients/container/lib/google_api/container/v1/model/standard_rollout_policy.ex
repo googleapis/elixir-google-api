@@ -22,7 +22,7 @@ defmodule GoogleApi.Container.V1.Model.StandardRolloutPolicy do
   ## Attributes
 
   *   `batchNodeCount` (*type:* `integer()`, *default:* `nil`) - Number of blue nodes to drain in a batch.
-  *   `batchPercentage` (*type:* `number()`, *default:* `nil`) - Percentage of the bool pool nodes to drain in a batch. The range of this field should be (0.0, 1.0].
+  *   `batchPercentage` (*type:* `number()`, *default:* `nil`) - Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0].
   *   `batchSoakDuration` (*type:* `String.t`, *default:* `nil`) - Soak time after each batch gets drained. Default to zero.
   """
 
