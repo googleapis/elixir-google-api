@@ -25,7 +25,16 @@ defmodule GoogleApi.Chat.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # View, add, and remove members from conversations in Google Chat
-      "https://www.googleapis.com/auth/chat.memberships"
+      "https://www.googleapis.com/auth/chat.memberships",
+
+      # View, compose, send, update, and delete messages, and add, view, and delete reactions to messages.
+      "https://www.googleapis.com/auth/chat.messages",
+
+      # Compose and send messages in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.create",
+
+      # view messages and reactions in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.readonly"
     ],
     otp_app: :google_api_chat,
     base_url: "https://chat.googleapis.com/"
