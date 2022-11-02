@@ -21,31 +21,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Propert
 
   ## Attributes
 
-  *   `humanReviewLabelingMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewLabelingMetadata.t`, *default:* `nil`) - Human review labeling config on the property.
-  *   `humanReviewMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewValidationMetadata.t`, *default:* `nil`) - Human review validation config on the property.
   *   `inactive` (*type:* `boolean()`, *default:* `nil`) - Whether the property should be considered as "inactive".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :humanReviewLabelingMetadata =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewLabelingMetadata.t()
-            | nil,
-          :humanReviewMetadata =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewValidationMetadata.t()
-            | nil,
           :inactive => boolean() | nil
         }
-
-  field(:humanReviewLabelingMetadata,
-    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewLabelingMetadata
-  )
-
-  field(:humanReviewMetadata,
-    as:
-      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewValidationMetadata
-  )
 
   field(:inactive)
 end
