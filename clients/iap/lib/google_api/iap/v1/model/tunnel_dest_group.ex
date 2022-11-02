@@ -21,8 +21,8 @@ defmodule GoogleApi.IAP.V1.Model.TunnelDestGroup do
 
   ## Attributes
 
-  *   `cidrs` (*type:* `list(String.t)`, *default:* `nil`) - null List of CIDRs that this group applies to.
-  *   `fqdns` (*type:* `list(String.t)`, *default:* `nil`) - null List of FQDNs that this group applies to.
+  *   `cidrs` (*type:* `list(String.t)`, *default:* `nil`) - Unordered list. List of CIDRs that this group applies to.
+  *   `fqdns` (*type:* `list(String.t)`, *default:* `nil`) - Unordered list. List of FQDNs that this group applies to.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project and contain only lower case letters (a-z) and dashes (-).
   """
 
