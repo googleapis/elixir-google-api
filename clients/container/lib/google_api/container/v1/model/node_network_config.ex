@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.NodeNetworkConfig do
   ## Attributes
 
   *   `createPodRange` (*type:* `boolean()`, *default:* `nil`) - Input only. Whether to create a new range for pod IPs in this node pool. Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they are not specified. If neither `create_pod_range` or `pod_range` are specified, the cluster-level default (`ip_allocation_policy.cluster_ipv4_cidr_block`) is used. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.
+  *   `enablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Whether nodes have internal IP addresses only. If enable_private_nodes is not specified, then the value is derived from cluster.privateClusterConfig.enablePrivateNodes
   *   `networkPerformanceConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkPerformanceConfig.t`, *default:* `nil`) - Network bandwidth tier configuration.
   *   `podIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.
   *   `podRange` (*type:* `String.t`, *default:* `nil`) - The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Container.V1.Model.NodeNetworkConfig do
 
   @type t :: %__MODULE__{
           :createPodRange => boolean() | nil,
+          :enablePrivateNodes => boolean() | nil,
           :networkPerformanceConfig =>
             GoogleApi.Container.V1.Model.NetworkPerformanceConfig.t() | nil,
           :podIpv4CidrBlock => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.NodeNetworkConfig do
         }
 
   field(:createPodRange)
+  field(:enablePrivateNodes)
   field(:networkPerformanceConfig, as: GoogleApi.Container.V1.Model.NetworkPerformanceConfig)
   field(:podIpv4CidrBlock)
   field(:podRange)

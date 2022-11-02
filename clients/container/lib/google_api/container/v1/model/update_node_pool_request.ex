@@ -36,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field.
   *   `nodeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field.
+  *   `resourceLabels` (*type:* `GoogleApi.Container.V1.Model.ResourceLabels.t`, *default:* `nil`) - The resource labels for the node pool to use to annotate any related Google Compute Engine resources.
   *   `tags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags to be applied to all nodes in the node pool. If this field is not present, the tags will not be changed. Otherwise, the existing network tags will be *replaced* with the provided tags.
   *   `taints` (*type:* `GoogleApi.Container.V1.Model.NodeTaints.t`, *default:* `nil`) - The desired node taints to be applied to all nodes in the node pool. If this field is not present, the taints will not be changed. Otherwise, the existing node taints will be *replaced* with the provided taints.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :nodePoolId => String.t() | nil,
           :nodeVersion => String.t() | nil,
           :projectId => String.t() | nil,
+          :resourceLabels => GoogleApi.Container.V1.Model.ResourceLabels.t() | nil,
           :tags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :taints => GoogleApi.Container.V1.Model.NodeTaints.t() | nil,
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
@@ -84,6 +86,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   field(:nodePoolId)
   field(:nodeVersion)
   field(:projectId)
+  field(:resourceLabels, as: GoogleApi.Container.V1.Model.ResourceLabels)
   field(:tags, as: GoogleApi.Container.V1.Model.NetworkTags)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaints)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)

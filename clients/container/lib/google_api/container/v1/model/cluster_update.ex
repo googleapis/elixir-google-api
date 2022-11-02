@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   *   `desiredServiceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field.
   *   `desiredDnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
+  *   `desiredGatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - The desired config of Gateway API on this cluster.
   *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
+  *   `desiredEnablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable private endpoint for the cluster's master.
   *   `desiredNodePoolLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - The desired node pool logging configuration defaults for the cluster.
   *   `desiredPrivateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
@@ -65,6 +67,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredServiceExternalIpsConfig =>
             GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
           :desiredDnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
+          :desiredGatewayApiConfig => GoogleApi.Container.V1.Model.GatewayAPIConfig.t() | nil,
           :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
           :desiredMasterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
@@ -84,6 +87,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t() | nil,
           :desiredBinaryAuthorization =>
             GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
+          :desiredEnablePrivateEndpoint => boolean() | nil,
           :desiredNodePoolLoggingConfig =>
             GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil,
           :desiredPrivateIpv6GoogleAccess => String.t() | nil,
@@ -120,6 +124,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredDnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
+  field(:desiredGatewayApiConfig, as: GoogleApi.Container.V1.Model.GatewayAPIConfig)
   field(:desiredDefaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
 
   field(:desiredMasterAuthorizedNetworksConfig,
@@ -144,6 +149,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
+  field(:desiredEnablePrivateEndpoint)
   field(:desiredNodePoolLoggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
   field(:desiredPrivateIpv6GoogleAccess)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
