@@ -22,7 +22,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ResourceV
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the resource value config
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Apply resource_value only to resources that match resource_type. resource_type will be checked with "AND" of other resources. E.g. "storage.googleapis.com/Bucket" with resource_value "HIGH" will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
   *   `resourceValue` (*type:* `String.t`, *default:* `nil`) - Required. Resource value level this expression represents
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Project or folder to scope this config to. For example, "project/456" would apply this config only to resources in "project/456" scope will be checked with "AND" of other resources.
   *   `tagValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. Tag values combined with AND to check against. Values in the form "tagValues/123" E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ] https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ResourceV
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
+          :resourceType => String.t() | nil,
           :resourceValue => String.t() | nil,
+          :scope => String.t() | nil,
           :tagValues => list(String.t()) | nil
         }
 
   field(:name)
+  field(:resourceType)
   field(:resourceValue)
+  field(:scope)
   field(:tagValues, type: :list)
 end
 
