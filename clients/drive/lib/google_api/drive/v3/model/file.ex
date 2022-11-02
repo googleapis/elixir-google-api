@@ -24,7 +24,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `shortcutDetails` (*type:* `GoogleApi.Drive.V3.Model.FileShortcutDetails.t`, *default:* `nil`) - Shortcut file details. Only populated for shortcut files, which have the mimeType field set to application/vnd.google-apps.shortcut.
   *   `modifiedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been modified by this user.
   *   `fullFileExtension` (*type:* `String.t`, *default:* `nil`) - The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
-      This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
+      This is automatically updated when the name field changes, however it isn't cleared if the new name does not contain a valid extension.
   *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder or shortcut to a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
       If an unsupported color is specified, the closest color in the palette will be used instead.
   *   `resourceKey` (*type:* `String.t`, *default:* `nil`) - A key needed to access the item via a shared link.
@@ -57,8 +57,8 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request.
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
   *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
-  *   `sha1Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA1 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.
-  *   `sha256Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA256 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.
+  *   `sha1Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA1 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.
+  *   `sha256Checksum` (*type:* `String.t`, *default:* `nil`) - The SHA256 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.
   *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
   *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
   *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.

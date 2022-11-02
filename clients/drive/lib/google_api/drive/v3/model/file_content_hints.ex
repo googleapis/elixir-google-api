@@ -21,7 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.FileContentHints do
 
   ## Attributes
 
-  *   `indexableText` (*type:* `String.t`, *default:* `nil`) - Text to be indexed for the file to improve fullText queries. This is limited to 128KB in length and may contain HTML elements.
+  *   `indexableText` (*type:* `String.t`, *default:* `nil`) - Text to be indexed for the file to improve fullText queries. This is limited to 128 KB in length and may contain HTML elements. For more information, see Manage file metadata.
   *   `thumbnail` (*type:* `GoogleApi.Drive.V3.Model.FileContentHintsThumbnail.t`, *default:* `nil`) - A thumbnail for the file. This will only be used if Google Drive cannot generate a standard thumbnail.
   """
 
