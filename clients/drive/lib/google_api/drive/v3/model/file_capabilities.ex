@@ -22,7 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   ## Attributes
 
   *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use canDeleteChildren or canTrashChildren instead.
-  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read.
+  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it isn't a folder, can be read.
   *   `canModifyContent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the content of this file.
   *   `canAddMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add a parent for the item without removing an existing parent in the same request. Not populated for shared drive files.
   *   `canMoveItemOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this item outside of this drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added.
