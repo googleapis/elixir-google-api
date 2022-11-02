@@ -27,6 +27,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
   *   `googleWorkspaceCustomerId` (*type:* `String.t`, *default:* `nil`) - The Google Workspace customer ID.
   *   `preProvisioningToken` (*type:* `String.t`, *default:* `nil`) - Optional. Must and can only be set for Chrome OS devices.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
+  *   `simlockProfileId` (*type:* `String.t`, *default:* `nil`) - Optional. Must and can only be set when DeviceProvisioningSectionType is SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile (go/simlock/profiles).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
             GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil,
           :googleWorkspaceCustomerId => String.t() | nil,
           :preProvisioningToken => String.t() | nil,
-          :sectionType => String.t() | nil
+          :sectionType => String.t() | nil,
+          :simlockProfileId => String.t() | nil
         }
 
   field(:customerId)
@@ -48,6 +50,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
   field(:googleWorkspaceCustomerId)
   field(:preProvisioningToken)
   field(:sectionType)
+  field(:simlockProfileId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
