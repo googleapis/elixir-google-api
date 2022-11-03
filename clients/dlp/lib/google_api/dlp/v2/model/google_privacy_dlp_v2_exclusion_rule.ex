@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule do
   ## Attributes
 
   *   `dictionary` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t`, *default:* `nil`) - Dictionary which defines the rule.
+  *   `excludeByHotword` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeByHotword.t`, *default:* `nil`) - Drop if the hotword rule is contained in the proximate context. For tabular data, the context includes the column name.
   *   `excludeInfoTypes` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes.t`, *default:* `nil`) - Set of infoTypes for which findings would affect this rule.
   *   `matchingType` (*type:* `String.t`, *default:* `nil`) - How the rule is applied, see MatchingType documentation for details.
   *   `regex` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t`, *default:* `nil`) - Regular expression which defines the rule.
@@ -31,6 +32,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule do
 
   @type t :: %__MODULE__{
           :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t() | nil,
+          :excludeByHotword =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeByHotword.t() | nil,
           :excludeInfoTypes =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes.t() | nil,
           :matchingType => String.t() | nil,
@@ -38,6 +41,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule do
         }
 
   field(:dictionary, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary)
+  field(:excludeByHotword, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeByHotword)
   field(:excludeInfoTypes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes)
   field(:matchingType)
   field(:regex, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex)
