@@ -37,7 +37,6 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Task do
   *   `job` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the parent Job.
   *   `labels` (*type:* `map()`, *default:* `nil`) - KRM-style labels for the resource. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with 'run.googleapis.com' or 'serving.knative.dev' namespaces. Those labels are read-only, and user changes will not be preserved.
   *   `lastAttemptResult` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskAttemptResult.t`, *default:* `nil`) - Output only. Result of the last attempt of this Task.
-  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Set the launch stage to a preview stage on write to allow use of preview features in that stage. On read, describes whether the resource uses preview features. Launch Stages are defined at [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages).
   *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - Number of retries allowed per Task, before marking this Task failed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique name of this Task.
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Task. See comments in `Job.reconciling` for additional information on reconciliation process in Cloud Run.
@@ -72,7 +71,6 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Task do
           :labels => map() | nil,
           :lastAttemptResult =>
             GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskAttemptResult.t() | nil,
-          :launchStage => String.t() | nil,
           :maxRetries => integer() | nil,
           :name => String.t() | nil,
           :observedGeneration => String.t() | nil,
@@ -103,7 +101,6 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Task do
   field(:job)
   field(:labels, type: :map)
   field(:lastAttemptResult, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskAttemptResult)
-  field(:launchStage)
   field(:maxRetries)
   field(:name)
   field(:observedGeneration)
