@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.EkmConnection do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the EkmConnection was created.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag of the currently stored EkmConnection.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.
   *   `serviceResolvers` (*type:* `list(GoogleApi.CloudKMS.V1.Model.ServiceResolver.t)`, *default:* `nil`) - A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported.
   """
