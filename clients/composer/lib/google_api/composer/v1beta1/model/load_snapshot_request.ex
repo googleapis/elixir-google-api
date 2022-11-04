@@ -21,6 +21,9 @@ defmodule GoogleApi.Composer.V1beta1.Model.LoadSnapshotRequest do
 
   ## Attributes
 
+  *   `skipAirflowOverridesSetting` (*type:* `boolean()`, *default:* `nil`) - Whether or not to skip setting Airflow overrides when loading the environment's state.
+  *   `skipEnvironmentVariablesSetting` (*type:* `boolean()`, *default:* `nil`) - Whether or not to skip setting environment variables when loading the environment's state.
+  *   `skipGcsDataCopying` (*type:* `boolean()`, *default:* `nil`) - Whether or not to skip copying Cloud Storage data when loading the environment's state.
   *   `skipPypiPackagesInstallation` (*type:* `boolean()`, *default:* `nil`) - Whether or not to skip installing Pypi packages when loading the environment's state.
   *   `snapshotPath` (*type:* `String.t`, *default:* `nil`) - A Cloud Storage path to a snapshot to load, e.g.: "gs://my-bucket/snapshots/project_location_environment_timestamp".
   """
@@ -28,10 +31,16 @@ defmodule GoogleApi.Composer.V1beta1.Model.LoadSnapshotRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :skipAirflowOverridesSetting => boolean() | nil,
+          :skipEnvironmentVariablesSetting => boolean() | nil,
+          :skipGcsDataCopying => boolean() | nil,
           :skipPypiPackagesInstallation => boolean() | nil,
           :snapshotPath => String.t() | nil
         }
 
+  field(:skipAirflowOverridesSetting)
+  field(:skipEnvironmentVariablesSetting)
+  field(:skipGcsDataCopying)
   field(:skipPypiPackagesInstallation)
   field(:snapshotPath)
 end
