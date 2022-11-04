@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
   @moduledoc """
-  Describes the Service being deployed. Currently Supported : Cloud Run (fully managed).
+  Describes the Service being deployed. Currently Supported : Cloud Run (fully managed). Next tag: 23
 
   ## Attributes
 
