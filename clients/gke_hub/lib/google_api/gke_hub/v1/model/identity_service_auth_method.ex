@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
 
   ## Attributes
 
+  *   `azureadConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig.t`, *default:* `nil`) - AzureAD specific Configuration.
   *   `googleConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t`, *default:* `nil`) - GoogleConfig specific configuration
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier for auth config.
   *   `oidcConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t`, *default:* `nil`) - OIDC specific configuration.
@@ -30,12 +31,14 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :azureadConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig.t() | nil,
           :googleConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t() | nil,
           :name => String.t() | nil,
           :oidcConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t() | nil,
           :proxy => String.t() | nil
         }
 
+  field(:azureadConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig)
   field(:googleConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig)
   field(:name)
   field(:oidcConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig)
