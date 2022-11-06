@@ -22,8 +22,10 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   ## Attributes
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t`, *default:* `nil`) - Display information of the final state "abort" and reason.
+  *   `appEngineVersion` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo.t`, *default:* `nil`) - Display information of an App Engine service version.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
   *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo.t`, *default:* `nil`) - Display information of a Cloud Function.
+  *   `cloudRunRevision` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo.t`, *default:* `nil`) - Display information of a Cloud Run revision.
   *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display information of a Cloud SQL instance.
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo.t`, *default:* `nil`) - Display information of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
@@ -48,8 +50,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
 
   @type t :: %__MODULE__{
           :abort => GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t() | nil,
+          :appEngineVersion =>
+            GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo.t() | nil,
           :causesDrop => boolean() | nil,
           :cloudFunction => GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo.t() | nil,
+          :cloudRunRevision =>
+            GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo.t() | nil,
           :cloudSqlInstance =>
             GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo.t() | nil,
           :deliver => GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo.t() | nil,
@@ -73,8 +79,10 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
         }
 
   field(:abort, as: GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo)
+  field(:appEngineVersion, as: GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionInfo)
   field(:causesDrop)
   field(:cloudFunction, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionInfo)
+  field(:cloudRunRevision, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo)
   field(:cloudSqlInstance, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo)
   field(:deliver, as: GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo)
   field(:description)

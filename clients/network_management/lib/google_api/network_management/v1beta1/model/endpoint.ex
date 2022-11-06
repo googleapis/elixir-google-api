@@ -21,7 +21,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
 
   ## Attributes
 
+  *   `appEngineVersion` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint.t`, *default:* `nil`) - An [App Engine](https://cloud.google.com/appengine) [service version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
   *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud Function](https://cloud.google.com/functions).
+  *   `cloudRunRevision` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint.t`, *default:* `nil`) - A [Cloud Run](https://cloud.google.com/run) [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
   *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
   *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
@@ -35,8 +37,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appEngineVersion =>
+            GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint.t() | nil,
           :cloudFunction =>
             GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint.t() | nil,
+          :cloudRunRevision =>
+            GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint.t() | nil,
           :cloudSqlInstance => String.t() | nil,
           :gkeMasterCluster => String.t() | nil,
           :instance => String.t() | nil,
@@ -47,7 +53,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
           :projectId => String.t() | nil
         }
 
+  field(:appEngineVersion, as: GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint)
   field(:cloudFunction, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint)
+  field(:cloudRunRevision, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint)
   field(:cloudSqlInstance)
   field(:gkeMasterCluster)
   field(:instance)
