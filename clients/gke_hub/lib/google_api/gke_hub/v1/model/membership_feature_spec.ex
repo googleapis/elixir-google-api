@@ -21,7 +21,6 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
 
   ## Attributes
 
-  *   `anthosvm` (*type:* `GoogleApi.GKEHub.V1.Model.AnthosVMMembershipSpec.t`, *default:* `nil`) - AnthosVM spec.
   *   `configmanagement` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t`, *default:* `nil`) - Config Management-specific spec.
   *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec.t`, *default:* `nil`) - Fleet observability membership spec
   *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec.t`, *default:* `nil`) - Identity Service-specific spec.
@@ -31,7 +30,6 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :anthosvm => GoogleApi.GKEHub.V1.Model.AnthosVMMembershipSpec.t() | nil,
           :configmanagement => GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t() | nil,
           :fleetobservability =>
             GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec.t() | nil,
@@ -39,7 +37,6 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
           :mesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t() | nil
         }
 
-  field(:anthosvm, as: GoogleApi.GKEHub.V1.Model.AnthosVMMembershipSpec)
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec)
   field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec)
   field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec)
