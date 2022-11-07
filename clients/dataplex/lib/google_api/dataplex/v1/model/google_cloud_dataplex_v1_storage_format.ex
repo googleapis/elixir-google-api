@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormat do
   *   `csv` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatCsvOptions.t`, *default:* `nil`) - Optional. Additional information about CSV formatted data.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The data format associated with the stored data, which represents content type values. The value is inferred from mime type.
   *   `json` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatJsonOptions.t`, *default:* `nil`) - Optional. Additional information about CSV formatted data.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The mime type descriptor for the data. Must match the pattern {type}/{subtype}. Supported values: application/x-parquet application/x-avro application/x-orc application/x-tfrecord application/json application/{subtypes} text/csv text/ image/{image subtype} video/{video subtype} audio/{audio subtype}
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The mime type descriptor for the data. Must match the pattern {type}/{subtype}. Supported values: application/x-parquet application/x-avro application/x-orc application/x-tfrecord application/x-parquet+iceberg application/x-avro+iceberg application/x-orc+iceberg application/json application/{subtypes} text/csv text/ image/{image subtype} video/{video subtype} audio/{audio subtype}
   """
 
   use GoogleApi.Gax.ModelBase
