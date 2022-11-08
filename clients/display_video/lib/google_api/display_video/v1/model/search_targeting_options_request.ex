@@ -24,7 +24,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SearchTargetingOptionsRequest do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Required. The Advertiser this request is being made in the context of.
   *   `businessChainSearchTerms` (*type:* `GoogleApi.DisplayVideo.V1.Model.BusinessChainSearchTerms.t`, *default:* `nil`) - Search terms for Business Chain targeting options. Can only be used when targeting_type is `TARGETING_TYPE_BUSINESS_CHAIN`.
   *   `geoRegionSearchTerms` (*type:* `GoogleApi.DisplayVideo.V1.Model.GeoRegionSearchTerms.t`, *default:* `nil`) - Search terms for geo region targeting options. Can only be used when targeting_type is `TARGETING_TYPE_GEO_REGION`.
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `SearchTargetingOptions` method. If not specified, the first page of results will be returned.
   *   `poiSearchTerms` (*type:* `GoogleApi.DisplayVideo.V1.Model.PoiSearchTerms.t`, *default:* `nil`) - Search terms for POI targeting options. Can only be used when targeting_type is `TARGETING_TYPE_POI`.
   """
