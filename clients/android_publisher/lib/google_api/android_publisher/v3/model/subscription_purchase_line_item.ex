@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
 
   *   `autoRenewingPlan` (*type:* `GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan.t`, *default:* `nil`) - The item is auto renewing.
   *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the subscription expired or will expire unless the access is extended (ex. renews).
+  *   `offerDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.OfferDetails.t`, *default:* `nil`) - The offer details for this item.
   *   `prepaidPlan` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan.t`, *default:* `nil`) - The item is prepaid.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The purchased product ID (for example, 'monthly001').
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
   @type t :: %__MODULE__{
           :autoRenewingPlan => GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan.t() | nil,
           :expiryTime => DateTime.t() | nil,
+          :offerDetails => GoogleApi.AndroidPublisher.V3.Model.OfferDetails.t() | nil,
           :prepaidPlan => GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan.t() | nil,
           :productId => String.t() | nil
         }
 
   field(:autoRenewingPlan, as: GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan)
   field(:expiryTime, as: DateTime)
+  field(:offerDetails, as: GoogleApi.AndroidPublisher.V3.Model.OfferDetails)
   field(:prepaidPlan, as: GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan)
   field(:productId)
 end

@@ -22,15 +22,22 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
   ## Attributes
 
   *   `autoRenewEnabled` (*type:* `boolean()`, *default:* `nil`) - If the subscription is currently set to auto-renew, e.g. the user has not canceled the subscription
+  *   `priceChangeDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t`, *default:* `nil`) - The information of the last price change for the item since subscription signup.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoRenewEnabled => boolean() | nil
+          :autoRenewEnabled => boolean() | nil,
+          :priceChangeDetails =>
+            GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t() | nil
         }
 
   field(:autoRenewEnabled)
+
+  field(:priceChangeDetails,
+    as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
