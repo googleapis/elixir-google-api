@@ -1797,7 +1797,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}", "folders/{folder_id}/sources/{source_id}/finding/{finding_id}", "projects/{project_id}/sources/{source_id}/finding/{finding_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
   *   `sources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `findings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1880,7 +1880,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}".
   *   `sources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `findings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
