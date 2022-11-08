@@ -31,6 +31,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability specific fields like cve, cvss scores etc. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
   *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more detail about the finding.
+  *   `files` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.File.t)`, *default:* `nil`) - File associated with the finding.
   *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Next steps associate to the finding.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
@@ -74,6 +75,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil,
           :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
           :description => String.t() | nil,
+          :files => list(GoogleApi.SecurityCenter.V1.Model.File.t()) | nil,
           :nextSteps => String.t() | nil,
           :findingClass => String.t() | nil,
           :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
@@ -115,6 +117,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
   field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
   field(:description)
+  field(:files, as: GoogleApi.SecurityCenter.V1.Model.File, type: :list)
   field(:nextSteps)
   field(:findingClass)
   field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)
