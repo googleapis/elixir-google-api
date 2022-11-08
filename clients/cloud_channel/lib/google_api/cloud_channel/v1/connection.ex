@@ -25,7 +25,10 @@ defmodule GoogleApi.CloudChannel.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage users on your domain
-      "https://www.googleapis.com/auth/apps.order"
+      "https://www.googleapis.com/auth/apps.order",
+
+      # View usage reports for your G Suite domain
+      "https://www.googleapis.com/auth/apps.reports.usage.readonly"
     ],
     otp_app: :google_api_cloud_channel,
     base_url: "https://cloudchannel.googleapis.com/"
