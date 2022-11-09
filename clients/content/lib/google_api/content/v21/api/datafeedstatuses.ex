@@ -106,8 +106,9 @@ defmodule GoogleApi.Content.V21.Api.Datafeedstatuses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:country` (*type:* `String.t`) - The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
-      *   `:language` (*type:* `String.t`) - The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+      *   `:country` (*type:* `String.t`) - Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+      *   `:feedLabel` (*type:* `String.t`) - The feed label to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+      *   `:language` (*type:* `String.t`) - The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -146,6 +147,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeedstatuses do
       :uploadType => :query,
       :upload_protocol => :query,
       :country => :query,
+      :feedLabel => :query,
       :language => :query
     }
 

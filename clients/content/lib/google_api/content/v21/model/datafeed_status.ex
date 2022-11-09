@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
   *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which the status is reported, represented as a CLDR territory code.
   *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the feed for which the status is reported.
   *   `errors` (*type:* `list(GoogleApi.Content.V21.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - The feed label status is reported for.
   *   `itemsTotal` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were processed.
   *   `itemsValid` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were valid.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#datafeedStatus`"
@@ -39,6 +40,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
           :country => String.t() | nil,
           :datafeedId => String.t() | nil,
           :errors => list(GoogleApi.Content.V21.Model.DatafeedStatusError.t()) | nil,
+          :feedLabel => String.t() | nil,
           :itemsTotal => String.t() | nil,
           :itemsValid => String.t() | nil,
           :kind => String.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
   field(:country)
   field(:datafeedId)
   field(:errors, as: GoogleApi.Content.V21.Model.DatafeedStatusError, type: :list)
+  field(:feedLabel)
   field(:itemsTotal)
   field(:itemsValid)
   field(:kind)

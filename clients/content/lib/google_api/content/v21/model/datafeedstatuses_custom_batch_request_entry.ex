@@ -22,9 +22,10 @@ defmodule GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry do
   ## Attributes
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
-  *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required.
   *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed to get.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required.
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - The feed label to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that for multi-target datafeeds this parameter is required.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`get`" 
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry do
           :batchId => integer() | nil,
           :country => String.t() | nil,
           :datafeedId => String.t() | nil,
+          :feedLabel => String.t() | nil,
           :language => String.t() | nil,
           :merchantId => String.t() | nil,
           :method => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry do
   field(:batchId)
   field(:country)
   field(:datafeedId)
+  field(:feedLabel)
   field(:language)
   field(:merchantId)
   field(:method)

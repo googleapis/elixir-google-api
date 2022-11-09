@@ -21,10 +21,12 @@ defmodule GoogleApi.Content.V21.Model.DatafeedTarget do
 
   ## Attributes
 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - The country where the items in the feed will be included in the search index, represented as a CLDR territory code.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `feedLabel` instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code.
   *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center).
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Feed label for the DatafeedTarget. Either `country` or `feedLabel` is required. If both `feedLabel` and `country` is specified, the values must match.
   *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
   *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targets[].country`.
+  *   `targetCountries` (*type:* `list(String.t)`, *default:* `nil`) - The countries where the items may be displayed. Represented as a CLDR territory code. Will be ignored for "product inventory" feeds.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +34,18 @@ defmodule GoogleApi.Content.V21.Model.DatafeedTarget do
   @type t :: %__MODULE__{
           :country => String.t() | nil,
           :excludedDestinations => list(String.t()) | nil,
+          :feedLabel => String.t() | nil,
           :includedDestinations => list(String.t()) | nil,
-          :language => String.t() | nil
+          :language => String.t() | nil,
+          :targetCountries => list(String.t()) | nil
         }
 
   field(:country)
   field(:excludedDestinations, type: :list)
+  field(:feedLabel)
   field(:includedDestinations, type: :list)
   field(:language)
+  field(:targetCountries, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.DatafeedTarget do
