@@ -17,23 +17,26 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.Documentation do
   @moduledoc """
-  A content string and a MIME type that describes the content string's format.
+  User-defined documentation of the generated notification.
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller. This text can be templatized by using variables (https://cloud.google.com/monitoring/alerts/doc-variables).
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The body of the notification, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller. This text can be templatized by using variables (https://cloud.google.com/monitoring/alerts/doc-variables).
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The format of the content field. Presently, only the value "text/markdown" is supported. See Markdown (https://en.wikipedia.org/wiki/Markdown) for more information.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - A public comment for an internal field, because the linter insists that all fields must have a comment. Sigh.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :content => String.t() | nil,
-          :mimeType => String.t() | nil
+          :mimeType => String.t() | nil,
+          :subject => String.t() | nil
         }
 
   field(:content)
   field(:mimeType)
+  field(:subject)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.Documentation do
