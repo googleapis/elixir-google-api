@@ -43,8 +43,11 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `promotionEffectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - Required. `TimePeriod` representation of the promotion's effective dates.
   *   `promotionDisplayDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion display dates. Deprecated. Use `promotion_display_time_period` instead.
   *   `promotionEffectiveDates` (*type:* `String.t`, *default:* `nil`) - String representation of the promotion effective dates. Deprecated. Use `promotion_effective_time_period` instead.
+  *   `storeCodeExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Store codes to exclude for the promotion.
+  *   `storeApplicability` (*type:* `String.t`, *default:* `nil`) - Whether the promotion applies to all stores, or only specified stores. Local Inventory ads promotions throw an error if no store applicability is included. An INVALID_ARGUMENT error is thrown if store_applicability is set to ALL_STORES and store_code or score_code_exclusion is set to a value.
   *   `itemIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item ID exclusion for the promotion.
   *   `brand` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand for the promotion.
+  *   `promotionUrl` (*type:* `String.t`, *default:* `nil`) - URL to the page on the merchant's site where the promotion shows. Local Inventory ads promotions throw an error if no promo url is included. URL is used to confirm that the promotion is valid and can be redeemed.
   *   `minimumPurchaseQuantity` (*type:* `integer()`, *default:* `nil`) - Minimum purchase quantity for the promotion.
   *   `limitValue` (*type:* `GoogleApi.Content.V21.Model.PriceAmount.t`, *default:* `nil`) - Maximum purchase value for the promotion.
   *   `orderLimit` (*type:* `integer()`, *default:* `nil`) - Order limit for the promotion.
@@ -52,6 +55,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `productTypeExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type exclusion for the promotion.
   *   `promotionDisplayTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - `TimePeriod` representation of the promotion's display dates.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `"online"`, `"in_store"`, or `"online_in_store"`.
+  *   `storeCode` (*type:* `list(String.t)`, *default:* `nil`) - Store codes to include for the promotion.
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries, and `de` content language is available for `DE` target country.
   *   `limitQuantity` (*type:* `integer()`, *default:* `nil`) - Maximum purchase quantity for the promotion.
   *   `getThisQuantityDiscounted` (*type:* `integer()`, *default:* `nil`) - The number of items discounted in the promotion.
@@ -84,8 +88,11 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
           :promotionEffectiveTimePeriod => GoogleApi.Content.V21.Model.TimePeriod.t() | nil,
           :promotionDisplayDates => String.t() | nil,
           :promotionEffectiveDates => String.t() | nil,
+          :storeCodeExclusion => list(String.t()) | nil,
+          :storeApplicability => String.t() | nil,
           :itemIdExclusion => list(String.t()) | nil,
           :brand => list(String.t()) | nil,
+          :promotionUrl => String.t() | nil,
           :minimumPurchaseQuantity => integer() | nil,
           :limitValue => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
           :orderLimit => integer() | nil,
@@ -93,6 +100,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
           :productTypeExclusion => list(String.t()) | nil,
           :promotionDisplayTimePeriod => GoogleApi.Content.V21.Model.TimePeriod.t() | nil,
           :id => String.t() | nil,
+          :storeCode => list(String.t()) | nil,
           :contentLanguage => String.t() | nil,
           :limitQuantity => integer() | nil,
           :getThisQuantityDiscounted => integer() | nil,
@@ -122,8 +130,11 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   field(:promotionEffectiveTimePeriod, as: GoogleApi.Content.V21.Model.TimePeriod)
   field(:promotionDisplayDates)
   field(:promotionEffectiveDates)
+  field(:storeCodeExclusion, type: :list)
+  field(:storeApplicability)
   field(:itemIdExclusion, type: :list)
   field(:brand, type: :list)
+  field(:promotionUrl)
   field(:minimumPurchaseQuantity)
   field(:limitValue, as: GoogleApi.Content.V21.Model.PriceAmount)
   field(:orderLimit)
@@ -131,6 +142,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   field(:productTypeExclusion, type: :list)
   field(:promotionDisplayTimePeriod, as: GoogleApi.Content.V21.Model.TimePeriod)
   field(:id)
+  field(:storeCode, type: :list)
   field(:contentLanguage)
   field(:limitQuantity)
   field(:getThisQuantityDiscounted)
