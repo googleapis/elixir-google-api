@@ -21,7 +21,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
 
   ## Attributes
 
-  *   `bakExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions.t`, *default:* `nil`) - 
   *   `csvExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions.t`, *default:* `nil`) - Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only.
   *   `databases` (*type:* `list(String.t)`, *default:* `nil`) - Databases to be exported. `MySQL instances:` If `fileType` is `SQL` and no database is specified, all databases are exported, except for the `mysql` system database. If `fileType` is `CSV`, you can specify one database, either by using this property or by using the `csvExportOptions.selectQuery` property, which takes precedence over this property. `PostgreSQL instances:` You must specify one database to be exported. If `fileType` is `CSV`, this database must match the one specified in the `csvExportOptions.selectQuery` property. `SQL Server instances:` You must specify one database to be exported, and the `fileType` must be `BAK`.
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri.
@@ -34,8 +33,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bakExportOptions =>
-            GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions.t() | nil,
           :csvExportOptions =>
             GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions.t() | nil,
           :databases => list(String.t()) | nil,
@@ -47,7 +44,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
           :uri => String.t() | nil
         }
 
-  field(:bakExportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions)
   field(:csvExportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions)
   field(:databases, type: :list)
   field(:fileType)

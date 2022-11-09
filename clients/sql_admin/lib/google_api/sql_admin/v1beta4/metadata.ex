@@ -20,7 +20,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4 do
   API client metadata for GoogleApi.SQLAdmin.V1beta4.
   """
 
-  @discovery_revision "20221017"
+  @discovery_revision "20221104"
 
   def discovery_revision(), do: @discovery_revision
 end
