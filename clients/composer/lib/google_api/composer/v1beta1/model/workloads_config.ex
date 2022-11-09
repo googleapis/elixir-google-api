@@ -22,6 +22,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.WorkloadsConfig do
   ## Attributes
 
   *   `scheduler` (*type:* `GoogleApi.Composer.V1beta1.Model.SchedulerResource.t`, *default:* `nil`) - Optional. Resources used by Airflow schedulers.
+  *   `triggerer` (*type:* `GoogleApi.Composer.V1beta1.Model.TriggererResource.t`, *default:* `nil`) - Optional. Resources used by Airflow triggerers.
   *   `webServer` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerResource.t`, *default:* `nil`) - Optional. Resources used by Airflow web server.
   *   `worker` (*type:* `GoogleApi.Composer.V1beta1.Model.WorkerResource.t`, *default:* `nil`) - Optional. Resources used by Airflow workers.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Composer.V1beta1.Model.WorkloadsConfig do
 
   @type t :: %__MODULE__{
           :scheduler => GoogleApi.Composer.V1beta1.Model.SchedulerResource.t() | nil,
+          :triggerer => GoogleApi.Composer.V1beta1.Model.TriggererResource.t() | nil,
           :webServer => GoogleApi.Composer.V1beta1.Model.WebServerResource.t() | nil,
           :worker => GoogleApi.Composer.V1beta1.Model.WorkerResource.t() | nil
         }
 
   field(:scheduler, as: GoogleApi.Composer.V1beta1.Model.SchedulerResource)
+  field(:triggerer, as: GoogleApi.Composer.V1beta1.Model.TriggererResource)
   field(:webServer, as: GoogleApi.Composer.V1beta1.Model.WebServerResource)
   field(:worker, as: GoogleApi.Composer.V1beta1.Model.WorkerResource)
 end
