@@ -22,9 +22,11 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action name provided at token generation.
+  *   `androidPackageName` (*type:* `String.t`, *default:* `nil`) - The name of the Android package with which the token was generated (Android keys only).
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp corresponding to the generation of the token.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname of the page on which the token was generated (Web keys only).
   *   `invalidReason` (*type:* `String.t`, *default:* `nil`) - Reason associated with the response when valid = false.
+  *   `iosBundleId` (*type:* `String.t`, *default:* `nil`) - The ID of the iOS bundle with which the token was generated (iOS keys only).
   *   `valid` (*type:* `boolean()`, *default:* `nil`) - Whether the provided user response token is valid. When valid = false, the reason could be specified in invalid_reason or it could also be due to a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey used to generate the token was different than the one specified in the assessment).
   """
 
@@ -32,16 +34,20 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   @type t :: %__MODULE__{
           :action => String.t() | nil,
+          :androidPackageName => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :hostname => String.t() | nil,
           :invalidReason => String.t() | nil,
+          :iosBundleId => String.t() | nil,
           :valid => boolean() | nil
         }
 
   field(:action)
+  field(:androidPackageName)
   field(:createTime, as: DateTime)
   field(:hostname)
   field(:invalidReason)
+  field(:iosBundleId)
   field(:valid)
 end
 
