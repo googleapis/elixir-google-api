@@ -32,7 +32,7 @@ defmodule GoogleApi.TagManager.V2.Model.Container do
   *   `publicId` (*type:* `String.t`, *default:* `nil`) - Container Public ID.
   *   `tagIds` (*type:* `list(String.t)`, *default:* `nil`) - All Tag IDs that refer to this Container.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
-  *   `taggingServerUrls` (*type:* `list(String.t)`, *default:* `nil`) - The URLs of the cloud environment for the GTM Container. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
+  *   `taggingServerUrls` (*type:* `list(String.t)`, *default:* `nil`) - List of server-side container URLs for the Container. If multiple URLs are provided, all URL paths must match. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
   *   `usageContext` (*type:* `list(String.t)`, *default:* `nil`) - List of Usage Contexts for the Container. Valid values include: web, android, or ios. @mutable tagmanager.accounts.containers.create @mutable tagmanager.accounts.containers.update
   """
 
