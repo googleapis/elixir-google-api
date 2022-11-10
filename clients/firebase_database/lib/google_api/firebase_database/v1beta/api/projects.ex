@@ -31,7 +31,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent project for which to create a database instance, in the form: `projects/{project-number}/locations/{location-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent project for which to create a database instance, in the form: `projects/{project-number}/locations/{location-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -109,7 +109,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
+  *   `name` (*type:* `String.t`) - Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -181,7 +181,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
+  *   `name` (*type:* `String.t`) - Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -255,7 +255,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. `database-id` is a globally unique identifier across all parent collections. For convenience, this method allows you to supply `-` as a wildcard character in place of specific collections under `projects` and `locations`. The resulting wildcarding form of the method is: `projects/-/locations/-/instances/{database-id}`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. `database-id` is a globally unique identifier across all parent collections. For convenience, this method allows you to supply `-` as a wildcard character in place of specific collections under `projects` and `locations`. The resulting wildcarding form of the method is: `projects/-/locations/-/instances/{database-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -327,7 +327,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent project for which to list database instances, in the form: `projects/{project-number}/locations/{location-id}` To list across all locations, use a parent in the form: `projects/{project-number}/locations/-`
+  *   `parent` (*type:* `String.t`) - Required. The parent project for which to list database instances, in the form: `projects/{project-number}/locations/{location-id}` To list across all locations, use a parent in the form: `projects/{project-number}/locations/-`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -405,7 +405,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
+  *   `name` (*type:* `String.t`) - Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -479,7 +479,7 @@ defmodule GoogleApi.FirebaseDatabase.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseDatabase.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
+  *   `name` (*type:* `String.t`) - Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
