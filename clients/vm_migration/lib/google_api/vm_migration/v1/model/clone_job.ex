@@ -28,6 +28,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the clone.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the clone job.
   *   `stateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the state was last updated.
+  *   `steps` (*type:* `list(GoogleApi.VMMigration.V1.Model.CloneStep.t)`, *default:* `nil`) - Output only. The clone steps list representing its progress.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +41,8 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
           :error => GoogleApi.VMMigration.V1.Model.Status.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
-          :stateTime => DateTime.t() | nil
+          :stateTime => DateTime.t() | nil,
+          :steps => list(GoogleApi.VMMigration.V1.Model.CloneStep.t()) | nil
         }
 
   field(:computeEngineTargetDetails, as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails)
@@ -51,6 +53,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CloneJob do
   field(:name)
   field(:state)
   field(:stateTime, as: DateTime)
+  field(:steps, as: GoogleApi.VMMigration.V1.Model.CloneStep, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VMMigration.V1.Model.CloneJob do
