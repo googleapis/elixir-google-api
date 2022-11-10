@@ -26,12 +26,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a Job.
+  Creates a Job.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this Job should be created. Format: projects/{project}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this Job should be created. Format: projects/{project}/locations/{location}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -111,7 +111,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -193,7 +193,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -266,7 +266,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Get the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.
+  Gets the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.
 
   ## Parameters
 
@@ -349,12 +349,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  List Jobs.
+  Lists Jobs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Format: projects/{project}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Format: projects/{project}/locations/{location}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -520,7 +520,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -763,12 +763,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Delete an Execution.
+  Deletes an Execution.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Execution to delete. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Execution to delete. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -852,12 +852,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Gets information about a Execution.
+  Gets information about an Execution.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Execution. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Execution. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -937,12 +937,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  List Executions from a Job.
+  Lists Executions from a Job.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The Execution from which the Executions should be listed. To list all Executions across Jobs, use "-" instead of Job name. Format: projects/{project}/locations/{location}/jobs/{job}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The Execution from which the Executions should be listed. To list all Executions across Jobs, use "-" instead of Job name. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1115,7 +1115,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  List Tasks from an Execution of a Job.
+  Lists Tasks from an Execution of a Job.
 
   ## Parameters
 
@@ -1457,7 +1457,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{project}/locations/{location} Only lowercase characters, digits, and hyphens.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project in which this service should be created. Format: projects/{project}/locations/{location}, where {project} can be project id or number. Only lowercase characters, digits, and hyphens.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1471,7 +1471,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceId` (*type:* `String.t`) - Required. The unique identifier for the Service. It must begin with letter, and may not end with hyphen; must contain fewer than 50 characters. The name of the service becomes {parent}/services/{service_id}.
+      *   `:serviceId` (*type:* `String.t`) - Required. The unique identifier for the Service. It must begin with letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the service becomes {parent}/services/{service_id}.
       *   `:validateOnly` (*type:* `boolean()`) - Indicates that the request should be validated and default values populated, without persisting the request or creating any resources.
       *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1537,7 +1537,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1619,7 +1619,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1692,7 +1692,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Get the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies.
+  Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies.
 
   ## Parameters
 
@@ -1775,12 +1775,12 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  List Services.
+  Lists Services.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid GCP region, and may not be the "-" wildcard. Format: projects/{project}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid GCP region, and cannot be the "-" wildcard. Format: projects/{project}/locations/{location}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2109,7 +2109,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Delete a Revision.
+  Deletes a Revision.
 
   ## Parameters
 
@@ -2283,7 +2283,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  List Revisions from a given Service, or from a given location.
+  Lists Revisions from a given Service, or from a given location.
 
   ## Parameters
 
