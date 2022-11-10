@@ -24,7 +24,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.DataTransfersListResponse do
   *   `dataTransfers` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer.t)`, *default:* `nil`) - List of data transfer requests.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#datatransfer#dataTransfersList`) - Identifies the resource as a collection of data transfer requests.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token which will be used to specify next page in list API.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to specify the next page in the list.
   """
 
   use GoogleApi.Gax.ModelBase

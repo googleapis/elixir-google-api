@@ -21,8 +21,8 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The type of the transfer parameter. eg: 'PRIVACY_LEVEL'
-  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - The value of the corresponding transfer parameter. eg: 'PRIVATE' or 'SHARED'
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The type of the transfer parameter, such as `PRIVACY_LEVEL`.
+  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - The value of the transfer parameter, such as `PRIVATE` or `SHARED`.
   """
 
   use GoogleApi.Gax.ModelBase

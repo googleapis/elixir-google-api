@@ -21,6 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserName do
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name. Limit: 256 characters.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - The user's last name. Required when creating a user account.
   *   `fullName` (*type:* `String.t`, *default:* `nil`) - The user's full name formed by concatenating the first and last name values.
   *   `givenName` (*type:* `String.t`, *default:* `nil`) - The user's first name. Required when creating a user account.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserName do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :familyName => String.t() | nil,
           :fullName => String.t() | nil,
           :givenName => String.t() | nil
         }
 
+  field(:displayName)
   field(:familyName)
   field(:fullName)
   field(:givenName)

@@ -21,10 +21,10 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.ApplicationsListResponse do
 
   ## Attributes
 
-  *   `applications` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.Application.t)`, *default:* `nil`) - List of applications that support data transfer and are also installed for the customer.
+  *   `applications` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.Application.t)`, *default:* `nil`) - The list of applications that support data transfer and are also installed for the customer.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#datatransfer#applicationsList`) - Identifies the resource as a collection of Applications.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token which will be used to specify next page in list API.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to specify the next page in the list.
   """
 
   use GoogleApi.Gax.ModelBase
