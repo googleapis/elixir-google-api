@@ -21,14 +21,14 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer do
 
   ## Attributes
 
-  *   `applicationDataTransfers` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationDataTransfer.t)`, *default:* `nil`) - List of per application data transfer resources. It contains data transfer details of the applications associated with this transfer resource. Note that this list is also used to specify the applications for which data transfer has to be done at the time of the transfer resource creation.
+  *   `applicationDataTransfers` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationDataTransfer.t)`, *default:* `nil`) - The list of per-application data transfer resources. It contains details of the applications associated with this transfer resource, and also specifies the applications for which data transfer has to be done at the time of the transfer resource creation.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The transfer's ID (Read-only).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Read-only. The transfer's ID.
   *   `kind` (*type:* `String.t`, *default:* `admin#datatransfer#DataTransfer`) - Identifies the resource as a DataTransfer request.
   *   `newOwnerUserId` (*type:* `String.t`, *default:* `nil`) - ID of the user to whom the data is being transferred.
   *   `oldOwnerUserId` (*type:* `String.t`, *default:* `nil`) - ID of the user whose data is being transferred.
-  *   `overallTransferStatusCode` (*type:* `String.t`, *default:* `nil`) - Overall transfer status (Read-only).
-  *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the data transfer was requested (Read-only).
+  *   `overallTransferStatusCode` (*type:* `String.t`, *default:* `nil`) - Read-only. Overall transfer status.
+  *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - Read-only. The time at which the data transfer was requested.
   """
 
   use GoogleApi.Gax.ModelBase

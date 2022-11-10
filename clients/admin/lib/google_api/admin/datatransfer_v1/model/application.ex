@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Admin.Datatransfer_v1.Model.Application do
   @moduledoc """
-  Applications resources represent applications installed on the domain that support transferring ownership of user data.
+  Application resources represent applications installed on the domain that support transferring ownership of user data.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The application's ID.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The application's ID. Retrievable by using the [`applications.list()`](/admin-sdk/data-transfer/reference/rest/v1/applications/list) method.
   *   `kind` (*type:* `String.t`, *default:* `admin#datatransfer#ApplicationResource`) - Identifies the resource as a DataTransfer Application Resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The application's name.
-  *   `transferParams` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t)`, *default:* `nil`) - The list of all possible transfer parameters for this application. These parameters can be used to select the data of the user in this application to be transferred.
+  *   `transferParams` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t)`, *default:* `nil`) - The list of all possible transfer parameters for this application. These parameters select which categories of the user's data to transfer.
   """
 
   use GoogleApi.Gax.ModelBase

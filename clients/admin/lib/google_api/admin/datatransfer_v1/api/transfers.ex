@@ -86,7 +86,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Transfers do
   end
 
   @doc """
-  Inserts a data transfer request.
+  Inserts a data transfer request. See the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference for specific application requirements.
 
   ## Parameters
 

@@ -22,8 +22,8 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.ApplicationDataTransfer do
   ## Attributes
 
   *   `applicationId` (*type:* `String.t`, *default:* `nil`) - The application's ID.
-  *   `applicationTransferParams` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t)`, *default:* `nil`) - The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application.
-  *   `applicationTransferStatus` (*type:* `String.t`, *default:* `nil`) - Current status of transfer for this application. (Read-only)
+  *   `applicationTransferParams` (*type:* `list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t)`, *default:* `nil`) - The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application. For more information about the specific values available for each application, see the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference.
+  *   `applicationTransferStatus` (*type:* `String.t`, *default:* `nil`) - Read-only. Current status of transfer for this application.
   """
 
   use GoogleApi.Gax.ModelBase
