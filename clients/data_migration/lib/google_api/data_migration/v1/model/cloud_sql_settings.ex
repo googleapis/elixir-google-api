@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
 
   *   `activationPolicy` (*type:* `String.t`, *default:* `nil`) - The activation policy specifies when the instance is activated; it is applicable only when the instance state is 'RUNNABLE'. Valid values: 'ALWAYS': The instance is on, and remains so even in the absence of connection requests. `NEVER`: The instance is off; it is not activated, even if a connection request arrives.
   *   `autoStorageIncrease` (*type:* `boolean()`, *default:* `nil`) - [default: ON] If you enable this setting, Cloud SQL checks your available storage every 30 seconds. If the available storage falls below a threshold size, Cloud SQL automatically adds additional storage capacity. If the available storage repeatedly falls below the threshold size, Cloud SQL continues to add storage until it reaches the maximum of 30 TB.
+  *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Optional. Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data availability. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available).
   *   `cmekKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for the csql instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL default instance level collation.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The storage capacity available to the database, in GB. The minimum (and default) size is 10GB.
@@ -32,6 +33,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   *   `ipConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlIpConfig.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Input only. Initial root password.
   *   `rootPasswordSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates If this connection profile root password is stored.
+  *   `secondaryZone` (*type:* `String.t`, *default:* `nil`) - Optional. The Google Cloud Platform zone where the failover Cloud SQL database instance is located. Used when the Cloud SQL database availability type is REGIONAL (i.e. multiple zones / highly available).
   *   `sourceId` (*type:* `String.t`, *default:* `nil`) - The Database Migration Service source connection profile ID, in the format: `projects/my_project_name/locations/us-central1/connectionProfiles/connection_profile_ID`
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example: `db-n1-standard-1` (MySQL instances) or `db-custom-1-3840` (PostgreSQL instances). For more information, see [Cloud SQL Instance Settings](https://cloud.google.com/sql/docs/mysql/instance-settings).
@@ -44,6 +46,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   @type t :: %__MODULE__{
           :activationPolicy => String.t() | nil,
           :autoStorageIncrease => boolean() | nil,
+          :availabilityType => String.t() | nil,
           :cmekKeyName => String.t() | nil,
           :collation => String.t() | nil,
           :dataDiskSizeGb => String.t() | nil,
@@ -53,6 +56,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
           :ipConfig => GoogleApi.DataMigration.V1.Model.SqlIpConfig.t() | nil,
           :rootPassword => String.t() | nil,
           :rootPasswordSet => boolean() | nil,
+          :secondaryZone => String.t() | nil,
           :sourceId => String.t() | nil,
           :storageAutoResizeLimit => String.t() | nil,
           :tier => String.t() | nil,
@@ -62,6 +66,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
 
   field(:activationPolicy)
   field(:autoStorageIncrease)
+  field(:availabilityType)
   field(:cmekKeyName)
   field(:collation)
   field(:dataDiskSizeGb)
@@ -71,6 +76,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   field(:ipConfig, as: GoogleApi.DataMigration.V1.Model.SqlIpConfig)
   field(:rootPassword)
   field(:rootPasswordSet)
+  field(:secondaryZone)
   field(:sourceId)
   field(:storageAutoResizeLimit)
   field(:tier)
