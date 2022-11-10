@@ -22,7 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2SecretKeySelector do
   ## Attributes
 
   *   `secret` (*type:* `String.t`, *default:* `nil`) - Required. The name of the secret in Cloud Secret Manager. Format: {secret_name} if the secret is in the same project. projects/{project}/secrets/{secret_name} if the secret is in a different project.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The Cloud Secret Manager secret version. Can be 'latest' for the latest version, an integer for a specific version, or a version alias.
   """
 
   use GoogleApi.Gax.ModelBase
