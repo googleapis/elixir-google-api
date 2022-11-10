@@ -31,6 +31,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node pool.
   *   `networkConfig` (*type:* `GoogleApi.Container.V1.Model.NodeNetworkConfig.t`, *default:* `nil`) - Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults.
+  *   `placementPolicy` (*type:* `GoogleApi.Container.V1.Model.PlacementPolicy.t`, *default:* `nil`) - Specifies the node placement policy.
   *   `podIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The pod CIDR block size per node in this node pool.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the nodes in this pool instance.
@@ -53,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
           :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
           :name => String.t() | nil,
           :networkConfig => GoogleApi.Container.V1.Model.NodeNetworkConfig.t() | nil,
+          :placementPolicy => GoogleApi.Container.V1.Model.PlacementPolicy.t() | nil,
           :podIpv4CidrSize => integer() | nil,
           :selfLink => String.t() | nil,
           :status => String.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   field(:maxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:name)
   field(:networkConfig, as: GoogleApi.Container.V1.Model.NodeNetworkConfig)
+  field(:placementPolicy, as: GoogleApi.Container.V1.Model.PlacementPolicy)
   field(:podIpv4CidrSize)
   field(:selfLink)
   field(:status)
