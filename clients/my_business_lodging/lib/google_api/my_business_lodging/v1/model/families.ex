@@ -27,6 +27,8 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.Families do
   *   `kidsActivitiesException` (*type:* `String.t`, *default:* `nil`) - Kids activities exception.
   *   `kidsClub` (*type:* `boolean()`, *default:* `nil`) - Kids club. An organized program of group activities held at the hotel and designed for the enjoyment of children. Facilitated by hotel staff (or staff procured by the hotel) in an area(s) designated for the purpose of entertaining children without their parents. May include games, outings, water sports, team sports, arts and crafts, and films. Usually has set hours. Can be free or for a fee. Also known as Kids Camp or Kids program.
   *   `kidsClubException` (*type:* `String.t`, *default:* `nil`) - Kids club exception.
+  *   `kidsFriendly` (*type:* `boolean()`, *default:* `nil`) - Kids friendly. The hotel has one or more special features for families with children, such as reduced rates, child-sized beds, kids' club, babysitting service, or suitable place to play on premises.
+  *   `kidsFriendlyException` (*type:* `String.t`, *default:* `nil`) - Kids friendly exception.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +39,9 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.Families do
           :kidsActivities => boolean() | nil,
           :kidsActivitiesException => String.t() | nil,
           :kidsClub => boolean() | nil,
-          :kidsClubException => String.t() | nil
+          :kidsClubException => String.t() | nil,
+          :kidsFriendly => boolean() | nil,
+          :kidsFriendlyException => String.t() | nil
         }
 
   field(:babysitting)
@@ -46,6 +50,8 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.Families do
   field(:kidsActivitiesException)
   field(:kidsClub)
   field(:kidsClubException)
+  field(:kidsFriendly)
+  field(:kidsFriendlyException)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MyBusinessLodging.V1.Model.Families do

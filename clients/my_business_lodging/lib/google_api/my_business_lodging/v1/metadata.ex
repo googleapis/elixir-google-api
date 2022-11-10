@@ -20,7 +20,7 @@ defmodule GoogleApi.MyBusinessLodging.V1 do
   API client metadata for GoogleApi.MyBusinessLodging.V1.
   """
 
-  @discovery_revision "20220914"
+  @discovery_revision "20221109"
 
   def discovery_revision(), do: @discovery_revision
 end
