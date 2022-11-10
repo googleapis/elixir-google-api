@@ -30,6 +30,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the cutover job.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A message providing possible extra details about the current state.
   *   `stateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the state was last updated.
+  *   `steps` (*type:* `list(GoogleApi.VMMigration.V1.Model.CutoverStep.t)`, *default:* `nil`) - Output only. The cutover steps list representing its progress.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
           :progressPercent => integer() | nil,
           :state => String.t() | nil,
           :stateMessage => String.t() | nil,
-          :stateTime => DateTime.t() | nil
+          :stateTime => DateTime.t() | nil,
+          :steps => list(GoogleApi.VMMigration.V1.Model.CutoverStep.t()) | nil
         }
 
   field(:computeEngineTargetDetails, as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails)
@@ -57,6 +59,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
   field(:state)
   field(:stateMessage)
   field(:stateTime, as: DateTime)
+  field(:steps, as: GoogleApi.VMMigration.V1.Model.CutoverStep, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VMMigration.V1.Model.CutoverJob do

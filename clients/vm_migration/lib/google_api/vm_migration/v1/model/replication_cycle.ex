@@ -21,19 +21,40 @@ defmodule GoogleApi.VMMigration.V1.Model.ReplicationCycle do
 
   ## Attributes
 
-  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - The current progress in percentage of this cycle.
+  *   `cycleNumber` (*type:* `integer()`, *default:* `nil`) - The cycle's ordinal number.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the replication cycle has ended.
+  *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Provides details on the state of the cycle in case of an error.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The identifier of the ReplicationCycle.
+  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the replication cycle has started.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the ReplicationCycle.
+  *   `steps` (*type:* `list(GoogleApi.VMMigration.V1.Model.CycleStep.t)`, *default:* `nil`) - The cycle's steps list representing its progress.
+  *   `totalPauseDuration` (*type:* `String.t`, *default:* `nil`) - The accumulated duration the replication cycle was paused.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cycleNumber => integer() | nil,
+          :endTime => DateTime.t() | nil,
+          :error => GoogleApi.VMMigration.V1.Model.Status.t() | nil,
+          :name => String.t() | nil,
           :progressPercent => integer() | nil,
-          :startTime => DateTime.t() | nil
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :steps => list(GoogleApi.VMMigration.V1.Model.CycleStep.t()) | nil,
+          :totalPauseDuration => String.t() | nil
         }
 
+  field(:cycleNumber)
+  field(:endTime, as: DateTime)
+  field(:error, as: GoogleApi.VMMigration.V1.Model.Status)
+  field(:name)
   field(:progressPercent)
   field(:startTime, as: DateTime)
+  field(:state)
+  field(:steps, as: GoogleApi.VMMigration.V1.Model.CycleStep, type: :list)
+  field(:totalPauseDuration)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VMMigration.V1.Model.ReplicationCycle do
