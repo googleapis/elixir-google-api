@@ -21,6 +21,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlConnectionProfile do
 
   ## Attributes
 
+  *   `additionalPublicIp` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud SQL database instance's additional (outgoing) public IP. Used when the Cloud SQL database availability type is REGIONAL (i.e. multiple zones / highly available).
   *   `cloudSqlId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud SQL instance ID that this connection profile is associated with.
   *   `privateIp` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud SQL database instance's private IP.
   *   `publicIp` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud SQL database instance's public IP.
@@ -30,12 +31,14 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalPublicIp => String.t() | nil,
           :cloudSqlId => String.t() | nil,
           :privateIp => String.t() | nil,
           :publicIp => String.t() | nil,
           :settings => GoogleApi.DataMigration.V1.Model.CloudSqlSettings.t() | nil
         }
 
+  field(:additionalPublicIp)
   field(:cloudSqlId)
   field(:privateIp)
   field(:publicIp)
