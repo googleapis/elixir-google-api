@@ -20,7 +20,7 @@ defmodule GoogleApi.DoubleClickSearch.V2 do
   API client metadata for GoogleApi.DoubleClickSearch.V2.
   """
 
-  @discovery_revision "20221025"
+  @discovery_revision "20221108"
 
   def discovery_revision(), do: @discovery_revision
 end
