@@ -28,6 +28,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `holdData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1HoldData.t`, *default:* `nil`) - Data specifying a hold.
   *   `intentMatchData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IntentMatchData.t`, *default:* `nil`) - Data specifying an intent match.
   *   `interruptionData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1InterruptionData.t`, *default:* `nil`) - Data specifying an interruption.
+  *   `issueMatchData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IssueMatchData.t`, *default:* `nil`) - Data specifying an issue match.
   *   `phraseMatchData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchData.t`, *default:* `nil`) - Data specifying a phrase match.
   *   `sentimentData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SentimentData.t`, *default:* `nil`) - Data specifying sentiment.
   *   `silenceData` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SilenceData.t`, *default:* `nil`) - Data specifying silence.
@@ -54,6 +55,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             | nil,
           :interruptionData =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1InterruptionData.t()
+            | nil,
+          :issueMatchData =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IssueMatchData.t()
             | nil,
           :phraseMatchData =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchData.t()
@@ -94,6 +98,10 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:interruptionData,
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1InterruptionData
+  )
+
+  field(:issueMatchData,
+    as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IssueMatchData
   )
 
   field(:phraseMatchData,
