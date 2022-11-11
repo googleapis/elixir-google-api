@@ -21,11 +21,11 @@ defmodule GoogleApi.Run.V1.Model.TrafficTarget do
 
   ## Attributes
 
-  *   `configurationName` (*type:* `String.t`, *default:* `nil`) - ConfigurationName of a configuration to whose latest revision which will be sent this portion of traffic. When the "status.latestReadyRevisionName" of the referenced configuration changes, traffic will automatically migrate from the prior "latest ready" revision to the new one. This field is never set in Route's status, only its spec. This is mutually exclusive with RevisionName. Cloud Run currently supports a single ConfigurationName.
-  *   `latestRevision` (*type:* `boolean()`, *default:* `nil`) - Optional. LatestRevision may be provided to indicate that the latest ready Revision of the Configuration should be used for this traffic target. When provided LatestRevision must be true if RevisionName is empty; it must be false when RevisionName is non-empty in spec. When shown in status, this indicates that the RevisionName was resolved from a spec's ConfigurationName.
+  *   `configurationName` (*type:* `String.t`, *default:* `nil`) - [Deprecated] Not supported in Cloud Run. It must be empty.
+  *   `latestRevision` (*type:* `boolean()`, *default:* `nil`) - Uses the "status.latestReadyRevisionName" of the Service to determine the traffic target. When it changes, traffic will automatically migrate from the prior "latest ready" revision to the new one. This field must be false if RevisionName is set. This field defaults to true otherwise. If the field is set to true on Status, this means that the Revision was resolved from the Service's latest ready revision.
   *   `percent` (*type:* `integer()`, *default:* `nil`) - Percent specifies percent of the traffic to this Revision or Configuration. This defaults to zero if unspecified.
-  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - RevisionName of a specific revision to which to send this portion of traffic. This is mutually exclusive with ConfigurationName.
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Optional. Tag is used to expose a dedicated url for referencing this target exclusively.
+  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - Points this traffic target to a specific Revision. This field is mutually exclusive with latest_revision.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag is used to expose a dedicated url for referencing this target exclusively.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. URL displays the URL for accessing tagged traffic targets. URL is displayed in status, and is disallowed on spec. URL must contain a scheme (e.g. https://) and a hostname, but may not contain anything else (e.g. basic auth, url path, etc.)
   """
 
