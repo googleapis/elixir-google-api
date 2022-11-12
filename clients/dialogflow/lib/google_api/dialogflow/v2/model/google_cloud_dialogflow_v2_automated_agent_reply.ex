@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AutomatedAgentRep
 
   *   `allowCancellation` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the partial automated agent reply is interruptible when a later reply message arrives. e.g. if the agent specified some music as partial response, it can be cancelled.
   *   `automatedAgentReplyType` (*type:* `String.t`, *default:* `nil`) - AutomatedAgentReply type.
+  *   `cxCurrentPage` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the current Dialogflow CX conversation page. Format: `projects//locations//agents//flows//pages/`.
   *   `detectIntentResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t`, *default:* `nil`) - Response of the Dialogflow Sessions.DetectIntent call.
   """
 
@@ -31,12 +32,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AutomatedAgentRep
   @type t :: %__MODULE__{
           :allowCancellation => boolean() | nil,
           :automatedAgentReplyType => String.t() | nil,
+          :cxCurrentPage => String.t() | nil,
           :detectIntentResponse =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse.t() | nil
         }
 
   field(:allowCancellation)
   field(:automatedAgentReplyType)
+  field(:cxCurrentPage)
 
   field(:detectIntentResponse,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse
