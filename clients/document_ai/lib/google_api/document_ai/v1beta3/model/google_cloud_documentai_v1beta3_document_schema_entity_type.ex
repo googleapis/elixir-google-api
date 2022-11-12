@@ -23,7 +23,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   *   `baseTypes` (*type:* `list(String.t)`, *default:* `nil`) - The entity type that this type is derived from. For now, one and only one should be set.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User defined name for the type.
-  *   `entityTypeMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityTypeMetadata.t`, *default:* `nil`) - Metadata for the entity type.
   *   `enumValues` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchemaEntityTypeEnumValues.t`, *default:* `nil`) - If specified, lists all the possible values for this entity. This should not be more than a handful of values. If the number of values is >10 or could change frequently use the `EntityType.value_ontology` field and specify a list of all possible values in a value ontology file.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the type. It must be unique within the schema file and cannot be a 'Common Type'. Besides that we use the following naming conventions: - *use snake_casing* - name matching is case-insensitive - Maximum 64 characters. - Must start with a letter. - Allowed characters: ASCII letters `[a-z0-9_-]`. (For backward compatibility internal infrastructure and tooling can handle any ascii character) - The '/' is sometimes used to denote a property of a type. For example line_item/amount. This convention is deprecated, but will still be honored for backward compatibility.
   *   `properties` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchemaEntityTypeProperty.t)`, *default:* `nil`) - Describing the nested structure, or composition of an entity.
@@ -34,9 +33,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   @type t :: %__MODULE__{
           :baseTypes => list(String.t()) | nil,
           :displayName => String.t() | nil,
-          :entityTypeMetadata =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityTypeMetadata.t()
-            | nil,
           :enumValues =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchemaEntityTypeEnumValues.t()
             | nil,
@@ -50,10 +46,6 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   field(:baseTypes, type: :list)
   field(:displayName)
-
-  field(:entityTypeMetadata,
-    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityTypeMetadata
-  )
 
   field(:enumValues,
     as:
