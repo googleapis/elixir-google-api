@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeInfo do
 
   ## Attributes
 
-  *   `approximateUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageMetrics.t`, *default:* `nil`) - Output only. Approximate workload resource usage calculated after workload finishes.
+  *   `approximateUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageMetrics.t`, *default:* `nil`) - Output only. Approximate workload resource usage calculated after workload finishes (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   *   `diagnosticOutputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the diagnostics tarball.
   *   `endpoints` (*type:* `map()`, *default:* `nil`) - Output only. Map of remote access endpoints (such as web interfaces and APIs) to their URIs.
   *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout and stderr of the workload.
