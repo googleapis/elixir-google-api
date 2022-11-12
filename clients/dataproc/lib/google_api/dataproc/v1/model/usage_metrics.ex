@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.UsageMetrics do
   @moduledoc """
-  Usage metrics represent total resources consumed by a workload.
+  Usage metrics represent approximate total resources consumed by a workload.
 
   ## Attributes
 
-  *   `milliDcuSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. DCU usage in milliDCU*seconds.
-  *   `shuffleStorageGbSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle storage usage in GB*Seconds
+  *   `milliDcuSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. DCU (Dataproc Compute Units) usage in (milliDCU x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
+  *   `shuffleStorageGbSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle storage usage in (GB x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   """
 
   use GoogleApi.Gax.ModelBase
