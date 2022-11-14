@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CertificateManager.V1.Model.GclbTarget do
   @moduledoc """
-  Describes a Target Proxy which uses this Certificate Map.
+  Describes a Target Proxy that uses this Certificate Map.
 
   ## Attributes
 
