@@ -22,8 +22,8 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image do
   ## Attributes
 
   *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image, used for accessibility.
-  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - An image URL.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The action triggered by an `onClick` event.
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The `https` URL that hosts the image. For example: ``` https://developers.google.com/chat/images/quickstart-app-avatar.png ```
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - When a user clicks on the image, the click triggers this action.
   """
 
   use GoogleApi.Gax.ModelBase

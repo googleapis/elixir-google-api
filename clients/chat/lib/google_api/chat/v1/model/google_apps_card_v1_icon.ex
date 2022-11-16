@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon do
   @moduledoc """
-
+  An icon displayed in a widget on a card. Supports [standard](https://developers.google.com/chat/api/guides/message-formats/cards) and [custom](https://developers.google.com/chat/api/guides/message-formats/cards#customicons) icons.
 
   ## Attributes
 
-  *   `altText` (*type:* `String.t`, *default:* `nil`) - The description of the icon, used for accessibility. The default value is provided if you don't specify one.
-  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
+  *   `altText` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the icon used for accessibility. If unspecified, a default value is provided. As a best practice, you should set a helpful description. For example, if an icon displays a user's account portrait, you could describe it as "A user's account portrait." If the icon displays in a Button, this alt text takes precedence and overwrites the button's alt text, so you should write alt text for the button: Set descriptive text that lets users know what the button does. For example, if a button opens a hyperlink, you might write: "Opens a new browser tab and navigates to the Google Chat developer documentation at https://developers.google.com/chat".
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - Display a custom icon hosted at an HTTPS URL. For example: ``` "iconUrl": "https://developers.google.com/chat/images/quickstart-app-avatar.png" ``` Supported file types include `.png` and `.jpg`.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The crop style applied to the image. In some cases, applying a `CIRCLE` crop causes the image to be drawn larger than a standard icon.
-  *   `knownIcon` (*type:* `String.t`, *default:* `nil`) - The icon specified by the string name of a list of known icons.
+  *   `knownIcon` (*type:* `String.t`, *default:* `nil`) - Display one of the standard icons provided by Google Workspace. For example, to display an airplane icon, specify `AIRPLANE`. For a bus, specify `BUS`. For a full list of supported icons, see [standard icons](https://developers.google.com/chat/api/guides/message-formats/cards).
   """
 
   use GoogleApi.Gax.ModelBase

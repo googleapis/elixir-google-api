@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionInput do
   @moduledoc """
-  A widget that creates a UI item with options for users to select. For example, a dropdown menu.
+  A widget that creates a UI item with options for users to select. For example, a dropdown menu or check list. Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs). When you need to collect data from users that matches options you set, use a selection input. To collect abstract data from users, use the text input widget instead. Only supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) coming soon.
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - An array of the selected items.
-  *   `label` (*type:* `String.t`, *default:* `nil`) - The label displayed ahead of the switch control.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input which is used in `formInput`.
-  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the selection.
+  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - An array of the selected items. For example, all the selected check boxes.
+  *   `label` (*type:* `String.t`, *default:* `nil`) - The text that appears above the selection input field in the user interface. Specify text that helps the user enter the information your app needs. For example, if users are selecting the urgency of a work ticket from a drop-down menu, the label might be "Urgency" or "Select urgency".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the selection input is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
+  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button that submits the form. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The way that an option appears to users. Different options support different types of interactions. For example, users can enable multiple check boxes, but can only select one value from a dropdown menu. Each selection input supports one type of selection. Mixing check boxes and switches, for example, is not supported.
   """
 
   use GoogleApi.Gax.ModelBase

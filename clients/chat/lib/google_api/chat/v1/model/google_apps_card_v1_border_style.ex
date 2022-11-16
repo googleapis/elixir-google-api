@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1BorderStyle do
   @moduledoc """
-  Represents the complete border style applied to widgets.
+  Represents the complete border style applied to items in a widget.
 
   ## Attributes
 

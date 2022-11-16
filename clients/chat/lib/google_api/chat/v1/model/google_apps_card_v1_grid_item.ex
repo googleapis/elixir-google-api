@@ -25,7 +25,6 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1GridItem do
   *   `image` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent.t`, *default:* `nil`) - The image that displays in the grid item.
   *   `layout` (*type:* `String.t`, *default:* `nil`) - The layout to use for the grid item.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The grid item's subtitle.
-  *   `textAlignment` (*type:* `String.t`, *default:* `nil`) - The horizontal alignment of the grid item's text.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The grid item's title.
   """
 
@@ -36,7 +35,6 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1GridItem do
           :image => GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent.t() | nil,
           :layout => String.t() | nil,
           :subtitle => String.t() | nil,
-          :textAlignment => String.t() | nil,
           :title => String.t() | nil
         }
 
@@ -44,7 +42,6 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1GridItem do
   field(:image, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent)
   field(:layout)
   field(:subtitle)
-  field(:textAlignment)
   field(:title)
 end
 
