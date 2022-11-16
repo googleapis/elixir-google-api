@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem do
   @moduledoc """
-  A selectable item in the switch control.
+  A selectable item in a selection input, such as a check box or a switch.
 
   ## Attributes
 
-  *   `selected` (*type:* `boolean()`, *default:* `nil`) - If more than one item is selected for `RADIO_BUTTON` and `DROPDOWN`, the first selected item is treated as selected and the ones after are ignored.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The text to be displayed.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value associated with this item. The client should use this as a form input value.
+  *   `selected` (*type:* `boolean()`, *default:* `nil`) - When `true`, more than one item is selected. If more than one item is selected for radio buttons and dropdown menus, the first selected item is received and the ones after are ignored.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text displayed to users.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value associated with this item. The client should use this as a form input value. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
   """
 
   use GoogleApi.Gax.ModelBase

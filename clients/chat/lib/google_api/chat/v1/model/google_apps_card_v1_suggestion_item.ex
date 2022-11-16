@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SuggestionItem do
   @moduledoc """
-  A suggestion item.
+  One suggested value that users can enter in a text input field.
 
   ## Attributes
 
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The suggested autocomplete result.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The value of a suggested input to a text input field. This is equivalent to what users would enter themselves.
   """
 
   use GoogleApi.Gax.ModelBase

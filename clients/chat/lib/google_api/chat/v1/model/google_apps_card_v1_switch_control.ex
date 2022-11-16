@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl do
   @moduledoc """
-  Either a toggle-style switch or a checkbox.
+  Either a toggle-style switch or a checkbox inside a `decoratedText` widget. Only supported on the `decoratedText` widget. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon.
 
   ## Attributes
 
-  *   `controlType` (*type:* `String.t`, *default:* `nil`) - The control type, either switch or checkbox.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the switch widget that's used in `formInput`.
-  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The action when the switch state is changed.
-  *   `selected` (*type:* `boolean()`, *default:* `nil`) - If the switch is selected.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value is what is passed back in the callback.
+  *   `controlType` (*type:* `String.t`, *default:* `nil`) - How the switch appears in the user interface.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the switch widget is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
+  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The action to perform when the switch state is changed, such as what function to run.
+  *   `selected` (*type:* `boolean()`, *default:* `nil`) - When `true`, the switch is selected.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
   """
 
   use GoogleApi.Gax.ModelBase

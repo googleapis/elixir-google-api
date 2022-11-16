@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker do
   @moduledoc """
-  The widget that lets users to specify a date and time. Not supported by Google Chat apps.
+  Lets users specify a date, a time, or both a date and a time. Accepts text input from users, but features an interactive date and time selector that helps users enter correctly-formatted dates and times. If users enter a date or time incorrectly, the widget shows an error that prompts users to enter the correct format. Not supported by Chat apps. Support by Chat apps coming soon.
 
   ## Attributes
 
-  *   `label` (*type:* `String.t`, *default:* `nil`) - The label for the field that displays to the user.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the text input that's used in `formInput`, and uniquely identifies this input.
-  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - Triggered when the user clicks Save or Clear from the date/time picker dialog. This is only triggered if the value changed as a result of the Save/Clear operation.
+  *   `label` (*type:* `String.t`, *default:* `nil`) - The text that prompts users to enter a date, time, or datetime. Specify text that helps the user enter the information your app needs. For example, if users are setting an appointment, then a label like "Appointment date" or "Appointment date and time" might work well.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the datetime picker is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
+  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - Triggered when the user clicks **Save** or **Clear** from the datetime picker interface.
   *   `timezoneOffsetDate` (*type:* `integer()`, *default:* `nil`) - The number representing the time zone offset from UTC, in minutes. If set, the `value_ms_epoch` is displayed in the specified time zone. If not set, it uses the user's time zone setting on the client side.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the date/time picker.
-  *   `valueMsEpoch` (*type:* `String.t`, *default:* `nil`) - The value to display as the default value before user input or previous user input. It is represented in milliseconds (Epoch time). For `DATE_AND_TIME` type, the full epoch value is used. For `DATE_ONLY` type, only date of the epoch time is used. For `TIME_ONLY` type, only time of the epoch time is used. For example, you can set epoch time to `3 * 60 * 60 * 1000` to represent 3am.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - What kind of date and time input the datetime picker supports.
+  *   `valueMsEpoch` (*type:* `String.t`, *default:* `nil`) - The value displayed as the default value before user input or previous user input, represented in milliseconds ([Epoch time](https://en.wikipedia.org/wiki/Unix_time)). For `DATE_AND_TIME` type, the full epoch value is used. For `DATE_ONLY` type, only date of the epoch time is used. For `TIME_ONLY` type, only time of the epoch time is used. For example, to represent 3:00 AM, set epoch time to `3 * 60 * 60 * 1000`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button do
   @moduledoc """
-  A button. Can be a text button or an image button.
+  A text, icon, or text + icon button that users can click. To make an image a clickable button, specify an Image (not an ImageComponent) and set an `onClick` action.
 
   ## Attributes
 
-  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text used for accessibility. Has no effect when an icon is set; use `icon.alt_text` instead.
-  *   `color` (*type:* `GoogleApi.Chat.V1.Model.Color.t`, *default:* `nil`) - If set, the button is filled with a solid background.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If `true`, the button is displayed in a disabled state and doesn't respond to user actions.
-  *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - The icon image.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The action to perform when the button is clicked.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The text of the button.
+  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text used for accessibility. Set descriptive text that lets users know what the button does. For example, if a button opens a hyperlink, you might write: "Opens a new browser tab and navigates to the Google Chat developer documentation at https://developers.google.com/chat". Has no effect when an icon is set; use `icon.alt_text` instead.
+  *   `color` (*type:* `GoogleApi.Chat.V1.Model.Color.t`, *default:* `nil`) - If set, the button is filled with a solid background color and the font color changes to maintain contrast with the background color. For example, setting a blue background will likely result in white text. If unset, the image background is white and the font color is blue. For red, green and blue, the value of each field is a `float` number that can be expressed in either of two ways: as a number between 0 and 255 divided by 255 (153/255) or as a value between 0 and 1 (0.6). 0 represents the absence of a color and 1 or 255/255 represent the full presence of that color on the RGB scale. Optionally set alpha, which sets a level of transparency using this equation: ``` pixel color = alpha * (this color) + (1.0 - alpha) * (background color) ``` For alpha, a value of 1 corresponds with a solid color, and a value of 0 corresponds with a completely transparent color. For example, the following color represents a half transparent red: ``` "color": { "red": 1, "green": 0, "blue": 0, "alpha": 0.5 } ```
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If `true`, the button is displayed in an inactive state and doesn't respond to user actions.
+  *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - The icon image. If both `icon` and `text` are set, then the icon appears in place of the text. Support for both an icon and text is coming soon.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - The action to perform when the button is clicked, such as opening a hyperlink or running a custom function.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text displayed inside the button.
   """
 
   use GoogleApi.Gax.ModelBase

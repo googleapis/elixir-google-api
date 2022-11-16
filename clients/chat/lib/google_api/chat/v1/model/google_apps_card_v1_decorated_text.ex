@@ -21,16 +21,16 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText do
 
   ## Attributes
 
-  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The formatted text label that shows below the main text.
+  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears below `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details.
   *   `button` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button.t`, *default:* `nil`) - A button that can be clicked to trigger an action.
-  *   `endIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - An icon displayed after the text.
-  *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - Deprecated in favor of start_icon.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - Only the top and bottom label and content region are clickable.
+  *   `endIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - An icon displayed after the text. Supports [standard](https://developers.google.com/chat/api/guides/message-formats/cards#builtinicons) and [custom](https://developers.google.com/chat/api/guides/message-formats/cards#customicons) icons.
+  *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - Deprecated in favor of `startIcon`.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - When users click on `topLabel` or `bottomLabel`, this action triggers.
   *   `startIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - The icon displayed in front of the text.
-  *   `switchControl` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl.t`, *default:* `nil`) - A switch widget can be clicked to change its state or trigger an action.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Required. The main widget formatted text. See Text formatting for details.
-  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The formatted text label that shows above the main text.
-  *   `wrapText` (*type:* `boolean()`, *default:* `nil`) - The wrap text setting. If `true`, the text is wrapped and displayed in multiline. Otherwise, the text is truncated.
+  *   `switchControl` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl.t`, *default:* `nil`) - A switch widget can be clicked to change its state and trigger an action. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Required. The primary text. Supports simple formatting. See Text formatting for formatting details.
+  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears above `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details.
+  *   `wrapText` (*type:* `boolean()`, *default:* `nil`) - The wrap text setting. If `true`, the text wraps and displays on multiple lines. Otherwise, the text is truncated. Only applies to `text`, not `topLabel` and `bottomLabel`.
   """
 
   use GoogleApi.Gax.ModelBase

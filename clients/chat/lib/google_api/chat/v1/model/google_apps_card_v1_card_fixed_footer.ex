@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardFixedFooter do
   @moduledoc """
-  A persistent (sticky) footer that is added to the bottom of the card.
+  A persistent (sticky) footer that that appears at the bottom of the card. Setting `fixedFooter` without specifying a `primaryButton` or a `secondaryButton` causes an error. Chat apps support `fixedFooter` in [dialogs](https://developers.google.com/chat/how-tos/dialogs), but not in [card messages](https://developers.google.com/chat/api/guides/message-formats/cards).
 
   ## Attributes
 
