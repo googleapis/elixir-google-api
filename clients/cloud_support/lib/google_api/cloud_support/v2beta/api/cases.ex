@@ -106,7 +106,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Create a new case and associate it with the given Cloud resource.
+  Create a new case and associate it with the given Cloud resource. The case object must have the following fields set: display_name, description, classification, and severity.
 
   ## Parameters
 
@@ -645,7 +645,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Add a new comment to the specified Case.
+  Add a new comment to the specified Case. The comment object must have the following fields set: body.
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Attachments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a file attachment on a case or Cloud resource.
+  Create a file attachment on a case or Cloud resource. The attachment object must have the following fields set: filename.
 
   ## Parameters
 
