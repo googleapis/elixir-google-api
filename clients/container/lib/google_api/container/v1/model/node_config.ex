@@ -27,6 +27,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Confidential nodes config. All the nodes in the node pool will be Confidential VM once enabled.
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
+  *   `fastSocket` (*type:* `GoogleApi.Container.V1.Model.FastSocket.t`, *default:* `nil`) - Enable or disable NCCL fast socket for the node pool.
   *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - Google Container File System (image streaming) configs.
   *   `gvnic` (*type:* `GoogleApi.Container.V1.Model.VirtualNIC.t`, *default:* `nil`) - Enable or disable gvnic in the node pool.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type to use for this node. Note that for a given image type, the latest version of it will be used.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
           :diskSizeGb => integer() | nil,
           :diskType => String.t() | nil,
+          :fastSocket => GoogleApi.Container.V1.Model.FastSocket.t() | nil,
           :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :gvnic => GoogleApi.Container.V1.Model.VirtualNIC.t() | nil,
           :imageType => String.t() | nil,
@@ -94,6 +96,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
   field(:diskSizeGb)
   field(:diskType)
+  field(:fastSocket, as: GoogleApi.Container.V1.Model.FastSocket)
   field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:gvnic, as: GoogleApi.Container.V1.Model.VirtualNIC)
   field(:imageType)
