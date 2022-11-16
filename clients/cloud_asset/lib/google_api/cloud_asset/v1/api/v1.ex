@@ -264,6 +264,259 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   end
 
   @doc """
+  Analyzes organization policies under a scope.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:constraint` (*type:* `String.t`) - Required. The name of the constraint to analyze organization policies for. The response only contains analyzed organization policies for the provided constraint.
+      *   `:filter` (*type:* `String.t`) - The expression to filter AnalyzeOrgPoliciesResponse.org_policy_results. The only supported field is `consolidated_policy.attached_resource`, and the only supported operator is `=`. Example: consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001" will return the org policy results of"folders/001".
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return per page. If unspecified, AnalyzeOrgPoliciesResponse.org_policy_results will contain 20 items with a maximum of 200.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token to retrieve the next page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPoliciesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_analyze_org_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPoliciesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudasset_analyze_org_policies(
+        connection,
+        v1_id,
+        v1_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :constraint => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicies", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPoliciesResponse{}]
+    )
+  end
+
+  @doc """
+  Analyzes organization policies governed assets (GCP resources or policies) under a scope. This RPC supports custom constraints and the following 10 canned constraints: * storage.uniformBucketLevelAccess * iam.disableServiceAccountKeyCreation * iam.allowedPolicyMemberDomains * compute.vmExternalIpAccess * appengine.enforceServiceAccountActAsCheck * gcp.resourceLocations * compute.trustedImageProjects * compute.skipDefaultNetworkCreation * compute.requireOsLogin * compute.disableNestedVirtualization This RPC only returns either: * resources of types supported by [searchable asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types), or * IAM policies.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output assets will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:constraint` (*type:* `String.t`) - Required. The name of the constraint to analyze governed assets for. The analysis only contains analyzed organization policies for the provided constraint.
+      *   `:filter` (*type:* `String.t`) - The expression to filter the governed assets in result. The only supported fields for governed resources are `governed_resource.project` and `governed_resource.folders`. The only supported fields for governed iam policies are `governed_iam_policy.project` and `governed_iam_policy.folders`. The only supported operator is `=`. Example 1: governed_resource.project="projects/12345678" filter will return all governed resources under projects/12345678 including the project ifself, if applicable. Example 2: governed_iam_policy.folders="folders/12345678" filter will return all governed iam policies under folders/12345678, if applicable.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return per page. If unspecified, AnalyzeOrgPolicyGovernedAssetsResponse.governed_assets will contain 100 items with a maximum of 200.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token to retrieve the next page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedAssetsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_analyze_org_policy_governed_assets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedAssetsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudasset_analyze_org_policy_governed_assets(
+        connection,
+        v1_id,
+        v1_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :constraint => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicyGovernedAssets", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedAssetsResponse{}]
+    )
+  end
+
+  @doc """
+  Analyzes organization policies governed containers (projects, folders or organization) under a scope.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output containers will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:constraint` (*type:* `String.t`) - Required. The name of the constraint to analyze governed containers for. The analysis only contains organization policies for the provided constraint.
+      *   `:filter` (*type:* `String.t`) - The expression to filter the governed containers in result. The only supported field is `parent`, and the only supported operator is `=`. Example: parent="//cloudresourcemanager.googleapis.com/folders/001" will return all containers under "folders/001".
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return per page. If unspecified, AnalyzeOrgPolicyGovernedContainersResponse.governed_containers will contain 100 items with a maximum of 200.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token to retrieve the next page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedContainersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_analyze_org_policy_governed_containers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedContainersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudasset_analyze_org_policy_governed_containers(
+        connection,
+        v1_id,
+        v1_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :constraint => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicyGovernedContainers", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPolicyGovernedContainersResponse{}]
+    )
+  end
+
+  @doc """
   Batch gets the update history of assets that overlap a time window. For IAM_POLICY content, this API outputs history when the asset and its attached IAM POLICY both exist. This can create gaps in the output history. Otherwise, this API outputs history with asset in both non-delete or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT error.
 
   ## Parameters
@@ -411,6 +664,70 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql). If the query execution finishes within timeout and there's no pagination, the full query results will be returned in the `QueryAssetsResponse`. Otherwise, full query results can be obtained by issuing extra requests with the `job_reference` from the a previous `QueryAssets` call. Note, the query result has approximately 10 GB limitation enforced by BigQuery https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger results will result in errors.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The relative name of the root asset. This can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"), or a folder number (such as "folders/123"). Only assets belonging to the `parent` will be returned.
+  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudAsset.V1.Model.QueryAssetsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_query_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudasset_query_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:queryAssets", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse{}])
   end
 
   @doc """
