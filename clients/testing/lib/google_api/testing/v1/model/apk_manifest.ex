@@ -24,9 +24,11 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `applicationLabel` (*type:* `String.t`, *default:* `nil`) - User-readable name for the application.
   *   `intentFilters` (*type:* `list(GoogleApi.Testing.V1.Model.IntentFilter.t)`, *default:* `nil`) - 
   *   `maxSdkVersion` (*type:* `integer()`, *default:* `nil`) - Maximum API level on which the application is designed to run.
+  *   `metadata` (*type:* `list(GoogleApi.Testing.V1.Model.Metadata.t)`, *default:* `nil`) - Meta-data tags defined in the manifest.
   *   `minSdkVersion` (*type:* `integer()`, *default:* `nil`) - Minimum API level required for the application to run.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g. "com.example.foo".
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
+  *   `usesFeature` (*type:* `list(GoogleApi.Testing.V1.Model.UsesFeature.t)`, *default:* `nil`) - Feature usage tags defined in the manifest.
   *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - Permissions declared to be used by the application
   *   `versionCode` (*type:* `String.t`, *default:* `nil`) - Version number used internally by the app.
   *   `versionName` (*type:* `String.t`, *default:* `nil`) - Version number shown to users.
@@ -38,9 +40,11 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
           :applicationLabel => String.t() | nil,
           :intentFilters => list(GoogleApi.Testing.V1.Model.IntentFilter.t()) | nil,
           :maxSdkVersion => integer() | nil,
+          :metadata => list(GoogleApi.Testing.V1.Model.Metadata.t()) | nil,
           :minSdkVersion => integer() | nil,
           :packageName => String.t() | nil,
           :targetSdkVersion => integer() | nil,
+          :usesFeature => list(GoogleApi.Testing.V1.Model.UsesFeature.t()) | nil,
           :usesPermission => list(String.t()) | nil,
           :versionCode => String.t() | nil,
           :versionName => String.t() | nil
@@ -49,9 +53,11 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   field(:applicationLabel)
   field(:intentFilters, as: GoogleApi.Testing.V1.Model.IntentFilter, type: :list)
   field(:maxSdkVersion)
+  field(:metadata, as: GoogleApi.Testing.V1.Model.Metadata, type: :list)
   field(:minSdkVersion)
   field(:packageName)
   field(:targetSdkVersion)
+  field(:usesFeature, as: GoogleApi.Testing.V1.Model.UsesFeature, type: :list)
   field(:usesPermission, type: :list)
   field(:versionCode)
   field(:versionName)
