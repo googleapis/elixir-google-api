@@ -23,6 +23,7 @@ defmodule GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfigTargetNameServ
 
   *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - Forwarding path for this TargetNameServer. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on address ranges; that is, RFC1918 addresses go to the VPC network, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through the VPC network for this target.
   *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - IPv4 address to forward queries to.
+  *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - IPv6 address to forward to. Does not accept both fields (ipv4 & ipv6) being populated. Public preview as of November 2022.
   *   `kind` (*type:* `String.t`, *default:* `dns#policyAlternativeNameServerConfigTargetNameServer`) - 
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfigTargetNameServ
   @type t :: %__MODULE__{
           :forwardingPath => String.t() | nil,
           :ipv4Address => String.t() | nil,
+          :ipv6Address => String.t() | nil,
           :kind => String.t() | nil
         }
 
   field(:forwardingPath)
   field(:ipv4Address)
+  field(:ipv6Address)
   field(:kind)
 end
 
