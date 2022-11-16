@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Api.Shoppingadsprogram do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the status and review eligibility for the Shopping Ads program.
+  Retrieves the status and review eligibility for the Shopping Ads program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account.
 
   ## Parameters
 
