@@ -24,6 +24,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this issue was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The representative name for the issue.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the issue. Format: projects/{project}/locations/{location}/issueModels/{issue_model}/issues/{issue}
+  *   `sampleUtterances` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Resource names of the sample representative utterances that match to this issue.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time that this issue was updated.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
+          :sampleUtterances => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:name)
+  field(:sampleUtterances, type: :list)
   field(:updateTime, as: DateTime)
 end
 
