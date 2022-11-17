@@ -41,6 +41,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiService do
   *   `monitoring` (*type:* `GoogleApi.ServiceUsage.V1.Model.Monitoring.t`, *default:* `nil`) - Monitoring configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The service name, which is a DNS-like logical identifier for the service, such as `calendar.googleapis.com`. The service name typically goes through DNS verification to make sure the owner of the service also owns the DNS name.
   *   `producerProjectId` (*type:* `String.t`, *default:* `nil`) - The Google project that owns this service.
+  *   `publishing` (*type:* `GoogleApi.ServiceUsage.V1.Model.Publishing.t`, *default:* `nil`) - Settings for [Google Cloud Client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries) generated from APIs defined as protocol buffers.
   *   `quota` (*type:* `GoogleApi.ServiceUsage.V1.Model.Quota.t`, *default:* `nil`) - Quota configuration.
   *   `sourceInfo` (*type:* `GoogleApi.ServiceUsage.V1.Model.SourceInfo.t`, *default:* `nil`) - Output only. The source information for this configuration if available.
   *   `systemParameters` (*type:* `GoogleApi.ServiceUsage.V1.Model.SystemParameters.t`, *default:* `nil`) - System parameter configuration.
@@ -74,6 +75,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiService do
           :monitoring => GoogleApi.ServiceUsage.V1.Model.Monitoring.t() | nil,
           :name => String.t() | nil,
           :producerProjectId => String.t() | nil,
+          :publishing => GoogleApi.ServiceUsage.V1.Model.Publishing.t() | nil,
           :quota => GoogleApi.ServiceUsage.V1.Model.Quota.t() | nil,
           :sourceInfo => GoogleApi.ServiceUsage.V1.Model.SourceInfo.t() | nil,
           :systemParameters => GoogleApi.ServiceUsage.V1.Model.SystemParameters.t() | nil,
@@ -108,6 +110,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiService do
   field(:monitoring, as: GoogleApi.ServiceUsage.V1.Model.Monitoring)
   field(:name)
   field(:producerProjectId)
+  field(:publishing, as: GoogleApi.ServiceUsage.V1.Model.Publishing)
   field(:quota, as: GoogleApi.ServiceUsage.V1.Model.Quota)
   field(:sourceInfo, as: GoogleApi.ServiceUsage.V1.Model.SourceInfo)
   field(:systemParameters, as: GoogleApi.ServiceUsage.V1.Model.SystemParameters)
