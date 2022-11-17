@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
   *   `deadline` (*type:* `float()`, *default:* `nil`) - The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment.
   *   `disableAuth` (*type:* `boolean()`, *default:* `nil`) - When disable_auth is true, a JWT ID token won't be generated and the original "Authorization" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header.
   *   `jwtAudience` (*type:* `String.t`, *default:* `nil`) - The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP "authorization" header, and sent to the backend.
+  *   `minDeadline` (*type:* `float()`, *default:* `nil`) - Deprecated, do not use.
   *   `operationDeadline` (*type:* `float()`, *default:* `nil`) - The number of seconds to wait for the completion of a long running operation. The default is no deadline.
   *   `pathTranslation` (*type:* `String.t`, *default:* `nil`) - 
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol used for sending a request to the backend. The supported values are "http/1.1" and "h2". The default value is inferred from the scheme in the address field: SCHEME PROTOCOL http:// http/1.1 https:// http/1.1 grpc:// h2 grpcs:// h2 For secure HTTP backends (https://) that support HTTP/2, set this field to "h2" for improved performance. Configuring this field to non-default values is only supported for secure HTTP backends. This field will be ignored for all other backends. See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for more details on the supported values.
@@ -38,6 +39,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
           :deadline => float() | nil,
           :disableAuth => boolean() | nil,
           :jwtAudience => String.t() | nil,
+          :minDeadline => float() | nil,
           :operationDeadline => float() | nil,
           :pathTranslation => String.t() | nil,
           :protocol => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
   field(:deadline)
   field(:disableAuth)
   field(:jwtAudience)
+  field(:minDeadline)
   field(:operationDeadline)
   field(:pathTranslation)
   field(:protocol)
