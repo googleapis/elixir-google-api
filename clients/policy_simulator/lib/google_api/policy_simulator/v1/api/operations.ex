@@ -93,6 +93,7 @@ defmodule GoogleApi.PolicySimulator.V1.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PolicySimulator.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -106,7 +107,6 @@ defmodule GoogleApi.PolicySimulator.V1.Api.Operations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:name` (*type:* `String.t`) - The name of the operation's parent resource.
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -116,12 +116,12 @@ defmodule GoogleApi.PolicySimulator.V1.Api.Operations do
   *   `{:ok, %GoogleApi.PolicySimulator.V1.Model.GoogleLongrunningListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec policysimulator_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec policysimulator_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PolicySimulator.V1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def policysimulator_operations_list(connection, optional_params \\ [], opts \\ []) do
+  def policysimulator_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -135,7 +135,6 @@ defmodule GoogleApi.PolicySimulator.V1.Api.Operations do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
-      :name => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -143,7 +142,9 @@ defmodule GoogleApi.PolicySimulator.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/operations", %{})
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
