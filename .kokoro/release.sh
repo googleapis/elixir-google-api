@@ -13,14 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Set this to a nonempty string to freeze releases.
+FREEZE_RELEASES=true
+
 set -eo pipefail
 
 pushd $(dirname "$0")/../
 
 export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/73713_elixir_hex_apikey)
 
-mix deps.get
-
-# Disabled for Google Cloud Next release freeze.
-# TODO: Re-enable on Oct 14, 2022
-# mix google_apis.publish
+if [[ -z "${FREEZE_RELEASES}" ]]; then
+  mix deps.get
+  mix google_apis.publish
+else
+  echo "Releases are frozen."
+fi
