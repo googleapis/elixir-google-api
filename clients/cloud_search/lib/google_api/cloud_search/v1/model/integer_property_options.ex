@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions do
 
   ## Attributes
 
+  *   `integerFacetingOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.IntegerFacetingOptions.t`, *default:* `nil`) - If set, describes integer faceting options for the given integer property. The corresponding integer property should be marked isFacetable.
   *   `maximumValue` (*type:* `String.t`, *default:* `nil`) - The maximum value of the property. The minimum and maximum values for the property are used to rank results according to the ordered ranking. Indexing requests with values greater than the maximum are accepted and ranked with the same weight as items indexed with the maximum value.
   *   `minimumValue` (*type:* `String.t`, *default:* `nil`) - The minimum value of the property. The minimum and maximum values for the property are used to rank results according to the ordered ranking. Indexing requests with values less than the minimum are accepted and ranked with the same weight as items indexed with the minimum value.
   *   `operatorOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions.t`, *default:* `nil`) - If set, describes how the integer should be used as a search operator.
@@ -30,12 +31,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :integerFacetingOptions =>
+            GoogleApi.CloudSearch.V1.Model.IntegerFacetingOptions.t() | nil,
           :maximumValue => String.t() | nil,
           :minimumValue => String.t() | nil,
           :operatorOptions => GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions.t() | nil,
           :orderedRanking => String.t() | nil
         }
 
+  field(:integerFacetingOptions, as: GoogleApi.CloudSearch.V1.Model.IntegerFacetingOptions)
   field(:maximumValue)
   field(:minimumValue)
   field(:operatorOptions, as: GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions)

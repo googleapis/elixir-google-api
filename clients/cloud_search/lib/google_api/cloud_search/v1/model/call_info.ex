@@ -27,12 +27,11 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   *   `availableReactions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ReactionInfo.t)`, *default:* `nil`) - Output only. The set of reactions that clients are allowed to send and can expect to receive. Note that a device in the conference should have the MAY_SEND_REACTIONS privilege to be able to send reactions.
   *   `broadcastSessionInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo.t`, *default:* `nil`) - Information about active broadcast session in the ongoing conference.
   *   `calendarEventId` (*type:* `String.t`, *default:* `nil`) - Output only. The calendar event ID of a Google Calendar event that the meeting space is associated with. If the meeting space is not associated with an event in Google Calendar, this field is empty. For recurring events, it refers to the recurring instance associated with the current call, as determined by the server.
-  *   `chatConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.ChatConfig.t`, *default:* `nil`) - Configuration for the chat for this conference.
   *   `coActivity` (*type:* `GoogleApi.CloudSearch.V1.Model.CoActivity.t`, *default:* `nil`) - The current co-activity session, or unset if there is none in progress. A co-activity session can be initiated by devices in JOINED state . Initiator of the co-activity is expected to populate this field to start the session. Once clients detect that the co-activity has finished, any JOINED device can clear this field to end the co-activity session. In the case of switching activities, the initiator of the new activity merely needs to override this with the new co-activity data, and all connected clients are expected to handle the transition gracefully.
   *   `collaboration` (*type:* `GoogleApi.CloudSearch.V1.Model.Collaboration.t`, *default:* `nil`) - The current collaboration session, or unset if no collaboration is in progress.
   *   `cseInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.CseInfo.t`, *default:* `nil`) - CSE information for the ongoing conference.
   *   `maxJoinedDevices` (*type:* `integer()`, *default:* `nil`) - Output only. The maximum number of devices that may be in the joined state simultaneously in this conference. This can be used by clients to guess whether it will be possible to join, but the only way to know is to try to join. It can also be used to inform users about the limit that is in effect. This limit is normally set when the conference is created and not changed during the lifetime of the conference. But there are some cases where it may change, so clients should be aware that the information may be stale.
-  *   `mediaBackendInfo` (*type:* `String.t`, *default:* `nil`) - Output only. Information about the media backend for the currently ongoing conference in the meeting space. The media backend information will only be filled in for clients that are supposed to present the information. The information should be displayed in a debug panel and is only intended for internal debugging purposes. If the string is empty nothing should be displayed about the media backend.
+  *   `mediaBackendInfo` (*type:* `String.t`, *default:* `nil`) - Output only. Information about the media backend for the currently ongoing conference in the meeting space. The media backend information will only be filled in for clients that are supposed to present the information. The information should be displayed in a debug panel and is only intended for internal debugging purposes. If the string is empty nothing should be displayed about the media backend. Deprecated because media backend is always MEDIA_ROUTER since Dec 2018.
   *   `organizationName` (*type:* `String.t`, *default:* `nil`) - Output only. The name or description of the organization or domain that the organizer belongs to. The expected use of this in clients is to present messages like "John Doe (outside of Google.com) is trying to join this call", where "Google.com" is the organization name. The field will be empty if the organization name could not be determined, possibly because of a backend error.
   *   `paygateInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.PaygateInfo.t`, *default:* `nil`) - Paygate information to clients.
   *   `presenter` (*type:* `GoogleApi.CloudSearch.V1.Model.Presenter.t`, *default:* `nil`) - The current presenter in the call, or unset if there is no current presenter. Clients can set this to change the presenter.
@@ -54,7 +53,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
           :availableReactions => list(GoogleApi.CloudSearch.V1.Model.ReactionInfo.t()) | nil,
           :broadcastSessionInfo => GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo.t() | nil,
           :calendarEventId => String.t() | nil,
-          :chatConfig => GoogleApi.CloudSearch.V1.Model.ChatConfig.t() | nil,
           :coActivity => GoogleApi.CloudSearch.V1.Model.CoActivity.t() | nil,
           :collaboration => GoogleApi.CloudSearch.V1.Model.Collaboration.t() | nil,
           :cseInfo => GoogleApi.CloudSearch.V1.Model.CseInfo.t() | nil,
@@ -81,7 +79,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.CallInfo do
   field(:availableReactions, as: GoogleApi.CloudSearch.V1.Model.ReactionInfo, type: :list)
   field(:broadcastSessionInfo, as: GoogleApi.CloudSearch.V1.Model.BroadcastSessionInfo)
   field(:calendarEventId)
-  field(:chatConfig, as: GoogleApi.CloudSearch.V1.Model.ChatConfig)
   field(:coActivity, as: GoogleApi.CloudSearch.V1.Model.CoActivity)
   field(:collaboration, as: GoogleApi.CloudSearch.V1.Model.Collaboration)
   field(:cseInfo, as: GoogleApi.CloudSearch.V1.Model.CseInfo)
