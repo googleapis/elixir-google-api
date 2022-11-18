@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   ## Attributes
 
   *   `boundingPoly` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2BoundingPoly.t`, *default:* `nil`) - The bounding polygon for the Layout.
-  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range [0, 1].
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
   *   `orientation` (*type:* `String.t`, *default:* `nil`) - Detected orientation for the Layout.
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Text anchor indexing into the Document.text.
   """

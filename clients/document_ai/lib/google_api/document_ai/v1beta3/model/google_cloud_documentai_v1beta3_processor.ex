@@ -28,7 +28,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}`
   *   `processEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The http endpoint that can be called to invoke processing.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc. To get a list of processors types, see FetchProcessorTypes.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc. To get a list of processors types, see FetchProcessorTypes.
   """
 
   use GoogleApi.Gax.ModelBase

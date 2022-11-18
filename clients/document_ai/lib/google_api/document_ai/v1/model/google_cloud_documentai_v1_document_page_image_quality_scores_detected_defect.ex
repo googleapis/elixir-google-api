@@ -21,8 +21,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageImage
 
   ## Attributes
 
-  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of detected defect. Range [0, 1] where 1 indicates strong confidence of that the defect exists.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Name of the defect type. Supported values are "quality/defect_blurry", "quality/defect_noisy", "quality/defect_dark", "quality/defect_faint", "quality/defect_text_too_small", "quality/defect_document_cutoff", "quality/defect_text_cutoff", "quality/defect_glare"
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - Inline document content.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA MIME type (RFC6838) indicating the nature and format of the [content].
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA MIME type (RFC6838) indicating the nature and format of the content.
   """
 
   use GoogleApi.Gax.ModelBase
