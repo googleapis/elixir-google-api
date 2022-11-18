@@ -32,7 +32,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityReport do
   *   `resultFileSize` (*type:* `String.t`, *default:* `nil`) - ResultFileSize is available only after the query is completed.
   *   `resultRows` (*type:* `String.t`, *default:* `nil`) - ResultRows is available only after the query is completed.
   *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query. Example: `/organizations/myorg/environments/myenv/securityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd` or following format if query is running at host level: `/organizations/myorg/hostSecurityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Query state could be "enqueued", "running", "completed", "failed".
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Query state could be "enqueued", "running", "completed", "expired" and "failed".
   *   `updated` (*type:* `String.t`, *default:* `nil`) - Output only. Last updated timestamp for the query.
   """
 
