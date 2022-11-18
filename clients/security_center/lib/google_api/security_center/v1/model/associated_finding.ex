@@ -23,17 +23,20 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AssociatedFinding do
 
   *   `canonicalFindingName` (*type:* `String.t`, *default:* `nil`) - Canonical name of the associated findings. Example: organizations/123/sources/456/findings/789
   *   `findingCategory` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full resource name of the finding.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :canonicalFindingName => String.t() | nil,
-          :findingCategory => String.t() | nil
+          :findingCategory => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:canonicalFindingName)
   field(:findingCategory)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.AssociatedFinding do
