@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1BatchDocumentsInp
   ## Attributes
 
   *   `gcsDocuments` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsDocuments.t`, *default:* `nil`) - The set of documents individually specified on Cloud Storage.
-  *   `gcsPrefix` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsPrefix.t`, *default:* `nil`) - The set of documents that match the specified Cloud Storage [gcs_prefix].
+  *   `gcsPrefix` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsPrefix.t`, *default:* `nil`) - The set of documents that match the specified Cloud Storage `gcs_prefix`.
   """
 
   use GoogleApi.Gax.ModelBase

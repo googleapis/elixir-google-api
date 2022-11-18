@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   ## Attributes
 
   *   `detectedDefects` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect.t)`, *default:* `nil`) - A list of detected defects.
-  *   `qualityScore` (*type:* `number()`, *default:* `nil`) - The overall quality score. Range [0, 1] where 1 is perfect quality.
+  *   `qualityScore` (*type:* `number()`, *default:* `nil`) - The overall quality score. Range `[0, 1]` where 1 is perfect quality.
   """
 
   use GoogleApi.Gax.ModelBase

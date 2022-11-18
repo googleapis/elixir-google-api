@@ -25,8 +25,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `availableLocations` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorTypeLocationInfo.t)`, *default:* `nil`) - The locations in which this processor is available.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The processor category, used by UI to group processor types.
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Launch stage of the processor type
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: projects/{project}/processorTypes/{processor_type}
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the processor, e.g., "invoice_parsing".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: `projects/{project}/processorTypes/{processor_type}`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
   """
 
   use GoogleApi.Gax.ModelBase
