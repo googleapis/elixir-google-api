@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.PrivateMessageInfo do
   @moduledoc """
-  Private message information specific to a given user.
+  Private message information specific to a given user. DEPRECATED: Use the privateMessageViewer field in CreateMessageInfo instead.
 
   ## Attributes
 

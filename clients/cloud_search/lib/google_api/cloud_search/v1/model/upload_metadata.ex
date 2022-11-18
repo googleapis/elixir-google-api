@@ -29,6 +29,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UploadMetadata do
   *   `contentName` (*type:* `String.t`, *default:* `nil`) - The original file name for the content, not the full path.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Type is from Scotty's best_guess by default: http://google3/uploader/agent/scotty_agent.proto?l=51&rcl=140889785
   *   `dlpMetricsMetadata` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDlpMetricsMetadata.t`, *default:* `nil`) - The metrics metadata of the Data Loss Prevention attachment scan.
+  *   `latestVirusScanTimestamp` (*type:* `String.t`, *default:* `nil`) - The timestamp of the most recent virus scan completed (in microseconds).
   *   `localId` (*type:* `String.t`, *default:* `nil`) - A copy of the LocalId in Annotation. This field is supposed to be filled by server only.
   *   `originalDimension` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension.t`, *default:* `nil`) - Original dimension of the content. Only set for image attachments.
   *   `videoReference` (*type:* `GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedVideoReference.t`, *default:* `nil`) - Reference to a transcoded video attachment. Only set for video attachments.
@@ -48,6 +49,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UploadMetadata do
           :contentType => String.t() | nil,
           :dlpMetricsMetadata =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDlpMetricsMetadata.t() | nil,
+          :latestVirusScanTimestamp => String.t() | nil,
           :localId => String.t() | nil,
           :originalDimension =>
             GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UploadMetadata do
     as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDlpMetricsMetadata
   )
 
+  field(:latestVirusScanTimestamp)
   field(:localId)
   field(:originalDimension, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedDimension)
   field(:videoReference, as: GoogleApi.CloudSearch.V1.Model.AppsDynamiteSharedVideoReference)

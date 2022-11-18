@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetBucket do
   ## Attributes
 
   *   `count` (*type:* `integer()`, *default:* `nil`) - Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned.
+  *   `filter` (*type:* `GoogleApi.CloudSearch.V1.Model.Filter.t`, *default:* `nil`) - Filter to be passed in the search request if the corresponding bucket is selected.
   *   `percentage` (*type:* `integer()`, *default:* `nil`) - Percent of results that match the bucket value. The returned value is between (0-100], and is rounded down to an integer if fractional. If the value is not explicitly returned, it represents a percentage value that rounds to 0. Percentages are returned for all searches, but are an estimate. Because percentages are always returned, you should render percentages instead of counts.
   *   `value` (*type:* `GoogleApi.CloudSearch.V1.Model.Value.t`, *default:* `nil`) - 
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.CloudSearch.V1.Model.FacetBucket do
 
   @type t :: %__MODULE__{
           :count => integer() | nil,
+          :filter => GoogleApi.CloudSearch.V1.Model.Filter.t() | nil,
           :percentage => integer() | nil,
           :value => GoogleApi.CloudSearch.V1.Model.Value.t() | nil
         }
 
   field(:count)
+  field(:filter, as: GoogleApi.CloudSearch.V1.Model.Filter)
   field(:percentage)
   field(:value, as: GoogleApi.CloudSearch.V1.Model.Value)
 end
