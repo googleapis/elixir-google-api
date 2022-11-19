@@ -26,6 +26,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The expiration time of the backup, with microseconds granularity that must be at least 6 hours and at most 30 days from the time the request is received. Once the `expire_time` has passed, Cloud Bigtable will delete the backup and free the resources used by the backup.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Size of the backup in bytes.
+  *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup from which this backup was copied. If a backup is not created by copying a backup, this field will be empty. Values are of the form: projects//instances//backups/.
   *   `sourceTable` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Name of the table from which this backup was created. This needs to be in the same instance as the backup. Values are of the form `projects/{project}/instances/{instance}/tables/{source_table}`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. `start_time` is the time that the backup was started (i.e. approximately the time the CreateBackup request is received). The row data in this backup will be no older than this timestamp.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the backup.
@@ -39,6 +40,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
           :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :sizeBytes => String.t() | nil,
+          :sourceBackup => String.t() | nil,
           :sourceTable => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil
@@ -49,6 +51,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
   field(:expireTime, as: DateTime)
   field(:name)
   field(:sizeBytes)
+  field(:sourceBackup)
   field(:sourceTable)
   field(:startTime, as: DateTime)
   field(:state)
