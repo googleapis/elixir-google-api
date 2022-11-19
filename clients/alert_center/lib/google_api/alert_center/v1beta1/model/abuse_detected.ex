@@ -23,6 +23,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AbuseDetected do
 
   *   `additionalDetails` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.EntityList.t`, *default:* `nil`) - List of abusive users/entities to be displayed in a table in the alert.
   *   `alertDescriptor` (*type:* `String.t`, *default:* `nil`) - Displayed after Customer abuse detected - {alert_descriptor}. If missing, alert name will be displayed as Customer abuse detected.
+  *   `nextSteps` (*type:* `String.t`, *default:* `nil`) - Customizable text to display in the next steps section of the alert. Will be parsed as HTML to allow new paragraphs and hyperlinks.
   *   `product` (*type:* `String.t`, *default:* `nil`) - Product that the abuse is originating from.
   *   `subAlertId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of each alert that is onboarded.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Customizable text to display in the summary section of the alert. Will be parsed as HTML to allow new paragraphs and hyperlinks.
@@ -33,6 +34,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AbuseDetected do
   @type t :: %__MODULE__{
           :additionalDetails => GoogleApi.AlertCenter.V1beta1.Model.EntityList.t() | nil,
           :alertDescriptor => String.t() | nil,
+          :nextSteps => String.t() | nil,
           :product => String.t() | nil,
           :subAlertId => String.t() | nil,
           :summary => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AbuseDetected do
 
   field(:additionalDetails, as: GoogleApi.AlertCenter.V1beta1.Model.EntityList)
   field(:alertDescriptor)
+  field(:nextSteps)
   field(:product)
   field(:subAlertId)
   field(:summary)
