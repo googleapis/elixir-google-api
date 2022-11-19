@@ -21,7 +21,7 @@ defmodule GoogleApi.WebRisk.V1.Model.GoogleCloudWebriskV1SearchUrisResponse do
 
   ## Attributes
 
-  *   `threat` (*type:* `GoogleApi.WebRisk.V1.Model.GoogleCloudWebriskV1SearchUrisResponseThreatUri.t`, *default:* `nil`) - The threat list matches. This may be empty if the URI is on no list.
+  *   `threat` (*type:* `GoogleApi.WebRisk.V1.Model.GoogleCloudWebriskV1SearchUrisResponseThreatUri.t`, *default:* `nil`) - The threat list matches. This might be empty if the URI is on no list.
   """
 
   use GoogleApi.Gax.ModelBase

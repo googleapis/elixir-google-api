@@ -21,7 +21,7 @@ defmodule GoogleApi.WebRisk.V1.Model.GoogleCloudWebriskV1Submission do
 
   ## Attributes
 
-  *   `threatTypes` (*type:* `list(String.t)`, *default:* `nil`) - ThreatTypes found to be associated with the submitted URI after reviewing it. This may be empty if the URI was not added to any list.
+  *   `threatTypes` (*type:* `list(String.t)`, *default:* `nil`) - ThreatTypes found to be associated with the submitted URI after reviewing it. This might be empty if the URI was not added to any list.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URI that is being reported for malicious content to be analyzed.
   """
 
