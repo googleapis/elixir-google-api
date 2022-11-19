@@ -17,23 +17,35 @@
 
 defmodule GoogleApi.Connectors.V1.Model.ConnectionSchemaMetadata do
   @moduledoc """
-  Metadata of connection schema.
+  ConnectionSchemaMetadata is the singleton resource of each connection. It includes the entity and action names of runtime resources exposed by a connection backend.
 
   ## Attributes
 
   *   `actions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of actions.
   *   `entities` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of entity names.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name. Format: projects/{project}/locations/{location}/connections/{connection}/connectionSchemaMetadata
+  *   `refreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the connection runtime schema refresh was triggered.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of runtime schema.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the connection runtime schema was updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :actions => list(String.t()) | nil,
-          :entities => list(String.t()) | nil
+          :entities => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :refreshTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:actions, type: :list)
   field(:entities, type: :list)
+  field(:name)
+  field(:refreshTime, as: DateTime)
+  field(:state)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.ConnectionSchemaMetadata do
