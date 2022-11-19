@@ -32,6 +32,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
+  *   `recoveryConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.RecoveryConfig.t`, *default:* `nil`) - Optional. The Recovery settings configuration of an environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   *   `webServerConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerConfig.t`, *default:* `nil`) - Optional. The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
           :nodeCount => integer() | nil,
           :privateEnvironmentConfig =>
             GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t() | nil,
+          :recoveryConfig => GoogleApi.Composer.V1beta1.Model.RecoveryConfig.t() | nil,
           :softwareConfig => GoogleApi.Composer.V1beta1.Model.SoftwareConfig.t() | nil,
           :webServerConfig => GoogleApi.Composer.V1beta1.Model.WebServerConfig.t() | nil,
           :webServerNetworkAccessControl =>
@@ -76,6 +78,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   field(:nodeConfig, as: GoogleApi.Composer.V1beta1.Model.NodeConfig)
   field(:nodeCount)
   field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig)
+  field(:recoveryConfig, as: GoogleApi.Composer.V1beta1.Model.RecoveryConfig)
   field(:softwareConfig, as: GoogleApi.Composer.V1beta1.Model.SoftwareConfig)
   field(:webServerConfig, as: GoogleApi.Composer.V1beta1.Model.WebServerConfig)
 
