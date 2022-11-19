@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
 
   *   `applicationSource` (*type:* `String.t`, *default:* `nil`) - The source of the package.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the app.
-  *   `events` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t)`, *default:* `nil`) - List of app events. The most recent 20 events are stored in the list.
+  *   `events` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t)`, *default:* `nil`) - The list of app events which have occurred in the last 30 hours.
   *   `installerPackageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app that installed this app.
   *   `keyedAppStates` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t)`, *default:* `nil`) - List of keyed app states reported by the app.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the app.
