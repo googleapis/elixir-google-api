@@ -32,10 +32,10 @@ defmodule GoogleApi.Gax.Response do
 
   ## Returns
 
-  *   `{:ok, struct()}` on success
+  *   `{:ok, any()}` on success
   *   `{:error, Tesla.Env.t}` on failure
   """
-  @spec decode({:ok, Tesla.Env.t()}, keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
+  @spec decode({:ok, Tesla.Env.t()}, keyword()) :: {:ok, any()} | {:error, Tesla.Env.t()}
   def decode(env, opts \\ [])
 
   def decode({:error, reason}, _), do: {:error, reason}
