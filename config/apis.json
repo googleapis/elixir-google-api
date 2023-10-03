@@ -1300,6 +1300,11 @@
     "name": "Speech"
   },
   {
+    "version": "v2",
+    "url": "https://speech.googleapis.com/$discovery/rest?version=v2",
+    "name": "Speech"
+  },
+  {
     "version": "v1",
     "url": "https://sqladmin.googleapis.com/$discovery/rest?version=v1",
     "name": "SQLAdmin"
