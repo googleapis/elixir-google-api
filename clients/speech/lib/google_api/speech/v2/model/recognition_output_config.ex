@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionOutputConfig do
   Configuration options for the output(s) of recognition.
 
   ## Attributes
-  
+
   *   `gcsOutputConfig` (*type:* `GoogleApi.Speech.V2.Model.GcsOutputConfig.t`, *default:* `nil`) - If this message is populated, recognition results are written to the provided Google Cloud Storage URI.
   *   `inlineResponseConfig` (*type:* `GoogleApi.Speech.V2.Model.InlineOutputConfig.t`, *default:* `nil`) - If this message is populated, recognition results are provided in the BatchRecognizeResponse message of the Operation when completed. This is only supported when calling BatchRecognize with just one audio file.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionOutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"gcsOutputConfig" => GoogleApi.Speech.V2.Model.GcsOutputConfig.t | nil,
-    
-      :"inlineResponseConfig" => GoogleApi.Speech.V2.Model.InlineOutputConfig.t | nil,
-    
-  }
-  
-  field(:"gcsOutputConfig", as: GoogleApi.Speech.V2.Model.GcsOutputConfig)
-  field(:"inlineResponseConfig", as: GoogleApi.Speech.V2.Model.InlineOutputConfig)
+          :gcsOutputConfig => GoogleApi.Speech.V2.Model.GcsOutputConfig.t() | nil,
+          :inlineResponseConfig => GoogleApi.Speech.V2.Model.InlineOutputConfig.t() | nil
+        }
+
+  field(:gcsOutputConfig, as: GoogleApi.Speech.V2.Model.GcsOutputConfig)
+  field(:inlineResponseConfig, as: GoogleApi.Speech.V2.Model.InlineOutputConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognitionOutputConfig do

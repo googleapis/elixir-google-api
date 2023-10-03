@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig do
   Configuration to enable speaker diarization.
 
   ## Attributes
-  
+
   *   `maxSpeakerCount` (*type:* `integer()`, *default:* `nil`) - Required. Maximum number of speakers in the conversation. Valid values are: 1-6. Must be >= `min_speaker_count`. This range gives you more flexibility by allowing the system to automatically determine the correct number of speakers.
   *   `minSpeakerCount` (*type:* `integer()`, *default:* `nil`) - Required. Minimum number of speakers in the conversation. This range gives you more flexibility by allowing the system to automatically determine the correct number of speakers. To fix the number of speakers detected in the audio, set `min_speaker_count` = `max_speaker_count`.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"maxSpeakerCount" => integer() | nil,
-    
-      :"minSpeakerCount" => integer() | nil,
-    
-  }
-  
-  field(:"maxSpeakerCount")
-  field(:"minSpeakerCount")
+          :maxSpeakerCount => integer() | nil,
+          :minSpeakerCount => integer() | nil
+        }
+
+  field(:maxSpeakerCount)
+  field(:minSpeakerCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig do

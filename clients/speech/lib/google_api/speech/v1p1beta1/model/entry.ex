@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.Entry do
   A single replacement configuration.
 
   ## Attributes
-  
+
   *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Whether the search is case sensitive.
   *   `replace` (*type:* `String.t`, *default:* `nil`) - What to replace with. Max length is 100 characters.
   *   `search` (*type:* `String.t`, *default:* `nil`) - What to replace. Max length is 100 characters.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.Entry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"caseSensitive" => boolean() | nil,
-    
-      :"replace" => String.t | nil,
-    
-      :"search" => String.t | nil,
-    
-  }
-  
-  field(:"caseSensitive")
-  field(:"replace")
-  field(:"search")
+          :caseSensitive => boolean() | nil,
+          :replace => String.t() | nil,
+          :search => String.t() | nil
+        }
+
+  field(:caseSensitive)
+  field(:replace)
+  field(:search)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.Entry do

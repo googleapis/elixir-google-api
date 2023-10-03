@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.Phrase do
   A Phrase contains words and phrase "hints" so that the speech recognition is more likely to recognize them. This can be used to improve the accuracy for specific words and phrases, for example, if specific commands are typically spoken by the user. This can also be used to add additional words to the vocabulary of the recognizer. List items can also include CustomClass references containing groups of words that represent common concepts that occur in natural language.
 
   ## Attributes
-  
+
   *   `boost` (*type:* `number()`, *default:* `nil`) - Hint Boost. Overrides the boost set at the phrase set level. Positive value will increase the probability that a specific phrase will be recognized over other similar sounding phrases. The higher the boost, the higher the chance of false positive recognition as well. Negative boost values would correspond to anti-biasing. Anti-biasing is not enabled, so negative boost values will return an error. Boost values must be between 0 and 20. Any values outside that range will return an error. We recommend using a binary search approach to finding the optimal value for your use case as well as adding phrases both with and without boost to your requests.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The phrase itself.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.Phrase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"boost" => number() | nil,
-    
-      :"value" => String.t | nil,
-    
-  }
-  
-  field(:"boost")
-  field(:"value")
+          :boost => number() | nil,
+          :value => String.t() | nil
+        }
+
+  field(:boost)
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.Phrase do

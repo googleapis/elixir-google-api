@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.UpdateCustomClassRequest do
   Request message for the UpdateCustomClass method.
 
   ## Attributes
-  
+
   *   `customClass` (*type:* `GoogleApi.Speech.V2.Model.CustomClass.t`, *default:* `nil`) - Required. The CustomClass to update. The CustomClass's `name` field is used to identify the CustomClass to update. Format: `projects/{project}/locations/{location}/customClasses/{custom_class}`.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The list of fields to be updated. If empty, all fields are considered for update.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set, validate the request and preview the updated CustomClass, but do not actually update it.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.UpdateCustomClassRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"customClass" => GoogleApi.Speech.V2.Model.CustomClass.t | nil,
-    
-      :"updateMask" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"customClass", as: GoogleApi.Speech.V2.Model.CustomClass)
-  field(:"updateMask")
-  field(:"validateOnly")
+          :customClass => GoogleApi.Speech.V2.Model.CustomClass.t() | nil,
+          :updateMask => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:customClass, as: GoogleApi.Speech.V2.Model.CustomClass)
+  field(:updateMask)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.UpdateCustomClassRequest do

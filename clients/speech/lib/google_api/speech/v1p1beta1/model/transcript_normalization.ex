@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization do
   Transcription normalization configuration. Use transcription normalization to automatically replace parts of the transcript with phrases of your choosing. For StreamingRecognize, this normalization only applies to stable partial transcripts (stability > 0.8) and final transcripts.
 
   ## Attributes
-  
+
   *   `entries` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.Entry.t)`, *default:* `nil`) - A list of replacement entries. We will perform replacement with one entry at a time. For example, the second entry in ["cat" => "dog", "mountain cat" => "mountain dog"] will never be applied because we will always process the first entry before it. At most 100 entries.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"entries" => list(GoogleApi.Speech.V1p1beta1.Model.Entry.t) | nil,
-    
-  }
-  
-  field(:"entries", as: GoogleApi.Speech.V1p1beta1.Model.Entry, type: :list)
+          :entries => list(GoogleApi.Speech.V1p1beta1.Model.Entry.t()) | nil
+        }
+
+  field(:entries, as: GoogleApi.Speech.V1p1beta1.Model.Entry, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization do

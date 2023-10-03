@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.CreateCustomClassRequest do
   Message sent by the client for the `CreateCustomClass` method.
 
   ## Attributes
-  
+
   *   `customClass` (*type:* `GoogleApi.Speech.V1.Model.CustomClass.t`, *default:* `nil`) - Required. The custom class to create.
   *   `customClassId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the custom class, which will become the final component of the custom class' resource name. This value should restrict to letters, numbers, and hyphens, with the first character a letter, the last a letter or a number, and be 4-63 characters.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V1.Model.CreateCustomClassRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"customClass" => GoogleApi.Speech.V1.Model.CustomClass.t | nil,
-    
-      :"customClassId" => String.t | nil,
-    
-  }
-  
-  field(:"customClass", as: GoogleApi.Speech.V1.Model.CustomClass)
-  field(:"customClassId")
+          :customClass => GoogleApi.Speech.V1.Model.CustomClass.t() | nil,
+          :customClassId => String.t() | nil
+        }
+
+  field(:customClass, as: GoogleApi.Speech.V1.Model.CustomClass)
+  field(:customClassId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.CreateCustomClassRequest do

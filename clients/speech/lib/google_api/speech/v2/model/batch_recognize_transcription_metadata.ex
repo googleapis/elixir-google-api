@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata do
   Metadata about transcription for a single file (for example, progress percent).
 
   ## Attributes
-  
+
   *   `error` (*type:* `GoogleApi.Speech.V2.Model.Status.t`, *default:* `nil`) - Error if one was encountered.
   *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - How much of the file has been transcribed so far.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage URI to which recognition results will be written.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"error" => GoogleApi.Speech.V2.Model.Status.t | nil,
-    
-      :"progressPercent" => integer() | nil,
-    
-      :"uri" => String.t | nil,
-    
-  }
-  
-  field(:"error", as: GoogleApi.Speech.V2.Model.Status)
-  field(:"progressPercent")
-  field(:"uri")
+          :error => GoogleApi.Speech.V2.Model.Status.t() | nil,
+          :progressPercent => integer() | nil,
+          :uri => String.t() | nil
+        }
+
+  field(:error, as: GoogleApi.Speech.V2.Model.Status)
+  field(:progressPercent)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata do

@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.ListCustomClassesResponse do
   Message returned to the client by the `ListCustomClasses` method.
 
   ## Attributes
-  
+
   *   `customClasses` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t)`, *default:* `nil`) - The custom classes.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.ListCustomClassesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"customClasses" => list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t) | nil,
-    
-      :"nextPageToken" => String.t | nil,
-    
-  }
-  
-  field(:"customClasses", as: GoogleApi.Speech.V1p1beta1.Model.CustomClass, type: :list)
-  field(:"nextPageToken")
+          :customClasses => list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t()) | nil,
+          :nextPageToken => String.t() | nil
+        }
+
+  field(:customClasses, as: GoogleApi.Speech.V1p1beta1.Model.CustomClass, type: :list)
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.ListCustomClassesResponse do

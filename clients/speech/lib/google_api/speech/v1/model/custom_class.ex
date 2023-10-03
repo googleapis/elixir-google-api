@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.CustomClass do
   A set of words or phrases that represents a common concept likely to appear in your audio, for example a list of passenger ship names. CustomClass items can be substituted into placeholders that you set in PhraseSet phrases.
 
   ## Attributes
-  
+
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Output only. Allows users to store small amounts of arbitrary data. Both the key and the value must be 63 characters or less each. At most 100 annotations. This field is not used.
   *   `customClassId` (*type:* `String.t`, *default:* `nil`) - If this custom class is a resource, the custom_class_id is the resource id of the CustomClass. Case sensitive.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this resource was requested for deletion. This field is not used.
@@ -39,48 +39,34 @@ defmodule GoogleApi.Speech.V1.Model.CustomClass do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"annotations" => map() | nil,
-    
-      :"customClassId" => String.t | nil,
-    
-      :"deleteTime" => DateTime.t | nil,
-    
-      :"displayName" => String.t | nil,
-    
-      :"etag" => String.t | nil,
-    
-      :"expireTime" => DateTime.t | nil,
-    
-      :"items" => list(GoogleApi.Speech.V1.Model.ClassItem.t) | nil,
-    
-      :"kmsKeyName" => String.t | nil,
-    
-      :"kmsKeyVersionName" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"reconciling" => boolean() | nil,
-    
-      :"state" => String.t | nil,
-    
-      :"uid" => String.t | nil,
-    
-  }
-  
-  field(:"annotations", type: :map)
-  field(:"customClassId")
-  field(:"deleteTime", as: DateTime)
-  field(:"displayName")
-  field(:"etag")
-  field(:"expireTime", as: DateTime)
-  field(:"items", as: GoogleApi.Speech.V1.Model.ClassItem, type: :list)
-  field(:"kmsKeyName")
-  field(:"kmsKeyVersionName")
-  field(:"name")
-  field(:"reconciling")
-  field(:"state")
-  field(:"uid")
+          :annotations => map() | nil,
+          :customClassId => String.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :items => list(GoogleApi.Speech.V1.Model.ClassItem.t()) | nil,
+          :kmsKeyName => String.t() | nil,
+          :kmsKeyVersionName => String.t() | nil,
+          :name => String.t() | nil,
+          :reconciling => boolean() | nil,
+          :state => String.t() | nil,
+          :uid => String.t() | nil
+        }
+
+  field(:annotations, type: :map)
+  field(:customClassId)
+  field(:deleteTime, as: DateTime)
+  field(:displayName)
+  field(:etag)
+  field(:expireTime, as: DateTime)
+  field(:items, as: GoogleApi.Speech.V1.Model.ClassItem, type: :list)
+  field(:kmsKeyName)
+  field(:kmsKeyVersionName)
+  field(:name)
+  field(:reconciling)
+  field(:state)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.CustomClass do

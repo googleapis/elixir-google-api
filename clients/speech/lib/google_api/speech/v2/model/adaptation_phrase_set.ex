@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.AdaptationPhraseSet do
   A biasing PhraseSet, which can be either a string referencing the name of an existing PhraseSets resource, or an inline definition of a PhraseSet.
 
   ## Attributes
-  
+
   *   `inlinePhraseSet` (*type:* `GoogleApi.Speech.V2.Model.PhraseSet.t`, *default:* `nil`) - An inline defined PhraseSet.
   *   `phraseSet` (*type:* `String.t`, *default:* `nil`) - The name of an existing PhraseSet resource. The user must have read access to the resource and it must not be deleted.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.AdaptationPhraseSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"inlinePhraseSet" => GoogleApi.Speech.V2.Model.PhraseSet.t | nil,
-    
-      :"phraseSet" => String.t | nil,
-    
-  }
-  
-  field(:"inlinePhraseSet", as: GoogleApi.Speech.V2.Model.PhraseSet)
-  field(:"phraseSet")
+          :inlinePhraseSet => GoogleApi.Speech.V2.Model.PhraseSet.t() | nil,
+          :phraseSet => String.t() | nil
+        }
+
+  field(:inlinePhraseSet, as: GoogleApi.Speech.V2.Model.PhraseSet)
+  field(:phraseSet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.AdaptationPhraseSet do

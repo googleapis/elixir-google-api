@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.CreatePhraseSetRequest do
   Request message for the CreatePhraseSet method.
 
   ## Attributes
-  
+
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The project and location where this PhraseSet will be created. The expected format is `projects/{project}/locations/{location}`.
   *   `phraseSet` (*type:* `GoogleApi.Speech.V2.Model.PhraseSet.t`, *default:* `nil`) - Required. The PhraseSet to create.
   *   `phraseSetId` (*type:* `String.t`, *default:* `nil`) - The ID to use for the PhraseSet, which will become the final component of the PhraseSet's resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.CreatePhraseSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"parent" => String.t | nil,
-    
-      :"phraseSet" => GoogleApi.Speech.V2.Model.PhraseSet.t | nil,
-    
-      :"phraseSetId" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"parent")
-  field(:"phraseSet", as: GoogleApi.Speech.V2.Model.PhraseSet)
-  field(:"phraseSetId")
-  field(:"validateOnly")
+          :parent => String.t() | nil,
+          :phraseSet => GoogleApi.Speech.V2.Model.PhraseSet.t() | nil,
+          :phraseSetId => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:parent)
+  field(:phraseSet, as: GoogleApi.Speech.V2.Model.PhraseSet)
+  field(:phraseSetId)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.CreatePhraseSetRequest do

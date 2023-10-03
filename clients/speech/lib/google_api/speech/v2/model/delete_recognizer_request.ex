@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.DeleteRecognizerRequest do
   Request message for the DeleteRecognizer method.
 
   ## Attributes
-  
+
   *   `allowMissing` (*type:* `boolean()`, *default:* `nil`) - If set to true, and the Recognizer is not found, the request will succeed and be a no-op (no Operation is recorded in this case).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields. This may be sent on update, undelete, and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Recognizer to delete. Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.DeleteRecognizerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"allowMissing" => boolean() | nil,
-    
-      :"etag" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"allowMissing")
-  field(:"etag")
-  field(:"name")
-  field(:"validateOnly")
+          :allowMissing => boolean() | nil,
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:allowMissing)
+  field(:etag)
+  field(:name)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.DeleteRecognizerRequest do

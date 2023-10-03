@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.GcsOutputConfig do
   Output configurations for Cloud Storage.
 
   ## Attributes
-  
+
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage URI prefix with which recognition results will be written.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"uri" => String.t | nil,
-    
-  }
-  
-  field(:"uri")
+          :uri => String.t() | nil
+        }
+
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.GcsOutputConfig do

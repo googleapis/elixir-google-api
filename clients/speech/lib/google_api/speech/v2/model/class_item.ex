@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.ClassItem do
   An item of the class.
 
   ## Attributes
-  
+
   *   `value` (*type:* `String.t`, *default:* `nil`) - The class item's value.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"value" => String.t | nil,
-    
-  }
-  
-  field(:"value")
+          :value => String.t() | nil
+        }
+
+  field(:value)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ClassItem do

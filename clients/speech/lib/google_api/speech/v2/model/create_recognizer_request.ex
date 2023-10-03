@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.CreateRecognizerRequest do
   Request message for the CreateRecognizer method.
 
   ## Attributes
-  
+
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The project and location where this Recognizer will be created. The expected format is `projects/{project}/locations/{location}`.
   *   `recognizer` (*type:* `GoogleApi.Speech.V2.Model.Recognizer.t`, *default:* `nil`) - Required. The Recognizer to create.
   *   `recognizerId` (*type:* `String.t`, *default:* `nil`) - The ID to use for the Recognizer, which will become the final component of the Recognizer's resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.CreateRecognizerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"parent" => String.t | nil,
-    
-      :"recognizer" => GoogleApi.Speech.V2.Model.Recognizer.t | nil,
-    
-      :"recognizerId" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"parent")
-  field(:"recognizer", as: GoogleApi.Speech.V2.Model.Recognizer)
-  field(:"recognizerId")
-  field(:"validateOnly")
+          :parent => String.t() | nil,
+          :recognizer => GoogleApi.Speech.V2.Model.Recognizer.t() | nil,
+          :recognizerId => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:parent)
+  field(:recognizer, as: GoogleApi.Speech.V2.Model.Recognizer)
+  field(:recognizerId)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.CreateRecognizerRequest do

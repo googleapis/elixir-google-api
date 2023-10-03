@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.RecognizeResponse do
   Response message for the Recognize method.
 
   ## Attributes
-  
+
   *   `metadata` (*type:* `GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t`, *default:* `nil`) - Metadata about the recognition.
   *   `results` (*type:* `list(GoogleApi.Speech.V2.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.RecognizeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"metadata" => GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t | nil,
-    
-      :"results" => list(GoogleApi.Speech.V2.Model.SpeechRecognitionResult.t) | nil,
-    
-  }
-  
-  field(:"metadata", as: GoogleApi.Speech.V2.Model.RecognitionResponseMetadata)
-  field(:"results", as: GoogleApi.Speech.V2.Model.SpeechRecognitionResult, type: :list)
+          :metadata => GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t() | nil,
+          :results => list(GoogleApi.Speech.V2.Model.SpeechRecognitionResult.t()) | nil
+        }
+
+  field(:metadata, as: GoogleApi.Speech.V2.Model.RecognitionResponseMetadata)
+  field(:results, as: GoogleApi.Speech.V2.Model.SpeechRecognitionResult, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognizeResponse do

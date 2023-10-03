@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.LanguageMetadata do
   The metadata about locales available in a given region. Currently this is just the models that are available for each locale
 
   ## Attributes
-  
+
   *   `models` (*type:* `%{optional(String.t) => GoogleApi.Speech.V2.Model.ModelMetadata.t}`, *default:* `nil`) - Map of locale (language code) -> models
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"models" => %{optional(String.t) => GoogleApi.Speech.V2.Model.ModelMetadata.t} | nil,
-    
-  }
-  
-  field(:"models", as: GoogleApi.Speech.V2.Model.ModelMetadata, type: :map)
+          :models => %{optional(String.t()) => GoogleApi.Speech.V2.Model.ModelMetadata.t()} | nil
+        }
+
+  field(:models, as: GoogleApi.Speech.V2.Model.ModelMetadata, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.LanguageMetadata do

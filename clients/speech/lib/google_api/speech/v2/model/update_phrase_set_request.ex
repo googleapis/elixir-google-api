@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest do
   Request message for the UpdatePhraseSet method.
 
   ## Attributes
-  
+
   *   `phraseSet` (*type:* `GoogleApi.Speech.V2.Model.PhraseSet.t`, *default:* `nil`) - Required. The PhraseSet to update. The PhraseSet's `name` field is used to identify the PhraseSet to update. Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The list of fields to update. If empty, all non-default valued fields are considered for update. Use `*` to update the entire PhraseSet resource.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set, validate the request and preview the updated PhraseSet, but do not actually update it.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"phraseSet" => GoogleApi.Speech.V2.Model.PhraseSet.t | nil,
-    
-      :"updateMask" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"phraseSet", as: GoogleApi.Speech.V2.Model.PhraseSet)
-  field(:"updateMask")
-  field(:"validateOnly")
+          :phraseSet => GoogleApi.Speech.V2.Model.PhraseSet.t() | nil,
+          :updateMask => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:phraseSet, as: GoogleApi.Speech.V2.Model.PhraseSet)
+  field(:updateMask)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest do

@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.StreamingRecognitionResult do
   A streaming speech recognition result corresponding to a portion of the audio that is currently being processed.
 
   ## Attributes
-  
+
   *   `alternatives` (*type:* `list(GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative.t)`, *default:* `nil`) - May contain one or more recognition hypotheses. These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer.
   *   `channelTag` (*type:* `integer()`, *default:* `nil`) - For multi-channel audio, this is the channel number corresponding to the recognized result for the audio from that channel. For `audio_channel_count` = `N`, its output values can range from `1` to `N`.
   *   `isFinal` (*type:* `boolean()`, *default:* `nil`) - If `false`, this StreamingRecognitionResult represents an interim result that may change. If `true`, this is the final time the speech service will return this particular StreamingRecognitionResult, the recognizer will not return any further hypotheses for this portion of the transcript and corresponding audio.
@@ -32,27 +32,20 @@ defmodule GoogleApi.Speech.V2.Model.StreamingRecognitionResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"alternatives" => list(GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative.t) | nil,
-    
-      :"channelTag" => integer() | nil,
-    
-      :"isFinal" => boolean() | nil,
-    
-      :"languageCode" => String.t | nil,
-    
-      :"resultEndOffset" => String.t | nil,
-    
-      :"stability" => number() | nil,
-    
-  }
-  
-  field(:"alternatives", as: GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative, type: :list)
-  field(:"channelTag")
-  field(:"isFinal")
-  field(:"languageCode")
-  field(:"resultEndOffset")
-  field(:"stability")
+          :alternatives => list(GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative.t()) | nil,
+          :channelTag => integer() | nil,
+          :isFinal => boolean() | nil,
+          :languageCode => String.t() | nil,
+          :resultEndOffset => String.t() | nil,
+          :stability => number() | nil
+        }
+
+  field(:alternatives, as: GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative, type: :list)
+  field(:channelTag)
+  field(:isFinal)
+  field(:languageCode)
+  field(:resultEndOffset)
+  field(:stability)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.StreamingRecognitionResult do

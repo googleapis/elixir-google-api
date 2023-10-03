@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.OperationMetadata do
   Represents the metadata of a long-running operation.
 
   ## Attributes
-  
+
   *   `batchRecognizeMetadata` (*type:* `GoogleApi.Speech.V2.Model.BatchRecognizeMetadata.t`, *default:* `nil`) - Metadata specific to the BatchRecognize method.
   *   `batchRecognizeRequest` (*type:* `GoogleApi.Speech.V2.Model.BatchRecognizeRequest.t`, *default:* `nil`) - The BatchRecognizeRequest that spawned the Operation.
   *   `createCustomClassRequest` (*type:* `GoogleApi.Speech.V2.Model.CreateCustomClassRequest.t`, *default:* `nil`) - The CreateCustomClassRequest that spawned the Operation.
@@ -48,75 +48,58 @@ defmodule GoogleApi.Speech.V2.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"batchRecognizeMetadata" => GoogleApi.Speech.V2.Model.BatchRecognizeMetadata.t | nil,
-    
-      :"batchRecognizeRequest" => GoogleApi.Speech.V2.Model.BatchRecognizeRequest.t | nil,
-    
-      :"createCustomClassRequest" => GoogleApi.Speech.V2.Model.CreateCustomClassRequest.t | nil,
-    
-      :"createPhraseSetRequest" => GoogleApi.Speech.V2.Model.CreatePhraseSetRequest.t | nil,
-    
-      :"createRecognizerRequest" => GoogleApi.Speech.V2.Model.CreateRecognizerRequest.t | nil,
-    
-      :"createTime" => DateTime.t | nil,
-    
-      :"deleteCustomClassRequest" => GoogleApi.Speech.V2.Model.DeleteCustomClassRequest.t | nil,
-    
-      :"deletePhraseSetRequest" => GoogleApi.Speech.V2.Model.DeletePhraseSetRequest.t | nil,
-    
-      :"deleteRecognizerRequest" => GoogleApi.Speech.V2.Model.DeleteRecognizerRequest.t | nil,
-    
-      :"kmsKeyName" => String.t | nil,
-    
-      :"kmsKeyVersionName" => String.t | nil,
-    
-      :"method" => String.t | nil,
-    
-      :"progressPercent" => integer() | nil,
-    
-      :"resource" => String.t | nil,
-    
-      :"undeleteCustomClassRequest" => GoogleApi.Speech.V2.Model.UndeleteCustomClassRequest.t | nil,
-    
-      :"undeletePhraseSetRequest" => GoogleApi.Speech.V2.Model.UndeletePhraseSetRequest.t | nil,
-    
-      :"undeleteRecognizerRequest" => GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest.t | nil,
-    
-      :"updateConfigRequest" => GoogleApi.Speech.V2.Model.UpdateConfigRequest.t | nil,
-    
-      :"updateCustomClassRequest" => GoogleApi.Speech.V2.Model.UpdateCustomClassRequest.t | nil,
-    
-      :"updatePhraseSetRequest" => GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest.t | nil,
-    
-      :"updateRecognizerRequest" => GoogleApi.Speech.V2.Model.UpdateRecognizerRequest.t | nil,
-    
-      :"updateTime" => DateTime.t | nil,
-    
-  }
-  
-  field(:"batchRecognizeMetadata", as: GoogleApi.Speech.V2.Model.BatchRecognizeMetadata)
-  field(:"batchRecognizeRequest", as: GoogleApi.Speech.V2.Model.BatchRecognizeRequest)
-  field(:"createCustomClassRequest", as: GoogleApi.Speech.V2.Model.CreateCustomClassRequest)
-  field(:"createPhraseSetRequest", as: GoogleApi.Speech.V2.Model.CreatePhraseSetRequest)
-  field(:"createRecognizerRequest", as: GoogleApi.Speech.V2.Model.CreateRecognizerRequest)
-  field(:"createTime", as: DateTime)
-  field(:"deleteCustomClassRequest", as: GoogleApi.Speech.V2.Model.DeleteCustomClassRequest)
-  field(:"deletePhraseSetRequest", as: GoogleApi.Speech.V2.Model.DeletePhraseSetRequest)
-  field(:"deleteRecognizerRequest", as: GoogleApi.Speech.V2.Model.DeleteRecognizerRequest)
-  field(:"kmsKeyName")
-  field(:"kmsKeyVersionName")
-  field(:"method")
-  field(:"progressPercent")
-  field(:"resource")
-  field(:"undeleteCustomClassRequest", as: GoogleApi.Speech.V2.Model.UndeleteCustomClassRequest)
-  field(:"undeletePhraseSetRequest", as: GoogleApi.Speech.V2.Model.UndeletePhraseSetRequest)
-  field(:"undeleteRecognizerRequest", as: GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest)
-  field(:"updateConfigRequest", as: GoogleApi.Speech.V2.Model.UpdateConfigRequest)
-  field(:"updateCustomClassRequest", as: GoogleApi.Speech.V2.Model.UpdateCustomClassRequest)
-  field(:"updatePhraseSetRequest", as: GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest)
-  field(:"updateRecognizerRequest", as: GoogleApi.Speech.V2.Model.UpdateRecognizerRequest)
-  field(:"updateTime", as: DateTime)
+          :batchRecognizeMetadata => GoogleApi.Speech.V2.Model.BatchRecognizeMetadata.t() | nil,
+          :batchRecognizeRequest => GoogleApi.Speech.V2.Model.BatchRecognizeRequest.t() | nil,
+          :createCustomClassRequest =>
+            GoogleApi.Speech.V2.Model.CreateCustomClassRequest.t() | nil,
+          :createPhraseSetRequest => GoogleApi.Speech.V2.Model.CreatePhraseSetRequest.t() | nil,
+          :createRecognizerRequest => GoogleApi.Speech.V2.Model.CreateRecognizerRequest.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deleteCustomClassRequest =>
+            GoogleApi.Speech.V2.Model.DeleteCustomClassRequest.t() | nil,
+          :deletePhraseSetRequest => GoogleApi.Speech.V2.Model.DeletePhraseSetRequest.t() | nil,
+          :deleteRecognizerRequest => GoogleApi.Speech.V2.Model.DeleteRecognizerRequest.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :kmsKeyVersionName => String.t() | nil,
+          :method => String.t() | nil,
+          :progressPercent => integer() | nil,
+          :resource => String.t() | nil,
+          :undeleteCustomClassRequest =>
+            GoogleApi.Speech.V2.Model.UndeleteCustomClassRequest.t() | nil,
+          :undeletePhraseSetRequest =>
+            GoogleApi.Speech.V2.Model.UndeletePhraseSetRequest.t() | nil,
+          :undeleteRecognizerRequest =>
+            GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest.t() | nil,
+          :updateConfigRequest => GoogleApi.Speech.V2.Model.UpdateConfigRequest.t() | nil,
+          :updateCustomClassRequest =>
+            GoogleApi.Speech.V2.Model.UpdateCustomClassRequest.t() | nil,
+          :updatePhraseSetRequest => GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest.t() | nil,
+          :updateRecognizerRequest => GoogleApi.Speech.V2.Model.UpdateRecognizerRequest.t() | nil,
+          :updateTime => DateTime.t() | nil
+        }
+
+  field(:batchRecognizeMetadata, as: GoogleApi.Speech.V2.Model.BatchRecognizeMetadata)
+  field(:batchRecognizeRequest, as: GoogleApi.Speech.V2.Model.BatchRecognizeRequest)
+  field(:createCustomClassRequest, as: GoogleApi.Speech.V2.Model.CreateCustomClassRequest)
+  field(:createPhraseSetRequest, as: GoogleApi.Speech.V2.Model.CreatePhraseSetRequest)
+  field(:createRecognizerRequest, as: GoogleApi.Speech.V2.Model.CreateRecognizerRequest)
+  field(:createTime, as: DateTime)
+  field(:deleteCustomClassRequest, as: GoogleApi.Speech.V2.Model.DeleteCustomClassRequest)
+  field(:deletePhraseSetRequest, as: GoogleApi.Speech.V2.Model.DeletePhraseSetRequest)
+  field(:deleteRecognizerRequest, as: GoogleApi.Speech.V2.Model.DeleteRecognizerRequest)
+  field(:kmsKeyName)
+  field(:kmsKeyVersionName)
+  field(:method)
+  field(:progressPercent)
+  field(:resource)
+  field(:undeleteCustomClassRequest, as: GoogleApi.Speech.V2.Model.UndeleteCustomClassRequest)
+  field(:undeletePhraseSetRequest, as: GoogleApi.Speech.V2.Model.UndeletePhraseSetRequest)
+  field(:undeleteRecognizerRequest, as: GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest)
+  field(:updateConfigRequest, as: GoogleApi.Speech.V2.Model.UpdateConfigRequest)
+  field(:updateCustomClassRequest, as: GoogleApi.Speech.V2.Model.UpdateCustomClassRequest)
+  field(:updatePhraseSetRequest, as: GoogleApi.Speech.V2.Model.UpdatePhraseSetRequest)
+  field(:updateRecognizerRequest, as: GoogleApi.Speech.V2.Model.UpdateRecognizerRequest)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.OperationMetadata do

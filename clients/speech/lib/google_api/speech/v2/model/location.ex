@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.Location do
   A resource that represents a Google Cloud location.
 
   ## Attributes
-  
+
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The friendly name for this location, typically a nearby city name. For example, "Tokyo".
   *   `labels` (*type:* `map()`, *default:* `nil`) - Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"}
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The canonical id for this location. For example: `"us-east1"`.
@@ -31,24 +31,18 @@ defmodule GoogleApi.Speech.V2.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"displayName" => String.t | nil,
-    
-      :"labels" => map() | nil,
-    
-      :"locationId" => String.t | nil,
-    
-      :"metadata" => map() | nil,
-    
-      :"name" => String.t | nil,
-    
-  }
-  
-  field(:"displayName")
-  field(:"labels", type: :map)
-  field(:"locationId")
-  field(:"metadata", type: :map)
-  field(:"name")
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :locationId => String.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil
+        }
+
+  field(:displayName)
+  field(:labels, type: :map)
+  field(:locationId)
+  field(:metadata, type: :map)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.Location do

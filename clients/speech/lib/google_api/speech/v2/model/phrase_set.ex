@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.PhraseSet do
   PhraseSet for biasing in speech recognition. A PhraseSet is used to provide "hints" to the speech recognizer to favor specific words and phrases in the results.
 
   ## Attributes
-  
+
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Allows users to store small amounts of arbitrary data. Both the key and the value must be 63 characters or less each. At most 100 annotations.
   *   `boost` (*type:* `number()`, *default:* `nil`) - Hint Boost. Positive value will increase the probability that a specific phrase will be recognized over other similar sounding phrases. The higher the boost, the higher the chance of false positive recognition as well. Valid `boost` values are between 0 (exclusive) and 20. We recommend using a binary search approach to finding the optimal value for your use case as well as adding phrases both with and without boost to your requests.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time.
@@ -41,54 +41,38 @@ defmodule GoogleApi.Speech.V2.Model.PhraseSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"annotations" => map() | nil,
-    
-      :"boost" => number() | nil,
-    
-      :"createTime" => DateTime.t | nil,
-    
-      :"deleteTime" => DateTime.t | nil,
-    
-      :"displayName" => String.t | nil,
-    
-      :"etag" => String.t | nil,
-    
-      :"expireTime" => DateTime.t | nil,
-    
-      :"kmsKeyName" => String.t | nil,
-    
-      :"kmsKeyVersionName" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"phrases" => list(GoogleApi.Speech.V2.Model.Phrase.t) | nil,
-    
-      :"reconciling" => boolean() | nil,
-    
-      :"state" => String.t | nil,
-    
-      :"uid" => String.t | nil,
-    
-      :"updateTime" => DateTime.t | nil,
-    
-  }
-  
-  field(:"annotations", type: :map)
-  field(:"boost")
-  field(:"createTime", as: DateTime)
-  field(:"deleteTime", as: DateTime)
-  field(:"displayName")
-  field(:"etag")
-  field(:"expireTime", as: DateTime)
-  field(:"kmsKeyName")
-  field(:"kmsKeyVersionName")
-  field(:"name")
-  field(:"phrases", as: GoogleApi.Speech.V2.Model.Phrase, type: :list)
-  field(:"reconciling")
-  field(:"state")
-  field(:"uid")
-  field(:"updateTime", as: DateTime)
+          :annotations => map() | nil,
+          :boost => number() | nil,
+          :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :kmsKeyVersionName => String.t() | nil,
+          :name => String.t() | nil,
+          :phrases => list(GoogleApi.Speech.V2.Model.Phrase.t()) | nil,
+          :reconciling => boolean() | nil,
+          :state => String.t() | nil,
+          :uid => String.t() | nil,
+          :updateTime => DateTime.t() | nil
+        }
+
+  field(:annotations, type: :map)
+  field(:boost)
+  field(:createTime, as: DateTime)
+  field(:deleteTime, as: DateTime)
+  field(:displayName)
+  field(:etag)
+  field(:expireTime, as: DateTime)
+  field(:kmsKeyName)
+  field(:kmsKeyVersionName)
+  field(:name)
+  field(:phrases, as: GoogleApi.Speech.V2.Model.Phrase, type: :list)
+  field(:reconciling)
+  field(:state)
+  field(:uid)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.PhraseSet do

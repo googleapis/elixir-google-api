@@ -20,19 +20,18 @@ defmodule GoogleApi.Speech.V2.Model.ModelMetadata do
   The metadata about the models in a given region for a specific locale. Currently this is just the features of the model
 
   ## Attributes
-  
+
   *   `modelFeatures` (*type:* `%{optional(String.t) => GoogleApi.Speech.V2.Model.ModelFeatures.t}`, *default:* `nil`) - Map of the model name -> features of that model
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"modelFeatures" => %{optional(String.t) => GoogleApi.Speech.V2.Model.ModelFeatures.t} | nil,
-    
-  }
-  
-  field(:"modelFeatures", as: GoogleApi.Speech.V2.Model.ModelFeatures, type: :map)
+          :modelFeatures =>
+            %{optional(String.t()) => GoogleApi.Speech.V2.Model.ModelFeatures.t()} | nil
+        }
+
+  field(:modelFeatures, as: GoogleApi.Speech.V2.Model.ModelFeatures, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ModelMetadata do

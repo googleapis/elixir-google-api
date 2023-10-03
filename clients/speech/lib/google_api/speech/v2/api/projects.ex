@@ -25,7 +25,6 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
 
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
-  
   @doc """
   Gets information about a location.
 
@@ -52,43 +51,32 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Location.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  @spec speech_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Speech.V2.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def speech_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
-    
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -96,7 +84,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Location{}])
   end
-  
+
   @doc """
   Lists information about the supported locations for this service.
 
@@ -126,49 +114,35 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.ListLocationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_list(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.ListLocationsResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  @spec speech_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Speech.V2.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def speech_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
-    
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"filter" => :"query",
-    
-      :"pageSize" => :"query",
-    
-      :"pageToken" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}/locations", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -176,7 +150,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.ListLocationsResponse{}])
   end
-  
+
   @doc """
   Returns the requested Config.
 
@@ -203,43 +177,32 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Config{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_config_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Config.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  @spec speech_projects_locations_config_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Speech.V2.Model.Config.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def speech_projects_locations_config_get(connection, name, optional_params \\ [], opts \\ []) do
-    
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -247,7 +210,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Config{}])
   end
-  
+
   @doc """
   Updates the Config.
 
@@ -276,47 +239,39 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Config{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_config_update(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Config.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  @spec speech_projects_locations_config_update(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Config.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def speech_projects_locations_config_update(connection, name, optional_params \\ [], opts \\ []) do
-    
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"updateMask" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"patch")
+      |> Request.method(:patch)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -324,7 +279,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Config{}])
   end
-  
+
   @doc """
   Creates a CustomClass.
 
@@ -354,49 +309,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_create(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_create(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"customClassId" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :customClassId => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+parent}/customClasses", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -404,7 +355,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Deletes the CustomClass.
 
@@ -434,49 +385,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_delete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_delete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"allowMissing" => :"query",
-    
-      :"etag" => :"query",
-    
-      :"validateOnly" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :allowMissing => :query,
+      :etag => :query,
+      :validateOnly => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"delete")
+      |> Request.method(:delete)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -484,7 +431,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Returns the requested CustomClass.
 
@@ -511,43 +458,42 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.CustomClass{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.CustomClass.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_get(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.CustomClass.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -555,7 +501,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.CustomClass{}])
   end
-  
+
   @doc """
   Lists CustomClasses.
 
@@ -585,49 +531,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.ListCustomClassesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_list(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.ListCustomClassesResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_list(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.ListCustomClassesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"pageSize" => :"query",
-    
-      :"pageToken" => :"query",
-    
-      :"showDeleted" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :showDeleted => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+parent}/customClasses", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -635,7 +577,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.ListCustomClassesResponse{}])
   end
-  
+
   @doc """
   Updates the CustomClass.
 
@@ -665,49 +607,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_patch(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_patch(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"updateMask" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"patch")
+      |> Request.method(:patch)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -715,7 +653,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Undeletes the CustomClass.
 
@@ -743,45 +681,43 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_custom_classes_undelete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_custom_classes_undelete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_custom_classes_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_custom_classes_undelete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+name}:undelete", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -789,7 +725,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
@@ -816,43 +752,42 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_operations_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_operations_get(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_operations_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -860,7 +795,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
@@ -890,49 +825,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.ListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_operations_list(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.ListOperationsResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_operations_list(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_operations_list(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"filter" => :"query",
-    
-      :"pageSize" => :"query",
-    
-      :"pageToken" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}/operations", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -940,7 +871,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.ListOperationsResponse{}])
   end
-  
+
   @doc """
   Creates a PhraseSet.
 
@@ -970,49 +901,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_create(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_create(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"phraseSetId" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :phraseSetId => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+parent}/phraseSets", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1020,7 +947,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Deletes the PhraseSet.
 
@@ -1050,49 +977,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_delete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_delete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"allowMissing" => :"query",
-    
-      :"etag" => :"query",
-    
-      :"validateOnly" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :allowMissing => :query,
+      :etag => :query,
+      :validateOnly => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"delete")
+      |> Request.method(:delete)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1100,7 +1023,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Returns the requested PhraseSet.
 
@@ -1127,43 +1050,42 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.PhraseSet{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.PhraseSet.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_get(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.PhraseSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1171,7 +1093,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.PhraseSet{}])
   end
-  
+
   @doc """
   Lists PhraseSets.
 
@@ -1201,49 +1123,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.ListPhraseSetsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_list(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.ListPhraseSetsResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_list(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.ListPhraseSetsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"pageSize" => :"query",
-    
-      :"pageToken" => :"query",
-    
-      :"showDeleted" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :showDeleted => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+parent}/phraseSets", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1251,7 +1169,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.ListPhraseSetsResponse{}])
   end
-  
+
   @doc """
   Updates the PhraseSet.
 
@@ -1281,49 +1199,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_patch(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_patch(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"updateMask" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"patch")
+      |> Request.method(:patch)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1331,7 +1245,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Undeletes the PhraseSet.
 
@@ -1359,45 +1273,43 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_phrase_sets_undelete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_phrase_sets_undelete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_phrase_sets_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_phrase_sets_undelete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+name}:undelete", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1405,7 +1317,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Performs batch asynchronous speech recognition: send a request with N audio files and receive a long running operation that can be polled to see when the transcriptions are finished.
 
@@ -1433,45 +1345,43 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_batch_recognize(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_batch_recognize(connection, recognizer, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_batch_recognize(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_batch_recognize(
+        connection,
+        recognizer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+recognizer}:batchRecognize", %{
-        "recognizer" => URI.encode(recognizer, &URI.char_unreserved?/1),
+        "recognizer" => URI.encode(recognizer, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1479,7 +1389,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Creates a Recognizer.
 
@@ -1509,49 +1419,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_create(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_create(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"recognizerId" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :recognizerId => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+parent}/recognizers", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1559,7 +1465,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Deletes the Recognizer.
 
@@ -1589,49 +1495,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_delete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_delete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"allowMissing" => :"query",
-    
-      :"etag" => :"query",
-    
-      :"validateOnly" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :allowMissing => :query,
+      :etag => :query,
+      :validateOnly => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"delete")
+      |> Request.method(:delete)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1639,7 +1541,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Returns the requested Recognizer. Fails with NOT_FOUND if the requested Recognizer doesn't exist.
 
@@ -1666,43 +1568,42 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Recognizer{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Recognizer.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_get(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Recognizer.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1710,7 +1611,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Recognizer{}])
   end
-  
+
   @doc """
   Lists Recognizers.
 
@@ -1740,49 +1641,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.ListRecognizersResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_list(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.ListRecognizersResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_list(connection, parent, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.ListRecognizersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"pageSize" => :"query",
-    
-      :"pageToken" => :"query",
-    
-      :"showDeleted" => :"query",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :showDeleted => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:"get")
+      |> Request.method(:get)
       |> Request.url("/v2/{+parent}/recognizers", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1790,7 +1687,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.ListRecognizersResponse{}])
   end
-  
+
   @doc """
   Updates the Recognizer.
 
@@ -1820,49 +1717,45 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_patch(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_patch(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"updateMask" => :"query",
-    
-      :"validateOnly" => :"query",
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :validateOnly => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"patch")
+      |> Request.method(:patch)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1870,7 +1763,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
+
   @doc """
   Performs synchronous Speech recognition: receive results after all audio has been sent and processed.
 
@@ -1898,45 +1791,43 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.RecognizeResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_recognize(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.RecognizeResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_recognize(connection, recognizer, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_recognize(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.RecognizeResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_recognize(
+        connection,
+        recognizer,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+recognizer}:recognize", %{
-        "recognizer" => URI.encode(recognizer, &URI.char_unreserved?/1),
+        "recognizer" => URI.encode(recognizer, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1944,7 +1835,7 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.RecognizeResponse{}])
   end
-  
+
   @doc """
   Undeletes the Recognizer.
 
@@ -1972,45 +1863,43 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
   *   `{:ok, %GoogleApi.Speech.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_projects_locations_recognizers_undelete(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V2.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
-  def speech_projects_locations_recognizers_undelete(connection, name, optional_params \\ [], opts \\ []) do
-    
+  @spec speech_projects_locations_recognizers_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Speech.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def speech_projects_locations_recognizers_undelete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
-    
-      :"$.xgafv" => :"query",
-    
-      :"access_token" => :"query",
-    
-      :"alt" => :"query",
-    
-      :"callback" => :"query",
-    
-      :"fields" => :"query",
-    
-      :"key" => :"query",
-    
-      :"oauth_token" => :"query",
-    
-      :"prettyPrint" => :"query",
-    
-      :"quotaUser" => :"query",
-    
-      :"uploadType" => :"query",
-    
-      :"upload_protocol" => :"query",
-    
-    
-      :"body" => :"body",
-    
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:"post")
+      |> Request.method(:post)
       |> Request.url("/v2/{+name}:undelete", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
-      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2018,5 +1907,4 @@ defmodule GoogleApi.Speech.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V2.Model.Operation{}])
   end
-  
 end

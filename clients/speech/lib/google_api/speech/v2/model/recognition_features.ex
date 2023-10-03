@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionFeatures do
   Available recognition features.
 
   ## Attributes
-  
+
   *   `diarizationConfig` (*type:* `GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig.t`, *default:* `nil`) - Configuration to enable speaker diarization and set additional parameters to make diarization better suited for your application. When this is enabled, we send all the words from the beginning of the audio for the top alternative in every consecutive STREAMING responses. This is done in order to improve our speaker tags as our models learn to identify the speakers in the conversation over time. For non-streaming requests, the diarization results will be provided only in the top alternative of the FINAL SpeechRecognitionResult.
   *   `enableAutomaticPunctuation` (*type:* `boolean()`, *default:* `nil`) - If `true`, adds punctuation to recognition result hypotheses. This feature is only available in select languages. The default `false` value does not add punctuation to result hypotheses.
   *   `enableSpokenEmojis` (*type:* `boolean()`, *default:* `nil`) - The spoken emoji behavior for the call. If `true`, adds spoken emoji formatting for the request. This will replace spoken emojis with the corresponding Unicode symbols in the final transcript. If `false`, spoken emojis are not replaced.
@@ -35,36 +35,26 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionFeatures do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"diarizationConfig" => GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig.t | nil,
-    
-      :"enableAutomaticPunctuation" => boolean() | nil,
-    
-      :"enableSpokenEmojis" => boolean() | nil,
-    
-      :"enableSpokenPunctuation" => boolean() | nil,
-    
-      :"enableWordConfidence" => boolean() | nil,
-    
-      :"enableWordTimeOffsets" => boolean() | nil,
-    
-      :"maxAlternatives" => integer() | nil,
-    
-      :"multiChannelMode" => String.t | nil,
-    
-      :"profanityFilter" => boolean() | nil,
-    
-  }
-  
-  field(:"diarizationConfig", as: GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig)
-  field(:"enableAutomaticPunctuation")
-  field(:"enableSpokenEmojis")
-  field(:"enableSpokenPunctuation")
-  field(:"enableWordConfidence")
-  field(:"enableWordTimeOffsets")
-  field(:"maxAlternatives")
-  field(:"multiChannelMode")
-  field(:"profanityFilter")
+          :diarizationConfig => GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig.t() | nil,
+          :enableAutomaticPunctuation => boolean() | nil,
+          :enableSpokenEmojis => boolean() | nil,
+          :enableSpokenPunctuation => boolean() | nil,
+          :enableWordConfidence => boolean() | nil,
+          :enableWordTimeOffsets => boolean() | nil,
+          :maxAlternatives => integer() | nil,
+          :multiChannelMode => String.t() | nil,
+          :profanityFilter => boolean() | nil
+        }
+
+  field(:diarizationConfig, as: GoogleApi.Speech.V2.Model.SpeakerDiarizationConfig)
+  field(:enableAutomaticPunctuation)
+  field(:enableSpokenEmojis)
+  field(:enableSpokenPunctuation)
+  field(:enableWordConfidence)
+  field(:enableWordTimeOffsets)
+  field(:maxAlternatives)
+  field(:multiChannelMode)
+  field(:profanityFilter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognitionFeatures do

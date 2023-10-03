@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig do
   Provides information to the recognizer that specifies how to process the request.
 
   ## Attributes
-  
+
   *   `adaptation` (*type:* `GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation.t`, *default:* `nil`) - Speech adaptation configuration improves the accuracy of speech recognition. For more information, see the [speech adaptation](https://cloud.google.com/speech-to-text/docs/adaptation) documentation. When speech adaptation is set it supersedes the `speech_contexts` field.
   *   `alternativeLanguageCodes` (*type:* `list(String.t)`, *default:* `nil`) - A list of up to 3 additional [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags, listing possible alternative languages of the supplied audio. See [Language Support](https://cloud.google.com/speech-to-text/docs/languages) for a list of the currently supported language codes. If alternative languages are listed, recognition result will contain recognition in the most likely language detected including the main language_code. The recognition result will include the language tag of the language detected in the audio. Note: This feature is only supported for Voice Command and Voice Search use cases and performance may vary for other use cases (e.g., phone call transcription).
   *   `audioChannelCount` (*type:* `integer()`, *default:* `nil`) - The number of channels in the input audio data. ONLY set this for MULTI-CHANNEL recognition. Valid values for LINEAR16, OGG_OPUS and FLAC are `1`-`8`. Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`. If `0` or omitted, defaults to one channel (mono). Note: We only recognize the first channel by default. To perform independent recognition on each channel set `enable_separate_recognition_per_channel` to 'true'.
@@ -48,75 +48,54 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"adaptation" => GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation.t | nil,
-    
-      :"alternativeLanguageCodes" => list(String.t) | nil,
-    
-      :"audioChannelCount" => integer() | nil,
-    
-      :"diarizationConfig" => GoogleApi.Speech.V1p1beta1.Model.SpeakerDiarizationConfig.t | nil,
-    
-      :"diarizationSpeakerCount" => integer() | nil,
-    
-      :"enableAutomaticPunctuation" => boolean() | nil,
-    
-      :"enableSeparateRecognitionPerChannel" => boolean() | nil,
-    
-      :"enableSpeakerDiarization" => boolean() | nil,
-    
-      :"enableSpokenEmojis" => boolean() | nil,
-    
-      :"enableSpokenPunctuation" => boolean() | nil,
-    
-      :"enableWordConfidence" => boolean() | nil,
-    
-      :"enableWordTimeOffsets" => boolean() | nil,
-    
-      :"encoding" => String.t | nil,
-    
-      :"languageCode" => String.t | nil,
-    
-      :"maxAlternatives" => integer() | nil,
-    
-      :"metadata" => GoogleApi.Speech.V1p1beta1.Model.RecognitionMetadata.t | nil,
-    
-      :"model" => String.t | nil,
-    
-      :"profanityFilter" => boolean() | nil,
-    
-      :"sampleRateHertz" => integer() | nil,
-    
-      :"speechContexts" => list(GoogleApi.Speech.V1p1beta1.Model.SpeechContext.t) | nil,
-    
-      :"transcriptNormalization" => GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization.t | nil,
-    
-      :"useEnhanced" => boolean() | nil,
-    
-  }
-  
-  field(:"adaptation", as: GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation)
-  field(:"alternativeLanguageCodes", type: :list)
-  field(:"audioChannelCount")
-  field(:"diarizationConfig", as: GoogleApi.Speech.V1p1beta1.Model.SpeakerDiarizationConfig)
-  field(:"diarizationSpeakerCount")
-  field(:"enableAutomaticPunctuation")
-  field(:"enableSeparateRecognitionPerChannel")
-  field(:"enableSpeakerDiarization")
-  field(:"enableSpokenEmojis")
-  field(:"enableSpokenPunctuation")
-  field(:"enableWordConfidence")
-  field(:"enableWordTimeOffsets")
-  field(:"encoding")
-  field(:"languageCode")
-  field(:"maxAlternatives")
-  field(:"metadata", as: GoogleApi.Speech.V1p1beta1.Model.RecognitionMetadata)
-  field(:"model")
-  field(:"profanityFilter")
-  field(:"sampleRateHertz")
-  field(:"speechContexts", as: GoogleApi.Speech.V1p1beta1.Model.SpeechContext, type: :list)
-  field(:"transcriptNormalization", as: GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization)
-  field(:"useEnhanced")
+          :adaptation => GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation.t() | nil,
+          :alternativeLanguageCodes => list(String.t()) | nil,
+          :audioChannelCount => integer() | nil,
+          :diarizationConfig =>
+            GoogleApi.Speech.V1p1beta1.Model.SpeakerDiarizationConfig.t() | nil,
+          :diarizationSpeakerCount => integer() | nil,
+          :enableAutomaticPunctuation => boolean() | nil,
+          :enableSeparateRecognitionPerChannel => boolean() | nil,
+          :enableSpeakerDiarization => boolean() | nil,
+          :enableSpokenEmojis => boolean() | nil,
+          :enableSpokenPunctuation => boolean() | nil,
+          :enableWordConfidence => boolean() | nil,
+          :enableWordTimeOffsets => boolean() | nil,
+          :encoding => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :maxAlternatives => integer() | nil,
+          :metadata => GoogleApi.Speech.V1p1beta1.Model.RecognitionMetadata.t() | nil,
+          :model => String.t() | nil,
+          :profanityFilter => boolean() | nil,
+          :sampleRateHertz => integer() | nil,
+          :speechContexts => list(GoogleApi.Speech.V1p1beta1.Model.SpeechContext.t()) | nil,
+          :transcriptNormalization =>
+            GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization.t() | nil,
+          :useEnhanced => boolean() | nil
+        }
+
+  field(:adaptation, as: GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation)
+  field(:alternativeLanguageCodes, type: :list)
+  field(:audioChannelCount)
+  field(:diarizationConfig, as: GoogleApi.Speech.V1p1beta1.Model.SpeakerDiarizationConfig)
+  field(:diarizationSpeakerCount)
+  field(:enableAutomaticPunctuation)
+  field(:enableSeparateRecognitionPerChannel)
+  field(:enableSpeakerDiarization)
+  field(:enableSpokenEmojis)
+  field(:enableSpokenPunctuation)
+  field(:enableWordConfidence)
+  field(:enableWordTimeOffsets)
+  field(:encoding)
+  field(:languageCode)
+  field(:maxAlternatives)
+  field(:metadata, as: GoogleApi.Speech.V1p1beta1.Model.RecognitionMetadata)
+  field(:model)
+  field(:profanityFilter)
+  field(:sampleRateHertz)
+  field(:speechContexts, as: GoogleApi.Speech.V1p1beta1.Model.SpeechContext, type: :list)
+  field(:transcriptNormalization, as: GoogleApi.Speech.V1p1beta1.Model.TranscriptNormalization)
+  field(:useEnhanced)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig do

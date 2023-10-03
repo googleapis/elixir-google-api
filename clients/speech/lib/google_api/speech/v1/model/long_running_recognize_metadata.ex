@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
   Describes the progress of a long-running `LongRunningRecognize` call. It is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
-  
+
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time of the most recent processing update.
   *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Approximate percentage of audio processed thus far. Guaranteed to be 100 when the audio is fully processed and the results are available.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request was received.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"lastUpdateTime" => DateTime.t | nil,
-    
-      :"progressPercent" => integer() | nil,
-    
-      :"startTime" => DateTime.t | nil,
-    
-      :"uri" => String.t | nil,
-    
-  }
-  
-  field(:"lastUpdateTime", as: DateTime)
-  field(:"progressPercent")
-  field(:"startTime", as: DateTime)
-  field(:"uri")
+          :lastUpdateTime => DateTime.t() | nil,
+          :progressPercent => integer() | nil,
+          :startTime => DateTime.t() | nil,
+          :uri => String.t() | nil
+        }
+
+  field(:lastUpdateTime, as: DateTime)
+  field(:progressPercent)
+  field(:startTime, as: DateTime)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do

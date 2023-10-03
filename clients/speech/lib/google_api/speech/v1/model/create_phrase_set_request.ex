@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.CreatePhraseSetRequest do
   Message sent by the client for the `CreatePhraseSet` method.
 
   ## Attributes
-  
+
   *   `phraseSet` (*type:* `GoogleApi.Speech.V1.Model.PhraseSet.t`, *default:* `nil`) - Required. The phrase set to create.
   *   `phraseSetId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the phrase set, which will become the final component of the phrase set's resource name. This value should restrict to letters, numbers, and hyphens, with the first character a letter, the last a letter or a number, and be 4-63 characters.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V1.Model.CreatePhraseSetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"phraseSet" => GoogleApi.Speech.V1.Model.PhraseSet.t | nil,
-    
-      :"phraseSetId" => String.t | nil,
-    
-  }
-  
-  field(:"phraseSet", as: GoogleApi.Speech.V1.Model.PhraseSet)
-  field(:"phraseSetId")
+          :phraseSet => GoogleApi.Speech.V1.Model.PhraseSet.t() | nil,
+          :phraseSetId => String.t() | nil
+        }
+
+  field(:phraseSet, as: GoogleApi.Speech.V1.Model.PhraseSet)
+  field(:phraseSetId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.CreatePhraseSetRequest do

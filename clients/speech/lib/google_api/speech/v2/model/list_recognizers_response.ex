@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.ListRecognizersResponse do
   Response message for the ListRecognizers method.
 
   ## Attributes
-  
+
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages. This token expires after 72 hours.
   *   `recognizers` (*type:* `list(GoogleApi.Speech.V2.Model.Recognizer.t)`, *default:* `nil`) - The list of requested Recognizers.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.ListRecognizersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"nextPageToken" => String.t | nil,
-    
-      :"recognizers" => list(GoogleApi.Speech.V2.Model.Recognizer.t) | nil,
-    
-  }
-  
-  field(:"nextPageToken")
-  field(:"recognizers", as: GoogleApi.Speech.V2.Model.Recognizer, type: :list)
+          :nextPageToken => String.t() | nil,
+          :recognizers => list(GoogleApi.Speech.V2.Model.Recognizer.t()) | nil
+        }
+
+  field(:nextPageToken)
+  field(:recognizers, as: GoogleApi.Speech.V2.Model.Recognizer, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ListRecognizersResponse do

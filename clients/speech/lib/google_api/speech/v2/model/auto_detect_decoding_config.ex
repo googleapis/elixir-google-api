@@ -20,15 +20,12 @@ defmodule GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig do
   Automatically detected decoding parameters. Supported for the following encodings: * WAV_LINEAR16: 16-bit signed little-endian PCM samples in a WAV container. * WAV_MULAW: 8-bit companded mulaw samples in a WAV container. * WAV_ALAW: 8-bit companded alaw samples in a WAV container. * RFC4867_5_AMR: AMR frames with an rfc4867.5 header. * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header. * FLAC: FLAC frames in the "native FLAC" container format. * MP3: MPEG audio frames with optional (ignored) ID3 metadata. * OGG_OPUS: Opus audio frames in an Ogg container. * WEBM_OPUS: Opus audio frames in a WebM container.
 
   ## Attributes
-  
+
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-    
-  }
-  
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig do

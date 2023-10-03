@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.ExplicitDecodingConfig do
   Explicitly specified decoding parameters.
 
   ## Attributes
-  
+
   *   `audioChannelCount` (*type:* `integer()`, *default:* `nil`) - Number of channels present in the audio data sent for recognition. Supported for the following encodings: * LINEAR16: Headerless 16-bit signed little-endian PCM samples. * MULAW: Headerless 8-bit companded mulaw samples. * ALAW: Headerless 8-bit companded alaw samples. The maximum allowed value is 8.
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Required. Encoding of the audio data sent for recognition.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Sample rate in Hertz of the audio data sent for recognition. Valid values are: 8000-48000. 16000 is optimal. For best results, set the sampling rate of the audio source to 16000 Hz. If that's not possible, use the native sample rate of the audio source (instead of re-sampling). Supported for the following encodings: * LINEAR16: Headerless 16-bit signed little-endian PCM samples. * MULAW: Headerless 8-bit companded mulaw samples. * ALAW: Headerless 8-bit companded alaw samples.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.ExplicitDecodingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"audioChannelCount" => integer() | nil,
-    
-      :"encoding" => String.t | nil,
-    
-      :"sampleRateHertz" => integer() | nil,
-    
-  }
-  
-  field(:"audioChannelCount")
-  field(:"encoding")
-  field(:"sampleRateHertz")
+          :audioChannelCount => integer() | nil,
+          :encoding => String.t() | nil,
+          :sampleRateHertz => integer() | nil
+        }
+
+  field(:audioChannelCount)
+  field(:encoding)
+  field(:sampleRateHertz)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ExplicitDecodingConfig do

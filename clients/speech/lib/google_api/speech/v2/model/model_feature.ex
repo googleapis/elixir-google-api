@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.ModelFeature do
   Representes a singular feature of a model. If the feature is `recognizer`, the release_state of the feature represents the release_state of the model
 
   ## Attributes
-  
+
   *   `feature` (*type:* `String.t`, *default:* `nil`) - The name of the feature (Note: the feature can be `recognizer`)
   *   `releaseState` (*type:* `String.t`, *default:* `nil`) - The release state of the feature
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.ModelFeature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"feature" => String.t | nil,
-    
-      :"releaseState" => String.t | nil,
-    
-  }
-  
-  field(:"feature")
-  field(:"releaseState")
+          :feature => String.t() | nil,
+          :releaseState => String.t() | nil
+        }
+
+  field(:feature)
+  field(:releaseState)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ModelFeature do

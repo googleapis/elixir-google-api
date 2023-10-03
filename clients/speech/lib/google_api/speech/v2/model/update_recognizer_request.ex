@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.UpdateRecognizerRequest do
   Request message for the UpdateRecognizer method.
 
   ## Attributes
-  
+
   *   `recognizer` (*type:* `GoogleApi.Speech.V2.Model.Recognizer.t`, *default:* `nil`) - Required. The Recognizer to update. The Recognizer's `name` field is used to identify the Recognizer to update. Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The list of fields to update. If empty, all non-default valued fields are considered for update. Use `*` to update the entire Recognizer resource.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set, validate the request and preview the updated Recognizer, but do not actually update it.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.UpdateRecognizerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"recognizer" => GoogleApi.Speech.V2.Model.Recognizer.t | nil,
-    
-      :"updateMask" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"recognizer", as: GoogleApi.Speech.V2.Model.Recognizer)
-  field(:"updateMask")
-  field(:"validateOnly")
+          :recognizer => GoogleApi.Speech.V2.Model.Recognizer.t() | nil,
+          :updateMask => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:recognizer, as: GoogleApi.Speech.V2.Model.Recognizer)
+  field(:updateMask)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.UpdateRecognizerRequest do

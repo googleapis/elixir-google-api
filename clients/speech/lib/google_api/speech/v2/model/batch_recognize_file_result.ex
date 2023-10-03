@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeFileResult do
   Final results for a single file.
 
   ## Attributes
-  
+
   *   `error` (*type:* `GoogleApi.Speech.V2.Model.Status.t`, *default:* `nil`) - Error if one was encountered.
   *   `metadata` (*type:* `GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t`, *default:* `nil`) - 
   *   `transcript` (*type:* `GoogleApi.Speech.V2.Model.BatchRecognizeResults.t`, *default:* `nil`) - The transcript for the audio file. This is populated only when InlineOutputConfig is set in the RecognitionOutputConfig.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeFileResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"error" => GoogleApi.Speech.V2.Model.Status.t | nil,
-    
-      :"metadata" => GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t | nil,
-    
-      :"transcript" => GoogleApi.Speech.V2.Model.BatchRecognizeResults.t | nil,
-    
-      :"uri" => String.t | nil,
-    
-  }
-  
-  field(:"error", as: GoogleApi.Speech.V2.Model.Status)
-  field(:"metadata", as: GoogleApi.Speech.V2.Model.RecognitionResponseMetadata)
-  field(:"transcript", as: GoogleApi.Speech.V2.Model.BatchRecognizeResults)
-  field(:"uri")
+          :error => GoogleApi.Speech.V2.Model.Status.t() | nil,
+          :metadata => GoogleApi.Speech.V2.Model.RecognitionResponseMetadata.t() | nil,
+          :transcript => GoogleApi.Speech.V2.Model.BatchRecognizeResults.t() | nil,
+          :uri => String.t() | nil
+        }
+
+  field(:error, as: GoogleApi.Speech.V2.Model.Status)
+  field(:metadata, as: GoogleApi.Speech.V2.Model.RecognitionResponseMetadata)
+  field(:transcript, as: GoogleApi.Speech.V2.Model.BatchRecognizeResults)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.BatchRecognizeFileResult do

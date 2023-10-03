@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.Config do
   Message representing the config for the Speech-to-Text API. This includes an optional [KMS key](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which incoming data will be encrypted.
 
   ## Attributes
-  
+
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. An optional [KMS key name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) that if present, will be used to encrypt Speech-to-Text resources at-rest. Updating this key will not encrypt existing resources using this key; only new resources will be encrypted using this key. The expected format is `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the config resource. There is exactly one config resource per project per location. The expected format is `projects/{project}/locations/{location}/config`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this resource was modified.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.Config do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"kmsKeyName" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"updateTime" => DateTime.t | nil,
-    
-  }
-  
-  field(:"kmsKeyName")
-  field(:"name")
-  field(:"updateTime", as: DateTime)
+          :kmsKeyName => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
+        }
+
+  field(:kmsKeyName)
+  field(:name)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.Config do

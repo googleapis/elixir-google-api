@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.LocationsMetadata do
   Main metadata for the Locations API for STT V2. Currently this is just the metadata about locales, models, and features
 
   ## Attributes
-  
+
   *   `accessMetadata` (*type:* `GoogleApi.Speech.V2.Model.AccessMetadata.t`, *default:* `nil`) - Information about access metadata for the region and given project.
   *   `languages` (*type:* `GoogleApi.Speech.V2.Model.LanguageMetadata.t`, *default:* `nil`) - Information about available locales, models, and features represented in the hierarchical structure of locales -> models -> features
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.LocationsMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"accessMetadata" => GoogleApi.Speech.V2.Model.AccessMetadata.t | nil,
-    
-      :"languages" => GoogleApi.Speech.V2.Model.LanguageMetadata.t | nil,
-    
-  }
-  
-  field(:"accessMetadata", as: GoogleApi.Speech.V2.Model.AccessMetadata)
-  field(:"languages", as: GoogleApi.Speech.V2.Model.LanguageMetadata)
+          :accessMetadata => GoogleApi.Speech.V2.Model.AccessMetadata.t() | nil,
+          :languages => GoogleApi.Speech.V2.Model.LanguageMetadata.t() | nil
+        }
+
+  field(:accessMetadata, as: GoogleApi.Speech.V2.Model.AccessMetadata)
+  field(:languages, as: GoogleApi.Speech.V2.Model.LanguageMetadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.LocationsMetadata do

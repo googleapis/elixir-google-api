@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest do
   Request message for the UndeleteRecognizer method.
 
   ## Attributes
-  
+
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields. This may be sent on update, undelete, and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Recognizer to undelete. Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set, validate the request and preview the undeleted Recognizer, but do not actually undelete it.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"etag" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"etag")
-  field(:"name")
-  field(:"validateOnly")
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:etag)
+  field(:name)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.UndeleteRecognizerRequest do

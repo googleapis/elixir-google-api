@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeResponse do
   Response message for BatchRecognize that is packaged into a longrunning Operation.
 
   ## Attributes
-  
+
   *   `results` (*type:* `%{optional(String.t) => GoogleApi.Speech.V2.Model.BatchRecognizeFileResult.t}`, *default:* `nil`) - Map from filename to the final result for that file.
   *   `totalBilledDuration` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
@@ -28,15 +28,14 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"results" => %{optional(String.t) => GoogleApi.Speech.V2.Model.BatchRecognizeFileResult.t} | nil,
-    
-      :"totalBilledDuration" => String.t | nil,
-    
-  }
-  
-  field(:"results", as: GoogleApi.Speech.V2.Model.BatchRecognizeFileResult, type: :map)
-  field(:"totalBilledDuration")
+          :results =>
+            %{optional(String.t()) => GoogleApi.Speech.V2.Model.BatchRecognizeFileResult.t()}
+            | nil,
+          :totalBilledDuration => String.t() | nil
+        }
+
+  field(:results, as: GoogleApi.Speech.V2.Model.BatchRecognizeFileResult, type: :map)
+  field(:totalBilledDuration)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.BatchRecognizeResponse do

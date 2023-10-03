@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.UpdateConfigRequest do
   Request message for the UpdateConfig method.
 
   ## Attributes
-  
+
   *   `config` (*type:* `GoogleApi.Speech.V2.Model.Config.t`, *default:* `nil`) - Required. The config to update. The config's `name` field is used to identify the config to be updated. The expected format is `projects/{project}/locations/{location}/config`.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The list of fields to be updated.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.UpdateConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"config" => GoogleApi.Speech.V2.Model.Config.t | nil,
-    
-      :"updateMask" => String.t | nil,
-    
-  }
-  
-  field(:"config", as: GoogleApi.Speech.V2.Model.Config)
-  field(:"updateMask")
+          :config => GoogleApi.Speech.V2.Model.Config.t() | nil,
+          :updateMask => String.t() | nil
+        }
+
+  field(:config, as: GoogleApi.Speech.V2.Model.Config)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.UpdateConfigRequest do

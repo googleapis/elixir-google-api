@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionConfig do
   Provides information to the Recognizer that specifies how to process the recognition request.
 
   ## Attributes
-  
+
   *   `adaptation` (*type:* `GoogleApi.Speech.V2.Model.SpeechAdaptation.t`, *default:* `nil`) - Speech adaptation context that weights recognizer predictions for specific words and phrases.
   *   `autoDecodingConfig` (*type:* `GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig.t`, *default:* `nil`) - Automatically detect decoding parameters. Preferred for supported formats.
   *   `explicitDecodingConfig` (*type:* `GoogleApi.Speech.V2.Model.ExplicitDecodingConfig.t`, *default:* `nil`) - Explicitly specified decoding parameters. Required if using headerless PCM audio (linear16, mulaw, alaw).
@@ -32,27 +32,20 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"adaptation" => GoogleApi.Speech.V2.Model.SpeechAdaptation.t | nil,
-    
-      :"autoDecodingConfig" => GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig.t | nil,
-    
-      :"explicitDecodingConfig" => GoogleApi.Speech.V2.Model.ExplicitDecodingConfig.t | nil,
-    
-      :"features" => GoogleApi.Speech.V2.Model.RecognitionFeatures.t | nil,
-    
-      :"languageCodes" => list(String.t) | nil,
-    
-      :"model" => String.t | nil,
-    
-  }
-  
-  field(:"adaptation", as: GoogleApi.Speech.V2.Model.SpeechAdaptation)
-  field(:"autoDecodingConfig", as: GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig)
-  field(:"explicitDecodingConfig", as: GoogleApi.Speech.V2.Model.ExplicitDecodingConfig)
-  field(:"features", as: GoogleApi.Speech.V2.Model.RecognitionFeatures)
-  field(:"languageCodes", type: :list)
-  field(:"model")
+          :adaptation => GoogleApi.Speech.V2.Model.SpeechAdaptation.t() | nil,
+          :autoDecodingConfig => GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig.t() | nil,
+          :explicitDecodingConfig => GoogleApi.Speech.V2.Model.ExplicitDecodingConfig.t() | nil,
+          :features => GoogleApi.Speech.V2.Model.RecognitionFeatures.t() | nil,
+          :languageCodes => list(String.t()) | nil,
+          :model => String.t() | nil
+        }
+
+  field(:adaptation, as: GoogleApi.Speech.V2.Model.SpeechAdaptation)
+  field(:autoDecodingConfig, as: GoogleApi.Speech.V2.Model.AutoDetectDecodingConfig)
+  field(:explicitDecodingConfig, as: GoogleApi.Speech.V2.Model.ExplicitDecodingConfig)
+  field(:features, as: GoogleApi.Speech.V2.Model.RecognitionFeatures)
+  field(:languageCodes, type: :list)
+  field(:model)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognitionConfig do

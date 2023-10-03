@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
   Description of audio data to be recognized.
 
   ## Attributes
-  
+
   *   `audioTopic` (*type:* `String.t`, *default:* `nil`) - Description of the content. Eg. "Recordings of federal supreme court hearings from 2012".
   *   `industryNaicsCodeOfAudio` (*type:* `integer()`, *default:* `nil`) - The industry vertical to which this speech recognition request most closely applies. This is most indicative of the topics contained in the audio. Use the 6-digit NAICS code to identify the industry vertical - see https://www.naics.com/search/.
   *   `interactionType` (*type:* `String.t`, *default:* `nil`) - The use case most closely describing the audio content to be recognized.
@@ -34,33 +34,24 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"audioTopic" => String.t | nil,
-    
-      :"industryNaicsCodeOfAudio" => integer() | nil,
-    
-      :"interactionType" => String.t | nil,
-    
-      :"microphoneDistance" => String.t | nil,
-    
-      :"originalMediaType" => String.t | nil,
-    
-      :"originalMimeType" => String.t | nil,
-    
-      :"recordingDeviceName" => String.t | nil,
-    
-      :"recordingDeviceType" => String.t | nil,
-    
-  }
-  
-  field(:"audioTopic")
-  field(:"industryNaicsCodeOfAudio")
-  field(:"interactionType")
-  field(:"microphoneDistance")
-  field(:"originalMediaType")
-  field(:"originalMimeType")
-  field(:"recordingDeviceName")
-  field(:"recordingDeviceType")
+          :audioTopic => String.t() | nil,
+          :industryNaicsCodeOfAudio => integer() | nil,
+          :interactionType => String.t() | nil,
+          :microphoneDistance => String.t() | nil,
+          :originalMediaType => String.t() | nil,
+          :originalMimeType => String.t() | nil,
+          :recordingDeviceName => String.t() | nil,
+          :recordingDeviceType => String.t() | nil
+        }
+
+  field(:audioTopic)
+  field(:industryNaicsCodeOfAudio)
+  field(:interactionType)
+  field(:microphoneDistance)
+  field(:originalMediaType)
+  field(:originalMimeType)
+  field(:recordingDeviceName)
+  field(:recordingDeviceType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognitionMetadata do

@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.Recognizer do
   A Recognizer message. Stores recognition configuration and metadata.
 
   ## Attributes
-  
+
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Allows users to store small amounts of arbitrary data. Both the key and the value must be 63 characters or less each. At most 100 annotations.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time.
   *   `defaultRecognitionConfig` (*type:* `GoogleApi.Speech.V2.Model.RecognitionConfig.t`, *default:* `nil`) - Default configuration to use for requests with this Recognizer. This can be overwritten by inline configuration in the RecognizeRequest.config field.
@@ -42,57 +42,40 @@ defmodule GoogleApi.Speech.V2.Model.Recognizer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"annotations" => map() | nil,
-    
-      :"createTime" => DateTime.t | nil,
-    
-      :"defaultRecognitionConfig" => GoogleApi.Speech.V2.Model.RecognitionConfig.t | nil,
-    
-      :"deleteTime" => DateTime.t | nil,
-    
-      :"displayName" => String.t | nil,
-    
-      :"etag" => String.t | nil,
-    
-      :"expireTime" => DateTime.t | nil,
-    
-      :"kmsKeyName" => String.t | nil,
-    
-      :"kmsKeyVersionName" => String.t | nil,
-    
-      :"languageCodes" => list(String.t) | nil,
-    
-      :"model" => String.t | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"reconciling" => boolean() | nil,
-    
-      :"state" => String.t | nil,
-    
-      :"uid" => String.t | nil,
-    
-      :"updateTime" => DateTime.t | nil,
-    
-  }
-  
-  field(:"annotations", type: :map)
-  field(:"createTime", as: DateTime)
-  field(:"defaultRecognitionConfig", as: GoogleApi.Speech.V2.Model.RecognitionConfig)
-  field(:"deleteTime", as: DateTime)
-  field(:"displayName")
-  field(:"etag")
-  field(:"expireTime", as: DateTime)
-  field(:"kmsKeyName")
-  field(:"kmsKeyVersionName")
-  field(:"languageCodes", type: :list)
-  field(:"model")
-  field(:"name")
-  field(:"reconciling")
-  field(:"state")
-  field(:"uid")
-  field(:"updateTime", as: DateTime)
+          :annotations => map() | nil,
+          :createTime => DateTime.t() | nil,
+          :defaultRecognitionConfig => GoogleApi.Speech.V2.Model.RecognitionConfig.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :kmsKeyVersionName => String.t() | nil,
+          :languageCodes => list(String.t()) | nil,
+          :model => String.t() | nil,
+          :name => String.t() | nil,
+          :reconciling => boolean() | nil,
+          :state => String.t() | nil,
+          :uid => String.t() | nil,
+          :updateTime => DateTime.t() | nil
+        }
+
+  field(:annotations, type: :map)
+  field(:createTime, as: DateTime)
+  field(:defaultRecognitionConfig, as: GoogleApi.Speech.V2.Model.RecognitionConfig)
+  field(:deleteTime, as: DateTime)
+  field(:displayName)
+  field(:etag)
+  field(:expireTime, as: DateTime)
+  field(:kmsKeyName)
+  field(:kmsKeyVersionName)
+  field(:languageCodes, type: :list)
+  field(:model)
+  field(:name)
+  field(:reconciling)
+  field(:state)
+  field(:uid)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.Recognizer do

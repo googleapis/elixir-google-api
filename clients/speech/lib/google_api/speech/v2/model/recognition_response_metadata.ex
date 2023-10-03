@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.RecognitionResponseMetadata do
   Metadata about the recognition request and response.
 
   ## Attributes
-  
+
   *   `totalBilledDuration` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"totalBilledDuration" => String.t | nil,
-    
-  }
-  
-  field(:"totalBilledDuration")
+          :totalBilledDuration => String.t() | nil
+        }
+
+  field(:totalBilledDuration)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognitionResponseMetadata do

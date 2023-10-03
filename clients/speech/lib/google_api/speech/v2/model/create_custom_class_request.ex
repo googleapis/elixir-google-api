@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.CreateCustomClassRequest do
   Request message for the CreateCustomClass method.
 
   ## Attributes
-  
+
   *   `customClass` (*type:* `GoogleApi.Speech.V2.Model.CustomClass.t`, *default:* `nil`) - Required. The CustomClass to create.
   *   `customClassId` (*type:* `String.t`, *default:* `nil`) - The ID to use for the CustomClass, which will become the final component of the CustomClass's resource name. This value should be 4-63 characters, and valid characters are /a-z-/.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The project and location where this CustomClass will be created. The expected format is `projects/{project}/locations/{location}`.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.CreateCustomClassRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"customClass" => GoogleApi.Speech.V2.Model.CustomClass.t | nil,
-    
-      :"customClassId" => String.t | nil,
-    
-      :"parent" => String.t | nil,
-    
-      :"validateOnly" => boolean() | nil,
-    
-  }
-  
-  field(:"customClass", as: GoogleApi.Speech.V2.Model.CustomClass)
-  field(:"customClassId")
-  field(:"parent")
-  field(:"validateOnly")
+          :customClass => GoogleApi.Speech.V2.Model.CustomClass.t() | nil,
+          :customClassId => String.t() | nil,
+          :parent => String.t() | nil,
+          :validateOnly => boolean() | nil
+        }
+
+  field(:customClass, as: GoogleApi.Speech.V2.Model.CustomClass)
+  field(:customClassId)
+  field(:parent)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.CreateCustomClassRequest do

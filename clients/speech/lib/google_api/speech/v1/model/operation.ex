@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.Operation do
   This resource represents a long-running operation that is the result of a network API call.
 
   ## Attributes
-  
+
   *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.
   *   `error` (*type:* `GoogleApi.Speech.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.
@@ -31,24 +31,18 @@ defmodule GoogleApi.Speech.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"done" => boolean() | nil,
-    
-      :"error" => GoogleApi.Speech.V1.Model.Status.t | nil,
-    
-      :"metadata" => map() | nil,
-    
-      :"name" => String.t | nil,
-    
-      :"response" => map() | nil,
-    
-  }
-  
-  field(:"done")
-  field(:"error", as: GoogleApi.Speech.V1.Model.Status)
-  field(:"metadata", type: :map)
-  field(:"name")
-  field(:"response", type: :map)
+          :done => boolean() | nil,
+          :error => GoogleApi.Speech.V1.Model.Status.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
+        }
+
+  field(:done)
+  field(:error, as: GoogleApi.Speech.V1.Model.Status)
+  field(:metadata, type: :map)
+  field(:name)
+  field(:response, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.Operation do

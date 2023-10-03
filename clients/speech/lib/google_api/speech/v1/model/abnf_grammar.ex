@@ -17,22 +17,20 @@
 
 defmodule GoogleApi.Speech.V1.Model.ABNFGrammar do
   @moduledoc """
-  
+
 
   ## Attributes
-  
+
   *   `abnfStrings` (*type:* `list(String.t)`, *default:* `nil`) - All declarations and rules of an ABNF grammar broken up into multiple strings that will end up concatenated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"abnfStrings" => list(String.t) | nil,
-    
-  }
-  
-  field(:"abnfStrings", type: :list)
+          :abnfStrings => list(String.t()) | nil
+        }
+
+  field(:abnfStrings, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.ABNFGrammar do

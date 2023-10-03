@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeRequest do
   Request message for the BatchRecognize method.
 
   ## Attributes
-  
+
   *   `config` (*type:* `GoogleApi.Speech.V2.Model.RecognitionConfig.t`, *default:* `nil`) - Features and audio metadata to use for the Automatic Speech Recognition. This field in combination with the config_mask field can be used to override parts of the default_recognition_config of the Recognizer resource.
   *   `configMask` (*type:* `String.t`, *default:* `nil`) - The list of fields in config that override the values in the default_recognition_config of the recognizer during this recognition request. If no mask is provided, all given fields in config override the values in the recognizer for this recognition request. If a mask is provided, only the fields listed in the mask override the config in the recognizer for this recognition request. If a wildcard (`*`) is provided, config completely overrides and replaces the config in the recognizer for this recognition request.
   *   `files` (*type:* `list(GoogleApi.Speech.V2.Model.BatchRecognizeFileMetadata.t)`, *default:* `nil`) - Audio files with file metadata for ASR. The maximum number of files allowed to be specified is 5.
@@ -32,27 +32,20 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"config" => GoogleApi.Speech.V2.Model.RecognitionConfig.t | nil,
-    
-      :"configMask" => String.t | nil,
-    
-      :"files" => list(GoogleApi.Speech.V2.Model.BatchRecognizeFileMetadata.t) | nil,
-    
-      :"processingStrategy" => String.t | nil,
-    
-      :"recognitionOutputConfig" => GoogleApi.Speech.V2.Model.RecognitionOutputConfig.t | nil,
-    
-      :"recognizer" => String.t | nil,
-    
-  }
-  
-  field(:"config", as: GoogleApi.Speech.V2.Model.RecognitionConfig)
-  field(:"configMask")
-  field(:"files", as: GoogleApi.Speech.V2.Model.BatchRecognizeFileMetadata, type: :list)
-  field(:"processingStrategy")
-  field(:"recognitionOutputConfig", as: GoogleApi.Speech.V2.Model.RecognitionOutputConfig)
-  field(:"recognizer")
+          :config => GoogleApi.Speech.V2.Model.RecognitionConfig.t() | nil,
+          :configMask => String.t() | nil,
+          :files => list(GoogleApi.Speech.V2.Model.BatchRecognizeFileMetadata.t()) | nil,
+          :processingStrategy => String.t() | nil,
+          :recognitionOutputConfig => GoogleApi.Speech.V2.Model.RecognitionOutputConfig.t() | nil,
+          :recognizer => String.t() | nil
+        }
+
+  field(:config, as: GoogleApi.Speech.V2.Model.RecognitionConfig)
+  field(:configMask)
+  field(:files, as: GoogleApi.Speech.V2.Model.BatchRecognizeFileMetadata, type: :list)
+  field(:processingStrategy)
+  field(:recognitionOutputConfig, as: GoogleApi.Speech.V2.Model.RecognitionOutputConfig)
+  field(:recognizer)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.BatchRecognizeRequest do

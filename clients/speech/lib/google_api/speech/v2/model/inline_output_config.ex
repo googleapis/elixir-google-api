@@ -20,15 +20,12 @@ defmodule GoogleApi.Speech.V2.Model.InlineOutputConfig do
   Output configurations for inline response.
 
   ## Attributes
-  
+
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-    
-  }
-  
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.InlineOutputConfig do

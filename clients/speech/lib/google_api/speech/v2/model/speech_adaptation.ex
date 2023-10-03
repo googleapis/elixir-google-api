@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.SpeechAdaptation do
   Provides "hints" to the speech recognizer to favor specific words and phrases in the results. PhraseSets can be specified as an inline resource, or a reference to an existing PhraseSet resource.
 
   ## Attributes
-  
+
   *   `customClasses` (*type:* `list(GoogleApi.Speech.V2.Model.CustomClass.t)`, *default:* `nil`) - A list of inline CustomClasses. Existing CustomClass resources can be referenced directly in a PhraseSet.
   *   `phraseSets` (*type:* `list(GoogleApi.Speech.V2.Model.AdaptationPhraseSet.t)`, *default:* `nil`) - A list of inline or referenced PhraseSets.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V2.Model.SpeechAdaptation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"customClasses" => list(GoogleApi.Speech.V2.Model.CustomClass.t) | nil,
-    
-      :"phraseSets" => list(GoogleApi.Speech.V2.Model.AdaptationPhraseSet.t) | nil,
-    
-  }
-  
-  field(:"customClasses", as: GoogleApi.Speech.V2.Model.CustomClass, type: :list)
-  field(:"phraseSets", as: GoogleApi.Speech.V2.Model.AdaptationPhraseSet, type: :list)
+          :customClasses => list(GoogleApi.Speech.V2.Model.CustomClass.t()) | nil,
+          :phraseSets => list(GoogleApi.Speech.V2.Model.AdaptationPhraseSet.t()) | nil
+        }
+
+  field(:customClasses, as: GoogleApi.Speech.V2.Model.CustomClass, type: :list)
+  field(:phraseSets, as: GoogleApi.Speech.V2.Model.AdaptationPhraseSet, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.SpeechAdaptation do

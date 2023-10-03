@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative do
   Alternative hypotheses (a.k.a. n-best list).
 
   ## Attributes
-  
+
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative of a non-streaming result or, of a streaming result where is_final is set to `true`. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
   *   `transcript` (*type:* `String.t`, *default:* `nil`) - Transcript text representing the words that the user spoke.
   *   `words` (*type:* `list(GoogleApi.Speech.V2.Model.WordInfo.t)`, *default:* `nil`) - A list of word-specific information for each recognized word. When the SpeakerDiarizationConfig is set, you will see all the words from the beginning of the audio.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"confidence" => number() | nil,
-    
-      :"transcript" => String.t | nil,
-    
-      :"words" => list(GoogleApi.Speech.V2.Model.WordInfo.t) | nil,
-    
-  }
-  
-  field(:"confidence")
-  field(:"transcript")
-  field(:"words", as: GoogleApi.Speech.V2.Model.WordInfo, type: :list)
+          :confidence => number() | nil,
+          :transcript => String.t() | nil,
+          :words => list(GoogleApi.Speech.V2.Model.WordInfo.t()) | nil
+        }
+
+  field(:confidence)
+  field(:transcript)
+  field(:words, as: GoogleApi.Speech.V2.Model.WordInfo, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.SpeechRecognitionAlternative do

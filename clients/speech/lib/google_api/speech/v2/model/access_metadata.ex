@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.AccessMetadata do
   The metadata related to access associated with the location for a given region. This can occur if the org policy for the given project disallows a particular region.
 
   ## Attributes
-  
+
   *   `constraintType` (*type:* `String.t`, *default:* `nil`) - Describes the type of constraint that occurred.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"constraintType" => String.t | nil,
-    
-  }
-  
-  field(:"constraintType")
+          :constraintType => String.t() | nil
+        }
+
+  field(:constraintType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.AccessMetadata do

@@ -20,15 +20,12 @@ defmodule GoogleApi.Speech.V1.Model.Empty do
   A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
 
   ## Attributes
-  
+
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-    
-  }
-  
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.Empty do

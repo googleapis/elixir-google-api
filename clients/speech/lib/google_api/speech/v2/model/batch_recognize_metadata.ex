@@ -20,19 +20,25 @@ defmodule GoogleApi.Speech.V2.Model.BatchRecognizeMetadata do
   Operation metadata for BatchRecognize.
 
   ## Attributes
-  
+
   *   `transcriptionMetadata` (*type:* `%{optional(String.t) => GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata.t}`, *default:* `nil`) - Map from provided filename to the transcription metadata for that file.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"transcriptionMetadata" => %{optional(String.t) => GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata.t} | nil,
-    
-  }
-  
-  field(:"transcriptionMetadata", as: GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata, type: :map)
+          :transcriptionMetadata =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata.t()
+            }
+            | nil
+        }
+
+  field(:transcriptionMetadata,
+    as: GoogleApi.Speech.V2.Model.BatchRecognizeTranscriptionMetadata,
+    type: :map
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.BatchRecognizeMetadata do

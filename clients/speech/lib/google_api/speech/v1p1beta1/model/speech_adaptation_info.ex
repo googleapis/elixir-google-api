@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptationInfo do
   Information on speech adaptation use in results
 
   ## Attributes
-  
+
   *   `adaptationTimeout` (*type:* `boolean()`, *default:* `nil`) - Whether there was a timeout when applying speech adaptation. If true, adaptation had no effect in the response transcript.
   *   `timeoutMessage` (*type:* `String.t`, *default:* `nil`) - If set, returns a message specifying which part of the speech adaptation request timed out.
   """
@@ -28,15 +28,12 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"adaptationTimeout" => boolean() | nil,
-    
-      :"timeoutMessage" => String.t | nil,
-    
-  }
-  
-  field(:"adaptationTimeout")
-  field(:"timeoutMessage")
+          :adaptationTimeout => boolean() | nil,
+          :timeoutMessage => String.t() | nil
+        }
+
+  field(:adaptationTimeout)
+  field(:timeoutMessage)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptationInfo do

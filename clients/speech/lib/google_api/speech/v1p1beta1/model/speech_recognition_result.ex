@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionResult do
   A speech recognition result corresponding to a portion of the audio.
 
   ## Attributes
-  
+
   *   `alternatives` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionAlternative.t)`, *default:* `nil`) - May contain one or more recognition hypotheses (up to the maximum specified in `max_alternatives`). These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer.
   *   `channelTag` (*type:* `integer()`, *default:* `nil`) - For multi-channel audio, this is the channel number corresponding to the recognized result for the audio from that channel. For audio_channel_count = N, its output values can range from '1' to 'N'.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the language in this result. This language code was detected to have the most likelihood of being spoken in the audio.
@@ -30,21 +30,21 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"alternatives" => list(GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionAlternative.t) | nil,
-    
-      :"channelTag" => integer() | nil,
-    
-      :"languageCode" => String.t | nil,
-    
-      :"resultEndTime" => String.t | nil,
-    
-  }
-  
-  field(:"alternatives", as: GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionAlternative, type: :list)
-  field(:"channelTag")
-  field(:"languageCode")
-  field(:"resultEndTime")
+          :alternatives =>
+            list(GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionAlternative.t()) | nil,
+          :channelTag => integer() | nil,
+          :languageCode => String.t() | nil,
+          :resultEndTime => String.t() | nil
+        }
+
+  field(:alternatives,
+    as: GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionAlternative,
+    type: :list
+  )
+
+  field(:channelTag)
+  field(:languageCode)
+  field(:resultEndTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.SpeechRecognitionResult do

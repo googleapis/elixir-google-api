@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V2.Model.RecognizeRequest do
   Request message for the Recognize method. Either `content` or `uri` must be supplied. Supplying both or neither returns INVALID_ARGUMENT. See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 
   ## Attributes
-  
+
   *   `config` (*type:* `GoogleApi.Speech.V2.Model.RecognitionConfig.t`, *default:* `nil`) - Features and audio metadata to use for the Automatic Speech Recognition. This field in combination with the config_mask field can be used to override parts of the default_recognition_config of the Recognizer resource.
   *   `configMask` (*type:* `String.t`, *default:* `nil`) - The list of fields in config that override the values in the default_recognition_config of the recognizer during this recognition request. If no mask is provided, all non-default valued fields in config override the values in the recognizer for this recognition request. If a mask is provided, only the fields listed in the mask override the config in the recognizer for this recognition request. If a wildcard (`*`) is provided, config completely overrides and replaces the config in the recognizer for this recognition request.
   *   `content` (*type:* `String.t`, *default:* `nil`) - The audio data bytes encoded as specified in RecognitionConfig. As with all bytes fields, proto buffers use a pure binary representation, whereas JSON representations use base64.
@@ -30,21 +30,16 @@ defmodule GoogleApi.Speech.V2.Model.RecognizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"config" => GoogleApi.Speech.V2.Model.RecognitionConfig.t | nil,
-    
-      :"configMask" => String.t | nil,
-    
-      :"content" => String.t | nil,
-    
-      :"uri" => String.t | nil,
-    
-  }
-  
-  field(:"config", as: GoogleApi.Speech.V2.Model.RecognitionConfig)
-  field(:"configMask")
-  field(:"content")
-  field(:"uri")
+          :config => GoogleApi.Speech.V2.Model.RecognitionConfig.t() | nil,
+          :configMask => String.t() | nil,
+          :content => String.t() | nil,
+          :uri => String.t() | nil
+        }
+
+  field(:config, as: GoogleApi.Speech.V2.Model.RecognitionConfig)
+  field(:configMask)
+  field(:content)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.RecognizeRequest do

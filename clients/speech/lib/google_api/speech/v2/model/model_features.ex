@@ -20,19 +20,17 @@ defmodule GoogleApi.Speech.V2.Model.ModelFeatures do
   Represents the collection of features belonging to a model
 
   ## Attributes
-  
+
   *   `modelFeature` (*type:* `list(GoogleApi.Speech.V2.Model.ModelFeature.t)`, *default:* `nil`) - Repeated field that contains all features of the model
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"modelFeature" => list(GoogleApi.Speech.V2.Model.ModelFeature.t) | nil,
-    
-  }
-  
-  field(:"modelFeature", as: GoogleApi.Speech.V2.Model.ModelFeature, type: :list)
+          :modelFeature => list(GoogleApi.Speech.V2.Model.ModelFeature.t()) | nil
+        }
+
+  field(:modelFeature, as: GoogleApi.Speech.V2.Model.ModelFeature, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V2.Model.ModelFeatures do

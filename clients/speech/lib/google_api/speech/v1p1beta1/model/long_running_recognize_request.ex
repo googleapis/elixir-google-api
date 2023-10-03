@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.LongRunningRecognizeRequest do
   The top-level message sent by the client for the `LongRunningRecognize` method.
 
   ## Attributes
-  
+
   *   `audio` (*type:* `GoogleApi.Speech.V1p1beta1.Model.RecognitionAudio.t`, *default:* `nil`) - Required. The audio data to be recognized.
   *   `config` (*type:* `GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig.t`, *default:* `nil`) - Required. Provides information to the recognizer that specifies how to process the request.
   *   `outputConfig` (*type:* `GoogleApi.Speech.V1p1beta1.Model.TranscriptOutputConfig.t`, *default:* `nil`) - Optional. Specifies an optional destination for the recognition results.
@@ -29,18 +29,14 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.LongRunningRecognizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-    
-      :"audio" => GoogleApi.Speech.V1p1beta1.Model.RecognitionAudio.t | nil,
-    
-      :"config" => GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig.t | nil,
-    
-      :"outputConfig" => GoogleApi.Speech.V1p1beta1.Model.TranscriptOutputConfig.t | nil,
-    
-  }
-  
-  field(:"audio", as: GoogleApi.Speech.V1p1beta1.Model.RecognitionAudio)
-  field(:"config", as: GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig)
-  field(:"outputConfig", as: GoogleApi.Speech.V1p1beta1.Model.TranscriptOutputConfig)
+          :audio => GoogleApi.Speech.V1p1beta1.Model.RecognitionAudio.t() | nil,
+          :config => GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig.t() | nil,
+          :outputConfig => GoogleApi.Speech.V1p1beta1.Model.TranscriptOutputConfig.t() | nil
+        }
+
+  field(:audio, as: GoogleApi.Speech.V1p1beta1.Model.RecognitionAudio)
+  field(:config, as: GoogleApi.Speech.V1p1beta1.Model.RecognitionConfig)
+  field(:outputConfig, as: GoogleApi.Speech.V1p1beta1.Model.TranscriptOutputConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.LongRunningRecognizeRequest do
