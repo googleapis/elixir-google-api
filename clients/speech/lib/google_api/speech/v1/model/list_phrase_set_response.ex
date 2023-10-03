@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.ListPhraseSetResponse do
   Message returned to the client by the `ListPhraseSet` method.
 
   ## Attributes
-
+  
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `phraseSets` (*type:* `list(GoogleApi.Speech.V1.Model.PhraseSet.t)`, *default:* `nil`) - The phrase set.
   """
@@ -28,12 +28,15 @@ defmodule GoogleApi.Speech.V1.Model.ListPhraseSetResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t() | nil,
-          :phraseSets => list(GoogleApi.Speech.V1.Model.PhraseSet.t()) | nil
-        }
-
-  field(:nextPageToken)
-  field(:phraseSets, as: GoogleApi.Speech.V1.Model.PhraseSet, type: :list)
+    
+      :"nextPageToken" => String.t | nil,
+    
+      :"phraseSets" => list(GoogleApi.Speech.V1.Model.PhraseSet.t) | nil,
+    
+  }
+  
+  field(:"nextPageToken")
+  field(:"phraseSets", as: GoogleApi.Speech.V1.Model.PhraseSet, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.ListPhraseSetResponse do

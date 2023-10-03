@@ -24,9 +24,11 @@ defmodule GoogleApi.Speech.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+    
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
-      "https://www.googleapis.com/auth/cloud-platform"
+      "https://www.googleapis.com/auth/cloud-platform",
+    
     ],
-    otp_app: :google_api_speech,
+    otp_app: :"google_api_speech",
     base_url: "https://speech.googleapis.com/"
 end

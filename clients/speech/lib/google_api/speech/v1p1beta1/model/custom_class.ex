@@ -20,23 +20,67 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.CustomClass do
   A set of words or phrases that represents a common concept likely to appear in your audio, for example a list of passenger ship names. CustomClass items can be substituted into placeholders that you set in PhraseSet phrases.
 
   ## Attributes
-
+  
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Output only. Allows users to store small amounts of arbitrary data. Both the key and the value must be 63 characters or less each. At most 100 annotations. This field is not used.
   *   `customClassId` (*type:* `String.t`, *default:* `nil`) - If this custom class is a resource, the custom_class_id is the resource id of the CustomClass. Case sensitive.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this resource was requested for deletion. This field is not used.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. User-settable, human-readable name for the CustomClass. Must be 63 characters or less. This field is not used.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields. This may be sent on update, undelete, and delete requests to ensure the client has an up-to-date value before proceeding. This field is not used.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this resource will be purged. This field is not used.
   *   `items` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.ClassItem.t)`, *default:* `nil`) - A collection of class items.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Output only. The [KMS key name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which the content of the ClassItem is encrypted. The expected format is `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+  *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - Output only. The [KMS key version name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions) with which content of the ClassItem is encrypted. The expected format is `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the custom class.
+  *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not this CustomClass is in the process of being updated. This field is not used.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The CustomClass lifecycle state. This field is not used.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System-assigned unique identifier for the CustomClass. This field is not used.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customClassId => String.t() | nil,
-          :items => list(GoogleApi.Speech.V1p1beta1.Model.ClassItem.t()) | nil,
-          :name => String.t() | nil
-        }
-
-  field(:customClassId)
-  field(:items, as: GoogleApi.Speech.V1p1beta1.Model.ClassItem, type: :list)
-  field(:name)
+    
+      :"annotations" => map() | nil,
+    
+      :"customClassId" => String.t | nil,
+    
+      :"deleteTime" => DateTime.t | nil,
+    
+      :"displayName" => String.t | nil,
+    
+      :"etag" => String.t | nil,
+    
+      :"expireTime" => DateTime.t | nil,
+    
+      :"items" => list(GoogleApi.Speech.V1p1beta1.Model.ClassItem.t) | nil,
+    
+      :"kmsKeyName" => String.t | nil,
+    
+      :"kmsKeyVersionName" => String.t | nil,
+    
+      :"name" => String.t | nil,
+    
+      :"reconciling" => boolean() | nil,
+    
+      :"state" => String.t | nil,
+    
+      :"uid" => String.t | nil,
+    
+  }
+  
+  field(:"annotations", type: :map)
+  field(:"customClassId")
+  field(:"deleteTime", as: DateTime)
+  field(:"displayName")
+  field(:"etag")
+  field(:"expireTime", as: DateTime)
+  field(:"items", as: GoogleApi.Speech.V1p1beta1.Model.ClassItem, type: :list)
+  field(:"kmsKeyName")
+  field(:"kmsKeyVersionName")
+  field(:"name")
+  field(:"reconciling")
+  field(:"state")
+  field(:"uid")
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.CustomClass do

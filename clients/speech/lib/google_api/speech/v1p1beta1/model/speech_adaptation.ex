@@ -20,7 +20,8 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation do
   Speech adaptation configuration.
 
   ## Attributes
-
+  
+  *   `abnfGrammar` (*type:* `GoogleApi.Speech.V1p1beta1.Model.ABNFGrammar.t`, *default:* `nil`) - Augmented Backus-Naur form (ABNF) is a standardized grammar notation comprised by a set of derivation rules. See specifications: https://www.w3.org/TR/speech-grammar
   *   `customClasses` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t)`, *default:* `nil`) - A collection of custom classes. To specify the classes inline, leave the class' `name` blank and fill in the rest of its fields, giving it a unique `custom_class_id`. Refer to the inline defined class in phrase hints by its `custom_class_id`.
   *   `phraseSetReferences` (*type:* `list(String.t)`, *default:* `nil`) - A collection of phrase set resource names to use.
   *   `phraseSets` (*type:* `list(GoogleApi.Speech.V1p1beta1.Model.PhraseSet.t)`, *default:* `nil`) - A collection of phrase sets. To specify the hints inline, leave the phrase set's `name` blank and fill in the rest of its fields. Any phrase set can use any custom class.
@@ -29,14 +30,21 @@ defmodule GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customClasses => list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t()) | nil,
-          :phraseSetReferences => list(String.t()) | nil,
-          :phraseSets => list(GoogleApi.Speech.V1p1beta1.Model.PhraseSet.t()) | nil
-        }
-
-  field(:customClasses, as: GoogleApi.Speech.V1p1beta1.Model.CustomClass, type: :list)
-  field(:phraseSetReferences, type: :list)
-  field(:phraseSets, as: GoogleApi.Speech.V1p1beta1.Model.PhraseSet, type: :list)
+    
+      :"abnfGrammar" => GoogleApi.Speech.V1p1beta1.Model.ABNFGrammar.t | nil,
+    
+      :"customClasses" => list(GoogleApi.Speech.V1p1beta1.Model.CustomClass.t) | nil,
+    
+      :"phraseSetReferences" => list(String.t) | nil,
+    
+      :"phraseSets" => list(GoogleApi.Speech.V1p1beta1.Model.PhraseSet.t) | nil,
+    
+  }
+  
+  field(:"abnfGrammar", as: GoogleApi.Speech.V1p1beta1.Model.ABNFGrammar)
+  field(:"customClasses", as: GoogleApi.Speech.V1p1beta1.Model.CustomClass, type: :list)
+  field(:"phraseSetReferences", type: :list)
+  field(:"phraseSets", as: GoogleApi.Speech.V1p1beta1.Model.PhraseSet, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1p1beta1.Model.SpeechAdaptation do

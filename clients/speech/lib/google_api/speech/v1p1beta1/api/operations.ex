@@ -25,6 +25,7 @@ defmodule GoogleApi.Speech.V1p1beta1.Api.Operations do
 
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
+  
   @doc """
   Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
@@ -51,32 +52,43 @@ defmodule GoogleApi.Speech.V1p1beta1.Api.Operations do
   *   `{:ok, %GoogleApi.Speech.V1p1beta1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1p1beta1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
+  @spec speech_operations_get(Tesla.Env.client(), String.t, keyword(), keyword()) :: {:ok, GoogleApi.Speech.V1p1beta1.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def speech_operations_get(connection, name, optional_params \\ [], opts \\ []) do
+    
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
+    
+      :"$.xgafv" => :"query",
+    
+      :"access_token" => :"query",
+    
+      :"alt" => :"query",
+    
+      :"callback" => :"query",
+    
+      :"fields" => :"query",
+    
+      :"key" => :"query",
+    
+      :"oauth_token" => :"query",
+    
+      :"prettyPrint" => :"query",
+    
+      :"quotaUser" => :"query",
+    
+      :"uploadType" => :"query",
+    
+      :"upload_protocol" => :"query",
+    
+    
     }
 
     request =
       Request.new()
-      |> Request.method(:get)
+      |> Request.method(:"get")
       |> Request.url("/v1p1beta1/operations/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+        "name" => URI.encode(name, &URI.char_unreserved?/1),
       })
+      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -84,9 +96,9 @@ defmodule GoogleApi.Speech.V1p1beta1.Api.Operations do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1p1beta1.Model.Operation{}])
   end
-
+  
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -114,41 +126,55 @@ defmodule GoogleApi.Speech.V1p1beta1.Api.Operations do
   *   `{:ok, %GoogleApi.Speech.V1p1beta1.Model.ListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1p1beta1.Model.ListOperationsResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
+  @spec speech_operations_list(Tesla.Env.client(), keyword(), keyword()) :: {:ok, GoogleApi.Speech.V1p1beta1.Model.ListOperationsResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def speech_operations_list(connection, optional_params \\ [], opts \\ []) do
+    
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :filter => :query,
-      :name => :query,
-      :pageSize => :query,
-      :pageToken => :query
+    
+      :"$.xgafv" => :"query",
+    
+      :"access_token" => :"query",
+    
+      :"alt" => :"query",
+    
+      :"callback" => :"query",
+    
+      :"fields" => :"query",
+    
+      :"key" => :"query",
+    
+      :"oauth_token" => :"query",
+    
+      :"prettyPrint" => :"query",
+    
+      :"quotaUser" => :"query",
+    
+      :"uploadType" => :"query",
+    
+      :"upload_protocol" => :"query",
+    
+    
+      :"filter" => :"query",
+    
+      :"name" => :"query",
+    
+      :"pageSize" => :"query",
+    
+      :"pageToken" => :"query",
+    
     }
 
     request =
       Request.new()
-      |> Request.method(:get)
+      |> Request.method(:"get")
       |> Request.url("/v1p1beta1/operations", %{})
+      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.Speech.V1p1beta1.Model.ListOperationsResponse{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1p1beta1.Model.ListOperationsResponse{}])
   end
+  
 end

@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
   The only message returned to the client by the `LongRunningRecognize` method. It contains the result as zero or more sequential `SpeechRecognitionResult` messages. It is included in the `result.response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
-
+  
   *   `outputConfig` (*type:* `GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t`, *default:* `nil`) - Original output config if present in the request.
   *   `outputError` (*type:* `GoogleApi.Speech.V1.Model.Status.t`, *default:* `nil`) - If the transcript output fails this field contains the relevant error.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - The ID associated with the request. This is a unique ID specific only to the given request.
@@ -32,20 +32,27 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t() | nil,
-          :outputError => GoogleApi.Speech.V1.Model.Status.t() | nil,
-          :requestId => String.t() | nil,
-          :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
-          :speechAdaptationInfo => GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t() | nil,
-          :totalBilledTime => String.t() | nil
-        }
-
-  field(:outputConfig, as: GoogleApi.Speech.V1.Model.TranscriptOutputConfig)
-  field(:outputError, as: GoogleApi.Speech.V1.Model.Status)
-  field(:requestId)
-  field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
-  field(:speechAdaptationInfo, as: GoogleApi.Speech.V1.Model.SpeechAdaptationInfo)
-  field(:totalBilledTime)
+    
+      :"outputConfig" => GoogleApi.Speech.V1.Model.TranscriptOutputConfig.t | nil,
+    
+      :"outputError" => GoogleApi.Speech.V1.Model.Status.t | nil,
+    
+      :"requestId" => String.t | nil,
+    
+      :"results" => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t) | nil,
+    
+      :"speechAdaptationInfo" => GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t | nil,
+    
+      :"totalBilledTime" => String.t | nil,
+    
+  }
+  
+  field(:"outputConfig", as: GoogleApi.Speech.V1.Model.TranscriptOutputConfig)
+  field(:"outputError", as: GoogleApi.Speech.V1.Model.Status)
+  field(:"requestId")
+  field(:"results", as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
+  field(:"speechAdaptationInfo", as: GoogleApi.Speech.V1.Model.SpeechAdaptationInfo)
+  field(:"totalBilledTime")
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do

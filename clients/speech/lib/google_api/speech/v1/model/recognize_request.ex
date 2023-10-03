@@ -20,7 +20,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeRequest do
   The top-level message sent by the client for the `Recognize` method.
 
   ## Attributes
-
+  
   *   `audio` (*type:* `GoogleApi.Speech.V1.Model.RecognitionAudio.t`, *default:* `nil`) - Required. The audio data to be recognized.
   *   `config` (*type:* `GoogleApi.Speech.V1.Model.RecognitionConfig.t`, *default:* `nil`) - Required. Provides information to the recognizer that specifies how to process the request.
   """
@@ -28,12 +28,15 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audio => GoogleApi.Speech.V1.Model.RecognitionAudio.t() | nil,
-          :config => GoogleApi.Speech.V1.Model.RecognitionConfig.t() | nil
-        }
-
-  field(:audio, as: GoogleApi.Speech.V1.Model.RecognitionAudio)
-  field(:config, as: GoogleApi.Speech.V1.Model.RecognitionConfig)
+    
+      :"audio" => GoogleApi.Speech.V1.Model.RecognitionAudio.t | nil,
+    
+      :"config" => GoogleApi.Speech.V1.Model.RecognitionConfig.t | nil,
+    
+  }
+  
+  field(:"audio", as: GoogleApi.Speech.V1.Model.RecognitionAudio)
+  field(:"config", as: GoogleApi.Speech.V1.Model.RecognitionConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognizeRequest do

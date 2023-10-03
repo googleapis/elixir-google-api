@@ -20,17 +20,19 @@ defmodule GoogleApi.Speech.V1.Model.TranscriptOutputConfig do
   Specifies an optional destination for the recognition results.
 
   ## Attributes
-
+  
   *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - Specifies a Cloud Storage URI for the recognition results. Must be specified in the format: `gs://bucket_name/object_name`, and the bucket must already exist.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsUri => String.t() | nil
-        }
-
-  field(:gcsUri)
+    
+      :"gcsUri" => String.t | nil,
+    
+  }
+  
+  field(:"gcsUri")
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.TranscriptOutputConfig do

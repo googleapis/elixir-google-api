@@ -25,6 +25,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
 
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
+  
   @doc """
   Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
 
@@ -51,31 +52,43 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   *   `{:ok, %GoogleApi.Speech.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_speech_longrunningrecognize(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
+  @spec speech_speech_longrunningrecognize(Tesla.Env.client(), keyword(), keyword()) :: {:ok, GoogleApi.Speech.V1.Model.Operation.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def speech_speech_longrunningrecognize(connection, optional_params \\ [], opts \\ []) do
+    
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
+    
+      :"$.xgafv" => :"query",
+    
+      :"access_token" => :"query",
+    
+      :"alt" => :"query",
+    
+      :"callback" => :"query",
+    
+      :"fields" => :"query",
+    
+      :"key" => :"query",
+    
+      :"oauth_token" => :"query",
+    
+      :"prettyPrint" => :"query",
+    
+      :"quotaUser" => :"query",
+    
+      :"uploadType" => :"query",
+    
+      :"upload_protocol" => :"query",
+    
+    
+      :"body" => :"body",
+    
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
+      |> Request.method(:"post")
       |> Request.url("/v1/speech:longrunningrecognize", %{})
+      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -83,7 +96,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1.Model.Operation{}])
   end
-
+  
   @doc """
   Performs synchronous speech recognition: receive results after all audio has been sent and processed.
 
@@ -110,31 +123,43 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   *   `{:ok, %GoogleApi.Speech.V1.Model.RecognizeResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec speech_speech_recognize(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1.Model.RecognizeResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
+  @spec speech_speech_recognize(Tesla.Env.client(), keyword(), keyword()) :: {:ok, GoogleApi.Speech.V1.Model.RecognizeResponse.t} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def speech_speech_recognize(connection, optional_params \\ [], opts \\ []) do
+    
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
+    
+      :"$.xgafv" => :"query",
+    
+      :"access_token" => :"query",
+    
+      :"alt" => :"query",
+    
+      :"callback" => :"query",
+    
+      :"fields" => :"query",
+    
+      :"key" => :"query",
+    
+      :"oauth_token" => :"query",
+    
+      :"prettyPrint" => :"query",
+    
+      :"quotaUser" => :"query",
+    
+      :"uploadType" => :"query",
+    
+      :"upload_protocol" => :"query",
+    
+    
+      :"body" => :"body",
+    
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
+      |> Request.method(:"post")
       |> Request.url("/v1/speech:recognize", %{})
+      
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -142,4 +167,5 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Speech.V1.Model.RecognizeResponse{}])
   end
+  
 end
