@@ -483,7 +483,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/storage/v1/b/{bucket}/o", %{
+      |> Request.url("/upload/storage/v1/b/{bucket}/o", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
