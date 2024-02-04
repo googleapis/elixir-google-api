@@ -18,7 +18,7 @@
 defmodule GoogleApi.PubSub.Mixfile do
   use Mix.Project
 
-  @version "0.37.0"
+  @version "0.37.1"
 
   def project() do
     [
@@ -40,7 +40,7 @@ defmodule GoogleApi.PubSub.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.4"},
+      {:google_gax, "~> 0.4.1"},
 
       {:ex_doc, "~> 0.16", only: :dev}
     ]
