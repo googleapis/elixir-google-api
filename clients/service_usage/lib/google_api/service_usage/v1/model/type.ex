@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Type do
 
   ## Attributes
 
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - The source edition string, only valid when syntax is SYNTAX_EDITIONS.
   *   `fields` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Field.t)`, *default:* `nil`) - The list of fields.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified message name.
   *   `oneofs` (*type:* `list(String.t)`, *default:* `nil`) - The list of types appearing in `oneof` definitions in this type.
@@ -32,6 +33,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Type do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :edition => String.t() | nil,
           :fields => list(GoogleApi.ServiceUsage.V1.Model.Field.t()) | nil,
           :name => String.t() | nil,
           :oneofs => list(String.t()) | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Type do
           :syntax => String.t() | nil
         }
 
+  field(:edition)
   field(:fields, as: GoogleApi.ServiceUsage.V1.Model.Field, type: :list)
   field(:name)
   field(:oneofs, type: :list)
