@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations for network endpoint.
   *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - URL of the forwarding rule associated with the health status of the instance.
   *   `forwardingRuleIp` (*type:* `String.t`, *default:* `nil`) - A forwarding rule IP address assigned to this instance.
-  *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the instance.
+  *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the IPv4 address of the instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The named port of the instance group, not necessarily the port that is health-checked.

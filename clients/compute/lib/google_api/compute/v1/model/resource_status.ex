@@ -22,15 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
   ## Attributes
 
   *   `physicalHost` (*type:* `String.t`, *default:* `nil`) - [Output Only] An opaque ID of the host on which the VM is running.
+  *   `upcomingMaintenance` (*type:* `GoogleApi.Compute.V1.Model.UpcomingMaintenance.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :physicalHost => String.t() | nil
+          :physicalHost => String.t() | nil,
+          :upcomingMaintenance => GoogleApi.Compute.V1.Model.UpcomingMaintenance.t() | nil
         }
 
   field(:physicalHost)
+  field(:upcomingMaintenance, as: GoogleApi.Compute.V1.Model.UpcomingMaintenance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.ResourceStatus do

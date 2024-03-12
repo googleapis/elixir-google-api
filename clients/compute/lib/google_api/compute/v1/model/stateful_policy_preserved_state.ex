@@ -22,6 +22,8 @@ defmodule GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState do
   ## Attributes
 
   *   `disks` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateDiskDevice.t}`, *default:* `nil`) - Disks created on the instances that will be preserved on instance delete, update, etc. This map is keyed with the device names of the disks.
+  *   `externalIPs` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp.t}`, *default:* `nil`) - External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+  *   `internalIPs` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp.t}`, *default:* `nil`) - Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,10 +34,32 @@ defmodule GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState do
               optional(String.t()) =>
                 GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateDiskDevice.t()
             }
+            | nil,
+          :externalIPs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp.t()
+            }
+            | nil,
+          :internalIPs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp.t()
+            }
             | nil
         }
 
   field(:disks, as: GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateDiskDevice, type: :map)
+
+  field(:externalIPs,
+    as: GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp,
+    type: :map
+  )
+
+  field(:internalIPs,
+    as: GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateNetworkIp,
+    type: :map
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState do

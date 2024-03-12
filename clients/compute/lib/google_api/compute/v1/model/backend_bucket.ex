@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendBucket.
   *   `compressionMode` (*type:* `String.t`, *default:* `nil`) - Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied responses.
+  *   `customResponseHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the Application Load Balancer should add to proxied responses.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional textual description of the resource; provided by the client when the resource is created.
   *   `edgeSecurityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the edge security policy associated with this backend bucket.
   *   `enableCdn` (*type:* `boolean()`, *default:* `nil`) - If true, enable Cloud CDN for this BackendBucket.

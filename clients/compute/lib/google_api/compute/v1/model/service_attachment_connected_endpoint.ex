@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConnectedEndpoint do
 
   ## Attributes
 
+  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - The url of the consumer network.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - The url of a connected endpoint.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - The PSC connection id of the connected endpoint.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of a connected endpoint to this service attachment.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConnectedEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :consumerNetwork => String.t() | nil,
           :endpoint => String.t() | nil,
           :pscConnectionId => String.t() | nil,
           :status => String.t() | nil
         }
 
+  field(:consumerNetwork)
   field(:endpoint)
   field(:pscConnectionId)
   field(:status)

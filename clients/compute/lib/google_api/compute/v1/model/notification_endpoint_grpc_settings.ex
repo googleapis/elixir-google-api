@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.NotificationEndpointGrpcSettings do
   *   `authority` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
   *   `payloadName` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, this field is used to populate the "name" field in gRPC requests.
-  *   `resendInterval` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
+  *   `resendInterval` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
   *   `retryDurationSec` (*type:* `integer()`, *default:* `nil`) - How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
   """
 

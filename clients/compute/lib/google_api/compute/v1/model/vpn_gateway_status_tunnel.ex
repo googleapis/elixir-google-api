@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatusTunnel do
   ## Attributes
 
   *   `localGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The VPN gateway interface this VPN tunnel is associated with.
-  *   `peerGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+  *   `peerGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
   *   `tunnelUrl` (*type:* `String.t`, *default:* `nil`) - URL reference to the VPN tunnel.
   """
 

@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `endTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment end time in RFC3339 text format.
+  *   `existingReservations` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#commitment`) - [Output Only] Type of the resource. Always compute#commitment for commitments.
   *   `licenseResource` (*type:* `GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t`, *default:* `nil`) - The license specification required as part of a license commitment.
@@ -33,10 +34,10 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `plan` (*type:* `String.t`, *default:* `nil`) - The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where this commitment may be used.
-  *   `reservations` (*type:* `list(GoogleApi.Compute.V1.Model.Reservation.t)`, *default:* `nil`) - List of reservations in this commitment.
+  *   `reservations` (*type:* `list(GoogleApi.Compute.V1.Model.Reservation.t)`, *default:* `nil`) - List of create-on-create reservations for this commitment.
   *   `resources` (*type:* `list(GoogleApi.Compute.V1.Model.ResourceCommitment.t)`, *default:* `nil`) - A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource commitments must occur together.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `splitSourceCommitment` (*type:* `String.t`, *default:* `nil`) - Source commitment to be splitted into a new commitment.
+  *   `splitSourceCommitment` (*type:* `String.t`, *default:* `nil`) - Source commitment to be split into a new commitment.
   *   `startTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment start time in RFC3339 text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :endTimestamp => String.t() | nil,
+          :existingReservations => list(String.t()) | nil,
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :licenseResource => GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   field(:creationTimestamp)
   field(:description)
   field(:endTimestamp)
+  field(:existingReservations, type: :list)
   field(:id)
   field(:kind)
   field(:licenseResource, as: GoogleApi.Compute.V1.Model.LicenseResourceCommitment)

@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
 
   ## Attributes
 
+  *   `cloudArmorTier` (*type:* `String.t`, *default:* `nil`) - [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
   *   `commonInstanceMetadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `defaultNetworkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
@@ -33,12 +34,14 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this project.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `usageExportLocation` (*type:* `GoogleApi.Compute.V1.Model.UsageExportLocation.t`, *default:* `nil`) - The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+  *   `vmDnsSetting` (*type:* `String.t`, *default:* `nil`) - [Output Only] Default internal DNS setting used by VMs running in this project.
   *   `xpnProjectStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudArmorTier => String.t() | nil,
           :commonInstanceMetadata => GoogleApi.Compute.V1.Model.Metadata.t() | nil,
           :creationTimestamp => String.t() | nil,
           :defaultNetworkTier => String.t() | nil,
@@ -51,9 +54,11 @@ defmodule GoogleApi.Compute.V1.Model.Project do
           :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()) | nil,
           :selfLink => String.t() | nil,
           :usageExportLocation => GoogleApi.Compute.V1.Model.UsageExportLocation.t() | nil,
+          :vmDnsSetting => String.t() | nil,
           :xpnProjectStatus => String.t() | nil
         }
 
+  field(:cloudArmorTier)
   field(:commonInstanceMetadata, as: GoogleApi.Compute.V1.Model.Metadata)
   field(:creationTimestamp)
   field(:defaultNetworkTier)
@@ -66,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   field(:quotas, as: GoogleApi.Compute.V1.Model.Quota, type: :list)
   field(:selfLink)
   field(:usageExportLocation, as: GoogleApi.Compute.V1.Model.UsageExportLocation)
+  field(:vmDnsSetting)
   field(:xpnProjectStatus)
 end
 

@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `natPolicy` (*type:* `String.t`, *default:* `nil`) - Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
+  *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this target instance.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the target instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstance do
           :name => String.t() | nil,
           :natPolicy => String.t() | nil,
           :network => String.t() | nil,
+          :securityPolicy => String.t() | nil,
           :selfLink => String.t() | nil,
           :zone => String.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstance do
   field(:name)
   field(:natPolicy)
   field(:network)
+  field(:securityPolicy)
   field(:selfLink)
   field(:zone)
 end

@@ -22,6 +22,8 @@ defmodule GoogleApi.Compute.V1.Model.PreservedState do
   ## Attributes
 
   *   `disks` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk.t}`, *default:* `nil`) - Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+  *   `externalIPs` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp.t}`, *default:* `nil`) - Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+  *   `internalIPs` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp.t}`, *default:* `nil`) - Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Preserved metadata defined for this instance.
   """
 
@@ -31,10 +33,24 @@ defmodule GoogleApi.Compute.V1.Model.PreservedState do
           :disks =>
             %{optional(String.t()) => GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk.t()}
             | nil,
+          :externalIPs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp.t()
+            }
+            | nil,
+          :internalIPs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp.t()
+            }
+            | nil,
           :metadata => map() | nil
         }
 
   field(:disks, as: GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk, type: :map)
+  field(:externalIPs, as: GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp, type: :map)
+  field(:internalIPs, as: GoogleApi.Compute.V1.Model.PreservedStatePreservedNetworkIp, type: :map)
   field(:metadata, type: :map)
 end
 

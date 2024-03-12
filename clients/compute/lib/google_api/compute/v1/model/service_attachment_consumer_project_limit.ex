@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConsumerProjectLimit do
   ## Attributes
 
   *   `connectionLimit` (*type:* `integer()`, *default:* `nil`) - The value of the limit to set.
+  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The network URL for the network to set the limit for.
   *   `projectIdOrNum` (*type:* `String.t`, *default:* `nil`) - The project id or number for the project to set the limit for.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConsumerProjectLimit do
 
   @type t :: %__MODULE__{
           :connectionLimit => integer() | nil,
+          :networkUrl => String.t() | nil,
           :projectIdOrNum => String.t() | nil
         }
 
   field(:connectionLimit)
+  field(:networkUrl)
   field(:projectIdOrNum)
 end
 

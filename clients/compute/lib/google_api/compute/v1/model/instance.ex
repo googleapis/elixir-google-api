@@ -34,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
   *   `confidentialInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - 
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+  *   `instanceEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `networkPerformanceConfig` (*type:* `GoogleApi.Compute.V1.Model.NetworkPerformanceConfig.t`, *default:* `nil`) - 
   *   `sourceMachineImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Source machine image encryption key when creating an instance from a machine image.
@@ -62,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this instance. These can be later modified by the setLabels method.
   *   `lastStartTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Last start timestamp in RFC3339 text format.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that this instance can consume from.
   *   `cpuPlatform` (*type:* `String.t`, *default:* `nil`) - [Output Only] The CPU platform used by this instance.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Sets the scheduling options for this instance.
@@ -85,6 +87,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :confidentialInstanceConfig =>
             GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t() | nil,
           :zone => String.t() | nil,
+          :instanceEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
           :description => String.t() | nil,
           :networkPerformanceConfig =>
             GoogleApi.Compute.V1.Model.NetworkPerformanceConfig.t() | nil,
@@ -116,6 +119,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :labels => map() | nil,
           :lastStartTimestamp => String.t() | nil,
           :selfLink => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t() | nil,
           :cpuPlatform => String.t() | nil,
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t() | nil
@@ -134,6 +138,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:metadata, as: GoogleApi.Compute.V1.Model.Metadata)
   field(:confidentialInstanceConfig, as: GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig)
   field(:zone)
+  field(:instanceEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:description)
   field(:networkPerformanceConfig, as: GoogleApi.Compute.V1.Model.NetworkPerformanceConfig)
   field(:sourceMachineImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
@@ -166,6 +171,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:labels, type: :map)
   field(:lastStartTimestamp)
   field(:selfLink)
+  field(:satisfiesPzi)
   field(:reservationAffinity, as: GoogleApi.Compute.V1.Model.ReservationAffinity)
   field(:cpuPlatform)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)

@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   *   `instanceHealth` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t)`, *default:* `nil`) - [Output Only] Health state of the instance per health-check.
   *   `instanceStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. This field is empty when the instance does not exist.
   *   `lastAttempt` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t`, *default:* `nil`) - [Output Only] Information about the last attempt to create or delete the instance.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
   *   `preservedStateFromConfig` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state applied from per-instance config for this instance.
   *   `preservedStateFromPolicy` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state generated based on stateful policy for this instance.
   *   `version` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t`, *default:* `nil`) - [Output Only] Intended version of this instance.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
             list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t()) | nil,
           :instanceStatus => String.t() | nil,
           :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t() | nil,
+          :name => String.t() | nil,
           :preservedStateFromConfig => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
           :preservedStateFromPolicy => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
           :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t() | nil
@@ -55,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
 
   field(:instanceStatus)
   field(:lastAttempt, as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt)
+  field(:name)
   field(:preservedStateFromConfig, as: GoogleApi.Compute.V1.Model.PreservedState)
   field(:preservedStateFromPolicy, as: GoogleApi.Compute.V1.Model.PreservedState)
   field(:version, as: GoogleApi.Compute.V1.Model.ManagedInstanceVersion)

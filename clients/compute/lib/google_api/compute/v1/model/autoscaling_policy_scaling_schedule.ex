@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyScalingSchedule do
   *   `durationSec` (*type:* `integer()`, *default:* `nil`) - The duration of time intervals, in seconds, for which this scaling schedule is to run. The minimum allowed value is 300. This field is required.
   *   `minRequiredReplicas` (*type:* `integer()`, *default:* `nil`) - The minimum number of VM instances that the autoscaler will recommend in time intervals starting according to schedule. This field is required.
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - The start timestamps of time intervals when this scaling schedule is to provide a scaling signal. This field uses the extended cron format (with an optional year field). The expression can describe a single timestamp if the optional year is set, in which case the scaling schedule runs once. The schedule is interpreted with respect to time_zone. This field is required. Note: These timestamps only describe when autoscaler starts providing the scaling signal. The VMs need additional time to become serving.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
   """
 
   use GoogleApi.Gax.ModelBase

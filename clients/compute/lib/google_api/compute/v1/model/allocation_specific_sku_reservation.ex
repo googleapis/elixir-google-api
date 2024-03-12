@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
   *   `count` (*type:* `String.t`, *default:* `nil`) - Specifies the number of resources that are allocated.
   *   `inUseCount` (*type:* `String.t`, *default:* `nil`) - [Output Only] Indicates how many instances are in use.
   *   `instanceProperties` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInstanceProperties.t`, *default:* `nil`) - The instance properties for the reservation.
+  *   `sourceInstanceTemplate` (*type:* `String.t`, *default:* `nil`) - Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
           :inUseCount => String.t() | nil,
           :instanceProperties =>
             GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInstanceProperties.t()
-            | nil
+            | nil,
+          :sourceInstanceTemplate => String.t() | nil
         }
 
   field(:assuredCount)
@@ -45,6 +47,8 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
   field(:instanceProperties,
     as: GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInstanceProperties
   )
+
+  field(:sourceInstanceTemplate)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do

@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do
   *   `jsonCustomConfig` (*type:* `GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.t`, *default:* `nil`) - Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
   *   `jsonParsing` (*type:* `String.t`, *default:* `nil`) - 
   *   `logLevel` (*type:* `String.t`, *default:* `nil`) - 
+  *   `userIpRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - An optional list of case-insensitive request header names to use for resolving the callers client IP address.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do
             GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.t()
             | nil,
           :jsonParsing => String.t() | nil,
-          :logLevel => String.t() | nil
+          :logLevel => String.t() | nil,
+          :userIpRequestHeaders => list(String.t()) | nil
         }
 
   field(:jsonCustomConfig,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do
 
   field(:jsonParsing)
   field(:logLevel)
+  field(:userIpRequestHeaders, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.SecurityPolicyAdvancedOptionsConfig do

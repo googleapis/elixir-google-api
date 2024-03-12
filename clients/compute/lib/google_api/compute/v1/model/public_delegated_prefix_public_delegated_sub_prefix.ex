@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefixPublicDelegatedSubPref
 
   *   `delegateeProject` (*type:* `String.t`, *default:* `nil`) - Name of the project scoping this PublicDelegatedSubPrefix.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP address range, in CIDR format, represented by this sub public delegated prefix.
   *   `isAddress` (*type:* `boolean()`, *default:* `nil`) - Whether the sub prefix is delegated to create Address resources in the delegatee project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the sub public delegated prefix.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.

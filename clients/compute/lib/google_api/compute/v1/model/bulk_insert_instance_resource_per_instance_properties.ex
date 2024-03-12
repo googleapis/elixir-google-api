@@ -21,15 +21,18 @@ defmodule GoogleApi.Compute.V1.Model.BulkInsertInstanceResourcePerInstanceProper
 
   ## Attributes
 
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
   *   `name` (*type:* `String.t`, *default:* `nil`) - This field is only temporary. It will be removed. Do not use it.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hostname => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:hostname)
   field(:name)
 end
 

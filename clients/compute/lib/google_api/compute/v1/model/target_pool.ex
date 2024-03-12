@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.TargetPool do
   @moduledoc """
-  Represents a Target Pool resource. Target pools are used for network TCP/UDP load balancing. A target pool references member instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target pool. For more information, read Using target pools.
+  Represents a Target Pool resource. Target pools are used with external passthrough Network Load Balancers. A target pool references member instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target pool. For more information, read Using target pools.
 
   ## Attributes
 
@@ -31,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPool do
   *   `kind` (*type:* `String.t`, *default:* `compute#targetPool`) - [Output Only] Type of the resource. Always compute#targetPool for target pools.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the target pool resides.
+  *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this target pool.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
   """
@@ -48,6 +49,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPool do
           :kind => String.t() | nil,
           :name => String.t() | nil,
           :region => String.t() | nil,
+          :securityPolicy => String.t() | nil,
           :selfLink => String.t() | nil,
           :sessionAffinity => String.t() | nil
         }
@@ -62,6 +64,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPool do
   field(:kind)
   field(:name)
   field(:region)
+  field(:securityPolicy)
   field(:selfLink)
   field(:sessionAffinity)
 end

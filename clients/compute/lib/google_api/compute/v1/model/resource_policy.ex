@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - 
+  *   `diskConsistencyGroupPolicy` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyDiskConsistencyGroupPolicy.t`, *default:* `nil`) - Resource policy for disk consistency groups.
   *   `groupPlacementPolicy` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy.t`, *default:* `nil`) - Resource policy for instances for placement configuration.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `instanceSchedulePolicy` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicy.t`, *default:* `nil`) - Resource policy for scheduling instance operations.
@@ -40,6 +41,8 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
   @type t :: %__MODULE__{
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
+          :diskConsistencyGroupPolicy =>
+            GoogleApi.Compute.V1.Model.ResourcePolicyDiskConsistencyGroupPolicy.t() | nil,
           :groupPlacementPolicy =>
             GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy.t() | nil,
           :id => String.t() | nil,
@@ -57,6 +60,11 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
 
   field(:creationTimestamp)
   field(:description)
+
+  field(:diskConsistencyGroupPolicy,
+    as: GoogleApi.Compute.V1.Model.ResourcePolicyDiskConsistencyGroupPolicy
+  )
+
   field(:groupPlacementPolicy, as: GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy)
   field(:id)
 
