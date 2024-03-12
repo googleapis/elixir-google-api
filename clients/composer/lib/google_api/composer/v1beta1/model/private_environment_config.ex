@@ -25,6 +25,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
   *   `cloudComposerNetworkIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for Cloud Composer Network in tenant project will be reserved. Needs to be disjoint from private_cluster_config.master_ipv4_cidr_block and cloud_sql_ipv4_cidr_block. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `cloudComposerNetworkIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range reserved for the tenant project's Cloud Composer network. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
   *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for Cloud SQL. Needs to be disjoint from web_server_ipv4_cidr_block
+  *   `enablePrivateBuildsOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, builds performed during operations that install Python packages have only private connectivity to Google services (including Artifact Registry) and VPC network (if either `NodeConfig.network` and `NodeConfig.subnetwork` fields or `NodeConfig.composer_network_attachment` field are specified). If `false`, the builds also have access to the internet. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
   *   `enablePrivateEnvironment` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, a Private IP Cloud Composer environment is created. If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be set to true for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `enablePrivatelyUsedPublicIps` (*type:* `boolean()`, *default:* `nil`) - Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for `IPAllocationPolicy.cluster_ipv4_cidr_block` and `IPAllocationPolicy.service_ipv4_cidr_block`.
   *   `networkingConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.NetworkingConfig.t`, *default:* `nil`) - Optional. Configuration for the network connections configuration in the environment.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
           :cloudComposerNetworkIpv4CidrBlock => String.t() | nil,
           :cloudComposerNetworkIpv4ReservedRange => String.t() | nil,
           :cloudSqlIpv4CidrBlock => String.t() | nil,
+          :enablePrivateBuildsOnly => boolean() | nil,
           :enablePrivateEnvironment => boolean() | nil,
           :enablePrivatelyUsedPublicIps => boolean() | nil,
           :networkingConfig => GoogleApi.Composer.V1beta1.Model.NetworkingConfig.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
   field(:cloudComposerNetworkIpv4CidrBlock)
   field(:cloudComposerNetworkIpv4ReservedRange)
   field(:cloudSqlIpv4CidrBlock)
+  field(:enablePrivateBuildsOnly)
   field(:enablePrivateEnvironment)
   field(:enablePrivatelyUsedPublicIps)
   field(:networkingConfig, as: GoogleApi.Composer.V1beta1.Model.NetworkingConfig)

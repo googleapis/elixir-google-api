@@ -21,8 +21,10 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
 
   ## Attributes
 
+  *   `airflowByoidUri` (*type:* `String.t`, *default:* `nil`) - Output only. The 'bring your own identity' variant of the URI of the Apache Airflow Web UI hosted within this environment, to be accessed with external identities using workforce identity federation (see [Access environments with workforce identity federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
   *   `airflowUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)).
   *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using "/"-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix.
+  *   `dataRetentionConfig` (*type:* `GoogleApi.Composer.V1.Model.DataRetentionConfig.t`, *default:* `nil`) - Optional. The configuration setting for Airflow database data retention mechanism.
   *   `databaseConfig` (*type:* `GoogleApi.Composer.V1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software.
   *   `encryptionConfig` (*type:* `GoogleApi.Composer.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption options for the Cloud Composer environment and its dependencies. Cannot be updated.
   *   `environmentSize` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
@@ -32,6 +34,8 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
+  *   `recoveryConfig` (*type:* `GoogleApi.Composer.V1.Model.RecoveryConfig.t`, *default:* `nil`) - Optional. The Recovery settings configuration of an environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
+  *   `resilienceMode` (*type:* `String.t`, *default:* `nil`) - Optional. Resilience mode of the Cloud Composer Environment. This field is supported for Cloud Composer environments in versions composer-2.2.0-airflow-*.*.* and newer.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   *   `webServerConfig` (*type:* `GoogleApi.Composer.V1.Model.WebServerConfig.t`, *default:* `nil`) - Optional. The configuration settings for the Airflow web server App Engine instance.
   *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied.
@@ -41,8 +45,10 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :airflowByoidUri => String.t() | nil,
           :airflowUri => String.t() | nil,
           :dagGcsPrefix => String.t() | nil,
+          :dataRetentionConfig => GoogleApi.Composer.V1.Model.DataRetentionConfig.t() | nil,
           :databaseConfig => GoogleApi.Composer.V1.Model.DatabaseConfig.t() | nil,
           :encryptionConfig => GoogleApi.Composer.V1.Model.EncryptionConfig.t() | nil,
           :environmentSize => String.t() | nil,
@@ -54,6 +60,8 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :nodeCount => integer() | nil,
           :privateEnvironmentConfig =>
             GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t() | nil,
+          :recoveryConfig => GoogleApi.Composer.V1.Model.RecoveryConfig.t() | nil,
+          :resilienceMode => String.t() | nil,
           :softwareConfig => GoogleApi.Composer.V1.Model.SoftwareConfig.t() | nil,
           :webServerConfig => GoogleApi.Composer.V1.Model.WebServerConfig.t() | nil,
           :webServerNetworkAccessControl =>
@@ -61,8 +69,10 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :workloadsConfig => GoogleApi.Composer.V1.Model.WorkloadsConfig.t() | nil
         }
 
+  field(:airflowByoidUri)
   field(:airflowUri)
   field(:dagGcsPrefix)
+  field(:dataRetentionConfig, as: GoogleApi.Composer.V1.Model.DataRetentionConfig)
   field(:databaseConfig, as: GoogleApi.Composer.V1.Model.DatabaseConfig)
   field(:encryptionConfig, as: GoogleApi.Composer.V1.Model.EncryptionConfig)
   field(:environmentSize)
@@ -76,6 +86,8 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   field(:nodeConfig, as: GoogleApi.Composer.V1.Model.NodeConfig)
   field(:nodeCount)
   field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig)
+  field(:recoveryConfig, as: GoogleApi.Composer.V1.Model.RecoveryConfig)
+  field(:resilienceMode)
   field(:softwareConfig, as: GoogleApi.Composer.V1.Model.SoftwareConfig)
   field(:webServerConfig, as: GoogleApi.Composer.V1.Model.WebServerConfig)
 

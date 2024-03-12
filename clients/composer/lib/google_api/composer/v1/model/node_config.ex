@@ -21,6 +21,8 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
 
   ## Attributes
 
+  *   `composerInternalIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The IP range in CIDR notation to use internally by Cloud Composer. IP addresses are not reserved - and the same range can be used by multiple Cloud Composer environments. In case of overlap, IPs from this range will not be accessible in the user's VPC network. Cannot be updated. If not specified, the default value of '100.64.128.0/20' is used. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  *   `composerNetworkAttachment` (*type:* `String.t`, *default:* `nil`) - Optional. Network Attachment that Cloud Composer environment is connected to, which provides connectivity with a user's VPC network. Takes precedence over network and subnetwork settings. If not provided, but network and subnetwork are defined during environment, it will be provisioned. If not provided and network and subnetwork are also empty, then connectivity to user's VPC network is disabled. Network attachment must be provided in format projects/{project}/regions/{region}/networkAttachments/{networkAttachment}. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `enableIpMasqAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
   *   `ipAllocationPolicy` (*type:* `GoogleApi.Composer.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
@@ -30,12 +32,14 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The set of Google API scopes to be made available on all node VMs. If `oauth_scopes` is empty, defaults to ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Google Cloud Platform Service Account to be used by the node VMs. If a service account is not specified, the "default" Compute Engine service account is used. Cannot be updated.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine subnetwork to be used for machine communications, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}" If a subnetwork is provided, `nodeConfig.network` must also be provided, and the subnetwork must belong to the enclosing environment's project and location.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of instance tags applied to all node VMs. Tags are used to identify valid sources or targets for network firewalls. Each tag within the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of instance tags applied to all node VMs. Tags are used to identify valid sources or targets for network firewalls. Each tag within the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Cannot be updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :composerInternalIpv4CidrBlock => String.t() | nil,
+          :composerNetworkAttachment => String.t() | nil,
           :diskSizeGb => integer() | nil,
           :enableIpMasqAgent => boolean() | nil,
           :ipAllocationPolicy => GoogleApi.Composer.V1.Model.IPAllocationPolicy.t() | nil,
@@ -48,6 +52,8 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
           :tags => list(String.t()) | nil
         }
 
+  field(:composerInternalIpv4CidrBlock)
+  field(:composerNetworkAttachment)
   field(:diskSizeGb)
   field(:enableIpMasqAgent)
   field(:ipAllocationPolicy, as: GoogleApi.Composer.V1.Model.IPAllocationPolicy)

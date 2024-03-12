@@ -28,6 +28,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.SoftwareConfig do
   *   `pypiPackages` (*type:* `map()`, *default:* `nil`) - Optional. Custom Python Package Index (PyPI) packages to be installed in the environment. Keys refer to the lowercase package name such as "numpy" and values are the lowercase extras and version specifier such as "==1.12.0", "[devel,gcp_api]", or "[devel]>=1.8.2, <1.9.2". To specify a package without pinning it to a version specifier, use the empty string as the value.
   *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be updated. This field is only supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3.
   *   `schedulerCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*.
+  *   `webServerPluginsMode` (*type:* `String.t`, *default:* `nil`) - Optional. Whether or not the web server uses custom plugins. If unspecified, the field defaults to `PLUGINS_ENABLED`. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +41,8 @@ defmodule GoogleApi.Composer.V1beta1.Model.SoftwareConfig do
           :imageVersion => String.t() | nil,
           :pypiPackages => map() | nil,
           :pythonVersion => String.t() | nil,
-          :schedulerCount => integer() | nil
+          :schedulerCount => integer() | nil,
+          :webServerPluginsMode => String.t() | nil
         }
 
   field(:airflowConfigOverrides, type: :map)
@@ -54,6 +56,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.SoftwareConfig do
   field(:pypiPackages, type: :map)
   field(:pythonVersion)
   field(:schedulerCount)
+  field(:webServerPluginsMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.SoftwareConfig do
