@@ -21,19 +21,27 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `allowAllBundleIds` (*type:* `boolean()`, *default:* `nil`) - If set to true, allowed_bundle_ids are not enforced.
-  *   `allowedBundleIds` (*type:* `list(String.t)`, *default:* `nil`) - iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'
+  *   `allowAllBundleIds` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, allowed_bundle_ids are not enforced.
+  *   `allowedBundleIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'
+  *   `appleDeveloperId` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AppleDeveloperId.t`, *default:* `nil`) - Optional. Apple Developer account details for the app that is protected by the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like Apple App Attest and Apple DeviceCheck to protect your app from abuse. Providing these fields allows reCAPTCHA Enterprise to get a better assessment of the integrity of your app.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :allowAllBundleIds => boolean() | nil,
-          :allowedBundleIds => list(String.t()) | nil
+          :allowedBundleIds => list(String.t()) | nil,
+          :appleDeveloperId =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AppleDeveloperId.t()
+            | nil
         }
 
   field(:allowAllBundleIds)
   field(:allowedBundleIds, type: :list)
+
+  field(:appleDeveloperId,
+    as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AppleDeveloperId
+  )
 end
 
 defimpl Poison.Decoder,

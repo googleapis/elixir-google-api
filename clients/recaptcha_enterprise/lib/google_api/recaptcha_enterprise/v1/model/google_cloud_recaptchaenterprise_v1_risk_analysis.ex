@@ -21,17 +21,20 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Reasons contributing to the risk analysis verdict.
-  *   `score` (*type:* `number()`, *default:* `nil`) - Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic).
+  *   `extendedVerdictReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Extended verdict reasons to be used for experimentation only. The set of possible reasons is subject to change.
+  *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Reasons contributing to the risk analysis verdict.
+  *   `score` (*type:* `number()`, *default:* `nil`) - Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :extendedVerdictReasons => list(String.t()) | nil,
           :reasons => list(String.t()) | nil,
           :score => number() | nil
         }
 
+  field(:extendedVerdictReasons, type: :list)
   field(:reasons, type: :list)
   field(:score)
 end

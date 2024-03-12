@@ -21,7 +21,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Labels for this request.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Labels for this request.
   """
 
   use GoogleApi.Gax.ModelBase
