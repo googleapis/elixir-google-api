@@ -23,7 +23,7 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextRequest do
 
   *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Required. Input document.
   *   `encodingType` (*type:* `String.t`, *default:* `nil`) - The encoding type used by the API to calculate offsets.
-  *   `features` (*type:* `GoogleApi.Language.V1.Model.Features.t`, *default:* `nil`) - Required. The enabled features.
+  *   `features` (*type:* `GoogleApi.Language.V1.Model.AnnotateTextRequestFeatures.t`, *default:* `nil`) - Required. The enabled features.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +31,12 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextRequest do
   @type t :: %__MODULE__{
           :document => GoogleApi.Language.V1.Model.Document.t() | nil,
           :encodingType => String.t() | nil,
-          :features => GoogleApi.Language.V1.Model.Features.t() | nil
+          :features => GoogleApi.Language.V1.Model.AnnotateTextRequestFeatures.t() | nil
         }
 
   field(:document, as: GoogleApi.Language.V1.Model.Document)
   field(:encodingType)
-  field(:features, as: GoogleApi.Language.V1.Model.Features)
+  field(:features, as: GoogleApi.Language.V1.Model.AnnotateTextRequestFeatures)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.AnnotateTextRequest do

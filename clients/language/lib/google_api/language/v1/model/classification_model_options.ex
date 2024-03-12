@@ -21,19 +21,19 @@ defmodule GoogleApi.Language.V1.Model.ClassificationModelOptions do
 
   ## Attributes
 
-  *   `v1Model` (*type:* `GoogleApi.Language.V1.Model.V1Model.t`, *default:* `nil`) - Setting this field will use the V1 model and V1 content categories version. The V1 model is a legacy model; support for this will be discontinued in the future.
-  *   `v2Model` (*type:* `GoogleApi.Language.V1.Model.V2Model.t`, *default:* `nil`) - Setting this field will use the V2 model with the appropriate content categories version. The V2 model is a better performing model.
+  *   `v1Model` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptionsV1Model.t`, *default:* `nil`) - Setting this field will use the V1 model and V1 content categories version. The V1 model is a legacy model; support for this will be discontinued in the future.
+  *   `v2Model` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptionsV2Model.t`, *default:* `nil`) - Setting this field will use the V2 model with the appropriate content categories version. The V2 model is a better performing model.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :v1Model => GoogleApi.Language.V1.Model.V1Model.t() | nil,
-          :v2Model => GoogleApi.Language.V1.Model.V2Model.t() | nil
+          :v1Model => GoogleApi.Language.V1.Model.ClassificationModelOptionsV1Model.t() | nil,
+          :v2Model => GoogleApi.Language.V1.Model.ClassificationModelOptionsV2Model.t() | nil
         }
 
-  field(:v1Model, as: GoogleApi.Language.V1.Model.V1Model)
-  field(:v2Model, as: GoogleApi.Language.V1.Model.V2Model)
+  field(:v1Model, as: GoogleApi.Language.V1.Model.ClassificationModelOptionsV1Model)
+  field(:v2Model, as: GoogleApi.Language.V1.Model.ClassificationModelOptionsV2Model)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V1.Model.ClassificationModelOptions do

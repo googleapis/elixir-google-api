@@ -21,7 +21,7 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextRequest do
 
   ## Attributes
 
-  *   `classificationModelOptions` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptions.t`, *default:* `nil`) - Model options to use for classification. Defaults to v1 options if not specified.
+  *   `classificationModelOptions` (*type:* `GoogleApi.Language.V1.Model.ClassificationModelOptions.t`, *default:* `nil`) - Optional. Model options to use for classification. Defaults to v1 options if not specified.
   *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Required. Input document.
   """
 
