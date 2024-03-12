@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.Drive.V3.Model.Comment do
   @moduledoc """
-  A comment on a file.
+  A comment on a file. Some resource methods (such as `comments.update`) require a `commentId`. Use the `comments.list` method to retrieve the ID for a comment in a file.
 
   ## Attributes
 
-  *   `anchor` (*type:* `String.t`, *default:* `nil`) - A region of the document represented as a JSON string. For details on defining anchor properties, refer to  Add comments and replies.
-  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The author of the comment. The author's email address and permission ID will not be populated.
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the comment. This field is used for setting the content, while htmlContent should be displayed.
+  *   `anchor` (*type:* `String.t`, *default:* `nil`) - A region of the document represented as a JSON string. For details on defining anchor properties, refer to [Manage comments and replies](https://developers.google.com/drive/api/v3/manage-comments).
+  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The author of the comment. The author's email address and permission ID will not be populated.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the comment. This field is used for setting the content, while `htmlContent` should be displayed.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the comment was created (RFC 3339 date-time).
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the comment has been deleted. A deleted comment has no content.
-  *   `htmlContent` (*type:* `String.t`, *default:* `nil`) - The content of the comment with HTML formatting.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the comment.
-  *   `kind` (*type:* `String.t`, *default:* `drive#comment`) - Identifies what kind of resource this is. Value: the fixed string "drive#comment".
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the comment has been deleted. A deleted comment has no content.
+  *   `htmlContent` (*type:* `String.t`, *default:* `nil`) - Output only. The content of the comment with HTML formatting.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the comment.
+  *   `kind` (*type:* `String.t`, *default:* `drive#comment`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#comment"`.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the comment or any of its replies was modified (RFC 3339 date-time).
   *   `quotedFileContent` (*type:* `GoogleApi.Drive.V3.Model.CommentQuotedFileContent.t`, *default:* `nil`) - The file content to which the comment refers, typically within the anchor region. For a text file, for example, this would be the text at the location of the comment.
-  *   `replies` (*type:* `list(GoogleApi.Drive.V3.Model.Reply.t)`, *default:* `nil`) - The full list of replies to the comment in chronological order.
-  *   `resolved` (*type:* `boolean()`, *default:* `nil`) - Whether the comment has been resolved by one of its replies.
+  *   `replies` (*type:* `list(GoogleApi.Drive.V3.Model.Reply.t)`, *default:* `nil`) - Output only. The full list of replies to the comment in chronological order.
+  *   `resolved` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the comment has been resolved by one of its replies.
   """
 
   use GoogleApi.Gax.ModelBase

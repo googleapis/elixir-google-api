@@ -17,23 +17,18 @@
 
 defmodule GoogleApi.Drive.V3.Model.LabelField do
   @moduledoc """
-  Representation of a label field.
+  Representation of field, which is a typed key-value pair.
 
   ## Attributes
 
   *   `dateString` (*type:* `list(Date.t)`, *default:* `nil`) - Only present if valueType is dateString. RFC 3339 formatted date: YYYY-MM-DD.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of this field.
-  *   `integer` (*type:* `list(String.t)`, *default:* `nil`) - Only present if valueType is integer.
-  *   `kind` (*type:* `String.t`, *default:* `drive#labelField`) - This is always drive#labelField.
-  *   `selection` (*type:* `list(String.t)`, *default:* `nil`) - Only present if valueType is selection.
-  *   `text` (*type:* `list(String.t)`, *default:* `nil`) - Only present if valueType is text.
-  *   `user` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - Only present if valueType is user.
-  *   `valueType` (*type:* `String.t`, *default:* `nil`) - The field type. While new values may be supported in the future, the following are currently allowed:  
-      - dateString 
-      - integer 
-      - selection 
-      - text 
-      - user
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of this label field.
+  *   `integer` (*type:* `list(String.t)`, *default:* `nil`) - Only present if `valueType` is `integer`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#labelField.
+  *   `selection` (*type:* `list(String.t)`, *default:* `nil`) - Only present if `valueType` is `selection`
+  *   `text` (*type:* `list(String.t)`, *default:* `nil`) - Only present if `valueType` is `text`.
+  *   `user` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - Only present if `valueType` is `user`.
+  *   `valueType` (*type:* `String.t`, *default:* `nil`) - The field type. While new values may be supported in the future, the following are currently allowed: * `dateString` * `integer` * `selection` * `text` * `user`
   """
 
   use GoogleApi.Gax.ModelBase

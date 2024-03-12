@@ -17,20 +17,18 @@
 
 defmodule GoogleApi.Drive.V3.Model.Reply do
   @moduledoc """
-  A reply to a comment on a file.
+  A reply to a comment on a file. Some resource methods (such as `replies.update`) require a `replyId`. Use the `replies.list` method to retrieve the ID for a reply.
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - The action the reply performed to the parent comment. Valid values are:  
-      - resolve 
-      - reopen
-  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The author of the reply. The author's email address and permission ID will not be populated.
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the reply. This field is used for setting the content, while htmlContent should be displayed. This is required on creates if no action is specified.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - The action the reply performed to the parent comment. Valid values are: * `resolve` * `reopen`
+  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The author of the reply. The author's email address and permission ID will not be populated.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the reply. This field is used for setting the content, while `htmlContent` should be displayed. This is required on creates if no `action` is specified.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the reply was created (RFC 3339 date-time).
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the reply has been deleted. A deleted reply has no content.
-  *   `htmlContent` (*type:* `String.t`, *default:* `nil`) - The content of the reply with HTML formatting.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the reply.
-  *   `kind` (*type:* `String.t`, *default:* `drive#reply`) - Identifies what kind of resource this is. Value: the fixed string "drive#reply".
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the reply has been deleted. A deleted reply has no content.
+  *   `htmlContent` (*type:* `String.t`, *default:* `nil`) - Output only. The content of the reply with HTML formatting.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the reply.
+  *   `kind` (*type:* `String.t`, *default:* `drive#reply`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#reply"`.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the reply was modified (RFC 3339 date-time).
   """
 

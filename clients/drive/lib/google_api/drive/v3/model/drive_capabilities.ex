@@ -17,29 +17,30 @@
 
 defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
   @moduledoc """
-  Capabilities the current user has on this shared drive.
+  Output only. Capabilities the current user has on this shared drive.
 
   ## Attributes
 
-  *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add children to folders in this shared drive.
-  *   `canChangeCopyRequiresWriterPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the copyRequiresWriterPermission restriction of this shared drive.
-  *   `canChangeDomainUsersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the domainUsersOnly restriction of this shared drive.
-  *   `canChangeDriveBackground` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the background of this shared drive.
-  *   `canChangeDriveMembersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the driveMembersOnly restriction of this shared drive.
-  *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can comment on files in this shared drive.
-  *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can copy files in this shared drive.
-  *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete children from folders in this shared drive.
-  *   `canDeleteDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete this shared drive. Attempting to delete the shared drive may still fail if there are untrashed items inside the shared drive.
-  *   `canDownload` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can download files in this shared drive.
-  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can edit files in this shared drive
-  *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can list the children of folders in this shared drive.
-  *   `canManageMembers` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add members to this shared drive or remove them or change their role.
-  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of files in this shared drive.
-  *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename files or folders in this shared drive.
-  *   `canRenameDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this shared drive.
-  *   `canResetDriveRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can reset the shared drive restrictions to defaults.
-  *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can share files or folders in this shared drive.
-  *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can trash children from folders in this shared drive.
+  *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add children to folders in this shared drive.
+  *   `canChangeCopyRequiresWriterPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `copyRequiresWriterPermission` restriction of this shared drive.
+  *   `canChangeDomainUsersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `domainUsersOnly` restriction of this shared drive.
+  *   `canChangeDriveBackground` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the background of this shared drive.
+  *   `canChangeDriveMembersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `driveMembersOnly` restriction of this shared drive.
+  *   `canChangeSharingFoldersRequiresOrganizerPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `sharingFoldersRequiresOrganizerPermission` restriction of this shared drive.
+  *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can comment on files in this shared drive.
+  *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can copy files in this shared drive.
+  *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can delete children from folders in this shared drive.
+  *   `canDeleteDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can delete this shared drive. Attempting to delete the shared drive may still fail if there are untrashed items inside the shared drive.
+  *   `canDownload` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can download files in this shared drive.
+  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can edit files in this shared drive
+  *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can list the children of folders in this shared drive.
+  *   `canManageMembers` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add members to this shared drive or remove them or change their role.
+  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the revisions resource of files in this shared drive.
+  *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can rename files or folders in this shared drive.
+  *   `canRenameDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can rename this shared drive.
+  *   `canResetDriveRestrictions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can reset the shared drive restrictions to defaults.
+  *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can share files or folders in this shared drive.
+  *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can trash children from folders in this shared drive.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,6 +51,7 @@ defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
           :canChangeDomainUsersOnlyRestriction => boolean() | nil,
           :canChangeDriveBackground => boolean() | nil,
           :canChangeDriveMembersOnlyRestriction => boolean() | nil,
+          :canChangeSharingFoldersRequiresOrganizerPermissionRestriction => boolean() | nil,
           :canComment => boolean() | nil,
           :canCopy => boolean() | nil,
           :canDeleteChildren => boolean() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.Drive.V3.Model.DriveCapabilities do
   field(:canChangeDomainUsersOnlyRestriction)
   field(:canChangeDriveBackground)
   field(:canChangeDriveMembersOnlyRestriction)
+  field(:canChangeSharingFoldersRequiresOrganizerPermissionRestriction)
   field(:canComment)
   field(:canCopy)
   field(:canDeleteChildren)

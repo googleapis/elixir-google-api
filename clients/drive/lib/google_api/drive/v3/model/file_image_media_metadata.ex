@@ -17,31 +17,31 @@
 
 defmodule GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
   @moduledoc """
-  Additional metadata about image media, if available.
+  Output only. Additional metadata about image media, if available.
 
   ## Attributes
 
-  *   `aperture` (*type:* `number()`, *default:* `nil`) - The aperture used to create the photo (f-number).
-  *   `cameraMake` (*type:* `String.t`, *default:* `nil`) - The make of the camera used to create the photo.
-  *   `cameraModel` (*type:* `String.t`, *default:* `nil`) - The model of the camera used to create the photo.
-  *   `colorSpace` (*type:* `String.t`, *default:* `nil`) - The color space of the photo.
-  *   `exposureBias` (*type:* `number()`, *default:* `nil`) - The exposure bias of the photo (APEX value).
-  *   `exposureMode` (*type:* `String.t`, *default:* `nil`) - The exposure mode used to create the photo.
-  *   `exposureTime` (*type:* `number()`, *default:* `nil`) - The length of the exposure, in seconds.
-  *   `flashUsed` (*type:* `boolean()`, *default:* `nil`) - Whether a flash was used to create the photo.
-  *   `focalLength` (*type:* `number()`, *default:* `nil`) - The focal length used to create the photo, in millimeters.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image in pixels.
-  *   `isoSpeed` (*type:* `integer()`, *default:* `nil`) - The ISO speed used to create the photo.
-  *   `lens` (*type:* `String.t`, *default:* `nil`) - The lens used to create the photo.
-  *   `location` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t`, *default:* `nil`) - Geographic location information stored in the image.
-  *   `maxApertureValue` (*type:* `number()`, *default:* `nil`) - The smallest f-number of the lens at the focal length used to create the photo (APEX value).
-  *   `meteringMode` (*type:* `String.t`, *default:* `nil`) - The metering mode used to create the photo.
-  *   `rotation` (*type:* `integer()`, *default:* `nil`) - The number of clockwise 90 degree rotations applied from the image's original orientation.
-  *   `sensor` (*type:* `String.t`, *default:* `nil`) - The type of sensor used to create the photo.
-  *   `subjectDistance` (*type:* `integer()`, *default:* `nil`) - The distance to the subject of the photo, in meters.
-  *   `time` (*type:* `String.t`, *default:* `nil`) - The date and time the photo was taken (EXIF DateTime).
-  *   `whiteBalance` (*type:* `String.t`, *default:* `nil`) - The white balance mode used to create the photo.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the image in pixels.
+  *   `aperture` (*type:* `number()`, *default:* `nil`) - Output only. The aperture used to create the photo (f-number).
+  *   `cameraMake` (*type:* `String.t`, *default:* `nil`) - Output only. The make of the camera used to create the photo.
+  *   `cameraModel` (*type:* `String.t`, *default:* `nil`) - Output only. The model of the camera used to create the photo.
+  *   `colorSpace` (*type:* `String.t`, *default:* `nil`) - Output only. The color space of the photo.
+  *   `exposureBias` (*type:* `number()`, *default:* `nil`) - Output only. The exposure bias of the photo (APEX value).
+  *   `exposureMode` (*type:* `String.t`, *default:* `nil`) - Output only. The exposure mode used to create the photo.
+  *   `exposureTime` (*type:* `number()`, *default:* `nil`) - Output only. The length of the exposure, in seconds.
+  *   `flashUsed` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether a flash was used to create the photo.
+  *   `focalLength` (*type:* `number()`, *default:* `nil`) - Output only. The focal length used to create the photo, in millimeters.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Output only. The height of the image in pixels.
+  *   `isoSpeed` (*type:* `integer()`, *default:* `nil`) - Output only. The ISO speed used to create the photo.
+  *   `lens` (*type:* `String.t`, *default:* `nil`) - Output only. The lens used to create the photo.
+  *   `location` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t`, *default:* `nil`) - Output only. Geographic location information stored in the image.
+  *   `maxApertureValue` (*type:* `number()`, *default:* `nil`) - Output only. The smallest f-number of the lens at the focal length used to create the photo (APEX value).
+  *   `meteringMode` (*type:* `String.t`, *default:* `nil`) - Output only. The metering mode used to create the photo.
+  *   `rotation` (*type:* `integer()`, *default:* `nil`) - Output only. The number of clockwise 90 degree rotations applied from the image's original orientation.
+  *   `sensor` (*type:* `String.t`, *default:* `nil`) - Output only. The type of sensor used to create the photo.
+  *   `subjectDistance` (*type:* `integer()`, *default:* `nil`) - Output only. The distance to the subject of the photo, in meters.
+  *   `time` (*type:* `String.t`, *default:* `nil`) - Output only. The date and time the photo was taken (EXIF DateTime).
+  *   `whiteBalance` (*type:* `String.t`, *default:* `nil`) - Output only. The white balance mode used to create the photo.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Output only. The width of the image in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

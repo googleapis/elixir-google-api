@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Drive.V3.Model.Label do
   @moduledoc """
-  Representation of a label and its fields.
+  Representation of label and label fields.
 
   ## Attributes
 
-  *   `fields` (*type:* `%{optional(String.t) => GoogleApi.Drive.V3.Model.LabelField.t}`, *default:* `nil`) - A map of the label's fields keyed by the field ID.
+  *   `fields` (*type:* `%{optional(String.t) => GoogleApi.Drive.V3.Model.LabelField.t}`, *default:* `nil`) - A map of the fields on the label, keyed by the field's ID.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the label.
-  *   `kind` (*type:* `String.t`, *default:* `drive#label`) - This is always drive#label
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#label
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - The revision ID of the label.
   """
 

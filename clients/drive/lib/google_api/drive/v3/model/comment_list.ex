@@ -22,8 +22,8 @@ defmodule GoogleApi.Drive.V3.Model.CommentList do
   ## Attributes
 
   *   `comments` (*type:* `list(GoogleApi.Drive.V3.Model.Comment.t)`, *default:* `nil`) - The list of comments. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched.
-  *   `kind` (*type:* `String.t`, *default:* `drive#commentList`) - Identifies what kind of resource this is. Value: the fixed string "drive#commentList".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of comments. This will be absent if the end of the comments list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.
+  *   `kind` (*type:* `String.t`, *default:* `drive#commentList`) - Identifies what kind of resource this is. Value: the fixed string `"drive#commentList"`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of comments. This will be absent if the end of the comments list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. The page token is typically valid for several hours. However, if new items are added or removed, your expected results might differ.
   """
 
   use GoogleApi.Gax.ModelBase

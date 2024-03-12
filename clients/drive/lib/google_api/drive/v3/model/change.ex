@@ -21,17 +21,17 @@ defmodule GoogleApi.Drive.V3.Model.Change do
 
   ## Attributes
 
-  *   `changeType` (*type:* `String.t`, *default:* `nil`) - The type of the change. Possible values are file and drive.
+  *   `changeType` (*type:* `String.t`, *default:* `nil`) - The type of the change. Possible values are `file` and `drive`.
   *   `drive` (*type:* `GoogleApi.Drive.V3.Model.Drive.t`, *default:* `nil`) - The updated state of the shared drive. Present if the changeType is drive, the user is still a member of the shared drive, and the shared drive has not been deleted.
   *   `driveId` (*type:* `String.t`, *default:* `nil`) - The ID of the shared drive associated with this change.
   *   `file` (*type:* `GoogleApi.Drive.V3.Model.File.t`, *default:* `nil`) - The updated state of the file. Present if the type is file and the file has not been removed from this list of changes.
   *   `fileId` (*type:* `String.t`, *default:* `nil`) - The ID of the file which has changed.
-  *   `kind` (*type:* `String.t`, *default:* `drive#change`) - Identifies what kind of resource this is. Value: the fixed string "drive#change".
+  *   `kind` (*type:* `String.t`, *default:* `drive#change`) - Identifies what kind of resource this is. Value: the fixed string `"drive#change"`.
   *   `removed` (*type:* `boolean()`, *default:* `nil`) - Whether the file or shared drive has been removed from this list of changes, for example by deletion or loss of access.
-  *   `teamDrive` (*type:* `GoogleApi.Drive.V3.Model.TeamDrive.t`, *default:* `nil`) - Deprecated - use drive instead.
-  *   `teamDriveId` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveId instead.
+  *   `teamDrive` (*type:* `GoogleApi.Drive.V3.Model.TeamDrive.t`, *default:* `nil`) - Deprecated: Use `drive` instead.
+  *   `teamDriveId` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use `driveId` instead.
   *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The time of this change (RFC 3339 date-time).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Deprecated - use changeType instead.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use `changeType` instead.
   """
 
   use GoogleApi.Gax.ModelBase

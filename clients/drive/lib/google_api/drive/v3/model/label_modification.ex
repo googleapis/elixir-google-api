@@ -22,7 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.LabelModification do
   ## Attributes
 
   *   `fieldModifications` (*type:* `list(GoogleApi.Drive.V3.Model.LabelFieldModification.t)`, *default:* `nil`) - The list of modifications to this label's fields.
-  *   `kind` (*type:* `String.t`, *default:* `drive#labelModification`) - This is always drive#labelModification.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#labelModification.
   *   `labelId` (*type:* `String.t`, *default:* `nil`) - The ID of the label to modify.
   *   `removeLabel` (*type:* `boolean()`, *default:* `nil`) - If true, the label will be removed from the file.
   """

@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Drive.V3.Model.LabelList do
   @moduledoc """
-  A list of labels.
+  A list of labels applied to a file.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#labelList`) - This is always drive#labelList
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#labelList
   *   `labels` (*type:* `list(GoogleApi.Drive.V3.Model.Label.t)`, *default:* `nil`) - The list of labels.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of labels. This field will be absent if the end of the list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of labels. This field will be absent if the end of the list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. The page token is typically valid for several hours. However, if new items are added or removed, your expected results might differ.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Drive.V3.Model.FileLabelInfo do
   @moduledoc """
-  An overview of the labels on the file.
+  Output only. An overview of the labels on the file.
 
   ## Attributes
 
-  *   `labels` (*type:* `list(GoogleApi.Drive.V3.Model.Label.t)`, *default:* `nil`) - The set of labels on the file as requested by the label IDs in the includeLabels parameter. By default, no labels are returned.
+  *   `labels` (*type:* `list(GoogleApi.Drive.V3.Model.Label.t)`, *default:* `nil`) - Output only. The set of labels on the file as requested by the label IDs in the `includeLabels` parameter. By default, no labels are returned.
   """
 
   use GoogleApi.Gax.ModelBase

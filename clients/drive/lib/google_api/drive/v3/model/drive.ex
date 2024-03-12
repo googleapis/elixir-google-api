@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.Drive.V3.Model.Drive do
   @moduledoc """
-  Representation of a shared drive.
+  Representation of a shared drive. Some resource methods (such as `drives.update`) require a `driveId`. Use the `drives.list` method to retrieve the ID for a shared drive.
 
   ## Attributes
 
-  *   `backgroundImageFile` (*type:* `GoogleApi.Drive.V3.Model.DriveBackgroundImageFile.t`, *default:* `nil`) - An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set.
-  *   `backgroundImageLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to this shared drive's background image.
-  *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.DriveCapabilities.t`, *default:* `nil`) - Capabilities the current user has on this shared drive.
-  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - The color of this shared drive as an RGB hex string. It can only be set on a drive.drives.update request that does not set themeId.
+  *   `backgroundImageFile` (*type:* `GoogleApi.Drive.V3.Model.DriveBackgroundImageFile.t`, *default:* `nil`) - An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on `drive.drives.update` requests that don't set `themeId`. When specified, all fields of the `backgroundImageFile` must be set.
+  *   `backgroundImageLink` (*type:* `String.t`, *default:* `nil`) - Output only. A short-lived link to this shared drive's background image.
+  *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.DriveCapabilities.t`, *default:* `nil`) - Output only. Capabilities the current user has on this shared drive.
+  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - The color of this shared drive as an RGB hex string. It can only be set on a `drive.drives.update` request that does not set `themeId`.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the shared drive was created (RFC 3339 date-time).
   *   `hidden` (*type:* `boolean()`, *default:* `nil`) - Whether the shared drive is hidden from default view.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this shared drive which is also the ID of the top level folder of this shared drive.
-  *   `kind` (*type:* `String.t`, *default:* `drive#drive`) - Identifies what kind of resource this is. Value: the fixed string "drive#drive".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of this shared drive which is also the ID of the top level folder of this shared drive.
+  *   `kind` (*type:* `String.t`, *default:* `drive#drive`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#drive"`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this shared drive.
-  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true.
-  *   `restrictions` (*type:* `GoogleApi.Drive.V3.Model.DriveRestrictions.t`, *default:* `nil`) - A set of restrictions that apply to this shared drive or items inside this shared drive.
-  *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Output only. The organizational unit of this shared drive. This field is only populated on `drives.list` responses when the `useDomainAdminAccess` parameter is set to `true`.
+  *   `restrictions` (*type:* `GoogleApi.Drive.V3.Model.DriveRestrictions.t`, *default:* `nil`) - A set of restrictions that apply to this shared drive or items inside this shared drive. Note that restrictions can't be set when creating a shared drive. To add a restriction, first create a shared drive and then use `drives.update` to add restrictions.
+  *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible `driveThemes` can be retrieved from a `drive.about.get` response. When not specified on a `drive.drives.create` request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set `colorRgb` or `backgroundImageFile`.
   """
 
   use GoogleApi.Gax.ModelBase

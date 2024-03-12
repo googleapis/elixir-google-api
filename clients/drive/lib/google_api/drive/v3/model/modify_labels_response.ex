@@ -21,7 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.ModifyLabelsResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#modifyLabelsResponse`) - This is always drive#modifyLabelsResponse
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#modifyLabelsResponse
   *   `modifiedLabels` (*type:* `list(GoogleApi.Drive.V3.Model.Label.t)`, *default:* `nil`) - The list of labels which were added or updated by the request.
   """
 

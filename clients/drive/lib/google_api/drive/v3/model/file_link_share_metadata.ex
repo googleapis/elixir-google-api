@@ -21,8 +21,8 @@ defmodule GoogleApi.Drive.V3.Model.FileLinkShareMetadata do
 
   ## Attributes
 
-  *   `securityUpdateEligible` (*type:* `boolean()`, *default:* `nil`) - Whether the file is eligible for security update.
-  *   `securityUpdateEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the security update is enabled for this file.
+  *   `securityUpdateEligible` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the file is eligible for security update.
+  *   `securityUpdateEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the security update is enabled for this file.
   """
 
   use GoogleApi.Gax.ModelBase

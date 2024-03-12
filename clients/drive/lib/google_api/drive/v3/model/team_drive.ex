@@ -21,17 +21,17 @@ defmodule GoogleApi.Drive.V3.Model.TeamDrive do
 
   ## Attributes
 
-  *   `backgroundImageFile` (*type:* `GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile.t`, *default:* `nil`) - An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on drive.teamdrives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set.
+  *   `backgroundImageFile` (*type:* `GoogleApi.Drive.V3.Model.TeamDriveBackgroundImageFile.t`, *default:* `nil`) - An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on `drive.teamdrives.update` requests that don't set `themeId`. When specified, all fields of the `backgroundImageFile` must be set.
   *   `backgroundImageLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to this Team Drive's background image.
   *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.TeamDriveCapabilities.t`, *default:* `nil`) - Capabilities the current user has on this Team Drive.
-  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - The color of this Team Drive as an RGB hex string. It can only be set on a drive.teamdrives.update request that does not set themeId.
+  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - The color of this Team Drive as an RGB hex string. It can only be set on a `drive.teamdrives.update` request that does not set `themeId`.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the Team Drive was created (RFC 3339 date-time).
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this Team Drive which is also the ID of the top level folder of this Team Drive.
-  *   `kind` (*type:* `String.t`, *default:* `drive#teamDrive`) - Identifies what kind of resource this is. Value: the fixed string "drive#teamDrive".
+  *   `kind` (*type:* `String.t`, *default:* `drive#teamDrive`) - Identifies what kind of resource this is. Value: the fixed string `"drive#teamDrive"`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this Team Drive.
-  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The organizational unit of this shared drive. This field is only populated on `drives.list` responses when the `useDomainAdminAccess` parameter is set to `true`.
   *   `restrictions` (*type:* `GoogleApi.Drive.V3.Model.TeamDriveRestrictions.t`, *default:* `nil`) - A set of restrictions that apply to this Team Drive or items inside this Team Drive.
-  *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible teamDriveThemes can be retrieved from a drive.about.get response. When not specified on a drive.teamdrives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile.
+  *   `themeId` (*type:* `String.t`, *default:* `nil`) - The ID of the theme from which the background image and color will be set. The set of possible `teamDriveThemes` can be retrieved from a `drive.about.get` response. When not specified on a `drive.teamdrives.create` request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set `colorRgb` or `backgroundImageFile`.
   """
 
   use GoogleApi.Gax.ModelBase

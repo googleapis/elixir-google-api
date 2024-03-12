@@ -22,8 +22,9 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveRestrictions do
   ## Attributes
 
   *   `adminManagedRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether administrative privileges on this Team Drive are required to modify restrictions.
-  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download files inside this Team Drive, should be disabled for readers and commenters. When this restriction is set to true, it will override the similarly named field to true for any file inside this Team Drive.
+  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download files inside this Team Drive, should be disabled for readers and commenters. When this restriction is set to `true`, it will override the similarly named field to `true` for any file inside this Team Drive.
   *   `domainUsersOnly` (*type:* `boolean()`, *default:* `nil`) - Whether access to this Team Drive and items inside this Team Drive is restricted to users of the domain to which this Team Drive belongs. This restriction may be overridden by other sharing policies controlled outside of this Team Drive.
+  *   `sharingFoldersRequiresOrganizerPermission` (*type:* `boolean()`, *default:* `nil`) - If true, only users with the organizer role can share folders. If false, users with either the organizer role or the file organizer role can share folders.
   *   `teamMembersOnly` (*type:* `boolean()`, *default:* `nil`) - Whether access to items inside this Team Drive is restricted to members of this Team Drive.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveRestrictions do
           :adminManagedRestrictions => boolean() | nil,
           :copyRequiresWriterPermission => boolean() | nil,
           :domainUsersOnly => boolean() | nil,
+          :sharingFoldersRequiresOrganizerPermission => boolean() | nil,
           :teamMembersOnly => boolean() | nil
         }
 
   field(:adminManagedRestrictions)
   field(:copyRequiresWriterPermission)
   field(:domainUsersOnly)
+  field(:sharingFoldersRequiresOrganizerPermission)
   field(:teamMembersOnly)
 end
 

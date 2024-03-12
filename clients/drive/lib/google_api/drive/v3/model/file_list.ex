@@ -22,9 +22,9 @@ defmodule GoogleApi.Drive.V3.Model.FileList do
   ## Attributes
 
   *   `files` (*type:* `list(GoogleApi.Drive.V3.Model.File.t)`, *default:* `nil`) - The list of files. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched.
-  *   `incompleteSearch` (*type:* `boolean()`, *default:* `nil`) - Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple drives with the "allDrives" corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as "user" or "drive".
-  *   `kind` (*type:* `String.t`, *default:* `drive#fileList`) - Identifies what kind of resource this is. Value: the fixed string "drive#fileList".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of files. This will be absent if the end of the files list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.
+  *   `incompleteSearch` (*type:* `boolean()`, *default:* `nil`) - Whether the search process was incomplete. If true, then some search results might be missing, since all documents were not searched. This can occur when searching multiple drives with the 'allDrives' corpora, but all corpora couldn't be searched. When this happens, it's suggested that clients narrow their query by choosing a different corpus such as 'user' or 'drive'.
+  *   `kind` (*type:* `String.t`, *default:* `drive#fileList`) - Identifies what kind of resource this is. Value: the fixed string `"drive#fileList"`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of files. This will be absent if the end of the files list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. The page token is typically valid for several hours. However, if new items are added or removed, your expected results might differ.
   """
 
   use GoogleApi.Gax.ModelBase

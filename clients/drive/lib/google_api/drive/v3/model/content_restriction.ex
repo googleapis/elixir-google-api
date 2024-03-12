@@ -21,27 +21,33 @@ defmodule GoogleApi.Drive.V3.Model.ContentRestriction do
 
   ## Attributes
 
+  *   `ownerRestricted` (*type:* `boolean()`, *default:* `nil`) - Whether the content restriction can only be modified or removed by a user who owns the file. For files in shared drives, any user with `organizer` capabilities can modify or remove this content restriction.
   *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Whether the content of the file is read-only. If a file is read-only, a new revision of the file may not be added, comments may not be added or modified, and the title of the file may not be modified.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - Reason for why the content of the file is restricted. This is only mutable on requests that also set readOnly=true.
-  *   `restrictingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who set the content restriction. Only populated if readOnly is true.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Reason for why the content of the file is restricted. This is only mutable on requests that also set `readOnly=true`.
+  *   `restrictingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The user who set the content restriction. Only populated if `readOnly` is true.
   *   `restrictionTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the content restriction was set (formatted RFC 3339 timestamp). Only populated if readOnly is true.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the content restriction. Currently the only possible value is globalContentRestriction.
+  *   `systemRestricted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the content restriction was applied by the system, for example due to an esignature. Users cannot modify or remove system restricted content restrictions.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the content restriction. Currently the only possible value is `globalContentRestriction`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ownerRestricted => boolean() | nil,
           :readOnly => boolean() | nil,
           :reason => String.t() | nil,
           :restrictingUser => GoogleApi.Drive.V3.Model.User.t() | nil,
           :restrictionTime => DateTime.t() | nil,
+          :systemRestricted => boolean() | nil,
           :type => String.t() | nil
         }
 
+  field(:ownerRestricted)
   field(:readOnly)
   field(:reason)
   field(:restrictingUser, as: GoogleApi.Drive.V3.Model.User)
   field(:restrictionTime, as: DateTime)
+  field(:systemRestricted)
   field(:type)
 end
 

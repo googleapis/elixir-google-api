@@ -21,13 +21,13 @@ defmodule GoogleApi.Drive.V3.Model.LabelFieldModification do
 
   ## Attributes
 
-  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - The ID of the Field to be modified.
-  *   `kind` (*type:* `String.t`, *default:* `drive#labelFieldModification`) - This is always drive#labelFieldModification.
-  *   `setDateValues` (*type:* `list(Date.t)`, *default:* `nil`) - Replaces a dateString field with these new values. The values must be strings in the RFC 3339 full-date format: YYYY-MM-DD.
-  *   `setIntegerValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces an integer field with these new values.
-  *   `setSelectionValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces a selection field with these new values.
-  *   `setTextValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces a text field with these new values.
-  *   `setUserValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces a user field with these new values. The values must be valid email addresses.
+  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - The ID of the field to be modified.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#labelFieldModification.
+  *   `setDateValues` (*type:* `list(Date.t)`, *default:* `nil`) - Replaces the value of a dateString Field with these new values. The string must be in the RFC 3339 full-date format: YYYY-MM-DD.
+  *   `setIntegerValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces the value of an `integer` field with these new values.
+  *   `setSelectionValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces a `selection` field with these new values.
+  *   `setTextValues` (*type:* `list(String.t)`, *default:* `nil`) - Sets the value of a `text` field.
+  *   `setUserValues` (*type:* `list(String.t)`, *default:* `nil`) - Replaces a `user` field with these new values. The values must be valid email addresses.
   *   `unsetValues` (*type:* `boolean()`, *default:* `nil`) - Unsets the values for this field.
   """
 
