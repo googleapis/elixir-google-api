@@ -21,16 +21,18 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
 
   ## Attributes
 
+  *   `actions` (*type:* `list(GoogleApi.Spanner.V1.Model.DdlStatementActionInfo.t)`, *default:* `nil`) - The brief action info for the DDL statements. `actions[i]` is the brief info for `statements[i]`.
   *   `commitTimestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - Reports the commit timestamps of all statements that have succeeded so far, where `commit_timestamps[i]` is the commit timestamp for the statement `statements[i]`.
   *   `database` (*type:* `String.t`, *default:* `nil`) - The database being modified.
-  *   `progress` (*type:* `list(GoogleApi.Spanner.V1.Model.OperationProgress.t)`, *default:* `nil`) - The progress of the UpdateDatabaseDdl operations. Currently, only index creation statements will have a continuously updating progress. For non-index creation statements, `progress[i]` will have start time and end time populated with commit timestamp of operation, as well as a progress of 100% once the operation has completed. `progress[i]` is the operation progress for `statements[i]`.
+  *   `progress` (*type:* `list(GoogleApi.Spanner.V1.Model.OperationProgress.t)`, *default:* `nil`) - The progress of the UpdateDatabaseDdl operations. All DDL statements will have continuously updating progress, and `progress[i]` is the operation progress for `statements[i]`. Also, `progress[i]` will have start time and end time populated with commit timestamp of operation, as well as a progress of 100% once the operation has completed.
   *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - For an update this list contains all the statements. For an individual statement, this list contains only that statement.
-  *   `throttled` (*type:* `boolean()`, *default:* `nil`) - Output only. When true, indicates that the operation is throttled e.g due to resource constraints. When resources become available the operation will resume and this field will be false again.
+  *   `throttled` (*type:* `boolean()`, *default:* `nil`) - Output only. When true, indicates that the operation is throttled e.g. due to resource constraints. When resources become available the operation will resume and this field will be false again.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :actions => list(GoogleApi.Spanner.V1.Model.DdlStatementActionInfo.t()) | nil,
           :commitTimestamps => list(DateTime.t()) | nil,
           :database => String.t() | nil,
           :progress => list(GoogleApi.Spanner.V1.Model.OperationProgress.t()) | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
           :throttled => boolean() | nil
         }
 
+  field(:actions, as: GoogleApi.Spanner.V1.Model.DdlStatementActionInfo, type: :list)
   field(:commitTimestamps, as: DateTime, type: :list)
   field(:database)
   field(:progress, as: GoogleApi.Spanner.V1.Model.OperationProgress, type: :list)

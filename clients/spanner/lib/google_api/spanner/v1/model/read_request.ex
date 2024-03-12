@@ -22,6 +22,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   ## Attributes
 
   *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - Required. The columns of table to be returned for each row matching this request.
+  *   `dataBoostEnabled` (*type:* `boolean()`, *default:* `nil`) - If this is for a partitioned read and this field is set to `true`, the request is executed with Spanner Data Boost independent compute resources. If the field is set to `true` but the request does not set `partition_token`, the API returns an `INVALID_ARGUMENT` error.
+  *   `directedReadOptions` (*type:* `GoogleApi.Spanner.V1.Model.DirectedReadOptions.t`, *default:* `nil`) - Directed read options for this request.
   *   `index` (*type:* `String.t`, *default:* `nil`) - If non-empty, the name of an index on table. This index is used instead of the table primary key when interpreting key_set and sorting result rows. See key_set for further information.
   *   `keySet` (*type:* `GoogleApi.Spanner.V1.Model.KeySet.t`, *default:* `nil`) - Required. `key_set` identifies the rows to be yielded. `key_set` names the primary keys of the rows in table to be yielded, unless index is present. If index is present, then key_set instead names index keys in index. If the partition_token field is empty, rows are yielded in table primary key order (if index is empty) or index key order (if index is non-empty). If the partition_token field is not empty, rows will be yielded in an unspecified order. It is not an error for the `key_set` to name rows that do not exist in the database. Read yields nothing for nonexistent rows.
   *   `limit` (*type:* `String.t`, *default:* `nil`) - If greater than zero, only the first `limit` rows are yielded. If `limit` is zero, the default is no limit. A limit cannot be specified if `partition_token` is set.
@@ -36,6 +38,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
 
   @type t :: %__MODULE__{
           :columns => list(String.t()) | nil,
+          :dataBoostEnabled => boolean() | nil,
+          :directedReadOptions => GoogleApi.Spanner.V1.Model.DirectedReadOptions.t() | nil,
           :index => String.t() | nil,
           :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
           :limit => String.t() | nil,
@@ -47,6 +51,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
         }
 
   field(:columns, type: :list)
+  field(:dataBoostEnabled)
+  field(:directedReadOptions, as: GoogleApi.Spanner.V1.Model.DirectedReadOptions)
   field(:index)
   field(:keySet, as: GoogleApi.Spanner.V1.Model.KeySet)
   field(:limit)

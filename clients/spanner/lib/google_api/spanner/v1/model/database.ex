@@ -25,9 +25,11 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   *   `databaseDialect` (*type:* `String.t`, *default:* `nil`) - Output only. The dialect of the Cloud Spanner Database.
   *   `defaultLeader` (*type:* `String.t`, *default:* `nil`) - Output only. The read-write region which contains the database's leader replicas. This is the same as the value of default_leader database option set using DatabaseAdmin.CreateDatabase or DatabaseAdmin.UpdateDatabaseDdl. If not explicitly set, this is empty.
   *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest timestamp at which older versions of the data can be read. This value is continuously updated by Cloud Spanner and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
+  *   `enableDropProtection` (*type:* `boolean()`, *default:* `nil`) - Whether drop protection is enabled for this database. Defaults to false, if not set. For more details, please see how to [prevent accidental database deletion](https://cloud.google.com/spanner/docs/prevent-database-deletion).
   *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Output only. For databases that are using customer managed encryption, this field contains the encryption configuration for the database. For databases that are using Google default or other types of encryption, this field is empty.
   *   `encryptionInfo` (*type:* `list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t)`, *default:* `nil`) - Output only. For databases that are using customer managed encryption, this field contains the encryption information for the database, such as all Cloud KMS key versions that are in use. The `encryption_status' field inside of each `EncryptionInfo` is not populated. For databases that are using Google default or other types of encryption, this field is empty. This field is propagated lazily from the backend. There might be a delay from when a key version is being used and when it appears in this field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database. Values are of the form `projects//instances//databases/`, where `` is as specified in the `CREATE DATABASE` statement. This name can be passed to other API methods to identify the database.
+  *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, the database is being updated. If false, there are no ongoing update operations for the database.
   *   `restoreInfo` (*type:* `GoogleApi.Spanner.V1.Model.RestoreInfo.t`, *default:* `nil`) - Output only. Applicable only for restored databases. Contains information about the restore source.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current database state.
   *   `versionRetentionPeriod` (*type:* `String.t`, *default:* `nil`) - Output only. The period in which Cloud Spanner retains all versions of data for the database. This is the same as the value of version_retention_period database option set using UpdateDatabaseDdl. Defaults to 1 hour, if not set.
@@ -40,9 +42,11 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
           :databaseDialect => String.t() | nil,
           :defaultLeader => String.t() | nil,
           :earliestVersionTime => DateTime.t() | nil,
+          :enableDropProtection => boolean() | nil,
           :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t() | nil,
           :encryptionInfo => list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t()) | nil,
           :name => String.t() | nil,
+          :reconciling => boolean() | nil,
           :restoreInfo => GoogleApi.Spanner.V1.Model.RestoreInfo.t() | nil,
           :state => String.t() | nil,
           :versionRetentionPeriod => String.t() | nil
@@ -52,9 +56,11 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   field(:databaseDialect)
   field(:defaultLeader)
   field(:earliestVersionTime, as: DateTime)
+  field(:enableDropProtection)
   field(:encryptionConfig, as: GoogleApi.Spanner.V1.Model.EncryptionConfig)
   field(:encryptionInfo, as: GoogleApi.Spanner.V1.Model.EncryptionInfo, type: :list)
   field(:name)
+  field(:reconciling)
   field(:restoreInfo, as: GoogleApi.Spanner.V1.Model.RestoreInfo)
   field(:state)
   field(:versionRetentionPeriod)

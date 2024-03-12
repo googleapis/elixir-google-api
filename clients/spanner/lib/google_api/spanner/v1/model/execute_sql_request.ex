@@ -21,6 +21,8 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
 
   ## Attributes
 
+  *   `dataBoostEnabled` (*type:* `boolean()`, *default:* `nil`) - If this is for a partitioned query and this field is set to `true`, the request is executed with Spanner Data Boost independent compute resources. If the field is set to `true` but the request does not set `partition_token`, the API returns an `INVALID_ARGUMENT` error.
+  *   `directedReadOptions` (*type:* `GoogleApi.Spanner.V1.Model.DirectedReadOptions.t`, *default:* `nil`) - Directed read options for this request.
   *   `paramTypes` (*type:* `%{optional(String.t) => GoogleApi.Spanner.V1.Model.Type.t}`, *default:* `nil`) - It is not always possible for Cloud Spanner to infer the right SQL type from a JSON value. For example, values of type `BYTES` and values of type `STRING` both appear in params as JSON strings. In these cases, `param_types` can be used to specify the exact SQL type for some or all of the SQL statement parameters. See the definition of Type for more information about SQL types.
   *   `params` (*type:* `map()`, *default:* `nil`) - Parameter names and values that bind to placeholders in the SQL string. A parameter placeholder consists of the `@` character followed by the parameter name (for example, `@firstName`). Parameter names must conform to the naming requirements of identifiers as specified at https://cloud.google.com/spanner/docs/lexical#identifiers. Parameters can appear anywhere that a literal value is expected. The same parameter name can be used more than once, for example: `"WHERE id > @msg_id AND id < @msg_id + 100"` It is an error to execute a SQL statement with unbound parameters.
   *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - If present, results will be restricted to the specified partition previously created using PartitionQuery(). There must be an exact match for the values of fields common to this message and the PartitionQueryRequest message used to create this partition_token.
@@ -36,6 +38,8 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataBoostEnabled => boolean() | nil,
+          :directedReadOptions => GoogleApi.Spanner.V1.Model.DirectedReadOptions.t() | nil,
           :paramTypes => %{optional(String.t()) => GoogleApi.Spanner.V1.Model.Type.t()} | nil,
           :params => map() | nil,
           :partitionToken => String.t() | nil,
@@ -48,6 +52,8 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
           :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
+  field(:dataBoostEnabled)
+  field(:directedReadOptions, as: GoogleApi.Spanner.V1.Model.DirectedReadOptions)
   field(:paramTypes, as: GoogleApi.Spanner.V1.Model.Type, type: :map)
   field(:params, type: :map)
   field(:partitionToken)

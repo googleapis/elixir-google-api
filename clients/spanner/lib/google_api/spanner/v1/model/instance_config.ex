@@ -32,7 +32,8 @@ defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   *   `optionalReplicas` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t)`, *default:* `nil`) - Output only. The available optional replicas to choose from for user managed configurations. Populated for Google managed configurations.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, the instance config is being created or updated. If false, there are no ongoing operations for the instance config.
   *   `replicas` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t)`, *default:* `nil`) - The geographic placement of nodes in this instance configuration and their replication properties.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current instance config state.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current instance config state. Applicable only for USER_MANAGED configs.
+  *   `storageLimitPerProcessingUnit` (*type:* `String.t`, *default:* `nil`) - Output only. The storage limit in bytes per processing unit.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
           :optionalReplicas => list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t()) | nil,
           :reconciling => boolean() | nil,
           :replicas => list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t()) | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :storageLimitPerProcessingUnit => String.t() | nil
         }
 
   field(:baseConfig)
@@ -64,6 +66,7 @@ defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   field(:reconciling)
   field(:replicas, as: GoogleApi.Spanner.V1.Model.ReplicaInfo, type: :list)
   field(:state)
+  field(:storageLimitPerProcessingUnit)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.InstanceConfig do
