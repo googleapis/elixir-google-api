@@ -21,11 +21,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeactivateSubscriptionOfferRequest
 
   ## Attributes
 
+  *   `basePlanId` (*type:* `String.t`, *default:* `nil`) - Required. The parent base plan (ID) of the offer to deactivate.
+  *   `latencyTolerance` (*type:* `String.t`, *default:* `nil`) - Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. The unique offer ID of the offer to deactivate.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Required. The parent app (package name) of the offer to deactivate.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The parent subscription (ID) of the offer to deactivate.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :basePlanId => String.t() | nil,
+          :latencyTolerance => String.t() | nil,
+          :offerId => String.t() | nil,
+          :packageName => String.t() | nil,
+          :productId => String.t() | nil
+        }
+
+  field(:basePlanId)
+  field(:latencyTolerance)
+  field(:offerId)
+  field(:packageName)
+  field(:productId)
 end
 
 defimpl Poison.Decoder,

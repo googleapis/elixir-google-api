@@ -3952,6 +3952,82 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
+  Creates a new track.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. Package name of the app.
+  *   `edit_id` (*type:* `String.t`) - Required. Identifier of the edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TrackConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_tracks_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_edits_tracks_create(
+        connection,
+        package_name,
+        edit_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/androidpublisher/v3/applications/{packageName}/edits/{editId}/tracks", %{
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.Track{}])
+  end
+
+  @doc """
   Gets a track.
 
   ## Parameters
@@ -3959,7 +4035,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `track` (*type:* `String.t`) - Identifier of the track.
+  *   `track` (*type:* `String.t`) - Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4116,7 +4192,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `track` (*type:* `String.t`) - Identifier of the track.
+  *   `track` (*type:* `String.t`) - Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4199,7 +4275,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `track` (*type:* `String.t`) - Identifier of the track.
+  *   `track` (*type:* `String.t`) - Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

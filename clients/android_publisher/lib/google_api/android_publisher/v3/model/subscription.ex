@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Subscription do
 
   ## Attributes
 
-  *   `archived` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this subscription is archived. Archived subscriptions are not available to any subscriber any longer, cannot be updated, and are not returned in list requests unless the show archived flag is passed in.
+  *   `archived` (*type:* `boolean()`, *default:* `nil`) - Output only. Deprecated: subscription archiving is not supported.
   *   `basePlans` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.BasePlan.t)`, *default:* `nil`) - The set of base plans for this subscription. Represents the prices and duration of the subscription if no other offers apply.
   *   `listings` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.SubscriptionListing.t)`, *default:* `nil`) - Required. List of localized listings for this subscription. Must contain at least an entry for the default language of the parent app.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. Package name of the parent app.

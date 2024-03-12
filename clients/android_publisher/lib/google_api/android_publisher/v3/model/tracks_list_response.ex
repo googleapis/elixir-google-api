@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TracksListResponse do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#tracksListResponse").
-  *   `tracks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Track.t)`, *default:* `nil`) - All tracks.
+  *   `tracks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Track.t)`, *default:* `nil`) - All tracks (including tracks with no releases).
   """
 
   use GoogleApi.Gax.ModelBase

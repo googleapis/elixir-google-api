@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails
 
   ## Attributes
 
-  *   `expectedNewPriceChargeTime` (*type:* `DateTime.t`, *default:* `nil`) - The renewal time at which the price change will become effective for the user. This is subject to change(to a future time) due to cases where the renewal time shifts like pause.
+  *   `expectedNewPriceChargeTime` (*type:* `DateTime.t`, *default:* `nil`) - The renewal time at which the price change will become effective for the user. This is subject to change(to a future time) due to cases where the renewal time shifts like pause. This field is only populated if the price change has not taken effect.
   *   `newPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Money.t`, *default:* `nil`) - New recurring price for the subscription item.
   *   `priceChangeMode` (*type:* `String.t`, *default:* `nil`) - Price change mode specifies how the subscription item price is changing.
   *   `priceChangeState` (*type:* `String.t`, *default:* `nil`) - State the price change is currently in.

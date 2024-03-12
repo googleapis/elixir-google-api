@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Orders do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Refunds a user's subscription or in-app purchase order. Orders older than 1 year cannot be refunded.
+  Refunds a user's subscription or in-app purchase order. Orders older than 3 years cannot be refunded.
 
   ## Parameters
 

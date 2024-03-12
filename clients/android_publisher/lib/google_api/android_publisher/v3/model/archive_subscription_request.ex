@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ArchiveSubscriptionRequest do
   @moduledoc """
-  Request message for ArchiveSubscription.
+  Deprecated: subscription archiving is not supported.
 
   ## Attributes
 

@@ -23,9 +23,11 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.GeneratedApksPerSigningKey do
 
   *   `certificateSha256Hash` (*type:* `String.t`, *default:* `nil`) - SHA256 hash of the APK signing public key certificate.
   *   `generatedAssetPackSlices` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.GeneratedAssetPackSlice.t)`, *default:* `nil`) - List of asset pack slices which will be served for this app bundle, signed with a key corresponding to certificate_sha256_hash.
+  *   `generatedRecoveryModules` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.GeneratedRecoveryApk.t)`, *default:* `nil`) - Generated recovery apks for recovery actions signed with a key corresponding to certificate_sha256_hash. This includes all generated recovery APKs, also those in draft or cancelled state. This field is not set if no recovery actions were created for this signing key.
   *   `generatedSplitApks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.GeneratedSplitApk.t)`, *default:* `nil`) - List of generated split APKs, signed with a key corresponding to certificate_sha256_hash.
   *   `generatedStandaloneApks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.GeneratedStandaloneApk.t)`, *default:* `nil`) - List of generated standalone APKs, signed with a key corresponding to certificate_sha256_hash.
   *   `generatedUniversalApk` (*type:* `GoogleApi.AndroidPublisher.V3.Model.GeneratedUniversalApk.t`, *default:* `nil`) - Generated universal APK, signed with a key corresponding to certificate_sha256_hash. This field is not set if no universal APK was generated for this signing key.
+  *   `targetingInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TargetingInfo.t`, *default:* `nil`) - Contains targeting information about the generated apks.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,18 +36,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.GeneratedApksPerSigningKey do
           :certificateSha256Hash => String.t() | nil,
           :generatedAssetPackSlices =>
             list(GoogleApi.AndroidPublisher.V3.Model.GeneratedAssetPackSlice.t()) | nil,
+          :generatedRecoveryModules =>
+            list(GoogleApi.AndroidPublisher.V3.Model.GeneratedRecoveryApk.t()) | nil,
           :generatedSplitApks =>
             list(GoogleApi.AndroidPublisher.V3.Model.GeneratedSplitApk.t()) | nil,
           :generatedStandaloneApks =>
             list(GoogleApi.AndroidPublisher.V3.Model.GeneratedStandaloneApk.t()) | nil,
           :generatedUniversalApk =>
-            GoogleApi.AndroidPublisher.V3.Model.GeneratedUniversalApk.t() | nil
+            GoogleApi.AndroidPublisher.V3.Model.GeneratedUniversalApk.t() | nil,
+          :targetingInfo => GoogleApi.AndroidPublisher.V3.Model.TargetingInfo.t() | nil
         }
 
   field(:certificateSha256Hash)
 
   field(:generatedAssetPackSlices,
     as: GoogleApi.AndroidPublisher.V3.Model.GeneratedAssetPackSlice,
+    type: :list
+  )
+
+  field(:generatedRecoveryModules,
+    as: GoogleApi.AndroidPublisher.V3.Model.GeneratedRecoveryApk,
     type: :list
   )
 
@@ -60,6 +70,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.GeneratedApksPerSigningKey do
   )
 
   field(:generatedUniversalApk, as: GoogleApi.AndroidPublisher.V3.Model.GeneratedUniversalApk)
+  field(:targetingInfo, as: GoogleApi.AndroidPublisher.V3.Model.TargetingInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.GeneratedApksPerSigningKey do

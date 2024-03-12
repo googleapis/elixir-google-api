@@ -21,7 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig do
 
   ## Attributes
 
-  *   `oldestAllowedPriceVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The cutoff time for historical prices that subscribers can remain paying. Subscribers who are on a price that was created before this cutoff time will be migrated to the currently-offered price. These subscribers will receive a notification that they will be paying a different price. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.
+  *   `oldestAllowedPriceVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The cutoff time for historical prices that subscribers can remain paying. Subscribers on prices which were available at this cutoff time or later will stay on their existing price. Subscribers on older prices will be migrated to the currently-offered price. The migrated subscribers will receive a notification that they will be paying a different price. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.
+  *   `priceIncreaseType` (*type:* `String.t`, *default:* `nil`) - Optional. The behavior the caller wants users to see when there is a price increase during migration. If left unset, the behavior defaults to PRICE_INCREASE_TYPE_OPT_IN. Note that the first opt-out price increase migration for each app must be initiated in Play Console.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. "US".
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig do
 
   @type t :: %__MODULE__{
           :oldestAllowedPriceVersionTime => DateTime.t() | nil,
+          :priceIncreaseType => String.t() | nil,
           :regionCode => String.t() | nil
         }
 
   field(:oldestAllowedPriceVersionTime, as: DateTime)
+  field(:priceIncreaseType)
   field(:regionCode)
 end
 
