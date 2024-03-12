@@ -22,15 +22,18 @@ defmodule GoogleApi.Content.V21.Model.ProductViewItemIssueItemIssueType do
   ## Attributes
 
   *   `canonicalAttribute` (*type:* `String.t`, *default:* `nil`) - Canonical attribute name for attribute-specific issues.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Error code of the issue.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canonicalAttribute => String.t() | nil
+          :canonicalAttribute => String.t() | nil,
+          :code => String.t() | nil
         }
 
   field(:canonicalAttribute)
+  field(:code)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ProductViewItemIssueItemIssueType do

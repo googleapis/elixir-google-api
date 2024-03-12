@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.ProductStatusDestinationStatus do
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
   *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is disapproved.
   *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is pending approval.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Destination approval status in `targetCountry` of the offer.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Deprecated. Destination approval status in `targetCountry` of the offer.
   """
 
   use GoogleApi.Gax.ModelBase

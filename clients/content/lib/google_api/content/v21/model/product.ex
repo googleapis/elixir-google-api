@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.Product do
   @moduledoc """
-   Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
+   Required product attributes are primarily defined by the product data specification. See the Product Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 
   ## Attributes
 
@@ -36,7 +36,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (for example, polka dots).
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
   *   `productHeight` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The height of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
-  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
+  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of [destinations to include](//support.google.com/merchants/answer/7501026) for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
   *   `shippingHeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
   *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - The pick up option for the item. Acceptable values are: - "`buy`" - "`reserve`" - "`ship to store`" - "`not supported`" 
   *   `taxes` (*type:* `list(GoogleApi.Content.V21.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
@@ -49,12 +49,13 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
   *   `subscriptionCost` (*type:* `GoogleApi.Content.V21.Model.ProductSubscriptionCost.t`, *default:* `nil`) - Number of periods (months or years) and amount of payment per period for an item with an associated subscription contract.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
-  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Feed label for the item. Either `targetCountry` or `feedLabel` is required.
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Feed label for the item. Either `targetCountry` or `feedLabel` is required. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-).
   *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
   *   `linkTemplate` (*type:* `String.t`, *default:* `nil`) - URL template for merchant hosted local storefront.
   *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
   *   `loyaltyPoints` (*type:* `GoogleApi.Content.V21.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#product`"
+  *   `lifestyleImageLinks` (*type:* `list(String.t)`, *default:* `nil`) - Additional URLs of lifestyle images of the item. Used to explicitly identify images that showcase your item in a real-world context. See the Help Center article for more information.
   *   `displayAdsValue` (*type:* `float()`, *default:* `nil`) - Offer margin for dynamic remarketing campaigns.
   *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
   *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
@@ -66,33 +67,34 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
   *   `adsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `shipping` (*type:* `list(GoogleApi.Content.V21.Model.ProductShipping.t)`, *default:* `nil`) - Shipping rules.
-  *   `productTypes` (*type:* `list(String.t)`, *default:* `nil`) - Categories of the item (formatted as in products data specification).
+  *   `productTypes` (*type:* `list(String.t)`, *default:* `nil`) - Categories of the item (formatted as in product data specification).
   *   `productWidth` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The width of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `additionalImageLinks` (*type:* `list(String.t)`, *default:* `nil`) - Additional URLs of images of the item.
   *   `transitTimeLabel` (*type:* `String.t`, *default:* `nil`) - The transit time label of the product, used to group product in account-level transit time tables.
   *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The cut of the item. Recommended for apparel items.
   *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - URL for the mobile-optimized version of your item's landing page.
-  *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center).
+  *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of [destinations to exclude](//support.google.com/merchants/answer/6324486) for this target (corresponds to cleared check boxes in Merchant Center). Products that are excluded from all destinations for more than 7 days are automatically deleted.
   *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
   *   `taxCategory` (*type:* `String.t`, *default:* `nil`) - The tax category of the product, used to configure detailed tax nexus in account-level tax settings.
   *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see [Google product taxonomy](https://support.google.com/merchants/answer/1705911)). When querying products, this field will contain the user provided value. There is currently no way to get back the auto assigned google product categories through the API.
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
   *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future.
-  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification ).
+  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see product data specification ).
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
   *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Item store pickup timeline. Acceptable values are: - "`same day`" - "`next day`" - "`2-day`" - "`3-day`" - "`4-day`" - "`5-day`" - "`6-day`" - "`7-day`" - "`multi-week`" 
   *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimal product handling time (in business days).
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local). Acceptable values are: - "`local`" - "`online`" 
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the item.
+  *   `cloudExportAdditionalProperties` (*type:* `list(GoogleApi.Content.V21.Model.CloudExportAdditionalProperties.t)`, *default:* `nil`) - Extra fields to export to the Cloud Retail program.
   *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `pause` (*type:* `String.t`, *default:* `nil`) - Publication of this item should be temporarily paused. Acceptable values are: - "`ads`" 
   *   `mobileLinkTemplate` (*type:* `String.t`, *default:* `nil`) - URL template for merchant hosted local storefront optimized for mobile devices.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter. The REST ID for a product is of the form channel:contentLanguage: targetCountry: offerId.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter. The REST ID for a product has one of the 2 forms channel:contentLanguage: targetCountry: offerId or channel:contentLanguage:feedLabel: offerId.
   *   `shippingLength` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
   *   `shippingWeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
   *   `shoppingAdsExcludedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) to exclude the offer from Shopping Ads destination. Countries from this list are removed from countries configured in MC feed settings.
@@ -101,17 +103,20 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `sellOnGoogleQuantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
+  *   `certifications` (*type:* `list(GoogleApi.Content.V21.Model.ProductCertification.t)`, *default:* `nil`) - Product [certification](https://support.google.com/merchants/answer/13528839), introduced for EU energy efficiency labeling compliance using the [EU EPREL](https://eprel.ec.europa.eu/screen/home) database.
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
   *   `externalSellerId` (*type:* `String.t`, *default:* `nil`) - Required for multi-seller accounts. Use this attribute if you're a marketplace uploading products for various sellers to your multi-seller account.
   *   `productDetails` (*type:* `list(GoogleApi.Content.V21.Model.ProductProductDetail.t)`, *default:* `nil`) - Technical specification or additional product details.
   *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - URL for the canonical version of your item's landing page.
+  *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The date time when an offer becomes visible in search results across Google’s YouTube surfaces, in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format. See [Disclosure date](https://support.google.com/merchants/answer/13034208) for more information.
   *   `productWeight` (*type:* `GoogleApi.Content.V21.Model.ProductWeight.t`, *default:* `nil`) - The weight of the product in the units provided. The value must be between 0 (exclusive) and 2000 (inclusive).
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
+  *   `virtualModelLink` (*type:* `String.t`, *default:* `nil`) - URL of the 3D model of the item to provide more visuals.
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item's country of sale.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, that is, how the offer was created. Acceptable values are: - "`api`" - "`crawl`" - "`feed`" 
   """
 
@@ -153,6 +158,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :displayAdsLink => String.t() | nil,
           :loyaltyPoints => GoogleApi.Content.V21.Model.LoyaltyPoints.t() | nil,
           :kind => String.t() | nil,
+          :lifestyleImageLinks => list(String.t()) | nil,
           :displayAdsValue => float() | nil,
           :shippingLabel => String.t() | nil,
           :sizeSystem => String.t() | nil,
@@ -184,6 +190,8 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :minHandlingTime => String.t() | nil,
           :channel => String.t() | nil,
           :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :cloudExportAdditionalProperties =>
+            list(GoogleApi.Content.V21.Model.CloudExportAdditionalProperties.t()) | nil,
           :minEnergyEfficiencyClass => String.t() | nil,
           :pause => String.t() | nil,
           :mobileLinkTemplate => String.t() | nil,
@@ -199,13 +207,16 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :sellOnGoogleQuantity => String.t() | nil,
           :contentLanguage => String.t() | nil,
           :availability => String.t() | nil,
+          :certifications => list(GoogleApi.Content.V21.Model.ProductCertification.t()) | nil,
           :availabilityDate => String.t() | nil,
           :externalSellerId => String.t() | nil,
           :productDetails => list(GoogleApi.Content.V21.Model.ProductProductDetail.t()) | nil,
           :canonicalLink => String.t() | nil,
+          :disclosureDate => String.t() | nil,
           :productWeight => GoogleApi.Content.V21.Model.ProductWeight.t() | nil,
           :title => String.t() | nil,
           :maxEnergyEfficiencyClass => String.t() | nil,
+          :virtualModelLink => String.t() | nil,
           :customLabel3 => String.t() | nil,
           :energyEfficiencyClass => String.t() | nil,
           :promotionIds => list(String.t()) | nil,
@@ -247,6 +258,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:displayAdsLink)
   field(:loyaltyPoints, as: GoogleApi.Content.V21.Model.LoyaltyPoints)
   field(:kind)
+  field(:lifestyleImageLinks, type: :list)
   field(:displayAdsValue)
   field(:shippingLabel)
   field(:sizeSystem)
@@ -278,6 +290,12 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:minHandlingTime)
   field(:channel)
   field(:price, as: GoogleApi.Content.V21.Model.Price)
+
+  field(:cloudExportAdditionalProperties,
+    as: GoogleApi.Content.V21.Model.CloudExportAdditionalProperties,
+    type: :list
+  )
+
   field(:minEnergyEfficiencyClass)
   field(:pause)
   field(:mobileLinkTemplate)
@@ -293,13 +311,16 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:sellOnGoogleQuantity)
   field(:contentLanguage)
   field(:availability)
+  field(:certifications, as: GoogleApi.Content.V21.Model.ProductCertification, type: :list)
   field(:availabilityDate)
   field(:externalSellerId)
   field(:productDetails, as: GoogleApi.Content.V21.Model.ProductProductDetail, type: :list)
   field(:canonicalLink)
+  field(:disclosureDate)
   field(:productWeight, as: GoogleApi.Content.V21.Model.ProductWeight)
   field(:title)
   field(:maxEnergyEfficiencyClass)
+  field(:virtualModelLink)
   field(:customLabel3)
   field(:energyEfficiencyClass)
   field(:promotionIds, type: :list)

@@ -22,11 +22,13 @@ defmodule GoogleApi.Content.V21.Model.Account do
   ## Attributes
 
   *   `accountManagement` (*type:* `String.t`, *default:* `nil`) - Output only. How the account is managed. Acceptable values are: - "`manual`" - "`automatic`" 
-  *   `adsLinks` (*type:* `list(GoogleApi.Content.V21.Model.AccountAdsLink.t)`, *default:* `nil`) - Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
+  *   `adsLinks` (*type:* `list(GoogleApi.Content.V21.Model.AccountAdsLink.t)`, *default:* `nil`) - Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the Google Ads API. To delete an active link, or to cancel a link request, remove it from the list.
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
   *   `automaticImprovements` (*type:* `GoogleApi.Content.V21.Model.AccountAutomaticImprovements.t`, *default:* `nil`) - The automatic improvements of the account can be used to automatically update items, improve images and shipping. Each section inside AutomaticImprovements is updated separately.
   *   `automaticLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - Automatically created label IDs that are assigned to the account by CSS Center.
+  *   `businessIdentity` (*type:* `GoogleApi.Content.V21.Model.AccountBusinessIdentity.t`, *default:* `nil`) - The business identity attributes can be used to self-declare attributes that let customers know more about your business.
   *   `businessInformation` (*type:* `GoogleApi.Content.V21.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
+  *   `conversionSettings` (*type:* `GoogleApi.Content.V21.Model.AccountConversionSettings.t`, *default:* `nil`) - Settings for conversion tracking.
   *   `cssId` (*type:* `String.t`, *default:* `nil`) - ID of CSS the account belongs to.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The Business Profile which is linked or in the process of being linked with the Merchant Center account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. 64-bit Merchant Center account ID.
@@ -48,8 +50,10 @@ defmodule GoogleApi.Content.V21.Model.Account do
           :automaticImprovements =>
             GoogleApi.Content.V21.Model.AccountAutomaticImprovements.t() | nil,
           :automaticLabelIds => list(String.t()) | nil,
+          :businessIdentity => GoogleApi.Content.V21.Model.AccountBusinessIdentity.t() | nil,
           :businessInformation =>
             GoogleApi.Content.V21.Model.AccountBusinessInformation.t() | nil,
+          :conversionSettings => GoogleApi.Content.V21.Model.AccountConversionSettings.t() | nil,
           :cssId => String.t() | nil,
           :googleMyBusinessLink =>
             GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t() | nil,
@@ -69,7 +73,9 @@ defmodule GoogleApi.Content.V21.Model.Account do
   field(:adultContent)
   field(:automaticImprovements, as: GoogleApi.Content.V21.Model.AccountAutomaticImprovements)
   field(:automaticLabelIds, type: :list)
+  field(:businessIdentity, as: GoogleApi.Content.V21.Model.AccountBusinessIdentity)
   field(:businessInformation, as: GoogleApi.Content.V21.Model.AccountBusinessInformation)
+  field(:conversionSettings, as: GoogleApi.Content.V21.Model.AccountConversionSettings)
   field(:cssId)
   field(:googleMyBusinessLink, as: GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink)
   field(:id)

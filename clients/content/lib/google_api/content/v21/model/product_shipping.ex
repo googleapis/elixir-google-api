@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.ProductShipping do
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country to which an item will ship.
   *   `locationGroupName` (*type:* `String.t`, *default:* `nil`) - The location where the shipping is applicable, represented by a location group name.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of a location that the shipping rate applies to as defined in the Google Ads API.
   *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximum handling time (inclusive) between when the order is received and shipped in business days. 0 means that the order is shipped on the same day as it's received if it happens before the cut-off time. Both maxHandlingTime and maxTransitTime are required if providing shipping speeds.
   *   `maxTransitTime` (*type:* `String.t`, *default:* `nil`) - Maximum transit time (inclusive) between when the order has shipped and when it's delivered in business days. 0 means that the order is delivered on the same day as it ships. Both maxHandlingTime and maxTransitTime are required if providing shipping speeds.
   *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimum handling time (inclusive) between when the order is received and shipped in business days. 0 means that the order is shipped on the same day as it's received if it happens before the cut-off time. minHandlingTime can only be present together with maxHandlingTime; but it's not required if maxHandlingTime is present.

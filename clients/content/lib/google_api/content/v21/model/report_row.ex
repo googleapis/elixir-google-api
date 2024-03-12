@@ -21,14 +21,16 @@ defmodule GoogleApi.Content.V21.Model.ReportRow do
 
   ## Attributes
 
-  *   `bestSellers` (*type:* `GoogleApi.Content.V21.Model.BestSellers.t`, *default:* `nil`) - Best Sellers fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView` or `BestSellersBrandView`.
+  *   `bestSellers` (*type:* `GoogleApi.Content.V21.Model.BestSellers.t`, *default:* `nil`) - Best sellers fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView` or `BestSellersBrandView`.
   *   `brand` (*type:* `GoogleApi.Content.V21.Model.Brand.t`, *default:* `nil`) - Brand fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersBrandView`.
+  *   `competitiveVisibility` (*type:* `GoogleApi.Content.V21.Model.CompetitiveVisibility.t`, *default:* `nil`) - Competitive visibility fields requested by the merchant in the query. Field values are only set if the merchant queries `CompetitiveVisibilityTopMerchantView`, `CompetitiveVisibilityBenchmarkView` or `CompetitiveVisibilityCompetitorView`.
   *   `metrics` (*type:* `GoogleApi.Content.V21.Model.Metrics.t`, *default:* `nil`) - Metrics requested by the merchant in the query. Metric values are only set for metrics requested explicitly in the query.
-  *   `priceCompetitiveness` (*type:* `GoogleApi.Content.V21.Model.PriceCompetitiveness.t`, *default:* `nil`) - Price Competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`.
-  *   `priceInsights` (*type:* `GoogleApi.Content.V21.Model.PriceInsights.t`, *default:* `nil`) - Price Insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`.
+  *   `priceCompetitiveness` (*type:* `GoogleApi.Content.V21.Model.PriceCompetitiveness.t`, *default:* `nil`) - Price competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`.
+  *   `priceInsights` (*type:* `GoogleApi.Content.V21.Model.PriceInsights.t`, *default:* `nil`) - Price insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`.
   *   `productCluster` (*type:* `GoogleApi.Content.V21.Model.ProductCluster.t`, *default:* `nil`) - Product cluster fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView`.
-  *   `productView` (*type:* `GoogleApi.Content.V21.Model.ProductView.t`, *default:* `nil`) - Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access.
+  *   `productView` (*type:* `GoogleApi.Content.V21.Model.ProductView.t`, *default:* `nil`) - Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`.
   *   `segments` (*type:* `GoogleApi.Content.V21.Model.Segments.t`, *default:* `nil`) - Segmentation dimensions requested by the merchant in the query. Dimension values are only set for dimensions requested explicitly in the query.
+  *   `topicTrends` (*type:* `GoogleApi.Content.V21.Model.TopicTrends.t`, *default:* `nil`) - Topic trends fields requested by the merchant in the query. Field values are only set if the merchant queries `TopicTrendsView`. https://support.google.com/merchants/answer/13542370.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,22 +38,26 @@ defmodule GoogleApi.Content.V21.Model.ReportRow do
   @type t :: %__MODULE__{
           :bestSellers => GoogleApi.Content.V21.Model.BestSellers.t() | nil,
           :brand => GoogleApi.Content.V21.Model.Brand.t() | nil,
+          :competitiveVisibility => GoogleApi.Content.V21.Model.CompetitiveVisibility.t() | nil,
           :metrics => GoogleApi.Content.V21.Model.Metrics.t() | nil,
           :priceCompetitiveness => GoogleApi.Content.V21.Model.PriceCompetitiveness.t() | nil,
           :priceInsights => GoogleApi.Content.V21.Model.PriceInsights.t() | nil,
           :productCluster => GoogleApi.Content.V21.Model.ProductCluster.t() | nil,
           :productView => GoogleApi.Content.V21.Model.ProductView.t() | nil,
-          :segments => GoogleApi.Content.V21.Model.Segments.t() | nil
+          :segments => GoogleApi.Content.V21.Model.Segments.t() | nil,
+          :topicTrends => GoogleApi.Content.V21.Model.TopicTrends.t() | nil
         }
 
   field(:bestSellers, as: GoogleApi.Content.V21.Model.BestSellers)
   field(:brand, as: GoogleApi.Content.V21.Model.Brand)
+  field(:competitiveVisibility, as: GoogleApi.Content.V21.Model.CompetitiveVisibility)
   field(:metrics, as: GoogleApi.Content.V21.Model.Metrics)
   field(:priceCompetitiveness, as: GoogleApi.Content.V21.Model.PriceCompetitiveness)
   field(:priceInsights, as: GoogleApi.Content.V21.Model.PriceInsights)
   field(:productCluster, as: GoogleApi.Content.V21.Model.ProductCluster)
   field(:productView, as: GoogleApi.Content.V21.Model.ProductView)
   field(:segments, as: GoogleApi.Content.V21.Model.Segments)
+  field(:topicTrends, as: GoogleApi.Content.V21.Model.TopicTrends)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ReportRow do

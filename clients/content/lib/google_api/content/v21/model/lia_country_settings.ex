@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V21.Model.LiaCountrySettings do
   *   `country` (*type:* `String.t`, *default:* `nil`) - Required. CLDR country code (for example, "US").
   *   `hostedLocalStorefrontActive` (*type:* `boolean()`, *default:* `nil`) - The status of the "Merchant hosted local storefront" feature.
   *   `inventory` (*type:* `GoogleApi.Content.V21.Model.LiaInventorySettings.t`, *default:* `nil`) - LIA inventory verification settings.
+  *   `omnichannelExperience` (*type:* `GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t`, *default:* `nil`) - The omnichannel experience configured for this country.
   *   `onDisplayToOrder` (*type:* `GoogleApi.Content.V21.Model.LiaOnDisplayToOrderSettings.t`, *default:* `nil`) - LIA "On Display To Order" settings.
   *   `posDataProvider` (*type:* `GoogleApi.Content.V21.Model.LiaPosDataProvider.t`, *default:* `nil`) - The POS data provider linked with this country.
   *   `storePickupActive` (*type:* `boolean()`, *default:* `nil`) - The status of the "Store pickup" feature.
@@ -37,6 +38,8 @@ defmodule GoogleApi.Content.V21.Model.LiaCountrySettings do
           :country => String.t() | nil,
           :hostedLocalStorefrontActive => boolean() | nil,
           :inventory => GoogleApi.Content.V21.Model.LiaInventorySettings.t() | nil,
+          :omnichannelExperience =>
+            GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t() | nil,
           :onDisplayToOrder => GoogleApi.Content.V21.Model.LiaOnDisplayToOrderSettings.t() | nil,
           :posDataProvider => GoogleApi.Content.V21.Model.LiaPosDataProvider.t() | nil,
           :storePickupActive => boolean() | nil
@@ -46,6 +49,7 @@ defmodule GoogleApi.Content.V21.Model.LiaCountrySettings do
   field(:country)
   field(:hostedLocalStorefrontActive)
   field(:inventory, as: GoogleApi.Content.V21.Model.LiaInventorySettings)
+  field(:omnichannelExperience, as: GoogleApi.Content.V21.Model.LiaOmnichannelExperience)
   field(:onDisplayToOrder, as: GoogleApi.Content.V21.Model.LiaOnDisplayToOrderSettings)
   field(:posDataProvider, as: GoogleApi.Content.V21.Model.LiaPosDataProvider)
   field(:storePickupActive)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.CustomAttribute do
   @moduledoc """
-
+  A message that represents custom attributes. Exactly one of `value` or `groupValues` must be provided. Maximum allowed number of characters for each custom attribute is 10240 (represents sum of characters for name and value). Maximum 2500 custom attributes can be set per merchant, with total size of 102.4kB.
 
   ## Attributes
 

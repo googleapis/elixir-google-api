@@ -25,6 +25,8 @@ defmodule GoogleApi.Content.V21.Model.PosInventoryResponse do
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number.
   *   `itemId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#posInventoryResponse`".
+  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Optional. Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the [local product inventory feed specification](https://support.google.com/merchants/answer/3061342).
+  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Optional. Expected date that an order will be ready for pickup relative to the order date. Must be submitted together with `pickupMethod`. For accepted attribute values, see the [local product inventory feed specification](https://support.google.com/merchants/answer/3061342).
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Required. The current price of the item.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The available quantity of the item.
   *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a `storeCode` inserted through the API or the code of the store in a Business Profile.
@@ -39,6 +41,8 @@ defmodule GoogleApi.Content.V21.Model.PosInventoryResponse do
           :gtin => String.t() | nil,
           :itemId => String.t() | nil,
           :kind => String.t() | nil,
+          :pickupMethod => String.t() | nil,
+          :pickupSla => String.t() | nil,
           :price => GoogleApi.Content.V21.Model.Price.t() | nil,
           :quantity => String.t() | nil,
           :storeCode => String.t() | nil,
@@ -50,6 +54,8 @@ defmodule GoogleApi.Content.V21.Model.PosInventoryResponse do
   field(:gtin)
   field(:itemId)
   field(:kind)
+  field(:pickupMethod)
+  field(:pickupSla)
   field(:price, as: GoogleApi.Content.V21.Model.Price)
   field(:quantity)
   field(:storeCode)

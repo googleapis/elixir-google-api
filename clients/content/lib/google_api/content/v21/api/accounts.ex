@@ -83,7 +83,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   end
 
   @doc """
-  Claims the website of a Merchant Center sub-account.
+  Claims the website of a Merchant Center sub-account. Merchant accounts with approved third-party CSSs aren't required to claim a website.
 
   ## Parameters
 
