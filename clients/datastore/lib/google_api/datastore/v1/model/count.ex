@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.Count do
 
   ## Attributes
 
-  *   `upTo` (*type:* `String.t`, *default:* `nil`) - Optional. Optional constraint on the maximum number of entities to count. This provides a way to set an upper bound on the number of entities to scan, limiting latency and cost. Unspecified is interpreted as no bound. If a zero value is provided, a count result of zero should always be expected. High-Level Example: ``` AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k ); ``` Requires: * Must be non-negative when present.
+  *   `upTo` (*type:* `String.t`, *default:* `nil`) - Optional. Optional constraint on the maximum number of entities to count. This provides a way to set an upper bound on the number of entities to scan, limiting latency, and cost. Unspecified is interpreted as no bound. If a zero value is provided, a count result of zero should always be expected. High-Level Example: ``` AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k ); ``` Requires: * Must be non-negative when present.
   """
 
   use GoogleApi.Gax.ModelBase

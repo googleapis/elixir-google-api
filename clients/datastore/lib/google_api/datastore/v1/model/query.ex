@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.Query do
 
   ## Attributes
 
-  *   `distinctOn` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyReference.t)`, *default:* `nil`) - The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned).
+  *   `distinctOn` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyReference.t)`, *default:* `nil`) - The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned). Requires: * If `order` is specified, the set of distinct on properties must appear before the non-distinct on properties in `order`.
   *   `endCursor` (*type:* `String.t`, *default:* `nil`) - An ending point for the query results. Query cursors are returned in query result batches and [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
   *   `filter` (*type:* `GoogleApi.Datastore.V1.Model.Filter.t`, *default:* `nil`) - The filter to apply.
   *   `kind` (*type:* `list(GoogleApi.Datastore.V1.Model.KindExpression.t)`, *default:* `nil`) - The kinds to query (if empty, returns entities of all kinds). Currently at most 1 kind may be specified.

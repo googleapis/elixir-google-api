@@ -23,17 +23,20 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryResponse do
 
   *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.QueryResultBatch.t`, *default:* `nil`) - A batch of query results (always present).
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.Query.t`, *default:* `nil`) - The parsed form of the `GqlQuery` from the request, if it was set.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction that was started as part of this RunQuery request. Set only when ReadOptions.new_transaction was set in RunQueryRequest.read_options.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :batch => GoogleApi.Datastore.V1.Model.QueryResultBatch.t() | nil,
-          :query => GoogleApi.Datastore.V1.Model.Query.t() | nil
+          :query => GoogleApi.Datastore.V1.Model.Query.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:batch, as: GoogleApi.Datastore.V1.Model.QueryResultBatch)
   field(:query, as: GoogleApi.Datastore.V1.Model.Query)
+  field(:transaction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.RunQueryResponse do

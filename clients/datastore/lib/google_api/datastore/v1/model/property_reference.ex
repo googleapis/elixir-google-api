@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.PropertyReference do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. If name includes "."s, it may be interpreted as a property name path.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A reference to a property. Requires: * MUST be a dot-delimited (`.`) string of segments, where each segment conforms to entity property name limitations.
   """
 
   use GoogleApi.Gax.ModelBase
