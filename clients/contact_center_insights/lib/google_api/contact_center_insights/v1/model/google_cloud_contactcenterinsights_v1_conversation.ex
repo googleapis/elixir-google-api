@@ -31,9 +31,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `labels` (*type:* `map()`, *default:* `nil`) - A map for the user to specify any custom fields. A maximum of 20 labels per conversation is allowed, with a maximum of 256 characters per entry.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - A user-specified language code for the conversation.
   *   `latestAnalysis` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis.t`, *default:* `nil`) - Output only. The conversation's latest analysis, if one exists.
+  *   `latestSummary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t`, *default:* `nil`) - Output only. Latest summary of the conversation.
   *   `medium` (*type:* `String.t`, *default:* `nil`) - Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the conversation. Format: projects/{project}/locations/{location}/conversations/{conversation}
   *   `obfuscatedUserId` (*type:* `String.t`, *default:* `nil`) - Obfuscated user ID which the customer sent to us.
+  *   `qualityMetadata` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationQualityMetadata.t`, *default:* `nil`) - Conversation metadata related to quality management.
   *   `runtimeAnnotations` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotation.t)`, *default:* `nil`) - Output only. The annotations that were generated during the customer and agent interaction.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the conversation started.
   *   `transcript` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationTranscript.t`, *default:* `nil`) - Output only. The conversation transcript.
@@ -66,9 +68,15 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :latestAnalysis =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis.t()
             | nil,
+          :latestSummary =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t()
+            | nil,
           :medium => String.t() | nil,
           :name => String.t() | nil,
           :obfuscatedUserId => String.t() | nil,
+          :qualityMetadata =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationQualityMetadata.t()
+            | nil,
           :runtimeAnnotations =>
             list(
               GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotation.t()
@@ -112,9 +120,19 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
     as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis
   )
 
+  field(:latestSummary,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData
+  )
+
   field(:medium)
   field(:name)
   field(:obfuscatedUserId)
+
+  field(:qualityMetadata,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationQualityMetadata
+  )
 
   field(:runtimeAnnotations,
     as:

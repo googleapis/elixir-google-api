@@ -22,6 +22,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   ## Attributes
 
   *   `analysisResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnalysisResult.t`, *default:* `nil`) - Output only. The result of the analysis, which is populated when the analysis finishes.
+  *   `annotatorSelector` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector.t`, *default:* `nil`) - To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the analysis was created, which occurs when the long-running operation completes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the analysis. Format: projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the analysis was requested.
@@ -33,6 +34,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :analysisResult =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnalysisResult.t()
             | nil,
+          :annotatorSelector =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector.t()
+            | nil,
           :createTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :requestTime => DateTime.t() | nil
@@ -40,6 +44,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   field(:analysisResult,
     as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnalysisResult
+  )
+
+  field(:annotatorSelector,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector
   )
 
   field(:createTime, as: DateTime)

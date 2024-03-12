@@ -22,8 +22,10 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   ## Attributes
 
   *   `conversationConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig.t`, *default:* `nil`) - Configuration that applies to all conversations.
-  *   `gcsSource` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource.t`, *default:* `nil`) - A cloud storage bucket source.
+  *   `gcsSource` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource.t`, *default:* `nil`) - A cloud storage bucket source. Note that any previously ingested objects from the source will be skipped to avoid duplication.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource for new conversations.
+  *   `redactionConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig.t`, *default:* `nil`) - Optional. DLP settings for transcript redaction. Optional, will default to the config specified in Settings.
+  *   `speechConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig.t`, *default:* `nil`) - Optional. Default Speech-to-Text configuration. Optional, will default to the config specified in Settings.
   *   `transcriptObjectConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig.t`, *default:* `nil`) - Configuration for when `source` contains conversation transcripts.
   """
 
@@ -37,6 +39,12 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource.t()
             | nil,
           :parent => String.t() | nil,
+          :redactionConfig =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig.t()
+            | nil,
+          :speechConfig =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig.t()
+            | nil,
           :transcriptObjectConfig =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig.t()
             | nil
@@ -53,6 +61,14 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   )
 
   field(:parent)
+
+  field(:redactionConfig,
+    as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig
+  )
+
+  field(:speechConfig,
+    as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig
+  )
 
   field(:transcriptObjectConfig,
     as:

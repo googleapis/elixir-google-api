@@ -21,6 +21,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
+  *   `annotatorSelector` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector.t`, *default:* `nil`) - Output only. The annotator selector used for the analysis (if any).
   *   `conversation` (*type:* `String.t`, *default:* `nil`) - Output only. The Conversation that this Analysis Operation belongs to.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
@@ -29,10 +30,18 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotatorSelector =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector.t()
+            | nil,
           :conversation => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil
         }
+
+  field(:annotatorSelector,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector
+  )
 
   field(:conversation)
   field(:createTime, as: DateTime)

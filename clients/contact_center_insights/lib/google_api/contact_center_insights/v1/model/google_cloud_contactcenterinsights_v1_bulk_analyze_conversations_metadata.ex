@@ -25,6 +25,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
   *   `failedAnalysesCount` (*type:* `integer()`, *default:* `nil`) - The number of requested analyses that have failed so far.
+  *   `partialErrors` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Output only. Partial errors during bulk analyze operation that might cause the operation output to be incomplete.
   *   `request` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest.t`, *default:* `nil`) - The original request for bulk analyze.
   *   `totalRequestedAnalysesCount` (*type:* `integer()`, *default:* `nil`) - Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.
   """
@@ -36,6 +37,8 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
           :failedAnalysesCount => integer() | nil,
+          :partialErrors =>
+            list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t()) | nil,
           :request =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest.t()
             | nil,
@@ -46,6 +49,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
   field(:failedAnalysesCount)
+  field(:partialErrors, as: GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus, type: :list)
 
   field(:request,
     as:

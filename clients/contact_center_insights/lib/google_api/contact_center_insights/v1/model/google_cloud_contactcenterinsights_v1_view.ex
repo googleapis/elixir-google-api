@@ -25,7 +25,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human-readable display name of the view.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the view. Format: projects/{project}/locations/{location}/views/{view}
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time at which the view was updated.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - String with specific view properties.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - String with specific view properties, must be non-empty.
   """
 
   use GoogleApi.Gax.ModelBase
