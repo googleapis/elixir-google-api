@@ -6,22 +6,23 @@ on:
 jobs:
   generate-updates:
     if: ${{ github.repository == 'googleapis/elixir-google-api' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
       APPROVAL_GITHUB_TOKEN: ${{secrets.YOSHI_APPROVER_TOKEN}}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: "3.3"
       - name: Install Elixir
-        uses: erlef/setup-elixir@v1
+        uses: erlef/setup-beam@v1
         with:
-          otp-version: "23.3.4.10"
-          elixir-version: "1.12.3"
+          otp-version: "23.3.4.19"
+          elixir-version: "1.12.3-otp-23"
+          version-type: strict
       - name: Install tools
         run: "gem install --no-document toys"
       - name: execute

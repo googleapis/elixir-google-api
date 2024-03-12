@@ -10,22 +10,23 @@ jobs:
     strategy:
       matrix:
         include:
-          - elixir: "1.7.4"
-            otp: "22.3.4.24"
-          - elixir: "1.12.3"
-            otp: "23.3.4.10"
-          - elixir: "1.13.1"
+          - elixir: "1.7.4-otp-22"
+            otp: "22.3.4.26"
+          - elixir: "1.12.3-otp-23"
+            otp: "23.3.4.19"
+          - elixir: "1.13.4-otp-24"
             otp: "24.1.7"
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install Elixir ${{ matrix.elixir }} on OTP ${{ matrix.otp }}
-        uses: erlef/setup-elixir@v1
+        uses: erlef/setup-beam@v1
         with:
           otp-version: "${{ matrix.otp }}"
           elixir-version: "${{ matrix.elixir }}"
+          version-type: strict
       - name: Run presubmits
         run: mix do deps.get, presubmit --pr ${{ github.event.pull_request.number }}
   required-checks:
