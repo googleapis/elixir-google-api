@@ -83,6 +83,7 @@ def handle_package api_name, index, total
                                       branch_name: branch_name,
                                       commit_message: commit_message,
                                       labels: ["automerge"],
+                                      cooldown_wait: 15,
                                       auto_approve: approval_message,
                                       approval_token: approval_token do
     generate_package api_name
