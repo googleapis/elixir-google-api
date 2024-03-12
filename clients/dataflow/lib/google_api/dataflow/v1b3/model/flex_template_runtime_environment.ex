@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   @moduledoc """
-  The environment values to be set at runtime for flex template.
+  The environment values to be set at runtime for flex template. LINT.IfChange
 
   ## Attributes
 
@@ -40,6 +40,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   *   `sdkContainerImage` (*type:* `String.t`, *default:* `nil`) - Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account to run the job as.
   *   `stagingLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path for staging local files. Must be a valid Cloud Storage URL, beginning with `gs://`.
+  *   `streamingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the Streaming Engine message processing guarantees. Reduces cost and latency but might result in duplicate messages committed to storage. Designed to run simple mapping streaming ETL jobs at the lowest cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use case.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK" or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a Shared VPC network, you must use the complete URL.
   *   `tempLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.
   *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.
@@ -69,6 +70,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
           :sdkContainerImage => String.t() | nil,
           :serviceAccountEmail => String.t() | nil,
           :stagingLocation => String.t() | nil,
+          :streamingMode => String.t() | nil,
           :subnetwork => String.t() | nil,
           :tempLocation => String.t() | nil,
           :workerRegion => String.t() | nil,
@@ -95,6 +97,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   field(:sdkContainerImage)
   field(:serviceAccountEmail)
   field(:stagingLocation)
+  field(:streamingMode)
   field(:subnetwork)
   field(:tempLocation)
   field(:workerRegion)

@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
   ## Attributes
 
   *   `dropLateData` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the pipeline allows late-arriving data.
+  *   `dynamicDestinations` (*type:* `boolean()`, *default:* `nil`) - If true, then this location represents dynamic topics.
   *   `idLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record ids. If left empty, record deduplication will be strictly best effort.
   *   `subscription` (*type:* `String.t`, *default:* `nil`) - A pubsub subscription, in the form of "pubsub.googleapis.com/subscriptions//"
   *   `timestampLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record timestamps. If left empty, record timestamps will be generated upon arrival.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
 
   @type t :: %__MODULE__{
           :dropLateData => boolean() | nil,
+          :dynamicDestinations => boolean() | nil,
           :idLabel => String.t() | nil,
           :subscription => String.t() | nil,
           :timestampLabel => String.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
         }
 
   field(:dropLateData)
+  field(:dynamicDestinations)
   field(:idLabel)
   field(:subscription)
   field(:timestampLabel)

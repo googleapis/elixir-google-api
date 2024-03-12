@@ -21,22 +21,24 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
 
   ## Attributes
 
-  *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job, specified with the `--experiments` option.
-  *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
-  *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Whether to bypass the safety checks for the job's temporary directory. Use with caution.
-  *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Streaming Engine for the job.
-  *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for the job. Defaults to the value from the template if not specified.
-  *   `maxWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
-  *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - The initial number of Google Compute Engine instances for the job.
-  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account to run the job as.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK" or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a Shared VPC network, you must use the complete URL.
-  *   `tempLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.
-  *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.
-  *   `workerZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1-a". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.
+  *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional experiment flags for the job, specified with the `--experiments` option.
+  *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Optional. Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
+  *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to bypass the safety checks for the job's temporary directory. Use with caution.
+  *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance.
+  *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable Streaming Engine for the job.
+  *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Optional. Configuration for VM IPs.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The machine type to use for the job. Defaults to the value from the template if not specified.
+  *   `maxWorkers` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
+  *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - Optional. The initial number of Google Compute Engine instances for the job. The default value is 11.
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Optional. The email address of the service account to run the job as.
+  *   `streamingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the Streaming Engine message processing guarantees. Reduces cost and latency but might result in duplicate messages committed to storage. Designed to run simple mapping streaming ETL jobs at the lowest cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use case.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional. Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK" or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a Shared VPC network, you must use the complete URL.
+  *   `tempLocation` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.
+  *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - Required. The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.
+  *   `workerZone` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. "us-west1-a". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,6 +47,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :additionalExperiments => list(String.t()) | nil,
           :additionalUserLabels => map() | nil,
           :bypassTempDirValidation => boolean() | nil,
+          :diskSizeGb => integer() | nil,
           :enableStreamingEngine => boolean() | nil,
           :ipConfiguration => String.t() | nil,
           :kmsKeyName => String.t() | nil,
@@ -53,6 +56,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :network => String.t() | nil,
           :numWorkers => integer() | nil,
           :serviceAccountEmail => String.t() | nil,
+          :streamingMode => String.t() | nil,
           :subnetwork => String.t() | nil,
           :tempLocation => String.t() | nil,
           :workerRegion => String.t() | nil,
@@ -63,6 +67,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:additionalExperiments, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:bypassTempDirValidation)
+  field(:diskSizeGb)
   field(:enableStreamingEngine)
   field(:ipConfiguration)
   field(:kmsKeyName)
@@ -71,6 +76,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:network)
   field(:numWorkers)
   field(:serviceAccountEmail)
+  field(:streamingMode)
   field(:subnetwork)
   field(:tempLocation)
   field(:workerRegion)

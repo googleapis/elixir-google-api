@@ -21,21 +21,31 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
 
   ## Attributes
 
+  *   `streamingScalingReportResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingScalingReportResponse.t`, *default:* `nil`) - Service's streaming scaling response for workers.
   *   `workerHealthReportResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse.t`, *default:* `nil`) - The service's response to a worker's health report.
   *   `workerMetricsResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse.t`, *default:* `nil`) - Service's response to reporting worker metrics (currently empty).
   *   `workerShutdownNoticeResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse.t`, *default:* `nil`) - Service's response to shutdown notice (currently empty).
+  *   `workerThreadScalingReportResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReportResponse.t`, *default:* `nil`) - Service's thread scaling recommendation for workers.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :streamingScalingReportResponse =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingScalingReportResponse.t() | nil,
           :workerHealthReportResponse =>
             GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse.t() | nil,
           :workerMetricsResponse =>
             GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReportResponse.t() | nil,
           :workerShutdownNoticeResponse =>
-            GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse.t() | nil
+            GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse.t() | nil,
+          :workerThreadScalingReportResponse =>
+            GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReportResponse.t() | nil
         }
+
+  field(:streamingScalingReportResponse,
+    as: GoogleApi.Dataflow.V1b3.Model.StreamingScalingReportResponse
+  )
 
   field(:workerHealthReportResponse, as: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse)
 
@@ -45,6 +55,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
 
   field(:workerShutdownNoticeResponse,
     as: GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNoticeResponse
+  )
+
+  field(:workerThreadScalingReportResponse,
+    as: GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReportResponse
   )
 end
 

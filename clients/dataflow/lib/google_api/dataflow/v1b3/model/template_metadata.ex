@@ -24,6 +24,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the template.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the template.
   *   `parameters` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t)`, *default:* `nil`) - The parameters for the template.
+  *   `streaming` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the template is streaming or not.
+  *   `supportsAtLeastOnce` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the streaming template supports at least once mode.
+  *   `supportsExactlyOnce` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the streaming template supports exactly once mode.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +34,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   @type t :: %__MODULE__{
           :description => String.t() | nil,
           :name => String.t() | nil,
-          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil
+          :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil,
+          :streaming => boolean() | nil,
+          :supportsAtLeastOnce => boolean() | nil,
+          :supportsExactlyOnce => boolean() | nil
         }
 
   field(:description)
   field(:name)
   field(:parameters, as: GoogleApi.Dataflow.V1b3.Model.ParameterMetadata, type: :list)
+  field(:streaming)
+  field(:supportsAtLeastOnce)
+  field(:supportsExactlyOnce)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do

@@ -31,10 +31,7 @@ defmodule GoogleApi.Dataflow.V1b3.Connection do
       "https://www.googleapis.com/auth/compute",
 
       # View your Google Compute Engine resources
-      "https://www.googleapis.com/auth/compute.readonly",
-
-      # See your primary Google Account email address
-      "https://www.googleapis.com/auth/userinfo.email"
+      "https://www.googleapis.com/auth/compute.readonly"
     ],
     otp_app: :google_api_dataflow,
     base_url: "https://dataflow.googleapis.com/"
