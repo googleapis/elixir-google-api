@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
 
   ## Attributes
 
-  *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the product. For accepted attribute values, see the local product inventory feed specification.
+  *   `availability` (*type:* `String.t`, *default:* `nil`) - The availability of the product. For accepted attribute values, see the local product inventory feed specification.
   *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. Can also be used to submit any attribute of the feed specification in its generic form, for example, `{ "name": "size type", "value": "regular" }`.
-  *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - In-store product location.
+  *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - The in-store product location.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#localInventory`"
-  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the local product inventory feed specification.
-  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Expected date that an order will be ready for pickup relative to the order date. Must be submitted together with `pickupMethod`. For accepted attribute values, see the local product inventory feed specification.
-  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the product.
-  *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity of the product. Must be nonnegative.
-  *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Sale price of the product. Mandatory if `sale_price_effective_date` is defined.
+  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - The supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the local product inventory feed specification.
+  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - The expected date that an order will be ready for pickup relative to the order date. Must be submitted together with `pickupMethod`. For accepted attribute values, see the local product inventory feed specification.
+  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The price of the product.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity of the product. Must be nonnegative.
+  *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The sale price of the product. Mandatory if `sale_price_effective_date` is defined.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates may be specified as 'null' if undecided.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. Store code of this local inventory resource.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The store code of this local inventory resource.
   """
 
   use GoogleApi.Gax.ModelBase

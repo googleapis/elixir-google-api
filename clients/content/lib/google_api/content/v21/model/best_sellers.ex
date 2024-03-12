@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.Content.V21.Model.BestSellers do
   @moduledoc """
-  Fields related to the [Best Sellers reports](https://support.google.com/merchants/answer/9488679).
+  Fields related to the [Best sellers reports](https://support.google.com/merchants/answer/9488679).
 
   ## Attributes
 
-  *   `categoryId` (*type:* `String.t`, *default:* `nil`) - Google product category ID to calculate the ranking for, represented in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country where the ranking is calculated.
+  *   `categoryId` (*type:* `String.t`, *default:* `nil`) - Google product category ID to calculate the ranking for, represented in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436). If a `WHERE` condition on `best_sellers.category_id` is not specified in the query, rankings for all top-level categories are returned.
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country where the ranking is calculated. A `WHERE` condition on `best_sellers.country_code` is required in the query.
   *   `previousRank` (*type:* `String.t`, *default:* `nil`) - Popularity rank in the previous week or month.
   *   `previousRelativeDemand` (*type:* `String.t`, *default:* `nil`) - Estimated demand in relation to the item with the highest popularity rank in the same category and country in the previous week or month.
   *   `rank` (*type:* `String.t`, *default:* `nil`) - Popularity on Shopping ads and free listings, in the selected category and country, based on the estimated number of units sold.
   *   `relativeDemand` (*type:* `String.t`, *default:* `nil`) - Estimated demand in relation to the item with the highest popularity rank in the same category and country.
   *   `relativeDemandChange` (*type:* `String.t`, *default:* `nil`) - Change in the estimated demand. Whether it rose, sank or remained flat.
-  *   `reportDate` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Report date. The value of this field can only be one of the following: * The first day of the week (Monday) for weekly reports. * The first day of the month for monthly reports.
-  *   `reportGranularity` (*type:* `String.t`, *default:* `nil`) - Granularity of the report. The ranking can be done over a week or a month timeframe.
+  *   `reportDate` (*type:* `GoogleApi.Content.V21.Model.Date.t`, *default:* `nil`) - Report date. The value of this field can only be one of the following: * The first day of the week (Monday) for weekly reports. * The first day of the month for monthly reports. If a `WHERE` condition on `best_sellers.report_date` is not specified in the query, the latest available weekly or monthly report is returned.
+  *   `reportGranularity` (*type:* `String.t`, *default:* `nil`) - Granularity of the report. The ranking can be done over a week or a month timeframe. A `WHERE` condition on `best_sellers.report_granularity` is required in the query.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.Content.V21.Model.PriceInsights do
   @moduledoc """
-  Price Insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`. https://support.google.com/merchants/answer/11916926
+  Price insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`. https://support.google.com/merchants/answer/11916926
 
   ## Attributes
 
   *   `predictedClicksChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in clicks as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in clicks.
   *   `predictedConversionsChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in conversions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in conversions).
-  *   `predictedGrossProfitChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in gross profit as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in gross profit.
+  *   `predictedGrossProfitChangeFraction` (*type:* `float()`, *default:* `nil`) - *Deprecated*: This field is no longer supported and will start returning 0. The predicted change in gross profit as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in gross profit.
   *   `predictedImpressionsChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in impressions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in impressions.
-  *   `predictedMonthlyGrossProfitChangeCurrencyCode` (*type:* `String.t`, *default:* `nil`) - The predicted monthly gross profit change currency (ISO 4217 code).
-  *   `predictedMonthlyGrossProfitChangeMicros` (*type:* `String.t`, *default:* `nil`) - The predicted change in gross profit in micros after introducing the suggested price for a month compared to current active price.
+  *   `predictedMonthlyGrossProfitChangeCurrencyCode` (*type:* `String.t`, *default:* `nil`) - *Deprecated*: This field is no longer supported and will start returning USD for all requests. The predicted monthly gross profit change currency (ISO 4217 code).
+  *   `predictedMonthlyGrossProfitChangeMicros` (*type:* `String.t`, *default:* `nil`) - *Deprecated*: This field is no longer supported and will start returning 0. The predicted change in gross profit in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) after introducing the suggested price for a month compared to current active price.
   *   `suggestedPriceCurrencyCode` (*type:* `String.t`, *default:* `nil`) - The suggested price currency (ISO 4217 code).
-  *   `suggestedPriceMicros` (*type:* `String.t`, *default:* `nil`) - The latest suggested price in micros for the product.
+  *   `suggestedPriceMicros` (*type:* `String.t`, *default:* `nil`) - The latest suggested price in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product.
   """
 
   use GoogleApi.Gax.ModelBase

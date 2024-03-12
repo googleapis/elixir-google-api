@@ -30,6 +30,7 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchRequestEntry do
   *   `liaSettings` (*type:* `GoogleApi.Content.V21.Model.LiaSettings.t`, *default:* `nil`) - The account Lia settings to update. Only defined if the method is `update`.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`get`" - "`getAccessibleGmbAccounts`" - "`requestGmbAccess`" - "`requestInventoryVerification`" - "`setInventoryVerificationContact`" - "`update`" 
+  *   `omnichannelExperience` (*type:* `GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t`, *default:* `nil`) - The omnichannel experience for a country. Required only for SetOmnichannelExperience.
   *   `posDataProviderId` (*type:* `String.t`, *default:* `nil`) - The ID of POS data provider. Required only for SetPosProvider.
   *   `posExternalAccountId` (*type:* `String.t`, *default:* `nil`) - The account ID by which this merchant is known to the POS provider.
   """
@@ -46,6 +47,8 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchRequestEntry do
           :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t() | nil,
           :merchantId => String.t() | nil,
           :method => String.t() | nil,
+          :omnichannelExperience =>
+            GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t() | nil,
           :posDataProviderId => String.t() | nil,
           :posExternalAccountId => String.t() | nil
         }
@@ -59,6 +62,7 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchRequestEntry do
   field(:liaSettings, as: GoogleApi.Content.V21.Model.LiaSettings)
   field(:merchantId)
   field(:method)
+  field(:omnichannelExperience, as: GoogleApi.Content.V21.Model.LiaOmnichannelExperience)
   field(:posDataProviderId)
   field(:posExternalAccountId)
 end

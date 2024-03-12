@@ -27,6 +27,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `freeGiftItemId` (*type:* `String.t`, *default:* `nil`) - Free gift item ID for the promotion.
   *   `itemGroupIdExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group ID exclusion for the promotion.
   *   `offerType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the promotion.
+  *   `promotionStatus` (*type:* `GoogleApi.Content.V21.Model.PromotionPromotionStatus.t`, *default:* `nil`) - Output only. The current status of the promotion.
   *   `productType` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type for the promotion.
   *   `itemGroupId` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by item group ID for the promotion.
   *   `productApplicability` (*type:* `String.t`, *default:* `nil`) - Required. Applicability of the promotion to either all products or only specific products.
@@ -54,13 +55,13 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   *   `brandExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by brand exclusion for the promotion.
   *   `productTypeExclusion` (*type:* `list(String.t)`, *default:* `nil`) - Product filter by product type exclusion for the promotion.
   *   `promotionDisplayTimePeriod` (*type:* `GoogleApi.Content.V21.Model.TimePeriod.t`, *default:* `nil`) - `TimePeriod` representation of the promotion's display dates.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `"online"`, `"in_store"`, or `"online_in_store"`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `"online"`, `"in_store"`, or `"online_in_store"`.
   *   `storeCode` (*type:* `list(String.t)`, *default:* `nil`) - Store codes to include for the promotion.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries, and `de` content language is available for `DE` target country.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries. `de` content language is available for `DE` target country. `nl` content language is available for `NL` target country. `it` content language is available for `IT` target country. `pt` content language is available for `BR` target country. `ja` content language is available for `JP` target country. `ko` content language is available for `KR` target country.
   *   `limitQuantity` (*type:* `integer()`, *default:* `nil`) - Maximum purchase quantity for the promotion.
   *   `getThisQuantityDiscounted` (*type:* `integer()`, *default:* `nil`) - The number of items discounted in the promotion.
   *   `redemptionChannel` (*type:* `list(String.t)`, *default:* `nil`) - Required. Redemption channel for the promotion. At least one channel is required.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The target country used as part of the unique identifier. Can be `AU`, `CA`, `DE`, `FR`, `GB`, `IN` or `US`.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The target country used as part of the unique identifier. Can be `AU`, `CA`, `DE`, `FR`, `GB`, `IN`, `US`, `BR`, `ES`, `NL`, `JP`, `IT` or `KR`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -72,6 +73,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
           :freeGiftItemId => String.t() | nil,
           :itemGroupIdExclusion => list(String.t()) | nil,
           :offerType => String.t() | nil,
+          :promotionStatus => GoogleApi.Content.V21.Model.PromotionPromotionStatus.t() | nil,
           :productType => list(String.t()) | nil,
           :itemGroupId => list(String.t()) | nil,
           :productApplicability => String.t() | nil,
@@ -114,6 +116,7 @@ defmodule GoogleApi.Content.V21.Model.Promotion do
   field(:freeGiftItemId)
   field(:itemGroupIdExclusion, type: :list)
   field(:offerType)
+  field(:promotionStatus, as: GoogleApi.Content.V21.Model.PromotionPromotionStatus)
   field(:productType, type: :list)
   field(:itemGroupId, type: :list)
   field(:productApplicability)

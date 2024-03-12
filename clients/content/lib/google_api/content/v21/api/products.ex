@@ -298,7 +298,7 @@ defmodule GoogleApi.Content.V21.Api.Products do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of products to return in the response, used for paging.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of products to return in the response, used for paging. The default value is 25. The maximum value is 250.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 

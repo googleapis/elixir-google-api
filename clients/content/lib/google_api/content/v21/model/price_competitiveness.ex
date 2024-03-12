@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Content.V21.Model.PriceCompetitiveness do
   @moduledoc """
-  Price Competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`. https://support.google.com/merchants/answer/9626903
+  Price competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`. https://support.google.com/merchants/answer/9626903
 
   ## Attributes
 
   *   `benchmarkPriceCurrencyCode` (*type:* `String.t`, *default:* `nil`) - The price benchmark currency (ISO 4217 code).
-  *   `benchmarkPriceMicros` (*type:* `String.t`, *default:* `nil`) - The latest available price benchmark in micros for the product's catalog in the benchmark country.
+  *   `benchmarkPriceMicros` (*type:* `String.t`, *default:* `nil`) - The latest available price benchmark in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product's catalog in the benchmark country.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - The country of the price benchmark (ISO 3166 code).
   """
 

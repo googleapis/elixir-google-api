@@ -17,14 +17,21 @@
 
 defmodule GoogleApi.Content.V21.Model.ProductView do
   @moduledoc """
-  Product fields. Values are only set for fields requested explicitly in the request's search query. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access.
+  Product fields. Values are only set for fields requested explicitly in the request's search query.
 
   ## Attributes
 
   *   `aggregatedDestinationStatus` (*type:* `String.t`, *default:* `nil`) - Aggregated destination status.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the product.
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the product.
+  *   `categoryL1` (*type:* `String.t`, *default:* `nil`) - First level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `categoryL2` (*type:* `String.t`, *default:* `nil`) - Second level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `categoryL3` (*type:* `String.t`, *default:* `nil`) - Third level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `categoryL4` (*type:* `String.t`, *default:* `nil`) - Fourth level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `categoryL5` (*type:* `String.t`, *default:* `nil`) - Fifth level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Channel of the product (online versus local).
+  *   `clickPotential` (*type:* `String.t`, *default:* `nil`) - Estimated performance potential compared to highest performing products of the merchant.
+  *   `clickPotentialRank` (*type:* `String.t`, *default:* `nil`) - Rank of the product based on its click potential. A product with `click_potential_rank` 1 has the highest click potential among the merchant's products that fulfill the search query conditions.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition of the product.
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the merchant created the product in timestamp seconds.
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Product price currency code (for example, ISO 4217). Absent if product price is not available.
@@ -35,7 +42,12 @@ defmodule GoogleApi.Content.V21.Model.ProductView do
   *   `itemIssues` (*type:* `list(GoogleApi.Content.V21.Model.ProductViewItemIssue.t)`, *default:* `nil`) - List of item issues for the product.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language code of the product in BCP 47 format.
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided id of the product.
-  *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - Product price specified as micros in the product currency. Absent in case the information about the price of the product is not available.
+  *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - Product price specified as micros (1 millionth of a standard unit, 1 USD = 1000000 micros) in the product currency. Absent in case the information about the price of the product is not available.
+  *   `productTypeL1` (*type:* `String.t`, *default:* `nil`) - First level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `productTypeL2` (*type:* `String.t`, *default:* `nil`) - Second level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `productTypeL3` (*type:* `String.t`, *default:* `nil`) - Third level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `productTypeL4` (*type:* `String.t`, *default:* `nil`) - Fourth level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).
+  *   `productTypeL5` (*type:* `String.t`, *default:* `nil`) - Fifth level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).
   *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The normalized shipping label specified in the feed
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the product.
   """
@@ -46,7 +58,14 @@ defmodule GoogleApi.Content.V21.Model.ProductView do
           :aggregatedDestinationStatus => String.t() | nil,
           :availability => String.t() | nil,
           :brand => String.t() | nil,
+          :categoryL1 => String.t() | nil,
+          :categoryL2 => String.t() | nil,
+          :categoryL3 => String.t() | nil,
+          :categoryL4 => String.t() | nil,
+          :categoryL5 => String.t() | nil,
           :channel => String.t() | nil,
+          :clickPotential => String.t() | nil,
+          :clickPotentialRank => String.t() | nil,
           :condition => String.t() | nil,
           :creationTime => DateTime.t() | nil,
           :currencyCode => String.t() | nil,
@@ -58,6 +77,11 @@ defmodule GoogleApi.Content.V21.Model.ProductView do
           :languageCode => String.t() | nil,
           :offerId => String.t() | nil,
           :priceMicros => String.t() | nil,
+          :productTypeL1 => String.t() | nil,
+          :productTypeL2 => String.t() | nil,
+          :productTypeL3 => String.t() | nil,
+          :productTypeL4 => String.t() | nil,
+          :productTypeL5 => String.t() | nil,
           :shippingLabel => String.t() | nil,
           :title => String.t() | nil
         }
@@ -65,7 +89,14 @@ defmodule GoogleApi.Content.V21.Model.ProductView do
   field(:aggregatedDestinationStatus)
   field(:availability)
   field(:brand)
+  field(:categoryL1)
+  field(:categoryL2)
+  field(:categoryL3)
+  field(:categoryL4)
+  field(:categoryL5)
   field(:channel)
+  field(:clickPotential)
+  field(:clickPotentialRank)
   field(:condition)
   field(:creationTime, as: DateTime)
   field(:currencyCode)
@@ -77,6 +108,11 @@ defmodule GoogleApi.Content.V21.Model.ProductView do
   field(:languageCode)
   field(:offerId)
   field(:priceMicros)
+  field(:productTypeL1)
+  field(:productTypeL2)
+  field(:productTypeL3)
+  field(:productTypeL4)
+  field(:productTypeL5)
   field(:shippingLabel)
   field(:title)
 end

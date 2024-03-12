@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Api.Reports do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves merchant performance mertrics matching the search query and optionally segmented by selected dimensions.
+  Retrieves merchant performance metrics matching the search query and optionally segmented by selected dimensions.
 
   ## Parameters
 
