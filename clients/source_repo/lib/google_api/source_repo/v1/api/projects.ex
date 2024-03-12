@@ -330,7 +330,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+  Gets the IAM policy policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
@@ -528,7 +528,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the IAM policy on the specified resource. Replaces any existing policy.
 
   ## Parameters
 
