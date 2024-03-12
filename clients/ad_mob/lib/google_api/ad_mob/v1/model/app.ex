@@ -21,6 +21,7 @@ defmodule GoogleApi.AdMob.V1.Model.App do
 
   ## Attributes
 
+  *   `appApprovalState` (*type:* `String.t`, *default:* `nil`) - Output only. The approval state for the app. The field is read-only.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - The externally visible ID of the app which can be used to integrate with the AdMob SDK. This is a read only property. Example: ca-app-pub-9876543210987654~0123456789
   *   `linkedAppInfo` (*type:* `GoogleApi.AdMob.V1.Model.AppLinkedAppInfo.t`, *default:* `nil`) - Immutable. The information for an app that is linked to an app store. This field is present if and only if the app is linked to an app store.
   *   `manualAppInfo` (*type:* `GoogleApi.AdMob.V1.Model.AppManualAppInfo.t`, *default:* `nil`) - The information for an app that is not linked to any app store. After an app is linked, this information is still retrivable. If no name is provided for the app upon creation, a placeholder name will be used.
@@ -31,6 +32,7 @@ defmodule GoogleApi.AdMob.V1.Model.App do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appApprovalState => String.t() | nil,
           :appId => String.t() | nil,
           :linkedAppInfo => GoogleApi.AdMob.V1.Model.AppLinkedAppInfo.t() | nil,
           :manualAppInfo => GoogleApi.AdMob.V1.Model.AppManualAppInfo.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.AdMob.V1.Model.App do
           :platform => String.t() | nil
         }
 
+  field(:appApprovalState)
   field(:appId)
   field(:linkedAppInfo, as: GoogleApi.AdMob.V1.Model.AppLinkedAppInfo)
   field(:manualAppInfo, as: GoogleApi.AdMob.V1.Model.AppManualAppInfo)
