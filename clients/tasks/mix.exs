@@ -18,7 +18,7 @@
 defmodule GoogleApi.Tasks.Mixfile do
   use Mix.Project
 
-  @version "0.13.0"
+  @version "0.13.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Tasks.Mixfile do
 
   defp description() do
     """
-    Tasks API client library. The Google Tasks API lets you manage your tasks and task lists.
+    Google Tasks API client library. The Google Tasks API lets you manage your tasks and task lists.
     """
   end
 

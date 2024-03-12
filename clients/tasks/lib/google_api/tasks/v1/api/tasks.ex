@@ -292,7 +292,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:completedMin` (*type:* `String.t`) - Lower bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.
       *   `:dueMax` (*type:* `String.t`) - Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
       *   `:dueMin` (*type:* `String.t`) - Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of tasks returned on one page. Optional. The default is 20 (max allowed: 100).
       *   `:pageToken` (*type:* `String.t`) - Token specifying the result page to return. Optional.
       *   `:showCompleted` (*type:* `boolean()`) - Flag indicating whether completed tasks are returned in the result. Optional. The default is True. Note that showHidden must also be True to show tasks completed in first party clients, such as the web UI and Google's mobile apps.
       *   `:showDeleted` (*type:* `boolean()`) - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.
