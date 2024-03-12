@@ -24,6 +24,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   *   `counters` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferCounters.t`, *default:* `nil`) - Information about the progress of the transfer operation.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of this transfer execution.
   *   `errorBreakdowns` (*type:* `list(GoogleApi.StorageTransfer.V1.Model.ErrorSummary.t)`, *default:* `nil`) - Summarizes errors encountered with sample error log entries.
+  *   `loggingConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.LoggingConfig.t`, *default:* `nil`) - Cloud Logging configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A globally unique ID assigned by the system.
   *   `notificationConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud project that owns the operation.
@@ -39,6 +40,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
           :counters => GoogleApi.StorageTransfer.V1.Model.TransferCounters.t() | nil,
           :endTime => DateTime.t() | nil,
           :errorBreakdowns => list(GoogleApi.StorageTransfer.V1.Model.ErrorSummary.t()) | nil,
+          :loggingConfig => GoogleApi.StorageTransfer.V1.Model.LoggingConfig.t() | nil,
           :name => String.t() | nil,
           :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t() | nil,
           :projectId => String.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   field(:counters, as: GoogleApi.StorageTransfer.V1.Model.TransferCounters)
   field(:endTime, as: DateTime)
   field(:errorBreakdowns, as: GoogleApi.StorageTransfer.V1.Model.ErrorSummary, type: :list)
+  field(:loggingConfig, as: GoogleApi.StorageTransfer.V1.Model.LoggingConfig)
   field(:name)
   field(:notificationConfig, as: GoogleApi.StorageTransfer.V1.Model.NotificationConfig)
   field(:projectId)
