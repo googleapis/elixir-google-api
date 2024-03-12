@@ -30,6 +30,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ReplicationCycle do
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the ReplicationCycle.
   *   `steps` (*type:* `list(GoogleApi.VMMigration.V1.Model.CycleStep.t)`, *default:* `nil`) - The cycle's steps list representing its progress.
   *   `totalPauseDuration` (*type:* `String.t`, *default:* `nil`) - The accumulated duration the replication cycle was paused.
+  *   `warnings` (*type:* `list(GoogleApi.VMMigration.V1.Model.MigrationWarning.t)`, *default:* `nil`) - Output only. Warnings that occurred during the cycle.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.VMMigration.V1.Model.ReplicationCycle do
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :steps => list(GoogleApi.VMMigration.V1.Model.CycleStep.t()) | nil,
-          :totalPauseDuration => String.t() | nil
+          :totalPauseDuration => String.t() | nil,
+          :warnings => list(GoogleApi.VMMigration.V1.Model.MigrationWarning.t()) | nil
         }
 
   field(:cycleNumber)
@@ -55,6 +57,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ReplicationCycle do
   field(:state)
   field(:steps, as: GoogleApi.VMMigration.V1.Model.CycleStep, type: :list)
   field(:totalPauseDuration)
+  field(:warnings, as: GoogleApi.VMMigration.V1.Model.MigrationWarning, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VMMigration.V1.Model.ReplicationCycle do

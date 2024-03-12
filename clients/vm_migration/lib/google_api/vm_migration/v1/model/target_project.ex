@@ -24,7 +24,7 @@ defmodule GoogleApi.VMMigration.V1.Model.TargetProject do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this target project resource was created (not related to when the Compute Engine project it points to was created).
   *   `description` (*type:* `String.t`, *default:* `nil`) - The target project's description.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the target project.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The target project ID (number) or project name.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Required. The target project ID (number) or project name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time the target project resource was updated.
   """
 

@@ -21,8 +21,11 @@ defmodule GoogleApi.VMMigration.V1.Model.Source do
 
   ## Attributes
 
+  *   `aws` (*type:* `GoogleApi.VMMigration.V1.Model.AwsSourceDetails.t`, *default:* `nil`) - AWS type source details.
+  *   `azure` (*type:* `GoogleApi.VMMigration.V1.Model.AzureSourceDetails.t`, *default:* `nil`) - Azure type source details.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create time timestamp.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of the source.
+  *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. Immutable. The encryption details of the source data stored by the service.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels of the source.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The Source name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time timestamp.
@@ -32,16 +35,22 @@ defmodule GoogleApi.VMMigration.V1.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :aws => GoogleApi.VMMigration.V1.Model.AwsSourceDetails.t() | nil,
+          :azure => GoogleApi.VMMigration.V1.Model.AzureSourceDetails.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :encryption => GoogleApi.VMMigration.V1.Model.Encryption.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vmware => GoogleApi.VMMigration.V1.Model.VmwareSourceDetails.t() | nil
         }
 
+  field(:aws, as: GoogleApi.VMMigration.V1.Model.AwsSourceDetails)
+  field(:azure, as: GoogleApi.VMMigration.V1.Model.AzureSourceDetails)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:encryption, as: GoogleApi.VMMigration.V1.Model.Encryption)
   field(:labels, type: :map)
   field(:name)
   field(:updateTime, as: DateTime)

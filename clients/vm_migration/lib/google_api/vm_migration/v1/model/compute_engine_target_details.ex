@@ -23,9 +23,10 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
 
   *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Additional licenses to assign to the VM.
   *   `appliedLicense` (*type:* `GoogleApi.VMMigration.V1.Model.AppliedLicense.t`, *default:* `nil`) - The OS license returned from the adaptation module report.
-  *   `bootOption` (*type:* `String.t`, *default:* `nil`) - The VM Boot Option, as set in the source vm.
+  *   `bootOption` (*type:* `String.t`, *default:* `nil`) - The VM Boot Option, as set in the source VM.
   *   `computeScheduling` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeScheduling.t`, *default:* `nil`) - Compute instance scheduling information (if empty default is used).
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - The disk type to use in the VM.
+  *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. The encryption to apply to the VM disks.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname to assign to the VM.
   *   `labels` (*type:* `map()`, *default:* `nil`) - A map of labels to associate with the VM.
   *   `licenseType` (*type:* `String.t`, *default:* `nil`) - The license type to use in OS adaptation.
@@ -33,9 +34,9 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
   *   `machineTypeSeries` (*type:* `String.t`, *default:* `nil`) - The machine type series to create the VM with.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - The metadata key/value pairs to assign to the VM.
   *   `networkInterfaces` (*type:* `list(GoogleApi.VMMigration.V1.Model.NetworkInterface.t)`, *default:* `nil`) - List of NICs connected to this VM.
-  *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - A map of network tags to associate with the VM.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The GCP target project ID or project name.
-  *   `secureBoot` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has Secure Boot enabled. This can be set to true only if the vm boot option is EFI.
+  *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - A list of network tags to associate with the VM.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The Google Cloud target project ID or project name.
+  *   `secureBoot` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has Secure Boot enabled. This can be set to true only if the VM boot option is EFI.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account to associate the VM with.
   *   `vmName` (*type:* `String.t`, *default:* `nil`) - The name of the VM to create.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The zone in which to create the VM.
@@ -49,6 +50,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
           :bootOption => String.t() | nil,
           :computeScheduling => GoogleApi.VMMigration.V1.Model.ComputeScheduling.t() | nil,
           :diskType => String.t() | nil,
+          :encryption => GoogleApi.VMMigration.V1.Model.Encryption.t() | nil,
           :hostname => String.t() | nil,
           :labels => map() | nil,
           :licenseType => String.t() | nil,
@@ -69,6 +71,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails do
   field(:bootOption)
   field(:computeScheduling, as: GoogleApi.VMMigration.V1.Model.ComputeScheduling)
   field(:diskType)
+  field(:encryption, as: GoogleApi.VMMigration.V1.Model.Encryption)
   field(:hostname)
   field(:labels, type: :map)
   field(:licenseType)
