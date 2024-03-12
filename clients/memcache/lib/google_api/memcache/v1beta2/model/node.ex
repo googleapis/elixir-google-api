@@ -22,6 +22,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Node do
   ## Attributes
 
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the Memcached node used by the clients to connect to the Memcached server on this node.
+  *   `memcacheFullVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The full version of memcached server running on this node. e.g. - memcached-1.5.16
+  *   `memcacheVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Major version of memcached server running on this node, e.g. MEMCACHE_1_5
   *   `nodeId` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the Memcached node. The node id does not include project or location like the Memcached instance name.
   *   `parameters` (*type:* `GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t`, *default:* `nil`) - User defined parameters currently applied to the node.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the Memcached server on this node.
@@ -34,6 +36,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Node do
 
   @type t :: %__MODULE__{
           :host => String.t() | nil,
+          :memcacheFullVersion => String.t() | nil,
+          :memcacheVersion => String.t() | nil,
           :nodeId => String.t() | nil,
           :parameters => GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t() | nil,
           :port => integer() | nil,
@@ -43,6 +47,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Node do
         }
 
   field(:host)
+  field(:memcacheFullVersion)
+  field(:memcacheVersion)
   field(:nodeId)
   field(:parameters, as: GoogleApi.Memcache.V1beta2.Model.MemcacheParameters)
   field(:port)
